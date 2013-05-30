@@ -1,0 +1,74 @@
+<protocol name="LB Liquid Growth Media">
+        
+    <checkout>
+        <item><name>1000 mL Bottle</name><quantity>1</quantity></item>
+        <item return="true"><name>LB Broth Base</name><quantity>1</quantity></item>
+        <item dispose="true"><name>Plastic Weigh Boat (S)</name><quantity>1</quantity></item>
+    </checkout>
+    
+    <inventory action='new'>
+        <object>1000 mL Bottle of LB Media (not sterilized)</object>
+        <quantity>1</quantity>
+        <location>b1.300</location>
+        <var>result</var>
+    </inventory>
+    
+    <step>
+        <description>Label the bottle</description>
+        <note>Write <br />
+            <div class='label'>LB Growth Media<br />
+            id : ||$result$.id||<br />
+            date: ||(new Date()).toDateString()||
+            </div> <br />
+        on a label, stick it to the bottle. <br />
+        Affix a piece of autoclave tape to the bottle as well.
+        </note>
+        <image>LabeledEmptyMediaBottle</image>
+    </step>
+    
+    <assign><var>ingredients</var><value>['LB Broth Base']</value></assign>
+    <assign><var>amounts</var><value>['20 g']</value></assign>
+    <assign><var>i</var><value>0</value></assign>
+    
+    <while>    
+        <condition>$i$!=1</condition>    
+        <do>
+            <step>
+                <description>Measure ||$amounts$[$i$]|| of ||$ingredients$[$i$]||</description>
+                <note><ul>
+                    <li>Place the plastic boat on the scale.</li>
+                    <li>Zero the scale.</li>
+                    <li>Using the spatula, measure ||$amounts$[$i$]|| of ||$ingredients$[$i$]|| 
+                        into the plastic boat.</li>                
+                </ul></note>
+                <image>WeighDryIngredient</image>
+            </step> 
+            
+            <step>
+                <description>Pour the ||$ingredients$[$i$]|| into the 1000 mL bottle.</description>
+                <image>PourDryIngredient</image>
+            </step>
+            
+            <assign><var>i</var><value>$i$+1</value></assign>
+        </do>
+    </while>
+
+    <step>
+        <description>Add 800 mL of DI water.</description>
+        <note>Use the DI water near the sink.</note>
+        <image>FillingMediaBottle</image>
+    </step>
+    
+    <step>
+        <description>Mix.</description>
+        <note>Put a cap on the bottle and shake to mix the dry ingredients with the water.
+        Dry off the bottle with a paper towel. Place the bottle in location b1.300.
+        </note>
+        <image>ShakenMediaBottle</image>
+    </step>
+
+
+    
+    <cleanup></cleanup>
+    
+</protocol>
