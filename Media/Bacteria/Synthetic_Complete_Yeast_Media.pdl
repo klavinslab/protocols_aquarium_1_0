@@ -1,0 +1,117 @@
+<protocol name="Synthetic Complete Yeast Media">
+<information>Makes 800 mL of 2% Glucose, Adenine-supplemented, Synthetic Complete Yeast Media</information>
+
+    <checkout>
+        <item><name>1000 mL Bottle</name><quantity>1</quantity></item>
+        <item return="true"><name>Yeast Extract</name><quantity>1</quantity></item>
+        <item dispose="true"><name>Plastic Weigh Boat (S)</name><quantity>1</quantity></item>
+    </checkout>
+
+    <inventory action='new'>
+        <object>800 mL Bottle of SC Media (not sterilized)</object>
+        <quantity>1</quantity>
+        <location>TBD</location>
+        <var>result</var>
+    </inventory>   
+    
+    <step>
+        <description>Label the bottle</description>
+        <note>Write <br />
+            <div class='label'>SC Yeast Media<br />
+            id : ||$result$.id||<br />
+            date: ||(new Date()).toDateString()||
+            </div> <br />
+        on a label, stick it to the bottle. <br />
+        Affix a piece of autoclave tape to the bottle as well.
+        </note>
+        <image>LabeledEmptyMediaBottle</image>
+    </step>
+
+    
+    <step>
+        <description>Measure 5.36 g of Yeast nitrogen base w/o amino acid</description>
+        <note><ul>
+            <li>Place the plastic boat on the scale.</li>
+            <li>Zero the scale.</li>
+            <li>Using the spatula, measure 5.36 g of Yeast nitrogen base 
+                into the plastic boat and add it to the bottle.</li>                
+        </ul></note>
+        <image>WeighDryIngredient</image>
+    </step> 
+    
+    
+    <step>
+        <description>Measure 1.12 g of Synthetic DO media</description>
+        <note><ul>
+            <li>Place the plastic boat on the scale.</li>
+            <li>Zero the scale.</li>
+            <li>Using the spatula, measure 1.12 g of Synthetic DO Media 
+                into the plastic boat and add it to the bottle.</li>                
+        </ul></note>
+        <image>WeighDryIngredient</image>
+    </step>
+    
+    
+    
+    <step>
+        <description>Measure 16 g of Dextrose</description>
+        <note><ul>
+            <li>Place the plastic boat on the scale.</li>
+            <li>Zero the scale.</li>
+            <li>Using the spatula, measure 16 g of Dextrose 
+                into the plastic boat and add it to the bottle.</li>                
+        </ul></note>
+        <image>WeighDryIngredient</image>
+    </step>
+    
+    
+     <step>
+        <description>Add 8 mL of Histidine Solution to the bottle.</description>
+        <image>Histidine Solution</image>
+    </step>
+   
+     <step>
+        <description>Add 8 mL of Leucine Solution to the bottle.</description>
+        <image>Leucine Solution</image>
+    </step>
+    
+     <step>
+        <description>Add 8 mL of Tryptophan Solution to the bottle.</description>
+        <image>Tryptophan Solution</image>
+    </step>
+    
+     <step>
+        <description>Add 8 mL of Uracil Solution to the bottle.</description>
+        <image>Uracil Solution</image>
+    </step>
+
+    <step>
+        <description>Measure 64 mg of Adenine hemisulfate</description>
+        <note><ul>
+            <li>Place the plastic boat on the scale.</li>
+            <li>Zero the scale.</li>
+            <li>Using the spatula, measure 64 g of Adenine hemisulfate 
+                into the plastic boat and add it to the bottle.</li>                
+        </ul></note>
+        <image>WeighDryIngredient</image>
+    </step>
+
+
+    <step>
+        <description>Add DI water to 800 mL until volume is about ~800 mL.</description>
+        <note>Use the DI water near the sink.</note>
+        <image>FillingMediaBottle</image>
+    </step>
+    
+    <step>
+        <description>Mix.</description>
+        <note>Put a cap on the bottle and shake to mix the dry ingredients with the water.
+        Dry off the bottle with a paper towel. Place the bottle in location TBD.
+        </note>
+        <image>ShakenMediaBottle</image>
+    </step>
+    
+    <cleanup></cleanup>
+
+    
+</protocol>
