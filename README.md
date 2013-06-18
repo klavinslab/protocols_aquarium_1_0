@@ -4,46 +4,46 @@ protocols
 File Organization
 ------------
 
--	Basic Cloning: 
-  –	Primer dilution
+- Basic Cloning:
+  - Primer dilution
   - Primer stock
-  –	PCR
-  –	Run Gel
-  –	PCR purification
-  –	Gel extraction
-  – Fragment stock
+  - PCR
+  - Run Gel
+  - PCR purification
+  - Gel extraction
+  - Fragment stock
   - Gibson
   - E. coli transformation
-    - Electrocompetent
-    - Chemically competent
+   		- Electrocompetent
+   		- Chemically competent
   - E. coli overnight
   - E. coli colony PCR
   - Mini-prep
   - Sequencing
-    - Plasmid
-    - Fragment
-    - Colony
+    	- Plasmid
+    	- Fragment
+    	- Colony
   - Restriction digest
   - Ligation
 -	Yeast cloning
-  –	Yeast transformation
+  -	Yeast transformation
   - YPD streak
   - Yeast colony PCR
   - Loop out
   - Gateway cloning
-    - cDNA preperation
-    - LR
-    - BP
+    	- cDNA preperation
+    	- LR
+    	- BP
 -	E. coli cloning
-  –	Mage
+  -	Mage
 - Experiments:
 	- Cytomoter
-    - Yeast assay
-    - E. coli assay
+    	- Yeast assay
+    	- E. coli assay
   - Plate reader
   - Nandrop
-    –	DNA concentration
-    –	OD
+    	-	DNA concentration
+    	-	OD
   - Microscope
   - CellAsic
 - Device maintainance:
@@ -59,30 +59,30 @@ File Organization
   - 37 degree shaker
 -	Media/reagents/stocks:
   - E. coli Media
-    –	LB
-    –	M9 (Cellobiose, Glucose, Pasc
-    –	TB
+    	-	LB
+    	-	M9 (Cellobiose, Glucose, Pasc
+    	-	TB
   -	Yeast media
-    - SOC
-    –	SC
-    –	YPD
+    	- SOC
+    	-	SC
+    	-	YPD
   -	Reagents
-    –	Gibson
-    -	Competent cells
-      –	Yeast
-      –	E. coli (NEB turbo, DH5alpha)
+    	-	Gibson
+    	-	Competent cells
+      	-	Yeast
+      	-	E. coli (NEB turbo, DH5alpha)
 -	Admin:
   -	Receiving
   -	Ordering
   -	Adding protocols
 -	Training/safety:
   -	Basic lab training
-    –	Pipette
-    –	Lab organization
-    –	Sterile technique
-    –	Safety
-    –	Waste disposal
-    –	Clean-up
+    -	Pipette
+    -	Lab organization
+    -	Sterile technique
+    -	Safety
+    -	Waste disposal
+    -	Clean-up
     -Acid/base safety
   -Emergency information
     -	Broken glass
