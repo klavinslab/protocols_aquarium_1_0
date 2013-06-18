@@ -59,11 +59,19 @@ File Organization
   - 37 degree incubator
   - 32 degree shaker
   - 37 degree shaker
+  - Autoclaving
+	- Glass
+	- Plastic
 -	Media/reagents/stocks:
   - E. coli Media
-    	-	LB
-    	-	M9 (Cellobiose, Glucose, Pasc
-    	-	TB
+		-	Liquid
+			-	LB
+			-	M9 (Cellobiose, Glucose, PASC)
+			-	TB
+		-	Agar
+			-	LB
+			-	LB CMC
+			-	M9 (Cellobiose, Glucose, PASC)
   -	Yeast media
     	- SOC
     	-	SC
@@ -71,8 +79,8 @@ File Organization
   -	Reagents
     	-	Gibson
     	-	Competent cells
-      	-	Yeast
-      	-	E. coli (NEB turbo, DH5alpha)
+      	-	Yeast # Competent Yeast? Yeast Extract? What is this?
+      	-	E. coli (NEB turbo, DH5alpha, MG1655)
 -	Admin:
   -	Receiving
   -	Ordering
