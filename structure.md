@@ -4,20 +4,20 @@ protocols
 File Organization
 ------------
 
-- Cloning
+- Cloning (DY)
 	- Yeast
 	- Ecoli
-- Training
+- Training (RJ)
 	- Equipment_Training
 	- Lab_Layout
 	- Safety
-- Emergency
-- Materials_prep
+- Emergency (RJ)
+- Materials_prep (DZ)
 	- Media
 	- Competent_Cells
 	- Reagents
-- Equipment
+- Equipment (YY)
 	- Device_1
 	- Device_2
 	- Device_3
-- Admin
+- Admin (YY)
