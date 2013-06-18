@@ -1,0 +1,145 @@
+<protocol name="Yeast Dropout Solutions">
+
+    <information>
+        This protocols describes how to make solutions of Tryptophan, Histidine, Leucine, and Uracil, which
+        are used to make selective media and/or plates for yeast. The amino acid solutions are 10 mg / mL
+        and the Uracil solution is 2.5 mg / mL.
+    </information>
+
+    <checkout>
+        <item><name>500 mL Bottle</name><quantity>4</quantity></item>
+        <item wash="true"><name>1000 mL Graduated Cylinder</name><quantity>1</quantity></item>
+        <item dispose="true"><name>1L Bottle Top Filter</name><quantity>8</quantity></item>
+        <item return="true"><name>Tryptophan Powder</name><quantity>1</quantity></item>
+        <item return="true"><name>Histidine Powder</name><quantity>1</quantity></item>
+        <item return="true"><name>Leucine Powder</name><quantity>1</quantity></item>
+        <item return="true"><name>Uracil Powder</name><quantity>1</quantity></item>
+    </checkout>
+    
+    <step>
+        <description>Put temporary labels on the lids of four of the 500 mL bottles.</description>
+        <note>
+            Label the bottles as follows:
+            <ul>
+                <li>Trp</li>
+                <li>His</li>
+                <li>Lue</li>
+                <li>Ura</li>
+            </ul>
+        </note>
+        <image>TempDropLabels</image>
+        <warning>Put the labels on the tops of the bottles, not on the sides. If not, the
+            labels may come off when the bottles are put in the heat bath.
+        </warning>
+    </step>
+    
+    <assign>
+        <var>ingredients</var>
+        <value>['Tryptophan Powder', 'Histidine Powder', 'Leucine Powder', 'Uracil Powder']</value>
+    </assign>
+
+    <assign>
+        <var>labels</var>
+        <value>['Trp', 'His', 'Leu', 'Ura']</value>
+    </assign>
+
+    <assign><var>amounts</var><value>['5g', '5g', '5g', '2.5g']</value></assign>
+    
+    <assign><var>i</var><value>0</value></assign>
+    
+    <while>    
+        <condition>$i$!=4</condition>    
+        <do>
+        
+            <step>
+                <description>Measure ||$amounts$[$i$]|| of ||$ingredients$[$i$]||</description>
+                <note><ul>
+                    <li>Place the plastic boat on the scale.</li>
+                    <li>Zero the scale.</li>
+                    <li>Using the spatula, measure ||$amounts$[$i$]|| of ||$ingredients$[$i$]|| 
+                        into the plastic boat.</li>
+                    <li>Use a kimwipe to clean the spatula.</li>
+                </ul></note>                
+                <image>WeighDryIngredient</image>
+            </step>
+                
+            <step>
+                <description>
+                    Transfer the ||$ingredients$[$i$]|| to the bottle labeled ||$labels$[$i$]||.
+                </description>
+                <note>
+                Remove the top of the 500 mL bottle labeled ||$labels$[$i$]|| and
+                the ||$ingredients$[$i$]|| into the bottle. Dispose of the plastic boat.
+                </note>
+                <image>PourDry500mL</image>
+            </step>
+                
+            <step>
+                <description>
+                    Fill the graduated cylinder with di Water to 500 mL
+                </description>
+                <image>Fill1000mLGraduated</image>
+            </step>
+
+            <step>
+                <description>
+                    Transfer and mix.            
+                </description>
+                <note>
+                    Pour the water from the cylinder into the bottle labeled ||$labels$[$i$]||,
+                    return the top, and shake the bottle to mix in the ||$ingredients$[$i$]||.
+                </note>
+                <image>TransferGraduatedTo500mL</image>
+            </step>
+            
+            <assign><var>i</var><value>$i$+1</value></assign>
+            
+        </do>
+        
+    </while>
+    
+    <step>
+        <description>Put all bottles in the heat bath.</description>
+        <note>Place all four of the bottles in the heat bath for approximately 20 minutes.
+            Make sure that the heat bath isat 65 C. Cover the heat bath for faster heating.
+            Go can go on to the next step now, but you should periodically remove each bottle,
+            swirl it, and check whether the powders have dissolved.
+        </note>
+        <image>HeatBathWithAminoAcids</image>
+    </step>
+    
+    <step>
+        <description>Prepare bottle top filters.</description>
+        <note>While the powders are dissolving, attach the four bottle top filters to 
+            the four remaining (sterile!) bottles. You will need to attache the white plastic hose adapter
+            to each filter as well. Be careful to keep the inside of the filter cap and the bottle
+            sterile.
+        </note>
+        <image>BottleFilterOnBottle</image>
+    </step>
+    
+    <inventory action='new'>
+        <object>Tryptophan Solution</object>
+        <quantity>1</quantity>
+        <var>trp</var>
+    </inventory>    
+
+    <inventory action='new'>
+        <object>Histidine Solution</object>
+        <quantity>1</quantity>
+        <var>his</var>
+    </inventory>    
+
+    <inventory action='new'>
+        <object>Leucine Solution</object>
+        <quantity>1</quantity>
+        <var>leu</var>
+    </inventory>    
+
+    <inventory action='new'>
+        <object>Uracil Solution</object>
+        <quantity>1</quantity>
+        <var>ura</var>
+    </inventory>    
+
+</protocol>

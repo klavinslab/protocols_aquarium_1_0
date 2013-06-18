@@ -1,0 +1,142 @@
+<protocol name="General M9 Salts Media">
+    <information>Protocol for making General M9 salts media.</information>
+
+    <checkout>
+        <item><name>1000 mL Bottle</name><quantity>1</quantity></item>
+        <item return="true"><name>M9 Salts</name><quantity>1</quantity></item>
+        <item return="true"><name>Calcium Chloride</name><quantity>1</quantity></item>
+        <item dispose="true"><name>Serological Pipette 2 mL</name><quantity>1</quantity></item>
+    </checkout>
+    
+        <inventory action='new'>
+        <object>1000 mL Bottle of General M9 Media (not sterilized)</object>
+        <quantity>1</quantity>
+        <location>TBD</location>
+        <var>result</var>
+    </inventory>   
+    
+    <step>
+        <description>Label the bottle</description>
+        <note>Write <br />
+            <div class='label'>General M9 Media<br />
+            id : ||$result$.id||<br />
+            date: ||(new Date()).toDateString()||
+            </div> <br />
+        on a label, stick it to the bottle. <br />
+        Affix a piece of autoclave tape to the bottle as well.
+        </note>
+        <image>LabeledEmptyMediaBottle</image>
+    </step>
+
+    <step>
+        <description>Add 25 mL of DI water to a 50 mL Falcon tube.</description>
+        <note>Use the DI water near the sink.</note>
+        <image>50 mL Falcon Tube</image>
+    </step>
+
+    <step>
+        <description>Transfer 100 uL of Calcium Chloride to the 50 mL Falcon tube</description>
+        <note>Use the serological pipettor and a 2 mL serological pipette. After aspirating,
+              be sure to wipe as much Calcium Chloride off of the outside of the pipette as possible. 
+              Dispense as much Calcium Chloride as possible, then wait 30 seconds, and dispense
+              whatever Calcium Chloride drains to the bottom of the pipette. (?)
+              <ul>
+            <li>If anything participated out of the solution, you'll need to discard whatever was
+            made in this protocol, make new CaCl2 1M solution, and start this protocol over.</li>              
+        </ul></note>
+    </step>
+
+
+    <step>
+        <description>Transfer 1 mL of Magnesium Sulfate to the 50 mL Falcon tube</description>
+        <note>Use the serological pipettor and a 2 mL serological pipette. After aspirating,
+              be sure to wipe as much Magnesium Sulfate off of the outside of the pipette as possible. 
+              Dispense as much Magnesium Sulfate as possible, then wait 30 seconds, and dispense
+              whatever Magnesium Sulfate drains to the bottom of the pipette. (?)
+              <ul>
+            <li>If anything participated out of the solution, you'll need to discard whatever was
+            made in this protocol, make new MgS04 1M solution, and start this protocol over.</li>              
+        </ul></note>
+    </step>
+ 
+    
+    
+    <step>
+        <description>To make a desired X% concentration M9 media, Measure X g of Dextrose</description>
+        <note><ul>
+            <li>Place the plastic boat on the scale.</li>
+            <li>Zero the scale.</li>
+            <li>Using the spatula, measure X g of Dextrose 
+                into the plastic boat and add it to the 50 mL Falcon tube.</li>                
+        </ul></note>
+        <image>WeighDryIngredient</image>
+    </step>
+    
+    
+    
+    <step>
+        <description>Measure 0.5 g of Casamino acids</description>
+        <note><ul>
+            <li>Place the plastic boat on the scale.</li>
+            <li>Zero the scale.</li>
+            <li>Using the spatula, measure 0.5 g of Casamino acids
+                into the plastic boat and add it to the bottle.</li>                
+        </ul></note>
+        <image>WeighDryIngredient</image>
+    </step>
+    
+    
+
+    <step>
+        <description>Add DI water to the Falcon tube until the volume is ~50 mL.</description>
+        <note>Use the DI water near the sink.</note>
+        <image>FillingMediaBottle</image>
+    </step>
+    
+    
+    <step>
+        <description>Mix.</description>
+        <note>Put a cap on the tube and shake to mix the dry ingredients with the water.
+        Dry off the bottle with a paper towel. Place the bottle in location TBD.
+        </note>
+    </step>
+    
+ 
+    <step>
+        <description>Add 500 mL of DI water to the labled 1000 mL bottle.</description>
+        <note>Use the DI water near the sink.</note>
+        <image>FillingMediaBottle</image>
+    </step>
+
+
+    <step>
+        <description>Use a 30 mL Syringe and aspirate as much solution as possible from the 50 mL Falcon tube.</description>
+        <note><ul>
+            <li>Connect a Syringe Filter to the end of the Syringe.</li>
+            <li>Expel the solution into the labled 1000 mL bottle.</li>
+            <li>Repeat until all of the original solution within the 50 mL 
+                Falcon tube is in the 1000 mL bottle.
+            </li>                
+        </ul></note>
+        <image>30 mL Syringe</image>
+        <image>Syringe Filter</image>
+    </step>
+    
+    <step>
+        <description>Add 200 mL of sterile M9 Salts 5x to the 1000 mL bottle.</description>
+        <image>M9 Salts</image>
+    </step>
+    
+    <step>
+        <description>Add DI water to the 1000 mL bottle until the total volume is ~1000 mL.</description>
+        <note>Use the DI water near the sink.</note>
+        <image>FillingMediaBottle</image>
+    </step>
+    
+    <step>
+        <description>Store at 4C.</description>
+    </step>    
+    
+    <cleanup></cleanup>
+
+</protocol>
