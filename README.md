@@ -36,6 +36,7 @@ File Organization
     	- BP
 -	E. coli cloning
   -	Mage
+  -	Keioe
 - Experiments:
 	- Cytomoter
     	- Yeast assay
@@ -46,6 +47,7 @@ File Organization
     	-	OD
   - Microscope
   - CellAsic
+-Device Use: (same things)
 - Device maintainance:
   - Cytometer
   - Plate reader
