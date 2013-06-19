@@ -72,7 +72,7 @@ Day 2:
     
 ####Troubleshooting####
 
-Possible problem 1:
+Possible problem 1:  
 Possible Problem 2:
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
