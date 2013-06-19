@@ -1,13 +1,17 @@
-#Protocol Name#
-===============
-###Total duration: x days/hours/minutes###
-    - Day 1:
-    - Day 2:
+Protocol Name
+--------------
+
+####Total duration: x days/hours/minutes####
+
+    - Day 1: x days/hours/minutes
+    - Day 2: x days/hours/minutes
     - ...
     
-- - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-###Required materials:###
+####Required materials:####
+
+Day 1:
 
     * Item 1:
         + Quantity: x ml/mg/items
@@ -15,18 +19,33 @@
     * Item 2:
         + Quantity: x ml/mg/items
         + Location: (address)
-        
-- - - - - - - - - - - - - - - - - - - - - - 
 
-##Protocol##
+Day 2:
 
-1. Step 1:
-2. Step 2:
-3. Step 3:
+    * Item 1:
+        + Quantity: x ml/mg/items
+        + Location: (address)
+    * Item 2:
+        + Quantity: x ml/mg/items
+        + Location: (address)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-- - - - - - - - - - - - - - - - - - - - - - 
+##Protocol:##
 
-##Troubleshooting##
+    1. Step 1: 
+    2. Step 2:
+    3. Step 3:
 
-1. Troubleshooting 1
-2. Troubleshooting 2
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    
+    
+####Troubleshooting####
+
+    - Possible problem 1:
+    - Possible Problem 2:
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+       
+For questions, contact ___ at ___@google.com    
+Last update: xx/yy/zzzz
