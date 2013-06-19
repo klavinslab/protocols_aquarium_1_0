@@ -13,10 +13,16 @@ Description:
     
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-####Required materials:####
+####Required equipment and materials:####
 
 Day 1:
 
+    * Equipment 1:
+        + Duration needed: x days/hours/min
+        + Location: (address)
+    * Equipment 2:
+        + Duration needed: x days/hours/min
+        + Location: (address)
     * Item 1:
         + Quantity: x ml/mg/items
         + Location: (address)
@@ -26,6 +32,12 @@ Day 1:
 
 Day 2:
 
+    * Equipment 1:
+        + Duration needed: x days/hours/min
+        + Location: (address)
+    * Equipment 2:
+        + Duration needed: x days/hours/min
+        + Location: (address)
     * Item 1:
         + Quantity: x ml/mg/items
         + Location: (address)
