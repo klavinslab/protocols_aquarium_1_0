@@ -1,10 +1,14 @@
 Protocol Name
 --------------
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Description:
 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ####Total duration: x days/hours/minutes####
+####Total worktime: x hours/minutes
 
-    - Day 1: x days/hours/minutes
-    - Day 2: x days/hours/minutes
+    - Day 1: x hours/minutes
+    - Day 2: x hours/minutes
     - ...
     
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -32,6 +36,14 @@ Day 2:
 
 ##Protocol:##
 
+Day 1:
+
+    1. Step 1: 
+    2. Step 2:
+    3. Step 3:
+
+Day 2:
+
     1. Step 1: 
     2. Step 2:
     3. Step 3:
@@ -48,4 +60,3 @@ Day 2:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
        
 For questions, contact ___ at ___@google.com    
-Last update: xx/yy/zzzz
