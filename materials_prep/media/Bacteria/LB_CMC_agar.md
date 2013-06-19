@@ -75,15 +75,15 @@ Day 1:
 
 Day 1:
 
-    1. Get Bottle and Stir Bar: Retrieve one Glass Liter Bottle from the glassware rack and one Medium Magnetic Stir Bar from the dishwashing station, bring to weigh station. Put the stir bar in the bottle.
-    2. Get Powders: Retrieve the container of LB agar powder and CMC powder from the indicated locations.
-    3. Weigh Agar: Using the gram scale, large weigh boat, and chemical spatula, weigh out 29.6 grams of LB Agar powder and pour into the bottle.
-	4. Weigh CMC: This time use the weigh paper, make sure to zero, weigh out 0.8 grams of CMC powder. Pour into bottle.
-	5. Measure out Water: fill bottle with DI water until it reaches the 800 mL line, shake to get all powder solvated.
-	6. Autoclave: stick autoclave tape on top of bottle cap, loosen top and autoclave at 110C for 15 minutes
-	7. Remove from Autoclave: put on thermal gloves and take bottle out of autoclave, place on stir plate
-	8. Stir: Heat to 65C while stirring at 700 rpm
-	9. Add Antibiotic: while heating and stirring add 4 mL kan 1.6 mL amp using a P1000 micropipette
+1. Get Bottle and Stir Bar: Retrieve one Glass Liter Bottle from the glassware rack and one Medium Magnetic Stir Bar from the dishwashing station, bring to weigh station. Put the stir bar in the bottle
+2. Get Powders: Retrieve the container of LB agar powder and CMC powder from the indicated locations.
+3. Weigh Agar: Using the gram scale, large weigh boat, and chemical spatula, weigh out 29.6 grams of LB Agar powder and pour into the bottle.
+4. Weigh CMC: This time use the weigh paper, make sure to zero, weigh out 0.8 grams of CMC powder. Pour into bottle.
+5. Measure out Water: fill bottle with DI water until it reaches the 800 mL line, shake to get all powder solvated.
+6. Autoclave: stick autoclave tape on top of bottle cap, loosen top and autoclave at 110C for 15 minutes
+7. Remove from Autoclave: put on thermal gloves and take bottle out of autoclave, place on stir plate
+8. Stir: Heat to 65C while stirring at 700 rpm
+9. Add Antibiotic: while heating and stirring add 4 mL kan 1.6 mL amp using a P1000 micropipette
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
