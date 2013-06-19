@@ -39,10 +39,6 @@ Day 1:
 	* Ampicillin
 		+ Quantity: 1.6 mL
 		+ Location: -20 freezer
--------------------------------------------------------
-	* P1000 Pipette
-		+ Duration: 2 minutes
-		+ Location: anywhere
 	* P1000 Pipette Tips
 		+ Quantity: 1 box
 		+ Location: anywhere
@@ -52,6 +48,10 @@ Day 1:
 	* Weigh Paper:
 		+ Quantity: 1
 		+ Location: Weigh table
+-------------------------------------------------------
+	* P1000 Pipette
+		+ Duration: 2 minutes
+		+ Location: anywhere
 	* Gram Scale:
 		+ Duration: 5 minutes
 		+ Location: Weigh table
