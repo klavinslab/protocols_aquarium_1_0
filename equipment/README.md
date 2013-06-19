@@ -1,20 +1,20 @@
-Microscope
-celASIC
-Cytometer
-Plate reader
-Spectrofluorometer
-Spectrophotometer
-Turbidostat
-Sonicator
+Microscope*
+celASIC*
+Cytometer*
+Plate reader*
+Spectrofluorometer*
+Spectrophotometer*
+Turbidostat*
+Sonicator*
 
-Nanodrop
+Nanodrop*
 Gel station
 Imaging / power supplies / boxes
-Heat blocks
-Thermocyclers
-Autoclaves
+Heat blocks*
+Thermocyclers*
+Autoclaves*
 Refrigerated centrifuge
-Electroporator
+Electroporator*
 Incubators/shakers
 Minifuges/Vortexers
 Fridges
@@ -22,5 +22,5 @@ Freezers
 Stir plates / hot plates
 Fume hood
 Pipettors (+serological)
-Water bath
-Microwave
+Water bath*
+Microwave*
