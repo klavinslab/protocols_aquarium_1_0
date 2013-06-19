@@ -39,6 +39,7 @@ Day 1:
 	* Ampicillin
 		+ Quantity: 1.6 mL
 		+ Location: -20 freezer
+-------------------------------------------------------
 	* P1000 Pipette
 		+ Duration: 2 minutes
 		+ Location: anywhere
