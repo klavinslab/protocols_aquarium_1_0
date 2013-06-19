@@ -1,1 +1,0 @@
-Electrocompetent e. coli transformation
