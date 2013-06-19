@@ -23,6 +23,10 @@ Day 1:
     * Equipment 2:
         + Duration needed: x days/hours/min
         + Location: (address)
+  
+  
+------
+
     * Item 1:
         + Quantity: x ml/mg/items
         + Location: (address)
@@ -38,6 +42,10 @@ Day 2:
     * Equipment 2:
         + Duration needed: x days/hours/min
         + Location: (address)
+        
+---------
+
+        
     * Item 1:
         + Quantity: x ml/mg/items
         + Location: (address)
