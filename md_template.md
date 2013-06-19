@@ -24,7 +24,6 @@ Day 1:
         + Duration needed: x days/hours/min
         + Location: (address)
   
-  
 ------
 
     * Item 1:
@@ -58,24 +57,23 @@ Day 2:
 
 Day 1:
 
-    1. TITLE:
-    2. TITLE:
-    3. TITLE:
+1. TITLE:
+2. TITLE:
+3. TITLE:
 
 Day 2:
 
-    1. TITLE:
-    2. TITLE:
-    3. TITLE:
+1. TITLE:
+2. TITLE:
+3. TITLE:
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
     
     
 ####Troubleshooting####
 
-    - Possible problem 1:
-    - Possible Problem 2:
-
+Possible problem 1:
+Possible Problem 2:
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
        
