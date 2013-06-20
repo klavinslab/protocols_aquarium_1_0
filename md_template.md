@@ -82,7 +82,12 @@ Day 2
 ####Additional Information and Settings####
 
     [Parameter/variable/clarification/option 1]:
+        [Option 1]:
+        [Option 2]:
     [Parameter/variable/clarification/option 2]:
+        [Option 1]:
+        [Option 2]:
+
 
 ####Common Issues####
 
