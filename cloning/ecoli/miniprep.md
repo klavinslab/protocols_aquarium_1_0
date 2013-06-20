@@ -67,7 +67,7 @@ Day 1
 1. [pipette 1ml of overnight culture into a 1.5 ml tube]
 2. [centrifuge at 15,000g-17,000g for one minute to pellet bacteria]
 3. [decant supernatant on into the waste bottle]  
-4. [resuspend the pelleted bacteria with 250 ul buffer P1]
+4. [resuspend the pelleted bacteria with 250 ul buffer P1. Return P1 to fridge.]
 5. [add 250 ul buffer P2. mix thoroughly by inverting 4-6 times.]
     *Do not let the reaction proceed for more than 5 minutes.
 6. [add 350 ul buffer N3 and invert 4-6 times.]
