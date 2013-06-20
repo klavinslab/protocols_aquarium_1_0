@@ -103,19 +103,38 @@ Description: Seperate DNA fragments by length for verification or purification
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
     
-    
 ####Additional Information and Settings####
 
-    Ladders: Ladder Range Link 1 kB 0.5 - 10 kB NEB Site 2 log 0.1 - 10 kB NEB Site 100 bp 0.1 - 1.5 kB NEB Site
-    Buffer: TBE can be substituted for TAE. TAE has historically worked better with gel purifications, though this may no longer be the case. Buffer can be reused after running a gel, but the quality decreases with every reuse (smeared bands, etc).
-    Combs: Use the thinner teeth for analysis and thicker teeth for a gel extraction.
+    Ladders: Choose a ladder with a range that includes the expected band sizes
+        1 kB NEB ladder: 
+        100 bp NEB ladder: 100 bp - 1517 bp
+        10 bp NEB ladder:
+    Buffer: New TAE is ideal, but there are other options
+        TAE: Historically better for gel purifications
+        TBE: Alternative if TAE not available
+        Used buffer: Buffer can be reused, but at a cost to band resolution
+    Comb: Chose a comb based on the need and the volume to run
+        Large: Large volume for gel extractions (about 50 ul)
+        Small: Small volume for size verification (about 10 ul)
+    Comb side:
+        Thick side: More volume, lower resolution
+        Thin side: Less volume, greater resolution
     Power supply settings: power supply and set it to 100V and 60 minutes. If you want greater resolution, set it to 80V and 80 minutes. If you want faster results (and smearier bands), do 110V for 45 minutes.
+        80V: (Run for about 80 minutes) Improved resolution
+        100V: (Run for about 60 minutes) Standard resoluton
+        110V: (Run for about 45 minutes) Decreased resolution
 
 ####Common Issues####
 
-    Issue 1:
-        - Solution 1:
-        - Solution 2:
+    No bands showed up (including ladder):
+        - Ensure the power supply was properly set: if run for too long, the DNA may have fully passed through the gel
+        - Check running direction: DNA runs towards the negative (red) electrode- make sure the gel tray is oriented correctly
+        - Make sure the correct amount of GelGreen was added to the gel
+        - Use new TAE buffer: Make sure that it is the proper pH
+    No bands showed up (except ladder):
+        - Make sure the correct amount of loading dye was added to the samples
+        - Make sure the samples loaded properly
+        - Prepare new sample with a higher DNA concentration
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
        
