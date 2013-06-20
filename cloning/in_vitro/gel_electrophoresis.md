@@ -9,69 +9,69 @@ Description: Seperate DNA fragments by length for verification or purification
     
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-####Required equipment and materials:####
+####Required equipment and materials####
 
-    * Pipettes:
+    * Pipettes
         + Duration needed: x days/hours/min
         + Location: (address)
-    * 250ml flask:
+    * 250ml flask
         + Duration needed: x days/hours/min
         + Location: (address)
-    * Balance:
+    * Balance
         + Duration needed: x days/hours/min
         + Location: (address)
-    * 100ml graduated cylinder:
+    * 100ml graduated cylinder
         + Duration needed: x days/hours/min
         + Location: (address)
-    * Microwave:
+    * Microwave
         + Duration needed: x days/hours/min
         + Location: (address)
-    * Heat-resistant glove:
+    * Heat-resistant glove
         + Duration needed: x days/hours/min
         + Location: (address)
-    * Gel box:
+    * Gel box
         + Duration needed: x days/hours/min
         + Location: (address)
-    * Comb (1 or 2):
+    * Comb (1 or 2)
         + Duration needed: x days/hours/min
         + Location: (address)      
-    * Gel box power supply:
+    * Gel box power supply
         + Duration needed: x days/hours/min
         + Location: (address)   
-    * Transluminator:
+    * Transluminator
         + Duration needed: x days/hours/min
         + Location: (address)   
 
 -----------------------
 
-    * Gloves:
+    * Gloves
         + Quantity: x ml/mg/items
         + Location: (address)
-    * Pipette tips:
+    * Pipette tips
         + Quantity: x ml/mg/items
         + Location: (address)
-    * Weigh paper:
+    * Weigh paper
         + Quantity: x ml/mg/items
         + Location: (address)
-    * Agarose:
+    * Agarose
         + Quantity: x ml/mg/items
         + Location: (address)
-    * TAE_1x:
+    * TAE_1x
         + Quantity: x ml/mg/items
         + Location: (address) 
-    * GelGreen:
+    * GelGreen
         + Quantity: x ml/mg/items
         + Location: (address)  
-    * Loading dye:
+    * Loading dye
         + Quantity: x ml/mg/items
         + Location: (address) 
-    * Ladder:
+    * Ladder
         + Quantity: x ml/mg/items
         + Location: (address)  
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-##Protocol:##
+##Protocol##
 
 1. Rinse gel box, gel tray, and gel comb with DI water
 2. Push the tray down fully into the center of the gel box, forming a seal
@@ -89,22 +89,31 @@ Description: Seperate DNA fragments by length for verification or purification
 12. Carefully remove the comb
 13. Add loading dye to all samples
 13. Load all samples and the appropriate DNA ladder
-13. Turn on the power supply and set it to 100V and 60 minutes. If you want greater resolution, set it to 80V and 80 minutes. If you want faster results (and smearier bands), do 110V for 45 minutes.
-14. Connect the electrodes to the power supply with the combination safety cover + electrode leads apparatus. Hit the 'running man' icon to start the power supply.
-15. Check on the gel 10 minutes later to make sure the samples are running in the right direction and that there are no other problems.
-16. Check on the gel every 30-40 minutes in case it has resolved enough for your purposes.
-17. When the gel bands have sufficiently resolved, pause the power supply and then turn it off. Remove the gel tray (with the gel) from the gel box and transfer the gel to the large blue light transilluminator for visualization. It should slide right of of the tray, so be careful that it doesn't slide off during the transfer! To remove bubbles under the gel, slowly move the gel around on the transilluminator, allowing the bubbles to escape.
+13. Turn on the power supply and set it the voltage and time
+14. Connect the electrodes to the power supply with the combination safety cover + electrode leads apparatus 
+15. Hit the 'running man' icon to start the power supply and chack for bubbles in the gel box to indicate that voltage is being applied
+16. Check on the gel every 30-40 minutes in case the bands have sufficiently resolved
+17. When sufficiently resolved, pause the power supply and then turn it off. 
+18. Remove the gel tray from the gel box and transfer the gel to the large blue light transilluminator for visualization (It should slide right of of the tray, so be careful that it doesn't slide off during the transfer! 
+19. To remove bubbles under the gel, slowly move the gel around on the transilluminator, allowing the bubbles to escape
 18. Visualize with the gel hood and transilluminator. Capture an image.
 19. If you don't need to save the gel, usually for a gel purification, it can be discarded in the biohazard bin. Rinse out the gel box and gel tray in the sink and leave them out to dry.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
     
     
-####Troubleshooting####
+####Additional Information and Settings####
 
 Ladders: Ladder Range Link 1 kB 0.5 - 10 kB NEB Site 2 log 0.1 - 10 kB NEB Site 100 bp 0.1 - 1.5 kB NEB Site
 Buffer: TBE can be substituted for TAE. TAE has historically worked better with gel purifications, though this may no longer be the case. Buffer can be reused after running a gel, but the quality decreases with every reuse (smeared bands, etc).
 Combs: Use the thinner teeth for analysis and thicker teeth for a gel extraction.
+Power supply settings: power supply and set it to 100V and 60 minutes. If you want greater resolution, set it to 80V and 80 minutes. If you want faster results (and smearier bands), do 110V for 45 minutes.
+
+####Common Issues####
+
+Issue 1:
+    - Solution 1:
+    - Solution 2:
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
        
