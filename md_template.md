@@ -1,4 +1,4 @@
-Notes/Directions: 
+Notes/Directions 
 
     - All irrelevent sections/headings are to be deleted. 
         ex. For a single day protocol, delete all references to "Day" 
@@ -22,7 +22,7 @@ Description:
     
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-####Required equipment and materials:####
+####Required equipment and materials####
 
 Day 1
 
@@ -62,7 +62,7 @@ Day 2
         + Location: [address]
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-##Protocol:##
+##Protocol##
 
 Day 1
 
@@ -81,15 +81,17 @@ Day 2
     
 ####Additional Information and Settings####
 
-[Parameter/variable/clarification/option 1]:
-[Parameter/variable/clarification/option 2]:
+    [Parameter/variable/clarification/option 1]:
+    [Parameter/variable/clarification/option 2]:
 
 ####Common Issues####
 
-[Issue 1]:
-    - [Solution 1]:
-    - [Solution 2]:
-
+    [Issue 1]:
+        - [Solution 1]:
+        - [Solution 2]:
+    [Issue 2]:
+        - [Solution 1]:
+        - [Solution 2]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
        
 For questions, contact ___ at ___@gmail.com    
