@@ -1,80 +1,95 @@
-Protocol Name
+Notes/Directions: 
+
+    - All irrelevent sections/headings are to be deleted. 
+        ex. For a single day protocol, delete all references to "Day" 
+    - All items in square brackets are place holders to be replaced by some other value 
+    - The description is a one or two sentance summary of what the protocol accomplishes
+
+
+
+[Protocol Name]
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Description:
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-####Total duration: x days/hours/minutes####
-####Total worktime: x hours/minutes
+####Total duration: [x days/hours/minutes]####
+####Total worktime: [x hours/minutes]
 
-    - Day 1: x hours/minutes
-    - Day 2: x hours/minutes
+    - Day 1: [x hours/minutes]
+    - Day 2: [x hours/minutes]
     - ...
     
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 ####Required equipment and materials:####
 
-Day 1:
+Day 1
 
-    * Equipment 1:
-        + Duration needed: x days/hours/min
-        + Location: (address)
-    * Equipment 2:
-        + Duration needed: x days/hours/min
-        + Location: (address)
+    * [Equipment 1]
+        + Duration needed: [x days/hours/min]
+        + Location: [address]
+    * [Equipment 2]
+        + Duration needed: [x days/hours/min]
+        + Location: [address]
   
 ------
 
-    * Item 1:
-        + Quantity: x ml/mg/items
-        + Location: (address)
-    * Item 2:
-        + Quantity: x ml/mg/items
-        + Location: (address)
+    * [Item 1]
+        + Quantity: [x ml/mg/items]
+        + Location: [address]
+    * [Item 2]
+        + Quantity: [x ml/mg/items]
+        + Location: [address]
 
-Day 2:
+Day 2
 
-    * Equipment 1:
-        + Duration needed: x days/hours/min
-        + Location: (address)
-    * Equipment 2:
-        + Duration needed: x days/hours/min
-        + Location: (address)
+    * [Equipment 1]
+        + Duration needed: [x days/hours/min]
+        + Location: [address]
+    * [Equipment 2]
+        + Duration needed: [x days/hours/min]
+        + Location: [address]
         
 ---------
 
         
-    * Item 1:
-        + Quantity: x ml/mg/items
-        + Location: (address)
-    * Item 2:
-        + Quantity: x ml/mg/items
-        + Location: (address)
+    * [Item 1]
+        + Quantity: [x ml/mg/items]
+        + Location: [address]
+    * [Item 2]
+        + Quantity: [x ml/mg/items]
+        + Location: [address]
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 ##Protocol:##
 
-Day 1:
+Day 1
 
-1. TITLE:
-2. TITLE:
-3. TITLE:
+1. [Step 1]
+2. [Step 2]
+3. [Step 3]
 
-Day 2:
+Day 2
 
-1. TITLE:
-2. TITLE:
-3. TITLE:
+1. [Step 1]
+2. [Step 2]
+3. [Step 3]
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
     
     
-####Troubleshooting####
+####Additional Information and Settings####
 
-Possible problem 1:  
-Possible Problem 2:
+[Parameter/variable/clarification/option 1]:
+[Parameter/variable/clarification/option 2]:
+
+####Common Issues####
+
+[Issue 1]:
+    - [Solution 1]:
+    - [Solution 2]:
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
        
-For questions, contact ___ at ___@google.com    
+For questions, contact ___ at ___@gmail.com    
