@@ -42,7 +42,7 @@ Day 1
 ##Making Ampicillin##
 Day 1
 
-1. [Add 20 ml of molecular grade water to the salts. Just add it into the bottle that the salts come in. Shake/vortex.]
+1. [Add 20 ml of molecular grade water to the salts. Just add it into the bottle that the salts come in. Shake/vortex.]  
   *[makes a 10ng/ul solution]
 2. [aliquot 1 ml into the eppendorf tubes.]
 3. [label them all "amp"] 
