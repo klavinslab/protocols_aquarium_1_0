@@ -15,6 +15,29 @@ Description: This protocol is for the preperation of LB CMC Agar. This stuff is 
 
 Day 1:
 
+	* P1000 Pipette
+		+ Duration: 2 minutes
+		+ Location: anywhere
+	* Gram Scale:
+		+ Duration: 5 minutes
+		+ Location: Weigh table
+	* Chemical Spatula
+		+ Duration: 5 minutes
+		+ Location: Weigh Table
+	* Graduated Cylinder:
+		+ Duration: 3 minutes
+		+ Location: glassware rack
+	* Autoclave:
+		+ Duration 2 hours 30 minutes
+		+ Location: Main Area
+	* Magnetic Stir Plate with Heating
+		+ Duration: 30 minutes
+		+ Location: bay 4 bench
+	* Thermal Gloves
+		+ Duration: 1 minute
+		+ Location: weigh table
+-----------------------------------------------
+
     * Glass Liter Bottle:
         + Quantity: 1
         + Location: glassware rack
@@ -48,28 +71,7 @@ Day 1:
 	* Weigh Paper:
 		+ Quantity: 1
 		+ Location: Weigh table
--------------------------------------------------------
-	* P1000 Pipette
-		+ Duration: 2 minutes
-		+ Location: anywhere
-	* Gram Scale:
-		+ Duration: 5 minutes
-		+ Location: Weigh table
-	* Chemical Spatula
-		+ Duration: 5 minutes
-		+ Location: Weigh Table
-	* Graduated Cylinder:
-		+ Duration: 3 minutes
-		+ Location: glassware rack
-	* Autoclave:
-		+ Duration 2 hours 30 minutes
-		+ Location: Main Area
-	* Magnetic Stir Plate with Heating
-		+ Duration: 30 minutes
-		+ Location: bay 4 bench
-	* Thermal Gloves
-		+ Duration: 1 minute
-		+ Location: weigh table
+
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 ##Protocol:##
@@ -88,11 +90,13 @@ Day 1:
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+####Additional Information and Settings####
+	
+	None
     
-    
-####Troubleshooting####
+####Common Issues####
 
-- Stuff caked at the bottom: after autoclaving, there is stuff caked at the bottom, do not use this batch, shake harder in step 5, make sure that everything is solvated before autoclaving
+	Stuff caked at the bottom: after autoclaving, there is stuff caked at the bottom, do not use this batch, shake harder in step 5, make sure that everything is solvated before autoclaving
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
