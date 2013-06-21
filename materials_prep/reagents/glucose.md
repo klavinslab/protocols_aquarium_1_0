@@ -1,19 +1,24 @@
 50% Glucose
 
-Reagent
-	
+Description: Make 50% glucose.
 
-Amount
+Total duration: 25 minutes
 
-Dextrose
-	
+Total worktime: 10 minutes
 
-25g
+Required equipment and materials
 
-dIH2O
-	
+* Autoclave
+    + Duration needed: 15min
+    + Location: [address]
+* dIH2O
+    + Quantity: 50 ml
+    + Location: [address]
+* Dextrose
+    + Quantity: 25g
+    + Location: [address]
 
-~50mL
+Protocol
 
 1. Add the dextrose to a container.
 
@@ -21,3 +26,12 @@ dIH2O
 
 3. Autoclave 121ºC for 15 mins
 
+Additional Information and Settings
+
+None
+
+Common Issues
+
+None
+
+For questions, contact ___ at ___@gmail.com
