@@ -77,18 +77,6 @@ Description: Make synthetic complete (SC) media with 2% glucose and adenine supp
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-Selective plate color code:
-
-His- = red
-
-Leu- = blue
-
-Trp- = green
-
-Ura- = purple
-
-
     
 ####Additional Information and Settings####
 
