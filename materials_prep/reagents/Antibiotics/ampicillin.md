@@ -1,23 +1,71 @@
-Ampicillin
+[Making Ampicillin]
+--------------
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Description: Need Ampicillin? Here is how you make it.
 
- 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+####Total duration: [10/minutes]####
+####Total worktime: [10/minutes]
 
-    Total time: ~45 minutes
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- 
+####Required equipment and materials####
 
-1.  Purchase Ampicillin Sodium Salt, irradicated at the Biochem Store
+Day 1
 
- 
+    * [Pipette gun]
+        + Duration needed: [10 min]
+        + Location: [above Nick's bench]
+    * [p1000 pipette]
+        + Duration needed: [10 min]
+        + Location: [bench]
+  
+------
 
-2.  Add 20 mL molecular grade water to Ampicillin sodium salt
+    * [Ampicillin Sodium salt]
+        + Quantity: [1 aliquot]
+        + Location: [Order from biochem store]
+    * [25 ml pipette tip]
+        + Quantity: [1]
+        + Location: [above Nick's bench]  
+    *[Molecular grade water]  
+        + Quantity: [20 ml]
+        +Location: [bench]  
+    *[eppendorf tubes]
+        + Quantity: [~20]
+        +Location: [Bench]
 
-        - makes 10 mg/mL solution
 
- 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-3.  Aliquot 1 mL into 1.5 mL tubes labeled 'Amp'
+##Making Ampicillin##
+Day 1
 
- 
+1. [Add 20 ml of molecular grade water to the salts. Just add it into the bottle that the salts come in. Shake/vortex.]
+  *[makes a 10ng/ul solution]
+2. [aliquot 1 ml into the eppendorf tubes.]
+3. [label them all "amp"] 
+4. [store the eppendorf tubes in the -20 freezer in the antibiotics box]
 
-4.  Store in -20°C freezer
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    
+    
+####Additional Information and Settings####
+
+    [Parameter/variable/clarification/option 1]:
+    +refer to biochem store protocol for instructions on how to order from the biochem store
+    [Parameter/variable/clarification/option 2]:
+
+####Common Issues####
+
+    [Issue 1]:
+        - [Solution 1]:
+        - [Solution 2]:
+    [Issue 2]:
+        - [Solution 1]:
+        - [Solution 2]:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+       
+For questions, contact jumroon.rada@gmail.com    
