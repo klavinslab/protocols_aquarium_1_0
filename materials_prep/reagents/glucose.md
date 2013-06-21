@@ -3,12 +3,12 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 Description: Make 50% glucose.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+####Total duration: 25 minutes####
 
-Total duration: 25 minutes
-
-Total worktime: 10 minutes
-
-Required equipment and materials
+####Total worktime: 10 minutes####
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+####Required equipment and materials####
 
 * Autoclave
     + Duration needed: 15min
@@ -20,7 +20,8 @@ Required equipment and materials
     + Quantity: 25g
     + Location: [address]
 
-Protocol
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+##Protocol##
 
 1. Add the dextrose to a container.
 
@@ -28,12 +29,12 @@ Protocol
 
 3. Autoclave 121ºC for 15 mins
 
-Additional Information and Settings
+####Additional Information and Settings####
 
 None
 
-Common Issues
+####Common Issues####
 
 None
 
-For questions, contact ___ at ___@gmail.com
+For questions, contact Yaoyu Yang at yaoyu.yang88@gmail.com
