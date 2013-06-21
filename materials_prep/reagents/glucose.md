@@ -10,15 +10,15 @@ Description: Make 50% glucose.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ####Required equipment and materials####
 
-* Autoclave
-    + Duration needed: 15min
-    + Location: [address]
-* dIH2O
-    + Quantity: 50 ml
-    + Location: [address]
-* Dextrose
-    + Quantity: 25g
-    + Location: [address]
+    * Autoclave
+        + Duration needed: 15min
+        + Location: [address]
+    * dIH2O
+        + Quantity: 50 ml
+        + Location: [address]
+    * Dextrose
+        + Quantity: 25g
+        + Location: [address]
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 ##Protocol##
