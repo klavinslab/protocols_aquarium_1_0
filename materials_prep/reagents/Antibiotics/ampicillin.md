@@ -54,7 +54,6 @@ Day 1
     
 ####Additional Information and Settings####
 
-    [Parameter/variable/clarification/option 1]:
     +refer to biochem store protocol for instructions on how to order from the biochem store
     [Parameter/variable/clarification/option 2]:
 
