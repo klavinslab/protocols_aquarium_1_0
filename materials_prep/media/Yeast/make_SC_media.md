@@ -1,7 +1,7 @@
 SC_media
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Description: Make synthetic complete (SC) media with 2% glucose and adenine supplement (800mL)
+Description: Makes 800 mL of synthetic complete (SC) media with 2% glucose and adenine supplement (800mL)
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ####Total duration: 2.5 horus ####
