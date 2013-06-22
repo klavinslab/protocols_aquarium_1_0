@@ -1,4 +1,4 @@
-<protocol name="Yeast YPAD Media">
+<protocol name="Make YPAD Media">
 
     <checkout>
         <item><name>1000 mL Bottle</name><quantity>1</quantity></item>
