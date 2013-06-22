@@ -1,4 +1,4 @@
-[Making Ampicillin]
+Making Ampicillin
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Description: Need Ampicillin? Here is how you make it.
@@ -14,26 +14,26 @@ Description: Need Ampicillin? Here is how you make it.
 
 Day 1
 
-    * [Pipette gun]
-        + Duration needed: [10 min]
+    * Pipette gun
+        + Duration needed: 10 min
         + Location: [above Nick's bench]
-    * [p1000 pipette]
+    * p1000 pipette
         + Duration needed: [10 min]
         + Location: [bench]
   
 ------
 
-    * [Ampicillin Sodium salt]
-        + Quantity: [1 aliquot]
+    * Ampicillin Sodium salt
+        + Quantity: 1 aliquot
         + Location: [Order from biochem store]
-    * [25 ml pipette tip]
-        + Quantity: [1]
+    * 25 ml pipette tip
+        + Quantity: 1
         + Location: [above Nick's bench]  
-    *[Molecular grade water]  
-        + Quantity: [20 ml]
+    *Molecular grade water  
+        + Quantity: 20 ml
         +Location: [bench]  
-    *[eppendorf tubes]
-        + Quantity: [~20]
+    *eppendorf tubes
+        + Quantity: ~20
         +Location: [Bench]
 
 
@@ -42,11 +42,11 @@ Day 1
 ##Making Ampicillin##
 Day 1
 
-1. [Add 20 ml of molecular grade water to the salts. Just add it into the bottle that the salts come in. Shake/vortex.]  
-  *[makes a 10ng/ul solution]
-2. [aliquot 1 ml into the eppendorf tubes.]
-3. [label them all "amp"] 
-4. [store the eppendorf tubes in the -20 freezer in the antibiotics box]
+1. Add 20 ml of molecular grade water to the salts. Just add it into the bottle that the salts come in. Shake/vortex.  
+  *makes a 10ng/ul solution
+2. aliquot 1 ml into the eppendorf tubes.
+3. label them all "amp" 
+4. store the eppendorf tubes in the -20 freezer in the antibiotics box
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
