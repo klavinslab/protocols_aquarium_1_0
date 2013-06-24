@@ -18,7 +18,10 @@ Day 1
         + Location: [TBD]
     * Pipette gun
         + Duration needed: 2 min
-        + Location: [TBD]
+        + Location: [TBD]  
+    *Vortex  
+        + Duration needed: 1 min  
+        +Location: [TBD]
   
 ------
 
