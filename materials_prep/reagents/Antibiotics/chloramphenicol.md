@@ -40,7 +40,7 @@ Day 1
     
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-##Chloramphenicol##
+##Making Chloramphenicol##
 
 Day 1
 
