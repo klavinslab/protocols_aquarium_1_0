@@ -28,7 +28,7 @@ Description: Make 50% glucose.
 2. Fill to 50mL mark with deionized water and mix thoroughly.
 
 3. Autoclave 121ºC for 15 mins
-
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 ####Additional Information and Settings####
 
 None
