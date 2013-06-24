@@ -1,14 +1,14 @@
 
-LB Liquid Media
+M9 Minimal Growth Media
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Description: This prepares a bottle of LB Media for growing bacteria.
+Description: This prepares a bottle of M9 Minimal Media.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-####Total duration: 3 hours####
-####Total worktime: 30 minutes
+####Total duration: 10 minutes####
+####Total worktime: 10 minutes
 
-    - Day 1: 3 hours
+    - Day 1: 10 minutes
 
     
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -17,21 +17,21 @@ Description: This prepares a bottle of LB Media for growing bacteria.
 
 Day 1
 
-    * [Equipment 1]
-        + Duration needed: [x days/hours/min]
-        + Location: [address]
-    * [Equipment 2]
-        + Duration needed: [x days/hours/min]
-        + Location: [address]
-  
-------
 
-    * [Item 1]
-        + Quantity: [x ml/mg/items]
+    * 5x M9 Salts
+        + Quantity: 50 mL
         + Location: [address]
-    * [Item 2]
-        + Quantity: [x ml/mg/items]
+    * 4% Cellobiose
+        + Quantity: 50 mL
         + Location: [address]
+	* 100x MgSO4 CaCl2
+		+ Quantity: 2.5 mL
+		+ Location:
+	* 250x Biotin
+		+ Quantity: 1 mL
+		+ Location:
+	* Sterile DI Water
+		+ Quantity: 
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 

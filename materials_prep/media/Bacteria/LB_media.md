@@ -58,9 +58,12 @@ Day 1
 
 Day 1
 
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
+1. Place large weigh boat on gram scale and zero
+2. Measure out 20 grams of LB media powder and pour contents into liter bottle
+3. Measure out 800 mL of DI water using the graduated cyinder and pour into liter bottle
+4. Close liter bottle and shake until all contents are solvated
+5. Stick autoclave tape on top of the bottle
+6. Loosen cap and autoclave at 110C for 15 minutes
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
