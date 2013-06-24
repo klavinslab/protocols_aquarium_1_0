@@ -18,8 +18,11 @@ Day 1
         + Duration needed: 10 min
         + Location: [above Nick's bench]
     * p1000 pipette
-        + Duration needed: [10 min]
-        + Location: [bench]
+        + Duration needed: 10 min
+        + Location: [bench]  
+    *Vortex  
+        + Duration needed: 1 min  
+        + Location: [TBD]
   
 ------
 
