@@ -1,4 +1,3 @@
-
 Chloramphenicol
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -27,14 +26,16 @@ Day 1
         + Quantity: 1
         + Location: [TBD]  
     * Bottle of Chlor (salts?)  
-        +Quantity: 1  
-        +Location: [TBD]  
+        + Quantity: 1  
+        + Location: [TBD]  
     *Empty autoclaved 100 ml bottle  
-        +Quantity: 1  
-        +Location: [TBD]  
+        + Quantity: 1  
+        + Location: [TBD]  
     *Eppendorf tubes  
-        +Quantity: ~10  
-        +Location: [TBD]
+        + Quantity: ~10  
+        + Location: [TBD]  
+    *100% ethanol  
+        + Quantity: 10 ml
     
     
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
