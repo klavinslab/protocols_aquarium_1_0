@@ -71,22 +71,13 @@ Day 1
     
 ####Additional Information and Settings####
 
-    [Parameter/variable/clarification/option 1]:
-        [Option 1]:
-        [Option 2]:
-    [Parameter/variable/clarification/option 2]:
-        [Option 1]:
-        [Option 2]:
+    Antibiotics:
+		- To add antibotics, wait for contents to cool to 40 C and add the appropriate amount of antibiotics
 
 
 ####Common Issues####
 
-    [Issue 1]:
-        - [Solution 1]:
-        - [Solution 2]:
-    [Issue 2]:
-        - [Solution 1]:
-        - [Solution 2]:
+    None
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
        
 For questions, contact ___ at ___@gmail.com    
