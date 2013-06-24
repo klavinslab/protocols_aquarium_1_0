@@ -46,7 +46,7 @@ Day 1
 
 1. weigh out 340 mg (.340 gram) chloramphenicol from stock bottle 
 2. Add to clean autoclaved 100ml bottle
-3. Add in 10 ml of 100% ethanol
+3. Add in 10 ml of 100% ethanol. Shake to mix well. If powder sticks, vortex.
 4. Aliquot 1 ml into eppendorf tubes
 5. Store them in the -20 degree freezer
 
