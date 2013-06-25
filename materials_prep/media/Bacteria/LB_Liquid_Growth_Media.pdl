@@ -1,74 +1,109 @@
-<protocol name="LB Liquid Growth Media">
-        
-    <checkout>
-        <item><name>1000 mL Bottle</name><quantity>1</quantity></item>
-        <item return="true"><name>LB Broth Base</name><quantity>1</quantity></item>
-        <item dispose="true"><name>Plastic Weigh Boat (S)</name><quantity>1</quantity></item>
-    </checkout>
-    
-    <inventory action='new'>
-        <object>1000 mL Bottle of LB Media (not sterilized)</object>
-        <quantity>1</quantity>
-        <location>b1.300</location>
-        <var>result</var>
-    </inventory>
-    
-    <step>
-        <description>Label the bottle</description>
-        <note>Write <br />
-            <div class='label'>LB Growth Media<br />
-            id : ||$result$.id||<br />
-            date: ||(new Date()).toDateString()||
-            </div> <br />
-        on a label, stick it to the bottle. <br />
-        Affix a piece of autoclave tape to the bottle as well.
+<protocol name="LB Liquid Media">
+	<information>
+		This prepares a bottle of LB Media for growing bacteria.
+	</information>
+	
+	<take>
+		<object>
+			1000 mL Glass Bottle
+		</object>
+		<quantity>
+			1
+		</quantity>
+		<var>
+			bottle
+		</var>
+		
+		<object>
+			LB Media Powder
+		</object>
+		<quantity>
+			1
+		</quantity>
+		<var>
+			lb
+		</var>
+		
+		<object>
+			DI Water
+		</object>
+		<quantity>
+			1
+		</quantity>
+		<var>
+			water
+		</var>
+		
+		<object>
+			Autoclave Tape
+		</object>
+		<quantity>
+			1
+		</quantity>
+		<var>
+			tape
+		</var>
+		
+		<object>
+			Large Weigh Boat
+		</object>
+		<quantity>
+			1
+		</quantity>
+		<var>
+			boat
+		</var>
+	</take>
+	
+	<step>
+		<description>
+			Place large weigh boat on gram scale and zero
+		</description>
+        <note>
         </note>
-        <image>LabeledEmptyMediaBottle</image>
-    </step>
-    
-    <assign><var>ingredients</var><value>['LB Broth Base']</value></assign>
-    <assign><var>amounts</var><value>['20 g']</value></assign>
-    <assign><var>i</var><value>0</value></assign>
-    
-    <while>    
-        <condition>$i$!=1</condition>    
-        <do>
-            <step>
-                <description>Measure ||$amounts$[$i$]|| of ||$ingredients$[$i$]||</description>
-                <note><ul>
-                    <li>Place the plastic boat on the scale.</li>
-                    <li>Zero the scale.</li>
-                    <li>Using the spatula, measure ||$amounts$[$i$]|| of ||$ingredients$[$i$]|| 
-                        into the plastic boat.</li>                
-                </ul></note>
-                <image>WeighDryIngredient</image>
-            </step> 
-            
-            <step>
-                <description>Pour the ||$ingredients$[$i$]|| into the 1000 mL bottle.</description>
-                <image>PourDryIngredient</image>
-            </step>
-            
-            <assign><var>i</var><value>$i$+1</value></assign>
-        </do>
-    </while>
-
-    <step>
-        <description>Add 800 mL of DI water.</description>
-        <note>Use the DI water near the sink.</note>
-        <image>FillingMediaBottle</image>
-    </step>
-    
-    <step>
-        <description>Mix.</description>
-        <note>Put a cap on the bottle and shake to mix the dry ingredients with the water.
-        Dry off the bottle with a paper towel. Place the bottle in location b1.300.
+	</step>
+	
+	<step>
+		<description>
+			Measure out 20 grams of LB media powder and pour contents into liter bottle
+		</description>
+        <note>
         </note>
-        <image>ShakenMediaBottle</image>
-    </step>
-
-
-    
+	</step>
+	
+	<step>
+		<description>
+			Measure out 800 mL of DI water using the graduated cyinder and pour into liter bottle
+		</description>
+        <note>
+        </note>
+	</step>
+	
+	<step>
+		<description>
+			Close liter bottle and shake until all contents are solvated
+		</description>
+        <note>
+        </note>
+	</step>
+	
+	<step>
+		<description>
+			Stick autoclave tape on top of the bottle
+		</description>
+        <note>
+        </note>
+	</step>
+	
+	<step>
+		<description>
+			Loosen cap and autoclave at 110C for 15 minutes
+		</description>
+        <note>
+        </note>
+	</step>
+	
     <cleanup></cleanup>
-    
+	
 </protocol>
+	
