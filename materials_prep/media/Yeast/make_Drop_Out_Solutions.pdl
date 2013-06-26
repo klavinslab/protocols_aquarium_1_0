@@ -1,6 +1,6 @@
 <protocol name="Yeast Dropout Solutions">
 
-make_Drop_Out_Solution(Trp="true, His="true", Leu="true", Ura="true")
+make_Drop_Out_Solution(Trp=0, His=0, Leu=0, Ura=0)
 
     <information>
         This protocols describes how to make solutions of Tryptophan, Histidine, Leucine, and Uracil, which
@@ -8,9 +8,14 @@ make_Drop_Out_Solution(Trp="true, His="true", Leu="true", Ura="true")
         and the Uracil solution is 2.5 mg / mL.
     </information>
 
+    <assign>
+        <var>total</var>
+        <value>Trp+His+Leu+Ura</value>
+    </assign>
+
     <take>
         <object>500 mL Bottle</object>
-        <quantity>4</quantity>
+        <quantity>$total$</quantity>
         <var>[bottleA, bottleB, bottleC, bottleD]</var>
     </take>   
     <take>
