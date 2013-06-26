@@ -1,20 +1,72 @@
-<protocol name="Synthetic Complete Yeast Media">
+<protocol name="Synthetic Drop Out or Complete Yeast Media">
 <information>Makes 800 mL of 2% Glucose, Adenine-supplemented, Synthetic Complete Yeast Media</information>
 
+make_SDO_or_SC_media(Trp="false",His="false",Leu="false",Ura="false")
+
     <take>
-        <object><name>1000 mL Bottle</name><quantity>1</quantity></object>
-        <object return="true"><name>Balance</name><quantity>1</quantity></object>
-        <object dispose="true"><name>Plastic Weigh Boat (S)</name><quantity>1</quantity></object>
-        <object dispose="true"><name>Plastic Weigh Boat (L)</name><quantity>1</quantity></object>
-        <object return="true"><name>Yeast Nitrogen Base</name><quantity>1</quantity></object>
-        <object return="true"><name>Synthetic Drop Out Media</name><quantity>1</quantity></object>
-        <object return="true"><name>Dextrose</name><quantity>1</quantity></object>
-        <object return="true"><name>Leucine Solution</name><quantity>1</quantity></object>
-        <object return="true"><name>Histadine Solution</name><quantity>1</quantity></object>
-        <object return="true"><name>Triptophan Solution</name><quantity>1</quantity></object>
-        <object return="true"><name>Uracil Solution</name><quantity>1</quantity></object>
-        <object return="true"><name>Adenine Hemisulfate</name><quantity>1</quantity></object>
-        <object return="true"><name>Autoclave Tape</name><quantity>1</quantity></object>
+        <object>1000 mL Bottle</object>
+        <quantity>1</quantity>
+        <var>bottle</var>
+    </take>    
+    <take>    
+        <object return="true">Balance</object>
+        <quantity>1</quantity>
+        <var>balance</var>
+    </take>    
+    <take>  
+        <object dispose="true">Plastic Weigh Boat (S)</object>
+        <quantity>1</quantity>
+        <var>boat_small</var>
+    </take>    
+    <take>          
+        <object dispose="true">Plastic Weigh Boat (L)</object>
+        <quantity>1</quantity>
+        <var>boat_large</var>
+    </take>    
+    <take>          
+        <object return="true">Yeast Nitrogen Base</object>
+        <quantity>1</quantity>
+        <var>yeast_base</var>
+    </take>    
+    <take>          
+        <object return="true">Synthetic Drop Out Media</object>
+        <quantity>1</quantity>
+        <var>sdo_media</var>
+    </take>    
+    <take>          
+        <object return="true">Dextrose</object>
+        <quantity>1</quantity>
+        <var>dextrose</var>
+    </take>    
+    <take>          
+        <object return="true">Leucine Solution</object>
+        <quantity>1</quantity>
+        <var>leu_solution</var>
+    </take>    
+    <take>          
+        <object return="true">Histadine Solution</object>
+        <quantity>1</quantity>
+        <var>his_solution</var>
+    </take>           
+    <take>          
+        <object return="true">Triptophan Solution</object>
+        <quantity>1</quantity>
+        <var>trp_solution</var>
+    </take>         
+    <take>          
+        <object return="true">Uracil Solution</object>
+        <quantity>1</quantity>
+        <var>ura_solution</var>
+    </take>       
+    <take>          
+        <object return="true">Adenine Hemisulfate</object>
+        <quantity>1</quantity>
+        <var>adenine</var>
+    </take>       
+    <take>          
+        <object>Autoclave Tape</object>
+        <quantity>1</quantity>
+        <var>autoclave_tape</var>
     </take>
     
     <step>
@@ -141,18 +193,17 @@
     </produce>   
     
     <release>
-        <object return="true"><name>Balance</name><quantity>1</quantity></object>
-        <object dispose="true"><name>Plastic Weigh Boat (S)</name><quantity>1</quantity></object>
-        <object dispose="true"><name>Plastic Weigh Boat (L)</name><quantity>1</quantity></object>
-        <object return="true"><name>Yeast Nitrogen Base</name><quantity>1</quantity></object>
-        <object return="true"><name>Synthetic Drop Out Media</name><quantity>1</quantity></object>
-        <object return="true"><name>Dextrose</name><quantity>1</quantity></object>
-        <object return="true"><name>Leucine Solution</name><quantity>1</quantity></object>
-        <object return="true"><name>Histadine Solution</name><quantity>1</quantity></object>
-        <object return="true"><name>Triptophan Solution</name><quantity>1</quantity></object>
-        <object return="true"><name>Uracil Solution</name><quantity>1</quantity></object>
-        <object return="true"><name>Adenine Hemisulfate</name><quantity>1</quantity></object>
-        <object return="true"><name>Autoclave Tape</name><quantity>1</quantity></object>
+        <var>balance</var>
+        <var>boat_small</var>
+        <var>boat_large</var>
+        <var>yeast_base</var>
+        <var>sdo_media</var>
+        <var>dextrose</var>
+        <var>his_solution</var>
+        <var>trp_solution</var>
+        <var>leu_solution</var>
+        <var>ura_solution</var>
+        <var>adenine</var>
     </release>
     
     <cleanup></cleanup>
