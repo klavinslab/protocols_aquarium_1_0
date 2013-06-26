@@ -103,7 +103,26 @@
         </note>
 	</step>
 	
-    <cleanup></cleanup>
+	<produce>
+		<object>
+			800 mL LB Liquid Media
+		</object>
+		<quantity>
+			1
+		</quantity>
+	</produce>
+	
+    <release>
+		<var>
+			lb
+		</var>
+		<var>
+			boat
+		</var>
+		<var>
+			tape
+		</var>
+	</release>
 	
 </protocol>
 	
