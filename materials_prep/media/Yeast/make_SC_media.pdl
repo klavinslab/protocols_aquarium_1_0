@@ -16,13 +16,6 @@
         <object return="true"><name>Adenine Hemisulfate</name><quantity>1</quantity></object>
         <object return="true"><name>Autoclave Tape</name><quantity>1</quantity></object>
     </take>
-
-    <produce>
-        <object>800 mL Bottle of SC Media (not sterilized)</object>
-        <quantity>1</quantity>
-        <location>TBD</location>
-        <var>result</var>
-    </produce>   
     
     <step>
         <description>Label the bottle</description>
@@ -140,6 +133,27 @@
         <image>AutoclaveTapeBottle</image>
     </step>
     
+    <produce>
+        <object>800 mL Bottle of SC Media (not sterilized)</object>
+        <quantity>1</quantity>
+        <location>TBD</location>
+        <var>result</var>
+    </produce>   
+    
+    <release>
+        <object return="true"><name>Balance</name><quantity>1</quantity></object>
+        <object dispose="true"><name>Plastic Weigh Boat (S)</name><quantity>1</quantity></object>
+        <object dispose="true"><name>Plastic Weigh Boat (L)</name><quantity>1</quantity></object>
+        <object return="true"><name>Yeast Nitrogen Base</name><quantity>1</quantity></object>
+        <object return="true"><name>Synthetic Drop Out Media</name><quantity>1</quantity></object>
+        <object return="true"><name>Dextrose</name><quantity>1</quantity></object>
+        <object return="true"><name>Leucine Solution</name><quantity>1</quantity></object>
+        <object return="true"><name>Histadine Solution</name><quantity>1</quantity></object>
+        <object return="true"><name>Triptophan Solution</name><quantity>1</quantity></object>
+        <object return="true"><name>Uracil Solution</name><quantity>1</quantity></object>
+        <object return="true"><name>Adenine Hemisulfate</name><quantity>1</quantity></object>
+        <object return="true"><name>Autoclave Tape</name><quantity>1</quantity></object>
+    </release>
     
     <cleanup></cleanup>
 
