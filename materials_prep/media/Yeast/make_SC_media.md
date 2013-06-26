@@ -41,7 +41,7 @@ Description: Makes 800 mL of synthetic complete (SC) media with 2% glucose and a
     * Dextrose
         + Quantity: 16 g (20 g/L)
         + Location: [address]
-    * Leucine 8 mL
+    * Leucine
         + Quantity: 8 mL (8 mg/mL stock)
         + Location: [address]
     * Histadine 
@@ -67,13 +67,14 @@ Description: Makes 800 mL of synthetic complete (SC) media with 2% glucose and a
 
 ##Protocol##
 
-1. Weight out nitrogen base, DO media, dextrose, and adenine sulfate and add to 1000 mL bottle
-2. Add amino acid solutions (Leu/His/Trp/Ura) to bottle
-3. Add 500 mL dIH2O to bottle, close cap tightly and shake to mix
-4. Add water to 800 mL mark on bottle, shake again to mix
-5. Place cap on bottle loosely
-6. Stick autoclave tape on the cap
-7. Autoclave 15 minutes at 110°C, minimal drying cycle (optional cycle).
+1. Label the 1000 mL bottle with "SC Media", the date, and an ID number
+2. Weight out nitrogen base, DO media, dextrose, and adenine sulfate and add to 1000 mL bottle
+3. Add amino acid solutions (Leu/His/Trp/Ura) to bottle
+4. Add 500 mL dIH2O to bottle, close cap tightly and shake to mix
+5. Add water to 800 mL mark on bottle, shake again to mix
+6. Place cap on bottle loosely
+7. Stick autoclave tape on the cap
+8. Autoclave 15 minutes at 110°C, minimal drying cycle (optional cycle).
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
