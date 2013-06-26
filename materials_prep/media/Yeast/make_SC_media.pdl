@@ -1,18 +1,28 @@
 <protocol name="Synthetic Complete Yeast Media">
 <information>Makes 800 mL of 2% Glucose, Adenine-supplemented, Synthetic Complete Yeast Media</information>
 
-    <checkout>
-        <item><name>1000 mL Bottle</name><quantity>1</quantity></item>
-        <item return="true"><name>Yeast Extract</name><quantity>1</quantity></item>
-        <item dispose="true"><name>Plastic Weigh Boat (S)</name><quantity>1</quantity></item>
-    </checkout>
+    <take>
+        <object><name>1000 mL Bottle</name><quantity>1</quantity></object>
+        <object return="true"><name>Balance</name><quantity>1</quantity></object>
+        <object dispose="true"><name>Plastic Weigh Boat (S)</name><quantity>1</quantity></object>
+        <object dispose="true"><name>Plastic Weigh Boat (L)</name><quantity>1</quantity></object>
+        <object return="true"><name>Yeast Nitrogen Base</name><quantity>1</quantity></object>
+        <object return="true"><name>Synthetic Drop Out Media</name><quantity>1</quantity></object>
+        <object return="true"><name>Dextrose</name><quantity>1</quantity></object>
+        <object return="true"><name>Leucine Solution</name><quantity>1</quantity></object>
+        <object return="true"><name>Histadine Solution</name><quantity>1</quantity></object>
+        <object return="true"><name>Triptophan Solution</name><quantity>1</quantity></object>
+        <object return="true"><name>Uracil Solution</name><quantity>1</quantity></object>
+        <object return="true"><name>Adenine Hemisulfate</name><quantity>1</quantity></object>
+        <object return="true"><name>Autoclave Tape</name><quantity>1</quantity></object>
+    </take>
 
-    <inventory action='new'>
+    <produce>
         <object>800 mL Bottle of SC Media (not sterilized)</object>
         <quantity>1</quantity>
         <location>TBD</location>
         <var>result</var>
-    </inventory>   
+    </produce>   
     
     <step>
         <description>Label the bottle</description>
@@ -21,8 +31,7 @@
             id : ||$result$.id||<br />
             date: ||(new Date()).toDateString()||
             </div> <br />
-        on a label, stick it to the bottle. <br />
-        Affix a piece of autoclave tape to the bottle as well.
+        on a label, stick it to the bottle.
         </note>
         <image>LabeledEmptyMediaBottle</image>
     </step>
@@ -98,7 +107,20 @@
 
 
     <step>
-        <description>Add DI water to 800 mL until volume is about ~800 mL.</description>
+        <description>Add 500 mL DI water.</description>
+        <note>Use the DI water near the sink.</note>
+        <image>FillingMediaBottle</image>
+    </step>
+    
+    <step>
+        <description>Mix.</description>
+        <note>Put a cap on the bottle and shake to mix the dry ingredients with the water.
+        </note>
+        <image>ShakenMediaBottle</image>
+    </step>
+    
+    <step>
+        <description>Add DI water until volume is about ~800 mL.</description>
         <note>Use the DI water near the sink.</note>
         <image>FillingMediaBottle</image>
     </step>
@@ -110,6 +132,14 @@
         </note>
         <image>ShakenMediaBottle</image>
     </step>
+    
+    <step>
+        <description>Affix autoclave tape.</description>
+        <note>Put a piece of autoclave tape that sticks to the cap and glass of the bottle.
+        </note>
+        <image>AutoclaveTapeBottle</image>
+    </step>
+    
     
     <cleanup></cleanup>
 
