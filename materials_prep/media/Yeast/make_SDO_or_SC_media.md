@@ -1,7 +1,7 @@
-SC_media
+Make SDO or SC media
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Description: Makes 800 mL of synthetic complete (SC) media with 2% glucose and adenine supplement (800mL)
+Description: Makes 800 mL of synthetic dropout (SDO) or synthetic complete (SC) media with 2% glucose and adenine supplement (800mL)
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ####Total duration: 2.5 horus ####
@@ -69,7 +69,7 @@ Description: Makes 800 mL of synthetic complete (SC) media with 2% glucose and a
 
 1. Label the 1000 mL bottle with "SC Media", the date, and an ID number
 2. Weight out nitrogen base, DO media, dextrose, and adenine sulfate and add to 1000 mL bottle
-3. Add amino acid solutions (Leu/His/Trp/Ura) to bottle
+3. Add amino acid solutions (Leu/His/Trp/Ura) to bottle (based on dropout type)
 4. Add 500 mL dIH2O to bottle, close cap tightly and shake to mix
 5. Add water to 800 mL mark on bottle, shake again to mix
 6. Place cap on bottle loosely
@@ -81,7 +81,7 @@ Description: Makes 800 mL of synthetic complete (SC) media with 2% glucose and a
     
 ####Additional Information and Settings####
 
-    Selective media/plates: For selective plates, leave out one or more amino acid and mark with the corresponding color(s)
+    Selective drop out media/plates: For selective plates, leave out one or more amino acid and mark with the corresponding color(s)
         No His: red
         No Leu: blue
         No Trp: green
