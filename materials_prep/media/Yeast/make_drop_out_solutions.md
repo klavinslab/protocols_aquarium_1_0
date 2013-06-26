@@ -1,7 +1,7 @@
-Make SDO Media
+Make Drop Out Solutions
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Description: Make synthetic drop out (SDO) media with 2% glucose and adenine supplement (800mL)
+Description: Make drop out solutions of Histadine, Triptophan, Leucine, and/or Uracil for adding back to selective drop out media
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ####Total duration: 2.5 horus ####
