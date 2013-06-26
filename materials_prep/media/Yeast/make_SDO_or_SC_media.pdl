@@ -1,4 +1,4 @@
-<protocol name="Synthetic Drop Out or Complete Yeast Media">
+<protocol name="Synthetic Drop Out or Synthetic Complete Yeast Media">
 <information>Makes 800 mL of 2% Glucose, Adenine-supplemented, Synthetic Complete Yeast Media</information>
 
 make_SDO_or_SC_media(Trp="false",His="false",Leu="false",Ura="false")
