@@ -16,10 +16,14 @@ Description: Make drop out solutions of Histadine, Triptophan, Leucine, and/or U
     * Balance
         + Duration needed: [x days/hours/min]
         + Location: [address]
-    * 1000 mL bottle
+    * 500 mL bottle
+        + Quantity: 8
         + Duration needed: [x days/hours/min]
         + Location: [address]
-    * Autoclave
+    * Graduated Cylinder
+        + Duration needed: [x days/hours/min]
+        + Location: [address]
+    * 65 degree C Heat Bath
         + Duration needed: [x days/hours/min]
         + Location: [address]
         
@@ -27,22 +31,22 @@ Description: Make drop out solutions of Histadine, Triptophan, Leucine, and/or U
 
                 
     * Small weight boat
-        + Quantity: 1
+        + Quantity: 4
         + Location: [address]   
-    * Large weight boat
+    * 1 L Bottle Top Filter
         + Quantity: 1
         + Location: [address] 
-    * Yeast nitrogen base (NO amino acids)
-        + Quantity: 5.36 g (6.7 g/L)
+    * Tryptophan Powder
+        + Quantity: 5 g
         + Location: [address]
-    * Synthetic drop out (DO) media (-Leu/-His/-Trp/-Ura)
-        + Quantity: 1.12 g (1.4 g/L)
+    * Histadine Powder
+        + Quantity: 5 g
         + Location: [address]
-    * Dextrose
-        + Quantity: 16 g (20 g/L)
+    * Leucine Powder
+        + Quantity: 5 g
         + Location: [address]
-    * Adenine hemisulfate
-        + Quantity: 64 mg (80 mg/L)
+    * Uracil Powder
+        + Quantity: 2.5 g
         + Location: [address]
     * DI water
         + Quantity: ~800 mL
@@ -55,28 +59,31 @@ Description: Make drop out solutions of Histadine, Triptophan, Leucine, and/or U
 
 ##Protocol##
 
-1. Weight out nitrogen base, DO media, dextrose, and adenine sulfate and add to 1000 mL bottle
-2. Add 500 mL dIH2O to bottle, close cap tightly and shake to mix
-3. Add water to 800 mL mark on bottle, shake again to mix
-4. Place cap on bottle loosely
-5. Stick autoclave tape on the cap
-6. Autoclave 15 minutes at 110°C, minimal drying cycle (optional cycle).
+1. Put temporary labels on the tops of four bottles (if put on the side, they will fall off in the heat bath)
+1. Weight out the amino acids in the weigh boats and add them to their respective bottles
+2. Add 500 mL dIH2O to each bottle, close cap tightly and shake to mix
+3. Put all bottles in the heat bath (set to 65 degrees C), and cover
+4. Every 10 minutes, remove each bottle and swirl it to check for dissolution
+3. Label the four remaining bottles (amino acid, date, id number) and attach the four bottle top filters using the white plastic hose adapter: Make sure the inside of the filter cap and bottle remain sterile! 
+4. When fully dissolved, filter sterilize the amino acid solutions into the sterile bottles
+5. Remove and discard the filter, and replace the cap
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
     
 ####Additional Information and Settings####
 
-    Selective media/plates: For selective plates, leave out one or more amino acid and mark with the corresponding color(s)
-        No His: red
-        No Leu: blue
-        No Trp: green
-        No Ura: purple
+    Make a subset of the amino acid solutions, rather than all 4
+        His
+        Leu
+        Trp
+        Ura
 
 ####Common Issues####
 
-    Solids left on bottom of bottle after autoclaving:
-        - Shake bottle to fully resuspend
+    Amino acids not dissolving:
+        - Make sure correct amount was added
+        - Make sure heat bath is at correct temperature
         
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
        
