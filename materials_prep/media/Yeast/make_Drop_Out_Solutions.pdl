@@ -1,5 +1,7 @@
 <protocol name="Yeast Dropout Solutions">
 
+make_Drop_Out_Solution(Trp="true, His="true", Leu="true", Ura="true")
+
     <information>
         This protocols describes how to make solutions of Tryptophan, Histidine, Leucine, and Uracil, which
         are used to make selective media and/or plates for yeast. The amino acid solutions are 10 mg / mL
@@ -7,17 +9,54 @@
     </information>
 
     <take>
-        <object><name>500 mL Bottle</name><quantity>4</quantity></object>
-        <object wash="true"><name>1000 mL Graduated Cylinder</name><quantity>1</quantity></object>
-        <object dispose="true"><name>1L Bottle Top Filter</name><quantity>8</quantity></object>
-        <object return="true"><name>Tryptophan Powder</name><quantity>1</quantity></object>
-        <object return="true"><name>Histidine Powder</name><quantity>1</quantity></object>
-        <object return="true"><name>Leucine Powder</name><quantity>1</quantity></object>
-        <object return="true"><name>Uracil Powder</name><quantity>1</quantity></object>
-    </take>
+        <object>500 mL Bottle</object>
+        <quantity>4</quantity>
+        <var>[bottleA, bottleB, bottleC, bottleD]</var>
+    </take>   
+    <take>
+        <object>Balance</object>
+        <quantity>1</quantity>
+        <var>[balance]</var>
+    </take>  
+    <take>
+        <object>Weigh Boat</object>
+        <quantity>4</quantity>
+        <var>[boatA, boatB, boatC, boatD]</var>
+    </take>       
+    <take>
+        <object wash="true">1000 mL Graduated Cylinder</object>
+        <quantity>1</quantity>
+        <var>[graduated_cylinder]</var>
+    </take>       
+    <take>
+        <object dispose="true">1L Bottle Top Filter</object>
+        <quantity>1</quantity>
+        <var>[filter]</var>
+    </take> 
+    <take>
+        <object return="true">Tryptophan Powder</object>
+        <quantity>1</quantity>
+        <var>[trp_powder]</var>
+    </take>           
+    <take>
+        <object return="true">Histadine Powder</object>
+        <quantity>1</quantity>
+        <var>[his_powder]</var>
+    </take>        
+    <take>
+        <object return="true">Leucine Powder</object>
+        <quantity>1</quantity>
+        <var>[leu_powder]</var>
+    </take>        
+    <take>
+        <object return="true">Uracil Powder</object>
+        <quantity>1</quantity>
+        <var>[ura_powder]</var>
+    </take>        
+    
     
     <step>
-        <description>Put temporary labels on the lids of four of the 500 mL bottles.</description>
+        <description>Put temporary labels on the lids of the 500 mL bottles.</description>
         <note>
             Label the bottles as follows:
             <ul>
@@ -68,7 +107,7 @@
                     Transfer the ||$ingredients$[$i$]|| to the bottle labeled ||$labels$[$i$]||.
                 </description>
                 <note>
-                Remove the top of the 500 mL bottle labeled ||$labels$[$i$]|| and
+                Remove the top of the 500 mL bottle labeled ||$labels$[$i$]|| and pour
                 the ||$ingredients$[$i$]|| into the bottle. Dispose of the plastic boat.
                 </note>
                 <image>PourDry500mL</image>
@@ -121,35 +160,33 @@
     <produce>
         <object>Tryptophan Solution</object>
         <quantity>1</quantity>
-        <var>trp</var>
     </produce>    
 
     <produce>
         <object>Histidine Solution</object>
         <quantity>1</quantity>
-        <var>his</var>
     </produce>    
 
     <produce>
         <object>Leucine Solution</object>
         <quantity>1</quantity>
-        <var>leu</var>
     </produce>    
 
     <produce>
         <object>Uracil Solution</object>
         <quantity>1</quantity>
-        <var>ura</var>
     </produce>    
 
 
     <release>
-        <object wash="true"><name>1000 mL Graduated Cylinder</name><quantity>1</quantity></object>
-        <object dispose="true"><name>1L Bottle Top Filter</name><quantity>8</quantity></object>
-        <object return="true"><name>Tryptophan Powder</name><quantity>1</quantity></object>
-        <object return="true"><name>Histidine Powder</name><quantity>1</quantity></object>
-        <object return="true"><name>Leucine Powder</name><quantity>1</quantity></object>
-        <object return="true"><name>Uracil Powder</name><quantity>1</quantity></object>
-    </take>
+        <var>balance</var>
+        <var>boatA</var><var>boatB</var><var>boatC</var><var>boatD</var>
+        <var>graduated_cylinder</var>
+        <var>filter</var>
+        <var>trp_powder</var>
+        <var>his_powder</var>
+        <var>leu_powder</var>
+        <var>ura_powder</var>
+    </release>
 
 </protocol>
