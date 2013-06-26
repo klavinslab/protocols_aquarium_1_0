@@ -157,6 +157,14 @@ make_Drop_Out_Solution(Trp="true, His="true", Leu="true", Ura="true")
         <image>BottleFilterOnBottle</image>
     </step>
     
+    <step>
+        <description>Remove filter and cap bottles</description>
+        <note>Remove the filter and cap the bottles, making sure to keep everthing sterile.
+        </note>
+        <image>BottleFilterOnBottle</image>
+    </step>
+    
+    
     <produce>
         <object>Tryptophan Solution</object>
         <quantity>1</quantity>
