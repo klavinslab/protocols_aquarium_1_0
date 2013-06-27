@@ -1,1 +1,76 @@
 <protocol name="50% Glucose">
+<information>Make 50% glucose</information>
+<take>
+        <object>100 mL Bottle</object>
+        <quantity>1</quantity>
+        <var>bottle</var>
+</take> 
+<take>
+        <object>dIH2O</object>
+        <quantity>1</quantity>
+        <var>dIH2O_tube</var>
+</take>
+<take>
+        <object>Dextrose</object>
+        <quantity>1</quantity>
+        <var>dextrose</var>
+</take>    
+    <take>          
+        <object>Autoclave Tape</object>
+        <quantity>1</quantity>
+        <var>autoclave_tape</var>
+    </take>
+<step>
+        <description>Label the bottle</description>
+        <note>Write <br />
+            <div class='label'>50% Glucose<br />
+            id : ||$result$.id||<br />
+            date: ||(new Date()).toDateString()||
+            </div> <br />
+        on a label, stick it to the bottle.
+        </note>
+        <image>LabeledEmptyMediaBottle</image>
+</step>
+<step>
+        <description>Measure 25 g of Dextrose</description>
+        <note><ul>
+            <li>Place the plastic boat on the scale.</li>
+            <li>Zero the scale.</li>
+            <li>Using the spatula, measure 25 g of Dextrose 
+                into the plastic boat and add it to the bottle.</li></ul></note>
+        <image>WeighDryIngredient</image>
+</step>
+    <step>
+        <description>Add DI water to 50 mL mark.</description>
+        <note>Use the DI water near the sink.</note>
+        <image>FillingMediaBottle</image>
+    </step>
+    <step>
+        <description>Mix.</description>
+        <note>Put a cap on the bottle and shake to mix the dry ingredients with the water.
+        </note>
+        <image>ShakenMediaBottle</image>
+    </step>
+    <step>
+        <description>Affix autoclave tape.</description>
+        <note>Put a piece of autoclave tape that sticks to the cap and glass of the bottle.
+        </note>
+        <image>AutoclaveTapeBottle</image>
+    </step>
+   <produce>
+        <object>50 mL Bottle of 50% Glucose (not sterilized)</object>
+        <quantity>1</quantity>
+        <location>TBD</location>
+        <var>result</var>
+    </produce>
+
+    <release>
+        <var>boat_small</var>
+        <var>boat_large</var>
+        <var>dextrose</var>
+	<var>DIH2O</var>
+    </release>
+
+<cleanup></cleanup>
+
+</protocol>
