@@ -21,7 +21,7 @@
 			1
 		</quantity>
 		<var>
-			lb
+			tb
 		</var>
 		
 		<object>
@@ -114,7 +114,7 @@
 	
     <release>
 		<var>
-			lb
+			tb
 		</var>
 		<var>
 			boat

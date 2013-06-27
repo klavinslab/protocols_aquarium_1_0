@@ -1,0 +1,182 @@
+<protocol name="M9 Minimal Growth Media">
+	<information>
+		This prepares a 250 mL bottle of M9 Minimal Media.
+	</information>
+	
+
+    <argument>
+        <var>nutrient</var>
+        <description>String, The carbon nutrient used in this batch of M9</description>
+    <argument>
+	
+    <argument>
+        <var>biotin</var>
+        <description>Boolean, this media will contain biotin if true</description>
+    <argument>
+	
+    <argument>
+        <var>casaa</var>
+        <description>Boolean, this media will contain CAS amino acids if true</description>
+    <argument>
+	
+	<take>
+		<object>
+			Electronic Serological Pipette
+		</object>
+		<quantity>
+			1
+		</quantity>
+		<var>
+			sero
+		</var>
+	
+		<object>
+			P1000 pipette
+		</object>
+		<quantity>
+			1
+		</quantity>
+		<var>
+			bottle
+		</var>
+		
+		<object>
+			250 mL Glass Bottle
+		</object>
+		<quantity>
+			1
+		</quantity>
+		<var>
+			bottle
+		</var>
+		
+		<object>
+			5x M9 Salts
+		</object>
+		<quantity>
+			1
+		</quantity>
+		<var>
+			salts
+		</var>
+		
+		<object>
+			100x MgSO4 CaCl2
+		</object>
+		<quantity>
+			1
+		</quantity>
+		<var>
+			saltsol
+		</var>
+		
+		<object>
+			Sterile DI Water
+		</object>
+		<quantity>
+			1
+		</quantity>
+		<var>
+			water
+		</var>
+		
+		<if> 
+			<condition>biotin</condition>
+			<then>
+				<object>
+					250x Biotin
+				<object>
+				<quantity>
+					1
+				</quantity>
+				<var>
+					250biotin
+				<var>
+			</then>
+			<else></else>
+		</if>
+		<if> 
+			<condition>cassaa</condition>
+			<then>
+				<object>
+					Sterile CAS amino acid solution
+				<object>
+				<quantity>
+					1
+				</quantity>
+				<var>
+					cas
+				<var>
+			</then>
+			<else></else>
+		</if>
+		<if> 
+			<condition>nutrient==cellobiose</condition>
+			<then>
+				<object>
+					4% Cellobiose Sterile Filtered
+				<object>
+				<quantity>
+					1
+				</quantity>
+				<var>
+					cb
+				<var>
+			</then>
+			<else></else>
+		</if>
+		<if> 
+			<condition>nutrient==glucose</condition>
+			<then>
+				<object>
+					20% glucose Sterile Filtered
+				<object>
+				<quantity>
+					1
+				</quantity>
+				<var>
+					gluc
+				<var>
+			</then>
+			<else></else>
+		</if>
+	</take>
+	
+	<step>
+		<description>
+			Using the serological pipette and 25 mL tip, add 50 mL of 5x M9 salts to the 250 mL bottle
+		</description>
+        <note>
+        </note>
+	</step>
+
+	<step>
+		<description>
+			Using the serological pipette and 5 mL tip, add 2.5 mL of 100x MgSO4 CaCl2 solution
+		</description>
+        <note>
+        </note>
+	</step>
+
+	<if>
+		<condition>biotin</condition>
+		<then>
+			<step>
+				<description>
+					Using the P1000 pipette, add 1 mL of 250x biotin
+				</description>
+				<note>
+				</note>
+			</step>
+		</then>
+		<else></else>
+	</if>
+
+	<step>
+		<description>
+			Fill to the 250 mL line with sterile water
+		</description>
+        <note>
+        </note>
+	</step>
+</protocol>
