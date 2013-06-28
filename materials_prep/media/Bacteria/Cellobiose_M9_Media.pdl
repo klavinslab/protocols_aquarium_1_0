@@ -4,7 +4,8 @@
     <checkout>
         <item><name>1000 mL Bottle</name><quantity>1</quantity></item>
         <item return="true"><name>M9 Salts</name><quantity>1</quantity></item>
-        <item return="true"><name>Calcium Chloride</name><quantity>1</quantity></item>
+        <item return="true"><name>1 M Calcium Chloride</name><quantity>1</quantity></item>
+        <item return="true"><name>1 M Magnesium Sulfate</name><quantity>1</quantity></item>
         <item dispose="true"><name>Serological Pipette 2 mL</name><quantity>1</quantity></item>
     </checkout>
     
@@ -42,13 +43,13 @@
               whatever Calcium Chloride drains to the bottom of the pipette. (?)
               <ul>
             <li>If anything participated out of the solution, you'll need to discard whatever was
-            made in this protocol, make new CaCl2 1M solution, and start this protocol over.</li>              
+            made in this protocol, make new 1M CaCl2 solution, and start this protocol over.</li>              
         </ul></note>
     </step>
 
 
     <step>
-        <description>Transfer 1 mL of Magnesium Sulfate to the 50 mL Falcon tube</description>
+        <description>Transfer 1 mL of 1 M Magnesium Sulfate to the 50 mL Falcon tube</description>
         <note>Use the serological pipettor and a 2 mL serological pipette. After aspirating,
               be sure to wipe as much Magnesium Sulfate off of the outside of the pipette as possible. 
               Dispense as much Magnesium Sulfate as possible, then wait 30 seconds, and dispense
