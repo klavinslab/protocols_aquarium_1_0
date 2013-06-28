@@ -37,7 +37,7 @@
 			1
 		</quantity>
 		<var>
-			bottle
+			pip
 		</var>
 		
 		<object>
@@ -171,7 +171,35 @@
 		</then>
 		<else></else>
 	</if>
+	
+	<if>
+		<condition>nutrient == cellobiose</condition>
+		<then>
+			<step>
+				<description>
+					Using the serological pipette, add 25 mL of 4% cellobiose
+				</description>
+				<note>
+				</note>
+			</step>
+		</then>
+		<else></else>
+	</if>
 
+	<if>
+		<condition>nutrient == cellobiose</condition>
+		<then>
+			<step>
+				<description>
+					Using the serological pipette, add 2.5 mL of 20% cellobiose
+				</description>
+				<note>
+				</note>
+			</step>
+		</then>
+		<else></else>
+	</if>
+	
 	<step>
 		<description>
 			Fill to the 250 mL line with sterile water
@@ -179,4 +207,54 @@
         <note>
         </note>
 	</step>
+	<release>
+		<var>
+			sero
+		</var>
+		<var>
+			pip
+		</var>
+		<var>
+			saltsol
+		</var>
+		<var>
+			salts
+		</var>
+		<if> 
+			<condition>biotin</condition>
+			<then>
+				<var>
+					250biotin
+				<var>
+			</then>
+			<else></else>
+		</if>
+		<if> 
+			<condition>cassaa</condition>
+			<then>
+				<var>
+					cas
+				<var>
+			</then>
+			<else></else>
+		</if>
+		<if> 
+			<condition>nutrient==cellobiose</condition>
+			<then>
+				<var>
+					cb
+				<var>
+			</then>
+			<else></else>
+		</if>
+		<if> 
+			<condition>nutrient==glucose</condition>
+			<then>
+				<var>
+					gluc
+				<var>
+			</then>
+			<else></else>
+		</if>
+	</release>
 </protocol>
