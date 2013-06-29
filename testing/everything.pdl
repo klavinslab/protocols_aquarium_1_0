@@ -5,7 +5,7 @@
     <description>The name of object type you would like this protocol to use.</description>
   </argument>
 
-  <information>This protocol tests a few things, and will start with helping you take and release %{object_name}.</information>
+  <information>This protocol tests a few things, and will start by helping you take and release %{object_name}.</information>
 
   <take>
     <object>%{object_name}</object>
