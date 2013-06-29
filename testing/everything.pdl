@@ -2,7 +2,7 @@
 
   <argument>
     <var>object_name</var>
-    <description>The name of object type you would like this protocol to use</description>
+    <description>The name of object type you would like this protocol to use.</description>
   </argument>
 
   <information>This protocol tests a few things, and will start with helping you take and release %{object_name}.</information>
@@ -17,7 +17,7 @@
   <assign><var>loc</var> <value>%{b}.item[:location]</value></assign>
 
   <step>
-    <description>You took an object of type %{name} from location %{loc}</description>
+    <description>You took an object of type %{name} from location %{loc}.</description>
   </step>
 
   <!-- Should the release tag be an expression instead of a var? -->
@@ -84,7 +84,7 @@
   <while>
     <condition>%{y} &lt; 100</condition>
     <do>
-      <step><description>y = %{y}</description></step>
+      <step><description>In the while loop, y = %{y}.</description></step>
       <if>
         <condition>%{y} &gt; 50</condition>
         <then><step><description>Hey! y is getting pretty big!</description></step></then>
