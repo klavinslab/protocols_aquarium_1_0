@@ -7,259 +7,200 @@
     <argument>
         <var>nutrient</var>
         <description>String, The carbon nutrient used in this batch of M9</description>
-    <argument>
+    </argument>
 	
     <argument>
         <var>biotin</var>
         <description>Boolean, this media will contain biotin if true</description>
-    <argument>
+    </argument>
 	
     <argument>
         <var>casaa</var>
         <description>Boolean, this media will contain CAS amino acids if true</description>
-    <argument>
+    </argument>
 	
-	<take>
-		<object>
-			Electronic Serological Pipette
-		</object>
-		<quantity>
-			1
-		</quantity>
-		<var>
-			sero
-		</var>
-	
-		<object>
-			P1000 pipette
-		</object>
-		<quantity>
-			1
-		</quantity>
-		<var>
-			pip
-		</var>
-		
-		<object>
-			250 mL Glass Bottle
-		</object>
-		<quantity>
-			1
-		</quantity>
-		<var>
-			bottle
-		</var>
-		
-		<object>
-			5x M9 Salts
-		</object>
-		<quantity>
-			1
-		</quantity>
-		<var>
-			salts
-		</var>
-		
-		<object>
-			100x MgSO4 CaCl2
-		</object>
-		<quantity>
-			1
-		</quantity>
-		<var>
-			saltsol
-		</var>
-		
-		<object>
-			Sterile DI Water
-		</object>
-		<quantity>
-			1
-		</quantity>
-		<var>
-			water
-		</var>
-		
-		<if> 
-			<condition>biotin</condition>
-			<then>
-				<object>
-					250x Biotin
-				<object>
-				<quantity>
-					1
-				</quantity>
-				<var>
-					250biotin
-				<var>
-			</then>
-			<else></else>
-		</if>
-		<if> 
-			<condition>cassaa</condition>
-			<then>
-				<object>
-					Sterile CAS amino acid solution
-				<object>
-				<quantity>
-					1
-				</quantity>
-				<var>
-					cas
-				<var>
-			</then>
-			<else></else>
-		</if>
-		<if> 
-			<condition>nutrient==cellobiose</condition>
-			<then>
-				<object>
-					4% Cellobiose Sterile Filtered
-				<object>
-				<quantity>
-					1
-				</quantity>
-				<var>
-					cb
-				<var>
-			</then>
-			<else></else>
-		</if>
-		<if> 
-			<condition>nutrient==glucose</condition>
-			<then>
-				<object>
-					20% glucose Sterile Filtered
-				<object>
-				<quantity>
-					1
-				</quantity>
-				<var>
-					gluc
-				<var>
-			</then>
-			<else></else>
-		</if>
-	</take>
-	
-	<step>
-		<description>
-			Using the serological pipette and 25 mL tip, add 50 mL of 5x M9 salts to the 250 mL bottle
-		</description>
-        <note>
-        </note>
-	</step>
+    <take>
+        <object>Electronic Serological Pipette</object>
+	<quantity> 1 </quantity>
+	<var> sero </var>
+    </take>
 
-	<step>
-		<description>
-			Using the serological pipette and 5 mL tip, add 2.5 mL of 100x MgSO4 CaCl2 solution
-		</description>
-        <note>
-        </note>
-	</step>
+    <take>
+        <object> P1000 pipette </object>
+	<quantity> 1 </quantity>
+	<var> pip </var>
+    </take>
+    
+    <take>
+	<object> 250 mL Glass Bottle </object>
+	<quantity> 1 </quantity>
+	<var> bottle </var>
+    </take>
+    
+    <take>
+	<object> 5x M9 Salts</object>
+	<quantity> 1 </quantity>
+	<var> salts </var>
+    </take>
+    
+    <take>
+        <object> 100x MgSO4 CaCl2 </object>
+	<quantity> 1 </quantity>
+	<var> saltsol </var>
+    </take>
 
-	<if>
-		<condition>biotin</condition>
-		<then>
-			<step>
-				<description>
-					Using the P1000 pipette, add 1 mL of 250x biotin
-				</description>
-				<note>
-				</note>
-			</step>
-		</then>
-		<else></else>
-	</if>
+    <take>
+	<object> Sterile DI Water </object>
+	<quantity> 1 </quantity>
+	<var> water </var>
+    </take>
+    
+    <if> 
+	<condition>biotin</condition>
+	<then>
+	    <take>
+		<object> 250x Biotin <object>
+		<quantity> 1 </quantity>
+		<var> 250biotin <var>
+	    </take>
+	</then>
+	<else></else>
+    </if>
+    
+    <if> 
+	<condition>cassaa</condition>
+	<then>
+    	    <take>
+		<object> Sterile CAS amino acid solution <object>
+		<quantity> 1 </quantity>
+		<var> cas <var>
+	    </take>
+	</then>
+	<else></else>
+    </if>
+    
+    <if> 
+	<condition>nutrient==cellobiose</condition>
+	<then>
+    	    <take>	
+		<object> 4% Cellobiose Sterile Filtered <object>
+		<quantity> 1 </quantity>
+		<var> cb <var>
+	    </take>
+	</then>
+	<else></else>
+    </if>
+    
+    <if> 
+	<condition>nutrient==glucose</condition>
+	<then>
+    	    <take>
+		<object> 20% glucose Sterile Filtered <object>
+		<quantity> 1 </quantity>
+		<var> gluc <var>
+	    </take>
+	</then>
+	<else></else>
+    </if>
+    
 	
-	<if>
-		<condition>nutrient == cellobiose</condition>
-		<then>
-			<step>
-				<description>
-					Using the serological pipette, add 25 mL of 4% cellobiose
-				</description>
-				<note>
-				</note>
-			</step>
-		</then>
-		<else></else>
-	</if>
+    <step>
+	<description>
+		Using the serological pipette and 25 mL tip, add 50 mL of 5x M9 salts to the 250 mL bottle
+	</description>
+    </step>
 
-	<if>
-		<condition>nutrient == cellobiose</condition>
-		<then>
-			<step>
-				<description>
-					Using the serological pipette, add 2.5 mL of 20% cellobiose
-				</description>
-				<note>
-				</note>
-			</step>
-		</then>
-		<else></else>
-	</if>
+    <step>
+	<description>
+		Using the serological pipette and 5 mL tip, add 2.5 mL of 100x MgSO4 CaCl2 solution
+	</description>
+    </step>
+
+
+    <if>
+	<condition>biotin</condition>
+	<then>
+	    <step>
+		<description> Using the P1000 pipette, add 1 mL of 250x biotin </description>
+	    </step>
+	</then>
+	<else></else>
+    </if>
 	
-	<step>
-		<description>
-			Fill to the 250 mL line with sterile water
-		</description>
-        <note>
-        </note>
-	</step>
-	<release>
-		<var>
-			sero
-		</var>
-		<var>
-			pip
-		</var>
-		<var>
-			saltsol
-		</var>
-		<var>
-			salts
-		</var>
-		<if> 
-			<condition>biotin</condition>
-			<then>
-				<var>
-					250biotin
-				<var>
-			</then>
-			<else></else>
-		</if>
-		<if> 
-			<condition>cassaa</condition>
-			<then>
-				<var>
-					cas
-				<var>
-			</then>
-			<else></else>
-		</if>
-		<if> 
-			<condition>nutrient==cellobiose</condition>
-			<then>
-				<var>
-					cb
-				<var>
-			</then>
-			<else></else>
-		</if>
-		<if> 
-			<condition>nutrient==glucose</condition>
-			<then>
-				<var>
-					gluc
-				<var>
-			</then>
-			<else></else>
-		</if>
-	</release>
+    <if>
+	<condition>nutrient == cellobiose</condition>
+	<then>
+	    <step>
+		<description> Using the serological pipette, add 25 mL of 4% cellobiose </description>
+	    </step>
+	</then>
+	<else></else>
+    </if>
+
+    <if>
+	<condition>nutrient == cellobiose</condition>
+	<then>
+	    <step>
+		<description> Using the serological pipette, add 2.5 mL of 20% cellobiose </description>
+	    </step>
+	</then>
+	<else></else>
+    </if>
 	
-	<produce>
+    <step>
+	<description> Fill to the 250 mL line with sterile water </description>
+    </step>
+
+    <release>
+	<var> sero </var>
+	<var> pip </var>
+	<var> saltsol </var>
+	<var> salts </var>
+    </release>
+    
+    <if> 
+	<condition>biotin</condition>
+	<then>
+	    <release>
+		<var> 250biotin </var>
+	    </release>
+	</then>
+	<else></else>
+    </if>
+    
+    <if> 
+	<condition>cassaa</condition>
+	<then>
+	    <release>
+		<var> cas <var>
+	    </release>
+	</then>
+	<else></else>
+    </if>
+    
+    <if> 
+	<condition>nutrient==cellobiose</condition>
+	<then>
+	    <release>
+		<var> cb <var>
+	    </release>
+	</then>
+	<else></else>
+    </if>
+    
+    <if> 
+	<condition>nutrient==glucose</condition>
+	<then>
+	    <release>
+		<var> gluc <var>
+	    <release>
+	</then>
+	<else></else>
+    </if>
+    
+    <produce>
         <object>250 mL M9 Media</object>
         <quantity>1</quantity>
     </produce>
+    
 </protocol>
