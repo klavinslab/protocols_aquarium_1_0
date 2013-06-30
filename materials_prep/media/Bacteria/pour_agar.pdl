@@ -1,0 +1,85 @@
+<protocol name="Pour Agar">
+	<information>
+		This protocol describes the steps needed to generate plate media from liquid state agar.
+	</information>
+	
+	<take>
+		<object>
+			800 mL Liquid Agar
+		</object>
+		<quantity>
+			1
+		</quantity>
+		<var>
+			agar
+		</var>
+		<object>
+			Plastic Petri Dishes
+		</object>
+		<quantity>
+			40
+		</quantity>
+		<var>
+			plates
+		</var>
+	</take>
+	<step>
+		<description>
+			Open both sleeves of plastic petri dishes by tearing plastic sleeve open at the indicated position, invert the stack and pull on the bag to empty the contents
+		</description>
+        <note>
+        </note>
+	</step>
+	<while><condition>$plates$!=0</condition>
+		<do>
+			<step>
+				<description>
+					Open agar bottle and one petri dish, pour agar until roughly 75% of the plate surface is covered
+				</description>
+				<note>
+				</note>
+			</step>
+			<step>
+				<description>
+					In one quick swirling motion, cover the rest of the petri dish surface with agar and replace lid
+				</description>
+				<note>
+				</note>
+			</step>
+			<assign><var>plates</var>
+				<value>$plates$-1</value>
+			</assign>
+		</do>
+	</while>
+	<step>
+		<description>
+			Wait until plates are solidified
+		</description>
+        <note>
+        </note>
+	</step>
+	<step>
+		<description>
+			Place plates in 30C incubator for 12 hours
+		</description>
+        <note>
+        </note>
+	</step>
+	<step>
+		<description>
+			Store at 4C in the media fridge
+		</description>
+        <note>
+        </note>
+	</step>
+	<release>
+		<var>
+			agar
+		</var>
+	</release>
+	<produce>
+        <object>Agar Plates</object>
+        <quantity>40</quantity>
+    </produce>
+	
+</protocol>

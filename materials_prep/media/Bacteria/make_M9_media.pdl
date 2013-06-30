@@ -257,4 +257,9 @@
 			<else></else>
 		</if>
 	</release>
+	
+	<produce>
+        <object>250 mL M9 Media</object>
+        <quantity>1</quantity>
+    </produce>
 </protocol>
