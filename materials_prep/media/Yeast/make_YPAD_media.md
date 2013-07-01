@@ -53,12 +53,13 @@ Description: Make 800 mL of yeast extract-peptone-dextrose medium + adenine (YPA
 
 ##Protocol##
 
-1. Weight out yeast extract, peptone, dextrose, and adenine sulfate (and optional agar) and add to 1000 mL bottle
-2. Add 500 mL dIH2O to bottle, close cap tightly and shake to mix
-3. Add water to 800 mL mark on bottle, shake again to mix
-4. Place cap on bottle loosely
-5. Stick autoclave tape on the cap
-6. Autoclave 15 minutes at 110°C, minimal drying cycle (optional cycle).
+1. Label the empty 1000 mL bottle
+2. Weight out yeast extract, peptone, dextrose, and adenine sulfate (and optional agar) and add to 1000 mL bottle
+3. Add 500 mL dIH2O to bottle, close cap tightly and shake to mix
+4. Add water to 800 mL mark on bottle, shake again to mix
+5. Place cap on bottle loosely
+6. Stick autoclave tape on the cap
+7. Autoclave 15 minutes at 110°C, minimal drying cycle (optional cycle).
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
