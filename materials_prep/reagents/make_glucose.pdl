@@ -1,5 +1,5 @@
-<protocol name="50% Glucose">
-<information>Make 50% glucose</information>
+<protocol name="Make 50% Glucose">
+<information>This prepares 50mL of 50% glucose</information>
 <take>
         <object>100 mL Bottle</object>
         <quantity>1</quantity>
