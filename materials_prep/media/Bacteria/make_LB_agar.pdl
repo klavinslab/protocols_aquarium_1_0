@@ -1,0 +1,226 @@
+<protocol name="LB agar">
+	<information>
+		This protocol is for the preperation of LB Agar, the common plate media for growing bacteria cells.
+	</information>
+
+	<argument>
+        <var>antibiotic</var>
+        <description>String, the antibiotic used in this batch</description>
+    <argument>
+	
+    <argument>
+        <var>cmc</var>
+        <description>Boolean, this media will contain cmc if true</description>
+    <argument>
+	
+	<take>
+		<object>
+			1000 mL bottle
+		</object>
+		<quantity>
+			1
+		</quantity>
+		<var>
+			bottle
+		</var>
+	</take>
+	
+	<take>
+		<object>
+			medium magnetic stir bar
+		</object>
+		<quantity>
+			1
+		</quantity>
+		<var>
+			bar
+		</var>
+	</take>
+	
+	<take>
+		<object>
+			LB agar powder
+		</object>
+		<quantity>
+			1
+		</quantity>
+		<var>
+			lbagar
+		</var>
+	</take>
+	
+	<take>
+		<object>
+			autoclave tape
+		</object>
+		<quantity>
+			1
+		</quantity>
+		<var>
+			tape
+		</var>
+	</take>
+	
+	<step>
+		<description>
+			Put the stir bar in the bottle
+		</description>
+        <note>
+        </note>
+	</step>
+	
+	<step>
+		<description>
+			Using the gram scale, large weigh boat, and chemical spatula, weigh out 29.6 grams of LB Agar powder and pour into the bottle.
+		</description>
+        <note>
+        </note>
+	</step>
+	
+	<if>
+		<condition>cmc</condition>
+		<then>
+			<take>
+				<object>
+					sodium carboxymethyl cellulose powder
+				</object>
+				<quantity>
+					1
+				</quantity>
+				<var>
+					cmcpow
+				</var>
+			</take>
+			<step>
+				<description>
+					This time use the weigh paper, make sure to zero, weigh out 0.8 grams of CMC powder. Pour into bottle.
+				</description>
+				<note>
+				</note>
+			</step>
+		</then>
+		<else></else>
+	</if>
+	
+	<step>
+		<description>
+			fill bottle with DI water until it reaches the 800 mL line, shake to get all powder solvated.
+		</description>
+        <note>
+        </note>
+	</step>	
+	
+	<step>
+		<description>
+			stick autoclave tape on top of bottle cap, loosen top and autoclave at 110C for 15 minutes
+		</description>
+        <note>
+        </note>
+	</step>	
+	
+	<step>
+		<description>
+			put on thermal gloves and take bottle out of autoclave, place on stir plate
+		</description>
+        <note>
+        </note>
+	</step>	
+	
+	<step>
+		<description>
+			Heat to 65C while stirring at 700 rpm
+		</description>
+        <note>
+        </note>
+	</step>
+	
+	<if>
+		<condition>antibiotic == kan</condition>
+		<then>
+			<take>
+				<object>
+					kanymycin aliquot
+				</object>
+				<quantity>
+					4
+				</quantity>
+				<var>
+					kanali
+				</var>
+			</take>
+			<step>
+				<description>
+					add 4 mL of kan to bottle
+				</description>
+				<note>
+				</note>
+			</step>
+		</then>
+		<else></else>
+	</if>
+
+	<if>
+		<condition>antibiotic == amp</condition>
+		<then>
+			<take>
+				<object>
+					ampicillin aliquot
+				</object>
+				<quantity>
+					8
+				</quantity>
+				<var>
+					ampali
+				</var>
+			</take>
+			<step>
+				<description>
+					add 8 mL of kan to bottle
+				</description>
+				<note>
+				</note>
+			</step>
+		</then>
+		<else></else>
+	</if>
+	
+	<if>
+		<condition>antibiotic == chlor</condition>
+		<then>
+			<take>
+				<object>
+					chloramphinicol aliquot
+				</object>
+				<quantity>
+					1
+				</quantity>
+				<var>
+					chlorali
+				</var>
+			</take>
+			<step>
+				<description>
+					add 800 uL of kan to bottle
+				</description>
+				<note>
+				</note>
+			</step>
+		</then>
+		<else></else>
+	</if>
+	
+	<produce>
+        <object>800 mL LB Agar</object>
+        <quantity>1</quantity>
+	</produce>
+	
+	<release>
+		<var>
+			tape
+		</var>
+		<var>
+			lbagar
+		</var>
+	</release>
+	
+</protocol>
