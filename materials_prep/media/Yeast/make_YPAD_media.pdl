@@ -40,7 +40,7 @@
         <object>Autoclave Tape</object>
         <quantity>1</quantity>
         <var>autoclave_tape</var>
-        </take>
+    </take>
 
  
 
@@ -58,7 +58,7 @@
     </step>
     
     <step>
-        <description>Add 800 mL of DI water.</description>
+        <description>Add 500 mL of DI water.</description>
         <note>Use the DI water near the sink.</note>
         <image>FillingMediaBottle</image>
     </step>
@@ -86,8 +86,6 @@
         <image>WeighDryIngredient</image>
     </step>
     
-    
-    
     <step>
         <description>Measure 16 g of Dextrose</description>
         <note><ul>
@@ -99,8 +97,7 @@
         <image>WeighDryIngredient</image>
     </step>
     
-    
-     <step>
+    <step>
         <description>Measure 64 mg of Adenine hemisulfate</description>
         <note><ul>
             <li>Place the plastic boat on the scale.</li>
@@ -110,7 +107,6 @@
         </ul></note>
         <image>WeighDryIngredient</image>
     </step>   
-    
     
     <step>
         <description>Add DI water to 800 mL.</description>
@@ -126,7 +122,6 @@
         <image>ShakenMediaBottle</image>
     </step>
 
-
     <produce>
         <object>800 mL Bottle of YPAD Media (not sterilized)</object>
         <quantity>1</quantity>
@@ -134,7 +129,18 @@
         <var>result</var>
     </produce>  
 
-
+    <release>
+        <var></var>
+        <var></var>
+        <var></var>
+        <var></var>
+        <var></var>
+        <var></var>
+        <var></var>
+        <var></var>
+        <var></var>
+        <var></var>
+    </release>
 
 
 </protocol>
