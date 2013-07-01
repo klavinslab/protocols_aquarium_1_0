@@ -1,1 +1,37 @@
-PEG
+<protocol name="Make 50% w/v PEG 3350">
+<information>This prepares 100mL of 50% w/v PEG 3350</information>
+<take>
+        <object>100 mL Bottle</object>
+        <quantity>1</quantity>
+        <var>bottle</var>
+</take> 
+<take>
+        <object>dIH2O</object>
+        <quantity>1</quantity>
+        <var>dIH2O_tube</var>
+</take>
+<take>
+        <object>PEG 3350</object>
+        <quantity>1</quantity>
+        <var>PEG 3350</var>
+</take>  
+<step>
+        <description>Label the bottle</description>
+        <note>Write <br />
+            <div class='label'>50% w/v PEG 3350<br />
+            id : ||$result$.id||<br />
+            date: ||(new Date()).toDateString()||
+            </div> <br />
+        on a label, stick it to the bottle.
+        </note>
+        <image>LabeledEmptyMediaBottle</image>
+</step>
+<step>
+        <description>Measure 50 g of PEG 3350</description>
+        <note><ul>
+            <li>Place the plastic boat on the scale.</li>
+            <li>Zero the scale.</li>
+            <li>Using the spatula, measure 50 g of PEG 3350 
+                into the plastic boat and add it to the bottle.</li></ul></note>
+        <image>WeighDryIngredient</image>
+</step>
