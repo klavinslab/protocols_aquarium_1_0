@@ -13,7 +13,8 @@
 		<var>
 			bottle
 		</var>
-		
+	</take>
+	<take>
 		<object>
 			TB Media Powder
 		</object>
@@ -23,7 +24,8 @@
 		<var>
 			tb
 		</var>
-		
+	</take>
+	<take>
 		<object>
 			DI Water
 		</object>
@@ -33,7 +35,8 @@
 		<var>
 			water
 		</var>
-		
+	</take>
+	<take>
 		<object>
 			Autoclave Tape
 		</object>
@@ -43,7 +46,8 @@
 		<var>
 			tape
 		</var>
-		
+	</take>
+	<take>
 		<object>
 			Large Weigh Boat
 		</object>
