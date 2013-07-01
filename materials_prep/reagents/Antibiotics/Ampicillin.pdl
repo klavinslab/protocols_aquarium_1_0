@@ -1,0 +1,80 @@
+<protocol name="Kanamycin antibiotic">
+  <information>
+  	This prepares 50ml of Kanamycin.
+	</information>
+
+	
+    <take>
+        <object>Electronic Serological Pipette</object>
+	<quantity> 1 </quantity>
+	<var> sero </var>
+    </take>
+    
+    <take>
+      <object> 25 ml serological pipette tip </object>
+  <quantity> 1 </quantity>
+	<var> sero </var>
+    </take>
+
+ 
+      
+    <take>
+	<object> Ampiillin Sodium Salts</object>
+	<quantity> 1 </quantity>
+	<var> salts </var>
+    </take>
+    
+
+    <take>
+	<object> Molecular grade water </object>
+	<quantity> 1 </quantity>
+	<var> water </var>
+    </take>
+    
+	    <take>
+		<object> Eppendorf tubes <object>
+		<quantity> 20 </quantity>
+		<var> Eppen <var>
+	    </take>
+
+	
+
+    <step>
+	<description>
+		Pipette 20 ml of molecular grade water into the bottle of Kanamycin sodium salts. Shake and vortex. 
+    Makes 10ng/ul solution.
+	</description>
+    </step>
+	
+    <step>
+  <description>
+		Aliquot 1ml into eppendorf tubes
+	</description>
+    </step>
+    
+      <step>
+  <description>
+		Label "Amp"
+	</description>
+    </step>  
+    
+        <step>
+  <description>
+		Store in -20 degree freezer
+	</description>
+    </step>
+    
+
+    
+    <release>
+	<var> sero </var>
+	<var> pip </var>
+    </release>
+    
+ 
+        <object> Ampicillin alliquots </object>
+        <quantity>20</quantity>
+    </produce>
+    
+    
+</protocol>
