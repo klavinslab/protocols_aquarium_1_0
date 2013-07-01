@@ -56,44 +56,49 @@
     
     <if>
         <condition>Leu="true"</condition>
-        <do>
+        <then>
             <take>          
                 <object>Leucine Solution</object>
                 <quantity>1</quantity>
                 <var>leu_solution</var>
             </take>  
-         </do>
+         </then>
+         <else></else>
     </if>
     <if>
         <condition>His="true"</condition> 
-        <do>
+        <then>
             <take>          
                 <object>Histadine Solution</object>
                 <quantity>1</quantity>
                 <var>his_solution</var>
             </take> 
-        </do>
+        </then>
+        <else></else>
     </if>
     <if>
         <condition>Trp="true"</condition> 
-        <do>
+        <then>
             <take>  
                 <object>Triptophan Solution</object>
                 <quantity>1</quantity>
                 <var>trp_solution</var>
             </take>  
-        </do>
+        </then>
+        <else></else>
     </if>
     <if>
         <condition>Ura="true"</condition>   
-        <do>
+        <then>
             <take>          
                 <object>Uracil Solution</object>
                 <quantity>1</quantity>
                 <var>ura_solution</var>
             </take> 
-        </do>
-    </take>
+        </then>
+        <else></else>
+    </if>
+    
     <take>          
         <object>Adenine Hemisulfate</object>
         <quantity>1</quantity>
@@ -150,46 +155,48 @@
         <image>WeighDryIngredient</image>
     </step>
 
-
-
     <if>
         <condition>His="true"</condition>   
-        <do>
+        <then>
             <step>
                 <description>Add 8 mL of Histidine Solution to the bottle.</description>
                 <image>Histidine Solution</image>
             </step>
-        </do>
+        </then>
+        <else></else>
     </if>
            
     <if>
         <condition>Leu="true"</condition>   
-        <do>           
+        <then>           
              <step>
                 <description>Add 8 mL of Leucine Solution to the bottle.</description>
                 <image>Leucine Solution</image>
             </step>
-        </do>
+        </then>
+        <else></else>
     </if>                        
             
     <if>
         <condition>Trp="true"</condition>   
-        <do>            
+        <then>            
              <step>
                 <description>Add 8 mL of Tryptophan Solution to the bottle.</description>
                 <image>Tryptophan Solution</image>
             </step>
-        </do>
+        </then>
+        <else></else>
     </if>            
                         
     <if>
         <condition>Ura="true"</condition>   
-        <do>            
+        <then>            
              <step>
                 <description>Add 8 mL of Uracil Solution to the bottle.</description>
                 <image>Uracil Solution</image>
             </step>
-        </do>
+        </then>
+        <else></else>
     </if>
 
     <step>
@@ -252,11 +259,44 @@
         <var>yeast_base</var>
         <var>sdo_media</var>
         <var>dextrose</var>
-        <var>his_solution</var>
-        <var>trp_solution</var>
-        <var>leu_solution</var>
-        <var>ura_solution</var>
         <var>adenine</var>
     </release>
+    
+    <if>
+        <condition>His="true"</condition>
+        <then>
+            <release>
+                <var>his_solution</var>
+            </release>
+        </then>
+        <else></else>
+    </if>
+    <if>
+        <condition>Leu="true"</condition>
+        <then>
+            <release>
+                <var>leu_solution</var>
+            </release>
+        </then>
+        <else></else>
+    </if>
+    <if>
+        <condition>Trp="true"</condition>
+        <then>
+            <release>
+                <var>trp_solution</var>
+            </release>
+        </then>
+        <else></else>
+    </if>    
+    <if>
+        <condition>Ura="true"</condition>
+        <then>
+            <release>
+                <var>ura_solution</var>
+            </release>
+        </then>
+        <else></else>
+    </if>    
     
 </protocol>
