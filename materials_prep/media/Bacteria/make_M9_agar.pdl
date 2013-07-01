@@ -1,0 +1,90 @@
+<protocol name="M9 agar">
+	<information>
+		This prepares M9 + CA 1% agarose plate with IPTG for microscopy assays.
+	</information>
+	
+    <step>
+		<description>
+			Setup water bath at 50 C (in room B040)
+		</description>
+    </step>
+	
+    <take>
+        <object>50 mL conical tube</object>
+	<quantity> 1 </quantity>
+	<var> con </var>
+    </take>
+	
+    <take>
+        <object>M9 CA Media</object>
+	<quantity> 1 </quantity>
+	<var> M9 </var>
+    </take>
+	
+    <take>
+        <object>foam rack</object>
+	<quantity> 1 </quantity>
+	<var> rack </var>
+    </take>
+	
+    <take>
+        <object>125 mL flask</object>
+	<quantity> 1 </quantity>
+	<var> flask </var>
+    </take>
+	
+    <take>
+        <object>agarose</object>
+	<quantity> 1 </quantity>
+	<var> agarose </var>
+    </take>
+	
+    <step>
+		<description>
+			Label 50 mL conical tube M9CA + [appropriate anitbiotic].
+		</description>
+    </step>
+	
+    <step>
+		<description>
+			Place a foam rack (often found in shaker) into the water bath with the 50 mL tubes inserted into it.
+		</description>
+    </step>
+	
+    <step>
+		<description>
+			Add 500 mg of agarose to a 125 mL flask. Add 50 mL of M9CA broth. (This should be enough for 3-4 plates).
+		</description>
+    </step>
+	
+    <step>
+		<description>
+			Microwave on full power for 40 seconds. Then microwave in 5-10 second intervals until the liquid is clear. Watch closely to prevent boiling over.
+		</description>
+    </step>
+	
+	<produce>
+		<object>
+			M9 agar
+		</object>
+		<quantity>
+			1
+		</quantity>
+	</produce>
+	
+	<release>
+		<var>
+			M9
+		</var>
+		<var>
+			flask
+		</var>
+		<var>
+			agarose
+		</var>
+		<var>
+			rack
+		</var>
+	</release>
+	
+</protocol>
