@@ -61,7 +61,7 @@
 	    <take>
 		<object> 250x Biotin <object>
 		<quantity> 1 </quantity>
-		<var> 250biotin <var>
+		<var> 250biotin </var>
 	    </take>
 	</then>
 	<else></else>
@@ -73,7 +73,7 @@
     	    <take>
 		<object> Sterile CAS amino acid solution <object>
 		<quantity> 1 </quantity>
-		<var> cas <var>
+		<var> cas </var>
 	    </take>
 	</then>
 	<else></else>
@@ -85,7 +85,7 @@
     	    <take>	
 		<object> 4% Cellobiose Sterile Filtered <object>
 		<quantity> 1 </quantity>
-		<var> cb <var>
+		<var> cb </var>
 	    </take>
 	</then>
 	<else></else>
@@ -97,7 +97,7 @@
     	    <take>
 		<object> 20% glucose Sterile Filtered <object>
 		<quantity> 1 </quantity>
-		<var> gluc <var>
+		<var> gluc </var>
 	    </take>
 	</then>
 	<else></else>
