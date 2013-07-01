@@ -8,7 +8,7 @@
 
     <take>
         <object>500 mL Bottle</object>
-        <quantity>$total$</quantity>
+        <quantity>4</quantity>
         <var>[bottleA, bottleB, bottleC, bottleD]</var>
     </take>   
     <take>
