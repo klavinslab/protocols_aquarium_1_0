@@ -1,12 +1,28 @@
 <protocol name="Yeast Dropout Solutions">
 
-make_Drop_Out_Solution(Trp=0, His=0, Leu=0, Ura=0)
-
     <information>
         This protocols describes how to make solutions of Tryptophan, Histidine, Leucine, and Uracil, which
         are used to make selective media and/or plates for yeast. The amino acid solutions are 10 mg / mL
         and the Uracil solution is 2.5 mg / mL.
     </information>
+
+
+    <argument>
+        <var>Trp</var>
+        <description>Number of triptophan bottles to make</description>
+    </argument>
+    <argument>
+        <var>His</var>
+        <description>Number of histidine bottles to make</description>
+    </argument>
+    <argument>
+        <var>Leu</var>
+        <description>Number of leucine bottles to make</description>
+    </argument>
+    <argument>
+        <var>Ura</var>
+        <description>Number of uracil bottles to make</description>
+    </argument>    
 
     <assign>
         <var>total</var>
@@ -21,7 +37,7 @@ make_Drop_Out_Solution(Trp=0, His=0, Leu=0, Ura=0)
     <take>
         <object>Balance</object>
         <quantity>1</quantity>
-        <var>[balance]</var>
+        <var>balance</var>
     </take>  
     <take>
         <object>Weigh Boat</object>
@@ -29,36 +45,35 @@ make_Drop_Out_Solution(Trp=0, His=0, Leu=0, Ura=0)
         <var>[boatA, boatB, boatC, boatD]</var>
     </take>       
     <take>
-        <object wash="true">1000 mL Graduated Cylinder</object>
+        <object>1000 mL Graduated Cylinder</object>
         <quantity>1</quantity>
-        <var>[graduated_cylinder]</var>
+        <var>graduated_cylinder</var>
     </take>       
     <take>
-        <object dispose="true">1L Bottle Top Filter</object>
+        <object>1L Bottle Top Filter</object>
         <quantity>1</quantity>
-        <var>[filter]</var>
+        <var>filter</var>
     </take> 
     <take>
-        <object return="true">Tryptophan Powder</object>
+        <object>Tryptophan Powder</object>
         <quantity>1</quantity>
         <var>[trp_powder]</var>
     </take>           
     <take>
-        <object return="true">Histadine Powder</object>
+        <object>Histadine Powder</object>
         <quantity>1</quantity>
-        <var>[his_powder]</var>
+        <var>his_powder</var>
     </take>        
     <take>
-        <object return="true">Leucine Powder</object>
+        <object>Leucine Powder</object>
         <quantity>1</quantity>
-        <var>[leu_powder]</var>
+        <var>leu_powder</var>
     </take>        
     <take>
-        <object return="true">Uracil Powder</object>
+        <object>Uracil Powder</object>
         <quantity>1</quantity>
-        <var>[ura_powder]</var>
+        <var>ura_powder</var>
     </take>        
-    
     
     <step>
         <description>Put temporary labels on the lids of the 500 mL bottles.</description>
@@ -92,7 +107,7 @@ make_Drop_Out_Solution(Trp=0, His=0, Leu=0, Ura=0)
     <assign><var>i</var><value>0</value></assign>
     
     <while>    
-        <condition>$i$!=4</condition>    
+        <condition>$i$!=$total$</condition>    
         <do>
         
             <step>
