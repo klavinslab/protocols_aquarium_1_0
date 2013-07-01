@@ -3,38 +3,55 @@
 
 make_SDO_or_SC_media(Trp="false",His="false",Leu="false",Ura="false")
 
+    <argument>
+        <var>Trp</var>
+        <description>Add tryptophan to media?</description>
+    </argument>
+    <argument>
+        <var>His</var>
+        <description>Add histadine to media?</description>
+    </argument>
+    <argument>
+        <var>Leu</var>
+        <description>Add leucine to media?</description>
+    </argument>
+    <argument>
+        <var>Ura</var>
+        <description>Add uracil to media?</description>
+    </argument>    
+    
     <take>
         <object>1000 mL Bottle</object>
         <quantity>1</quantity>
         <var>bottle</var>
     </take>    
     <take>    
-        <object return="true">Balance</object>
+        <object>Balance</object>
         <quantity>1</quantity>
         <var>balance</var>
     </take>    
     <take>  
-        <object dispose="true">Plastic Weigh Boat (S)</object>
+        <object>Plastic Weigh Boat (S)</object>
         <quantity>1</quantity>
         <var>boat_small</var>
     </take>    
     <take>          
-        <object dispose="true">Plastic Weigh Boat (L)</object>
+        <object>Plastic Weigh Boat (L)</object>
         <quantity>1</quantity>
         <var>boat_large</var>
     </take>    
     <take>          
-        <object return="true">Yeast Nitrogen Base</object>
+        <object>Yeast Nitrogen Base</object>
         <quantity>1</quantity>
         <var>yeast_base</var>
     </take>    
     <take>          
-        <object return="true">Synthetic Drop Out Media</object>
+        <object>Synthetic Drop Out Media</object>
         <quantity>1</quantity>
         <var>sdo_media</var>
     </take>    
     <take>          
-        <object return="true">Dextrose</object>
+        <object>Dextrose</object>
         <quantity>1</quantity>
         <var>dextrose</var>
     </take>    
@@ -43,7 +60,7 @@ make_SDO_or_SC_media(Trp="false",His="false",Leu="false",Ura="false")
         <condition>Leu="true"</condition>
         <do>
             <take>          
-                <object return="true">Leucine Solution</object>
+                <object>Leucine Solution</object>
                 <quantity>1</quantity>
                 <var>leu_solution</var>
             </take>  
@@ -53,34 +70,34 @@ make_SDO_or_SC_media(Trp="false",His="false",Leu="false",Ura="false")
         <condition>His="true"</condition> 
         <do>
             <take>          
-                <object return="true">Histadine Solution</object>
+                <object>Histadine Solution</object>
                 <quantity>1</quantity>
                 <var>his_solution</var>
             </take> 
         </do>
     </if>
     <if>
-        <condition>Leu="true"</condition> 
+        <condition>Trp="true"</condition> 
         <do>
             <take>  
-                <object return="true">Triptophan Solution</object>
+                <object>Triptophan Solution</object>
                 <quantity>1</quantity>
                 <var>trp_solution</var>
             </take>  
         </do>
     </if>
     <if>
-        <condition>Leu="true"</condition>   
+        <condition>Ura="true"</condition>   
         <do>
             <take>          
-                <object return="true">Uracil Solution</object>
+                <object>Uracil Solution</object>
                 <quantity>1</quantity>
                 <var>ura_solution</var>
             </take> 
         </do>
     </take>
     <take>          
-        <object return="true">Adenine Hemisulfate</object>
+        <object>Adenine Hemisulfate</object>
         <quantity>1</quantity>
         <var>adenine</var>
     </take>       
@@ -102,7 +119,6 @@ make_SDO_or_SC_media(Trp="false",His="false",Leu="false",Ura="false")
         <image>LabeledEmptyMediaBottle</image>
     </step>
 
-    
     <step>
         <description>Measure 5.36 g of Yeast nitrogen base w/o amino acid</description>
         <note><ul>
@@ -244,8 +260,5 @@ make_SDO_or_SC_media(Trp="false",His="false",Leu="false",Ura="false")
         <var>ura_solution</var>
         <var>adenine</var>
     </release>
-    
-    <cleanup></cleanup>
-
     
 </protocol>
