@@ -193,7 +193,7 @@
 	<then>
 	    <release>
 		<var> gluc </var>
-	    <release>
+	    </release>
 	</then>
 	<else></else>
     </if>
