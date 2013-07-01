@@ -1,6 +1,6 @@
 <protocol name="Ampicillin antibiotic">
   <information>
-  	This prepares 20ml of Kanamycin.
+  	This prepares 20ml of Ampicillin.
 	</information>
 
 	
@@ -19,7 +19,7 @@
  
       
     <take>
-	<object> Ampiillin Sodium Salts</object>
+	<object> Ampicillin Sodium Salts</object>
 	<quantity> 1 </quantity>
 	<var> salts </var>
     </take>
@@ -31,11 +31,11 @@
 	<var> water </var>
     </take>
     
-	    <take>
-		<object> Eppendorf tubes <object>
-		<quantity> 20 </quantity>
-		<var> Eppen <var>
-	    </take>
+    <take>
+	<object> Eppendorf tubes <object>
+	<quantity> 20 </quantity>
+	<var> Eppen <var>
+    </take>
 
 	
 
