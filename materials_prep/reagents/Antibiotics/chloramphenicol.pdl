@@ -1,6 +1,6 @@
-<protocol name="Kanamycin antibiotic">
+<protocol name="Chloramphenicol antibiotic">
   <information>
-  	This prepares 50ml of Kanamycin.
+  	This prepares 10ml of Kanamycin.
 	</information>
 
 	
@@ -82,7 +82,7 @@
     
         <step>
   <description>
-		Store eppendorf tubes and 100 ml bottle in -20 freezer
+		Store eppendorf tubes in -20 freezer
 	</description>
     </step>
     
