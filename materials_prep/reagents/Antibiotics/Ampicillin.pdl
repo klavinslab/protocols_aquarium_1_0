@@ -72,7 +72,7 @@
 	<var> salts </var>
     </release>
     
- 
+ <produce>
         <object> Ampicillin alliquots </object>
         <quantity>20</quantity>
     </produce>
