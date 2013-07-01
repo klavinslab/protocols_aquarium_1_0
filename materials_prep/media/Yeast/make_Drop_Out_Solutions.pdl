@@ -4,30 +4,7 @@
         This protocols describes how to make solutions of Tryptophan, Histidine, Leucine, and Uracil, which
         are used to make selective media and/or plates for yeast. The amino acid solutions are 10 mg / mL
         and the Uracil solution is 2.5 mg / mL.
-    </information>
-
-
-    <argument>
-        <var>Trp</var>
-        <description>Number of triptophan bottles to make</description>
-    </argument>
-    <argument>
-        <var>His</var>
-        <description>Number of histidine bottles to make</description>
-    </argument>
-    <argument>
-        <var>Leu</var>
-        <description>Number of leucine bottles to make</description>
-    </argument>
-    <argument>
-        <var>Ura</var>
-        <description>Number of uracil bottles to make</description>
-    </argument>    
-
-    <assign>
-        <var>total</var>
-        <value>Trp+His+Leu+Ura</value>
-    </assign>
+    </information> 
 
     <take>
         <object>500 mL Bottle</object>
@@ -107,9 +84,8 @@
     <assign><var>i</var><value>0</value></assign>
     
     <while>    
-        <condition>$i$!=$total$</condition>    
+        <condition>$i$!=4</condition>    
         <do>
-        
             <step>
                 <description>Measure ||$amounts$[$i$]|| of ||$ingredients$[$i$]||</description>
                 <note><ul>
