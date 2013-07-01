@@ -172,7 +172,7 @@
 	<condition>cassaa</condition>
 	<then>
 	    <release>
-		<var> cas <var>
+		<var> cas </var>
 	    </release>
 	</then>
 	<else></else>
@@ -182,7 +182,7 @@
 	<condition>nutrient==cellobiose</condition>
 	<then>
 	    <release>
-		<var> cb <var>
+		<var> cb </var>
 	    </release>
 	</then>
 	<else></else>
@@ -192,7 +192,7 @@
 	<condition>nutrient==glucose</condition>
 	<then>
 	    <release>
-		<var> gluc <var>
+		<var> gluc </var>
 	    <release>
 	</then>
 	<else></else>
