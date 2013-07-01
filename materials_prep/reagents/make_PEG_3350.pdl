@@ -1,21 +1,21 @@
 <protocol name="Make 50% w/v PEG 3350">
 <information>This prepares 100mL of 50% w/v PEG 3350</information>
-<take>
+	<take>
         <object>100 mL Bottle</object>
         <quantity>1</quantity>
         <var>bottle</var>
-</take> 
-<take>
+	</take> 
+	<take>
         <object>dIH2O</object>
         <quantity>1</quantity>
         <var>dIH2O_tube</var>
-</take>
-<take>
+	</take>
+	<take>
         <object>PEG 3350</object>
         <quantity>1</quantity>
         <var>PEG 3350</var>
-</take>  
-<step>
+	</take>  
+	<step>
         <description>Label the bottle</description>
         <note>Write <br />
             <div class='label'>50% w/v PEG 3350<br />
@@ -25,8 +25,8 @@
         on a label, stick it to the bottle.
         </note>
         <image>LabeledEmptyMediaBottle</image>
-</step>
-<step>
+	</step>
+	<step>
         <description>Measure 50 g of PEG 3350</description>
         <note><ul>
             <li>Place the plastic boat on the scale.</li>
@@ -34,4 +34,41 @@
             <li>Using the spatula, measure 50 g of PEG 3350 
                 into the plastic boat and add it to the bottle.</li></ul></note>
         <image>WeighDryIngredient</image>
-</step>
+	</step>
+    <step>
+        <description>Add DI water to 75 mL mark.</description>
+        <note>Use the DI water near the sink.</note>
+        <image>FillingMediaBottle</image>
+    </step>
+    <step>
+        <description>Add a clean stir bar and heat with mixing at 80°C.</description>
+        <note>Add a clean stir bar and heat with mixing at 80°C until the PEG has gone fully into solution.
+        </note>
+
+    </step>
+    <step>
+        <description>Add DI water to 100 mL mark.</description>
+        <note>Use the DI water near the sink.</note>
+        <image>FillingMediaBottle</image>
+    </step>
+    <step>
+        <description>Filter sterilize.</description>
+        <note>Do not autoclave.</note>
+  
+    </step>
+    <produce>
+        <object>100 mL Bottle of PEG 3350 (filter sterilized)</object>
+        <quantity>1</quantity>
+        <location>TBD</location>
+        <var>result</var>
+    </produce>
+    <release>
+        <var>boat_small</var>
+        <var>boat_large</var>
+        <var>PEG 3350</var>
+	<var>DIH2O</var>
+    </release>
+    <cleanup>
+    </cleanup>
+
+</protocol>
