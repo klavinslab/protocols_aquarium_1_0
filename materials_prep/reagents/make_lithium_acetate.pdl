@@ -1,1 +1,83 @@
-lithum
+<protocol name="Make 1M Lithium Acetate (LiOAc)">
+  <information>
+		This prepares a bottle of 50mL 1M Lithium Acetate (LiOAc).
+	</information>
+  
+  <take>
+        <object>100 mL Bottle</object>
+        <quantity>1</quantity>
+        <var>bottle</var>
+	</take> 
+	
+  <take>
+        <object>dIH2O</object>
+        <quantity>1</quantity>
+        <var>dIH2O_tube</var>
+	</take>
+  
+  <take>
+        <object>Lithium acetate (LiOAc)</object>
+        <quantity>1</quantity>
+        <var>Lithium acetate (LiOAc)</var>
+	</take> 
+  
+  <step>
+        <description>Label the bottle</description>
+        <note>Write <br />
+            <div class='label'>1M LiOAc<br />
+            id : ||$result$.id||<br />
+            date: ||(new Date()).toDateString()||
+            </div> <br />
+        on a label, stick it to the bottle.
+        </note>
+        <image>LabeledEmptyMediaBottle</image>
+	</step>
+  
+  <step>
+        <description>Measure 5.1 g of LiOAc</description>
+        <note><ul>
+            <li>Place the plastic boat on the scale.</li>
+            <li>Zero the scale.</li>
+            <li>Using the spatula, measure 5.1 g of LioAc 
+                into the plastic boat and add it to the bottle.</li></ul></note>
+        <image>WeighDryIngredient</image>
+	</step>
+  
+  <step>
+        <description>Add DI water to 50 mL mark.</description>
+        <note>Use the DI water near the sink.</note>
+        <image>FillingMediaBottle</image>
+  </step>
+
+  <step>
+        <description>Mix.</description>
+        <note>Put a cap on the bottle and shake to mix the dry ingredients with the water.
+        </note>
+        <image>ShakenMediaBottle</image>
+  </step>
+  
+  <step>
+        <description>Affix autoclave tape.</description>
+        <note>Put a piece of autoclave tape that sticks to the cap and glass of the bottle.
+        </note>
+        <image>AutoclaveTapeBottle</image>
+  </step>
+  
+  <produce>
+        <object>a bottle of 50mL 1M Lithium Acetate</object>
+        <quantity>1</quantity>
+        <location>TBD</location>
+        <var>result</var>
+  </produce>
+  
+  <release>
+        <var>boat_small</var>
+        <var>boat_large</var>
+        <var>Lithium Acetate (LiOAc)</var>
+        <var>DIH2O</var>
+  </release>
+  
+  <cleanup>
+  </cleanup>
+
+</protocol>
