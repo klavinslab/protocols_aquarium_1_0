@@ -10,8 +10,8 @@ Description: Make Salmon Sperm Carrier DNA.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ####Required equipment and materials####
 
-    * Autoclave
-        + Duration needed: 15min
+    * Thermocycler
+        + Duration needed: 5min
         + Location: [address]
     * Sterile TE buffer
         + Quantity: 800 µL
