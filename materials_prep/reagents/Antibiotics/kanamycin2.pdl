@@ -73,6 +73,13 @@
 	</description>
     </step>
     
+            <step>
+  <description>
+		Label "Kan"
+	</description>
+    </step>
+    
+    
         <step>
   <description>
 		Store eppendorf tubes and 100 ml bottle in -20 freezer
