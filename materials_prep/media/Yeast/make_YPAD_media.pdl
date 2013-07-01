@@ -1,17 +1,48 @@
 <protocol name="Make YPAD Media">
+<information>Make a batch of YPAD yeast media.</information>
 
-    <checkout>
-        <item><name>1000 mL Bottle</name><quantity>1</quantity></item>
-        <item return="true"><name>Yeast Extract</name><quantity>1</quantity></item>
-        <item dispose="true"><name>Plastic Weigh Boat (S)</name><quantity>1</quantity></item>
-    </checkout>
-
-    <inventory action='new'>
-        <object>800 mL Bottle of YPAD Media (not sterilized)</object>
+    <take>
+        <object>balance</object>
         <quantity>1</quantity>
-        <location>TBD</location>
-        <var>result</var>
-    </inventory>   
+        <var>balance</var>
+    </take>
+    <take>
+        <object>1000 mL Bottle</object>
+        <quantity>1</quantity>
+        <var>bottle</var>
+        </take>
+    <take>
+        <object>Weigh Boat (L)</object>
+        <quantity>1</quantity>
+        <var>boat_large</var>
+    </take>
+    <take>
+        <object>Bacto Yeast Extract</object>
+        <quantity>1</quantity>
+        <var>yeast_extract</var>
+    </take>
+    <take>
+        <object>Bacto Peptone</object>
+        <quantity>1</quantity>
+        <var>bacto_peptone</var>
+    </take>
+    <take>
+        <object>Dextrose</object>
+        <quantity>1</quantity>
+        <var>dextrose</var>
+    </take>
+    <take>
+        <object>Adenine Hemisulfate</object>
+        <quantity>1</quantity>
+        <var>adenine_hemisulfate</var>
+    </take>
+    <take>
+        <object>Autoclave Tape</object>
+        <quantity>1</quantity>
+        <var>autoclave_tape</var>
+        </take>
+
+ 
 
     <step>
         <description>Label the bottle</description>
@@ -94,5 +125,16 @@
         </note>
         <image>ShakenMediaBottle</image>
     </step>
-    
+
+
+    <produce>
+        <object>800 mL Bottle of YPAD Media (not sterilized)</object>
+        <quantity>1</quantity>
+        <location>TBD</location>
+        <var>result</var>
+    </produce>  
+
+
+
+
 </protocol>
