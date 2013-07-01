@@ -44,7 +44,7 @@
 	    <take>
 		<object> Eppendorf tubes <object>
 		<quantity> 10 </quantity>
-		<var> Eppen <var>
+		<var> Eppen </var>
 	    </take>
 
 	
@@ -92,7 +92,7 @@
 	<var> salts </var>
     </release>
     
- 
+ <produce>
         <object> Chloramphenicol aliquots. </object>
         <quantity>10</quantity>
     </produce>
