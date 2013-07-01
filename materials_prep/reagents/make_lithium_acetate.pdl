@@ -1,7 +1,7 @@
 <protocol name="Make 1M Lithium Acetate (LiOAc)">
   <information>
 		This prepares a bottle of 50mL 1M Lithium Acetate (LiOAc).
-	</information>
+  </information>
   
   <take>
         <object>100 mL Bottle</object>
