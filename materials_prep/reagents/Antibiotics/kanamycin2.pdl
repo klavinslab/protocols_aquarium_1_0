@@ -1,0 +1,97 @@
+<protocol name="Kanamycin antibiotic">
+  <information>
+		This prepares 50ml of Kanamycin.
+	</information>
+
+	
+    <take>
+        <object>Electronic Serological Pipette</object>
+	<quantity> 1 </quantity>
+	<var> sero </var>
+    </take>
+    
+    <take>
+      <object> 25 ml serological pipette tip </object>
+  <quantity> 1 </quantity>
+	<var> sero </var>
+    </take>
+
+    <take>
+        <object> Electronic Scale </object>
+	<quantity> 1 </quantity>
+	<var> pip </var>
+    </take>
+    
+    <take>
+	<object> 100 mL sterile Glass Bottle </object>
+	<quantity> 1 </quantity>
+	<var> bottle </var>
+    </take>
+    
+    <take>
+	<object> Kanamycin Sulfate Salts</object>
+	<quantity> 1 </quantity>
+	<var> salts </var>
+    </take>
+    
+
+    <take>
+	<object> Molecular grade water </object>
+	<quantity> 1 </quantity>
+	<var> water </var>
+    </take>
+    
+	    <take>
+		<object> Eppendorf tubes <object>
+		<quantity> 20 </quantity>
+		<var> Eppen <var>
+	    </take>
+
+	
+
+    <step>
+	<description>
+		Weigh out 0.5 grams of Kanamycin sulfate salts and add to 100 ml sterile bottle
+	</description>
+    </step>
+	
+    <step>
+  <description>
+		Use serological pipette to pipette 50 ml of molecular grade water into 100 ml bottle
+	</description>
+    </step>
+    
+      <step>
+  <description>
+		Shake to mix well. If powder sticks, vortex.
+	</description>
+    </step>  
+    
+        <step>
+  <description>
+		Aliquot 1ml into each eppendorf tube
+	</description>
+    </step>
+    
+        <step>
+  <description>
+		Store eppendorf tubes and 100 ml bottle in -20 freezer
+	</description>
+    </step>
+    
+    <release>
+	<var> sero </var>
+	<var> pip </var>
+	<var> salts </var>
+    </release>
+    
+ 
+        <object>Kanamycin aliquots. </object>
+        <quantity>20</quantity>
+    </produce>
+    
+    <object>bottle of of Kanamycin </object>
+        <quantity>1</quantity>
+    </produce>
+    
+</protocol>
