@@ -6,12 +6,12 @@
 	<argument>
         <var>antibiotic</var>
         <description>String, the antibiotic used in this batch</description>
-    <argument>
+    </argument>
 	
     <argument>
         <var>cmc</var>
         <description>Boolean, this media will contain cmc if true</description>
-    <argument>
+    </argument>
 	
 	<take>
 		<object>
