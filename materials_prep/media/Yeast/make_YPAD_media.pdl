@@ -130,17 +130,13 @@
     </produce>  
 
     <release>
-        <var></var>
-        <var></var>
-        <var></var>
-        <var></var>
-        <var></var>
-        <var></var>
-        <var></var>
-        <var></var>
-        <var></var>
-        <var></var>
+        <var>balance</var>
+        <var>boat_large</var>
+        <var>yeast_extract</var>
+        <var>bacto_peptone</var>
+        <var>dextrose</var>
+        <var>adenine_hemisulfate</var>
+        <var>autoclave_tape</var>
     </release>
-
 
 </protocol>
