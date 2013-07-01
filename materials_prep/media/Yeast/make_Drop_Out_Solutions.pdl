@@ -1,9 +1,9 @@
-<protocol name="Yeast Dropout Solutions">
+<protocol name="Make Yeast Dropout Solutions">
 
     <information>
         This protocols describes how to make solutions of Tryptophan, Histidine, Leucine, and Uracil, which
-        are used to make selective media and/or plates for yeast. The amino acid solutions are 10 mg / mL
-        and the Uracil solution is 2.5 mg / mL.
+        are used to make selective media and/or plates for yeast. The Trp, His, and Leu solutions are 10 mg / mL
+        and the Ura solution is 2.5 mg / mL.
     </information> 
 
     <take>
@@ -37,7 +37,7 @@
         <var>[trp_powder]</var>
     </take>           
     <take>
-        <object>Histadine Powder</object>
+        <object>Histidine Powder</object>
         <quantity>1</quantity>
         <var>his_powder</var>
     </take>        
@@ -59,12 +59,12 @@
             <ul>
                 <li>Trp</li>
                 <li>His</li>
-                <li>Lue</li>
+                <li>Leu</li>
                 <li>Ura</li>
             </ul>
         </note>
         <image>TempDropLabels</image>
-        <warning>Put the labels on the tops of the bottles, not on the sides. If not, the
+        <warning>Put the labels on the tops of the bottles, not on the sides. Otherwise, the
             labels may come off when the bottles are put in the heat bath.
         </warning>
     </step>
