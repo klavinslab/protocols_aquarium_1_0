@@ -1,1 +1,8 @@
-auxo
+<protocol name="Make Auxotrophic Supplement Solutions">
+<information>This prepares auxotrophic supplement solutions</information>
+
+
+
+
+<cleanup></cleanup>
+</protocol>
