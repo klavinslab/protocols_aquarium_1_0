@@ -44,7 +44,7 @@
 	    <take>
 		<object> Eppendorf tubes <object>
 		<quantity> 20 </quantity>
-		<var> Eppen <var>
+		<var> Eppen </var>
 	    </take>
 
 	
@@ -92,7 +92,7 @@
 	<var> salts </var>
     </release>
     
- 
+ <produce>
         <object>Kanamycin aliquots. </object>
         <quantity>20</quantity>
     </produce>
