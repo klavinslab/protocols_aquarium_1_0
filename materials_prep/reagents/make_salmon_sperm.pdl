@@ -1,1 +1,75 @@
-salmon
+<protocol name="Make Salmon Sperm Carrier DNA">
+  <information>This prepares Salmon Sperm Carrier DNA
+  </information>
+  
+  <take>
+        <object>Sterile TE buffer</object>
+        <quantity>1</quantity>
+        <var>stock</var>
+  </take> 
+
+  <take>
+        <object>Salmon Sperm DNA</object>
+        <quantity>1</quantity>
+        <var>stock</var>
+  </take> 
+  
+  <take>
+        <object>1.5 mL tube</object>
+        <quantity>1</quantity>
+        <var>tube</var>
+  </take>
+  
+  <take>
+        <object>PCR tube</object>
+        <quantity>20</quantity>
+        <var>tube</var>
+  </take>
+  
+  <step>
+        <description>Label a 1.5 mL tube</description>
+        <note>Write ssDNA on the tube.</note>
+  </step>
+  
+  <step>
+        <description>Pipette 200 uL Salmon Sperm DNA in the labled tube</description>
+  </step>
+  
+    
+  <step>
+        <description>Pipette 800 uL Sterile TE buffer in the labled tube</description>
+  </step>
+  
+      
+  <step>
+        <description>Votex the labled tube for 10 seconds</description>
+  </step>
+  
+        
+  <step>
+        <description>Pipette 50 uL from the labled tube to each PCR tube, 20 PCR tubes total</description>
+  </step>
+  
+  <step>
+        <description>Put all the PCR tubes in thermocylcer and run a 5 minutes boil program</description>
+  </step>
+  
+  <step>
+        <description>Put all the PCR tubes in a freezer box that is labed Salmon Sperm DNA</description>
+  </step>
+  
+  <produce>
+        <object>50 uL of Salmon Sperm DNA</object>
+        <quantity>20</quantity>
+        <location>TBD</location>
+        <var>tube</var>
+  </produce>
+     
+  <release>
+        <var>Sterile TE buffer</var>
+        <var>Salmon Sperm DNA</var>
+  </release>
+
+<cleanup></cleanup>
+
+</protocol>
