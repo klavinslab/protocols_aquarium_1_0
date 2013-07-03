@@ -1,0 +1,33 @@
+<protocol>
+
+  <step>
+
+  <description>Transfer 1 mL of 1 M Magnesium Sulfate to the 50 mL Falcon tube.</description>
+  
+  <note>Use the serological pipettor and a 2 mL serological pipette. 
+    After aspirating, be sure to wipe as much Magnesium Sulfate off of 
+    the outside of the pipette as possible. Dispense as much Magnesium 
+    Sulfate as possible, then wait 30 seconds, and dispense whatever 
+    Magnesium Sulfate drains to the bottom of the pipette.
+  </note>
+  
+  <warning>
+    If anything participated out of the solution, you'll need to discard
+    whatever was made in this protocol, make new MgS04 1M solution, and
+    start this protocol over.
+  <warning>
+
+  <getdata>
+    <var>x</var>
+    <description>A variable representing something important.</description>
+  </getdata>
+
+  <getdata>
+    <var>y</var>
+    <description>Another variable.</description>
+  </getdata>
+
+
+  </step>
+
+</protocol>
