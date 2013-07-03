@@ -1,7 +1,5 @@
 <protocol>
 
-  <information>Info here</information>
-
   <step>
 
   <description>Transfer 1 mL of 1 M Magnesium Sulfate to the 50 mL Falcon tube.</description>
@@ -17,7 +15,7 @@
     If anything participated out of the solution, you'll need to discard
     whatever was made in this protocol, make new MgS04 1M solution, and
     start this protocol over.
-  <warning>
+  </warning>
 
   <getdata>
     <var>x</var>
@@ -28,7 +26,6 @@
     <var>y</var>
     <description>Another variable.</description>
   </getdata>
-
 
   </step>
 
