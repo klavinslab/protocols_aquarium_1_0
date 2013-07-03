@@ -84,4 +84,8 @@
         <quantity>40</quantity>
     </produce>
 	
+	<step>
+			<description>Done. Thank you for running this protocol.</description>
+	</step>
+	
 </protocol>
