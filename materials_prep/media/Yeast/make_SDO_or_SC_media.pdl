@@ -4,7 +4,7 @@
     <argument>
         <var>Trp</var>
         <description>Add tryptophan to media?</description>
-    </argument>
+    <argument>
     <argument>
         <var>His</var>
         <description>Add histidine to media?</description>
