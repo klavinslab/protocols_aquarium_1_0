@@ -19,9 +19,15 @@
     </argument>    
     
     <take>
-        <object>1000 mL Bottle</object>
-        <quantity>1</quantity>
-        <var>bottle</var>
+        <if> 
+          <condition>%{Ura} == 0</condition>
+          <then>
+            <object>1000 mL Bottle</object>
+            <quantity>1</quantity>
+            <var>bottle</var>
+          </then>
+          <else></else>
+        </if>
     </take>    
     <take>    
         <object>Balance</object>
