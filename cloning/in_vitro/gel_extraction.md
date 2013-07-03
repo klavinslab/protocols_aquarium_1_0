@@ -94,12 +94,12 @@ Day 1
 
 ####Common Issues####
 
-    [Issue 1]:
-        - [Solution 1]:
-        - [Solution 2]:
-    [Issue 2]:
-        - [Solution 1]:
-        - [Solution 2]:
+    No DNA:
+        - Check PE buffer to make sure it has the correct ethanol concentration
+        - Try a longer elution (10 min) and try eluting on the 50 C heat block
+        - Make sure QG buffer pH is correct after adding it to the gel slice
+    Wrong ratio on nanodrop: (if value at 230 is greater than 5)
+        - Dialize elution for 20-30 minutes at room temperature to remove residual salts. Re-spec on Nanodrop.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
        
 For questions, contact David Younger at dyounger@gmail.com    
