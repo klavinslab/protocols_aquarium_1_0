@@ -1,0 +1,9 @@
+<protocol>
+
+    <take>
+        <object>1000mL_Bottle</object>
+        <quantity>1</quantity>
+        <var>A</var>
+    </take>
+  
+</protocol>
