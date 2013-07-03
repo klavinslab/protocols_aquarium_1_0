@@ -1,4 +1,4 @@
-Making Ampicillin
+Make Ampicillin Stock
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Description: Need Ampicillin? Here is how you make it.
