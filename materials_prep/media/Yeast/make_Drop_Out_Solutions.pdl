@@ -1,57 +1,131 @@
-<protocol name="Make Yeast Dropout Solutions">
+<protocol name="Yeast Dropout Solutions">
+
+    <argument>
+      <var>Trp</var>
+      <type>num</type>
+      <description>Enter the number of bottles of Trp you wish to make.</description>
+    </argument>
+
+    <argument>
+      <var>His</var>
+      <type>num</type>
+      <description>Enter the number of bottles of His you wish to make.</description>
+    </argument>
+
+    <argument>
+      <var>Leu</var>
+      <type>num</type>
+      <description>Enter the number of bottles of Leu you wish to make.</description>
+    </argument>
+
+    <argument>
+      <var>Ura</var>
+      <type>num</type>
+      <description>Enter the number of bottles of Ura you wish to make.</description>
+    </argument>
 
     <information>
         This protocols describes how to make solutions of Tryptophan, Histidine, Leucine, and Uracil, which
-        are used to make selective media and/or plates for yeast. The Trp, His, and Leu solutions are 10 mg / mL
-        and the Ura solution is 2.5 mg / mL.
-    </information> 
+        are used to make selective media and/or plates for yeast. The amino acid solutions are 10 mg / mL
+        and the Uracil solution is 2.5 mg / mL.
+    </information>
+
+  <assign><var>x</var><value>0</value></assign>
+  <assign><var>y</var><value>1</value></assign>
+
+  <assign><var>temp</var><value>%{x}+%{y}</value></assign>
+
+    <assign>
+        <var>total</var>
+        <value>%{Trp}+%{His}+%{Leu}+%{Ura}</value>
+    </assign>
+
+    <assign>
+    <var>count</var>
+        <value>0</value>
+    </assign>
 
     <take>
-        <object>500 mL Bottle</object>
-        <quantity>4</quantity>
-        <var>[bottleA, bottleB, bottleC, bottleD]</var>
-    </take>   
+	<object>500 mL Bottle</object>
+	<quantity>%{total}</quantity>
+        <var>bottles</var>
+    </take>
+
     <take>
-        <object>Balance</object>
-        <quantity>1</quantity>
-        <var>balance</var>
-    </take>  
-    <take>
-        <object>Weigh Boat</object>
-        <quantity>4</quantity>
-        <var>[boatA, boatB, boatC, boatD]</var>
-    </take>       
-    <take>
-        <object>1000 mL Graduated Cylinder</object>
-        <quantity>1</quantity>
-        <var>graduated_cylinder</var>
-    </take>       
+        <object>Weigh Boat (L)</object>
+        <quantity>%{total}</quantity>
+        <var>boats</var>
+    </take>
+
     <take>
         <object>1L Bottle Top Filter</object>
         <quantity>1</quantity>
         <var>filter</var>
     </take> 
-    <take>
-        <object>Tryptophan Powder</object>
-        <quantity>1</quantity>
-        <var>[trp_powder]</var>
-    </take>           
-    <take>
-        <object>Histidine Powder</object>
-        <quantity>1</quantity>
-        <var>his_powder</var>
-    </take>        
-    <take>
-        <object>Leucine Powder</object>
-        <quantity>1</quantity>
-        <var>leu_powder</var>
-    </take>        
-    <take>
-        <object>Uracil Powder</object>
-        <quantity>1</quantity>
-        <var>ura_powder</var>
-    </take>        
-    
+
+    <if>
+      <condition>%{Trp} &gt; 0</condition>
+      <then>
+        <take>
+            <object>Tryptophan Powder</object>
+            <quantity>1</quantity>
+            <var>trp_powder</var>
+        </take>
+      </then>
+      <else>
+	<step><description>Not making any Trp</description></step>
+      </else>
+    </if>
+
+    <if>
+      <condition>%{His} &gt; 0</condition>
+      <then>
+        <take>
+            <object>Histadine Powder</object>
+            <quantity>1</quantity>
+            <var>his_powder</var>
+        </take>
+      </then>
+      <else>
+	<step><description>Not making any His</description></step>
+      </else>
+    </if>
+
+    <if>
+      <condition>%{Leu} &gt; 0</condition>
+      <then>
+        <take>
+            <object>Leucine Powder</object>
+            <quantity>1</quantity>
+            <var>leu_powder</var>
+        </take>
+      </then>
+      <else>
+	<step><description>Not making any Leu</description></step>
+      </else>
+    </if>
+
+    <if>
+      <condition>%{Ura} &gt; 0</condition>
+      <then>
+        <take>
+            <object>Uracil Powder</object>
+            <quantity>1</quantity>
+            <var>ura_powder</var>
+        </take>
+      </then>
+      <else>
+	<step><description>Not making any Ura</description></step>
+      </else>
+    </if>
+
+    <comment> loop over Trp, His, Leu, and Ura independently and with a step label a bottle
+	of each of those types for each iteration
+	also push the label into the label array each time
+	and push the ingredient into the ingredients array
+	and push the amount into the amounts array
+    </comment>
+  
     <step>
         <description>Put temporary labels on the lids of the 500 mL bottles.</description>
         <note>
@@ -59,12 +133,11 @@
             <ul>
                 <li>Trp</li>
                 <li>His</li>
-                <li>Leu</li>
+                <li>Lue</li>
                 <li>Ura</li>
             </ul>
         </note>
-        <image>TempDropLabels</image>
-        <warning>Put the labels on the tops of the bottles, not on the sides. Otherwise, the
+        <warning>Put the labels on the tops of the bottles, not on the sides. If not, the
             labels may come off when the bottles are put in the heat bath.
         </warning>
     </step>
@@ -83,28 +156,30 @@
     
     <assign><var>i</var><value>0</value></assign>
     
+
+    <comment>while condition below should be %{i}!=#{labels.length}</comment>
+
     <while>    
-        <condition>$i$!=4</condition>    
+        <condition>%{i}!= %{labels}.length</condition>    
         <do>
+        
             <step>
-                <description>Measure ||$amounts$[$i$]|| of ||$ingredients$[$i$]||</description>
-                <note><ul>
-                    <li>Place the plastic boat on the scale.</li>
-                    <li>Zero the scale.</li>
-                    <li>Using the spatula, measure ||$amounts$[$i$]|| of ||$ingredients$[$i$]|| 
-                        into the plastic boat.</li>
-                    <li>Use a kimwipe to clean the spatula.</li>
-                </ul></note>                
+                <description>Measure #{%{amounts}[%{i}]} of #{%{ingredients}[%{i}]}</description>
+                <note>Place the plastic boat on the scale. Zero the scale. 
+		      Using the spatula, measure #{%{amounts}[%{i}]} of #{%{ingredients}[%{i}]} 
+		      into the plastic boat.
+                      Use a kimwipe to clean the spatula.
+		</note>
                 <image>WeighDryIngredient</image>
             </step>
                 
             <step>
                 <description>
-                    Transfer the ||$ingredients$[$i$]|| to the bottle labeled ||$labels$[$i$]||.
+                    Transfer the #{%{ingredients}[%{i}]} to the bottle labeled #{%{labels}[%{i}]}.
                 </description>
                 <note>
-                Remove the top of the 500 mL bottle labeled ||$labels$[$i$]|| and pour
-                the ||$ingredients$[$i$]|| into the bottle. Dispose of the plastic boat.
+                Remove the top of the 500 mL bottle labeled #{%{labels}[%{i}]} and pour
+                the #{%{ingredients}[%{i}]} into the bottle. Dispose of the plastic boat.
                 </note>
                 <image>PourDry500mL</image>
             </step>
@@ -121,13 +196,13 @@
                     Transfer and mix.            
                 </description>
                 <note>
-                    Pour the water from the cylinder into the bottle labeled ||$labels$[$i$]||,
-                    return the top, and shake the bottle to mix in the ||$ingredients$[$i$]||.
+                    Pour the water from the cylinder into the bottle labeled #{%{labels}[%{i}]},
+                    return the top, and shake the bottle to mix in the #{%{ingredients}[%{i}]}.
                 </note>
                 <image>TransferGraduatedTo500mL</image>
             </step>
             
-            <assign><var>i</var><value>$i$+1</value></assign>
+            <assign><var>i</var><value>%{i}+1</value></assign>
             
         </do>
         
@@ -155,37 +230,41 @@
     
     <step>
         <description>Remove filter and cap bottles</description>
-        <note>Remove the filter and cap the bottles, making sure to keep everthing sterile.
-        </note>
+        <note>Remove the filter and cap the bottles, making sure to keep everthing sterile.</note>
         <image>BottleFilterOnBottle</image>
     </step>
     
-    
+    <comment>Each produce statement should be wrapped in an if statement, 
+	because we dont want to produce 0</comment>
+ 
     <produce>
         <object>Tryptophan Solution</object>
-        <quantity>1</quantity>
+	<location>B0.101</location>
+        <quantity>%{Trp}</quantity>
     </produce>    
 
     <produce>
-        <object>Histidine Solution</object>
-        <quantity>1</quantity>
+        <object>Histadine Solution</object>
+	<location>B0.102</location>
+        <quantity>%{His}</quantity>
     </produce>    
 
     <produce>
         <object>Leucine Solution</object>
-        <quantity>1</quantity>
+	<location>B0.103</location>
+        <quantity>%{Leu}</quantity>
     </produce>    
 
     <produce>
         <object>Uracil Solution</object>
-        <quantity>1</quantity>
+	<location>B0.104</location>
+        <quantity>%{Ura}</quantity>
     </produce>    
 
 
     <release>
-        <var>balance</var>
-        <var>boatA</var><var>boatB</var><var>boatC</var><var>boatD</var>
-        <var>graduated_cylinder</var>
+        <var>boats</var>
+	<var>bottles</var>
         <var>filter</var>
         <var>trp_powder</var>
         <var>his_powder</var>
