@@ -1,0 +1,14 @@
+<protocol>
+
+  <information>A protocol for testing the BTOR gui.</information>
+  
+  <assign>
+    <var>x</var>
+    <value>1</value>
+  <assign>
+  
+  <step>
+    <description>In this step, x = %{x}.</description>
+  </step>
+
+</protocol>
