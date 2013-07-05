@@ -5,7 +5,7 @@
   <assign>
     <var>x</var>
     <value>1</value>
-  <assign>
+  </assign>
   
   <step>
     <description>In this step, x = %{x}.</description>
