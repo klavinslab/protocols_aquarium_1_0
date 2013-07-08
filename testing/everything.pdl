@@ -13,8 +13,8 @@
     <var>b</var>
   </take>
 
-  <assign><var>name</var><value>%{b}.object[:name]</value></assign>
-  <assign><var>loc</var> <value>%{b}.item[:location]</value></assign>
+  <assign><var>name</var><value>%{b}[:object][:name]</value></assign>
+  <assign><var>loc</var> <value>%{b}[:item][:location]</value></assign>
 
   <step>
     <description>You took an object of type %{name} from location %{loc}.</description>
