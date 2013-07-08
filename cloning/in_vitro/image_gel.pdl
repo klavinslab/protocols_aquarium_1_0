@@ -1,0 +1,99 @@
+<protocol>
+        <information>This protocol guides the user through imaging a gel on the blue transilluminator using the gelDoc
+imaging station and the Canon G10 digitial camera.</information>
+
+        <take>
+                <object>Gel</object>
+                <quantity>1</quantity>
+                <var>gel</var>
+        </take>
+
+        <step>
+                <description>Place gel on blue transilluminator</description>
+        </step>
+
+        <step>
+                <description>Place gelDoc imaging rig over the transilluminator</description>
+        </step>
+
+        <step>
+                <description>Open door to gelDoc imaging rig and turn on illuminator</description>
+        </step>
+
+        <step>
+                <description>Turn on camera by pressing the power button once, located on the top of the camera on the right hand side</description>
+        </step>
+
+        <step>
+                <description>Switch the camera to manual mode by turning the large dial until the display says manual</description>
+        </step>
+
+        <step>
+                <description>Set the ISO to 100</description>
+        </step>
+
+        <step>
+                <description>Switch camera to macro mode</description>
+        </step>
+		
+        <step>
+                <description>Set white balance to tungsten</description>
+        </step>
+		
+        <step>
+                <description>Set the aperture ot 3.5</description>
+        </step>
+		
+        <step>
+                <description>Set exposure time from 1 to 5 seconds</description>
+        </step>
+		
+        <step>
+                <description>Using the zoom knob, zoom into the gel such that it covers the entire view </description>
+        </step>
+		
+        <step>
+                <description>Take the wired trigger and press half way to focus, then click to second stop to take image</description>
+        </step>
+		
+        <step>
+                <description>Remove gel from illuminator</description>
+        </step>
+		
+        <release>
+                <var>%{gel}</var>
+        </release>
+		
+        <step>
+                <description>Turn off illuminator and remove gelDoc imaging rig</description>
+        </step>
+		
+        <take>
+                <object>Kimwipe</object>
+                <quantity>1</quantity>
+                <var>wipe</var>
+        </take>
+
+        <take>
+                <object>95% Ethanol Spray Bottle</object>
+                <quantity>1</quantity>
+                <var>ethanol</var>
+        </take>
+		
+        <step>
+                <description>Spray the top of the illuminator with 95% ethanol, wipe dry with kimwipe</description>
+        </step>
+
+        <release>
+                <var>%{ethanol}</var>
+        </release>
+
+        <release>
+                <var>%{kimwipe}</var>
+        </release>
+		
+        <step>
+                <description>Done. Thank you for running this protocol.</description>
+        </step>
+
+</protocol>
