@@ -1,12 +1,3 @@
-Notes/Directions 
-
-    - All irrelevent sections/headings are to be deleted. 
-        ex. For a single day protocol, delete all references to "Day" 
-    - All items in square brackets are place holders to be replaced by some other value
-        ex. "[Protocol Name]" could be replaced by "Gel Elecrophoresis"
-    - The description is a one or two sentance summary of what the protocol accomplishes
-
-
 Restriction Digest
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -67,8 +58,6 @@ Day 1
     Incubate;         37 C;     5 hr;         Can be shorter if needed, but >2hr
     Denature enzymes; 80 C;     20 min;
 
-3. [Step 3]
-
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
     
@@ -87,14 +76,9 @@ Day 1
 
 ####Common Issues####
 
-
-
     [Issue 1]: No thermocycler is available,
         - [Solution 1]: Use a standing incubator overnight, and heat deactivate in a heat block the following morning
-        - [Solution 2]:
-    [Issue 2]:
-        - [Solution 1]:
-        - [Solution 2]:
+
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
        
 For questions, contact Rob Egert at robere@gmail.com    
