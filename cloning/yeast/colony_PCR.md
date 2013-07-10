@@ -46,16 +46,6 @@ A typical QC PCR is a 10uL Phusion reaction:
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 ####Additional Information and Settings####
-
-Use an annealing temperature 2-4C below the primer TM
-
-####Common Issues####
-
-None
-
-For questions, contact Nick Bolten at bolten@u.washington.edu
-
-
 PCR Design:
 
 Yeast colony PCR is for seeing whether a genomic modification (insertion, deletion, etc) has been successful.
@@ -142,7 +132,11 @@ prKL922
 	Verifying genomic deletion
 Verifying deletion is straightforward: design two genomic primers which bind outside of the deletion. Colony PCR of the deletion strain will produce a short product while colony PCR of the parent strain will produce a long product.
 
-Protocol:
-Prep Time: 10 mins if diluted lysates are already available
-Protocol Total Time: 3-4 hours
 
+Use an annealing temperature 2-4C below the primer TM
+
+####Common Issues####
+
+None
+
+For questions, contact Nick Bolten at bolten@u.washington.edu
