@@ -1,0 +1,13 @@
+<protocol name="Yeast Dropout Solutions">
+
+    <information>
+        The produce tag should not require a location tag. The current interpreter relies on the location tag.
+        This is a bug.
+    </information>
+
+    <produce>
+        <object>Tryptophan Solution</object>
+        <quantity>1</quantity>
+    </produce>      
+
+</protocol>
