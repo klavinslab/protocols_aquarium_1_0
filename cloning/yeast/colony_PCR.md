@@ -9,6 +9,38 @@ Description: Yeast colony PCR to verify successful intergration.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ####Required equipment and materials####
 
+    * Thermocycler
+        + Duration needed: 3.5 hrs
+        + Location: [address]
+    * Phusion Master Mix
+        + Quantity: 1 tube
+        + Location: [address]
+    * MGH2O
+        + Quantity: 1 tube
+        + Location: [address]
+    * Yeast Lysate (prepared in previous step)
+        + Quantity: NA
+        + Location: [address]
+        
+    * Primers (depends on which locus the integration is on)
+        + Quantity: NA
+        + Location: [address]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+##Protocol##
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+####Additional Information and Settings####
+
+None
+
+####Common Issues####
+
+None
+
+For questions, contact Nick Bolten at bolten@u.washington.edu
+
+
 PCR Design:
 
 Yeast colony PCR is for seeing whether a genomic modification (insertion, deletion, etc) has been successful.
