@@ -1,10 +1,13 @@
 Yeast Colony PCR
+--------------
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Description: Yeast colony PCR to verify successful intergration.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+####Total duration: 5 hours####
 
-Table of Contents
-PCR Design
-Protocol
-
-
+####Total worktime: 1 hours####
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+####Required equipment and materials####
 
 PCR Design:
 
