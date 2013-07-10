@@ -3,9 +3,9 @@ Yeast Colony PCR
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Description: Yeast colony PCR to verify successful intergration.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-####Total duration: 5 hours####
+####Total duration: 4 hours####
 
-####Total worktime: 1 hours####
+####Total worktime: 10 minitues####
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ####Required equipment and materials####
 
@@ -28,11 +28,26 @@ Description: Yeast colony PCR to verify successful intergration.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 ##Protocol##
 
+1. Make 1/10X diluted lysates.
+2. Set up standard Phusion PCR mix as below.
+A typical QC PCR is a 10uL Phusion reaction:
+	3.5uL MGH2O
+	0.5uL 1/10X lysate
+	0.5uL primer 1
+	0.5uL primer 2
+	5uL Phusion Master Mix
+3. Set up thermal cycler:
+	3 min 98C
+	35 cycles of:
+		10s 98C
+		20s primer Tm - 2 or -4C (e.g. for 72C primers, use 68C or 70C).3.5-4 minutes 72C (extension. Long time = more chance of getting product)
+	72C 5 min
+	Hold at 4C
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 ####Additional Information and Settings####
 
-None
+Use an annealing temperature 2-4C below the primer TM
 
 ####Common Issues####
 
@@ -131,26 +146,3 @@ Protocol:
 Prep Time: 10 mins if diluted lysates are already available
 Protocol Total Time: 3-4 hours
 
-1. Make 1/10X diluted lysates.
-2. Set up standard Phusion PCR mix as below.
-A typical QC PCR is a 10uL Phusion reaction:
-	3.5uL MGH2O
-	0.5uL 1/10X lysate
-	0.5uL primer 1
-	0.5uL primer 2
-	5uL Phusion Master Mix
-3. Set up thermal cycler:
-	3 min 98C
-	35 cycles of:
-		10s 98C
-		20s primer Tm - 2 or -4C (e.g. for 72C primers, use 68C or 70C).
-3.5-4 minutes 72C (extension. Long time = more chance of getting product)
-	72C 5 min
-	Hold at 4C
-   s
-
-Notes:
-Use an annealing temperature 2-4C below the primer TM
-
-Authors/Contact:
-Nick Bolten
