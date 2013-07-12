@@ -87,14 +87,26 @@
 	
 	
 	<produce>
-		<object></object>
-		<quantity></quantity>
+		<object>gel_extract_DNA</object>
+		<quantity>1</quantity>
 	</produce>
 	
 	<release>
-		<var></var>
-		<var></var>
-		<var></var>
+		<var>light_box</var>
+		<var>balance</var>
+		<var>heat</var>
+		<var>vortex</var>
+		<var>nanodrop</var>
+		<var>gel</var>		
+		<var>razer</var>
+		<var>tubeA</var>
+		<var>tubeB</var>
+		<var>QG</var>
+		<var>sodium_acetate</var>
+		<var>isopropanol</var>
+		<var>column</var>
+		<var>PE</var>
+		<var>elution_buffer</var>
 	</release>
 	
 	
