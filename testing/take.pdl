@@ -4,7 +4,7 @@
       <name>object</name>
       <type>number</type>
       <description>An object to take from the IMS</description>
-    <argument>
+    </argument>
 
     <take>
         <object>%{object}</object>
