@@ -15,9 +15,9 @@
     <take>
         <object>1000 mL Bottle</object>
         <quantity>2</quantity>
-        <var>A</var>
+        <var>B</var>
     </take>
     
-    <information>Object information array: %{A}.</information>
+    <information>Object information array: A = %{A} and B=%{B}.</information>
   
 </protocol>
