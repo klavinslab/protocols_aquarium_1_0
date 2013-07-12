@@ -10,7 +10,7 @@
 
   <information>First object release method: %{method}.</information>
 
-  <release>A</release>
+  <release>%{A}</release>
   
   <assign><lhs>released</lhs><rhs>%{A}[0][:object][:released]</rhs></assign>
 
