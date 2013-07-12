@@ -1,7 +1,7 @@
 <protocol>
 
     <take>
-        <object>"1000 mL Bottle"</object>
+        <object>1000 mL Bottle</object>
         <quantity>2</quantity>
         <var>A</var>
     </take>
