@@ -1,9 +1,11 @@
 <protocol>
 
     <take>
-        <object>1000mL_Bottle</object>
-        <quantity>1</quantity>
+        <object>1000 mL Bottle</object>
+        <quantity>2</quantity>
         <var>A</var>
     </take>
+    
+    <information>Object information array: %{A}.</information>
   
 </protocol>
