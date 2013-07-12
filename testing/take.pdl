@@ -1,5 +1,17 @@
 <protocol>
 
+    <argument>
+      <name>object</name>
+      <type>number</type>
+      <description>An object to take from the IMS</description>
+    <argument>
+
+    <take>
+        <object>%{object}</object>
+        <quantity>2</quantity>
+        <var>A</var>
+    </take>
+
     <take>
         <object>1000 mL Bottle</object>
         <quantity>2</quantity>
