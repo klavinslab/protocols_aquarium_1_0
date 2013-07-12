@@ -1,0 +1,10 @@
+<protocol>
+
+  <argument>
+    <name>x</name>
+    <description>An integral argument to the protocol without a type specified.</description>
+  </argument>
+
+  <information>This protocol should produce a parse error.</information>
+
+</protocol>
