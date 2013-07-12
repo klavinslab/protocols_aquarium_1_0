@@ -1,0 +1,73 @@
+<protocol name="Restriction Digest">
+
+  <information>
+  	This protocol describes the process to perform restriction digest.
+	</information>
+
+	<take>
+		<object>Molecular grade water</object>
+		<quantity>x ml </quantity>
+		<var></var>
+
+		<object>Restriction enzyme</object>
+		<quantity> x items </quantity>
+		<var></var>
+
+  	<object>NEB Buffer 1, 2, 3 or 4 10x enzyme</object>
+		<quantity> x ml </quantity>
+		<var></var>
+
+    <object>MP or PCR DNA</object>
+		<quantity> x mg </quantity>
+		<var></var>
+
+    <object>BSA</object>
+		<quantity> x ml </quantity>
+		<var></var>
+	</take>
+
+	<step>
+		<description> Add the following to a 0.5 mL PCR tube and mix gently</description>
+		<note>
+    Reagent; Amount; Where to Find it 
+    dI H20; 42.5 - x - y - z uL; Room temp stocks - HyClone bottles 
+    Buffer 10X; 5 uL; -20 C Freezer - NEB 1, 2, 3, or 4 tube 
+    BSA 100X; 0.5 uL; -20 C Freezer 
+    DNA to digest;x uL (~600-800 ng); 
+    MP or PCR DNA -20 Freezer or Fridge 
+    Enzyme 1; y uL; -20 C Freezer keep cold 
+    Enzyme 2; z uL; -20 C Freezer keep cold</note>
+		<image></image>
+		<warning>Keep the enzymes cold using an ice block</warning>
+	</step>
+
+  <step>
+		<description> Gently mix, spin down, and run in Thermocycler with the following program </description>
+		<note>
+    Step; Temp; Time; Notes 
+    Incubate; 37 C; 5 hr; Can be shorter if needed, but >2hr 
+    Denature enzymes; 80 C; 20 min;
+    </note>
+		<image></image>
+		<warning>Keep the enzymes cold using an ice block</warning>
+	</step>
+
+
+
+	<produce>
+		<object>Linearized DNA fragment</object>
+		<quantity>y pieces</quantity>
+
+		<object>Linearized DNA fragment</object>
+		<quantity>y pieces</quantity>
+	</produce>
+
+	<release>
+    <var>Molecular Grade Water </var>
+		<var>Restriction Enyzme</var>
+		<var>NEB Buffer 1, 2, 3 or 4 10x enzyme</var>
+		<var></var>
+	</release>
+
+
+</protocol>
