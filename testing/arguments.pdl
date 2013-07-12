@@ -3,7 +3,13 @@
   <argument>
     <name>x</name>
     <type>number</type>
-    <description>A numerical argument to the protocol</description>
+    <description>An integral argument to the protocol</description>
+  </argument>
+
+  <argument>
+    <name>y</name>
+    <type>number</type>
+    <description>A float argument to the protocol</description>
   </argument>
 
   <argument>
