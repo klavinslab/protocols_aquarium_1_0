@@ -1,6 +1,15 @@
 <protocol>
-    <release>
-        <var>bottle1</var>
-        <var>boat</var>
-    </release>
+
+  <take>
+    <object>1000 mL Bottle</object>
+    <quantity>2</quantity>
+    <var>A</var>
+  </take>
+
+  <information>First object's release method: #{%A[0][:object][:release_method]}</information>
+
+  <release>A</release>
+
+  <information>First object's release flag: #{%A[0][:object][:released]}</information>
+
 </protocol>
