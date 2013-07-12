@@ -13,7 +13,7 @@
 
   <assign>
     <lhs>z</lhs>
-    <rhs>{thing: y[0]+2}</rhs>
+    <rhs>{thing: %{y}[0]+2}</rhs>
   </assign>
 
   <information>Based on the number you entered, y=%{y} and z=%{z}.</information>
