@@ -1,0 +1,21 @@
+<protocol>
+
+  <argument>
+    <name>x</name>
+    <type>number</type>
+    <description>An integral argument to the protocol</description>
+  </argument>
+
+  <assign>
+    <lhs>y</lhs>
+    <rhs>[%{x},%{x}+1]</rhs>
+  </assign>
+
+  <assign>
+    <lhs>z</lhs>
+    <rhs>{thing: y[0]+2}</rhs>
+  </assign>
+
+  <information>Based on the number you entered, y=%{y} and z=%{z}.</information>
+
+</protocol>
