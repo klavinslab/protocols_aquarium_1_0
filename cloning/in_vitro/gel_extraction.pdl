@@ -5,15 +5,76 @@
 	</information>
 	
 	<take>
-		<object></object>
-		<quantity></quantity>
-		<var></var>
+		<object>Transluminator</object>
+		<quantity>1</quantity>
+		<var>light_box</var>
 	</take>
-	
-	
-	
-	
-	
+	<take>
+		<object>Balance</object>
+		<quantity>1</quantity>
+		<var>balance</var>
+	</take>	
+	<take>
+		<object>50C Heat Block</object>
+		<quantity>1</quantity>
+		<var>heat</var>
+	</take>	
+	<take>
+		<object>Vortex</object>
+		<quantity>1</quantity>
+		<var>vortex</var>
+	</take>	
+	<take>
+		<object>Nanodrop</object>
+		<quantity>1</quantity>
+		<var>nanodrop</var>
+	</take>
+	<take>
+		<object>Finished Gel</object>
+		<quantity>1</quantity>
+		<var>gel</var>
+	</take>
+	<take>
+		<object>razer Blade</object>
+		<quantity>1</quantity>
+		<var>razer</var>
+	</take>	
+	<take>
+		<object>Epindorph Tube</object>
+		<quantity>2</quantity>
+		<var>[tubeA, tubeB]</var>
+	</take>	
+	<take>
+		<object>QG Buffer</object>
+		<quantity>1</quantity>
+		<var>QG</var>
+	</take>	
+	<take>
+		<object>Sodium Acetate</object>
+		<quantity>1</quantity>
+		<var>sodium_acetate</var>
+	</take>
+	<take>
+		<object>Isopropanol</object>
+		<quantity>1</quantity>
+		<var>isopropanol</var>
+	</take>
+	<take>
+		<object>Gel Extraction Spin Column</object>
+		<quantity>1</quantity>
+		<var>column</var>
+	</take>
+	<take>
+		<object>PE Buffer</object>
+		<quantity>1</quantity>
+		<var>PE</var>
+	</take>
+	<take>
+		<object>Elution Buffer</object>
+		<quantity>1</quantity>
+		<var>elution_buffer</var>
+	</take>	
+
 	
 	<step>
 		<description></description>
