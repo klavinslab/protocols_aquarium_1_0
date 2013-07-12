@@ -1,0 +1,17 @@
+<protocol>
+
+  <argument>
+    <name>x</name>
+    <type>number</type>
+    <description>A numerical argument to the protocol</description>
+  </argument>
+
+  <argument>
+    <name>s</name>
+    <type>string</type>
+    <description>A string argument to the protocol</description>
+  </argument>
+
+  <information>The arguments to this protocol are x=%{x} and s=%{x}</information>
+
+</protocol>
