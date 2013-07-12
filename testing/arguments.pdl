@@ -18,6 +18,6 @@
     <description>A string argument to the protocol</description>
   </argument>
 
-  <information>The arguments to this protocol are x=%{x}, y = %{y}, and s=%{x}</information>
+  <information>The arguments given to this protocol were x=%{x}, y = %{y}, and s=%{x}.</information>
 
 </protocol>
