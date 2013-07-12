@@ -6,9 +6,10 @@
     <var>A</var>
   </take>
 
+  <assign><lhs>num</lhs><rhs>%{A}.length</rhs></assign>
   <assign><lhs>method</lhs><rhs>%{A}[0][:object][:release_method]</rhs></assign>
 
-  <information>First object release method: %{method}.</information>
+  <information>%{num} objects taken. First object release method: %{method}.</information>
 
   <release>%{A}</release>
   
