@@ -2,7 +2,7 @@
 
     <argument>
       <name>object</name>
-      <type>number</type>
+      <type>string</type>
       <description>An object to take from the IMS</description>
     </argument>
 
