@@ -6,10 +6,14 @@
     <var>A</var>
   </take>
 
-  <information>First object release method is #{%{A}[0][:object][:release_method]}.</information>
+  <assign><lhs>method</lhs><rhs>%{A}[0][:object][:release_method]</rhs></assign>
+
+  <information>First object release method: %{method}.</information>
 
   <release>A</release>
+  
+  <assign><lhs>released</lhs><rhs>%{A}[0][:object][:released]</rhs></assign>
 
-  <information>First object release flag is #{%{A}[0][:object][:released]}.</information>
+  <information>First object release flag is %{released}.</information>
 
 </protocol>
