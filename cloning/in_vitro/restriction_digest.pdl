@@ -7,19 +7,26 @@
   <take>
     <object>Molecular grade water</object>
     <quantity>x ml </quantity>
-    
+  </take>
+  
+  <take>
     <object>Restriction enzyme</object>
     <quantity> x items </quantity>
-
+  </take>
+  
+  <take>
     <object>NEB Buffer 1, 2, 3 or 4 10x enzyme</object>
     <quantity> x ml </quantity>
- 
+  </take>
+  
+  <take>
     <object>MP or PCR DNA</object>
     <quantity> x mg </quantity>
-
+  </take>
+  
+  <take>
     <object>BSA</object>
     <quantity> x ml </quantity>
-    
   </take>
 
   <step>
@@ -52,7 +59,9 @@
   <produce>
     <object>Linearized DNA fragment</object>
     <quantity>y pieces</quantity>
-
+  </produce>
+  
+  <produce>
     <object>Linearized DNA fragment</object>
     <quantity>y pieces</quantity>
   </produce>
