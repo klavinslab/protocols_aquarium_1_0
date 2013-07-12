@@ -1,0 +1,71 @@
+<protocol name="Start overnight">
+
+  <information>
+    This protocol describes the process of starting an E.coli overnight culture. 
+  </information>
+
+  <take>
+    <object>Culture tube</object>
+    <quantity>1 item</quantity>
+  </take>
+  
+  <take>
+    <object>37C degree shaker incubator</object>
+    <quantity></quantity>
+  </take>
+
+  <take>
+    <object>Broth (minimal, LB, or TB)</object>
+    <quantity>3 to 5 ml</quantity>
+  </take>
+  
+  <take>
+    <object>Antibiotic(s) (Amp, Kan, Chlor and/or Carb)</object>
+    <quantity>1x</quantity>
+  </take>
+  
+  <take>
+    <object>Inducer(s) (IPTG, aTc)</object>
+    <quantity>1x</quantity>
+  </take>
+  
+  <take>
+    <object>Bacterial cells</object>
+    <quantity>1x</quantity>
+    <var> 1 plate colony, 1 glycerol srape, 1 uL from liquid culture </var>
+  </take>
+  
+  
+  <step>
+    <description>Use serological pipette to add broth to culture tube</description>
+    <note>    </note>
+    <warning></warning>
+  </step>
+
+  <step>
+    <description>Add antibiotics and inducers (if any) and mix gently</description>
+    <note></note>
+    <warning></warning>
+  </step>
+
+  <step>
+    <description> Add cells and attach lid loosely for good aeration </description>
+  </step>
+  
+  <step> 
+    <description>Place in a tube rack in 37C shaker incubator overnight </description>
+  </step>
+
+
+  <produce>
+    <object>Overnight culture</object>
+    <quantity>x tubes</quantity>
+  </produce>
+  
+  
+  <release>
+    <var></var>
+  </release>
+
+
+</protocol>
