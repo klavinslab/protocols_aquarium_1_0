@@ -21,6 +21,6 @@
   
   <assign><lhs>released</lhs><rhs>%{A}[0][:object][:released]</rhs></assign>
 
-  <information>First object release flag is %{released}.</information>
+  <information>Objects released.</information>
 
 </protocol>
