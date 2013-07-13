@@ -6,12 +6,18 @@
     <var>A</var>
   </take>
 
+  <take>
+    <object>Pretri Dish</object>
+    <quantity>1</quantity>
+    <var>B</var>
+  </take>
+
   <assign><lhs>num</lhs><rhs>%{A}.length</rhs></assign>
   <assign><lhs>method</lhs><rhs>%{A}[0][:object][:release_method]</rhs></assign>
 
-  <information>%{num} objects taken. First object release method: %{method}.</information>
+  <information>%{num} Bottlestaken. First object release method: %{method}.</information>
 
-  <release>%{A}</release>
+  <release>[%{A}[0],%{A}[1],%B[0]]</release>
   
   <assign><lhs>released</lhs><rhs>%{A}[0][:object][:released]</rhs></assign>
 
