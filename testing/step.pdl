@@ -2,31 +2,48 @@
 
   <step>
 
-  <description>Transfer 1 mL of 1 M Magnesium Sulfate to the 50 mL Falcon tube.</description>
+    <description>Transfer 1 mL of 1 M Magnesium Sulfate to the 50 mL Falcon tube.</description>
   
-  <note>Use the serological pipettor and a 2 mL serological pipette. 
+    <note>Use the serological pipettor and a 2 mL serological pipette. 
     After aspirating, be sure to wipe as much Magnesium Sulfate off of 
     the outside of the pipette as possible. Dispense as much Magnesium 
     Sulfate as possible, then wait 30 seconds, and dispense whatever 
     Magnesium Sulfate drains to the bottom of the pipette.
-  </note>
+    </note>
   
-  <warning>
+    <warning>
     If anything participated out of the solution, you'll need to discard
     whatever was made in this protocol, make new MgS04 1M solution, and
     start this protocol over.
-  </warning>
+    </warning>
 
-  <getdata>
-    <var>x</var>
-    <description>A variable representing something important.</description>
-  </getdata>
+    <getdata>
+      <var>x</var>
+      <type>string</type>
+      <description>A string representing something important.</description>
+    </getdata>
 
-  <getdata>
-    <var>y</var>
-    <description>Another variable.</description>
-  </getdata>
+    <getdata>
+      <var>y</var>
+      <type>number</type>
+      <description>A number.</description>
+    </getdata>
 
+    <select>
+      <var>z</var>
+      <description>You have choices to make.</description>
+      <choice>First</choice>
+      <choice>Second</choice>
+      <choice>Third</choice>
+    </select>
+
+  </step>
+
+  <step>
+    <description>Thank you</description>
+    <note>
+       x = %{x}, y=%{y}, and z=%{z}.
+    </note>
   </step>
 
 </protocol>
