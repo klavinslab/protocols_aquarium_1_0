@@ -1,6 +1,6 @@
 <protocol>
   <produce>
-        <object>1000_mL_Bottle</object>
+        <object>1000 mL Bottle</object>
         <quantity>1</quantity>
   </produce>
 </protocol>
