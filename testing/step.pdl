@@ -20,7 +20,7 @@
     <getdata>
       <var>x</var>
       <type>string</type>
-      <description>A string representing something important.</description>
+      <description>A string representing something important</description>
     </getdata>
 
     <getdata>
@@ -31,7 +31,7 @@
 
     <select>
       <var>z</var>
-      <description>You have choices to make.</description>
+      <description>You have choices to make</description>
       <choice>First</choice>
       <choice>Second</choice>
       <choice>Third</choice>
