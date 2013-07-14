@@ -30,11 +30,12 @@
 
   <step>
     <description>Would you like to produce a bottle?</description>
-    <getdata>
+    <select>
       <var>answer</var>
-      <type>string</type>
       <description>Enter yes or no</description>
-    </getdata>
+      <choice>yes</choice>
+      <choice>no</choice>
+    </select>
   </step>
 
   <if>
@@ -49,7 +50,7 @@
       </produce>
 
       <step>
-        <description>Ok! Check the inventory. There should be a new bottle at %{new_location}</description>
+        <description>Ok! Check the inventory. There should be a new bottle at the location you specified.</description>
       </step>
 
     </then>
