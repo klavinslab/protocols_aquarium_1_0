@@ -1,7 +1,8 @@
 <protocol>
 
   <argument>
-    <var>object_name</var>
+    <name>object_name</name>
+    <type>string</type>
     <description>The name of object type you would like this protocol to use.</description>
   </argument>
 
@@ -13,14 +14,13 @@
     <var>b</var>
   </take>
 
-  <assign><var>name</var><value>%{b}[:object][:name]</value></assign>
-  <assign><var>loc</var> <value>%{b}[:item][:location]</value></assign>
+  <assign><lhs>name</lhs><rhs>%{b}[0][:object][:name]</rhs></assign>
+  <assign><lhs>loc</lhs> <rhs>%{b}[0][:item][:location]</rhs></assign>
 
   <step>
     <description>You took an object of type %{name} from location %{loc}.</description>
   </step>
 
-  <!-- Should the release tag be an expression instead of a var? -->
   <release>
     <var>%{b}</var>
   </release>
@@ -34,6 +34,7 @@
     <description>Would you like to produce a bottle?</description>
     <getdata>
       <var>answer</var>
+      <type>string</type>
       <description>Enter yes or no</description>
     </getdata>
   </step>
@@ -44,17 +45,8 @@
 
     <then>
 
-      <step>
-        <description>Enter the location you will put the bottle.</description>
-        <getdata>
-          <var>new_location</var>
-          <description>Enter location</description>
-        </getdata>
-      </step>
-
       <produce>
         <object>1000 mL Bottle</object>
-        <location>%{new_location}</location>
         <quantity>1</quantity>
       </produce>
 
@@ -78,8 +70,8 @@
     <description>Now let's print out the first few numbers in the Fibonacci sequence.</description>
   </step>
 
-  <assign><var>x</var><value>0</value></assign>
-  <assign><var>y</var><value>1</value></assign>
+  <assign><lhs>x</lhs><rhs>0</rhs></assign>
+  <assign><lhs>y</lhs><rhs>1</rhs></assign>
 
   <while>
     <condition>%{y} &lt; 100</condition>
@@ -90,9 +82,9 @@
         <then><step><description>Hey! y is getting pretty big!</description></step></then>
         <else><step><description>y is not such a big number ... yet!</description></step></else>
       </if>
-      <assign><var>temp</var><value>%{x}+%{y}</value></assign>
-      <assign><var>x</var><value>%{y}</value></assign>
-      <assign><var>y</var><value>%{temp}</value></assign>
+      <assign><lhs>temp</lhs><rhs>%{x}+%{y}</rhs></assign>
+      <assign><lhs>x</lhs><rhs>%{y}</rhs></assign>
+      <assign><lhs>y</lhs><rhs>%{temp}</rhs></assign>
     </do>
   </while>
 
