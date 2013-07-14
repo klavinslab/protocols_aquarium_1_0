@@ -21,9 +21,7 @@
     <description>You took an object of type %{name} from location %{loc}.</description>
   </step>
 
-  <release>
-    <var>%{b}</var>
-  </release>
+  <release>%{b}</release>
 
   <step>
     <description>Thank you for returning the %{name}.</description>
