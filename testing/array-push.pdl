@@ -2,7 +2,7 @@
 
   <assign><lhs>A</lhs><rhs>[]</rhs></assign>
   <step><description>1) A=%{A}</description></step>
-  <assign><lhs>A</lhs><rhs>A.push 1</rhs></assign>
+  <assign><lhs>A</lhs><rhs>%{A}.push 1</rhs></assign>
   <step><description>2) A=%{A}</description></step>
 
 
