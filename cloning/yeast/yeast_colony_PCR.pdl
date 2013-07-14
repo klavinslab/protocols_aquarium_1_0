@@ -1,1 +1,92 @@
-something
+<protocol name="Yeast Colony PCR">
+  <information>
+  	This prepares a yeast colony PCR results that can be used to run a gel and verify plasmid locus integration.
+  </information>
+  
+  <take>
+        <object>thermocycler</object>
+        <quantity>1</quantity>
+        <var>thermocycler</var>
+  </take> 
+
+  <take>
+        <object>dIH2O</object>
+        <quantity>1</quantity>
+        <var>dIH2O_tube</var>
+	</take>
+  
+  <take>
+        <object>Phusion Master Mix</object>
+        <quantity>1</quantity>
+        <var>tube</var>
+	</take> 
+  
+    
+  <take>
+        <object>Yeast Lysate</object>
+        <quantity>1</quantity>
+        <var>tube</var>
+  </take> 
+  
+  <take>
+        <object>primers</object>
+        <quantity>1</quantity>
+        <var>tube</var>
+  </take> 
+  
+  <take>
+        <object>PCR tube</object>
+        <quantity>1</quantity>
+        <var>tube</var>
+  </take> 
+  
+  <step>
+        <description>Label the pcr tube</description>
+        <note>Write <br />
+            <div class='label'>QCPCR<br />
+            id : ||$result$.id||<br />
+            date: ||(new Date()).toDateString()||
+            </div> <br />
+        on the PCR tube.
+        </note>
+  </step>
+  
+  <step>
+  Set up standard Phusion PCR mix as below. 
+  A typical QC PCR is a 10uL Phusion reaction: 
+  3.5uL MGH2O 0.5uL 
+  1/10X lysate 0.5uL 
+  primer 1 0.5uL 
+  primer 2 5uL 
+  Phusion Master Mix
+  </step>
+  
+  <step>
+  Set up thermal cycler: 3 min 98C 35 cycles of: 
+  10s 98C 20s primer Tm - 2 or -4C 
+  (e.g. for 72C primers, use 68C or 70C).3.5-4 minutes 72C (extension. Long time = more chance of getting product)
+  72C 
+  5 min Hold at 4C
+  </step>
+  
+  
+  <produce>
+        <object>a tube of yeast colony PCR result</object>
+        <quantity>1</quantity>
+        <location>TBD</location>
+        <var>result</var>
+  </produce>
+  
+  <release>
+        <var>thermocycler</var>
+        <var>dIH2O</var>
+        <var>Phusion Master Mix</var>
+        <var>Yeast Lysate</var>
+        <var>primers</var>
+        <var>PCR tube</var>
+  </release>
+  
+  <cleanup>
+  </cleanup>
+
+</protocol>
