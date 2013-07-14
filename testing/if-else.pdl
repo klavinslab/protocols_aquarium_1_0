@@ -37,11 +37,11 @@
   <if>
     <condition>true</condition>
     <then>
-      <step><description>C</description></step>
+      <step><description>D</description></step>
     </then>  
     <else></else>
   </if>
 
-  <step><description>D</description></step>
+  <step><description>E</description></step>
 
 </protocol>
