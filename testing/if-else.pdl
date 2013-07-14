@@ -1,0 +1,47 @@
+<protocol>
+
+  <if>
+    <condition>true</condition>
+    <then>
+      <step><description>A</description></step>
+    </then>
+    <else>
+       <step><description>XXX</description></step>
+    </else>
+  </if>
+
+  <if>
+    <condition>false</condition>
+    <then>
+      <step><description>XXX</description></step>
+    </then>
+    <else>
+       <step><description>B</description></step>
+    </else>
+  </if>
+
+  <if>
+    <condition>true</condition>
+    <then>
+      <step><description>C</description></step>
+    </then>  
+  </if>
+
+  <if>
+    <condition>false</condition>
+    <then>
+      <step><description>XXX</description></step>
+    </then>  
+  </if>
+
+  <if>
+    <condition>true</condition>
+    <then>
+      <step><description>C</description></step>
+    </then>  
+    <else></else>
+  </if>
+
+  <step><description>D</description></step>
+
+</protocol>
