@@ -282,7 +282,7 @@
                 <image>TransferGraduatedTo500mL</image>
             </step>
             
-            <assign><lhs>i</lhs><rhs>%{i}+2</rhs></assign>
+            <assign><lhs>i</lhs><rhs>%{i}+1</rhs></assign>
             
         </do>
         
