@@ -1,0 +1,124 @@
+<protocol name="DNA Sequencing">
+
+  <argument>
+    <name>DNA_type</name>
+    <type>string</type>
+    <description>Enter the DNA type (fragment or plasmid).</description>
+  </argument>
+
+  <argument>
+    <name>DNA_name</name>
+    <type>string</type>
+    <description>Enter the DNA sample name.</description>
+  </argument>
+
+  <argument>
+    <name>DNA_concentration</name>
+    <type>number</type>
+    <description>Enter the concentration of the DNA sample (ng/µL).</description>
+  </argument>
+  
+  <argument>
+    <name>DNA_length</name>
+    <type>number</type>
+    <description>Enter the length in base pairs of the DNA sample.</description>
+  </argument>
+
+  <assign><lhs>DNA_seq_vol</lhs><rhs>0</rhs></assign>
+
+  <if>
+    <condition>%{DNA_type} == 'plasmid'</condition>
+    <then>
+      <if>
+        <condition>%{DNA_length} &lt 6000</condition>
+        <then>
+          %{DNA_seq_vol} + 500 / %{DNA_concentration}
+        </then>
+        <else>
+          %{DNA_seq_vol} + 800 / %{DNA_concentration}
+        </else>
+      </if>
+    </then>
+    <else>
+      <if>
+        <condition>%{DNA_length} &lt 500</condition>
+        <then>
+          %{DNA_seq_vol} + 10 / %{DNA_concentration}
+        </then>
+        <else>
+          %{DNA_seq_vol} + 40 / %{DNA_concentration}
+        </else>
+      </if>
+    </else>
+  </if>
+
+  <information>
+    This protocol describes the process of preparing a DNA sample for sequencing through Genewiz. 
+  </information>
+
+  <take>
+    <object>PCR 12 Well Strip Tube</object>
+    <quantity>1</quantity>
+  </take>
+  
+  <take>
+    <object>%{DNA_name} Sample</object>
+    <quantity>1</quantity>
+  </take>
+  
+  <take>
+    <object>%{DNA_name} Sequencing Primer 10µM Aliquot</object>
+    <quantity>1</quantity>
+  </take>
+
+  <take>
+    <object>30mL Molecular Water Aliquot</object>
+    <quantity>1</quantity>
+  </take>
+  
+  <if>
+    <condition>%{DNA_type} == 'plasmid'</condition>
+    <then>
+      <step>
+        <description>Add </description>
+        <note></note>
+        <warning></warning>
+      </step>
+    </then>
+    <else>
+      
+      <step>
+        <description>Add  </description>
+        <note></note>
+        <warning></warning>
+      </step>
+    </else>
+  </step>
+
+  <step>
+    <description>Add antibiotics and inducers (if any) and mix gently</description>
+    <note></note>
+    <warning></warning>
+  </step>
+
+  <step>
+    <description> Add cells and attach lid loosely for good aeration </description>
+  </step>
+  
+  <step> 
+    <description>Place in a tube rack in 37C shaker incubator overnight </description>
+  </step>
+
+
+  <produce>
+    <object>Overnight culture</object>
+    <quantity>x tubes</quantity>
+  </produce>
+  
+  
+  <release>
+    <var></var>
+  </release>
+
+
+</protocol>
