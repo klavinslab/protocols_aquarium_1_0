@@ -1,6 +1,12 @@
 <protocol name="DNA Sequencing">
 
   <argument>
+    <name>replicates</name>
+    <type>number</type>
+    <description>Enter the number of sample replicates to be sequenced</description>
+  </argument>
+
+  <argument>
     <name>DNA_type</name>
     <type>string</type>
     <description>Enter the DNA type (fragment or plasmid).</description>
@@ -76,24 +82,8 @@
     <quantity>1</quantity>
   </take>
   
-  <if>
-    <condition>%{DNA_type} == 'plasmid'</condition>
-    <then>
-      <step>
-        <description>Add </description>
-        <note></note>
-        <warning></warning>
-      </step>
-    </then>
-    <else>
-      
-      <step>
-        <description>Add  </description>
-        <note></note>
-        <warning></warning>
-      </step>
-    </else>
-  </step>
+  <step>
+    <description>Add %{
 
   <step>
     <description>Add antibiotics and inducers (if any) and mix gently</description>
