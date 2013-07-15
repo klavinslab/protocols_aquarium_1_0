@@ -38,10 +38,10 @@
       <if>
         <condition>%{DNA_length} &lt 6000</condition>
         <then>
-          %{DNA_seq_vol} + 500 / %{DNA_concentration}
+          <assign><lhs>DNA_seq_vol</lhs><rhs>%{DNA_seq_vol} + 500 / %{DNA_concentration}</rhs></assign>
         </then>
         <else>
-          %{DNA_seq_vol} + 800 / %{DNA_concentration}
+          <assign><lhs>DNA_seq_vol</lhs><rhs>%{DNA_seq_vol} + 800 / %{DNA_concentration}</rhs></assign>
         </else>
       </if>
     </then>
@@ -49,14 +49,16 @@
       <if>
         <condition>%{DNA_length} &lt 500</condition>
         <then>
-          %{DNA_seq_vol} + 10 / %{DNA_concentration}
+          <assign><lhs>DNA_seq_vol</lhs><rhs>%{DNA_seq_vol} + 10 / %{DNA_concentration}</rhs></assign>
         </then>
         <else>
-          %{DNA_seq_vol} + 40 / %{DNA_concentration}
+          <assign><lhs>DNA_seq_vol</lhs><rhs>%{DNA_seq_vol} + 40 / %{DNA_concentration}</rhs></assign>
         </else>
       </if>
     </else>
   </if>
+
+  <assign><lhs>h2o_vol</lhs><rhs>15-2.5-%{DNA_seq_vol}</rhs></assign>
 
   <information>
     This protocol describes the process of preparing a DNA sample for sequencing through Genewiz. 
@@ -70,45 +72,87 @@
   <take>
     <object>%{DNA_name} Sample</object>
     <quantity>1</quantity>
+    <var>a</var>
   </take>
   
   <take>
     <object>%{DNA_name} Sequencing Primer 10µM Aliquot</object>
     <quantity>1</quantity>
+    <var>b</var>
   </take>
 
   <take>
     <object>30mL Molecular Water Aliquot</object>
     <quantity>1</quantity>
+    <var>c</var>
   </take>
   
   <step>
-    <description>Add %{
+    <description>Add %{DNA_seq_vol} to %{replicates} PCR Tube Wells</description>
+    <note> Cut off unused wells from the PCR 12 Well Strip Tube</note>
+    <warning></warning>
+  </step>
 
   <step>
-    <description>Add antibiotics and inducers (if any) and mix gently</description>
+    <description>Add 2.5µL of %{DNA_name} Sequencing Primer 10µM Aliquot to the %{replicates} PCR Tube Wells</description>
+    <note></note>
+    <warning>Must use the 10µM primer aliquot and not the undilute sequencing primer stock</warning>
+  </step>
+
+  <step>
+    <description>Add %{h2o_vol}µL of molecular water to the to the %{replicates} PCR Tube Wells</description>
+    <note></note>
+    <warning></warning>
+  </step>
+  
+  <step> 
+    <description>Write your first and last initials followed by the sample number starting at 1 and ending at %{replicates} on the side of each tube</description>
+    <note>If my name was Jon Doe, each tube would have the following written on it "JD01, JD02, JD03..."</note>
+    <warning></warning>
+  </step>
+
+  <step>
+    <description>Set up an order form at www.genewiz.com</description>
+    <note>The Klavins Lab's quote number is: MS0721101</note>
+    <warning>
+      <br>If you do not have a Genewiz account, get a referral from someone with an account (5 free reactions for you, other rewards for them) or sign up.</br>  
+      <br>Required information:</br>
+	    <br>PI/Group Leader: Eric Klavins</br>
+	    <br>Institution Name: University of Washington Institution</br>
+	    <br>Type: Academic Department - Electrical Engineering</br>
+	    <br>Work Phone: your number or 206-221-0941 (B040 lab number) or 206-552-9869 (soslab.general Google Voice number)</br>
+	    <br>Billing and Lab shipping address:</br>
+	    <br>University of Washington Street address: 185 Stevens Way Paul Allen Center Room AE100R Box 352500 Seattle, WA 98195-2500</br>
+	    <br>Bill to: Jack Lockhart at University of Washington</br>
+    </warning>
+  </step>
+
+  <step>
+    <description>Print out oder conformation form</description>
     <note></note>
     <warning></warning>
   </step>
 
   <step>
-    <description> Add cells and attach lid loosely for good aeration </description>
-  </step>
-  
-  <step> 
-    <description>Place in a tube rack in 37C shaker incubator overnight </description>
+    <description>Place the labled PCR well tubes and the printer order confirmation sheet into a clear plastic ziplock bag and seel it</description>
+    <note>The printed order confirmation can be folded and placed into the ziplock bag</note>
+    <warning></warning>
   </step>
 
+  <step>
+    <description>Place ziplock back into the genewiz dropoff mailbox located at xx</description>
+    <note>Orders will be picked up at 4:00pm each day and results will be delieverd to the account used to place the order by 1am the following day</note>
+    <warning></warning>
+  </step>
 
   <produce>
-    <object>Overnight culture</object>
-    <quantity>x tubes</quantity>
-  </produce>
-  
-  
-  <release>
-    <var></var>
-  </release>
+    <object>Sequence Order</object>
+    <quantity>1</quantity>
+  </produce>  
+
+  <release>%{a}</release>
+  <release>%{b}</release>
+  <release>%{c}</release>
 
 
 </protocol>
