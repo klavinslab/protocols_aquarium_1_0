@@ -242,11 +242,15 @@
     <while>    
         <condition>%{i}!= %{labels}.length</condition>    
         <do>
-        
+ 
+	    <assign><lhs>cur_ingredient</lhs><rhs>%{ingredients}[%{i}]</rhs></assign>
+	    <assign><lhs>cur_amount</lhs><rhs>%{amounts}[%{i}]</rhs></assign>
+	    <assign><lhs>cur_label</lhs><rhs>%{labels}[%{i}]</rhs></assign>
+ 
             <step>
-                <description>Measure #{%{amounts}[%{i}]} of #{%{ingredients}[%{i}]}</description>
+                <description>Measure %{cur_amount} of %{cur_ingredient}</description>
                 <note>Place the plastic boat on the scale. Zero the scale. 
-		      Using the spatula, measure #{%{amounts}[%{i}]} of #{%{ingredients}[%{i}]} 
+		      Using the spatula, measure %{cur_amount} of %{cur_ingredient} 
 		      into the plastic boat.
                       Use a kimwipe to clean the spatula.
 		</note>
@@ -255,11 +259,11 @@
                 
             <step>
                 <description>
-                    Transfer the #{%{ingredients}[%{i}]} to the bottle labeled #{%{labels}[%{i}]}.
+                    Transfer the %{cur_ingredient} to the bottle labeled %{cur_label}.
                 </description>
                 <note>
-                Remove the top of the 500 mL bottle labeled #{%{labels}[%{i}]} and pour
-                the #{%{ingredients}[%{i}]} into the bottle. Dispose of the plastic boat.
+                Remove the top of the 500 mL bottle labeled %{cur_label} and pour
+                the %{cur_ingredient} into the bottle. Dispose of the plastic boat.
                 </note>
                 <image>PourDry500mL</image>
             </step>
@@ -276,8 +280,8 @@
                     Transfer and mix.            
                 </description>
                 <note>
-                    Pour the water from the cylinder into the bottle labeled #{%{labels}[%{i}]},
-                    return the top, and shake the bottle to mix in the #{%{ingredients}[%{i}]}.
+                    Pour the water from the cylinder into the bottle labeled %{cur_label},
+                    return the top, and shake the bottle to mix in the %{cur_ingredient}.
                 </note>
                 <image>TransferGraduatedTo500mL</image>
             </step>
