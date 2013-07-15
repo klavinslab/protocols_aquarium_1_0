@@ -19,8 +19,8 @@
 
   <release>[%{A}[0],%{A}[1],%{B}[0]]</release>
   
-  <assign><lhs>released</lhs><rhs>%{A}[0][:object][:released]</rhs></assign>
-
   <information>Objects released.</information>
 
 </protocol>
+
+
