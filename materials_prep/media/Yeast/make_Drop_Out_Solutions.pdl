@@ -96,9 +96,6 @@
 	  </do>
 	</while>
       </then>
-      <else>
-	<step><description>Not making any Trp</description></step>
-      </else>
     </if>
 
     <if>
@@ -138,10 +135,7 @@
            <assign><lhs>k</lhs><rhs>%{k}+1</rhs></assign>
           </do>
         </while>
-      </then>
-      <else>
-	<step><description>Not making any His</description></step>
-      </else>
+      </then> 
     </if>
 
     <if>
@@ -183,9 +177,6 @@
           </do>
         </while>
       </then>
-      <else>
-	<step><description>Not making any Leu</description></step>
-      </else>
     </if>
 
     <if>
@@ -226,9 +217,6 @@
           </do>
         </while>
       </then>
-      <else>
-	<step><description>Not making any Ura</description></step>
-      </else>
     </if>
 
     <assign>
@@ -327,9 +315,6 @@
           <quantity>%{Trp}</quantity>
         </produce>
       </then>
-      <else>
-        <step><description>Protocol did not make any Trp</description></step>
-      </else>
     </if>
 
     <if>
@@ -340,9 +325,6 @@
           <quantity>%{His}</quantity>
         </produce>    
       </then>
-      <else>
-        <step><description>Protocol did not make any His</description></step>
-      </else>
     </if>
 
     <if>
@@ -353,9 +335,6 @@
           <quantity>%{Leu}</quantity>
         </produce>    
       </then>
-      <else>
-        <step><description>Protocol did not make any Leu</description></step>
-      </else>
     </if>
 
     <if>
@@ -366,9 +345,6 @@
           <quantity>%{Ura}</quantity>
         </produce>    
       </then>
-      <else>
-        <step><description>Protocol did not make any Ura</description></step>
-      </else>
     </if>
 
     <release>
@@ -388,9 +364,6 @@
             %{trp_powder}
         </release>
       </then>
-      <else>
-	<step><description>Protocol did not make any Trp</description></step>
-      </else>
     </if>
     <if>
       <condition>%{His} &gt; 0</condition>
@@ -399,9 +372,6 @@
             %{his_powder}
         </release>
       </then>
-      <else>
-	<step><description>Protocol did not make any His</description></step>
-      </else>
     </if>
     <if>
       <condition>%{Leu} &gt; 0</condition>
@@ -410,9 +380,6 @@
             %{leu_powder}
         </release>
       </then>
-      <else>
-	<step><description>Protocol did not make any Leu</description></step>
-      </else>
     </if>
     <if>
       <condition>%{Ura} &gt; 0</condition>
@@ -421,9 +388,6 @@
             %{ura_powder}
         </release>
       </then>
-      <else>
-	<step><description>Protocol did not make any Ura</description></step>
-      </else>
     </if>
 
 </protocol>
