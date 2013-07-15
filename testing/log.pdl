@@ -1,0 +1,22 @@
+<protocol>
+
+  <information>Test the log capability</information>
+
+  <step>
+    <description>Enter a message to save to the log.</description>
+    <getdata>
+       <description>Message</description>
+       <type>string</type>
+       <var>msg</var>
+    </getdata>
+  </step>
+
+  <log>%{msg}</log>
+
+  <step>
+    <description>Ok.</description>
+    <note>The message '%{msg}' was saved to the log. You can go to the log for this job to see if it is there.</note>
+  </step>
+
+
+</protocol>
