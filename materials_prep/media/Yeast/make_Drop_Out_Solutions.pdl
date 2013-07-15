@@ -368,20 +368,20 @@
     </if>
 
     <release>
-        <var>%{boats}</var>
+        %{boats}
     </release>
     <release>
-	<var>%{bottles}</var>
+	%{bottles}
     </release>
     <release>
-        <var>%{filter}</var>
+        %{filter}
     </release>
 
     <if>
       <condition>%{Trp} &gt; 0</condition>
       <then>
         <release>
-            <var>%{trp_powder}</var>
+            %{trp_powder}
         </release>
       </then>
       <else>
@@ -392,7 +392,7 @@
       <condition>%{His} &gt; 0</condition>
       <then>
         <release>
-            <var>%{his_powder}</var>
+            %{his_powder}
         </release>
       </then>
       <else>
@@ -403,7 +403,7 @@
       <condition>%{Leu} &gt; 0</condition>
       <then>
         <release>
-            <var>%{leu_powder}</var>
+            %{leu_powder}
         </release>
       </then>
       <else>
@@ -414,7 +414,7 @@
       <condition>%{Ura} &gt; 0</condition>
       <then>
         <release>
-            <var>%{ura_powder}</var>
+            %{ura_powder}
         </release>
       </then>
       <else>
