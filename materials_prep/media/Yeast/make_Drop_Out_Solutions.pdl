@@ -1,26 +1,26 @@
 <protocol name="Yeast Dropout Solutions">
 
     <argument>
-      <var>Trp</var>
-      <type>num</type>
+      <name>Trp</name>
+      <type>number</type>
       <description>Enter the number of bottles of Trp you wish to make.</description>
     </argument>
 
     <argument>
-      <var>His</var>
-      <type>num</type>
+      <name>His</name>
+      <type>number</type>
       <description>Enter the number of bottles of His you wish to make.</description>
     </argument>
 
     <argument>
-      <var>Leu</var>
-      <type>num</type>
+      <name>Leu</name>
+      <type>number</type>
       <description>Enter the number of bottles of Leu you wish to make.</description>
     </argument>
 
     <argument>
-      <var>Ura</var>
-      <type>num</type>
+      <name>Ura</name>
+      <type>number</type>
       <description>Enter the number of bottles of Ura you wish to make.</description>
     </argument>
 
@@ -30,14 +30,14 @@
         and the Uracil solution is 2.5 mg / mL.
     </information>
 
-  <assign><var>ingredients</var><value>[]</value></assign>
+  <assign><lhs>ingredients</lhs><rhs>[]</rhs></assign>
 
-  <assign><var>labels</var><value>[]</value></assign>
-  <assign><var>amounts</var><value>[]</value></assign>
+  <assign><lhs>labels</lhs><rhs>[]</rhs></assign>
+  <assign><lhs>amounts</lhs><rhs>[]</rhs></assign>
 
     <assign>
-        <var>total</var>
-        <value>%{Trp}+%{His}+%{Leu}+%{Ura}</value>
+        <lhs>total</lhs>
+        <rhs>%{Trp}+%{His}+%{Leu}+%{Ura}</rhs>
     </assign>
 
     <take>
@@ -76,23 +76,23 @@
             	      labels may come off when the bottles are put in the heat bath.
             </warning>
 	</step>
-	<assign><var>j</var><value>0</value></assign>
+	<assign><lhs>j</lhs><rhs>0</rhs></assign>
 	<while>
 	  <condition>%{j} &lt;  %{Trp}</condition>
           <do>
             <assign>
-                <var>ingredients</var>
-	        <value>%{ingredients}.push('Tryptophan')</value>
+                <lhs>ingredients</lhs>
+	        <rhs>%{ingredients}.push('Tryptophan')</rhs>
             </assign>
             <assign>
-                <var>labels</var>
-	        <value>%{labels}.push('Trp')</value>
+                <lhs>labels</lhs>
+	        <rhs>%{labels}.push('Trp')</rhs>
             </assign>
             <assign>
-                <var>amounts</var>
-	        <value>%{amounts}.push('5g')</value>
+                <lhs>amounts</lhs>
+	        <rhs>%{amounts}.push('5g')</rhs>
             </assign>
-	    <assign><var>j</var><value>%{j}+1</value></assign>
+	    <assign><lhs>j</lhs><rhs>%{j}+1</rhs></assign>
 	  </do>
 	</while>
       </then>
@@ -119,23 +119,23 @@
             	      labels may come off when the bottles are put in the heat bath.
             </warning>
 	</step>
-        <assign><var>k</var><value>0</value></assign>
+        <assign><lhs>k</lhs><rhs>0</rhs></assign>
         <while>
           <condition>%{k} &lt;  %{His}</condition>
           <do>
             <assign>
-              <var>ingredients</var>
-	      <value>%{ingredients}.push('Histidine')</value>
+              <lhs>ingredients</lhs>
+	      <rhs>%{ingredients}.push('Histidine')</rhs>
             </assign>
             <assign>
-              <var>labels</var>
-	      <value>%{labels}.push('His')</value>
+              <lhs>labels</lhs>
+	      <rhs>%{labels}.push('His')</rhs>
             </assign>
             <assign>
-              <var>amounts</var>
-	      <value>%{amounts}.push('5g')</value>
+              <lhs>amounts</lhs>
+	      <rhs>%{amounts}.push('5g')</rhs>
             </assign>
-           <assign><var>k</var><value>%{k}+1</value></assign>
+           <assign><lhs>k</lhs><rhs>%{k}+1</rhs></assign>
           </do>
         </while>
       </then>
@@ -162,24 +162,24 @@
             	      labels may come off when the bottles are put in the heat bath.
             </warning>
 	</step>
-        <assign><var>l</var><value>0</value></assign>
+        <assign><lhs>l</lhs><rhs>0</rhs></assign>
         <while>
           <condition>%{l} &lt;  %{Leu}</condition>
           <do>
 
         <assign>
-            <var>ingredients</var>
-	    <value>%{ingredients}.push('Leucine')</value>
+            <lhs>ingredients</lhs>
+	    <rhs>%{ingredients}.push('Leucine')</rhs>
         </assign>
         <assign>
-            <var>labels</var>
-	    <value>%{labels}.push('Leu')</value>
+            <lhs>labels</lhs>
+	    <rhs>%{labels}.push('Leu')</rhs>
         </assign>
         <assign>
-            <var>amounts</var>
-	    <value>%{amounts}.push('5g')</value>
+            <lhs>amounts</lhs>
+	    <rhs>%{amounts}.push('5g')</rhs>
         </assign>
-           <assign><var>l</var><value>%{l}+1</value></assign>
+           <assign><lhs>l</lhs><rhs>%{l}+1</rhs></assign>
           </do>
         </while>
       </then>
@@ -205,24 +205,24 @@
             	      labels may come off when the bottles are put in the heat bath.
             </warning>
 	</step>
-        <assign><var>m</var><value>0</value></assign>
+        <assign><lhs>m</lhs><rhs>0</rhs></assign>
         <while>
           <condition>%{m} &lt;  %{Ura}</condition>
           <do>
 
         <assign>
-            <var>ingredients</var>
-	    <value>%{ingredients}.push('Uracine')</value>
+            <lhs>ingredients</lhs>
+	    <rhs>%{ingredients}.push('Uracine')</rhs>
         </assign>
         <assign>
-            <var>labels</var>
-	    <value>%{labels}.push('Ura')</value>
+            <lhs>labels</lhs>
+	    <rhs>%{labels}.push('Ura')</rhs>
         </assign>
         <assign>
-            <var>amounts</var>
-	    <value>%{amounts}.push('2.5g')</value>
+            <lhs>amounts</lhs>
+	    <rhs>%{amounts}.push('2.5g')</rhs>
         </assign>
-           <assign><var>m</var><value>%{m}+1</value></assign>
+           <assign><lhs>m</lhs><rhs>%{m}+1</rhs></assign>
           </do>
         </while>
       </then>
@@ -231,22 +231,13 @@
       </else>
     </if>
 
-    <comment> loop over Trp, His, Leu, and Ura independently and with a step label a bottle
-	of each of those types for each iteration
-	also push the label into the label array each time
-	and push the ingredient into the ingredients array
-	and push the amount into the amounts array
-    </comment>
- 
     <assign>
-	<var>count</var>
-	<value>0</value>
+	<lhs>count</lhs>
+	<rhs>0</rhs>
     </assign>
 
-    <assign><var>i</var><value>0</value></assign>
+    <assign><lhs>i</lhs><rhs>0</rhs></assign>
     
-
-    <comment>while condition below should be %{i}!=#{labels.length}</comment>
 
     <while>    
         <condition>%{i}!= %{labels}.length</condition>    
@@ -291,7 +282,7 @@
                 <image>TransferGraduatedTo500mL</image>
             </step>
             
-            <assign><var>i</var><value>%{i}+2</value></assign>
+            <assign><lhs>i</lhs><rhs>%{i}+2</rhs></assign>
             
         </do>
         
@@ -323,9 +314,6 @@
         <image>BottleFilterOnBottle</image>
     </step>
     
-    <comment>Each produce statement should be wrapped in an if statement, 
-	because we dont want to produce 0</comment>
-
 
     <if>
       <condition>%{Trp} &gt; 0</condition>
