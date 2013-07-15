@@ -1,6 +1,6 @@
 <protocol>
 
-  <information>Test the log capability</information>
+  <information>A test of the log capability</information>
 
   <step>
     <description>Enter a message to save to the log.</description>
@@ -11,7 +11,7 @@
     </getdata>
   </step>
 
-  <log>%{msg}</log>
+  <log><type>MESSAGE</type><data>%{msg}</data></log>
 
   <step>
     <description>Ok.</description>
