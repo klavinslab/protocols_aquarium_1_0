@@ -89,26 +89,26 @@
   </take>
   
   <step>
-    <description>Add %{DNA_seq_vol} to %{replicates} PCR Tube Wells</description>
+    <description>Add %{DNA_seq_vol} of %{DNA_name} sample to %{replicates} PCR Tube Well(s).</description>
     <note> Cut off unused wells from the PCR 12 Well Strip Tube</note>
     <warning></warning>
   </step>
 
   <step>
-    <description>Add 2.5µL of %{DNA_name} Sequencing Primer 10µM Aliquot to the %{replicates} PCR Tube Wells</description>
+    <description>Add 2.5µL of the %{DNA_name} Sequencing Primer 10µM Aliquot to %{replicates} PCR Tube Well(s).</description>
     <note></note>
     <warning>Must use the 10µM primer aliquot and not the undilute sequencing primer stock</warning>
   </step>
 
   <step>
-    <description>Add %{h2o_vol}µL of molecular water to the to the %{replicates} PCR Tube Wells</description>
+    <description>Add %{h2o_vol}µL of molecular water to the to %{replicates} PCR Tube Well(s).</description>
     <note></note>
     <warning></warning>
   </step>
   
   <step> 
     <description>Write your first and last initials followed by the sample number starting at 1 and ending at %{replicates} on the side of each tube</description>
-    <note>If my name was Jon Doe, each tube would have the following written on it "JD01, JD02, JD03..."</note>
+    <note>If my name was Jon Doe, the PCR tubes would have the following written on them "JD01, JD02, JD03..."</note>
     <warning></warning>
   </step>
 
