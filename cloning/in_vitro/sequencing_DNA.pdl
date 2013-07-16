@@ -103,12 +103,12 @@
   </step>
   
   <step> 
-    <description>Write your first and last initials followed by the sample number starting at 1 and ending at %{replicates} on the side of each tube</description>
+    <description>Write your first and last initials followed by the sample number starting at 1 and ending at %{replicates} on the side of each tube.</description>
     <note>If my name was Jon Doe, the PCR tubes would have the following written on them "JD01, JD02, JD03..."</note>
   </step>
 
   <step>
-    <description>Set up an order form at www.genewiz.com</description>
+    <description>Set up a sequencing order at www.genewiz.com.</description>
     <note>The Klavins Lab's quote number is: MS0721101</note>
     <warning>
       If you do not have a Genewiz account, get a referral from someone with an account (5 free reactions for you, other rewards for them) or sign up. 
@@ -123,16 +123,16 @@
   </step>
 
   <step>
-    <description>Print out the order conformation form</description>
+    <description>Print out the order conformation form.</description>
   </step>
 
   <step>
-    <description>Place the labled PCR tubes and the printed order confirmation sheet into a clear plastic ziplock bag and seel it</description>
+    <description>Place the labled PCR tubes and the printed order confirmation sheet into a clear plastic ziplock bag and seal it.</description>
     <note>The order confirmation can be folded in order to place it into the ziplock bag</note>
   </step>
 
   <step>
-    <description>Place the ziplock bag into the Genewiz mailbox located at xx</description>
+    <description>Place the ziplock bag into the Genewiz mailbox located at xx.</description>
     <note>Orders will be picked up at 4:00pm each day and results will be delieverd to the account used to place the order by 1am the following day</note>
   </step>
 
@@ -141,6 +141,6 @@
     <quantity>1</quantity>
   </produce>  
 
-  <release>[%{a},%{b},%{c},%{d}]</release>
+  <release>%{a},%{b},%{c},%{d}</release>
 
 </protocol>
