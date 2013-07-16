@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<protocol name="Gibson Assembly">
+<!-- It is not clear how you're supposed to use arrays...
+-->
+<argument>
+  <name>fragment_n</name>
+  <type>number</type>
+  <description>Enter the number of fragments being assembled.</description>
+</argument>
+
+<assign>
+  <lhs>water</lhs>
+  <rhs>5.0</rhs>
+</assign>
+<assign>
+  <lhs>counter1</lhs>
+  <rhs>1</rhs>
+</assign>
+<while>
+  <condition>%{counter1} &le; %{fragment_n}</condition>
+  <do>
+    <assign>
+      <name>fragment_%{counter1}</name>
+      <type>string</type>
+      <description>Enter the ID of fragment %{counter1}</description>
+    </assign>
+    <assign>
+      <name>fragment_vol_%{counter1}</name>
+      <type>number</type>
+      <description>Enter volume of fragment to add in µL</description>
+    </assign>
+    <assign>
+      <lhs>counter1</lhs>
+      <rhs>%{counter1} + 1</rhs>
+    </assign>
+    <assign>
+      <lhs>water</lhs>
+      <rhs>%{water} - %{fragment_vol_%{counter1}}</rhs>
+    </assign>
+  </do>
+</while>
+
+<information>Scarlessly assemble DNA using terminal fragment homologies</information>
+<take>
+  <object>Gibson aliquot 15µL</object>
+  <quantity>1</quantity>
+  <var>gibson</var>
+</take>
+
+<step>
+  <description>Thaw Gibson aliquot, store on ice block</description>
+</step>
+<step>
+  <description>Spin down Gibson aliquot for 2 seconds on tabletop mini centrifuge</description>
+  <note>Return to ice block afterwards</note>
+</step>
+
+<assign>
+  <lhs>counter2</lhs>
+  <rhs>1</rhs>
+</assign>
+<while>
+  <condition>%{counter2} &le; %{fragment_n}</condition>
+  <do>
+    <take>
+      <object>fragment_%{counter2}</object>
+      <quantity>1</quantity>
+      <var>fragment__%{counter2}</var>
+    </take>
+    <assign>
+      <lhs>counter2</lhs>
+      <rhs>%{counter2} + 1</rhs>
+    </assign>
+  </do>
+</while>
+
+<assign>
+  <lhs>counter3</lhs>
+  <rhs>1</rhs>
+</assign>
+<while>
+  <condition>%{counter3} &le; %{fragment_n}</condition>
+  <do>
+    <step>
+      <description>Add %{fragment_vol_%{counter3}} µL of %{fragment__%{counter3}} to Gibson aliquot</description>
+    </step>
+    <assign>
+      <lhs>counter3</lhs>
+      <rhs>%{counter3} + 1</rhs>
+    </assign>
+  </do>
+</while>
+
+<step>
+  <description>Spin down the Gibson aliquot for 2s in a tabletop mini centrifuge</description>
+</step>
+<step>
+  <description>Add tube to a heat block set to 50° C.</description>
+</step>
+<step>
+  <description>Incubate for 30-60 minutes</description>
+</step>
