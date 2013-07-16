@@ -28,10 +28,10 @@
 <argument>
   <name>template_len</name>
   <type>number</type>
-  <description>Enter the length of the template, in bp</description>
+  <description>Enter the length of the amplicon, in bp</description>
 </argument>
 
-<information>Description: Amplify a segment of DNA from a DNA or RNA template using Taq polymerase</information>
+<information>Amplify a segment of DNA from a DNA or RNA template using Taq polymerase</information>
 
 <take>
   <object>0.2mL Thin Wall Strip Well Tubes</object>
