@@ -58,7 +58,7 @@
     </else>
   </if>
 
-  <assign><lhs>h2o_vol</lhs><rhs>15-2.5-%{DNA_seq_vol}</rhs></assign>
+  <assign><lhs>h2o_vol</lhs><rhs>12.5-%{DNA_seq_vol}</rhs></assign>
 
   <information>
     This protocol describes the process of preparing a DNA sample for sequencing through Genewiz. 
