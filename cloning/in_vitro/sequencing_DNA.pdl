@@ -141,9 +141,6 @@
     <quantity>1</quantity>
   </produce>  
 
-  <release>%{a}</release>
-  <release>%{b}</release>
-  <release>%{c}</release>
-  <release>%{d}</release>
+  <release>[%{a}[0], %{b}[0], %{c}[0], %{d}[0]]</release>
 
 </protocol>
