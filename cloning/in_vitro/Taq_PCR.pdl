@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<protocol name="Taq PCR">
+<!-- TODO: How do I get or refer to a plasmid / primer with an ID?
+     TODO: Undefined Object types: template, primers
+     TODO: Unused vars: all of them?
+-->
+
+<argument>
+  <name>Template</name>
+  <type>string</type>
+  <description>Enter the template ID</description>
+</argument>
+<argument>
+  <name>Primer1</name>
+  <type>string</type>
+  <description>Enter the first primer ID</description>
+</argument>
+<argument>
+  <name>Primer2</name>
+  <type>string</type>
+  <description>Enter the second primer ID</description>
+</argument>
+<argument>
+  <name>taq_anneal</name>
+  <type>number</type>
+  <description>Enter the anneal temperature</description>
+</argument>
+<argument>
+  <name>template_len</name>
+  <type>number</type>
+  <description>Enter the length of the template, in bp</description>
+</argument>
+
+<information>Description: Amplify a segment of DNA from a DNA or RNA template using Taq polymerase</information>
+
+<take>
+  <object>0.2mL Thin Wall Strip Well Tubes</object>
+  <quantity>1</quantity>
+  <var>tube</var>
+</take>
+
+<step>
+  <description>Label a 0.2mL strip well tube.</description>
+  <note>Label with unique identifier, initials, and date</note>
+</step>
+      
+<take>
+  <object>Molecular Grade Water, 50mL aliquot</object>
+  <quantity>1</quantity>
+  <var>MGH2O</var>
+</take>
+
+<step>
+  <description>Pipet 19µL molecular grade water into the strip well tube.</description>
+</step>
+
+<take>
+  <object>Template DNA 1ng/µL</object>
+  <quantity>1</quantity>
+  <var>Template</var>
+</take>
+
+<step>
+  <description>Pipet 1µL diluted template DNA into the strip well tube.</description>
+</step>
+
+<take>
+  <object>Primer1</object>
+  <quantity>1</quantity>
+  <var>Primer1</var>
+</take>
+
+<step>
+  <description>Pipet 2.5µL of primer 1 into the strip well tube.</description>
+</step>
+
+<take>
+  <object>Primer2</object>
+  <quantity>1</quantity>
+  <var>Primer2</var>
+</take>
+
+<step>
+  <description>Pipet 2.5µL of primer 2 into the strip well tube.</description>
+</step>
+
+<take>
+  <object>Taq 2X Master Mix</object>
+  <quantity>1</quantity>
+  <var>Taq</var>
+</take>
+
+<step>
+  <description>Pipet 25µL of 2X Taq Master Mix into the strip well tube.</description>
+</step>
+
+<take>
+  <object>Thermal Cycler</object>
+  <quantity>1</quantity>
+  <var>ThermalCycler</var>
+</take>
+
+<step>
+  <description>Set first step to 98C for 5 min on thermal cycler</description>
+</step>
+
+<step>
+  <description>Select 35 cycles of denature, anneal, extend</description>
+</step>
+
+<step>
+  <description>Set denature step to 98C for 10s</description>
+</step>
+
+<step>
+  <description>Set anneal step to %{taq_anneal}C for 10s</description>
+</step>
+
+<step>
+  <description>Set extension step to 72C for %{template_len / 1000.0 * 20}s</description>
+</step>
+
+<step>
+  <description>Set final extension time to 72C for 5min</description>
+</step>
+
+<step>
+  <description>Hit 'run' on the thermal cycler and select 50µL setting, if applicable</description>
+</step>
