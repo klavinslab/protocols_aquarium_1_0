@@ -77,7 +77,8 @@
 
 		
 	<step>
-		<description>Cut fragment out of gel with razer and place in epindorph tube (cut as closely around the band as possible to minimize gel mass)</description>
+		<description>Cut fragment out of gel with razer and place in epindorph tube</description>
+		<note>Cut as closely around the band as possible to minimize gel mass</note>
 	</step>	
 	<step>
 		<description>Weigh gel slice on balance using an empty epindorph tube to tare</description>
@@ -86,10 +87,12 @@
 		<description>Add 3x gel volume of QG buffer (ex. a 50 mg gel would require 150 uL of QG buffer)</description>
 	</step>		
 	<step>
-		<description>Place tube in 50 C heat block for 10 minutes. Vortex every few minutes to speed up the process. Note: Check if tube contents look orange or purple. If so, the pH is too high and your DNA will not bind to the column. Add 10 uL of 3 M sodium acetate (NaOAc) and mix</description>
+		<description>Place tube in 50 C heat block for 10 minutes. Vortex every few minutes to speed up the process</description>
+		<note>Check if tube contents look orange or purple. If so, the pH is too high and your DNA will not bind to the column. Add 10 uL of 3 M sodium acetate (NaOAc) and mix</note>	
 	</step>	
 	<step>
-		<description>Add 1x volume (50 uL to 50 mg of gel slice) isopropanol. Pipette up and down to mix (do not centrifuge at this step). Note: this step is only necessary if purifying a band less than 500 bp or greater than 4 kb</description>
+		<description>Add 1x volume (50 uL to 50 mg of gel slice) isopropanol. Pipette up and down to mix (do not centrifuge at this step)</description>
+		<note>this step is only necessary if purifying a band less than 500 bp or greater than 4 kb</note>	
 	</step>
 	<step>
 		<description>Add tube contents to labeled purple Qiagen column. Spin at top speed (> 17,900 g) for 1 minute to bind DNA to column. Empty collection tube</description>
@@ -107,7 +110,8 @@
 		<description>Add 30 uL molecular grade water or EB elution buffer to center of column. Be very careful to not pipette on the wall of the tube. Wait two minutes. Elute DNA into Eppendorf tube by spinning at top speed (> 17,900 xg) for one minute</description>
 	</step>		
 	<step>
-		<description>Spec on Nanodrop to check DNA concentration. If the absorbance value at 230 nm is greater than 5, there are residual salts in the elution that are masking the amount of DNA you have. If a more accurate concentration is necessary for any downstream use, dialyze elution for 20-30 minutes at room temperature to remove residual salts. Re-spec on Nanodrop</description>
+		<description>Spec on Nanodrop to check DNA concentration. If the absorbance value at 230 nm is greater than 5, there are residual salts in the elution that are masking the amount of DNA you have</description>
+		<note>If a more accurate concentration is necessary for any downstream use, dialyze elution for 20-30 minutes at room temperature to remove residual salts. Re-spec on Nanodrop</note>
 	</step>		
 	
 	
