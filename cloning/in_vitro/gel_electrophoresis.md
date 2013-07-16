@@ -11,62 +11,53 @@ Description: Seperate DNA fragments by length for verification or purification
 
 ####Required equipment and materials####
 
-    * Pipettes
-        + Duration needed: x days/hours/min
-        + Location: (address)
     * 250ml flask
-        + Duration needed: x days/hours/min
+        + Duration needed: 10 min
         + Location: (address)
     * Balance
-        + Duration needed: x days/hours/min
+        + Duration needed: 1 min
         + Location: (address)
     * 100ml graduated cylinder
-        + Duration needed: x days/hours/min
+        + Duration needed: 1 min
         + Location: (address)
     * Microwave
-        + Duration needed: x days/hours/min
+        + Duration needed: 2 min
         + Location: (address)
     * Heat-resistant glove
-        + Duration needed: x days/hours/min
+        + Duration needed: 5 min
         + Location: (address)
     * Gel box
-        + Duration needed: x days/hours/min
+        + Duration needed: 2 min
         + Location: (address)
     * Comb (1 or 2)
-        + Duration needed: x days/hours/min
+        + Duration needed: 1 hour
         + Location: (address)      
     * Gel box power supply
-        + Duration needed: x days/hours/min
+        + Duration needed: 1 hour
         + Location: (address)   
     * Transluminator
-        + Duration needed: x days/hours/min
+        + Duration needed: 2 min
         + Location: (address)   
 
 -----------------------
 
-    * Gloves
-        + Quantity: x ml/mg/items
-        + Location: (address)
-    * Pipette tips
-        + Quantity: x ml/mg/items
-        + Location: (address)
     * Weigh paper
-        + Quantity: x ml/mg/items
+        + Quantity: 1
         + Location: (address)
     * Agarose
-        + Quantity: x ml/mg/items
+        + Quantity: 0.4-0.6 g
         + Location: (address)
     * TAE_1x
-        + Quantity: x ml/mg/items
+        + Quantity: 50 mL
         + Location: (address) 
     * GelGreen
-        + Quantity: x ml/mg/items
+        + Quantity: 5 uL
         + Location: (address)  
     * Loading dye
-        + Quantity: x ml/mg/items
+        + Quantity: 10 uL
         + Location: (address) 
     * Ladder
-        + Quantity: x ml/mg/items
+        + Quantity: 20 uL
         + Location: (address)  
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
