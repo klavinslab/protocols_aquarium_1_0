@@ -76,7 +76,7 @@
         </then>
     </if>
     <if>
-        <condition>${Trp}==1</condition> 
+        <condition>%{Trp}==1</condition> 
         <then>
             <take>  
                 <object>Triptophan Solution</object>
