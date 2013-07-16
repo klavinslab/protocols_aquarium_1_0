@@ -89,8 +89,8 @@
   </take>
   
   <step>
-    <description>Add %{DNA_seq_vol} of %{DNA_name} sample to %{replicates} PCR Tube Well(s).</description>
-    <note> Cut off unused wells from the PCR 12 Well Strip Tube</note>
+    <description>Add %{DNA_seq_vol}µL of %{DNA_name} sample to %{replicates} PCR Tube Well(s).</description>
+    <note>Cut off unused wells from the PCR 12 Well Strip Tube</note>
     <warning></warning>
   </step>
 
