@@ -26,9 +26,9 @@
   <description>Enter the anneal temperature</description>
 </argument>
 <argument>
-  <name>template_len</name>
+  <name>extension_time</name>
   <type>number</type>
-  <description>Enter the length of the amplicon, in bp</description>
+  <description>Enter the extension time, in seconds</description>
 </argument>
 
 <information>Amplify a segment of DNA from a DNA or RNA template using the high-fidelity Phusion polymerase</information>
@@ -117,7 +117,7 @@
 </step>
 
 <step>
-  <description>Set extension step to 72C for %{template_len / 1000.0 * 20}s</description>
+  <description>Set extension step to 72C for %{extension_time}s</description>
 </step>
 
 <step>
