@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <protocol name="Phusion PCR">
 <!-- TODO: How do I get or refer to a plasmid / primer with an ID?
-     TODO: Undefined Object types: template, primers
      TODO: Unused vars: all of them?
 -->
 
@@ -26,9 +25,9 @@
   <description>Enter the anneal temperature</description>
 </argument>
 <argument>
-  <name>extension_time</name>
+  <name>template_length</name>
   <type>number</type>
-  <description>Enter the extension time, in seconds</description>
+  <description>Enter the length of the amplicon in bp</description>
 </argument>
 
 <information>Amplify a segment of DNA from a DNA or RNA template using the high-fidelity Phusion polymerase</information>
@@ -115,6 +114,8 @@
 <step>
   <description>Set anneal step to %{phusion_anneal}C for 10s</description>
 </step>
+
+<assign><lhs>extension_time</lhs><rhs>%{template_length} / 1000.0 * 20</rhs></assign>
 
 <step>
   <description>Set extension step to 72C for %{extension_time}s</description>
