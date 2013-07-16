@@ -73,7 +73,7 @@
   <assign><lhs>y</lhs><rhs>1</rhs></assign>
 
   <while>
-    <condition>%{y} &lt; 100</condition>
+    <condition>%{y} &lt; 75</condition>
     <do>
       <step><description>In the while loop, y = %{y}.</description></step>
       <if>
