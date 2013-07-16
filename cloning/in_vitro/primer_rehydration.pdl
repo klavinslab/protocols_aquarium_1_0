@@ -45,7 +45,7 @@
   </produce>
   
   <release>
-    [TE]
+    %{TE}
   </release>
 
 </protocol>
