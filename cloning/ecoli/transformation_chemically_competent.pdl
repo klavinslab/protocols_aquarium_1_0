@@ -1,0 +1,65 @@
+<protocol name="Transformation - Chemically Competent E.coli">
+
+    <argument>
+      <name>Transformation</name>
+      <type>number</type>
+      <description>Enter the number of transformations you wish to do.</description>
+    </argument>
+
+    <information>
+        This protocols describes how to do transformations using chemically competent E.coli and plasmid DNA from mini preps, gibbons or gateways. 
+    </information>
+
+  <assign><lhs>total</lhs><rhs>%{Transformation}*10</rhs></assign>
+
+    <take>
+  <object>IceBlock</object>
+	<quantity>1</quantity>
+        <var>block</var>
+    </take>
+
+    <take>
+        <object>Frozen chemically competent E.coli aliquot</object>
+        <quantity>%{Transformation}</quantity>
+        <var>aliquots</var>
+    </take>
+
+    <take>
+        <object>SOB</object>
+        <quantity>%{total}</quantity>
+        <var>SOB</var>
+    </take> 
+
+	<step>
+	    <description>Thaw frozen chemically competent E. coli aliquots on ice (e.g. on top of blue cold block). </description>
+       	    <note>
+             Slushy or liquid consistency is desirable
+            </note>
+	</step>
+
+	<step>
+	    <description> Add DNA to aliquot (Miniprep: 25pg, Gibson: 2µL, Gateway: 2µL). Gently invert to mix</description>
+	</step>
+
+	<step>
+	    <description> Allow aliquot to sit on ice for 10-30 minutes.</description>
+	</step>
+
+	<step>
+	    <description> Heat shock cells at 42°C for 45 seconds.</description>
+	</step>
+
+	<step>
+	    <description> Add 900µL of SOB to rescue cells.</description>
+	</step>
+
+	<step>
+	    <description> If plating on ampicillin, 200µL of cells can be plated immediately. If plating on other antibiotics (kanamycin, chloramphenicol), allow cells to recover for 45-60 minutes before plating. If you expect low efficiency, the last ~800µL can be spun down, 600µL removed, and the rest of the cells plated on another plate.</description>
+	</step>
+ 
+  <release>
+	%{IceBlock}
+  </release>
+
+</protocol>
+
