@@ -5,12 +5,80 @@
 	</information>
 	
 	<take>
-		<object></object>
-		<quantity></quantity>
-		<var></var>
+		<object>250 mL Flask</object>
+		<quantity>1</quantity>
+		<var>flask</var>
 	</take>
-	
-	
+	<take>
+		<object>Balance</object>
+		<quantity>1</quantity>
+		<var>balance</var>
+	</take>	
+	<take>
+		<object>100mL Graduated Cylinder</object>
+		<quantity>1</quantity>
+		<var>graduated_cylinder</var>
+	</take>	
+	<take>
+		<object>Microwave</object>
+		<quantity>1</quantity>
+		<var>microwave</var>
+	</take>
+	<take>
+		<object>Heat-Resistant Glove</object>
+		<quantity>1</quantity>
+		<var>glove</var>
+	</take>	
+	<take>
+		<object>Gel Box</object>
+		<quantity>1</quantity>
+		<var>box</var>
+	</take>	
+	<take>
+		<object>Comb (L)</object>
+		<quantity>1</quantity>
+		<var>comb</var>
+	</take>		
+	<take>
+		<object>Gel Box Power Supply</object>
+		<quantity>1</quantity>
+		<var>power</var>
+	</take>		
+	<take>
+		<object>Transluminator</object>
+		<quantity>1</quantity>
+		<var>light</var>
+	</take>		
+	<take>
+		<object>Weigh Paper</object>
+		<quantity>1</quantity>
+		<var>paper</var>
+	</take>		
+	<take>
+		<object>Agarose</object>
+		<quantity>1</quantity>
+		<var>agar</var>
+	</take>		
+	<take>
+		<object>TAE 1x</object>
+		<quantity>1</quantity>
+		<var>TAE</var>
+	</take>			
+	<take>
+		<object>GelGreen</object>
+		<quantity>1</quantity>
+		<var>gelgreen</var>
+	</take>			
+	<take>
+		<object>Loading Dye</object>
+		<quantity>1</quantity>
+		<var>dye</var>
+	</take>			
+	<take>
+		<object>DNA Ladder</object>
+		<quantity>1</quantity>
+		<var>ladder</var>
+	</take>					
 	
 	
 	
@@ -26,15 +94,26 @@
 	
 	
 	<produce>
-		<object></object>
-		<quantity></quantity>
+		<object>Finished Gel</object>
+		<quantity>1</quantity>
 	</produce>
 	
 	<release>
-		<var></var>
-		<var></var>
-		<var></var>
+		<var>flask</var>
+		<var>balance</var>
+		<var>graduated_cylinder</var>
+		<var>microwave</var>
+		<var>glove</var>
+		<var>box</var>
+		<var>comb</var>
+		<var>power</var>
+		<var>light</var>
+		<var>paper</var>
+		<var>agar</var>
+		<var>TAE</var>
+		<var>gelgreen</var>
+		<var>dye</var>
+		<var>ladder</var>
 	</release>
-	
 	
 </protocol>
