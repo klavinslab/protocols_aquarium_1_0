@@ -11,8 +11,6 @@ Description: Isolating the DNA from a specific gel band
 
 ####Required equipment and materials####
 
-Day 1
-
     * Transluminator
         + Duration needed: 1 min
         + Location: [address]
@@ -64,8 +62,6 @@ Day 1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 ##Protocol##
-
-Day 1
 
 1. Cut fragment out of gel with razer and place in epindorph tube (cut as closely around the band as possible to minimize gel mass) 
 2. Weigh gel slice on balance using an empty epindorph tube to tare
