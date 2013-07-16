@@ -5,7 +5,7 @@
         <name>Trp</name>
         <type>number</type>
         <description>Add tryptophan to media? If yes, enter 1. If no, enter 0.</description>
-    <argument>
+    </argument>
     <argument>
         <name>His</name>
         <type>number</type>
