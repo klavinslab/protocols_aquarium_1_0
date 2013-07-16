@@ -6,6 +6,10 @@
     <description>Enter the number of nm(nano moles) of lyophilized DNA (lower right of tube label).</description>
   </argument>
 
+  <assign>
+    <lhs>vol</lhs><rhs>%{moles}*10</rhs>
+  </assign>
+
   <information>
     This protocols describes how to rehydrate lyophilized DNA from IDT.  NOTE: untested protocol.
   </information>
@@ -23,7 +27,7 @@
 
   <step>
     <description> 
-      Remove the tube from the centrifuge and pipette %{moles*10} 
+      Remove the tube from the centrifuge and pipette %{vol} 
       ul of TE into the oligo tube. 
     </description> 
   </step>
