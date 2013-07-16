@@ -30,14 +30,9 @@
         <var>bottle</var>
     </take>
     <take>    
-        <object>Balance</object>
+        <object>Scale</object>
         <quantity>1</quantity>
         <var>balance</var>
-    </take>    
-    <take>  
-        <object>Plastic Weigh Boat (S)</object>
-        <quantity>1</quantity>
-        <var>boat_small</var>
     </take>    
     <take>          
         <object>Plastic Weigh Boat (L)</object>
@@ -236,7 +231,7 @@
     </produce>   
     
     <release>
-        [%{balance}[0],%{boat_small}[0],%{boat_large}[0],%{yeast_base}[0],%{sdo_media}[0],%{dextrose}[0],%{adenine}[0]]
+        [%{balance}[0],%{boat_large}[0],%{yeast_base}[0],%{sdo_media}[0],%{dextrose}[0],%{adenine}[0]]
     </release>
     
     <if>
