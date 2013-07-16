@@ -10,7 +10,7 @@
         <object>1000 mL Bottle</object>
         <quantity>1</quantity>
         <var>bottle</var>
-        </take>
+    </take>
     <take>
         <object>Weigh Boat (L)</object>
         <quantity>1</quantity>
