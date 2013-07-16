@@ -141,6 +141,9 @@
     <quantity>1</quantity>
   </produce>  
 
-  <release>%{a},%{b},%{c},%{d}</release>
+  <release>%{a}</release>
+  <release>%{b}</release>
+  <release>%{c}</release>
+  <release>%{d}</release>
 
 </protocol>
