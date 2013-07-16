@@ -61,5 +61,5 @@ Notes:
 ####Common Issues####
 
 
-Authors/Contact:
-Nick Bolten
+None
+For questions, contact Nick Bolten at bolten@u.washington.edu
