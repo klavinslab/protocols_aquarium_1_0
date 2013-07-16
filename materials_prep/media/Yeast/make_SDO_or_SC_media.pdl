@@ -79,7 +79,7 @@
         <condition>%{Trp}==1</condition> 
         <then>
             <take>  
-                <object>Triptophan Solution</object>
+                <object>Tryptophan Solution</object>
                 <quantity>1</quantity>
                 <var>trp_solution</var>
             </take>  
