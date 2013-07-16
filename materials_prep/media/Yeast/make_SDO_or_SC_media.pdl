@@ -1,5 +1,5 @@
 <protocol name="Make Synthetic Drop Out or Synthetic Complete Yeast Media">
-<information>Makes 800 mL of 2% Glucose, Adenine-supplemented, Synthetic Complete Yeast Media</information>
+<information>Makes 800 mL of 2 percent Glucose, Adenine-supplemented, Synthetic Complete Yeast Media</information>
 
     <argument>
         <name>Trp</name>
