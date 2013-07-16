@@ -101,7 +101,7 @@
 </take>
 
 <step>
-  <description>Set first step to 98C for 5 min on thermal cycler</description>
+  <description>Set first step to 95C for 5 min on thermal cycler</description>
 </step>
 
 <step>
@@ -109,7 +109,7 @@
 </step>
 
 <step>
-  <description>Set denature step to 98C for 10s</description>
+  <description>Set denature step to 95C for 10s</description>
 </step>
 
 <step>
