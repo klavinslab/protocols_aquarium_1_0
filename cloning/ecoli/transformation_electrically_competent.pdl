@@ -1,0 +1,153 @@
+<protocol name="Transformation - Electrocompetent E.coli">
+
+    <argument>
+      <name>Transformation</name>
+      <type>number</type>
+      <description>Enter the number of transformations you wish to do.</description>
+    </argument>
+
+    <information>
+        This protocols describes how to do transformations using electrically competent E.coli.
+    </information>
+
+  <assign><lhs>total</lhs><rhs>%{Transformation} mL</rhs></assign>
+
+    <take>
+  <object>IceBlock</object>
+	<quantity>1</quantity>
+        <var>block</var>
+    </take>
+
+    <take>
+        <object>Frozen electrocompetent E.coli aliquot</object>
+        <quantity>%{Transformation}</quantity>
+        <var>aliquots</var>
+    </take>
+
+    <take>
+        <object>LB</object>
+        <quantity>%{total}</quantity>
+        <var>LB</var>
+    </take> 
+
+    <take>
+        <object>Electrocuvette</object>
+        <quantity>%{Transformation}</quantity>
+        <var>Electrocuvette</var>
+    </take> 
+
+    <take>
+        <object>1.5 mL Tube</object>
+        <quantity>%{Transformation}</quantity>
+        <var>Tube</var>
+    </take> 
+
+    <take>
+        <object>Plasmid DNA</object>
+        <quantity>variable</quantity>
+        <var>DNA</var>
+    </take> 
+  
+    <take>
+        <object>Plates</object>
+        <quantity>%{Transformation}</quantity>
+        <var>Plates</var>
+    </take> 
+
+	<step>
+	    <description> Label each aliquot of electrocompetent cells with name of plasmid. </description>
+	</step>
+
+	<step>
+	    <description>Obtain an aliquot of frozen electrocompetent cells (40 uL) from the -80 C freezer, and keep it on ice.  </description>
+       	    <note>
+             The transformation efficiency of the electroporation method is heavily dependent on keeping electrocompetent cells ice-cold until electroporation.
+            </note>
+	</step>
+
+	<step>
+	    <description> Allow cells to thaw on ice (~1 min). Slushy or liquid consistency is desirable. </description>
+	</step>
+
+	<step>
+	    <description> Add 2 uL DNA (~0.1-1 ng) to aliquot . Use pipet tip and gently swirl to mix
+</description>
+<note>
+- Miniprep DNA: if used at full concentration, the transformation is likely to give a lawn of cells.  Instead dilute to 0.1-1 ng/uL before transforming the cells.
+- Ligation : use a full 2 uL from a standard 20 uL ligation reaction
+- Gateway :use a full 2 uL directly from a 10 uL LR or BP reaction.
+- In-Fusion : we usually don't use electroporation with In-Fusion reaction results. 
+- Gibson : 1-2 uL. Gibson reactions are quite salty, so if you want to add more due to low efficiencies, dialyze the Gibson reaction or run it through a PCR purification kit.
+</note>
+	</step>
+
+	<step>
+	    <description>  Incubate on ice block for one minute</description>
+	</step>
+
+	<step>
+	    <description> Working quickly, transfer the contents of the aliquot into the center of the gap of an ice-cold electrocuvette from the freezer, and then place the electrocuvette in the electroporator. Check that the electroporator is set to deliver 1,250 V, and then press the PULSE button twice to deliver a pulse.</description>
+	</step>
+
+	<step>
+	    <description> Again, working quickly, remove the electrocuvette from the electroporator and add 1 mL of room-temperature LB to it, pipetting up and down several times to extract the cells from the 1 mm gap.</description>
+	</step>
+
+	<step>
+	    <description> Transfer entire contents of electrocuvette to the tube
+	</description>
+	</step>
+
+	<step>
+	    <description> Check and record the discharge time constant (units are in milliseconds).</description>
+	</step>
+
+	<step>
+	    <description> Incubate tube at 37°C for 30-45 minutes.</description>
+	</step>
+
+	<step>
+	    <description> Wash cuvette for reuse. Squirt 95% ethanol to fill cuvette more than halfway. Add cap and invert cuvette a few times to disinfect it. Pour out in waste receptacle by sink.</description>
+	<note> If washed properly, cuvettes can be reused up to 10 times. 
+		</note>
+	</step>
+
+	<step>
+	    <description> Wash cuvette three times with DI H2O using squeeze bottle and dump water into sink.</description>
+	</step>
+
+	<step>
+	    <description> Squirt 95% ethanol in the cuvette, add the cap, and let it sit for an hour or overnight.</description>
+	</step> 
+
+	<step>
+	    <description> Transfer 100-300 μL of culture to the appropriate plate using the large micropipettor.  </description>
+	<note>Do not place the plate lid on lab bench while you do this.</note>
+	</step> 
+
+	<step>
+	    <description>Add 5 to 10 sterile glass beads to the plate and swirl/shake the plate to spread the culture onto the agar. Dump the beads into the used bead beaker when done.</description>
+	</step> 
+
+	<step>
+	    <description>
+Replace plate top and incubate plate, upside-down, overnight at 37°C.
+	</description>
+	</step> 
+
+	<step>
+	    <description>
+Pour out ethanol and place cuvette upside down on paper towel to dry.
+	</description>
+	</step> 
+
+  <release>
+	%{IceBlock}
+  </release>
+
+  <release>
+	%{Electrocuvette}
+  </release>
+
+</protocol>
+
