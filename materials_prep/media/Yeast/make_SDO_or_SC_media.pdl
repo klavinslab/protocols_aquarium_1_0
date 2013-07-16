@@ -253,7 +253,7 @@
         <condition>%{Trp}==1</condition>
         <then>
             <release>
-                [%{trp_solution}]
+                %{trp_solution}
             </release>
         </then>
     </if>    
@@ -261,7 +261,7 @@
         <condition>%{Ura}==1</condition>
         <then>
             <release>
-                [%{ura_solution}]
+                %{ura_solution}
             </release>
         </then>
     </if>    
