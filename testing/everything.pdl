@@ -87,7 +87,7 @@
     </do>
   </while>
 
-  <log><type>REPORT</type><data>{ message: We computed the sequence all the way up to %{y}!}</data></log>
+  <log><type>REPORT</type><data>{ message: 'We computed the sequence all the way up to %{y}!'}</data></log>
 
   <step>
     <description>All done. Thank you for running this protocol.</description>
