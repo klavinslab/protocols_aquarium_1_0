@@ -91,25 +91,21 @@
   <step>
     <description>Add %{DNA_seq_vol}µL of %{DNA_name} sample to %{replicates} PCR Tube Well(s).</description>
     <note>Cut off unused wells from the PCR 12 Well Strip Tube</note>
-    <warning></warning>
   </step>
 
   <step>
     <description>Add 2.5µL of the %{DNA_name} Sequencing Primer 10µM Aliquot to %{replicates} PCR Tube Well(s).</description>
-    <note></note>
     <warning>Must use the 10µM primer aliquot and not the undilute sequencing primer stock</warning>
   </step>
 
   <step>
     <description>Add %{h2o_vol}µL of molecular water to the to %{replicates} PCR Tube Well(s).</description>
-    <note></note>
     <warning></warning>
   </step>
   
   <step> 
     <description>Write your first and last initials followed by the sample number starting at 1 and ending at %{replicates} on the side of each tube</description>
     <note>If my name was Jon Doe, the PCR tubes would have the following written on them "JD01, JD02, JD03..."</note>
-    <warning></warning>
   </step>
 
   <step>
@@ -130,20 +126,16 @@
 
   <step>
     <description>Print out oder conformation form</description>
-    <note></note>
-    <warning></warning>
   </step>
 
   <step>
     <description>Place the labled PCR well tubes and the printer order confirmation sheet into a clear plastic ziplock bag and seel it</description>
     <note>The printed order confirmation can be folded and placed into the ziplock bag</note>
-    <warning></warning>
   </step>
 
   <step>
     <description>Place ziplock back into the genewiz dropoff mailbox located at xx</description>
     <note>Orders will be picked up at 4:00pm each day and results will be delieverd to the account used to place the order by 1am the following day</note>
-    <warning></warning>
   </step>
 
   <produce>
