@@ -67,24 +67,25 @@
   <take>
     <object>PCR 12 Well Strip Tube</object>
     <quantity>1</quantity>
+    <var>a</var>
   </take>
   
   <take>
     <object>%{DNA_name} Sample</object>
     <quantity>1</quantity>
-    <var>a</var>
+    <var>b</var>
   </take>
   
   <take>
     <object>%{DNA_name} Sequencing Primer 10µM Aliquot</object>
     <quantity>1</quantity>
-    <var>b</var>
+    <var>c</var>
   </take>
 
   <take>
     <object>30mL Molecular Water Aliquot</object>
     <quantity>1</quantity>
-    <var>c</var>
+    <var>d</var>
   </take>
   
   <step>
@@ -153,6 +154,7 @@
   <release>%{a}</release>
   <release>%{b}</release>
   <release>%{c}</release>
+  <release>%{d}</release>
 
 
 </protocol>
