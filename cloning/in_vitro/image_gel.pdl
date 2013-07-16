@@ -2,12 +2,6 @@
         <information>This protocol guides the user through imaging a gel on the blue transilluminator using the gelDoc
 imaging station and the Canon G10 digitial camera.</information>
 
-        <take>
-                <object>Gel</object>
-                <quantity>1</quantity>
-                <var>gel</var>
-        </take>
-
         <step>
                 <description>Place gel on blue transilluminator</description>
         </step>
@@ -59,10 +53,6 @@ imaging station and the Canon G10 digitial camera.</information>
         <step>
                 <description>Remove gel from illuminator</description>
         </step>
-		
-        <release>
-                [%{gel}]
-        </release>
 		
         <step>
                 <description>Turn off illuminator and remove gelDoc imaging rig</description>
