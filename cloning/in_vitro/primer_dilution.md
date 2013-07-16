@@ -20,10 +20,10 @@ Day 1
 ------
 
     * IDT stock primer of your choice
-        + Quantity: 10 ml
+        + Quantity: 10 ul
         + Location: [address]
     * TE
-        + Quantity: 90 ml
+        + Quantity: 90 ul
         + Location: [address]  
     * 1.5 ml tube  
         + Quantity: 1  
@@ -35,8 +35,8 @@ Day 1
 
 Day 1
 
-1. Add 10 ml of stock IDT to 1.5 ml tube
-2. Add 90 ml of TE to the same 1.5 ml tube
+1. Add 10 ul of stock IDT to 1.5 ml tube
+2. Add 90 ul of TE to the same 1.5 ml tube
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
     
