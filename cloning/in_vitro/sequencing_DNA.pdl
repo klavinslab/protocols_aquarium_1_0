@@ -36,7 +36,7 @@
     <condition>%{DNA_type} == 'plasmid'</condition>
     <then>
       <if>
-        <condition>%{DNA_length} &lt 6000</condition>
+        <condition>%{DNA_length} &lt; 6000</condition>
         <then>
           <assign><lhs>DNA_seq_vol</lhs><rhs>%{DNA_seq_vol} + 500 / %{DNA_concentration}</rhs></assign>
         </then>
@@ -47,7 +47,7 @@
     </then>
     <else>
       <if>
-        <condition>%{DNA_length} &lt 500</condition>
+        <condition>%{DNA_length} &lt; 500</condition>
         <then>
           <assign><lhs>DNA_seq_vol</lhs><rhs>%{DNA_seq_vol} + 10 / %{DNA_concentration}</rhs></assign>
         </then>
