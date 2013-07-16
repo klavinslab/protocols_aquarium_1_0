@@ -1,0 +1,51 @@
+<protocol name="Primer Dilution to Stock">
+
+    <argument>
+      <name>IDT</name>
+      <type>number</type>
+      <description>Enter the number of primer dilutions you are making.</description>
+    </argument>
+    
+    
+
+    <information>
+        No more primer for you to use? This protocol will teach you how to create stock solution by diluting from the  
+        IDT rehydrated stock stored in the freezer. 
+    </information>
+
+
+    <take>
+  <object>p100 pipette</object>
+	<quantity>1</quantity>
+        <var>pipette</var>
+    </take>
+
+    <take>
+        <object>IDT rehydrated stock</object>
+        <quantity>%{IDT}</quantity>
+        <var>boats</var>
+    </take>
+
+    <take>
+        <object>TE</object>
+        <quantity>1</quantity>
+        <var>bottles</var>
+    </take> 
+    
+    <take>
+        <object>1.5 ml tube</object>
+        <quantity>%{IDT}</quantity>
+        <var>tubes</var>
+
+  <step>
+    <description> label 1.5 ml tubes with primer name or number </description>
+    </step>
+    
+    <step> 
+    <description> pipette 10 ul of stock rehydrated IDT into labeled 1.5 ml tubes. </dsceription>
+    
+    <step> 
+    <description> pipette 90 ul of TE into each 1.5 ml tube </description>
+   
+
+</protocol>
