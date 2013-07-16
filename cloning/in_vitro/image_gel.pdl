@@ -61,7 +61,7 @@ imaging station and the Canon G10 digitial camera.</information>
         </step>
 		
         <release>
-                <var>%{gel}</var>
+                [%{gel}]
         </release>
 		
         <step>
@@ -85,11 +85,7 @@ imaging station and the Canon G10 digitial camera.</information>
         </step>
 
         <release>
-                <var>%{ethanol}</var>
-        </release>
-
-        <release>
-                <var>%{kimwipe}</var>
+                [%{ethanol}, %{kimwipe}]
         </release>
 		
         <step>
