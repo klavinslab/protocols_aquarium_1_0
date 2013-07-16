@@ -75,7 +75,7 @@ imaging station and the Canon G10 digitial camera.</information>
         </step>
 
         <release>
-                [%{ethanol}, %{kimwipe}]
+                [%{ethanol}, %{wipe}]
         </release>
 		
         <step>
