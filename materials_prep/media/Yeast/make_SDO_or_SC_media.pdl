@@ -35,7 +35,7 @@
         <var>balance</var>
     </take>    
     <take>          
-        <object>Plastic Weigh Boat (L)</object>
+        <object>Weigh Boat (L)</object>
         <quantity>1</quantity>
         <var>boat_large</var>
     </take>    
@@ -69,7 +69,7 @@
         <condition>%{His}==1</condition> 
         <then>
             <take>          
-                <object>Histadine Solution</object>
+                <object>Histidine Solution</object>
                 <quantity>1</quantity>
                 <var>his_solution</var>
             </take> 
@@ -109,12 +109,11 @@
     
     <step>
         <description>Label the bottle</description>
-        <note>Write <br />
-            <div class='label'>SC Yeast Media<br />
-            id : ||$result$.id||<br />
-            date: ||(new Date()).toDateString()||
-            </div> <br />
-        on a label, stick it to the bottle.
+        <note>Write:
+            SC Yeast Media
+            id :
+            date:
+          on a label, stick it to the bottle.
         </note>
         <image>LabeledEmptyMediaBottle</image>
     </step>
