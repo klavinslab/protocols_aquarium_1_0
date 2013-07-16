@@ -11,11 +11,13 @@
     </getdata>
   </step>
 
-  <log><type>MESSAGE</type><data>%{msg}</data></log>
+  <assign><lhs>full_message</lhs><rhs>{msg: %{msg}, another_field: 1}</rhs></assign>
+
+  <log><type>MESSAGE</type><data>%{full_message}</data></log>
 
   <step>
     <description>Ok.</description>
-    <note>The message '%{msg}' was saved to the log. You can go to the log for this job to see if it is there.</note>
+    <note>The message '%{full_message}' was saved to the log. You can go to the log for this job to see if it is there.</note>
   </step>
 
 
