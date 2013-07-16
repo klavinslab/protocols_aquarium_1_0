@@ -19,16 +19,16 @@
 <while>
   <condition>%{counter1} &le; %{fragment_n}</condition>
   <do>
-    <assign>
+    <argument>
       <name>fragment_%{counter1}</name>
       <type>string</type>
       <description>Enter the ID of fragment %{counter1}</description>
-    </assign>
-    <assign>
+    </argument>
+    <argument>
       <name>fragment_vol_%{counter1}</name>
       <type>number</type>
       <description>Enter volume of fragment to add in µL</description>
-    </assign>
+    </argument>
     <assign>
       <lhs>counter1</lhs>
       <rhs>%{counter1} + 1</rhs>
