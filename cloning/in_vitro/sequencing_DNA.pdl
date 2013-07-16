@@ -94,12 +94,12 @@
   </step>
 
   <step>
-    <description>Add 2.5µL of the %{DNA_name} Sequencing Primer to %{replicates} PCR tube well(s).</description>
+    <description>Add 2.5µL of the %{DNA_name} Sequencing Primer to the PCR tube well(s).</description>
     <warning>Must use the 10µM primer aliquot and not the undilute sequencing primer stock</warning>
   </step>
 
   <step>
-    <description>Add %{h2o_vol}µL of molecular water to %{replicates} PCR tube well(s).</description>
+    <description>Add %{h2o_vol}µL of molecular water to the PCR tube well(s).</description>
   </step>
   
   <step> 
@@ -111,7 +111,6 @@
     <description>Set up an order form at www.genewiz.com</description>
     <note>The Klavins Lab's quote number is: MS0721101</note>
     <warning>
-      <p>
       If you do not have a Genewiz account, get a referral from someone with an account (5 free reactions for you, other rewards for them) or sign up. 
       <b>Required information:</b>
       PI/Group Leader: Eric Klavins
@@ -121,7 +120,6 @@
       Billing and Lab shipping address:
       University of Washington Street address: 185 Stevens Way Paul Allen Center Room AE100R Box 352500 Seattle, WA 98195-2500
       Bill to: Jack Lockhart at University of Washington
-      </p>
     </warning>
   </step>
 
@@ -144,10 +142,6 @@
     <quantity>1</quantity>
   </produce>  
 
-  <release>%{a}</release>
-  <release>%{b}</release>
-  <release>%{c}</release>
-  <release>%{d}</release>
-
+  <release>[%{a}, %{b}, %{c}, %{d}]</release>
 
 </protocol>
