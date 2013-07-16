@@ -100,7 +100,6 @@
 
   <step>
     <description>Add %{h2o_vol}µL of molecular water to the to %{replicates} PCR Tube Well(s).</description>
-    <warning></warning>
   </step>
   
   <step> 
