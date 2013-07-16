@@ -1,27 +1,27 @@
-make_yeast_lysate.md
-Yeast Lysate
+Make Yeast Lysate
+--------------
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Description: Make yeast lysate for yeast colony PCR
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+####Total duration: 10 minitues####
 
-Protocol Total Time: 20 minutes 
+####Total worktime: 20 minitues####
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+####Required equipment and materials####
 
-Preparation of lysate:
-Prep Time: 10 mins
-Protocol Total Time: 20 minutes
+    * Heat block
+        + Duration needed: 10 minitues
+        + Location: [address]
+    * MGH20
+        + Quantity: 1 tube
+        + Location: [address]
+    * 2% SDS
+        + Quantity: 1 tube
+        + Location: [address]
+        
 
-Reagent
-Amount
-Notes:
-2% SDS
-3uL * X (+10%)
-
-
-molecular grade water
-27uL * X (+10%)
-
-
-Isolated yeast colony(ies)
-X
-X = the number of lysates you want to make.
-
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+##Protocol##
 
 1. Prepare 30uL aliquots of 0.2% SDS from 2% SDS stock and molecular grade water. Prepare enough for the amount you need plus 10% to account for pipetting/lab error. 
 
@@ -41,8 +41,25 @@ Label the tubes with a convenient shorthand - they will be discarded soon.
 
 7. 0.5-1uL of these new 1/10X dilutions can be used as template in PCR reactions for isolating anything that should be on the genome and is small enough to amplify (generally less than 8kb). You must use a polymerase which is good at amplifying large sections of DNA, like Phusion. Taq is generally poor at amplifying anything larger than 2-3kb.
 
-
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+####Additional Information and Settings####
+Reagent
+Amount
 Notes:
+2% SDS
+3uL * X (+10%)
+
+molecular grade water
+27uL * X (+10%)
+
+
+Isolated yeast colony(ies)
+X
+X = the number of lysates you want to make.
+Notes:
+
+####Common Issues####
+
 
 Authors/Contact:
 Nick Bolten
