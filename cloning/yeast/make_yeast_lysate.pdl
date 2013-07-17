@@ -1,1 +1,31 @@
-something
+<protocol name="Make Yeast Lysate">
+    <information>
+        This protocol prepares yeast lysate for yeast colony PCR
+    </information>
+    
+    <take>
+  <object>MGH2O</object>
+	<quantity>1</quantity>
+        <var>tubes</var>
+    </take>
+    
+    <take>
+  <object>2% SDS</object>
+  <quantity>1</quantity>
+        <var>tubes</var>
+    </take>
+    
+    <take>
+  <object>Heat block</object>
+  <quantity>1</quantity>
+        <var>heat block</var>
+    </take>
+    
+    <step>
+      <description>Prepare 30uL aliquots of 0.2% SDS from 2% SDS stock and molecular grade water. </description>
+       	    <note>
+             Label the tube
+            </note>
+            <warning>Prepare enough for the amount you need plus 10% to account for pipetting/lab error.
+            </warning>
+  	</step>
