@@ -1,94 +1,134 @@
+<?xml version="1.0"?>
 <protocol name="E. coli colony PCR">
+
+<argument>
+  <name>Template</name>
+  <type>string</type>
+  <description>Enter the template ID</description>
+</argument>
+<argument>
+  <name>Primer1</name>
+  <type>string</type>
+  <description>Enter the first primer ID</description>
+</argument>
+<argument>
+  <name>Primer2</name>
+  <type>string</type>
+  <description>Enter the second primer ID</description>
+</argument>
+<argument>
+  <name>finnzyme_anneal</name>
+  <type>number</type>
+  <description>Enter the anneal temperature from the primer database (Finnzyme Tm)</description>
+</argument>
+<argument>
+  <name>template_length</name>
+  <type>number</type>
+  <description>Enter the length of the target amplicon in bp</description>
+</argument>
+
   <information>
   	This protocol describes how to amplify DNA fragments using live cell cultures as a source for the DNA template. Colony PCR is primarily useful for validating genomic DNA manipulations (often to be sequenced) or plasmid cloning outcomes.
   </information>
   
-  <take>
-        <object>thermocycler</object>
-        <quantity>1</quantity>
-        <var>thermocycler</var>
-  </take> 
+<take>
+  <object>0.2 mL Thin Wall Strip Well Tubes</object>
+  <quantity>1</quantity>
+  <var>tube</var>
+</take>
 
-  <take>
-        <object>dIH2O</object>
-        <quantity>1</quantity>
-        <var>dIH2O_tube</var>
-	</take>
-  
-  <take>
-        <object>2x Taq Master Mix</object>
-        <quantity>1</quantity>
-        <var>tube</var>
-	</take> 
-  
-    
-  <take>
-        <object>Yeast Lysate</object>
-        <quantity>1</quantity>
-        <var>tube</var>
-  </take> 
-  
-  <take>
-        <object>primers</object>
-        <quantity>1</quantity>
-        <var>tube</var>
-  </take> 
-  
-  <take>
-        <object>PCR tube</object>
-        <quantity>1</quantity>
-        <var>tube</var>
-  </take> 
-  
-  <step>
-        <description>Label the PCR tube</description>
-        <note>Write <br />
-            <div class='label'>QCPCR<br />
-            id : ||$result$.id||<br />
-            date: ||(new Date()).toDateString()||
-            </div> <br />
-        on the PCR tube.
-        </note>
-  </step>
-  
-  <step>
-  Set up standard Taq PCR mix as below. 
-  A typical colony PCR is a 10uL Taq reaction: 
-  3.0 uL MGH2O 
-  1 uL DNA template from lysed cells 
-  0.5 uL primer 1
-  0.5 uL primer 2
-  5 uL 2x Taq Master Mix
-  </step>
-  
-  <step>
-  Set up thermal cycler: 5 min 95C
-  35 cycles of: 
-  30s 95C 30s primer Tm - 5 C (Finnzyme Tm)
-  (e.g. for 65 C primers, use 60 C)
-  1-2 minutes 72C (extension. Long time = more chance of getting product)
-  72C 
-  7 min Hold at 4C
-  </step>
-  
-  
-  <produce>
-        <object>a tube of yeast colony PCR result</object>
-        <quantity>1</quantity>
-        <location>TBD</location>
-        <var>result</var>
-  </produce>
-  
-  <release>
-        <var>thermocycler</var>
-        <var>dIH2O</var>
-        <var>Phusion Master Mix</var>
-        <var>Yeast Lysate</var>
-        <var>primers</var>
-        <var>PCR tube</var>
-  </release>
-  
-  <cleanup>
-  </cleanup>
+<step>
+  <description>Label a 0.2 mL strip well tube.</description>
+  <note>Label with unique identifier, initials, and date</note>
+</step>
 
+<take>
+  <object>Taq 2x Master Mix</object>
+  <quantity>1</quantity>
+  <var>Taq</var>
+</take>
+
+<step>
+  <description>Pipet 5 µL of 2x Taq Master Mix into the strip well tube.</description>
+</step>
+      
+<take>
+  <object>Molecular Grade Water 50 mL aliquot</object>
+  <quantity>1</quantity>
+  <var>MGH2O</var>
+</take>
+
+<step>
+  <description>Pipet 3.0 µL molecular grade water into the strip well tube.</description>
+</step>
+
+<take>
+  <object>Template DNA (centrifuged cell lysate)</object>
+  <quantity>1</quantity>
+  <var>Template</var>
+</take>
+
+<step>
+  <description>Pipet 1µL template DNA into the strip well tube.</description>
+</step>
+
+<take>
+  <object>Primer1</object>
+  <quantity>1</quantity>
+  <var>Primer1</var>
+</take>
+
+<step>
+  <description>Pipet 0.5µL of primer 1 into the strip well tube.</description>
+</step>
+
+<take>
+  <object>Primer2</object>
+  <quantity>1</quantity>
+  <var>Primer2</var>
+</take>
+
+<step>
+  <description>Pipet 0.5µL of primer 2 into the strip well tube.</description>
+</step>
+
+<take>
+  <object>Thermal Cycler</object>
+  <quantity>1</quantity>
+  <var>ThermalCycler</var>
+</take>
+
+<step>
+  <description>Set initial step to 95 C for 5 min on thermal cycler</description>
+</step>
+
+<step>
+  <description>Select 35 cycles of denature, anneal, extend</description>
+</step>
+
+<step>
+  <description>Set denature step to 95 C for 30 s</description>
+</step>
+
+<step>
+  <description>Set anneal step to %{finnzyme_anneal-5} C for 30 s</description>
+</step>
+
+<assign><lhs>extension_time</lhs><rhs>%{template_length} / 1000.0 * 60</rhs></assign>
+
+<step>
+  <description>Set extension step to 72 C for %{extension_time} s</description>
+</step>
+
+<step>
+  <description>Set final extension time to 72 C for 10 min</description>
+</step>
+
+<step>
+  <description>Set chill step to 4 C for 0 min</description>
+</step>
+
+<step>
+  <description>Hit 'run' on the thermal cycler and select 10 µL setting, if applicable</description>
+</step>
 </protocol>
