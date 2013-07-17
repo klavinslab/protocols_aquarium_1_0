@@ -42,8 +42,8 @@
     
     <step> Pipette in 750 ul of buffer PE and spin at 17,000 g, or vacuum. Discard flow through. Place column back into same tube. </step>
       <warning> Make sure that the PE has ethanol added to it. Otherwise you won't get much DNA </warning>
-      </step> 
       <note> If you are having low DNA concentration it may be a good idea to wash with 750 ul PE then 500 ul PE </note>
+      </step>
       
       <step> Spin for an additonal minute at 17,000 g, or vacuum to remove residual buffer </step> 
       
