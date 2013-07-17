@@ -32,6 +32,7 @@
     <take>
         <object>Qiagen centrifuge column</object>
         <quantity>1</quantity> 
+        <var>column</var>
         </take>
         
     <step> transfer PCR product you want to purify to 1.5 ml tube </step>
