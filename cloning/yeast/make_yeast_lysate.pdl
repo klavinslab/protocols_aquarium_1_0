@@ -57,7 +57,7 @@
        </if>
 
     <step>
-      <description>Pipette 3*%{lysates} uL 2 percent SDS into 1.5 mL tube. </description>
+      <description>Pipette 3 * (%{lysates}) uL 2 percent SDS into 1.5 mL tube. </description>
        	    <note>
              Label the tube as 0.2 percent SDS
             </note>
@@ -65,7 +65,7 @@
 
     
     <step>
-      <description>Pipette 27*%{lysates} uL MGH2O into above tube. </description>
+      <description>Pipette 27 * (*%{lysates}) uL MGH2O into above tube. </description>
   	</step>
   	
   	    
@@ -78,7 +78,7 @@
   	</step>
   	
   	<step>
-      <description>Pipette 30 uL from 0.2% SDS tube to each tube 1, 2, ..., %{lysates}. </description>
+      <description>Pipette 30 uL from 0.2 percent SDS tube to each tube 1, 2, ..., %{lysates}. </description>
   	</step>
   	
   	
