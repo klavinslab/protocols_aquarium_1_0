@@ -56,6 +56,9 @@
     <release>
         %{stock}
     </release>
+    <produce>
+    <object>Purified PCR product</object>
+    <quantity>1</quantity>
    
 
 </protocol>
