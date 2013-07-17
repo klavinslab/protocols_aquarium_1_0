@@ -69,7 +69,7 @@
 </take>
 
 <step>
-  <description>Pipet 1µL template DNA into the strip well tube.</description>
+  <description>Pipet 1 µL template DNA into the strip well tube.</description>
 </step>
 
 <take>
@@ -79,7 +79,7 @@
 </take>
 
 <step>
-  <description>Pipet 0.5µL of primer 1 into the strip well tube.</description>
+  <description>Pipet 0.5 µL of primer 1 into the strip well tube.</description>
 </step>
 
 <take>
@@ -89,7 +89,7 @@
 </take>
 
 <step>
-  <description>Pipet 0.5µL of primer 2 into the strip well tube.</description>
+  <description>Pipet 0.5 µL of primer 2 into the strip well tube.</description>
 </step>
 
 <take>
@@ -110,8 +110,10 @@
   <description>Set denature step to 95 C for 30 s</description>
 </step>
 
+<assign><lhs>anneal_temp</lhs><rhs>%{finnzyme_anneal} - 5 </rhs></assign>
+
 <step>
-  <description>Set anneal step to %{finnzyme_anneal-5} C for 30 s</description>
+  <description>Set anneal step to %{anneal_temp} C for 30 s</description>
 </step>
 
 <assign><lhs>extension_time</lhs><rhs>%{template_length} / 1000.0 * 60</rhs></assign>
@@ -131,4 +133,9 @@
 <step>
   <description>Hit 'run' on the thermal cycler and select 10 µL setting, if applicable</description>
 </step>
+
+ <release>
+        %{ThermalCycler}
+    </release>
+    
 </protocol>
