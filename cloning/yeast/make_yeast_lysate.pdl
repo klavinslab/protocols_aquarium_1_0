@@ -12,15 +12,15 @@
     </information>
     
     <take>
-  		<object>MGH2O</object>
+  		<object>Molecular Grade Water</object>
 		<quantity>1</quantity>
-        <var>tubes</var>
+        	<var>MGH2O</var>
     </take>
     
     <take>
   		<object>2% SDS</object>
  		<quantity>1</quantity>
-        <var>tubes</var>
+        	<var>tubes</var>
     </take>
     
       <if>
