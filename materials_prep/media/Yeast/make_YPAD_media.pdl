@@ -119,7 +119,8 @@
     </produce>  
 
     <release>
-        [%{balance},%{boat_large},%{yeast_extract},%{bacto_peptone},%{dextrose},%{adenine_hemisulfate},%{autoclave_tape}]
+        [%{balance}[0],%{boat_large}[0],%{yeast_extract}[0],%{bacto_peptone}[0],%{dextrose}[0],
+        %{adenine_hemisulfate}[0],%{autoclave_tape}[0]]
     </release>
 
 </protocol>
