@@ -7,31 +7,31 @@
   <take>
     <object>Molecular grade water</object>
     <quantity>x ml </quantity>
-    <var> MG H2O </var>
+    <var>MG H2O</var>
   </take>
   
   <take>
     <object>Restriction enzyme</object>
     <quantity> x items </quantity>
-    <var> Enzyme 1 </var>
+    <var>Enzyme 1</var>
   </take>
   
   <take>
     <object>NEB Buffer 1, 2, 3 or 4 10x enzyme</object>
     <quantity> x ml </quantity>
-    <var> NEB Buffer </var>
+    <var>NEB Buffer</var>
   </take>
   
   <take>
     <object>MP or PCR DNA</object>
     <quantity> x mg </quantity>
-    <var> DNA </var>
+    <var>DNA</var>
   </take>
   
   <take>
     <object>BSA</object>
     <quantity> x ml </quantity>
-    <var> BSA </var>
+    <var>BSA</var>
   </take>
 
   <step>
@@ -72,9 +72,9 @@
   </produce>
 
   <release>
-    <var>Molecular Grade Water </var>
-    <var>Restriction Enyzme</var>
-    <var>NEB Buffer 1, 2, 3 or 4 10x enzyme</var>
+    <var>MG H2O</var>
+    <var>Enyzme 1</var>
+    <var>NEB Buffer</var>
   </release>
 
 
