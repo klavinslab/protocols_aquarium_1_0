@@ -28,7 +28,7 @@
                 </note>
         </step>
 
-        <assign><lhs>ingredients</lhs><rhs>%{lb}.object[:name]</rhs></assign>
+        <assign><lhs>ingredients</lhs><rhs>%{lb}[0].object[:name]</rhs></assign>
 
         <step>
                 <description>Measure 20g of %{ingredients}</description>
