@@ -97,7 +97,8 @@
         <quantity>20</quantity>
     </produce>
     
-    <object>bottle of of Kanamycin </object>
+    <produce>
+    <object> bottle of of Kanamycin </object>
         <quantity>1</quantity>
     </produce>
     
