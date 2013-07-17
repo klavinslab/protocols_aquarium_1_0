@@ -9,7 +9,7 @@ Description: Buying inventory from the campus biochem store
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-####Required equipment and materials:####  
+####Required equipment and materials:  
 
     * List of specific inventory items needed  
         + Duration needed: 25 minutes
