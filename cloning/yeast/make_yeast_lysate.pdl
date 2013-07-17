@@ -114,12 +114,12 @@
       	<description>Heat at 90C for 10 minutes in the heat block. </description>
   		</step> 
   		  		
-  		<release>%{90Cheatblock}</release>
+  		<release>[%{90Cheatblock}[0]]</release>
   		
        	</else>
        
        </if>
        
-       <release>%{MGH2O},%{2SDS}</release>
+       <release>[%{MGH2O}[0],%{2SDS}[0]]</release>
        
 </protocol>
