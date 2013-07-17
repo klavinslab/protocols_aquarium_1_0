@@ -1,5 +1,15 @@
 <protocol name="Restriction Digest">
 
+
+  <argument> 
+    <name>RE_1</name>
+    <type>string</type>
+    <description>
+      Enter the name of the restriction enzyme 1. Make sure the enzyme is listed in the inventory. 
+    </description>
+  </argument>
+  
+  
   <information>
   	This protocol describes the process to perform restriction digest.
   </information>
@@ -11,7 +21,7 @@
   </take>
   
   <take>
-    <object>Restriction Enzyme EcoRI</object>
+    <object>%{RE_1}</object>
     <quantity>1</quantity>
     <var>Enzyme 1</var>
   </take>
@@ -59,16 +69,14 @@
     <warning>Keep the enzymes cold using an ice block</warning>
   </step>
 
-
-
   <produce>
     <object>Linearized DNA fragment</object>
-    <quantity>y pieces</quantity>
+    <quantity>y</quantity>
   </produce>
   
   <produce>
     <object>Linearized DNA fragment</object>
-    <quantity>y pieces</quantity>
+    <quantity>y</quantity>
   </produce>
 
   <release>
