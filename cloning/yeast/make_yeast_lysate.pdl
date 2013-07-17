@@ -75,7 +75,7 @@
 
     
     <step>
-      <description>Pipette *%{totalMGH2O} uL MGH2O into above tube. </description>
+      <description>Pipette %{totalMGH2O} uL MGH2O into above tube. </description>
   	</step>
   	
   	    
