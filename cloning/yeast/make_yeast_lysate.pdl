@@ -12,13 +12,13 @@
     </information>
     
     <take>
-  		<object>Molecular Grade Water</object>
+  		<object>Molecular Grade Water 50mL aliquot</object>
 		<quantity>1</quantity>
         	<var>MGH2O</var>
     </take>
     
     <take>
-  		<object>2% SDS</object>
+  		<object>2 percent SDS</object>
  		<quantity>1</quantity>
         	<var>tubes</var>
     </take>
@@ -28,27 +28,27 @@
       <then>
       
         <take>
-            <object>PCR tubes</object>
+            <object>0.2mL Thin Wall Strip Well Tubes</object>
             <quantity>%{lysates}</quantity>
-            <var>lysates</var>
+            <var>tubes</var>
         </take>
         
         <take>
-            <object>thermocycler</object>
+            <object>Thermal Cycler</object>
             <quantity>1</quantity>
-            <var>unit</var>
+            <var>ThermalCycler</var>
         </take>
         
       </then>
        
        	<else>
         <take>
-            <object>1.5mL tube</object>
+            <object>Eppendorf Tube</object>
             <quantity>%{lysates}</quantity>
             <var>lysates</var>
         </take>
         <take>
-        	<object>Heat block</object>
+        	<object>90C Heat Block</object>
   			<quantity>1</quantity>
         	<var>heat block</var>
     	</take>
