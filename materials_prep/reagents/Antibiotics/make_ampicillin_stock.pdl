@@ -32,7 +32,7 @@
     </take>
     
     <take>
-	<object> Eppendorf tubes <object>
+	<object> Eppendorf tubes </object>
 	<quantity> 20 </quantity>
 	<var> Eppen </var>
     </take>
