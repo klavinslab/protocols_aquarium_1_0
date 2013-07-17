@@ -59,7 +59,7 @@
       <release> %{PB} </release>
       <release> %{PE} </release>
       <release> %{EB} </release>
-      <release> %{tubes} <quantity>1</quantity></release>
+      
       
       <produce> 
         <object> 100 ul of purified PCR product </object>
