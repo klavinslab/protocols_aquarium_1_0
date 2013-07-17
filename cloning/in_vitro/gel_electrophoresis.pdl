@@ -10,7 +10,7 @@
 		<var>flask</var>
 	</take>
 	<take>
-		<object>Balance</object>
+		<object>Scale</object>
 		<quantity>1</quantity>
 		<var>balance</var>
 	</take>	
