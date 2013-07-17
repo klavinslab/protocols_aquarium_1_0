@@ -49,7 +49,7 @@
 	</take>
 	<take>
 		<object>
-			Large Weigh Boat
+			Weigh Boat (L)
 		</object>
 		<quantity>
 			1
@@ -109,24 +109,14 @@
 	
 	<produce>
 		<object>
-			800 mL LB Liquid Media
+			800 mL TB Liquid Media (unsterile)
 		</object>
 		<quantity>
 			1
 		</quantity>
 	</produce>
 	
-    <release>
-		<var>
-			tb
-		</var>
-		<var>
-			boat
-		</var>
-		<var>
-			tape
-		</var>
-	</release>
+    <release>[%{tb}[0],%{boat}[0],%{tape}[0]]</release>
 	
 	<step>
 			<description>Done. Thank you for running this protocol.</description>
