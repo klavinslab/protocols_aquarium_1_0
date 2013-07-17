@@ -1,6 +1,6 @@
 <protocol name="Gel Extraction">
 
-  <information>
+	<information>
 		This protocol describes how to extract a band of DNA from an agarose gel
 	</information>
 	
@@ -10,7 +10,7 @@
 		<var>light_box</var>
 	</take>
 	<take>
-		<object>Balance</object>
+		<object>Scale</object>
 		<quantity>1</quantity>
 		<var>balance</var>
 	</take>	
@@ -115,29 +115,22 @@
 	</step>		
 	
 	
-	
-	<produce>
-		<object>gel_extract_DNA</object>
-		<quantity>1</quantity>
-	</produce>
-	
-	<release>
-		<var>light_box</var>
-		<var>balance</var>
-		<var>heat</var>
-		<var>vortex</var>
-		<var>nanodrop</var>
-		<var>gel</var>		
-		<var>razer</var>
-		<var>tubeA</var>
-		<var>tubeB</var>
-		<var>QG</var>
-		<var>sodium_acetate</var>
-		<var>isopropanol</var>
-		<var>column</var>
-		<var>PE</var>
-		<var>elution_buffer</var>
-	</release>
+
+	<release>%{light_box}</release>
+	<release>%{balance}</release>
+	<release>%{heat}</release>
+	<release>%{vortex}</release>
+	<release>%{nanodrop}</release>
+	<release>%{gel}</release>		
+	<release>%{razer}</release>
+	<release>%{tubeA}</release>
+	<release>%{tubeB}</release>
+	<release>%{QG}</release>
+	<release>%{sodium_acetate}</release>
+	<release>%{isopropanol}</release>
+	<release>%{column}</release>
+	<release>%{PE}</release>
+	<release>%{elution_buffer}</release>
 	
 	
 </protocol>
