@@ -51,8 +51,9 @@
       
       <step> Add in 50 ul of EB, elution buffer to the column. Wait 1 minute then centrifuge. </step>
       <note> to increase DNA concentration, add in 30 ul instead of 50 ul. Waiting an extra minute is another option, and both may be done simulatenously </note>
+      </step>
       
-      <step> use the nanodrop in order to measure the DNA concentration <step>
+      <step> use the nanodrop in order to measure the DNA concentration </step>
       
       <release> %{PB} </release>
       <release> %{PE} </release>
@@ -67,6 +68,4 @@
       
       
         
-        
-
-</protocol>
+  </protocol>
