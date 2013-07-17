@@ -1,4 +1,4 @@
-BIOCHEM STORE
+Biochem Store
 -------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Description: Buying inventory from the campus biochem store
