@@ -66,12 +66,8 @@
 	</step>
 	
 	<produce>
-		<object>
-			800 mL TB Liquid Media (unsterile)
-		</object>
-		<quantity>
-			1
-		</quantity>
+		<object>800 mL TB Liquid Media (unsterile)</object>
+		<quantity>1</quantity>
 	</produce>
 	
     	<release>[%{tb}[0],%{boat}[0],%{tape}[0]]</release>
