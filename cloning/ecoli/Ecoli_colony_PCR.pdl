@@ -1,0 +1,94 @@
+<protocol name="E. coli colony PCR">
+  <information>
+  	This protocol describes how to amplify DNA fragments using live cell cultures as a source for the DNA template. Colony PCR is primarily useful for validating genomic DNA manipulations (often to be sequenced) or plasmid cloning outcomes.
+  </information>
+  
+  <take>
+        <object>thermocycler</object>
+        <quantity>1</quantity>
+        <var>thermocycler</var>
+  </take> 
+
+  <take>
+        <object>dIH2O</object>
+        <quantity>1</quantity>
+        <var>dIH2O_tube</var>
+	</take>
+  
+  <take>
+        <object>2x Taq Master Mix</object>
+        <quantity>1</quantity>
+        <var>tube</var>
+	</take> 
+  
+    
+  <take>
+        <object>Yeast Lysate</object>
+        <quantity>1</quantity>
+        <var>tube</var>
+  </take> 
+  
+  <take>
+        <object>primers</object>
+        <quantity>1</quantity>
+        <var>tube</var>
+  </take> 
+  
+  <take>
+        <object>PCR tube</object>
+        <quantity>1</quantity>
+        <var>tube</var>
+  </take> 
+  
+  <step>
+        <description>Label the PCR tube</description>
+        <note>Write <br />
+            <div class='label'>QCPCR<br />
+            id : ||$result$.id||<br />
+            date: ||(new Date()).toDateString()||
+            </div> <br />
+        on the PCR tube.
+        </note>
+  </step>
+  
+  <step>
+  Set up standard Taq PCR mix as below. 
+  A typical colony PCR is a 10uL Taq reaction: 
+  3.0 uL MGH2O 
+  1 uL DNA template from lysed cells 
+  0.5 uL primer 1
+  0.5 uL primer 2
+  5 uL 2x Taq Master Mix
+  </step>
+  
+  <step>
+  Set up thermal cycler: 5 min 95C
+  35 cycles of: 
+  30s 95C 30s primer Tm - 5 C (Finnzyme Tm)
+  (e.g. for 65 C primers, use 60 C)
+  1-2 minutes 72C (extension. Long time = more chance of getting product)
+  72C 
+  7 min Hold at 4C
+  </step>
+  
+  
+  <produce>
+        <object>a tube of yeast colony PCR result</object>
+        <quantity>1</quantity>
+        <location>TBD</location>
+        <var>result</var>
+  </produce>
+  
+  <release>
+        <var>thermocycler</var>
+        <var>dIH2O</var>
+        <var>Phusion Master Mix</var>
+        <var>Yeast Lysate</var>
+        <var>primers</var>
+        <var>PCR tube</var>
+  </release>
+  
+  <cleanup>
+  </cleanup>
+
+</protocol>

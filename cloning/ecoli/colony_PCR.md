@@ -1,4 +1,4 @@
-Colony PCR with Green tag
+Colony PCR with Green Taq
 (See General PCR Protocol and PCR_GoTaq)
 
 Master mix (7ul):
