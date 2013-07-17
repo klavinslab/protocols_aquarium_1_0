@@ -1,0 +1,72 @@
+<protocol name="PCR purification">
+
+       
+ <information>
+        This protocol describes how to purify your PCR product. 
+    </information>
+    
+        <take>
+  <object>Buffer PB</object>
+	<quantity>1</quantity>
+        <var>PB</var>
+    </take>
+
+    <take>
+        <object>Buffer PE</object>
+        <quantity>1</quantity>
+        <var>PE</var>
+    </take>
+
+    <take>
+        <object>Buffer EB</object>
+        <quantity>1</quantity>
+        <var>EB</var>
+    </take> 
+    
+    <take>
+        <object>1.5 ml tube</object>
+        <quantity>2</quantity>
+        <var>tubes</var>
+        </take>
+        
+    <take>
+        <object>Qiagen centrifuge column</object>
+        <quantity>1</quantity> 
+        </take>
+        
+    <step> transfer PCR product you want to purify to 1.5 ml tube </step>
+    
+    <step> Multiply PCR product in ul by 5. Add that amount of EB to 1.5 ml tube. Pipette up and down to mix </step>
+    
+    <step> Aliquot into Qiagen centrifuge column. Spin at 1 min at 17,000 g, or vacuum. Discard flow through. Place back in same tube. </step>
+    
+    <step> Pipette in 750 ul of buffer PE and spin at 17,000 g, or vacuum. Discard flow through. Place column back into same tube. </step>
+      <warning> Make sure that the PE has ethanol added to it. Otherwise you won't get much DNA </warning>
+      </step> 
+      <note> If you are having low DNA concentration it may be a good idea to wash with 750 ul PE then 500 ul PE </note>
+      
+      <step> Spin for an additonal minute at 17,000 g, or vacuum to remove residual buffer </step> 
+      
+      <step> Remove the column and place into clean 1.5 ml tube </step> 
+      
+      <step> Add in 50 ul of EB, elution buffer to the column. Wait 1 minute then centrifuge. </step>
+      <note> to increase DNA concentration, add in 30 ul instead of 50 ul. Waiting an extra minute is another option, and both may be done simulatenously </note>
+      
+      <step> use the nanodrop in order to measure the DNA concentration <step>
+      
+      <release> %{PB} </release>
+      <release> %{PE} </release>
+      <release> %{EB} </release>
+      <release> %{tubes} <quantity>1</quantity></release>
+      
+      <produce> 
+        <object> 100 ul of purified PCR product </object>
+        <quantity>1</quantity>
+      </produce>
+      
+      
+      
+        
+        
+
+</protocol>
