@@ -13,8 +13,10 @@ Description: Repair nicked DNA to create fusions (anneal restriction digested pi
 * 10X T4 ligation buffer
 * DNA to anneal + ligate
 * T4 ligase
+
 - - - - - - - - - - - 
 ##Protocol##
+
 1. Add the following to a 0.5 mL PCR tube and mix gently:
 
 | Reagent                 | Amount                                | Where to Find it                   |
