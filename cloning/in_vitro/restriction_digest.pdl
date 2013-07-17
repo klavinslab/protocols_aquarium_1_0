@@ -38,37 +38,45 @@
     <quantity>1</quantity>
     <var>NEB_Buffer</var>
   </take>
-
   
   <take>
     <object>BSA</object>
     <quantity>1</quantity>
     <var>BSA</var>
   </take>
-
+  
+  <take>
+    <object>1.5 mL Microcentrifuge Tubes</object>
+    <quantity>1</quantity>
+    <var>PCR_tube</var>
+  </take>
+  
   <step>
-    <description> Add the following to a 0.5 mL PCR tube and mix gently</description>
-    <note>
-	Reagent; Amount; Where to Find it 
-	dI H20; 42.5 - x - y - z uL; Room temp stocks - HyClone bottles 
-	Buffer 10X; 5 uL; -20 C Freezer - NEB 1, 2, 3, or 4 tube 
-	BSA 100X; 0.5 uL; -20 C Freezer 
-	DNA to digest;x uL (~600-800 ng); 
-	MP or PCR DNA -20 Freezer or Fridge 
-	Enzyme 1; y uL; -20 C Freezer keep cold 
-	Enzyme 2; z uL; -20 C Freezer keep cold
-    </note>
-    <warning>Keep the enzymes cold using an ice block</warning>
+    <description> Add 42.5 uL of %{MG_H2O} to %{PCR_tube}.</description>
+  </step>
+  
+  <step>
+    <description> Add 5 uL of NEB Buffer %{Buffer} to %{PCR_tube}. </description>
+  </step>
+  
+  <step>
+    <description> Add 0.5 uL of %{BSA} to %{PCR_tube}.</description>
   </step>
 
   <step>
+    <description> Add the DNA to be digested to %{PCR_tube}. </description>
+  </step>
+  
+  <step>
+    <description>Add %{Enzyme_1} to %{PCR_tube}. </description>
+    <warning> Keep the enzymes cold using an ice block. </warning>
+  </step>
+  
+  <step>
     <description> Gently mix, spin down, and run in Thermocycler with the following program </description>
     <note>
-	Step; Temp; Time; Notes 
-	Incubate; 37 C; 5 hr; Can be shorter if needed, but >2hr 
-	Denature enzymes; 80 C; 20 min;
+	37C for 5 hours, followed by 80C for 20 minutes.
     </note>
-    <warning>Keep the enzymes cold using an ice block</warning>
   </step>
 
   <produce>
