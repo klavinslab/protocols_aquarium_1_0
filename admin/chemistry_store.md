@@ -10,7 +10,7 @@ Description: Buying inventory from the campus chemistry store
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-####Required equipment and materials####  
+####Required equipment and materials 
 
     * List of inventory items to purchase
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
