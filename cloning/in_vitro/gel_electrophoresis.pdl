@@ -91,29 +91,21 @@
 	</step>
 	
 	
-	
-	
-	<produce>
-		<object>Finished Gel</object>
-		<quantity>1</quantity>
-	</produce>
-	
-	<release>
-		<var>flask</var>
-		<var>balance</var>
-		<var>graduated_cylinder</var>
-		<var>microwave</var>
-		<var>glove</var>
-		<var>box</var>
-		<var>comb</var>
-		<var>power</var>
-		<var>light</var>
-		<var>paper</var>
-		<var>agar</var>
-		<var>TAE</var>
-		<var>gelgreen</var>
-		<var>dye</var>
-		<var>ladder</var>
-	</release>
+
+	<release>flask</release>
+	<release>balance</release>
+	<release>graduated_cylinder</release>
+	<release>microwave</release>
+	<release>glove</release>
+	<release>box</release>
+	<release>comb</release>
+	<release>power</release>
+	<release>light</release>
+	<release>paper</release>
+	<release>agar</release>
+	<release>TAE</release>
+	<release>gelgreen</release>
+	<release>dye</release>
+	<release>ladder</release>
 	
 </protocol>
