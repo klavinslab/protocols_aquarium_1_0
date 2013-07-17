@@ -72,20 +72,16 @@
   </step>
 
   <produce>
-    <object>Linearized DNA fragment</object>
+    <object>Linearized DNA</object>
     <quantity>1</quantity>
   </produce>
-  
-  <produce>
-    <object>Linearized DNA fragment</object>
-    <quantity>1</quantity>
-  </produce>
+
 
   <release>
     MG H2O
   </release>
   <release>
-    Enyzme 1
+    Enzyme 1
   </release>
   <release>
     NEB Buffer
