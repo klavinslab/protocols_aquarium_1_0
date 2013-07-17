@@ -53,7 +53,7 @@
 </step>
       
 <take>
-  <object>Molecular Grade Water 50 mL aliquot</object>
+  <object>Molecular Grade Water50 mL aliquot</object>
   <quantity>1</quantity>
   <var>MGH2O</var>
 </take>
