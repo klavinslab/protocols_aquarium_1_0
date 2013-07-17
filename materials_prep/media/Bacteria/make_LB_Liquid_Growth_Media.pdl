@@ -28,12 +28,11 @@
                 </note>
         </step>
 
-        <assign><lhs>ingredients</lhs><rhs>%{lb}[0].object[:name]</rhs></assign>
 
         <step>
-                <description>Measure 20g of %{ingredients}</description>
+                <description>Measure 20g of LB Powder </description>
                 <note>Place the plastic boat on the scale. Zero the scale.
-                Using the spatula, measure 20g of %{ingredients} into the plastic boat.
+                Using the spatula, measure 20g of LB Powder into the plastic boat.
                 </note>
         </step>
 
