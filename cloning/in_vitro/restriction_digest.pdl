@@ -78,13 +78,13 @@
 
 
   <release>
-    MG H2O
+    %{MG H2O}
   </release>
   <release>
-    Enzyme 1
+    %{Enzyme 1}
   </release>
   <release>
-    NEB Buffer
+    %{NEB Buffer}
   </release>
 
 
