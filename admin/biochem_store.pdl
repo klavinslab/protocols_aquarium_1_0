@@ -1,0 +1,35 @@
+<protocol name="Biochem Store">
+    <information>
+      This describes how to purchase inventory items from the biochem store
+    </information>
+          
+    <take>
+        <object>List of inventory items to purchase</object>
+        <var>list</var>
+    </take>
+    <take>
+        <object>List of relevant budget numbers</object>
+        <var>numbers</var>
+    <take>
+        <object>Freezer box (if purchasing an enzyme)</object>
+        <quantity>1</quantity>
+        <var>box</var>
+    </take>
+          
+    <step>
+        <description>
+        Take list of inventory items, budget numbers and freezer box (if needed) 
+        and walk to the biochem store, located in the basement of Health Sciences, 
+        room J-014.
+        </description>
+        <note>
+        It is easiest to enter the J-wing through the side door of Health Sciences 
+        that's across from Hitchcock and then go down one floor.
+        </note>
+    </step>
+             
+        
+            
+    
+                  
+    
