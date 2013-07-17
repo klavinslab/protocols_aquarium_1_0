@@ -11,19 +11,19 @@
   </take>
   
   <take>
-    <object>Restriction enzyme</object>
+    <object>Restriction Enzyme EcoRI</object>
     <quantity>1</quantity>
     <var>Enzyme 1</var>
   </take>
   
   <take>
-    <object>NEB Buffer 1, 2, 3 or 4 10x enzyme</object>
+    <object>NEB Buffer 1</object>
     <quantity>1</quantity>
     <var>NEB Buffer</var>
   </take>
   
   <take>
-    <object>MP or PCR DNA</object>
+    <object>MP DNA</object>
     <quantity>1</quantity>
     <var>DNA</var>
   </take>
