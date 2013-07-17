@@ -1,13 +1,15 @@
 <protocol name="Make Yeast Lysate">
-    <information>
-        This protocol prepares yeast lysate for yeast colony PCR
-    </information>
+
     
     <argument>
       	<name>lysates</name>
       	<type>number</type>
       	<description>Enter the number of lysates you wish to make.</description>
     </argument>
+    
+    <information>
+        This protocol prepares yeast lysate for yeast colony PCR.
+    </information>
     
     <take>
   		<object>MGH2O</object>
