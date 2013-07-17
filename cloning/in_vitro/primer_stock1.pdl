@@ -36,6 +36,7 @@
         <object>1.5 ml tube</object>
         <quantity>%{IDT}</quantity>
         <var>tubes</var>
+        </take>
 
   <step>
     <description> label 1.5 ml tubes with primer name or number </description>
