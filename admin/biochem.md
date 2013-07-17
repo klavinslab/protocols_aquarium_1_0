@@ -12,13 +12,13 @@ Description: Buying inventory from the campus biochem store
 ####Required equipment and materials:  
 
     * List of specific inventory items needed  
-        + Duration needed: 25 minutes
+        + Quantity: N/A
         + Location: From SOS Lab Order Requests Google doc  
     * Relevant budget numbers for inventory items  
-        + Duration: 25 minutes  
+        + Quantity: N/A  
         + Location: N/A
     * Freezer box if purchasing an enzyme
-        + Duration: 25 minutes
+        + Quanity: 1 box
         + Location: Main shelf of freezer
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
