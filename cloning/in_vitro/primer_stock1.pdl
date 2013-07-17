@@ -1,3 +1,4 @@
+<protocol>
 <protocol name="Primer Dilution to Stock">
 
     <argument>
@@ -59,6 +60,7 @@
     <produce>
     <object>Purified PCR product</object>
     <quantity>1</quantity>
+    <produce>
    
 
 </protocol>
