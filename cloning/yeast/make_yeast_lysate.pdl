@@ -57,9 +57,9 @@
        </if>
 
     <step>
-      <description>Pipette 3*%{lysates} uL 2% SDS into 1.5 mL tube. </description>
+      <description>Pipette 3*%{lysates} uL 2 percent SDS into 1.5 mL tube. </description>
        	    <note>
-             Label the tube as 0.2% SDS
+             Label the tube as 0.2 percent SDS
             </note>
   	</step>
 
@@ -70,7 +70,7 @@
   	
   	    
     <step>
-      <description>Mix 0.2% SDS tube by vortexing. </description>
+      <description>Mix 0.2 percent SDS tube by vortexing. </description>
   	</step>
   	
   	<step>
