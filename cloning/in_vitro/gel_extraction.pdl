@@ -42,7 +42,7 @@
 	<take>
 		<object>Eppendorf Tube</object>
 		<quantity>2</quantity>
-		<var>[tubeA, tubeB]</var>
+		<var>tubes</var>
 	</take>	
 	<take>
 		<object>QG Buffer</object>
@@ -123,8 +123,7 @@
 	<release>%{nanodrop}</release>
 	<release>%{gel}</release>		
 	<release>%{razor}</release>
-	<release>[%{tubeA}]</release>
-	<release>[%{tubeB}]</release>
+	<release>%{tubes}</release>
 	<release>%{QG}</release>
 	<release>%{sodium_acetate}</release>
 	<release>%{isopropanol}</release>
