@@ -57,7 +57,7 @@
        </if>
 
     <step>
-      <description>Pipette 3 * (%{lysates}) uL 2 percent SDS into 1.5 mL tube. </description>
+      <description>Pipette %{lysates} uL 2 percent SDS into 1.5 mL tube. </description>
        	    <note>
              Label the tube as 0.2 percent SDS
             </note>
@@ -65,7 +65,7 @@
 
     
     <step>
-      <description>Pipette 27 * (*%{lysates}) uL MGH2O into above tube. </description>
+      <description>Pipette *%{lysates} uL MGH2O into above tube. </description>
   	</step>
   	
   	    
@@ -74,7 +74,7 @@
   	</step>
   	
   	<step>
-      <description>Label %{lysates} of 1.5 mL tubes as 1, 2, ..., %{lysates}. </description>
+      <description>Label %{lysates} of tubes as 1, 2, ..., %{lysates}. </description>
   	</step>
   	
   	<step>
@@ -86,7 +86,7 @@
       <description>Add ~1/3 of a ~5mm colony to each tube 1, 2, ..., %{lysates} and mix well by vortexing. </description>
   	</step>
   	
-  	<if>
+      <if>
       <condition>%{lysates} &gt; 20 </condition>
       <then>
       
