@@ -72,9 +72,13 @@
   </produce>
 
   <release>
-    <var>MG H2O</var>
-    <var>Enyzme 1</var>
-    <var>NEB Buffer</var>
+    MG H2O
+  </release>
+  <release>
+    Enyzme 1
+  </release>
+  <release>
+    NEB Buffer
   </release>
 
 
