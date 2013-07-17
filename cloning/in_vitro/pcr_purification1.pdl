@@ -35,26 +35,35 @@
         <var>column</var>
         </take>
         
-    <step> transfer PCR product you want to purify to 1.5 ml tube </step>
+    <step> transfer PCR product you want to purify to 1.5 ml tube 
+    	</step>
     
-    <step> Multiply PCR product in ul by 5. Add that amount of EB to 1.5 ml tube. Pipette up and down to mix </step>
+    <step> Multiply PCR product in ul by 5. Add that amount of EB to 1.5 ml tube. Pipette up and down to mix 
+    	</step>
     
-    <step> Aliquot into Qiagen centrifuge column. Spin at 1 min at 17,000 g, or vacuum. Discard flow through. Place back in same tube. </step>
+    <step> Aliquot into Qiagen centrifuge column. Spin at 1 min at 17,000 g, or vacuum. Discard flow through. Place back in same tube. 
+    	</step>
     
     <step> Pipette in 750 ul of buffer PE and spin at 17,000 g, or vacuum. Discard flow through. Place column back into same tube.
-      <warning> Make sure that the PE has ethanol added to it. Otherwise you won't get much DNA </warning>
-      <note> If you are having low DNA concentration it may be a good idea to wash with 750 ul PE then 500 ul PE </note>
+      <warning> Make sure that the PE has ethanol added to it. Otherwise you won't get much DNA 
+      	</warning>
+      <note> If you are having low DNA concentration it may be a good idea to wash with 750 ul PE then 500 ul PE 
+      	</note>
      </step>
       
-      <step> Spin for an additonal minute at 17,000 g, or vacuum to remove residual buffer </step> 
+      <step> Spin for an additonal minute at 17,000 g, or vacuum to remove residual buffer 
+      	</step> 
       
-      <step> Remove the column and place into clean 1.5 ml tube </step> 
+      <step> Remove the column and place into clean 1.5 ml tube 
+      	</step> 
       
       <step> Add in 50 ul of EB, elution buffer to the column. Wait 1 minute then centrifuge. 
-      <note> to increase DNA concentration, add in 30 ul instead of 50 ul. Waiting an extra minute is another option, and both may be done simulatenously </note>
+      <note> to increase DNA concentration, add in 30 ul instead of 50 ul. Waiting an extra minute is another option, and both may be done simulatenously 
+      	</note>
       </step>
       
-      <step> use the nanodrop in order to measure the DNA concentration </step>
+      <step> use the nanodrop in order to measure the DNA concentration 
+      	</step>
       
       <release> %{PB} </release>
       <release> %{PE} </release>
