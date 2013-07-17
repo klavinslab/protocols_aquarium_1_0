@@ -65,33 +65,33 @@
 
     
     <step>
-      <description>Pipette 27*%{lysates} uL MGH2O into above tube/description>
+      <description>Pipette 27*%{lysates} uL MGH2O into above tube. </description>
   	</step>
   	
   	    
     <step>
-      <description>Mix 0.2% SDS tube by vortexing/description>
+      <description>Mix 0.2% SDS tube by vortexing. </description>
   	</step>
   	
   	<step>
-      <description>Label %{lysates} of 1.5 mL tubes as 1, 2, ..., %{lysates}/description>
+      <description>Label %{lysates} of 1.5 mL tubes as 1, 2, ..., %{lysates}. </description>
   	</step>
   	
   	<step>
-      <description>Pipette 30 uL from 0.2% SDS tube to each tube 1, 2, ..., %{lysates}/description>
+      <description>Pipette 30 uL from 0.2% SDS tube to each tube 1, 2, ..., %{lysates}. </description>
   	</step>
   	
   	
   	<step>
-      <description>Add ~1/3 of a ~5mm colony to each tube 1, 2, ..., %{lysates} and mix well by vortexing./description>
+      <description>Add ~1/3 of a ~5mm colony to each tube 1, 2, ..., %{lysates} and mix well by vortexing. </description>
   	</step>
   	
   	<if>
-      <condition>%{lysates} &gt; 20</condition>
+      <condition>%{lysates} &gt; 20 </condition>
       <then>
       
    		<step>
-      	<description>Heat at 90C for 5 minutes in the thermal cycler/description>
+      	<description>Heat at 90C for 5 minutes in the thermal cycler. </description>
   		</step> 
         
       </then>
@@ -99,7 +99,7 @@
        	<else>
        	
    		<step>
-      	<description>Heat at 90C for 10 minutes in the heat block/description>
+      	<description>Heat at 90C for 10 minutes in the heat block. </description>
   		</step> 
   		
        	</else>
