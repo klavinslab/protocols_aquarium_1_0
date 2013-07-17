@@ -165,20 +165,21 @@
 		<description>Discard gel in biohazard bin, rinse gel tray and box with DI water, clean the transilluminator, and return all items</description>
 	</step>	
 
-	<release>flask</release>
-	<release>balance</release>
-	<release>graduated_cylinder</release>
-	<release>microwave</release>
-	<release>glove</release>
-	<release>box</release>
-	<release>comb</release>
-	<release>power</release>
-	<release>light</release>
-	<release>paper</release>
-	<release>agar</release>
-	<release>TAE</release>
-	<release>gelgreen</release>
-	<release>dye</release>
-	<release>ladder</release>
+	<release>%{flask}</release>
+	<release>%{balance}</release>
+	<release>%{graduated_cylinder}</release>
+	<release>%{microwave}</release>
+	<release>%{glove}</release>
+	<release>%{box}</release>
+	<release>%{comb}</release>
+	<release>%{power}</release>
+	<release>%{light}</release>
+	<release>%{paper}</release>
+	<release>%{agar}</release>
+	<release>%{TAE}</release>
+	<release>%{gelgreen}</release>
+	<release>%{dye}</release>
+	<release>%{ladder}</release>
+	
 	
 </protocol>
