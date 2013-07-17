@@ -4,107 +4,65 @@
 	</information>
 	
 	<take>
-		<object>
-			1000 mL Bottle
-		</object>
-		<quantity>
-			1
-		</quantity>
-		<var>
-			bottle
-		</var>
+		<object>1000 mL Bottle</object>
+		<quantity>1</quantity>
+		<var>bottle</var>
 	</take>
 	<take>
-		<object>
-			TB Media Powder
-		</object>
-		<quantity>
-			1
-		</quantity>
-		<var>
-			tb
-		</var>
+		<object>TB Media Powder</object>
+		<quantity>1</quantity>
+		<var>tb</var>
 	</take>
 	<take>
-		<object>
-			DI Water
-		</object>
-		<quantity>
-			1
-		</quantity>
-		<var>
-			water
-		</var>
+		<object>DI Water</object>
+		<quantity>1</quantity>
+		<var>water</var>
 	</take>
 	<take>
-		<object>
-			Autoclave Tape
-		</object>
-		<quantity>
-			1
-		</quantity>
-		<var>
-			tape
-		</var>
+		<object>Autoclave Tape</object>
+		<quantity>1</quantity>
+		<var>tape</var>
 	</take>
 	<take>
-		<object>
-			Weigh Boat (L)
-		</object>
-		<quantity>
-			1
-		</quantity>
-		<var>
-			boat
-		</var>
+		<object>Weigh Boat (L)</object>
+		<quantity>1</quantity>
+		<var>boat</var>
 	</take>
 	
 	<step>
 		<description>
 			Place large weigh boat on gram scale and zero
 		</description>
-        <note>
-        </note>
 	</step>
 	
 	<step>
 		<description>
 			Measure out 20 grams of TB media powder and pour contents into liter bottle
 		</description>
-        <note>
-        </note>
 	</step>
 	
 	<step>
 		<description>
 			Measure out 800 mL of DI water using the graduated cyinder and pour into liter bottle
 		</description>
-        <note>
-        </note>
 	</step>
 	
 	<step>
 		<description>
 			Close liter bottle and shake until all contents are solvated
 		</description>
-        <note>
-        </note>
 	</step>
 	
 	<step>
 		<description>
 			Stick autoclave tape on top of the bottle
 		</description>
-        <note>
-        </note>
 	</step>
 	
 	<step>
 		<description>
 			Loosen cap and autoclave at 110C for 15 minutes
 		</description>
-        <note>
-        </note>
 	</step>
 	
 	<produce>
@@ -116,10 +74,10 @@
 		</quantity>
 	</produce>
 	
-    <release>[%{tb}[0],%{boat}[0],%{tape}[0]]</release>
+    	<release>[%{tb}[0],%{boat}[0],%{tape}[0]]</release>
 	
 	<step>
-			<description>Done. Thank you for running this protocol.</description>
+		<description>Done. Thank you for running this protocol.</description>
 	</step>
 	
 </protocol>
