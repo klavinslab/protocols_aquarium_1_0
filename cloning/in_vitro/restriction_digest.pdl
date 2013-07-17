@@ -38,12 +38,7 @@
     <quantity>1</quantity>
     <var>NEB Buffer</var>
   </take>
-  
-  <take>
-    <object>MP DNA</object>
-    <quantity>1</quantity>
-    <var>DNA</var>
-  </take>
+
   
   <take>
     <object>BSA</object>
