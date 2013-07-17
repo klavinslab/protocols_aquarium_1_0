@@ -40,7 +40,7 @@
 		<var>razor</var>
 	</take>	
 	<take>
-		<object>Epindorph Tube</object>
+		<object>Eppendorf Tube</object>
 		<quantity>2</quantity>
 		<var>[tubeA, tubeB]</var>
 	</take>	
