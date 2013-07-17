@@ -23,7 +23,7 @@
     <take>
         <object>IDT rehydrated stock</object>
         <quantity>%{IDT}</quantity>
-        <var>boats</var>
+        <var>stock</var>
     </take>
 
     <take>
@@ -46,6 +46,16 @@
     
     <step> 
     <description> pipette 90 ul of TE into each 1.5 ml tube </description>
+    
+    <release>
+        %{pipette}
+    </release>
+    <release>
+	%{bottles}
+    </release>
+    <release>
+        %{stock}
+    </release>
    
 
 </protocol>
