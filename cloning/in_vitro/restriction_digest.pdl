@@ -73,12 +73,12 @@
 
   <produce>
     <object>Linearized DNA fragment</object>
-    <quantity>y</quantity>
+    <quantity>1</quantity>
   </produce>
   
   <produce>
     <object>Linearized DNA fragment</object>
-    <quantity>y</quantity>
+    <quantity>1</quantity>
   </produce>
 
   <release>
