@@ -28,7 +28,7 @@
                 </note>
         </step>
 
-        <assign><var>ingredients</var><value>%{lb}.object[:name]</value></assign>
+        <assign><lhs>ingredients</lhs><rhs>%{lb}.object[:name]</rhs></assign>
 
         <step>
                 <description>Measure 20g of %{ingredients}</description>
@@ -38,7 +38,7 @@
         </step>
 
         <release>
-                <var>%{boat}</var>
+                %{boat}
         </release>
 
         <step>
@@ -55,16 +55,15 @@
 
         <produce>
                 <object>1000 mL LB Liquid Media (unsterile)</object>
-                <location>B5.105</location>
                 <quantity>1</quantity>
         </produce>
 
         <release>
-                <var>%{lb}</var>
+                %{lb}
         </release>
 
         <release>
-                <var>%{bottle}</var>
+                %{bottle}
         </release>
 
         <step>
