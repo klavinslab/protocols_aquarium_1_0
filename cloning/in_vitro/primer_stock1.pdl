@@ -1,4 +1,4 @@
-<protocol> name="Primer Dilution to Stock">
+<protocol name="Primer Dilution to Stock">
 
     <argument>
       <name>IDT</name>
