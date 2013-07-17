@@ -1,11 +1,18 @@
 <protocol name="Restriction Digest">
 
-
   <argument> 
     <name>RE_1</name>
     <type>string</type>
     <description>
       Enter the name of the restriction enzyme 1. Make sure the enzyme is listed in the inventory. 
+    </description>
+  </argument>
+
+  <argument> 
+    <name>Buffer</name>
+    <type>number</type>
+    <description>
+      Enter the name of the NEB Buffer. Choose from 1, 2, 3 or 4 
     </description>
   </argument>
   
@@ -27,7 +34,7 @@
   </take>
   
   <take>
-    <object>NEB Buffer 1</object>
+    <object>NEB Buffer %{Buffer}</object>
     <quantity>1</quantity>
     <var>NEB Buffer</var>
   </take>
