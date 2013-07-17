@@ -3,29 +3,104 @@
         This protocol prepares yeast lysate for yeast colony PCR
     </information>
     
+    <argument>
+      	<name>lysates</name>
+      	<type>number</type>
+      	<description>Enter the number of lysates you wish to make.</description>
+    </argument>
+    
     <take>
-  <object>MGH2O</object>
-	<quantity>1</quantity>
+  		<object>MGH2O</object>
+		<quantity>1</quantity>
         <var>tubes</var>
     </take>
     
     <take>
-  <object>2% SDS</object>
-  <quantity>1</quantity>
+  		<object>2% SDS</object>
+ 		<quantity>1</quantity>
         <var>tubes</var>
     </take>
     
-    <take>
-  <object>Heat block</object>
-  <quantity>1</quantity>
-        <var>heat block</var>
-    </take>
+      <if>
+      <condition>%{lysates} &gt; 20</condition>
+      <then>
+      
+        <take>
+            <object>PCR tubes</object>
+            <quantity>%{lysates}</quantity>
+            <var>lysates</var>
+        </take>
+        
+        <take>
+            <object>thermocycler</object>
+            <quantity>1</quantity>
+            <var>unit</var>
+        </take>
+        
+      </then>
+       
+       	<else>
+        <take>
+            <object>1.5mL tube</object>
+            <quantity>%{lysates}</quantity>
+            <var>lysates</var>
+        </take>
+        <take>
+        	<object>Heat block</object>
+  			<quantity>1</quantity>
+        	<var>heat block</var>
+    	</take>
+       	</else>
+       
+       </if>
+
+    <step>
+      <description>Pipette 3*%{lysates} uL 2% SDS into 1.5 mL tube. </description>
+       	    <note>
+             Label the tube as 0.2% SDS
+            </note>
+  	</step>
+
     
     <step>
-      <description>Prepare 30uL aliquots of 0.2% SDS from 2% SDS stock and molecular grade water. </description>
-       	    <note>
-             Label the tube
-            </note>
-            <warning>Prepare enough for the amount you need plus 10% to account for pipetting/lab error.
-            </warning>
+      <description>Pipette 27*%{lysates} uL MGH2O into above tube/description>
   	</step>
+  	
+  	    
+    <step>
+      <description>Mix 0.2% SDS tube by vortexing/description>
+  	</step>
+  	
+  	<step>
+      <description>Label %{lysates} of 1.5 mL tubes as 1, 2, ..., %{lysates}/description>
+  	</step>
+  	
+  	<step>
+      <description>Pipette 30 uL from 0.2% SDS tube to each tube 1, 2, ..., %{lysates}/description>
+  	</step>
+  	
+  	
+  	<step>
+      <description>Add ~1/3 of a ~5mm colony to each tube 1, 2, ..., %{lysates} and mix well by vortexing./description>
+  	</step>
+  	
+  	<if>
+      <condition>%{lysates} &gt; 20</condition>
+      <then>
+      
+   		<step>
+      	<description>Heat at 90C for 5 minutes in the thermal cycler/description>
+  		</step> 
+        
+      </then>
+       
+       	<else>
+       	
+   		<step>
+      	<description>Heat at 90C for 10 minutes in the heat block/description>
+  		</step> 
+  		
+       	</else>
+       
+       </if>
+</protocol>
