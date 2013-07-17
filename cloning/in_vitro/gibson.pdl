@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <protocol name="Gibson Assembly">
 <!-- It is not clear how you're supposed to use arrays...
+     FIXME: this doesn't work - can't iterate to generate arguments. Wait on array arguments.
 -->
 <argument>
   <name>fragment_n</name>
