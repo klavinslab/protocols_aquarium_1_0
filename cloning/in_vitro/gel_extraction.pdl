@@ -123,8 +123,8 @@
 	<release>%{nanodrop}</release>
 	<release>%{gel}</release>		
 	<release>%{razor}</release>
-	<release>%{tubeA}</release>
-	<release>%{tubeB}</release>
+	<release>[%{tubeA}]</release>
+	<release>[%{tubeB}]</release>
 	<release>%{QG}</release>
 	<release>%{sodium_acetate}</release>
 	<release>%{isopropanol}</release>
