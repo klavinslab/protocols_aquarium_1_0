@@ -11,7 +11,7 @@
           
     <step>
         <description>
-        Take list of inventory items t purchase, relevantbudget numbers 
+        Take list of inventory items to purchase, relevant budget numbers 
         and freezer box (if needed) and walk to the biochem store, located 
         in the basement of Health Sciences, room J-014.
         </description>
@@ -51,6 +51,10 @@
         Add purchased items to database and put away in correct location.
         </description>
     </step>
+    
+    <release>
+        <var>box</var>
+    </release>
     
     
 </protocol>
