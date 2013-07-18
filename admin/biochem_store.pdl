@@ -4,7 +4,7 @@
     </information>
           
     <take>
-        <object>Freezer box (if purchasing an enzyme)</object>
+        <object>Freezer box</object>
         <quantity>1</quantity>
         <var>box</var>
     </take>
@@ -51,6 +51,10 @@
         Add purchased items to database and put away in correct location.
         </description>
     </step>
+    
+    <release>
+        <var>box</var>
+    </release>
     
 </protocol>
              
