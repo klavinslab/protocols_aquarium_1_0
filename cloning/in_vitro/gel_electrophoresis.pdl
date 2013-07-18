@@ -1,8 +1,4 @@
 <protocol>
-
-	<information>
-		This protocol is for seperating linearized DNA on an agarose gel by fragment size
-	</information>
 	
 	<argument>
   		<name>gel_volume</name>
@@ -24,7 +20,10 @@
   		<type>number</type>
   		<description>Enter the desired run time for gel electrophoresis</description>
 	</argument>	
-	
+
+	<information>
+		This protocol is for seperating linearized DNA on an agarose gel by fragment size
+	</information>
 	
 	<take>
 		<object>250 mL Flask</object>
