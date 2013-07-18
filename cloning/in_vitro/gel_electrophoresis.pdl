@@ -37,7 +37,7 @@
 		<var>paper</var>
 	</take>	
 	
-	<release>[%{paper}[0],%{flask}[0]]</release>
+	<release>[%{flask}[0]]</release>
 	
 	
 	<take>
