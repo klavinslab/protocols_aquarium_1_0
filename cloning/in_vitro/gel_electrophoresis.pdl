@@ -18,7 +18,7 @@
 	<argument>
   		<name>run_time</name>
   		<type>number</type>
-  		<description>Enter the desired run time for gel electrophoresis</description>
+  		<description>Enter the desired run time for gel electrophoresis in minutes</description>
 	</argument>	
 
 	<information>
