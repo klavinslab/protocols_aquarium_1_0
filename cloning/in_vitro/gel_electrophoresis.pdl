@@ -109,7 +109,7 @@
 		<note>Wait for 30 minutes for gel to solidify</note>
 	</step>
 	
-	<release>[%{flask}[0],%{balance}[0],%{graduated_cylinder}[0],%{microwave}[0],%{glove}[0],%{gelgreen}[0],%{agar}[0],%{paper}[0]</release>
+	<release>[%{flask}[0],%{balance}[0],%{graduated_cylinder}[0],%{microwave}[0],%{glove}[0],%{gelgreen}[0],%{agar}[0],%{paper}[0]]</release>
 	
 
 	<step>
@@ -165,7 +165,7 @@
 		<note>Check on the gel every 30-40 minutes in case the bands have sufficiently resolved. When sufficiently resolved, pause the power supply and then turn it off.</note>
 	</step>
 
-	<release>%{dye}[0],%{ladder}[0]</release>
+	<release>%{dye}[0],%{ladder}[0]]</release>
 	
 	<take>
 		<object>Transluminator</object>
@@ -177,7 +177,7 @@
 		<description>Remove the gel tray from the gel box and transfer the gel to the large blue light transilluminator for visualization (It should slide right of of the tray, so be careful that it doesn't slide off during the transfer!</description>
 	</step>
 	
-	<release>%{box}[0],%{power}[0]</release>
+	<release>%{box}[0],%{power}[0]]</release>
 	
 	<step>
 		<description>To remove bubbles under the gel, slowly move the gel around on the transilluminator, allowing the bubbles to escape</description>
