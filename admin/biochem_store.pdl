@@ -4,14 +4,6 @@
     </information>
           
     <take>
-        <object>List of inventory items to purchase</object>
-        <var>list</var>
-    </take>
-    <take>
-        <object>List of relevant budget numbers</object>
-        <var>numbers</var>
-    </take>
-    <take>
         <object>Freezer box (if purchasing an enzyme)</object>
         <quantity>1</quantity>
         <var>box</var>
@@ -19,9 +11,9 @@
           
     <step>
         <description>
-        Take list of inventory items, budget numbers and freezer box (if needed) 
-        and walk to the biochem store, located in the basement of Health Sciences, 
-        room J-014.
+        Take list of inventory items t purchase, relevantbudget numbers 
+        and freezer box (if needed) and walk to the biochem store, located 
+        in the basement of Health Sciences, room J-014.
         </description>
         <note>
         It is easiest to enter the J-wing through the side door of Health Sciences 
@@ -61,8 +53,6 @@
     </step>
     
     <release>
-        <var>list</var>
-        <var>numbers</var>
         <var>box</var>
     </release>
         
