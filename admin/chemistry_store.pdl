@@ -1,1 +1,45 @@
-<protocole name="Chemistry Store">
+<protocol name="Chemistry Store">
+    <information>
+        This describes how to purchase inventory from the campus chemistry store.
+    </information>
+    
+    <step>
+        <description>
+        Prepare a list of inventory to purchase from the chemistry store, and walk
+        to the chemistry store, located in the basement of Bagley Hall, Room 36.
+        </description>
+        <note>
+        Before purchasing inventory at the chemistry store for the first time, you
+        must register your husky card with the lab's budget numnbers in the main 
+        office of Bagley (1st floor).
+        </note>
+    </step>
+    
+    <step>
+        <description>
+        While at the chemistry store, pick out the items to purchase, take the items 
+        to the checkout counter, sign in with your MyUW account, and choose the 
+        relevant budget number for the items.
+        </description>
+    </step>
+    
+    <step>
+        <description>
+        Enter the item number (sticker on the item) into the computer, as well as
+        the quantity of each item. Click Purchase.
+        </description>
+        <note>
+        If purchasing a chemical, scan the barcode of each chemical purchased
+        with the scanner located right next to the checkout computer.
+        </note>
+    </step>
+    
+    <step>
+        <description>
+        Walk back to the lab, enter the items into the database, and put purchased
+        items away in correct location.
+        </description>
+    </step>
+    
+</protocol>
+        
