@@ -29,11 +29,7 @@
 		<object>250 mL Flask</object>
 		<quantity>1</quantity>
 		<var>flask</var>
-	</take>
-	
-	
-	<release>%{flask}</release>
-	
+	</take>	
 	
 	<take>
 		<object>Weigh Paper</object>
@@ -41,7 +37,7 @@
 		<var>paper</var>
 	</take>	
 	
-	<release>[%{paper}[0]]</release>
+	<release>[%{paper}[0],%{flask}[0]]</release>
 	
 	
 	<take>
