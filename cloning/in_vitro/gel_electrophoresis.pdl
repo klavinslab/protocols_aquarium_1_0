@@ -1,7 +1,7 @@
 <protocol name="Gel Electrophoresis">
 
 	<information>
-		This protocol is for seprating linearized DNA on an agarose gel by fragment size
+		This protocol is for seperating linearized DNA on an agarose gel by fragment size
 	</information>
 	
 	<argument>
@@ -14,6 +14,17 @@
   		<type>number</type>
   		<description>Enter the desired percent agarose (suggested 0.8 to 1.0)</description>
 	</argument>	
+	<argument>
+  		<name>run_voltage</name>
+  		<type>number</type>
+  		<description>Enter the desired voltage for gel electrophoresis</description>
+	</argument>
+	<argument>
+  		<name>run_time</name>
+  		<type>number</type>
+  		<description>Enter the desired run time for gel electrophoresis</description>
+	</argument>	
+	
 	
 	<take>
 		<object>250 mL Flask</object>
@@ -79,22 +90,20 @@
 		<var>comb</var>
 	</take>			
 	<step>
-		<description>Rinse gel box, gel tray, and gel comb with DI water</description>
+		<description>Set up the gel tray and gel box</description>
+		<note>Rinse gel box, gel tray, and gel comb with DI water. Push the tray down fully into the center of the gel box, forming a seal.
 	</step>
-	<step>
-		<description>Push the tray down fully into the center of the gel box, forming a seal</description>
-	</step>	
 	<take>
 		<object>Heat-Resistant Glove</object>
 		<quantity>1</quantity>
 		<var>glove</var>
 	</take>		
 	<step>
-		<description>Using waterproof, heat-resistant gloves, swirl to mix</description>
+		<description>Remove flask, swirl to mix, and check dissolution</description>
+		<note>Continue to microwave for 10 seconds, swirl, and check until agarose is completely dissolved</note>
+		<warning>Use waterproof, heat-resistant gloves!</warning>
 	</step>
-	<step>
-		<description>Microwave for 10 seconds and swirl- Repeat this step until the agarose solution has no sediment</description>
-	</step>	
+
 	<take>
 		<object>GelGreen</object>
 		<quantity>1</quantity>
@@ -102,7 +111,7 @@
 	</take>		
 	<step>
 		<description>Add 5µL of GelGreen to the 250ml flask</description>
-		<note>Swirl to mix</note>
+		<note>Swirl to mix thouroughly</note>
 	</step>
 	<step>
 		<description>Pour the contents of the 250ml flask into the sealed gel tray and add comb</description>
@@ -113,23 +122,11 @@
 	
 
 	<step>
-		<description>Carefully lift the gel tray out of the gel box</description>
-	</step>	
-	<step>
-		<description>With the electrodes facing away, place the gel tray into the box with the comb on the left side</description>
+		<description>Setup the gel for loading</description>
+		<note>Carefully lift the gel tray out of the gel box. With the electrodes facing away, place the gel tray into the box with the comb on the left side. Fill the gel box with 1X TAE until it reaches the marked fill line on the side of the box. Carefully remove the comb.</note>
 	</step>	
 	
-	<step>
-		<description>Fill the gel box with 1X TAE until it reaches the marked fill line on the side of the box</description>
-	</step>
-	
-	<release>%{TAE}</release>
-	
-	<step>
-		<description>Carefully remove the comb</description>
-	</step>		
-	
-	<release>%{comb}</release>
+	<release>[%{TAE}[0],%{comb}[0]]</release>
 	
 	<take>
 		<object>Loading Dye</object>
@@ -143,6 +140,7 @@
 	</take>					
 	<step>
 		<description>Add loading dye to all samples</description>
+		<note>For 6x loading dye, add 2ul of dye for each 10ul of sample to load</note>
 	</step>
 	<step>
 		<description>Load all samples and the appropriate DNA ladder</description>
@@ -155,7 +153,7 @@
 	</take>	
 	
 	<step>
-		<description>Turn on the power supply and set the voltage and time</description>
+		<description>Turn on the power supply and set the voltage to %{run_voltage}V and time to %{run_time}s</description>
 	</step>
 	<step>
 		<description>Connect the electrodes to the power supply with the combination safety cover + electrode leads apparatus</description>
@@ -174,25 +172,19 @@
 	</take>							
 
 	<step>
-		<description>Remove the gel tray from the gel box and transfer the gel to the large blue light transilluminator for visualization (It should slide right of of the tray, so be careful that it doesn't slide off during the transfer!</description>
+		<description>Remove the gel tray from the gel box and transfer the gel to the transilluminator</description>
+		<warning>It should slide right of of the tray, so be careful that it doesn't slide off during the transfer!</warning>
+		<note>To remove bubbles under the gel, slowly move the gel around on the transilluminator, allowing the bubbles to escape</note>
 	</step>
 	
 	<release>%{box}[0],%{power}[0]]</release>
 	
 	<step>
-		<description>To remove bubbles under the gel, slowly move the gel around on the transilluminator, allowing the bubbles to escape</description>
+		<description>Visualize with the gel hood and transilluminator, capture an image</description>
+		<note>Continue to gel purification if appropriate</note>
 	</step>
 	<step>
-		<description>Visualize with the gel hood and transilluminator</description>
-	</step>
-	<step>
-		<description>Capture an image</description>
-	</step>
-	<step>
-		<description>Continue to gel purification if appropriate</description>
-	</step>
-	<step>
-		<description>Discard gel in biohazard bin, rinse gel tray and box with DI water, clean the transilluminator, and return all items</description>
+		<description>Discard gel in biohazard bin and clean the transilluminator</description>
 	</step>	
 
 	<release>%{light}</release>
