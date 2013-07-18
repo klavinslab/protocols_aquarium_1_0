@@ -52,10 +52,6 @@
         </description>
     </step>
     
-    <release>
-        <var>box</var>
-    </release>
-        
 </protocol>
              
         
