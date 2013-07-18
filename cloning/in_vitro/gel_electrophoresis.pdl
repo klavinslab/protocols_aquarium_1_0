@@ -177,7 +177,7 @@
 		<note>To remove bubbles under the gel, slowly move the gel around on the transilluminator, allowing the bubbles to escape</note>
 	</step>
 	
-	<release>%{box}[0],%{power}[0]]</release>
+	<release>[%{box}[0],%{power}[0]]</release>
 	
 	<step>
 		<description>Visualize with the gel hood and transilluminator, capture an image</description>
