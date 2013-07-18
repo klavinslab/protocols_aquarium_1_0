@@ -163,7 +163,7 @@
 		<note>Check on the gel every 30-40 minutes in case the bands have sufficiently resolved. When sufficiently resolved, pause the power supply and then turn it off.</note>
 	</step>
 
-	<release>%{dye}[0],%{ladder}[0]]</release>
+	<release>[%{dye}[0],%{ladder}[0]]</release>
 	
 	<take>
 		<object>Transluminator</object>
