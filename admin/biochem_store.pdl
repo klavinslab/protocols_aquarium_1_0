@@ -52,9 +52,7 @@
         </description>
     </step>
     
-    <release>
-        <var>box</var>
-    </release>
+    <release>%{box}</release>
     
     
 </protocol>
