@@ -37,14 +37,13 @@
 		<var>paper</var>
 	</take>	
 	
-	<release>[%{flask}[0]]</release>
-	
 	
 	<take>
 		<object>Agarose</object>
 		<quantity>1</quantity>
 		<var>agar</var>
 	</take>	
+	
 	<take>
 		<object>Scale</object>
 		<quantity>1</quantity>
