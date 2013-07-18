@@ -27,6 +27,44 @@
         that's across from Hitchcock and then go down one floor.
         </note>
     </step>
+    
+    <step>
+        <description>
+        Give cashier name of lab (Klavins Lab), list of inventory, and relevant
+        budget numbers when prompted. 
+        </description>
+    </step>
+    
+    <step>
+        <description>
+        Sign receipt when prompted by cashier, and gather items purchased.
+        </description>
+        <note>
+        If purchasing an enzyme, take it out of the packaging and put into freezer box
+        </note>
+    </step>
+    
+    <step>
+        <description>
+        Walk back to lab.
+        </description>
+        <note>
+        If an enzyme was purchased, add it to freezer right away.
+        </note>
+    </step>
+    
+    <step>
+        <description>
+        Add purchased items to database and put away in correct location.
+        </description>
+    </step>
+    
+    <release>
+        <var>list</var>
+        <var>numbers</var>
+        <var>box</var>
+        
+    </protocol>
              
         
             
