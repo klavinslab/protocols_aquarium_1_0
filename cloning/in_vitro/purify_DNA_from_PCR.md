@@ -1,4 +1,4 @@
-[PCR purification]
+Purify DNA from PCR
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Description: Purification of your PCR product
@@ -10,8 +10,6 @@ Description: Purification of your PCR product
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 ####Required equipment and materials####
-
-Day 1
 
     * Centrifuge
         + Duration needed: 30 min
@@ -50,8 +48,6 @@ Day 1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 ##PCR purification##
-
-Day 1
 
 1. Transfer PCR product that you want to purify into 1.5 ml tube. 
 2. Add in 5 volumes of buffer PB for every 1 volume of PCR product. E.g. if you have 10ul PCR product add 50 ul PB.
