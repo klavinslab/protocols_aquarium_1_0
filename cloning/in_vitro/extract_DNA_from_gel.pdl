@@ -1,4 +1,4 @@
-<protocol name="Gel Extraction">
+<protocol name="Extract DNA from Gel">
 
 	<information>
 		This protocol describes how to extract a band of DNA from an agarose gel
