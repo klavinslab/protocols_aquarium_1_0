@@ -11,11 +11,6 @@ Description: This reaction integrates desired DNA sequences into specially desig
 
 ####Required equipment and materials####
 
-Day 1
-
-  
-------
-
     * LR Clonase
         + Quantity: 1µl * desired number of reactions
         + Location: -20º Freezer
@@ -31,8 +26,6 @@ Day 1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 ##Protocol##
-
------
 
 Day 1
 
