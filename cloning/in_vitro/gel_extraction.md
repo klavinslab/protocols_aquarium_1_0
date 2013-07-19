@@ -1,4 +1,4 @@
-Extract DNA from Gel (Qiagen)
+Gel Extraction (Qiagen)
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Description: Isolating the DNA from a specific gel band
