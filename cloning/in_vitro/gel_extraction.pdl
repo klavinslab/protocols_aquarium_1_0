@@ -50,20 +50,20 @@
 	</take>	
 	
 	<step>
-		<description>Weigh gel slice on balance using an empty epindorph tube to tare</description>
+		<description>Weigh gel slice</description>
+		<note>Use empty eppendorf tube to tare balance. Record gel mass for each slice</note>
+	</step>
 	
-	
-	
-	
-	</step>		
 	<release>%{balance}</release>	
+	
 	<take>
 		<object>QG Buffer</object>
 		<quantity>1</quantity>
 		<var>QG</var>
 	</take>		
 	<step>
-		<description>Add 3x gel volume of QG buffer (ex. a 50 mg gel would require 150 uL of QG buffer)</description>
+		<description>Add 3x gel volume of QG buffer</description>
+		<note>For example, a 50 mg gel would require 150 uL of QG buffer</note>
 	</step>		
 	<take>
 		<object>50C Heat Block</object>
@@ -81,8 +81,9 @@
 		<var>sodium_acetate</var>
 	</take>
 	<step>
-		<description>Place tube in 50 C heat block for 10 minutes. Vortex every few minutes to speed up the process</description>
-		<note>Check if tube contents look orange or purple. If so, the pH is too high and your DNA will not bind to the column. Add 10 uL of 3 M sodium acetate (NaOAc) and mix</note>	
+		<description>Place tube in 50 C heat block for 10 minutes</description>
+		<note>Vortex every few minutes to speed up the process</note>
+		<warning>Check if tube contents look orange or purple. If so, the pH is too high and your DNA will not bind to the column. Add 10 uL of 3 M sodium acetate (NaOAc) and mix</warning>	
 	</step>		
 	<release>[%{heat}[0],%{vortex}[0],%{QG}[0],%{sodium_acetate}[0]]</release>
 	<take>
@@ -91,16 +92,24 @@
 		<var>isopropanol</var>
 	</take>	
 	<step>
-		<description>Add 1x volume (50 uL to 50 mg of gel slice) isopropanol. Pipette up and down to mix (do not centrifuge at this step)</description>
-		<note>this step is only necessary if purifying a band less than 500 bp or greater than 4 kb</note>	
+		<description>Add 1x volume (50 uL to 50 mg of gel slice) isopropanol and pipette to mix</description>
+		<note>this step is only necessary if purifying a band less than 500 bp or greater than 4 kb</note>
+		<warning>Do NOT centrifuge at this step</warning>
 	</step>	
+	<release>%{isopropanol}</release>	
 	<take>
 		<object>Gel Extraction Spin Column</object>
 		<quantity>%{number}</quantity>
 		<var>column</var>
 	</take>
+	<take>
+		<object>Centrifuge</object>
+		<quantity>1</quantity>
+		<var>centrifuge</var>
+	</take>
 	<step>
-		<description>Add tube contents to labeled purple Qiagen column. Spin at top speed (> 17,900 g) for 1 minute to bind DNA to column. Empty collection tube</description>
+		<description>Transfer to labeled splin column, spin at 17,900 g for 1 min, discard flow through</description>
+		<note>Use purple gel extraction Qiagen column</note>
 	</step>	
 	<take>
 		<object>PE Buffer</object>
@@ -108,27 +117,34 @@
 		<var>PE</var>
 	</take>	
 	<step>
-		<description>Add 750 uL PE buffer to column and wait five minutes. Spin at top speed (> 17,900 g) for 30 seconds to wash column. Empty collection tube</description>
+		<description>PE wash 1</description>
+		<note>Add 750 uL PE buffer to column and wait five minutes. Spin at 17,900 g for 30 seconds. Empty collection tube</note>
 	</step>	
 	<step>
-		<description>Add 500 uL PE buffer to column and wait five minutes. Spin at top speed (> 17,900 g) for 30 seconds to wash column. Empty collection tube</description>
+		<description>PE wash 2</description>
+		<note>Add 500 uL PE buffer to column and wait five minutes. Spin at 17,900 g for 30 seconds. Empty collection tube</note>
 	</step>	
-	<step>
-		<description>Spin at top speed (> 17,900 g) for 30 seconds to remove all PE buffer from column. Label 1.5 ml Eppendorf tube. Transfer pink column to empty Eppendorf tube</description>
-	</step>		
+	<release>%{PE}</release>	
 	<take>
 		<object>Eppendorf Tube</object>
 		<quantity>%{number}</quantity>
 		<var>tubes</var>
 	</take>	
+	<step>
+		<description>Dry column and transfer to clean and labeled eppendorf tube</description>
+		<note>Spin at top speed (> 17,900 g) for 30 seconds to remove all PE buffer from column</note>
+	</step>	
 	<take>
 		<object>Elution Buffer</object>
 		<quantity>1</quantity>
 		<var>elution_buffer</var>
 	</take>		
 	<step>
-		<description>Add 30 uL molecular grade water or EB elution buffer to center of column. Be very careful to not pipette on the wall of the tube. Wait two minutes. Elute DNA into Eppendorf tube by spinning at top speed (> 17,900 xg) for one minute</description>
-	</step>		
+		<description>Elute with 30 uL elution buffer (EB)</description>
+		<note>Wait two minutes. Spin at 17,900 g for one minute</note>
+		<warning>Add EB to center of column. Be very careful to not pipette on the wall of the tube</warning>
+	</step>	
+	<release>[%{centrifuge}[0],%{column}[0],%{elution_buffer}[0]</release>
 	<take>
 		<object>Nanodrop</object>
 		<quantity>1</quantity>
@@ -138,22 +154,14 @@
 		<description>Spec on Nanodrop to check DNA concentration. If the absorbance value at 230 nm is greater than 5, there are residual salts in the elution that are masking the amount of DNA you have</description>
 		<note>If a more accurate concentration is necessary for any downstream use, dialyze elution for 20-30 minutes at room temperature to remove residual salts. Re-spec on Nanodrop</note>
 	</step>		
-	
-	
-
-	
+	<release>[%{nanodrop}[0],{tubes}[0]]</release>
 	
 
+        <produce>
+          	<object>DNA</object>
+          	<quantity>%{number}</quantity>
+        </produce>    
 
-	<release>%{nanodrop}</release>
-	<release>%{tubes}</release>
-	<release>%{isopropanol}</release>
-	<release>%{column}</release>
-	<release>%{PE}</release>
-	<release>%{elution_buffer}</release>
-	
-	
-	
 	<step>
 		<description>Thank you for running the gel extraction protocol!</description>
 	</step>		
