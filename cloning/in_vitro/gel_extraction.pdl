@@ -1,8 +1,16 @@
 <protocol name="Gel Extraction">
 
+
+	<argument>
+  		<name>number</name>
+  		<type>number</type>
+  		<description>Enter the number of bands to be extracted</description>
+	</argument>	
+
 	<information>
 		This protocol describes how to extract a band of DNA from an agarose gel
-	</information>
+	</information>	
+	
 	
 	<take>
 		<object>Transluminator</object>
@@ -10,10 +18,53 @@
 		<var>light_box</var>
 	</take>
 	<take>
+		<object>Finished Gel</object>
+		<quantity>1</quantity>
+		<var>gel</var>
+	</take>	
+	<take>
+		<object>Razor Blade</object>
+		<quantity>1</quantity>
+		<var>razor</var>
+	</take>	
+	<take>
+		<object>Eppendorf Tube</object>
+		<quantity>%{number}</quantity>
+		<var>tubes</var>
+	</take>	
+	<step>
+		<description>Label epindorph tubes</description>
+		<note>Shorthand is okay, as this tubes will not be kept</note>
+	</step>	
+	<step>
+		<description>Cut fragments out of gel with razor and place each in labeled epindorph tube</description>
+		<note>Use transluminator to see bands. Cut as closely around the bands as possible to minimize gel mass</note>
+	</step>		
+	
+	<release>[%{light_box}[0],%{gel}[0],%{razor}[0]]</release>
+		
+	<take>
 		<object>Scale</object>
 		<quantity>1</quantity>
 		<var>balance</var>
 	</take>	
+	
+	<step>
+		<description>Weigh gel slice on balance using an empty epindorph tube to tare</description>
+	
+	
+	
+	
+	</step>		
+	<release>%{balance}</release>	
+	<take>
+		<object>QG Buffer</object>
+		<quantity>1</quantity>
+		<var>QG</var>
+	</take>		
+	<step>
+		<description>Add 3x gel volume of QG buffer (ex. a 50 mg gel would require 150 uL of QG buffer)</description>
+	</step>		
 	<take>
 		<object>50C Heat Block</object>
 		<quantity>1</quantity>
@@ -25,90 +76,64 @@
 		<var>vortex</var>
 	</take>	
 	<take>
-		<object>Nanodrop</object>
-		<quantity>1</quantity>
-		<var>nanodrop</var>
-	</take>
-	<take>
-		<object>Finished Gel</object>
-		<quantity>1</quantity>
-		<var>gel</var>
-	</take>
-	<take>
-		<object>Razor Blade</object>
-		<quantity>1</quantity>
-		<var>razor</var>
-	</take>	
-	<take>
-		<object>Eppendorf Tube</object>
-		<quantity>2</quantity>
-		<var>tubes</var>
-	</take>	
-	<take>
-		<object>QG Buffer</object>
-		<quantity>1</quantity>
-		<var>QG</var>
-	</take>	
-	<take>
 		<object>Sodium Acetate</object>
 		<quantity>1</quantity>
 		<var>sodium_acetate</var>
 	</take>
+	<step>
+		<description>Place tube in 50 C heat block for 10 minutes. Vortex every few minutes to speed up the process</description>
+		<note>Check if tube contents look orange or purple. If so, the pH is too high and your DNA will not bind to the column. Add 10 uL of 3 M sodium acetate (NaOAc) and mix</note>	
+	</step>		
+	<release>[%{heat}[0],%{vortex}[0],%{QG}[0],%{sodium_acetate}[0]]</release>
 	<take>
 		<object>Isopropanol</object>
 		<quantity>1</quantity>
 		<var>isopropanol</var>
-	</take>
+	</take>	
+	<step>
+		<description>Add 1x volume (50 uL to 50 mg of gel slice) isopropanol. Pipette up and down to mix (do not centrifuge at this step)</description>
+		<note>this step is only necessary if purifying a band less than 500 bp or greater than 4 kb</note>	
+	</step>	
 	<take>
 		<object>Gel Extraction Spin Column</object>
-		<quantity>1</quantity>
+		<quantity>%{number}</quantity>
 		<var>column</var>
 	</take>
+	<step>
+		<description>Add tube contents to labeled purple Qiagen column. Spin at top speed (> 17,900 g) for 1 minute to bind DNA to column. Empty collection tube</description>
+	</step>	
 	<take>
 		<object>PE Buffer</object>
 		<quantity>1</quantity>
 		<var>PE</var>
-	</take>
-	<take>
-		<object>Elution Buffer</object>
-		<quantity>1</quantity>
-		<var>elution_buffer</var>
 	</take>	
-
-		
-	<step>
-		<description>Cut fragment out of gel with razor and place in epindorph tube</description>
-		<note>Cut as closely around the band as possible to minimize gel mass</note>
-	</step>	
-	<step>
-		<description>Weigh gel slice on balance using an empty epindorph tube to tare</description>
-	</step>	
-	<step>
-		<description>Add 3x gel volume of QG buffer (ex. a 50 mg gel would require 150 uL of QG buffer)</description>
-	</step>		
-	<step>
-		<description>Place tube in 50 C heat block for 10 minutes. Vortex every few minutes to speed up the process</description>
-		<note>Check if tube contents look orange or purple. If so, the pH is too high and your DNA will not bind to the column. Add 10 uL of 3 M sodium acetate (NaOAc) and mix</note>	
-	</step>	
-	<step>
-		<description>Add 1x volume (50 uL to 50 mg of gel slice) isopropanol. Pipette up and down to mix (do not centrifuge at this step)</description>
-		<note>this step is only necessary if purifying a band less than 500 bp or greater than 4 kb</note>	
-	</step>
-	<step>
-		<description>Add tube contents to labeled purple Qiagen column. Spin at top speed (> 17,900 g) for 1 minute to bind DNA to column. Empty collection tube</description>
-	</step>
 	<step>
 		<description>Add 750 uL PE buffer to column and wait five minutes. Spin at top speed (> 17,900 g) for 30 seconds to wash column. Empty collection tube</description>
 	</step>	
 	<step>
 		<description>Add 500 uL PE buffer to column and wait five minutes. Spin at top speed (> 17,900 g) for 30 seconds to wash column. Empty collection tube</description>
-	</step>		
+	</step>	
 	<step>
 		<description>Spin at top speed (> 17,900 g) for 30 seconds to remove all PE buffer from column. Label 1.5 ml Eppendorf tube. Transfer pink column to empty Eppendorf tube</description>
 	</step>		
+	<take>
+		<object>Eppendorf Tube</object>
+		<quantity>%{number}</quantity>
+		<var>tubes</var>
+	</take>	
+	<take>
+		<object>Elution Buffer</object>
+		<quantity>1</quantity>
+		<var>elution_buffer</var>
+	</take>		
 	<step>
 		<description>Add 30 uL molecular grade water or EB elution buffer to center of column. Be very careful to not pipette on the wall of the tube. Wait two minutes. Elute DNA into Eppendorf tube by spinning at top speed (> 17,900 xg) for one minute</description>
 	</step>		
+	<take>
+		<object>Nanodrop</object>
+		<quantity>1</quantity>
+		<var>nanodrop</var>
+	</take>	
 	<step>
 		<description>Spec on Nanodrop to check DNA concentration. If the absorbance value at 230 nm is greater than 5, there are residual salts in the elution that are masking the amount of DNA you have</description>
 		<note>If a more accurate concentration is necessary for any downstream use, dialyze elution for 20-30 minutes at room temperature to remove residual salts. Re-spec on Nanodrop</note>
@@ -116,20 +141,21 @@
 	
 	
 
-	<release>%{light_box}</release>
-	<release>%{balance}</release>
-	<release>%{heat}</release>
-	<release>%{vortex}</release>
+	
+	
+
+
 	<release>%{nanodrop}</release>
-	<release>%{gel}</release>		
-	<release>%{razor}</release>
 	<release>%{tubes}</release>
-	<release>%{QG}</release>
-	<release>%{sodium_acetate}</release>
 	<release>%{isopropanol}</release>
 	<release>%{column}</release>
 	<release>%{PE}</release>
 	<release>%{elution_buffer}</release>
 	
+	
+	
+	<step>
+		<description>Thank you for running the gel extraction protocol!</description>
+	</step>		
 	
 </protocol>
