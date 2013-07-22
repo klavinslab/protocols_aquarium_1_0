@@ -124,8 +124,9 @@
 		<note>Wait for 30 minutes for gel to solidify</note>
 	</step>
 	
-	<release>[%{flask}[0],%{balance}[0],%{graduated_cylinder}[0],%{microwave}[0],%{glove}[0],%{gelgreen}[0],%{agar}[0],%{paper}[0]]</release>
-	
+	<release>[%{flask}[0],%{balance}[0],%{graduated_cylinder}[0],%{microwave}[0],%{glove}[0]]</release>
+	<release>[%{gelgreen}[0],%{agar}[0],%{paper}[0]]</release>
+
 
 	<step>
 		<description>Setup the gel for loading</description>
