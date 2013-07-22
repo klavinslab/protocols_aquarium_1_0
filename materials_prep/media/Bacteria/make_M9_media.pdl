@@ -8,7 +8,7 @@
         <name>nutrient</name>
 		<type>string</type>
         <description>
-			String, The carbon nutrient used in this batch of M9
+			String, The carbon nutrient used in this batch of M9 (glucose or cellobiose)
 		</description>
     </argument>
 	
@@ -79,7 +79,7 @@
     <if> 
 	<condition>cassaa</condition>
 	<then>
-    	    <take>
+    	<take>
 		<object> Sterile CAS amino acid solution </object>
 		<quantity> 1 </quantity>
 		<var> cas </var>
@@ -91,7 +91,7 @@
     <if> 
 	<condition>nutrient==cellobiose</condition>
 	<then>
-    	    <take>	
+    	<take>	
 		<object> 4% Cellobiose Sterile Filtered </object>
 		<quantity> 1 </quantity>
 		<var> cb </var>
@@ -103,7 +103,7 @@
     <if> 
 	<condition>nutrient==glucose</condition>
 	<then>
-    	    <take>
+    	<take>
 		<object> 20% glucose Sterile Filtered </object>
 		<quantity> 1 </quantity>
 		<var> gluc </var>
@@ -147,10 +147,10 @@
     </if>
 
     <if>
-	<condition>nutrient == cellobiose</condition>
+	<condition>nutrient == glucose</condition>
 	<then>
 	    <step>
-		<description> Using the serological pipette, add 2.5 mL of 20% cellobiose </description>
+		<description> Using the serological pipette, add 2.5 mL of 20% glucose </description>
 	    </step>
 	</then>
 	<else></else>
@@ -161,17 +161,14 @@
     </step>
 
     <release>
-	<var> sero </var>
-	<var> pip </var>
-	<var> saltsol </var>
-	<var> salts </var>
+	[%{sero}[0], %{pip}[0], %{saltsol}[0], %{salts}[0]]
     </release>
     
     <if> 
 	<condition>biotin</condition>
 	<then>
 	    <release>
-		<var> 250biotin </var>
+		[%{250biotin}[0]]
 	    </release>
 	</then>
 	<else></else>
@@ -181,7 +178,7 @@
 	<condition>cassaa</condition>
 	<then>
 	    <release>
-		<var> cas </var>
+		[%{cas}[0]]
 	    </release>
 	</then>
 	<else></else>
@@ -191,7 +188,7 @@
 	<condition>nutrient==cellobiose</condition>
 	<then>
 	    <release>
-		<var> cb </var>
+		[%{cb}[0]]
 	    </release>
 	</then>
 	<else></else>
@@ -201,7 +198,7 @@
 	<condition>nutrient==glucose</condition>
 	<then>
 	    <release>
-		<var> gluc </var>
+		[%{gluc}[0]]
 	    </release>
 	</then>
 	<else></else>
