@@ -111,9 +111,12 @@
 		<object>GelGreen</object>
 		<quantity>1</quantity>
 		<var>gelgreen</var>
-	</take>		
+	</take>
+	
+	<assign><lhs>gelgreen_volume</lhs><rhs>%{gel_volume} / 10.0</rhs></assign>
+	
 	<step>
-		<description>Add 5µL of GelGreen to the 250ml flask</description>
+		<description>Add %{gelgreen_volume}µL of GelGreen to the 250ml flask</description>
 		<note>Swirl to mix thouroughly</note>
 	</step>
 	<step>
@@ -162,7 +165,7 @@
 		<description>Connect the electrodes to the power supply with the combination safety cover + electrode leads apparatus</description>
 	</step>
 	<step>
-		<description>Hit the 'running man' icon to start the power supply and chack for bubbles in the gel box to indicate that voltage is being applied</description>
+		<description>Hit the 'running man' icon to start the power supply and check for bubbles in the gel box to indicate that voltage is being applied</description>
 		<note>Check on the gel every 30-40 minutes in case the bands have sufficiently resolved. When sufficiently resolved, pause the power supply and then turn it off.</note>
 	</step>
 
