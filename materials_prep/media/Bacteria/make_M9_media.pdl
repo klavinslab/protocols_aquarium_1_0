@@ -6,17 +6,26 @@
 
     <argument>
         <var>nutrient</var>
-        <description>String, The carbon nutrient used in this batch of M9</description>
+		<type>string</type>
+        <description>
+			String, The carbon nutrient used in this batch of M9
+		</description>
     </argument>
 	
     <argument>
         <var>biotin</var>
-        <description>Boolean, this media will contain biotin if true</description>
+		<type>string</type>
+        <description>
+			Boolean (type true or false) , this media will contain biotin if true
+		</description>
     </argument>
 	
     <argument>
         <var>casaa</var>
-        <description>Boolean, this media will contain CAS amino acids if true</description>
+		<type>string</type>
+        <description>
+			Boolean (type true or false), this media will contain CAS amino acids if true
+		</description>
     </argument>
 	
     <take>
