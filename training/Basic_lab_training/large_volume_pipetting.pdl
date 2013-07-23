@@ -24,4 +24,51 @@
      </note>
   </step>
 
+  <step>
+    <description>Add approximately 10 mL of tap water to the tube labeled 'source'.</description>
+    <note>Use any sink in the lab for this step. Replace the cap when finished.</note>
+  </step>
+
+  <step>
+    <description>Load a pipette tip onto the large pipettor.</description>
+    <note>Make sure the pipette tip is seated properly and that you close the tip box.</note>
+  </step>
+
+
+  <assign>
+    <lhs>vols</lhs>
+    <rhs>[ 100, 200, 150, 550 ]</rhs>
+  </assign>
+
+  <assign>
+    <lhs>i</lhs>
+    <rhs>0</rhs>
+  </assign>
+  
+  <while>
+    <condition>%{i} &lt; 5</condition>
+    <do>
+
+      <assign>
+        <lhs>a</lhs>
+        <rhs>%{vols}[%{i}]</rhs>
+      </assign>
+
+      <step>
+        <description>Transfer %{a} mL from 'source' to tube 'A'.</description>
+        <note>Adjust the pipettor volume to %{a} mL. Depress the plunger. Put the tip into the water 
+        in the 'source' tube. Slowly release the plunger. Place the tip into tube 'A'. Dispense the 
+        water into the tube, making sure to push the plunger past the slight resistance at the end of 
+        the dispense step. Remove the pipette tip from the tube before releasing the plunger.</note>
+      </step>
+
+      <assign>
+        <lhs>i</lhs>
+        <rhs>%{i}+1</rhs>
+      </assign>
+
+    </do>
+
+  </while>
+
 </protocol> 
