@@ -35,31 +35,25 @@
     </take>
 
     <take>
-        <object> P1000 pipette </object>
-	<quantity> 1 </quantity>
-	<var> pip </var>
-    </take>
-    
-    <take>
-	<object> 250 mL Glass Bottle </object>
+	<object>250 mL Bottle</object>
 	<quantity> 1 </quantity>
 	<var> bottle </var>
     </take>
     
     <take>
-	<object> 5x M9 Salts</object>
+	<object>5X M9 Salts</object>
 	<quantity> 1 </quantity>
 	<var> salts </var>
     </take>
     
     <take>
-        <object> 100x MgSO4 CaCl2 </object>
+        <object>100X MgSO4 CaCl2</object>
 	<quantity> 1 </quantity>
 	<var> saltsol </var>
     </take>
 
     <take>
-	<object> Sterile DI Water </object>
+	<object>diH2O (sterile)</object>
 	<quantity> 1 </quantity>
 	<var> water </var>
     </take>
@@ -68,7 +62,7 @@
 	<condition>biotin</condition>
 	<then>
 	    <take>
-		<object> 250x Biotin </object>
+		<object>250X Biotin</object>
 		<quantity> 1 </quantity>
 		<var> 250biotin </var>
 	    </take>
@@ -80,7 +74,7 @@
 	<condition>cassaa</condition>
 	<then>
     	<take>
-		<object> Sterile CAS amino acid solution </object>
+		<object>Sterile CAS amino acid solution</object>
 		<quantity> 1 </quantity>
 		<var> cas </var>
 	    </take>
@@ -92,7 +86,7 @@
 	<condition>nutrient==cellobiose</condition>
 	<then>
     	<take>	
-		<object> 4% Cellobiose Sterile Filtered </object>
+		<object>4percent Sterile Filtered Cellobiose</object>
 		<quantity> 1 </quantity>
 		<var> cb </var>
 	    </take>
@@ -104,7 +98,7 @@
 	<condition>nutrient==glucose</condition>
 	<then>
     	<take>
-		<object> 20% glucose Sterile Filtered </object>
+		<object>20percent Sterile Filtered Glucose</object>
 		<quantity> 1 </quantity>
 		<var> gluc </var>
 	    </take>
@@ -161,7 +155,7 @@
     </step>
 
     <release>
-	[%{sero}[0], %{pip}[0], %{saltsol}[0], %{salts}[0]]
+	[%{sero}[0], %{saltsol}[0], %{salts}[0]]
     </release>
     
     <if> 
@@ -210,7 +204,7 @@
     </produce>
 
 	<step>
-			<description>Done. Thank you for running this protocol.</description>
+		<description>Done. Thank you for running this protocol.</description>
 	</step>
     
 </protocol>
