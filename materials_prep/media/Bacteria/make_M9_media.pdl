@@ -71,7 +71,7 @@
     </if>
     
     <if> 
-	<condition>%{cassaa}==true</condition>
+	<condition>%{casaa}==true</condition>
 	<then>
     	<take>
 		<object>Sterile CAS amino acid solution</object>
@@ -169,7 +169,7 @@
     </if>
     
     <if> 
-	<condition>%{cassaa}=true</condition>
+	<condition>%{casaa}=true</condition>
 	<then>
 	    <release>
 		[%{cas}[0]]
