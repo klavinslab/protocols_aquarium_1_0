@@ -30,15 +30,16 @@
 	<take>
 		<object>Eppendorf Tube</object>
 		<quantity>%{number}</quantity>
-		<var>tubes</var>
+		<var>tubes1</var>
 	</take>	
 	<step>
 		<description>Label epindorph tubes</description>
-		<note>Shorthand is okay, as this tubes will not be kept</note>
+		<note>Shorthand is okay, as these tubes will not be kept</note>
 	</step>	
 	<step>
 		<description>Cut fragments out of gel with razor and place each in labeled epindorph tube</description>
 		<note>Use transluminator to see bands. Cut as closely around the bands as possible to minimize gel mass</note>
+		<warning>Wipe the razer with ethanol between cutting out each band to avoid contamination</warning>
 	</step>		
 	
 	<release>[%{light_box}[0],%{gel}[0],%{razor}[0]]</release>
@@ -111,6 +112,7 @@
 		<description>Transfer to labeled splin column, spin at 17,900 g for 1 min, discard flow through</description>
 		<note>Use purple gel extraction Qiagen column</note>
 	</step>	
+	<release>%{tubes1}</release>
 	<take>
 		<object>PE Buffer</object>
 		<quantity>1</quantity>
@@ -128,7 +130,7 @@
 	<take>
 		<object>Eppendorf Tube</object>
 		<quantity>%{number}</quantity>
-		<var>tubes</var>
+		<var>tubes2</var>
 	</take>	
 	<step>
 		<description>Dry column and transfer to clean and labeled eppendorf tube</description>
@@ -144,7 +146,8 @@
 		<note>Wait two minutes. Spin at 17,900 g for one minute</note>
 		<warning>Add EB to center of column. Be very careful to not pipette on the wall of the tube</warning>
 	</step>	
-	<release>[%{centrifuge}[0],%{column}[0],%{elution_buffer}[0]</release>
+	<release>[%{centrifuge}[0],%{elution_buffer}[0]</release>
+	<release>%{column}</release>
 	<take>
 		<object>Nanodrop</object>
 		<quantity>1</quantity>
@@ -154,8 +157,8 @@
 		<description>Spec on Nanodrop to check DNA concentration. If the absorbance value at 230 nm is greater than 5, there are residual salts in the elution that are masking the amount of DNA you have</description>
 		<note>If a more accurate concentration is necessary for any downstream use, dialyze elution for 20-30 minutes at room temperature to remove residual salts. Re-spec on Nanodrop</note>
 	</step>		
-	<release>[%{nanodrop}[0],{tubes}[0]]</release>
-	
+	<release>%{nanodrop}</release>
+	<release>%{tubes2}</release>	
 
         <produce>
           	<object>DNA</object>
