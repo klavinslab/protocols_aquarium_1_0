@@ -104,7 +104,8 @@
       	<description>Heat at 90C for 5 minutes in the thermal cycler. </description>
   		</step> 
   		  		  		  		
-  		<release>[%{ThermalCycler}[0],%{PCRtubes}]</release>
+  		<release>[%{ThermalCycler}[0]]</release>
+  		<release>%{PCRtubes}</release>
   		        
       </then>
        
@@ -114,7 +115,8 @@
       	<description>Heat at 90C for 10 minutes in the heat block. </description>
   		</step> 
   		  		
-  		<release>[%{HeatBlock}[0],%{EppendorfTube}[0]]</release>
+  		<release>[%{HeatBlock}[0]]</release>
+  		<release>%{EppendorfTube}</release>
   		
        	</else>
        
