@@ -5,4 +5,10 @@
     the accuracy of your results at the end.
   </information>
 
-</protocol>
+  <take>
+    <object>14 mL Falcon Tube</object>
+    <quantity>1</quantity>
+    <var>source</var>
+  </take>
+
+</protocol> 
