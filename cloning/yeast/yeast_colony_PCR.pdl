@@ -4,41 +4,28 @@
   </information>
   
   <take>
-        <object>thermocycler</object>
-        <quantity>1</quantity>
-        <var>thermocycler</var>
-  </take> 
-
-  <take>
-        <object>dIH2O</object>
-        <quantity>1</quantity>
-        <var>dIH2O_tube</var>
-	</take>
-  
-  <take>
-        <object>Phusion Master Mix</object>
-        <quantity>1</quantity>
-        <var>tube</var>
-	</take> 
-  
-    
-  <take>
-        <object>Yeast Lysate</object>
-        <quantity>1</quantity>
-        <var>tube</var>
+      <item>
+        <type>dIH2O<</type><quantity>1</quantity><var>water</var>
+      </item>
+      <item>
+        <type>Phusion Master Mix</type><quantity>1</quantity><var>MasterMix</var>
+      </item>
+      <item>
+        <type>Yeast Lysate</type><quantity>1</quantity><var>yeast_lysate</var>
+      </item>
+      <item>
+        <type>primers</type><quantity>1</quantity><var>primer</var>
+      </item>
+      <item>
+        <type>PCR tube</type><quantity>1</quantity><var>pcr_tube</var>
+      </item>
   </take> 
   
   <take>
-        <object>primers</object>
-        <quantity>1</quantity>
-        <var>tube</var>
-  </take> 
-  
-  <take>
-        <object>PCR tube</object>
-        <quantity>1</quantity>
-        <var>tube</var>
-  </take> 
+      <item>
+        <type>thermocycler</type><quantity>1</quantity><var>thermocycler</var>
+      </item>
+  </take>
   
   <step>
         <description>Label the pcr tube</description>
