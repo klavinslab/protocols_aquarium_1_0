@@ -59,7 +59,7 @@
     </take>
     
     <if> 
-	<condition>biotin==true</condition>
+	<condition>%{biotin}==true</condition>
 	<then>
 	    <take>
 		<object>250X Biotin</object>
