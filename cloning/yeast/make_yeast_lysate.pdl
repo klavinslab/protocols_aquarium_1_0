@@ -114,7 +114,7 @@
       	<description>Heat at 90C for 10 minutes in the heat block. </description>
   		</step> 
   		  		
-  		<release>[%{Heatblock}[0],%{PCRtubes}[0]]</release>
+  		<release>[%{HeatBlock}[0],%{PCRtubes}[0]]</release>
   		
        	</else>
        
