@@ -159,7 +159,7 @@
     </release>
     
     <if> 
-	<condition>biotin==true</condition>
+	<condition>%{biotin}==true</condition>
 	<then>
 	    <release>
 		[%{250biotin}[0]]
