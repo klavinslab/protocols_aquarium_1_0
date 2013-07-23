@@ -30,7 +30,7 @@
     <take>
   		<object>2 percent SDS</object>
  		<quantity>1</quantity>
-        	<var>2SDS</var>
+        	<var>SDS</var>
     </take>
     
       <if>
@@ -60,7 +60,7 @@
         <take>
         	<object>90C Heat Block</object>
   			<quantity>1</quantity>
-        	<var>90Cheatblock</var>
+        	<var>heatblock</var>
     	</take>
        	</else>
        
@@ -114,12 +114,12 @@
       	<description>Heat at 90C for 10 minutes in the heat block. </description>
   		</step> 
   		  		
-  		<release>[%{MGH2O}[0],%{2SDS}[0]]</release>
+  		<release>[%{heatblock}[0]]</release>
   		
        	</else>
        
        </if>
        
-       <release>[%{MGH2O}[0],%{2SDS}[0]]</release>
+       <release>[%{MGH2O}[0],%{SDS}[0]]</release>
        
 </protocol>
