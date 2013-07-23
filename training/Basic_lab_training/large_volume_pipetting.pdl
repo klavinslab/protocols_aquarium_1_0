@@ -71,17 +71,21 @@
   </while>
 
   <step>
+
     <description>Check total quantity.</description>
+
     <note>A total of 1000 μL was added to each reaction tube. Check that the pipetting steps were
       accurate by determining the measurement error. Adjust the micropipettor and very carefully
       withdraw 1000 μL from tube 'A', then examine the filled tip.</note>
+
    <select>
      <description>What do you observe?</description>
-     <option>The tip is filled exactly.</option>
-     <option>There is air at the end of the tip.</option>
-     <option>There is liquid left in tube 'A'.</option>    
+     <choice>The tip is filled exactly.</choice>
+     <choice>There is air at the end of the tip.</choice>
+     <choice>There is liquid left in tube 'A'.</choice>    
      <var>answer</var>
    </select>
+
   </step>
 
 </protocol> 
