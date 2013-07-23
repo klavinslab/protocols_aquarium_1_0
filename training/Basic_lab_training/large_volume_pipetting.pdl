@@ -34,7 +34,6 @@
     <note>Make sure the pipette tip is seated properly and that you close the tip box.</note>
   </step>
 
-
   <assign>
     <lhs>vols</lhs>
     <rhs>[ 100, 200, 150, 550 ]</rhs>
@@ -46,7 +45,7 @@
   </assign>
   
   <while>
-    <condition>%{i} &lt; 5</condition>
+    <condition>%{i} &lt; 4</condition>
     <do>
 
       <assign>
@@ -68,7 +67,20 @@
       </assign>
 
     </do>
-
+ 
   </while>
+
+  <step>
+    <description>Check total quantity.</description>
+    <note>A total of 1000 μL was added to each reaction tube. Check that the pipetting steps were
+      accurate by determining the measurement error. Adjust the micropipettor and very carefully
+      withdraw 1000 μL from tube 'A', then examine the filled tip.</note>
+   <select>
+     <description>What do you observe?</description>
+     <option>The tip is filled exactly.</option>
+     <option>There is air at the end of the tip.</option>
+     <option>There is liquid left in tube 'A'.</option>    
+   </select>
+  </step>
 
 </protocol> 
