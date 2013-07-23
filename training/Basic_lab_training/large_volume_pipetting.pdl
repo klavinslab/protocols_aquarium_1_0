@@ -80,6 +80,7 @@
      <option>The tip is filled exactly.</option>
      <option>There is air at the end of the tip.</option>
      <option>There is liquid left in tube 'A'.</option>    
+     <var>answer</var>
    </select>
   </step>
 
