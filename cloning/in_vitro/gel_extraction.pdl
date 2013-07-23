@@ -154,8 +154,9 @@
 		<var>nanodrop</var>
 	</take>	
 	<step>
-		<description>Spec on Nanodrop to check DNA concentration. If the absorbance value at 230 nm is greater than 5, there are residual salts in the elution that are masking the amount of DNA you have</description>
+		<description>Use the Nanodrop to check DNA concentration</description>
 		<note>If a more accurate concentration is necessary for any downstream use, dialyze elution for 20-30 minutes at room temperature to remove residual salts. Re-spec on Nanodrop</note>
+		<warning>If the absorbance value at 230 nm is greater than 5, there are residual salts in the elution that are masking the amount of DNA you have>
 	</step>		
 	<release>%{nanodrop}</release>
 	<release>%{tubes2}</release>	
