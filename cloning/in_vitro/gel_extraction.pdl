@@ -146,7 +146,7 @@
 		<note>Wait two minutes. Spin at 17,900 g for one minute</note>
 		<warning>Add EB to center of column. Be very careful to not pipette on the wall of the tube</warning>
 	</step>	
-	<release>[%{centrifuge}[0],%{elution_buffer}[0]</release>
+	<release>[%{centrifuge}[0],%{elution_buffer}[0]]</release>
 	<release>%{column}</release>
 	<take>
 		<object>Nanodrop</object>
