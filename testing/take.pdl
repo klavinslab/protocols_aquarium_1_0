@@ -7,15 +7,19 @@
     </argument>
 
     <take>
-        <object>%{object}</object>
+
+      <item>
+        <type>%{object}</type>
         <quantity>2</quantity>
         <var>A</var>
-    </take>
+      </item>
 
-    <take>
-        <object>1000 mL Bottle</object>
+      <item>
+        <type>1000 mL Bottle</type>
         <quantity>2</quantity>
         <var>B</var>
+      </item>
+
     </take>
     
     <information>Object information array: A = %{A} and B=%{B}.</information>
