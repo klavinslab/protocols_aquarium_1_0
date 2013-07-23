@@ -8,7 +8,20 @@
   <take>
     <object>14 mL Falcon Tube</object>
     <quantity>1</quantity>
-    <var>source</var>
+    <var>sources</var>
   </take>
+
+  <take>
+    <object>1.5 mL Microcentrifuge Tubes</object>
+    <quantity>2</quantity>
+    <var>tubes</var>
+  </take>
+
+  <step>
+    <description>Label the tubes</description>
+    <note>
+      Use a Sharpie to label the 14 mL Falcon Tube 'source' and label the two 1.5 mL tubes 'A' and 'B' respectively.
+     </note>
+  </step>
 
 </protocol> 
