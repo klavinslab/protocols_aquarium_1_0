@@ -24,7 +24,7 @@
     <take>
   		<object>Molecular Grade Water 50mL aliquot</object>
 		<quantity>1</quantity>
-        	<var>MGH2O</var>
+        	<var>water</var>
     </take>
     
     <take>
@@ -120,6 +120,6 @@
        
        </if>
        
-       <release>[%{MGH2O}[0],%{SDS}[0]]</release>
+       <release>[%{water}[0],%{SDS}[0]]</release>
        
 </protocol>
