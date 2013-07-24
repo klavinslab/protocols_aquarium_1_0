@@ -30,32 +30,32 @@
 	
     <take>
         <object>Electronic Serological Pipette</object>
-	<quantity> 1 </quantity>
-	<var> sero </var>
+	<quantity>1</quantity>
+	<var>sero</var>
     </take>
 
     <take>
 	<object>250 mL Bottle</object>
-	<quantity> 1 </quantity>
-	<var> bottle </var>
+	<quantity>1</quantity>
+	<var>bottle</var>
     </take>
     
     <take>
 	<object>5X M9 Salts</object>
-	<quantity> 1 </quantity>
-	<var> salts </var>
+	<quantity>1</quantity>
+	<var>salts</var>
     </take>
     
     <take>
-        <object>100X MgSO4 CaCl2</object>
-	<quantity> 1 </quantity>
-	<var> saltsol </var>
+    <object>100X MgSO4 CaCl2</object>
+	<quantity>1</quantity>
+	<var>saltsol</var>
     </take>
 
     <take>
 	<object>diH2O (sterile)</object>
-	<quantity> 1 </quantity>
-	<var> water </var>
+	<quantity>1</quantity>
+	<var>water</var>
     </take>
     
     <if> 
@@ -63,8 +63,8 @@
 	<then>
 	    <take>
 		<object>250X Biotin</object>
-		<quantity> 1 </quantity>
-		<var> 250biotin </var>
+		<quantity>1</quantity>
+		<var>250biotin</var>
 	    </take>
 	</then>
 	<else></else>
@@ -75,8 +75,8 @@
 	<then>
     	<take>
 		<object>Sterile CAS amino acid solution</object>
-		<quantity> 1 </quantity>
-		<var> cas </var>
+		<quantity>1</quantity>
+		<var>cas</var>
 	    </take>
 	</then>
 	<else></else>
@@ -87,8 +87,8 @@
 	<then>
     	<take>	
 		<object>4percent Sterile Filtered Cellobiose</object>
-		<quantity> 1 </quantity>
-		<var> cb </var>
+		<quantity>1</quantity>
+		<var>cb</var>
 	    </take>
 	</then>
 	<else></else>
@@ -99,8 +99,8 @@
 	<then>
     	<take>
 		<object>20percent Sterile Filtered Glucose</object>
-		<quantity> 1 </quantity>
-		<var> gluc </var>
+		<quantity>1</quantity>
+		<var>gluc</var>
 	    </take>
 	</then>
 	<else></else>
@@ -155,7 +155,7 @@
     </step>
 
     <release>
-	[%{sero}[0], %{saltsol}[0], %{salts}[0]]
+	[%{sero}[0], %{saltsol}[0], %{salts}[0], %{water}[0]]
     </release>
     
     <if> 
