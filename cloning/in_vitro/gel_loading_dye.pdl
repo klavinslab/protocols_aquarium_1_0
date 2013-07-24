@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<protocol name="Gel Loading Dye">
+
+<argument>
+  <name>volume</name>
+  <type>number</type>
+  <description>Enter the volume of the sample to which loading dye will be added</description>
+</argument>
+
+<argument>
+  <name>sample</name>
+  <type>string</type>
+  <description>Enter the sample ID to which loading dye is being added</description>
+</argument>
+
+<assign>
+  <lhs>loading_volume</lhs>
+  <rhs>%{volume} / 5.0</rhs>
+</assign>
+
+<take>
+  <object>6X Loading Dye</object>
+  <quantity>1</quantity>
+  <var>dye</var>
+</take>
+
+<!-- TODO: take the specified sample out of its inventory location -->
+
+<step>
+  <description>Add %{loading_volume}µL of 6X Loading Dye to sample tube</description>
+</step>
+
+<produce>
+    <object>DNA with Loading Dye</object>
+    <quantity>1</quantity>
+</produce>
+
+<!-- TODO: tube got transformed, shouldn't do anything with it -->
+<release>%{6X Loading Dye}</release>
+
+</protocol>
