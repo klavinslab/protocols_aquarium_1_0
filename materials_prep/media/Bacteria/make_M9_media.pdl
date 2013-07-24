@@ -95,7 +95,7 @@
     </if>
     
     <if> 
-	<condition>%{nutrient}==glucose</condition>
+	<condition>%{nutrient}=="glucose"</condition>
 	<then>
     	<take>
 		<object>20percent Sterile Filtered Glucose</object>
@@ -121,7 +121,7 @@
 
 
     <if>
-	<condition>%{biotin}==true</condition>
+	<condition>%{biotin}=="true"</condition>
 	<then>
 	    <step>
 		<description> Using the P1000 pipette, add 1 mL of 250x biotin </description>
@@ -131,7 +131,7 @@
     </if>
 	
     <if>
-	<condition>%{nutrient} == cellobiose</condition>
+	<condition>%{nutrient}=="cellobiose"</condition>
 	<then>
 	    <step>
 		<description> Using the serological pipette, add 25 mL of 4% cellobiose </description>
@@ -141,7 +141,7 @@
     </if>
 
     <if>
-	<condition>%{nutrient} == glucose</condition>
+	<condition>%{nutrient}=="glucose"</condition>
 	<then>
 	    <step>
 		<description> Using the serological pipette, add 2.5 mL of 20% glucose </description>
@@ -159,7 +159,7 @@
     </release>
     
     <if> 
-	<condition>%{biotin}==true</condition>
+	<condition>%{biotin}=="true"</condition>
 	<then>
 	    <release>
 		[%{250biotin}[0]]
@@ -169,7 +169,7 @@
     </if>
     
     <if> 
-	<condition>%{casaa}=true</condition>
+	<condition>%{casaa}="true"</condition>
 	<then>
 	    <release>
 		[%{cas}[0]]
@@ -179,7 +179,7 @@
     </if>
     
     <if> 
-	<condition>%{nutrient}==cellobiose</condition>
+	<condition>%{nutrient}=="cellobiose"</condition>
 	<then>
 	    <release>
 		[%{cb}[0]]
@@ -189,7 +189,7 @@
     </if>
     
     <if> 
-	<condition>%{nutrient}==glucose</condition>
+	<condition>%{nutrient}=="glucose"</condition>
 	<then>
 	    <release>
 		[%{gluc}[0]]
