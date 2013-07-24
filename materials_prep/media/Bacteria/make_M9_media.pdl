@@ -162,7 +162,7 @@
 	<condition>%{biotin}=="true"</condition>
 	<then>
 	    <release>
-		[%{250biotin}[0]]
+		%{250biotin}
 	    </release>
 	</then>
 	<else></else>
@@ -172,7 +172,7 @@
 	<condition>%{casaa}="true"</condition>
 	<then>
 	    <release>
-		[%{cas}[0]]
+		%{cas}
 	    </release>
 	</then>
 	<else></else>
@@ -182,7 +182,7 @@
 	<condition>%{nutrient}=="cellobiose"</condition>
 	<then>
 	    <release>
-		[%{cb}[0]]
+		%{cb}
 	    </release>
 	</then>
 	<else></else>
@@ -192,7 +192,7 @@
 	<condition>%{nutrient}=="glucose"</condition>
 	<then>
 	    <release>
-		[%{gluc}[0]]
+		%{gluc}
 	    </release>
 	</then>
 	<else></else>
