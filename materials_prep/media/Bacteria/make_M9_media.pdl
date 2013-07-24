@@ -134,7 +134,7 @@
 	<condition>%{nutrient}=="cellobiose"</condition>
 	<then>
 	    <step>
-		<description> Using the serological pipette, add 25 mL of 4% cellobiose </description>
+		<description> Using the serological pipette, add 25 mL of 4percent cellobiose </description>
 	    </step>
 	</then>
 	<else></else>
@@ -144,7 +144,7 @@
 	<condition>%{nutrient}=="glucose"</condition>
 	<then>
 	    <step>
-		<description> Using the serological pipette, add 2.5 mL of 20% glucose </description>
+		<description> Using the serological pipette, add 2.5 mL of 20percent glucose </description>
 	    </step>
 	</then>
 	<else></else>
