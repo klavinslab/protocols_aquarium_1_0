@@ -83,7 +83,7 @@
     </if>
     
     <if> 
-	<condition>%{nutrient}==cellobiose</condition>
+	<condition>%{nutrient}=="cellobiose"</condition>
 	<then>
     	<take>	
 		<object>4percent Sterile Filtered Cellobiose</object>
