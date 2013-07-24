@@ -158,6 +158,10 @@
 	[%{sero}[0], %{saltsol}[0], %{salts}[0], %{water}[0]]
     </release>
     
+	<release>
+	%{250biotin}
+	</release>
+	
     <if> 
 	<condition>%{biotin}=="true"</condition>
 	<then>
@@ -169,7 +173,7 @@
     </if>
     
     <if> 
-	<condition>%{casaa}="true"</condition>
+	<condition>%{casaa}=="true"</condition>
 	<then>
 	    <release>
 		%{cas}
