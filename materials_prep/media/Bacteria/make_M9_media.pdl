@@ -64,7 +64,7 @@
 	    <take>
 		<object>250X Biotin</object>
 		<quantity>1</quantity>
-		<var>250biotin</var>
+		<var>biotin250</var>
 	    </take>
 	</then>
 	<else></else>
@@ -161,7 +161,7 @@
     <if> 
 	<condition>%{biotin}=="true"</condition>
 	<then>
-	    <release>%{250biotin}</release>
+	    <release>%{biotin250}</release>
 	</then>
 	<else></else>
     </if>
