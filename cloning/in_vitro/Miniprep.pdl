@@ -1,0 +1,125 @@
+<protocol name="Miniprep">
+
+  <argument>
+  		<name>number</name>
+  		<type>number</type>
+  		<description>Enter the number of minipreps you wish to do</description>
+	</argument>	
+
+  <information>
+		This protocol is for purifying bacterial plasmid from an e.coli overnight culture
+	</information>
+  
+  <take>
+		<object>Overnight Cultures</object>
+		<quantity>%{number}</quantity>
+		<var>cultures</var>
+	</take>
+  
+  <take>
+  	<object>Eppendorf Tube</object>
+		<quantity>%{number}</quantity>
+		<var>tubes1</var>
+	</take>
+
+  <step>
+    <description>Pipette 1 mL of overnight culture into a labeled eppendorf tube</description>
+    <note>For labels, shorthand is okay. These tubes will be discarded</note>
+  </step>
+  
+  <release>%{cultures}</release>
+  
+  <take>
+    <object>Centrifuge</object>
+		<quantity>1</quantity>
+		<var>centrifuge</var>
+	</take>
+  
+  <step>
+    <description>Spin cells at 6000g for 2 minutes and remove supernatant</description>
+  </step>
+
+  <take>
+    <object>Vortex</object>
+    <quantity>1</quantity>
+  	<var>vortex</var>
+	</take>
+  <take>
+    <object>Buffer P1</object>
+  	<quantity>1</quantity>
+		<var>P1</var>
+	</take>
+  <take>
+    <object>Buffer P2</object>
+    <quantity>1</quantity>
+		<var>P2</var>
+	</take>
+  <take>
+    <object>Buffer N3</object>
+    <quantity>1</quantity>
+		<var>N3</var>
+	</take>
+
+  <step>
+    <description>Resuspend cells with 250ul buffer P1</description>
+    <note>Resuspend by vortexing</note>
+    <warning>Make sure that RNAse has been added to buffer p1: Look for check on cap</warning>
+  </step>
+  
+  <release>%{vortex}</release>
+
+  <step>
+    <description>Add 250ul buffer P2 to each tube</description>
+    <note>Invert tube 6-10 times to mix. Concents should turn blue.</note>
+    <warning>Do not allow reaction to proceed for more than 5 minutes</warning>
+  </step>
+
+  <step>
+    <description>Add 350ul buffer N3 to each tube</description>
+    <note>Invert tube 6-10 times to mix. Concents should turn colorless with white precipitate</note>
+    <warning>Do not vortex or shake vigorously</warning>
+  </step>
+
+  <step>
+    <description>Spin cells at 17000g for 10 minutes</description>
+  </step>
+
+  <release>[%{P1}[0],%{P2}[0],%{P3}[0]]</release>
+  
+  <take>
+    <object>Miniprep Spin Column</object>
+    <quantity>%{number}</quantity>
+  	<var>column</var>
+	</take>
+
+  <step>
+    <description>Pour supernatant into labeled miniprep spin column</description>
+  </step>
+
+  <step>
+    <description>Spin at 17000g for 1 minutes, discard flow through</description>
+  </step>
+
+  <take>
+    <object>Buffer PE</object>
+    <quantity>1</quantity>
+    <var>PE</var>
+	</take>
+
+
+
+  <step>
+    <description>Wash with 750ul buffer PE</description>
+    <note>
+  </step>
+  
+  
+  
+  
+
+centrifuge
+tubes1(#)
+column(#)
+PE
+
+</protocol>
