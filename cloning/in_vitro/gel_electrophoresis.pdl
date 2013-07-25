@@ -1,5 +1,5 @@
-<protocol>
-	
+<protocol name="Gel Electrophoresis>
+
 	<argument>
   		<name>gel_volume</name>
   		<type>number</type>
