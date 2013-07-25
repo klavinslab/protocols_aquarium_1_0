@@ -136,7 +136,7 @@
 	<release>[%{TAE}[0],%{comb}[0]]</release>
 	
 	<take>
-		<object>Loading Dye</object>
+		<object>6X Loading Dye</object>
 		<quantity>1</quantity>
 		<var>dye</var>
 	</take>			
