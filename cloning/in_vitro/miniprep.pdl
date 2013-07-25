@@ -155,4 +155,10 @@
     <quantity>%{number}</quantity>
   </produce>    
 
+
+	<step>
+		<description>Thank you for running the gel extraction protocol!</description>
+	</step>	
+
+
 </protocol>
