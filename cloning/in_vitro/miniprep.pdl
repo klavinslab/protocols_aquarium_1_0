@@ -110,7 +110,7 @@
   <release>%{tubes1}</release>  
 
   <take>
-    <object>Buffer PE</object>
+    <object>PE Buffer</object>
     <quantity>1</quantity>
     <var>PE</var>
   </take>
