@@ -190,11 +190,28 @@
 	<else></else>
     </if>
     
-    <produce>
-        <object>250 mL M9 Media</object>
+    <if> 
+	<condition>%{nutrient}=="cellobiose"</condition>
+	<then>
+	    <produce>
+        <object>M9 Media Cellobiose</object>
         <quantity>1</quantity>
     </produce>
-
+	</then>
+	<else></else>
+    </if>
+    
+    <if> 
+	<condition>%{nutrient}=="glucose"</condition>
+	<then>
+		<produce>
+			<object>M9 Media Glucose</object>
+			<quantity>1</quantity>
+		</produce>
+	</then>
+	<else></else>
+    </if>
+	
 	<step>
 		<description>Done. Thank you for running this protocol.</description>
 	</step>
