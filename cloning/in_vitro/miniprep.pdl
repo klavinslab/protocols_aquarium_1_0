@@ -91,7 +91,7 @@
     <description>Spin cells at 17000g for 10 minutes</description>
   </step>
 
-  <release>[%{P1}[0],%{P2}[0],%{P3}[0]]</release>
+  <release>[%{P1}[0],%{P2}[0],%{N3}[0]]</release>
   
   <take>
     <object>Miniprep Spin Column</object>
