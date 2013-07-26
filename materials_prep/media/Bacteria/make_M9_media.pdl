@@ -166,8 +166,8 @@
 		</assign>
 	    <step>
 		<description>Add cellobiose</description>
-	    </step>
 		<note>Using the serological pipette, add %{cbvol} mL of 4percent cellobiose</note>
+	    </step>
 	</then>
 	<else></else>
     </if>
