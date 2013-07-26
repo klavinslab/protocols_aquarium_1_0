@@ -55,7 +55,7 @@
         <take>
             <object>Eppendorf Tube</object>
             <quantity>%{lysates}</quantity>
-            <var>%{EppendorfTube}</var>
+            <var>EppendorfTube</var>
         </take>
         <take>
         	<object>90C Heat Block</object>
