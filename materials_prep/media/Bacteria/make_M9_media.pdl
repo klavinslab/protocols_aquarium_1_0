@@ -126,13 +126,18 @@
 		Using the serological pipette and 25 mL tip, add %{m9vol} mL of 5x M9 salts to the bottle
 	</note>
     </step>
-
+	
+	<assign>
+		<lhs>mgcavol</lhs>
+		<rhs>%{volume} / 100</rhs>
+	</assign>
+	
     <step>
 	<description>
 		Add 100x MgSO4 CaCl2 solution
 	</description>
 	<note>
-		Using the serological pipette and 5 mL tip, add 2.5 mL of 100x MgSO4 CaCl2 solution
+		Using the serological pipette or P1000 pipette (depending on how much you're adding), add %{mgcavol} mL of 100x MgSO4 CaCl2 solution
 	</note>
     </step>
 
@@ -140,9 +145,13 @@
     <if>
 	<condition>%{biotin}=="true"</condition>
 	<then>
+		<assign>
+			<lhs>biovol</lhs>
+			<rhs>%{volume} / 250</rhs>
+		</assign>
 	    <step>
 		<description>Add biotin</description>
-		<note>Using the P1000 pipette, add 1 mL of 250x biotin</note>
+		<note>Using the P1000 pipette, add %{biovol} mL of 250x biotin</note>
 	    </step>
 	</then>
 	<else></else>
@@ -151,10 +160,14 @@
     <if>
 	<condition>%{nutrient}=="cellobiose"</condition>
 	<then>
+		<assign>
+			<lhs>cbvol</lhs>
+			<rhs>%{volume} / 10</rhs>
+		</assign>
 	    <step>
 		<description>Add cellobiose</description>
 	    </step>
-		<note>Using the serological pipette, add 25 mL of 4percent cellobiose</note>
+		<note>Using the serological pipette, add %{cbvol} mL of 4percent cellobiose</note>
 	</then>
 	<else></else>
     </if>
@@ -162,9 +175,13 @@
     <if>
 	<condition>%{nutrient}=="glucose"</condition>
 	<then>
+		<assign>
+			<lhs>gluvol</lhs>
+			<rhs>%{volume} / 50</rhs>
+		</assign>
 	    <step>
 		<description>Add glucose</description>
-		<note>Using the serological pipette, add 2.5 mL of 20percent glucose</note>
+		<note>Using the serological pipette, add %{gluvol} mL of 20percent glucose</note>
 	    </step>
 	</then>
 	<else></else>
@@ -172,7 +189,7 @@
 	
     <step>
 	<description>Add water</description>
-	<note> Fill to the 250 mL line with sterile water </note>
+	<note> Fill to the %{volume} mL line with sterile water </note>
     </step>
 
     <release>
