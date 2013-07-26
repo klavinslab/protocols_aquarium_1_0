@@ -43,7 +43,7 @@
     </take>
 	
     <take>
-	<object>250 mL Bottle</object>
+	<object>1000 mL Bottle</object>
 	<quantity>1</quantity>
 	<var>bottle</var>
     </take>
@@ -117,14 +117,20 @@
 	
     <step>
 	<description>
-		Using the serological pipette and 25 mL tip, add 50 mL of 5x M9 salts to the 250 mL bottle
+		Add M9 salts
 	</description>
+	<note>
+		Using the serological pipette and 25 mL tip, add 50 mL of 5x M9 salts to the 250 mL bottle
+	</note>
     </step>
 
     <step>
 	<description>
-		Using the serological pipette and 5 mL tip, add 2.5 mL of 100x MgSO4 CaCl2 solution
+		Add 100x MgSO4 CaCl2 solution
 	</description>
+	<note>
+		Using the serological pipette and 5 mL tip, add 2.5 mL of 100x MgSO4 CaCl2 solution
+	</note>
     </step>
 
 
@@ -132,7 +138,8 @@
 	<condition>%{biotin}=="true"</condition>
 	<then>
 	    <step>
-		<description> Using the P1000 pipette, add 1 mL of 250x biotin </description>
+		<description>Add biotin</description>
+		<note>Using the P1000 pipette, add 1 mL of 250x biotin</note>
 	    </step>
 	</then>
 	<else></else>
@@ -142,8 +149,9 @@
 	<condition>%{nutrient}=="cellobiose"</condition>
 	<then>
 	    <step>
-		<description> Using the serological pipette, add 25 mL of 4percent cellobiose </description>
+		<description>Add cellobiose</description>
 	    </step>
+		<note>Using the serological pipette, add 25 mL of 4percent cellobiose</note>
 	</then>
 	<else></else>
     </if>
@@ -152,14 +160,16 @@
 	<condition>%{nutrient}=="glucose"</condition>
 	<then>
 	    <step>
-		<description> Using the serological pipette, add 2.5 mL of 20percent glucose </description>
+		<description>Add glucose</description>
+		<note>Using the serological pipette, add 2.5 mL of 20percent glucose</note>
 	    </step>
 	</then>
 	<else></else>
     </if>
 	
     <step>
-	<description> Fill to the 250 mL line with sterile water </description>
+	<description>Add water</description>
+	<note> Fill to the 250 mL line with sterile water </note>
     </step>
 
     <release>
