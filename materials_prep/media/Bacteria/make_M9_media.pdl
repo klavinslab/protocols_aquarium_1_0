@@ -1,6 +1,6 @@
 <protocol name="M9 Minimal Growth Media">
 	<information>
-		This prepares a 250 mL bottle of M9 Minimal Media.
+		This prepares a bottle of M9 Minimal Media with whatever nutrients and the option for biotin or CAS amino acids.
 	</information>
 	
 
@@ -28,12 +28,20 @@
 		</description>
     </argument>
 	
+    <argument>
+        <name>volume</name>
+		<type>number</type>
+        <description>
+			Number, the desired final volume of media in mL enter a number between 100 and 1000
+		</description>
+    </argument>
+	
     <take>
-        <object>Electronic Serological Pipette</object>
+    <object>Electronic Serological Pipette</object>
 	<quantity>1</quantity>
 	<var>sero</var>
     </take>
-
+	
     <take>
 	<object>250 mL Bottle</object>
 	<quantity>1</quantity>
