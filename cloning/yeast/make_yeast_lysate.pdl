@@ -55,7 +55,7 @@
         <take>
             <object>Eppendorf Tube</object>
             <quantity>%{lysates}</quantity>
-            <var>EppendorfTube</var>
+            <var>%{EppendorfTube}</var>
         </take>
         <take>
         	<object>90C Heat Block</object>
@@ -103,6 +103,25 @@
    		<step>
       	<description>Heat at 90C for 5 minutes in the thermal cycler. </description>
   		</step> 
+  		
+  		
+  		<step>
+  		<description>Spin down the 1.5mL tubes 1 to %{lysates} for 2 minutes at 17,000xg</description>
+  		</step>
+  		
+  		<step>
+      		<description>Label %{lysates} of 1.5mL tubes as c1 to c%{lysates}, and add 40uL of %{water} to each tube</description>
+  		</step>
+  		
+  		<step>
+      		<description>Add 10uL of lysate supernatant from tubes 1 to %{lysates} separately to tubes c1 to c%{lysates} and mix well by vortexing</description>
+      		<warning>Be careful to avoid picking up cellular debris at the bottom of the tubes.</warning>
+  		</step>
+  		
+  		<produce>
+          	<object>Yeast Lysate</object>
+          	<quantity>%{lysates}</quantity>
+        	</produce>    
   		  		  		  		
   		<release>[%{ThermalCycler}[0]]</release>
   		<release>%{PCRtubes}</release>
