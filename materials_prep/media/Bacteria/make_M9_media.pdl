@@ -3,7 +3,6 @@
 		This prepares a bottle of M9 Minimal Media with whatever nutrients and the option for biotin or CAS amino acids.
 	</information>
 	
-
     <argument>
         <name>nutrient</name>
 		<type>string</type>
@@ -114,13 +113,17 @@
 	<else></else>
     </if>
     
+	<assign>
+		<lhs>m9vol</lhs>
+		<rhs>%{volume} / 5</rhs>
+	</assign>
 	
     <step>
 	<description>
 		Add M9 salts
 	</description>
 	<note>
-		Using the serological pipette and 25 mL tip, add 50 mL of 5x M9 salts to the 250 mL bottle
+		Using the serological pipette and 25 mL tip, add %{m9vol} mL of 5x M9 salts to the bottle
 	</note>
     </step>
 
@@ -231,7 +234,8 @@
     </if>
 	
 	<step>
-		<description>Done. Thank you for running this protocol.</description>
+		<description>Done</description>
+		<note>YOU DID IT! YAAAAAAY!!!!!!!!!!!!!!!!!!!!!!!!!!!</note>
 	</step>
     
 </protocol>
