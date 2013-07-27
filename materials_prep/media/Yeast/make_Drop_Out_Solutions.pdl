@@ -41,30 +41,32 @@
     </assign>
 
     <take>
-	<object>500 mL Bottle</object>
+      <item>
+	<type>500 mL Bottle</type>
 	<quantity>%{total}</quantity>
         <var>bottles</var>
-    </take>
-
-    <take>
-        <object>Weigh Boat (L)</object>
+      </item>
+      <item>
+        <type>Weigh Boat (L)</type>
         <quantity>%{total}</quantity>
         <var>boats</var>
-    </take>
-
-    <take>
-        <object>1L Bottle Top Filter</object>
+      </item>
+      <item>
+        <type>1L Bottle Top Filter</type>
         <quantity>1</quantity>
         <var>filter</var>
+      </item>
     </take> 
 
     <if>
       <condition>%{Trp} &gt; 0</condition>
       <then>
         <take>
-            <object>Tryptophan Powder</object>
+          <item>
+            <type>Tryptophan Powder</type>
             <quantity>1</quantity>
             <var>trp_powder</var>
+           </item>
         </take>
 
 	<step>
@@ -102,9 +104,11 @@
       <condition>%{His} &gt; 0</condition>
       <then>
         <take>
-            <object>Histidine Powder</object>
+          <item>
+            <type>Histidine Powder</type>
             <quantity>1</quantity>
             <var>his_powder</var>
+          </item>
         </take>
 
 	<step>
@@ -142,9 +146,11 @@
       <condition>%{Leu} &gt; 0</condition>
       <then>
         <take>
-            <object>Leucine Powder</object>
+          <item>
+            <type>Leucine Powder</type>
             <quantity>1</quantity>
             <var>leu_powder</var>
+          </item>
         </take>
 
 	<step>
@@ -183,9 +189,11 @@
       <condition>%{Ura} &gt; 0</condition>
       <then>
         <take>
-            <object>Uracil Powder</object>
+          <item>
+            <typet>Uracil Powder</type>
             <quantity>1</quantity>
             <var>ura_powder</var>
+           </item>
         </take>
 	<step>
 	    <description>Put a temporary label on the lid of %{Ura} of the 500 mL bottles.</description>
