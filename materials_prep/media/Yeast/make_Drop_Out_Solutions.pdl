@@ -190,7 +190,7 @@
       <then>
         <take>
           <item>
-            <typet>Uracil Powder</type>
+            <type>Uracil Powder</type>
             <quantity>1</quantity>
             <var>ura_powder</var>
            </item>
