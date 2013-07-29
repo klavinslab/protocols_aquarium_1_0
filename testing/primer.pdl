@@ -1,0 +1,25 @@
+<protocol>
+
+<information>This protocol demonstrates how to take a primer, get some information about it, and release it.</information>
+
+<take>
+  <item>
+    <type>Primer Aliquot</type>
+    <quantity>1</quantity>
+    <var>x</var>
+    <primer>
+      <description>xynC_lysRBS_rev</description>
+    </primer>
+  </item>
+</take>
+
+<assign>
+  <lhs>seq</lhs>
+  <rhs>%{x}[:overhang] + %{x}[:annealing]</rhs>
+</assign>
+
+<step>
+  <description>The sequence for the primer is: %{seq}</description>
+</step>
+
+</protocol>
