@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<protocol name="Gel Pouring">
+
+  <!--- arguments -->
+  <argument>
+      <name>gel_volume</name>
+      <type>number</type>
+      <description>Enter the gel volume in mL (50 or 100)</description>
+  </argument>  
+  <argument>
+    <name>gel_percent</name>
+    <type>number</type>
+    <description>Enter the desired percent agarose (suggested 0.8 to 1.0)</description>
+  </argument>  
+  <information>
+    This protocol is for seperating linearized DNA on an agarose gel by fragment size
+  </information>
+  
+  <!--- takes -->
+  <take>
+    <object>250 mL Flask</object>
+    <quantity>1</quantity>
+    <var>flask</var>
+  </take>  
+  <take>
+    <object>Weigh Paper</object>
+    <quantity>1</quantity>
+    <var>paper</var>
+  </take>  
+  <take>
+    <object>Agarose</object>
+    <quantity>1</quantity>
+    <var>agar</var>
+  </take>  
+  <take>
+    <object>Scale</object>
+    <quantity>1</quantity>
+    <var>balance</var>
+  </take>  
+  
+  <assign><lhs>gel_mass</lhs><rhs>%{gel_percent} / 100.0 * %{gel_volume}</rhs></assign>
+  
+  <!--- Begin steps --> 
+  <!-- Weigh out dry reagents -->
+  <step>
+    <description>Measure out %{gel_mass}g agarose</description>
+    <note>Add to empty 250mL flask</note>
+  </step>    
+  
+  <!-- Measure and add buffer -->
+  <take>
+    <object>100mL Graduated Cylinder</object>
+    <quantity>1</quantity>
+    <var>graduated_cylinder</var>
+  </take>  
+  <take>
+    <object>TAE 1x</object>
+    <quantity>1</quantity>
+    <var>TAE</var>
+  </take>  
+  <step>
+    <description>Pour %{gel_volume}ml TAE into 100mL graduated cylinder</description>
+    <note>Add to 250mL flask with agarose</note>
+  </step>  
+  
+  <!-- Microwave into solution -->
+  <take>
+    <object>Heat-Resistant Glove</object>
+    <quantity>1</quantity>
+    <var>glove</var>
+  </take>    
+  <take>
+    <object>Microwave</object>
+    <quantity>1</quantity>
+    <var>microwave</var>
+  </take>
+  <assign>
+    <lhs>dissolved</lhs>
+    <rhs>0</rhs>
+  </assign>
+  <assign>
+    <lhs>microwave_counter</lhs>
+    <rhs>5</rhs>
+  </assign>
+  <while>
+    <condition>dissolved != 1</condition>
+    <do>
+      <step>
+        <description>Microwave for %{microwave_counter} minute(s)</description>
+        <note>use 30% power.</note>
+      </step>
+      <step>
+        <description>Carefully swirl flask for 5 seconds.</description>
+        <note>Use 30% power.</note>
+        <warning>Use heat-resistant, waterproof gloves</warning>
+      </step>
+      <if>
+        <condition>%{microwave_counter} > 1</condition>
+        <then>
+          <assign>
+            <lhs>microwave_counter</lhs>
+            <rhs>%{microwave_counter} - 1</rhs>
+          </assign>
+        </then>
+        <else></else>
+      </if>
+      <argument>
+        <name>dissolved</name>
+        <type>number</type>
+        <description>Enter 1 if the gel has dissolved. Otherwise, enter 0.</description>
+      </argument>
+    </do>
+  </while>
+ 
+  <!-- Prepare gel box -->
+  <!-- IDEA: split into two protocols to allow execution in parallel (melting gel vs. prepping gel box) -->
+  <take>
+    <object>Gel Box</object>
+    <quantity>1</quantity>
+    <var>box</var>
+  </take>  
+  <!-- TODO: parameterize comb sizes -->
+  <take>
+    <object>Comb (L)</object>
+    <quantity>1</quantity>
+    <var>comb</var>
+  </take>      
+  <step>
+    <description>Set up the gel tray and gel box</description>
+    <note>Rinse gel box, gel tray, and gel comb with DI water. Push the tray down fully into the center of the gel box, forming a seal.</note>
+  </step>
+  <step>
+    <description>Test the seal</description>
+    <note>Test the seal of the gel by filling with about 1cm of water and checking for leaks. Pour the water out.</note>
+  </step>
+  <!-- TODO: produce and release tags -->
+
+</protocol>
