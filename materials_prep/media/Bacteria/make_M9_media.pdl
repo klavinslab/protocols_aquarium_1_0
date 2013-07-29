@@ -69,9 +69,11 @@
 	<condition>%{casaa}=="true"</condition>
 	<then>
     	<take>
-		<item>Sterile CAS amino acid solution</item>
+		<item>
+		<type>Sterile CAS amino acid solution</type>
 		<quantity>1</quantity>
 		<var>cas</var>
+		</item>
 	    </take>
 	</then>
 	<else></else>
@@ -80,10 +82,12 @@
     <if> 
 	<condition>%{nutrient}=="cellobiose"</condition>
 	<then>
-    	<take>	
-		<item>4percent Sterile Filtered Cellobiose</item>
+    	<take>
+		<item>
+		<type>4percent Sterile Filtered Cellobiose</type>
 		<quantity>1</quantity>
 		<var>cb</var>
+		</item>
 	    </take>
 	</then>
 	<else></else>
@@ -93,9 +97,11 @@
 	<condition>%{nutrient}=="glucose"</condition>
 	<then>
     	<take>
-		<item>20percent Sterile Filtered Glucose</item>
+		<item>
+		<type>20percent Sterile Filtered Glucose</type>
 		<quantity>1</quantity>
 		<var>gluc</var>
+		</item>
 	    </take>
 	</then>
 	<else></else>
