@@ -38,13 +38,13 @@
       <then>
       
         <take>
-            <object>0.2mL Thin Wall Strip Well Tubes</object>
+            <type>0.2mL Thin Wall Strip Well Tubes</type>
             <quantity>%{lysates}</quantity>
             <var>PCRtubes</var>
         </take>
         
         <take>
-            <object>Thermal Cycler</object>
+            <type>Thermal Cycler</type>
             <quantity>1</quantity>
             <var>ThermalCycler</var>
         </take>        
@@ -52,7 +52,7 @@
        
        	<else>
         <take>
-            <object>Eppendorf Tube</type>
+            <type>Eppendorf Tube</type>
             <quantity>%{lysates}</quantity>
             <var>EppendorfTube</var>
         </take>
