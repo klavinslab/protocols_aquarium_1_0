@@ -22,7 +22,7 @@
     </assign>
     
     <take>
-  		<object>Molecular Grade Water 50mL aliquot</object>
+  		<type>Molecular Grade Water 50mL aliquot</typey>
 		<quantity>1</quantity>
         	<var>water</var>
     </take>
@@ -47,18 +47,17 @@
             <object>Thermal Cycler</object>
             <quantity>1</quantity>
             <var>ThermalCycler</var>
-        </take>
-        
+        </take>        
       </then>
        
        	<else>
         <take>
-            <object>Eppendorf Tube</object>
+            <object>Eppendorf Tube</type>
             <quantity>%{lysates}</quantity>
             <var>EppendorfTube</var>
         </take>
         <take>
-        	<object>90C Heat Block</object>
+        	<type>90C Heat Block</type>
   			<quantity>1</quantity>
         	<var>HeatBlock</var>
     	</take>
@@ -119,7 +118,7 @@
   		</step>
   		
   		<produce>
-          	<object>Yeast Lysate</object>
+          	<type>Yeast Lysate</type>
           	<quantity>%{lysates}</quantity>
         	</produce>    
   		  		  		  		
