@@ -57,9 +57,9 @@
 	<condition>%{biotin}=="true"</condition>
 	<then>
 	    <take>
-		<item>250X Biotin</item>
-		<quantity>1</quantity>
-		<var>biotin250</var>
+			<item>
+			<type>250X Biotin</type><quantity>1</quantity><var>biotin250</var>
+			</item>
 	    </take>
 	</then>
 	<else></else>
@@ -69,11 +69,9 @@
 	<condition>%{casaa}=="true"</condition>
 	<then>
     	<take>
-		<item>
-		<type>Sterile CAS amino acid solution</type>
-		<quantity>1</quantity>
-		<var>cas</var>
-		</item>
+			<item>
+			<type>Sterile CAS amino acid solution</type><quantity>1</quantity><var>cas</var>
+			</item>
 	    </take>
 	</then>
 	<else></else>
@@ -83,11 +81,9 @@
 	<condition>%{nutrient}=="cellobiose"</condition>
 	<then>
     	<take>
-		<item>
-		<type>4percent Sterile Filtered Cellobiose</type>
-		<quantity>1</quantity>
-		<var>cb</var>
-		</item>
+			<item>
+			<type>4percent Sterile Filtered Cellobiose</type><quantity>1</quantity><var>cb</var>
+			</item>
 	    </take>
 	</then>
 	<else></else>
@@ -97,11 +93,9 @@
 	<condition>%{nutrient}=="glucose"</condition>
 	<then>
     	<take>
-		<item>
-		<type>20percent Sterile Filtered Glucose</type>
-		<quantity>1</quantity>
-		<var>gluc</var>
-		</item>
+			<item>
+			<type>20percent Sterile Filtered Glucose</type><quantity>1</quantity><var>gluc</var>
+			</item>
 	    </take>
 	</then>
 	<else></else>
