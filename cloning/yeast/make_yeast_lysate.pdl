@@ -22,45 +22,56 @@
     </assign>
     
     <take>
+    		<item>
   		<type>Molecular Grade Water 50mL aliquot</type>
 		<quantity>1</quantity>
         	<var>water</var>
-    </take>
-    
-    <take>
-  		<type>2 percent SDS</type>
+        	</item>
+        	
+        	<item>
+        	<type>2 percent SDS</type>
  		<quantity>1</quantity>
         	<var>SDS</var>
+        	</item>
     </take>
+    
     
       <if>
       <condition>%{lysates} &gt; 20</condition>
       <then>
       
         <take>
-            <type>0.2mL Thin Wall Strip Well Tubes</type>
-            <quantity>%{lysates}</quantity>
-            <var>PCRtubes</var>
+            	<item>
+            	<type>0.2mL Thin Wall Strip Well Tubes</type>
+            	<quantity>%{lysates}</quantity>
+            	<var>PCRtubes</var>
+            	</item>
+            
+            	<item>
+            	<type>Thermal Cycler</type>
+            	<quantity>1</quantity>
+            	<var>ThermalCycler</var>
+            	</item>
+            
         </take>
-        
-        <take>
-            <type>Thermal Cycler</type>
-            <quantity>1</quantity>
-            <var>ThermalCycler</var>
-        </take>        
+   
       </then>
        
        	<else>
         <take>
-            <type>Eppendorf Tube</type>
-            <quantity>%{lysates}</quantity>
-            <var>EppendorfTube</var>
-        </take>
-        <take>
-        	<type>90C Heat Block</type>
-  			<quantity>1</quantity>
+             	<item>
+             	<type>Eppendorf Tube</type>
+             	<quantity>%{lysates}</quantity>
+             	<var>EppendorfTube</var>
+             	</item>
+             
+             	<item>
+       		<type>90C Heat Block</type>
+  		<quantity>1</quantity>
         	<var>HeatBlock</var>
-    	</take>
+        	</item>
+             
+        </take>
        	</else>
        
        </if>
