@@ -22,46 +22,56 @@
     </assign>
     
     <take>
-  		<object>Molecular Grade Water 50mL aliquot</object>
+    		<item>
+  		<type>Molecular Grade Water 50mL aliquot</type>
 		<quantity>1</quantity>
         	<var>water</var>
-    </take>
-    
-    <take>
-  		<object>2 percent SDS</object>
+        	</item>
+        	
+        	<item>
+        	<type>2 percent SDS</type>
  		<quantity>1</quantity>
         	<var>SDS</var>
+        	</item>
     </take>
+    
     
       <if>
       <condition>%{lysates} &gt; 20</condition>
       <then>
       
         <take>
-            <object>0.2mL Thin Wall Strip Well Tubes</object>
-            <quantity>%{lysates}</quantity>
-            <var>PCRtubes</var>
+            	<item>
+            	<type>0.2mL Thin Wall Strip Well Tubes</type>
+            	<quantity>%{lysates}</quantity>
+            	<var>PCRtubes</var>
+            	</item>
+            
+            	<item>
+            	<type>Thermal Cycler</type>
+            	<quantity>1</quantity>
+            	<var>ThermalCycler</var>
+            	</item>
+            
         </take>
-        
-        <take>
-            <object>Thermal Cycler</object>
-            <quantity>1</quantity>
-            <var>ThermalCycler</var>
-        </take>
-        
+   
       </then>
        
        	<else>
         <take>
-            <object>Eppendorf Tube</object>
-            <quantity>%{lysates}</quantity>
-            <var>EppendorfTube</var>
-        </take>
-        <take>
-        	<object>90C Heat Block</object>
-  			<quantity>1</quantity>
+             	<item>
+             	<type>Eppendorf Tube</type>
+             	<quantity>%{lysates}</quantity>
+             	<var>EppendorfTube</var>
+             	</item>
+             
+             	<item>
+       		<type>90C Heat Block</type>
+  		<quantity>1</quantity>
         	<var>HeatBlock</var>
-    	</take>
+        	</item>
+             
+        </take>
        	</else>
        
        </if>
@@ -119,7 +129,7 @@
   		</step>
   		
   		<produce>
-          	<object>Yeast Lysate</object>
+          	<type>Yeast Lysate</type>
           	<quantity>%{lysates}</quantity>
         	</produce>    
   		  		  		  		

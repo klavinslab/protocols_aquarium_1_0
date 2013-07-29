@@ -35,43 +35,34 @@
 		</description>
     </argument>
 	
-    <take>
-    <object>Electronic Serological Pipette</object>
-	<quantity>1</quantity>
-	<var>sero</var>
+	<take>
+		<item>
+			<type>Electronic Serological Pipette</type><quantity>1</quantity><var>sero</var>
+		</item>
+		<item>
+			<type>1000 mL Bottle</type><quantity>1</quantity><var>bottle</var>
+		</item>
+		<item>
+			<type>5X M9 Salts</type><quantity>1</quantity><var>salts</var>
+		</item>
     </take>
 	
-    <take>
-	<object>1000 mL Bottle</object>
-	<quantity>1</quantity>
-	<var>bottle</var>
-    </take>
-    
-    <take>
-	<object>5X M9 Salts</object>
-	<quantity>1</quantity>
-	<var>salts</var>
-    </take>
-    
-    <take>
-    <object>100X MgSO4 CaCl2</object>
-	<quantity>1</quantity>
-	<var>saltsol</var>
-    </take>
-
-    <take>
-	<object>diH2O (sterile)</object>
-	<quantity>1</quantity>
-	<var>water</var>
-    </take>
+	<take>
+		<item>
+			<type>100X MgSO4 CaCl2</type><quantity>1</quantity><var>saltsol</var>
+		</item>
+		<item>
+			<type>diH2O (sterile)</type><quantity>1</quantity><var>water</var>
+		</item>
+	</take>
     
     <if> 
 	<condition>%{biotin}=="true"</condition>
 	<then>
 	    <take>
-		<object>250X Biotin</object>
-		<quantity>1</quantity>
-		<var>biotin250</var>
+			<item>
+			<type>250X Biotin</type><quantity>1</quantity><var>biotin250</var>
+			</item>
 	    </take>
 	</then>
 	<else></else>
@@ -81,9 +72,9 @@
 	<condition>%{casaa}=="true"</condition>
 	<then>
     	<take>
-		<object>Sterile CAS amino acid solution</object>
-		<quantity>1</quantity>
-		<var>cas</var>
+			<item>
+			<type>Sterile CAS amino acid solution</type><quantity>1</quantity><var>cas</var>
+			</item>
 	    </take>
 	</then>
 	<else></else>
@@ -92,10 +83,10 @@
     <if> 
 	<condition>%{nutrient}=="cellobiose"</condition>
 	<then>
-    	<take>	
-		<object>4percent Sterile Filtered Cellobiose</object>
-		<quantity>1</quantity>
-		<var>cb</var>
+    	<take>
+			<item>
+			<type>4percent Sterile Filtered Cellobiose</type><quantity>1</quantity><var>cb</var>
+			</item>
 	    </take>
 	</then>
 	<else></else>
@@ -105,9 +96,9 @@
 	<condition>%{nutrient}=="glucose"</condition>
 	<then>
     	<take>
-		<object>20percent Sterile Filtered Glucose</object>
-		<quantity>1</quantity>
-		<var>gluc</var>
+			<item>
+			<type>20percent Sterile Filtered Glucose</type><quantity>1</quantity><var>gluc</var>
+			</item>
 	    </take>
 	</then>
 	<else></else>
