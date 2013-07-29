@@ -22,13 +22,13 @@
     </assign>
     
     <take>
-  		<type>Molecular Grade Water 50mL aliquot</typey>
+  		<type>Molecular Grade Water 50mL aliquot</type>
 		<quantity>1</quantity>
         	<var>water</var>
     </take>
     
     <take>
-  		<object>2 percent SDS</object>
+  		<type>2 percent SDS</type>
  		<quantity>1</quantity>
         	<var>SDS</var>
     </take>
