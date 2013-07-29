@@ -45,13 +45,16 @@
 		<item>
 			<type>5X M9 Salts</type><quantity>1</quantity><var>salts</var>
 		</item>
+    </take>
+	
+	<take>
 		<item>
 			<type>100X MgSO4 CaCl2</type><quantity>1</quantity><var>saltsol</var>
 		</item>
 		<item>
 			<type>diH2O (sterile)</type><quantity>1</quantity><var>water</var>
 		</item>
-    </take>
+	</take>
     
     <if> 
 	<condition>%{biotin}=="true"</condition>
