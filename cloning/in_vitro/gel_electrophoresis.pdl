@@ -1,203 +1,74 @@
+<?xml version="1.0"?>
 <protocol name="Gel Electrophoresis">
+  <information>
+    This protocol is for seperating linearized DNA on an agarose gel by fragment size
+  </information>
+ 
+  <!-- arguments -->
+  <!-- FIXME: this should be parameterized to accept < N inputs (where N is available wells)? -->
+  <!-- FIXME: should be parallelized -->
+  <argument>
+    <name>samples</name>
+    <type>string</type>
+    <description>Enter sample IDs to run</description>
+  </argument>
+  <argument>
+      <name>run_voltage</name>
+      <type>number</type>
+      <description>Enter the desired voltage for gel electrophoresis</description>
+  </argument>
+  <argument>
+      <name>run_time</name>
+      <type>number</type>
+      <description>Enter the desired run time for gel electrophoresis in minutes</description>
+  </argument>  
+ 
+  <!-- takes -->
+  <!-- FIXME: take all the samples -->
+  <take>
+    <object>Sample with Loading Dye</object>
+    <quantity>1</quantity>
+    <var>balance</var>
+  </take>  
+  <take>
+    <object>Agarose Gel</object>
+    <quantity>1</quantity>
+    <var>agar</var>
+    <!-- FIXME: which gel? -->
+  </take>  
+  
+  <step>
+    <description>Setup the gel for loading</description>
+    <note>Carefully lift the gel tray out of the gel box. With the electrodes facing away, place the gel tray into the box with the comb on the left side. Fill the gel box with 1X TAE until it reaches the marked fill line on the side of the box. Carefully remove the comb.</note>
+  </step>  
+  
+  <!-- Put away combs -->
+  <release>[%{TAE}[0],%{comb}[0]]</release>
+  
+  <!-- TODO: include a sample loading protocol? -->
+  <step>
+    <description>Load all samples</description>
+  </step>  
+  
+  <take>
+    <object>Gel Box Power Supply</object>
+    <quantity>1</quantity>
+    <var>power</var>
+  </take>  
 
-	<argument>
-  		<name>gel_volume</name>
-  		<type>number</type>
-  		<description>Enter the gel volume in mL (50 or 100)</description>
-	</argument>	
-	<argument>
-  		<name>gel_percent</name>
-  		<type>number</type>
-  		<description>Enter the desired percent agarose (suggested 0.8 to 1.0)</description>
-	</argument>	
-	<argument>
-  		<name>run_voltage</name>
-  		<type>number</type>
-  		<description>Enter the desired voltage for gel electrophoresis</description>
-	</argument>
-	<argument>
-  		<name>run_time</name>
-  		<type>number</type>
-  		<description>Enter the desired run time for gel electrophoresis in minutes</description>
-	</argument>	
+  <!-- Set up power supply and gel prior to running -->
+  <step>
+    <description>Connect the electrodes to the power supply with the combination safety cover + electrode leads apparatus.</description>
+    <note>Ensure that red is connected to red, and black to black.</note>
+  </step>
+  <step>
+    <description>Turn on the power supply and set the voltage to %{run_voltage}V and time to %{run_time}s</description>
+  </step>
 
-	<information>
-		This protocol is for seperating linearized DNA on an agarose gel by fragment size
-	</information>
-	
-	<take>
-		<object>250 mL Flask</object>
-		<quantity>1</quantity>
-		<var>flask</var>
-	</take>	
-	
-	<take>
-		<object>Weigh Paper</object>
-		<quantity>1</quantity>
-		<var>paper</var>
-	</take>	
-	
-	
-	<take>
-		<object>Agarose</object>
-		<quantity>1</quantity>
-		<var>agar</var>
-	</take>	
-	
-	<take>
-		<object>Scale</object>
-		<quantity>1</quantity>
-		<var>balance</var>
-	</take>	
-	
-	<assign><lhs>gel_mass</lhs><rhs>%{gel_percent} / 100.0 * %{gel_volume}</rhs></assign>
-	
-	<step>
-		<description>Measure out %{gel_mass}g agarose</description>
-		<note>Add to empty 250ml flask</note>
-	</step>		
-	
-	<take>
-		<object>100mL Graduated Cylinder</object>
-		<quantity>1</quantity>
-		<var>graduated_cylinder</var>
-	</take>	
-	<take>
-		<object>TAE 1x</object>
-		<quantity>1</quantity>
-		<var>TAE</var>
-	</take>	
-	<step>
-		<description>Measure %{gel_volume}ml TAE in 100ml graduated cylinder</description>
-		<note>Add to 250ml flask with agarose</note>
-	</step>	
-	
-	<take>
-		<object>Microwave</object>
-		<quantity>1</quantity>
-		<var>microwave</var>
-	</take>
-	<step>
-		<description>Microwave for 1 minute</description>
-		<note>Use default microwave setting</note>
-	</step>
-	
-	<take>
-		<object>Gel Box</object>
-		<quantity>1</quantity>
-		<var>box</var>
-	</take>	
-	<take>
-		<object>Comb (L)</object>
-		<quantity>1</quantity>
-		<var>comb</var>
-	</take>			
-	<step>
-		<description>Set up the gel tray and gel box</description>
-		<note>Rinse gel box, gel tray, and gel comb with DI water. Push the tray down fully into the center of the gel box, forming a seal.</note>
-	</step>
-	<take>
-		<object>Heat-Resistant Glove</object>
-		<quantity>1</quantity>
-		<var>glove</var>
-	</take>		
-	<step>
-		<description>Remove flask, swirl to mix, and check dissolution</description>
-		<note>Continue to microwave for 10 seconds, swirl, and check until agarose is completely dissolved</note>
-		<warning>Use waterproof, heat-resistant gloves!</warning>
-	</step>
+  <!-- Run --> 
+  <step>
+    <description>Hit the 'running man' icon to start the power supply.</description>
+    <note>Check for bubbles in the gel box to indicate that voltage is being applied</note>
+  </step>
 
-	<take>
-		<object>GelGreen</object>
-		<quantity>1</quantity>
-		<var>gelgreen</var>
-	</take>
-	
-	<assign><lhs>gelgreen_volume</lhs><rhs>%{gel_volume} / 10.0</rhs></assign>
-	
-	<step>
-		<description>Add %{gelgreen_volume}µL of GelGreen to the 250ml flask</description>
-		<note>Swirl to mix thouroughly</note>
-	</step>
-	<step>
-		<description>Pour the contents of the 250ml flask into the sealed gel tray and add comb</description>
-		<note>Wait for 30 minutes for gel to solidify</note>
-	</step>
-	
-	<release>[%{flask}[0],%{balance}[0],%{graduated_cylinder}[0],%{microwave}[0],%{glove}[0]]</release>
-	<release>[%{gelgreen}[0],%{agar}[0],%{paper}[0]]</release>
-
-
-	<step>
-		<description>Setup the gel for loading</description>
-		<note>Carefully lift the gel tray out of the gel box. With the electrodes facing away, place the gel tray into the box with the comb on the left side. Fill the gel box with 1X TAE until it reaches the marked fill line on the side of the box. Carefully remove the comb.</note>
-	</step>	
-	
-	<release>[%{TAE}[0],%{comb}[0]]</release>
-	
-	<take>
-		<object>6X Loading Dye</object>
-		<quantity>1</quantity>
-		<var>dye</var>
-	</take>			
-	<take>
-		<object>DNA Ladder</object>
-		<quantity>1</quantity>
-		<var>ladder</var>
-	</take>					
-	<step>
-		<description>Add loading dye to all samples</description>
-		<note>For 6x loading dye, add 2ul of dye for each 10ul of sample to load</note>
-	</step>
-	<step>
-		<description>Load all samples and the appropriate DNA ladder</description>
-	</step>	
-	
-	<take>
-		<object>Gel Box Power Supply</object>
-		<quantity>1</quantity>
-		<var>power</var>
-	</take>	
-	
-	<step>
-		<description>Turn on the power supply and set the voltage to %{run_voltage}V and time to %{run_time}s</description>
-	</step>
-	<step>
-		<description>Connect the electrodes to the power supply with the combination safety cover + electrode leads apparatus</description>
-	</step>
-	<step>
-		<description>Hit the 'running man' icon to start the power supply and check for bubbles in the gel box to indicate that voltage is being applied</description>
-		<note>Check on the gel every 30-40 minutes in case the bands have sufficiently resolved. When sufficiently resolved, pause the power supply and then turn it off.</note>
-	</step>
-
-	<release>[%{dye}[0],%{ladder}[0]]</release>
-	
-	<take>
-		<object>Transluminator</object>
-		<quantity>1</quantity>
-		<var>light</var>
-	</take>							
-
-	<step>
-		<description>Remove the gel tray from the gel box and transfer the gel to the transilluminator</description>
-		<warning>It should slide right of of the tray, so be careful that it doesn't slide off during the transfer!</warning>
-		<note>To remove bubbles under the gel, slowly move the gel around on the transilluminator, allowing the bubbles to escape</note>
-	</step>
-	
-	<release>[%{box}[0],%{power}[0]]</release>
-	
-	<step>
-		<description>Visualize with the gel hood and transilluminator, capture an image</description>
-		<note>Continue to gel purification if appropriate</note>
-	</step>
-	<step>
-		<description>Discard gel in biohazard bin and clean the transilluminator</description>
-	</step>	
-
-	<release>%{light}</release>
-
-	<step>
-		<description>Thank you for running the gel electrophoresis protocol!</description>
-	</step>		
-	
 </protocol>

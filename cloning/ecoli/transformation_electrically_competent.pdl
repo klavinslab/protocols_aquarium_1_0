@@ -5,6 +5,7 @@
       <type>number</type>
       <description>Enter the number of transformations you wish to do.</description>
     </argument>
+    <!-- TODO: parameterize recovery volume (250µL vs 1000µL) -->
 
     <information>
         This protocols describes how to do transformations using electrically competent E.coli.
