@@ -5,7 +5,7 @@
   
   <take>
       <item>
-        <type>dIH2O</type><quantity>1</quantity><var>water</var>
+        <type>Molecular Grade Water 50mL aliquot</type><quantity>1</quantity><var>water</var>
       </item>
       <item>
         <type>Phusion Master Mix</type><quantity>1</quantity><var>MasterMix</var>
@@ -17,13 +17,13 @@
         <type>primers</type><quantity>1</quantity><var>primer</var>
       </item>
       <item>
-        <type>PCR tube</type><quantity>1</quantity><var>pcr_tube</var>
+        <type>0.2mL Thin Wall Strip Well Tubes</type><quantity>1</quantity><var>pcr_tube</var>
       </item>
   </take> 
   
   <take>
       <item>
-        <type>thermocycler</type><quantity>1</quantity><var>thermocycler</var>
+        <type>Thermal Cycler</type><quantity>1</quantity><var>thermocycler</var>
       </item>
   </take>
   
