@@ -70,6 +70,9 @@ Day 1
         [Option 2]:
 
 
+Amount to use Centromeric Plasmid 200-300ng linearized pGP vector (not pGP5 though) 300-400ng linearized pAG vector or pGP5 vector 2µg (plate whole aliquot) or 5µg (plate 1/3 of the aliquot) PCR product 250µL of PCR mix, isopropanol purified into 50µL aliquot.
+
+
 ####Common Issues####
 
     [Issue 1]:
