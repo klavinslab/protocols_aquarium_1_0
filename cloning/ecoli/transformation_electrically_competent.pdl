@@ -150,5 +150,10 @@ Pour out ethanol and place cuvette upside down on paper towel to dry.
 	%{Electrocuvette}
   </release>
 
+  <produce>
+  	<object>Dirty Electrcuvette</object>
+  	<quantity>%{total}</quantity>
+  </produce>
+
 </protocol>
 
