@@ -5,7 +5,7 @@
   
   <take>
       <item>
-        <type>dIH2O<</type><quantity>1</quantity><var>water</var>
+        <type>dIH2O</type><quantity>1</quantity><var>water</var>
       </item>
       <item>
         <type>Phusion Master Mix</type><quantity>1</quantity><var>MasterMix</var>
