@@ -5,7 +5,12 @@
       <type>number</type>
       <description>Enter the number of transformations you wish to do.</description>
     </argument>
-    <!-- TODO: parameterize recovery volume (250µL vs 1000µL) -->
+    
+    <argument>
+    	<name>recovery_volume</name>
+    	<type>number</type>
+    	<description>Enter the volume you wish to use for recovery in ul (250 or 1000)</description>
+    </argument>
 
     <information>
         This protocols describes how to do transformations using electrically competent E.coli.
@@ -14,7 +19,7 @@
   <assign><lhs>total</lhs><rhs>%{Transformation} mL</rhs></assign>
 
     <take>
-  <object>IceBlock</object>
+  	<object>IceBlock</object>
 	<quantity>1</quantity>
         <var>block</var>
     </take>
@@ -91,12 +96,11 @@
 	</step>
 
 	<step>
-	    <description> Again, working quickly, remove the electrocuvette from the electroporator and add 1 mL of room-temperature LB to it, pipetting up and down several times to extract the cells from the 1 mm gap.</description>
+	    <description> Again, working quickly, remove the electrocuvette from the electroporator and add %{recovery_volume} uL of room-temperature LB to it, pipetting up and down several times to extract the cells from the 1 mm gap.</description>
 	</step>
 
 	<step>
-	    <description> Transfer entire contents of electrocuvette to the tube
-	</description>
+	    <description> Transfer entire contents of electrocuvette to the tube</description>
 	</step>
 
 	<step>
