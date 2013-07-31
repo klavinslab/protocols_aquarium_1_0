@@ -58,7 +58,7 @@
   
   
   <produce>
-        <object>a tube of yeast colony PCR result</object>
+        <type>a tube of yeast colony PCR result</type>
         <quantity>1</quantity>
         <location>TBD</location>
         <var>result</var>
