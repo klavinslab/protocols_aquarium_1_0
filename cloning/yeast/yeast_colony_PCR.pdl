@@ -65,7 +65,7 @@
   </produce>
   
   <release>[%{water}[0],%{MasterMix}[0],%{yeast_lysate}[0],%{primer}[0],%{pcr_tube}[0]]</release>
-  <release>%{thermocycler}<release>
+  <release>%{thermocycler}</release>
   
   <cleanup>
   </cleanup>
