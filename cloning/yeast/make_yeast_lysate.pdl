@@ -129,7 +129,7 @@
   		</step>
   		
   		<produce>
-          	<type>Yeast Lysate</type>
+          	<object>Yeast Lysate</object>
           	<quantity>%{lysates}</quantity>
         	</produce>    
   		  		  		  		
