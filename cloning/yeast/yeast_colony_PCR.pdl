@@ -8,13 +8,16 @@
         <type>Molecular Grade Water 50mL aliquot</type><quantity>1</quantity><var>water</var>
       </item>
       <item>
-        <type>Phusion Master Mix</type><quantity>1</quantity><var>MasterMix</var>
+        <type>Phusion 2X Master Mix</type><quantity>1</quantity><var>MasterMix</var>
       </item>
       <item>
         <type>Yeast Lysate</type><quantity>1</quantity><var>yeast_lysate</var>
       </item>
       <item>
-        <type>primers</type><quantity>1</quantity><var>primer</var>
+        <type>Primer1</type><quantity>1</quantity><var>primer1</var>
+      </item>
+      <item>
+        <type>Primer2</type><quantity>1</quantity><var>primer2</var>
       </item>
       <item>
         <type>0.2mL Thin Wall Strip Well Tubes</type><quantity>1</quantity><var>pcr_tube</var>
@@ -64,8 +67,8 @@
         <var>result</var>
   </produce>
   
-  <release>[%{water}[0],%{MasterMix}[0],%{yeast_lysate}[0],%{primer}[0],%{pcr_tube}[0]]</release>
-  <release>%{thermocycler}</release>
+  <release>[%{water}[0],%{MasterMix}[0],%{yeast_lysate}[0],%{primer1}[0],]</release>
+  <release>[%{pcr_tube}[0],%{thermocycler}[0]]</release>
   
   <cleanup>
   </cleanup>
