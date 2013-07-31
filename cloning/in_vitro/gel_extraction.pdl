@@ -1,173 +1,109 @@
+<?xml version="1.0"?>
 <protocol name="Gel Extraction">
+  <information>This protocol describes how to extract a band of DNA from an agarose gel.</information>  
+ 
+  <!-- arguments -->
+  <argument>
+    <name>number</name>
+    <type>number</type>
+    <description>Enter the number of bands to be extracted.</description>
+  </argument>  
+  <!-- FIXME: what I really want is an array input -->
+  <argument>
+    <name>lanes</name>
+    <type>string</type>
+    <description>Enter the lanes from which to extract bands.</description>
+  </argument>
+  <!-- TODO: is there a better way to specify cutting out a given band? Maybe circling them on an image? -->
+   <argument>
+    <name>lengths</name>
+    <type>string</type>
+    <description>Enter the lengths of each band to extract.</description>
+  </argument>
+ 
+  <!-- takes -->
+  <take>
+    <object>Transluminator</object>
+    <quantity>1</quantity>
+    <var>light_box</var>
+  </take>
+  <take>
+    <object>Run Gel</object>
+    <quantity>1</quantity>
+    <var>gel</var>
+  </take>  
+  <take>
+    <object>Razor Blade</object>
+    <quantity>1</quantity>
+    <var>razor</var>
+  </take>  
+  <take>
+    <object>Ethanol Spray Bottle</object>
+    <quantity>1</quantity>
+    <var>ethanol</var>
+  </take>
+  <take>
+    <object>Eppendorf Tube</object>
+    <quantity>%{number}</quantity>
+    <var>tubes1</var>
+  </take>  
 
-
-	<argument>
-  		<name>number</name>
-  		<type>number</type>
-  		<description>Enter the number of bands to be extracted</description>
-	</argument>	
-
-	<information>
-		This protocol describes how to extract a band of DNA from an agarose gel
-	</information>	
-	
-	
-	<take>
-		<object>Transluminator</object>
-		<quantity>1</quantity>
-		<var>light_box</var>
-	</take>
-	<take>
-		<object>Finished Gel</object>
-		<quantity>1</quantity>
-		<var>gel</var>
-	</take>	
-	<take>
-		<object>Razor Blade</object>
-		<quantity>1</quantity>
-		<var>razor</var>
-	</take>	
-	<take>
-		<object>Eppendorf Tube</object>
-		<quantity>%{number}</quantity>
-		<var>tubes1</var>
-	</take>	
-	<step>
-		<description>Label epindorph tubes</description>
-		<note>Shorthand is okay, as these tubes will not be kept</note>
-	</step>	
-	<step>
-		<description>Cut fragments out of gel with razor and place each in labeled epindorph tube</description>
-		<note>Use transluminator to see bands. Cut as closely around the bands as possible to minimize gel mass</note>
-		<warning>Wipe the razer with ethanol between cutting out each band to avoid contamination</warning>
-	</step>		
-	
-	<release>[%{light_box}[0],%{gel}[0],%{razor}[0]]</release>
-		
-	<take>
-		<object>Scale</object>
-		<quantity>1</quantity>
-		<var>balance</var>
-	</take>	
-	
-	<step>
-		<description>Weigh gel slice</description>
-		<note>Use empty eppendorf tube to tare balance. Record gel mass for each slice</note>
-	</step>
-	
-	<release>%{balance}</release>	
-	
-	<take>
-		<object>QG Buffer</object>
-		<quantity>1</quantity>
-		<var>QG</var>
-	</take>		
-	<step>
-		<description>Add 3x gel volume of QG buffer</description>
-		<note>For example, a 50 mg gel would require 150 uL of QG buffer</note>
-	</step>		
-	<take>
-		<object>50C Heat Block</object>
-		<quantity>1</quantity>
-		<var>heat</var>
-	</take>	
-	<take>
-		<object>Vortex</object>
-		<quantity>1</quantity>
-		<var>vortex</var>
-	</take>	
-	<take>
-		<object>Sodium Acetate</object>
-		<quantity>1</quantity>
-		<var>sodium_acetate</var>
-	</take>
-	<step>
-		<description>Place tube in 50 C heat block for 10 minutes</description>
-		<note>Vortex every few minutes to speed up the process</note>
-		<warning>Check if tube contents look orange or purple. If so, the pH is too high and your DNA will not bind to the column. Add 10 uL of 3 M sodium acetate (NaOAc) and mix</warning>	
-	</step>		
-	<release>[%{heat}[0],%{vortex}[0],%{QG}[0],%{sodium_acetate}[0]]</release>
-	<take>
-		<object>Isopropanol</object>
-		<quantity>1</quantity>
-		<var>isopropanol</var>
-	</take>	
-	<step>
-		<description>Add 1x volume (50 uL to 50 mg of gel slice) isopropanol and pipette to mix</description>
-		<note>this step is only necessary if purifying a band less than 500 bp or greater than 4 kb</note>
-		<warning>Do NOT centrifuge at this step</warning>
-	</step>	
-	<release>%{isopropanol}</release>	
-	<take>
-		<object>Gel Extraction Spin Column</object>
-		<quantity>%{number}</quantity>
-		<var>column</var>
-	</take>
-	<take>
-		<object>Centrifuge</object>
-		<quantity>1</quantity>
-		<var>centrifuge</var>
-	</take>
-	<step>
-		<description>Transfer to labeled splin column, spin at 17,900 g for 1 min, discard flow through</description>
-		<note>Use purple gel extraction Qiagen column</note>
-	</step>	
-	<release>%{tubes1}</release>
-	<take>
-		<object>PE Buffer</object>
-		<quantity>1</quantity>
-		<var>PE</var>
-	</take>	
-	<step>
-		<description>PE wash 1</description>
-		<note>Add 750 uL PE buffer to column and wait five minutes. Spin at 17,900 g for 30 seconds. Empty collection tube</note>
-	</step>	
-	<step>
-		<description>PE wash 2</description>
-		<note>Add 500 uL PE buffer to column and wait five minutes. Spin at 17,900 g for 30 seconds. Empty collection tube</note>
-	</step>	
-	<release>%{PE}</release>	
-	<take>
-		<object>Eppendorf Tube</object>
-		<quantity>%{number}</quantity>
-		<var>tubes2</var>
-	</take>	
-	<step>
-		<description>Dry column and transfer to clean and labeled eppendorf tube</description>
-		<note>Spin at top speed (> 17,900 g) for 30 seconds to remove all PE buffer from column</note>
-	</step>	
-	<take>
-		<object>Elution Buffer</object>
-		<quantity>1</quantity>
-		<var>elution_buffer</var>
-	</take>		
-	<step>
-		<description>Elute with 30 uL elution buffer (EB)</description>
-		<note>Wait two minutes. Spin at 17,900 g for one minute</note>
-		<warning>Add EB to center of column. Be very careful to not pipette on the wall of the tube</warning>
-	</step>	
-	<release>[%{centrifuge}[0],%{elution_buffer}[0]]</release>
-	<release>%{column}</release>
-	<take>
-		<object>Nanodrop</object>
-		<quantity>1</quantity>
-		<var>nanodrop</var>
-	</take>	
-	<step>
-		<description>Use the Nanodrop to check DNA concentration</description>
-		<note>If a more accurate concentration is necessary for any downstream use, dialyze elution for 20-30 minutes at room temperature to remove residual salts. Re-spec on Nanodrop</note>
-		<warning>If the absorbance value at 230 nm is greater than 5, there are residual salts in the elution that are masking the amount of DNA you have</warning>
-	</step>		
-	<release>%{nanodrop}</release>
-	<release>%{tubes2}</release>	
-
-        <produce>
-          	<object>DNA</object>
-          	<quantity>%{number}</quantity>
-        </produce>    
-
-	<step>
-		<description>Thank you for running the gel extraction protocol!</description>
-	</step>		
-	
+  <!-- begin steps -->
+  <step>
+    <description>Label Eppendorph tubes with name, initials, and date.</description>
+    <note>All of this information is required, as these tubes may be saved overnight.</note>
+  </step>
+  <!-- 0-indexed counter -->
+  <assign>
+    <lhs>counter</lhs>
+    <rhs>%{number}</rhs>
+  </assign>
+  <!-- 1-indexed counter (human readable tube number) -->
+  <assign>
+    <lhs>hcounter</lhs>
+    <rhs>%{counter} + 1</rhs>
+  </assign>
+  <while>
+    <condition>counter > 1</condition>
+    <do>
+      <!-- Find current lane number + band size + tube number -->
+      <assign>
+        <lhs>current_lane</lhs>
+        <rhs>%{lanes}[counter]</rhs>
+      </assign>
+      <assign>
+        <lhs>current_length</lhs>
+        <rhs>%{lengths}[counter]</rhs>
+      </assign>
+      <assign>
+        <lhs>hcounter</lhs>
+        <rhs>%{hcounter} - 1</rhs>
+      </assign>
+      <step>
+        <description>Cut fragment of %{current_length} size out of lane %{current_lane} and place in Eppendorph tube %{hcounter}.</description>
+        <note>Use transilluminator to see bands. Cut as closely around the bands as possible to minimize gel mass.</note>
+        <warning>Wipe the razor with ethanol between cutting out each band to avoid contamination.</warning>
+      </step>
+      <!-- Update while loop condition -->
+      <assign>
+        <lhs>counter</lhs>
+        <rhs>%{counter} - 1</rhs>
+      </assign>
+    </do>
+  </while>
+  
+  <release>[%{light_box}[0], %{gel}[0], %{razor}[0], %{ethanol}[0]]</release>
+  <!-- TODO: clean up gel area, move to scale -->
+    
+  <!-- Weighing out gel slices -->
+  <take>
+    <object>Scale</object>
+    <quantity>1</quantity>
+    <var>balance</var>
+  </take>  
+  <step>
+    <description>Weigh gel slice</description>
+    <note>Use empty eppendorf tube to tare balance. Record gel mass for each slice.</note>
+  </step>
+  <release>%{balance}</release>  
 </protocol>
