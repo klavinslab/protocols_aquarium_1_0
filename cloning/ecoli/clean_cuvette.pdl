@@ -47,9 +47,6 @@
     <object>Electrocuvette</object>
     quantity>%{number}</quantity>
   </produce>
-  
-  
-  </produce>
 
 </protocol>
 
