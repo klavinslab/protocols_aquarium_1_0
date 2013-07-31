@@ -1,0 +1,55 @@
+<protocol name="Clean Cuvette">
+
+    <argument>
+      <name>number</name>
+      <type>number</type>
+      <description>Enter the number of cuvettes you wish to clean</description>
+    </argument>
+
+    <information>
+        This protocols describes how to clean a used electroporating cuvette
+    </information>
+
+    <take>
+        <object>Dirty Electrocuvette</object>
+        <quantity>%{number}</quantity>
+        <var>dirty_electrocuvette</var>
+    </take> 
+
+    <take>
+        <object>Ethanol 95 Percent</object>
+        <quantity>1</quantity>
+        <var>ethanol</var>
+    </take> 
+
+	<step>
+	    <description> Squirt 95 percent ethanol to fill cuvette more than halfway. Add cap and invert cuvette a few times to disinfect it. Pour out in waste receptacle by sink.</description>
+	<note> If washed properly, cuvettes can be reused up to 10 times. 
+		</note>
+	</step>
+
+	<step>
+	    <description> Wash cuvette three times with DI H2O using squeeze bottle and dump water into sink.</description>
+	</step>
+
+	<step>
+	    <description> Squirt 95 percent ethanol in the cuvette, add the cap, and let it sit for an hour or longer</description>
+	</step> 
+
+	<step>
+	    <description>Pour out ethanol and place cuvette upside down on paper towel to dry</description>
+	</step> 
+
+  <release>%{dirty_electrocuvette}</release>
+  <release>%{ethanol}</release>
+
+  <produce>
+    <object>Electrocuvette</object>
+    quantity>%{number}</quantity>
+  </produce>
+  
+  
+  </produce>
+
+</protocol>
+
