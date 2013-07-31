@@ -32,13 +32,6 @@
   
   <step>
         <description>Label the pcr tube</description>
-        <note>Write <br />
-            <div class='label'>QCPCR<br />
-            id : ||$result$.id||<br />
-            date: ||(new Date()).toDateString()||
-            </div> <br />
-        on the PCR tube.
-        </note>
   </step>
   
   <step>
