@@ -1,35 +1,64 @@
 <protocol name="Transformation - Electrocompetent E.coli">
 
-    <argument>
-      <name>Transformation</name>
-      <type>number</type>
-      <description>Enter the number of transformations you wish to do.</description>
-    </argument>
-    
-    <argument>
-    	<name>recovery_volume</name>
-    	<type>number</type>
-    	<description>Enter the volume you wish to use for recovery in ul (250 or 1000)</description>
-    </argument>
+	<argument>
+		<name>total</name>
+		<type>number</type>
+		<description>Enter the number of transformations you wish to do.</description>
+	</argument>
 
-    <information>
-        This protocols describes how to do transformations using electrically competent E.coli.
-    </information>
+	<argument>
+		<name>recovery_volume</name>
+		<type>number</type>
+		<description>Enter the volume you wish to use for recovery in ul (250 or 1000)</description>
+	</argument>
 
-  <assign><lhs>total</lhs><rhs>%{Transformation} mL</rhs></assign>
+	<argument>
+		<name>strain</name>
+		<type>string</type>
+		<description>What strain would you like to transform into? (DH5alpha, NEBturbo)</description>
+	</argument>
+	
+	<argument>
+		<name>DNA_volume</name>
+		<type>number</type>
+		<description>What volume of DNA in ul would you like to use? (.1-1 ng plasmid is ideal)</description>
+	</argument>
 
-    <take>
-  	<object>IceBlock</object>
-	<quantity>1</quantity>
-        <var>block</var>
-    </take>
+	<information>
+		This protocols describes how to do transformations using electrically competent E.coli.
+	</information>
 
-    <take>
-        <object>Frozen electrocompetent E.coli aliquot</object>
-        <quantity>%{Transformation}</quantity>
-        <var>aliquots</var>
-    </take>
+	<take>
+  		<object>IceBlock</object>
+		<quantity>1</quantity>
+		<var>block</var>
+	</take>
 
+    <if>
+    	<condition>%{strain}="DH5alpha"</condition>
+    	<then>
+			<take>
+	    		<object>Frozen electrocompetent E.coli aliquot</object>
+	    		<quantity>%{Transformation}</quantity>
+	    		<var>aliquots</var>
+			</take>
+		</then>
+		<else>
+		
+			<if>
+    			<condition>%{strain}="DH5alpha"</condition>
+    			<then>
+					<take>
+        				<object>Frozen electrocompetent E.coli aliquot</object>
+        				<quantity>%{Transformation}</quantity>
+        				<var>aliquots</var>
+    				</take>
+    			</then>
+    			<else></else>
+    		</if>
+    	</else>
+    </if>
+    			
     <take>
         <object>LB</object>
         <quantity>%{total}</quantity>
@@ -38,92 +67,77 @@
 
     <take>
         <object>Electrocuvette</object>
-        <quantity>%{Transformation}</quantity>
+        <quantity>%{total}</quantity>
         <var>Electrocuvette</var>
     </take> 
 
     <take>
-        <object>1.5 mL Tube</object>
-        <quantity>%{Transformation}</quantity>
+        <object>Eppendorf Tube</object>
+        <quantity>%{total}</quantity>
         <var>Tube</var>
     </take> 
 
     <take>
         <object>Plasmid DNA</object>
-        <quantity>variable</quantity>
+        <quantity>1</quantity>
         <var>DNA</var>
     </take> 
   
     <take>
         <object>Plates</object>
-        <quantity>%{Transformation}</quantity>
+        <quantity>%{total}</quantity>
         <var>Plates</var>
     </take> 
 
 	<step>
-	    <description> Label each aliquot of electrocompetent cells with name of plasmid. </description>
+	    <description>Label cell aliquots with construct name</description>
+	    <warning>The transformation efficiency of the electroporation method is heavily dependent on keeping electrocompetent cells ice-cold until electroporation!</warning>
 	</step>
 
 	<step>
-	    <description>Obtain an aliquot of frozen electrocompetent cells (40 uL) from the -80 C freezer, and keep it on ice.  </description>
-       	    <note>
-             The transformation efficiency of the electroporation method is heavily dependent on keeping electrocompetent cells ice-cold until electroporation.
-            </note>
+	    <description> Allow cells to thaw</description>
+	    <note>Keep on ice for about 1 minute. Slushy or liquid consistency is desirable.</note>
 	</step>
 
 	<step>
-	    <description> Allow cells to thaw on ice (~1 min). Slushy or liquid consistency is desirable. </description>
+	    <description> Add %{DNA_volume}uL DNA to cell aliquots</description>
+	    <note>Use pipet tip and gently swirl to mix<note>
 	</step>
 
 	<step>
-	    <description> Add 2 uL DNA (~0.1-1 ng) to aliquot . Use pipet tip and gently swirl to mix
-</description>
-<note>
-- Miniprep DNA: if used at full concentration, the transformation is likely to give a lawn of cells.  Instead dilute to 0.1-1 ng/uL before transforming the cells.
-- Ligation : use a full 2 uL from a standard 20 uL ligation reaction
-- Gateway :use a full 2 uL directly from a 10 uL LR or BP reaction.
-- In-Fusion : we usually don't use electroporation with In-Fusion reaction results. 
-- Gibson : 1-2 uL. Gibson reactions are quite salty, so if you want to add more due to low efficiencies, dialyze the Gibson reaction or run it through a PCR purification kit.
-</note>
+	    <description>Incubate on ice block for one minute</description>
 	</step>
 
 	<step>
-	    <description>  Incubate on ice block for one minute</description>
+	    <description> Transfer the contents of the aliquot into the center of the gap of an ice-cold electrocuvette from the freezer, and then place the electrocuvette in the electroporator. Check that the electroporator is set to deliver 1,250 V, and then press the PULSE button twice to deliver a pulse.</description>
+		<warning>Work quickly to keep cold!</warning>
 	</step>
 
 	<step>
-	    <description> Working quickly, transfer the contents of the aliquot into the center of the gap of an ice-cold electrocuvette from the freezer, and then place the electrocuvette in the electroporator. Check that the electroporator is set to deliver 1,250 V, and then press the PULSE button twice to deliver a pulse.</description>
+	    <description> Remove the electrocuvette from the electroporator and add %{recovery_volume} uL of room-temperature LB to it, pipetting up and down several times to extract the cells from the 1 mm gap.</description>
+		<warning>Work quickly to keep cold!</warning>
 	</step>
 
 	<step>
-	    <description> Again, working quickly, remove the electrocuvette from the electroporator and add %{recovery_volume} uL of room-temperature LB to it, pipetting up and down several times to extract the cells from the 1 mm gap.</description>
+	    <description>Transfer entire contents of electrocuvette to the tube</description>
 	</step>
 
 	<step>
-	    <description> Transfer entire contents of electrocuvette to the tube</description>
+	    <description>Check and record the discharge time constant (units are in milliseconds)</description>
 	</step>
 
-	<step>
-	    <description> Check and record the discharge time constant (units are in milliseconds).</description>
-	</step>
+
+
+
+
+
+
+
+
 
 	<step>
-	    <description> Incubate tube at 37°C for 30-45 minutes.</description>
+	    <description>Incubate tube at 37°C for 30-45 minutes</description>
 	</step>
-
-	<step>
-	    <description> Wash cuvette for reuse. Squirt 95% ethanol to fill cuvette more than halfway. Add cap and invert cuvette a few times to disinfect it. Pour out in waste receptacle by sink.</description>
-	<note> If washed properly, cuvettes can be reused up to 10 times. 
-		</note>
-	</step>
-
-	<step>
-	    <description> Wash cuvette three times with DI H2O using squeeze bottle and dump water into sink.</description>
-	</step>
-
-	<step>
-	    <description> Squirt 95% ethanol in the cuvette, add the cap, and let it sit for an hour or overnight.</description>
-	</step> 
 
 	<step>
 	    <description> Transfer 100-300 μL of culture to the appropriate plate using the large micropipettor.  </description>
@@ -135,29 +149,21 @@
 	</step> 
 
 	<step>
-	    <description>
-Replace plate top and incubate plate, upside-down, overnight at 37°C.
-	</description>
+	    <description>Replace plate top and incubate plate, upside-down, overnight at 37°C</description>
 	</step> 
 
-	<step>
-	    <description>
-Pour out ethanol and place cuvette upside down on paper towel to dry.
-	</description>
-	</step> 
 
-  <release>
-	%{IceBlock}
-  </release>
+	<release>
+		%{IceBlock}
+	</release>
 
-  <release>
-	%{Electrocuvette}
-  </release>
+	<release>
+		%{Electrocuvette}
+	</release>
 
-  <produce>
-  	<object>Dirty Electrcuvette</object>
-  	<quantity>%{total}</quantity>
-  </produce>
+	<produce>
+  		<object>Dirty Electrcuvette</object>
+  		<quantity>%{total}</quantity>
+  	</produce>
 
 </protocol>
-
