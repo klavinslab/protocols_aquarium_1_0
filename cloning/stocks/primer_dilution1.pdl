@@ -13,13 +13,6 @@
         IDT rehydrated stock stored in the freezer. 
     </information>
 
-
-    <take>
-  <object>p100 pipette</object>
-	<quantity>1</quantity>
-        <var>pipette</var>
-    </take>
-
     <take>
         <object>IDT rehydrated stock</object>
         <quantity>%{IDT}</quantity>
@@ -33,7 +26,7 @@
     </take> 
     
     <take>
-        <object>1.5 ml tube</object>
+        <object>eppendorf tube</object>
         <quantity>%{IDT}</quantity>
         <var>tubes</var>
         </take>
@@ -51,13 +44,7 @@
     </step>
     
     <release>
-        %{pipette}
-    </release>
-    <release>
-	%{bottles}
-    </release>
-    <release>
-        %{stock}
+        [ %{bottles}, %{stock}]
     </release>
     <produce>
     <object>Purified PCR product</object>
