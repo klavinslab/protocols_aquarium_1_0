@@ -73,7 +73,7 @@
 
   <step>
       <description> Add %{DNA_volume}uL DNA to cell aliquots</description>
-      <note>Use pipet tip and gently swirl to mix<note>
+      <note>Use pipet tip and gently swirl to mix</note>
   </step>
 
   <release>%{DNA}</release>
