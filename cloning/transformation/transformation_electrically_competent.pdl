@@ -1,14 +1,9 @@
 <?xml version="1.0"?>
 <protocol name="Transformation - Electrocompetent E.coli">
+  
   <information>
-    This protocols describes how to do transformations using electrically competent E.coli.
+    This protocols describes how to transform electrically competent E.coli.
   </information>
-
-  <argument>
-    <name>total</name>
-    <type>number</type>
-    <description>Enter the number of transformations you wish to do.</description>
-  </argument>
 
   <argument>
     <name>recovery_volume</name>
@@ -25,11 +20,11 @@
   <argument>
     <name>DNA_volume</name>
     <type>number</type>
-    <description>What volume of DNA in ul would you like to use? (.1-1 ng plasmid is ideal)</description>
+    <description>What volume of DNA in ul would you like to use? (.1-1 ng plasmid in 2ul is ideal)</description>
   </argument>
 
   <take>
-      <object>IceBlock</object>
+    <object>Ice Block</object>
     <quantity>1</quantity>
     <var>block</var>
   </take>
@@ -37,61 +32,32 @@
     <if>
       <condition>%{strain}="DH5alpha"</condition>
       <then>
-      <take>
-          <object>Frozen electrocompetent E.coli aliquot</object>
-          <quantity>%{Transformation}</quantity>
+        <take>
+          <object>Frozen Electrocompetent DH5alpha</object>
+          <quantity>1</quantity>
           <var>aliquots</var>
-      </take>
-    </then>
+        </take>
+      </then>
     <else>
     
       <if>
-          <condition>%{strain}="DH5alpha"</condition>
-          <then>
+        <condition>%{strain}="NEBturbo"</condition>
+        <then>
           <take>
-                <object>Frozen electrocompetent E.coli aliquot</object>
-                <quantity>%{Transformation}</quantity>
-                <var>aliquots</var>
-            </take>
-          </then>
-          <else></else>
-        </if>
-      </else>
-    </if>
-          
-    <take>
-        <object>LB</object>
-        <quantity>%{total}</quantity>
-        <var>LB</var>
-    </take> 
-
-    <take>
-        <object>Electrocuvette</object>
-        <quantity>%{total}</quantity>
-        <var>Electrocuvette</var>
-    </take> 
-
-    <take>
-        <object>Eppendorf Tube</object>
-        <quantity>%{total}</quantity>
-        <var>Tube</var>
-    </take> 
-
-    <take>
-        <object>Plasmid DNA</object>
-        <quantity>1</quantity>
-        <var>DNA</var>
-    </take> 
-  
-    <take>
-        <object>Plates</object>
-        <quantity>%{total}</quantity>
-        <var>Plates</var>
-    </take> 
+            <object>Frozen Electrocompetent NEBturbo</object>
+            <quantity>1</quantity>
+            <var>aliquots</var>
+          </take>
+        </then>
+        <else></else>
+      </if>
+    </else>
+  </if>
 
   <step>
-      <description>Label cell aliquots with construct name</description>
-      <warning>The transformation efficiency of the electroporation method is heavily dependent on keeping electrocompetent cells ice-cold until electroporation!</warning>
+      <description>Immedietly put the cell aliquots on the ice block</description>
+      <note>Label the aliquots with the contruct name</note>
+      <warning>Transformation efficiency is heavily dependent on keeping cells ice-cold!</warning>
   </step>
 
   <step>
@@ -99,71 +65,73 @@
       <note>Keep on ice for about 1 minute. Slushy or liquid consistency is desirable.</note>
   </step>
 
+  <take>
+    <object>Plasmid</object>
+    <quantity>1</quantity>
+    <var>DNA</var>
+  </take> 
+
   <step>
       <description> Add %{DNA_volume}uL DNA to cell aliquots</description>
       <note>Use pipet tip and gently swirl to mix<note>
   </step>
 
+  <release>%{DNA}</release>
+
   <step>
       <description>Incubate on ice block for one minute</description>
   </step>
 
+  <take>
+    <object>Electrocuvette</object>
+    <quantity>1</quantity>
+    <var>electrocuvette</var>
+  </take> 
+
+  <take>
+    <object>Electroporator</object>
+    <quantity>1</quantity>
+    <var>electroporator</var>
+  </take> 
+
+  <take>
+    <object>LB</object>
+    <quantity>1</quantity>
+    <var>LB</var>
+  </take> 
+
+  <take>
+    <object>Eppendorf Tube</object>
+    <quantity>1</quantity>
+    <var>tube</var>
+  </take> 
+
   <step>
-      <description> Transfer the contents of the aliquot into the center of the gap of an ice-cold electrocuvette from the freezer, and then place the electrocuvette in the electroporator. Check that the electroporator is set to deliver 1,250 V, and then press the PULSE button twice to deliver a pulse.</description>
-    <warning>Work quickly to keep cold!</warning>
+    <description>Electroporate cells</description>
+    <note>Transfer the contents of the aliquot into the center of the gap of an ice-cold electrocuvette from the freezer, and then place the electrocuvette in the electroporator. Check that the electroporator is set to deliver 1,250 V, and then press the PULSE button twice to deliver a pulse.</note>
+    <warning>Work quickly to keep cells and electrocuvette cold!</warning>
   </step>
 
   <step>
-      <description> Remove the electrocuvette from the electroporator and add %{recovery_volume} uL of room-temperature LB to it, pipetting up and down several times to extract the cells from the 1 mm gap.</description>
-    <warning>Work quickly to keep cold!</warning>
-  </step>
-
-  <step>
-      <description>Transfer entire contents of electrocuvette to the tube</description>
-  </step>
-
-  <step>
-      <description>Check and record the discharge time constant (units are in milliseconds)</description>
+    <description>Recover cells in %{recovery_volume} uL room-temperature LB</description>
+    <note>Remove the electrocuvette from the electroporator and add LB, pipetting up and down several times to extract the cells from the 1 mm gap, and transfer to an Eppendorf tube</note>
+    <warning>Work quickly to keep reamaining cells and electrcuvettes cold!</warning>
   </step>
 
 
-
-
-
-
-
-
-
-
-  <step>
-      <description>Incubate tube at 37°C for 30-45 minutes</description>
-  </step>
-
-  <step>
-      <description> Transfer 100-300 μL of culture to the appropriate plate using the large micropipettor.  </description>
-  <note>Do not place the plate lid on lab bench while you do this.</note>
-  </step> 
-
-  <step>
-      <description>Add 5 to 10 sterile glass beads to the plate and swirl/shake the plate to spread the culture onto the agar. Dump the beads into the used bead beaker when done.</description>
-  </step> 
-
-  <step>
-      <description>Replace plate top and incubate plate, upside-down, overnight at 37°C</description>
-  </step> 
-
-
-  <release>
-    %{IceBlock}
-  </release>
-
-  <release>
-    %{Electrocuvette}
-  </release>
 
   <produce>
       <object>Dirty Electrcuvette</object>
-      <quantity>%{total}</quantity>
-    </produce>
+      <quantity>1</quantity>
+  </produce>
+
+  <produce>
+      <object>Transformed Ecoli</object>
+      <quantity>1</quantity>
+  </produce>
+
+
+  <release>[%{LB}[0],%{tube}[0],%{electroporator}[0],%{block}[0],%{electrocuvette}[0],%{aliquots}[0]]</release>
+
 
 </protocol>
