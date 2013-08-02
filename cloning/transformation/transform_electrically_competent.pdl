@@ -24,9 +24,11 @@
   </argument>
 
   <take>
+    <item>
     <object>Ice Block</object>
     <quantity>1</quantity>
     <var>block</var>
+    </item>
   </take>
 
     <if>
