@@ -134,8 +134,8 @@
   <description>Hit 'run' on the thermal cycler and select 10 µL setting, if applicable</description>
 </step>
 
- <release>
+<release>
         %{ThermalCycler}
-    </release>
+ </release>
     
 </protocol>
