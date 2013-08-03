@@ -1,51 +1,57 @@
+<?xml version="1.0"?>
 <protocol name="Primer Rehydration">
+  <information>
+    This protocols describes how to rehydrate lyophilized DNA to 100µM in TE buffer.
+  </information>
 
+  <!-- Get amount of DNA that was synthesized, in nanomoles -->
   <argument>
     <name>moles</name>
     <type>number</type>
     <description>Enter the number of nm(nano moles) of lyophilized DNA (lower right of tube label).</description>
   </argument>
 
+  <!-- To generate 100µM stock, multiply nanomoles by 10 to get volume (in µL) to add -->
   <assign>
     <lhs>vol</lhs><rhs>%{moles}*10</rhs>
   </assign>
 
-  <information>
-    This protocols describes how to rehydrate lyophilized DNA from IDT.  NOTE: untested protocol.
-  </information>
-
+  <!-- Resuspend in TE pH 8.0 to maximize DNA stability -->
+  <!-- TODO: RNA should be resuspended in TE pH 7.5. Separate protocol? -->
   <take>
     <object>TE aliquote</object>
       <quantity>1</quantity>
       <var>TE</var>
   </take>
 
+  <!-- Begin steps -->
+  <!-- Centrifuge to prevent any dislodged DNA from flying out of tube -->
   <step>
-    <description> Centrifuge the tube containing your primer at maximum Gs for 1 minute </description>
-    <warning> Make sure the centrifuge is properly ballanced </warning>
+    <description>Centrifuge the tube containing your primer for 5 seconds.</description>
+    <note>A 1000xg (tabletop mini centrifuge) is sufficient.</description>
+    <warning>Make sure the centrifuge is properly balanced.</warning>
   </step>
 
+  <!-- Resuspend in TE pH 8.0 -->
   <step>
-    <description> 
-      Remove the tube from the centrifuge and pipette %{vol} 
-      ul of TE into the oligo tube. 
-    </description> 
+    <description>Pipette %{vol}µl of TE pH 8.0 into the tube.</description>
+    <note>Remove the cap, pipet in {%vol}µL of TE pH 8.0, then screw the cap back on.</note>
   </step>
-  
+
+  <!-- Dissolve by vortexing, then leaving out at room temp for a while -->
   <step>
-    <description> 
-      Recap the tube and vortex it five times in three second bursts, or until all DNA is desolved, 
-      whichever comes later. 
-    </description>
+    <description>Vortex to resuspend</description>
+    <note>Vortex for 5-30 seconds. Let tube sit out at room temp for 10 minutes afterwards.</note>
   </step>
-  
+
+  <!-- Produce tube (from vendor) with resuspended DNA in it -->
   <produce>
-    <object>100uM oligo</object>
+    <object>100µM oligo</object>
     <quantity>1</quantity>
   </produce>
-  
+
   <release>
-    %{TE}
+    %{TE pH 8.0}
   </release>
 
 </protocol>

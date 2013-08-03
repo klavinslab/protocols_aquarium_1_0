@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<protocol name="Diluting Primers to 10µM Working Concentration">
+
+  <information>Concentrated primer stocks are too concentrated for accurate pipetting and contain polymerase-disabling materials like EDTA. This protocol generates a water-diluted stock that is easily pipetted and works well with polymerases.</information>
+
+  <!-- arguments -->
+  <argument>
+    <name>id</name>
+    <type>string</type>
+    <description>Enter primer ID.</description>
+  </argument>
+
+  <!-- takes - concentrated primer stock, water, and tube -->
+  <take>
+    <!-- TODO: replace with primer database object type with an ID to boot -->
+    <object>100µM Primer Stock</object>
+    <quantity>1</quantity>
+    <var>stock</var>
+  </take>
+  <take>
+    <object>Molecular Grade Water Aliquot 50mL aliquot</object>
+    <quantity>1</quantity>
+    <var>water</var>
+  </take>
+  <take>
+    <object>Eppendorf Tube</object>
+    <quantity>1</quantity>
+    <var>tube</var>
+  </take>
+
+  <!-- begin steps -->
+  <!-- Labeling the working concentration primer stock -->
+  <step>
+    <description>Label 1.5mL tube with: prKL%{id}.</description>
+    <note>Add a white sticker dot to the top of the tube, then label with a permanent marker.</note>
+  </step>
+  <!-- Pipet in concentrated primer -->
+  <step>
+    <description>Pipette 10µL of primer stock into labeled Eppendorf tube.</description>
+  </step>
+  <!-- Dilute in 9X as much molecular grade water -->
+  <step>
+    <description>Pipette 90µL of molecular grade water into the Eppendorf tube.</description>
+  </step>
+
+  <!-- releases -->
+  <!-- TODO: should <transform> the tube -->
+  <release>
+    [%{stock}, %{water}, %{tube}]
+  </release>
+
+  <!-- produce -->
+  <produce>
+    <object>10µM Primer Stock</object>
+    <quantity>1</quantity>
+  </produce>
+
+</protocol>

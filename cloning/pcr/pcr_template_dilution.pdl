@@ -1,44 +1,47 @@
 <?xml version="1.0"?>
 <protocol name="PCR Template Dilution">
 
-<argument>
-  <name>template_conc</name>
-  <type>number</type>
-  <description>Enter the concentration of the template in ng/µL</description>
-</argument>
+  <information>Dilute a DNA template down to 1ng/µL for use in a PCR.</information>
 
-<assign>
-  <lhs>h2o_vol</lhs>
-  <rhs>%{template_conc} - 1</rhs>
-</assign>
+  <!-- arguments -->
+  <argument>
+    <name>template_conc</name>
+    <type>number</type>
+    <description>Enter the concentration of the template in ng/µL.</description>
+  </argument>
+  <!-- TODO: handle case where this would imply more than 1.5mL -->
+  <assign>
+    <lhs>h2o_vol</lhs>
+    <rhs>%{template_conc} - 1</rhs>
+  </assign>
 
-<take>
-  <object>Molecular Grade Water 50mL aliquot</object>
-  <quantity>1</quantity>
-  <var>MGH2O</var>
-</take>
+  <!-- takes -->
+  <take>
+    <object>Molecular Grade Water 50mL aliquot</object>
+    <quantity>1</quantity>
+    <var>MGH2O</var>
+  </take>
+  <take>
+    <object>Eppendorf Tube</object>
+    <quantity>1</quantity>
+    <var>tube</var>
+  </take>
 
-<take>
-  <object>Eppendorf Tube</object>
-  <quantity>1</quantity>
-  <var>tube</var>
-</take>
+  <!-- begin steps -->
+  <step>
+    <description>Add %{h2o_vol}µL of molecular grade water to the Eppendorf tube.</description>
+  </step>
 
-<step>
-  <description>Add %{h2o_vol}µL of molecular grade water to eppendorf tube</description>
-</step>
+  <step>
+    <description>Add 1µL of DNA template to the Eppendorf tube.</description>
+  </step>
 
-<step>
-  <description>Add 1µL of DNA template to eppendorf tube</description>
-</step>
-
-<produce>
+  <produce>
     <object>PCR Template DNA 1ng/µL</object>
     <quantity>1</quantity>
-</produce>
+  </produce>
 
-<release>%{MGH2O}</release>
-<!-- TODO: tube got transformed, shouldn't do anything with it -->
-<release>%{tube}</release>
+  <!-- TODO: tube got transformed, shouldn't do anything with it -->
+  <release>[%{MGH2O}, %{tube}]</release>
 
 </protocol>
