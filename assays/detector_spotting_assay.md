@@ -90,7 +90,6 @@ Day 2
 * 6.8 ng/mL Chlor aTc-
 * 6.8 ng/mL Chlor 100ng/mL aTc
 * 6.8 ng/mL Chlor 10ng/mL aTc.
-
 2. On the bottom of each plate, draw an identical grid corresponding to the number of variants; if the variants are in a deepwell plate, have the grid correspond to the location of each variant in the plate. Record what variant each grid location corresponds to.
 3. Add 200uL of MGH20 to each of 9 1.5mL Eppendorf tube and label similarly to the ampicillin plates
 4. To all tubes from number 3 labelled with "100ng/mL aTc" add 20uL of aTc.
