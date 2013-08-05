@@ -1,14 +1,4 @@
-Notes/Directions 
-
-    - All irrelevent sections/headings are to be deleted. 
-        ex. For a single day protocol, delete all references to "Day" 
-    - All items in square brackets are place holders to be replaced by some other value
-        ex. "[Protocol Name]" could be replaced by "Gel Elecrophoresis"
-    - The description is a one or two sentance summary of what the protocol accomplishes
-
-
-
-[Protocol Name]
+SDAc PASC Full Run Assay
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Description:
@@ -67,9 +57,10 @@ Day 2
 
 Day 1
 
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
+1. For each strain pick from glycerol stock into 200 ul of LB + kan + low amp in a 1.5 mL centrifuge tube
+2. Streak out 1 ul of each strain on LB + kan + low amp + IPTG plates, or aTc plates depending on desired initilization state
+3. Place plates in 37 C incubator, dispose of 200 ul cultures
+
 
 Day 2
 
