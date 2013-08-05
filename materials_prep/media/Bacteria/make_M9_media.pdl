@@ -1,7 +1,5 @@
 <protocol name="M9 Minimal Growth Media">
-	<information>
-		This prepares a bottle of M9 Minimal Media with whatever nutrients and the option for biotin or CAS amino acids.
-	</information>
+	<information>This prepares a bottle of M9 Minimal Media with whatever nutrients and the option for biotin or CAS amino acids.</information>
 	
     <argument>
         <name>nutrient</name>
@@ -56,7 +54,7 @@
 		</item>
 	</take>
     
-    <if> 
+  <if> 
 	<condition>%{biotin}=="true"</condition>
 	<then>
 	    <take>
@@ -66,9 +64,9 @@
 	    </take>
 	</then>
 	<else></else>
-    </if>
+  </if>
     
-    <if> 
+  <if> 
 	<condition>%{casaa}=="true"</condition>
 	<then>
     	<take>
@@ -80,7 +78,7 @@
 	<else></else>
     </if>
     
-    <if> 
+  <if> 
 	<condition>%{nutrient}=="cellobiose"</condition>
 	<then>
     	<take>
@@ -90,16 +88,16 @@
 	    </take>
 	</then>
 	<else></else>
-    </if>
+  </if>
     
-    <if> 
+  <if> 
 	<condition>%{nutrient}=="glucose"</condition>
 	<then>
-    	<take>
+			<take>
 			<item>
 			<type>20percent Sterile Filtered Glucose</type><quantity>1</quantity><var>gluc</var>
 			</item>
-	    </take>
+			</take>
 	</then>
 	<else></else>
     </if>
@@ -123,17 +121,17 @@
 		<rhs>%{volume} / 100</rhs>
 	</assign>
 	
-    <step>
+  <step>
 	<description>
 		Add 100x MgSO4 CaCl2 solution
 	</description>
 	<note>
 		Using the serological pipette or P1000 pipette (depending on how much you're adding), add %{mgcavol} mL of 100x MgSO4 CaCl2 solution
 	</note>
-    </step>
+  </step>
 
 
-    <if>
+  <if>
 	<condition>%{biotin}=="true"</condition>
 	<then>
 		<assign>
@@ -146,9 +144,9 @@
 	    </step>
 	</then>
 	<else></else>
-    </if>
+  </if>
 	
-    <if>
+  <if>
 	<condition>%{nutrient}=="cellobiose"</condition>
 	<then>
 		<assign>
@@ -161,9 +159,9 @@
 	    </step>
 	</then>
 	<else></else>
-    </if>
+  </if>
 
-    <if>
+  <if>
 	<condition>%{nutrient}=="glucose"</condition>
 	<then>
 		<assign>
@@ -176,16 +174,16 @@
 	    </step>
 	</then>
 	<else></else>
-    </if>
+  </if>
 	
-    <step>
+  <step>
 	<description>Add water</description>
 	<note> Fill to the %{volume} mL line with sterile water </note>
-    </step>
+  </step>
 
-    <release>
+  <release>
 	[%{sero}[0], %{saltsol}[0], %{salts}[0], %{water}[0]]
-    </release>
+  </release>
 	
     <if> 
 	<condition>%{biotin}=="true"</condition>
@@ -195,31 +193,31 @@
 	<else></else>
     </if>
     
-    <if> 
+  <if> 
 	<condition>%{casaa}=="true"</condition>
 	<then>
 	    <release>%{cas}</release>
 	</then>
 	<else></else>
-    </if>
+  </if>
     
-    <if> 
+  <if> 
 	<condition>%{nutrient}=="cellobiose"</condition>
 	<then>
 	    <release>%{cb}</release>
 	</then>
 	<else></else>
-    </if>
+  </if>
     
-    <if> 
+  <if> 
 	<condition>%{nutrient}=="glucose"</condition>
 	<then>
 	    <release>%{gluc}</release>
 	</then>
 	<else></else>
-    </if>
+  </if>
     
-    <if> 
+  <if> 
 	<condition>%{nutrient}=="cellobiose"</condition>
 	<then>
 	    <produce>
@@ -228,9 +226,9 @@
     </produce>
 	</then>
 	<else></else>
-    </if>
+  </if>
     
-    <if> 
+  <if> 
 	<condition>%{nutrient}=="glucose"</condition>
 	<then>
 		<produce>
@@ -239,7 +237,7 @@
 		</produce>
 	</then>
 	<else></else>
-    </if>
+  </if>
 	
 	<step>
 		<description>Done</description>
