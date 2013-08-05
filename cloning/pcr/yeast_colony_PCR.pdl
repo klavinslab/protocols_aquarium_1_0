@@ -12,19 +12,24 @@
       <item>
         <type>Yeast Lysate</type><quantity>1</quantity><var>yeast_lysate</var>
       </item>
+
+  </take> 
+  
+  <take>
+      <item>
+        <type>0.2mL Thin Wall Strip Well Tubes</type><quantity>1</quantity><var>pcr_tube</var>
+      </item>
       <item>
         <type>Primer1</type><quantity>1</quantity><var>primer1</var>
       </item>
       <item>
         <type>Primer2</type><quantity>1</quantity><var>primer2</var>
       </item>
-      <item>
-        <type>0.2mL Thin Wall Strip Well Tubes</type><quantity>1</quantity><var>pcr_tube</var>
-      </item>
-  </take> 
+
+  </take>
   
   <take>
-      <item>
+        <item>
         <type>Thermal Cycler</type><quantity>1</quantity><var>thermocycler</var>
       </item>
   </take>
