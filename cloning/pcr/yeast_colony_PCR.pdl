@@ -1,7 +1,6 @@
+<?xml version="1.0"?>
 <protocol name="Yeast Colony PCR">
-  <information>
-  	This prepares a yeast colony PCR results that can be used to run a gel and verify plasmid locus integration.
-  </information>
+<information>This prepares a yeast colony PCR results that can be used to run a gel and verify plasmid locus integration.</information>
   
   <take>
       <item>
