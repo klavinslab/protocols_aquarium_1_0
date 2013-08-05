@@ -1,5 +1,6 @@
+<?xml version="1.0"?>
 <protocol name="Make Yeast Lysate">
-
+<information>This protocol prepares yeast lysate for yeast colony PCR.</information>
     
     <argument>
       	<name>lysates</name>
@@ -7,9 +8,7 @@
       	<description>Enter the number of lysates you wish to make.</description>
     </argument>
     
-    <information>
-        This protocol prepares yeast lysate for yeast colony PCR.
-    </information>
+
     
     <assign>
         <lhs>totalSDS</lhs>
