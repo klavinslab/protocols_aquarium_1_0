@@ -6,8 +6,8 @@ CpCel9, or any combo thereof).
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #### Total duration: 7 days ####
-#### Best day to start from plate streaking: Saturday ####
-#### Best day to start from liquid culture: Sunday ####
+###### Best day to start from plate streaking: Saturday ######
+###### Best day to start from liquid culture: Sunday ######
 #### Active worktime: 24 hours
 
     - Day 1: 1 hour
