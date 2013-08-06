@@ -33,7 +33,7 @@ Day 1
   
 ------
 
-    * LB + Kan/low Amp Plate
+    * LB 50 ug/mL kanamycin, 20 ug/mL ampicillin plates
         + Quantity: 2 plates
         + Location: R1
     * aTc inducer (100 ug/mL)
@@ -62,7 +62,7 @@ Day 2
         + Quantity: 12-18 tubes
         + Location: [address]
     * LB Liquid Media
-        + Quantity: 36-54 mL
+        + Quantity: 24-36 mL
         + Location: [address]
     * Kanamycin antibiotic (10 mg/mL)
         + Quantity: ~200 uL
@@ -216,7 +216,7 @@ Day 1
 
 Day 2
 
-1. Pick 3 colonies from each plate. Incubate in 3 mL LB + Kan (200:1) + Amp (500:1) overnight in 14 mL glass culture tube.
+1. Pick 3 colonies from each plate. Incubate in 2 mL LB + Kan (200:1) + Amp (500:1) overnight in 14 mL glass culture tube.
 2. Incubate for 24 hours.
 
 Day 3
