@@ -5,15 +5,18 @@ Description: Identify a parameter “omega” for each cellulase variant (Cel7, 
 CpCel9, or any combo thereof).
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-####Total duration: 5 days ####
-####Active worktime: [x hours/minutes]
+#### Total duration: 7 days ####
+#### Best day to start from plate streaking: Saturday ####
+#### Best day to start from liquid culture: Sunday ####
+#### Active worktime: 24 hours
 
     - Day 1: 1 hour
     - Day 2: 1 hour
     - Day 3: 8-10 hours
     - Day 4: 5 hours
     - Day 5: 5 hours
-    - Day 6: 
+    - Day 6: 1 hour
+    - Day 7: 1 hour
     
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
