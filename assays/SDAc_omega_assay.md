@@ -6,13 +6,14 @@ CpCel9, or any combo thereof).
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ####Total duration: 5 days ####
-####Total worktime: [x hours/minutes]
+####Active worktime: [x hours/minutes]
 
-    - Day 1: [x hours/minutes]
-    - Day 2: [x hours/minutes]
-    - Day 3: [x hours/minutes]
-    - Day 4: [x hours/minutes]
-    - Day 5: [x hours/minutes]
+    - Day 1: 1 hour
+    - Day 2: 1 hour
+    - Day 3: 8-10 hours
+    - Day 4: 5 hours
+    - Day 5: 5 hours
+    - Day 6: 
     
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -64,7 +65,7 @@ Day 2
         + Quantity: ~200 uL
         + Location: [F1]
     * Ampicillin antibiotic (10 mg/mL)
-        + Quantity: [~100 uL]
+        + Quantity: ~100 uL
         + Location: [F1]
 
 Day 3
@@ -81,6 +82,7 @@ Day 3
     * Nanodrop
         + Duration needed: ~3 hours
         + Location: [address]
+
 ---------
 
         
@@ -288,7 +290,7 @@ Sample once every hour for the first 4 hours and then at 24 48 hours.
 
 Day 5 cellobiose release experiment (after 48 hour incubation)
 
-1. Centrifuge at 250 Gs for 10 minutes.
+1. Centrifuge at 250 xg for 10 minutes.
 2. Transfer 2 mL supernatant to 14 mL culture tube.
 3. Inoculate well with 10 (1:200) uL DL146 overnight in LB.
 4. Incubate for 24 hours.
@@ -296,10 +298,20 @@ Day 5 cellobiose release experiment (after 48 hour incubation)
 Day 6
 
 CFU measurement of supe-grown DL146
-1. In 96 well clear Costar (Corning 3795) plate, add 180 PBS to 6 columns.
+1. In 96 well clear Costar (Corning 3795) plate, add 180 uL PBS to 6 columns.
 2. From supe-grown DL146, vortex to mix, then transfer 20 uL to 180 uL PBS (10-1 diution).
 3. With new pipette tip, serially transfer 20 uL to 180 uL PBS to make 10-2 to 10-5 dilutions.
 4. Plate 100 uL of 10-5 cultures on LB + kan + amp plates.
+5. Incubate 12-16 hours in 37 C incubator.
+
+Day 7
+
+Image plates and record CFUs
+1. Remove plates from incubator and image using blue-light transilluminator.
+2. Analyze CFU counts using openCFU software package on plate reader computer.
+*Note: manually count colonies along plate edge that are not picked up by software and account for any false positives.*
+3. Record each plate count in spreadsheet.
+*Note: at 10^5 dilution, the number of colonies corresponds to 10^6 multiplier for CFU/mL.*
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
     
     
