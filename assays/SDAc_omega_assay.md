@@ -21,20 +21,20 @@ CpCel9, or any combo thereof).
 Day 1
 
     * Bunsen Burner
-        + Duration needed: [10 minutes]
+        + Duration needed: 10 minutes
         + Location: [address]
     * 37 Degree Incubator
-        + Duration needed: [12-16 hours]
+        + Duration needed: 12-16 hours
         + Location: [address]
   
 ------
 
     * LB + Kan/low Amp Plate
-        + Quantity: [2 plates]
-        + Location: [R1]
-    * aTc inducer
-        + Quantity: [40 uL]
-        + Location: [F1]
+        + Quantity: 2 plates
+        + Location: R1
+    * aTc inducer (100 ug/mL)
+        + Quantity: 40 uL
+        + Location: F1
     * Glycerol Stocks
         * DL146 (fullTrunc)
         * DL147 (Cel7 lysTrunc)
@@ -42,150 +42,150 @@ Day 1
         * DL294 (Cel7/CpCel9 lysTrunc)
         * DL296 (BsCel5/CpCel9 lysTrunc)
         * DL307 (BsCel5 lysTrunc)
-        + Quantity: [~1 uL]
-        + Location: [F3]
+        + Quantity: 1 tip stab
+        + Location: F3
 
 Day 2
 
     * 37 degree Shaker Incubator
-        + Duration needed: [24 hours]
+        + Duration needed: 24 hours
         + Location: [address]
 
 ---------
 
         
     * 14 mL culture tubes
-        + Quantity: [12-18 tubes]
+        + Quantity: 12-18 tubes
         + Location: [address]
     * LB Liquid Media
-        + Quantity: [36-54 mL]
+        + Quantity: 36-54 mL
         + Location: [address]
-    * Kanamycin antibiotic
-        + Quantity: [~200 uL]
+    * Kanamycin antibiotic (10 mg/mL)
+        + Quantity: ~200 uL
         + Location: [F1]
-    * Ampicillin antibiotic
+    * Ampicillin antibiotic (10 mg/mL)
         + Quantity: [~100 uL]
         + Location: [F1]
 
 Day 3
 
     * Cell Sonicator
-        + Duration needed: [3-5 hours]
+        + Duration needed: 3-5 hours
         + Location: [address]
     * 95 degree Heatblock
-        + Duration needed: [~1 hour]
+        + Duration needed: ~1 hour
         + Location: [address]
     * Centrifuge
-        + Duration needed: [~1 hour]
+        + Duration needed: ~1 hour
         + Location: [address]
     * Nanodrop
-        + Duration needed: [~3 hours]
+        + Duration needed: ~3 hours
         + Location: [address]
 ---------
 
         
     * 1.5 mL Eppy tubes
-        + Quantity: [~100 tubes]
+        + Quantity: ~100 tubes
         + Location: [address]
     * LB + Kan/low Amp Plate 
-        + Quantity: [24-36 plates]
+        + Quantity: 24-36 plates
         + Location: [address]
     * 3 mL Syringe
-        + Quantity: [24-36 syringes]
+        + Quantity: 24-36 syringes
         + Location: [address]
     * Syringe Filter
-        + Quantity: [24-36 fitlers]
+        + Quantity: 24-36 fitlers
         + Location: [address]
     * 96 Well Plate
-        + Quantity: [2-3 plates]
+        + Quantity: 2-3 plates
         + Location: [address]
     * 14 mL culture tubes
-        + Quantity: [~50 tubes]
+        + Quantity: ~50 tubes
         + Location: [address]
     * 0.4% PASC Media
-        + Quantity: [~100 mL]
+        + Quantity: ~100 mL
         + Location: [address]
     * LB Liquid Media
-        + Quantity: [2 mL]
+        + Quantity: 2 mL
         + Location: [address]
     * 0.3% Congo Red
-        + Quantity: [~20 mL]
+        + Quantity: ~20 mL
         + Location: [address]
 
 Day 4
 
     * 95 degree Heatblock
-        + Duration needed: [~1 hour]
+        + Duration needed: ~1 hour
         + Location: [address]
     * Centrifuge
-        + Duration needed: [~1 hour]
+        + Duration needed: ~1 hour
         + Location: [address]
     * Nanodrop
-        + Duration needed: [~3 hours]
+        + Duration needed: ~3 hours
         + Location: [address]
 ---------
 
         
     * 1.5 mL Eppy tubes
-        + Quantity: [~100 tubes]
+        + Quantity: ~100 tubes
         + Location: [address]
     * 14 mL culture tube
-        + Quantity: [1 tube]
+        + Quantity: 1 tube
         + Location: [address]
     * LB Liquid Media
-        + Quantity: [2 mL]
+        + Quantity: 2 mL
         + Location: [address]
     * 0.3% Congo Red
-        + Quantity: [~20 mL]
+        + Quantity: ~20 mL
         + Location: [address]
     * Glycerol Stocks
         * DL146 (fullTrunc)
-        + Quantity: [~1 uL]
-        + Location: [F3]
+        + Quantity: ~1 uL
+        + Location: F3
         
 Day 5
 
     * 95 degree Heatblock
-        + Duration needed: [~1 hour]
+        + Duration needed: ~1 hour
         + Location: [address]
     * Centrifuge
-        + Duration needed: [~1 hour]
+        + Duration needed: ~1 hour
         + Location: [address]
     * Large Centrifuge
-        + Duration needed: [~5 minutes]
+        + Duration needed: ~5 minutes
         + Location: [address]
     * Nanodrop
-        + Duration needed: [~3 hours]
+        + Duration needed: ~3 hours
         + Location: [address]
     * 37 degree Shaker Incubator
-        + Duration needed: [24 hours]
+        + Duration needed: 24 hours
         + Location: [address]
 ---------
 
         
     * 1.5 mL Eppy tubes
-        + Quantity: [~100 tubes]
+        + Quantity: ~100 tubes
         + Location: [address]
     * 14 mL culture tube
-        + Quantity: [~50 tubes]
+        + Quantity: ~50 tubes
         + Location: [address]
     * 0.3% Congo Red
-        + Quantity: [~20 mL]
+        + Quantity: ~20 mL
         + Location: [address]
 
 Day 6
 
     * 37 Degree Incubator
-        + Duration needed: [12-16 hours]
+        + Duration needed: 12-16 hours
         + Location: [address]
   
 ------
 
     * LB + Kan/low Amp Plate
-        + Quantity: [~50 plates]
-        + Location: [R1]
+        + Quantity: ~50 plates
+        + Location: R1
     * 96 Well Plate
-        + Quantity: [2-3 plates]
+        + Quantity: 2-3 plates
         + Location: [address]
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
