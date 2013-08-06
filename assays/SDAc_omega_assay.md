@@ -204,13 +204,14 @@ Day 1
     * DL307 (BsCel5 lysTrunc)
 3. Fill each tube with 100 uL LB + 200:1 kan + 500:1 amp.
 4. Topically add 20 uL aTc (diluted into 100 uL H2O) to LB + kan + 500:1 amp plates. Shake with beads to spread solution.
-5. Streak plates from glycerol stocks for each strain above.
+5. At -80 C freezer, transfer glycerol stock stab for each strain from (2) to labeled 1.5 mL Eppendorf tube.
+5. After trisecting each plate, streak plates from glycerol stock suspensions.
 6. Unplug electric Bunsen burner.
-7. Incubate for 12 to 16 hours.
+7. Incubate in 37 C incubator for 12 to 16 hours.
 
 Day 2
 
-1. Pick 3 colonies from each plate. Incubate in 3 mL TB + Kan (200:1) + Amp (500:1) overnight in 14 mL glass culture tube.
+1. Pick 3 colonies from each plate. Incubate in 3 mL LB + Kan (200:1) + Amp (500:1) overnight in 14 mL glass culture tube.
 2. Incubate for 24 hours.
 
 Day 3
