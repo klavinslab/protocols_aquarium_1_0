@@ -147,8 +147,8 @@ Day 2 Evening (9 pm)
 4. Add 1 mL M9 no carbon and pipette vigorously to resuspend pellet. Take care to not contaminate pipette body.
 5. Transfer 1 uL resuspended culture to 1 mL M9 0.4% cellobiose culture volume and incubate at 37 C.
 **Prepare to sample cell state in 12 hours.**
-6. In a yellow Phenix 96-well plate, add 200 uL PBS to odd columns 5, 7, 9, and 11 using a multichannel pipettor.
-7. Add 50 uL PBS to even columns 6, 8, 10, 12.
+6. In a yellow Phenix 96-well plate, add 200 uL PBS to all odd columns using a multichannel pipettor.
+7. Add 50 uL PBS to all even columns.
 8. Transfer 2 uL of each resuspended well to appropriate well in table below for cytometer sampling.
 
 Day 3 Morning (9 am)
@@ -157,7 +157,10 @@ Day 3 Morning (9 am)
 1. Prepare Phenix cytometer plate with 50 uL PBS in even columns 6 through 12.
 2. Remove plate from shaker/incubator.
 3. Using multichannel pipette, mix deep well plate, column by column, with pipettor set to 80 uL by pipetting up and down several (5 to 8) times.
-
+*Note: take care to not cross-contaminate wells!*
+4. Transfer 80 uL directly from each growth well to the appropriate odd column wells - 2(x-1)+1 where x is the column number from the culture plate.
+5. Transfer plate to cytometer and run autosampler template for switching rate assay (full plate read).
+6. Determine dilution volume for each sample (see Dilution Protocol below).
 
 
 
