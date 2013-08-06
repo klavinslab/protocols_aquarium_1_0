@@ -1,12 +1,10 @@
 <?xml version="1.0"?>
 <protocol name="Gel Electrophoresis">
-  <information>
-    This protocol is for seperating linearized DNA on an agarose gel by fragment size
-  </information>
- 
+
+  <information>This protocol is for seperating linearized DNA on an agarose gel by fragment size.</information>
+
   <!-- arguments -->
-  <!-- FIXME: this should be parameterized to accept < N inputs (where N is available wells)? -->
-  <!-- FIXME: should be parallelized -->
+  <!-- IDEA: arguments should have a maximum length option (only so many wells per gel) -->
   <argument>
     <name>samples</name>
     <type>string</type>
@@ -21,42 +19,40 @@
       <name>run_time</name>
       <type>number</type>
       <description>Enter the desired run time for gel electrophoresis in minutes</description>
-  </argument>  
- 
+  </argument>
+
   <!-- takes -->
   <!-- FIXME: take all the samples -->
   <take>
     <object>Sample with Loading Dye</object>
     <quantity>1</quantity>
     <var>balance</var>
-  </take>  
+  </take>
   <take>
     <object>Agarose Gel</object>
     <quantity>1</quantity>
     <var>agar</var>
     <!-- FIXME: which gel? -->
-  </take>  
-  
+  </take>
+
+  <!-- Begin steps -->
+  <!-- Place gel in buffer and running box -->
   <step>
-    <description>Setup the gel for loading</description>
+    <description>Set up the gel for loading</description>
     <note>Carefully lift the gel tray out of the gel box. With the electrodes facing away, place the gel tray into the box with the comb on the left side. Fill the gel box with 1X TAE until it reaches the marked fill line on the side of the box. Carefully remove the comb.</note>
-  </step>  
-  
-  <!-- Put away combs -->
-  <release>[%{TAE}[0],%{comb}[0]]</release>
-  
-  <!-- TODO: include a sample loading protocol? -->
+  </step>
+  <!-- TODO: include the sample loading protocol here? -->
+  <!-- FIXME: vague -->
   <step>
     <description>Load all samples</description>
-  </step>  
-  
+  </step>
+  <!-- Hook up to power supply -->
   <take>
     <object>Gel Box Power Supply</object>
     <quantity>1</quantity>
     <var>power</var>
-  </take>  
-
-  <!-- Set up power supply and gel prior to running -->
+  </take>
+  <!-- Set up power supply and leads-->
   <step>
     <description>Connect the electrodes to the power supply with the combination safety cover + electrode leads apparatus.</description>
     <note>Ensure that red is connected to red, and black to black.</note>
@@ -64,11 +60,13 @@
   <step>
     <description>Turn on the power supply and set the voltage to %{run_voltage}V and time to %{run_time}s</description>
   </step>
-
-  <!-- Run --> 
+  <!-- Run -->
   <step>
     <description>Hit the 'running man' icon to start the power supply.</description>
     <note>Check for bubbles in the gel box to indicate that voltage is being applied</note>
   </step>
+  <!-- Put away combs -->
+  <release>[%{TAE}[0],%{comb}[0]]</release>
+  <!-- TODO: a protocol for checking on the gel that can be scheduled periodically, e.g. every 30 minutes -->
 
 </protocol>

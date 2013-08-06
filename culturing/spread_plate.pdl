@@ -1,14 +1,25 @@
+<?xml version="1.0"?>
+<protocol>
 
+  <information>Spread cells or reagents on a 25mL petri dish containing ~25mL agar media.</information>
+  <!-- TODO: separate out bead method from dally rod method -->
+  <!-- TODO: arguments -->
+  <!-- TODO: takes -->
 
- <step>
-      <description> Transfer 100-300 μL of culture to the appropriate plate using the large micropipettor.  </description>
-  <note>Do not place the plate lid on lab bench while you do this.</note>
-  </step> 
-
+  <!-- Begin steps -->
+  <!-- TODO: volume should be a parameter and checked for validity -->
+  <!-- Add culture on top of plate -->
   <step>
-      <description>Add 5 to 10 sterile glass beads to the plate and swirl/shake the plate to spread the culture onto the agar. Dump the beads into the used bead beaker when done.</description>
+    <description>Transfer 100-300 μL of culture to the appropriate plate using the large micropipettor.</description>
+    <note>Do not place the plate lid on lab bench while you do this.</note>
+  </step> 
+  <!-- Add beads, shake, dump out -->
+  <step>
+    <description>Add 5 to 10 sterile glass beads to the plate and swirl/shake the plate to spread the culture onto the agar. Dump the beads into the used bead beaker when done.</description>
+  </step> 
+  <!-- Incubate -->
+  <step>
+    <description>Replace plate top and incubate plate, upside-down, overnight at 37°C</description>
   </step> 
 
-  <step>
-      <description>Replace plate top and incubate plate, upside-down, overnight at 37°C</description>
-  </step> 
+</protocol>

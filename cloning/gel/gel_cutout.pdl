@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<protocol name="Gel Extraction">
+
+  <information>This protocol describes how to cut out a band of DNA from an agarose gel.</information>
+
+  <!-- arguments -->
+  <argument>
+    <name>lane</name>
+    <type>string</type>
+    <description>Enter the lane from which to extract a band.</description>
+  </argument>
+  <!-- IDEA: Specify by circling band(s) on an image? -->
+   <argument>
+    <name>length</name>
+    <type>string</type>
+    <description>Enter the length of the band to extract.</description>
+  </argument>
+
+  <!-- takes -->
+  <take>
+    <object>Transilluminator</object>
+    <quantity>1</quantity>
+    <var>light_box</var>
+  </take>
+  <take>
+    <object>Run Gel</object>
+    <quantity>1</quantity>
+    <var>gel</var>
+  </take>
+  <take>
+    <object>Razor Blade</object>
+    <quantity>1</quantity>
+    <var>razor</var>
+  </take>
+  <take>
+    <object>Ethanol Spray Bottle</object>
+    <quantity>1</quantity>
+    <var>ethanol</var>
+  </take>
+  <take>
+    <object>Eppendorf Tube</object>
+    <quantity>%{number}</quantity>
+    <var>tubes1</var>
+  </take>
+
+  <!-- begin steps -->
+  <step>
+    <description>Label Eppendorph tubes with name, initials, and date.</description>
+    <note>All of this information is required, as these tubes may be saved overnight.</note>
+  </step>
+  <!-- Find current lane number + band size + tube number -->
+  <step>
+    <description>Cut fragment of %{current_length} size out of lane %{current_lane} and place in Eppendorph tube %{hcounter}.</description>
+    <note>Use transilluminator to see bands. Cut as closely around the bands as possible to minimize gel mass.</note>
+    <warning>Wipe the razor with ethanol between cutting out each band to avoid contamination.</warning>
+  </step>
+
+  <release>[%{light_box}[0], %{gel}[0], %{razor}[0], %{ethanol}[0]]</release>
+  <!-- TODO: clean up gel area, move to scale -->
+
+  <!-- Weighing out gel slices -->
+  <take>
+    <object>Scale</object>
+    <quantity>1</quantity>
+    <var>balance</var>
+  </take>
+  <step>
+    <description>Weigh gel slice</description>
+    <note>Use empty eppendorf tube to tare balance. Record gel mass for each slice.</note>
+  </step>
+  <release>%{balance}</release>
+  <!-- TODO: transform eppendorf tube into product -->
+
+</protocol>

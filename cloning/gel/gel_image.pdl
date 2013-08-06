@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <protocol>
+
   <information>This protocol guides the user through imaging a gel on the blue transilluminator using the gelDoc
 imaging station and the Canon G10 digitial camera.</information>
 
@@ -16,11 +17,11 @@ imaging station and the Canon G10 digitial camera.</information>
     <!-- FIXME: how do I specify an exact gel with an id? -->
   </take>
 
+  <!-- Begin steps -->
   <!-- Camera on -->
   <step>
     <description>Turn on camera by pressing the power button once, located on the top of the camera on the right hand side</description>
   </step>
-
   <!-- Physical setup -->
   <step>
     <description>Place gel on blue transilluminator.</description>
@@ -33,7 +34,6 @@ imaging station and the Canon G10 digitial camera.</information>
   <step>
     <description>Turn on illuminator.</description>
   </step>
-
   <!-- Camera settings -->
   <step>
     <description>Switch the camera to manual mode.</description>
@@ -58,15 +58,13 @@ imaging station and the Canon G10 digitial camera.</information>
     <description>Set exposure time from 1 to 5 seconds</description>
     <!-- TODO: how? -->
   </step>
-
   <!-- Camera use -->
   <step>
     <description>Using the zoom knob, zoom into the gel such that it covers the entire view </description>
     <!-- TODO: how? -->
   </step>
-  <!-- TODO: Manual focus steps here - auto is bad for gels -->
-  
-  <!-- Cleanup and teardown -->
+  <!-- TODO: Replace with manual focus steps - auto is bad for gels -->
+  <!-- Cleanup -->
   <step>
     <description>Remove gel from illuminator</description>
   </step>
@@ -90,4 +88,4 @@ imaging station and the Canon G10 digitial camera.</information>
     [%{ethanol}[0], %{wipe}[0], %{gel}[0]]
   </release>
 
- </protocol>
+</protocol>

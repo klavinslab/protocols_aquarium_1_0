@@ -1,26 +1,25 @@
 <?xml version="1.0"?>
 <protocol name="Transformation - Electrocompetent E.coli">
-  
-  <information>
-    This protocols describes how to transform electrically competent E.coli.
-  </information>
+  <!-- TODO: comments -->
+
+  <information>This protocols describes how to transform electrically competent E.coli. </information>
 
   <argument>
     <name>recovery_volume</name>
     <type>number</type>
-    <description>Enter the volume you wish to use for recovery in ul (250 or 1000)</description>
+    <description>Enter the volume you wish to use for recovery in µL (250 or 1000).</description>
   </argument>
 
   <argument>
     <name>strain</name>
     <type>string</type>
-    <description>What strain would you like to transform into? (DH5alpha, NEBturbo)</description>
+    <description>What strain would you like to transform into? (DH5alpha, NEBturbo).</description>
   </argument>
-  
+
   <argument>
     <name>DNA_volume</name>
     <type>number</type>
-    <description>What volume of DNA in ul would you like to use? (.1-1 ng plasmid in 2ul is ideal)</description>
+    <description>What volume of DNA in µL would you like to use? (0.1 to 1.0 ng plasmid in 2µl is ideal).</description>
   </argument>
 
   <take>
@@ -31,19 +30,19 @@
     </item>
   </take>
 
+  <if>
+    <condition>%{strain}="DH5alpha"</condition>
+    <then>
+      <take>
+        <object>Frozen Electrocompetent DH5alpha</object>
+        <quantity>1</quantity>
+        <var>aliquots</var>
+      </take>
+    </then>
+  <else>
     <if>
-      <condition>%{strain}="DH5alpha"</condition>
-      <then>
-        <take>
-          <object>Frozen Electrocompetent DH5alpha</object>
-          <quantity>1</quantity>
-          <var>aliquots</var>
-        </take>
-      </then>
-    <else>
-    
-      <if>
-        <condition>%{strain}="NEBturbo"</condition>
+      <!-- TODO: is this the right == operator? -->
+      <condition>%{strain}="NEBturbo"</condition>
         <then>
           <take>
             <object>Frozen Electrocompetent NEBturbo</object>
@@ -57,13 +56,13 @@
   </if>
 
   <step>
-      <description>Immedietly put the cell aliquots on the ice block</description>
-      <note>Label the aliquots with the contruct name</note>
+      <description>Immediately put the cell aliquots on the ice block.</description>
+      <note>Label the aliquots with the contruct name.</note>
       <warning>Transformation efficiency is heavily dependent on keeping cells ice-cold!</warning>
   </step>
 
   <step>
-      <description> Allow cells to thaw</description>
+      <description> Allow cells to thaw.</description>
       <note>Keep on ice for about 1 minute. Slushy or liquid consistency is desirable.</note>
   </step>
 
@@ -71,59 +70,57 @@
     <object>Plasmid</object>
     <quantity>1</quantity>
     <var>DNA</var>
-  </take> 
+  </take>
 
   <step>
-      <description> Add %{DNA_volume}uL DNA to cell aliquots</description>
-      <note>Use pipet tip and gently swirl to mix</note>
+      <description> Add %{DNA_volume}uL DNA to cell aliquots.</description>
+      <note>Use pipet tip and gently swirl to mix.</note>
   </step>
 
   <release>%{DNA}</release>
 
   <step>
-      <description>Incubate on ice block for one minute</description>
+      <description>Incubate on ice block for one minute.</description>
   </step>
 
   <take>
     <object>Electrocuvette</object>
     <quantity>1</quantity>
     <var>electrocuvette</var>
-  </take> 
+  </take>
 
   <take>
     <object>Electroporator</object>
     <quantity>1</quantity>
     <var>electroporator</var>
-  </take> 
+  </take>
 
   <take>
     <object>LB</object>
     <quantity>1</quantity>
     <var>LB</var>
-  </take> 
+  </take>
 
   <take>
     <object>Eppendorf Tube</object>
     <quantity>1</quantity>
     <var>tube</var>
-  </take> 
+  </take>
 
   <step>
-    <description>Electroporate cells</description>
+    <description>Electroporate cells.</description>
     <note>Transfer the contents of the aliquot into the center of the gap of an ice-cold electrocuvette from the freezer, and then place the electrocuvette in the electroporator. Check that the electroporator is set to deliver 1,250 V, and then press the PULSE button twice to deliver a pulse.</note>
     <warning>Work quickly to keep cells and electrocuvette cold!</warning>
   </step>
 
   <step>
-    <description>Recover cells in %{recovery_volume} uL room-temperature LB</description>
+    <description>Recover cells in %{recovery_volume} uL room-temperature LB.</description>
     <note>Remove the electrocuvette from the electroporator and add LB, pipetting up and down several times to extract the cells from the 1 mm gap, and transfer to an Eppendorf tube</note>
     <warning>Work quickly to keep reamaining cells and electrcuvettes cold!</warning>
   </step>
 
-
-
   <produce>
-      <object>Dirty Electrcuvette</object>
+      <object>Dirty Electrocuvette</object>
       <quantity>1</quantity>
   </produce>
 
@@ -132,8 +129,6 @@
       <quantity>1</quantity>
   </produce>
 
-
   <release>[%{LB}[0],%{tube}[0],%{electroporator}[0],%{block}[0],%{electrocuvette}[0],%{aliquots}[0]]</release>
-
 
 </protocol>

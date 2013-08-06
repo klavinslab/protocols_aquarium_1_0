@@ -1,41 +1,45 @@
 <?xml version="1.0"?>
 <protocol name="Gel Loading Dye">
 
-<argument>
-  <name>volume</name>
-  <type>number</type>
-  <description>Enter the volume of the sample to which loading dye will be added</description>
-</argument>
+  <information>Add gel dye to samples so they sink into gel wells and runnin progress can be tracked without prestaining.</information>
+  <!-- FIXME: take the specified sample out of its inventory location -->
 
-<argument>
-  <name>sample</name>
-  <type>string</type>
-  <description>Enter the sample ID to which loading dye is being added</description>
-</argument>
+  <!-- Initial arguments -->
+  <argument>
+    <name>volume</name>
+    <type>number</type>
+    <description>Enter the volume of the sample to which loading dye will be added</description>
+  </argument>
+  <argument>
+    <name>sample</name>
+    <type>string</type>
+    <description>Enter the sample ID to which loading dye is being added</description>
+  </argument>
 
-<assign>
-  <lhs>loading_volume</lhs>
-  <rhs>%{volume} / 5.0</rhs>
-</assign>
+  <!-- Calculate volume of 6X dye that's needed to add -->
+  <assign>
+    <lhs>loading_volume</lhs>
+    <rhs>%{volume} / 5.0</rhs>
+  </assign>
 
-<take>
-  <object>6X Loading Dye</object>
-  <quantity>1</quantity>
-  <var>dye</var>
-</take>
-
-<!-- TODO: take the specified sample out of its inventory location -->
-
-<step>
-  <description>Add %{loading_volume}µL of 6X Loading Dye to sample tube</description>
-</step>
-
-<produce>
-    <object>DNA with Loading Dye</object>
+  <!-- Initial takes -->
+  <take>
+    <object>6X Loading Dye</object>
     <quantity>1</quantity>
-</produce>
+    <var>dye</var>
+  </take>
 
-<!-- TODO: tube got transformed, shouldn't do anything with it -->
-<release>%{6X Loading Dye}</release>
+  <!-- Begin steps -->
+  <step>
+    <description>Add %{loading_volume}µL of 6X Loading Dye to sample tube</description>
+  </step>
+
+  <produce>
+      <object>DNA with Loading Dye</object>
+      <quantity>1</quantity>
+  </produce>
+
+  <!-- TODO: tube got transformed, shouldn't release -->
+  <release>%{6X Loading Dye}</release>
 
 </protocol>

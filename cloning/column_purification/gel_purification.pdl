@@ -1,41 +1,43 @@
 <?xml version="1.0"?>
 <protocol name="Gel Extraction">
-  <information>This protocol describes how to extract a band of DNA from an agarose gel</information>  
- 
+
+  <information>This protocol describes how to extract a band of DNA from an agarose gel</information>
+  <!-- TODO: comments -->
+
   <!-- arguments -->
   <argument>
       <name>gel_id</name>
       <type>number</type>
       <description>Enter the id of the gel piece to be purified.</description>
-  </argument>  
+  </argument>
 
   <!-- Get and add QG buffer -->
   <take>
     <object>QG Buffer</object>
     <quantity>1</quantity>
     <var>QG</var>
-  </take>    
+  </take>
   <step>
     <description>Add 3x gel volume of QG buffer</description>
     <note>For example, a 50 mg gel would require 150 uL of QG buffer</note>
-  </step>    
+  </step>
 
   <!-- Put on 50C heat block for ~10 minutes -->
   <take>
     <object>50C Heat Block</object>
     <quantity>1</quantity>
     <var>heat</var>
-  </take>  
+  </take>
   <take>
     <object>Vortex</object>
     <quantity>1</quantity>
     <var>vortex</var>
-  </take>  
+  </take>
   <step>
-    <description>Place tube in 50 C heat block for 10 minutes</description>
-    <note>Vortex every few minutes to speed up the process</note>
+    <description>Place tube in 50 C heat block for 10 minutes.</description>
+    <note>Vortex every few minutes to speed up the process.</note>
     <!-- note: purple = pH too high and won't bind column -->
-    <warning>Check if tube contents look purple. If so, the pH is too high. Add 10 µL of 3.0M sodium acetate (NaOAc) and mix.</warning>  
+    <warning>Check if tube contents look purple. If so, the pH is too high. Add 10 µL of 3.0M sodium acetate (NaOAc) and mix.</warning>
   </step>
   <argument>
     <name>purple</name>
@@ -53,13 +55,13 @@
     <object>Isopropanol</object>
     <quantity>1</quantity>
     <var>isopropanol</var>
-  </take>  
+  </take>
   <step>
-    <description>Add 1x volume (50 uL to 50 mg of gel slice) isopropanol and pipette to mix</description>
-    <note>this step is only necessary if purifying a band less than 500 bp or greater than 4 kb</note>
-    <warning>Do NOT centrifuge at this step</warning>
-  </step>  
-  <release>%{isopropanol}</release>  
+    <description>Add 1x volume (50 uL to 50 mg of gel slice) isopropanol and pipette to mix.</description>
+    <note>this step is only necessary if purifying a band less than 500 bp or greater than 4 kb.</note>
+    <warning>Do NOT centrifuge at this step.</warning>
+  </step>
+  <release>%{isopropanol}</release>
   <take>
     <object>Gel Extraction Spin Column</object>
     <quantity>%{number}</quantity>
@@ -71,65 +73,61 @@
     <var>centrifuge</var>
   </take>
   <step>
-    <description>Transfer to labeled splin column, spin at 17,900 g for 1 min, discard flow through</description>
-    <note>Use purple gel extraction Qiagen column</note>
-  </step>  
+    <description>Transfer to labeled splin column, spin at 17,000 g for 1 min, discard flow through.</description>
+    <note>Use purple gel extraction Qiagen column.</note>
+  </step>
   <release>%{tubes1}</release>
   <take>
     <object>PE Buffer</object>
     <quantity>1</quantity>
     <var>PE</var>
-  </take>  
+  </take>
   <step>
     <description>PE wash 1</description>
-    <note>Add 750 uL PE buffer to column and wait five minutes. Spin at 17,900 g for 30 seconds. Empty collection tube</note>
-  </step>  
+    <note>Add 750 uL PE buffer to column and wait five minutes. Spin at 17,900 g for 30 seconds. Empty collection tube.</note>
+  </step>
   <step>
     <description>PE wash 2</description>
-    <note>Add 500 uL PE buffer to column and wait five minutes. Spin at 17,900 g for 30 seconds. Empty collection tube</note>
-  </step>  
-  <release>%{PE}</release>  
+    <note>Add 500 uL PE buffer to column and wait five minutes. Spin at 17,900 g for 30 seconds. Empty collection tube.</note>
+  </step>
+  <release>%{PE}</release>
   <take>
     <object>Eppendorf Tube</object>
     <quantity>%{number}</quantity>
     <var>tubes2</var>
-  </take>  
+  </take>
   <step>
-    <description>Dry column and transfer to clean and labeled eppendorf tube</description>
-    <note>Spin at top speed (> 17,900 g) for 30 seconds to remove all PE buffer from column</note>
-  </step>  
+    <description>Dry column and transfer to clean and labeled eppendorf tube.</description>
+    <note>Spin at top speed (> 17,900 g) for 30 seconds to remove all PE buffer from column.</note>
+  </step>
   <take>
     <object>Elution Buffer</object>
     <quantity>1</quantity>
     <var>elution_buffer</var>
-  </take>    
+  </take>
   <step>
     <description>Elute with 30 uL elution buffer (EB)</description>
     <note>Wait two minutes. Spin at 17,900 g for one minute</note>
-    <warning>Add EB to center of column. Be very careful to not pipette on the wall of the tube</warning>
-  </step>  
+    <warning>Add EB to center of column. Be very careful to not pipette on the wall of the tube.</warning>
+  </step>
   <release>[%{centrifuge}[0],%{elution_buffer}[0]]</release>
   <release>%{column}</release>
   <take>
     <object>Nanodrop</object>
     <quantity>1</quantity>
     <var>nanodrop</var>
-  </take>  
+  </take>
   <step>
     <description>Use the Nanodrop to check DNA concentration</description>
-    <note>If a more accurate concentration is necessary for any downstream use, dialyze elution for 20-30 minutes at room temperature to remove residual salts. Re-spec on Nanodrop</note>
-    <warning>If the absorbance value at 230 nm is greater than 5, there are residual salts in the elution that are masking the amount of DNA you have</warning>
-  </step>    
+    <note>If a more accurate concentration is necessary for any downstream use, dialyze elution for 20-30 minutes at room temperature to remove residual salts. Re-spec on Nanodrop.</note>
+    <warning>If the absorbance value at 230 nm is greater than 5, there are residual salts in the elution that are masking the amount of DNA you have.</warning>
+  </step>
   <release>%{nanodrop}</release>
-  <release>%{tubes2}</release>  
+  <release>%{tubes2}</release>
 
-        <produce>
-            <object>DNA</object>
-            <quantity>%{number}</quantity>
-        </produce>    
+  <produce>
+      <object>DNA</object>
+      <quantity>%{number}</quantity>
+  </produce>
 
-  <step>
-    <description>Thank you for running the gel extraction protocol!</description>
-  </step>    
-  
 </protocol>
