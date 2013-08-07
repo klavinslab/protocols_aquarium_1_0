@@ -150,7 +150,7 @@ Day 2 Evening (9 pm)
 **Prepare to sample cell state in 12 hours.**
 6. In a yellow Phenix 96-well plate, add 200 uL PBS to all odd columns using a multichannel pipettor.
 7. Add 50 uL PBS to all even columns.
-8. Transfer 2 uL of each resuspended well to appropriate well in table below for cytometer sampling.
+8. Transfer 2 uL of each sample resuspended in M9 no carbon to appropriate well for cytometer sampling.
 
 Day 3 Morning (9 am)
 - - - - - - -
