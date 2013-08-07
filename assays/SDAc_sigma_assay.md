@@ -148,9 +148,7 @@ Description: Identify parameters V, “sigma,” and "rho" for SDAc variants and
 3. Pipette off supernatant, taking care to not disturb cell pellet.
 4. Add 1 mL M9 no carbon and pipette vigorously to resuspend pellet. Take care to not contaminate pipette body.
 5. Transfer 1 uL resuspended culture to 500 uL M9 0.4% cellobiose culture volume and incubate at 37 C.
-
-**Prepare to sample cell state in 12 hours.**
-
+*Note: prepare to sample cell state in 12 hours.*
 6. In a yellow Phenix 96-well plate, add 200 uL PBS to all odd columns using a multichannel pipettor.
 7. Add 50 uL PBS to all even columns.
 8. Transfer 2 uL of each sample resuspended in M9 no carbon to appropriate well for cytometer sampling.
