@@ -146,7 +146,7 @@ Day 2 Evening (9 pm)
 2. Centrifuge at 5,000 xg for 2 minutes to pellet cells.
 3. Pipette off supernatant, taking care to not disturb cell pellet.
 4. Add 1 mL M9 no carbon and pipette vigorously to resuspend pellet. Take care to not contaminate pipette body.
-5. Transfer 1 uL resuspended culture to 1 mL M9 0.4% cellobiose culture volume and incubate at 37 C.
+5. Transfer 1 uL resuspended culture to 500 uL M9 0.4% cellobiose culture volume and incubate at 37 C.
 **Prepare to sample cell state in 12 hours.**
 6. In a yellow Phenix 96-well plate, add 200 uL PBS to all odd columns using a multichannel pipettor.
 7. Add 50 uL PBS to all even columns.
@@ -161,7 +161,7 @@ Day 3 Morning (9 am)
 *Note: take care to not cross-contaminate wells!*
 4. Transfer 80 uL directly from each growth well to the appropriate odd column wells - 2(x-1)+1 where x is the column number from the culture plate.
 5. Transfer plate to cytometer and run autosampler template for switching rate assay (full plate read).
-6. Add 1 mL M9 0.4% cellobiose media with antibiotics to next set of 48 wells, either in same plate (columns 7 through 12) or a new plate. Place current plate and new plate, if generated, in 37 C shaker.
+6. Add 500 uL M9 0.4% cellobiose media with antibiotics to next set of 48 wells, either in same plate (columns 7 through 12) or a new plate. Place current plate and new plate, if generated, in 37 C shaker.
 7. After cytometry ends, determine dilution volume for each sample (see Dilution Protocol below).
 
 Further measurements
@@ -169,10 +169,12 @@ Further measurements
 **15 hour, 18 hour, 24 hour, 36 hour, 48 hour, ...**
 Follow "Day 3 Morning" protocol for each sample time, diluting at each time point. However, for samples measured at hours 15 and 18, use initial dilution.
 
-Dilution protocol
+Transfer volume protocol
 - - - - - - - - - - -
 The purpose of the dilution is to keep the cells in growth phase, but at a high enough density to ensure roughly 3,000 events per second per sample in the cytometer.
-
+Transfer volume: (0.16*v)/x uL, where v is the culture volume and x is the cell density in thousands of events per second (assuming slow fluidics).
+For example, if the cell density of a sample well is 5,000 events per second, the transfer volume into a 500 uL culture should be (0.16*500)/5 = 16 uL.
+In practice (Excel spreadsheet), this is implemented (for 500 uL cultures) as CEILING(80/x/2.5,1)*2.5 to produce dilution factors with 2.5 uL increments with a minimum transfer volume of 10 uL and a maximum transfer volume of 100 uL.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
        
 For questions, contact Rob Egbert at robegbert@gmail.com    
