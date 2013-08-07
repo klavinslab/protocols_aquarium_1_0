@@ -142,12 +142,15 @@ Day 2 Morning (9 am)
 Day 2 Evening (9 pm)
 - - - - - - -
 *Note: do the centrifuge step in sets of 12 tubes to minimize pellet loss.*
+
 1. Mix and transfer 500 uL of each turbid LB culture to a labeled Eppendorf tube.
 2. Centrifuge at 5,000 xg for 2 minutes to pellet cells.
 3. Pipette off supernatant, taking care to not disturb cell pellet.
 4. Add 1 mL M9 no carbon and pipette vigorously to resuspend pellet. Take care to not contaminate pipette body.
 5. Transfer 1 uL resuspended culture to 500 uL M9 0.4% cellobiose culture volume and incubate at 37 C.
+
 **Prepare to sample cell state in 12 hours.**
+
 6. In a yellow Phenix 96-well plate, add 200 uL PBS to all odd columns using a multichannel pipettor.
 7. Add 50 uL PBS to all even columns.
 8. Transfer 2 uL of each sample resuspended in M9 no carbon to appropriate well for cytometer sampling.
@@ -155,6 +158,7 @@ Day 2 Evening (9 pm)
 Day 3 Morning (9 am)
 - - - - - - -
 **12 hour measurement**
+
 1. Prepare Phenix cytometer plate with 50 uL PBS in even columns 6 through 12.
 2. Remove plate from shaker/incubator.
 3. Using multichannel pipette, mix deep well plate, column by column, with pipettor set to 80 uL by pipetting up and down several (5 to 8) times.
@@ -169,6 +173,7 @@ Day 3 Morning (9 am)
 Further measurements
 - - - - - - - - - - -
 **15 hour, 18 hour, 24 hour, 36 hour, 48 hour, ...**
+
 Follow "Day 3 Morning" protocol for each sample time, diluting at each time point. However, for samples measured at hours 15 and 18, use initial dilution.
 
 Transfer volume protocol
