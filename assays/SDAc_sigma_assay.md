@@ -21,7 +21,7 @@ Description: Identify parameters V, “sigma,” and "rho" for SDAc variants and
 
 ####Required equipment and materials####
 
-Day 1
+###### Day 1
 
     * Bunsen Burner
         + Duration needed: 10 minutes
@@ -50,7 +50,7 @@ Day 1
         + Quantity: 1 tip stab
         + Location: F3
 
-Day 2
+###### Day 2
 
     * 37 degree Shaker Incubator
         + Duration needed: 24 hours
@@ -87,7 +87,7 @@ Day 2
         + Quantity: 48 tubes
         + Location: [address]
 
-Day 3 - Day 7
+###### Day 3 - Day 7
 
     * Cytometer
         + Duration needed: 1 hour every 12 hours (10 am, 10 pm)
@@ -109,7 +109,7 @@ Day 3 - Day 7
 
 ##Assay##
 
-Day 1 (by 3 pm)
+###### Day 1 (by 3 pm)
 - - - - - - -
 1. Plug in electric Bunsen burner.
 2. Label 1.5 mL Eppendorf tubes with the following labels
@@ -131,7 +131,7 @@ Day 1 (by 3 pm)
 6. Unplug electric Bunsen burner.
 7. Incubate in 37 C incubator for 12 to 16 hours.
 
-Day 2 Morning (9 am)
+###### Day 2 Morning (9 am)
 - - - - - - -
 1. Prepare 33 14 mL glass tubes with 2 mL LB + Kan (200:1) + Amp (500:1) + IPTG (1000:1).
 2. Prepare 15 14 mL glass tubes with 2 mL LB + Kan (200:1) + Amp (500:1) + aTc (1000:1).
@@ -139,7 +139,7 @@ Day 2 Morning (9 am)
 4. Pick 3 colonies from each restreak of DL146, DL147, DL182, DL183, and DL188. Transfer to LB + aTc tube.
 5. Incubate in 37 C shaker until turbid, or 12 hours.
 
-Day 2 Evening (9 pm)
+###### Day 2 Evening (9 pm)
 - - - - - - -
 *Note: do the centrifuge step in sets of 12 tubes to minimize pellet loss.*
 
@@ -155,7 +155,7 @@ Day 2 Evening (9 pm)
 7. Add 50 uL PBS to all even columns.
 8. Transfer 2 uL of each sample resuspended in M9 no carbon to appropriate well for cytometer sampling.
 
-Day 3 Morning (9 am)
+###### Day 3 Morning (9 am)
 - - - - - - -
 **12 hour measurement**
 
@@ -170,13 +170,13 @@ Day 3 Morning (9 am)
 6. Add 500 uL M9 0.4% cellobiose media with antibiotics to next set of 48 wells, either in same plate (columns 7 through 12) or a new plate. Place current plate and new plate, if generated, in 37 C shaker.
 7. After cytometry ends, determine dilution volume for each sample (see Dilution Protocol below).
 
-Further measurements
+###### Further measurements
 - - - - - - - - - - -
 **15 hour, 18 hour, 24 hour, 36 hour, 48 hour, ...**
 
 Follow "Day 3 Morning" protocol for each sample time, diluting at each time point. However, for samples measured at hours 15 and 18, use initial dilution.
 
-Transfer volume protocol
+###### Transfer volume protocol
 - - - - - - - - - - -
 The purpose of the dilution is to keep the cells in growth phase, but at a high enough density to ensure roughly 3,000 events per second per sample in the cytometer.
 
