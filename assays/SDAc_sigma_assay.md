@@ -110,7 +110,7 @@ Day 3 - Day 7
 ##Assay##
 
 Day 1 (by 3 pm)
-
+- - - - - - -
 1. Plug in electric Bunsen burner.
 2. Label 1.5 mL Eppendorf tubes with the following labels
     * DL046 (T12/A10 SDAc)
@@ -132,7 +132,7 @@ Day 1 (by 3 pm)
 7. Incubate in 37 C incubator for 12 to 16 hours.
 
 Day 2 Morning (9 am)
-
+- - - - - - -
 1. Prepare 33 14 mL glass tubes with 2 mL LB + Kan (200:1) + Amp (500:1) + IPTG (1000:1).
 2. Prepare 15 14 mL glass tubes with 2 mL LB + Kan (200:1) + Amp (500:1) + aTc (1000:1).
 3. Pick 3 colonies from each restreak of DL046, DL107, DL108, DL110, DL112, DL146, DL147, DL180, DL182, DL183, and DL188. Transfer to LB + IPTG tube.
@@ -140,6 +140,7 @@ Day 2 Morning (9 am)
 5. Incubate in 37 C shaker until turbid, or 12 hours.
 
 Day 2 Evening (9 pm)
+- - - - - - -
 *Note: do the centrifuge step in sets of 12 tubes to minimize pellet loss.*
 1. Mix and transfer 500 uL of each turbid LB culture to a labeled Eppendorf tube.
 2. Centrifuge at 5,000 xg for 2 minutes to pellet cells.
@@ -152,7 +153,7 @@ Day 2 Evening (9 pm)
 8. Transfer 2 uL of each resuspended well to appropriate well in table below for cytometer sampling.
 
 Day 3 Morning (9 am)
-
+- - - - - - -
 **12 hour measurement**
 1. Prepare Phenix cytometer plate with 50 uL PBS in even columns 6 through 12.
 2. Remove plate from shaker/incubator.
@@ -160,9 +161,17 @@ Day 3 Morning (9 am)
 *Note: take care to not cross-contaminate wells!*
 4. Transfer 80 uL directly from each growth well to the appropriate odd column wells - 2(x-1)+1 where x is the column number from the culture plate.
 5. Transfer plate to cytometer and run autosampler template for switching rate assay (full plate read).
-6. Determine dilution volume for each sample (see Dilution Protocol below).
+6. Add 1 mL M9 0.4% cellobiose media with antibiotics to next set of 48 wells, either in same plate (columns 7 through 12) or a new plate. Place current plate and new plate, if generated, in 37 C shaker.
+7. After cytometry ends, determine dilution volume for each sample (see Dilution Protocol below).
 
+Further measurements
+- - - - - - - - - - -
+**15 hour, 18 hour, 24 hour, 36 hour, 48 hour, ...**
+Follow "Day 3 Morning" protocol for each sample time, diluting at each time point. However, for samples measured at hours 15 and 18, use initial dilution.
 
+Dilution protocol
+- - - - - - - - - - -
+The purpose of the dilution is to keep the cells in growth phase, but at a high enough density to ensure roughly 3,000 events per second per sample in the cytometer.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
        
