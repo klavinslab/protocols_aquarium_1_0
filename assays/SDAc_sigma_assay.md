@@ -158,7 +158,9 @@ Day 3 Morning (9 am)
 1. Prepare Phenix cytometer plate with 50 uL PBS in even columns 6 through 12.
 2. Remove plate from shaker/incubator.
 3. Using multichannel pipette, mix deep well plate, column by column, with pipettor set to 80 uL by pipetting up and down several (5 to 8) times.
+
 *Note: take care to not cross-contaminate wells!*
+
 4. Transfer 80 uL directly from each growth well to the appropriate odd column wells - 2(x-1)+1 where x is the column number from the culture plate.
 5. Transfer plate to cytometer and run autosampler template for switching rate assay (full plate read).
 6. Add 500 uL M9 0.4% cellobiose media with antibiotics to next set of 48 wells, either in same plate (columns 7 through 12) or a new plate. Place current plate and new plate, if generated, in 37 C shaker.
@@ -172,8 +174,11 @@ Follow "Day 3 Morning" protocol for each sample time, diluting at each time poin
 Transfer volume protocol
 - - - - - - - - - - -
 The purpose of the dilution is to keep the cells in growth phase, but at a high enough density to ensure roughly 3,000 events per second per sample in the cytometer.
+
 Transfer volume: (0.16*v)/x uL, where v is the culture volume and x is the cell density in thousands of events per second (assuming slow fluidics).
+
 For example, if the cell density of a sample well is 5,000 events per second, the transfer volume into a 500 uL culture should be (0.16*500)/5 = 16 uL.
+
 In practice (Excel spreadsheet), this is implemented (for 500 uL cultures) as CEILING(80/x/2.5,1)*2.5 to produce dilution factors with 2.5 uL increments with a minimum transfer volume of 10 uL and a maximum transfer volume of 100 uL.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
        
