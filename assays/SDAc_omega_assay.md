@@ -286,17 +286,19 @@ Day 6
 7. Inoculate DL146 in LB
 4. From glycerol stock - grow overnight in 2 mL LB + kan + lowAmp overnight.
 
-###### Day 3 or 4 (depending on time point) 
+###### Days 3 and 4 (depending on time point) 
 
-PASC utilization measurement
-Sample once every hour for the first 4 hours and then at 24 48 hours.
+**PASC utilization measurement**
+
+Sample at hour 0, 1, 2, 3, and 4 and then at 24 and 48 hours.
+
 1. Mix contents by votexing on medium speed and transfer 100 uL into 1.5 mL Eppy tube.
 2. Heat tube contents at 95 C for 5 minutes to denature cellulase. (Add DI H2O to heat block well for efficient heat transfer).
 3. Add 100 uL 0.3% Congo Red and incubate at room temperature for 30 minutes.
 4. Centrifuge at top speed (Seelig centrifuge) for 5 minutes.
 5. Measure UV-Vis spectrum three times per sample (blank on water). Record measurement at 480 nm.
 
-Day 5 cellobiose release experiment (after 48 hour incubation)
+**Day 5 cellobiose release experiment (after 48 hour incubation)**
 
 1. Centrifuge at 250 xg for 10 minutes.
 2. Transfer 2 mL supernatant to 14 mL culture tube.
@@ -305,7 +307,8 @@ Day 5 cellobiose release experiment (after 48 hour incubation)
 
 Day 6
 
-CFU measurement of supe-grown DL146
+**CFU measurement of supe-grown DL146**
+
 1. In 96 well clear Costar (Corning 3795) plate, add 180 uL PBS to 6 columns.
 2. From supe-grown DL146, vortex to mix, then transfer 20 uL to 180 uL PBS (10-1 diution).
 3. With new pipette tip, serially transfer 20 uL to 180 uL PBS to make 10-2 to 10-5 dilutions.
@@ -314,7 +317,8 @@ CFU measurement of supe-grown DL146
 
 Day 7
 
-Image plates and record CFUs
+**Image plates and record CFUs**
+
 1. Remove plates from incubator and image using blue-light transilluminator.
 2. Analyze CFU counts using openCFU software package on plate reader computer.
 
