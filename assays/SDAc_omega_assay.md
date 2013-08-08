@@ -195,9 +195,9 @@ Day 6
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-##Protocol##
+##Assay##
 
-Day 1
+###### Day 1
 
 1. Plug in electric Bunsen burner.
 2. Label 1.5 mL Eppendorf tubes with the following labels
@@ -214,14 +214,15 @@ Day 1
 6. Unplug electric Bunsen burner.
 7. Incubate in 37 C incubator for 12 to 16 hours.
 
-Day 2
+###### Day 2
 
 1. Pick 3 colonies from each plate. Incubate in 2 mL LB + Kan (200:1) + Amp (500:1) overnight in 14 mL glass culture tube.
 2. Incubate for 24 hours.
 
-Day 3
+###### Day 3
 
-Supe extraction (live cells, 147, 292, 294, 296, 307)
+**Supe extraction (live cells, 147, 292, 294, 296, 307)**
+
 1. Vortex overnight culture
 2. Transfer 1.2 mL to labeled Eppy tube.
 3. Centrifuge at top speed (Seelig centrifuge) for 5 minutes.
@@ -230,7 +231,8 @@ Supe extraction (live cells, 147, 292, 294, 296, 307)
 6. Pipette supernatant into syringe barrel.
 7. Plunge supernatant into new, labeled Eppy tube.
 
-Supe extraction (sonicated cells, 146, 147, 292, 294, 296, 307)
+**Supe extraction (sonicated cells, 146, 147, 292, 294, 296, 307)**
+
 1. Vortex overnight culture.
 2. Transfer 1.2 mL to labeled Eppy tube.
 3. Sonicate each sample (900 sec, 10 sec on, 10 sec off, 95% power).
@@ -240,19 +242,22 @@ Supe extraction (sonicated cells, 146, 147, 292, 294, 296, 307)
 7. Pipette supernatant into syringe barrel.
 8. Plunge supernatant into new, labeled Eppy tube.
 
-CFU counts (live cells)
+**CFU counts (live cells)**
+
 1. In 96 well clear Costar (Corning 3795) plate, add 270 uL PBS to 6 columns.
 2. From saturated LB culture (triplicate DL146, 147, 292, 294, 296, 307), vortex to mix, then transfer 20 uL to 180 uL PBS (10-1 diution).
 3. With new pipette tip, serially transfer 20 uL to 180 uL PBS to make 10-2 to 10-7 dilutions.
 4. Plate 100 uL of 10-7 cultures on LB + kan + amp plates.
 
-CFU counts (sonicated cells)
+**CFU counts (sonicated cells)**
+
 1. In 96 well clear Costar (Corning 3795) plate, add 180 PBS to 6 columns.
 2. From sonicated samples (triplicate DL146, 147, 292, 294, 296, 307), vortex to mix, then transfer 20 uL to 180 uL PBS (10-1 diution).
 3. With new pipette tip, serially transfer 20 uL to 180 uL PBS to make 10-2 to 10-7 dilutions.
 4. Plate 100 uL of 10-7 cultures on LB + kan + amp plates.
 
-PASC inoculation
+**PASC inoculation**
+
 0.4% PASC
     + DL146 alone
     + DL147 alone
@@ -281,7 +286,7 @@ PASC inoculation
 7. Inoculate DL146 in LB
 4. From glycerol stock - grow overnight in 2 mL LB + kan + lowAmp overnight.
 
-Day 3 or 4 (depending on time point) 
+###### Day 3 or 4 (depending on time point) 
 
 PASC utilization measurement
 Sample once every hour for the first 4 hours and then at 24 48 hours.
