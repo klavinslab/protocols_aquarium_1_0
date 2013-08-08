@@ -1,7 +1,7 @@
 PASC for M9
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Description: This prepares a enough PASC for 250 (500) mL of M9 0.8 (0.4)% PASC media.
+Description: This prepares a enough PASC for 250 mL (500 mL) of M9 0.8% (0.4%) PASC media.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ####Total duration: 1 day 3 hours 5 minutes####
