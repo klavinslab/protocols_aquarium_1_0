@@ -10,12 +10,11 @@ Description: Identify parameters V, “sigma,” and "rho" for SDAc variants and
 #### Active worktime: 24 hours
 
     - Day 1: 1 hour
-    - Day 2: 1 hour
-    - Day 3: 8-10 hours
-    - Day 4: 5 hours
-    - Day 5: 5 hours
-    - Day 6: 1 hour
-    - Day 7: 1 hour
+    - Day 2: 3 hours
+    - Day 3: 2 hours
+    - Day 4: 2 hours
+    - Day 5: 2 hours
+    - Day 6: 2 hours
     
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
