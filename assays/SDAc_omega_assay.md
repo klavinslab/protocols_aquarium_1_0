@@ -317,30 +317,12 @@ Day 7
 Image plates and record CFUs
 1. Remove plates from incubator and image using blue-light transilluminator.
 2. Analyze CFU counts using openCFU software package on plate reader computer.
+
 *Note: manually count colonies along plate edge that are not picked up by software and account for any false positives.*
+
 3. Record each plate count in spreadsheet.
+
 *Note: at 10^5 dilution, the number of colonies corresponds to 10^6 multiplier for CFU/mL.*
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-    
-    
-####Additional Information and Settings####
-
-    [Parameter/variable/clarification/option 1]:
-        [Option 1]:
-        [Option 2]:
-    [Parameter/variable/clarification/option 2]:
-        [Option 1]:
-        [Option 2]:
-
-
-####Common Issues####
-
-    [Issue 1]:
-        - [Solution 1]:
-        - [Solution 2]:
-    [Issue 2]:
-        - [Solution 1]:
-        - [Solution 2]:
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-       
+        
 For questions, contact Leandra Brettner at leandra.brettner@gmail.com    
