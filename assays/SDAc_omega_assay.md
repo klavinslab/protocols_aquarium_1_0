@@ -298,14 +298,16 @@ Sample at hour 0, 1, 2, 3, and 4 and then at 24 and 48 hours.
 4. Centrifuge at top speed (Seelig centrifuge) for 5 minutes.
 5. Measure UV-Vis spectrum three times per sample (blank on water). Record measurement at 480 nm.
 
-**Day 5 cellobiose release experiment (after 48 hour incubation)**
+###### Day 5 
+
+**Cellobiose release experiment (after 48 hour incubation)**
 
 1. Centrifuge at 250 xg for 10 minutes.
 2. Transfer 2 mL supernatant to 14 mL culture tube.
 3. Inoculate well with 10 (1:200) uL DL146 overnight in LB.
 4. Incubate for 24 hours.
 
-Day 6
+###### Day 6
 
 **CFU measurement of supe-grown DL146**
 
@@ -315,18 +317,18 @@ Day 6
 4. Plate 100 uL of 10-5 cultures on LB + kan + amp plates.
 5. Incubate 12-16 hours in 37 C incubator.
 
-Day 7
+###### Day 7
 
 **Image plates and record CFUs**
 
 1. Remove plates from incubator and image using blue-light transilluminator.
-2. Analyze CFU counts using openCFU software package on plate reader computer.
+2. Analyze CFU counts using the openCFU software package on plate reader computer (settings?).
 
 *Note: manually count colonies along plate edge that are not picked up by software and account for any false positives.*
 
 3. Record each plate count in spreadsheet.
 
-*Note: at 10^5 dilution, the number of colonies corresponds to 10^6 multiplier for CFU/mL.*
+*Note: at 10^5 dilution, the number of colonies "n" corresponds to n x 10^6 CFU/mL.*
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
         
 For questions, contact Leandra Brettner at leandra.brettner@gmail.com    
