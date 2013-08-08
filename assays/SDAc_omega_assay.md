@@ -259,6 +259,7 @@ Day 6
 **PASC inoculation**
 
 0.4% PASC
+
     + DL146 alone
     + DL147 alone
     + DL292 alone
@@ -275,7 +276,8 @@ Day 6
     + DL147 + DL292 (10%, 50%, 90%)
     + DL307 + DL292 (10%, 50%, 90%)
 
-+ PASC Titration
+PASC Titration
+
     + 0.2% PASC + DL147
     + 0.1% PASC + DL147
     + 0.05% PASC + DL147
