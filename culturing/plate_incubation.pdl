@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<protocol>
+  <!-- IDEA: this could be an optional <include> for spread plate protocols -->
+
+  <information>Incubate plates in an incubator</information>
+  <!-- Arguments -->
+  <!-- Need to know spread plate ID -->
+  <argument>
+    <name>plate_id</name>
+    <type>number</type>
+    <description>Enter the ID of the spread plate to be incubated.</description>
+  </argument>
+  <argument>
+    <name>temperature</name>
+    <type>number</type>
+    <description>Enter the temperature (in °C) at which to incubate the plate.</description>
+  </argument>
+
+  <!-- Initial takes -->
+  <!-- Is there a way to add a note (i.e. you will need X number of beads)? -->
+  <!-- Take the plate -->
+  <!-- TODO: need to be able to take one with a specific ID -->
+  <take>
+    <item>
+      <type>Spread Plate</type>
+      <quantity>1</quantity>
+      <var>plate</var>
+    </item>
+  </take>
+  <take>
+    <item>
+      <type>%{temperature} Incubator</type>
+      <quantity>1</quantity>
+      <var>incubator</var>
+    </item>
+  </take>
+
+  <!-- Begin steps -->
+  <!-- Put the plate in the incubator -->
+  <step>
+    <description>Put the plate in the incubator.</description>
+    <note>Incubate the plate upside-down (lid on the bottom) to prevent condensation from dropping on the agar surface.</note>
+  </step> 
+
+  <!-- Produces -->
+  <produce>
+    <object>Spread plate in incubator</object>
+    <quantity>1</quantity>
+  </produce>
+
+</protocol>
