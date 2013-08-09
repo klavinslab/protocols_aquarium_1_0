@@ -1,10 +1,12 @@
+<?xml version="1.0"?>
 <protocol name="Miniprep">
+  <information>This protocol is for purifying bacterial plasmid from an E. coli overnight culture.</information>
 
   <argument>
   		<name>number</name>
   		<type>number</type>
   		<description>Enter the number of minipreps you wish to do</description>
-  </argument>	
+  </argument>
 
   <argument>
   		<name>volume</name>
@@ -13,16 +15,12 @@
   </argument>
 
 
-  <information>
-		This protocol is for purifying bacterial plasmid from an e.coli overnight culture
-  </information>
-  
   <take>
 	<object>Overnight Culture</object>
 	<quantity>%{number}</quantity>
 	<var>cultures</var>
   </take>
-  
+
   <take>
   	<object>Eppendorf Tube</object>
 	<quantity>%{number}</quantity>
@@ -33,15 +31,15 @@
     <description>Pipette 1 mL of overnight culture into a labeled eppendorf tube</description>
     <note>For labels, shorthand is okay. These tubes will be discarded</note>
   </step>
-  
+
   <release>%{cultures}</release>
-  
+
   <take>
     <object>Centrifuge</object>
     <quantity>1</quantity>
     <var>centrifuge</var>
   </take>
-  
+
   <step>
     <description>Spin cells at 6000g for 2 minutes and remove supernatant</description>
   </step>
@@ -72,7 +70,7 @@
     <note>Resuspend by vortexing</note>
     <warning>Make sure that RNAse has been added to buffer p1: Look for check on cap</warning>
   </step>
-  
+
   <release>%{vortex}</release>
 
   <step>
@@ -92,7 +90,7 @@
   </step>
 
   <release>[%{P1}[0],%{P2}[0],%{N3}[0]]</release>
-  
+
   <take>
     <object>Miniprep Spin Column</object>
     <quantity>%{number}</quantity>
@@ -106,8 +104,8 @@
   <step>
     <description>Spin at 17000g for 1 minute, discard flow through</description>
   </step>
-  
-  <release>%{tubes1}</release>  
+
+  <release>%{tubes1}</release>
 
   <take>
     <object>PE Buffer</object>
@@ -120,9 +118,9 @@
     <note>Add PE to column, spin at 17000g for 1 minute, discard flow through</note>
     <warning>Make sure to cap the buffer PE tightly to prevent evaporation</warning>
   </step>
-  
-  <release>%{PE}</release>  
-  
+
+  <release>%{PE}</release>
+
   <step>
     <description>Dry column</description>
     <note>Spin at 17000g for 1 minute</note>
@@ -133,7 +131,7 @@
     <quantity>1</quantity>
     <var>EB</var>
   </take>
-  
+
   <take>
   	<object>Eppendorf Tube</object>
 	<quantity>%{number}</quantity>
@@ -145,20 +143,20 @@
     <note>Place columns in clean and labeled eppendorf tubes. Add elution buffer to the center of the column. Spin at 17000g for 1 minute</note>
     <warning>Pipette the elution buffer directly onto the center of the column</warning>
   </step>
-  
-  <release>%{column}</release>  
-  <release>[%{centrifuge}[0],%{EB}[0]]</release>  
-  <release>%{tubes2}</release>  
+
+  <release>%{column}</release>
+  <release>[%{centrifuge}[0],%{EB}[0]]</release>
+  <release>%{tubes2}</release>
 
   <produce>
 	<object>DNA</object>
     <quantity>%{number}</quantity>
-  </produce>    
+  </produce>
 
 
 	<step>
 		<description>Thank you for running the gel extraction protocol!</description>
-	</step>	
+	</step>
 
 
 </protocol>
