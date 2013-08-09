@@ -2,161 +2,150 @@
 <protocol name="Miniprep">
   <information>This protocol is for purifying bacterial plasmid from an E. coli overnight culture.</information>
 
+  <!-- Arguments -->
   <argument>
-  		<name>number</name>
-  		<type>number</type>
-  		<description>Enter the number of minipreps you wish to do</description>
+      <name>volume</name>
+      <type>number</type>
+      <description>Enter the desired elution volume in µL.</description>
   </argument>
 
-  <argument>
-  		<name>volume</name>
-  		<type>number</type>
-  		<description>Enter the desired elution volume in ul</description>
-  </argument>
-
-
+  <!-- Initial takes -->
   <take>
-	<object>Overnight Culture</object>
-	<quantity>%{number}</quantity>
-	<var>cultures</var>
+    <object>Overnight Culture</object>
+    <quantity>1</quantity>
+    <var>culture</var>
+  </take>
+  <take>
+    <object>Eppendorf Tube</object>
+    <quantity>1</quantity>
+    <var>tube</var>
   </take>
 
-  <take>
-  	<object>Eppendorf Tube</object>
-	<quantity>%{number}</quantity>
-	<var>tubes1</var>
-  </take>
-
+  <!-- Begin steps -->
+  <!-- Add cells to Eppendorf tubes -->
   <step>
-    <description>Pipette 1 mL of overnight culture into a labeled eppendorf tube</description>
-    <note>For labels, shorthand is okay. These tubes will be discarded</note>
+    <description>Pipette 1.5mL of overnight culture into a labeled eppendorf tube.</description>
+    <note>Shorthand labels are okay. The tube(s) will be discarded soon.</note>
   </step>
-
+  <!-- IDEA: Might want to use this for a glycerol stock. What to do? -->
   <release>%{cultures}</release>
-
+  <!-- Pellet cells -->
   <take>
-    <object>Centrifuge</object>
+    <object>Microcentrifuge</object>
     <quantity>1</quantity>
     <var>centrifuge</var>
   </take>
-
   <step>
-    <description>Spin cells at 6000g for 2 minutes and remove supernatant</description>
+    <description>Spin tube(s) at 6000xg for 3 minutes.</description>
+    <warning>Make sure to balance the centrifuge.</warning>
   </step>
-
-  <take>
-    <object>Vortex</object>
-    <quantity>1</quantity>
-  	<var>vortex</var>
-	</take>
+  <step>
+    <description>Remove the supernatant</description>
+    <note>Remove the supernatant very slowly using a P1000 pipet. Do not disturb the pellet.</note>
+  </step>
+  <!-- Respend in P1 (might as well get out all buffers now) -->
+  <!-- Here the takes are for entire bottles, not amounts... -->
   <take>
     <object>Buffer P1</object>
-  	<quantity>1</quantity>
-		<var>P1</var>
-	</take>
+    <quantity>1</quantity>
+    <var>p1</var>
+  </take>
   <take>
     <object>Buffer P2</object>
     <quantity>1</quantity>
-		<var>P2</var>
-	</take>
+    <var>p2</var>
+  </take>
   <take>
     <object>Buffer N3</object>
     <quantity>1</quantity>
-		<var>N3</var>
-	</take>
-
+    <var>n3</var>
+  </take>
+  <take>
+    <object>Vortex</object>
+    <quantity>1</quantity>
+    <var>vortex</var>
+  </take>
   <step>
-    <description>Resuspend cells with 250ul buffer P1</description>
-    <note>Resuspend by vortexing</note>
-    <warning>Make sure that RNAse has been added to buffer p1: Look for check on cap</warning>
+    <description>Resuspend pellet in 250µL of P1 buffer.</description>
+    <!-- Maybe this would be a good point to get data from user on resuspension, then optionally launch alternative resuspension protocol -->
+    <note>Add P1 on top of cell pellet and resuspend by vortexing. Vortex until pellet disappears (invert the tube to check). If pellet remains after a minute of vortexing, resuspend by gently pipetting up and down with a P1000 pipet.</note>
+    <warning>Make sure that RNAse has been added to buffer P1: Look for check on cap.</warning>
   </step>
-
   <release>%{vortex}</release>
-
+  <!-- Add P2 and mix -->
   <step>
-    <description>Add 250ul buffer P2 to each tube</description>
-    <note>Invert tube 6-10 times to mix. Concents should turn blue.</note>
-    <warning>Do not allow reaction to proceed for more than 5 minutes</warning>
+    <description>Add 250µL of P2 buffer.</description>
+    <note>Invert tube (gently) 6-10 times to mix. Stop when contents are uniformly blue.</note>
+    <warning>Do not allow reaction to proceed for more than 5 minutes (the DNA becomes fragile and shears).</warning>
   </step>
-
+  <!-- Add N3 and mix -->
   <step>
-    <description>Add 350ul buffer N3 to each tube</description>
-    <note>Invert tube 6-10 times to mix. Concents should turn colorless with white precipitate</note>
-    <warning>Do not vortex or shake vigorously</warning>
+    <description>Add 350µL of N3 buffer.</description>
+    <note>Invert tube (gently) 6-10 times to mix. Contents should turn into a colorless supernatant and white precipitate. Continue inverting until no blue remains.</note>
+    <warning>Do not vortex or shake vigorously.</warning>
   </step>
-
-  <step>
-    <description>Spin cells at 17000g for 10 minutes</description>
-  </step>
-
+  <!-- 10-minute spin -->
+  <!-- IDEA: the following two steps could happen in parallel - you want to start the centrifuge ASAP, but should then immediately put away buffers -->
   <release>[%{P1}[0],%{P2}[0],%{N3}[0]]</release>
-
+  <step>
+    <description>Spin cells at 17,000xg for 10 minutes.</description>
+    <warning>Make sure the centrifuge is balanced.</warning>
+  </step>
+  <!-- Add supernatant to column -->
   <take>
     <object>Miniprep Spin Column</object>
-    <quantity>%{number}</quantity>
-  	<var>column</var>
-	</take>
-
+    <quantity>1</quantity>
+    <var>column</var>
+  </take>
   <step>
-    <description>Pour supernatant into labeled miniprep spin column</description>
+    <description>Pipet supernatant into labeled miniprep spin column.</description>
+    <note>Volume should be about 850µL.</description>
   </step>
-
+  <!-- Bind to column (spin) -->
   <step>
-    <description>Spin at 17000g for 1 minute, discard flow through</description>
+    <description>Spin at 17,000xg for 1 minute, discard flow-through.</description>
   </step>
-
-  <release>%{tubes1}</release>
-
+  <release>%{tube}</release>
+  <!-- Wash with PE -->
   <take>
     <object>PE Buffer</object>
     <quantity>1</quantity>
-    <var>PE</var>
+    <var>pe</var>
   </take>
-
   <step>
-    <description>Wash with 750ul buffer PE</description>
-    <note>Add PE to column, spin at 17000g for 1 minute, discard flow through</note>
-    <warning>Make sure to cap the buffer PE tightly to prevent evaporation</warning>
+    <description>First wash with 750µL PE buffer.</description>
+    <note>Add PE to column with P1000, spin at 17,000xg for 1 minute, and discard flow-through.</note>
+    <warning>Make sure to cap the buffer PE tightly when not in use to prevent evaporation.</warning>
   </step>
-
   <release>%{PE}</release>
-
+  <!-- Spin again to remove residual PE -->
   <step>
-    <description>Dry column</description>
-    <note>Spin at 17000g for 1 minute</note>
+    <description>Spin to remove residual PE.</description>
+    <note>Spin at 17,000xg for 1 minute.</note>
   </step>
-
+  <!-- Elute -->
   <take>
     <object>Elution Buffer</object>
     <quantity>1</quantity>
     <var>EB</var>
   </take>
-
   <take>
-  	<object>Eppendorf Tube</object>
-	<quantity>%{number}</quantity>
-	<var>tubes2</var>
+    <object>Eppendorf Tube</object>
+    <quantity>%{number}</quantity>
+    <var>elution_tube</var>
   </take>
-
   <step>
     <description>Elute with %{volume}ul elution buffer</description>
-    <note>Place columns in clean and labeled eppendorf tubes. Add elution buffer to the center of the column. Spin at 17000g for 1 minute</note>
-    <warning>Pipette the elution buffer directly onto the center of the column</warning>
+    <note>Label the new Eppendorf tube. Transfer column to new Eppendorf tube. Add elution buffer to the center of the column without touching the disc. Spin at 17,000xg for 1 minute.</note>
   </step>
-
   <release>%{column}</release>
   <release>[%{centrifuge}[0],%{EB}[0]]</release>
-  <release>%{tubes2}</release>
+  <!-- TODO: should be released when miniprepped DNA tube is produced -->
+  <release>%{elution_tube}</release>
 
   <produce>
-	<object>DNA</object>
-    <quantity>%{number}</quantity>
+    <object>Miniprep</object>
+    <quantity>1</quantity>
   </produce>
-
-
-	<step>
-		<description>Thank you for running the gel extraction protocol!</description>
-	</step>
-
 
 </protocol>
