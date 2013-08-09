@@ -1,25 +1,73 @@
 <?xml version="1.0"?>
 <protocol>
+  <!-- TODO: separate bead method from dally rod method -->
 
   <information>Spread cells or reagents on a 25mL petri dish containing ~25mL agar media.</information>
-  <!-- TODO: separate out bead method from dally rod method -->
-  <!-- TODO: arguments -->
-  <!-- TODO: takes -->
+  <!-- Arguments -->
+  <!-- Need to know sample type/ID/volume -->
+  <argument>
+    <name>sample_type</name>
+    <type>string</type>
+    <description>Enter the sample object type (usually cell suspension or reagent).</description>
+  </argument>
+  <argument>
+    <name>sample_id</name>
+    <type>number</type>
+    <description>Enter the ID of the cell suspension or reagent to be spread on the plate.</description>
+  </argument>
+  <!-- Default value or range would be useful here (100-300µL) -->
+  <argument>
+    <name>volume</name>
+    <type>number</type>
+    <description>Enter the volume (µL) to plate.</description>
+  </argument>
+  <argument>
+    <name>plate_type</name>
+    <type>string</type>
+    <description>Enter the type of plate you want to use.</description>
+  </argument>
+
+  <!-- Initial takes -->
+  <!-- TODO: How do you take a cell suspension sample with an ID? -->
+  <take>
+    <item>
+      <type>%{plate_type}</type>
+      <quantity>1</quantity>
+      <var>plate</var>
+    </item>
+  </take>
+  <!-- Is there a way to add a note (i.e. you will need X number of beads)? -->
+  <take>
+    <item>
+      <type>Sterile Glass Bead Aliquot</type>
+      <quantity>1</quantity>
+      <var>beads</var>
+    </item>
+  </take>
 
   <!-- Begin steps -->
-  <!-- TODO: volume should be a parameter and checked for validity -->
+  <!-- Add beads to plate -->
+  <step>
+    <description>Add sterile glass beads to the plate.</description>
+    <note>Invert the plate so that the lid is on the tabletop. Add 5-10 beads to the inside of the lid (lift the plate up). Place the plate back on the lid afterwards.</note>
+  </step> 
   <!-- Add culture on top of plate -->
   <step>
-    <description>Transfer 100-300 μL of culture to the appropriate plate using the large micropipettor.</description>
-    <note>Do not place the plate lid on lab bench while you do this.</note>
+    <description>Transfer the culture or reagent to the center of the plate.</description>
+    <note>Invert the plate again so the beads are on the agar surface. Add %{volume} of your culture of reagent using the P1000 micropipettor and put the lid back on the plate.</note>
+    <warning>Do not place the plate lid on lab bench while you do this.</warning>
   </step> 
-  <!-- Add beads, shake, dump out -->
+  <!-- Shake, then dump out beads -->
   <step>
-    <description>Add 5 to 10 sterile glass beads to the plate and swirl/shake the plate to spread the culture onto the agar. Dump the beads into the used bead beaker when done.</description>
+    <description>Shake the plate to spread the culture or reagent over the surface.</description>
+    <note>Use 3-4 sharp shakes, then pour the beads out into the waste bead container. When done, invert the plate (lid down) in preparation for incubation.</note>
   </step> 
-  <!-- Incubate -->
-  <step>
-    <description>Replace plate top and incubate plate, upside-down, overnight at 37°C</description>
-  </step> 
+  <!-- Incubation is optional second protocol - temperature, duration will vary -->
+
+  <!-- Produces -->
+  <produce>
+    <object>Spread plate</object>
+    <quantity>1</quantity>
+  </produce>
 
 </protocol>
