@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<protocol name="Start overnight">
+
+  <information>This protocol describes the process of starting an E.coli overnight culture from an incubated spread plate.</information>
+
+  <!-- Arguments -->
+  <argument>
+    <name>plate_id</name>
+    <type>string</type>
+    <description>Enter the ID of the plate from which to get an inoculum.</description>
+  </argument>
+  <!-- How do I give a discrete list of options? Should that even happen? -->
+  <argument>
+    <name>tube_type</name>
+    <type>string</type>
+    <description>Enter the type of culture tube you want to use (must be in database).</description>
+  </argument>
+  <argument>
+    <name>media</name>
+    <type>string</type>
+    <description>Enter the type of media you want to use (must be in database).</description>
+  </argument>
+  <!-- Should expect something between 1 and 5 mL -->
+  <argument>
+    <name>volume</name>
+    <type>number</type>
+    <description>Enter the amount of media per tube in mL.</description>
+  </argument>
+
+  <!-- Initial takes -->
+  <take>
+    <object>%{tube_type}</object>
+    <quantity>1</quantity>
+    <var>tube</var>
+  </take>
+  <!-- Should a specific volume be in the take command? -->
+  <take>
+    <object>%{media}</object>
+    <quantity>1</quantity>
+    <var>taken_media</var>
+  </take>
+  <!-- FIXME: Need to take a Spread plate of a specific ID. Also, is it always a spread plate? -->
+  <take>
+    <object>Spread Plate</object>
+    <quantity>1</quantity>
+    <var>plate</var>
+  </take>
+  <take>
+    <object>Serological Pipettor</object>
+    <quantity>1</quantity>
+    <var>pipettor</var>
+  </take>
+
+  <!-- Start steps -->
+  <!-- Add media -->
+  <step>
+    <description>Add media to culture tube(s).</description>
+    <note>Use a serological pipettor to add %{volume} of %{media} to the culture tube.</description>
+  </step>
+  <!-- Add cells -->
+  <step>
+    <description>Inoculate tube with P10 pipet tip, from plate.</description>
+    <note>Grab a sterile P10 pipet tip, touch it to an isolated colony on the plate, then touch it to the media in the tube and gently mix. Discard the pipet tip when done.</note>
+    <warning>Replace the tube cap when done, but do not completely seal the tube - cells usually want oxygen!</warning>
+  </step>
+  <!-- Put in incubator -->
+  <take>
+    <object>37°C degree shaker incubator</object>
+    <quantity>1</quantity>
+  </take>
+  <step>
+    <description>Place the tube in the 37°C shaker incubator.</description>
+  </step>
+
+  <produce>
+    <object>E. coli Overnight Culture</object>
+    <quantity>1</quantity>
+  </produce>
+
+  <!-- TODO: tube should be released in produce step -->
+  <release>
+    <var>[%{tube}, %{taken_media}, %{plate}, %{pipettor}]</var>
+  </release>
+
+</protocol>
