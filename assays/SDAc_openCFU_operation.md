@@ -50,7 +50,7 @@ Day 2
 
 
 Example image:
-<img src="https://dl.dropbox.com/s/1ovun5fuxpgx6mi/openCFU.png" style="width: 600px;"/>
+<img src="https://dl.dropbox.com/s/1ovun5fuxpgx6mi/openCFU.png" style="width: 300px;"/>
 
 ##Protocol##
 
