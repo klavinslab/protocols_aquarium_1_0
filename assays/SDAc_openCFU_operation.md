@@ -4,12 +4,10 @@ Counting colonies with openCFU
 Description:
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-####Total duration: [x days/hours/minutes]####
-####Total worktime: [x hours/minutes]
+####Total duration: 7 minutes per plate ####
+####Total worktime: 7 minutes per plate
 
-    - Day 1: [x hours/minutes]
-    - Day 2: [x hours/minutes]
-    - ...
+    - Day 1: 7 minutes per plate
     
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -50,6 +48,10 @@ Day 2
         + Location: [address]
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
+
+Example image:
+<img src="https://dl.dropbox.com/s/1ovun5fuxpgx6mi/openCFU.png" style="width: 600px;"/>
+
 ##Protocol##
 
 *Note: this protocol assumes you ran Leandra's low-error CFU plating [protocol](https://github.com/klavinslab/protocols/blob/master/assays/assay_quality_CFU_plating_best_practices.md)!
@@ -74,9 +76,6 @@ Day 2
 5. Count colonies along plate edge not captured by software.
 6. Subtract any false positives (usually only when radius is set to **3** or lower)
 7. Record colony count and dilution factor on appropriate spreadsheet.
-
-Example image:
-<img src="https://dl.dropbox.com/s/1ovun5fuxpgx6mi/openCFU.png" style="width: 600px;"/>
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
     
