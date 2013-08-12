@@ -90,21 +90,23 @@ Day 2
 * 6.8 ng/mL Chlor aTc-
 * 6.8 ng/mL Chlor 100ng/mL aTc
 * 6.8 ng/mL Chlor 10ng/mL aTc.
-2. On the bottom of each plate, draw an identical grid corresponding to the number of variants; if the variants are in a deepwell plate, have the grid correspond to the location of each variant in the plate. Record what variant each grid location corresponds to.
-3. Add 200uL of MGH20 to each of 9 1.5mL Eppendorf tube and label similarly to the ampicillin plates
-4. To all tubes from number 3 labelled with "100ng/mL aTc" add 20uL of aTc.
-5. Label and empty Eppendorf tube "10ug/mL aTc." Add 10uL of aTc to 90uL of MGH20 in this tube. Mix by vortexing and table-top centrifugation for a few seconds.
-6. To all of the tubes from number 3 labelled with "1ng/mL aTc" add 2uL of the 10ug/mL aTc from step 5.
-7. To all of the tubes from number 3 labelled with "1:2000 chlor" add 10uL of dChlor.
-8. To all of the tubes from number 3 labelled with "1:5000 chlor" add 4uL of dChlor.
-9. Mix all 9 Eppendorf tubes from number 3 now with their added chemicals by vortexing and table-top centrifugation for a few seconds.
-10. Add all off the contents of the tubes from number 9 to the ampicillin plate with the same name.
-11. Add 5-8 media-spreading beads to each ampicillin plate and shake the plates to spread the added media.
-12. Once the media is spread, discard the beads in the bead disposal and let the plates sit with their lids on for 20 minutes.
-13. Remove the overnights of the variants from Day 1 from the 42C incubator. 
-14. Using the multichannel pipette, suck up 20uL of each variant in one row of the grid, and spot ~2uL into the appropriate spot on each plate.
-15. Once all variants have been spotted, let each plate dry for 10 minutes, or until spots dry.
-16. Place each plate, upside-down, in 30C incubator overnight.
+
+2. On the bottom of each plate, draw an identical grid corresponding to the number of variants; if the variants are in a deepwell plate, have the grid correspond to the location of each variant in the plate. Record the grid location corresponding to each variant.
+3. Add 100uL of molecular grade H2O to each of 9 1.5mL Eppendorf tube and label similarly to the ampicillin plates.
+4. To all tubes from step 3 labeled with "100 ng/mL aTc" add 20 uL of aTc.
+5. To all of the tubes from step 3 labelled with "10 ng/mL aTc" add 2 uL of aTc.
+6. Label and empty Eppendorf tube "10ug/mL aTc." Add 10uL of aTc to 90uL of molecular grade H20 in this tube. Mix by vortexing and briefly centrifuge tube contents.
+7. To all of the tubes from step 3 labelled with "1 ng/mL aTc" add 2 uL 10 ug/mL aTc from step 5.
+8. To all of the tubes from step 3 labelled with "17 ug/mL chlor" add 10uL of dChlor.
+9. To all of the tubes from step 3 labelled with "6.8 ug/mL chlor" add 4uL of dChlor.
+10. Mix all 9 Eppendorf tubes from step 3 now with their added chemicals by vortexing and briefly centrifuge tube contents.
+11. Add all off the contents of the tubes from step 10 to the ampicillin plate with the same name.
+12. Add 5-8 media-spreading beads to each ampicillin plate and shake the plates to top-spread the solution.
+13. Once the solution is absorbed, discard the beads in the bead disposal and let the plates sit with their lids on for 20 minutes.
+14. Remove the overnights of the variants from Day 1 from the 42C incubator. 
+15. Using the multichannel pipette, suck up 20uL of each variant in one row of the grid, and spot ~2uL into the appropriate spot on each plate.
+16. Once all variants have been spotted, let each plate dry for 10 minutes, or until the droplets dry.
+17. Place each plate, upside-down, in 30C incubator overnight.
 
 Day 3
 ------
