@@ -1,7 +1,7 @@
 Counting colonies with openCFU
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Description:
+Description: Semi-automating CFU measurements for fluorescent plates. Uses openCFU software, version 3.8.8 (http://opencfu.sourceforge.net/).
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ####Total duration: 7 minutes per plate ####
