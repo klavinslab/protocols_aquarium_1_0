@@ -68,37 +68,47 @@ Day 2
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-##Protocol##
+##Assay##
 
-Day 1
+###### Day 1
 
-1. For each strain pick from glycerol stock into 200 uL of LB + kan + low amp in a 1.5 mL centrifuge tube
-2. Streak out 1 uL of each strain on LB + kan + low amp + IPTG plates, or aTc plates depending on desired initilization state
-3. Place plates in 37 C incubator, dispose of 200 uL cultures
+1. For each strain pick from glycerol stock into 200 uL of LB + kan + low amp in a 1.5 mL centrifuge tube.
+2. Streak out 1 uL of each strain on LB + kan + low amp + 1 mM IPTG plates, or 1 ng/mL aTc plates depending on desired initilization state.
+3. Place plates in 37 C incubator, dispose of 200 uL cultures.
 
 
-Day 2
+###### Day 2
 
-1. Retrieve plates form 37 C incubator, or deli fridge if the first day was skipped and desired colonies are already avaliable
+1. Retrieve plates form 37 C incubator, or deli fridge if the first day was skipped and desired colonies are already avaliable.
 2. Pick one colony per streak into 200 uL of LB + kan + low amp in a 1.5 mL centrifuge tube.
 3. Dilute each resuspended colony 10:1 into LB + kan + low amp (20 uL into 180 uL).
-3. Go to media bay and set up one 20 mL glass tube per colony with 6 mL of LB + kan + low amp, label side of each tube.
-4. Inoculate media with resuspended colony by adding 0.5 uL of the 10:1 diluted sample into its respecitve LB tube.
-5. Place tubes in the 30 C shaker, dispose of 200 uL cultures
-6. Parafilm plates and place in designated are in the deli fridge
-7. 
+4. Go to media bay and set up one 20 mL glass tube per colony with 6 mL of LB + kan + low amp, label side of each tube.
+5. Inoculate media with resuspended colony by adding 0.5 uL of the 10:1 diluted sample into its respecitve LB tube.
+6. Place tubes in the 30 C shaker, dispose of 200 uL cultures.
+7. Parafilm plates and place in designated are in the deli fridge.
 
-Day 3
+###### Day 3
 
-1. Set up cytometer plate by adding 50 uL of PBS to every even numbered column (or however many is enough to accomodate every strain)
-2. Add 199 uL PBS to the odd numbered column (or however many is enough to accomodate every strain)
-3. Add 1 uL of culture from the tall tubes to a well
-4. Run cytometer plate using the template in the Paper Assays Folder
-5. Ensure percent green is consistent with previously established results
-6. Inoculate 30 uL of the LB overnight into a 3 mL M9 0.4% PASC culture (with 200:1 kan and 500:1 amp) in a 14 mL glass tube.
-7. Moderately vortex culture (avoid splashing) for 10 seconds and sample 100 uL for initial CFU count.
-8. Place PASC culture in 37 C incubator.
-9. Plate a 10^5 [serial dilution](https://github.com/klavinslab/protocols/blob/master/assays/assay_quality_CFU_plating_best_practices.md) of the starting culture and incubate at 37 C for 16-20 hours to obtain an initial CFU measurement.
+1. Set up cytometer plate by adding 50 uL of PBS to every even numbered column (or however many is enough to accomodate every strain).
+2. Add 199 uL PBS to the odd numbered column (or however many is enough to accomodate every strain).
+3. Add 1 uL of culture from the tall tubes to a well.
+4. Label sample wells with strain number in cytometer file.
+5. Run cytometer plate using the template in the Paper Assays Folder
+6. Ensure percent green is consistent with previously established results
+7. Inoculate 30 uL of the LB overnight into a 3 mL M9 0.4% PASC culture (with 200:1 kan and 500:1 amp) in a 14 mL glass tube.
+8. Moderately vortex culture (avoid splashing) for 10 seconds and sample 100 uL for initial CFU count.
+9. Place PASC culture in 37 C incubator.
+10. Plate a 10^5 [serial dilution](https://github.com/klavinslab/protocols/blob/master/assays/assay_quality_CFU_plating_best_practices.md) of the starting culture and incubate at 37 C for 16-20 hours to obtain an initial CFU measurement.
+
+###### Day 4-7
+
+1. Prepare Corning Costar 3975 (clear, round-bottom) plate by adding 180 uL to all columns of rows B through H using multichannel pipettor.
+2. Remove culture from 37 C incubator.
+3. Moderately vortex culture to resuspend PASC accumulated on tube walls.
+4. Sample 100 uL into wells of Row A of multi-well plate.
+5. Plate a serial dilution following the assay-quality CFU [protocol](https://github.com/klavinslab/protocols/blob/master/assays/assay_quality_CFU_plating_best_practices.md). If the previous day's colony count exceeded 150 at 10^5 dilution, plate both 10^5 and 10^6 dilutions.
+
+**Continue this protocol for 96 hours from inoculation, sampling every 24 hours.**
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
     
