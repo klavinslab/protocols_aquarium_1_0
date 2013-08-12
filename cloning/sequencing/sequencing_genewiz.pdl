@@ -1,4 +1,7 @@
+<?xml version="1.0"?>
 <protocol name="DNA Sequencing">
+
+  <information>This protocol describes the process of preparing a DNA sample for sequencing through GeneWiz.</information>
 
   <argument>
     <name>replicates</name>
@@ -23,7 +26,7 @@
     <type>number</type>
     <description>Enter the concentration of the DNA sample (ng/µL).</description>
   </argument>
-  
+
   <argument>
     <name>DNA_length</name>
     <type>number</type>
@@ -60,22 +63,18 @@
 
   <assign><lhs>h2o_vol</lhs><rhs>12.5-%{DNA_seq_vol}</rhs></assign>
 
-  <information>
-    This protocol describes the process of preparing a DNA sample for sequencing through Genewiz. 
-  </information>
-
   <take>
     <object>PCR 12 Well Strip Tube</object>
     <quantity>1</quantity>
     <var>a</var>
   </take>
-  
+
   <take>
     <object>%{DNA_name} Sample</object>
     <quantity>1</quantity>
     <var>b</var>
   </take>
-  
+
   <take>
     <object>%{DNA_name} Sequencing Primer 10µM Aliquot</object>
     <quantity>1</quantity>
@@ -87,7 +86,7 @@
     <quantity>1</quantity>
     <var>d</var>
   </take>
-  
+
   <step>
     <description>Add %{DNA_seq_vol}µL of %{DNA_name} sample to %{replicates} PCR tube well(s).</description>
     <note>Cut off unused wells from the PCR 12 well tube strip</note>
@@ -101,8 +100,8 @@
   <step>
     <description>Add %{h2o_vol}µL of molecular water to the PCR tube well(s).</description>
   </step>
-  
-  <step> 
+
+  <step>
     <description>Write your first and last initials followed by the sample number starting at 1 and ending at %{replicates} on the side of each tube.</description>
     <note>If my name was Jon Doe, the PCR tubes would have the following written on them "JD01, JD02, JD03..."</note>
   </step>
@@ -111,7 +110,7 @@
     <description>Set up a sequencing order at www.genewiz.com.</description>
     <note>The Klavins Lab's quote number is: MS0721101</note>
     <warning>
-      If you do not have a Genewiz account, get a referral from someone with an account (5 free reactions for you, other rewards for them) or sign up. 
+      If you do not have a Genewiz account, get a referral from someone with an account (5 free reactions for you, other rewards for them) or sign up.
       Required information:
       ~PI/Group Leader: Eric Klavins~
       ~Institution Name: University of Washington Institution~
@@ -139,7 +138,7 @@
   <produce>
     <object>Sequence Order</object>
     <quantity>1</quantity>
-  </produce>  
+  </produce>
 
   <release>[%{a}[0], %{b}[0], %{c}[0], %{d}[0]]</release>
 
