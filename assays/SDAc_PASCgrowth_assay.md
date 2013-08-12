@@ -1,4 +1,4 @@
-SDAc PASC Full Run Assay
+SDAc PASC Growth Assay
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Description:
