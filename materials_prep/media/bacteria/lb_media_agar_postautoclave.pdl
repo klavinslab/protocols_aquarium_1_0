@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<protocol name="LB agar">
+
+  <information>Prepare LB agar media for pouring plates.</information>
+
+  <!-- Arguments -->
+  <!-- IDEA: Do we ever make LB agar plates without antibiotics? -->
+  <!-- IDEA: what if we want more than one antibiotic? -->
+  <argument>
+    <name>antibiotic</name>
+    <type>string</type>
+    <!-- Allowed strings are: Amp, Kan, Chlor -->
+    <description>Enter the antibiotic to use for this batch.</description>
+  </argument>
+
+  <!-- Initial takes -->
+  <take>
+    <!-- Is there a way to include a note about this thing being crazy hot? -->
+    <object>800mL Agar Media (sterile)</object>
+    <quantity>1</quantity>
+    <var>bottle</var>
+  </take>
+  <!-- TODO: take the stir plate -->
+  <!-- Begin steps -->
+  <!-- TODO: Should take/release the gloves, too! -->
+  <!-- Put bottle on stir plate -->
+  <step>
+    <description>Place the agar media bottle on the stir plate.</description>
+    <warning>Use heat-resistant, waterproof gloves</warning>
+  </step>
+  <!-- Set stir plate settings -->
+  <step>
+    <description>Heat stir plate to 65°C and 700 RPM.</description>
+  </step>
+  <!-- TODO: There's a wait step somewhere in here. How long does it take to equilibriate? -->
+  <!-- For Kanamycin: -->
+  <!-- Technically I want an if, then an elif, then another elif, then an else, and the else should be angry that you didn't give the right input -->
+  <if>
+    <!-- Can I do string literals like this? -->
+    <condition>%{antibiotic} == "Kan"</condition>
+    <then>
+      <assign>
+        <!-- This is in mL -->
+        <lhs>antibiotic_volume</lhs>
+        <!-- Kan is at 200X-->
+        <rhs>800 / 200</rhs>
+      </assign>
+      <take>
+        <!-- FIXME: object description has to be more specific than this -->
+        <object>Kanymycin aliquot</object>
+        <!-- Can I do math here (I want 'ceil' or integer division)? -->
+        <quantity>%{antibiotic_volume}</quantity>
+        <var>antibiotic</var>
+      </take>
+    </then>
+    <else></else>
+  </if>
+  <!-- For Ampicillin: -->
+  <if>
+    <condition>%{antibiotic} == "Amp"</condition>
+    <then>
+      <assign>
+        <!-- This is in mL -->
+        <lhs>antibiotic_volume</lhs>
+        <!-- Amp is at 100X-->
+        <rhs>800 / 200</rhs>
+      </assign>
+      <take>
+        <!-- FIXME: object description has to be more specific than this -->
+        <object>Ampicillin aliquot</object>
+        <!-- Can I do math here (I want 'ceil' or integer division)? -->
+        <quantity>%{antibiotic_volume}</quantity>
+        <var>antibiotic</var>
+      </take>
+    </then>
+    <else></else>
+  </if>
+  <!-- For Chloramphenicol: -->
+  <if>
+    <condition>%{antibiotic} == "Chlor"</condition>
+    <then>
+      <assign>
+        <!-- This is in mL -->
+        <lhs>antibiotic_volume</lhs>
+        <!-- Amp is at 1000X-->
+        <rhs>800 / 1000</rhs>
+      </assign>
+      <take>
+        <!-- FIXME: object description has to be more specific than this -->
+        <object>Chloramphenicol aliquot</object>
+        <!-- Can I do math here (I want 'ceil' or integer division)? -->
+        <quantity>%{antibiotic_volume}</quantity>
+        <var>antibiotic</var>
+      </take>
+    </then>
+    <else></else>
+  </if>
+  <!-- Add antibiotic -->
+  <step>
+    <description>Add antibiotic</description>
+    <note>Add %{antibiotic_volume}mL of %{antibiotic} to the LB Agar bottle.</note>
+  </step>
+
+  <!-- Produces -->
+  <!-- TODO: Include plate pouring protocol here - plates should be produced at the end of this protocol -->
+  <!-- TODO: update releases -->
+  <release></release>
+
+</protocol>

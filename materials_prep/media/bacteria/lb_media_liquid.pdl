@@ -4,7 +4,7 @@
   <information>Prepare a bottle of LB Media (rich media for bacteria).</information>
 
   <!-- Arguments -->
-  <!-- IDEA: make different volumes of LB? -->
+    <!-- None! -->
   <!-- Begin takes -->
   <take>
     <object>1L Bottle</object>
@@ -31,17 +31,12 @@
   </step>
   <!-- Weigh out LB powder -->
   <step>
-    <description>Measure 20g of LB Powder.</description>
-    <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, add 20g of LB Powder into the plastic boat. If too much was added, remove excess to waste container using spatula.</note>
+    <description>Measure 20g of LB Powder and add to the bottle.</description>
+    <!-- Picture would be good here -->
+    <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, add 20g of LB Powder into the plastic boat. If too much was added, remove excess to waste container using spatula. Pour into bottle using a corner of the weigh boat.</note>
   </step>
   <!-- Throw away the boat -->
   <release>%{boat}[0]</release>
-  <!-- Pour powder into the bottle -->
-  <step>
-    <description>Pour the measured LB Powder into the 1L bottle.</description>
-    <!-- Picture would be good here -->
-    <note>To prevent spilling, hold the boat at two of the corners and pinch slightly, then pour out one of the other corners.</note>
-  </step>
   <!-- Add water -->
   <!-- IDEA: should we 'take' DI water? -->
   <step>
