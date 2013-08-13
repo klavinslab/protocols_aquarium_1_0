@@ -1,4 +1,3 @@
-
 Pouring Agar
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -10,7 +9,7 @@ Description: This protocol describes the steps needed to generate plate media fr
 
     - Day 1: 10 minutes
 	- Dat 2: 10 minutes
-    
+
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 ####Required equipment and materials####
@@ -32,7 +31,7 @@ Day 1
         + Location: on hand
 
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 ##Protocol##
 
@@ -47,9 +46,9 @@ Day 1
 7. Retrieve plates from 30C incubator and back into sleeves
 8. Store at 4C in the deli fridge
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-    
-    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
 ####Additional Information and Settings####
 
 	None
@@ -59,6 +58,6 @@ Day 1
     Pour Ring Malformed:
         - Sometimes the pour ring is malformed, making pouring difficult, obatain a good pour ring that is sterile and replace the one on the bottle
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-       
-For questions, contact David at davidzng@uw.edu    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+For questions, contact David at davidzng@uw.edu

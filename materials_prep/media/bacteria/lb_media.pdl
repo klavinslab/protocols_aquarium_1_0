@@ -1,72 +1,65 @@
+<?xml version="1.0"?>
 <protocol>
-        <information>This prepares a bottle of LB Media for growing bacteria.</information>
 
-        <take>
-                <object>1000 mL Bottle</object>
-                <quantity>1</quantity>
-                <var>bottle</var>
-        </take>
+  <information>Prepare a bottle of LB Media (rich media for bacteria).</information>
 
-        <take>
-                <object>LB Media Powder</object>
-                <quantity>1</quantity>
-                <var>lb</var>
-        </take>
+  <!-- Arguments -->
+  <!-- IDEA: make different volumes of LB? -->
+  <!-- Begin takes -->
+  <take>
+    <object>1L Bottle</object>
+    <quantity>1</quantity>
+    <var>bottle</var>
+  </take>
+  <take>
+    <object>LB Media Powder</object>
+    <quantity>1</quantity>
+    <var>lb_powder</var>
+  </take>
+  <take>
+    <object>Weigh Boat (L)</object>
+    <quantity>1</quantity>
+    <var>boat</var>
+  </take>
 
-        <take>
-                <object>Weigh Boat (L)</object>
-                <quantity>1</quantity>
-                <var>boat</var>
-        </take>
+  <!-- Begin steps -->
+  <!-- Label bottle -->
+  <!-- FIXME: Is this not automated/more specified in some way? -->
+  <step>
+    <description>Label the bottle.</description>
+    <note>Write LB Growth Media on a label, stick it to the bottle. Affix a piece of autoclave tape to the bottle as well.</note>
+  </step>
+  <!-- Weigh out LB powder -->
+  <step>
+    <description>Measure 20g of LB Powder.</description>
+    <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, add 20g of LB Powder into the plastic boat. If too much was added, remove excess to waste container using spatula.</note>
+  </step>
+  <!-- Throw away the boat -->
+  <release>%{boat}[0]</release>
+  <!-- Pour powder into the bottle -->
+  <step>
+    <description>Pour the measured LB Powder into the 1L bottle.</description>
+    <!-- Picture would be good here -->
+    <note>To prevent spilling, hold the boat at two of the corners and pinch slightly, then pour out one of the other corners.</note>
+  </step>
+  <!-- Add water -->
+  <!-- IDEA: should we 'take' DI water? -->
+  <step>
+    <description>Fill the bottle to the 800mL mark with deionized water.</description>
+  </step>
+  <!-- Mix -->
+  <step>
+    <description>Cap and mix.</description>
+    <note>Tightly close the cap on the 1L bottle and shake until all contents are dissolved. To check for dissolution, let the bottle rest for 10s, then pick up and look for sediment on the bottom. This step may take 5 minutes or more.</note>
+  </step>
 
+  <!-- Produce -->
+  <produce>
+    <object>1L LB Liquid Media (unsterile)</object>
+    <quantity>1</quantity>
+  </produce>
 
-        <step>
-                <description>Label the bottle</description>
-                <note>Write LB Growth Media
-                on a label, stick it to the bottle.
-                Affix a piece of autoclave tape to the bottle as well.
-                </note>
-        </step>
-
-
-        <step>
-                <description>Measure 20g of LB Powder </description>
-                <note>Place the plastic boat on the scale. Zero the scale.
-                Using the spatula, measure 20g of LB Powder into the plastic boat.
-                </note>
-        </step>
-
-        <release>
-                %{boat}
-        </release>
-
-        <step>
-                <description>Pour the measured LB Powder into the 1000 mL bottle.</description>
-        </step>
-
-        <step>
-                <description>Add 800 mL of DI water into the bottle</description>
-        </step>
-
-        <step>
-                <description>Close liter bottle and shake until all contents are solvated</description>
-        </step>
-
-        <produce>
-                <object>1000 mL LB Liquid Media (unsterile)</object>
-                <quantity>1</quantity>
-        </produce>
-
-        <release>
-                %{lb}
-        </release>
-
-        <release>
-                %{bottle}
-        </release>
-
-        <step>
-                <description>Done. Thank you for running this protocol.</description>
-        </step>
+  <!-- Final releases -->
+  <release>%{lb}[0], %{bottle}[0]</release>
 
 </protocol>
