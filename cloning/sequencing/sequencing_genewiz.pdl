@@ -3,113 +3,132 @@
 
   <information>This protocol describes the process of preparing a DNA sample for sequencing through GeneWiz.</information>
 
+  <!-- Arguments -->
+  <!-- TODO: handle submission of bacteria on plates -->
   <argument>
-    <name>replicates</name>
-    <type>number</type>
-    <description>Enter the number of sample replicates to be sequenced</description>
-  </argument>
-
-  <argument>
-    <name>DNA_type</name>
+    <name>sample_type</name>
     <type>string</type>
     <description>Enter the DNA type (fragment or plasmid).</description>
   </argument>
-
   <argument>
-    <name>DNA_name</name>
-    <type>string</type>
-    <description>Enter the DNA sample name.</description>
+    <name>sample_id</name>
+    <type>number</type>
+    <description>Enter the ID of the sample to be sequenced.</description>
   </argument>
-
   <argument>
-    <name>DNA_concentration</name>
+    <name>sample_conc</name>
     <type>number</type>
     <description>Enter the concentration of the DNA sample (ng/µL).</description>
   </argument>
-
   <argument>
-    <name>DNA_length</name>
+    <name>sample_length</name>
     <type>number</type>
-    <description>Enter the length in base pairs of the DNA sample.</description>
+    <description>Enter the number of base pairs (length) of the sample.</description>
+  </argument>
+  <argument>
+    <name>primer_id</name>
+    <type>number</type>
+    <description>Enter the sequencing primer ID.</description>
   </argument>
 
-  <assign><lhs>DNA_seq_vol</lhs><rhs>0</rhs></assign>
-
+  <!-- Calculate volume of template to add -->
   <if>
-    <condition>%{DNA_type} == 'plasmid'</condition>
+    <!-- For plasmids -->
+    <condition>%{sample_type} == 'plasmid'</condition>
     <then>
-      <if>
-        <condition>%{DNA_length} &lt; 6000</condition>
-        <then>
-          <assign><lhs>DNA_seq_vol</lhs><rhs>%{DNA_seq_vol} + 500 / %{DNA_concentration}</rhs></assign>
-        </then>
-        <else>
-          <assign><lhs>DNA_seq_vol</lhs><rhs>%{DNA_seq_vol} + 800 / %{DNA_concentration}</rhs></assign>
-        </else>
-      </if>
+      <!-- For plasmids, we generally ignore GeneWiz's recommendations and instead approximate them by adding (len)/10 ng of DNA -->
+      <assign>
+        <lhs>dna_vol</lhs>
+        <rhs>%{sample_length} / 10.0 / %{sample_conc}</rhs>
+      </assign>
     </then>
+    <!-- For PCR fragments -->
     <else>
+    <!-- This appears to be about right, but is NOT GeneWiz's exact recommendation -->
       <if>
-        <condition>%{DNA_length} &lt; 500</condition>
+        <condition>%{sample_length} &lt; 4000</condition>
         <then>
-          <assign><lhs>DNA_seq_vol</lhs><rhs>%{DNA_seq_vol} + 10 / %{DNA_concentration}</rhs></assign>
+          <assign>
+            <lhs>dna_vol</lhs>
+            <rhs>%{sample_length} / 37.5 / %{sample_conc}</rhs>
+          </assign>
         </then>
         <else>
-          <assign><lhs>DNA_seq_vol</lhs><rhs>%{DNA_seq_vol} + 40 / %{DNA_concentration}</rhs></assign>
+          <assign>
+            <lhs>dna_vol</lhs>
+            <rhs>%{sample_length} / 10 / %{sample_conc}</rhs>
+          </assign>
         </else>
       </if>
     </else>
   </if>
+  <!-- If template is too dilute, will fail to add enough -->
+  <!-- Should probably get some kind of feedback on how much plasmid there is left / allow aborting for that reason -->
+  <!-- TODO: this will differ depending on if one is using our primers or GeneWiz's! -->
+  <if>
+    <condition>%{dna_vol} &gt; 12.5</condition>
+    <then>
+      <assign>
+        <lhs>dna_vol</lhs>
+        <rhs>12.5</rhs>
+      </assign>
+      <!-- TODO: issue a warning or something here (added too little template) -->
+    </then>
+    <else></else>
+  </if>
+  <!-- Water to add -->
+  <assign>
+    <lhs>h2o_vol</lhs>
+    <rhs>12.5 - %{dna_vol}</rhs>
+  </assign>
 
-  <assign><lhs>h2o_vol</lhs><rhs>12.5-%{DNA_seq_vol}</rhs></assign>
-
+  <!-- Initial takes -->
   <take>
     <object>PCR 12 Well Strip Tube</object>
     <quantity>1</quantity>
-    <var>a</var>
+    <var>tube</var>
   </take>
-
+  <!-- FIXME: need to refer to specific ID of a sample type programmatically -->
+  <!-- TODO: If miniprep take Miniprep of ID, else take PCR product of ID -->
   <take>
-    <object>%{DNA_name} Sample</object>
+    <object>Miniprep</object>
     <quantity>1</quantity>
-    <var>b</var>
+    <var>dna</var>
   </take>
-
+  <!-- TODO: refer to specific ID of the aliquot -->
   <take>
-    <object>%{DNA_name} Sequencing Primer 10µM Aliquot</object>
+    <object>Primer, 10µM</object>
     <quantity>1</quantity>
-    <var>c</var>
+    <var>primer</var>
   </take>
-
   <take>
-    <object>30mL Molecular Water Aliquot</object>
+    <object>50mL Molecular Grade Water Aliquot</object>
     <quantity>1</quantity>
-    <var>d</var>
+    <var>h20</var>
   </take>
 
+  <!-- Begin steps -->
   <step>
-    <description>Add %{DNA_seq_vol}µL of %{DNA_name} sample to %{replicates} PCR tube well(s).</description>
-    <note>Cut off unused wells from the PCR 12 well tube strip</note>
+    <description>Add %{h2o_vol}µL of molecular grade water to the strip tube.</description>
+    <note>Cut unused wells from the PCR 12 well tube strip.</note>
   </step>
-
+  <!-- TODO: Add either plasmid or fragment by ID -->
   <step>
-    <description>Add 2.5µL of the %{DNA_name} Sequencing Primer to the PCR tube well(s).</description>
-    <warning>Must use the 10µM primer aliquot and not the undilute sequencing primer stock</warning>
+    <description>Add %{sample_vol}µL of plasmid %{sample_id} miniprep to the strip tube.</description>
   </step>
-
   <step>
-    <description>Add %{h2o_vol}µL of molecular water to the PCR tube well(s).</description>
+    <description>Add 2.5µL of primer %{primer_id} to the strip tube.</description>
+    <warning>Must use the 10µM primer aliquot.</warning>
   </step>
-
   <step>
-    <description>Write your first and last initials followed by the sample number starting at 1 and ending at %{replicates} on the side of each tube.</description>
-    <note>If my name was Jon Doe, the PCR tubes would have the following written on them "JD01, JD02, JD03..."</note>
+    <description>Write your initials on the tube followed by '01'.</description>
+    <note>Write vertically. If your name were John Doe, the PCR tube would look like this: "JD01", but vertical</note>
   </step>
-
   <step>
+    <!-- TODO: this should be automated -->
     <description>Set up a sequencing order at www.genewiz.com.</description>
-    <note>The Klavins Lab's quote number is: MS0721101</note>
-    <warning>
+    <note>The Klavins Lab's quote number is: MS0721101.</note>
+    <!-- Note:
       If you do not have a Genewiz account, get a referral from someone with an account (5 free reactions for you, other rewards for them) or sign up.
       Required information:
       ~PI/Group Leader: Eric Klavins~
@@ -118,28 +137,31 @@
       ~Work Phone: your number or 206-221-0941 (B040 lab number) or 206-552-9869 (soslab.general Google Voice number)~
       ~Billing and Lab shipping address: University of Washington 185 Stevens Way Paul Allen Center Room AE100R Box 352500 Seattle, WA 98195-2500~
       ~Bill to: Jack Lockhart at University of Washington~
-    </warning>
+    -->
   </step>
-
   <step>
-    <description>Print out the order conformation form.</description>
+    <description>Print out the order confirmation form.</description>
   </step>
-
   <step>
-    <description>Place the labled PCR tubes and the printed order confirmation sheet into a clear plastic ziplock bag and seal it.</description>
-    <note>The order confirmation can be folded in order to place it into the ziplock bag</note>
+    <description>Put the labeled aliquot and confirmation sheet in a clear ziplock bag</description>
+    <note>Seal the bag</note>
   </step>
-
+  <!-- TODO: should make the dropbox a piece of equipment so its location can be acquired! -->
   <step>
-    <description>Place the ziplock bag into the Genewiz mailbox located at xx.</description>
-    <note>Orders will be picked up at 4:00pm each day and results will be delieverd to the account used to place the order by 1am the following day</note>
+    <description>Place the ziplock bag into the Genewiz dropbox.</description>
+    <!-- Note:
+    Orders will be picked up at 4:00pm each day and results will be delivered to the account used to place the order by 1am the following day
+    -->
   </step>
 
+  <!-- Should anything be produced? These samples basically disappear forever -->
+  <!-- TODO: should release tube within produce tag -->
   <produce>
     <object>Sequence Order</object>
     <quantity>1</quantity>
   </produce>
 
-  <release>[%{a}[0], %{b}[0], %{c}[0], %{d}[0]]</release>
+  <!-- Releases -->
+  <release>[%{tube}[0], %{dna}[0], %{primer}[0], %{h2o}[0]]</release>
 
 </protocol>
