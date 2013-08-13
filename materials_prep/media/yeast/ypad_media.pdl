@@ -1,129 +1,96 @@
-<protocol name="Make YPAD Media">
-<information>Make a batch of YPAD yeast media.</information>
+<?xml version="1.0"?>
+<protocol>
 
-    <take>
-        <object>Scale</object>
-        <quantity>1</quantity>
-        <var>balance</var>
-    </take>
-    <take>
-        <object>1000 mL Bottle</object>
-        <quantity>1</quantity>
-        <var>bottle</var>
-    </take>
-    <take>
-        <object>Weigh Boat (L)</object>
-        <quantity>1</quantity>
-        <var>boat_large</var>
-    </take>
-    <take>
-        <object>Bacto Yeast Extract</object>
-        <quantity>1</quantity>
-        <var>yeast_extract</var>
-    </take>
-    <take>
-        <object>Bacto Peptone</object>
-        <quantity>1</quantity>
-        <var>bacto_peptone</var>
-    </take>
-    <take>
-        <object>Dextrose</object>
-        <quantity>1</quantity>
-        <var>dextrose</var>
-    </take>
-    <take>
-        <object>Adenine Hemisulfate</object>
-        <quantity>1</quantity>
-        <var>adenine_hemisulfate</var>
-    </take>
-    <take>
-        <object>Autoclave Tape</object>
-        <quantity>1</quantity>
-        <var>autoclave_tape</var>
-    </take>
+  <information>Make 800mL of YPAD yeast media.</information>
 
- 
+  <!-- Arguments -->
+    <!-- None! -->
+  <!-- Initial takes -->
+  <take>
+    <!-- Bottle just needs to be clean... -->
+    <object>1L Bottle (sterile)</object>
+    <quantity>1</quantity>
+    <var>bottle</var>
+  </take>
+  <take>
+    <object>Weigh Boat (L)</object>
+    <quantity>1</quantity>
+    <var>boat</var>
+  </take>
+  <take>
+    <object>Bacto Yeast Extract</object>
+    <quantity>1</quantity>
+    <var>yeast_extract</var>
+  </take>
+  <take>
+    <object>Bacto Peptone</object>
+    <quantity>1</quantity>
+    <var>bacto_peptone</var>
+  </take>
+  <take>
+    <object>Dextrose</object>
+    <quantity>1</quantity>
+    <var>dextrose</var>
+  </take>
+  <take>
+    <object>Adenine Hemisulfate</object>
+    <quantity>1</quantity>
+    <var>adenine_hemisulfate</var>
+  </take>
+  <take>
+    <object>Scale</object>
+    <quantity>1</quantity>
+    <var>balance</var>
+  </take>
 
-    <step>
-        <description>Label the bottle</description>
-        <note>Write
-            label: YPAD Yeast Media
-            id : 
-            date: 
-        on a label, stick it to the bottle.
-        Affix a piece of autoclave tape to the bottle as well.
-        </note>
-    </step>
-    
-    <step>
-        <description>Add 500 mL of DI water.</description>
-        <note>Use the DI water near the sink.</note>
-    </step>
-    
-    <step>
-        <description>Measure 8 g of Bacto Yeast Extract</description>
-        <note>
-            Place the plastic boat on the scale.
-            Zero the scale.
-            Using the spatula, measure 8 g of Bacto Yeast Extract 
-                into the plastic boat and add it to the bottle.               
-        </note>
-    </step> 
-    
-    
-    <step>
-        <description>Measure 16 g of Bacto Peptone</description>
-        <note>
-            Place the plastic boat on the scale.
-            Zero the scale.
-            Using the spatula, measure 16 g of Bacto Peptone 
-                into the plastic boat and add it to the bottle.                
-        </note>
-    </step>
-    
-    <step>
-        <description>Measure 16 g of Dextrose</description>
-        <note>
-            Place the plastic boat on the scale.
-            Zero the scale.
-            Using the spatula, measure 16 g of Dextrose 
-                into the plastic boat and add it to the bottle.               
-        </note>
-    </step>
-    
-    <step>
-        <description>Measure 64 mg of Adenine hemisulfate</description>
-        <note>
-            Place the plastic boat on the scale.
-            Zero the scale.
-            Using the spatula, measure 64 mg of Adenine hemisulfate 
-                into the plastic boat and add it to the bottle.                
-        </note>
-    </step>   
-    
-    <step>
-        <description>Add DI water to 800 mL.</description>
-        <note>Use the DI water near the sink.</note>
-    </step>
-    
-    <step>
-        <description>Mix.</description>
-        <note>Put a cap on the bottle and shake to mix the dry ingredients with the water.
-        Dry off the bottle with a paper towel. Place the bottle in location TBD.
-        </note>
-    </step>
+  <!-- TODO: Labeling should be more automated than what was here previously -->
+  <!-- Add water to bottle -->
+  <step>
+    <!-- Is this what Miles does? Water first? -->
+    <description>Add 500mL of DI water.</description>
+    <note>Measure using the bottle graduations.</note>
+  </step>
+  <!-- Add yeast extract to bottle -->
+  <!-- FIXME: Does it have to be bacto? Isn't bacto a brand? -->
+  <!-- FIXME: lookit all this redundancy -->
+  <step>
+    <description>Measure 8g of Bacto Yeast Extract.</description>
+    <note>Place the weigh boat on the scale. Zero the scale. Using the spatula, measure 8g of Bacto Yeast Extract into the plastic boat and add it to the bottle.</note>
+  </step>
+  <!-- Add peptone -->
+  <step>
+    <description>Measure 16g of Bacto Peptone.</description>
+    <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, measure 16g of Bacto Peptone into the plastic boat and add it to the bottle.</note>
+  </step>
+  <!-- Add dextrose -->
+  <step>
+    <description>Measure 16g of Dextrose.</description>
+    <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, measure 16g of dextrose into the plastic boat and add it to the bottle.</note>
+  </step>
+  <!-- Add adenine -->
+  <step>
+    <description>Measure 64mg of Adenine hemisulfate.</description>
+    <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, measure 64 mg of Adenine hemisulfate into the plastic boat and add it to the bottle.</note>
+  </step>
+  <!-- Add water again -->
+  <step>
+    <description>Add DI water to 800mL mark.</description>
+  </step>
+  <!-- Mix -->
+  <step>
+    <description>Mix.</description>
+    <note>Put a cap on the bottle and shake to mix the dry ingredients with the water until dissolved. This may take several minutes. To check for dissolution, let bottle sit for 10 seconds and check for sediment on the bottom.</note>
+  </step>
+  <!-- TODO: Add autoclave tape here / include autoclave protocol -->
 
-    <produce>
-        <object>800 mL Bottle of YPAD Media (not sterilized)</object>
-        <quantity>1</quantity>
-    </produce>  
+  <!-- Produces -->
+  <produce>
+    <object>800mL Bottle of YPAD Media (nonsterile)</object>
+    <quantity>1</quantity>
+  </produce>
 
-    <release>
-        [%{balance}[0],%{boat_large}[0],%{yeast_extract}[0],%{bacto_peptone}[0]] 
-    </release>
-
-    <release>
-        [%{dextrose}[0],%{adenine_hemisulfate}[0],%{autoclave_tape}[0]]
-    </release>
+  <!-- Releases -->
+  <release>[%{balance}[0], %{boat}[0], %{yeast_extract}[0], %{bacto_peptone}[0]]</release>
+  <release>[%{dextrose}[0], %{adenine_hemisulfate}[0], %{autoclave_tape}[0]]</release>
 
 </protocol>
