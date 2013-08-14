@@ -5,15 +5,15 @@
 
   <!-- Arguments -->
   <!-- Why are we asking the 'turker' to make this decision? Isn't this specified at a higher abstraction layer? -->
-  <!-- Commented out because no way to construct the string from ints + strings? -->
-  <assign><lhs>my_var</lhs><rhs>1 + "potato"</rhs></assign>
-  <!--
+  <!-- Can't refer to bottle 1, 2, etc: get this error: "String can't be coerced into Fixnum" -->
+  <!-- <assign><lhs>my_var</lhs><rhs>1 + "fish"</rhs></assign> -->
   <argument>
     <name>n_bottle</name>
     <type>number</type>
     <description>Enter the number of bottles you want to make.</description>
   </argument>
 
+  <!-- Initial takes -->
   <take>
     <item>
       <type>1000 mL Bottle</type>
@@ -32,66 +32,36 @@
     </item>
   </take>
 
-  <assign>
-    <lhs>counter</lhs>
-    <rhs>%{n_bottle}</rhs>
-  </assign>
-  <assign>
-    <lhs>bottle_string</lhs>
-    <rhs>"bottle 1"</rhs>
-  </assign>
-  <while>
-    <condition>%{counter} > 1</condition>
-    <do>
-      <assign>
-        <lhs>bottle_string</lhs>
-        <rhs>%{bottle_string} + ", bottle " + (%{n_bottle} - %{counter} + 2)</rhs>
-      </assign>
-      <assign>
-        <lhs>counter</lhs>
-        <rhs>%{counter} - 1</rhs>
-      </assign>
-    </do>
-  </while>
-
-  <step>
-    <description>Label bottle.</description>
-    <note>Write LB Growth Media and the bottle number on %{bottle_string} on a piece of tape. Stick it to the bottle.</note>
-  </step>
-  -->
-
   <!-- Begin steps -->
   <!-- Label bottle -->
   <!-- FIXME: Is this not automated/more specified in some way? -->
   <step>
-    <description>Label bottle.</description>
-    <note>Write LB Growth Media and the bottle number on %{bottle_string} on a piece of tape. Stick it to the bottle.</note>
+    <description>Label bottle(s).</description>
+    <note>Write LB Growth Media and the bottle number on a piece of tape. Stick one to the bottle(s).</note>
   </step>
-
-
   <!-- Weigh out LB powder -->
   <step>
-    <description>Measure 20g of LB Powder and add to the bottle.</description>
+    <description>Measure 20g of LB Powder and add to the bottle(s).</description>
     <!-- Picture would be good here -->
-    <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, add 20g of LB Powder into the plastic boat. If too much was added, remove excess to waste container using spatula. Pour into bottle using a corner of the weigh boat.</note>
+    <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, add 20g of LB Powder into the plastic boat. If too much was added, remove excess to waste container using spatula. Pour into bottle using a corner of the weigh boat. Repeat for other bottles, if applicable.</note>
   </step>
   <!-- Throw away the boat -->
   <release>%{boat}</release>
   <!-- Add water -->
   <!-- IDEA: should we 'take' DI water? -->
   <step>
-    <description>Fill the bottle to the 800mL mark with deionized water.</description>
+    <description>Fill the bottle(s) to the 800mL mark with deionized water.</description>
   </step>
   <!-- Mix -->
   <step>
     <description>Cap and mix.</description>
-    <note>Tightly close the cap on the 1L bottle and shake until all contents are dissolved. To check for dissolution, let the bottle rest for 10s, then pick up and look for sediment on the bottom. This step may take 5 minutes or more.</note>
+    <note>Tightly close the cap on the 1L bottle(s) and shake until all contents are dissolved. To check for dissolution, let the bottle rest for 10s, then pick up and look for sediment on the bottom. This step may take 5 minutes or more.</note>
   </step>
 
   <!-- Produce -->
   <produce>
     <object>800mL LB Liquid Media (unsterile)</object>
-    <quantity>1</quantity>
+    <quantity>%{n_bottle}</quantity>
   </produce>
 
   <!-- Final releases -->
