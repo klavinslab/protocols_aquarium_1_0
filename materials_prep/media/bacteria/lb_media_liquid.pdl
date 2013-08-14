@@ -38,7 +38,7 @@
     <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, add 20g of LB Powder into the plastic boat. If too much was added, remove excess to waste container using spatula. Pour into bottle using a corner of the weigh boat.</note>
   </step>
   <!-- Throw away the boat -->
-  <release>%{boat}[0]</release>
+  <release>%{boat}</release>
   <!-- Add water -->
   <!-- IDEA: should we 'take' DI water? -->
   <step>
@@ -52,11 +52,11 @@
 
   <!-- Produce -->
   <produce>
-    <object>1L LB Liquid Media (unsterile)</object>
+    <object>800mL LB Liquid Media (unsterile)</object>
     <quantity>1</quantity>
   </produce>
 
   <!-- Final releases -->
-  <release>%{lb}[0], %{bottle}[0]</release>
+  <release>[%{lb}, %{bottle}]</release>
 
 </protocol>
