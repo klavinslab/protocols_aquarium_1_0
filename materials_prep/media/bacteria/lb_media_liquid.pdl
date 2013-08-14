@@ -8,17 +8,17 @@
   <!-- Begin takes -->
   <take>
     <item>
-      <object>1000 mL Bottle</object>
+      <type>1000 mL Bottle</type>
       <quantity>1</quantity>
       <var>bottle</var>
     </item>
     <item>
-      <object>LB Media Powder</object>
+      <type>LB Media Powder</type>
       <quantity>1</quantity>
       <var>lb_powder</var>
     </item>
     <item>
-      <object>Weighing Boat</object>
+      <type>Weighing Boat</type>
       <quantity>1</quantity>
       <var>boat</var>
     </item>
