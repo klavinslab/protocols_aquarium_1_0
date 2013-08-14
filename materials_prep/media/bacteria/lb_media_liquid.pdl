@@ -7,19 +7,21 @@
     <!-- None! -->
   <!-- Begin takes -->
   <take>
-    <object>1000 mL Bottle</object>
-    <quantity>1</quantity>
-    <var>bottle</var>
-  </take>
-  <take>
-    <object>LB Media Powder</object>
-    <quantity>1</quantity>
-    <var>lb_powder</var>
-  </take>
-  <take>
-    <object>Weighing Boat</object>
-    <quantity>1</quantity>
-    <var>boat</var>
+    <item>
+      <object>1000 mL Bottle</object>
+      <quantity>1</quantity>
+      <var>bottle</var>
+    </item>
+    <item>
+      <object>LB Media Powder</object>
+      <quantity>1</quantity>
+      <var>lb_powder</var>
+    </item>
+    <item>
+      <object>Weighing Boat</object>
+      <quantity>1</quantity>
+      <var>boat</var>
+    </item>
   </take>
 
   <!-- Begin steps -->
