@@ -46,7 +46,7 @@
       <!-- Concatenate any other bottle names to string -->
       <assign>
         <lhs>bottle_string</lhs>
-        <rhs>%{bottle_string} + ", bottle " + (%{n_bottle} - counter + 2)</rhs>
+        <rhs>%{bottle_string} + ", bottle " + (%{n_bottle} - %{counter} + 2)</rhs>
       </assign>
       <!-- Decrement counter -->
       <assign>
