@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<protocol>
+
+  <information>Prepare a bottle of LB Media (rich media for bacteria).</information>
+
+  <!-- Arguments -->
+    <!-- None! -->
+  <!-- Begin takes -->
+  <!-- Weigh out LB powder -->
+  <step>
+    <description>Measure 20g of LB Powder and add to the bottle.</description>
+    <!-- Picture would be good here -->
+    <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, add 20g of LB Powder into the plastic boat. If too much was added, remove excess to waste container using spatula. Pour into bottle using a corner of the weigh boat.</note>
+  </step>
+  <!-- Throw away the boat -->
+  <release>%{boat}[0]</release>
+  <!-- Add water -->
+  <!-- IDEA: should we 'take' DI water? -->
+  <step>
+    <description>Fill the bottle to the 800mL mark with deionized water.</description>
+  </step>
+  <!-- Mix -->
+  <step>
+    <description>Cap and mix.</description>
+    <note>Tightly close the cap on the 1L bottle and shake until all contents are dissolved. To check for dissolution, let the bottle rest for 10s, then pick up and look for sediment on the bottom. This step may take 5 minutes or more.</note>
+  </step>
+
+  <!-- Produce -->
+  <produce>
+    <object>1L LB Liquid Media (unsterile)</object>
+    <quantity>1</quantity>
+  </produce>
+
+  <!-- Final releases -->
+  <release>%{lb}[0], %{bottle}[0]</release>
+
+</protocol>
