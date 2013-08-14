@@ -7,7 +7,7 @@
     <!-- None! -->
   <!-- Begin takes -->
   <take>
-    <object>1L Bottle</object>
+    <object>1000 mL Bottle</object>
     <quantity>1</quantity>
     <var>bottle</var>
   </take>
