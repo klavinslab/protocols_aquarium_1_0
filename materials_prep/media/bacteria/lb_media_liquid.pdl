@@ -5,13 +5,15 @@
 
   <!-- Arguments -->
   <!-- Why are we asking the 'turker' to make this decision? Isn't this specified at a higher abstraction layer? -->
+  <!-- Commented out because no way to construct the string from ints + strings? -->
+  <assign><lhs>my_var</lhs><rhs>1 + "potato"</rhs></assign>
+  <!--
   <argument>
     <name>n_bottle</name>
     <type>number</type>
     <description>Enter the number of bottles you want to make.</description>
   </argument>
 
-  <!-- Begin takes -->
   <take>
     <item>
       <type>1000 mL Bottle</type>
@@ -30,12 +32,10 @@
     </item>
   </take>
 
-  <!-- Construct the string referring to the bottles -->
   <assign>
     <lhs>counter</lhs>
     <rhs>%{n_bottle}</rhs>
   </assign>
-  <!-- Fencepost the string -->
   <assign>
     <lhs>bottle_string</lhs>
     <rhs>"bottle 1"</rhs>
@@ -43,18 +43,22 @@
   <while>
     <condition>%{counter} > 1</condition>
     <do>
-      <!-- Concatenate any other bottle names to string -->
       <assign>
         <lhs>bottle_string</lhs>
         <rhs>%{bottle_string} + ", bottle " + (%{n_bottle} - %{counter} + 2)</rhs>
       </assign>
-      <!-- Decrement counter -->
       <assign>
         <lhs>counter</lhs>
         <rhs>%{counter} - 1</rhs>
       </assign>
     </do>
   </while>
+
+  <step>
+    <description>Label bottle.</description>
+    <note>Write LB Growth Media and the bottle number on %{bottle_string} on a piece of tape. Stick it to the bottle.</note>
+  </step>
+  -->
 
   <!-- Begin steps -->
   <!-- Label bottle -->
@@ -63,6 +67,8 @@
     <description>Label bottle.</description>
     <note>Write LB Growth Media and the bottle number on %{bottle_string} on a piece of tape. Stick it to the bottle.</note>
   </step>
+
+
   <!-- Weigh out LB powder -->
   <step>
     <description>Measure 20g of LB Powder and add to the bottle.</description>
