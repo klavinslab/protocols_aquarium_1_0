@@ -6,6 +6,13 @@
   <!-- Arguments -->
     <!-- None! -->
   <!-- Begin takes -->
+  <!-- Begin steps -->
+  <!-- Label bottle -->
+  <!-- FIXME: Is this not automated/more specified in some way? -->
+  <step>
+    <description>Label the bottle.</description>
+    <note>Write LB Growth Media on a label, stick it to the bottle. Affix a piece of autoclave tape to the bottle as well.</note>
+  </step>
   <!-- Weigh out LB powder -->
   <step>
     <description>Measure 20g of LB Powder and add to the bottle.</description>
