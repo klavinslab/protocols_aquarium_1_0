@@ -57,7 +57,7 @@
   </produce>
 
   <!-- Final releases -->
-  <release>%{lb}</release>
+  <release>%{lb_powder}</release>
   <release>%{bottle}</release>
 
 </protocol>
