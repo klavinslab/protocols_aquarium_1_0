@@ -46,7 +46,7 @@
       <assign><lhs>bottle_string</lhs><rhs>"Bottle 1"</rhs></assign>
       <assign><lhs>counter</lhs><rhs>2</rhs></assign>
       <while>
-        <condition>%{counter} < %{n_bottle} + 1</condition>
+        <condition>%{counter} &lt; %{n_bottle} + 1</condition>
         <do>
           <assign><lhs>bottle_string</lhs><rhs>%{bottle_string} + ", Bottle " + %{counter}.to_s</rhs></assign>
         </do>
