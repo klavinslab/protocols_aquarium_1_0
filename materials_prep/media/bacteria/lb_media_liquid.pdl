@@ -9,60 +9,74 @@
   <argument>
     <name>n_bottle</name>
     <type>number</type>
-    <description>Enter the number of bottles you want to make.</description>
+    <description>Enter the number of bottles you want to make (maximum of 4).</description>
   </argument>
 
-  <!-- Initial takes -->
-  <take>
-    <item>
-      <type>1000 mL Bottle</type>
-      <quantity>%{n_bottle}</quantity>
-      <var>bottle</var>
-    </item>
-    <item>
-      <type>LB Media Powder</type>
-      <quantity>1</quantity>
-      <var>lb_powder</var>
-    </item>
-    <item>
-      <type>Weighing Boat</type>
-      <quantity>1</quantity>
-      <var>boat</var>
-    </item>
-  </take>
+  <if>
+    <condition>%{n_bottle} > 4 || %{n_bottle} < 0</condition>
+    <then>
+      <!-- Abort the protocol (warning message + put stuff away) -->
+      <step>
+        <description>Wrong number of bottles!</description>
+        <note>You can only specify 0-4 bottles!</note>
+      </step>
+    </then>
+    <else>
+      <!-- Do the protocol -->
+      <!-- Initial takes -->
+      <take>
+        <item>
+          <type>1000 mL Bottle</type>
+          <quantity>%{n_bottle}</quantity>
+          <var>bottle</var>
+        </item>
+        <item>
+          <type>LB Media Powder</type>
+          <quantity>1</quantity>
+          <var>lb_powder</var>
+        </item>
+        <item>
+          <type>Weighing Boat</type>
+          <quantity>1</quantity>
+          <var>boat</var>
+        </item>
+      </take>
 
-  <!-- Begin steps -->
-  <!-- Label bottle -->
-  <step>
-    <description>Label bottle(s).</description>
-    <note>Write LB Growth Media and the bottle number on a piece of tape. Stick one to the bottle(s).</note>
-  </step>
-  <!-- Weigh out LB powder -->
-  <step>
-    <description>Measure 20g of LB Powder and add to the bottle(s).</description>
-    <!-- Picture would be good here -->
-    <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, add 20g of LB Powder into the plastic boat. If too much was added, remove excess to waste container using spatula. Pour into bottle using a corner of the weigh boat. Repeat for other bottles, if applicable.</note>
-  </step>
-  <!-- Throw away the boat -->
-  <release>%{boat}</release>
-  <!-- Add water -->
-  <step>
-    <description>Fill the bottle(s) to the 800mL mark with deionized water.</description>
-  </step>
-  <!-- Mix -->
-  <step>
-    <description>Cap and mix.</description>
-    <note>Tightly close the cap on the 1L bottle(s) and shake until all contents are dissolved. To check for dissolution, let the bottle rest for 10s, then pick up and look for sediment on the bottom. This step may take 5 minutes or more.</note>
-  </step>
+      <!-- Begin steps -->
+      <!-- Label bottle(s) -->
+      <step>
+        <description>Label bottle(s).</description>
+        <note>Write LB Growth Media and the bottle number on a piece of tape. Stick one to each 1000 mL bottle.</note>
+      </step>
+      <!-- Weigh out LB powder -->
+      <step>
+        <description>Measure 20g of LB Powder and add to the bottle(s).</description>
+        <!-- Picture would be good here -->
+        <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, add 20g of LB Powder into the plastic boat. If too much was added, remove excess to waste container using spatula. Pour into bottle using a corner of the weigh boat. Repeat for other bottles, if applicable.</note>
+      </step>
+      <!-- Throw away the boat -->
+      <release>%{boat}</release>
+      <!-- Add water -->
+      <step>
+        <description>Fill the bottle(s) to the 800mL mark with deionized water.</description>
+      </step>
+      <!-- Mix -->
+      <step>
+        <description>Cap and mix.</description>
+        <note>Tightly close the cap on the 1000 mL bottle(s) and shake until all contents are dissolved. To check for dissolution, let the bottle rest for 10s, then pick up and look for sediment on the bottom. This step may take 5 minutes or more.</note>
+      </step>
 
-  <!-- Produce -->
-  <produce>
-    <object>800mL LB Liquid Media (unsterile)</object>
-    <quantity>%{n_bottle}</quantity>
-  </produce>
+      <!-- Produce -->
+      <produce>
+        <object>800mL LB Liquid Media (unsterile)</object>
+        <quantity>%{n_bottle}</quantity>
+      </produce>
 
-  <!-- Final releases -->
-  <release>%{lb_powder}</release>
-  <release>%{bottle}</release>
+      <!-- Final releases -->
+      <release>%{lb_powder}</release>
+      <release>%{bottle}</release>
+
+    </else>
+  </if>
 
 </protocol>
