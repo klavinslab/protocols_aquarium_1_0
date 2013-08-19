@@ -55,7 +55,7 @@
               <if>
                 <condition>%{n_bottle} == 2</condition>
                 <then>
-                  <assign><lhs>bottle_string</lhs><rhs>%{bottle_string} + "and Bottle " + %{counter}.to_s</rhs></assign>
+                  <assign><lhs>bottle_string</lhs><rhs>%{bottle_string} + " and Bottle " + %{counter}.to_s</rhs></assign>
                 </then>
                 <else>
                   <assign><lhs>bottle_string</lhs><rhs>%{bottle_string} + ", and Bottle " + %{counter}.to_s</rhs></assign>
