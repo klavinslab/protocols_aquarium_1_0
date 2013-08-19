@@ -13,7 +13,7 @@
   </argument>
 
   <if>
-    <condition>%{n_bottle} > 4 || %{n_bottle} < 0</condition>
+    <condition>%{n_bottle} &gt; 4 || %{n_bottle} &lt; 0</condition>
     <then>
       <!-- Abort the protocol (warning message + put stuff away) -->
       <step>
