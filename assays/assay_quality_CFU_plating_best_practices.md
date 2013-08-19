@@ -14,7 +14,7 @@ CFU plating process to produce as small of error bars as possible.
 
 
     * 37 degree Incubator
-        + Duration needed: 12-16 hours
+        + Duration needed: 14-18 hours
         + Location: [address]  
 ------
 
@@ -37,8 +37,10 @@ CFU plating process to produce as small of error bars as possible.
 
 ##Protocol##
 
+**Note: if the plates are coming from the fridge, place them in the 30 C incubator (no stacking) for 30-60 minutes while you follow the protocol to step 14.**
+
 1. Determine (estimate) the lowest dilution factor needed for your sample(s) that will 
-ideally give between 10 and 150 colonies on the incubated plate (E.G. saturated LB: 10^-7).
+ideally give between 20 and 250 colonies on the incubated plate (e.g. saturated LB: 10^-7).
 2. Label the appropriate agar plates with sample name and dilution factor.
 3. Add 5 to 8 sterile beads to each plate and then flip lid side down.
 4. Skipping the first row of a sterile 96 well plate, fill each well with 180 uL of PBS
@@ -77,12 +79,8 @@ complete.
     
 ####Additional Information and Settings####
 
-    [Parameter/variable/clarification/option 1]:
-        [Option 1]:
-        [Option 2]:
-    [Parameter/variable/clarification/option 2]:
-        [Option 1]:
-        [Option 2]:
+    Notes on tracking growth rates in PASC media:
+        When the cells are actively growing and reach at least 150 colonies on a plate at 10^5 dilution, plate a 10^5 and a 10^6 dilution. 
 
 
 ####Common Issues####
