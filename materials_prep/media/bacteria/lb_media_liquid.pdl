@@ -42,14 +42,14 @@
         </item>
       </take>
 
-      <!-- Calculate bottle names -->
+      <!-- Generate string for bottle names -->
       <assign><lhs>bottle_string</lhs><rhs>"Bottle 1"</rhs></assign>
       <assign><lhs>counter</lhs><rhs>2</rhs></assign>
       <while>
         <condition>%{counter} &lt; %{n_bottle} + 1</condition>
         <do>
           <if>
-            <!-- Last bottle - add 'and' -->
+            <!-- Last bottle - add 'and' (Oxford comma!) -->
             <condition>%{counter} == %{n_bottle}</condition>
             <then>
               <if>
@@ -63,6 +63,7 @@
               </if>
             </then>
             <else>
+              <!-- Not last bottle - separate by comma and space -->
               <assign><lhs>bottle_string</lhs><rhs>%{bottle_string} + ", Bottle " + %{counter}.to_s</rhs></assign>
             </else>
             <!-- increment counter -->
@@ -74,25 +75,26 @@
       <!-- Begin steps -->
       <!-- Label bottle(s) -->
       <step>
-        <description>Label bottle(s).</description>
-        <note>Write LB Growth Media and the bottle number on a piece of tape. Stick one to %{bottle_string}.</note>
+        <description>Label.</description>
+        <note>Label %{bottle_string} with 'LB Growth Media' and the bottle number using a piece of lab tape.</note>
       </step>
       <!-- Weigh out LB powder -->
       <step>
-        <description>Measure 20g of LB Powder and add to the bottle(s).</description>
+        <description>Measure and add 20g of LB Powder.</description>
         <!-- Picture would be good here -->
-        <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, add 20g of LB Powder into the plastic boat. If too much was added, remove excess to waste container using spatula. Pour into bottle using a corner of the weigh boat. Repeat for other bottles, if applicable.</note>
+        <note>Do this for %{bottle_string}: Place the plastic boat on the scale. Zero the scale. Using the spatula, add 20g of LB Powder into the plastic boat. If too much was added, remove excess to waste container using spatula. Pour into bottle using a corner of the weigh boat.</note>
       </step>
       <!-- Throw away the boat -->
       <release>%{boat}</release>
       <!-- Add water -->
       <step>
-        <description>Fill the bottle(s) to the 800mL mark with deionized water.</description>
+        <description>Add deionized water.</description>
+        <note>Fill %{bottle_string} to the 800mL mark with deionized water.</note>
       </step>
       <!-- Mix -->
       <step>
         <description>Cap and mix.</description>
-        <note>Tightly close the cap on the 1000 mL bottle(s) and shake until all contents are dissolved. To check for dissolution, let the bottle rest for 10s, then pick up and look for sediment on the bottom. This step may take 5 minutes or more.</note>
+        <note>Tightly close the cap on %{bottle_string} and shake until all contents are dissolved. To check for dissolution, let bottle rest for 10 seconds, then pick up and look for sediment on the bottom. This step may take 5 minutes or more.</note>
       </step>
 
       <!-- Produce -->
