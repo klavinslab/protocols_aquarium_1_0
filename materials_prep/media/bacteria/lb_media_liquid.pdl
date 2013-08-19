@@ -4,8 +4,7 @@
   <information>Prepare a bottle of LB Media (rich media for bacteria).</information>
 
   <!-- Arguments -->
-  <!-- Why are we asking the 'turker' to make this decision? Isn't this specified at a higher abstraction layer? -->
-  <!-- Can't refer to bottle 1, 2, etc: get this error: "String can't be coerced into Fixnum" -->
+  <!-- Can't programatically do itoa to bottle 1, 2, etc: get this error: "String can't be coerced into Fixnum" -->
   <!-- <assign><lhs>my_var</lhs><rhs>1 + "fish"</rhs></assign> -->
   <argument>
     <name>n_bottle</name>
@@ -34,7 +33,6 @@
 
   <!-- Begin steps -->
   <!-- Label bottle -->
-  <!-- FIXME: Is this not automated/more specified in some way? -->
   <step>
     <description>Label bottle(s).</description>
     <note>Write LB Growth Media and the bottle number on a piece of tape. Stick one to the bottle(s).</note>
@@ -48,7 +46,6 @@
   <!-- Throw away the boat -->
   <release>%{boat}</release>
   <!-- Add water -->
-  <!-- IDEA: should we 'take' DI water? -->
   <step>
     <description>Fill the bottle(s) to the 800mL mark with deionized water.</description>
   </step>
