@@ -16,17 +16,9 @@
     <condition>%{n_bottle} &gt; 4 || %{n_bottle} &lt; 1</condition>
     <then>
       <!-- Abort the protocol (warning message + put stuff away) -->
-      <assign>
-        <lhs>test_int</lhs>
-        <rhs>2</rhs>
-      </assign>
-      <assign>
-        <lhs>test_string</lhs>
-        <rhs>"hello " + %{test_int}.to_s</rhs>
-      </assign>
       <step>
         <description>Wrong number of bottles!</description>
-        <note>You can only specify 0-4 bottles! %{test_string}</note>
+        <note>You can only specify 0-4 bottles!</note>
       </step>
     </then>
     <else>
