@@ -22,7 +22,7 @@
       </assign>
       <assign>
         <lhs>test_string</lhs>
-        <rhs>"hello " + %{test_string}.to_s</rhs>
+        <rhs>"hello " + %{test_int}.to_s</rhs>
       </assign>
       <step>
         <description>Wrong number of bottles!</description>
