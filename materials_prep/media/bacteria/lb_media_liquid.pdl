@@ -42,11 +42,21 @@
         </item>
       </take>
 
+      <!-- Calculate bottle names -->
+      <assign><lhs>bottle_string</lhs><rhs>"Bottle 1"</rhs></assign>
+      <assign><lhs>counter</lhs><rhs>2</rhs></assign>
+      <while>
+        <condition>%{counter} < %{n_bottle} + 1</condition>
+        <do>
+          <assign><lhs>bottle_string</lhs><rhs>%{bottle_string} + ", Bottle " + %{counter}.to_s</rhs></assign>
+        </do>
+      </while>
+
       <!-- Begin steps -->
       <!-- Label bottle(s) -->
       <step>
         <description>Label bottle(s).</description>
-        <note>Write LB Growth Media and the bottle number on a piece of tape. Stick one to each 1000 mL bottle.</note>
+        <note>Write LB Growth Media and the bottle number on a piece of tape. Stick one to %{bottle_string}.</note>
       </step>
       <!-- Weigh out LB powder -->
       <step>
