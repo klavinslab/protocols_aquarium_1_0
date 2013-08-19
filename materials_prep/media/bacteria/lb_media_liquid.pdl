@@ -49,6 +49,7 @@
         <condition>%{counter} &lt; %{n_bottle} + 1</condition>
         <do>
           <assign><lhs>bottle_string</lhs><rhs>%{bottle_string} + ", Bottle " + %{counter}.to_s</rhs></assign>
+          <assign><lhs>counter</lhs><rhs>%{counter} + 1</rhs></assign>
         </do>
       </while>
 
