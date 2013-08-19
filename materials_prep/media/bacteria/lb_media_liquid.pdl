@@ -48,8 +48,26 @@
       <while>
         <condition>%{counter} &lt; %{n_bottle} + 1</condition>
         <do>
-          <assign><lhs>bottle_string</lhs><rhs>%{bottle_string} + ", Bottle " + %{counter}.to_s</rhs></assign>
-          <assign><lhs>counter</lhs><rhs>%{counter} + 1</rhs></assign>
+          <if>
+            <!-- Last bottle - add 'and' -->
+            <condition>%{counter} == %{n_bottle}</condition>
+            <then>
+              <if>
+                <condition>%{n_bottle} == 2</condition>
+                <then>
+                  <assign><lhs>bottle_string</lhs><rhs>%{bottle_string} + "and Bottle " + %{counter}.to_s</rhs></assign>
+                </then>
+                <else>
+                  <assign><lhs>bottle_string</lhs><rhs>%{bottle_string} + ", and Bottle " + %{counter}.to_s</rhs></assign>
+                </else>
+              </if>
+            </then>
+            <else>
+              <assign><lhs>bottle_string</lhs><rhs>%{bottle_string} + ", Bottle " + %{counter}.to_s</rhs></assign>
+            </else>
+            <!-- increment counter -->
+            <assign><lhs>counter</lhs><rhs>%{counter} + 1</rhs></assign>
+          </if>
         </do>
       </while>
 
