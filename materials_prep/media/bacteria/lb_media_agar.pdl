@@ -31,14 +31,19 @@
           <var>bottle</var>
         </item>
         <item>
-          <type>LB Media Powder</type>
+          <type>LB Agar Powder</type>
           <quantity>1</quantity>
-          <var>lb_powder</var>
+          <var>lb_agar_powder</var>
         </item>
         <item>
           <type>Weighing Boat</type>
           <quantity>1</quantity>
           <var>boat</var>
+        </item>
+        <item>
+          <type>Medium Magnetic Stir Bar</type>
+          <quantity>%{n_bottle}</quantity>
+          <var>stir_bar</var>
         </item>
       </take>
 
@@ -76,11 +81,16 @@
       <!-- Label bottle(s) -->
       <step>
         <description>Label.</description>
-        <note>Label %{bottle_string} with 'LB Growth Media' and the bottle number using a piece of lab tape.</note>
+        <note>Label %{bottle_string} with 'LB Agar Media' and the bottle number using a piece of lab tape.</note>
+      </step>
+      <!-- Add stir bar -->
+      <step>
+        <description>Add stir bar.</description>
+        <note>Add one stir bar to each bottle: %{bottle_string}.</note>
       </step>
       <!-- Weigh out LB powder -->
       <step>
-        <description>Measure and add 20g of LB Powder.</description>
+        <description>Measure and add 29.6g of LB Agar Powder.</description>
         <!-- Picture would be good here -->
         <note>Do this for %{bottle_string}: Place the plastic boat on the scale. Zero the scale. Using the spatula, add 20g of LB Powder into the plastic boat. If too much was added, remove excess to waste container using spatula. Pour into bottle using a corner of the weigh boat.</note>
       </step>
@@ -99,12 +109,12 @@
 
       <!-- Produce -->
       <produce>
-        <object>800mL LB Liquid Media (unsterile)</object>
+        <object>800mL LB Agar Media (unsterile)</object>
         <quantity>%{n_bottle}</quantity>
       </produce>
 
       <!-- Final releases -->
-      <release>%{lb_powder}</release>
+      <release>%{lb_agar_powder}</release>
       <release>%{bottle}</release>
 
     </else>
