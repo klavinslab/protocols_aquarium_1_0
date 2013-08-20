@@ -1,91 +1,60 @@
+<?xml version="1.0"?>
 <protocol name="Pour Agar">
-	<information>
-		This protocol describes the steps needed to generate plate media from liquid state agar.
-	</information>
-	
-	<take>
-		<object>
-			800 mL Liquid Agar
-		</object>
-		<quantity>
-			1
-		</quantity>
-		<var>
-			agar
-		</var>
-	</take>
-	<take>
-		<object>
-			Plastic Petri Dishes
-		</object>
-		<quantity>
-			40
-		</quantity>
-		<var>
-			plates
-		</var>
-	</take>
-	<step>
-		<description>
-			Open both sleeves of plastic petri dishes by tearing plastic sleeve open at the indicated position, invert the stack and pull on the bag to empty the contents
-		</description>
-        <note>
-        </note>
-	</step>
-	<while><condition>$plates$!=0</condition>
-		<do>
-			<step>
-				<description>
-					Open agar bottle and one petri dish, pour agar until roughly 75% of the plate surface is covered
-				</description>
-				<note>
-				</note>
-			</step>
-			<step>
-				<description>
-					In one quick swirling motion, cover the rest of the petri dish surface with agar and replace lid
-				</description>
-				<note>
-				</note>
-			</step>
-			<assign><var>plates</var>
-				<value>$plates$-1</value>
-			</assign>
-		</do>
-	</while>
-	<step>
-		<description>
-			Wait until plates are solidified
-		</description>
-        <note>
-        </note>
-	</step>
-	<step>
-		<description>
-			Place plates in 30C incubator for 12 hours
-		</description>
-        <note>
-        </note>
-	</step>
-	<step>
-		<description>
-			Store at 4C in the media fridge
-		</description>
-        <note>
-        </note>
-	</step>
-	<release>
-		<var>
-			agar
-		</var>
-	</release>
-	<produce>
-        <object>Agar Plates</object>
-        <quantity>40</quantity>
-    </produce>
-	
-	<step>
-			<description>Done. Thank you for running this protocol.</description>
-	</step>
-	
+
+  <information>Pour plates from 800mL of liquid state agar.</information>
+
+  <!-- Arguments -->
+  <argument>
+    <name>object_type</name>
+    <type>string</type>
+    <description>Enter the object type of the agar you'd like to pour (must be 800mL in a bottle).</description>
+  </argument>
+
+  <!-- Initial takes -->
+  <take>
+    <item>
+        <type>%{object_type}</type>
+        <quantity>1</quantity>
+        <var>agar_bottle</var>
+    </item>
+    <item>
+      <type>Plastic Petri Dishes</type>
+      <quantity>40</quantity>
+      <var>plates</var>
+    </item>
+  </take>
+
+  <!-- Start steps -->
+  <!-- TODO: Labeling step? Where does the info come from? Should we use the printer? Many labs use stamps. -->
+  <!-- Lay out plates individually -->
+  <step>
+    <description>Lay out plates on workspace.</description>
+    <note>Lay out plates individually on your workspace, lid side up, in preparation for pouring.</note>
+  </step>
+  <!-- Pour -->
+  <step>
+    <description>Pour plates.</description>
+    <notes>Pour about 25mL of media into each plate. To do so, uncap the molte agar media bottle, then pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25mL. Replace the petri dish lid and repeat for every plate.</notes>
+  </step>
+  <!-- Let cool -->
+  <!-- Is this metacol territory? -->
+  <step>
+    <description>Let plates cool.</description>
+    <note>Let the plates cool until solid. If you keep them spread out individually (as when poured), they will cool much faster. This should take 10-20 minutes.</note>
+  </step>
+  <!-- Dry in 30C incubator -->
+  <!-- FIXME: Is this really how we do it? I haven't noticed bacterial media in any 30C incubators -->
+  <!-- TODO: this is definitely metacol territory (12 hour wait). It's also optional. -->
+  <step>
+    <description>Dry the plates in an incubator.</description>
+    <note>Place plates in 30C incubator for 12 hours.</note>
+  </step>
+
+  <release>%{agar}</release>
+  <!-- TODO: how do we name the plates? Input media source could be anything -->
+  <produce>
+    <object>Agar Plates</object>
+    <quantity>40</quantity>
+  </produce>
+
 </protocol>
