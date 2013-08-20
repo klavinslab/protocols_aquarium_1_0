@@ -1,269 +1,236 @@
-<protocol name="Make Synthetic Drop Out or Synthetic Complete Yeast Media">
-<information>Makes 800 mL of 2 percent Glucose, Adenine-supplemented, Synthetic Complete Yeast Media</information>
+<?xml version="1.0"?>
+<protocol>
 
-    <argument>
-        <name>Trp</name>
-        <type>number</type>
-        <description>Add tryptophan to media? If yes, enter 1. If no, enter 0.</description>
-    </argument>
-    <argument>
-        <name>His</name>
-        <type>number</type>
-        <description>Add histidine to media? If yes, enter 1. If no, enter 0.</description>
-    </argument>
-    <argument>
-        <name>Leu</name>
-        <type>number</type>
-        <description>Add leucine to media? If yes, enter 1. If no, enter 0.</description>
-    </argument>
-    <argument>
-        <name>Ura</name>
-        <type>number</type>
-        <description>Add uracil to media? If yes, enter 1. If no, enter 0.</description>
-    </argument>    
-    
-    
- 
-    <take>
-        <object>1000 mL Bottle</object>
-        <quantity>1</quantity>
-        <var>bottle</var>
-    </take>
-    <take>    
-        <object>Scale</object>
-        <quantity>1</quantity>
-        <var>balance</var>
-    </take>    
-    <take>          
-        <object>Weigh Boat (L)</object>
-        <quantity>1</quantity>
-        <var>boat_large</var>
-    </take>    
-    <take>          
-        <object>Yeast Nitrogen Base</object>
-        <quantity>1</quantity>
-        <var>yeast_base</var>
-    </take>    
-    <take>          
-        <object>Synthetic Drop Out Media</object>
-        <quantity>1</quantity>
-        <var>sdo_media</var>
-    </take>    
-    <take>          
-        <object>Dextrose</object>
-        <quantity>1</quantity>
-        <var>dextrose</var>
-    </take>    
-    
-    <if>
-        <condition>%{Leu}==1</condition>
-        <then>
-            <take>          
-                <object>Leucine Solution</object>
-                <quantity>1</quantity>
-                <var>leu_solution</var>
-            </take>  
-         </then>
-    </if>
-    <if>
-        <condition>%{His}==1</condition> 
-        <then>
-            <take>          
-                <object>Histidine Solution</object>
-                <quantity>1</quantity>
-                <var>his_solution</var>
-            </take> 
-        </then>
-    </if>
-    <if>
-        <condition>%{Trp}==1</condition> 
-        <then>
-            <take>  
-                <object>Tryptophan Solution</object>
-                <quantity>1</quantity>
-                <var>trp_solution</var>
-            </take>  
-        </then>
-    </if>
-    <if>
-        <condition>%{Ura}==1</condition>   
-        <then>
-            <take>          
-                <object>Uracil Solution</object>
-                <quantity>1</quantity>
-                <var>ura_solution</var>
-            </take> 
-        </then>
-    </if>
-    
-    <take>          
-        <object>Adenine Hemisulfate</object>
-        <quantity>1</quantity>
-        <var>adenine</var>
-    </take>       
-    <take>          
-        <object>Autoclave Tape</object>
-        <quantity>1</quantity>
-        <var>autoclave_tape</var>
-    </take>
-    
-    <step>
-        <description>Label the bottle</description>
-        <note>Write:
-            SC Yeast Media
-            id :
-            date:
-          on a label, stick it to the bottle.
-        </note>
-        <image>LabeledEmptyMediaBottle</image>
-    </step>
+  <information>Make 800mL of Synthetic Drop-out or Synthetic Complete media.</information>
 
-    <step>
-        <description>Measure 5.36 g of Yeast nitrogen base w/o amino acid</description>
-        <note>
-            Place the plastic boat on the scale.
-            Zero the scale.
-            Using the spatula, measure 5.36 g of Yeast nitrogen base 
-            into the plastic boat and add it to the bottle.                
-        </note>
-    </step> 
-    
-    <step>
-        <description>Measure 1.12 g of Synthetic DO media</description>
-        <note>
-            Place the plastic boat on the scale.
-            Zero the scale.
-            Using the spatula, measure 1.12 g of Synthetic DO Media 
-            into the plastic boat and add it to the bottle.                
-        </note>
-    </step>
-    
-    <step>
-        <description>Measure 16 g of Dextrose</description>
-        <note>
-            Place the plastic boat on the scale.
-            Zero the scale.
-            Using the spatula, measure 16 g of Dextrose 
-            into the plastic boat and add it to the bottle.                
-        </note>
-    </step>
+  <!-- Arguments -->
+  <argument>
+    <name>trp</name>
+    <type>number</type>
+    <description>Add tryptophan to media? If yes, enter 1. If no, enter 0.</description>
+  </argument>
+  <argument>
+    <name>his</name>
+    <type>number</type>
+    <description>Add histidine to media? If yes, enter 1. If no, enter 0.</description>
+  </argument>
+  <argument>
+    <name>leu</name>
+    <type>number</type>
+    <description>Add leucine to media? If yes, enter 1. If no, enter 0.</description>
+  </argument>
+  <argument>
+    <name>ura</name>
+    <type>number</type>
+    <description>Add uracil to media? If yes, enter 1. If no, enter 0.</description>
+  </argument>
 
+  <!-- Initial takes -->
+  <!-- Take bottle -->
+  <take>
+    <item>
+      <type>1000 mL Bottle</type>
+      <quantity>1</quantity>
+      <var>bottle</var>
+    </item>
+  </take>
+  <!-- Take primary dry reagents -->
+  <take>
+    <item>
+      <type>Yeast Nitrogen Base</type>
+      <quantity>1</quantity>
+      <var>yeast_base</var>
+    </item>
+    <item>
+      <type>Synthetic Drop Out Media</type>
+      <quantity>1</quantity>
+      <var>sdo_media</var>
+    </item>
+    <item>
+      <type>Dextrose</type>
+      <quantity>1</quantity>
+      <var>dextrose</var>
+    </item>
+    <item>
+      <type>Adenine Hemisulfate</type>
+      <quantity>1</quantity>
+      <var>adenine</var>
+    </item>
+  </take>
+  <!-- Take drop-out solutions -->
+  <take>
+    <!-- TODO: could replace with while loop, but would need 3 arrays: yes/no array from arguments, object type array, and object var array -->
     <if>
-        <condition>%{His}==1</condition>   
-        <then>
-            <step>
-                <description>Add 8 mL of Histidine Solution to the bottle.</description>
-            </step>
-        </then>
-    </if>
-           
-    <if>
-        <condition>%{Leu}==1</condition>   
-        <then>           
-             <step>
-                <description>Add 8 mL of Leucine Solution to the bottle.</description>
-            </step>
-        </then>
-    </if>                        
-            
-    <if>
-        <condition>%{Trp}==1</condition>   
-        <then>            
-             <step>
-                <description>Add 8 mL of Tryptophan Solution to the bottle.</description>
-            </step>
-        </then>
-    </if>            
-                        
-    <if>
-        <condition>%{Ura}==1</condition>   
-        <then>            
-             <step>
-                <description>Add 8 mL of Uracil Solution to the bottle.</description>
-            </step>
-        </then>
-    </if>
-
-    <step>
-        <description>Measure 64 mg of Adenine hemisulfate</description>
-        <note>
-            Place the plastic boat on the scale.
-            Zero the scale.
-            Using the spatula, measure 64 g of Adenine hemisulfate 
-            into the plastic boat and add it to the bottle.                
-        </note>
-    </step>
-
-
-    <step>
-        <description>Add 500 mL DI water.</description>
-        <note>Use the DI water near the sink.</note>
-    </step>
-    
-    <step>
-        <description>Mix.</description>
-        <note>Put a cap on the bottle and shake to mix the dry ingredients with the water.
-        </note>
-    </step>
-    
-    <step>
-        <description>Add DI water until volume is about ~800 mL.</description>
-        <note>Use the DI water near the sink.</note>
-    </step>
-    
-    <step>
-        <description>Mix.</description>
-        <note>Put a cap on the bottle and shake to mix the dry ingredients with the water.
-        Dry off the bottle with a paper towel. Place the bottle in location TBD.
-        </note>
-    </step>
-    
-    <step>
-        <description>Affix autoclave tape.</description>
-        <note>Put a piece of autoclave tape that sticks to the cap and glass of the bottle.
-        </note>
-    </step>
-    
-    <produce>
-        <object>800 mL Bottle of SC Media (not sterilized)</object>
-        <quantity>1</quantity>
-    </produce>   
-    
-    <release>
-        [%{balance}[0],%{boat_large}[0],%{yeast_base}[0],%{sdo_media}[0],%{dextrose}[0],%{adenine}[0]]
-    </release>
-    
-    <if>
-        <condition>%{His}==1</condition>
-        <then>
-            <release>
-                %{his_solution}
-            </release>
-        </then>
+      <condition>%{Leu}==1</condition>
+      <then>
+        <item>
+          <type>Leucine Solution</type>
+          <quantity>1</quantity>
+          <var>leu_solution</var>
+        </item>
+       </then>
     </if>
     <if>
-        <condition>%{Leu}==1</condition>
-        <then>
-            <release>
-                %{leu_solution}
-            </release>
-        </then>
+      <condition>%{His}==1</condition>
+      <then>
+        <item>
+          <type>Histidine Solution</type>
+          <quantity>1</quantity>
+          <var>his_solution</var>
+        </item>
+      </then>
     </if>
     <if>
-        <condition>%{Trp}==1</condition>
-        <then>
-            <release>
-                %{trp_solution}
-            </release>
-        </then>
-    </if>    
+      <condition>%{Trp}==1</condition>
+      <then>
+        <item>
+          <type>Tryptophan Solution</type>
+          <quantity>1</quantity>
+          <var>trp_solution</var>
+        </item>
+      </then>
+    </if>
     <if>
-        <condition>%{Ura}==1</condition>
-        <then>
-            <release>
-                %{ura_solution}
-            </release>
-        </then>
-    </if>    
-    
+      <condition>%{Ura}==1</condition>
+      <then>
+        <item>
+          <type>Uracil Solution</type>
+          <quantity>1</quantity>
+          <var>ura_solution</var>
+        </item>
+      </then>
+    </if>
+  </take>
+  <!-- Take items required for measuring things -->
+  <take>
+    <item>
+      <type>Scale</type>
+      <quantity>1</quantity>
+      <var>balance</var>
+    </item>
+    <item>
+      <type>Weigh Boat (L)</type>
+      <quantity>1</quantity>
+      <var>boat_large</var>
+    </item>
+  </take>
+
+  <!-- Begin steps -->
+  <!-- TODO: replace with include for 'add dry reagent' protocol -->
+  <step>
+    <description>Measure 5.36g of Yeast nitrogen base without amino acids.</description>
+    <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, measure 5.36 g of Yeast nitrogen base into the plastic boat and add it to the bottle.</note>
+  </step>
+  <step>
+    <description>Measure 1.12g of Synthetic DO media.</description>
+    <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, measure 1.12 g of Synthetic DO Media into the plastic boat and add it to the bottle.</note>
+  </step>
+  <step>
+    <description>Measure 16g of Dextrose.</description>
+    <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, measure 16 g of Dextrose into the plastic boat and add it to the bottle.</note>
+  </step>
+
+  <step>
+    <description>Measure 64mg of Adenine hemisulfate</description>
+    <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, measure 64 g of Adenine hemisulfate into the plastic boat and add it to the bottle.
+    </note>
+  </step>
+
+  <!-- Could also build with while loop -->
+  <if>
+    <condition>%{His}==1</condition>
+    <then>
+      <step>
+        <description>Add 8mL of Histidine Solution to the bottle.</description>
+      </step>
+    </then>
+  </if>
+
+  <if>
+    <condition>%{Leu}==1</condition>
+    <then>
+       <step>
+        <description>Add 8mL of Leucine Solution to the bottle.</description>
+      </step>
+    </then>
+  </if>
+
+  <if>
+    <condition>%{Trp}==1</condition>
+    <then>
+       <step>
+        <description>Add 8mL of Tryptophan Solution to the bottle.</description>
+      </step>
+    </then>
+  </if>
+
+  <if>
+    <condition>%{Ura}==1</condition>
+    <then>
+       <step>
+        <description>Add 8mL of Uracil Solution to the bottle.</description>
+      </step>
+    </then>
+  </if>
+
+  <step>
+    <description>Add 500 mL DI water.</description>
+    <note>Use the DI water near the sink.</note>
+  </step>
+  <step>
+    <description>Mix.</description>
+    <note>Put a cap on the bottle and shake to mix the dry ingredients with the water.</note>
+  </step>
+  <step>
+    <description>Add DI water until volume is about ~800 mL.</description>
+    <note>Use the DI water near the sink.</note>
+  </step>
+  <step>
+    <description>Mix.</description>
+    <note>Put a cap on the bottle and shake to mix the dry ingredients with the water.
+    Dry off the bottle with a paper towel. Place the bottle in location TBD.
+    </note>
+  </step>
+
+  <produce>
+    <object>800 mL Bottle of SC Media (not sterilized)</object>
+    <quantity>1</quantity>
+  </produce>
+
+  <release>[%{balance}[0],%{boat_large}[0],%{yeast_base}[0],%{sdo_media}[0],%{dextrose}[0],%{adenine}[0]]</release>
+  <!-- TODO: generate array of drop-out solution variables, then release here -->
+
+  <if>
+    <condition>%{His}==1</condition>
+    <then>
+      <release>
+        %{his_solution}
+      </release>
+    </then>
+  </if>
+  <if>
+    <condition>%{Leu}==1</condition>
+    <then>
+      <release>
+        %{leu_solution}
+      </release>
+    </then>
+  </if>
+  <if>
+    <condition>%{Trp}==1</condition>
+    <then>
+      <release>
+        %{trp_solution}
+      </release>
+    </then>
+  </if>
+  <if>
+    <condition>%{Ura}==1</condition>
+    <then>
+      <release>
+        %{ura_solution}
+      </release>
+    </then>
+  </if>
+
 </protocol>
