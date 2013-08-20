@@ -1,80 +1,113 @@
-<protocol name="TB Liquid Media">
-	<information>
-		This prepares a bottle of TB Media for growing bacteria.
-	</information>
-	
-	<take>
-		<object>1000 mL Bottle</object>
-		<quantity>1</quantity>
-		<var>bottle</var>
-	</take>
-	<take>
-		<object>TB Media Powder</object>
-		<quantity>1</quantity>
-		<var>tb</var>
-	</take>
-	<take>
-		<object>DI Water</object>
-		<quantity>1</quantity>
-		<var>water</var>
-	</take>
-	<take>
-		<object>Autoclave Tape</object>
-		<quantity>1</quantity>
-		<var>tape</var>
-	</take>
-	<take>
-		<object>Weigh Boat (L)</object>
-		<quantity>1</quantity>
-		<var>boat</var>
-	</take>
-	
-	<step>
-		<description>
-			Place large weigh boat on gram scale and zero
-		</description>
-	</step>
-	
-	<step>
-		<description>
-			Measure out 20 grams of TB media powder and pour contents into liter bottle
-		</description>
-	</step>
-	
-	<step>
-		<description>
-			Measure out 800 mL of DI water using the graduated cyinder and pour into liter bottle
-		</description>
-	</step>
-	
-	<step>
-		<description>
-			Close liter bottle and shake until all contents are solvated
-		</description>
-	</step>
-	
-	<step>
-		<description>
-			Stick autoclave tape on top of the bottle
-		</description>
-	</step>
-	
-	<step>
-		<description>
-			Loosen cap and autoclave at 110C for 15 minutes
-		</description>
-	</step>
-	
-	<produce>
-		<object>800 mL TB Liquid Media (unsterile)</object>
-		<quantity>1</quantity>
-	</produce>
-	
-    	<release>[%{tb}[0],%{boat}[0],%{tape}[0]]</release>
-	
-	<step>
-		<description>Done. Thank you for running this protocol.</description>
-	</step>
-	
+<?xml version="1.0"?>
+<protocol>
+
+  <information>Prepare a bottle of TB Media (ultra-rich media for bacteria).</information>
+
+  <!-- Arguments -->
+  <!-- Can't programatically do itoa to bottle 1, 2, etc: get this error: "String can't be coerced into Fixnum" -->
+  <!-- <assign><lhs>my_var</lhs><rhs>1 + "fish"</rhs></assign> -->
+  <argument>
+    <name>n_bottle</name>
+    <type>number</type>
+    <description>Enter the number of bottles you want to make (maximum of 4).</description>
+  </argument>
+
+  <if>
+    <condition>%{n_bottle} &gt; 4 || %{n_bottle} &lt; 1</condition>
+    <then>
+      <!-- Abort the protocol (warning message + put stuff away) -->
+      <step>
+        <description>Wrong number of bottles!</description>
+        <note>You can only specify 0-4 bottles!</note>
+      </step>
+    </then>
+    <else>
+      <!-- Do the protocol -->
+      <!-- Initial takes -->
+      <take>
+        <item>
+          <type>1000 mL Bottle</type>
+          <quantity>%{n_bottle}</quantity>
+          <var>bottle</var>
+        </item>
+        <item>
+          <type>TB Media Powder</type>
+          <quantity>1</quantity>
+          <var>tb_powder</var>
+        </item>
+        <item>
+          <type>Weighing Boat</type>
+          <quantity>1</quantity>
+          <var>boat</var>
+        </item>
+      </take>
+
+      <!-- Generate string for bottle names -->
+      <assign><lhs>bottle_string</lhs><rhs>"Bottle 1"</rhs></assign>
+      <assign><lhs>counter</lhs><rhs>2</rhs></assign>
+      <while>
+        <condition>%{counter} &lt; %{n_bottle} + 1</condition>
+        <do>
+          <if>
+            <!-- Last bottle - add 'and' (Oxford comma!) -->
+            <condition>%{counter} == %{n_bottle}</condition>
+            <then>
+              <if>
+                <condition>%{n_bottle} == 2</condition>
+                <then>
+                  <assign><lhs>bottle_string</lhs><rhs>%{bottle_string} + " and Bottle " + %{counter}.to_s</rhs></assign>
+                </then>
+                <else>
+                  <assign><lhs>bottle_string</lhs><rhs>%{bottle_string} + ", and Bottle " + %{counter}.to_s</rhs></assign>
+                </else>
+              </if>
+            </then>
+            <else>
+              <!-- Not last bottle - separate by comma and space -->
+              <assign><lhs>bottle_string</lhs><rhs>%{bottle_string} + ", Bottle " + %{counter}.to_s</rhs></assign>
+            </else>
+            <!-- increment counter -->
+            <assign><lhs>counter</lhs><rhs>%{counter} + 1</rhs></assign>
+          </if>
+        </do>
+      </while>
+
+      <!-- Begin steps -->
+      <!-- Label bottle(s) -->
+      <step>
+        <description>Label.</description>
+        <note>Label %{bottle_string} with 'TB Growth Media' and the bottle number using a piece of lab tape.</note>
+      </step>
+      <!-- Weigh out TB powder -->
+      <step>
+        <description>Measure and add 20g of TB Powder.</description>
+        <!-- Picture would be good here -->
+        <note>Do this for %{bottle_string}: Place the plastic boat on the scale. Zero the scale. Using the spatula, add 20g of TB Powder into the plastic boat. If too much was added, remove excess to waste container using spatula. Pour into bottle using a corner of the weigh boat.</note>
+      </step>
+      <!-- Throw away the boat -->
+      <release>%{boat}</release>
+      <!-- Add water -->
+      <step>
+        <description>Add deionized water.</description>
+        <note>Fill %{bottle_string} to the 800mL mark with deionized water.</note>
+      </step>
+      <!-- Mix -->
+      <step>
+        <description>Cap and mix.</description>
+        <note>Tightly close the cap(s) on %{bottle_string} and shake until all contents are dissolved. To check for dissolution, let bottle rest for 10 seconds, then pick up and look for sediment on the bottom. This step may take 5 minutes or more.</note>
+      </step>
+
+      <!-- Produce -->
+      <produce>
+        <object>800mL TB Liquid Media (unsterile)</object>
+        <quantity>%{n_bottle}</quantity>
+      </produce>
+
+      <!-- Final releases -->
+      <release>%{tb_powder}</release>
+      <release>%{bottle}</release>
+
+    </else>
+  </if>
+
 </protocol>
-	

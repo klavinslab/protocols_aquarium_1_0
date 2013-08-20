@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <protocol>
 
-  <information>Prepare a bottle of LB Media (rich media for bacteria).</information>
+  <information>Prepare a bottle of LB Agar Media (rich media for bacteria).</information>
 
   <!-- Arguments -->
   <!-- Can't programatically do itoa to bottle 1, 2, etc: get this error: "String can't be coerced into Fixnum" -->
