@@ -1,58 +1,55 @@
 <?xml version="1.0"?>
 <protocol>
 
-  <information>Make 800mL of YPAD yeast media.</information>
+  <information>Make 800mL of YPAD (rich yeast media).</information>
 
   <!-- Arguments -->
     <!-- None! -->
+
   <!-- Initial takes -->
   <take>
-    <!-- Bottle just needs to be clean... -->
-    <object>1L Bottle (sterile)</object>
-    <quantity>1</quantity>
-    <var>bottle</var>
+    <item>
+      <type>1000 mL Bottle</type>
+      <quantity>1</quantity>
+      <var>bottle</var>
+    </item>
+    <item>
+      <type>Weigh Boat (L)</type>
+      <quantity>1</quantity>
+      <var>boat</var>
+    </item>
   </take>
   <take>
-    <object>Weigh Boat (L)</object>
-    <quantity>1</quantity>
-    <var>boat</var>
+    <item>
+      <type>Bacto Yeast Extract</type>
+      <quantity>1</quantity>
+      <var>yeast_extract</var>
+    </item>
+    <item>
+      <type>Bacto Peptone</type>
+      <quantity>1</quantity>
+      <var>bacto_peptone</var>
+    </item>
+    <item>
+      <type>Dextrose</type>
+      <quantity>1</quantity>
+      <var>dextrose</var>
+    </item>
+    <item>
+      <type>Adenine Hemisulfate</type>
+      <quantity>1</quantity>
+      <var>adenine_hemisulfate</var>
+    </item>
   </take>
   <take>
-    <object>Bacto Yeast Extract</object>
-    <quantity>1</quantity>
-    <var>yeast_extract</var>
-  </take>
-  <take>
-    <object>Bacto Peptone</object>
-    <quantity>1</quantity>
-    <var>bacto_peptone</var>
-  </take>
-  <take>
-    <object>Dextrose</object>
-    <quantity>1</quantity>
-    <var>dextrose</var>
-  </take>
-  <take>
-    <object>Adenine Hemisulfate</object>
-    <quantity>1</quantity>
-    <var>adenine_hemisulfate</var>
-  </take>
-  <take>
-    <object>Scale</object>
-    <quantity>1</quantity>
-    <var>balance</var>
+    <item>
+      <type>Scale</type>
+      <quantity>1</quantity>
+      <var>balance</var>
+    </item>
   </take>
 
-  <!-- TODO: Labeling should be more automated than what was here previously -->
-  <!-- Add water to bottle -->
-  <step>
-    <!-- Is this what Miles does? Water first? -->
-    <description>Add 500mL of DI water.</description>
-    <note>Measure using the bottle graduations.</note>
-  </step>
   <!-- Add yeast extract to bottle -->
-  <!-- FIXME: Does it have to be bacto? Isn't bacto a brand? -->
-  <!-- FIXME: lookit all this redundancy -->
   <step>
     <description>Measure 8g of Bacto Yeast Extract.</description>
     <note>Place the weigh boat on the scale. Zero the scale. Using the spatula, measure 8g of Bacto Yeast Extract into the plastic boat and add it to the bottle.</note>
@@ -72,20 +69,20 @@
     <description>Measure 64mg of Adenine hemisulfate.</description>
     <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, measure 64 mg of Adenine hemisulfate into the plastic boat and add it to the bottle.</note>
   </step>
-  <!-- Add water again -->
+  <!-- Add water -->
   <step>
-    <description>Add DI water to 800mL mark.</description>
+    <description>Add deionized water.</description>
+    <note>Add DI water to 800mL mark.</note>
   </step>
   <!-- Mix -->
   <step>
     <description>Mix.</description>
     <note>Put a cap on the bottle and shake to mix the dry ingredients with the water until dissolved. This may take several minutes. To check for dissolution, let bottle sit for 10 seconds and check for sediment on the bottom.</note>
   </step>
-  <!-- TODO: Add autoclave tape here / include autoclave protocol -->
 
   <!-- Produces -->
   <produce>
-    <object>800mL Bottle of YPAD Media (nonsterile)</object>
+    <object>800mL YPAD Media (nonsterile)</object>
     <quantity>1</quantity>
   </produce>
 
