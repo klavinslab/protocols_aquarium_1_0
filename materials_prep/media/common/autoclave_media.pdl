@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<protocol>
+
+  <information>Take in media, glassware, etc. and make it sterile.</information>
+
+  <!-- Arguments -->
+  <!-- Initial takes -->
+  <!-- Begin steps -->
+  <!-- Produces -->
+
+  <!-- Overall plans/problems:
+        Arguments:
+          Temperature
+          Pressure
+          Cycle Type
+          Problems:
+            Takes may be of different types:
+              Could type check eventually, but not right now (glassware vs media)
+              Could rely on documentation / smart users to figure it out, i.e. one argument is temperature and another is pressure, cycle type, etc.
+
+        Takes:
+
+
+
+
+       -->
+
+</protocol>
