@@ -116,6 +116,7 @@
       <!-- Final releases -->
       <release>%{lb_agar_powder}</release>
       <release>%{bottle}</release>
+      <release>%{stir_bar}</release>
 
     </else>
   </if>
