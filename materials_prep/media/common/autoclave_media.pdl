@@ -2,27 +2,57 @@
 <protocol>
 
   <information>Take in media, glassware, etc. and make it sterile.</information>
+  <!-- IMPORTANT: Expects input objects to end with "(nonsterile)" and output to end with "(sterile")
+                  These must exist as object types for this protocol to function.
+       -->
 
   <!-- Arguments -->
-  <!-- Initial takes -->
-  <!-- Begin steps -->
-  <!-- Produces -->
-
-  <!-- Overall plans/problems:
-        Arguments:
+  <!-- This protocol could make good use of array arguments (list of objects) -->
+  <!-- Location of items -->
+  <!-- TODO: validate location? -->
+  <argument>
+    <name>location</name>
+    <type>string</type>
+    <description>Enter the location of the items to autoclave.</description>
+  </argument>
+  <!-- Item IDs -->
+  <argument>
+    <name>item_ids</name>
+    <type>string</type>
+    <description>Enter the IDs of the items to autoclave, separated by commas (no spaces).</description>
+  </argument>
+  <!-- TODO: arguments for:
           Temperature
           Pressure
           Cycle Type
-          Problems:
-            Takes may be of different types:
-              Could type check eventually, but not right now (glassware vs media)
-              Could rely on documentation / smart users to figure it out, i.e. one argument is temperature and another is pressure, cycle type, etc.
-
-        Takes:
-
-
-
-
        -->
+  <!-- Process item id string -->
+  <!-- FIXME: this is totally cheating (ruby string/array methods) -->
+  <assign><lhs>item_n</lhs><rhs>%{item_ids}.split(',').length</rhs></assign>
+  <assign><lhs>item_array</lhs><rhs>[]</rhs></assign>
+  <assign><lhs>i</lhs><rhs>0</rhs></assign>
+  <while>
+    <condition>%{i} &lt; %{item_n}</condition>
+    <do>
+      <assign><lhs>item_array</lhs><rhs>%{item_array}.push(%{item_ids}.split(",")[i])</rhs></assign>
+      <assign><lhs>i</lhs><rhs>%{i} + 1</rhs></assign>
+    </do>
+  </while>
+  <!-- Initial takes -->
+  <!-- FIXME: I have no idea how to do a take on a specific item with a specific ID, but it's necessary for updating the inventory -->
+  <!-- Begin steps -->
+  <step>
+    <description>Get items from location %{location}.</description>
+    <note>Gather items with ids %{item_array} from %{location} to your workspace.</note>
+  </step>
+  <step>
+    <description>Apply autoclave tape.</description>
+    <note>Add autoclave tape to each item. For items with lids, make sure autoclave tape extends fully over the lid and onto the sides of the item, so that one must break an autoclave tape 'seal' in order to use it.</note>
+  </step>
+  <!-- TODO: take the autoclave here. Note that it will not be properly released as it would be controlled, somehow, at the metacol level -->
+  <step>
+    <description>Place items in the autoclave.</description>
+    <note>Make sure no caps are tight. If a cap is tight, the item may explode.</note>
+  </step>
 
 </protocol>
