@@ -89,20 +89,23 @@ Day 2
 
 ###### Day 3
 
-1. Set up cytometer plate by adding 50 uL of PBS to every even numbered column (or however many is enough to accomodate every strain).
-2. Add 199 uL PBS to the odd numbered column (or however many is enough to accomodate every strain).
-3. Add 1 uL of culture from the tall tubes to a well.
-4. Label sample wells with strain number in cytometer file.
-5. Run cytometer plate using the template in the Paper Assays Folder
-6. Ensure percent green is consistent with previously established results
-7. Inoculate 30 uL of the LB overnight into a 3 mL M9 0.4% PASC culture (with 200:1 kan and 500:1 amp) in a 14 mL glass tube.
-8. Moderately vortex culture (avoid splashing) for 10 seconds and sample 100 uL for initial CFU count.
-9. Place PASC culture in 37 C incubator.
-10. Plate a 10^5 [serial dilution](https://github.com/klavinslab/protocols/blob/master/assays/assay_quality_CFU_plating_best_practices.md) of the starting culture and incubate at 37 C for 16-20 hours to obtain an initial CFU measurement.
+1. Set up 3 mL M9 0.4% PASC cultures in glass 14 mL tubes for each culture. Place in 37 C incubator to pre-warm.
+2. Set up cytometer plate by adding 50 uL of PBS to every even numbered column (or however many is enough to accomodate every strain).
+3. Add 199 uL PBS to the odd numbered column (or however many is enough to accomodate every strain).
+4. Add 1 uL of culture from the tall tubes to a well.
+5. Label sample wells with strain number in cytometer file.
+6. Run cytometer plate using the template in the Paper Assays Folder.
+7. Ensure percent green is consistent with previously established results.
+8. **Vigorously** vortex LB culture for 10 seconds to break up cell clumps.
+9. Inoculate 30 uL of the LB overnight into a 3 mL M9 0.4% PASC culture (with 200:1 kan and 500:1 amp) in a 14 mL glass tube.
+10. Moderately vortex culture (avoid splashing) for 10 seconds and sample 100 uL for initial CFU count.
+11. Transfer PASC culture in 37 C shaker/incubator.
+12. Plate a 10^5 serial dilution following [best practices](https://github.com/klavinslab/protocols/blob/master/assays/assay_quality_CFU_plating_best_practices.md) of the starting culture.
+13. Incubate at 37 C for 14-18 hours, until sizeable colonies arise to obtain an initial CFU/mL measurement.
 
 ###### Day 4-7
 
-1. Prepare Corning Costar 3975 (clear, round-bottom) plate by adding 180 uL to all columns of rows B through H using multichannel pipettor.
+1. Prepare Corning Costar 3795 (clear, round-bottom) plate by adding 180 uL to all columns of rows B through H using multichannel pipettor.
 2. Remove culture from 37 C incubator.
 3. Moderately vortex culture to resuspend PASC accumulated on tube walls.
 4. Sample 100 uL into wells of Row A of multi-well plate.
