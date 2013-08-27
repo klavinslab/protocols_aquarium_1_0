@@ -17,17 +17,23 @@
 
   <!-- Initial takes -->
   <!-- Initialize empty vector for pre-autoclaved items -->
+  <!-- FIXME: this doesn't actually work - it only asks for the first argument and everything gets screwed up.
+       I think the while loop doesn't reevaluate or something until later. No way to ask for variable number of arguments?
+       -->
   <assign><lhs>items</lhs><rhs>[]</rhs></assign>
   <assign><lhs>counter</lhs><rhs>0</rhs></assign>
   <while>
     <condition>%{counter} &lt; %{item_number}</condition>
     <do>
       <!-- Ask for next item's string -->
-      <argument>
-        <name>current_item_name</name>
-        <type>string</type>
-        <description>Enter the next item to autoclave (must be exactly the name that's in the inventory).</description>
-      </argument>
+      <step>
+        <description>Enter items to autoclave.</description>
+        <getdata>
+          <type>string</type>
+          <description>Enter the next item to autoclave (must be exactly the name that's in the inventory).</description>
+          <var>current_item_name</var>
+        </getdata>
+      </step>
       <!-- Take that item -->
       <!-- We could ask for all the items at the end of the loop, but that's difficult to debug - if one
            object type was wrong, how do we know which one it was? Traceback is useless (nonexistent?) -->
