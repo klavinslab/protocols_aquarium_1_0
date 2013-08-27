@@ -93,6 +93,5 @@
   <release>%{bacto_peptone}</release>
   <release>%{dextrose}</release>
   <release>%{adenine_hemisulfate}</release>
-  <release>%{autoclave_tape}</release>
 
 </protocol>
