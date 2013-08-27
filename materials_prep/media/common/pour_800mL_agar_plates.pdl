@@ -17,9 +17,9 @@
   <!-- Strip first 6 characters to remove '800mL ' -->
   <assign><lhs>plate_name</lhs><rhs>%{object_type}[6..-1]</rhs></assign>
   <!-- Strip last 20 characters to remove 'Agar Media (sterile)' -->
-  <assign><lhs>plate_name</lhs><rhs>%{object_type}[0..-21]</rhs></assign>
+  <assign><lhs>plate_name</lhs><rhs>%{plate_name}[0..-18]</rhs></assign>
   <!-- Add 'Agar Plate (sterile)' to the end of the string -->
-  <assign><lhs>plate_name</lhs><rhs>%{object_type} + 'Agar Plate (sterile)'</rhs></assign>
+  <assign><lhs>plate_name</lhs><rhs>%{plate_name} + 'Agar Plate (sterile)'</rhs></assign>
 
   <!-- Initial takes -->
   <take>
@@ -45,7 +45,7 @@
   <!-- Pour -->
   <step>
     <description>Pour 25mL of media into each plate.</description>
-    <notes>Uncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25mL. Replace the petri dish lid and repeat for every plate.</notes>
+    <note>Uncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25mL. Replace the petri dish lid and repeat for every plate.</note>
   </step>
   <!-- Let cool -->
   <!-- FIXME: This is metacol territory -->
