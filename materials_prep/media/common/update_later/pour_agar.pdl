@@ -9,6 +9,7 @@
     <type>string</type>
     <description>Enter the object type of the agar you'd like to pour (must be 800mL in a bottle).</description>
   </argument>
+  <!-- TODO: could also ask for volume (a multiple of 25mL) and calculate number of plates -->
 
   <!-- Initial takes -->
   <take>
@@ -18,14 +19,14 @@
         <var>agar_bottle</var>
     </item>
     <item>
-      <type>Plastic Petri Dishes</type>
+      <type>Petri Dish</type>
+      <!-- FIXME: Petri Dish is too vague, should be plastic/disposable -->
       <quantity>40</quantity>
       <var>plates</var>
     </item>
   </take>
 
   <!-- Start steps -->
-  <!-- TODO: Labeling step? Where does the info come from? Should we use the printer? Many labs use stamps. -->
   <!-- Lay out plates individually -->
   <step>
     <description>Lay out plates on workspace.</description>
@@ -33,28 +34,25 @@
   </step>
   <!-- Pour -->
   <step>
-    <description>Pour plates.</description>
-    <notes>Pour about 25mL of media into each plate. To do so, uncap the molte agar media bottle, then pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25mL. Replace the petri dish lid and repeat for every plate.</notes>
+    <description>Pour 25mL of media into each plate.</description>
+    <notes>Uncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25mL. Replace the petri dish lid and repeat for every plate.</notes>
   </step>
   <!-- Let cool -->
-  <!-- Is this metacol territory? -->
+  <!-- FIXME: This is metacol territory -->
   <step>
     <description>Let plates cool.</description>
     <note>Let the plates cool until solid. If you keep them spread out individually (as when poured), they will cool much faster. This should take 10-20 minutes.</note>
   </step>
-  <!-- Dry in 30C incubator -->
-  <!-- FIXME: Is this really how we do it? I haven't noticed bacterial media in any 30C incubators -->
-  <!-- TODO: this is definitely metacol territory (12 hour wait). It's also optional. -->
-  <step>
-    <description>Dry the plates in an incubator.</description>
-    <note>Place plates in 30C incubator for 12 hours.</note>
-  </step>
+  <!-- TODO: plates should go in a drying area and sit for a while - also metacol territory -->
 
-  <release>%{agar}</release>
-  <!-- TODO: how do we name the plates? Input media source could be anything -->
+  <!-- Produces -->
   <produce>
+    <!-- TODO: how do we name the plates? Input media source could be anything (e.g. '800mL' or '200mL' in the name) -->
     <object>Agar Plates</object>
     <quantity>40</quantity>
   </produce>
+
+  <!-- Releases -->
+  <release>%{agar}</release>
 
 </protocol>

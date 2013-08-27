@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<protocol name="Pour Agar">
+
+  <information>Pour plates from 800mL of liquid state agar.</information>
+  <!-- IMPORTANT: this protocol expects a string with this exact format in order to make accurate take/produce tags:
+                  '800mL MEDIA Agar Media (sterile)'. The '800ml ' and 'Agar Media (sterile)' are stripped to produce
+                  'MEDIA Agar Plate (sterile)'. -->
+
+  <!-- Arguments -->
+  <argument>
+    <name>object_type</name>
+    <type>string</type>
+    <description>Enter the object type of the agar you'd like to pour. Must be of this format: '800mL MEDIA_NAME Agar Media (sterile)'.</description>
+  </argument>
+
+  <!-- Calculate the name of the produced plates -->
+  <!-- Strip first 6 characters to remove '800mL ' -->
+  <assign><lhs>plate_name</lhs><rhs>%{object_type}[6..-1]</rhs></assign>
+  <!-- Strip last 20 characters to remove 'Agar Media (sterile)' -->
+  <assign><lhs>plate_name</lhs><rhs>%{object_type}[0..-21]</rhs></assign>
+  <!-- Add 'Agar Plate (sterile)' to the end of the string -->
+  <assign><lhs>plate_name</lhs><rhs>%{object_type} + 'Agar Plate (sterile)'</rhs></assign>
+
+  <!-- Initial takes -->
+  <take>
+    <item>
+        <type>%{object_type}</type>
+        <quantity>1</quantity>
+        <var>agar_bottle</var>
+    </item>
+    <item>
+      <type>Petri Dish</type>
+      <!-- FIXME: Petri Dish is too vague, should be plastic/disposable -->
+      <quantity>40</quantity>
+      <var>plates</var>
+    </item>
+  </take>
+
+  <!-- Start steps -->
+  <!-- Lay out plates individually -->
+  <step>
+    <description>Lay out plates on workspace.</description>
+    <note>Lay out plates individually on your workspace, lid side up, in preparation for pouring.</note>
+  </step>
+  <!-- Pour -->
+  <step>
+    <description>Pour 25mL of media into each plate.</description>
+    <notes>Uncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25mL. Replace the petri dish lid and repeat for every plate.</notes>
+  </step>
+  <!-- Let cool -->
+  <!-- FIXME: This is metacol territory -->
+  <step>
+    <description>Let plates cool.</description>
+    <note>Let the plates cool until solid. If you keep them spread out individually (as when poured), they will cool much faster. This should take 10-20 minutes.</note>
+  </step>
+  <!-- TODO: plates should go in a drying area and sit for a while - also metacol territory -->
+
+  <!-- Produces -->
+  <produce>
+    <object>%{plate_name}</object>
+    <quantity>40</quantity>
+  </produce>
+
+  <!-- Releases -->
+  <release>%{object_type}</release>
+
+</protocol>
