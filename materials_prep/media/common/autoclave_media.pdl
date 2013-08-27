@@ -100,7 +100,7 @@
     <do>
       <!-- Ask for next item's string -->
       <!-- If you pop off of the list, can't release anything -->
-      <release>%{items}[counter]</release>
+      <release>%{items}[%{counter}]</release>
       <assign><lhs>counter</lhs><rhs>%{counter} + 1</rhs></assign>
     </do>
   </while>
