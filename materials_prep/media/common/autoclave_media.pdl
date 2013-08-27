@@ -78,7 +78,8 @@
     <do>
       <!-- Ask for next item's string -->
       <!-- If you pop off of the list, can't release anything -->
-      <assign><lhs>produced_item_name</lhs><rhs>%{items}[%{counter}][0..-12] + '(sterile)'</rhs></assign>
+      <assign><lhs>produced_item_name</lhs><rhs>%{items}[%{counter}]</rhs></assign>
+      <assign><lhs>produced_item_name</lhs><rhs>%{produced_item_name}[0..-12] + '(sterile)'</rhs></assign>
       <produce>
         <object>%{produced_item_name}</object>
         <quantity>1</quantity>
