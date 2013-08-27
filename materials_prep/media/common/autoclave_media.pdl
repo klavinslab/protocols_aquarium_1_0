@@ -2,7 +2,7 @@
 <protocol>
 
   <information>Take in media, glassware, etc. and make it sterile.</information>
-  <!-- IMPORTANT: Expects input objects to end with "(nonsterile)" and output to end with "(sterile")
+  <!-- IMPORTANT: Expects input objects to end with "(unsterile)" and output to end with "(sterile")
                   These must exist as object types for this protocol to function.
        -->
 
@@ -20,7 +20,7 @@
   <assign><lhs>items</lhs><rhs>[]</rhs></assign>
   <assign><lhs>counter</lhs><rhs>0</rhs></assign>
   <while>
-    <condition>counter &lt; %{item_number}</condition>
+    <condition>%{counter} &lt; %{item_number}</condition>
     <do>
       <!-- Ask for next item's string -->
       <argument>
@@ -78,7 +78,7 @@
     <do>
       <!-- Ask for next item's string -->
       <!-- If you pop off of the list, can't release anything -->
-      <assign><lhs>produced_item_name</lhs><rhs>%{items}[counter][0:-13] + '(sterile)'</rhs></assign>
+      <assign><lhs>produced_item_name</lhs><rhs>%{items}[counter][0:-12] + '(sterile)'</rhs></assign>
       <produce>
         <object>%{produced_item_name}</object>
         <quantity>1</quantity>
