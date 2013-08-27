@@ -9,9 +9,11 @@
   <information>This protocol tests a few things, and will start by helping you take and release %{object_name}.</information>
 
   <take>
-    <object>%{object_name}</object>
-    <quantity>1</quantity>
-    <var>b</var>
+    <item>
+      <type>%{object_name}</type>
+      <quantity>1</quantity>
+      <var>b</var>
+    </item>
   </take>
 
   <assign><lhs>name</lhs><rhs>%{b}[0][:object][:name]</rhs></assign>
