@@ -74,7 +74,7 @@
   <!-- Produces -->
   <assign><lhs>counter</lhs><rhs>0</rhs></assign>
   <while>
-    <condition>counter &lt; %{item_number}</condition>
+    <condition>%{counter} &lt; %{item_number}</condition>
     <do>
       <!-- Ask for next item's string -->
       <!-- If you pop off of the list, can't release anything -->
