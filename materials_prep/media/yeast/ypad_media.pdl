@@ -87,7 +87,12 @@
   </produce>
 
   <!-- Releases -->
-  <release>[%{balance}[0], %{boat}[0], %{yeast_extract}[0], %{bacto_peptone}[0]]</release>
-  <release>[%{dextrose}[0], %{adenine_hemisulfate}[0], %{autoclave_tape}[0]]</release>
+  <release>%{balance}</release>
+  <release>%{boat}</release>
+  <release>%{yeast_extract}</release>
+  <release>%{bacto_peptone}</release>
+  <release>%{dextrose}</release>
+  <release>%{adenine_hemisulfate}</release>
+  <release>%{autoclave_tape}</release>
 
 </protocol>
