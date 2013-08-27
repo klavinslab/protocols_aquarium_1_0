@@ -62,6 +62,7 @@
   </produce>
 
   <!-- Releases -->
-  <release>%{object_type}</release>
+  <release>%{agar_bottle}</release>
+  <release>%{plates}</release>
 
 </protocol>
