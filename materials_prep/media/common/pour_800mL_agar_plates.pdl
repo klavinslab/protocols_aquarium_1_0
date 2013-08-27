@@ -19,7 +19,7 @@
   <!-- Strip last 20 characters to remove 'Agar Media (sterile)' -->
   <assign><lhs>plate_name</lhs><rhs>%{plate_name}[0..-18]</rhs></assign>
   <!-- Add 'Agar Plate (sterile)' to the end of the string -->
-  <assign><lhs>plate_name</lhs><rhs>%{plate_name} + 'Agar Plate (sterile)'</rhs></assign>
+  <assign><lhs>plate_name</lhs><rhs>%{plate_name} + 'Plate (sterile)'</rhs></assign>
 
   <!-- Initial takes -->
   <take>
