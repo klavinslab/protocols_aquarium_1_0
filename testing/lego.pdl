@@ -9,25 +9,41 @@
   
   </step>
 
-  <step>
-    <description>Get a red Lego</description>
-    <note>Find a red 2x2 Lego brick in the small container of Legos.</note>
-  </step>
+ <take>
+    <item>
+      <type>Red brick</type>
+      <quantity>1</quantity>
+      <var>r</var>
+    </item>
+ </take>
+
+ <take>
+    <item>
+      <type>Yellow brick</type>
+      <quantity>1</quantity>
+      <var>r2</var>
+    </item>
+ </take>
+
+ <take>
+    <item>
+      <type>White lego plate</type>
+      <quantity>1</quantity>
+      <var>r3</var>
+    </item>
+ </take>
 
   <step>
-    <description>Get a yellow Lego</description>
-    <note>Find a yellow 2x2 Lego brick in the small container of Legos.</note>
-  </step>
-
-  <step>
-    <description>White Lego plate</description>
-    <note>Find the white 6x4 Lego plate in the small container of Legos.</note>
-  </step>
-
-  <step>
-    <description>Attache the red and yellow lego to the plate</description>
+    <description>Attach the red and yellow lego to the plate</description>
     <note>
 	Snap the red and yellow lego to the top side of the white plate side-by-side and centered such that there is still a border of white around the bricks.
+    </note>
+  </step>
+
+  <step>
+    <description>Admire your work</description>
+    <note>
+      You are a clever person. Reflect on what you have accomplished. Press 'Next' when finished.
     </note>
   </step>
 
