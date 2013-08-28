@@ -1,0 +1,27 @@
+<protocol>
+
+  <take>
+
+    <item>
+      <type>Thing One</type>
+      <quantity>1</quantity>
+      <var>T1</var>
+    </item>
+
+    <item>
+      <type>Thing Two</type>
+      <quantity>2</quantity>
+      <var>T2</var>
+    </item>
+
+    <item>
+      <type>Thing Three</type>
+      <quantity>3</quantity>
+      <var>T3</var>
+    </item>
+
+  </take>
+
+  <release>%{T1}.concat %{T2}.concat %{T3}</release>
+
+</protocol>

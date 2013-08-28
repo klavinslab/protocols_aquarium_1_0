@@ -1,0 +1,40 @@
+<protocol>
+
+  <take>
+
+    <item>
+      <type>Peanut Butter</type>
+      <quantity>1</quantity>
+      <var>PB</var>
+    </item>
+
+    <item>
+      <type>Jelly</type>
+      <quantity>1</quantity>
+      <var>J</var>
+    </item>
+
+    <item>
+      <type>Slice of Bread</type>
+      <quantity>2</quantity>
+      <var>Bread</var>
+    </item>
+
+  </take>
+
+  <step>
+    <description>Make a sandwich.</description>
+    <note>If you don't know how to do this, you really should not be a bioturk technician.</note>
+  </step>
+
+  <produce>
+    <object>PBandJ Sandwich</object>
+    <quantity>1</quantity>
+    <release>%{Bread}</release>
+  </produce>
+
+  <release>
+    %{PB}.concat %{J}
+  </release>
+
+</protocol>
