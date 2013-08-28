@@ -47,4 +47,8 @@
     </note>
   </step>
 
+ <release>%{r}</release>
+ <release>%{r1}</release>
+ <release>%{r2}</release>
+
 </protocol>
