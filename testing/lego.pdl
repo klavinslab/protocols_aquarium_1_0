@@ -1,0 +1,34 @@
+<protocol>
+
+  <step>
+
+    <description>Build a simple Lego subassembly.</description>
+  
+    <note>This is a protocol that will be used to test manta's ability to record, transcode and segment sensor and vision data.
+    </note>
+  
+  </step>
+
+  <step>
+    <description>Get a red Lego</description>
+    <note>Find a red 2x2 Lego brick in the small container of Legos.</note>
+  </step>
+
+  <step>
+    <description>Get a yellow Lego</description>
+    <note>Find a yellow 2x2 Lego brick in the small container of Legos.</note>
+  </step>
+
+  <step>
+    <description>White Lego plate</description>
+    <note>Find the white 6x4 Lego plate in the small container of Legos.</note>
+  </step>
+
+  <step>
+    <description>Attache the red and yellow lego to the plate</description>
+    <note>
+	Snap the red and yellow lego to the top side of the white plate side-by-side and centered such that there is still a border of white around the bricks.
+    </note>
+  </step>
+
+</protocol>
