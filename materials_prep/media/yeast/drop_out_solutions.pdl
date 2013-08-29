@@ -33,80 +33,76 @@
   <assign><lhs>type_names</lhs><rhs>["Trp", "His", "Leu", "Ura"]</rhs></assign>
   <assign><lhs>total</lhs><rhs>%{trp_n} + %{his_n} + %{leu_n} + %{ura_n}</rhs></assign>
 
-  <!-- TODO: remove these? -->
-  <assign><lhs>ingredients</lhs><rhs>[]</rhs></assign>
-  <assign><lhs>labels</lhs><rhs>[]</rhs></assign>
-  <assign><lhs>amounts</lhs><rhs>[]</rhs></assign>
-
   <!-- Generate string for referring to bottles -->
   <assign><lhs>bottle_names</lhs><rhs>[]</rhs></assign>
   <assign><lhs>i</lhs><rhs>0</rhs></assign>
   <while>
-  <condition>%{counter} < 4</condition>
-  <do>
-    <if>
-    <condition>%{type_n}[i] > 0</condition>
-    <then>
-      <assign><lhs>bottle_names</lhs><rhs>%{bottle_names}.push(%{type_n}[i].to_s + " %{type_names}[i]")</rhs></assign>
-    </then>
-    <else><!-- Ignore it --></else>
-    </if>
-    <assign><lhs>i</lhs><rhs>%{i} + 1</rhs></assign>
-  </do>
+    <condition>%{counter} < 4</condition>
+    <do>
+      <if>
+        <condition>%{type_n}[i] > 0</condition>
+        <then>
+          <assign><lhs>bottle_names</lhs><rhs>%{bottle_names}.push(%{type_n}[i].to_s + " %{type_names}[i]")</rhs></assign>
+        </then>
+        <else><!-- Ignore it --></else>
+      </if>
+      <assign><lhs>i</lhs><rhs>%{i} + 1</rhs></assign>
+    </do>
   </while>
 
   <!-- Initial takes -->
   <take>
-  <item>
-    <type>500 mL Bottle</type>
-    <quantity>%{total}</quantity>
-    <var>bottles</var>
-  </item>
-  <item>
-    <type>Weighing Boat</type>
-    <quantity>%{total}</quantity>
-    <var>boats</var>
-  </item>
-  <!-- FIXME: I don't actually know how many filters are needed. Is it one per amino acid? One per bottle? -->
-  <item>
-    <type>1L Bottle Top Filter</type>
-    <quantity>%{total}</quantity>
-    <var>filter</var>
-  </item>
+    <item>
+      <type>500 mL Bottle</type>
+      <quantity>%{total}</quantity>
+      <var>bottles</var>
+    </item>
+    <item>
+      <type>Weighing Boat</type>
+      <quantity>%{total}</quantity>
+      <var>boats</var>
+    </item>
+    <!-- FIXME: I don't actually know how many filters are needed. Is it one per amino acid? One per bottle? -->
+    <item>
+      <type>1L Bottle Top Filter</type>
+      <quantity>%{total}</quantity>
+      <var>filter</var>
+    </item>
   </take>
 
   <!-- Initial steps -->
   <!-- Set up / label all tubes -->
   <step>
-  <description>Label bottles.</description>
-  <note>Label the following bottles with initials, date, and the type of supplement: %{bottle_names}.</note>
+    <description>Label bottles.</description>
+    <note>Label the following bottles with initials, date, and the type of supplement: %{bottle_names}.</note>
   </step>
 
+  <!-- FIXME: these sections are just dying for an import -->
   <if>
   <condition>%{Trp} &gt; 0</condition>
   <then>
     <take>
-    <item>
-      <type>Tryptophan Powder</type>
-      <quantity>1</quantity>
-      <var>trp_powder</var>
-    </item>
+      <item>
+        <type>Tryptophan Powder</type>
+        <quantity>1</quantity>
+        <var>trp_powder</var>
+      </item>
     </take>
 
     <step>
-    <description>Put a temporary label on the lid of %{Trp} of the 500 mL bottles.</description>
-    <note>Label the bottles Trp</note>
-    <warning>Put the labels on the tops of the bottles, not on the sides. If not, the labels may come off when the bottles are put in the heat bath.</warning>
+      <description>Put a temporary label on the lid of %{Trp} of the 500 mL bottles.</description>
+      <note>Label the bottles Trp</note>
+      <warning>Put the labels on the tops of the bottles, not on the sides. If not, the labels may come off when the bottles are put in the heat bath.</warning>
     </step>
     <assign><lhs>j</lhs><rhs>0</rhs></assign>
     <while>
-    <condition>%{j} &lt;  %{Trp}</condition>
-    <do>
-      <assign><lhs>ingredients</lhs><rhs>%{ingredients}.push('Tryptophan')</rhs></assign>
-      <assign><lhs>labels</lhs><rhs>%{labels}.push('Trp')</rhs></assign>
-      <assign><lhs>amounts</lhs><rhs>%{amounts}.push('5g')</rhs></assign>
-      <assign><lhs>j</lhs><rhs>%{j}+1</rhs></assign>
-    </do>
+      <condition>%{j} &lt;  %{Trp}</condition>
+      <do>
+        <assign><lhs>ingredients</lhs><rhs>%{ingredients}.push('Tryptophan')</rhs></assign>
+        <assign><lhs>labels</lhs><rhs>%{labels}.push('Trp')</rhs></assign>
+        <assign><lhs>amounts</lhs><rhs>%{amounts}.push('5g')</rhs></assign>
+        <assign><lhs>j</lhs><rhs>%{j}+1</rhs></assign>
+      </do>
     </while>
   </then>
   </if>
@@ -114,42 +110,29 @@
   <if>
     <condition>%{His} &gt; 0</condition>
     <then>
-    <take>
-      <item>
-      <type>Histidine Powder</type>
-      <quantity>1</quantity>
-      <var>his_powder</var>
-      </item>
-    </take>
+      <take>
+        <item>
+          <type>Histidine Powder</type>
+          <quantity>1</quantity>
+          <var>his_powder</var>
+        </item>
+      </take>
 
-  <step>
-    <description>Put a temporary label on the lid of %{His} of the 500 mL bottles.</description>
-       <note>
-       Label the bottles His
-      </note>
-      <warning>Put the labels on the tops of the bottles, not on the sides. If not, the
-          labels may come off when the bottles are put in the heat bath.
-      </warning>
-  </step>
-    <assign><lhs>k</lhs><rhs>0</rhs></assign>
-    <while>
-      <condition>%{k} &lt;  %{His}</condition>
-      <do>
-      <assign>
-        <lhs>ingredients</lhs>
-    <rhs>%{ingredients}.push('Histidine')</rhs>
-      </assign>
-      <assign>
-        <lhs>labels</lhs>
-    <rhs>%{labels}.push('His')</rhs>
-      </assign>
-      <assign>
-        <lhs>amounts</lhs>
-    <rhs>%{amounts}.push('5g')</rhs>
-      </assign>
-       <assign><lhs>k</lhs><rhs>%{k}+1</rhs></assign>
-      </do>
-    </while>
+      <step>
+        <description>Put a temporary label on the lid of %{His} of the 500 mL bottles.</description>
+        <note>Label the bottles His</note>
+        <warning>Put the labels on the tops of the bottles, not on the sides. If not, the labels may come off when the bottles are put in the heat bath.</warning>
+      </step>
+      <assign><lhs>k</lhs><rhs>0</rhs></assign>
+      <while>
+        <condition>%{k} &lt;  %{His}</condition>
+        <do>
+          <assign><lhs>ingredients</lhs><rhs>%{ingredients}.push('Histidine')</rhs></assign>
+          <assign><lhs>labels</lhs><rhs>%{labels}.push('His')</rhs></assign>
+          <assign><lhs>amounts</lhs><rhs>%{amounts}.push('5g')</rhs></assign>
+          <assign><lhs>k</lhs><rhs>%{k}+1</rhs></assign>
+       </do>
+      </while>
     </then>
   </if>
 
@@ -158,22 +141,18 @@
     <then>
     <take>
       <item>
-      <type>Leucine Powder</type>
-      <quantity>1</quantity>
-      <var>leu_powder</var>
+        <type>Leucine Powder</type>
+        <quantity>1</quantity>
+        <var>leu_powder</var>
       </item>
     </take>
 
   <step>
     <description>Put a temporary label on the lid of %{Leu} of the 500 mL bottles.</description>
-       <note>
-       Label the bottles Leu
-      </note>
-      <warning>Put the labels on the tops of the bottles, not on the sides. If not, the
-          labels may come off when the bottles are put in the heat bath.
-      </warning>
+      <note>Label the bottles Leu</note>
+      <warning>Put the labels on the tops of the bottles, not on the sides. If not, the labels may come off when the bottles are put in the heat bath.</warning>
   </step>
-    <assign><lhs>l</lhs><rhs>0</rhs></assign>
+  <assign><lhs>l</lhs><rhs>0</rhs></assign>
     <while>
       <condition>%{l} &lt;  %{Leu}</condition>
       <do>
