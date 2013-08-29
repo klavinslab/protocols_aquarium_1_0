@@ -101,11 +101,11 @@
       <produce>
         <object>800mL TB Liquid Media (unsterile)</object>
         <quantity>%{n_bottle}</quantity>
+        <release>%{bottle}</release>
       </produce>
 
       <!-- Final releases -->
       <release>%{tb_powder}</release>
-      <release>%{bottle}</release>
 
     </else>
   </if>

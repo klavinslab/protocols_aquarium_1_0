@@ -1,31 +1,31 @@
 <?xml version="1.0"?>
 <protocol name="Yeast Dropout Solutions">
 
-    <information>Make sterile solutions of Tryptophan, Histidine, Leucine, and/or Uracil.</information>
-    <!-- This protocols describes how to make solutions of Tryptophan, Histidine, Leucine, and Uracil, which are used to make selective media and/or plates for yeast. The amino acid solutions are 10 mg / mL and the Uracil solution is 2.5 mg / mL. --><
+  <information>Make sterile solutions of Tryptophan, Histidine, Leucine, and/or Uracil.</information>
+  <!-- This protocols describes how to make solutions of Tryptophan, Histidine, Leucine, and Uracil, which are used to make selective media and/or plates for yeast. The amino acid solutions are 10 mg / mL and the Uracil solution is 2.5 mg / mL. --><
 
-    <!-- Arguments -->
-    <!-- Which stocks are you making? Can make any number of each -->
-    <argument>
-      <name>trp_n</name>
-      <type>number</type>
-      <description>Enter the number of bottles of Trp you wish to make.</description>
-    </argument>
-    <argument>
-      <name>his_n</name>
-      <type>number</type>
-      <description>Enter the number of bottles of His you wish to make.</description>
-    </argument>
-    <argument>
-      <name>leu_n</name>
-      <type>number</type>
-      <description>Enter the number of bottles of Leu you wish to make.</description>
-    </argument>
-    <argument>
-      <name>ura_n</name>
-      <type>number</type>
-      <description>Enter the number of bottles of Ura you wish to make.</description>
-    </argument>
+  <!-- Arguments -->
+  <!-- Which stocks are you making? Can make any number of each -->
+  <argument>
+    <name>trp_n</name>
+    <type>number</type>
+    <description>Enter the number of bottles of Trp you wish to make.</description>
+  </argument>
+  <argument>
+    <name>his_n</name>
+    <type>number</type>
+    <description>Enter the number of bottles of His you wish to make.</description>
+  </argument>
+  <argument>
+    <name>leu_n</name>
+    <type>number</type>
+    <description>Enter the number of bottles of Leu you wish to make.</description>
+  </argument>
+  <argument>
+    <name>ura_n</name>
+    <type>number</type>
+    <description>Enter the number of bottles of Ura you wish to make.</description>
+  </argument>
 
   <!-- Figure out how many of each item to take -->
   <!-- Initialize arrays for items -->
@@ -42,371 +42,368 @@
   <assign><lhs>bottle_names</lhs><rhs>[]</rhs></assign>
   <assign><lhs>i</lhs><rhs>0</rhs></assign>
   <while>
-    <condition>%{counter} < 4</condition>
-    <do>
-      <if>
-        <condition>%{type_n}[i] > 0</condition>
-        <then>
-          <assign><lhs>bottle_names</lhs><rhs>%{bottle_names}.push(%{type_n}[i].to_s + " %{type_names}[i]")</rhs></assign>
-        </then>
-        <else><!-- Ignore it --></else>
-      </if>
-      <assign><lhs>i</lhs><rhs>%{i} + 1</rhs></assign>
-    </do>
+  <condition>%{counter} < 4</condition>
+  <do>
+    <if>
+    <condition>%{type_n}[i] > 0</condition>
+    <then>
+      <assign><lhs>bottle_names</lhs><rhs>%{bottle_names}.push(%{type_n}[i].to_s + " %{type_names}[i]")</rhs></assign>
+    </then>
+    <else><!-- Ignore it --></else>
+    </if>
+    <assign><lhs>i</lhs><rhs>%{i} + 1</rhs></assign>
+  </do>
   </while>
 
   <!-- Initial takes -->
   <take>
-    <item>
-      <type>500 mL Bottle</type>
-      <quantity>%{total}</quantity>
-      <var>bottles</var>
-    </item>
-    <item>
-      <type>Weighing Boat</type>
-      <quantity>%{total}</quantity>
-      <var>boats</var>
-    </item>
-    <!-- FIXME: I don't actually know how many filters are needed. Is it one per amino acid? One per bottle? -->
-    <item>
-      <type>1L Bottle Top Filter</type>
-      <quantity>%{total}</quantity>
-      <var>filter</var>
-    </item>
+  <item>
+    <type>500 mL Bottle</type>
+    <quantity>%{total}</quantity>
+    <var>bottles</var>
+  </item>
+  <item>
+    <type>Weighing Boat</type>
+    <quantity>%{total}</quantity>
+    <var>boats</var>
+  </item>
+  <!-- FIXME: I don't actually know how many filters are needed. Is it one per amino acid? One per bottle? -->
+  <item>
+    <type>1L Bottle Top Filter</type>
+    <quantity>%{total}</quantity>
+    <var>filter</var>
+  </item>
   </take>
 
   <!-- Initial steps -->
   <!-- Set up / label all tubes -->
   <step>
-    <description>Label bottles.</description>
-    <note>Label the following bottles with initials, date, and the type of supplement: %{bottle_names}.</note>
+  <description>Label bottles.</description>
+  <note>Label the following bottles with initials, date, and the type of supplement: %{bottle_names}.</note>
   </step>
+
+  <if>
+  <condition>%{Trp} &gt; 0</condition>
+  <then>
+    <take>
+    <item>
+      <type>Tryptophan Powder</type>
+      <quantity>1</quantity>
+      <var>trp_powder</var>
+    </item>
+    </take>
+
+    <step>
+    <description>Put a temporary label on the lid of %{Trp} of the 500 mL bottles.</description>
+    <note>Label the bottles Trp</note>
+    <warning>Put the labels on the tops of the bottles, not on the sides. If not, the labels may come off when the bottles are put in the heat bath.</warning>
+    </step>
+    <assign><lhs>j</lhs><rhs>0</rhs></assign>
+    <while>
+    <condition>%{j} &lt;  %{Trp}</condition>
+    <do>
+      <assign><lhs>ingredients</lhs><rhs>%{ingredients}.push('Tryptophan')</rhs></assign>
+      <assign><lhs>labels</lhs><rhs>%{labels}.push('Trp')</rhs></assign>
+      <assign><lhs>amounts</lhs><rhs>%{amounts}.push('5g')</rhs></assign>
+      <assign><lhs>j</lhs><rhs>%{j}+1</rhs></assign>
+    </do>
+    </while>
+  </then>
+  </if>
+
+  <if>
+    <condition>%{His} &gt; 0</condition>
+    <then>
+    <take>
+      <item>
+      <type>Histidine Powder</type>
+      <quantity>1</quantity>
+      <var>his_powder</var>
+      </item>
+    </take>
+
+  <step>
+    <description>Put a temporary label on the lid of %{His} of the 500 mL bottles.</description>
+       <note>
+       Label the bottles His
+      </note>
+      <warning>Put the labels on the tops of the bottles, not on the sides. If not, the
+          labels may come off when the bottles are put in the heat bath.
+      </warning>
+  </step>
+    <assign><lhs>k</lhs><rhs>0</rhs></assign>
+    <while>
+      <condition>%{k} &lt;  %{His}</condition>
+      <do>
+      <assign>
+        <lhs>ingredients</lhs>
+    <rhs>%{ingredients}.push('Histidine')</rhs>
+      </assign>
+      <assign>
+        <lhs>labels</lhs>
+    <rhs>%{labels}.push('His')</rhs>
+      </assign>
+      <assign>
+        <lhs>amounts</lhs>
+    <rhs>%{amounts}.push('5g')</rhs>
+      </assign>
+       <assign><lhs>k</lhs><rhs>%{k}+1</rhs></assign>
+      </do>
+    </while>
+    </then>
+  </if>
+
+  <if>
+    <condition>%{Leu} &gt; 0</condition>
+    <then>
+    <take>
+      <item>
+      <type>Leucine Powder</type>
+      <quantity>1</quantity>
+      <var>leu_powder</var>
+      </item>
+    </take>
+
+  <step>
+    <description>Put a temporary label on the lid of %{Leu} of the 500 mL bottles.</description>
+       <note>
+       Label the bottles Leu
+      </note>
+      <warning>Put the labels on the tops of the bottles, not on the sides. If not, the
+          labels may come off when the bottles are put in the heat bath.
+      </warning>
+  </step>
+    <assign><lhs>l</lhs><rhs>0</rhs></assign>
+    <while>
+      <condition>%{l} &lt;  %{Leu}</condition>
+      <do>
+
+    <assign>
+      <lhs>ingredients</lhs>
+    <rhs>%{ingredients}.push('Leucine')</rhs>
+    </assign>
+    <assign>
+      <lhs>labels</lhs>
+    <rhs>%{labels}.push('Leu')</rhs>
+    </assign>
+    <assign>
+      <lhs>amounts</lhs>
+    <rhs>%{amounts}.push('5g')</rhs>
+    </assign>
+       <assign><lhs>l</lhs><rhs>%{l}+1</rhs></assign>
+      </do>
+    </while>
+    </then>
+  </if>
+
+  <if>
+    <condition>%{Ura} &gt; 0</condition>
+    <then>
+    <take>
+      <item>
+      <type>Uracil Powder</type>
+      <quantity>1</quantity>
+      <var>ura_powder</var>
+       </item>
+    </take>
+  <step>
+    <description>Put a temporary label on the lid of %{Ura} of the 500 mL bottles.</description>
+       <note>
+       Label the bottles Ura
+      </note>
+      <warning>Put the labels on the tops of the bottles, not on the sides. If not, the
+          labels may come off when the bottles are put in the heat bath.
+      </warning>
+  </step>
+    <assign><lhs>m</lhs><rhs>0</rhs></assign>
+    <while>
+      <condition>%{m} &lt;  %{Ura}</condition>
+      <do>
+
+    <assign>
+      <lhs>ingredients</lhs>
+    <rhs>%{ingredients}.push('Uracine')</rhs>
+    </assign>
+    <assign>
+      <lhs>labels</lhs>
+    <rhs>%{labels}.push('Ura')</rhs>
+    </assign>
+    <assign>
+      <lhs>amounts</lhs>
+    <rhs>%{amounts}.push('2.5g')</rhs>
+    </assign>
+       <assign><lhs>m</lhs><rhs>%{m}+1</rhs></assign>
+      </do>
+    </while>
+    </then>
+  </if>
+
+  <assign>
+  <lhs>count</lhs>
+  <rhs>0</rhs>
+  </assign>
+
+  <assign><lhs>i</lhs><rhs>0</rhs></assign>
+
+
+  <while>
+    <condition>%{i}!= %{labels}.length</condition>
+    <do>
+
+    <assign><lhs>cur_ingredient</lhs><rhs>%{ingredients}[%{i}]</rhs></assign>
+    <assign><lhs>cur_amount</lhs><rhs>%{amounts}[%{i}]</rhs></assign>
+    <assign><lhs>cur_label</lhs><rhs>%{labels}[%{i}]</rhs></assign>
+
+      <step>
+        <description>Measure %{cur_amount} of %{cur_ingredient}</description>
+        <note>Place the plastic boat on the scale. Zero the scale.
+      Using the spatula, measure %{cur_amount} of %{cur_ingredient}
+      into the plastic boat.
+            Use a kimwipe to clean the spatula.
+  </note>
+        <image>WeighDryIngredient</image>
+      </step>
+
+      <step>
+        <description>
+          Transfer the %{cur_ingredient} to the bottle labeled %{cur_label}.
+        </description>
+        <note>
+        Remove the top of the 500 mL bottle labeled %{cur_label} and pour
+        the %{cur_ingredient} into the bottle. Dispose of the plastic boat.
+        </note>
+        <image>PourDry500mL</image>
+      </step>
+
+      <step>
+        <description>
+          Fill the graduated cylinder with di Water to 500 mL
+        </description>
+        <image>Fill1000mLGraduated</image>
+      </step>
+
+      <step>
+        <description>
+          Transfer and mix.
+        </description>
+        <note>
+          Pour the water from the cylinder into the bottle labeled %{cur_label},
+          return the top, and shake the bottle to mix in the %{cur_ingredient}.
+        </note>
+        <image>TransferGraduatedTo500mL</image>
+      </step>
+
+      <assign><lhs>i</lhs><rhs>%{i}+1</rhs></assign>
+
+    </do>
+
+  </while>
+
+  <step>
+    <description>Put all bottles in the heat bath.</description>
+    <note>Place all four of the bottles in the heat bath for approximately 20 minutes.
+      Make sure that the heat bath isat 65 C. Cover the heat bath for faster heating.
+      Go can go on to the next step now, but you should periodically remove each bottle,
+      swirl it, and check whether the powders have dissolved.
+    </note>
+    <image>HeatBathWithAminoAcids</image>
+  </step>
+
+  <step>
+    <description>Prepare bottle top filters.</description>
+    <note>While the powders are dissolving, attach the four bottle top filters to
+      the four remaining (sterile!) bottles. You will need to attache the white plastic hose adapter
+      to each filter as well. Be careful to keep the inside of the filter cap and the bottle
+      sterile.
+    </note>
+    <image>BottleFilterOnBottle</image>
+  </step>
+
+  <step>
+    <description>Remove filter and cap bottles</description>
+    <note>Remove the filter and cap the bottles, making sure to keep everthing sterile.</note>
+    <image>BottleFilterOnBottle</image>
+  </step>
+
 
   <if>
     <condition>%{Trp} &gt; 0</condition>
     <then>
-      <take>
-        <item>
-          <type>Tryptophan Powder</type>
-          <quantity>1</quantity>
-          <var>trp_powder</var>
-        </item>
-      </take>
-
-      <step>
-        <description>Put a temporary label on the lid of %{Trp} of the 500 mL bottles.</description>
-        <note>Label the bottles Trp</note>
-        <warning>Put the labels on the tops of the bottles, not on the sides. If not, the labels may come off when the bottles are put in the heat bath.</warning>
-      </step>
-      <assign><lhs>j</lhs><rhs>0</rhs></assign>
-      <while>
-        <condition>%{j} &lt;  %{Trp}</condition>
-        <do>
-          <assign><lhs>ingredients</lhs><rhs>%{ingredients}.push('Tryptophan')</rhs></assign>
-          <assign><lhs>labels</lhs><rhs>%{labels}.push('Trp')</rhs></assign>
-          <assign><lhs>amounts</lhs><rhs>%{amounts}.push('5g')</rhs></assign>
-          <assign><lhs>j</lhs><rhs>%{j}+1</rhs></assign>
-        </do>
-      </while>
+    <produce>
+      <object>Tryptophan Solution</object>
+      <quantity>%{Trp}</quantity>
+      <release>%{bottles}[0]</release>
+    </produce>
     </then>
   </if>
 
-    <if>
-      <condition>%{His} &gt; 0</condition>
-      <then>
-        <take>
-          <item>
-            <type>Histidine Powder</type>
-            <quantity>1</quantity>
-            <var>his_powder</var>
-          </item>
-        </take>
+  <if>
+    <condition>%{His} &gt; 0</condition>
+    <then>
+    <produce>
+      <object>Histidine Solution</object>
+      <quantity>%{His}</quantity>
+      <release>%{bottles}[0]</release>
+    </produce>
+    </then>
+  </if>
 
-  <step>
-      <description>Put a temporary label on the lid of %{His} of the 500 mL bottles.</description>
-             <note>
-             Label the bottles His
-            </note>
-            <warning>Put the labels on the tops of the bottles, not on the sides. If not, the
-                    labels may come off when the bottles are put in the heat bath.
-            </warning>
-  </step>
-        <assign><lhs>k</lhs><rhs>0</rhs></assign>
-        <while>
-          <condition>%{k} &lt;  %{His}</condition>
-          <do>
-            <assign>
-              <lhs>ingredients</lhs>
-        <rhs>%{ingredients}.push('Histidine')</rhs>
-            </assign>
-            <assign>
-              <lhs>labels</lhs>
-        <rhs>%{labels}.push('His')</rhs>
-            </assign>
-            <assign>
-              <lhs>amounts</lhs>
-        <rhs>%{amounts}.push('5g')</rhs>
-            </assign>
-           <assign><lhs>k</lhs><rhs>%{k}+1</rhs></assign>
-          </do>
-        </while>
-      </then>
-    </if>
+  <if>
+    <condition>%{Leu} &gt; 0</condition>
+    <then>
+    <produce>
+      <object>Leucine Solution</object>
+      <quantity>%{Leu}</quantity>
+      <release>%{bottles}[0]</release>
+    </produce>
+    </then>
+  </if>
 
-    <if>
-      <condition>%{Leu} &gt; 0</condition>
-      <then>
-        <take>
-          <item>
-            <type>Leucine Powder</type>
-            <quantity>1</quantity>
-            <var>leu_powder</var>
-          </item>
-        </take>
+  <if>
+    <condition>%{Ura} &gt; 0</condition>
+    <then>
+    <produce>
+      <object>Uracil Solution</object>
+      <quantity>%{Ura}</quantity>
+      <release>%{bottles}[0]</release>
+    </produce>
+    </then>
+  </if>
 
-  <step>
-      <description>Put a temporary label on the lid of %{Leu} of the 500 mL bottles.</description>
-             <note>
-             Label the bottles Leu
-            </note>
-            <warning>Put the labels on the tops of the bottles, not on the sides. If not, the
-                    labels may come off when the bottles are put in the heat bath.
-            </warning>
-  </step>
-        <assign><lhs>l</lhs><rhs>0</rhs></assign>
-        <while>
-          <condition>%{l} &lt;  %{Leu}</condition>
-          <do>
+  <release>%{boats}</release>
+  <release>%{filter}</release>
 
-        <assign>
-            <lhs>ingredients</lhs>
-      <rhs>%{ingredients}.push('Leucine')</rhs>
-        </assign>
-        <assign>
-            <lhs>labels</lhs>
-      <rhs>%{labels}.push('Leu')</rhs>
-        </assign>
-        <assign>
-            <lhs>amounts</lhs>
-      <rhs>%{amounts}.push('5g')</rhs>
-        </assign>
-           <assign><lhs>l</lhs><rhs>%{l}+1</rhs></assign>
-          </do>
-        </while>
-      </then>
-    </if>
-
-    <if>
-      <condition>%{Ura} &gt; 0</condition>
-      <then>
-        <take>
-          <item>
-            <type>Uracil Powder</type>
-            <quantity>1</quantity>
-            <var>ura_powder</var>
-           </item>
-        </take>
-  <step>
-      <description>Put a temporary label on the lid of %{Ura} of the 500 mL bottles.</description>
-             <note>
-             Label the bottles Ura
-            </note>
-            <warning>Put the labels on the tops of the bottles, not on the sides. If not, the
-                    labels may come off when the bottles are put in the heat bath.
-            </warning>
-  </step>
-        <assign><lhs>m</lhs><rhs>0</rhs></assign>
-        <while>
-          <condition>%{m} &lt;  %{Ura}</condition>
-          <do>
-
-        <assign>
-            <lhs>ingredients</lhs>
-      <rhs>%{ingredients}.push('Uracine')</rhs>
-        </assign>
-        <assign>
-            <lhs>labels</lhs>
-      <rhs>%{labels}.push('Ura')</rhs>
-        </assign>
-        <assign>
-            <lhs>amounts</lhs>
-      <rhs>%{amounts}.push('2.5g')</rhs>
-        </assign>
-           <assign><lhs>m</lhs><rhs>%{m}+1</rhs></assign>
-          </do>
-        </while>
-      </then>
-    </if>
-
-    <assign>
-  <lhs>count</lhs>
-  <rhs>0</rhs>
-    </assign>
-
-    <assign><lhs>i</lhs><rhs>0</rhs></assign>
-
-
-    <while>
-        <condition>%{i}!= %{labels}.length</condition>
-        <do>
-
-      <assign><lhs>cur_ingredient</lhs><rhs>%{ingredients}[%{i}]</rhs></assign>
-      <assign><lhs>cur_amount</lhs><rhs>%{amounts}[%{i}]</rhs></assign>
-      <assign><lhs>cur_label</lhs><rhs>%{labels}[%{i}]</rhs></assign>
-
-            <step>
-                <description>Measure %{cur_amount} of %{cur_ingredient}</description>
-                <note>Place the plastic boat on the scale. Zero the scale.
-          Using the spatula, measure %{cur_amount} of %{cur_ingredient}
-          into the plastic boat.
-                      Use a kimwipe to clean the spatula.
-    </note>
-                <image>WeighDryIngredient</image>
-            </step>
-
-            <step>
-                <description>
-                    Transfer the %{cur_ingredient} to the bottle labeled %{cur_label}.
-                </description>
-                <note>
-                Remove the top of the 500 mL bottle labeled %{cur_label} and pour
-                the %{cur_ingredient} into the bottle. Dispose of the plastic boat.
-                </note>
-                <image>PourDry500mL</image>
-            </step>
-
-            <step>
-                <description>
-                    Fill the graduated cylinder with di Water to 500 mL
-                </description>
-                <image>Fill1000mLGraduated</image>
-            </step>
-
-            <step>
-                <description>
-                    Transfer and mix.
-                </description>
-                <note>
-                    Pour the water from the cylinder into the bottle labeled %{cur_label},
-                    return the top, and shake the bottle to mix in the %{cur_ingredient}.
-                </note>
-                <image>TransferGraduatedTo500mL</image>
-            </step>
-
-            <assign><lhs>i</lhs><rhs>%{i}+1</rhs></assign>
-
-        </do>
-
-    </while>
-
-    <step>
-        <description>Put all bottles in the heat bath.</description>
-        <note>Place all four of the bottles in the heat bath for approximately 20 minutes.
-            Make sure that the heat bath isat 65 C. Cover the heat bath for faster heating.
-            Go can go on to the next step now, but you should periodically remove each bottle,
-            swirl it, and check whether the powders have dissolved.
-        </note>
-        <image>HeatBathWithAminoAcids</image>
-    </step>
-
-    <step>
-        <description>Prepare bottle top filters.</description>
-        <note>While the powders are dissolving, attach the four bottle top filters to
-            the four remaining (sterile!) bottles. You will need to attache the white plastic hose adapter
-            to each filter as well. Be careful to keep the inside of the filter cap and the bottle
-            sterile.
-        </note>
-        <image>BottleFilterOnBottle</image>
-    </step>
-
-    <step>
-        <description>Remove filter and cap bottles</description>
-        <note>Remove the filter and cap the bottles, making sure to keep everthing sterile.</note>
-        <image>BottleFilterOnBottle</image>
-    </step>
-
-
-    <if>
-      <condition>%{Trp} &gt; 0</condition>
-      <then>
-        <produce>
-          <object>Tryptophan Solution</object>
-          <quantity>%{Trp}</quantity>
-        </produce>
-      </then>
-    </if>
-
-    <if>
-      <condition>%{His} &gt; 0</condition>
-      <then>
-        <produce>
-          <object>Histidine Solution</object>
-          <quantity>%{His}</quantity>
-        </produce>
-      </then>
-    </if>
-
-    <if>
-      <condition>%{Leu} &gt; 0</condition>
-      <then>
-        <produce>
-          <object>Leucine Solution</object>
-          <quantity>%{Leu}</quantity>
-        </produce>
-      </then>
-    </if>
-
-    <if>
-      <condition>%{Ura} &gt; 0</condition>
-      <then>
-        <produce>
-          <object>Uracil Solution</object>
-          <quantity>%{Ura}</quantity>
-        </produce>
-      </then>
-    </if>
-
+  <if>
+    <condition>%{Trp} &gt; 0</condition>
+    <then>
     <release>
-        %{boats}
+      %{trp_powder}
     </release>
+    </then>
+  </if>
+  <if>
+    <condition>%{His} &gt; 0</condition>
+    <then>
     <release>
-  %{bottles}
+      %{his_powder}
     </release>
+    </then>
+  </if>
+  <if>
+    <condition>%{Leu} &gt; 0</condition>
+    <then>
     <release>
-        %{filter}
+      %{leu_powder}
     </release>
-
-    <if>
-      <condition>%{Trp} &gt; 0</condition>
-      <then>
-        <release>
-            %{trp_powder}
-        </release>
-      </then>
-    </if>
-    <if>
-      <condition>%{His} &gt; 0</condition>
-      <then>
-        <release>
-            %{his_powder}
-        </release>
-      </then>
-    </if>
-    <if>
-      <condition>%{Leu} &gt; 0</condition>
-      <then>
-        <release>
-            %{leu_powder}
-        </release>
-      </then>
-    </if>
-    <if>
-      <condition>%{Ura} &gt; 0</condition>
-      <then>
-        <release>
-            %{ura_powder}
-        </release>
-      </then>
-    </if>
+    </then>
+  </if>
+  <if>
+    <condition>%{Ura} &gt; 0</condition>
+    <then>
+    <release>
+      %{ura_powder}
+    </release>
+    </then>
+  </if>
 
 </protocol>

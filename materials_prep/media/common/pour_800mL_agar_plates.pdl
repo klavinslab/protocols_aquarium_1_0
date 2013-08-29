@@ -61,6 +61,8 @@
     <quantity>40</quantity>
   </produce>
 
+  <!-- FIXME: Also produces an unsterile 1L bottle! Input bottle should be released there -->
+
   <!-- Releases -->
   <release>%{agar_bottle}</release>
   <release>%{plates}</release>

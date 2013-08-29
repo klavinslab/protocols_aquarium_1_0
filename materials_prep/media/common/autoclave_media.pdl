@@ -89,23 +89,13 @@
       <produce>
         <object>%{produced_item_name}</object>
         <quantity>1</quantity>
+        <release>%{items}[%{counter}]</release>
       </produce>
       <assign><lhs>counter</lhs><rhs>%{counter} + 1</rhs></assign>
     </do>
   </while>
 
   <!-- Releases -->
-  <!-- for some reason releasing list of %{items} doesn't work -->
-  <assign><lhs>counter</lhs><rhs>0</rhs></assign>
-  <while>
-    <condition>%{counter} &lt; %{item_number}</condition>
-    <do>
-      <!-- Ask for next item's string -->
-      <!-- If you pop off of the list, can't release anything -->
-      <release>%{items}[%{counter}]</release>
-      <assign><lhs>counter</lhs><rhs>%{counter} + 1</rhs></assign>
-    </do>
-  </while>
 
   <!-- May need to invent another state for objects - autoclaving -->
   <!-- There's a break in the middle of this protocol (waiting for the autoclave), and at the end

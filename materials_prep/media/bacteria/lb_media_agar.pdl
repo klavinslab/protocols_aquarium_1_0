@@ -111,11 +111,11 @@
       <produce>
         <object>800mL LB Agar Media (unsterile)</object>
         <quantity>%{n_bottle}</quantity>
+        <release>%{bottle}</release>
       </produce>
 
       <!-- Final releases -->
       <release>%{lb_agar_powder}</release>
-      <release>%{bottle}</release>
       <release>%{stir_bar}</release>
 
     </else>

@@ -84,6 +84,7 @@
   <produce>
     <object>800mL YPAD Media (nonsterile)</object>
     <quantity>1</quantity>
+    <release>%{bottle}</release>
   </produce>
 
   <!-- Releases -->
