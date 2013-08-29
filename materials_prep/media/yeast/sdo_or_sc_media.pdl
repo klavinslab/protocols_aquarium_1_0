@@ -42,6 +42,7 @@
       <var>yeast_base</var>
     </item>
     <item>
+      <!-- FIXME: isn't this called drop-out media supplement? -->
       <type>Synthetic Drop Out Media</type>
       <quantity>1</quantity>
       <var>sdo_media</var>
@@ -59,7 +60,7 @@
   </take>
   <!-- Take drop-out solutions -->
   <take>
-    <!-- TODO: could replace with while loop, but would need 3 arrays: yes/no array from arguments, object type array, and object var array -->
+  <!-- TODO: replace with for-loop equivalent -->
     <if>
       <condition>%{Leu}==1</condition>
       <then>
@@ -116,7 +117,8 @@
   </take>
 
   <!-- Begin steps -->
-  <!-- TODO: replace with include for 'add dry reagent' protocol -->
+  <!-- TODO: replace with include for 'add %{x}g %{dry reagent} to %{item}' protocol -->
+  <!-- TODO: replace with for-loop equivalent -->
   <step>
     <description>Measure 5.36g of Yeast nitrogen base without amino acids.</description>
     <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, measure 5.36 g of Yeast nitrogen base into the plastic boat and add it to the bottle.</note>
@@ -136,7 +138,7 @@
     </note>
   </step>
 
-  <!-- Could also build with while loop -->
+  <!-- TODO: replace with for-loop equivalent -->
   <if>
     <condition>%{His}==1</condition>
     <then>
@@ -145,7 +147,6 @@
       </step>
     </then>
   </if>
-
   <if>
     <condition>%{Leu}==1</condition>
     <then>
@@ -154,7 +155,6 @@
       </step>
     </then>
   </if>
-
   <if>
     <condition>%{Trp}==1</condition>
     <then>
@@ -163,7 +163,6 @@
       </step>
     </then>
   </if>
-
   <if>
     <condition>%{Ura}==1</condition>
     <then>
@@ -173,6 +172,7 @@
     </then>
   </if>
 
+  <!-- TODO: Use include tag here - this is used in most protocols -->
   <step>
     <description>Add 500 mL DI water.</description>
     <note>Use the DI water near the sink.</note>
@@ -192,15 +192,18 @@
     </note>
   </step>
 
+  <!-- FIXME: this object doesn't exist, violates naming scheme -->
   <produce>
     <object>800 mL Bottle of SC Media (not sterilized)</object>
     <quantity>1</quantity>
     <release>%{bottle}</release>
   </produce>
 
+  <!-- FIXME: need to release in separate tags -->
   <release>[%{balance}[0],%{boat_large}[0],%{yeast_base}[0],%{sdo_media}[0],%{dextrose}[0],%{adenine}[0]]</release>
-  <!-- TODO: generate array of drop-out solution variables, then release here -->
+  <!-- FIXME: generate array of drop-out solution variables, then release here -->
 
+  <!-- TODO: replace with for loop equivalent -->
   <if>
     <condition>%{His}==1</condition>
     <then>
