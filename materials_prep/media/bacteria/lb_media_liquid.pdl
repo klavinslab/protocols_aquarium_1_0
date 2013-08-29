@@ -101,11 +101,12 @@
       <produce>
         <object>800mL LB Liquid Media (unsterile)</object>
         <quantity>%{n_bottle}</quantity>
+        <!-- Consumes a bottle -->
+        <release>%{bottle}</release>
       </produce>
 
       <!-- Final releases -->
       <release>%{lb_powder}</release>
-      <release>%{bottle}</release>
 
     </else>
   </if>
