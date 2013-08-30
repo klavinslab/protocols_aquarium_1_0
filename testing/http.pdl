@@ -1,0 +1,24 @@
+<protocol>
+
+  <information>Do a Google search on life.</information>
+
+  <http>
+    <host>http://www.google.com</host>
+    <query>
+      <q>life</q>
+    </query> 
+    <status>s</status>
+    <body>b</body>
+  </http>
+
+  <assign>
+    <lhs>len</lhs>
+    <rhs>%{b}.length</rhs>
+  </assign>
+
+  <step>
+    <description>Google returned status %{s}.</description>
+    <note>We can't show the result because BioTurk doesn't do html. But the length of the response is %{len} charaters.</note>
+  </step>
+
+</protocol>
