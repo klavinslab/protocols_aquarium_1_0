@@ -18,7 +18,7 @@
 
   <step>
     <description>Google returned status %{s}.</description>
-    <note>We can't show the result because BioTurk doesn't do html. But the length of the response is %{len} charaters.</note>
+    <note>We can't show the result because BioTurk doesn't do html well. But the length of the response is %{len} characters.</note>
   </step>
 
 </protocol>
