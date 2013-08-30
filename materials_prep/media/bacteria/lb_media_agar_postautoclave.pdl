@@ -50,7 +50,7 @@
     <then>
       <!-- Amp is at 100X-->
       <assign><lhs>antibiotic_volume</lhs><rhs>800 / 100</rhs></assign>
-      <assign><lhs>antibiotic_type</lhs><rhs>100X 1 mL Ampicillin aliquot</rhs></assign>
+      <assign><lhs>antibiotic_type</lhs><rhs>"100X 1 mL Ampicillin Aliquot"</rhs></assign>
     </then>
     <else>
       <if>
@@ -59,16 +59,16 @@
         <then>
           <!-- Kan is at 200X-->
           <assign><lhs>antibiotic_volume</lhs><rhs>800 / 200</rhs></assign>
-          <assign><lhs>antibiotic_type</lhs><rhs>200X 1 mL Kanamycin aliquot</rhs></assign>
+          <assign><lhs>antibiotic_type</lhs><rhs>"200X 1 mL Kanamycin Aliquot"</rhs></assign>
         </then>
         <else>
           <if>
             <!-- Can I do string literals like this? -->
             <condition>%{antibiotic} == "Chlor"</condition>
             <then>
-              <!-- Amp is at 1000X-->
+              <!-- Chlor is at 1000X-->
               <assign><lhs>antibiotic_volume</lhs><rhs>800 / 1000</rhs></assign>
-              <assign><lhs>antibiotic_type</lhs><rhs>1000X 1 mL Chloramphenicol aliquot</rhs></assign>
+              <assign><lhs>antibiotic_type</lhs><rhs>"1000X 1 mL Chloramphenicol Aliquot"</rhs></assign>
             </then>
             <else>
               <!-- TODO: if we get a 'fail' tag, use it here -->
@@ -95,7 +95,7 @@
   <!-- Add antibiotic -->
   <step>
     <description>Add antibiotic</description>
-    <note>Add %{antibiotic_volume}mL of %{antibiotic} to the LB Agar bottle. Swirl a little to mix.</note>
+    <note>Add %{antibiotic_volume}mL from %{antibiotic_type} to the LB Agar bottle. Swirl a little to mix.</note>
   </step>
 
   <!-- Produces -->
