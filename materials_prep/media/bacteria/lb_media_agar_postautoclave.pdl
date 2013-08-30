@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<protocol name="LB agar">
+<protocol>
 
   <information>Prepare LB agar media for pouring plates.</information>
 
@@ -9,18 +9,24 @@
   <argument>
     <name>antibiotic</name>
     <type>string</type>
-    <!-- Allowed strings are: Amp, Kan, Chlor -->
-    <description>Enter the antibiotic to use for this batch.</description>
+    <description>Enter the antibiotic to use for this batch (allowed inputs are Amp, Kan, or Chlor).</description>
   </argument>
 
   <!-- Initial takes -->
+  <!-- TODO: Is there a way to include a note about this thing being crazy hot? -->
   <take>
-    <!-- Is there a way to include a note about this thing being crazy hot? -->
-    <object>800mL Agar Media (sterile)</object>
-    <quantity>1</quantity>
-    <var>bottle</var>
+    <item>
+      <type>800mL LB Agar Media (sterile)</type>
+      <quantity>1</quantity>
+      <var>lb</var>
+    </item>
+    <item>
+      <type>Heated Stir Plate</type>
+      <quantity>1</quantity>
+      <var>stir_plate</var>
+    </item>
   </take>
-  <!-- TODO: take the stir plate -->
+
   <!-- Begin steps -->
   <!-- TODO: Should take/release the gloves, too! -->
   <!-- Put bottle on stir plate -->
@@ -35,75 +41,63 @@
   <!-- TODO: There's a wait step somewhere in here. How long does it take to equilibriate? -->
   <!-- For Kanamycin: -->
   <!-- Technically I want an if, then an elif, then another elif, then an else, and the else should be angry that you didn't give the right input -->
+  <!-- TODO: Good place to use include and/or a for loop equivalent -->
+  <!-- FIXME: antibiotic aliquots should be named using their concentration (100X, etc) -->
+  <!-- What I really want is an 'elseif'... -->
   <if>
     <!-- Can I do string literals like this? -->
-    <condition>%{antibiotic} == "Kan"</condition>
-    <then>
-      <assign>
-        <!-- This is in mL -->
-        <lhs>antibiotic_volume</lhs>
-        <!-- Kan is at 200X-->
-        <rhs>800 / 200</rhs>
-      </assign>
-      <take>
-        <!-- FIXME: object description has to be more specific than this -->
-        <object>Kanymycin aliquot</object>
-        <!-- Can I do math here (I want 'ceil' or integer division)? -->
-        <quantity>%{antibiotic_volume}</quantity>
-        <var>antibiotic</var>
-      </take>
-    </then>
-    <else></else>
-  </if>
-  <!-- For Ampicillin: -->
-  <if>
     <condition>%{antibiotic} == "Amp"</condition>
     <then>
-      <assign>
-        <!-- This is in mL -->
-        <lhs>antibiotic_volume</lhs>
-        <!-- Amp is at 100X-->
-        <rhs>800 / 200</rhs>
-      </assign>
-      <take>
-        <!-- FIXME: object description has to be more specific than this -->
-        <object>Ampicillin aliquot</object>
-        <!-- Can I do math here (I want 'ceil' or integer division)? -->
-        <quantity>%{antibiotic_volume}</quantity>
-        <var>antibiotic</var>
-      </take>
+      <!-- Amp is at 100X-->
+      <assign><lhs>antibiotic_volume</lhs><rhs>800 / 100</rhs></assign>
+      <assign><lhs>antibiotic_type</lhs><rhs>Ampicillin aliquot</rhs></assign>
     </then>
-    <else></else>
+    <else>
+      <if>
+        <!-- Can I do string literals like this? -->
+        <condition>%{antibiotic} == "Kan"</condition>
+        <then>
+          <!-- Kan is at 200X-->
+          <assign><lhs>antibiotic_volume</lhs><rhs>800 / 200</rhs></assign>
+          <assign><lhs>antibiotic_type</lhs><rhs>Kanamycin aliquot</rhs></assign>
+        </then>
+        <else>
+          <if>
+            <!-- Can I do string literals like this? -->
+            <condition>%{antibiotic} == "Chlor"</condition>
+            <then>
+              <!-- Amp is at 1000X-->
+              <assign><lhs>antibiotic_volume</lhs><rhs>800 / 1000</rhs></assign>
+              <assign><lhs>antibiotic_type</lhs><rhs>Chloramphenicol aliquot</rhs></assign>
+            </then>
+            <else>
+              <!-- TODO: if we get a 'fail' tag, use it here -->
+              <step>
+                <description>Input for the antibiotic wasn't Amp, Kan, or Chlor - you should abort this protocol now.</description>
+              </step>
+            </else>
+          </if>
+        </else>
+      </if>
+    </else>
   </if>
-  <!-- For Chloramphenicol: -->
-  <if>
-    <condition>%{antibiotic} == "Chlor"</condition>
-    <then>
-      <assign>
-        <!-- This is in mL -->
-        <lhs>antibiotic_volume</lhs>
-        <!-- Amp is at 1000X-->
-        <rhs>800 / 1000</rhs>
-      </assign>
-      <take>
-        <!-- FIXME: object description has to be more specific than this -->
-        <object>Chloramphenicol aliquot</object>
-        <!-- Can I do math here (I want 'ceil' or integer division)? -->
-        <quantity>%{antibiotic_volume}</quantity>
-        <var>antibiotic</var>
-      </take>
-    </then>
-    <else></else>
-  </if>
+
+  <take>
+    <item>
+      <type>%{antibiotic_type}</type>
+      <quantity>%{antibiotic_volume}</quantity>
+      <var>antibiotic</var>
+    </item>
+  </take>
+
   <!-- Add antibiotic -->
   <step>
     <description>Add antibiotic</description>
-    <note>Add %{antibiotic_volume}mL of %{antibiotic} to the LB Agar bottle.</note>
+    <note>Add %{antibiotic_volume}mL of %{antibiotic} to the LB Agar bottle. Swirl a little to mix.</note>
   </step>
 
   <!-- Produces -->
   <!-- TODO: Include plate pouring protocol here - plates should be produced at the end of this protocol -->
   <!-- TODO: update releases -->
-  <release></release>
 
 </protocol>
