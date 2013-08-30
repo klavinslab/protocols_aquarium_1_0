@@ -22,6 +22,11 @@
 
   </take>
 
+  <step>
+    <description>Things</description>
+    <note>%{T2}</note>
+  </step>
+
   <release>%{T1}.concat %{T2}.concat %{T3}</release>
 
 </protocol>
