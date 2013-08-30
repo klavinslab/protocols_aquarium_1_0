@@ -50,7 +50,7 @@
     <then>
       <!-- Amp is at 100X-->
       <assign><lhs>antibiotic_volume</lhs><rhs>800 / 100</rhs></assign>
-      <assign><lhs>antibiotic_type</lhs><rhs>Ampicillin aliquot</rhs></assign>
+      <assign><lhs>antibiotic_type</lhs><rhs>100X 1 mL Ampicillin aliquot</rhs></assign>
     </then>
     <else>
       <if>
@@ -59,7 +59,7 @@
         <then>
           <!-- Kan is at 200X-->
           <assign><lhs>antibiotic_volume</lhs><rhs>800 / 200</rhs></assign>
-          <assign><lhs>antibiotic_type</lhs><rhs>Kanamycin aliquot</rhs></assign>
+          <assign><lhs>antibiotic_type</lhs><rhs>200X 1 mL Kanamycin aliquot</rhs></assign>
         </then>
         <else>
           <if>
@@ -68,7 +68,7 @@
             <then>
               <!-- Amp is at 1000X-->
               <assign><lhs>antibiotic_volume</lhs><rhs>800 / 1000</rhs></assign>
-              <assign><lhs>antibiotic_type</lhs><rhs>Chloramphenicol aliquot</rhs></assign>
+              <assign><lhs>antibiotic_type</lhs><rhs>1000X 1 mL Chloramphenicol aliquot</rhs></assign>
             </then>
             <else>
               <!-- TODO: if we get a 'fail' tag, use it here -->
@@ -81,6 +81,8 @@
       </if>
     </else>
   </if>
+
+  <!-- TODO: need to calculate how many tubes are needed, i.e. calculate ceil(vol / 1000) -->
 
   <take>
     <item>
