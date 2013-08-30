@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<protocol>
-  <information>test for include tag</information>
-  <include>
-    <id>included.pdl</id>
-    <setarg></setarg>
-  </include>
-</protocol>

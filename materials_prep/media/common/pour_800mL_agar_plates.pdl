@@ -59,12 +59,12 @@
   <produce>
     <object>%{plate_name}</object>
     <quantity>40</quantity>
+    <release>%{plates}</release>
   </produce>
 
   <!-- FIXME: Also produces an unsterile 1L bottle! Input bottle should be released there -->
 
   <!-- Releases -->
   <release>%{agar_bottle}</release>
-  <release>%{plates}</release>
 
 </protocol>
