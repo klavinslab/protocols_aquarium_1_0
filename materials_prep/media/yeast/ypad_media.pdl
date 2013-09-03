@@ -4,95 +4,146 @@
   <information>Make 800mL of YPAD (rich yeast media).</information>
 
   <!-- Arguments -->
-    <!-- None! -->
+  <argument>
+    <name>n_bottle</name>
+    <type>number</type>
+    <description>Enter the number of bottles you want to make (maximum of 4).</description>
+  </argument>
 
-  <!-- Initial takes -->
-  <take>
-    <item>
-      <type>1000 mL Bottle</type>
-      <quantity>1</quantity>
-      <var>bottle</var>
-    </item>
-    <item>
-      <type>Weigh Boat (L)</type>
-      <quantity>1</quantity>
-      <var>boat</var>
-    </item>
-  </take>
-  <take>
-    <item>
-      <type>Bacto Yeast Extract</type>
-      <quantity>1</quantity>
-      <var>yeast_extract</var>
-    </item>
-    <item>
-      <type>Bacto Peptone</type>
-      <quantity>1</quantity>
-      <var>bacto_peptone</var>
-    </item>
-    <item>
-      <type>Dextrose</type>
-      <quantity>1</quantity>
-      <var>dextrose</var>
-    </item>
-    <item>
-      <type>Adenine Hemisulfate</type>
-      <quantity>1</quantity>
-      <var>adenine_hemisulfate</var>
-    </item>
-  </take>
-  <take>
-    <item>
-      <type>Scale</type>
-      <quantity>1</quantity>
-      <var>balance</var>
-    </item>
-  </take>
+  <if>
+    <condition>%{n_bottle} &gt; 4 || %{n_bottle} &lt; 1</condition>
+    <then>
+      <!-- Abort the protocol (warning message + put stuff away) -->
+      <step>
+        <description>Wrong number of bottles!</description>
+        <note>You can only specify 0-4 bottles!</note>
+      </step>
+    </then>
+    <else>
+      <!-- Do the protocol -->
+      <!-- Initial takes -->
+      <take>
+        <item>
+          <type>1000 mL Bottle</type>
+          <quantity>%{n_bottle}</quantity>
+          <var>bottle</var>
+        </item>
+        <item>
+          <type>Weighing Boat</type>
+          <quantity>1</quantity>
+          <var>boat</var>
+        </item>
+        <item>
+          <type>Bacto Yeast Extract</type>
+          <quantity>1</quantity>
+          <var>yeast_extract</var>
+        </item>
+        <item>
+          <type>Bacto Peptone</type>
+          <quantity>1</quantity>
+          <var>bacto_peptone</var>
+        </item>
+        <item>
+          <type>Dextrose</type>
+          <quantity>1</quantity>
+          <var>dextrose</var>
+        </item>
+        <item>
+          <type>Adenine Hemisulfate</type>
+          <quantity>1</quantity>
+          <var>adenine_hemisulfate</var>
+        </item>
+        <item>
+          <type>Scale</type>
+          <quantity>1</quantity>
+          <var>balance</var>
+        </item>
+      </take>
 
-  <!-- Add yeast extract to bottle -->
-  <step>
-    <description>Measure 8g of Bacto Yeast Extract.</description>
-    <note>Place the weigh boat on the scale. Zero the scale. Using the spatula, measure 8g of Bacto Yeast Extract into the plastic boat and add it to the bottle.</note>
-  </step>
-  <!-- Add peptone -->
-  <step>
-    <description>Measure 16g of Bacto Peptone.</description>
-    <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, measure 16g of Bacto Peptone into the plastic boat and add it to the bottle.</note>
-  </step>
-  <!-- Add dextrose -->
-  <step>
-    <description>Measure 16g of Dextrose.</description>
-    <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, measure 16g of dextrose into the plastic boat and add it to the bottle.</note>
-  </step>
-  <!-- Add adenine -->
-  <step>
-    <description>Measure 64mg of Adenine hemisulfate.</description>
-    <note>Place the plastic boat on the scale. Zero the scale. Using the spatula, measure 64 mg of Adenine hemisulfate into the plastic boat and add it to the bottle.</note>
-  </step>
-  <!-- Add water -->
-  <step>
-    <description>Add deionized water.</description>
-    <note>Add DI water to 800mL mark.</note>
-  </step>
-  <!-- Mix -->
-  <step>
-    <description>Mix.</description>
-    <note>Put a cap on the bottle and shake to mix the dry ingredients with the water until dissolved. This may take several minutes. To check for dissolution, let bottle sit for 10 seconds and check for sediment on the bottom.</note>
-  </step>
+      <!-- Generate string for bottle names -->
+      <assign><lhs>bottle_string</lhs><rhs>"Bottle 1"</rhs></assign>
+      <assign><lhs>counter</lhs><rhs>2</rhs></assign>
+      <while>
+        <condition>%{counter} &lt; %{n_bottle} + 1</condition>
+        <do>
+          <if>
+            <!-- Last bottle - add 'and' (Oxford comma!) -->
+            <condition>%{counter} == %{n_bottle}</condition>
+            <then>
+              <if>
+                <condition>%{n_bottle} == 2</condition>
+                <then>
+                  <assign><lhs>bottle_string</lhs><rhs>%{bottle_string} + " and Bottle " + %{counter}.to_s</rhs></assign>
+                </then>
+                <else>
+                  <assign><lhs>bottle_string</lhs><rhs>%{bottle_string} + ", and Bottle " + %{counter}.to_s</rhs></assign>
+                </else>
+              </if>
+            </then>
+            <else>
+              <!-- Not last bottle - separate by comma and space -->
+              <assign><lhs>bottle_string</lhs><rhs>%{bottle_string} + ", Bottle " + %{counter}.to_s</rhs></assign>
+            </else>
+            <!-- increment counter -->
+            <assign><lhs>counter</lhs><rhs>%{counter} + 1</rhs></assign>
+          </if>
+        </do>
+      </while>
 
-  <!-- Produces -->
-  <produce>
-    <object>800mL YPAD Media (nonsterile)</object>
-    <quantity>1</quantity>
-    <release>%{bottle}</release>
-  </produce>
+      <!-- Begin steps -->
+      <!-- Label bottle(s) -->
+      <step>
+        <description>Label.</description>
+        <note>Label %{bottle_string} with 'YPAD' and the bottle number using a piece of lab tape.</note>
+      </step>
 
-  <!-- Releases -->
-  <release>%{balance}</release>
-  <release>%{boat}</release>
-  <release>%{yeast_extract}</release>
-  <release>%{bacto_peptone}</release>
-  <release>%{dextrose}</release>
-  <release>%{adenine_hemisulfate}</release>
+      <!-- Add yeast extract to bottle -->
+      <step>
+        <description>Measure 8g of Bacto Yeast Extract.</description>
+        <note>Repeat the following step for %{bottle_string}: Place the weigh boat on the scale. Zero the scale. Using the spatula, measure 8g of Bacto Yeast Extract into the plastic boat and add it to the bottle.</note>
+      </step>
+      <!-- Add peptone -->
+      <step>
+        <description>Measure 16g of Bacto Peptone.</description>
+        <note>Repeat the following step for %{bottle_string}: Place the plastic boat on the scale. Zero the scale. Using the spatula, measure 16g of Bacto Peptone into the plastic boat and add it to the bottle.</note>
+      </step>
+      <!-- Add dextrose -->
+      <step>
+        <description>Measure 16g of Dextrose.</description>
+        <note>Repeat the following step for %{bottle_string}: Place the plastic boat on the scale. Zero the scale. Using the spatula, measure 16g of dextrose into the plastic boat and add it to the bottle.</note>
+      </step>
+      <!-- Add adenine -->
+      <step>
+        <description>Measure 64mg of Adenine hemisulfate.</description>
+        <note>Repeat the following step for %{bottle_string}: Place the plastic boat on the scale. Zero the scale. Using the spatula, measure 64 mg of Adenine hemisulfate into the plastic boat and add it to the bottle.</note>
+      </step>
+      <!-- Add water -->
+      <step>
+        <description>Add deionized water.</description>
+        <note>Repeat the following step for %{bottle_string}: Add DI water to 800mL mark.</note>
+      </step>
+      <!-- Mix -->
+      <step>
+        <description>Mix.</description>
+        <note>Repeat the following step for %{bottle_string}: Put a cap on the bottle and shake to mix the dry ingredients with the water until dissolved. This may take several minutes. To check for dissolution, let bottle sit for 10 seconds and check for sediment on the bottom.</note>
+      </step>
+
+      <!-- Produces -->
+      <produce>
+        <object>800mL YPAD Media (nonsterile)</object>
+        <quantity>%{n_bottle}</quantity>
+        <release>%{bottle}</release>
+      </produce>
+
+      <!-- Releases -->
+      <release>%{balance}</release>
+      <release>%{boat}</release>
+      <release>%{yeast_extract}</release>
+      <release>%{bacto_peptone}</release>
+      <release>%{dextrose}</release>
+      <release>%{adenine_hemisulfate}</release>
+
+    </else>
+  </if>
 
 </protocol>
