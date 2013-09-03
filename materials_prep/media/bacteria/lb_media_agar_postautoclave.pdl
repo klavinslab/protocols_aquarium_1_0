@@ -49,8 +49,11 @@
     <condition>%{antibiotic} == "Amp"</condition>
     <then>
       <!-- Amp is at 100X-->
-      <assign><lhs>antibiotic_volume</lhs><rhs>800 / 100</rhs></assign>
+      <!-- TODO: Ask whether discriminating between floats/ints in an expression is a desired behavior -->
+      <assign><lhs>antibiotic_volume</lhs><rhs>800.0 / 100</rhs></assign>
       <assign><lhs>antibiotic_type</lhs><rhs>"100X 1 mL Ampicillin Aliquot"</rhs></assign>
+      <!-- TODO: refactor so name assignment happens on one line -->
+      <assign><lhs>produced_object</lhs><rhs>"800mL Ampicillin LB Agar Media (sterile)"</rhs></assign>
     </then>
     <else>
       <if>
@@ -58,8 +61,9 @@
         <condition>%{antibiotic} == "Kan"</condition>
         <then>
           <!-- Kan is at 200X-->
-          <assign><lhs>antibiotic_volume</lhs><rhs>800 / 200</rhs></assign>
+          <assign><lhs>antibiotic_volume</lhs><rhs>800.0 / 200</rhs></assign>
           <assign><lhs>antibiotic_type</lhs><rhs>"200X 1 mL Kanamycin Aliquot"</rhs></assign>
+          <assign><lhs>produced_object</lhs><rhs>"800mL Kanamycin LB Agar Media (sterile)"</rhs></assign>
         </then>
         <else>
           <if>
@@ -67,8 +71,9 @@
             <condition>%{antibiotic} == "Chlor"</condition>
             <then>
               <!-- Chlor is at 1000X-->
-              <assign><lhs>antibiotic_volume</lhs><rhs>800 / 1000</rhs></assign>
+              <assign><lhs>antibiotic_volume</lhs><rhs>800.0 / 1000</rhs></assign>
               <assign><lhs>antibiotic_type</lhs><rhs>"1000X 1 mL Chloramphenicol Aliquot"</rhs></assign>
+              <assign><lhs>produced_object</lhs><rhs>"800mL Chloramphenicol LB Agar Media (sterile)"</rhs></assign>
             </then>
             <else>
               <!-- TODO: if we get a 'fail' tag, use it here -->
@@ -82,12 +87,13 @@
     </else>
   </if>
 
-  <!-- TODO: need to calculate how many tubes are needed, i.e. calculate ceil(vol / 1000) -->
+  <!-- Calculate how many tubes are needed (ceil(vol / 1000)) -->
+  <assign><lhs>antibiotic_tubes</lhs><rhs>%{antibiotic_volume}.ceil</rhs></assign>
 
   <take>
     <item>
       <type>%{antibiotic_type}</type>
-      <quantity>%{antibiotic_volume}</quantity>
+      <quantity>%{antibiotic_tubes}</quantity>
       <var>antibiotic</var>
     </item>
   </take>
@@ -95,10 +101,21 @@
   <!-- Add antibiotic -->
   <step>
     <description>Add antibiotic</description>
-    <note>Add %{antibiotic_volume}mL from %{antibiotic_type} to the LB Agar bottle. Swirl a little to mix.</note>
+    <note>Add %{antibiotic_volume}mL of antibiotic solution to the LB Agar bottle. Use as many %{antibiotic_type}s as needed. Swirl a little to mix.</note>
   </step>
 
   <!-- Produces -->
+  <produce>
+    <object>%{produced_object}</object>
+    <quantity>1</quantity>
+    <release>%{lb}</release>
+    <!-- TODO: verify that all aliquots get released -->
+    <release>%{antibiotic}</release>
+  </produce>
+
+  <!-- Releases -->
+  <release>%{stir_plate}</release>
+
   <!-- TODO: Include plate pouring protocol here - plates should be produced at the end of this protocol -->
   <!-- TODO: update releases -->
 
