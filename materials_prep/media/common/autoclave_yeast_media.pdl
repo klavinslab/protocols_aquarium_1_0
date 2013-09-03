@@ -12,7 +12,7 @@
   <argument>
     <name>item_number</name>
     <type>number</type>
-    <description>Enter the number of items you are autoclaving.</description>
+    <description>Enter the number of items you are autoclaving. Remember, this is for yeast media - no LB/TB/M9.</description>
   </argument>
 
   <!-- Initial takes -->
@@ -63,7 +63,11 @@
     <description>Place items in the autoclave.</description>
     <note>Make sure no caps are tight. If a cap is tight, the item may explode.</note>
   </step>
-  <!-- TODO: autoclave settings go here -->
+  <!-- TODO: make sure these instructions are detailed enough -->
+  <step>
+    <description>Set autoclave settings.</description>
+    <note>Select cancel (red button) to remove any previous dialog. Select the optional cycle (up arrow). Set temperature to 110°C. Set the length of time to 10 minutes.</note>
+  </step>
   <step>
     <description>Start the autoclave.</description>
     <note>Hit the green button on the autoclave.</note>
