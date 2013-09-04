@@ -1,0 +1,16 @@
+<protocol>
+
+  <argument>
+    <name>x</name>
+    <type>string</type>
+    <description>The first argument</description>
+  </argument>
+
+  <assign><lhs>z</lhs><rhs>%{x}+' world'</rhs></assign>
+
+  <step>
+    <description>In the even more buried included file, x=%{x} and z=%{z}.</description>
+  </step>
+
+
+</protocol>

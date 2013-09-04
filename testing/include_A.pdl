@@ -14,8 +14,15 @@
 
   <assign><lhs>z</lhs><rhs>%{x}+%{y}</rhs></assign>
 
+  <include>
+    <path>testing/include_B.pdl</path>
+    <setarg><var>x</var><value>'hello'</value></setarg>
+    <return><var>r</var><value>%{z}</value></return>
+  </include>
+
   <step>
-    <description>In the included file, x=%{x}, y=%{y}, and z=%{z}</description>
+    <description>In the included file, x=%{x}, y=%{y}, z=%{z}, and r=%{r}.</description>
   </step>
+
 
 </protocol>
