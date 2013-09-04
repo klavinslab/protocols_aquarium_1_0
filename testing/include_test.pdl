@@ -1,0 +1,16 @@
+<protocol>
+
+  <info>This file includes another one.</info>
+
+  <include>
+    <path>testing/include_A.pdl</path>
+    <setarg><var>x</var><value>1</value></setarg>
+    <setarg><var>y</var><value>2</value></setarg>
+    <return><var>r</var><value>%{z}</value></return>
+  </include>
+
+  <step>
+    <description>r=</description>
+  </step>
+
+</protocol>

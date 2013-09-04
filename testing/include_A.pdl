@@ -1,0 +1,21 @@
+<protocol>
+
+  <argument>
+    <name>x</name>
+    <type>number</type>
+    <description>The first argument</description>
+  </argument>
+
+  <argument>
+    <name>y</name>
+    <type>number</type>
+    <description>The second argument</description>
+  </argument>
+
+  <assign><lhs>z</lhs><rhs>%{x}+%{y}</rhs></assign>
+
+  <step>
+    <description>In the included file, x=%{x}, y=%{y}, and z=%{z}</description>
+  </step>
+
+</protocol>
