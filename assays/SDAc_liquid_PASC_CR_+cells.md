@@ -1,81 +1,50 @@
-Notes/Directions 
-
-    - All irrelevent sections/headings are to be deleted. 
-        ex. For a single day protocol, delete all references to "Day" 
-    - All items in square brackets are place holders to be replaced by some other value
-        ex. "[Protocol Name]" could be replaced by "Gel Elecrophoresis"
-    - The description is a one or two sentance summary of what the protocol accomplishes
-
-
-
-[Protocol Name]
---------------
+Liquid Cellulose Congo Red Measurements with Cells
+--------------------------------------------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Description:
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-####Total duration: [x days/hours/minutes]####
-####Total worktime: [x hours/minutes]
-
-    - Day 1: [x hours/minutes]
-    - Day 2: [x hours/minutes]
-    - ...
-    
+####Total duration: 1.5 hours####
+####Total worktime: 1 hour
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 ####Required equipment and materials####
 
-Day 1
 
-    * [Equipment 1]
-        + Duration needed: [x days/hours/min]
+    * Nanodrop Spectrophotometer
+        + Duration needed: 30 min
         + Location: [address]
-    * [Equipment 2]
-        + Duration needed: [x days/hours/min]
+    * Fume Hood
+        + Duration needed: 30 min
         + Location: [address]
-  
+    * Centrifuge
+        + Duration needed: 5 min
+        + Location: [address]
+
 ------
 
-    * [Item 1]
-        + Quantity: [x ml/mg/items]
+    * 0.4% PASC media
+        + Quantity: ~2 mL
         + Location: [address]
-    * [Item 2]
-        + Quantity: [x ml/mg/items]
+    * LB grown DL146 cells
+        + Quantity: 2 mL
         + Location: [address]
-
-Day 2
-
-    * [Equipment 1]
-        + Duration needed: [x days/hours/min]
+    * 0.3% Congo Red
+        + Quantity: ~2 mL
         + Location: [address]
-    * [Equipment 2]
-        + Duration needed: [x days/hours/min]
+    * Sterile DI H2O
+        + Quantity: ~2 mL
         + Location: [address]
         
----------
-
-        
-    * [Item 1]
-        + Quantity: [x ml/mg/items]
-        + Location: [address]
-    * [Item 2]
-        + Quantity: [x ml/mg/items]
-        + Location: [address]
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 ##Protocol##
 
-Day 1
-
 1. [Step 1]
 2. [Step 2]
 3. [Step 3]
 
-Day 2
 
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
     
