@@ -4,8 +4,6 @@
   <information>Prepare a bottle of LB Media (rich media for bacteria).</information>
 
   <!-- Arguments -->
-  <!-- Can't programatically do itoa to bottle 1, 2, etc: get this error: "String can't be coerced into Fixnum" -->
-  <!-- <assign><lhs>my_var</lhs><rhs>1 + "fish"</rhs></assign> -->
   <argument>
     <name>n_bottle</name>
     <type>number</type>
@@ -26,7 +24,7 @@
       <!-- Initial takes -->
       <take>
         <item>
-          <type>1000 mL Bottle</type>
+          <type>1 L Bottle</type>
           <quantity>%{n_bottle}</quantity>
           <var>bottle</var>
         </item>
@@ -36,7 +34,7 @@
           <var>lb_powder</var>
         </item>
         <item>
-          <type>Weighing Boat</type>
+          <type>Large Weigh Boat</type>
           <quantity>1</quantity>
           <var>boat</var>
         </item>
@@ -99,7 +97,7 @@
 
       <!-- Produce -->
       <produce>
-        <object>800mL LB Liquid Media (unsterile)</object>
+        <object>800 mL LB liquid (unsterile)</object>
         <quantity>%{n_bottle}</quantity>
         <!-- Consumes a bottle -->
         <release>%{bottle}</release>
