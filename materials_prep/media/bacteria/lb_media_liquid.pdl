@@ -89,8 +89,14 @@
         <path>materials_prep/steps/measure_dry_add_to_vessels.pdl</path>
         <setarg>
           <var>vessel_string</var><value>%{bottle_string}</value>
+        </setarg>
+        <setarg>
           <var>reagent</var><value>"LB Media Powder"</value>
+        </setarg>
+        <setarg>
           <var>mass</var><value>20</value>
+        </setarg>
+        <setarg>
           <var>boat_type</var><value>"Large Weigh Boat"</value>
         </setarg>
       </include>

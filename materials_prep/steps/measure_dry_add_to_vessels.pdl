@@ -20,13 +20,14 @@
        spatula
        -->
   <!-- Arguments -->
+  <!-- vessel -->
   <!-- e.g. 'do this for X'. What is X? Bottle 1? The bottle? Bottles 1 and 2? -->
   <argument>
     <name>vessel_string</name>
     <type>string</type>
     <description>Enter the string used for referring to the vessel(s).</description>
   </argument>
-  <!-- What is being measured and added? Must be the object type -->
+  <!-- What is being measured and added? Should be the object type -->
   <argument>
     <name>reagent</name>
     <type>string</type>
@@ -38,6 +39,7 @@
     <type>number</type>
     <description>Enter the mass in grams.</description>
   </argument>
+  <!-- The type of weigh paper/boat to use -->
   <argument>
     <name>boat_type</name>
     <type>string</type>
