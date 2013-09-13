@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <protocol>
 
-  <information>Subprotocol for adding a dry reagent to a bottle. Don't run this - use the include tag.</information>
-
   <!-- Usage notes:
        IMPORTANT: this protocol does not have any effect on the inventory outside of taking/releasing a weigh boat.
 
