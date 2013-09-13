@@ -3,9 +3,13 @@
 
   <info>This file includes another one.</info>
 
+  <assign><lhs>n</lhs><rhs>1</rhs></assign>
+  <assign><lhs>asd</lhs><rhs>'asd string'</rhs></assign>
+
   <include>
     <path>testing/include_A.pdl</path>
-    <setarg><var>x</var><value>1</value></setarg>
+    <setarg><var>x</var><value>%{n}</value></setarg>
+    <setarg><var>str</var><value>%{asd}</value></setarg>
     <setarg><var>y</var><value>2</value></setarg>
     <return><var>r</var><value>%{z}</value></return>
   </include>
