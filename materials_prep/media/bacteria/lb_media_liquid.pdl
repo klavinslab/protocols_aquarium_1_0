@@ -76,14 +76,28 @@
         <description>Label.</description>
         <note>Label %{bottle_string} with 'LB Growth Media' and the bottle number using a piece of lab tape.</note>
       </step>
+      <!-- Take the scale -->
+      <take>
+        <item>
+          <type>Scale</type>
+          <quantity>1</quantity>
+          <var>scale</var>
+        </item>
+      </take>
       <!-- Weigh out LB powder -->
-      <step>
-        <description>Measure and add 20g of LB Powder.</description>
-        <!-- Picture would be good here -->
-        <note>Do this for %{bottle_string}: Place the plastic boat on the scale. Zero the scale. Using the spatula, add 20g of LB Powder into the plastic boat. If too much was added, remove excess to waste container using spatula. Pour into bottle using a corner of the weigh boat.</note>
-      </step>
+      <include>
+        <path>materials_prep/steps/measure_dry_add_to_vessels.pdl</path>
+        <setarg>
+          <var>vessel_string</var><value>%{bottle_string}</value>
+          <var>reagent</var><value>"LB Media Powder"</value>
+          <var>mass</var><value>20</value>
+          <var>boat_type</var><value>"Large Weigh Boat"</value>
+        </setarg>
+      </include>
       <!-- Throw away the boat -->
       <release>%{boat}</release>
+      <!-- Release the scale -->
+      <release>%{scale}</release>
       <!-- Add water -->
       <step>
         <description>Add deionized water.</description>
