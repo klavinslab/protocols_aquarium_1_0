@@ -22,6 +22,7 @@
 
   <step>
     <description>In the included file, x=%{x}, y=%{y}, z=%{z}, and r=%{r}.</description>
+    <note>Also, str = %{str}.</note>
   </step>
 
 
