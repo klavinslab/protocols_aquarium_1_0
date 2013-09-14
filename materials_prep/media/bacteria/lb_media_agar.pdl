@@ -108,8 +108,14 @@
       </step>
 
       <!-- Produce -->
+      <include>
+        <path>materials_prep/steps/add_di_water_and_shake.pdl</path>
+        <setarg>
+          <var></var><value></value>
+        </setarg>
+      </include>
       <produce>
-        <object>800mL LB Agar Media (unsterile)</object>
+        <object>800 mL LB Agar (unsterile)</object>
         <quantity>%{n_bottle}</quantity>
         <release>%{bottle}</release>
       </produce>

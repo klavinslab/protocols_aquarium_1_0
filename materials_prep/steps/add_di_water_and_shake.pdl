@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<protocol>
+
+  <!-- Usage notes:
+       Inventory effects: NONE
+       -->
+
+  <!-- Arguments -->
+  <!-- vessel -->
+  <!-- e.g. 'do this for X'. What is X? Bottle 1? The bottle? Bottles 1 and 2? -->
+  <argument>
+    <name>vessel_string</name>
+    <type>string</type>
+    <description>Enter the string used for referring to the vessel(s).</description>
+  </argument>
+  <!-- The volume to which to fill DI (usually 800 mL) -->
+  <argument>
+    <name>volume</name>
+    <type>number</type>
+    <description>Enter the volume line to which to fill the bottle(s) in mL.</description>
+  </argument>
+  <!-- How long to shake the bottle -->
+  <argument>
+    <name>shake_time</name>
+    <type>number</type>
+    <description>Enter the approximate number of seconds the bottle should be shaken.</description>
+  </argument>
+
+  <!-- Steps -->
+  <!-- Add DI water -->
+  <step>
+    <description>Add deionized water.</description>
+    <note>Fill %{vessel_string} to the %{volume} mL mark with deionized water.</note>
+  </step>
+  <!-- Mix -->
+  <step>
+    <description>Cap and mix.</description>
+    <note>Tightly close the cap(s) on %{vessel_string} and shake until all contents are dissolved. To check for dissolution, let bottle rest for 10 seconds, then pick up and look for sediment on the bottom. This should take approximately %{shake_duration} seconds.</note>
+  </step>
+
+</protocol>
