@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<protocol>
+  <!-- Usage notes:
+       Inventory effects: NONE
+       -->
+  <argument>
+    <name>fallback_string</name>
+    <type>string</type>
+    <description>A string that describes the object to label.</description>
+  </argument>
+  <argument>
+    <name>human_name</name>
+    <type>string</type>
+    <description>Human-readable name of the thing to label.</description>
+  </argument>
+
+  <!-- Try to print. If it fails, fall back to hand-drawn labels -->
+  <if>
+    <!-- TODO: this condition will always fail - replace with print attempt -->
+    <condition>2 &lt; 1</condition>
+    <then>
+    </then>
+    <else>
+      <step>
+        <description>Label.</description>
+        <note>Label %{fallback_string} with %{human_name}, the bottle number, your initials, and the date using a piece of lab tape.</note>
+      </step>
+    </else>
+  </if>
+</protocol>
