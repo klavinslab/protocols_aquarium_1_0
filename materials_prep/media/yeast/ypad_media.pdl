@@ -69,6 +69,7 @@
       <!-- Begin steps -->
       <!-- Label bottle(s) -->
       <!-- FIXME: should only have to supply an array of objects for which you want labels to get the right output -->
+      <!--
       <include>
         <path>includes/labels/800_mL_labels.pdl</path>
         <setarg>
@@ -80,6 +81,7 @@
           <value>%{bottle_names}</value>
         </setarg>
       </include>
+      -->
       <!-- Take the scale -->
       <take>
         <item>
@@ -98,17 +100,75 @@
         </setarg>
         <setarg>
           <var>reagent</var>
-          <value>"LB Media Powder"</value>
+          <value>"Bacto Yeast Extract"</value>
         </setarg>
         <setarg>
           <var>mass</var>
-          <value>20</value>
+          <value>8</value>
         </setarg>
         <setarg>
           <var>boat_type</var>
           <value>"Large Weigh Boat"</value>
         </setarg>
       </include>
+      <include>
+        <path>materials_prep/includes/measure_dry_add_to_vessels.pdl</path>
+        <setarg>
+          <var>vessel_string</var>
+          <value>%{bottle_string}</value>
+        </setarg>
+        <setarg>
+          <var>reagent</var>
+          <value>"Bacto Peptone"</value>
+        </setarg>
+        <setarg>
+          <var>mass</var>
+          <value>8</value>
+        </setarg>
+        <setarg>
+          <var>boat_type</var>
+          <value>"Large Weigh Boat"</value>
+        </setarg>
+      </include>
+      <include>
+        <path>materials_prep/includes/measure_dry_add_to_vessels.pdl</path>
+        <setarg>
+          <var>vessel_string</var>
+          <value>%{bottle_string}</value>
+        </setarg>
+        <setarg>
+          <var>reagent</var>
+          <value>"Dextrose"</value>
+        </setarg>
+        <setarg>
+          <var>mass</var>
+          <value>16</value>
+        </setarg>
+        <setarg>
+          <var>boat_type</var>
+          <value>"Large Weigh Boat"</value>
+        </setarg>
+      </include>
+      <include>
+        <path>materials_prep/includes/measure_dry_add_to_vessels.pdl</path>
+        <setarg>
+          <var>vessel_string</var>
+          <value>%{bottle_string}</value>
+        </setarg>
+        <setarg>
+          <var>reagent</var>
+          <value>"Adenine Hemisulfate"</value>
+        </setarg>
+        <setarg>
+          <var>mass</var>
+          <value>16</value>
+        </setarg>
+        <setarg>
+          <var>boat_type</var>
+          <value>"Large Weigh Boat"</value>
+        </setarg>
+      </include>
+
       <!-- Release the scale -->
       <release>%{scale}</release>
       <!-- Add water and shake -->
@@ -130,15 +190,17 @@
 
       <!-- Produce -->
       <produce>
-        <object>800 mL LB liquid (unsterile)</object>
+        <object>800 mL YPAD liquid (unsterile)</object>
         <quantity>%{n_bottle}</quantity>
         <!-- Consumes a bottle -->
         <release>%{bottle}</release>
       </produce>
 
       <!-- Final releases -->
-      <release>%{lb_powder}</release>
+      <release>%{yeast_extract}</release>
+      <release>%{bacto_peptone}</release>
+      <release>%{dextrose}</release>
+      <release>%{adenine_hemisulfate}</release>
     </else>
   </if>
-
 </protocol>
