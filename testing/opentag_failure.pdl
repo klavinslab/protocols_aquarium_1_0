@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<protocol>
+  <information>This protocol should fail because a child tag isn't opened properly</information>
+  <take>
+    <item>
+      <type>1 L Bottle</type>
+      <quantity>1</quantity>
+      var>bottle</var>
+    </item>
+  </take>
+</protocol>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol>
   <!-- Information -->
-  <information>Make 800mL of YPAD (rich yeast media).</information>
+  <information>Prepare unsterile bottle(s) of 800 mL YPAD (rich yeast media), ready to be autoclaved.</information>
 
   <!-- Arguments -->
   <argument>
@@ -28,7 +28,7 @@
         <item>
           <type>1 L Bottle</type>
           <quantity>%{n_bottle}</quantity>
-          var>bottle</var>
+          <var>bottle</var>
         </item>
         <item>
           <type>Bacto Yeast Extract</type>

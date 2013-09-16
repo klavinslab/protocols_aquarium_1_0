@@ -1,7 +1,7 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <protocol>
   <!-- Information -->
-  <information>Prepare a bottle of LB Media (rich media for bacteria).</information>
+  <information>Prepare unsterile bottle(s) of 800 mL LB Media (rich media for bacteria), ready to be autoclaved.</information>
 
   <!-- Arguments -->
   <argument>
