@@ -65,7 +65,6 @@
           <value>%{bottle_string}</value>
         </return>
       </include>
-
       <!-- Begin steps -->
       <!-- Label bottle(s) -->
       <!-- FIXME: should only have to supply an array of objects for which you want labels to get the right output -->
@@ -168,7 +167,6 @@
           <value>"Large Weigh Boat"</value>
         </setarg>
       </include>
-
       <!-- Release the scale -->
       <release>%{scale}</release>
       <!-- Add water and shake -->

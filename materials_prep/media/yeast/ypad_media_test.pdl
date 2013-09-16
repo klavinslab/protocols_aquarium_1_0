@@ -1,7 +1,7 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <protocol>
   <!-- Information -->
-  <information>Prepare a bottle of LB Media (rich media for bacteria).</information>
+  <information>Make 800mL of YPAD (rich yeast media).</information>
 
   <!-- Arguments -->
   <argument>
@@ -28,12 +28,29 @@
         <item>
           <type>1 L Bottle</type>
           <quantity>%{n_bottle}</quantity>
-          <var>bottle</var>
+          var>bottle</var>
         </item>
         <item>
-          <type>LB Media Powder</type>
+          <type>Bacto Yeast Extract</type>
           <quantity>1</quantity>
-          <var>lb_powder</var>
+          <var>yeast_extract</var>
+        </item>
+        <item>
+          <type>Bacto Peptone</type>
+          <quantity>1</quantity>
+          <var>bacto_peptone</var>
+        </item>
+      </take>
+      <take>
+        <item>
+          <type>Dextrose</type>
+          <quantity>1</quantity>
+          <var>dextrose</var>
+        </item>
+        <item>
+          <type>Adenine Hemisulfate</type>
+          <quantity>1</quantity>
+          <var>adenine_hemisulfate</var>
         </item>
       </take>
       <!-- Generate string for bottle names -->
@@ -48,11 +65,9 @@
           <value>%{bottle_string}</value>
         </return>
       </include>
-
       <!-- Begin steps -->
       <!-- Label bottle(s) -->
       <!-- FIXME: should only have to supply an array of objects for which you want labels to get the right output -->
-      <!-- FIXME: 'nil' conversion error when not commented out -->
       <!--
       <include>
         <path>includes/labels/800_mL_labels.pdl</path>
@@ -76,25 +91,6 @@
       </take>
       <!-- Weigh out LB powder -->
       <!-- The included protocol consumes a weigh boat -->
-      <include>
-        <path>materials_prep/includes/measure_dry_add_to_vessels.pdl</path>
-        <setarg>
-          <var>vessel_string</var>
-          <value>%{bottle_string}</value>
-        </setarg>
-        <setarg>
-          <var>reagent</var>
-          <value>"LB Media Powder"</value>
-        </setarg>
-        <setarg>
-          <var>mass</var>
-          <value>20</value>
-        </setarg>
-        <setarg>
-          <var>boat_type</var>
-          <value>"Large Weigh Boat"</value>
-        </setarg>
-      </include>
       <!-- Release the scale -->
       <release>%{scale}</release>
       <!-- Add water and shake -->
@@ -116,15 +112,17 @@
 
       <!-- Produce -->
       <produce>
-        <object>800 mL LB liquid (unsterile)</object>
+        <object>800 mL YPAD liquid (unsterile)</object>
         <quantity>%{n_bottle}</quantity>
         <!-- Consumes a bottle -->
         <release>%{bottle}</release>
       </produce>
 
       <!-- Final releases -->
-      <release>%{lb_powder}</release>
+      <release>%{yeast_extract}</release>
+      <release>%{bacto_peptone}</release>
+      <release>%{dextrose}</release>
+      <release>%{adenine_hemisulfate}</release>
     </else>
   </if>
-
 </protocol>
