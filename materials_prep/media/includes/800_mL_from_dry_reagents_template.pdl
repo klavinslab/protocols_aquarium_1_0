@@ -1,9 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <protocol>
-  <!-- Information -->
-  <information>Make 800mL of YPAD (rich yeast media).</information>
-
   <!-- Arguments -->
+  <argument>
+    <name>product_name</name>
+    <type>string</type>
+    <description>Enter the name of the media to be produced.</description>
+  </argument>
   <argument>
     <name>n_bottle</name>
     <type>number</type>
@@ -28,29 +30,12 @@
         <item>
           <type>1 L Bottle</type>
           <quantity>%{n_bottle}</quantity>
-          var>bottle</var>
+          <var>bottle</var>
         </item>
         <item>
-          <type>Bacto Yeast Extract</type>
+          <type>LB Media Powder</type>
           <quantity>1</quantity>
-          <var>yeast_extract</var>
-        </item>
-        <item>
-          <type>Bacto Peptone</type>
-          <quantity>1</quantity>
-          <var>bacto_peptone</var>
-        </item>
-      </take>
-      <take>
-        <item>
-          <type>Dextrose</type>
-          <quantity>1</quantity>
-          <var>dextrose</var>
-        </item>
-        <item>
-          <type>Adenine Hemisulfate</type>
-          <quantity>1</quantity>
-          <var>adenine_hemisulfate</var>
+          <var>lb_powder</var>
         </item>
       </take>
       <!-- Generate string for bottle names -->
@@ -73,7 +58,7 @@
         <path>includes/labels/800_mL_labels.pdl</path>
         <setarg>
           <var>human_name</var>
-          <value>"LB Growth Media"</value>
+          <value>%{product_name}</value>
         </setarg>
         <setarg>
           <var>fallback_string</var>
@@ -130,7 +115,7 @@
 
       <!-- Produce -->
       <produce>
-        <object>800 mL LB liquid (unsterile)</object>
+        <object>product_name</object>
         <quantity>%{n_bottle}</quantity>
         <!-- Consumes a bottle -->
         <release>%{bottle}</release>

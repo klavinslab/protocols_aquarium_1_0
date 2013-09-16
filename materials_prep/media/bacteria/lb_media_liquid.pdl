@@ -10,7 +10,7 @@
     <description>Enter the number of bottles you want to make (maximum of 4).</description>
   </argument>
 
-
+  <!-- Input checking -->
   <if>
     <condition>%{n_bottle} &gt; 4 || %{n_bottle} &lt; 1</condition>
     <then>
@@ -51,10 +51,18 @@
 
       <!-- Begin steps -->
       <!-- Label bottle(s) -->
-      <step>
-        <description>Label.</description>
-        <note>Label %{bottle_string} with 'LB Growth Media' and the bottle number using a piece of lab tape.</note>
-      </step>
+      <!-- FIXME: should only have to supply an array of objects for which you want labels to get the right output -->
+      <include>
+        <path>includes/labels/800_mL_labels.pdl</path>
+        <setarg>
+          <var>human_name</var>
+          <value>"LB Growth Media"</value>
+        </setarg>
+        <setarg>
+          <var>fallback_string</var>
+          <value>%{bottle_names}</value>
+        </setarg>
+      </include>
       <!-- Take the scale -->
       <take>
         <item>
@@ -66,7 +74,7 @@
       <!-- Weigh out LB powder -->
       <!-- The included protocol consumes a weigh boat -->
       <include>
-        <path>materials_prep/steps/measure_dry_add_to_vessels.pdl</path>
+        <path>materials_prep/includes/measure_dry_add_to_vessels.pdl</path>
         <setarg>
           <var>vessel_string</var>
           <value>%{bottle_string}</value>
@@ -88,7 +96,7 @@
       <release>%{scale}</release>
       <!-- Add water and shake -->
       <include>
-        <path>materials_prep/steps/add_di_water_and_shake.pdl</path>
+        <path>materials_prep/includes/add_di_water_and_shake.pdl</path>
         <setarg>
           <var>vessel_string</var>
           <value>%{bottle_string}</value>
@@ -98,7 +106,7 @@
           <value>800</value>
         </setarg>
         <setarg>
-          <var>shake_time</var>
+          <var>shake_duration</var>
           <value>20</value>
         </setarg>
       </include>
