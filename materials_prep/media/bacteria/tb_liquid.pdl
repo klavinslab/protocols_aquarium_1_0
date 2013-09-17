@@ -1,112 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol>
-
-  <information>Prepare a bottle of TB Media (ultra-rich media for bacteria).</information>
+  <!-- Information -->
+  <information>Prepare unsterile bottle(s) of 800 mL TB Media (rich media for bacteria), ready to be autoclaved.</information>
 
   <!-- Arguments -->
-  <!-- Can't programatically do itoa to bottle 1, 2, etc: get this error: "String can't be coerced into Fixnum" -->
-  <!-- <assign><lhs>my_var</lhs><rhs>1 + "fish"</rhs></assign> -->
   <argument>
     <name>n_bottle</name>
     <type>number</type>
     <description>Enter the number of bottles you want to make (maximum of 4).</description>
   </argument>
 
+  <!-- Input checking -->
   <if>
     <condition>%{n_bottle} &gt; 4 || %{n_bottle} &lt; 1</condition>
     <then>
-      <!-- Abort the protocol (warning message + put stuff away) -->
+      <!-- There were more than 4 bottles specified or the number is negative -->
+      <!-- TODO: if we get a failure tag, use it here to avoid nesting the rest of the protocol -->
       <step>
         <description>Wrong number of bottles!</description>
-        <note>You can only specify 0-4 bottles!</note>
+        <note>You can only specify 1-4 bottles!</note>
       </step>
     </then>
     <else>
-      <!-- Do the protocol -->
-      <!-- Initial takes -->
+      <!-- There's between 1 and 4 bottles -->
+      <!-- Take the bottles and TB -->
       <take>
         <item>
-          <type>1000 mL Bottle</type>
+          <type>1 L Bottle</type>
           <quantity>%{n_bottle}</quantity>
           <var>bottle</var>
         </item>
         <item>
-          <type>TB Media Powder</type>
+          <type>TB Powder</type>
           <quantity>1</quantity>
           <var>tb_powder</var>
         </item>
+      </take>
+      <!-- Generate string for bottle names -->
+      <include>
+        <path>includes/strings/bottle_names.pdl</path>
+        <setarg>
+          <var>n_bottle</var>
+          <value>%{n_bottle}</value>
+        </setarg>
+        <return>
+          <var>bottle_string</var>
+          <value>%{bottle_string}</value>
+        </return>
+      </include>
+
+      <!-- Begin steps -->
+      <!-- Label bottle(s) -->
+      <!-- FIXME: should only have to supply an array of objects for which you want labels to get the right output -->
+      <!-- FIXME: 'nil' conversion error when not commented out -->
+      <include>
+        <path>includes/labels/800_mL_labels.pdl</path>
+        <setarg>
+          <var>item_string</var>
+          <value>%{bottle_string}</value>
+        </setarg>
+        <setarg>
+          <var>human_name</var>
+          <value>"TB Powder"</value>
+        </setarg>
+      </include>
+      <!-- Take the scale -->
+      <take>
         <item>
-          <type>Weighing Boat</type>
+          <type>Scale</type>
+          <quantity>1</quantity>
+          <var>scale</var>
+        </item>
+      </take>
+      <take>
+        <item>
+          <type>Large Weigh Boat</type>
           <quantity>1</quantity>
           <var>boat</var>
         </item>
       </take>
-
-      <!-- Generate string for bottle names -->
-      <assign><lhs>bottle_string</lhs><rhs>"Bottle 1"</rhs></assign>
-      <assign><lhs>counter</lhs><rhs>2</rhs></assign>
-      <while>
-        <condition>%{counter} &lt; %{n_bottle} + 1</condition>
-        <do>
-          <if>
-            <!-- Last bottle - add 'and' (Oxford comma!) -->
-            <condition>%{counter} == %{n_bottle}</condition>
-            <then>
-              <if>
-                <condition>%{n_bottle} == 2</condition>
-                <then>
-                  <assign><lhs>bottle_string</lhs><rhs>%{bottle_string} + " and Bottle " + %{counter}.to_s</rhs></assign>
-                </then>
-                <else>
-                  <assign><lhs>bottle_string</lhs><rhs>%{bottle_string} + ", and Bottle " + %{counter}.to_s</rhs></assign>
-                </else>
-              </if>
-            </then>
-            <else>
-              <!-- Not last bottle - separate by comma and space -->
-              <assign><lhs>bottle_string</lhs><rhs>%{bottle_string} + ", Bottle " + %{counter}.to_s</rhs></assign>
-            </else>
-            <!-- increment counter -->
-            <assign><lhs>counter</lhs><rhs>%{counter} + 1</rhs></assign>
-          </if>
-        </do>
-      </while>
-
-      <!-- Begin steps -->
-      <!-- Label bottle(s) -->
-      <step>
-        <description>Label.</description>
-        <note>Label %{bottle_string} with 'TB Growth Media' and the bottle number using a piece of lab tape.</note>
-      </step>
       <!-- Weigh out TB powder -->
-      <step>
-        <description>Measure and add 20g of TB Powder.</description>
-        <!-- Picture would be good here -->
-        <note>Do this for %{bottle_string}: Place the plastic boat on the scale. Zero the scale. Using the spatula, add 20g of TB Powder into the plastic boat. If too much was added, remove excess to waste container using spatula. Pour into bottle using a corner of the weigh boat.</note>
-      </step>
-      <!-- Throw away the boat -->
+      <!-- The included protocol consumes a weigh boat -->
+      <include>
+        <path>materials_prep/includes/measure_dry_add_to_vessels.pdl</path>
+        <setarg>
+          <var>vessel_string</var>
+          <value>%{bottle_string}</value>
+        </setarg>
+        <setarg>
+          <var>reagent</var>
+          <value>"TB Powder"</value>
+        </setarg>
+        <setarg>
+          <var>mass</var>
+          <value>20</value>
+        </setarg>
+        <setarg>
+          <var>boat_type</var>
+          <value>"Large Weigh Boat"</value>
+        </setarg>
+      </include>
+      <!-- Release the scale -->
+      <release>%{scale}</release>
       <release>%{boat}</release>
-      <!-- Add water -->
-      <step>
-        <description>Add deionized water.</description>
-        <note>Fill %{bottle_string} to the 800mL mark with deionized water.</note>
-      </step>
-      <!-- Mix -->
-      <step>
-        <description>Cap and mix.</description>
-        <note>Tightly close the cap(s) on %{bottle_string} and shake until all contents are dissolved. To check for dissolution, let bottle rest for 10 seconds, then pick up and look for sediment on the bottom. This step may take 5 minutes or more.</note>
-      </step>
+      <!-- Add water and shake -->
+      <include>
+        <path>materials_prep/includes/add_di_water_and_shake.pdl</path>
+        <setarg>
+          <var>vessel_string</var>
+          <value>%{bottle_string}</value>
+        </setarg>
+        <setarg>
+          <var>volume</var>
+          <value>800</value>
+        </setarg>
+        <setarg>
+          <var>shake_duration</var>
+          <value>20</value>
+        </setarg>
+      </include>
 
       <!-- Produce -->
       <produce>
-        <object>800mL TB Liquid Media (unsterile)</object>
+        <object>800 mL TB liquid (unsterile)</object>
         <quantity>%{n_bottle}</quantity>
+        <!-- Consumes a bottle -->
         <release>%{bottle}</release>
       </produce>
 
       <!-- Final releases -->
       <release>%{tb_powder}</release>
-
     </else>
   </if>
 
