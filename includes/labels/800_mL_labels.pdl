@@ -17,6 +17,6 @@
   <!-- Fallback label - default for now. Tells user to write out stuff by hand -->
   <step>
     <description>Label.</description>
-    <note>Label %{item_string} with "%{human_name}", the bottle number, your initials, and the date using a piece of lab tape.</note>
+    <note>Label %{item_string} with "%{human_name}", the bottle number, your initials, and the date and time using a piece of lab tape.</note>
   </step>
 </protocol>
