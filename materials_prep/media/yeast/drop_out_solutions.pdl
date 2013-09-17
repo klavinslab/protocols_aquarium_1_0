@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<protocol name="Yeast Dropout Solutions">
+<?xml version="1.0" encoding="UTF-8"?>
+<protocol>
 
   <information>Make sterile solutions of Tryptophan, Histidine, Leucine, and/or Uracil.</information>
   <!-- This protocols describes how to make solutions of Tryptophan, Histidine, Leucine, and Uracil, which are used to make selective media and/or plates for yeast. The amino acid solutions are 10 mg / mL and the Uracil solution is 2.5 mg / mL. --><

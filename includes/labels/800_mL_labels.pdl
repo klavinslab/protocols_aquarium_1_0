@@ -13,18 +13,10 @@
     <type>string</type>
     <description>Human-readable name of the thing to label.</description>
   </argument>
-
-  <!-- Try to print. If it fails, fall back to hand-drawn labels -->
-  <if>
-    <!-- TODO: this condition will always fail - replace with print attempt -->
-    <condition>2 &lt; 1</condition>
-    <then>
-    </then>
-    <else>
-      <step>
-        <description>Label.</description>
-        <note>Label %{fallback_string} with %{human_name}, the bottle number, your initials, and the date using a piece of lab tape.</note>
-      </step>
-    </else>
-  </if>
+  <!-- TODO: Try to print. If it fails, fall back to hand-drawn labels -->
+  <!-- Fallback label - default for now. Tells user to write out stuff by hand -->
+  <step>
+    <description>Label.</description>
+    <note>Label %{fallback_string} with "%{human_name}", the bottle number, your initials, and the date using a piece of lab tape.</note>
+  </step>
 </protocol>
