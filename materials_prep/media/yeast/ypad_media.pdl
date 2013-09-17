@@ -23,7 +23,7 @@
     </then>
     <else>
       <!-- There's between 1 and 3 bottles -->
-      <!-- Take the bottles and LB -->
+      <!-- Take the bottles and dry reagents -->
       <take>
         <item>
           <type>1 L Bottle</type>
@@ -68,19 +68,17 @@
       <!-- Begin steps -->
       <!-- Label bottle(s) -->
       <!-- FIXME: should only have to supply an array of objects for which you want labels to get the right output -->
-      <!--
       <include>
         <path>includes/labels/800_mL_labels.pdl</path>
         <setarg>
-          <var>human_name</var>
-          <value>"LB Growth Media"</value>
-        </setarg>
-        <setarg>
-          <var>fallback_string</var>
+          <var>item_string</var>
           <value>%{bottle_names}</value>
         </setarg>
+        <setarg>
+          <var>human_name</var>
+          <value>"YPAD Liquid"</value>
+        </setarg>
       </include>
-      -->
       <!-- Take the scale -->
       <take>
         <item>
@@ -89,7 +87,7 @@
           <var>scale</var>
         </item>
       </take>
-      <!-- Weigh out LB powder -->
+      <!-- Weigh out dry reagents -->
       <!-- The included protocol consumes a weigh boat -->
       <include>
         <path>materials_prep/includes/measure_dry_add_to_vessels.pdl</path>
