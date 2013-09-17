@@ -57,7 +57,7 @@
         <path>includes/labels/800_mL_labels.pdl</path>
         <setarg>
           <var>item_string</var>
-          <value>%{bottle_names}</value>
+          <value>%{bottle_string}</value>
         </setarg>
         <setarg>
           <var>human_name</var>
