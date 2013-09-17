@@ -15,7 +15,7 @@
   </step>
 
   <log>
-    <type>RETURN</type><data>%{x}</data>
+    <type>RETURN</type><data>{value: %{x}}</data>
   </log>
 
 </protocol>
