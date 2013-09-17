@@ -36,5 +36,4 @@
     <description>Cap and mix.</description>
     <note>Tightly close the cap(s) on %{vessel_string} and shake until all contents are dissolved. To check for dissolution, let bottle rest for 10 seconds, then pick up and look for sediment on the bottom. This should take approximately %{shake_duration} seconds.</note>
   </step>
-
 </protocol>

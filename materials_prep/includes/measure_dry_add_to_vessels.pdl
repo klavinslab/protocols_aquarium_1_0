@@ -1,8 +1,6 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <protocol>
-
   <!-- Usage notes:
-       IMPORTANT: this protocol does not have any effect on the inventory outside of taking/releasing a weigh boat.
 
        You have to clean up before and after this subprotocol, as it may be used in tandem. So
        you have to take all the items before including it, then release them afterwards (including the scale).
@@ -43,22 +41,10 @@
     <type>string</type>
     <description>Enter the weighing sheet to use (large weigh boat, small, weigh paper, etc).</description>
   </argument>
-
-  <!-- Take a weigh boat -->
-  <take>
-    <item>
-      <type>%{boat_type}</type>
-      <quantity>1</quantity>
-      <var>boat</var>
-    </item>
-  </take>
   <!-- Weigh out LB powder -->
   <step>
     <description>Measure and add %{mass} g of %{reagent}.</description>
     <!-- Picture would be good here -->
     <note>Do this for %{vessel_string}: Place the plastic boat on the scale. Zero the scale. Using the spatula, add %{mass} g of %{reagent} into the plastic boat. If too much was added, remove excess to waste container using spatula. Pour into bottle using a corner of the weigh boat.</note>
   </step>
-  <!-- Throw away the boat -->
-  <release>%{boat}</release>
-
 </protocol>

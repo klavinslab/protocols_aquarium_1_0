@@ -18,11 +18,11 @@
       <!-- TODO: if we get a failure tag, use it here to avoid nesting the rest of the protocol -->
       <step>
         <description>Wrong number of bottles!</description>
-        <note>You can only specify 0-4 bottles!</note>
+        <note>You can only specify 1-4 bottles!</note>
       </step>
     </then>
     <else>
-      <!-- There's between 1 and 3 bottles -->
+      <!-- There's between 1 and 4 bottles -->
       <!-- Take the bottles and LB -->
       <take>
         <item>
