@@ -1,0 +1,21 @@
+<protocol>
+
+  <step>
+
+    <description>Choose a value to return.</description>
+
+    <select>
+      <var>x</var>
+      <description>You have choices to make</description>
+      <choice>First</choice>
+      <choice>Second</choice>
+      <choice>Third</choice>
+    </select>
+
+  </step>
+
+  <log>
+    <type>RETURN</type><data>%{x}</data>
+  </log>
+
+</protocol>
