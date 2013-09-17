@@ -87,6 +87,13 @@
           <var>scale</var>
         </item>
       </take>
+      <take>
+        <item>
+          <type>Large Weigh Boat</type>
+          <quantity>1</quantity>
+          <var>boat</var>
+        </item>
+      </take>
       <!-- Weigh out dry reagents -->
       <!-- The included protocol consumes a weigh boat -->
       <include>
@@ -167,6 +174,7 @@
       </include>
       <!-- Release the scale -->
       <release>%{scale}</release>
+      <release>%{boat}</release>
       <!-- Add water and shake -->
       <include>
         <path>materials_prep/includes/add_di_water_and_shake.pdl</path>
