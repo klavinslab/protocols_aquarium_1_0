@@ -36,9 +36,9 @@
           <var>yeast_extract</var>
         </item>
         <item>
-          <type>Bacto Peptone</type>
+          <type>Bacto Tryptone</type>
           <quantity>1</quantity>
-          <var>bacto_peptone</var>
+          <var>bacto_tryptone</var>
         </item>
       </take>
       <take>
@@ -72,7 +72,7 @@
         <path>includes/labels/800_mL_labels.pdl</path>
         <setarg>
           <var>item_string</var>
-          <value>%{bottle_names}</value>
+          <value>%{bottle_string}</value>
         </setarg>
         <setarg>
           <var>human_name</var>
@@ -194,7 +194,7 @@
 
       <!-- Final releases -->
       <release>%{yeast_extract}</release>
-      <release>%{bacto_peptone}</release>
+      <release>%{bacto_tryptone}</release>
       <release>%{dextrose}</release>
       <release>%{adenine_hemisulfate}</release>
     </else>
