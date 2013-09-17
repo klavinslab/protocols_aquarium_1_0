@@ -4,7 +4,7 @@
        Inventory effects: NONE
        -->
   <argument>
-    <name>fallback_string</name>
+    <name>item_string</name>
     <type>string</type>
     <description>A string that describes the object to label.</description>
   </argument>

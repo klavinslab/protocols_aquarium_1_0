@@ -53,19 +53,17 @@
       <!-- Label bottle(s) -->
       <!-- FIXME: should only have to supply an array of objects for which you want labels to get the right output -->
       <!-- FIXME: 'nil' conversion error when not commented out -->
-      <!--
       <include>
         <path>includes/labels/800_mL_labels.pdl</path>
+        <setarg>
+          <var>item_string</var>
+          <value>%{bottle_names}</value>
+        </setarg>
         <setarg>
           <var>human_name</var>
           <value>"LB Growth Media"</value>
         </setarg>
-        <setarg>
-          <var>fallback_string</var>
-          <value>%{bottle_names}</value>
-        </setarg>
       </include>
-      -->
       <!-- Take the scale -->
       <take>
         <item>
