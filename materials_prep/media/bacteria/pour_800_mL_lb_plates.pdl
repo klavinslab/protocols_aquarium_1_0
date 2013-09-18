@@ -38,11 +38,27 @@
     <lhs>plate_name</lhs>
     <rhs>%{plate_name} + 'Plate (sterile)'</rhs>
   </assign>
+  <!-- Initial takes -->
+  <take>
+    <item>
+        <type>%{object_type}</type>
+        <quantity>1</quantity>
+        <var>agar_bottle</var>
+    </item>
+    <item>
+      <type>Petri Dish</type>
+      <quantity>40</quantity>
+      <var>plates</var>
+    </item>
+  </take>
 
   <!-- Antibiotics -->
   <if>
     <condition>%{antibiotic_bool}</condition>
     <then>
+      <step>
+        <description>debug1</description>
+      </step>
       <!-- Check for Amp -->
       <if>
         <condition>%{antibiotic} == "Amp"</condition>
@@ -88,21 +104,12 @@
         </return>
       </include>
     </then>
+    <else>
+      <step>
+        <description>debug2</description>
+      </step>
+    </else>
   </if>
-
-  <!-- Initial takes -->
-  <take>
-    <item>
-        <type>%{object_type}</type>
-        <quantity>1</quantity>
-        <var>agar_bottle</var>
-    </item>
-    <item>
-      <type>Petri Dish</type>
-      <quantity>40</quantity>
-      <var>plates</var>
-    </item>
-  </take>
 
   <!-- Start steps -->
   <!-- Lay out plates individually -->
