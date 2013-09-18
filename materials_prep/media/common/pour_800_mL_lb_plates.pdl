@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol name="Pour Agar">
-
   <information>Pour plates from 800mL of liquid state agar.</information>
   <!-- IMPORTANT: this protocol expects a string with this exact format in order to make accurate take/produce tags:
                   '800mL MEDIA Agar Media (sterile)'. The '800ml ' and 'Agar Media (sterile)' are stripped to produce
@@ -9,25 +8,25 @@
 
   <!-- Arguments -->
   <argument>
-    <name>object_type</name>
-    <type>string</type>
-    <description>Enter the object type of the agar you'd like to pour. Must be of this format: '800mL MEDIA_NAME Agar Media (sterile)'.</description>
-  </argument>
-  <argument>
     <name>antibiotic</name>
     <type>string</type>
-    <description>Enter the antibiotic to use for this batch (allowed inputs are Amp, Kan, or Chlor). If there's no antibiotic, type "None".</description>
+    <description>Enter the antibiotic to use for this batch (allowed inputs are Amp, Kan, or Chlor). If there's no antibiotic, enter anything else (like "None".</description>
   </argument>
 
+  <!-- Restrict to LB for now -->
+  <assign>
+    <lhs>object_type</lhs>
+    <rhs>"800 mL LB Agar (sterile)"</rhs>
+  </assign>
+
   <!-- Check for bad input -->
+  <assign>
+    <lhs>antibiotic_bool</lhs>
+    <rhs>%{antibiotic} == "Amp" || %{antibiotic} == "Kan" || %{antibiotic} == "Chlor"</rhs>
+  </assign>
   <if>
-    <condition>%{antibiotic} != "Amp" &amp;&amp; %{antibiotic} != "Kan" &amp;&amp; %{antibiotic} != "Chlor" &amp;&amp; %{antibiotic} != "None"</condition>
+    <condition>%{antibiotic_bool}</condition>
     <then>
-      <step>
-        <description>Input for the antibiotic wasn't Amp, Kan, or Chlor - you should cancel this job now.</description>
-      </step>
-    </then>
-    <else>
       <!-- Check for Amp -->
       <if>
         <condition>%{antibiotic} == "Amp"</condition>
@@ -58,11 +57,7 @@
           </assign>
         </then>
       </if>
-    </else>
-  </if>
-  <if>
-    <condition>%{antibiotic} != "None"</condition>
-    <then>
+
       <!-- Run the 'add antibiotics to LB' subprotocol -->
       <include>
         <path>includes/media/lb_agar_add_antibiotics.pdl</path>
@@ -72,10 +67,12 @@
         </setarg>
         <!-- Have to release the antibiotic aliquots with the plates -->
         <return>
-          <var>%{antibiotic_aliquots}</var>
+          <var>antibiotic_aliquots</var>
+          <value>%{antibiotic_aliquots}</value>
         </return>
       </include>
     </then>
+    <else></else>
   </if>
 
   <!-- Calculate the name of the produced plates -->
@@ -126,7 +123,11 @@
     <description>Let plates cool.</description>
     <note>Let the plates cool until solid. If you keep them spread out individually (as when poured), they will cool much faster. This should take 10-20 minutes.</note>
   </step>
-  <!-- TODO: plates should go in a drying area and sit for a while - also metacol territory -->
+  <!-- Put in drying area for some amount of time -->
+  <!-- FIXME: metacol territory -->
+  <step>
+    <description>Put plates in the 30C incubator</description>
+  </step>
 
   <!-- Produces -->
   <produce>
@@ -134,8 +135,7 @@
     <quantity>40</quantity>
     <release>%{plates}</release>
     <if>
-      <!-- HACK: should actually do proper input checking... this is fragile -->
-      <condition>%{antibiotic} != "None"</condition>
+      <condition>%{antibiotic_bool}</condition>
       <then>
         <release>%{antibiotic_aliquots}</release>
       </then>
