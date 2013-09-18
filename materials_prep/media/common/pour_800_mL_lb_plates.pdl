@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol name="Pour Agar">
-  <information>Pour plates from 800mL of liquid state agar.</information>
-  <!-- IMPORTANT: this protocol expects a string with this exact format in order to make accurate take/produce tags:
-                  '800mL MEDIA Agar Media (sterile)'. The '800ml ' and 'Agar Media (sterile)' are stripped to produce
-                  'MEDIA Agar Plate (sterile)'.
-        -->
+  <!-- Information -->
+  <information>Pour plates from 800 mL of liquid state agar.</information>
 
   <!-- Arguments -->
   <argument>
@@ -24,6 +21,25 @@
     <lhs>antibiotic_bool</lhs>
     <rhs>%{antibiotic} == "Amp" || %{antibiotic} == "Kan" || %{antibiotic} == "Chlor"</rhs>
   </assign>
+
+  <!-- Calculate the name of the produced plates -->
+  <!-- Strip first 7 characters to remove '800 mL ' -->
+  <assign>
+    <lhs>plate_name</lhs>
+    <rhs>%{object_type}[7..-1]</rhs>
+  </assign>
+  <!-- Strip last 9 characters to remove '(sterile)' -->
+  <assign>
+    <lhs>plate_name</lhs>
+    <rhs>%{plate_name}[0..-7]</rhs>
+  </assign>
+  <!-- Add 'Plate (sterile)' to the end of the string -->
+  <assign>
+    <lhs>plate_name</lhs>
+    <rhs>%{plate_name} + 'Plate (sterile)'</rhs>
+  </assign>
+
+  <!-- Antibiotics -->
   <if>
     <condition>%{antibiotic_bool}</condition>
     <then>
@@ -72,25 +88,7 @@
         </return>
       </include>
     </then>
-    <else></else>
   </if>
-
-  <!-- Calculate the name of the produced plates -->
-  <!-- Strip first 7 characters to remove '800 mL ' -->
-  <assign>
-    <lhs>plate_name</lhs>
-    <rhs>%{object_type}[7..-1]</rhs>
-  </assign>
-  <!-- Strip last 9 characters to remove '(sterile)' -->
-  <assign>
-    <lhs>plate_name</lhs>
-    <rhs>%{plate_name}[0..-7]</rhs>
-  </assign>
-  <!-- Add 'Plate (sterile)' to the end of the string -->
-  <assign>
-    <lhs>plate_name</lhs>
-    <rhs>%{plate_name} + 'Plate (sterile)'</rhs>
-  </assign>
 
   <!-- Initial takes -->
   <take>
