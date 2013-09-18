@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<protocol>
+  <!-- Note: if this is desired behavior, outputs should be identical. Otherwise,
+       int 800 / 7 should be 114 (an int) and float 800 / 7 should be ~114.29 -->
+  <assign>
+    <lhs>int_800</lhs>
+    <rhs>800 / 7</rhs>
+  </assign>
+  <assign>
+    <lhs>float_800</lhs>
+    <rhs>800.0 / 7</rhs>
+  </assign>
+  <step>
+    <description>integer versus float division</description>
+    <note>integer division: 800 / 7 = %{int_800}. float division: 800 / 7 = %{float_800}</note>
+  </step>
+</protocol>

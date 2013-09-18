@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol>
-
-  <information>Prepare LB agar media for pouring plates.</information>
+  <!-- Information -->
+  <!-- None - this protocol should be included only as an optional antibiotic / other things addition step -->
 
   <!-- Arguments -->
-  <!-- IDEA: Do we ever make LB agar plates without antibiotics? -->
-  <!-- IDEA: what if we want more than one antibiotic? -->
   <argument>
     <name>antibiotic</name>
     <type>string</type>
     <description>Enter the antibiotic to use for this batch (allowed inputs are Amp, Kan, or Chlor).</description>
   </argument>
 
+  <!-- Media volume in mL - will always be 800 a first -->
+  <assign>
+    <lhs>media_volume</lhs>
+    <rhs>800.0</rhs>
+  </assign>
+
   <!-- Initial takes -->
-  <!-- TODO: Is there a way to include a note about this thing being crazy hot? -->
   <take>
     <item>
       <type>800mL LB Agar Media (sterile)</type>
@@ -25,10 +28,14 @@
       <quantity>1</quantity>
       <var>stir_plate</var>
     </item>
+    <item>
+      <type>Autoclave Gloves</type>
+      <quantity>1</quantity>
+      <var>gloves</var>
+    </item>
   </take>
 
   <!-- Begin steps -->
-  <!-- TODO: Should take/release the gloves, too! -->
   <!-- Put bottle on stir plate -->
   <step>
     <description>Place the agar media bottle on the stir plate.</description>
@@ -37,23 +44,34 @@
   <!-- Set stir plate settings -->
   <step>
     <description>Heat stir plate to 65°C and 700 RPM.</description>
+    <!-- TODO: how long? -->
+    <note>This should take about X minutes</note>
   </step>
-  <!-- TODO: There's a wait step somewhere in here. How long does it take to equilibriate? -->
-  <!-- For Kanamycin: -->
-  <!-- Technically I want an if, then an elif, then another elif, then an else, and the else should be angry that you didn't give the right input -->
-  <!-- TODO: Good place to use include and/or a for loop equivalent -->
   <!-- FIXME: antibiotic aliquots should be named using their concentration (100X, etc) -->
   <!-- What I really want is an 'elseif'... -->
+  <!-- TODO: Refactor this - should just specify an array of names + dilution factors and select them based on input -->
+  <assign>
+    <lhs>volumes</lhs>
+    <rhs>[</rhs>
+  </assign>
   <if>
     <!-- Can I do string literals like this? -->
     <condition>%{antibiotic} == "Amp"</condition>
     <then>
       <!-- Amp is at 100X-->
       <!-- TODO: Ask whether discriminating between floats/ints in an expression is a desired behavior -->
-      <assign><lhs>antibiotic_volume</lhs><rhs>800.0 / 100</rhs></assign>
-      <assign><lhs>antibiotic_type</lhs><rhs>"100X 1 mL Ampicillin Aliquot"</rhs></assign>
-      <!-- TODO: refactor so name assignment happens on one line -->
-      <assign><lhs>produced_object</lhs><rhs>"800mL Ampicillin LB Agar Media (sterile)"</rhs></assign>
+      <assign>
+        <lhs>antibiotic_volume</lhs>
+        <rhs>800.0 / 100</rhs>
+      </assign>
+      <assign>
+        <lhs>antibiotic_type</lhs>
+        <rhs>"100X 1 mL Ampicillin Aliquot"</rhs>
+      </assign>
+      <assign>
+        <lhs>produced_object</lhs>
+        <rhs>"800mL Ampicillin LB Agar Media (sterile)"</rhs>
+      </assign>
     </then>
     <else>
       <if>
@@ -61,9 +79,18 @@
         <condition>%{antibiotic} == "Kan"</condition>
         <then>
           <!-- Kan is at 200X-->
-          <assign><lhs>antibiotic_volume</lhs><rhs>800.0 / 200</rhs></assign>
-          <assign><lhs>antibiotic_type</lhs><rhs>"200X 1 mL Kanamycin Aliquot"</rhs></assign>
-          <assign><lhs>produced_object</lhs><rhs>"800mL Kanamycin LB Agar Media (sterile)"</rhs></assign>
+          <assign>
+            <lhs>antibiotic_volume</lhs>
+            <rhs>800.0 / 200</rhs>
+          </assign>
+          <assign>
+            <lhs>antibiotic_type</lhs>
+            <rhs>"200X 1 mL Kanamycin Aliquot"</rhs>
+          </assign>
+          <assign>
+            <lhs>produced_object</lhs>
+            <rhs>"800mL Kanamycin LB Agar Media (sterile)"</rhs>
+          </assign>
         </then>
         <else>
           <if>
@@ -71,9 +98,18 @@
             <condition>%{antibiotic} == "Chlor"</condition>
             <then>
               <!-- Chlor is at 1000X-->
-              <assign><lhs>antibiotic_volume</lhs><rhs>800.0 / 1000</rhs></assign>
-              <assign><lhs>antibiotic_type</lhs><rhs>"1000X 1 mL Chloramphenicol Aliquot"</rhs></assign>
-              <assign><lhs>produced_object</lhs><rhs>"800mL Chloramphenicol LB Agar Media (sterile)"</rhs></assign>
+              <assign>
+                <lhs>antibiotic_volume</lhs>
+                <rhs>800.0 / 1000</rhs>
+              </assign>
+              <assign>
+                <lhs>antibiotic_type</lhs>
+                <rhs>"1000X 1 mL Chloramphenicol Aliquot"</rhs>
+              </assign>
+              <assign>
+                <lhs>produced_object</lhs>
+                <rhs>"800mL Chloramphenicol LB Agar Media (sterile)"</rhs>
+              </assign>
             </then>
             <else>
               <!-- TODO: if we get a 'fail' tag, use it here -->
@@ -88,7 +124,10 @@
   </if>
 
   <!-- Calculate how many tubes are needed (ceil(vol / 1000)) -->
-  <assign><lhs>antibiotic_tubes</lhs><rhs>%{antibiotic_volume}.ceil</rhs></assign>
+  <assign>
+    <lhs>antibiotic_tubes</lhs>
+    <rhs>%{antibiotic_volume}.ceil</rhs>
+  </assign>
 
   <take>
     <item>
@@ -103,6 +142,7 @@
     <description>Add antibiotic</description>
     <note>Add %{antibiotic_volume}mL of antibiotic solution to the LB Agar bottle. Use as many %{antibiotic_type}s as needed. Swirl a little to mix.</note>
   </step>
+  <release>%{stir_plate}</release>
 
   <!-- Produces -->
   <produce>
@@ -114,7 +154,7 @@
   </produce>
 
   <!-- Releases -->
-  <release>%{stir_plate}</release>
+  <release>%{gloves}</release>
 
   <!-- TODO: Include plate pouring protocol here - plates should be produced at the end of this protocol -->
   <!-- TODO: update releases -->
