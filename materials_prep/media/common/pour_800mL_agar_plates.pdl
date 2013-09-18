@@ -4,7 +4,8 @@
   <information>Pour plates from 800mL of liquid state agar.</information>
   <!-- IMPORTANT: this protocol expects a string with this exact format in order to make accurate take/produce tags:
                   '800mL MEDIA Agar Media (sterile)'. The '800ml ' and 'Agar Media (sterile)' are stripped to produce
-                  'MEDIA Agar Plate (sterile)'. -->
+                  'MEDIA Agar Plate (sterile)'.
+        -->
 
   <!-- Arguments -->
   <argument>
@@ -12,14 +13,87 @@
     <type>string</type>
     <description>Enter the object type of the agar you'd like to pour. Must be of this format: '800mL MEDIA_NAME Agar Media (sterile)'.</description>
   </argument>
+  <argument>
+    <name>antibiotic</name>
+    <type>string</type>
+    <description>Enter the antibiotic to use for this batch (allowed inputs are Amp, Kan, or Chlor). If there's no antibiotic, type "None".</description>
+  </argument>
+
+  <!-- Check for bad input -->
+  <if>
+    <condition>%{antibiotic} != "Amp" &amp;&amp; %{antibiotic} != "Kan" &amp;&amp; %{antibiotic} != "Chlor" &amp;&amp; %{antibiotic} != "None"</condition>
+    <then>
+      <step>
+        <description>Input for the antibiotic wasn't Amp, Kan, or Chlor - you should cancel this job now.</description>
+      </step>
+    </then>
+    <else>
+      <!-- Check for Amp -->
+      <if>
+        <condition>%{antibiotic} == "Amp"</condition>
+        <then>
+          <assign>
+            <lhs>antibiotic_index</lhs>
+            <rhs>0</rhs>
+          </assign>
+        </then>
+      </if>
+      <!-- Check for Kan -->
+      <if>
+        <condition>%{antibiotic} == "Kan"</condition>
+        <then>
+          <assign>
+            <lhs>antibiotic_index</lhs>
+            <rhs>1</rhs>
+          </assign>
+        </then>
+      </if>
+      <!-- Check for Chlor -->
+      <if>
+        <condition>%{antibiotic} == "Chlor"</condition>
+        <then>
+          <assign>
+            <lhs>antibiotic_index</lhs>
+            <rhs>2</rhs>
+          </assign>
+        </then>
+      </if>
+    </else>
+  </if>
+  <if>
+    <condition>%{antibiotic} != "None"</condition>
+    <then>
+      <!-- Run the 'add antibiotics to LB' subprotocol -->
+      <include>
+        <path>includes/media/lb_agar_add_antibiotics.pdl</path>
+        <setarg>
+          <var>antibiotic</var>
+          <value>%{antibiotic_index}</value>
+        </setarg>
+        <!-- Have to release the antibiotic aliquots with the plates -->
+        <return>
+          <var>%{antibiotic_aliquots}</var>
+        </return>
+      </include>
+    </then>
+  </if>
 
   <!-- Calculate the name of the produced plates -->
-  <!-- Strip first 6 characters to remove '800mL ' -->
-  <assign><lhs>plate_name</lhs><rhs>%{object_type}[6..-1]</rhs></assign>
-  <!-- Strip last 20 characters to remove 'Agar Media (sterile)' -->
-  <assign><lhs>plate_name</lhs><rhs>%{plate_name}[0..-16]</rhs></assign>
-  <!-- Add 'Agar Plate (sterile)' to the end of the string -->
-  <assign><lhs>plate_name</lhs><rhs>%{plate_name} + 'Plate (sterile)'</rhs></assign>
+  <!-- Strip first 7 characters to remove '800 mL ' -->
+  <assign>
+    <lhs>plate_name</lhs>
+    <rhs>%{object_type}[7..-1]</rhs>
+  </assign>
+  <!-- Strip last 9 characters to remove '(sterile)' -->
+  <assign>
+    <lhs>plate_name</lhs>
+    <rhs>%{plate_name}[0..-7]</rhs>
+  </assign>
+  <!-- Add 'Plate (sterile)' to the end of the string -->
+  <assign>
+    <lhs>plate_name</lhs>
+    <rhs>%{plate_name} + 'Plate (sterile)'</rhs>
+  </assign>
 
   <!-- Initial takes -->
   <take>
@@ -30,7 +104,6 @@
     </item>
     <item>
       <type>Petri Dish</type>
-      <!-- FIXME: Petri Dish is too vague, should be plastic/disposable -->
       <quantity>40</quantity>
       <var>plates</var>
     </item>
@@ -60,11 +133,17 @@
     <object>%{plate_name}</object>
     <quantity>40</quantity>
     <release>%{plates}</release>
+    <if>
+      <!-- HACK: should actually do proper input checking... this is fragile -->
+      <condition>%{antibiotic} != "None"</condition>
+      <then>
+        <release>%{antibiotic_aliquots}</release>
+      </then>
+    </if>
   </produce>
-
-  <!-- FIXME: Also produces an unsterile 1L bottle! Input bottle should be released there -->
-
-  <!-- Releases -->
-  <release>%{agar_bottle}</release>
-
+  <produce>
+    <object>1 L Bottle (dirty)</object>
+    <quantity>1</quantity>
+    <release>%{agar_bottle}</release>
+  </produce>
 </protocol>

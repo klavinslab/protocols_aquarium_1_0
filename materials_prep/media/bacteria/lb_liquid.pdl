@@ -82,7 +82,7 @@
       <!-- Weigh out LB powder -->
       <!-- The included protocol consumes a weigh boat -->
       <include>
-        <path>materials_prep/includes/measure_dry_add_to_vessels.pdl</path>
+        <path>includes/media/measure_dry_add_to_vessels.pdl</path>
         <setarg>
           <var>vessel_string</var>
           <value>%{bottle_string}</value>
@@ -105,7 +105,7 @@
       <release>%{boat}</release>
       <!-- Add water and shake -->
       <include>
-        <path>materials_prep/includes/add_di_water_and_shake.pdl</path>
+        <path>includes/media/add_di_water_and_shake.pdl</path>
         <setarg>
           <var>vessel_string</var>
           <value>%{bottle_string}</value>

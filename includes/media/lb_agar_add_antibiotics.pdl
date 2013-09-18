@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol>
-  <!-- Information -->
-  <!-- None - this protocol should be included only as an optional antibiotic / other things addition step -->
+  <!-- Important:
+       Inventory effects: takes antibiotics that should be released in the final product - variable is titled %{antibiotic_aliquots}
+       -->
+
   <!-- TODO: replace inventory object type's dilution factor with actual mg/mL -->
 
   <!-- Arguments -->
   <argument>
-    <name>antibiotic</name>
+    <name>antibiotic_index</name>
     <type>string</type>
-    <description>Enter the antibiotic to use for this batch (allowed inputs are Amp, Kan, or Chlor).</description>
+    <description>Enter the antibiotic to use for this batch. 0 = Amp, 1 = Kan, 2 = Chlor</description>
   </argument>
 
   <!-- Media volume in mL - will always be 800 a first -->
@@ -27,53 +29,6 @@
     <lhs>dilution_factors</lhs>
     <rhs>[1.0/100.0, 1.0/200.0, 1.0/1000.0]</rhs>
   </assign>
-  <!-- Array of antibiotic + media object types this order: Amp, Kan, Chlor -->
-  <assign>
-    <lhs>produced_types</lhs>
-    <rhs>["800 mL Ampicillin LB Agar (sterile)", "800 mL Kanamycin LB Agar (sterile)", "800 mL Chloramphenicol LB Agar (sterile)"]</rhs>
-  </assign>
-
-  <!-- Check for bad input -->
-  <if>
-    <condition>%{antibiotic} != "Amp" &amp;&amp; %{antibiotic} != "Kan" &amp;&amp; %{antibiotic} != "Chlor"</condition>
-    <then>
-      <step>
-        <description>Input for the antibiotic wasn't Amp, Kan, or Chlor - you should cancel this job now.</description>
-      </step>
-    </then>
-    <else>
-      <!-- Check for Amp -->
-      <if>
-        <condition>%{antibiotic} == "Amp"</condition>
-        <then>
-          <assign>
-            <lhs>antibiotic_index</lhs>
-            <rhs>0</rhs>
-          </assign>
-        </then>
-      </if>
-      <!-- Check for Kan -->
-      <if>
-        <condition>%{antibiotic} == "Kan"</condition>
-        <then>
-          <assign>
-            <lhs>antibiotic_index</lhs>
-            <rhs>1</rhs>
-          </assign>
-        </then>
-      </if>
-      <!-- Check for Chlor -->
-      <if>
-        <condition>%{antibiotic} == "Chlor"</condition>
-        <then>
-          <assign>
-            <lhs>antibiotic_index</lhs>
-            <rhs>2</rhs>
-          </assign>
-        </then>
-      </if>
-    </else>
-  </if>
 
   <!-- Calculate how many tubes are needed (ceil(vol / 1000)) -->
   <assign>
@@ -85,25 +40,14 @@
     <rhs>%{antibiotic_volume}.ceil</rhs>
   </assign>
 
-  <!-- Initial takes -->
+  <!-- Take stir plate -->
   <take>
-    <item>
-      <type>800 mL LB Agar (sterile)</type>
-      <quantity>1</quantity>
-      <var>lb</var>
-    </item>
     <item>
       <type>Hot/Stir Plate</type>
       <quantity>1</quantity>
       <var>stir_plate</var>
     </item>
-    <item>
-      <type>Autoclave Gloves</type>
-      <quantity>1</quantity>
-      <var>gloves</var>
-    </item>
   </take>
-
   <!-- Begin steps -->
   <!-- Put bottle on stir plate -->
   <step>
@@ -126,7 +70,7 @@
     <item>
       <type>%{antibiotic_type}</type>
       <quantity>%{antibiotic_tubes}</quantity>
-      <var>antibiotic</var>
+      <var>antibiotic_aliquots</var>
     </item>
   </take>
 
@@ -135,20 +79,7 @@
     <description>Add %{antibiotic_volume} mL of antibiotic</description>
     <note>If necessary, thaw antibiotic aliquots with your hand (or other 37°C warmer). Add %{antibiotic_volume} mL of antibiotic solution to the LB Agar bottle. This should require no more than %{antibiotic_tubes} antibiotic aliquot(s). Swirl the bottle gently for 10 seconds to mix.</note>
   </step>
-  <release>%{stir_plate}</release>
-
-  <!-- Produces -->
-  <assign>
-    <lhs>produced_type</lhs>
-    <rhs>%{produced_types}[%{antibiotic_index}]</rhs>
-  </assign>
-  <produce>
-    <object>%{produced_type}</object>
-    <quantity>1</quantity>
-    <release>%{lb}</release>
-    <release>%{antibiotic}</release>
-  </produce>
 
   <!-- Releases -->
-  <release>%{gloves}</release>
+  <release>%{stir_plate}</release>
 </protocol>
