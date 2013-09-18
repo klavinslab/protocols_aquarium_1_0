@@ -9,7 +9,7 @@
   <!-- Arguments -->
   <argument>
     <name>antibiotic_index</name>
-    <type>string</type>
+    <type>number</type>
     <description>Enter the antibiotic to use for this batch. 0 = Amp, 1 = Kan, 2 = Chlor</description>
   </argument>
 
