@@ -119,6 +119,10 @@
           <value>20</value>
         </setarg>
       </include>
+      <step>
+        <description>Important Location Note</description>
+        <note>For the next step, choose B1.320 as the location to store %{bottle_string}. Write this location down now.</note>
+      </step>
 
       <!-- Produce -->
       <produce>
