@@ -64,6 +64,11 @@
           <value>"LB Growth Media"</value>
         </setarg>
       </include>
+      <!-- Remove autoclave tape -->
+      <step>
+        <description>Remove autoclave tape.</description>
+        <note>Remove any autoclave tape from %{bottle_string}.</note>
+      </step>
       <!-- Take the scale -->
       <take>
         <item>
