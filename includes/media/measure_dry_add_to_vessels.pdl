@@ -47,4 +47,8 @@
     <!-- Picture would be good here -->
     <note>Do this for %{vessel_string}: Place the plastic boat on the scale. Zero the scale. Using the spatula, add %{mass} g of %{reagent} into the plastic boat. If too much was added, remove excess to waste container using spatula. Pour into bottle using a corner of the weigh boat.</note>
   </step>
+  <step>
+    <description>Clean the spatula.</description>
+    <note>Clean the spatula used to weigh out the ingredients using ethanol and kim wipes to prevent dry reagent contamination.</note>
+  </step>
 </protocol>

@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol>
-
+  <!-- Information -->
   <information>Take in media, glassware, etc. and make it sterile.</information>
   <!-- IMPORTANT: Expects input objects to end with "(unsterile)" and output to end with "(sterile")
                   These must exist as object types for this protocol to function.
        -->
 
   <!-- Arguments -->
-  <!-- This protocol could make good use of array arguments (list of objects) -->
-  <!-- Item IDs -->
   <argument>
     <name>item_number</name>
     <type>number</type>
@@ -16,12 +14,16 @@
   </argument>
 
   <!-- Initial takes -->
+  <!-- FIXME: using 'getdata' instead of 'argument' violates abstraction layer. There is no way to hack another solution? -->
   <!-- Initialize empty vector for pre-autoclaved items -->
-  <!-- FIXME: this doesn't actually work - it only asks for the first argument and everything gets screwed up.
-       I think the while loop doesn't reevaluate or something until later. No way to ask for variable number of arguments?
-       -->
-  <assign><lhs>items</lhs><rhs>[]</rhs></assign>
-  <assign><lhs>counter</lhs><rhs>0</rhs></assign>
+  <assign>
+    <lhs>items</lhs>
+    <rhs>[]</rhs>
+  </assign>
+  <assign>
+    <lhs>counter</lhs>
+    <rhs>0</rhs>
+  </assign>
   <while>
     <condition>%{counter} &lt; %{item_number}</condition>
     <do>
@@ -44,8 +46,14 @@
             <var>current_item</var>
         </item>
       </take>
-      <assign><lhs>items</lhs><rhs>%{items}.push(%{current_item})</rhs></assign>
-      <assign><lhs>counter</lhs><rhs>%{counter} + 1</rhs></assign>
+      <assign>
+        <lhs>items</lhs>
+        <rhs>%{items}.push(%{current_item})</rhs>
+      </assign>
+      <assign>
+        <lhs>counter</lhs>
+        <rhs>%{counter} + 1</rhs>
+      </assign>
     </do>
   </while>
   <!-- TODO: offer small selection of options:
@@ -88,22 +96,23 @@
     <do>
       <!-- Ask for next item's string -->
       <!-- If you pop off of the list, can't release anything -->
-      <assign><lhs>produced_item_name</lhs><rhs>%{items}[%{counter}][0][:object][:name]</rhs></assign>
-      <assign><lhs>produced_item_name</lhs><rhs>%{produced_item_name}[0..-12] + '(sterile)'</rhs></assign>
+      <assign>
+        <lhs>produced_item_name</lhs>
+        <rhs>%{items}[%{counter}][0][:object][:name]</rhs>
+      </assign>
+      <assign>
+        <lhs>produced_item_name</lhs>
+        <rhs>%{produced_item_name}[0..-12] + '(sterile)'</rhs>
+      </assign>
       <produce>
         <object>%{produced_item_name}</object>
         <quantity>1</quantity>
         <release>%{items}[%{counter}]</release>
       </produce>
-      <assign><lhs>counter</lhs><rhs>%{counter} + 1</rhs></assign>
+      <assign>
+        <lhs>counter</lhs>
+        <rhs>%{counter} + 1</rhs>
+      </assign>
     </do>
   </while>
-
-  <!-- Releases -->
-
-  <!-- May need to invent another state for objects - autoclaving -->
-  <!-- There's a break in the middle of this protocol (waiting for the autoclave), and at the end
-       we want sterile items to come out.
-       -->
-
 </protocol>
