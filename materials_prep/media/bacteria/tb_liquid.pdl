@@ -93,7 +93,7 @@
         </setarg>
         <setarg>
           <var>mass</var>
-          <value>20</value>
+          <value>47.6</value>
         </setarg>
         <setarg>
           <var>boat_type</var>
@@ -103,6 +103,18 @@
       <!-- Release the scale -->
       <release>%{scale}</release>
       <release>%{boat}</release>
+      <take>
+        <item>
+          <type>Glycerol</type>
+          <quantity>1</quantity>
+          <var>glycerol</var>
+        </item>
+      </take>
+      <step>
+        <description>Add 100% glycerol.</description>
+        <note>Using a serological pipetter, add 8 mL of 100% glycerol to %{bottle_string}.</note>
+      </step>
+      <release>%{glycerol}</release>
       <!-- Add water and shake -->
       <include>
         <path>includes/media/add_di_water_and_shake.pdl</path>
@@ -121,6 +133,10 @@
       </include>
 
       <!-- Produce -->
+      <step>
+        <description>Important Location Note</description>
+        <note>For the next step, choose B1.320 as the location to store %{bottle_string}. Write this location down now.</note>
+      </step>
       <produce>
         <object>800 mL TB liquid (unsterile)</object>
         <quantity>%{n_bottle}</quantity>

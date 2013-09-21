@@ -22,18 +22,13 @@
       </step>
     </then>
     <else>
-      <!-- There's between 1 and 4 bottles -->
-      <!-- Take the bottles and LB -->
+      <!-- There's between 1 and 4 bottles so continue -->
+      <!-- Take the bottles -->
       <take>
         <item>
           <type>1 L Bottle</type>
           <quantity>%{n_bottle}</quantity>
           <var>bottle</var>
-        </item>
-        <item>
-          <type>LB Media Powder</type>
-          <quantity>1</quantity>
-          <var>lb_powder</var>
         </item>
       </take>
       <!-- Generate string for bottle names -->
@@ -52,7 +47,6 @@
       <!-- Begin steps -->
       <!-- Label bottle(s) -->
       <!-- FIXME: should only have to supply an array of objects for which you want labels to get the right output -->
-      <!-- FIXME: 'nil' conversion error when not commented out -->
       <include>
         <path>includes/labels/800_mL_labels.pdl</path>
         <setarg>
@@ -69,15 +63,18 @@
         <description>Remove autoclave tape.</description>
         <note>Remove any autoclave tape from %{bottle_string}.</note>
       </step>
-      <!-- Take the scale -->
+      <!-- Take dry reagents, scale, and weigh boat-->
       <take>
+        <item>
+          <type>LB Media Powder</type>
+          <quantity>1</quantity>
+          <var>lb_powder</var>
+        </item>
         <item>
           <type>Scale</type>
           <quantity>1</quantity>
           <var>scale</var>
         </item>
-      </take>
-      <take>
         <item>
           <type>Large Weigh Boat</type>
           <quantity>1</quantity>
@@ -124,12 +121,12 @@
           <value>20</value>
         </setarg>
       </include>
+
+      <!-- Produce -->
       <step>
         <description>Important Location Note</description>
         <note>For the next step, choose B1.320 as the location to store %{bottle_string}. Write this location down now.</note>
       </step>
-
-      <!-- Produce -->
       <produce>
         <object>800 mL LB liquid (unsterile)</object>
         <quantity>%{n_bottle}</quantity>
@@ -141,5 +138,4 @@
       <release>%{lb_powder}</release>
     </else>
   </if>
-
 </protocol>
