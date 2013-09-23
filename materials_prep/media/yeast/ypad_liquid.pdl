@@ -123,11 +123,11 @@
         </setarg>
         <setarg>
           <var>reagent</var>
-          <value>"Bacto Peptone"</value>
+          <value>"Bacto Tryptone"</value>
         </setarg>
         <setarg>
           <var>mass</var>
-          <value>8</value>
+          <value>16</value>
         </setarg>
         <setarg>
           <var>boat_type</var>
@@ -165,7 +165,7 @@
         </setarg>
         <setarg>
           <var>mass</var>
-          <value>16</value>
+          <value>0.064</value>
         </setarg>
         <setarg>
           <var>boat_type</var>
@@ -188,7 +188,7 @@
         </setarg>
         <setarg>
           <var>shake_duration</var>
-          <value>20</value>
+          <value>60</value>
         </setarg>
       </include>
 
