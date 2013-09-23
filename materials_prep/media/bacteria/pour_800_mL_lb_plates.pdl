@@ -10,7 +10,7 @@
     <description>Enter the antibiotic to use for this batch (allowed inputs are Amp, Kan, or Chlor). If there's no antibiotic, enter anything else (like "None".</description>
   </argument>
 
-  <!-- Restrict to LB for now -->
+  <!-- Hard-code for LB (but anticipating parameterization) -->
   <assign>
     <lhs>object_type</lhs>
     <rhs>"800 mL LB Agar (sterile)"</rhs>
@@ -28,16 +28,27 @@
     <lhs>plate_name</lhs>
     <rhs>%{object_type}[7..-1]</rhs>
   </assign>
-  <!-- Strip last 9 characters to remove '(sterile)' -->
+  <!-- Strip last 14 characters to remove 'Agar (sterile)' -->
   <assign>
     <lhs>plate_name</lhs>
-    <rhs>%{plate_name}[0..-7]</rhs>
+    <rhs>%{plate_name}[0..-15]</rhs>
   </assign>
-  <!-- Add 'Plate (sterile)' to the end of the string -->
+  <!-- If antibiotics were added, add to name -->
+  <if>
+    <condition>%{antibiotic_bool}</condition>
+    <then>
+      <assign>
+        <lhs>plate_name</lhs>
+        <rhs>%{plate_name} + %{antibiotic} + " "</rhs>
+      </assign>
+    </then>
+  </if>
+  <!-- Add 'Agar Plate (sterile)' to the end of the string -->
   <assign>
     <lhs>plate_name</lhs>
     <rhs>%{plate_name} + 'Plate (sterile)'</rhs>
   </assign>
+
   <!-- Initial takes -->
   <take>
     <item>
@@ -56,9 +67,6 @@
   <if>
     <condition>%{antibiotic_bool}</condition>
     <then>
-      <step>
-        <description>debug1</description>
-      </step>
       <!-- Check for Amp -->
       <if>
         <condition>%{antibiotic} == "Amp"</condition>
@@ -104,11 +112,6 @@
         </return>
       </include>
     </then>
-    <else>
-      <step>
-        <description>debug2</description>
-      </step>
-    </else>
   </if>
 
   <!-- Start steps -->
@@ -119,20 +122,16 @@
   </step>
   <!-- Pour -->
   <step>
-    <description>Pour 25mL of media into each plate.</description>
-    <note>Uncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25mL. Replace the petri dish lid and repeat for every plate.</note>
+    <description>Pour 25 mL of media into each plate.</description>
+    <note>Uncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25 mL. Replace the petri dish lid and repeat for every plate.</note>
   </step>
   <!-- Let cool -->
-  <!-- FIXME: This is metacol territory -->
+  <!-- FIXME: Metacol territory -->
   <step>
     <description>Let plates cool.</description>
-    <note>Let the plates cool until solid. If you keep them spread out individually (as when poured), they will cool much faster. This should take 10-20 minutes.</note>
+    <note>Let the plates cool until solid. If you keep them separate and usntacked, they will cool much faster and more evenly. This should take 10-20 minutes.</note>
   </step>
-  <!-- Put in drying area for some amount of time -->
-  <!-- FIXME: metacol territory -->
-  <step>
-    <description>Put plates in the 30C incubator</description>
-  </step>
+  <!-- TODO: put them somewhere - 30C incubator? -->
 
   <!-- Produces -->
   <produce>

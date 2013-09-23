@@ -130,6 +130,10 @@
       </include>
 
       <!-- Produce -->
+      <step>
+        <description>Important Location Note</description>
+        <note>For the next step, choose B1.320 as the location to store %{bottle_string}. Write this location down now.</note>
+      </step>
       <produce>
         <object>800 mL LB agar (unsterile)</object>
         <quantity>%{n_bottle}</quantity>

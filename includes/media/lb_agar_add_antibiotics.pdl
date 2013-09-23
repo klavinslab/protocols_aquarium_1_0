@@ -56,9 +56,9 @@
   </step>
   <!-- Set stir plate settings -->
   <step>
-    <description>Heat stir plate to 65°C and 700 RPM.</description>
+    <description>Heat stir plate to 50°C and 700 RPM.</description>
     <!-- FIXME: how long? -->
-    <note>This should take about X minutes</note>
+    <note>It should take about 10 minutes to equilibrate (note: Nick made this number up).</note>
   </step>
 
   <!-- Take the antibiotic aliquots -->
@@ -77,7 +77,7 @@
   <!-- Add antibiotic -->
   <step>
     <description>Add %{antibiotic_volume} mL of antibiotic</description>
-    <note>If necessary, thaw antibiotic aliquots with your hand (or other 37°C warmer). Add %{antibiotic_volume} mL of antibiotic solution to the LB Agar bottle. This should require no more than %{antibiotic_tubes} antibiotic aliquot(s). Swirl the bottle gently for 10 seconds to mix.</note>
+    <note>If necessary, thaw antibiotic aliquots with your hand (or other 37°C warmer). Using a micropipette, add %{antibiotic_volume} mL of antibiotic solution to the LB Agar bottle. This should require no more than %{antibiotic_tubes} antibiotic aliquot(s). Swirl the bottle gently for 10 seconds to mix.</note>
   </step>
 
   <!-- Releases -->

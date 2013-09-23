@@ -2,7 +2,7 @@
 <protocol>
 
   <information>Make sterile solutions of Tryptophan, Histidine, Leucine, and/or Uracil.</information>
-  <!-- This protocols describes how to make solutions of Tryptophan, Histidine, Leucine, and Uracil, which are used to make selective media and/or plates for yeast. The amino acid solutions are 10 mg / mL and the Uracil solution is 2.5 mg / mL. --><
+  <!-- This protocols describes how to make solutions of Tryptophan, Histidine, Leucine, and Uracil, which are used to make selective media and/or plates for yeast. The amino acid solutions are 10 mg / mL and the Uracil solution is 2.5 mg / mL. -->
 
   <!-- Arguments -->
   <!-- Which stocks are you making? Can make any number of each -->
@@ -28,25 +28,51 @@
   </argument>
 
   <!-- Figure out how many of each item to take -->
-  <!-- Initialize arrays for items -->
-  <assign><lhs>type_n</lhs><rhs>[%{trp_n}, %{his_n}, %{leu_n}, %{ura_n}]</rhs></assign>
-  <assign><lhs>type_names</lhs><rhs>["Trp", "His", "Leu", "Ura"]</rhs></assign>
-  <assign><lhs>total</lhs><rhs>%{trp_n} + %{his_n} + %{leu_n} + %{ura_n}</rhs></assign>
+  <!-- Make array of counts for each drop-out solution -->
+  <assign>
+    <lhs>type_n</lhs>
+    <rhs>[%{trp_n}, %{his_n}, %{leu_n}, %{ura_n}]</rhs>
+  </assign>
+  <!-- Make array of names for each drop-out solution -->
+  <assign>
+    <lhs>type_names</lhs>
+    <rhs>["Trp", "His", "Leu", "Ura"]</rhs>
+  </assign>
+  <!-- Count how many bottles are being made -->
+  <assign>
+    <lhs>total</lhs>
+    <rhs>%{trp_n} + %{his_n} + %{leu_n} + %{ura_n}</rhs>
+  </assign>
 
   <!-- Generate string for referring to bottles -->
-  <assign><lhs>bottle_names</lhs><rhs>[]</rhs></assign>
-  <assign><lhs>i</lhs><rhs>0</rhs></assign>
+  <!-- Initialize empty array -->
+  <assign>
+    <lhs>bottle_names</lhs>
+    <rhs>[]</rhs>
+  </assign>
+  <!-- Counter for drop out solution types (Trp, His, Leu, Ura) -->
+  <assign>
+    <lhs>i</lhs>
+    <rhs>0</rhs>
+  </assign>
   <while>
-    <condition>%{counter} < 4</condition>
+    <condition>%{i} < 4</condition>
     <do>
       <if>
         <condition>%{type_n}[i] > 0</condition>
         <then>
-          <assign><lhs>bottle_names</lhs><rhs>%{bottle_names}.push(%{type_n}[i].to_s + " %{type_names}[i]")</rhs></assign>
+          <!-- Add that drop-out type to the name string -->
+          <assign>
+            <lhs>bottle_names</lhs>
+            <rhs>%{bottle_names}.push(%{type_n}[i].to_s + " %{type_names}[i]")</rhs>
+          </assign>
         </then>
         <else><!-- Ignore it --></else>
       </if>
-      <assign><lhs>i</lhs><rhs>%{i} + 1</rhs></assign>
+      <assign>
+        <lhs>i</lhs>
+        <rhs>%{i} + 1</rhs>
+      </assign>
     </do>
   </while>
 
@@ -62,7 +88,6 @@
       <quantity>%{total}</quantity>
       <var>boats</var>
     </item>
-    <!-- FIXME: I don't actually know how many filters are needed. Is it one per amino acid? One per bottle? -->
     <item>
       <type>1L Bottle Top Filter</type>
       <quantity>%{total}</quantity>
@@ -72,10 +97,17 @@
 
   <!-- Initial steps -->
   <!-- Set up / label all tubes -->
-  <step>
-    <description>Label bottles.</description>
-    <note>Label the following bottles with initials, date, and the type of supplement: %{bottle_names}.</note>
-  </step>
+  <include>
+    <path>includes/labels/800_mL_labels.pdl</path>
+    <setarg>
+      <var>item_string</var>
+      <value>%{bottle_string}</value>
+    </setarg>
+    <setarg>
+      <var>human_name</var>
+      <value>"the type of supplement (one of %{bottle_names})"</value>
+    </setarg>
+  </include>
 
   <!-- FIXME: these sections are just dying for an import -->
   <if>
