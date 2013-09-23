@@ -1,0 +1,27 @@
+<protocol>
+
+  <if>
+    <condition>false</condition>
+    <then>
+
+      <step>
+        <description>A Step in the 'if' part.</description>
+      </step>
+
+      <include>
+        <path>testing/include_B.pdl</path>
+        <setarg><var>x</var><value>'hello'</value></setarg>
+        <return><var>r</var><value>%{z}</value></return>
+      </include>
+
+    </then>
+
+    <else>
+      <step>
+        <description>A Step in the 'else' part.</description>
+      </step>
+    </else>
+
+  </if>
+
+</protocol>
