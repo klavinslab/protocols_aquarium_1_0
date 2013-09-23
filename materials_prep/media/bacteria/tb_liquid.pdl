@@ -61,7 +61,7 @@
         </setarg>
         <setarg>
           <var>human_name</var>
-          <value>"TB Powder"</value>
+          <value>"TB Liquid"</value>
         </setarg>
       </include>
       <!-- Take the scale -->
