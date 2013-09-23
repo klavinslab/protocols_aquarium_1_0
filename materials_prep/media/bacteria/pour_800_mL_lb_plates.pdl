@@ -58,7 +58,7 @@
     </item>
     <item>
       <type>Petri Dish</type>
-      <quantity>40</quantity>
+      <quantity>50</quantity>
       <var>plates</var>
     </item>
   </take>
@@ -134,16 +134,15 @@
   <!-- FIXME: Metacol territory -->
   <step>
     <description>Let plates cool.</description>
-    <note>Let the plates cool until solid. If you keep them separate and usntacked, they will cool much faster and more evenly. This should take 10-20 minutes.</note>
+    <note>Let the plates cool until solid. If you keep them separate and unstacked, they will cool much faster and more evenly. This should take 10-20 minutes.</note>
   </step>
   <!-- TODO: put them somewhere - 30C incubator? -->
-  <!-- FIXME: do math if less than 40 plates were produced -->
-  <!-- FIXME: waste media if 40 poured and there's still media left? -->
+  <!-- FIXME: do math if less than 50 plates were produced -->
 
   <!-- Produces -->
   <produce>
     <object>%{plate_name}</object>
-    <quantity>plates_poured</quantity>
+    <quantity>%{plates_poured}</quantity>
     <release>%{plates}</release>
     <if>
       <condition>%{antibiotic_bool}</condition>
