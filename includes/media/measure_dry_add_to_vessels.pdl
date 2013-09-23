@@ -45,7 +45,7 @@
   <step>
     <description>Measure and add %{mass} g of %{reagent}.</description>
     <!-- Picture would be good here -->
-    <note>Do this for %{vessel_string}: Place the plastic boat on the scale. Zero the scale. Using the spatula, add %{mass} g of %{reagent} into the plastic boat. If too much was added, remove excess to waste container using spatula. Pour into bottle using a corner of the weigh boat. Lightly flick the boat to dislodge remainder of the powder.</note>
+    <note>Do this for %{vessel_string}: Place the %{boat_type} on the scale. Zero the scale. Using the spatula, add %{mass} g of %{reagent} into the %{boat_type}. If too much was added, remove excess to waste container using spatula. Pour into bottle using a corner of the %{boat_type}. Lightly flick the boat to dislodge remainder of the powder.</note>
   </step>
   <step>
     <description>Clean the spatula.</description>

@@ -48,7 +48,7 @@
           <var>dextrose</var>
         </item>
         <item>
-          <type>Adenine Hemisulfate</type>
+          <type>Adenine (Adenine hemisulfate)</type>
           <quantity>1</quantity>
           <var>adenine_hemisulfate</var>
         </item>
@@ -79,15 +79,13 @@
           <value>"YPAD Liquid"</value>
         </setarg>
       </include>
-      <!-- Take the scale -->
+      <!-- Take the scale and weigh boat-->
       <take>
         <item>
           <type>Scale</type>
           <quantity>1</quantity>
           <var>scale</var>
         </item>
-      </take>
-      <take>
         <item>
           <type>Large Weigh Boat</type>
           <quantity>1</quantity>
@@ -153,6 +151,16 @@
           <value>"Large Weigh Boat"</value>
         </setarg>
       </include>
+      <!-- Release boat and take out some weigh paper -->
+      <release>%{boat}</release>
+      <take>
+        <item>
+          <type>Weigh Paper</type>
+          <quantity>1</quantity>
+          <var>weigh_paper</var>
+        </item>
+      </take>
+      <!-- Add adenine -->
       <include>
         <path>includes/media/measure_dry_add_to_vessels.pdl</path>
         <setarg>
@@ -169,12 +177,13 @@
         </setarg>
         <setarg>
           <var>boat_type</var>
-          <value>"Large Weigh Boat"</value>
+          <value>"Weigh Paper"</value>
         </setarg>
       </include>
+      <!-- Release weigh paper -->
+      <release>%{weigh_paper}</release>
       <!-- Release the scale -->
       <release>%{scale}</release>
-      <release>%{boat}</release>
       <!-- Add water and shake -->
       <include>
         <path>includes/media/add_di_water_and_shake.pdl</path>
