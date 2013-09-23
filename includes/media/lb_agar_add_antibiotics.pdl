@@ -77,7 +77,8 @@
   <!-- Add antibiotic -->
   <step>
     <description>Add %{antibiotic_volume} mL of antibiotic</description>
-    <note>If necessary, thaw antibiotic aliquots with your hand (or other 37°C warmer). Using a micropipette, add %{antibiotic_volume} mL of antibiotic solution to the LB Agar bottle. This should require no more than %{antibiotic_tubes} antibiotic aliquot(s). Swirl the bottle gently for 10 seconds to mix.</note>
+    <note>Using a micropipette, add %{antibiotic_volume} mL of antibiotic solution to the LB Agar bottle. Swirl the bottle gently for 10 seconds to mix.</note>
+    <warning>If necessary, thaw antibiotic aliquots with your hand (or other 37°C warmer).</warning>
   </step>
 
   <!-- Releases -->

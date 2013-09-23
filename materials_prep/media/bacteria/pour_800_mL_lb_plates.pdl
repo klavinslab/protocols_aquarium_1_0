@@ -124,6 +124,11 @@
   <step>
     <description>Pour 25 mL of media into each plate.</description>
     <note>Uncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25 mL. Replace the petri dish lid and repeat for every plate.</note>
+    <getdata>
+      <description>Enter the number of plates you poured (varies depending on average pour volume).</description>
+      <type>number</type>
+      <var>plates_poured</var>
+    </getdata>
   </step>
   <!-- Let cool -->
   <!-- FIXME: Metacol territory -->
@@ -132,11 +137,13 @@
     <note>Let the plates cool until solid. If you keep them separate and usntacked, they will cool much faster and more evenly. This should take 10-20 minutes.</note>
   </step>
   <!-- TODO: put them somewhere - 30C incubator? -->
+  <!-- FIXME: do math if less than 40 plates were produced -->
+  <!-- FIXME: waste media if 40 poured and there's still media left? -->
 
   <!-- Produces -->
   <produce>
     <object>%{plate_name}</object>
-    <quantity>40</quantity>
+    <quantity>plates_poured</quantity>
     <release>%{plates}</release>
     <if>
       <condition>%{antibiotic_bool}</condition>
