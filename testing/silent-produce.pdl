@@ -1,0 +1,45 @@
+<protocol>
+
+  <produce render='false'>
+    <object>1000 mL Bottle</object>
+    <quantity>1</quantity>
+    <var>b</var>
+  </produce>
+
+  <assign>
+    <lhs>i</lhs>
+    <rhs>%{b}[:id]</rhs>
+  </assign>
+
+  <assign>
+    <lhs>d</lhs>
+    <rhs>%{b}[:location]</rhs>
+  </assign>
+
+  <step>
+    <description>Produced a new bottle, with id = %{i}.</description>
+    <note>The current location of the bottle is %{d}.</note>
+    <getdata>
+       <description>Where would you like to put it?</description>
+       <type>string</type>
+       <var>loc</var>
+    </getdata>
+  </step>
+
+  <move>
+    <item>%{b}</item>
+    <location>%{loc}</location>
+    <var>b</var>
+  </move>
+
+  <assign>
+    <lhs>d</lhs>
+    <rhs>%{b}[:location]</rhs>
+  </assign>
+
+  <step>
+    <description>Item moved to %{d}.</description>
+  </step>
+
+
+</protocol>
