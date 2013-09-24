@@ -111,8 +111,8 @@
         </item>
       </take>
       <step>
-        <description>Add 100% glycerol.</description>
-        <note>Using a serological pipetter, add 8 mL of 100% glycerol to %{bottle_string}.</note>
+        <description>Add 100&#37; glycerol.</description>
+        <note>Using a serological pipetter, add 8 mL of 100&#37; glycerol to %{bottle_string}.</note>
       </step>
       <release>%{glycerol}</release>
       <!-- Add water and shake -->
