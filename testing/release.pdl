@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol>
+
   <take>
+
     <item>
       <type>1 L Bottle</type>
       <quantity>2</quantity>
       <var>A</var>
     </item>
+
     <item>
       <type>Petri Dish</type>
       <quantity>1</quantity>
       <var>B</var>
     </item>
+
   </take>
 
   <assign>
     <lhs>num</lhs>
     <rhs>%{A}.length</rhs>
   </assign>
+
   <assign>
     <lhs>method</lhs>
     <rhs>%{A}[0][:object][:release_method]</rhs>
@@ -26,10 +31,12 @@
     <description>Info</description>
     <note>%{num} Bottles taken. First object release method: %{method}.</note>
   </step>
+
   <step>
     <description>Debug info - bottle hash A contains:</description>
     <note>%{A}</note>
   </step>
 
-  <release>[%{A}[0], %{A}[1], %{B}[0]]</release>
+  <release>[%{A}[0], %{B}[0]]</release>
+
 </protocol>
