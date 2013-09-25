@@ -1,0 +1,8 @@
+<protocol>
+
+  <step>
+    <description>The variable x has value %{x}.</description>
+    <note>Since x has not been defined, the above should throw an error.</note>
+  </step>
+
+</protocol>

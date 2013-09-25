@@ -1,0 +1,9 @@
+<protocol>
+
+  <include>
+    <path>nonexistant_protocol.pdl</path>
+    <setarg><var>x</var><value>1</value></setarg>
+    <return><var>r</var><value>%{x}</value></return>
+  </include>
+
+</protocol>

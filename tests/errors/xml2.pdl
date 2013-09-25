@@ -1,0 +1,8 @@
+<protocol>
+
+  <assign>
+    <lhs>x</lhs>
+    <rhs>y
+  </assign>
+
+</protocol>
