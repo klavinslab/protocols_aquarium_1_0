@@ -31,7 +31,7 @@
           <var>bottle</var>
         </item>
         <item>
-          <type>TB Powder</type>
+          <type>Terrific Broth, modified</type>
           <quantity>1</quantity>
           <var>tb_powder</var>
         </item>
@@ -93,7 +93,7 @@
         </setarg>
         <setarg>
           <var>mass</var>
-          <value>47.6</value>
+          <value>38.08</value>
         </setarg>
         <setarg>
           <var>boat_type</var>
@@ -105,14 +105,14 @@
       <release>%{boat}</release>
       <take>
         <item>
-          <type>Glycerol</type>
+          <type>50% Glycerol (sterile)</type>
           <quantity>1</quantity>
           <var>glycerol</var>
         </item>
       </take>
       <step>
-        <description>Add 100 percent glycerol.</description>
-        <note>Using a serological pipetter, add 6.4 mL of 100 percent glycerol to %{bottle_string}.</note>
+        <description>Add 50 percent glycerol.</description>
+        <note>Using a serological pipetter, add 12.8 mL of 50 percent glycerol to %{bottle_string}.</note>
       </step>
       <release>%{glycerol}</release>
       <!-- Add water and shake -->
