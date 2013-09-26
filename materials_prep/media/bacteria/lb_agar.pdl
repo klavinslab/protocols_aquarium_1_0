@@ -63,6 +63,11 @@
           <value>"LB Agar"</value>
         </setarg>
       </include>
+      <!-- Remove autoclave tape -->
+      <step>
+        <description>Remove autoclave tape.</description>
+        <note>Remove any autoclave tape from %{bottle_string}.</note>
+      </step>
       <!-- Take the scale -->
       <take>
         <item>
@@ -88,6 +93,10 @@
         <description>Add stir bar.</description>
         <note>Add one stir bar to each bottle.</note>
       </step>
+      <!-- Wipe down spatula first - it's probably dirty -->
+      <include>
+        <path>includes/media/clean_spatula.pdl</path>
+      </include>
       <!-- Weigh out LB powder -->
       <!-- The included protocol consumes a weigh boat -->
       <include>
@@ -145,5 +154,4 @@
       <release>%{lb_powder}</release>
     </else>
   </if>
-
 </protocol>

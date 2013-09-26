@@ -79,6 +79,11 @@
           <value>"YPAD Liquid"</value>
         </setarg>
       </include>
+      <!-- Remove autoclave tape -->
+      <step>
+        <description>Remove autoclave tape.</description>
+        <note>Remove any autoclave tape from %{bottle_string}.</note>
+      </step>
       <!-- Take the scale and weigh boat-->
       <take>
         <item>
@@ -92,6 +97,10 @@
           <var>boat</var>
         </item>
       </take>
+      <!-- Wipe down spatula first - it's probably dirty -->
+      <include>
+        <path>includes/media/clean_spatula.pdl</path>
+      </include>
       <!-- Weigh out dry reagents -->
       <!-- The included protocol consumes a weigh boat -->
       <include>

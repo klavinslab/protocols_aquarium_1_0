@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
 <protocol>
   <!-- Information -->
   <information>Prepare unsterile bottle(s) of 800 mL LB Media (rich media for bacteria), ready to be autoclaved.</information>
@@ -55,7 +55,7 @@
         </setarg>
         <setarg>
           <var>human_name</var>
-          <value>"LB Growth Media"</value>
+          <value>"LB Liquid"</value>
         </setarg>
       </include>
       <!-- Remove autoclave tape -->
@@ -66,7 +66,7 @@
       <!-- Take dry reagents, scale, and weigh boat-->
       <take>
         <item>
-          <type>LB Media Powder</type>
+          <type>Difco LB Broth, Miller</type>
           <quantity>1</quantity>
           <var>lb_powder</var>
         </item>
@@ -81,6 +81,10 @@
           <var>boat</var>
         </item>
       </take>
+      <!-- Wipe down spatula first - it's probably dirty -->
+      <include>
+        <path>includes/media/clean_spatula.pdl</path>
+      </include>
       <!-- Weigh out LB powder -->
       <!-- The included protocol consumes a weigh boat -->
       <include>
