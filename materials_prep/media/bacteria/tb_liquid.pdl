@@ -109,7 +109,7 @@
       <release>%{boat}</release>
       <take>
         <item>
-          <type>50% Glycerol (sterile)</type>
+          <type>50 percent Glycerol (sterile)</type>
           <quantity>1</quantity>
           <var>glycerol</var>
         </item>
