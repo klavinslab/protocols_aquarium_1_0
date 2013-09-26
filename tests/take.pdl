@@ -1,0 +1,29 @@
+<protocol>
+
+  <information>This is a testing protocol for the most basic form of take.</information>
+
+  <step>
+    <description>First test.</description>
+    <note>First we will take one Petri Dish and two 1000 mL Bottles. You should open the inventory pages for these items in another tab before continuing. Make a note of the quantities and in-use numbers for each.</note>
+  </step>
+
+  <take>
+    <item>
+      <type>Petri Dish</type><quantity>1</quantity><var>x</var>
+    </item>
+    <item>
+      <type>1000 mL Bottle</type><quantity>2</quantity><var>y</var>
+    </item>
+  </take>
+
+  <step>
+    <description>The Results.</description>
+    <note>Request for one Petri Dish gave %{x}. Request for two bottles gave %{y}. There should now be one more Petri Dish in use, and two more bottles in use. Reload the inventory page to check.</note>
+  </step>
+
+  <step>
+    <description>Information has been logged.</description>
+    <note>Check that there are two TAKE entry types in the log with the appropriate information.</note>
+  </step>
+
+</protocol>
