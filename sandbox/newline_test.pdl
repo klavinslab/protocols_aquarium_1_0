@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<protocol>
+    <step>
+        <description>One-line description of this step</description>
+        <note>Do this for items A, B, and C:\n\n1. Add dirt\n2. Add water\ 3. Wait.</note>
+    </step>
+</protocol>
