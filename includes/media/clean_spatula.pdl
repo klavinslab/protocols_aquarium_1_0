@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<protocol>
+  <!-- Usage notes:
+
+       This protocol just tells the user to clean the spatula they're using with 70% ethanol.
+       -->
+  <!-- Arguments -->
+  <!-- None! -->
+  <step>
+    <description>Clean the spatula.</description>
+    <note>Clean the spatula using 70 percent ethanol and kim wipes to prevent contamination.</note>
+  </step>
+</protocol>
