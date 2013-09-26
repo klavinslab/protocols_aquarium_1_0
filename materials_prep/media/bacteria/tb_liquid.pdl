@@ -79,6 +79,10 @@
           <var>boat</var>
         </item>
       </take>
+      <!-- Wipe down spatula first - it's probably dirty -->
+      <include>
+        <path>includes/media/clean_spatula.pdl</path>
+      </include>
       <!-- Weigh out TB powder -->
       <!-- The included protocol consumes a weigh boat -->
       <include>
