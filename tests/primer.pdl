@@ -1,25 +1,29 @@
 <protocol>
 
-<information>This protocol demonstrates how to take a primer, get some information about it, and release it.</information>
+  <information>This protocol demonstrates how to take a primer, get some information about it, and release it.</information>
 
-<take>
-  <item>
-    <type>Primer Aliquot</type>
-    <quantity>1</quantity>
-    <var>x</var>
-    <primer>
-      <description>xynC_lysRBS_rev</description>
-    </primer>
-  </item>
-</take>
+  <step>
+    <description>Requirements</description>
+    <note>
+      For this protocol to work there must be a 'Primer Aliquot' in the object type table whose handler is 'primer'; 
+      there should be a primer named xynC_lysRBS_rev in the primer table; and there should be one aliquot stored in
+      some locationm somewhere.
+    </note>
+  </step>
 
-<assign>
-  <lhs>seq</lhs>
-  <rhs>%{x}[:overhang] + %{x}[:annealing]</rhs>
-</assign>
+  <take>
+    <item>
+      <type>Primer Aliquot</type>
+      <quantity>1</quantity>
+      <var>x</var>
+      <primer>
+        <description>xynC_lysRBS_revi</description>
+      </primer>
+    </item>
+  </take>
 
-<step>
-  <description>The sequence for the primer is: %{seq}</description>
-</step>
+  <step>
+    <description>The primer aliquot you took is %{x}.</description>
+  </step>
 
 </protocol>

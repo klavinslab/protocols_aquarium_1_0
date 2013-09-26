@@ -1,0 +1,23 @@
+<protocol>
+
+  <information>This protocol takes objects that are either returned, disposed of or queried, and then releases them.</information>
+
+  <take>
+
+    <item>
+      <type>1 L Bottle</type><quantity>1</quantity><var>x</var>
+    </item>
+
+    <item>
+      <type>LB Media Powder</type><quantity>2</quantity><var>y</var>
+    </item>
+
+    <item>
+      <type>14 mL Falcon Tube</type><quantity>3</quantity><var>z</var>
+    </item>
+
+  </take>
+
+  <release>%{x}.concat(%{y}).concat(%{z})</release>
+
+</protocol>
