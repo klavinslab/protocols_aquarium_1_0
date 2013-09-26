@@ -110,8 +110,7 @@
         </setarg>
       </include>
       <!-- Release the scale -->
-      <release>%{scale}</release>
-      <release>%{boat}</release>
+      <release>[%{scale}[0], %{boat}[0]]</release>
       <take>
         <item>
           <type>50 percent Glycerol (sterile)</type>

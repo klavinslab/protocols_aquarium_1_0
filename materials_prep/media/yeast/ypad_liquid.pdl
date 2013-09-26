@@ -189,10 +189,8 @@
           <value>"Weigh Paper"</value>
         </setarg>
       </include>
-      <!-- Release weigh paper -->
-      <release>%{weigh_paper}</release>
-      <!-- Release the scale -->
-      <release>%{scale}</release>
+      <!-- Release weigh paper and scale -->
+      <release>[%{weigh_paper}[0], %{scale}[0]]</release>
       <!-- Add water and shake -->
       <include>
         <path>includes/media/add_di_water_and_shake.pdl</path>
@@ -223,9 +221,7 @@
       </produce>
 
       <!-- Final releases -->
-      <release>%{yeast_extract}</release>
-      <release>%{bacto_tryptone}</release>
-      <release>%{dextrose}</release>
+      <release>[%{yeast_extract}[0], %{bacto_tryptone}[0], %{dextrose}[0]]</release>
       <release>%{adenine_hemisulfate}</release>
     </else>
   </if>

@@ -119,8 +119,7 @@
         </setarg>
       </include>
       <!-- Release the scale -->
-      <release>%{scale}</release>
-      <release>%{boat}</release>
+      <release>[%{scale}[0], %{boat}[0]]</release>
       <!-- Add water and shake -->
       <include>
         <path>includes/media/add_di_water_and_shake.pdl</path>
