@@ -140,17 +140,24 @@
   <!-- FIXME: do math if less than 50 plates were produced -->
 
   <!-- Produces -->
-  <produce>
-    <object>%{plate_name}</object>
-    <quantity>%{plates_poured}</quantity>
-    <release>%{plates}</release>
-    <if>
-      <condition>%{antibiotic_bool}</condition>
-      <then>
+  <if>
+    <condition>%{antibiotic_bool}</condition>
+    <then>
+      <produce>
+        <object>%{plate_name}</object>
+        <quantity>%{plates_poured}</quantity>
+        <release>%{plates}</release>
         <release>%{antibiotic_aliquots}</release>
-      </then>
-    </if>
-  </produce>
+      </produce>
+    </then>
+    <else>
+      <produce>
+        <object>%{plate_name}</object>
+        <quantity>%{plates_poured}</quantity>
+        <release>%{plates}</release>
+      </produce>
+    </else>
+  </if>
   <produce>
     <object>1 L Bottle (dirty)</object>
     <quantity>1</quantity>
