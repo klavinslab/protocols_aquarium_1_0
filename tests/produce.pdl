@@ -1,0 +1,22 @@
+<protocol>
+
+  <information>Tests the produce tag.</information>
+
+  <take>
+    <item>
+      <type>Widget</type><quantity>2</quantity><var>w</var>
+    </item>
+    <item>
+      <type>Gizmo</type><quantity>3</quantity><var>g</var>
+    </item>
+  </take>
+
+  <produce>
+    <object>Machine</object>
+    <quantity>1</quantity>
+    <release>%{g}</release>
+  </produce>
+
+  <release>%{w}</release>
+
+</protocol>

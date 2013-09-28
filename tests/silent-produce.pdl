@@ -32,13 +32,8 @@
     <var>b</var>
   </move>
 
-  <assign>
-    <lhs>d</lhs>
-    <rhs>%{b}[:location]</rhs>
-  </assign>
-
   <step>
-    <description>Item moved to %{d}.</description>
+    <description>Item moved to %{loc}.</description>
   </step>
 
 
