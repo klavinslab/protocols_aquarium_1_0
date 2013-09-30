@@ -70,10 +70,13 @@ to B.
 to A and 250 μL to B.
 6. Each tube should now have 1 mL in it, so to check the error from pipetting,
 set the 1 mL pipettor to 1000 μL and draw up as much liquid as possible from each 
-ube. If thereis still liquid left in the tube, too much was added. If there is air 
-t the end of the tube, too little was added. If too little was added, to determine 
-he error,slowly decrease the volume until the liquid reaches the end of the tube. 
-he error ate is (100 - final volume).
-7. Throw out tubes
+tube. If there is still liquid left in the tube, too much was added. If there is air 
+at the end of the tube, too little was added. If too little was added, to determine 
+the error,slowly decrease the volume until the liquid reaches the end of the tube. 
+the error rate is (100 - final volume).
+7. Throw out tubes A and B.
+
+Small Volume Exercise:
+1. 
 
 
