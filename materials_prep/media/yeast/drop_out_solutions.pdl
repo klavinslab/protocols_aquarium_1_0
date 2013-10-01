@@ -1,418 +1,222 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol>
+  <!-- Outline of steps: -->
+  <!-- Acquire two bottles of the same size. Set one aside. Label them. -->
+  <!-- Measure dry reagent, add to one bottle only -->
+  <!-- Add DI water very carefully to some mark (eventually, use graduated cylinder). Mix by shaking. -->
+  <!-- For uracil, heat to 50C -->
+  <!-- Take out filter system -->
+  <!-- Remove cap from set aside bottle, replace with filter. -->
+  <!-- Plug in filter to vacuum, turn to parallel with tube (on) -->
+  <!-- Pour bottle w/ solution in it into filter, wait for it to run through the filter completely. -->
+  <!-- Remove the filter apparatus and cap the bottle. Label again, this time with proper label. -->
+  <!-- To do more than one at a time, repeat every step for more bottles. Only difference should be measuring out reagents in the 2nd step -->
+
   <information>Make sterile solutions of Tryptophan, Histidine, Leucine, and/or Uracil.</information>
   <!-- This protocols describes how to make solutions of Tryptophan, Histidine, Leucine, and Uracil, which are used to make selective media and/or plates for yeast. The amino acid solutions are 10 mg / mL and the Uracil solution is 2.5 mg / mL. -->
 
   <!-- Arguments -->
-  <!-- Which stocks are you making? Can make any number of each -->
   <argument>
-    <name>trp_n</name>
-    <type>number</type>
-    <description>Enter the number of bottles of Trp you wish to make.</description>
-  </argument>
-  <argument>
-    <name>his_n</name>
-    <type>number</type>
-    <description>Enter the number of bottles of His you wish to make.</description>
-  </argument>
-  <argument>
-    <name>leu_n</name>
-    <type>number</type>
-    <description>Enter the number of bottles of Leu you wish to make.</description>
-  </argument>
-  <argument>
-    <name>ura_n</name>
-    <type>number</type>
-    <description>Enter the number of bottles of Ura you wish to make.</description>
+    <name>supplement_name</name>
+    <type>string</type>
+    <description>Enter the type of solution you want to make: His, Trp, Leu, or Ura.</description>
   </argument>
 
-  <!-- Figure out how many of each item to take -->
-  <!-- Make array of counts for each drop-out solution -->
   <assign>
-    <lhs>type_n</lhs>
-    <rhs>[%{trp_n}, %{his_n}, %{leu_n}, %{ura_n}]</rhs>
-  </assign>
-  <!-- Make array of names for each drop-out solution -->
-  <assign>
-    <lhs>type_names</lhs>
-    <rhs>["Trp", "His", "Leu", "Ura"]</rhs>
-  </assign>
-  <!-- Count how many bottles are being made -->
-  <assign>
-    <lhs>total</lhs>
-    <rhs>%{trp_n} + %{his_n} + %{leu_n} + %{ura_n}</rhs>
+    <lhs>nonsterile_bottle</lhs>
+    <rhs>"the bottle labeled as nonsterile"</rhs>
   </assign>
 
-  <!-- Generate string for referring to bottles -->
-  <!-- Initialize empty array -->
-  <assign>
-    <lhs>bottle_names</lhs>
-    <rhs>[]</rhs>
-  </assign>
-  <!-- Counter for drop out solution types (Trp, His, Leu, Ura) -->
-  <assign>
-    <lhs>i</lhs>
-    <rhs>0</rhs>
-  </assign>
-  <while>
-    <condition>%{i} < 4</condition>
-    <do>
-      <if>
-        <condition>%{type_n}[i] > 0</condition>
-        <then>
-          <!-- Add that drop-out type to the name string -->
-          <assign>
-            <lhs>bottle_names</lhs>
-            <rhs>%{bottle_names}.push(%{type_n}[i].to_s + " %{type_names}[i]")</rhs>
-          </assign>
-        </then>
-        <else><!-- Ignore it --></else>
-      </if>
+  <!-- TODO: check for invalid input -->
+  <if>
+    <condition>%{supplement_name} == "His"</condition>
+    <then>
       <assign>
-        <lhs>i</lhs>
-        <rhs>%{i} + 1</rhs>
+        <lhs>supplement_type</lhs>
+        <rhs>"L-Histidine"</rhs>
       </assign>
-    </do>
-  </while>
+      <assign>
+        <lhs>mass</lhs>
+        <rhs>5</rhs>
+      </assign>
+      <assign>
+        <lhs>supplement_produced</lhs>
+        <rhs>"Histidine Solution"</rhs>
+      </assign>
+    </then>
+  </if>
+  <if>
+    <condition>%{supplement_name} == "Trp"</condition>
+    <then>
+      <assign>
+        <lhs>supplement_type</lhs>
+        <rhs>"L-Tryptophan Powder"</rhs>
+      </assign>
+      <assign>
+        <lhs>mass</lhs>
+        <rhs>5</rhs>
+      </assign>
+      <assign>
+        <lhs>supplement_produced</lhs>
+        <rhs>"Tryptophan Solution"</rhs>
+      </assign>
+    </then>
+  </if>
+  <if>
+    <condition>%{supplement_name} == "Leu"</condition>
+    <then>
+      <assign>
+        <lhs>supplement_type</lhs>
+        <rhs>"L-Leucine Powder"</rhs>
+      </assign>
+      <assign>
+        <lhs>mass</lhs>
+        <rhs>5</rhs>
+      </assign>
+      <assign>
+        <lhs>supplement_produced</lhs>
+        <rhs>"Leucine Solution"</rhs>
+      </assign>
+    </then>
+  </if>
+  <if>
+    <condition>%{supplement_name} == "Ura"</condition>
+    <then>
+      <assign>
+        <lhs>supplement_type</lhs>
+        <rhs>"Uracil"</rhs>
+      </assign>
+      <assign>
+        <lhs>mass</lhs>
+        <rhs>2.5</rhs>
+      </assign>
+      <assign>
+        <lhs>supplement_produced</lhs>
+        <rhs>"Uracil Solution"</rhs>
+      </assign>
+    </then>
+  </if>
 
-  <!-- Initial takes -->
   <take>
     <item>
       <type>500 mL Bottle</type>
-      <quantity>%{total}</quantity>
+      <quantity>2</quantity>
       <var>bottles</var>
-    </item>
-    <item>
-      <type>Weighing Boat</type>
-      <quantity>%{total}</quantity>
-      <var>boats</var>
-    </item>
-    <item>
-      <type>1L Bottle Top Filter</type>
-      <quantity>%{total}</quantity>
-      <var>filter</var>
     </item>
   </take>
 
-  <!-- Initial steps -->
-  <!-- Set up / label all tubes -->
+  <step>
+    <description>Label bottles.</description>
+    <note>Lable one bottle as "nonsterile mixed solution of %{supplement_type}" and the other as "sterile %{supplement_type}".</note>
+  </step>
+  <step>
+    <description>Measure dry supplement and add to one bottle</description>
+    <note>Measure and add %{mass} g of dry %{supplement_type} to the bottle labeled "nonsterile".</note>
+  </step>
+  <!-- Take the scale and weigh boat-->
+  <take>
+    <item>
+      <type>Scale</type>
+      <quantity>1</quantity>
+      <var>scale</var>
+    </item>
+    <item>
+      <type>Large Weigh Boat</type>
+      <quantity>1</quantity>
+      <var>boat</var>
+    </item>
+  </take>
+  <!-- Wipe down spatula first - it's probably dirty -->
   <include>
-    <path>includes/labels/800_mL_labels.pdl</path>
+    <path>includes/media/clean_spatula.pdl</path>
+  </include>
+  <!-- Weigh out dry reagents -->
+  <!-- The included protocol consumes a weigh boat -->
+  <include>
+    <path>includes/media/measure_dry_add_to_vessels.pdl</path>
     <setarg>
-      <var>item_string</var>
-      <value>%{bottle_string}</value>
+      <var>vessel_string</var>
+      <value>%{nonsterile_bottle}</value>
     </setarg>
     <setarg>
-      <var>human_name</var>
-      <value>"the type of supplement (one of %{bottle_names})"</value>
+      <var>reagent</var>
+      <value>%{supplement_type}</value>
+    </setarg>
+    <setarg>
+      <var>mass</var>
+      <value>%{mass}</value>
+    </setarg>
+    <setarg>
+      <var>boat_type</var>
+      <value>"Large Weigh Boat"</value>
+    </setarg>
+  </include>
+  <release>[%{boat}[0], %{scale}[0]]</release>
+
+  <include>
+    <path>includes/media/add_di_water_and_shake.pdl</path>
+    <setarg>
+      <var>vessel_string</var>
+      <value>%{nonsterile_bottle}</value>
+    </setarg>
+    <setarg>
+      <var>volume</var>
+      <value>500</value>
+    </setarg>
+    <setarg>
+      <var>shake_duration</var>
+      <value>30</value>
     </setarg>
   </include>
 
-  <!-- FIXME: these sections are just dying for an import -->
   <if>
-  <condition>%{Trp} &gt; 0</condition>
-  <then>
-    <take>
-      <item>
-        <type>Tryptophan Powder</type>
-        <quantity>1</quantity>
-        <var>trp_powder</var>
-      </item>
-    </take>
-
-    <step>
-      <description>Put a temporary label on the lid of %{Trp} of the 500 mL bottles.</description>
-      <note>Label the bottles Trp</note>
-      <warning>Put the labels on the tops of the bottles, not on the sides. If not, the labels may come off when the bottles are put in the heat bath.</warning>
-    </step>
-    <assign><lhs>j</lhs><rhs>0</rhs></assign>
-    <while>
-      <condition>%{j} &lt;  %{Trp}</condition>
-      <do>
-        <assign><lhs>ingredients</lhs><rhs>%{ingredients}.push('Tryptophan')</rhs></assign>
-        <assign><lhs>labels</lhs><rhs>%{labels}.push('Trp')</rhs></assign>
-        <assign><lhs>amounts</lhs><rhs>%{amounts}.push('5g')</rhs></assign>
-        <assign><lhs>j</lhs><rhs>%{j}+1</rhs></assign>
-      </do>
-    </while>
-  </then>
-  </if>
-
-  <if>
-    <condition>%{His} &gt; 0</condition>
+    <condition>%{supplement_name} == "Ura"</condition>
     <then>
       <take>
         <item>
-          <type>Histidine Powder</type>
+          <type>Hot/Stir Plate</type>
           <quantity>1</quantity>
-          <var>his_powder</var>
+          <var>stir_plate</var>
         </item>
       </take>
-
       <step>
-        <description>Put a temporary label on the lid of %{His} of the 500 mL bottles.</description>
-        <note>Label the bottles His</note>
-        <warning>Put the labels on the tops of the bottles, not on the sides. If not, the labels may come off when the bottles are put in the heat bath.</warning>
+        <description>Heat bottle to 50°C on stir plate to dissolve uracil.</description>
+        <note>Using the heat plate, heat the bottle to 50°C. Shake to mix every few minutes.</note>
       </step>
-      <assign><lhs>k</lhs><rhs>0</rhs></assign>
-      <while>
-        <condition>%{k} &lt;  %{His}</condition>
-        <do>
-          <assign><lhs>ingredients</lhs><rhs>%{ingredients}.push('Histidine')</rhs></assign>
-          <assign><lhs>labels</lhs><rhs>%{labels}.push('His')</rhs></assign>
-          <assign><lhs>amounts</lhs><rhs>%{amounts}.push('5g')</rhs></assign>
-          <assign><lhs>k</lhs><rhs>%{k}+1</rhs></assign>
-       </do>
-      </while>
+      <release>%{stir_plate}</release>
     </then>
   </if>
 
-  <if>
-    <condition>%{Leu} &gt; 0</condition>
-    <then>
-    <take>
-      <item>
-        <type>Leucine Powder</type>
-        <quantity>1</quantity>
-        <var>leu_powder</var>
-      </item>
-    </take>
-
-  <step>
-    <description>Put a temporary label on the lid of %{Leu} of the 500 mL bottles.</description>
-      <note>Label the bottles Leu</note>
-      <warning>Put the labels on the tops of the bottles, not on the sides. If not, the labels may come off when the bottles are put in the heat bath.</warning>
-  </step>
-  <assign><lhs>l</lhs><rhs>0</rhs></assign>
-    <while>
-      <condition>%{l} &lt;  %{Leu}</condition>
-      <do>
-
-    <assign>
-      <lhs>ingredients</lhs>
-    <rhs>%{ingredients}.push('Leucine')</rhs>
-    </assign>
-    <assign>
-      <lhs>labels</lhs>
-    <rhs>%{labels}.push('Leu')</rhs>
-    </assign>
-    <assign>
-      <lhs>amounts</lhs>
-    <rhs>%{amounts}.push('5g')</rhs>
-    </assign>
-       <assign><lhs>l</lhs><rhs>%{l}+1</rhs></assign>
-      </do>
-    </while>
-    </then>
-  </if>
-
-  <if>
-    <condition>%{Ura} &gt; 0</condition>
-    <then>
-    <take>
-      <item>
-      <type>Uracil Powder</type>
+  <take>
+    <item>
+      <type>1 L Bottle Top Filter</type>
       <quantity>1</quantity>
-      <var>ura_powder</var>
-       </item>
-    </take>
+      <var>filter</var>
+    </item>
+  </take>
   <step>
-    <description>Put a temporary label on the lid of %{Ura} of the 500 mL bottles.</description>
-       <note>
-       Label the bottles Ura
-      </note>
-      <warning>Put the labels on the tops of the bottles, not on the sides. If not, the
-          labels may come off when the bottles are put in the heat bath.
-      </warning>
+    <description>Attach filter to sterile bottle.</description>
+    <note>Uncap the sterile bottle. Quickly remove the filter from its wrapping and screw onto the bottle.</note>
   </step>
-    <assign><lhs>m</lhs><rhs>0</rhs></assign>
-    <while>
-      <condition>%{m} &lt;  %{Ura}</condition>
-      <do>
-
-    <assign>
-      <lhs>ingredients</lhs>
-    <rhs>%{ingredients}.push('Uracine')</rhs>
-    </assign>
-    <assign>
-      <lhs>labels</lhs>
-    <rhs>%{labels}.push('Ura')</rhs>
-    </assign>
-    <assign>
-      <lhs>amounts</lhs>
-    <rhs>%{amounts}.push('2.5g')</rhs>
-    </assign>
-       <assign><lhs>m</lhs><rhs>%{m}+1</rhs></assign>
-      </do>
-    </while>
-    </then>
-  </if>
-
-  <assign>
-  <lhs>count</lhs>
-  <rhs>0</rhs>
-  </assign>
-
-  <assign><lhs>i</lhs><rhs>0</rhs></assign>
-
-
-  <while>
-    <condition>%{i}!= %{labels}.length</condition>
-    <do>
-
-    <assign><lhs>cur_ingredient</lhs><rhs>%{ingredients}[%{i}]</rhs></assign>
-    <assign><lhs>cur_amount</lhs><rhs>%{amounts}[%{i}]</rhs></assign>
-    <assign><lhs>cur_label</lhs><rhs>%{labels}[%{i}]</rhs></assign>
-
-      <step>
-        <description>Measure %{cur_amount} of %{cur_ingredient}</description>
-        <note>Place the plastic boat on the scale. Zero the scale.
-      Using the spatula, measure %{cur_amount} of %{cur_ingredient}
-      into the plastic boat.
-            Use a kimwipe to clean the spatula.
-  </note>
-        <image>WeighDryIngredient</image>
-      </step>
-
-      <step>
-        <description>
-          Transfer the %{cur_ingredient} to the bottle labeled %{cur_label}.
-        </description>
-        <note>
-        Remove the top of the 500 mL bottle labeled %{cur_label} and pour
-        the %{cur_ingredient} into the bottle. Dispose of the plastic boat.
-        </note>
-        <image>PourDry500mL</image>
-      </step>
-
-      <step>
-        <description>
-          Fill the graduated cylinder with di Water to 500 mL
-        </description>
-        <image>Fill1000mLGraduated</image>
-      </step>
-
-      <step>
-        <description>
-          Transfer and mix.
-        </description>
-        <note>
-          Pour the water from the cylinder into the bottle labeled %{cur_label},
-          return the top, and shake the bottle to mix in the %{cur_ingredient}.
-        </note>
-        <image>TransferGraduatedTo500mL</image>
-      </step>
-
-      <assign><lhs>i</lhs><rhs>%{i}+1</rhs></assign>
-
-    </do>
-
-  </while>
-
   <step>
-    <description>Put all bottles in the heat bath.</description>
-    <note>Place all four of the bottles in the heat bath for approximately 20 minutes.
-      Make sure that the heat bath isat 65 C. Cover the heat bath for faster heating.
-      Go can go on to the next step now, but you should periodically remove each bottle,
-      swirl it, and check whether the powders have dissolved.
-    </note>
-    <image>HeatBathWithAminoAcids</image>
+    <description>Attach vacuum hose to filter.</description>
+    <note>Attach to the hose near B1.310.</note>
   </step>
-
   <step>
-    <description>Prepare bottle top filters.</description>
-    <note>While the powders are dissolving, attach the four bottle top filters to
-      the four remaining (sterile!) bottles. You will need to attache the white plastic hose adapter
-      to each filter as well. Be careful to keep the inside of the filter cap and the bottle
-      sterile.
-    </note>
-    <image>BottleFilterOnBottle</image>
+    <description>Pour solution into filter.</description>
+    <note>Pour solution from %{nonsterile_bottle} into the filter (keep the filter bottle stable).</note>
   </step>
-
   <step>
-    <description>Remove filter and cap bottles</description>
-    <note>Remove the filter and cap the bottles, making sure to keep everthing sterile.</note>
-    <image>BottleFilterOnBottle</image>
+    <description>Recap the sterile bottle.</description>
+    <note>When solution has run through the filter, remove the filter top and immediately recap with a sterile cap (ideally the same one it had originally).</note>
   </step>
-
-
-  <if>
-    <condition>%{Trp} &gt; 0</condition>
-    <then>
-    <produce>
-      <object>Tryptophan Solution</object>
-      <quantity>%{Trp}</quantity>
-      <release>%{bottles}[0]</release>
-    </produce>
-    </then>
-  </if>
-
-  <if>
-    <condition>%{His} &gt; 0</condition>
-    <then>
-    <produce>
-      <object>Histidine Solution</object>
-      <quantity>%{His}</quantity>
-      <release>%{bottles}[0]</release>
-    </produce>
-    </then>
-  </if>
-
-  <if>
-    <condition>%{Leu} &gt; 0</condition>
-    <then>
-    <produce>
-      <object>Leucine Solution</object>
-      <quantity>%{Leu}</quantity>
-      <release>%{bottles}[0]</release>
-    </produce>
-    </then>
-  </if>
-
-  <if>
-    <condition>%{Ura} &gt; 0</condition>
-    <then>
-    <produce>
-      <object>Uracil Solution</object>
-      <quantity>%{Ura}</quantity>
-      <release>%{bottles}[0]</release>
-    </produce>
-    </then>
-  </if>
-
-  <release>%{boats}</release>
   <release>%{filter}</release>
 
-  <if>
-    <condition>%{Trp} &gt; 0</condition>
-    <then>
-    <release>
-      %{trp_powder}
-    </release>
-    </then>
-  </if>
-  <if>
-    <condition>%{His} &gt; 0</condition>
-    <then>
-    <release>
-      %{his_powder}
-    </release>
-    </then>
-  </if>
-  <if>
-    <condition>%{Leu} &gt; 0</condition>
-    <then>
-    <release>
-      %{leu_powder}
-    </release>
-    </then>
-  </if>
-  <if>
-    <condition>%{Ura} &gt; 0</condition>
-    <then>
-    <release>
-      %{ura_powder}
-    </release>
-    </then>
-  </if>
+  <produce>
+    <object>%{supplement_produced}</object>
+    <quantity>1</quantity>
+    <!-- Consumes a bottle -->
+    <release>[%{bottles}[1]]</release>
+  </produce>
+  <release>[%{bottles}[0]]</release>
 </protocol>
