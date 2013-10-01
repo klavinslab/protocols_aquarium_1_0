@@ -68,15 +68,40 @@ to B.
 μL to A and 350 μL to B.
 5. Using the same pipette but a fresh tip, and solution IV to the tubes: 550 μL
 to A and 250 μL to B.
-6. Each tube should now have 1 mL in it, so to check the error from pipetting,
-set the 1 mL pipettor to 1000 μL and draw up as much liquid as possible from each 
-tube. If there is still liquid left in the tube, too much was added. If there is air 
-at the end of the tube, too little was added. If too little was added, to determine 
-the error,slowly decrease the volume until the liquid reaches the end of the tube. 
-the error rate is (100 - final volume).
-7. Throw out tubes A and B.
+6. Each tube should now have 1 mL (total volume) in it, so to check the error 
+from pipetting,set the 1 mL pipette to 1000 μL and draw up as much liquid as 
+possible from each tube. 
+7. Calculate measurement error.
+8. Throw out tubes A and B
 
 Small Volume Exercise:
-1. 
+1. Take out tubes C - E, and the 10 μL pipette and pipette tip box.
+2. Add solution I to the tubes: 4 μL in in C, 4 μL in D, and 4 μL in E.
+3. Using the same pipette but a new tip, add solution II to the tubes: 5 μL
+to C, 5 μL to D, and 4 μL to E.
+4. Using the same pipette but a new tip, add solution III to the tuebs: 1 μL
+to C, and 1 μL to E.
+5. Using the same pipette but a new tip, add solution IV to the tubes: 1 μL
+to D and 1 μL to E.
+6. Each tube should now have 10 μL (total volume) in it, so to check the error from 
+pipetting, set the 10 μL pipette to 10 μL and draw up as much liquid as possible
+from each tube. 
+7. Calculate measurement error.
+8. Throw out tubes C - E.
+
+Calculate Measurement Error:
+
+IF there is still liquid left in the tube, too much was added. To determine
+the error if too much was added, discard the tip with liquid in it and get a fresh
+tip. Carefully pipette up the remaining liquid in the tip, and then rotate the 
+volume dial until the liquid reaches the bottom of the tip. The error rate is 
+new volume / total volume.
+
+OR IF there is air at the end of the tip, too little was added. If too little was added, 
+to determine the error, slowly decrease the volume until the liquid reaches the end 
+of the tip. The error rate is (total volume - new volume)/ total volume. 
+
+OR if the tube is filled exactly with liquid, the measurement error is 0.
+
 
 
