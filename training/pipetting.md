@@ -75,6 +75,7 @@ possible from each tube.
 8. Throw out tubes A and B
 
 Small Volume Exercise:
+
 1. Take out tubes C - E, and the 10 μL pipette and pipette tip box.
 2. Add solution I to the tubes: 4 μL in in C, 4 μL in D, and 4 μL in E.
 3. Using the same pipette but a new tip, add solution II to the tubes: 5 μL
