@@ -1,6 +1,6 @@
 <protocol>
 
- <information>This protocol teaches the fundementals of pipetting though a large and a small volume pipetting 
+ <information>This protocol teaches the fundamentals of pipetting though a large and a small volume pipetting 
  exercise and then demonstrates how to calculate the error associated with pipetting.</information>
 
   <take>
@@ -21,18 +21,36 @@
     </note>
   </step>
   
+  <step>
+    <description>
+    Put tubes C - E off to the side.
+    </description>
+    <note>
+    Tubes C - E will be used for the second part of the exercise.
+    </note>
+  </step>
+  
   <take>
     <item>
-      <type>Rainin 10 µL Pipette Tip Box</type>
+      <type>Rainin 1 mL Pipette Tip Box</type>
       <quantity>1</quantity>
       <var>tips</var>
     </item>
     <item>
-      <type>Rainin 10 µL Pipette</type>
+      <type>Rainin 1 mL Pipette</type>
       <quantity>1</quantity>
       <var>pipette</var>
     </item>
   </take>
+  
+  <step>
+    <description>Put a fresh tip on the end of the 1 mL pipette.</description>
+    <note>
+    Open the box of tips, and holding the pipette in one hand, stab the end of the pipette on one tip 
+    in the box, holding the box securely with the other hand.
+    </note>
+  </step>
+    
     
   
 </protocol>
