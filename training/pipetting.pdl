@@ -1,4 +1,3 @@
-
 <protocol>
 
  <information>This protocol teaches the fundementals of pipetting though a large and a small volume pipetting 
@@ -21,5 +20,19 @@
     or touch the insides of the tubes and cap.
     </note>
   </step>
+  
+  <take>
+    <item>
+      <type>Rainin 10 µL Pipette Tip Box</type>
+      <quantity>1</quantity>
+      <var>tips</var>
+    </item>
+    <item>
+      <type>Rainin 10 µL Pipette</type>
+      <quantity>1</quantity>
+      <var>pipette</var>
+    </item>
+  </take>
+    
   
 </protocol>
