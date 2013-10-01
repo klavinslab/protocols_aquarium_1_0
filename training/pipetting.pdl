@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+
 <protocol>
 
  <information>This protocol teaches the fundementals of pipetting though a large and a small volume pipetting 
@@ -15,7 +15,7 @@
   <step>
     <description>
     Take out 6 1.5 mL tubes, close the caps, and label them A - E on the top of each cap.
-    <description>
+    </description>
     <note>
     Be careful always use a sterile technique when handling the tubes: Do not drop the tubes on the ground,
     or touch the insides of the tubes and cap.
