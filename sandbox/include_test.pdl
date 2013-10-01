@@ -7,7 +7,7 @@
   <assign><lhs>asd</lhs><rhs>'asd string'</rhs></assign>
 
   <include>
-    <path>testing/include_A.pdl</path>
+    <path>sandbox/include_A.pdl</path>
     <setarg><var>x</var><value>%{n}</value></setarg>
     <setarg><var>str</var><value>%{asd}</value></setarg>
     <setarg><var>y</var><value>2</value></setarg>

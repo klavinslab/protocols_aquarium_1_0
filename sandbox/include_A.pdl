@@ -15,7 +15,7 @@
   <assign><lhs>z</lhs><rhs>%{x}+%{y}</rhs></assign>
 
   <include>
-    <path>testing/include_B.pdl</path>
+    <path>sandbox/include_B.pdl</path>
     <setarg><var>x</var><value>'hello'</value></setarg>
     <return><var>r</var><value>%{z}</value></return>
   </include>
