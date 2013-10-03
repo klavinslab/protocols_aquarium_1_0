@@ -165,7 +165,7 @@
     </setarg>
     <setarg>
       <var>shake_duration</var>
-      <value>30</value>
+      <value>120</value>
     </setarg>
   </include>
 
@@ -199,8 +199,8 @@
     <note>Uncap the sterile bottle. Quickly remove the filter from its wrapping and screw onto the bottle.</note>
   </step>
   <step>
-    <description>Attach vacuum hose to filter.</description>
-    <note>Attach to the hose near B1.310.</note>
+    <description>Attach vacuum hose to filter and turn on vacuum.</description>
+    <note>Attach to the hose near B1.310. Turn on the vacuum by rotating the handle to be parallel to the tube.</note>
   </step>
   <step>
     <description>Pour solution into filter.</description>
@@ -208,7 +208,7 @@
   </step>
   <step>
     <description>Recap the sterile bottle.</description>
-    <note>When solution has run through the filter, remove the filter top and immediately recap with a sterile cap (ideally the same one it had originally).</note>
+    <note>When solution has run through the filter, turn off the vacuum, remove the filter top and immediately recap with a sterile cap (ideally the same one it had originally).</note>
   </step>
   <release>%{filter}</release>
 
