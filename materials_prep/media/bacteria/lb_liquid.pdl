@@ -3,6 +3,10 @@
   <!-- Information -->
   <information>Prepare unsterile bottle(s) of 800 mL LB Media (rich media for bacteria), ready to be autoclaved.</information>
 
+  <assign>
+    <lhs>product_name</lhs>
+    <rhs>800 mL LB Liquid (unsterile)</rhs>
+  </assign>
   <!-- Arguments -->
   <argument>
     <name>n_bottle</name>
@@ -45,17 +49,17 @@
       </include>
 
       <!-- Begin steps -->
-      <!-- Label bottle(s) -->
+      <!-- Label bottle(s) temporarily -->
       <!-- FIXME: should only have to supply an array of objects for which you want labels to get the right output -->
       <include>
-        <path>includes/labels/800_mL_labels.pdl</path>
+        <path>includes/labels/temporary_labels.pdl</path>
         <setarg>
           <var>item_string</var>
           <value>%{bottle_string}</value>
         </setarg>
         <setarg>
           <var>human_name</var>
-          <value>"LB Liquid"</value>
+          <value>%{product_name}</value>
         </setarg>
       </include>
       <!-- Remove autoclave tape -->
@@ -125,17 +129,39 @@
         </setarg>
       </include>
 
-      <!-- Produce -->
-      <step>
-        <description>Important Location Note</description>
-        <note>For the next step, choose B1.320 as the location to store %{bottle_string}. Write this location down now.</note>
-      </step>
-      <produce>
-        <object>800 mL LB liquid (unsterile)</object>
+      <!-- Produce silently -->
+      <produce display="false">
+        <object>product_name</object>
         <quantity>%{n_bottle}</quantity>
+        <var>%{produced_bottles}</var>
         <!-- Consumes a bottle -->
         <release>%{bottle}</release>
       </produce>
+      <!-- Label produced thing -->
+      <assign>
+        <lhs>item_name</lhs>
+        <rhs>%{produced_bottles}[0][:name]</rhs>
+      </assign>
+      <assign>
+        <lhs>item_id</lhs>
+        <rhs>%{produced_bottles}[0][:id]</rhs>
+      </assign>
+      <include>
+        <path>includes/labels/800_mL_labels.pdl</path>
+        <setarg>
+          <var>item_name</var>
+          <value>%{item_name}</value>
+        </setarg>
+        <setarg>
+          <var>item_id</var>
+          <value>%{item_id}</value>
+        </setarg>
+      </include>
+      <!-- Move it to the right place - autoclave staging area-->
+      <move>
+        <item>%{produced_bottles}</item>
+        <location>B1.340</location>
+      </move>
 
       <!-- Final releases -->
       <release>%{lb_powder}</release>
