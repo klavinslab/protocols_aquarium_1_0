@@ -131,7 +131,7 @@
 
       <!-- Produce silently -->
       <produce display="false">
-        <object>product_name</object>
+        <object>%{product_name}</object>
         <quantity>%{n_bottle}</quantity>
         <var>%{produced_bottles}</var>
         <!-- Consumes a bottle -->
