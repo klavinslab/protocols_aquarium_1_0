@@ -117,7 +117,7 @@
       <var>scale</var>
     </item>
     <item>
-      <type>Large Weigh Boat</type>
+      <type>Small Weigh Boat</type>
       <quantity>1</quantity>
       <var>boat</var>
     </item>
@@ -126,7 +126,7 @@
     <item>
       <type>%{supplement_type}</type>
       <quantity>1</quantity>
-      <var>%{supplement_item}</var>
+      <var>supplement_item</var>
     </item>
   </take>
 
@@ -208,11 +208,11 @@
   </step>
   <step>
     <description>Pour solution into filter.</description>
-    <note>Pour solution from %{nonsterile_bottle} into the filter (keep the filter bottle stable).</note>
+    <note>Remove the lid from the filter. Pour the solution from %{nonsterile_bottle} into the filter (keep the filter bottle stable).</note>
   </step>
   <step>
     <description>Recap the sterile bottle.</description>
-    <note>When solution has run through the filter, turn off the vacuum, remove the filter top and immediately recap with a sterile cap (ideally the same one it had originally).</note>
+    <note>When solution has run through the filter, turn off the vacuum, and remove the filter top. Immediately recap the bottle of sterile %{supplement_name} solution with its original (sterile) sterile cap.</note>
   </step>
   <release>%{filter}</release>
 
