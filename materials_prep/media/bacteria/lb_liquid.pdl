@@ -133,7 +133,7 @@
       <produce display="false">
         <object>%{product_name}</object>
         <quantity>%{n_bottle}</quantity>
-        <var>%{produced_bottles}</var>
+        <var>produced_bottles</var>
         <!-- Consumes a bottle -->
         <release>%{bottle}</release>
       </produce>
