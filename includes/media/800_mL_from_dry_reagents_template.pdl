@@ -52,17 +52,17 @@
       </include>
 
       <!-- Begin steps -->
-      <!-- Label bottle(s) -->
+      <!-- Label bottle(s) temporarily -->
       <!-- FIXME: should only have to supply an array of objects for which you want labels to get the right output -->
       <include>
-        <path>includes/labels/800_mL_labels.pdl</path>
+        <path>includes/labels/temporary_labels.pdl</path>
+        <setarg>
+          <var>item_string</var>
+          <value>%{bottle_names}</value>
+        </setarg>
         <setarg>
           <var>human_name</var>
           <value>%{product_name}</value>
-        </setarg>
-        <setarg>
-          <var>fallback_string</var>
-          <value>%{bottle_names}</value>
         </setarg>
       </include>
       <!-- Take the scale -->
@@ -113,17 +113,42 @@
         </setarg>
       </include>
 
-      <!-- Produce -->
-      <produce>
+      <!-- Produce silently -->
+      <produce display="false">
         <object>product_name</object>
         <quantity>%{n_bottle}</quantity>
+        <var>%{produced_bottles}</var>
         <!-- Consumes a bottle -->
         <release>%{bottle}</release>
       </produce>
+      <!-- Label produced thing -->
+      <assign>
+        <lhs>item_name</lhs>
+        <rhs>%{produced_bottles}[0][:name]</rhs>
+      </assign>
+      <assign>
+        <lhs>item_id</lhs>
+        <rhs>%{produced_bottles}[0][:id]</rhs>
+      </assign>
+      <include>
+        <path>includes/labels/800_mL_labels.pdl</path>
+        <setarg>
+          <var>item_name</var>
+          <value>%{item_name}</value>
+        </setarg>
+        <setarg>
+          <var>item_id</var>
+          <value>%{item_id}</value>
+        </setarg>
+      </include>
+      <!-- Move it to the right place - autoclave staging area-->
+      <move>
+        <item>%{produced_bottles}</item>
+        <location>B1.340</location>
+      </move>
 
       <!-- Final releases -->
       <release>%{lb_powder}</release>
     </else>
   </if>
-
 </protocol>
