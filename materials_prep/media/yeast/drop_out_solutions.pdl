@@ -109,10 +109,6 @@
     <description>Label bottles.</description>
     <note>Lable one bottle as "nonsterile mixed solution of %{supplement_type}" and the other as "sterile %{supplement_type}".</note>
   </step>
-  <step>
-    <description>Measure dry supplement and add to one bottle</description>
-    <note>Measure and add %{mass} g of dry %{supplement_type} to the bottle labeled "nonsterile".</note>
-  </step>
   <!-- Take the scale and weigh boat-->
   <take>
     <item>
@@ -126,6 +122,14 @@
       <var>boat</var>
     </item>
   </take>
+  <take>
+    <item>
+      <type>%{supplement_type}</type>
+      <quantity>1</quantity>
+      <var>%{supplement_item}</var>
+    </item>
+  </take>
+
   <!-- Wipe down spatula first - it's probably dirty -->
   <include>
     <path>includes/media/clean_spatula.pdl</path>
@@ -181,7 +185,7 @@
       </take>
       <step>
         <description>Heat bottle to 50°C on stir plate to dissolve uracil.</description>
-        <note>Using the heat plate, heat the bottle to 50°C. Shake to mix every few minutes.</note>
+        <note>Using the heat plate, heat the bottle to 50°C. Shake to mix every few minutes. Stop when full dissolution occurs or only a very small (but persistent) amount of dry reagent remains.</note>
       </step>
       <release>%{stir_plate}</release>
     </then>
@@ -200,7 +204,7 @@
   </step>
   <step>
     <description>Attach vacuum hose to filter and turn on vacuum.</description>
-    <note>Attach to the hose near B1.310. Turn on the vacuum by rotating the handle to be parallel to the tube.</note>
+    <note>Bring the bottle + filter apparatus to B1.310. Attach to the vacuum hose. Turn on the vacuum by rotating the handle to be parallel to the tube.</note>
   </step>
   <step>
     <description>Pour solution into filter.</description>
@@ -219,8 +223,9 @@
     <release>[%{bottles}[1]]</release>
   </produce>
   <produce>
-    <object>1 L Bottle (dirty)</object>
+    <object>500 mL Bottle (dirty)</object>
     <quantity>1</quantity>
     <release>[%{bottles}[0]]</release>
   </produce>
+  <release>%{supplement_item}</release>
 </protocol>
