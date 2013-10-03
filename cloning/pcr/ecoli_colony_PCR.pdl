@@ -32,9 +32,11 @@
   </information>
   
 <take>
-  <object>0.2mL Thin Wall Strip Well Tubes</object>
+  <item>
+  <type>0.2mL Thin Wall Strip Well Tubes</type>
   <quantity>1</quantity>
   <var>tube</var>
+  <item>
 </take>
 
 <step>
