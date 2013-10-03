@@ -218,5 +218,9 @@
     <!-- Consumes a bottle -->
     <release>[%{bottles}[1]]</release>
   </produce>
-  <release>[%{bottles}[0]]</release>
+  <produce>
+    <object>1 L Bottle (dirty)</object>
+    <quantity>1</quantity>
+    <release>[%{bottles}[0]]</release>
+  </produce>
 </protocol>
