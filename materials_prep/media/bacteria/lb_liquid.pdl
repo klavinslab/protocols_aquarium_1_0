@@ -5,7 +5,7 @@
 
   <assign>
     <lhs>product_name</lhs>
-    <rhs>800 mL LB Liquid (unsterile)</rhs>
+    <rhs>"800 mL LB Liquid (unsterile)"</rhs>
   </assign>
   <!-- Arguments -->
   <argument>
