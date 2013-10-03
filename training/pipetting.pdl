@@ -47,9 +47,30 @@
     <description>Put a fresh tip on the end of the 1 mL pipette.</description>
     <note>
     Open the box of tips, and holding the pipette in one hand, stab the end of the pipette on one tip 
-    in the box, holding the box securely with the other hand.
+    in the box, holding the box securely with the other hand. Lift up the pipette, the tip should be attached.
     </note>
   </step>
+  
+  <step>
+    <description>Change the volume of the pipette</description>
+    <note>
+    When changing the volume, be sure the pipette tip does not touch anything so that it stays sterile.
+    To change the volume of the pipette slide the notch at the top of the pipette from locked (a closed lock)
+    to unlocked (an open lock). Then turn the dial at the top of the pipette until the numbers read 010. This
+    pipette pipettes a max of 1000 μL (1 mL), so a volume of 010 is 100 μL. BE SURE NOT TO GO ANY HIGHER THAN
+    1000 μL (reads as 100) BECAUSE IT MESSES UP THE CALIBRATION OF THE PIPETTE.
+    </note>
+  </step>
+  
+  <step>
+    <description>Add solution I to Tube A</description>
+    <note>
+    
+    </note>
+    
+  </step>
+  
+  
     
     
   
