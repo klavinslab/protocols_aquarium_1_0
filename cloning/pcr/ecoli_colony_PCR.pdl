@@ -36,7 +36,7 @@
   <type>0.2mL Thin Wall Strip Well Tubes</type>
   <quantity>1</quantity>
   <var>tube</var>
-  <item>
+  </item>
 </take>
 
 <step>
@@ -55,9 +55,11 @@
 </step>
       
 <take>
-  <object>Molecular Grade Water 50mL aliquot</object>
+  <item>
+  <type>Molecular Grade Water 50mL aliquot</type>
   <quantity>1</quantity>
   <var>MGH2O</var>
+  </item>
 </take>
 
 <step>
