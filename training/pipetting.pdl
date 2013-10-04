@@ -44,10 +44,11 @@
   </take>
   
   <step>
-    <description>Put a fresh tip on the end of the 1 mL pipette.</description>
+    <description>Feel how the pipette works</description>
     <note>
-    Open the box of tips, and holding the pipette in one hand, stab the end of the pipette on one tip 
-    in the box, holding the box securely with the other hand. Lift up the pipette, the tip should be attached.
+    Holding the pipette in one hand, press the button up and down a few times. There are two stops when
+    pressing down. If you push down lightly, you hit the first stop. Keep pressing down, and you hit
+    the second stop, when you can't press down any more.
     </note>
   </step>
   
@@ -63,12 +64,48 @@
   </step>
   
   <step>
-    <description>Add solution I to Tube A</description>
+    <description>Take off caps.</description>
     <note>
-    
+    Carefully take the cap off of the test tube holding Solution I. Set the cap upside down on the bench.
+    Carefully open the cap of tube A, being sure not to touch the inside of the tube or the cap.
     </note>
-    
   </step>
+  
+  <step>
+    <description>Put a fresh tip on the end of the 1 mL pipette.</description>
+    <note>
+    Open the box of tips, and holding the pipette in one hand, stab the end of the pipette on one tip 
+    in the box, holding the box securely with the other hand. Lift up the pipette, the tip should be attached.
+    </note>
+  </step>
+  
+  <step>
+    <description>Add solution I to tube A.</description>
+    <note>
+    Press down the button on the pipette until it reaches the first stop. Immerse the tip into Solution I
+    and slowly release the button. Carefully move the tip so that it is barely inside tube A. Press down
+    on the button until it reaches the first stop, then keep pressing to the second stop to release all
+    of the liquid in the tip. Close the cap of tube A.
+    </note>
+  <description>
+  
+  <step>
+    <description>Add 150 μL of Solution I to tube B.</description>
+    <note>
+    Change the volume of the pipette so that it reads 015. Open the cap of tube B, and carefully pipette 
+    150 μL of Solution I into B. Discard the tip into tip waste by pressing the ledge behind the button.
+    Close the cap of tube B.
+    </note>
+  </step>
+  
+  <step>
+    <description>Add Solution II.</description>
+    <note>
+    Put on a fresh tip, and add 200 μL of Solution II to tube A and 250 μL to tube B (be sure to change the
+    volume on the pipette!). Discard the tip.
+    </note>
+  </step>
+    
   
   
     
