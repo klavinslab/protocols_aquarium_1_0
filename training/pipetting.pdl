@@ -144,12 +144,12 @@
   
   <take>
       <item>
-      <type>Rainin 1 μL Pipette Tip Box</type>
+      <type>Rainin 10 µL Pipette Tip Box</type>
       <quantity>1</quantity>
       <var>tipssmall</var>
     </item>
     <item>
-      <type>Rainin 1 μL Pipette</type>
+      <type>Rainin 10 µL Pipette</type>
       <quantity>1</quantity>
       <var>pipettesmall</var>
     </item>
