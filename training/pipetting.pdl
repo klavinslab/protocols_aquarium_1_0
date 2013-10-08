@@ -140,6 +140,22 @@
     </note>
   </step>
   
+  <release>[%{tips}[0],%{pipette}[0]]</release>
+  
+  <take>
+      <item>
+      <type>Rainin 1 μL Pipette Tip Box</type>
+      <quantity>1</quantity>
+      <var>tipssmall</var>
+    </item>
+    <item>
+      <type>Rainin 1 μL Pipette</type>
+      <quantity>1</quantity>
+      <var>pipettesmall</var>
+    </item>
+  </take>
+  
+  
   <step>
     <description>Perform the small volume exercise.</description>
     <note>
@@ -169,7 +185,7 @@
     </note>
   </step>
   
-  <release>[%{tubes}[0],%{tips}[0],%{pipette}[0]]</release>
+  <release>[%{tubes}[0],%{tipssmall}[0],%{pipettesmall}[0]]</release>
     
   
 </protocol>
