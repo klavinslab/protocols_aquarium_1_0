@@ -55,7 +55,7 @@
       <include>
         <path>includes/labels/temporary_labels.pdl</path>
         <setarg>
-          <var>item_name</var>
+          <var>item_string</var>
           <value>%{bottle_string}</value>
         </setarg>
         <setarg>

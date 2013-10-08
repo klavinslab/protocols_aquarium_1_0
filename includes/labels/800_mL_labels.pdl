@@ -20,7 +20,7 @@
   <!-- TODO: Try to print. If it fails, fall back to hand-drawn labels -->
   <!-- Fallback label - default for now. Tells user to write out stuff by hand -->
   <step>
-    <description>Label1.</description>
+    <description>Label.</description>
     <note>Label %{item_name} with item id "%{item_id}", the name "%{item_name}", the bottle number, your initials, and the date and time using a piece of lab tape.</note>
   </step>
 </protocol>
