@@ -1,0 +1,27 @@
+<protocol>
+
+  <argument>
+    <name>name</name>
+    <type>string</type>
+    <description>Primer Name</description>
+  </argument>
+
+  <argument>
+    <name>project</name>
+    <type>string</type>
+    <description>Project</description>
+  </argument>
+
+  <take>
+    <item>
+      <type>Primer Aliquot</type>
+      <quantity>1</quantity>
+      <var>p</var>
+      <name>%{name}</name>
+      <project>%{project}</project>
+    </item>
+  </take>
+
+  <release>%{p}</release>
+
+</protocol>
