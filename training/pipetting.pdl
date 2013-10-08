@@ -169,7 +169,7 @@
     </note>
   </step>
   
-  <release>[%tubes[0],%tips[0],%pipette[0]]</release>
+  <release>[%{tubes}[0],%{tips}[0],%{pipette}[0]]</release>
     
   
 </protocol>
