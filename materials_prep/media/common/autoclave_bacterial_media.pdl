@@ -7,112 +7,216 @@
        -->
 
   <!-- Arguments -->
-  <argument>
-    <name>item_number</name>
-    <type>number</type>
-    <description>Enter the number of items you are autoclaving. Remember, this is for bacterial media only - do not include YPAD/SC/SDO.</description>
-  </argument>
+  <!-- None! -->
 
-  <!-- Initial takes -->
-  <!-- FIXME: using 'getdata' instead of 'argument' violates abstraction layer. There is no way to hack another solution? -->
-  <!-- Initialize empty vector for pre-autoclaved items -->
+  <!-- Arrays to store 'consumed' input media, output media name, and the number autoclaved.
+       The simplest way I can find (so far) to concisely and straightforwardly store this information
+       between takes and releases -->
   <assign>
-    <lhs>items</lhs>
-    <rhs>[]</rhs>
+    <lhs>lb_liquid_data</lhs>
+    <rhs>["800 mL LB liquid (unsterile)", "800 mL LB Liquid (sterile)", 0]</rhs>
   </assign>
   <assign>
-    <lhs>counter</lhs>
-    <rhs>0</rhs>
+    <lhs>lb_agar_data</lhs>
+    <rhs>["800 mL LB Agar (unsterile)", "800 mL LB Agar (sterile)", 0]</rhs>
+  </assign>
+  <assign>
+    <lhs>tb_liquid_data</lhs>
+    <rhs>["800 mL TB Liquid (sterile)", "800 mL TB Liquid (sterile)", 0]</rhs>
+  </assign>
+
+  <!-- Get arguments via getdata subtag of step. This violates the abstraction layer but is the only way to do this using PDL. -->
+  <assign>
+    <lhs>not_done</lhs>
+    <rhs>true</rhs>
   </assign>
   <while>
-    <condition>%{counter} &lt; %{item_number}</condition>
+    <condition>not_done</condition>
     <do>
-      <!-- Ask for next item's string -->
       <step>
-        <description>Enter items to autoclave.</description>
-        <getdata>
-          <type>string</type>
-          <description>Enter the next item to autoclave (must be exactly the name that's in the inventory).</description>
-          <var>current_item_name</var>
-        </getdata>
+        <description>Select media to autoclave</description>
+        <note>Select a media option and the number of 800 mL bottles of it that you are autoclaving. Repeating a media choice with a different number will overwrite the previous selection. Keep track of how many bottles you can autoclave at once. If you are done selecting media, choose "Done".</note>
+        <select>
+          <description>Media Choice</description>
+          <var>latest_choice</var>
+          <choice>"800 mL LB Liquid (unsterile)"</choice>
+          <choice>"800 mL LB Agar (unsterile)"</choice>
+          <choice>"800 mL TB Liquid (unsterile)"</choice>
+          <choice>"Done"</choice>
+        </select>
+        <select>
+          <description>Number</description>
+          <var>latest_number</var>
+          <choice>1</choice>
+          <choice>2</choice>
+          <choice>3</choice>
+          <choice>4</choice>
+        </select>
       </step>
-      <!-- Take that item -->
-      <!-- We could ask for all the items at the end of the loop, but that's difficult to debug - if one
-           object type was wrong, how do we know which one it was? Traceback is useless (nonexistent?) -->
-      <take>
-        <item>
-            <type>%{current_item_name}</type>
-            <quantity>1</quantity>
-            <var>current_item</var>
-        </item>
-      </take>
-      <assign>
-        <lhs>items</lhs>
-        <rhs>%{items}.push(%{current_item})</rhs>
-      </assign>
-      <assign>
-        <lhs>counter</lhs>
-        <rhs>%{counter} + 1</rhs>
-      </assign>
+      <!-- If chose LB Agar -->
+      <if>
+        <condition>%{latest_choice} == "800 mL LB Agar (unsterile)"</condition>
+        <then>
+          <!-- update number to take/release -->
+          <assign>
+            <lhs>lb_agar_data</lhs>
+            <rhs>%{lb_agar_data}[0,2] + %{latest_number}</rhs>
+          </assign>
+        </then>
+        <take>
+          <type>%{latest_choice}</type>
+          <quantity>%{latest_number}</quantity>
+          <var>latest_take</var>
+        </take>
+        <assign>
+          <lhs>lb_agar_data</lhs>
+          <rhs>%{lb_agar_data} + %{latest_take}</rhs>
+        </assign>
+      </if>
+      <!-- If chose TB Liquid -->
+      <if>
+        <condition>%{latest_choice} == "800 mL TB Liquid (unsterile)"</condition>
+        <then>
+          <!-- update number to take/release -->
+          <assign>
+            <lhs>tb_liquid_data</lhs>
+            <rhs>%{tb_liquid_data}[0,2] + %{latest_number}</rhs>
+          </assign>
+        </then>
+        <take>
+          <type>%{latest_choice}</type>
+          <quantity>%{latest_number}</quantity>
+          <var>latest_take</var>
+        </take>
+        <assign>
+          <lhs>tb_liquid_data</lhs>
+          <rhs>%{tb_liquid_data} + %{latest_take}</rhs>
+        </assign>
+      </if>
+      <!-- If chose LB Liquid -->
+      <if>
+        <condition>%{latest_choice} == "800 mL LB Liquid (unsterile)"</condition>
+        <then>
+          <!-- update number to take/release -->
+          <assign>
+            <lhs>lb_liquid_data</lhs>
+            <rhs>%{lb_liquid_data}[0,2] + %{latest_number}</rhs>
+          </assign>
+        </then>
+        <take>
+          <type>%{latest_choice}</type>
+          <quantity>%{latest_number}</quantity>
+          <var>latest_take</var>
+        </take>
+        <assign>
+          <lhs>lb_liquid_data</lhs>
+          <rhs>%{lb_liquid_data} + %{latest_take}</rhs>
+        </assign>
+      </if>
+      <if>
+        <condition>%{latest_choice} == "Done"</condition>
+        <then>
+          <assign>
+            <lhs>not_done</lhs>
+            <rhs>false</rhs>
+          </assign>
+        </then>
+      </if>
     </do>
   </while>
-  <!-- TODO: offer small selection of options:
-              liquid cycle
-              optional cycle at 110 for 15 mins
-              'dry cycle' (unwrapped) -->
 
   <!-- Begin steps -->
   <step>
     <description>Apply autoclave tape.</description>
     <note>Add autoclave tape to each item. For items with lids, make sure autoclave tape extends fully over the lid and onto the sides of the item, so that one must break the seal in order to use it.</note>
   </step>
-  <!-- TODO: take the autoclave here. Note that it will not be properly released as it would be controlled, somehow, at the metacol level -->
+  <take>
+    <type>Autoclave</type>
+    <quantity>1</quantity>
+    <var>autoclave</var>
+  </take>
   <step>
     <description>Place items in the autoclave.</description>
     <note>Make sure no caps are tight. If a cap is tight, the item may explode.</note>
   </step>
-  <!-- TODO: make sure these instructions are detailed enough -->
   <step>
-    <description>Set autoclave settings.</description>
-    <note>Select cancel (red button) to remove any previous dialog. Select the liquid cycle. This should set the temperature to 121°C and the the length of time to 15 minutes.</note>
-  </step>
-  <step>
-    <description>Start the autoclave.</description>
-    <note>Hit the green button on the autoclave.</note>
+    <description>Set autoclave settings and start.</description>
+    <note>If using the free-stranding autoclave, set the temperature to 121°C and time at pressure to 15 minutes. Seal the hatch, secure the magnetic safety device, and hit start. If using the tabletop centrifuge at A1, select liquid cycle and start, which applies the same settings.</note>
   </step>
   <step>
     <description>Wait around until the autoclave finishes.</description>
-    <note>The amount of time it takes varies considerably (45 mins to 1.5 hours).</note>
+    <note>This will take between 45 minutes and two hours. You can leave this job running and do other tasks while the autoclave is running - when the autoclave is done, resume by finding the job and resuming it. The large autoclave beeps 5 times in a row *just once* when it is done. The small autoclave produces two long beeps every few seconds until you tell it to stop. When the autoclave finishes, hit next.</note>
   </step>
   <step>
-    <description>Remove items from the autoclave to a cooling area.</description>
-    <note>When items are below 50°C, proceed to the next step.</note>
+    <description>Remove items from the autoclave to a cooling area (the media station).</description>
+    <note>When items are around 50°C (no longer hurts to touch), proceed to the next step.</note>
   </step>
-  <!-- TODO: another wait step that shouldn't be in a protocol -->
+
   <!-- Produces -->
-  <assign><lhs>counter</lhs><rhs>0</rhs></assign>
-  <while>
-    <condition>%{counter} &lt; %{item_number}</condition>
-    <do>
-      <!-- Ask for next item's string -->
-      <!-- If you pop off of the list, can't release anything -->
+  <if>
+    <condition>%{lb_liquid_data}[2] != 0</condition>
+    <then>
       <assign>
-        <lhs>produced_item_name</lhs>
-        <rhs>%{items}[%{counter}][0][:object][:name]</rhs>
+        <lhs>temp_produce</lhs>
+        <rhs>%{lb_liquid_data}[1]</rhs>
       </assign>
       <assign>
-        <lhs>produced_item_name</lhs>
-        <rhs>%{produced_item_name}[0..-12] + '(sterile)'</rhs>
+        <lhs>temp_release</lhs>
+        <rhs>%{lb_liquid_data}[3]</rhs>
+      </assign>
+      <assign>
+        <lhs>temp_number</lhs>
+        <rhs>%{lb_liquid_data}[2]</rhs>
       </assign>
       <produce>
-        <object>%{produced_item_name}</object>
-        <quantity>1</quantity>
-        <release>%{items}[%{counter}]</release>
+        <type>%{temp_produce}</type>
+        <quantity>%{temp_number}</quantity>
+        <release>%{temp_release}</release>
       </produce>
+    </then>
+  </if>
+  <if>
+    <condition>%{tb_liquid_data}[2] != 0</condition>
+    <then>
       <assign>
-        <lhs>counter</lhs>
-        <rhs>%{counter} + 1</rhs>
+        <lhs>temp_produce</lhs>
+        <rhs>%{tb_liquid_data}[1]</rhs>
       </assign>
-    </do>
-  </while>
+      <assign>
+        <lhs>temp_release</lhs>
+        <rhs>%{tb_liquid_data}[3]</rhs>
+      </assign>
+      <assign>
+        <lhs>temp_number</lhs>
+        <rhs>%{tb_liquid_data}[2]</rhs>
+      </assign>
+      <produce>
+        <type>%{temp_produce}</type>
+        <quantity>%{temp_number}</quantity>
+        <release>%{temp_release}</release>
+      </produce>
+    </then>
+  </if>
+  <if>
+    <condition>%{lb_agar_data}[2] != 0</condition>
+    <then>
+      <assign>
+        <lhs>temp_produce</lhs>
+        <rhs>%{lb_agar_data}[1]</rhs>
+      </assign>
+      <assign>
+        <lhs>temp_release</lhs>
+        <rhs>%{lb_agar_data}[3]</rhs>
+      </assign>
+      <assign>
+        <lhs>temp_number</lhs>
+        <rhs>%{lb_agar_data}[2]</rhs>
+      </assign>
+      <produce>
+        <type>%{temp_produce}</type>
+        <quantity>%{temp_number}</quantity>
+        <release>%{temp_release}</release>
+      </produce>
+    </then>
+  </if>
 </protocol>

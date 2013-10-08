@@ -53,9 +53,9 @@
       <!-- Label bottle(s) -->
       <!-- FIXME: should only have to supply an array of objects for which you want labels to get the right output -->
       <include>
-        <path>includes/labels/800_mL_labels.pdl</path>
+        <path>includes/labels/temporary_labels.pdl</path>
         <setarg>
-          <var>item_string</var>
+          <var>item_name</var>
           <value>%{bottle_string}</value>
         </setarg>
         <setarg>
