@@ -20,8 +20,6 @@
       <type>E. coli Glycerol Stock</type>
       <quantity>1</quantity>
       <var>sample</var>
-      <name>DH5alpha</name>
-      <project>All</project>
       <id>%{strain_sample_id}</id>
     </item>
 

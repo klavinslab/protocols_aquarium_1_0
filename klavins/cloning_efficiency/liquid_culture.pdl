@@ -9,20 +9,22 @@
   </argument>
 
   <take>
+
     <item>
       <type>890 mL Sterile TB</type><quantity>1</quantity><var>media</var>
     </item>
+
     <item>
       <type>5 mL Culture Tubes With Closures</type><quantity>1</quantity><var>tube</var>
     </item>
+
     <item>
       <type>Amp Plate with Sample</type>
       <quantity>1</quantity>
       <var>plate</var>
-      <name>DH5alpha</name>
-      <project>All</project>
       <id>%{strain_sample_id}</id>
     </item>
+
   </take>
 
   <step>
