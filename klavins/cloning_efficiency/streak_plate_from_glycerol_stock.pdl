@@ -45,6 +45,7 @@
   <produce>
     <object>Petri Dish with Sample</object>
     <quantity>1</quantity>
+    <sample>%{sample}[0]</sample> <!-- is it okay to refer to the sample after it is released? -->
     <release>%{plate}</release>
     <var>x</var>
   </produce>
