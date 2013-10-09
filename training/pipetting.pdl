@@ -17,7 +17,7 @@
     </description>
     <note>
     Be careful to always use a sterile technique when handling the tubes: Do not drop the tubes on the ground
-    or touch the inside of the tubes and cap.
+    or touch the inside of the tubes and caps.
     </note>
   </step>
   
@@ -81,7 +81,7 @@
   </step>
   
   <step>
-    <description>Add solution I to tube A.</description>
+    <description>Add Solution I to tube A.</description>
     <note>
     Press down the button on the pipette until it reaches the first stop. Immerse the tip into Solution I
     and slowly release the button. Carefully raise the pipette, move it to just above Tube A, then lower the
@@ -97,7 +97,7 @@
     Change the volume of the pipette so that it reads 015 (150 μL). Be sure that the tip does not touch 
     anything and remains sterile. Open the cap of tube B, and carefully pipette 150 μL of Solution I into B. 
     Discard the tip into tip waste by pressing the ledge behind the button. The tip will shoot off of the
-    pipette. Close the cap of Tube B.
+    pipette. Close the cap of Tube B. Replace the cap on Solution I.
     </note>
   </step>
   
@@ -123,10 +123,10 @@
     <note>
     Tubes A and B should contain 1000 μL (1 mL) of liquid. This is the total volume. Using the 1 mL pipette, 
     change the volume to 1000 μL, add a fresh tip, and draw up as much liquid as possible from tube A.
-    IF there is still liquid left in the tube, too much was added. To determine the error if too much was added, 
+    IF there is still liquid left in the tube, too much was added. To determine the error when too much was added, 
     discard the tip with liquid in it and get a fresh tip. Carefully pipette up the remaining liquid in the tip, 
     and then rotate the volume dial to decrease the volume until the liquid reaches the bottom of the tip. This
-    is the new volume. The error rate is new volume / total volume.
+    is the new volume. The error rate is (new volume / total volume).
     OR IF there is air at the end of the tip, too little was added. If too little was added, to determine the error, 
     slowly decrease the volume until the liquid reaches the end of the tip. This is the new volume.
     The error rate is (total volume - new volume)/ total volume.
@@ -158,6 +158,14 @@
     </item>
   </take>
   
+  <step>
+    <description>Pipetting small volumes:</description>
+    <note>
+    When releasing the liquid into the tube, let the pipette tip barely touch the side of the inside of
+    the tube. A small drop of liquid should be visible on the inside of the tube when you raise the tip
+    out of the tube, and no liquid shold be left in the pipette tip.
+    </note>
+  </step>
   
   <step>
     <description>Perform the Small Volume Exercise.</description>
@@ -165,7 +173,7 @@
     Using the techniques previously described for the Large Volume Exercise, add the following volumes 
     of Solution I, II, III, and IV to tubes C, D, and E using the 10 μL pipette and 10 μL pipette tips. 
     Make sure to always change the tip when pipetting a new solution, to set the pipette to the correct 
-    volume for each aliquot of liquid, to and maintain a sterile technique.
+    volume for each aliquot of liquid, to and maintain a sterile technique. 
     Solution I: 4 μL to C, 4 μL to D, 4 μL to E.
     Solution II: 5 μL to C, 5 μL to D, 4 μL to E.
     Solution III: 1 μL to C, 0 μL to D, 1 μL to E.
