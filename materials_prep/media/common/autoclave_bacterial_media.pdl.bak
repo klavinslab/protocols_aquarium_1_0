@@ -14,24 +14,24 @@
        between takes and releases -->
   <assign>
     <lhs>lb_liquid_data</lhs>
-    <rhs>["800 mL LB liquid (unsterile)", "800 mL LB liquid (sterile)", 0]</rhs>
+    <rhs>["800 mL LB liquid (unsterile)", "800 mL LB Liquid (sterile)", 0]</rhs>
   </assign>
   <assign>
     <lhs>lb_agar_data</lhs>
-    <rhs>["800 mL LB agar (unsterile)", "800 mL LB agar (sterile)", 0]</rhs>
+    <rhs>["800 mL LB Agar (unsterile)", "800 mL LB Agar (sterile)", 0]</rhs>
   </assign>
   <assign>
     <lhs>tb_liquid_data</lhs>
-    <rhs>["800 mL TB liquid (unsterile)", "800 mL TB liquid (sterile)", 0]</rhs>
+    <rhs>["800 mL TB Liquid (sterile)", "800 mL TB Liquid (sterile)", 0]</rhs>
   </assign>
 
   <!-- Get arguments via getdata subtag of step. This violates the abstraction layer but is the only way to do this using PDL. -->
   <assign>
-    <lhs>done</lhs>
-    <rhs>false</rhs>
+    <lhs>not_done</lhs>
+    <rhs>true</rhs>
   </assign>
   <while>
-    <condition>%{done} != true</condition>
+    <condition>%{not_done}</condition>
     <do>
       <step>
         <description>Select media to autoclave</description>
@@ -39,10 +39,10 @@
         <select>
           <description>Media Choice</description>
           <var>latest_choice</var>
-          <choice>800 mL LB liquid (unsterile)</choice>
-          <choice>800 mL LB agar (unsterile)</choice>
-          <choice>800 mL TB liquid (unsterile)</choice>
-          <choice>Done</choice>
+          <choice>"800 mL LB Liquid (unsterile)"</choice>
+          <choice>"800 mL LB Agar (unsterile)"</choice>
+          <choice>"800 mL TB Liquid (unsterile)"</choice>
+          <choice>"Done"</choice>
         </select>
         <select>
           <description>Number</description>
@@ -54,96 +54,71 @@
         </select>
       </step>
       <if>
-        <condition>%{latest_choice} == "800 mL LB liquid (unsterile)"</condition>
+        <condition>%{latest_choice} == "800 mL LB Liquid (unsterile)"</condition>
         <then>
           <assign>
             <lhs>lb_liquid_data</lhs>
-            <rhs>%{lb_liquid_data}[0,2] + [%{latest_number}.to_i]</rhs>
-          </assign>
-          <assign>
-            <lhs>take_type</lhs>
-            <rhs>%{lb_liquid_data}[0]</rhs>
-          </assign>
-          <assign>
-            <lhs>take_number</lhs>
-            <rhs>%{lb_liquid_data}[2]</rhs>
-          </assign>
-          <take>
-            <item>
-              <type>%{take_type}</type>
-              <quantity>%{take_number}</quantity>
-              <var>latest_take</var>
-            </item>
-          </take>
-          <assign>
-            <lhs>lb_liquid_data</lhs>
-            <rhs>%{lb_liquid_data} + [%{latest_take}]</rhs>
+            <rhs>%{lb_liquid_data}[0,2] + %{latest_number}</rhs>
           </assign>
         </then>
+        <take>
+          <item>
+            <type>%{latest_choice}</type>
+            <quantity>%{latest_number}</quantity>
+            <var>latest_take</var>
+          </item>
+        </take>
+        <assign>
+          <lhs>lb_liquid_data</lhs>
+          <rhs>%{lb_liquid_data} + %{latest_take}</rhs>
+        </assign>
       </if>
       <if>
-        <condition>%{latest_choice} == "800 mL LB agar (unsterile)"</condition>
+        <condition>%{latest_choice} == "800 mL LB Agar (unsterile)"</condition>
         <then>
           <assign>
             <lhs>lb_agar_data</lhs>
-            <rhs>%{lb_agar_data}[0,2] + [%{latest_number}.to_i]</rhs>
-          </assign>
-          <assign>
-            <lhs>take_type</lhs>
-            <rhs>%{lb_agar_data}[0]</rhs>
-          </assign>
-          <assign>
-            <lhs>take_number</lhs>
-            <rhs>%{lb_agar_data}[2]</rhs>
-          </assign>
-          <take>
-            <item>
-              <type>%{take_type}</type>
-              <quantity>%{take_number}</quantity>
-              <var>latest_take</var>
-            </item>
-          </take>
-          <assign>
-            <lhs>lb_agar_data</lhs>
-            <rhs>%{lb_agar_data} + [%{latest_take}]</rhs>
+            <rhs>%{lb_agar_data}[0,2] + %{latest_number}</rhs>
           </assign>
         </then>
+        <take>
+          <item>
+            <type>%{latest_choice}</type>
+            <quantity>%{latest_number}</quantity>
+            <var>latest_take</var>
+          </item>
+        </take>
+        <assign>
+          <lhs>lb_agar_data</lhs>
+          <rhs>%{lb_agar_data} + %{latest_take}</rhs>
+        </assign>
       </if>
       <if>
-        <condition>%{latest_choice} == "800 mL TB liquid (unsterile)"</condition>
+        <condition>%{latest_choice} == "800 mL TB Liquid (unsterile)"</condition>
         <then>
           <assign>
             <lhs>tb_liquid_data</lhs>
-            <rhs>%{tb_liquid_data}[0,2] + [%{latest_number}.to_i]</rhs>
-          </assign>
-          <assign>
-            <lhs>take_type</lhs>
-            <rhs>%{tb_liquid_data}[0]</rhs>
-          </assign>
-          <assign>
-            <lhs>take_number</lhs>
-            <rhs>%{tb_liquid_data}[2]</rhs>
-          </assign>
-          <take>
-            <item>
-              <type>%{take_type}</type>
-              <quantity>%{take_number}</quantity>
-              <var>latest_take</var>
-            </item>
-          </take>
-          <assign>
-            <lhs>tb_liquid_data</lhs>
-            <rhs>%{tb_liquid_data} + [%{latest_take}]</rhs>
+            <rhs>%{tb_liquid_data}[0,2] + %{latest_number}</rhs>
           </assign>
         </then>
+        <take>
+          <item>
+            <type>%{latest_choice}</type>
+            <quantity>%{latest_number}</quantity>
+            <var>latest_take</var>
+          </item>
+        </take>
+        <assign>
+          <lhs>tb_liquid_data</lhs>
+          <rhs>%{tb_liquid_data} + %{latest_take}</rhs>
+        </assign>
       </if>
-
       <if>
         <condition>%{latest_choice} == "Done"</condition>
         <then>
           <assign>
-            <lhs>done</lhs>
-            <rhs>true</rhs>
+            <lhs>not_done</lhs>
+            <rhs>false</rhs>
           </assign>
         </then>
       </if>
@@ -164,7 +139,7 @@
   </take>
   <step>
     <description>Place items in the autoclave.</description>
-    <warning>Make sure no caps are tight. If a cap is tight, the item may explode.</warning>
+    <note>Make sure no caps are tight. If a cap is tight, the item may explode.</note>
   </step>
   <step>
     <description>Set autoclave settings and start.</description>
@@ -178,7 +153,6 @@
     <description>Remove items from the autoclave to a cooling area (the media station).</description>
     <note>When items are around 50°C (no longer hurts to touch), proceed to the next step.</note>
   </step>
-  <release>%{autoclave}</release>
 
   <!-- Produces -->
   <if>
@@ -189,37 +163,15 @@
         <rhs>%{lb_liquid_data}[1]</rhs>
       </assign>
       <assign>
-        <lhs>temp_number</lhs>
-        <rhs>%{lb_liquid_data}[2]</rhs>
-      </assign>
-      <assign>
         <lhs>temp_release</lhs>
         <rhs>%{lb_liquid_data}[3]</rhs>
       </assign>
-      <produce>
-        <object>%{temp_produce}</object>
-        <quantity>%{temp_number}</quantity>
-        <release>%{temp_release}</release>
-      </produce>
-    </then>
-  </if>
-  <if>
-    <condition>%{lb_agar_data}[2] != 0</condition>
-    <then>
-      <assign>
-        <lhs>temp_produce</lhs>
-        <rhs>%{lb_agar_data}[1]</rhs>
-      </assign>
       <assign>
         <lhs>temp_number</lhs>
-        <rhs>%{lb_agar_data}[2]</rhs>
-      </assign>
-      <assign>
-        <lhs>temp_release</lhs>
-        <rhs>%{lb_agar_data}[3]</rhs>
+        <rhs>%{lb_liquid_data}[2]</rhs>
       </assign>
       <produce>
-        <object>%{temp_produce}</object>
+        <type>%{temp_produce}</type>
         <quantity>%{temp_number}</quantity>
         <release>%{temp_release}</release>
       </produce>
@@ -233,19 +185,40 @@
         <rhs>%{tb_liquid_data}[1]</rhs>
       </assign>
       <assign>
-        <lhs>temp_number</lhs>
-        <rhs>%{tb_liquid_data}[2]</rhs>
-      </assign>
-      <assign>
         <lhs>temp_release</lhs>
         <rhs>%{tb_liquid_data}[3]</rhs>
       </assign>
+      <assign>
+        <lhs>temp_number</lhs>
+        <rhs>%{tb_liquid_data}[2]</rhs>
+      </assign>
       <produce>
-        <object>%{temp_produce}</object>
+        <type>%{temp_produce}</type>
         <quantity>%{temp_number}</quantity>
         <release>%{temp_release}</release>
       </produce>
     </then>
   </if>
-
+  <if>
+    <condition>%{lb_agar_data}[2] != 0</condition>
+    <then>
+      <assign>
+        <lhs>temp_produce</lhs>
+        <rhs>%{lb_agar_data}[1]</rhs>
+      </assign>
+      <assign>
+        <lhs>temp_release</lhs>
+        <rhs>%{lb_agar_data}[3]</rhs>
+      </assign>
+      <assign>
+        <lhs>temp_number</lhs>
+        <rhs>%{lb_agar_data}[2]</rhs>
+      </assign>
+      <produce>
+        <type>%{temp_produce}</type>
+        <quantity>%{temp_number}</quantity>
+        <release>%{temp_release}</release>
+      </produce>
+    </then>
+  </if>
 </protocol>
