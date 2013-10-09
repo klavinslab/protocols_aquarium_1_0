@@ -35,8 +35,14 @@
     <quantity>1</quantity>
     <release>%{culture}</release>
     <sample>%{culture}[0]</sample>
+    <var>x</var>
   </produce>
 
   <release>%{mp}</release>
+
+  <log>
+    <type>RETURN</type>
+    <data>{item: %{x}}</data>
+  </log>
 
 </protocol>
