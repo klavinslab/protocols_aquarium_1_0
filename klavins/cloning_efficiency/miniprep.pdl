@@ -9,12 +9,34 @@
   </argument>
 
   <take>
+
     <item>
       <type>Liquid Culture</type>
       <quantity>1</quantity>
       <var>culture</var>
       <id>%{strain_sample_id}</id>
     </item>
+
+    <item>
+      <type>Miniprep Kit</type>
+      <quantity>1</quantity>
+      <var>mp</var>
+    </item>
+
   </take>
+
+  <step>
+    <description>Do the minimprep</description>
+    <note>Details forthcoming.</note>
+  </step>
+
+  <produce>
+    <object>Plasmid DNA</object>
+    <quantity>1</quantity>
+    <release>%{culture}</release>
+    <sample>%{culture}[0]</sample>
+  </produce>
+
+  <release>%{mp}</release>
 
 </protocol>

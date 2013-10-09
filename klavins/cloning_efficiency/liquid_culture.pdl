@@ -38,6 +38,7 @@
     <object>Liquid Culture</object>
     <quantity>1</quantity>
     <release>%{tube}</release>
+    <sample>%{plate}[0]</sample>
     <var>x</var>
   </produce>
 
