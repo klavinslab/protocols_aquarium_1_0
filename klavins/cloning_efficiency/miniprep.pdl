@@ -1,0 +1,11 @@
+<protocol>
+
+  <information>Get plasmid DNA out of a cell sample.</information>
+
+  <argument>
+    <name>strain</name>
+    <type>number</type>
+    <description>The id of the sample to use</description>
+  </argument>
+
+</protocol>

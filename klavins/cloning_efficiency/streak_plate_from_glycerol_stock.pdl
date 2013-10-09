@@ -1,0 +1,57 @@
+<protocol>
+
+  <information>Describes how to transfer some bacteria to a petri dish from a glycerol stock.</information>
+
+  <argument>
+    <name>strain_sample_id</name>
+    <type>number</type>
+    <description>The id of a strain sample to streak</description>
+  </argument>
+
+  <argument>
+    <name>plate_type</name>
+    <type>string</type>
+    <description>The type of plate to use.</description>
+  </argument>
+
+  <take>
+
+    <item>
+      <type>E. coli Glycerol Stock</type>
+      <quantity>1</quantity>
+      <var>sample</var>
+      <name>DH5alpha</name>
+      <project>All</project>
+      <id>%{strain_sample_id}</id>
+    </item>
+
+    <item>
+      <type>%{plate_type}</type>
+      <quantity>1</quantity>
+      <var>plate</var>
+    </item>
+
+  </take>
+
+  <step>
+    <description>Description</description>
+    <note>Go to the freezer, get the stock, stab some with a pipetter,
+    scrape the pipette tip on the plate. Put the plate in the
+    incubator.</note>
+  </step>
+
+  <release>%{sample}</release>
+
+  <produce>
+    <object>Petri Dish with Sample</object>
+    <quantity>1</quantity>
+    <release>%{plate}</release>
+    <var>x</var>
+  </produce>
+
+  <log>
+    <type>RETURN</type>
+    <data>{item: %{x}}</data>
+  </log>  
+
+</protocol>

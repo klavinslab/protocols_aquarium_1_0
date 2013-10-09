@@ -1,0 +1,11 @@
+<protocol>
+
+  <information></information>
+
+  <argument>
+    <name>plasmid</name>
+    <type>intneger</type>
+    <description>The plasmid sample to measure.</description>
+  </argument>
+
+</protocol>

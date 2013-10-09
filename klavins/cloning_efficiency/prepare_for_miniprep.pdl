@@ -1,0 +1,16 @@
+<protocol>
+
+  <information>Prepare cells for a miniprep.</information>
+
+  <argument>
+    <name>strain</name>
+    <type>string</type>
+    <description>Name of cells to prepare</description>
+  </argument>
+
+  <step>
+    <description>Grow them and spin them down</description>
+    <note>Details here.</note>
+  </step>
+
+</protocol>

@@ -1,0 +1,28 @@
+<protocol>
+
+  <information>Describes how to transfer some bacteria to a petri dish from a glycerol stock.</information>
+
+  <argument>
+    <name>strain</name>
+    <type>string</type>
+    <description>Name of the strain of bacteria to streak</description>
+  </argument>
+
+  <argument>
+    <name>project</name>
+    <type>string</type>
+    <description>Name of the project associated with the strain</description>
+  </argument>
+
+  <argument>
+    <name>marker</name>
+    <type>string</type>
+    <description>Name the antibiotic marker used, if any (put 'none' if there is no marker)</description>
+  </argument>
+
+  <step>
+    <description>Start the liquid culture.</description>
+    <note>Touch a colony with a tip and put the tip in a tube.</note>
+  </step>
+
+</protocol>
