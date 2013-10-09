@@ -1,28 +1,47 @@
 <protocol>
 
-  <information>Describes how to transfer some bacteria to a petri dish from a glycerol stock.</information>
+  <information>Describes how to transfer some bacteria from a petri dish to a liquid culture.</information>
 
   <argument>
-    <name>strain</name>
+    <name>strain_sample_id</name>
     <type>string</type>
-    <description>Name of the strain of bacteria to streak</description>
+    <description>The id of the plate to get the bacteria from</description>
   </argument>
 
-  <argument>
-    <name>project</name>
-    <type>string</type>
-    <description>Name of the project associated with the strain</description>
-  </argument>
-
-  <argument>
-    <name>marker</name>
-    <type>string</type>
-    <description>Name the antibiotic marker used, if any (put 'none' if there is no marker)</description>
-  </argument>
+  <take>
+    <item>
+      <type>890 mL Sterile TB</type><quantity>1</quantity><var>media</var>
+    </item>
+    <item>
+      <type>5 mL Culture Tubes With Closures</type><quantity>1</quantity><var>tube</var>
+    </item>
+    <item>
+      <type>Amp Plate with Sample</type>
+      <quantity>1</quantity>
+      <var>plate</var>
+      <name>DH5alpha</name>
+      <project>All</project>
+      <id>%{strain_sample_id}</id>
+    </item>
+  </take>
 
   <step>
     <description>Start the liquid culture.</description>
     <note>Touch a colony with a tip and put the tip in a tube.</note>
   </step>
+
+  <release>%{media}.concat %{plate}</release>
+
+  <produce>
+    <object>Liquid Culture</object>
+    <quantity>1</quantity>
+    <release>%{tube}</release>
+    <var>x</var>
+  </produce>
+
+  <log>
+    <type>RETURN</type>
+    <data>{item: %{x}}</data>
+  </log>  
 
 </protocol>
