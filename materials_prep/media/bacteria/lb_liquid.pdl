@@ -130,7 +130,7 @@
       </include>
 
       <!-- Produce silently -->
-      <produce display='false'>
+      <produce render="false">
         <object>%{product_name}</object>
         <quantity>%{n_bottle}</quantity>
         <var>produced_bottles</var>
@@ -139,18 +139,14 @@
       </produce>
       <!-- Label produced thing -->
       <assign>
-        <lhs>item_name</lhs>
-        <rhs>%{produced_bottles}[0][:name]</rhs>
-      </assign>
-      <assign>
         <lhs>item_id</lhs>
-        <rhs>%{produced_bottles}[0][:id]</rhs>
+        <rhs>%{produced_bottles}[:id]</rhs>
       </assign>
       <include>
         <path>includes/labels/800_mL_labels.pdl</path>
         <setarg>
           <var>item_name</var>
-          <value>%{item_name}</value>
+          <value>%{product_name}</value>
         </setarg>
         <setarg>
           <var>item_id</var>
@@ -158,9 +154,13 @@
         </setarg>
       </include>
       <!-- Move it to the right place - autoclave staging area-->
+      <step>
+        <description>Move the bottle(s) to B1.340.</description>
+        <note>When done, click Next.</note>
+      </step>
       <move>
         <item>%{produced_bottles}</item>
-        <location>B1.340</location>
+        <location>"B1.340"</location>
       </move>
 
       <!-- Final releases -->
