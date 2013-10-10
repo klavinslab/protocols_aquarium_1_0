@@ -12,14 +12,8 @@
     <rhs>%{b}[:id]</rhs>
   </assign>
 
-  <assign>
-    <lhs>d</lhs>
-    <rhs>%{b}[:location]</rhs>
-  </assign>
-
   <step>
     <description>Produced a new bottle, with id = %{i}.</description>
-    <note>The current location of the bottle is %{d}.</note>
     <getdata>
        <description>Where would you like to put it?</description>
        <type>string</type>

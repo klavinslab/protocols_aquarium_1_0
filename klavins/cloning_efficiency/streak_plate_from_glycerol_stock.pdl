@@ -46,6 +46,7 @@
     <sample>%{sample}[0]</sample> <!-- is it okay to refer to the sample after it is released? -->
     <release>%{plate}</release>
     <var>x</var>
+    <note>Make sure to place the plate in the incubator upside down.</note>
   </produce>
 
   <log>
