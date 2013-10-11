@@ -15,9 +15,9 @@ Description: Safety protocols that MUST be learned before working in the wetlab.
 
 Day 1
 
-    * [Equipment 1]
-        + Duration needed: [x days/hours/min]
-        + Location: [address]
+    * [SOS Lab Safety Form]
+        + Duration needed: [5 min]
+        + Location: [Email logan.mccoll@gmail.com]
     * [Equipment 2]
         + Duration needed: [x days/hours/min]
         + Location: [address]
