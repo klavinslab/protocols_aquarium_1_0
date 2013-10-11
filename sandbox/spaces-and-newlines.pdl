@@ -1,0 +1,13 @@
+<protocol>
+
+  <step>
+    <description>Some spaces and newlines</description>
+    <note>
+This protocol\n
+\tshould read\n
+\ta bit like\n
+a poem.
+</note>
+  </step>
+
+</protocol>
