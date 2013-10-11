@@ -55,9 +55,12 @@ Day 2
 
 Day 1
 
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
+1. [Step 1] No eating or drinking in the lab. This is a wet lab that works with live cultures. Do not bring food or drinks into the lab, do not apply cosmetics in the lab, and do not make any other type of contact with mucous (ex contact lenses or touching one's mouth). 
+2. [Step 2] You must wash your hands: Before leaving the lab, immediately following contact with potentially infectious agents, and immediately after taking off gloves or other protective equipment.
+3. [Step 3] Gloves must be used when using potentially dangerous chemicals. Dispose of goves after each use when handling dangerous chemicals and/or potentially infectious agents. Immediately replace punctured or torn gloves. All gloves must be disposed of in the biohazard box.
+4. [Step 4] Eye Protection must be: used during any activites with risk of splashing or aerosolization and as required by laboratory instructor.
+5. [Step 5] UV Shield must be used when using UV transilluminator. Do not look directly at or expose skin to UV light as it may cause permanent damage.
+6. [Step 6] 
 
 Day 2
 
