@@ -1,15 +1,13 @@
-[Protocol Name]
+[Laboratory Safety]
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Description:
+Description: Safety protocols that MUST be learned before working in the wetlab.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-####Total duration: [x days/hours/minutes]####
-####Total worktime: [x hours/minutes]
+####Total duration: [1.5 Hours]####
+####Total worktime: [.25 Hours]
 
-    - Day 1: [x hours/minutes]
-    - Day 2: [x hours/minutes]
-    - ...
+    - Day 1: [1.5 Hours]
     
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
