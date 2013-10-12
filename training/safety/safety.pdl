@@ -1,1 +1,27 @@
  
+<?xml version="1.0" encoding="UTF-8"?>
+<protocol>
+
+<information>This protocol describes methods associated with maintaining a sterile technique</information>
+
+<take>
+  <item>
+    <type>1.5 mL Tube Box</type>
+    <quantity>1</quantity>
+    <var>tubes</var>
+  </item>
+  <item>14 mL Test Tube</item>
+    <quantity>1</quantity>
+    <var>testtube</var>
+  </item>
+</take>
+
+<step>
+  <description>Take out 1 1.5 mL tube from the box</description> 
+  <note>
+  
+  </note>
+</step>
+
+</protocol>
+
