@@ -1,16 +1,14 @@
-
 Transformation Training
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Description: This protocol trains a new user on cell transformation through electroporation
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-####Total duration: [x days/hours/minutes]####
-####Total worktime: [x hours/minutes]
+####Total duration: 2 days####
+####Total worktime: 45 minutes
 
-    - Day 1: [x hours/minutes]
-    - Day 2: [x hours/minutes]
-    - ...
+    - Day 1: 40 minutes
+    - Day 2: 5 minutes
     
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -18,40 +16,37 @@ Description: This protocol trains a new user on cell transformation through elec
 
 Day 1
 
-    * [Equipment 1]
+    * Ice Block
         + Duration needed: [x days/hours/min]
         + Location: [address]
-    * [Equipment 2]
+    * Electroporator
+        + Duration needed: [x days/hours/min]
+        + Location: [address]
+    * 37C Incubator
         + Duration needed: [x days/hours/min]
         + Location: [address]
   
 ------
 
-    * [Item 1]
+    * Plasmid DNA
         + Quantity: [x ml/mg/items]
         + Location: [address]
-    * [Item 2]
+    * Competent Cells
+        + Quantity: [x ml/mg/items]
+        + Location: [address]
+    * 1.5 mL Tubes
+        + Quantity: [x ml/mg/items]
+        + Location: [address]
+    * LB Media
+        + Quantity: [x ml/mg/items]
+        + Location: [address]
+    * LB Agar Plate
+        + Quantity: [x ml/mg/items]
+        + Location: [address]
+    * Electrocurvette
         + Quantity: [x ml/mg/items]
         + Location: [address]
 
-Day 2
-
-    * [Equipment 1]
-        + Duration needed: [x days/hours/min]
-        + Location: [address]
-    * [Equipment 2]
-        + Duration needed: [x days/hours/min]
-        + Location: [address]
-        
----------
-
-        
-    * [Item 1]
-        + Quantity: [x ml/mg/items]
-        + Location: [address]
-    * [Item 2]
-        + Quantity: [x ml/mg/items]
-        + Location: [address]
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 ##Protocol##
