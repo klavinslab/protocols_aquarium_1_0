@@ -5,13 +5,13 @@
   <argument>
     <name>primer_id</name>
     <type>sample</type>
-    <description>A Sample</description>
+    <description>An item containing a primer</description>
   </argument>
 
   <argument>
     <name>q</name>
     <type>sample</type>
-    <description>A Sample</description>
+    <description>An item containing a sample</description>
   </argument>
 
   <argument>
