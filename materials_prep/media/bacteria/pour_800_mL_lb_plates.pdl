@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol name="Pour Agar">
   <!-- Information -->
-  <information>Pour plates from 800 mL of liquid state agar.</information>
+  <information>Pour (antibiotic) plates from 800 mL of liquid state agar.</information>
 
   <!-- Arguments -->
   <argument>
@@ -136,7 +136,16 @@
     <description>Let plates cool.</description>
     <note>Let the plates cool until solid. If you keep them separate and unstacked, they will cool much faster and more evenly. This should take 10-20 minutes.</note>
   </step>
-  <!-- TODO: put them somewhere - 30C incubator? -->
+  <!-- FIXME: Metacol territory -->
+  <step>
+    <description>Stack and label.</description>
+    <note>Once the plates are cool, stack them inverted (lid down) in groups of about 20. With a marker, streak up the side of the plates, marking both the lid and the plate itself with a colored line: purple for Amp, green for Kan, and blue for Chlor. In addition, label a long piece of lab tape with LB, the antibiotic type, your initials, and the date and apply it up the side of the stack, being careful not to cover the marker lines.</note>
+  </step>
+  <step>
+    <description>Place in the 30 degree yeast incubator.</description>
+    <note>Place the plates in the 30 degree yeast incubator to dry for one day.</note>
+  </step>
+
   <!-- FIXME: do math if less than 50 plates were produced -->
 
   <!-- Produces -->
@@ -163,4 +172,8 @@
     <quantity>1</quantity>
     <release>%{agar_bottle}</release>
   </produce>
+  <step>
+    <description>Debug</description>
+    <note>This is the object containing plates at the end of the protocol: </note>
+  </step>
 </protocol>
