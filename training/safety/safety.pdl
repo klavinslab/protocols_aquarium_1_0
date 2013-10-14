@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol>
 
- <information>This protocol teaches the fundamentals of pipetting though a large and a small volume pipetting
- exercise, then demonstrates how to calculate the error associated with pipetting.</information>
-
-  <take>
-    <item>
-      <type>1.5 mL Tube Box</type>
-      <quantity>1</quantity>
-      <var>tubes</var>
-    </item>
-  </take>
+ <information>This protocol teaches the essential safety practices of the lab.</information>
 
   <step>
     <description>
-    Take out 6 1.5 mL tubes, close the caps, and label them A - E on the top of each cap.
+    Find the fire extinguisher.
     </description>
     <note>
     Be careful to always use a sterile technique when handling the tubes: Do not drop the tubes on the ground
