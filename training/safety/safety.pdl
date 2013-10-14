@@ -1,27 +1,206 @@
- 
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol>
 
-<information>This protocol describes the safety practices of the Klavins Lab</information>
+ <information>This protocol teaches the fundamentals of pipetting though a large and a small volume pipetting
+ exercise, then demonstrates how to calculate the error associated with pipetting.</information>
 
-<take>
-  <item>
-    <type>Fire Extinguisher</type>
-    <quantity>1</quantity>
-    <var>tubes</var>
-  </item>
-  <item>14 mL Test Tube</item>
-    <quantity>1</quantity>
-    <var>testtube</var>
-  </item>
-</take>
+  <take>
+    <item>
+      <type>1.5 mL Tube Box</type>
+      <quantity>1</quantity>
+      <var>tubes</var>
+    </item>
+  </take>
 
-<step>
-  <description>locate the fire extinguisher</description> 
-  <note>
-  
-  </note>
-</step>
+  <step>
+    <description>
+    Take out 6 1.5 mL tubes, close the caps, and label them A - E on the top of each cap.
+    </description>
+    <note>
+    Be careful to always use a sterile technique when handling the tubes: Do not drop the tubes on the ground
+    or touch the inside of the tubes and caps.
+    </note>
+  </step>
+
+  <step>
+    <description>
+    Put tubes C - E off to the side.
+    </description>
+    <note>
+    Tubes C - E will be used for the second part of the exercise, the Small Volume Exercise.
+    </note>
+  </step>
+
+  <take>
+    <item>
+      <type>Rainin 1 mL Pipette Tip Box</type>
+      <quantity>1</quantity>
+      <var>tips</var>
+    </item>
+    <item>
+      <type>Rainin 1 mL Pipette</type>
+      <quantity>1</quantity>
+      <var>pipette</var>
+    </item>
+  </take>
+
+  <step>
+    <description>Feel how the pipette works.</description>
+    <note>
+    Holding the pipette in one hand, press the button down and release a few times. There are two stops when
+    pressing down. If you push down lightly, you hit the first stop. If you keep pressing down after the first
+    stop, you hit the second stop, and shouldn't be able to press down any more.
+    </note>
+  </step>
+
+  <step>
+    <description>Change the volume of the pipette.</description>
+    <note>
+    To change the volume of the pipette, slide the notch at the top of the pipette from locked (a closed lock)
+    to unlocked (an open lock). Turn the dial at the top of the pipette until the numbers read 010. This
+    pipette pipettes a max of 1000 μL (1 mL), so a dial that reads 010 means 100 μL.
+    BE SURE NOT TO GO ANY HIGHER THAN 1000 μL (reads as 100) BECAUSE IT MESSES UP THE CALIBRATION OF THE PIPETTE.
+    Slide the notch to the locked position.
+    </note>
+  </step>
+
+  <step>
+    <description>Take off caps.</description>
+    <note>
+    Carefully take the cap off of the test tube holding Solution I. Set the cap upside down on the bench.
+    Carefully open the cap of tube A, being sure not to touch the inside of the tube or the cap.
+    </note>
+  </step>
+
+  <step>
+    <description>Put a fresh tip on the end of the 1 mL pipette.</description>
+    <note>
+    Open the box of tips, and holding the pipette in one hand, stab the end of the pipette on to one tip
+    in the box, holding the box securely with the other hand. Carefully lift up the pipette, making sure
+    the tip remains attached.
+    </note>
+  </step>
+
+  <step>
+    <description>Add Solution I to tube A.</description>
+    <note>
+    Press down the button on the pipette until it reaches the first stop. Immerse the tip into Solution I
+    and slowly release the button. Carefully raise the pipette, move it to just above Tube A, then lower the
+    pipette until the tip is barely inside of tube A, but not touching the side of the tube. Press on the
+    button until it reaches the first stop, then keep pressing down to the second stop to release all
+    of the liquid in the tip. Close the cap of tube A.
+    </note>
+  </step>
+
+  <step>
+    <description>Add 150 μL of Solution I to tube B.</description>
+    <note>
+    Change the volume of the pipette so that it reads 015 (150 μL). Be sure that the tip does not touch
+    anything and remains sterile. Open the cap of tube B, and carefully pipette 150 μL of Solution I into B.
+    Discard the tip into tip waste by pressing the ledge behind the button. The tip will shoot off of the
+    pipette. Close the cap of Tube B. Replace the cap on Solution I.
+    </note>
+  </step>
+
+  <step>
+    <description>Add Solution II.</description>
+    <note>
+    Put on a fresh tip, and add 200 μL of Solution II to Tube A and 250 μL of Soultion II to Tube B
+    (be sure to change the volume on the pipette!). Discard the tip into tip waste.
+    </note>
+  </step>
+
+  <step>
+    <description>Add Solutions III and IV</description>
+    <note>
+    Using a fresh tip for each solution, add the following volumes to tubes A and B.
+    Solution III: 150 μL to A, 350 μL to B.
+    Solution IV: 550 μL to A, 250 μL to B.
+    </note>
+  </step>
+
+  <step>
+    <description>Check the pipetting error</description>
+    <note>
+    Tubes A and B should contain 1000 μL (1 mL) of liquid. This is the total volume. Using the 1 mL pipette,
+    change the volume to 1000 μL, add a fresh tip, and draw up as much liquid as possible from tube A.
+    IF there is still liquid left in the tube, too much was added. To determine the error when too much was added,
+    discard the tip with liquid in it and get a fresh tip. Carefully pipette up the remaining liquid in the tip,
+    and then rotate the volume dial to decrease the volume until the liquid reaches the bottom of the tip. This
+    is the new volume. The error rate is (new volume / total volume).
+    OR IF there is air at the end of the tip, too little was added. If too little was added, to determine the error,
+    slowly decrease the volume until the liquid reaches the end of the tip. This is the new volume.
+    The error rate is (total volume - new volume)/ total volume.
+    OR if the tube is filled exactly with liquid, the measurement error is 0.
+    Write down the error rate.
+    </note>
+  </step>
+
+  <step>
+    <description>Find the error rate for Tube B</description>
+    <note>
+    Using the same process described for Tube A, find the error rate for Tube B. Write down the error rate.
+    Tubes A and B can be discarded into the tip waste.
+    </note>
+  </step>
+
+  <release>[%{tips}[0],%{pipette}[0]]</release>
+
+  <take>
+      <item>
+      <type>Rainin 10 µL Pipette Tip Box</type>
+      <quantity>1</quantity>
+      <var>tipssmall</var>
+    </item>
+    <item>
+      <type>Rainin 10 µL Pipette</type>
+      <quantity>1</quantity>
+      <var>pipettesmall</var>
+    </item>
+  </take>
+
+  <step>
+    <description>Pipetting small volumes:</description>
+    <note>
+    When releasing the liquid into the tube, let the pipette tip barely touch the side of the inside of
+    the tube. A small drop of liquid should be visible on the inside of the tube when you raise the tip
+    out of the tube, and no liquid shold be left in the pipette tip.
+    </note>
+  </step>
+
+  <step>
+    <description>Perform the Small Volume Exercise.</description>
+    <note>
+    Using the techniques previously described for the Large Volume Exercise, add the following volumes
+    of Solution I, II, III, and IV to tubes C, D, and E using the 10 μL pipette and 10 μL pipette tips.
+    Make sure to always change the tip when pipetting a new solution, to set the pipette to the correct
+    volume for each aliquot of liquid, to and maintain a sterile technique.
+    Solution I: 4 μL to C, 4 μL to D, 4 μL to E.
+    Solution II: 5 μL to C, 5 μL to D, 4 μL to E.
+    Solution III: 1 μL to C, 0 μL to D, 1 μL to E.
+    Solution IV: 0 μL to C, 1 μL to D, 1 μL to E.
+    </note>
+  </step>
+
+  <step>
+    <description>Calculate the pipetting error for Tubes C, D, and E.</description>
+    <note>
+    Calculate the error rate for Tube C, Tube D, and Tube E using the method previously described. The total
+    volume is 5 μL. Write down the error rate for each tube.
+    </note>
+  </step>
+
+  <step>
+    <description>Calculate the overall error rate.</description>
+    <note>
+    To calculate the overall error rate, add the five error rates from Tubes A - E together and divide by five.
+    This is your overall pipetting error rate.
+    </note>
+  </step>
+
+  <release>[%{tubes}[0],%{tipssmall}[0],%{pipettesmall}[0]]</release>
+
 
 </protocol>
+
 
