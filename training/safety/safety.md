@@ -63,8 +63,9 @@ Day 1
 6. [Step 6] All biologically contaminated disposables must be disposed of in the biohazard waste. This includes items such as pipette tips, petri dishes, and gloves. Do not dispose of "sharps" in the biohazard waste bag.
 7. [Step 7] To clean up /decontaminate a biohazard waste, first dispose of biohazard waste in biohazard bag and then to decontaminate a surface or disposable allow the object in question to soak in 10% bleach solution for 20min then dispose of bleached waste in regular waste stream. 
 8. [Step 8] Sharps, such as needles, scalpels, microscope slides, razor blades etc. must be disposed of in sharps container.
-9. [Step 9] All broken glassware must be disposed of in broken glass container
+9. [Step 9] All broken glassware must be disposed of in broken glass container.
 10.[Step 10] Locate the first aid kit, fire extinguisher, broken glass container, sharps container, biohazard waste bag, eye wash station, and chemical shower.
+
 Day 2
 
 1. [Step 1]
