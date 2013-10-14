@@ -18,37 +18,7 @@ Day 1
     * [SOS Lab Safety Form]
         + Duration needed: [5 min]
         + Location: [Email logan.mccoll@gmail.com]
-    * [Equipment 2]
-        + Duration needed: [x days/hours/min]
-        + Location: [address]
-  
-------
-
-    * [Item 1]
-        + Quantity: [x ml/mg/items]
-        + Location: [address]
-    * [Item 2]
-        + Quantity: [x ml/mg/items]
-        + Location: [address]
-
-Day 2
-
-    * [Equipment 1]
-        + Duration needed: [x days/hours/min]
-        + Location: [address]
-    * [Equipment 2]
-        + Duration needed: [x days/hours/min]
-        + Location: [address]
-        
----------
-
-        
-    * [Item 1]
-        + Quantity: [x ml/mg/items]
-        + Location: [address]
-    * [Item 2]
-        + Quantity: [x ml/mg/items]
-        + Location: [address]
+   
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 ##Protocol##
@@ -61,7 +31,7 @@ Day 1
 4. [Step 4] Eye Protection must be: used during any activites with risk of splashing or aerosolization and as required by laboratory instructor.
 5. [Step 5] UV Shield must be used when using UV transilluminator. Do not look directly at or expose skin to UV light as it may cause permanent damage.
 6. [Step 6] All biologically contaminated disposables must be disposed of in the biohazard waste. This includes items such as pipette tips, petri dishes, and gloves. Do not dispose of "sharps" in the biohazard waste bag.
-7. [Step 7] To clean up /decontaminate a biohazard waste, first dispose of biohazard waste in biohazard bag and then to decontaminate a surface or disposable allow the object in question to soak in 10% bleach solution for 20min then dispose of bleached waste in regular waste stream. 
+7. [Step 7] To clean up /decontaminate a biohazard spill, first dispose of biohazard waste in biohazard bag and then to decontaminate a surface or disposable allow the object in question to soak in 10% bleach solution for 20min then dispose of bleached waste in regular waste stream. 
 8. [Step 8] Sharps, such as needles, scalpels, microscope slides, razor blades etc. must be disposed of in sharps container.
 9. [Step 9] All broken glassware must be disposed of in broken glass container.
 10.[Step 10] Locate the first aid kit, fire extinguisher, broken glass container, sharps container, biohazard waste bag, eye wash station, and chemical shower.
