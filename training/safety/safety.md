@@ -34,10 +34,10 @@ Day 1
 7. [Step 7] To clean up /decontaminate a biohazard spill, first dispose of biohazard waste in biohazard bag and then to decontaminate a surface or disposable allow the object in question to soak in 10% bleach solution for 20min then dispose of bleached waste in regular waste stream. Locate dishwashing station (in the back of the lab) and bleach solution (bottles are at the dishwashing station, stock solution is located under the dishwashing sink).
 8. [Step 8] Sharps, such as needles, scalpels, microscope slides, razor blades etc. must be disposed of in sharps container. Locate sharps container (under the microwave).
 9. [Step 9] All broken glassware must be disposed of in broken glass container. Locate broken glass container (under the microwave).
-10.[Step 10] Locate the first aid kit () and familiarize yourself with it's contents.
-11.[Step 11] fire extinguisher 
-12.[Step 12] eye wash station, and chemical shower.
-
+10.[Step 10] Locate the first aid kit (B7.500) and familiarize yourself with it's contents.
+11.[Step 11] In case of a fire be able to locate AND use fire extinguisher. Be aware when using flammable reagents. In case of serious fire call 911. Locate fire extinguisher (across from handwash station) 
+12.[Step 12] In case of a serious chemical spill be able to use and locate both the eye wash station and chemical shower. Locate eye wash station and chemical shower (both are located near the dishwashing station).
+13.[Step 13] When using flammable, acidic, or basic reagents the chemicals MUST be used within the fume hood with the sash as low as possible. Locate the fume hood (near UV transilluminator) and familiarize yourself where basic, acidic, and flammable reagents are kept (cabinets under fume hood). Always wear gloves when using ANY regeants in the fume hood.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
     
