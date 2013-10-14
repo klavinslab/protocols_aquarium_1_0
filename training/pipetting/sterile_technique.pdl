@@ -50,5 +50,7 @@
   </note>
 </step>
 
+<release>[%{tubes}[0],%{testtube}[0]]</release>
+
 
 </protocol>
