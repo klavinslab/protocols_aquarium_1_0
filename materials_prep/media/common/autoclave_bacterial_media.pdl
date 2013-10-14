@@ -167,8 +167,12 @@
     <warning>Make sure no caps are tight. If a cap is tight, the item may explode.</warning>
   </step>
   <step>
+    <description>Seal the autoclave.</description>
+    <note>If you are using the tabletop centrifuge at A1, close the autoclave door until it latches, pull the screw handle over to the front of the autoclave (unscrew if necessary), and rotate it clockwise until it is tight. If you are using the free-standing autoclave, close the hatch and seal by rotating clockwise and secure the magnetic safety device to the hatch.</note>
+  </step>
+  <step>
     <description>Set autoclave settings and start.</description>
-    <note>If using the free-stranding autoclave, set the temperature to 121°C and time at pressure to 15 minutes. Seal the hatch, secure the magnetic safety device, and hit start. If using the tabletop centrifuge at A1, select liquid cycle and start, which applies the same settings.</note>
+    <note>If using the free-stranding autoclave, set the temperature to 121°C and time at pressure to 15 minutes, then hit start. If using the tabletop centrifuge at A1, select liquid cycle and start, which applies the same settings.</note>
   </step>
   <step>
     <description>Wait around until the autoclave finishes.</description>
