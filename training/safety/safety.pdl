@@ -2,11 +2,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol>
 
-<information>This protocol describes methods associated with maintaining a sterile technique</information>
+<information>This protocol describes the safety practices of the Klavins Lab</information>
 
 <take>
   <item>
-    <type>1.5 mL Tube Box</type>
+    <type>Fire Extinguisher</type>
     <quantity>1</quantity>
     <var>tubes</var>
   </item>
@@ -17,7 +17,7 @@
 </take>
 
 <step>
-  <description>Take out 1 1.5 mL tube from the box</description> 
+  <description>locate the fire extinguisher</description> 
   <note>
   
   </note>
