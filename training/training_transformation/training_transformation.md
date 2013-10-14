@@ -1,17 +1,8 @@
-Notes/Directions 
 
-    - All irrelevent sections/headings are to be deleted. 
-        ex. For a single day protocol, delete all references to "Day" 
-    - All items in square brackets are place holders to be replaced by some other value
-        ex. "[Protocol Name]" could be replaced by "Gel Elecrophoresis"
-    - The description is a one or two sentance summary of what the protocol accomplishes
-
-
-
-[Protocol Name]
+Transformation Training
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Description:
+Description: This protocol trains a new user on cell transformation through electroporation
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ####Total duration: [x days/hours/minutes]####
