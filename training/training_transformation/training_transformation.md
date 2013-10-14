@@ -53,9 +53,12 @@ Day 1
 
 Day 1
 
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
+1. This is an electroporator. An electroporator is a device that gets plasmid DNA into E.coli 
+cells through a process called electroporation.
+2. This is a tube of competent cells. We have already prepared special cells called
+competent cells that have been washed to remove any extra ions which helps this process along.
+3. This is an electrocurvette. This is what the cells mixture will be put into which allows the 
+electroporator to apply the voltage.
 
 Day 2
 
