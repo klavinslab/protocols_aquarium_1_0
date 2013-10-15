@@ -14,25 +14,12 @@
 
   <step>
     <description>
-    Put tubes C - E off to the side.
+    Locate eye wash station and chemical shower (both are located near the dishwashing station).
     </description>
     <note>
-    Tubes C - E will be used for the second part of the exercise, the Small Volume Exercise.
+    In case of a serious chemical spill be able to locate and operate both the eye wash station and chemical shower. Familiarize yourself with the directions.
     </note>
   </step>
-
-  <take>
-    <item>
-      <type>Rainin 1 mL Pipette Tip Box</type>
-      <quantity>1</quantity>
-      <var>tips</var>
-    </item>
-    <item>
-      <type>Rainin 1 mL Pipette</type>
-      <quantity>1</quantity>
-      <var>pipette</var>
-    </item>
-  </take>
 
   <step>
     <description>Feel how the pipette works.</description>
