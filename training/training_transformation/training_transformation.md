@@ -71,8 +71,15 @@ signals cellular machinery to copy the plasmid when the cell divides. The antibi
 resistance to a certain antibiotic which helps us select for the cell that have the plasmid.
 8. Take molecular grade water.
 9. Dilute the DNA to 100 pg/ul. Find the concentration of the DNA on the side of the tube and figure out
-how much water to mix with how much DNA.
-10. 
+how much water to mix with how much DNA. Use the pipetting skills you learned in the earlier tutorials
+to figure out which volumes are appropriate.
+10. Add DNA to cell aliquots. By now, the cell aliqots should have thawed out. Remove the cell tube from
+the ice block and make sure that the contents are a slush and not a solid. Pipet the DNA into the cell aliqot
+and mix up and down.
+11. Let the cell DNA mixture to sit on ice. Do this for a minute. In the mean time, I want to warn you that
+you have to do the next few steps very quickly, so you might want to read through the next page completely before
+you even start to do anything.
+12. 
 
 Day 2
 
