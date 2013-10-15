@@ -2,6 +2,20 @@
 <protocol>
 
  <information>This protocol teaches the essential safety practices and procedures of the lab.</information>
+ 
+  <step>
+    <description>No eating or drinking in the lab.</description>
+    <note>
+    This is a wet lab that works with live cultures. Do not bring food or drinks into the lab, do not apply cosmetics in the lab, and do not make any other type of contact with mucous (ex. contact lenses or touching one's mouth).
+    </note>
+  </step>
+ 
+  <step>
+    <description>Locate the handwashing station (between Bay 1 and Bay 2).</description>
+    <note>
+    You must wash your hands: Before leaving the lab, immediately following contact with potentially infectious agents, and immediately after taking off gloves or other protective equipment.
+    </note>
+  </step>
 
   <step>
     <description>
@@ -36,140 +50,53 @@
   </step>
 
   <step>
-    <description>Take off caps.</description>
+    <description>Locate broken glass container (under the microwave).</description>
     <note>
-    Carefully take the cap off of the test tube holding Solution I. Set the cap upside down on the bench.
-    Carefully open the cap of tube A, being sure not to touch the inside of the tube or the cap.
+    All broken glassware must be disposed of in broken glass container.
     </note>
   </step>
 
   <step>
-    <description>Put a fresh tip on the end of the 1 mL pipette.</description>
+    <description>Locate sharps container (under the microwave).</description>
     <note>
-    Open the box of tips, and holding the pipette in one hand, stab the end of the pipette on to one tip
-    in the box, holding the box securely with the other hand. Carefully lift up the pipette, making sure
-    the tip remains attached.
+    Sharps, such as needles, scalpels, microscope slides, razor blades etc. must be disposed of in sharps container.
     </note>
   </step>
 
   <step>
-    <description>Add Solution I to tube A.</description>
+    <description>Locate dishwashing station (in the back of the lab) and bleach solution (bottles are at the dishwashing station, stock solution is located under the dishwashing sink).</description>
     <note>
-    Press down the button on the pipette until it reaches the first stop. Immerse the tip into Solution I
-    and slowly release the button. Carefully raise the pipette, move it to just above Tube A, then lower the
-    pipette until the tip is barely inside of tube A, but not touching the side of the tube. Press on the
-    button until it reaches the first stop, then keep pressing down to the second stop to release all
-    of the liquid in the tip. Close the cap of tube A.
+    To clean up /decontaminate a biohazard spill, first dispose of biohazard waste in biohazard bag and then to decontaminate a surface or disposable allow the object in question to soak in 10% bleach solution for 20min then dispose of bleached waste in regular waste stream.
     </note>
   </step>
 
   <step>
-    <description>Add 150 μL of Solution I to tube B.</description>
+    <description>Locate biohazard waste box (near microwave and autoclave).</description>
     <note>
-    Change the volume of the pipette so that it reads 015 (150 μL). Be sure that the tip does not touch
-    anything and remains sterile. Open the cap of tube B, and carefully pipette 150 μL of Solution I into B.
-    Discard the tip into tip waste by pressing the ledge behind the button. The tip will shoot off of the
-    pipette. Close the cap of Tube B. Replace the cap on Solution I.
+    All biologically contaminated disposables must be disposed of in the biohazard waste. This includes items such as pipette tips, petri dishes, and gloves. Do not dispose of "sharps" in the biohazard waste bag.
     </note>
   </step>
 
   <step>
-    <description>Add Solution II.</description>
+    <description>Locate UV transilluminator and protective eyewear (located near fume hood;room B052A)</description>
     <note>
-    Put on a fresh tip, and add 200 μL of Solution II to Tube A and 250 μL of Soultion II to Tube B
-    (be sure to change the volume on the pipette!). Discard the tip into tip waste.
+    UV Shield must be used when using UV transilluminator. Do not look directly at or expose skin to UV light as it may cause permanent damage.
     </note>
   </step>
 
   <step>
-    <description>Add Solutions III and IV</description>
+    <description> Locate the two glove stations (one near Bay 1 and one near autoclave).</description>
     <note>
-    Using a fresh tip for each solution, add the following volumes to tubes A and B.
-    Solution III: 150 μL to A, 350 μL to B.
-    Solution IV: 550 μL to A, 250 μL to B.
+    Gloves must be used when using potentially dangerous chemicals. Dispose of goves after each use when handling dangerous chemicals and/or potentially infectious agents. Immediately replace punctured or torn gloves. All gloves must be disposed of in the biohazard box. 
     </note>
   </step>
 
   <step>
-    <description>Check the pipetting error</description>
+    <description>Eye Protection:</description>
     <note>
-    Tubes A and B should contain 1000 μL (1 mL) of liquid. This is the total volume. Using the 1 mL pipette,
-    change the volume to 1000 μL, add a fresh tip, and draw up as much liquid as possible from tube A.
-    IF there is still liquid left in the tube, too much was added. To determine the error when too much was added,
-    discard the tip with liquid in it and get a fresh tip. Carefully pipette up the remaining liquid in the tip,
-    and then rotate the volume dial to decrease the volume until the liquid reaches the bottom of the tip. This
-    is the new volume. The error rate is (new volume / total volume).
-    OR IF there is air at the end of the tip, too little was added. If too little was added, to determine the error,
-    slowly decrease the volume until the liquid reaches the end of the tip. This is the new volume.
-    The error rate is (total volume - new volume)/ total volume.
-    OR if the tube is filled exactly with liquid, the measurement error is 0.
-    Write down the error rate.
+    Eye Protection must be: used during any activites with risk of splashing or aerosolization and as required by laboratory instructor.
     </note>
   </step>
-
-  <step>
-    <description>Find the error rate for Tube B</description>
-    <note>
-    Using the same process described for Tube A, find the error rate for Tube B. Write down the error rate.
-    Tubes A and B can be discarded into the tip waste.
-    </note>
-  </step>
-
-  <release>[%{tips}[0],%{pipette}[0]]</release>
-
-  <take>
-      <item>
-      <type>Rainin 10 µL Pipette Tip Box</type>
-      <quantity>1</quantity>
-      <var>tipssmall</var>
-    </item>
-    <item>
-      <type>Rainin 10 µL Pipette</type>
-      <quantity>1</quantity>
-      <var>pipettesmall</var>
-    </item>
-  </take>
-
-  <step>
-    <description>Pipetting small volumes:</description>
-    <note>
-    When releasing the liquid into the tube, let the pipette tip barely touch the side of the inside of
-    the tube. A small drop of liquid should be visible on the inside of the tube when you raise the tip
-    out of the tube, and no liquid shold be left in the pipette tip.
-    </note>
-  </step>
-
-  <step>
-    <description>Perform the Small Volume Exercise.</description>
-    <note>
-    Using the techniques previously described for the Large Volume Exercise, add the following volumes
-    of Solution I, II, III, and IV to tubes C, D, and E using the 10 μL pipette and 10 μL pipette tips.
-    Make sure to always change the tip when pipetting a new solution, to set the pipette to the correct
-    volume for each aliquot of liquid, to and maintain a sterile technique.
-    Solution I: 4 μL to C, 4 μL to D, 4 μL to E.
-    Solution II: 5 μL to C, 5 μL to D, 4 μL to E.
-    Solution III: 1 μL to C, 0 μL to D, 1 μL to E.
-    Solution IV: 0 μL to C, 1 μL to D, 1 μL to E.
-    </note>
-  </step>
-
-  <step>
-    <description>Calculate the pipetting error for Tubes C, D, and E.</description>
-    <note>
-    Calculate the error rate for Tube C, Tube D, and Tube E using the method previously described. The total
-    volume is 5 μL. Write down the error rate for each tube.
-    </note>
-  </step>
-
-  <step>
-    <description>Calculate the overall error rate.</description>
-    <note>
-    To calculate the overall error rate, add the five error rates from Tubes A - E together and divide by five.
-    This is your overall pipetting error rate.
-    </note>
-  </step>
-
-  <release>[%{tubes}[0],%{tipssmall}[0],%{pipettesmall}[0]]</release>
 
 
 </protocol>
