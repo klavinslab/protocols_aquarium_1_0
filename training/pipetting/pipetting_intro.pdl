@@ -51,10 +51,10 @@
 <step>
   <description>Understand the difference between the three pipettes.</description>
   <note>
-  We use three different pipettes in this lab, that pipette three different volumes. They can generally be
-  though of as small, medium, and large volume pipettes: the pipette with the red button pipettes small volumes
-  (0.5 - 10 µL),the one with the green button button pipettes medium volumes (10 - 100 µL), and the pipette with
-  the blue tip pipettes large volumes (100 - 1000 µL). Each pipette fits a different size of tip, the tips each
+  We use three different pipettes in this lab that pipette three different volumes. They can generally be
+  thought of as small, medium, and large volume pipettes: the pipette with the red button pipettes small volumes
+  (0.5 - 10 µL), the one with the green button pipettes medium volumes (10 - 100 µL), and the pipette with
+  the blue button pipettes large volumes (100 - 1000 µL). Each pipette fits a different size of tip, the tips each
   pipette fits corresponds to the color of the tip box. For example, the large volume (blue) pipettor fits tips 
   from the blue box.
   </note>
@@ -75,11 +75,11 @@
   The current volume of a pipette is read from the number screen, from top to bottom. The actual volume
   of the pipette depends on what pipette is being used, and what the min/max is. The numbers can be read as
   a percentage of the maximum volume. For example, a reading of 010 means 10 percent of the max volume. For 
-  example, the small volume (red) pipette, 010 or 10 percent of the the max volume is 1 µL, for the medium volume
+   the small volume (red) pipette, 010 or 10 percent of the the max volume is 1 µL, for the medium volume
   (green) pipette, 010 is 10 µL, and for the large volume (blue) pipette, 010 is 100 µL.
   To change the volume of the pipette, slide the notch at the top of the pipette from locked (a closed lock)
-  to unlocked (an open lock). The volume is then changed by rotating the button to the right (smaller volume) or
-  to the left larger volume. Once the pipette is set to the correct volume, slide the notch back to the locked
+  to unlocked (an open lock.) The volume can be changed by rotating the button to the right (smaller volume) or
+  to the left (larger volume.) Once the pipette is set to the correct volume, slide the notch back to the locked
   position.
   </note>
 </step>
@@ -92,15 +92,16 @@
   one of the tips in the box. Press down firmly, if the correct amount of pressure is added, when the pipette is 
   raised, the tip will be firmly attached to the end. Practice using different amounts of pressure when adding a 
   tip until you understand what the correct pressure is. To release a tip, press the ledge between the button
-  on top of the pipette and your hand, CAREFULLY, because the tip can shoot off very fast. Practice adding and
-  releasing tips using all three pipettes until you feel comfortable.
+  on top of the pipette and your hand, CAREFULLY, because the tip can shoot off fast. Make sure to release
+  all tips into a tip waste cntainer.Practice adding and releasing tips using all three pipettes until you 
+  feel comfortable.
   </note>
 </step>
 
 <step>
   <description>Practice pressing the button.</description>
   <note>
-  There are two stopping points when pressing down the button on top of the pipette. Practice pressing the button.
+  There are two stopping points when pressing the button on top of the pipette. Practice pressing the button.
   If you press down lightly, you hit the first stop, but if you keep pressing down, you will hit the second stop
   when you can't press down any further. 
   </note>
@@ -111,10 +112,10 @@
   <note>
   Fill a 1.5 mL tube with water from the sink. For good practice, maintain a sterile technique when using this
   tube. Add a fresh tip to a pipette. To draw up liquid, press the button down 
-  to its first stop, and immerse the end of the tip in the water in the tube. Release the button, and liquid should 
-  be drawn up into the tip. To release the liquid, press down on the button to the first stop to release most of the
-  liquid, then keeping pressing down to the second stop to release the rest of the liquid. Practice drawing up
-  and releasing liquid using the three different pipettes until you feel comfortable.
+  to its first stop, and immerse the end of the tip in the liquid in the tube. Release the button, and liquid 
+  should be drawn up into the tip. To release the liquid, press down on the button to the first stop to release 
+  most of the liquid, then keeping pressing down to the second stop to release the rest of the liquid. 
+  Practice drawing up and releasing liquid using the three different pipettes until you feel comfortable.
   </note>
 </step>
 
