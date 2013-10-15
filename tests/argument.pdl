@@ -1,0 +1,60 @@
+<protocol>
+
+  <information>Tests the various types of arguments that can be specified in PDL.</information>
+
+  <argument>
+    <name>primer_id</name>
+    <type>sample</type>
+    <description>An item containing a primer</description>
+  </argument>
+
+  <argument>
+    <name>q</name>
+    <type>sample</type>
+    <description>An item containing a sample</description>
+  </argument>
+
+  <argument>
+    <name>ob</name>
+    <type>objecttype</type>
+    <description>A type of object</description>
+  </argument>
+
+  <argument>
+    <name>x</name>
+    <type>number</type>
+    <description>A Number</description>
+  </argument>
+
+  <argument>
+    <name>y</name>
+    <type>string</type>
+    <description>A String</description>
+  </argument>
+
+  <take>
+    <item>
+      <id>%{primer_id}</id>
+      <var>p</var>
+    </item>
+    <item>
+      <type>%{ob}</type>
+      <quantity>1</quantity>
+      <var>o</var>
+    </item>
+  </take>
+
+  <step>
+    <description>Results</description>
+    <note>
+    primer_id = %{primer_id} => p = %{p}\n
+    q = %{q}\n
+    ob = %{ob} => o = %{o}\n
+    x = %{x}\n
+    y = %{y}   
+    </note>
+  </step>
+
+  <release>%{p}.concat %{o}</release>
+
+</protocol>

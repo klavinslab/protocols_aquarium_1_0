@@ -1,12 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol>
 
-<information></information>
+<information>This protocol teaches the fundamentals of handling and working with a pipette.</information>
 
+<take>
+  <item>
+    <type>Rainin 10 µL Pipette</type>
+    <quantity>1</quantity>
+    <var>smallpipette</var>
+  </item>
+  <item>
+    <type>Rainin 100 µL Pipette</type>
+    <quantity>1</quantity>
+    <var>mediumpipette</var>
+  </item>
+  <item>
+    <type>Rainin 1000 µL Pipette</type>
+    <quantity>1</quantity>
+    <var>largepipette</var>
+  </item>
+  <item>
+    <type>Rainin 10 µL Pipette Tip Box</type>
+    <quantity>1</quantity>
+    <var>smalltips</var>
+  </item>
+  <item>
+    <type>Rainin 100 µL Pipette Tip Box</type>
+    <quantity>1</quantity>
+    <var>mediumtips</var>
+  </item>
+  <item>
+    <type>Rainin 1000 µL Pipette Tip Box</type>
+    <quantity>1</quantity>
+    <var>largetips</var>
+  </item>
+</take>
 
+<step>
+  <description>Learn how to hold a pipette.</description>
+  <note>
+  Always hold a pipette with one hand. Grab the body of the pipette with your palm and fingers, with your thumb 
+  free to press the button on top of the pipette. Make sure the number screen is on the opposite side of your thumb.
+  ALWAYS HOLD THE PIPETTE UPRIGHT. Do not turn the pipette to the side or upside down, especially when pipetting 
+  liquid. This messes up the calibration of the pipette.
+  </note>
+</step>
 
+<step>
+  <description>Understand the difference between the three pipettes.</description>
+  <note>
+  We use three different pipettes in this lab, that pipette three different volumes. They can generally be
+  though of as small, medium, and large volume pipettes: the pipette with the red button pipettes small volumes
+  (0.5 - 10 µL),the one with the green button button pipettes medium volumes (10 - 100 µL), and the pipette with
+  the blue tip pipettes large volumes (100 - 1000 µL). Each pipette fits a different size of tip, the tips each
+  pipette fits corresponds to the color of the tip box. For example, the large volume (blue) pipettor fits tips 
+  from the blue box.
+  </note>
+</step>
+  
+<step>
+  <description>Understand the maxiumum volume of each pipette.</description>
+  <note>
+  The maximum volume of the small pipette is 10 µL, the medium pipette is 100 µL, and the large pipette is 1000 µL.
+  This is the danger number. NEVER exceed the danger number, because it messes up the calibration of the pipette.
+  For each pipette, the danger number reads as 100 (from top to bottom) on the number screen.
+  </note>
+</step>
 
+<step>
+  <description>Practice changing the volume of the pipette.</description>
+  <note>
+  The current volume of a pipette is read from the number screen, from top to bottom. The actual volume
+  of the pipette depends on what pipette is being used, and what the min/max is. The numbers can be read as
+  a percentage of the maximum volume. For example, a reading of 010 means 10 percent of the max volume. For 
+  example, the small volume (red) pipette, 010 or 10 percent of the the max volume is 1 µL, for the medium volume
+  (green) pipette, 010 is 10 µL, and for the large volume (blue) pipette, 010 is 100 µL.
+  To change the volume of the pipette, slide the notch at the top of the pipette from locked (a closed lock)
+  to unlocked (an open lock). The volume is then changed by rotating the button to the right (smaller volume) or
+  to the left larger volume. Once the pipette is set to the correct volume, slide the notch back to the locked
+  position.
+  </note>
+</step>
 
-
+<step>
+  <description>Practice putting a tip on the pipette.</description>
+  <note>
+  
+  </note>
+</step>
 
 </protocol>

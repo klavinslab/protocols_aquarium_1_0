@@ -1,0 +1,40 @@
+<protocol>
+
+  <argument>
+    <name>sample_id</name>
+    <type>sample</type>
+    <description>The input sample</description>
+  </argument>
+
+  <argument>
+    <name>container</name>
+    <type>objecttype</type>
+    <description>The kind of sample container that will be produced</description>
+  </argument>
+  
+  <take>
+    <item>
+      <id>%{sample_id}</id>
+      <var>sample</var>
+    </item>
+  </take>
+
+  <step>
+    <description>Prepare the output sample.</description>
+    <note>Describe what you are doing in the log by clicking 'Note' to the right before you click 'Next'.</note>
+  </step>
+
+  <produce>
+    <object>%{container}</object>
+    <quantity>1</quantity>
+    <sample>%{sample}[0]</sample>
+  </produce>
+
+  <release>%{sample}</release>
+
+  <step>
+    <description>Done</description>
+    <note>Click 'Next' to complete the protocol.</note>
+  </step>
+
+</protocol>
