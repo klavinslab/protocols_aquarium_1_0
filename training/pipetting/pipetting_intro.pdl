@@ -117,5 +117,9 @@
   and releasing liquid using the three different pipettes until you feel comfortable.
   </note>
 </step>
+
+<release>[%{smallpipette}[0],%{mediumpipette}[0],%{largepipette}[0]]</release>
+
+<release>[%{smalltips}[0],%{mediumtips}[0],%{largetips}[0]]</release>
   
 </protocol>
