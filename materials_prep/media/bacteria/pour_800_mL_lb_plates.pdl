@@ -58,7 +58,7 @@
     </item>
     <item>
       <type>Petri Dish</type>
-      <quantity>50</quantity>
+      <quantity>40</quantity>
       <var>plates</var>
     </item>
   </take>
@@ -123,7 +123,7 @@
   <!-- Pour -->
   <step>
     <description>Pour 25 mL of media into each plate.</description>
-    <note>Uncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25 mL. Replace the petri dish lid and repeat for every plate.</note>
+    <note>Uncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25 mL. Replace the petri dish lid and mark the lid and bottom with line on the side: purple for Amp, green for Kan, and blue for Chlor. Repeat for every plate.</note>
     <getdata>
       <description>Enter the number of plates you poured (varies depending on average pour volume).</description>
       <type>number</type>
@@ -134,19 +134,17 @@
   <!-- FIXME: Metacol territory -->
   <step>
     <description>Let plates cool.</description>
-    <note>Let the plates cool until solid. If you keep them separate and unstacked, they will cool much faster and more evenly. This should take 10-20 minutes.</note>
+    <note>Let the plates cool until solid. You can verify that the plates are cool because the agar becomes opaque. If you keep them separate and unstacked, they will cool much faster and more evenly. This should take 10-20 minutes.</note>
   </step>
   <!-- FIXME: Metacol territory -->
   <step>
     <description>Stack and label.</description>
-    <note>Once the plates are cool, stack them inverted (lid down) in groups of about 20. With a marker, streak up the side of the plates, marking both the lid and the plate itself with a colored line: purple for Amp, green for Kan, and blue for Chlor. In addition, label a long piece of lab tape with LB, the antibiotic type, your initials, and the date and apply it up the side of the stack, being careful not to cover the marker lines.</note>
+    <note>Once the plates are cool, invert all of them lid down. Stack them (lid down) in groups of about 20. Label a piece of lab tape with LB, the antibiotic type, your initials, and the date. Apply the tape to the top plate on the stack.</note>
   </step>
   <step>
     <description>Place in the 30 degree yeast incubator.</description>
-    <note>Place the plates in the 30 degree yeast incubator to dry for one day.</note>
+    <note>Place the plates in the 30 degree yeast incubator to dry overnight.</note>
   </step>
-
-  <!-- FIXME: do math if less than 50 plates were produced -->
 
   <!-- Produces -->
   <!-- Releasing plates is tricky - have to consume the ones that were poured and release the ones that are left over -->
@@ -180,7 +178,7 @@
   </if>
   <!-- Release any left over plates -->
   <if>
-    <condition>%{plates_poured} &lt; 50</condition>
+    <condition>%{plates_poured} &lt; 40</condition>
     <then>
       <release>%{empty_plates}</release>
     </then>
