@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol>
 
-<information></information>
+<information>This protocol is for practicing pipetting large volumes.</information>
 
+<take>
+  <item>
+    <type>1.5 mL Tube Box</type>
+    <quantity>1</quantity>
+    <var>tubes</var>
+  </item>
+</take>
 
+<step>
+  <description>
+  Take out 3 1.5 mL tubes, close the caps, and label them A - c on the top of each cap.
+  </description>
+  <note>
+  Be careful to always use a sterile technique when handling the tubes.
+</step>
 
+<take>
+  <item>
+    <type>Rainin 1 mL Pipette Tip Box</type>
+    <quantity>1</quantity>
+    <var>tips</var>
+  </item>
+  <item>
+     <type>Rainin 1 mL Pipette</type>
+    <quantity>1</quantity>
+     <var>pipette</var>
+  </item>
+</take>
 
 
 
