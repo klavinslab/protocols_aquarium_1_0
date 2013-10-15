@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol>
 
- <information>This protocol teaches the essential safety practices of the lab.</information>
+ <information>This protocol teaches the essential safety practices and procedures of the lab.</information>
 
   <step>
     <description>
-    Find the fire extinguisher.
+    Locate fire extinguisher (across from handwash station).
     </description>
     <note>
-    Be careful to always use a sterile technique when handling the tubes: Do not drop the tubes on the ground
-    or touch the inside of the tubes and caps.
+    In case of a fire be able to locate AND use fire extinguisher. Be aware when using flammable reagents. In case of a serious fire call 911. There is no smoking in the lab.
     </note>
   </step>
 
