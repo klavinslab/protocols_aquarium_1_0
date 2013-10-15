@@ -35,7 +35,7 @@
     <do>
       <step>
         <description>Select media to autoclave</description>
-        <note>Select a media option and the number of 800 mL bottles of it that you are autoclaving. Repeating a media choice with a different number will overwrite the previous selection. Keep track of how many bottles you can autoclave at once. If you are done selecting media, choose "Done".</note>
+        <note>Select a media option and the number of 800 mL bottles of it that you are autoclaving. Repeating a media choice with a different number will overwrite the previous selection. Keep track of how many bottles you can autoclave at once. If you are done selecting media, select "Done" from the drop down menu.</note>
         <select>
           <description>Media Choice</description>
           <var>latest_choice</var>
@@ -164,24 +164,27 @@
   </take>
   <step>
     <description>Place items in the autoclave.</description>
+    <note>Place all items one at a time into the autoclave.</note>
     <warning>Make sure no caps are tight. If a cap is tight, the item may explode.</warning>
   </step>
   <step>
     <description>Seal the autoclave.</description>
-    <note>If you are using the tabletop centrifuge at A1, close the autoclave door until it latches, pull the screw handle over to the front of the autoclave (unscrew if necessary), and rotate it clockwise until it is tight. If you are using the free-standing autoclave, close the hatch and seal by rotating clockwise and secure the magnetic safety device to the hatch.</note>
+    <note>If you are using the tabletop autoclave at A1, close the autoclave door until it latches, pull the screw handle over to the front of the autoclave (unscrew if necessary), and rotate it clockwise until it is tight. If you are using the free-standing autoclave, close the hatch and seal by rotating clockwise and secure the magnetic safety device to the hatch.</note>
   </step>
   <step>
     <description>Set autoclave settings and start.</description>
-    <note>If using the free-stranding autoclave, set the temperature to 121°C and time at pressure to 15 minutes, then hit start. If using the tabletop centrifuge at A1, select liquid cycle and start, which applies the same settings.</note>
+    <note>If using the free-stranding autoclave, set the temperature to 121°C and time at pressure to 15 minutes, then hit start. If using the tabletop autoclave at A1, select liquid cycle and start, which applies the same settings.</note>
   </step>
   <step>
     <description>Wait around until the autoclave finishes.</description>
     <note>This will take between 45 minutes and two hours. You can leave this job running and do other tasks while the autoclave is running - when the autoclave is done, resume by finding the job and resuming it. The large autoclave beeps 5 times in a row *just once* when it is done. The small autoclave produces two long beeps every few seconds until you tell it to stop. When the autoclave finishes, hit next.</note>
   </step>
+  <!-- TODO: take autoclave gloves -->
+  <!-- TODO: describe basics of undoing latch. Press 'start' on tabletop autoclave to shut it up -->
   <step>
     <description>Remove items from the autoclave to a cooling area (the media station).</description>
     <note>When items are around 50°C (no longer hurts to touch), proceed to the next step.</note>
-    <warning>If any of the items contain agar, make sure to launch a pouring protocol soon or keep them at or above 50°C.</warning>
+    <warning>Use autoclave gloves. If any of the items contain agar, make sure to launch a pouring protocol soon or keep them at or above 50°C.</warning>
   </step>
   <release>%{autoclave}</release>
 
@@ -252,5 +255,5 @@
       </produce>
     </then>
   </if>
-
+  <!-- TODO: release autoclave gloves -->
 </protocol>

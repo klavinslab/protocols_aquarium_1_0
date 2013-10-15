@@ -149,13 +149,24 @@
   <!-- FIXME: do math if less than 50 plates were produced -->
 
   <!-- Produces -->
+  <!-- Releasing plates is tricky - have to consume the ones that were poured and release the ones that are left over -->
+  <!-- Poured plates object - will release in produce -->
+  <assign>
+    <lhs>poured_plates</lhs>
+    <rhs>%{plates}[0,%{plates_poured}]</rhs>
+  </assign>
+  <!-- Empty plates left over - will release at the end -->
+  <assign>
+    <lhs>empty_plates</lhs>
+    <rhs>%{plates}[%{plates_poured}..-1]</rhs>
+  </assign>
   <if>
     <condition>%{antibiotic_bool}</condition>
     <then>
       <produce>
         <object>%{plate_name}</object>
         <quantity>%{plates_poured}</quantity>
-        <release>%{plates}</release>
+        <release>%{poured_plates}</release>
         <release>%{antibiotic_aliquots}</release>
       </produce>
     </then>
@@ -163,17 +174,20 @@
       <produce>
         <object>%{plate_name}</object>
         <quantity>%{plates_poured}</quantity>
-        <release>%{plates}</release>
+        <release>%{poured_plates}</release>
       </produce>
     </else>
+  </if>
+  <!-- Release any left over plates -->
+  <if>
+    <condition>%{plates_poured} &lt; 50</condition>
+    <then>
+      <release>%{empty_plates}</release>
+    </then>
   </if>
   <produce>
     <object>1 L Bottle (dirty)</object>
     <quantity>1</quantity>
     <release>%{agar_bottle}</release>
   </produce>
-  <step>
-    <description>Debug</description>
-    <note>This is the object containing plates at the end of the protocol: </note>
-  </step>
 </protocol>
