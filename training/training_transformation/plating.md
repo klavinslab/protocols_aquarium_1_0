@@ -4,12 +4,11 @@ General Plating
 Description: This protocol describes how to uniformly spread liquid culture onto agar plates.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-####Total duration: [~16 hours]####
+####Total duration: [16-24 hours]####
 ####Total worktime: [~20 min]
 
     - Day 1: [~15 min]
     - Day 2: [~5 min]
-    - ...
     
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -49,36 +48,24 @@ the plate, rotating occasionally, to evenly spread the liquid until it is dry.
 complete.
 17. Dispose the beads into a dirty bead receptacle. Be careful not to leave the lid off for too
 long, or to let the plate face agar side up.
-18. Incubate the plates at 37 degrees C until the colonies are 2 to 3 mm in diameter
-(12-16 hours).
+18. Incubate the plates at 37 degrees C until the colonies are 1 to 3 mm in diameter
+(16-24 hours).
 
 Day 2
 
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
+1. Once the colonies have reached the desired size, remove the plates from the incubator.
+2. Perform appropriate processing (e.g. parafilm wrapping and refrigerating, colony picking etc.).
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-    
-    
-####Additional Information and Settings####
-
-    [Parameter/variable/clarification/option 1]:
-        [Option 1]:
-        [Option 2]:
-    [Parameter/variable/clarification/option 2]:
-        [Option 1]:
-        [Option 2]:
-
 
 ####Common Issues####
 
-    [Issue 1]:
-        - [Solution 1]:
-        - [Solution 2]:
-    [Issue 2]:
-        - [Solution 1]:
-        - [Solution 2]:
+    Colonies are mainly around the edge of plate:
+        - Beads are likely swirling around the edge of the plate. Be sure to shake the beads directly 
+        across the plate with consistent rotation.
+    Colonies are large, splotchy, and close together:
+        - Plates are likely too wet with condensation. Prewarm plates in the 30 degree incubator for
+        at least 30 minutes prior to plating.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
        
 For questions, contact Leandra Brettner at leandra.brettner@gmail.com    
