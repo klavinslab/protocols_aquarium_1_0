@@ -3,13 +3,6 @@
 
 <information>This protocol is for practicing pipetting large volumes.</information>
 
-<take>
-  <item>
-    <type>1.5 mL Tube Box</type>
-    <quantity>1</quantity>
-    <var>tubes</var>
-  </item>
-</take>
 
 <step>
   <description>
@@ -19,19 +12,6 @@
   Be careful to always use a sterile technique when handling the tubes.
   </note>
 </step>
-
-<take>
-  <item>
-    <type>Rainin 1 mL Pipette Tip Box</type>
-    <quantity>1</quantity>
-    <var>tips</var>
-  </item>
-  <item>
-     <type>Rainin 1 mL Pipette</type>
-    <quantity>1</quantity>
-     <var>pipette</var>
-  </item>
-</take>
 
 <step>
   <description>Add Solution I to Tube A.</description>
@@ -103,7 +83,5 @@
   This is the total volume. 
   </note>
 </step>
-
-<release>[%{tubes}[0]]</release>
 
 </protocol>
