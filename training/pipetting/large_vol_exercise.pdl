@@ -13,7 +13,7 @@
 
 <step>
   <description>
-  Take out 3 1.5 mL tubes, close the caps, and label them A - c on the top of each cap.
+  Take out 3 1.5 mL tubes, close the caps, and label them A - C on the top of each cap.
   </description>
   <note>
   Be careful to always use a sterile technique when handling the tubes.
@@ -103,5 +103,7 @@
   This is the total volume. 
   </note>
 </step>
+
+<release>[%{tubes}[0]]</release>
 
 </protocol>
