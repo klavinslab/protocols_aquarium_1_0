@@ -233,4 +233,13 @@
 
 <release>[%{water}[0]]</release>
 
+<step>
+  <description>
+  You've completed the first part of transformation.
+  </description>
+  <note>
+	Something education here?
+	</note>
+</step>
+
 </protocol>
