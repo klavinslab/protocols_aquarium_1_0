@@ -7,14 +7,14 @@
   <description>Know the total volume.</description>
   <note>
   The total volume is the volume that the liquid SHOULD be after pipetting. For the large volume pipetting exercise,
-  the total volume is 1000 μL. For the small volume pipetting exercise, the total volume is 1 μL.
+  the total volume is 1000 μL. For the small volume pipetting exercise, the total volume is 5 μL.
   </note>
 </step>
 
 <step>
   <description>Draw up the liquid.</description>
   <note>
-  Using the correct pipette that is set to the total volume, draw up as much liquid from the 1.5 mL tube as 
+  Using the correct pipette that is set to the total volume, draw up as much liquid from the tube as 
   possible. There are three possible outcomes after this step. Pick which outcome best applies.
   </note>
     <select>
@@ -47,8 +47,7 @@
 </if>
 
 <if>
-  <condition>%{outcome} == "There is not more liquid left in the tube, but there is air at the bottom of the
-  pipette tip"</condition>
+  <condition>%{outcome} == "There is not more liquid left in the tube, but there is air at the bottom of the pipette tip."</condition>
     <then>
       <step>
         <description>Too little liquid was pipetted.</description>
@@ -67,8 +66,7 @@
 </if>
 
 <if>
-  <condition>%{outcome} == "There is no more liquid left in the tube, and there is no air at the bottom of the 
-  pipette tip."</condition>
+  <condition>%{outcome} == "There is no more liquid left in the tube, and there is no air at the bottom of the pipette tip."</condition>
     <then>
       <step>
         <description>Congratulations!</description>
