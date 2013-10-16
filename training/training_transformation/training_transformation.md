@@ -95,12 +95,6 @@ the cell slush and the media are well mixed. Transfer 200 ul of this mixture int
 17. Incubate for 1 hour. Place the tube on a rack and place the rack into the 37C incubator. Wait for 1 hour. In the
 mean time, let's review what you just did.
 
-Day 2
-
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
     
     
