@@ -17,9 +17,9 @@
   </description>
   <note>
   This is an electroporator. An electroporator is a device that gets plasmid DNA into 
-	E.coli cells through a process called electroporation. Turn on the electroporator and 
-	press the set volts button. Using the up arrow, set the voltage to 1250 V. Then press the 
-	time const button.
+  E.coli cells through a process called electroporation. Turn on the electroporator and 
+  press the set volts button. Using the up arrow, set the voltage to 1250 V. Then press the 
+  time const button.
 	</note>
 	<warning>
 	Do not insert anything but an electrocuvette into the electroporator. 1250V is a lot of volts.
