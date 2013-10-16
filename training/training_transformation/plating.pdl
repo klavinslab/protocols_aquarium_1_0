@@ -1,1 +1,68 @@
-hold
+<protocol name="Generic Plating">
+
+  <information>This protocol describes how to cut out a band of DNA from an agarose gel.</information>
+
+  <!-- arguments -->
+  <argument>
+    <name>samp</name>
+    <type>string</type>
+    <description>Enter the number of samples you need to plate.</description>
+  </argument>
+  
+  <!-- takes -->
+  <take>
+    <object>Transformed Cells</object>
+    <quantity>%{samp}</quantity>
+    <var>cells</var>
+  </take>
+  <take>
+    <object>LB Agar Plates</object>
+    <quantity>%{samp}</quantity>
+    <var>plates</var>
+  </take>
+  <take>
+    <object>50 mL Conical Sterile Beads</object>
+    <quantity>1</quantity>
+    <var>beads</var>
+  </take>
+
+  <!-- begin steps -->
+  <step>
+    <description>Label the sides of the LB agar plates with sample name, your initials, and the date.</description>
+    <note>All of this information is required, as these plates will be incubated overnight and potentially stored.</note>
+  </step>
+  <step>
+    <description>Add 5 to 8 sterile beads to the agar side of each plate and then flip lid side down.</description>
+    <warning>Be sure to shake the 50 mL conical gently, or a large number of beads will spill out.</warning>
+  <step>
+    <description>For up to 6 plates in a row, transfer all of the transformed culture to the center of the agar of each plate.</description>
+  </step>
+  <step>
+    <description>Once each of the up to 6 plates has a pool of transformed cells, gently shake the beads across the plate to evenly spread the liquid until it is dry.</description>
+    <note>Be sure to shake the beads directly across the plate with consistent, occasional rotation.</note>
+  </step>
+  <step>
+    <description>Flip the plates lid side down and repeat steps 3 and 4 until all samples are complete.</description>
+  </step>
+  <step>
+    <description>Dispose the beads into a dirty bead receptacle.</description>
+    <warning>Be careful not to leave the lid off for too long, or to let the plate face agar side up to avoid contamination.</warning>
+  </step>
+
+  <release>[%{cells}[0], %{plates}[0], %{beads}[0]]</release>
+  <!-- TODO: clean up bench area, move to incubator -->
+
+  <!-- Incubating plates -->
+  <take>
+    <object>37 degree Incubator</object>
+    <quantity>1</quantity>
+    <var>incubator</var>
+  </take>
+  <step>
+    <description>Place all completed plates in the 37 degree incubator for 16 to 24 hours</description>
+    <note>Be sure the plates are stacked in the incubator lid side down to avoid the formation of condensation.</note>
+  </step>
+  
+  <!-- TODO: remove and process plates on day 2 -->
+
+</protocol>
