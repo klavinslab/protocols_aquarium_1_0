@@ -1,76 +1,56 @@
+General Plating
+---------------
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Description: This protocol describes how to uniformly spread liquid culture onto agar plates.
 
-Notes/Directions 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+####Total duration: [~16 hours]####
+####Total worktime: [~20 min]
 
-    - All irrelevent sections/headings are to be deleted. 
-        ex. For a single day protocol, delete all references to "Day" 
-    - All items in square brackets are place holders to be replaced by some other value
-        ex. "[Protocol Name]" could be replaced by "Gel Elecrophoresis"
-    - The description is a one or two sentance summary of what the protocol accomplishes
-
-
-
-[Protocol Name]
---------------
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Description:
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-####Total duration: [x days/hours/minutes]####
-####Total worktime: [x hours/minutes]
-
-    - Day 1: [x hours/minutes]
-    - Day 2: [x hours/minutes]
+    - Day 1: [~15 min]
+    - Day 2: [~5 min]
     - ...
     
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 ####Required equipment and materials####
 
-Day 1
-
-    * [Equipment 1]
-        + Duration needed: [x days/hours/min]
-        + Location: [address]
-    * [Equipment 2]
-        + Duration needed: [x days/hours/min]
-        + Location: [address]
-  
+    * 37 degree Incubator
+        + Duration needed: 14-18 hours
+        + Location: [address]  
 ------
 
-    * [Item 1]
-        + Quantity: [x ml/mg/items]
+    * Liquid Culture(s)
+        + Quantity: 100 uL
         + Location: [address]
-    * [Item 2]
-        + Quantity: [x ml/mg/items]
+    * Carbon + Agar + (Antibiotics) Plates
+        + Quantity: # culture samples
         + Location: [address]
-
-Day 2
-
-    * [Equipment 1]
-        + Duration needed: [x days/hours/min]
+    * Sterile Beads
+        + Quantity: 50 mL conical
         + Location: [address]
-    * [Equipment 2]
-        + Duration needed: [x days/hours/min]
-        + Location: [address]
-        
 ---------
 
-        
-    * [Item 1]
-        + Quantity: [x ml/mg/items]
-        + Location: [address]
-    * [Item 2]
-        + Quantity: [x ml/mg/items]
-        + Location: [address]
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 ##Protocol##
 
 Day 1
 
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
+1. Label the appropriate agar plates with sample name and other relevant information 
+(such as date, dilution factor etc.).
+2. Add 5 to 8 sterile beads to each plate and then flip lid side down.
+3. For up to 6 plates in a row, transfer EXACTLY 100 uL of the appropriate liquid culture to the 
+center of the agar of each plate. Be sure to mix the well contents first by pipetting
+up and down a few times.
+4. Once each of the 4 to 6 plates has 100 uL of cells, gently shake the beads across
+the plate, rotating occasionally, to evenly spread the liquid until it is dry.
+5. Flip the plates lid side down and repeat steps 3. and 4. until all samples are 
+complete.
+17. Dispose the beads into a dirty bead receptacle. Be careful not to leave the lid off for too
+long, or to let the plate face agar side up.
+18. Incubate the plates at 37 degrees C until the colonies are 2 to 3 mm in diameter
+(12-16 hours).
 
 Day 2
 
@@ -101,4 +81,4 @@ Day 2
         - [Solution 2]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
        
-For questions, contact ___ at ___@gmail.com    
+For questions, contact Leandra Brettner at leandra.brettner@gmail.com    
