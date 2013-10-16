@@ -1,12 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol>
 
-<information></information>
+<information>This protocol is for practicing pipetting small volumes.</information>
 
+<step>
+  <description>
+  Take out 3 1.5 mL tubes, close the caps, and label them C - E on the top of each cap.
+  </description>
+  <note>
+  Be careful to always use a sterile technique when handling the tubes.
+  </note>
+</step>
 
+<step>
+  <description>A note about pipetting small volumes:</description>
+  <note>
+  When pipetting a small volume of liquid into a tube, place the end of the pipette tip on the side of the tube
+  that you are pipetting in, so that when you release the liquid, it sticks to the side of the tube in a drop.
+  </note>
+</step>
 
+<step>
+  <description>Add Solution I to Tube C.</description>
+  <note>
+  Add 4 μL of Solution I to the tube labeled C, making sure to open and close the caps of the tube and test
+  tube by using a sterile technique. Be sure to use the correct pipette and set it to 4 μL before adding a tip.
+  </note>
+</step>
 
+<step>
+  <description>Add Solution I to Tube D.</description>
+  <note>
+  Using a fresh tip and maintaining a sterile technique, add 4 μL of Solution I to Tube D. 
+  </note>
+</step>
 
+<step>
+  <description>Add Solution I to Tube E.</description>
+  <note>
+  Using a fresh tip and maintaining a sterile technique, add 4 μL of Solution I to Tube E. 
+  </note>
+</step>
 
+<step>
+  <description>Add Solution II to Tube C.</description>
+  <note>
+  Using a fresh tip and maintaining a sterile technique, add 5 μL of Solution II to Tube C. Be sure to change 
+  the volume of the pipette before adding a new tip.
+  </note>
+</step>
+
+<step>
+  <description>Add Solution II to Tube D.</description>
+  <note>
+  Using a fresh tip and maintaining a sterile technique, add 5 μL of Solution II to Tube D. 
+  </note>
+</step>
+
+<step>
+  <description>Add Solution II to Tube E.</description>
+  <note>
+  Using a fresh tip and maintaining a sterile technique, add 4 μL of Solution II to Tube E. Be sure to change 
+  the volume of the pipette before adding a new tip.
+  </note>
+</step>
+
+<step>
+  <description>Add Solution III to Tube C.</description>
+  <note>
+  Using a fresh tip and maintaining a sterile technique, add 1 μL of Solution III to Tube C. Be sure to change 
+  the volume of the pipette before adding a new tip. 
+  </note>
+</step>
+
+<step>
+  <description>Add Solution III to Tube E.</description>
+  <note>
+  Using a fresh tip and maintaining a sterile technique, add 1 μL of Solution III to Tube E.
+  </note>
+</step>
+
+<step>
+  <description>Add Solution IV to Tube D.</description>
+  <note>
+  Using a fresh tip and maintaining a sterile technique, add 1 μL of Solution IV to Tube D.
+  </note>
+</step>
+
+<step>
+  <description>Add Solution IV to Tube E.</description>
+  <note>
+  Using a fresh tip and maintaining a sterile technique, add 1 μL of Solution IV to Tube E.
+  </note>
+</step>
 
 </protocol>
