@@ -52,7 +52,7 @@
   <step>
     <description>Cut fragment of %{current_length} size out of lane %{current_lane} and place in Eppendorph tube %{hcounter}.</description>
     <note>Use transilluminator to see bands. Cut as closely around the bands as possible to minimize gel mass.</note>
-    <warning>Wipe the razor with ethanol between cutting out each band to avoid contamination.</warning>
+    <warning>Wipe the razor with an ethanol soaked kimwipe between cutting out each band to avoid contamination.</warning>
   </step>
 
   <release>[%{light_box}[0], %{gel}[0], %{razor}[0], %{ethanol}[0]]</release>
