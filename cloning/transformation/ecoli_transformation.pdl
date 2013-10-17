@@ -50,8 +50,121 @@
     </take>
 
 
-
     <!--Begin Steps-->
+    
+    <step>
+        <description>Intialize the Electroporator</description>
+        <note>Click on and set the voltage to 120V</note>
+        <image></image>
+        <warning></warning>
+    </step>
+
+    <step>
+        <description>Label the 1.5 mL Test Tube</description>
+        <note>Write the plasmid ID number, strain ID number, and date on the tube.
+            \nPlace the tube in the tube rack.
+            \nThis tube will be used to hold your final transformation.
+        </note>
+        <image></image>
+        <warning></warning>
+    </step>
+
+    <take>
+        <item>
+            <type>Plasmid</type><quantity>1</quantity><var>my_plasmid</var>
+        </item>
+        <item>
+        	<type>Styrophoam Block</type><quantity>1</quantity><var>my_styblock</var>
+        </item>
+        <item>
+        	<type>Ice block</type><quantity>1</quantity><var>my_iceblock</var>
+        </item>
+        <item>
+            <type>Aluminun tube rack</type><quantity>1</quantity><var>my_alrack</var>
+        </item>
+    </take>    
+    
+    <step>
+        <description>Arrange Ice Block</description>
+        <note>Put the Ice block in the Styrophoam block, and place the Aluminum tube rack 
+        on top of the ice block.</note>
+        <image></image>
+        <warning></warning>
+    </step>
+
+    
+    <step>
+        <description>Handling Electrocompetent Cells</description>
+        <note>You will now be asked to grab the electrocompetent cells and a cuvette.\n
+            When grabbing the Electrocompetent Cells, take the arranged Ice block with you
+            and place the tube of cells in the Aluminum tube rack.\n
+            The cuvette should be placed alongside the ice block.
+        </note>
+        <image></image>
+        <warning></warning>
+    </step>
+    
+    <take>
+        <item>
+        	<type>Electrocuvette</type><quantity>1</quantity><var>my_cuvette</var>
+        </item>
+        <item>
+        	<type>DH5alpha</type><quantity>1</quantity><var>my_strain</var>
+        </item>
+    </take>
+
+    <step>
+        <description>Allow the Electrocompetent Cells to thaw slightly</description>
+        <note>Wait until your cells have thawed to a slushy consistency that can be pipetted out.</note>
+        <image></image>
+        <warning>Do not hold the tube in your hands to warm it up.</warning>
+    </step>
+
+    <step>
+        <description></description>
+        <note>Pipette 2 uL of your plasmid into the Electrocompetent Cells tube and mix with the pipette tip.\n
+            Then transfer the mixture, via pipette, into the elevtrocuvette and place the cap on top. 
+        </note>
+        <image></image>
+        <warning></warning>
+    </step>
+    
+    <step>
+        <description>Electroporation and Rescue</description>
+        <note>We will now begin Electroporation and Rescue of the cells.\n
+            The next few steps will need to be done in rapid succession.\n
+            After Electroporation, Rescue must happen as quickly as possible.
+        </note>
+        <image></image>
+        <warning></warning>
+    </step>
+
+    <step>
+        <description>Electroporation</description>
+        <note>Put the cuvette in the electroporator and press the PULSE button twice to deliver a pulse.\n
+            Remove the electrocuvette. 
+        </note>
+        <image></image>
+        <warning>Must be done QUICKLY</warning>
+    </step>
+    
+    <step>
+        <description>Rescue</description>
+        <note>Remove the electrocuvette from the electroporator and QUICKLY add 1 mL of room-temperature LB to it.\n
+            Pipette up and down 5-7 times to extract the cells from the 1mm gap in the cuvette.
+        </note>
+        <image></image>
+        <warning>Must be done QUICKLY</warning>
+    </step>
+    
+    <step>
+        <description>Transfer to labeled 1.5 mL tube</description>
+        <note></note>
+        <image></image>
+        <warning></warning>
+    </step>
+
+
 	<!--Produce-->
 	<!--Final releases-->
 
