@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<protocol>
+  <!-- Information -->
+  <information>Make yeast media sterile using an autoclave (high heat and pressure).</information>
+  <!-- IMPORTANT: Expects input objects to end with "(unsterile)" and output to end with "(sterile")
+                  These must exist as object types for this protocol to function.
+       -->
+
+  <!-- Arguments -->
+  <!-- None! -->
+
+  <!-- Arrays to store 'consumed' input media, output media name, and the number autoclaved.
+       The simplest way I can find (so far) to concisely and straightforwardly store this information
+       between takes and releases -->
+  <assign>
+    <lhs>ypad_liquid_data</lhs>
+    <rhs>["800 mL YPAD liquid (unsterile)", "800 mL YPAD liquid (sterile)", 0]</rhs>
+  </assign>
+  <assign>
+    <lhs>ypad_agar_data</lhs>
+    <rhs>["800 mL YPAD agar (unsterile)", "800 mL YPAD agar (sterile)", 0]</rhs>
+  </assign>
+  <assign>
+    <lhs>sdo_liquid_data</lhs>
+    <rhs>["800 mL SDO liquid (unsterile)", "800 mL SDO liquid (sterile)", 0]</rhs>
+  </assign>
+  <assign>
+    <lhs>sdo_agar_data</lhs>
+    <rhs>["800 mL SDO agar (unsterile)", "800 mL SDO agar (sterile)", 0]</rhs>
+  </assign>
+  <!-- Get arguments via getdata subtag of step. This violates the abstraction layer but is the only way to do this using PDL. -->
+  <assign>
+    <lhs>done</lhs>
+    <rhs>false</rhs>
+  </assign>
+  <while>
+    <condition>%{done} != true</condition>
+    <do>
+      <step>
+        <description>Select media to autoclave</description>
+        <note>Select a media option and the number of 800 mL bottles of it that you are autoclaving. Repeating a media choice with a different number will overwrite the previous selection. Keep track of how many bottles you can autoclave at once. If you are done selecting media, select "Done" from the drop down menu.</note>
+        <select>
+          <description>Media Choice</description>
+          <var>latest_choice</var>
+          <choice>800 mL YPAD liquid (unsterile)</choice>
+          <choice>800 mL YPAD agar (unsterile)</choice>
+          <choice>800 mL SDO liquid (unsterile)</choice>
+          <choice>800 mL SDO agar (unsterile)</choice>
+          <choice>Done</choice>
+        </select>
+        <select>
+          <description>Number</description>
+          <var>latest_number</var>
+          <choice>1</choice>
+          <choice>2</choice>
+          <choice>3</choice>
+          <choice>4</choice>
+        </select>
+      </step>
+      <if>
+        <condition>%{latest_choice} == "800 mL YPAD liquid (unsterile)"</condition>
+        <then>
+          <assign>
+            <lhs>ypad_liquid_data</lhs>
+            <rhs>%{ypad_liquid_data}[0,2] + [%{latest_number}.to_i]</rhs>
+          </assign>
+          <assign>
+            <lhs>take_type</lhs>
+            <rhs>%{ypad_liquid_data}[0]</rhs>
+          </assign>
+          <assign>
+            <lhs>take_number</lhs>
+            <rhs>%{ypad_liquid_data}[2]</rhs>
+          </assign>
+          <take>
+            <item>
+              <type>%{take_type}</type>
+              <quantity>%{take_number}</quantity>
+              <var>latest_take</var>
+            </item>
+          </take>
+          <assign>
+            <lhs>ypad_liquid_data</lhs>
+            <rhs>%{ypad_liquid_data} + [%{latest_take}]</rhs>
+          </assign>
+        </then>
+      </if>
+      <if>
+        <condition>%{latest_choice} == "800 mL YPAD agar (unsterile)"</condition>
+        <then>
+          <assign>
+            <lhs>ypad_agar_data</lhs>
+            <rhs>%{ypad_agar_data}[0,2] + [%{latest_number}.to_i]</rhs>
+          </assign>
+          <assign>
+            <lhs>take_type</lhs>
+            <rhs>%{ypad_agar_data}[0]</rhs>
+          </assign>
+          <assign>
+            <lhs>take_number</lhs>
+            <rhs>%{ypad_agar_data}[2]</rhs>
+          </assign>
+          <take>
+            <item>
+              <type>%{take_type}</type>
+              <quantity>%{take_number}</quantity>
+              <var>latest_take</var>
+            </item>
+          </take>
+          <assign>
+            <lhs>ypad_agar_data</lhs>
+            <rhs>%{ypad_agar_data} + [%{latest_take}]</rhs>
+          </assign>
+        </then>
+      </if>
+      <if>
+        <condition>%{latest_choice} == "800 mL SDO liquid (unsterile)"</condition>
+        <then>
+          <assign>
+            <lhs>sdo_liquid_data</lhs>
+            <rhs>%{sdo_liquid_data}[0,2] + [%{latest_number}.to_i]</rhs>
+          </assign>
+          <assign>
+            <lhs>take_type</lhs>
+            <rhs>%{sdo_liquid_data}[0]</rhs>
+          </assign>
+          <assign>
+            <lhs>take_number</lhs>
+            <rhs>%{sdo_liquid_data}[2]</rhs>
+          </assign>
+          <take>
+            <item>
+              <type>%{take_type}</type>
+              <quantity>%{take_number}</quantity>
+              <var>latest_take</var>
+            </item>
+          </take>
+          <assign>
+            <lhs>sdo_liquid_data</lhs>
+            <rhs>%{sdo_liquid_data} + [%{latest_take}]</rhs>
+          </assign>
+        </then>
+      </if>
+      <if>
+        <condition>%{latest_choice} == "800 mL SDO agar (unsterile)"</condition>
+        <then>
+          <assign>
+            <lhs>sdo_agar_data</lhs>
+            <rhs>%{sdo_agar_data}[0,2] + [%{latest_number}.to_i]</rhs>
+          </assign>
+          <assign>
+            <lhs>take_type</lhs>
+            <rhs>%{sdo_agar_data}[0]</rhs>
+          </assign>
+          <assign>
+            <lhs>take_number</lhs>
+            <rhs>%{sdo_agar_data}[2]</rhs>
+          </assign>
+          <take>
+            <item>
+              <type>%{take_type}</type>
+              <quantity>%{take_number}</quantity>
+              <var>latest_take</var>
+            </item>
+          </take>
+          <assign>
+            <lhs>sdo_agar_data</lhs>
+            <rhs>%{sdo_agar_data} + [%{latest_take}]</rhs>
+          </assign>
+        </then>
+      </if>
+      <if>
+        <condition>%{latest_choice} == "Done"</condition>
+        <then>
+          <assign>
+            <lhs>done</lhs>
+            <rhs>true</rhs>
+          </assign>
+        </then>
+      </if>
+    </do>
+  </while>
+
+  <!-- Begin steps -->
+  <step>
+    <description>Apply autoclave tape.</description>
+    <note>Add autoclave tape to each item. For items with lids, make sure autoclave tape extends fully over the lid and onto the sides of the item, so that one must break the seal in order to use it.</note>
+  </step>
+  <take>
+    <item>
+      <type>Autoclave</type>
+      <quantity>1</quantity>
+      <var>autoclave</var>
+    </item>
+  </take>
+  <step>
+    <description>Place items in the autoclave.</description>
+    <note>Place all items one at a time into the autoclave.</note>
+    <warning>Make sure no caps are tight. If a cap is tight, the item may explode.</warning>
+  </step>
+  <step>
+    <description>Seal the autoclave.</description>
+    <note>If you are using the tabletop autoclave at A1, close the autoclave door until it latches, pull the screw handle over to the front of the autoclave (unscrew if necessary), and rotate it clockwise until it is tight. If you are using the free-standing autoclave, close the hatch and seal by rotating clockwise and secure the magnetic safety device to the hatch.</note>
+  </step>
+  <step>
+    <description>Set autoclave settings and start.</description>
+    <note>For yeast media, autoclave at 110°C for 10 minutes are pressure.\n\nIf using the free-stranding autoclave, set the temperature and time at pressure, then hit start. If using the tabletop autoclave at A1, select optional cycle, set the temperature and time, and press 'up' to start.</note>
+  </step>
+  <step>
+    <description>Wait around until the autoclave finishes.</description>
+    <note>This will take between 45 minutes and two hours. You can leave this job running and do other tasks while the autoclave is running - when the autoclave is done, resume by finding the job and resuming it. The large autoclave beeps 5 times in a row *just once* when it is done. The small autoclave produces two long beeps every few seconds until you tell it to stop. When the autoclave finishes, hit next.</note>
+  </step>
+  <!-- TODO: take autoclave gloves -->
+  <!-- TODO: describe basics of undoing latch. Press 'start' on tabletop autoclave to shut it up -->
+  <step>
+    <description>Remove items from the autoclave to a cooling area (the media station).</description>
+    <note>When items are around 50°C (no longer hurts to touch), proceed to the next step.</note>
+    <warning>Use autoclave gloves. If any of the items contain agar, make sure to launch a pouring protocol soon or keep them at or above 50°C.</warning>
+  </step>
+  <release>%{autoclave}</release>
+
+  <!-- Produces -->
+  <if>
+    <condition>%{ypad_liquid_data}[2] != 0</condition>
+    <then>
+      <assign>
+        <lhs>temp_produce</lhs>
+        <rhs>%{ypad_liquid_data}[1]</rhs>
+      </assign>
+      <assign>
+        <lhs>temp_number</lhs>
+        <rhs>%{ypad_liquid_data}[2]</rhs>
+      </assign>
+      <assign>
+        <lhs>temp_release</lhs>
+        <rhs>%{ypad_liquid_data}[3]</rhs>
+      </assign>
+      <produce>
+        <object>%{temp_produce}</object>
+        <quantity>%{temp_number}</quantity>
+        <release>%{temp_release}</release>
+      </produce>
+    </then>
+  </if>
+  <if>
+    <condition>%{ypad_agar_data}[2] != 0</condition>
+    <then>
+      <assign>
+        <lhs>temp_produce</lhs>
+        <rhs>%{ypad_agar_data}[1]</rhs>
+      </assign>
+      <assign>
+        <lhs>temp_number</lhs>
+        <rhs>%{ypad_agar_data}[2]</rhs>
+      </assign>
+      <assign>
+        <lhs>temp_release</lhs>
+        <rhs>%{ypad_agar_data}[3]</rhs>
+      </assign>
+      <produce>
+        <object>%{temp_produce}</object>
+        <quantity>%{temp_number}</quantity>
+        <release>%{temp_release}</release>
+      </produce>
+    </then>
+  </if>
+  <if>
+    <condition>%{sdo_liquid_data}[2] != 0</condition>
+    <then>
+      <assign>
+        <lhs>temp_produce</lhs>
+        <rhs>%{sdo_liquid_data}[1]</rhs>
+      </assign>
+      <assign>
+        <lhs>temp_number</lhs>
+        <rhs>%{sdo_liquid_data}[2]</rhs>
+      </assign>
+      <assign>
+        <lhs>temp_release</lhs>
+        <rhs>%{sdo_liquid_data}[3]</rhs>
+      </assign>
+      <produce>
+        <object>%{temp_produce}</object>
+        <quantity>%{temp_number}</quantity>
+        <release>%{temp_release}</release>
+      </produce>
+    </then>
+  </if>
+  <if>
+    <condition>%{sdo_agar_data}[2] != 0</condition>
+    <then>
+      <assign>
+        <lhs>temp_produce</lhs>
+        <rhs>%{sdo_agar_data}[1]</rhs>
+      </assign>
+      <assign>
+        <lhs>temp_number</lhs>
+        <rhs>%{sdo_agar_data}[2]</rhs>
+      </assign>
+      <assign>
+        <lhs>temp_release</lhs>
+        <rhs>%{sdo_agar_data}[3]</rhs>
+      </assign>
+      <produce>
+        <object>%{temp_produce}</object>
+        <quantity>%{temp_number}</quantity>
+        <release>%{temp_release}</release>
+      </produce>
+    </then>
+  </if>
+  <!-- TODO: release autoclave gloves -->
+</protocol>

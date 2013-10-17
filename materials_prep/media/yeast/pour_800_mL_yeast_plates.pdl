@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<protocol name="Pour Agar">
+  <!-- Information -->
+  <information>Pour plates from 800 mL of liquid state agar media.</information>
+  <!-- Arguments -->
+  <!-- None -->
+  <!-- Get the type of object you want to pour from (molten agar) -->
+  <step>
+    <select>
+      <description>Media choice</description>
+      <var>object_type</var>
+      <choice>800 mL YPAD agar (sterile)</choice>
+      <choice>800 mL SDO agar (sterile)</choice>
+    </select>
+  </step>
+  <!-- Calculate the name of the produced plates -->
+  <!-- Strip first 7 characters to remove '800 mL ' -->
+  <assign>
+    <lhs>plate_name</lhs>
+    <rhs>%{object_type}[7..-1]</rhs>
+  </assign>
+  <!-- Strip last 14 characters to remove 'agar (sterile)' -->
+  <assign>
+    <lhs>plate_name</lhs>
+    <rhs>%{plate_name}[0..-15]</rhs>
+  </assign>
+  <!-- Add 'Agar Plate (sterile)' to the end of the string -->
+  <assign>
+    <lhs>plate_name</lhs>
+    <rhs>%{plate_name} + 'Plate (sterile)'</rhs>
+  </assign>
+  <!-- Initial takes -->
+  <take>
+    <item>
+        <type>%{object_type}</type>
+        <quantity>1</quantity>
+        <var>agar_bottle</var>
+    </item>
+    <item>
+      <type>Petri Dish</type>
+      <quantity>40</quantity>
+      <var>plates</var>
+    </item>
+  </take>
+  <!-- Start steps -->
+  <!-- Lay out plates individually -->
+  <step>
+    <description>Lay out plates on workspace.</description>
+    <note>Lay out plates individually on your workspace, lid side up, in preparation for pouring.</note>
+  </step>
+  <!-- Pour -->
+  <step>
+    <description>Pour 25 mL of media into each plate.</description>
+    <note>Uncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25 mL.\n\nReplace the petri dish lid and mark the lid and bottom with line on the side: red for -His, blue for -Leu, green for -Trp, purple for -Ura. Repeat for every plate.</note>
+    <getdata>
+      <description>Enter the number of plates you poured (varies depending on average pour volume).</description>
+      <type>number</type>
+      <var>plates_poured</var>
+    </getdata>
+  </step>
+  <!-- Let cool -->
+  <!-- FIXME: Metacol territory -->
+  <step>
+    <description>Let plates cool.</description>
+    <note>Let the plates cool until solid. You can verify that the plates are cool because the agar becomes opaque. If you keep them separate and unstacked, they will cool much faster and more evenly. This should take 10-20 minutes.</note>
+  </step>
+  <!-- FIXME: Metacol territory -->
+  <step>
+    <description>Stack and label.</description>
+    <note>Once the plates are cool, invert all of them lid down. Stack them (lid down) in groups of about 20. Label a piece of lab tape with the media type (YPAD or SDO), your initials, and the date. Apply the tape to the top plate on the stack.</note>
+  </step>
+  <step>
+    <description>Place in the 30 degree yeast incubator.</description>
+    <note>Place the plates in the 30 degree yeast incubator to dry overnight.</note>
+  </step>
+
+  <!-- Produces -->
+  <!-- Releasing plates is tricky - have to consume the ones that were poured and release the ones that are left over -->
+  <!-- Poured plates object - will release in produce -->
+  <assign>
+    <lhs>poured_plates</lhs>
+    <rhs>%{plates}[0,%{plates_poured}]</rhs>
+  </assign>
+  <!-- Empty plates left over - will release at the end -->
+  <assign>
+    <lhs>empty_plates</lhs>
+    <rhs>%{plates}[%{plates_poured}..-1]</rhs>
+  </assign>
+  <!-- Produce -->
+  <produce>
+    <object>%{plate_name}</object>
+    <quantity>%{plates_poured}</quantity>
+    <release>%{poured_plates}</release>
+  </produce>
+  <!-- Release any left over plates -->
+  <if>
+    <condition>%{plates_poured} &lt; 40</condition>
+    <then>
+      <release>%{empty_plates}</release>
+    </then>
+  </if>
+  <produce>
+    <object>1 L Bottle (dirty)</object>
+    <quantity>1</quantity>
+    <release>%{agar_bottle}</release>
+  </produce>
+</protocol>
