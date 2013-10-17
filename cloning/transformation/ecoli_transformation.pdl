@@ -4,15 +4,76 @@
 
 	<!--Arguments-->
     <argument>
-        <name></name>
-        <type></type>
-        <description></description>
+        <name>Plasmid</name>
+        <type>string</type>
+        <description>The plasmid to be used.</description>
+    </argument>
+    <argument>
+        <name>Strain</name>
+        <type>string</type>
+        <description>The strain to be used.</description>
+    </argument>
+    <argument>
+        <name>Media</name>
+        <type>string</type>
+        <description>The rescue media to be used.</description>
+    </argument>
+    <argument>
+        <name>Voltage</name>
+        <type>number</type>
+        <description>The voltage of electric shock on the electroporator.</description>
+    </argument>
+    <argument>
+        <name>Incubator_time</name>
+        <type>number</type>
+        <description>Time duration in the incubator for recovery.</description>
     </argument>
 
+
 	<!--Initial takes-->
-	<!--Begin Steps-->
+    <take>
+        <item>
+        	<type>Electroporator</type><quantity></quantity><var></var><name></name><project></project><id></id>
+        </item>
+    </take>
+
+    <take>
+        <item>
+        	<type>50 mL Falcon Tube LB</type><quantity>1</quantity><var></var><name></name><project></project><id></id>
+        </item>
+        <item>
+        	<type>1.5 mL Test Tube Rack</type><quantity>1</quantity><var></var><name></name><project></project><id></id>
+        </item>
+        <item>
+        	<type>1.5 mL Test Tube</type><quantity>1</quantity><var></var><name></name><project></project><id></id>
+        </item>
+    </take>
+
+
+
+    <!--Begin Steps-->
 	<!--Produce-->
 	<!--Final releases-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
