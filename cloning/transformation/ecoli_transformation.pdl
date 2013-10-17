@@ -1,0 +1,19 @@
+<protocol>
+
+	<information>Protocol for describing an e.coli transformation</information>
+
+	<!--Arguments-->
+    <argument>
+        <name></name>
+        <type></type>
+        <description></description>
+    </argument>
+
+	<!--Initial takes-->
+	<!--Begin Steps-->
+	<!--Produce-->
+	<!--Final releases-->
+
+
+
+</protocol>
