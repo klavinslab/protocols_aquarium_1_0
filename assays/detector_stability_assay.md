@@ -8,10 +8,10 @@ Notes/Directions
 
 
 
-[Protocol Name]
+[Detector Stability Assay]
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Description:
+Description: This assay tests whether detector strains are stable in both the ON and OFF state. Both states should be stable i.e if induced into either state and then grown in absence of inducer, strains should maintain that state. This assay
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ####Total duration: [x days/hours/minutes]####
