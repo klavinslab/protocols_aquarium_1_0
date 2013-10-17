@@ -11,11 +11,11 @@ Notes/Directions
 [Detector Stability Assay]
 --------------
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Description: This assay tests whether detector strains are stable in both the ON and OFF state. Both states should be stable i.e if induced into either state and then grown in absence of inducer, strains should maintain that state. This assay
+Description: This assay tests whether detector strains are stable in both the ON and OFF state. Both states should be stable i.e if induced into either state and then grown in absence of inducer, strains should maintain that state. This assay will likely follow detector_screening_assay, which tests whether strains can be induced into distinct ON and OFF states.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-####Total duration: [x days/hours/minutes]####
-####Total worktime: [x hours/minutes]
+####Total duration: [3-4 days]####
+####Total worktime: [4 hours]
 
     - Day 1: [x hours/minutes]
     - Day 2: [x hours/minutes]
