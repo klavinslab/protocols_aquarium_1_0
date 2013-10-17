@@ -6,4 +6,15 @@
 This protocol explains how to move bacteria plates from the yeast incubator to the refrigerator R1.
 </information>
 
+<step>
+  <description>Select which type of plates you are moving.</description>
+      <select>
+        <description>Media Choice</description>
+        <var>media_type</var>
+        <choice>LB agar + Amp</choice>
+        <choice>LB agar + Kan</choice>
+        <choice>LB agar + Chlor</choice>
+      </select>
+</step>
+
 </protocol>
