@@ -33,19 +33,19 @@
 	<!--Initial takes-->
     <take>
         <item>
-        	<type>Electroporator</type><quantity></quantity><var></var><name></name><project></project><id></id>
+        	<type>Electroporator</type><quantity>1</quantity><var>my_electroporator</var>
         </item>
     </take>
 
     <take>
         <item>
-        	<type>50 mL Falcon Tube LB</type><quantity>1</quantity><var></var><name></name><project></project><id></id>
+        	<type>50 mL Falcon Tube LB</type><quantity>1</quantity><var>my_falcon_tube</var>
         </item>
         <item>
-        	<type>1.5 mL Test Tube Rack</type><quantity>1</quantity><var></var><name></name><project></project><id></id>
+        	<type>1.5 mL Test Tube Rack</type><quantity>1</quantity><var>my_tube_rack</var>
         </item>
         <item>
-        	<type>1.5 mL Test Tube</type><quantity>1</quantity><var></var><name></name><project></project><id></id>
+        	<type>1.5 mL Test Tube</type><quantity>1</quantity><var>my_tube</var>
         </item>
     </take>
 
@@ -55,7 +55,7 @@
     <step>
         <description>Intialize the Electroporator</description>
         <note>Click on and set the voltage to 120V</note>
-        <image></image>
+        <image>initialize_electroporator</image>
         <warning></warning>
     </step>
 
@@ -65,7 +65,7 @@
             \nPlace the tube in the tube rack.
             \nThis tube will be used to hold your final transformation.
         </note>
-        <image></image>
+        <image>label_1_5mL_tube</image>
         <warning></warning>
     </step>
 
@@ -88,7 +88,7 @@
         <description>Arrange Ice Block</description>
         <note>Put the Ice block in the Styrophoam block, and place the Aluminum tube rack 
         on top of the ice block.</note>
-        <image></image>
+        <image>arrange_cold_block</image>
         <warning></warning>
     </step>
 
@@ -100,7 +100,7 @@
             and place the tube of cells in the Aluminum tube rack.\n
             The cuvette should be placed alongside the ice block.
         </note>
-        <image></image>
+        <image>handle_electrocompetent_cells</image>
         <warning></warning>
     </step>
     
@@ -116,7 +116,7 @@
     <step>
         <description>Allow the Electrocompetent Cells to thaw slightly</description>
         <note>Wait until your cells have thawed to a slushy consistency that can be pipetted out.</note>
-        <image></image>
+        <image>thawed_electrocompotent_cells</image>
         <warning>Do not hold the tube in your hands to warm it up.</warning>
     </step>
 
@@ -125,7 +125,7 @@
         <note>Pipette 2 uL of your plasmid into the Electrocompetent Cells tube and mix with the pipette tip.\n
             Then transfer the mixture, via pipette, into the elevtrocuvette and place the cap on top. 
         </note>
-        <image></image>
+        <image>pipette_plasmid_into_electrocompotent_cells</image>
         <warning></warning>
     </step>
     
@@ -144,7 +144,7 @@
         <note>Put the cuvette in the electroporator and press the PULSE button twice to deliver a pulse.\n
             Remove the electrocuvette. 
         </note>
-        <image></image>
+        <image>place_cuvette_in_electroporator</image>
         <warning>Must be done QUICKLY</warning>
     </step>
     
@@ -153,20 +153,29 @@
         <note>Remove the electrocuvette from the electroporator and QUICKLY add 1 mL of room-temperature LB to it.\n
             Pipette up and down 5-7 times to extract the cells from the 1mm gap in the cuvette.
         </note>
-        <image></image>
+        <image>rescue_transformation</image>
         <warning>Must be done QUICKLY</warning>
     </step>
     
     <step>
         <description>Transfer to labeled 1.5 mL tube</description>
         <note></note>
-        <image></image>
+        <image>transfer_transformation_to_1_5mL_tube</image>
         <warning></warning>
     </step>
-
+    
 
 	<!--Produce-->
+    <produce>
+        <object>1.5 mL Transformation</object>
+        <quantity>1</quantity>
+        <release>1.5 mL Test Tube</release>
+    </produce>
+
+    
 	<!--Final releases-->
+    <release>[%{my_electroporator}[0],%{my_falcon_tube}[0],%{my_tube_rack}[0],%{my_tube}[0],%{my_plasmid}[0],
+    %{my_styblock}[0],%{my_iceblock}[0],%{my_alrack}[0],%{my_cuvette}[0],%{my_cuvette}[0],%{my_strain}[0]]</release>
 
 
 
