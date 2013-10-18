@@ -4,55 +4,70 @@
   <information>This protocol describes how to cut out a band of DNA from an agarose gel.</information>
 
   <!-- arguments -->
+  
+   <argument>
+    <name>number</name>
+    <type>number</type>
+    <description>Enter the number of bands that you wish to cut out</description>
+  </argument>  
   <argument>
-    <name>lane</name>
+    <name>bands_to_cut</name>
     <type>string</type>
-    <description>Enter the lane from which to extract a band.</description>
+    <description>Enter the bands to be cut out. Enter this information in the following form: [(X1, Y1), (X2, Y2), (X3, Y3) ...], where Xn is the lane and Yn is the expected size in bp.(</description>
+  </argument>
+  <argument>
+    <name>band_names</name>
+    <type>string</type>
+    <description>Enter the names of each band to be cut out in the same order as the bands were described in the previous argument. Enter this information in the following form: [NAME1, NAME2, NAME3 ...].(</description>
   </argument>
   <!-- IDEA: Specify by circling band(s) on an image? -->
-   <argument>
-    <name>length</name>
-    <type>string</type>
-    <description>Enter the length of the band to extract.</description>
-  </argument>
+
 
   <!-- takes -->
-  <take>
-    <object>Transilluminator</object>
-    <quantity>1</quantity>
-    <var>light_box</var>
-  </take>
-  <take>
-    <object>Run Gel</object>
-    <quantity>1</quantity>
-    <var>gel</var>
-  </take>
-  <take>
-    <object>Razor Blade</object>
-    <quantity>1</quantity>
-    <var>razor</var>
-  </take>
-  <take>
-    <object>Ethanol Spray Bottle</object>
-    <quantity>1</quantity>
-    <var>ethanol</var>
-  </take>
-  <take>
-    <object>Eppendorf Tube</object>
-    <quantity>%{number}</quantity>
-    <var>tubes1</var>
-  </take>
+<take>    
+    <item>
+      <type>Transilluminator</type>
+      <quantity>1</quantity>
+      <var>light_box</var>
+    </item>
+    <item>
+      <type>Run Gel</type>
+      <quantity>1</quantity>
+      <var>gel</var>
+    </item>
+    <item>
+      <type>Razor Blade</type>
+      <quantity>1</quantity>
+      <var>razor</var>
+    </item>
+    <item>
+      <type>Ethanol Spray Bottle</type>
+      <quantity>1</quantity>
+      <var>ethanol</var>
+    </item>
+</take>
+<take>
+    <item>
+      <type>Eppendorf Tube</type>
+      <quantity>%{number}</quantity>
+      <var>tubes</var>
+    </item>
+</take>
 
   <!-- begin steps -->
   <step>
-    <description>Label Eppendorph tubes with name, initials, and date.</description>
-    <note>All of this information is required, as these tubes may be saved overnight.</note>
+    <description>Label Eppendorph tube(s) with name, initials, and date. The names of the tubes are as follows: %{band_names}</description>
+    <note>Keep the tubes in the order of the names listed. The bands will be cut out in this same order.</note>
   </step>
-  <!-- Find current lane number + band size + tube number -->
   <step>
-    <description>Cut fragment of %{current_length} size out of lane %{current_lane} and place in Eppendorph tube %{hcounter}.</description>
-    <note>Use transilluminator to see bands. Cut as closely around the bands as possible to minimize gel mass.</note>
+    <description>Cut out the bands described here and place each in its appropriate tube: %{bands_to_cut}</description>
+    <note>As a reminder, the tubes should be ordered as follows: %{band_name}. Use the transilluminator to see bands. Cut as closely around the bands as possible to minimize gel mass.</note>
     <warning>Wipe the razor with an ethanol soaked kimwipe between cutting out each band to avoid contamination.</warning>
+  </step>
+
+  <step>
+    <description>Clean up the gel station</description>
+    <note>Discard the remaining gel pieces in a biohazard bin and wipe down the transilluminator with kimwipes</note>
   </step>
 
   <release>[%{light_box}[0], %{gel}[0], %{razor}[0], %{ethanol}[0]]</release>
@@ -70,5 +85,13 @@
   </step>
   <release>%{balance}</release>
   <!-- TODO: transform eppendorf tube into product -->
+
+  <produce render="false">
+      <object>Gel Slices</object>
+      <quantity>%{number}</quantity>
+      <var>gel_slices</var>
+      <!-- Consumes tubes -->
+      <release>%{tubes}</release>
+  </produce>
 
 </protocol>
