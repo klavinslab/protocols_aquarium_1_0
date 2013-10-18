@@ -22,19 +22,31 @@
   <step>
     <description>Prepare the output sample.</description>
     <note>Describe what you are doing in the log by clicking 'Note' to the right before you click 'Next'.</note>
+    <getdata>
+      <description>Name of data to associate with produced sample (e.g. concentration)</description>
+      <type>string</type>
+      <var>name</var>
+    </getdata>
+    <getdata>
+      <description>Value of associate with produced sample</description>
+      <type>number</type>
+      <var>val</var>
+    </getdata>
   </step>
 
   <produce>
     <object>%{container}</object>
     <quantity>1</quantity>
     <sample>%{sample}[0]</sample>
+    <data>{ %{name} => %{val} }</data>
+    <var>result</var>
   </produce>
 
   <release>%{sample}</release>
 
   <step>
     <description>Done</description>
-    <note>Click 'Next' to complete the protocol.</note>
+    <note>You produced the item %{result}.</note>
   </step>
 
 </protocol>

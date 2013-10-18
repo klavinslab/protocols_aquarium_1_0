@@ -3,15 +3,15 @@
   <information>Tests the various types of arguments that can be specified in PDL.</information>
 
   <argument>
-    <name>primer_id</name>
+    <name>primer_1</name>
     <type>sample</type>
     <description>An item containing a primer</description>
   </argument>
 
   <argument>
-    <name>q</name>
+    <name>some_other_sample</name>
     <type>sample</type>
-    <description>An item containing a sample</description>
+    <description>An item containing a plasmid</description>
   </argument>
 
   <argument>
@@ -34,7 +34,7 @@
 
   <take>
     <item>
-      <id>%{primer_id}</id>
+      <id>%{primer_1}</id>
       <var>p</var>
     </item>
     <item>
@@ -47,8 +47,8 @@
   <step>
     <description>Results</description>
     <note>
-    primer_id = %{primer_id} => p = %{p}\n
-    q = %{q}\n
+    primer_1 = %{primer_1} => p = %{p}\n
+    some_other_sample = %{some_other_sample}\n
     ob = %{ob} => o = %{o}\n
     x = %{x}\n
     y = %{y}   
