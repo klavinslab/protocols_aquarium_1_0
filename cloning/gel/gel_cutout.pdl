@@ -76,7 +76,7 @@
   <!-- Weighing out gel slices -->
   <take>
     <item>
-      <object>Scale</object>
+      <type>Scale</type>
       <quantity>1</quantity>
       <var>balance</var>
     </item>
