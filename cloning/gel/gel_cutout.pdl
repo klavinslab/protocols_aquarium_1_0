@@ -65,7 +65,7 @@
     <note>Discard the remaining gel pieces in a biohazard bin and wipe down the transilluminator with kimwipes</note>
   </step>
 
-  <release>[%{light_box}[0], %{gel}[0], %{razor}[0], %{ethanol}[0]]</release>
+  <release>[%{light_box}[0], %{razor}[0]]</release>
   <!-- TODO: clean up gel area, move to scale -->
 
   <!-- Weighing out gel slices -->
@@ -89,6 +89,7 @@
       <var>gel_slices</var>
       <!-- Consumes tubes -->
       <release>%{tubes}</release>
+      <release>%{gel}</release>
   </produce>
 
 </protocol>
