@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <protocol name="Gel Extraction">
 
   <information>This is a protocol for cutting bands out of an agarose gel for later purification</information>
