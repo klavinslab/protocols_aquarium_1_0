@@ -75,9 +75,11 @@
 
   <!-- Weighing out gel slices -->
   <take>
-    <object>Scale</object>
-    <quantity>1</quantity>
-    <var>balance</var>
+    <item>
+      <object>Scale</object>
+      <quantity>1</quantity>
+      <var>balance</var>
+    </item>
   </take>
   <step>
     <description>Weigh gel slice</description>
