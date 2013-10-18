@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <protocol name="Gel Extraction">
 
-  <information>This protocol describes how to cut out a band of DNA from an agarose gel.</information>
+  <information>This is a protocol for cutting bands out of an agarose gel for later purification</information>
 
   <!-- arguments -->
   
@@ -40,11 +40,6 @@
       <quantity>1</quantity>
       <var>razor</var>
     </item>
-    <item>
-      <type>Ethanol Spray Bottle</type>
-      <quantity>1</quantity>
-      <var>ethanol</var>
-    </item>
 </take>
 <take>
     <item>
@@ -61,7 +56,7 @@
   </step>
   <step>
     <description>Cut out the bands described here and place each in its appropriate tube: %{bands_to_cut}</description>
-    <note>As a reminder, the tubes should be ordered as follows: %{band_name}. Use the transilluminator to see bands. Cut as closely around the bands as possible to minimize gel mass.</note>
+    <note>As a reminder, the tubes should be ordered as follows: %{band_names}. Use the transilluminator to see bands. Cut as closely around the bands as possible to minimize gel mass.</note>
     <warning>Wipe the razor with an ethanol soaked kimwipe between cutting out each band to avoid contamination.</warning>
   </step>
 
