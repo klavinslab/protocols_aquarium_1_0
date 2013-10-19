@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <protocol name="Gel Electrophoresis">
 
   <information>This protocol is for seperating linearized DNA on an agarose gel by fragment size.</information>
@@ -11,6 +11,16 @@
     <description>Enter sample IDs to run</description>
   </argument>
   <argument>
+      <name>gel</name>
+      <type>string</type>
+      <description>Enter the ID of the gel to be used</description>
+  </argument>
+  <argument>
+      <name>ladder</name>
+      <type>string</type>
+      <description>Enter the ladder to be used (enter 10bp, 100bp, or 1kb)</description>
+  </argument>
+  <argument>
       <name>run_voltage</name>
       <type>number</type>
       <description>Enter the desired voltage for gel electrophoresis</description>
@@ -21,18 +31,20 @@
       <description>Enter the desired run time for gel electrophoresis in minutes</description>
   </argument>
 
+
   <!-- takes -->
   <!-- FIXME: take all the samples -->
   <take>
-    <object>Sample with Loading Dye</object>
-    <quantity>1</quantity>
-    <var>balance</var>
-  </take>
-  <take>
-    <object>Agarose Gel</object>
-    <quantity>1</quantity>
-    <var>agar</var>
-    <!-- FIXME: which gel? -->
+    <item>
+      <type>Samples with Loading Dye</type>
+      <quantity>1</quantity>
+      <var>samples</var>
+    </item>
+    <item>
+      <type>Gel</type>
+      <quantity>1</quantity>
+      <var>gel</var>
+    </item>
   </take>
 
   <!-- Begin steps -->
@@ -42,15 +54,17 @@
     <note>Carefully lift the gel tray out of the gel box. With the electrodes facing away, place the gel tray into the box with the comb on the left side. Fill the gel box with 1X TAE until it reaches the marked fill line on the side of the box. Carefully remove the comb.</note>
   </step>
   <!-- TODO: include the sample loading protocol here? -->
-  <!-- FIXME: vague -->
   <step>
     <description>Load all samples</description>
+    <note>Load the %{ladder} ladder in the first lane, followed by samples in the following order: %{samples}
   </step>
   <!-- Hook up to power supply -->
   <take>
-    <object>Gel Box Power Supply</object>
-    <quantity>1</quantity>
-    <var>power</var>
+    <item>
+      <type>Gel Box Power Supply</type>
+      <quantity>1</quantity>
+      <var>power</var>
+    </item>
   </take>
   <!-- Set up power supply and leads-->
   <step>
