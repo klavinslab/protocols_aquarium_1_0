@@ -83,14 +83,15 @@
   </step>
 
   <!-- Cleanup -->
-  <step>
-    <description>Remove gel from illuminator and return it to where it was</description>
-  </step>
+
+  <release>%{gel}</release>
   <step>
     <description>Turn off illuminator and remove gelDoc imaging rig</description>
   </step>
   <step>
     <description>Spray the top of the illuminator with ethanol, wipe dry with kimwipe</description>
   </step>
+
+  <release>[%{camera}[0],%{transilluminator}[0]]</release>
 
 </protocol>
