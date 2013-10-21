@@ -83,7 +83,7 @@
   <release>%{balance}</release>
   <!-- TODO: transform eppendorf tube into product -->
 
-  <produce render="false">
+  <produce>
       <object>Gel Slices</object>
       <quantity>%{number}</quantity>
       <var>gel_slices</var>
