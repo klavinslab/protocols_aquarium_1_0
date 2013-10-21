@@ -1,1 +1,111 @@
---
+<?xml version="1.0"?>
+<protocol name="Phusion PCR">
+  <information>Amplify a segment of DNA from a DNA or RNA template using the high-fidelity Phusion polymerase</information>
+
+  <!-- Initial arguments -->
+  <argument>
+    <name>template</name>
+    <type>string</type>
+    <description>Enter the template ID.</description>
+  </argument>
+  <argument>
+    <name>primer1</name>
+    <type>string</type>
+    <description>Enter the first primer ID.</description>
+  </argument>
+  <argument>
+    <name>primer2</name>
+    <type>string</type>
+    <description>Enter the second primer ID.</description>
+  </argument>
+  <argument>
+    <name>phusion_anneal</name>
+    <type>number</type>
+    <description>Enter the anneal temperature.</description>
+  </argument>
+  <argument>
+    <name>template_length</name>
+    <type>number</type>
+    <description>Enter the length of the amplicon in bp.</description>
+  </argument>
+
+  <!-- Extension time math -->
+  <assign><lhs>extension_time</lhs><rhs>%{template_length} / 1000.0 * 20</rhs></assign>
+
+  <!-- Initial takes -->
+  <take>
+    <object>0.2mL Thin Wall Strip Well Tubes</object>
+    <quantity>1</quantity>
+    <var>tube</var>
+  </take>
+  <take>
+    <object>Molecular Grade Water 50mL aliquot</object>
+    <quantity>1</quantity>
+    <var>MGH2O</var>
+  </take>
+  <take>
+    <object>Template DNA 1ng/µL</object>
+    <quantity>1</quantity>
+    <var>Template</var>
+  </take>
+  <take>
+    <object>primer1</object>
+    <quantity>1</quantity>
+    <var>primer1</var>
+  </take>
+  <take>
+    <object>primer2</object>
+    <quantity>1</quantity>
+    <var>primer2</var>
+  </take>
+  <take>
+    <object>Phusion 2X Master Mix</object>
+    <quantity>1</quantity>
+    <var>Phusion</var>
+  </take>
+
+  <!-- Begin steps -->
+  <!-- Label tubes -->
+  <step>
+    <description>Label a 0.2mL strip well tube.</description>
+    <note>Label with unique identifier, initials, and date</note>
+  </step>
+  <!-- Add water -->
+  <step>
+    <description>Pipet 19µL molecular grade water into the strip well tube.</description>
+  </step>
+  <!-- Add 1ng of template -->
+  <step>
+    <description>Pipet 1µL diluted template DNA into the strip well tube.</description>
+  </step>
+  <!-- Add first primer -->
+  <step>
+    <description>Pipet 2.5µL of primer 1 into the strip well tube.</description>
+  </step>
+  <!-- Add second primer -->
+  <step>
+    <description>Pipet 2.5µL of primer 2 into the strip well tube.</description>
+  </step>
+  <!-- Add Phusion polymerase master mix -->
+  <step>
+    <description>Pipet 25µL of 2X Phusion Master Mix into the strip well tube.</description>
+  </step>
+
+  <!-- Acquire a thermal cycler -->
+  <take>
+    <object>Thermal Cycler</object>
+    <quantity>1</quantity>
+    <var>ThermalCycler</var>
+  </take>
+
+  <!--  -->
+  <!-- TODO: insert a table / newlines to make the note readable? -->
+  <step>
+    <description>Set up the thermal cycler program.</description>
+    <note>First step is 98°C for 5 minutes. Second step is 35 cycles of: denature at 98°C for 10 seconds, anneal at %{phusion_anneal}°C for 10 seconds, and extend at 72°C for %{extension_times} seconds. The third and final step is an extension at 72°C for 5 minutes.</note>
+  </step>
+  <!-- Run the program -->
+  <step>
+    <description>Hit 'run' on the thermal cycler and select 50µL setting.</description>
+  </step>
+</protocol>
