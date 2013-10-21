@@ -67,7 +67,7 @@
     </item>
   </take>
   <step>
-    <description>Fill the box with 1x TAE and carefully move it to the gel station</description
+    <description>Fill the box with 1x TAE and carefully move it to the gel station</description>
     <note>Fill until it reaches the marked fill line on the side of the box.</note>
   </step>
   <release>%{TAE}</release>
