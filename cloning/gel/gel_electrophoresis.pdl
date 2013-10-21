@@ -6,7 +6,7 @@
   <!-- arguments -->
   <!-- IDEA: arguments should have a maximum length option (only so many wells per gel) -->
   <argument>
-    <name>samples</name>
+    <name>sampleIDs</name>
     <type>string</type>
     <description>Enter sample IDs to run</description>
   </argument>
@@ -33,7 +33,6 @@
 
 
   <!-- takes -->
-  <!-- FIXME: take all the samples -->
   <take>
     <item>
       <type>Samples with Loading Dye</type>
@@ -50,13 +49,33 @@
   <!-- Begin steps -->
   <!-- Place gel in buffer and running box -->
   <step>
-    <description>Set up the gel for loading</description>
-    <note>Carefully lift the gel tray out of the gel box. With the electrodes facing away, place the gel tray into the box with the comb on the left side. Fill the gel box with 1X TAE until it reaches the marked fill line on the side of the box. Carefully remove the comb.</note>
+    <description>Arrange the gel box for loading</description>
+    <note>Carefully lift the gel tray out of the gel box. With the electrodes facing away, place the gel tray into the box with the comb on the left side. Carefully remove the comb.</note>
   </step>
+  
+  <produce>
+    <object>comb</object>
+    <quantity>1</quantity>
+    <var>comb</var>
+  </produce>
+  
+  <take>
+    <item>
+      <type>1x TAE</type>
+      <quantity>1</quantity>
+      <var>TAE</var>
+    </item>
+  </take>
+  <step>
+    <description>Fill the box with 1x TAE and carefully move it to the gel station</description
+    <note>Fill until it reaches the marked fill line on the side of the box.</note>
+  </step>
+  <release>%{TAE}</release>
+  
   <!-- TODO: include the sample loading protocol here? -->
   <step>
     <description>Load all samples</description>
-    <note>Load the %{ladder} ladder in the first lane, followed by samples in the following order: %{samples}
+    <note>Load the %{ladder} ladder in the first lane, followed by samples in the following order: %{sampleIDs}</note>
   </step>
   <!-- Hook up to power supply -->
   <take>
@@ -80,7 +99,14 @@
     <note>Check for bubbles in the gel box to indicate that voltage is being applied</note>
   </step>
   <!-- Put away combs -->
-  <release>[%{TAE}[0],%{comb}[0]]</release>
-  <!-- TODO: a protocol for checking on the gel that can be scheduled periodically, e.g. every 30 minutes -->
+  <release>%{samples}</release>
+  
+  <produce render="false">
+      <object>Running Gel</object>
+      <quantity>1</quantity>
+      <var>running_gel</var>
+      <!-- Consumes gel -->
+      <release>%{gel}</release>
+  </produce>
 
 </protocol>
