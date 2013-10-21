@@ -10,19 +10,21 @@
     <description>Enter the input gel ID.</description>
   </argument>
   <take>
-    <object>Run Gel</object>
-    <name>gel</name>
-    <quantity>1</quantity>
-  </take>
-  <take>
-    <object>transilluminator</object>
-    <name>transilluminator</name>
-    <quantity>1</quantity>
-  </take>
-  <take>
-    <object>camera</object>
-    <name>camera</name>
-    <quantity>1</quantity>
+    <item>
+      <type>Run Gel</type>
+      <name>gel</name>
+      <quantity>1</quantity>
+    </item>
+    <item>
+      <type>transilluminator</type>
+      <name>transilluminator</name>
+      <quantity>1</quantity>
+    </item>
+    <item>
+      <type>camera</type>
+      <name>camera</name>
+      <quantity>1</quantity>
+    </item>
   </take>
   
   
