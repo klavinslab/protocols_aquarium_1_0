@@ -7,6 +7,16 @@ This protocol explains how to move bacteria plates from the yeast incubator to t
 </information>
 
 <step>
+  <description>Get plates out of yeast incubator.</description>
+  <note>
+  Once the plates have been in the yeast incubator for at least twelve hours, walk over to the yeast incubator,
+  located at A1.110. Move the plates over to Bay 1, only carrying one stack at a time so that you don't drop any.
+  The plates will be moved to R1, which is located at ??.???. Bacteria plates are located on the second shelf from
+  the top.
+  </note>
+</step>
+
+<step>
   <description>Select which type of plates you are moving.</description>
       <select>
         <description>Media Type:</description>
@@ -15,16 +25,6 @@ This protocol explains how to move bacteria plates from the yeast incubator to t
         <choice>LB agar + Kan</choice>
         <choice>LB agar + Chlor</choice>
       </select>
-</step>
-
-<step>
-  <description>Get plates out of yeast incubator.</description>
-  <note>
-  Once the plates have been in the yeast incubator for at least twelve hours, walk over to the yeast incubator,
-  located at A1.110. Move the plates over to Bay 1, only carrying one stack at a time so that you don't drop any.
-  The plates will be moved to R1, which is located at ??.???. Bacteria plates are located on the second shelf from
-  the top.
-  </note>
 </step>
 
 
