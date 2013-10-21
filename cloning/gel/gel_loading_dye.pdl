@@ -1,8 +1,7 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <protocol name="Gel Loading Dye">
 
   <information>Add gel dye to samples so they sink into gel wells and runnin progress can be tracked without prestaining.</information>
-  <!-- FIXME: take the specified sample out of its inventory location -->
 
   <!-- Initial arguments -->
   <argument>
@@ -24,9 +23,16 @@
 
   <!-- Initial takes -->
   <take>
-    <object>6X Loading Dye</object>
-    <quantity>1</quantity>
-    <var>dye</var>
+    <item>
+      <type>sample</type>
+      <quantity>1</quantity>
+      <var>sample</var>
+    </item>
+    <item>
+      <type>6X Loading Dye</type>
+      <quantity>1</quantity>
+      <var>dye</var>
+    </item>
   </take>
 
   <!-- Begin steps -->
@@ -37,9 +43,9 @@
   <produce>
       <object>DNA with Loading Dye</object>
       <quantity>1</quantity>
+      <release>sample</release>
   </produce>
 
-  <!-- TODO: tube got transformed, shouldn't release -->
   <release>%{6X Loading Dye}</release>
 
 </protocol>
