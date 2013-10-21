@@ -28,7 +28,8 @@ This protocol explains how to move bacteria plates from the yeast incubator to t
 </step>
 
 
-<if><condition>%{media_type} == "LB agar + Kan"</condition>
+<if>
+  <condition>%{media_type} == "LB agar + Kan"</condition>
   <then>
     <step>
       <description>Put away plates in row marked LB + Kan.</description> 
@@ -40,7 +41,8 @@ This protocol explains how to move bacteria plates from the yeast incubator to t
   </then>
 </if>
 
-<if><condition>%{media_type} == "LB agar + Amp"</condition>
+<if>
+  <condition>%{media_type} == "LB agar + Amp"</condition>
   <then>
     <step>
       <description>Put away plates in row marked LB + Amp.</description> 
@@ -52,7 +54,8 @@ This protocol explains how to move bacteria plates from the yeast incubator to t
   </then>
 </if>
 
-<if><condition>%{media_type} == "LB agar + Chlor"</condition>
+<if>
+  <condition>%{media_type} == "LB agar + Chlor"</condition>
   <then>
     <step>
       <description>Put away plates in row marked LB + Chlor.</description> 
