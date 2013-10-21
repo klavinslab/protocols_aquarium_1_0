@@ -12,18 +12,18 @@
   <take>
     <item>
       <type>Run Gel</type>
-      <name>gel</name>
       <quantity>1</quantity>
+      <var>gel</var>
     </item>
     <item>
       <type>transilluminator</type>
-      <name>transilluminator</name>
       <quantity>1</quantity>
+      <var>transilluminator</var>
     </item>
     <item>
       <type>camera</type>
-      <name>camera</name>
       <quantity>1</quantity>
+      <var>camera</var>
     </item>
   </take>
   
