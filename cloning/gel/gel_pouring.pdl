@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <protocol name="Gel Pouring">
 
   <information>This protocol is for preparing and pouring an agarose gel for electrophoresis.</information>
@@ -17,24 +17,28 @@
 
   <!--- takes -->
   <take>
-    <object>250 mL Flask</object>
-    <quantity>1</quantity>
-    <var>flask</var>
+    <item>
+      <type>250 mL Flask</type>
+      <quantity>1</quantity>
+      <var>flask</var>
+    </item>
+    <item>
+      <type>Weigh Paper</type>
+      <quantity>1</quantity>
+      <var>paper</var>
+    </item>
+    <item>
+      <type>Agarose</type>
+      <quantity>1</quantity>
+      <var>agar</var>
+    </item>
   </take>
   <take>
-    <object>Weigh Paper</object>
-    <quantity>1</quantity>
-    <var>paper</var>
-  </take>
-  <take>
-    <object>Agarose</object>
-    <quantity>1</quantity>
-    <var>agar</var>
-  </take>
-  <take>
-    <object>Scale</object>
-    <quantity>1</quantity>
-    <var>balance</var>
+    <item>
+      <type>Scale</type>
+      <quantity>1</quantity>
+      <var>balance</var>
+    </item>
   </take>
 
   <assign><lhs>gel_mass</lhs><rhs>%{gel_percent} / 100.0 * %{gel_volume}</rhs></assign>
@@ -46,83 +50,86 @@
     <note>Add to empty 250mL flask</note>
   </step>
 
+  <release>[%{paper}[0],%{agar}[0],%{balance}[0]]</release>
+
   <!-- Measure and add buffer -->
   <take>
-    <object>100mL Graduated Cylinder</object>
-    <quantity>1</quantity>
-    <var>graduated_cylinder</var>
+    <item>
+      <type>100mL Graduated Cylinder</type>
+      <quantity>1</quantity>
+      <var>graduated_cylinder</var>
+    </item>
+    <item>
+      <type>TAE 1x</type>
+      <quantity>1</quantity>
+      <var>TAE</var>
+    </item>
   </take>
-  <take>
-    <object>TAE 1x</object>
-    <quantity>1</quantity>
-    <var>TAE</var>
-  </take>
+  
   <step>
-    <description>Pour %{gel_volume}ml TAE into 100mL graduated cylinder.</description>
+    <description>Measure out %{gel_volume}ml TAE using 100mL graduated cylinder.</description>
     <note>Add to 250mL flask with agarose.</note>
   </step>
 
+  <release>[%{graduated_cylinder}[0],%{TAE}[0]]</release>
+
   <!-- Microwave into solution -->
   <take>
-    <object>Heat-Resistant Glove</object>
-    <quantity>1</quantity>
-    <var>glove</var>
+    <item>
+      <type>Heat-Resistant Glove</type>
+      <quantity>1</quantity>
+      <var>glove</var>
+    </item>
+    <item>
+      <type>Microwave</type>
+      <quantity>1</quantity>
+      <var>microwave</var>
+    </item>
   </take>
+  
+    <assign><lhs>microwave_time</lhs><rhs>%{gel_volume} / 50</rhs></assign>
+  
+  <step>
+    <description>Microwave for %{microwave_time} minute(s).</description>
+  </step>
+  <step>
+    <description>Carefully swirl flask for 5 seconds to check for complete dissolution</description>
+    <note>If not completely dissolved, microwave for an additional 30 seconds and repeat this step</note>
+    <warning>Use heat-resistant, waterproof gloves.</warning>
+  </step>
+     
+  <release>%{microwave}</release>
+     
   <take>
-    <object>Microwave</object>
-    <quantity>1</quantity>
-    <var>microwave</var>
-  </take>
-  <assign>
-    <lhs>dissolved</lhs>
-    <rhs>0</rhs>
-  </assign>
-  <assign>
-    <lhs>microwave_counter</lhs>
-    <rhs>5</rhs>
-  </assign>
-  <while>
-    <condition>dissolved != 1</condition>
-    <do>
-      <step>
-        <description>Microwave for %{microwave_counter} minute(s).</description>
-        <note>use 30% power.</note>
-      </step>
-      <step>
-        <description>Carefully swirl flask for 5 seconds.</description>
-        <note>Use 30% power.</note>
-        <warning>Use heat-resistant, waterproof gloves.</warning>
-      </step>
-      <if>
-        <condition>%{microwave_counter} > 1</condition>
-        <then>
-          <assign>
-            <lhs>microwave_counter</lhs>
-            <rhs>%{microwave_counter} - 1</rhs>
-          </assign>
-        </then>
-        <else></else>
-      </if>
-      <argument>
-        <name>dissolved</name>
-        <type>number</type>
-        <description>Enter 1 if the gel has dissolved. Otherwise, enter 0.</description>
-      </argument>
-    </do>
-  </while>
-
+    <item>
+      <type>Gel dye</type>
+      <quantity>1</quantity>
+      <var>dye</var>
+    </item>
+  </take>     
+     
+    <assign><lhs>dye_volume</lhs><rhs>%{gel_volume} / 10</rhs></assign>
+  
+  <step>
+    <description>Add %{dye_volume}ul of gel dye to the flask</description>
+    <note>Wearing the heat-resistant glove, swirl the flask to fully mix in the dye</note>
+    <warning>Be sure to avoid any skin contact with the dye</warning>
+  </step>     
+     
+  <release>%{dye}</release>
+    
   <!-- Prepare gel box -->
-  <!-- IDEA: split into two protocols to allow execution in parallel (melting gel vs. prepping gel box) -->
   <take>
-    <object>Gel Box</object>
-    <quantity>1</quantity>
-    <var>box</var>
-  </take>
-  <!-- TODO: parameterize comb sizes -->
-  <take>
-    <object>Comb (L)</object>
-    <quantity>1</quantity>
-    <var>comb</var>
+    <item>
+      <type>Gel Box</type>
+      <quantity>1</quantity>
+      <var>box</var>
+    </item>
+    <item>
+      <type>Comb (L)</type>
+      <quantity>1</quantity>
+      <var>comb</var>
+    </item>
   </take>
   <step>
     <description>Set up the gel tray and gel box.</description>
@@ -132,6 +139,25 @@
     <description>Test the seal</description>
     <note>Test the seal of the gel by filling with about 1cm of water and checking for leaks. Pour the water out.</note>
   </step>
-  <!-- TODO: produce and release tags -->
+  <step>
+    <description>Insert the comb into the gel tray</description>
+  </step>
+  
+  <step>
+    <description>Carefully pour the conents of the flask into the gel tray</description>
+    <note>If necessary, use a pipette tip to push any bubbles to the sides of the tray</note>
+    <warning>Use heat resistant gloves, as the flask is still very hot!</warning>
+  </step>
+  
+  <release>[%{flask}[0],%{glove}[0]]</release>
+  
+  <produce render="false">
+      <object>Gel</object>
+      <quantity>1</quantity>
+      <var>gel</var>
+      <!-- Consumes items -->
+      <release>%{box}</release>
+      <release>%{comb}</release>
+  </produce>
 
 </protocol>
