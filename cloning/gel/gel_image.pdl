@@ -1,8 +1,7 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <protocol>
 
-  <information>This protocol guides the user through imaging a gel on the blue transilluminator using the gelDoc
-imaging station and the Canon G10 digitial camera.</information>
+  <information>This protocol is for imaging a gel on the blue transilluminator using the gelDoc imaging station and the Canon G10 digitial camera.</information>
 
   <!-- takes -->
   <argument>
@@ -14,9 +13,19 @@ imaging station and the Canon G10 digitial camera.</information>
     <object>Run Gel</object>
     <name>gel</name>
     <quantity>1</quantity>
-    <!-- FIXME: how do I specify an exact gel with an id? -->
   </take>
-
+  <take>
+    <object>transilluminator</object>
+    <name>transilluminator</name>
+    <quantity>1</quantity>
+  </take>
+  <take>
+    <object>camera</object>
+    <name>camera</name>
+    <quantity>1</quantity>
+  </take>
+  
+  
   <!-- Begin steps -->
   <!-- Camera on -->
   <step>
@@ -24,7 +33,7 @@ imaging station and the Canon G10 digitial camera.</information>
   </step>
   <!-- Physical setup -->
   <step>
-    <description>Place gel on blue transilluminator.</description>
+    <description>Carefully place gel on blue transilluminator.</description>
     <note>Remove large bubbles under the gel by sliding it around on the surface.</note>
   </step>
   <step>
@@ -32,7 +41,8 @@ imaging station and the Canon G10 digitial camera.</information>
     <note>Adjust the gelDoc until the gel is in the center of the camera display.</note>
   </step>
   <step>
-    <description>Turn on illuminator.</description>
+    <description>Turn on the illuminator</description>
+    <note>The power switch is located on the left side of the transilluminator, toward the back</note>
   </step>
   <!-- Camera settings -->
   <step>
@@ -55,7 +65,7 @@ imaging station and the Canon G10 digitial camera.</information>
     <!-- TODO: how? -->
   </step>
   <step>
-    <description>Set exposure time from 1 to 5 seconds</description>
+    <description>Set exposure time to 4 seconds</description>
     <!-- TODO: how? -->
   </step>
   <!-- Camera use -->
@@ -63,29 +73,24 @@ imaging station and the Canon G10 digitial camera.</information>
     <description>Using the zoom knob, zoom into the gel such that it covers the entire view </description>
     <!-- TODO: how? -->
   </step>
-  <!-- TODO: Replace with manual focus steps - auto is bad for gels -->
+  <step>
+    <description>Use manual focus to resolve the gel, using the ladder lane as a guide</description>
+    <note>Press right on the tough pad on the front of the camera, then use the zoom knob to adjust the focus</note>
+  </step>
+  <step>
+    <description>Take a picture</description>
+    <note>After the picture is taken, leave the camera on to sync with dropbox</note>
+  </step>
+
   <!-- Cleanup -->
   <step>
-    <description>Remove gel from illuminator</description>
+    <description>Remove gel from illuminator and return it to where it was</description>
   </step>
   <step>
     <description>Turn off illuminator and remove gelDoc imaging rig</description>
   </step>
-  <take>
-    <object>Kimwipes</object>
-    <quantity>1</quantity>
-    <var>wipe</var>
-  </take>
-  <take>
-    <object>Ethanol Spray Bottle</object>
-    <quantity>1</quantity>
-    <var>ethanol</var>
-  </take>
   <step>
     <description>Spray the top of the illuminator with ethanol, wipe dry with kimwipe</description>
   </step>
-  <release>
-    [%{ethanol}[0], %{wipe}[0], %{gel}[0]]
-  </release>
 
 </protocol>
