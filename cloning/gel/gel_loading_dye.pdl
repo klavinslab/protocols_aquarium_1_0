@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol name="Gel Loading Dye">
 
-  <information>Add gel dye to samples so they sink into gel wells and runnin progress can be tracked without prestaining.</information>
+  <information>This protocol is for adding loading dye to DNA samples before being loaded onto an agarose gel</information>
 
   <!-- Initial arguments -->
   <argument>
     <name>volume</name>
     <type>number</type>
-    <description>Enter the volume of the sample to which loading dye will be added</description>
+    <description>Enter the volume of the sample to which loading dye will be added (in ul)</description>
   </argument>
   <argument>
     <name>sample</name>
@@ -43,7 +43,8 @@
   <produce>
       <object>DNA with Loading Dye</object>
       <quantity>1</quantity>
-      <release>sample</release>
+      <var>sample2</var>
+      <release>%{sample}</release>
   </produce>
 
   <release>%{6X Loading Dye}</release>
