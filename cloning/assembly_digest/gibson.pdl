@@ -46,7 +46,7 @@
   </while>
 
   <take>
-    <type>Gibson aliquot 15µL</type>
+    <type>Gibson aliquot</type>
     <quantity>1</quantity>
     <var>gibson</var>
   </take>
