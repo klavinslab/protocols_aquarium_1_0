@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol>
+<information>Scarlessly assemble DNA using fragments with terminal homologies</information>
+  <!-- Initial arguments -->
+  <argument>
+    <name>fragment_n</name>
+    <type>number</type>
+    <description>Enter the number of fragments being assembled.</description>
+  </argument>
 
-<information>Scarlessly assemble DNA using terminal fragment homologies</information>
-
+  <take>
+    <item>
+    <type>Gibson aliquot</type>
+    <quantity>1</quantity>
+    <var>gibson</var>
+    </item>
+  </take>
 
 </protocol>
