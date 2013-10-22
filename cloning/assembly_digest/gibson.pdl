@@ -22,7 +22,7 @@
     <rhs>1</rhs>
   </assign>
   <while>
-    <condition>%{counter1} < %{fragment_n}</condition>
+    <condition>%{counter1} < 2 </condition>
     <do>
       <argument>
         <name>fragment_%{counter1}</name>
