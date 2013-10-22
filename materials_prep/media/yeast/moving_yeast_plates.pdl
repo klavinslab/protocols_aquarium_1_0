@@ -7,7 +7,7 @@ This protocol describes how to move yeast plates from the yeast incubator to ref
 </information>
 
 <step>
-  <description>Choose the type of yeast plates you are moving</description>
+  <description>Choose the type of yeast plates you are moving.</description>
     <select>
       <descripton>Media Types:</description>
       <var>media_type</var>
