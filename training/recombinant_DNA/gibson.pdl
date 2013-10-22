@@ -9,25 +9,40 @@
   </argument>
   
   <assign>
-    <lhs>counter1</lhs>
+    <lhs>i</lhs>
     <rhs>%{fragment_num}</rhs>
   </assign>
+  
+  <assign>
+    <lhs>fragment_id_array</lhs>
+    <rhs>[]</rhs>
+  </assign>
+  
+  <assign>
+    <lhs>fragment_vol_array</lhs>
+    <rhs>[]</rhs>
+  </assign>
+  
   <while>
-    <condition>%{counter1} &gt; 0 </condition>
+    <condition>%{i} &gt; 0</condition>
     <do>
-      <argument>
-        <name>fragment_%{counter1}</name>
-        <type>string</type>
-        <description>Enter the ID of fragment %{counter1}</description>
-      </argument>
-      <argument>
-        <name>fragment_vol_%{counter1}</name>
-        <type>number</type>
-        <description>Enter volume of fragment to add in µL</description>
-      </argument>
+      <step>
+        <description>Enter fragment id</description>
+        <getdata>
+          <type>string</type>
+          <description>fragment id</description>
+          <var>temp_id</var>
+        </getdata>
+      </step>    
       <assign>
-        <lhs>counter1</lhs>
-        <rhs>%{counter1} - 1</rhs>
+        <lhs>fragment_id_array</lhs>
+        <rhs>%{fragment_id_array} + [%{temp_id}]</rhs>
+      </assign>   
+      
+      
+      <assign>
+        <lhs>i</lhs>
+        <rhs>%{i} - 1</rhs>
       </assign>
     </do>
   </while>
