@@ -93,7 +93,7 @@
             <var>x%{num}</var>
           </getdata>
         </step>
-        <assign><lhs>num</lhs><rhs>%{num} - 1</rhs></assign>
+        <assign><lhs>num</lhs><rhs>%{num} + 1</rhs></assign>
       </do>
     </while>
 
