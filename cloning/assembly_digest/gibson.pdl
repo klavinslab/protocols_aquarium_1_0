@@ -46,9 +46,11 @@
   </while>
 
   <take>
+    <item>
     <type>Gibson aliquot</type>
     <quantity>1</quantity>
     <var>gibson</var>
+    </item>
   </take>
 
   <!-- Begin steps -->
@@ -70,9 +72,11 @@
     <condition>%{counter2} &le; %{fragment_n}</condition>
     <do>
       <take>
+        <item>
         <type>fragment_%{counter2}</type>
         <quantity>1</quantity>
         <var>fragment__%{counter2}</var>
+        </item>
       </take>
       <assign>
         <lhs>counter2</lhs>
