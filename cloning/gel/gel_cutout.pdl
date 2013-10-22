@@ -3,8 +3,7 @@
 
   <information>This is a protocol for cutting bands out of an agarose gel for later purification</information>
 
-  <!-- arguments -->
-  
+<!-- arguments -->
    <argument>
     <name>number</name>
     <type>number</type>
@@ -22,9 +21,8 @@
   </argument>
   <!-- IDEA: Specify by circling band(s) on an image? -->
 
-
-  <!-- takes -->
-<take>    
+<!-- takes -->
+  <take>    
     <item>
       <type>Transilluminator</type>
       <quantity>1</quantity>
@@ -40,16 +38,16 @@
       <quantity>1</quantity>
       <var>razor</var>
     </item>
-</take>
-<take>
+  </take>
+  <take>
     <item>
       <type>Eppendorf Tube</type>
       <quantity>%{number}</quantity>
       <var>tubes</var>
     </item>
-</take>
+  </take>
 
-  <!-- begin steps -->
+<!-- begin steps -->
   <step>
     <description>Label Eppendorph tube(s) with name, initials, and date. The names of the tubes are as follows: %{band_names}</description>
     <note>Keep the tubes in the order of the names listed. The bands will be cut out in this same order.</note>
@@ -59,28 +57,49 @@
     <note>As a reminder, the tubes should be ordered as follows: %{band_names}. Use the transilluminator to see bands. Cut as closely around the bands as possible to minimize gel mass.</note>
     <warning>Wipe the razor with an ethanol soaked kimwipe between cutting out each band to avoid contamination.</warning>
   </step>
-
   <step>
     <description>Clean up the gel station</description>
-    <note>Discard the remaining gel pieces in a biohazard bin and wipe down the transilluminator with kimwipes</note>
+    <note>Discard the remaining gel pieces in a biohazard bin and wipe down the transilluminator with ethanol soaked kimwipes</note>
   </step>
-
+  
+<!-- initial releases -->  
   <release>[%{light_box}[0], %{razor}[0]]</release>
-  <!-- TODO: clean up gel area, move to scale -->
 
-  <!-- Weighing out gel slices -->
+<!-- Weighing out gel slices -->
   <take>
     <item>
       <type>Scale</type>
       <quantity>1</quantity>
       <var>balance</var>
     </item>
+    <item>
+    <item>
+      <type>Eppendorf Tube</type>
+      <quantity>1</quantity>
+      <var>tare</var>
+    </item>
   </take>
-  <step>
-    <description>Weigh gel slice</description>
-    <note>Use empty eppendorf tube to tare balance. Record gel mass for each slice.</note>
-  </step>
-  <release>%{balance}</release>
+  
+  <assign><lhs>num</lhs><rhs>1</rhs></assign>
+
+    <while>
+      <condition>%{num} &lt; %{number} + 1</condition>
+      <do>
+        <step>
+          <description>Weigh gel slice %{num}</description>
+          <note>Use empty eppendorf tube to tare balance</note>
+          <getdata>
+            <type>number</type>
+            <description>Weight of gel slice %{num} in grams</description>
+            <var>x%{num}</var>
+          </getdata>
+        </step>
+        <assign><lhs>num</lhs><rhs>%{num} - 1</rhs></assign>
+      </do>
+    </while>
+
+  
+  <release>[%{balance}[0],%{tare}[0]]</release>
   <!-- TODO: transform eppendorf tube into product -->
 
   <produce>
