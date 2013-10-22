@@ -46,7 +46,7 @@
   </while>
 
   <take>
-    <object>Gibson aliquot 15µL</object>
+    <type>Gibson aliquot 15µL</type>
     <quantity>1</quantity>
     <var>gibson</var>
   </take>
@@ -70,7 +70,7 @@
     <condition>%{counter2} &le; %{fragment_n}</condition>
     <do>
       <take>
-        <object>fragment_%{counter2}</object>
+        <type>fragment_%{counter2}</type>
         <quantity>1</quantity>
         <var>fragment__%{counter2}</var>
       </take>
