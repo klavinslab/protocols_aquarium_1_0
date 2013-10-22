@@ -1,7 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol>
+<information>Scarlessly assemble DNA using fragments with terminal homologies</information>
+  <!-- Initial arguments -->
+  <argument>
+    <name>fragment_num</name>
+    <type>number</type>
+    <description>Enter the number of fragments being assembled.</description>
+  </argument>
+  
+  <assign>
+    <lhs>counter1</lhs>
+    <rhs>%{fragment_num}</rhs>
+  </assign>
+  <while>
+    <condition>%{counter1} &gt; 0 </condition>
+    <do>
+      <argument>
+        <name>fragment_%{counter1}</name>
+        <type>string</type>
+        <description>Enter the ID of fragment %{counter1}</description>
+      </argument>
+      <argument>
+        <name>fragment_vol_%{counter1}</name>
+        <type>number</type>
+        <description>Enter volume of fragment to add in µL</description>
+      </argument>
+      <assign>
+        <lhs>counter1</lhs>
+        <rhs>%{counter1} - 1</rhs>
+      </assign>
+    </do>
+  </while>
 
-<information>Scarlessly assemble DNA using terminal fragment homologies</information>
+  <take>
+    <item>
+    <type>Gibson aliquot</type>
+    <quantity>%{fragment_num}</quantity>
+    <var>aliquot</var>
+    </item>
+  </take>
+  
+  <!-- Begin steps -->
+  <step>
+    <description>Thaw Gibson aliquot by holding in your hands for several seconds, then put on ice block to keep it cool.</description>
+  </step>
+  <step>
+    <description>Spin down Gibson aliquot for 2 seconds on a tabletop mini centrifuge</description>
+    <note>Put back on ice block afterwards</note>
+  </step>
+  
+  
+  <release>%{aliquot}</release>
 
 
 </protocol>
