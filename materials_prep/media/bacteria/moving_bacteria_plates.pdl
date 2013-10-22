@@ -54,7 +54,7 @@ This protocol explains how to move bacteria plates from the yeast incubator to t
 </if>
 
 <if>
-  <condition>%{mediatype} == "LB agar + Chlor"</condition>
+  <condition>%{media_type} == "LB agar + Chlor"</condition>
   <then>
     <step>
       <description>Put away plates in row marked LB + Chlor.</description> 
