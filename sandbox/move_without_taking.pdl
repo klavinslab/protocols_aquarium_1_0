@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<protocol>
+  <assign>
+    <lhs>item</lhs>
+    <!--<rhs>{:id => 268, :name => "800 mL LB liquid (unsterile)", :data=>{}}</rhs>-->
+    <rhs>{:id => 268, :data=>{}}</rhs>
+  </assign>
+  <move>
+    <item>%{item}</item>
+    <location>"B1.340"</location>
+  </move>
+</protocol>

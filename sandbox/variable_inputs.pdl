@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<protocol>
+  <argument>
+    <description>How many fragments?</description>
+    <type>number</type>
+    <name>frag_number</name>
+  </argument>
+
+  <assign>
+    <lhs>i</lhs>
+    <rhs>%{frag_number}</rhs>
+  </assign>
+  <assign>
+    <lhs>fragment_array</lhs>
+    <rhs>[]</rhs>
+  </assign>
+  <assign>
+    <lhs>fragment_push_array</lhs>
+    <rhs>[]</rhs>
+  </assign>
+
+  <while>
+    <condition>%{i} &gt; 0</condition>
+    <do>
+      <step>
+        <description>Enter fragment id</description>
+        <getdata>
+          <type>string</type>
+          <description>fragment id</description>
+          <var>temp_id</var>
+        </getdata>
+      </step>
+
+      <assign>
+        <lhs>fragment_array</lhs>
+        <rhs>%{fragment_array} + [%{temp_id}]</rhs>
+      </assign>
+      <assign>
+        <lhs>fragment_push_array</lhs>
+        <rhs>%{fragment_push_array}.push(%{temp_id})</rhs>
+      </assign>
+
+      <assign>
+        <lhs>i</lhs>
+        <rhs>%{i} - 1</rhs>
+      </assign>
+    </do>
+  </while>
+
+  <step>
+    <description>With plus</description>
+    <note>%{fragment_array}</note>
+  </step>
+  <step>
+    <description>With push</description>
+    <note>%{fragment_push_array}</note>
+  </step>
+
+</protocol>
