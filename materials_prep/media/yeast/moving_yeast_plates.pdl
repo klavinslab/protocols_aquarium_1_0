@@ -11,7 +11,7 @@ This protocol describes how to move yeast plates from the yeast incubator to ref
   <note>
   </note>
     <select>
-      <descripton>Media Types:</description>
+     <description>Media Types:</description>
       <var>media_type</var>
       <choice>YPAD</choice>
       <choice>-His</choice>
