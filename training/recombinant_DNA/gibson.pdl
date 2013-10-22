@@ -75,7 +75,6 @@
   </step>
   <step>
     <description>Show the array</description>
-    <note>%{fragment_id_array}</note>
     <note>%{fragment_vol_array}</note>
   </step>
   
