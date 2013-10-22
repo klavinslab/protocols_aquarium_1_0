@@ -155,6 +155,10 @@
     <description>Apply autoclave tape.</description>
     <note>Add autoclave tape to each item. For items with lids, make sure autoclave tape extends fully over the lid and onto the sides of the item, so that one must break the seal in order to use it.</note>
   </step>
+  <step>
+    <description>Important autoclave note</description>
+    <note>If you are autoclaving any agar media, use the free-standing autoclave (not the autoclave A1) at the next step.</note>
+  </step>
   <take>
     <item>
       <type>Autoclave</type>
@@ -163,17 +167,21 @@
     </item>
   </take>
   <step>
+    <description>Check the autoclave.</description>
+    <note>For the tabletop autoclave A1, there is not much to check before using it - a low-water indicator will flash if water is low.\n\nFor the free-standing autoclave, check the water level and steam receptacle level. Inside the autoclave, the water should be high enough to almost cover the hexagonal plate. If it is low, fill with DI water. The steam receptacle is a plastic bottle at the front of the autoclave and the water level should be between low and high. If it is above this, empty into the sink.</note>
+  </step>
+  <step>
     <description>Place items in the autoclave.</description>
     <note>Place all items one at a time into the autoclave.</note>
     <warning>Make sure no caps are tight. If a cap is tight, the item may explode.</warning>
   </step>
   <step>
     <description>Seal the autoclave.</description>
-    <note>If you are using the tabletop autoclave at A1, close the autoclave door until it latches, pull the screw handle over to the front of the autoclave (unscrew if necessary), and rotate it clockwise until it is tight. If you are using the free-standing autoclave, close the hatch and seal by rotating clockwise and secure the magnetic safety device to the hatch.</note>
+    <note>If you are using the tabletop autoclave A1, close the autoclave door until it latches, pull the screw handle over to the front of the autoclave (unscrew if necessary), and rotate it clockwise until it is tight. If you are using the free-standing autoclave, close the hatch and seal by rotating clockwise and secure the magnetic safety device to the hatch.</note>
   </step>
   <step>
     <description>Set autoclave settings and start.</description>
-    <note>If using the free-stranding autoclave, set the temperature to 121°C and time at pressure to 15 minutes, then hit start. If using the tabletop autoclave at A1, select liquid cycle and start, which applies the same settings.</note>
+    <note>If using the free-stranding autoclave, set the temperature to 121°C and time at pressure to 15 minutes, then hit start. If using the tabletop autoclave A1, select liquid cycle and start, which applies the same settings.</note>
   </step>
   <step>
     <description>Wait around until the autoclave finishes.</description>
