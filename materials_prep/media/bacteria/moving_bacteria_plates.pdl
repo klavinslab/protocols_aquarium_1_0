@@ -14,10 +14,10 @@ This protocol describes how to move bacteria plates from the yeast incubator to 
      <description>Media Types:</description>
       <var>media_type</var>
       <choice>LB plus Amp</choice>
-      <choice>LB + Kan</choice>
-      <choice>LB + Chlor</choice>
-      <choice>LB + Amp + Chlor</choice>
-      <choice>LB + Amp + Kan</choice>
+      <choice>LB plus Kan</choice>
+      <choice>LB plus Chlor</choice>
+      <choice>LB plus Amp plus Chlor</choice>
+      <choice>LB plus Amp plus Kan</choice>
     </select>
 </step>
 
@@ -45,52 +45,60 @@ This protocol describes how to move bacteria plates from the yeast incubator to 
 </if>
 
 <if> 
-  <condition>%{media_type} == "-His"</condition>
+  <condition>%{media_type} == "LB plus Kan"</condition>
     <then>
       <step>
-        <description>Move the plates to the Refridgerator R1, located at . Yeast plates are on the top shelf.
+        <description>Move the plates to the Refridgerator R1, located at . Bacteria plates are on the second shelf
+        from the top.
         </description>
         <note>
-        Move the -His plates to the row labeled "-His", putting them behind the older stack(s) of -His plates.
+        Move the LB plus Kan plates to the row labeled "LB + Kan", putting them behind the older stack(s) of 
+        LB plus Kan plates.
         </note>
       </step>
     </then>
 </if>
 
 <if> 
-  <condition>%{media_type} == "-Ura"</condition>
+  <condition>%{media_type} == "LB plus Chlor"</condition>
     <then>
       <step>
-        <description>Move the plates to the Refridgerator R1, located at . Yeast plates are on the top shelf.
+        <description>Move the plates to the Refridgerator R1, located at . Bacteria plates are on the second shelf
+        from the top.
         </description>
         <note>
-        Move the -Ura plates to the row labeled "-Ura", putting them behind the older stack(s) of -Ura plates.
+        Move the LB plus Chlor plates to the row labeled "LB + Chlor", putting them behind the older stack(s) of 
+        LB plus Clhor plates.
         </note>
       </step>
     </then>
 </if>
 
 <if> 
-  <condition>%{media_type} == "-Leu"</condition>
+  <condition>%{media_type} == "LB plus Amp plus Chlor"</condition>
     <then>
       <step>
-        <description>Move the plates to the Refridgerator R1, located at . Yeast plates are on the top shelf.
+        <description>Move the plates to the Refridgerator R1, located at . Bacteria plates are on the second shelf
+        from the top.
         </description>
         <note>
-        Move the -Leu plates to the row labeled "-Leu", putting them behind the older stack(s) of -Leu plates.
+        Move the LB plus Amp plus Chlor plates to the row labeled "LB + Amp + Chlor", putting them behind the older stack(s) of 
+        LB plus Amp plus Chlor plates.
         </note>
       </step>
     </then>
 </if>
 
 <if> 
-  <condition>%{media_type} == "-Trp"</condition>
+  <condition>%{media_type} == "LB plus Amp plus Kan"</condition>
     <then>
       <step>
-        <description>Move the plates to the Refridgerator R1, located at . Yeast plates are on the top shelf.
+        <description>Move the plates to the Refridgerator R1, located at . Bacteria plates are on the second shelf
+        from the top.
         </description>
         <note>
-        Move the -Trp plates to the row labeled "-Trp", putting them behind the older stack(s) of -Trp plates.
+        Move the LB plus Amp plus Kan plates to the row labeled "LB + Amp + Kan", putting them behind the older stack(s) of 
+        LB plus Amp plus Kan plates.
         </note>
       </step>
     </then>
