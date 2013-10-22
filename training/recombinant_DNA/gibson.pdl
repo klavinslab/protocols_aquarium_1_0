@@ -33,12 +33,22 @@
           <description>fragment id</description>
           <var>temp_id</var>
         </getdata>
+        
+        <getdata>
+          <type>number</type>
+          <description>fragment volume</description>
+          <var>temp_vol</var>
+        </getdata>
       </step>    
       <assign>
         <lhs>fragment_id_array</lhs>
         <rhs>%{fragment_id_array} + [%{temp_id}]</rhs>
       </assign>   
       
+      <assign>
+        <lhs>fragment_vol_array</lhs>
+        <rhs>%{fragment_vol_array} + [%{temp_vol}]</rhs>
+      </assign>   
       
       <assign>
         <lhs>i</lhs>
@@ -63,7 +73,11 @@
     <description>Spin down Gibson aliquot for 2 seconds on a tabletop mini centrifuge</description>
     <note>Put back on ice block afterwards</note>
   </step>
-  
+  <step>
+    <description>Show the array</description>
+    <note>%{fragment_id_array}</note>
+    <note>%{fragment_vol_array}</note>
+  </step>
   
   <release>%{aliquot}</release>
 
