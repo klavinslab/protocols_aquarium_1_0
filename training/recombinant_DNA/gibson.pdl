@@ -3,7 +3,7 @@
 <information>Scarlessly assemble DNA using fragments with terminal homologies</information>
   <!-- Initial arguments -->
   <argument>
-    <name>fragment_n</name>
+    <name>fragment_num</name>
     <type>number</type>
     <description>Enter the number of fragments being assembled.</description>
   </argument>
@@ -11,9 +11,12 @@
   <take>
     <item>
     <type>Gibson aliquot</type>
-    <quantity>1</quantity>
-    <var>gibson</var>
+    <quantity>%{fragment_num}</quantity>
+    <var>aliquot</var>
     </item>
   </take>
+  
+  <release>%{aliquot}</release>
+
 
 </protocol>
