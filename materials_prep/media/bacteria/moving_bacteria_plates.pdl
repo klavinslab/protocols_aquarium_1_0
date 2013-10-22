@@ -8,6 +8,8 @@ This protocol explains how to move bacteria plates from the yeast incubator to t
 
 <step>
   <description>Select which type of plates you are moving.</description>
+      <note>
+      </note>
       <select>
         <description>Media Type:</description>
           <var>media_type</var>
