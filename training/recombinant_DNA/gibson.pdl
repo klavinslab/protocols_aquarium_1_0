@@ -86,7 +86,7 @@
     </step>
     <assign>
       <lhs>j</lhs>
-      <rhs>%{j} + 1<rhs>
+      <rhs>%{j} + 1</rhs>
     </assign>
     </do>
   </while>
