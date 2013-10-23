@@ -71,7 +71,7 @@
   </step>
   <step>
     <description>Spin down Gibson aliquot for 2 seconds on a tabletop mini centrifuge.</description>
-    <note>Put back on ice block afterwards</note>
+    <note>Put back on ice block afterwards.</note>
   </step>
 
   <assign>
@@ -82,7 +82,7 @@
     <condition>%{j} &lt; %{fragment_num}</condition>
     <do>
     <step>
-      <description>Add #{%{fragment_vol_array}[%{j}]} µL of fragment #{%{fragment_id_array}[%{j}]} into the gibson aliquot</description>
+      <description>Add #{%{fragment_vol_array}[1]} µL of fragment #{%{fragment_id_array}[1]} into the gibson aliquot</description>
     </step>
     <assign>
       <lhs>j</lhs>
