@@ -170,12 +170,12 @@
       <item>
         <type>%{upper_comb_size} Comb for %{gel_volume}ml gel box</type>
         <quantity>1</quantity>
-        <var>comb</var>
+        <var>comb1</var>
       </item>
       <item>
         <type>%{lower_comb_size} Comb for %{gel_volume}ml gel box</type>
         <quantity>1</quantity>
-        <var>comb</var>
+        <var>comb2</var>
       </item>
     </take>
   </else>
@@ -211,13 +211,29 @@
   
   <release>[%{flask}[0],%{glove}[0]]</release>
   
-  <produce render="false">
+<if>
+  <condition>%{lower_comb_size}=="None"</condition>
+  <then>
+    <produce render="false">
       <object>Gel</object>
       <quantity>1</quantity>
       <var>gel</var>
       <!-- Consumes items -->
       <release>%{box}</release>
       <release>%{comb}</release>
-  </produce>
+    </produce>
+  </then>
+  <else>
+    <produce render="false">
+      <object>Gel</object>
+      <quantity>1</quantity>
+      <var>gel</var>
+      <!-- Consumes items -->
+      <release>%{box}</release>
+      <release>%{comb1}</release>
+      <release>%{comb2}</release>
+    </produce>    
+  </else>
+</if>    
 
 </protocol>
