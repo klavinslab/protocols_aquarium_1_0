@@ -27,7 +27,7 @@
   <argument>
     <name>comb_width</name>
     <type>string</type>
-    <description>Enter the desired comb width ("Thick" or "Thin")</description>
+    <description>Enter the desired comb width ("thick" or "thin")</description>
   </argument>
   
 
@@ -156,7 +156,7 @@
     <note>Rinse gel box, gel tray, and gel comb(s) with DI water. Push the tray down fully into the center of the gel box, forming a seal.</note>
   </step>
   <step>
-    <description>Insert the comb(s) into the gel tray</description>
+    <description>Insert the comb(s) into the gel tray with the %{comb_width} side down</description>
   </step>
   
   <step>
