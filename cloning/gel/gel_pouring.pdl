@@ -145,9 +145,8 @@
     
   <!-- Prepare gel box -->
 <if>
-  <condition>%{lower_comb_size}="None"</condition>
+  <condition>%{lower_comb_size}=="None"</condition>
   <then>
-
     <take>  
       <item>
         <type>Gel Box</type>
@@ -181,13 +180,16 @@
     </take>
   </else>
 </if>
-  
-  
-  
+
   <step>
     <description>Set up the gel tray and gel box.</description>
     <note>Rinse gel box, gel tray, and gel comb(s) with DI water. Push the tray down fully into the center of the gel box, forming a seal.</note>
   </step>
+  
+  
+  
+  
+  
   <step>
     <description>Insert the comb(s) into the gel tray with the %{comb_width} side down</description>
   </step>
