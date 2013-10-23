@@ -121,7 +121,7 @@
 	</note>
 	<getdata>
 		<type>number</type>
-		<description>Enter the concentration (number only)</description>
+		<description>Enter the concentration (in ng/ul)</description>
 		<var>conc</var>
   </getdata>
 </step>
