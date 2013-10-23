@@ -40,11 +40,12 @@
 	<warning>
 	Do not insert anything but an electrocuvette into the electroporator. 1250V is a lot of volts.
   </warning>
+	<image>initialize_electroporator</image>
 </step>
 
 <take>
   <item>
-    <type>Orange Electrocuvette</type>
+    <type>Electrocuvette</type>
     <quantity>1</quantity>
     <var>cuvette</var>
   </item>
@@ -59,11 +60,12 @@
 	apply the voltage. Notice the gap between the two metal plates. This is where the 
 	cells will go. Also notice that there is a notch on one side of the cuvette. This 
 	notch will fit one way with the electroporator. Place the electrocuvette on the ice 
-	block to keep it ice cold.
+	block to keep it ice cold. Stick it in the side of the block, like in the picture.
 	</note>
 	<warning>
 	Make sure you keep this on ice!
   </warning>
+	<image>handle_electrocompetent_cells</image>
 </step>
 
 <take>
@@ -161,6 +163,7 @@
 	<warning>
 	Make sure you keep this on ice!
   </warning>
+	<image>handle_electrocompetent_cells</image>
 </step>
 
 <step>
@@ -175,6 +178,7 @@
 	<warning>
 	Do not pick the tube up by the bottom, your warm hands will heat the cells up too much.
   </warning>
+	<image>thawed_electrocompotent_cells</image>
 </step>
 
 <step>
@@ -186,6 +190,7 @@
 	ice block and make sure that the contents are a slush and not a solid. Pipette the 
 	DNA into the cell aliquot and mix up and down.
 	</note>
+	<image>pipette_plasmid_into_electrocompotent_cells</image>
 </step>
 
 <step>
@@ -212,6 +217,7 @@
 	<warning>
 	DO THIS FAST!! Make sure the mixture is in the gap and only in the gap.
   </warning>
+	<image>pipette_transformation_mix_to_cuvette</image>
 </step>
 
 <step>
@@ -225,6 +231,7 @@
 	<warning>
 	DO THIS FAST!!
   </warning>
+	<image>place_cuvette_in_electroporator</image>
 </step>
 
 <step>
@@ -253,6 +260,7 @@
 	<warning>
 	DO THIS FAST!!
   </warning>
+	<image>rescue_transformation</image>
 </step>
 
 <step>
