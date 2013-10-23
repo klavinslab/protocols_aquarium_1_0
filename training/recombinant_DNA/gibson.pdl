@@ -82,7 +82,7 @@
     <condition>%{j} &lt; %{fragment_num}</condition>
     <do>
     <step>
-      <description>Add %{fragment_vol_array}[j] µL of fragment %{fragment_id_array}[j] into the gibson aliquot</description>
+      <description>Add %{fragment_vol_array}[%{j}] µL of fragment %{fragment_id_array}[%{j}] into the gibson aliquot</description>
     </step>
     <assign>
       <lhs>j</lhs>
