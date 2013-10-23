@@ -70,7 +70,7 @@
   <take>
     <item>
     <type>Gibson aliquot</type>
-    <quantity>%{fragment_num}</quantity>
+    <quantity>1</quantity>
     <var>aliquot</var>
     </item>
   </take>
@@ -100,7 +100,7 @@
       <rhs>%{fragment_id_array}[%{j}]</rhs>
     </assign>
     <step>
-      <description>Add %{vol} µL of fragment %{id} into the gibson aliquot</description>
+      <description>Add %{vol} µL of fragment_%{id} into the gibson aliquot</description>
     </step>
     <assign>
       <lhs>j</lhs>
