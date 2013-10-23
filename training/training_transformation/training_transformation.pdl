@@ -9,7 +9,22 @@
     <quantity>1</quantity>
     <var>ice</var>
   </item>
+  <item>
+    <type>Aluminium Tube Holder</type>
+    <quantity>1</quantity>
+    <var>alu</var>
+  </item>
 </take>
+
+<step>
+  <description>
+  Put the tube holder on the ice block.
+  </description>
+  <note>
+  This is how you keep things cold. Put tubes in the holes and bigger stuff on the sides of
+	the ice block.
+	</note>
+</step>
 
 <step>
   <description>
@@ -82,7 +97,7 @@
 
   <item>
     <type>1.5 mL Tube</type>
-    <quantity>1</quantity>
+    <quantity>2</quantity>
     <var>tube</var>
   </item>
 	
@@ -106,9 +121,27 @@
 		<description>Enter the concentration (number only)</description>
 		<var>conc</var>
   </getdata>
-	<warning>
-	Make sure you are pipetting appropriate volumes!
-  </warning>
+</step>
+
+<assign>
+	<lhs>voladd</lhs>
+	<rhs>20*conc</rhs>
+</assign>
+
+<step>
+  <description>
+  (Continued) Dilute the DNA to 100 pg/ul with the molecular grade water.
+  </description>
+  <note>
+	Pipette 1 ul of the concentrated plasmid DNA into one of your 1.5 mL tubes.
+	Then add %{voladd} ul of molecular grade water to the tube. Pipette up and 
+	down to mix well. Set the dilute DNA on ice.
+	</note>
+	<getdata>
+		<type>number</type>
+		<description>Enter the concentration (number only)</description>
+		<var>conc</var>
+  </getdata>
 </step>
 
 <take>
@@ -212,21 +245,14 @@
   </warning>
 </step>
 
-<take>
-  <item>
-    <type>1.5 mL Tube</type>
-    <quantity>1</quantity>
-    <var>restube</var>
-  </item>
-</take>
-
 <step>
   <description>
   Rescue the cells.
   </description>
   <note>
 	Open the tube of LB media and pipette 200 ul of it into the electrocuvette. Pipette up and down 
-	so the cell slush and the media are well mixed. Transfer 200 ul of this mixture into a 1.5 mL tube.
+	so the cell slush and the media are well mixed. Transfer 200 ul of this mixture into the second
+	1.5 mL tube that you labelled earlier.
 	</note>
 	<warning>
 	DO THIS FAST!!
