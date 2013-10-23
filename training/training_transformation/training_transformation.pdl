@@ -13,7 +13,7 @@
 
 <step>
   <description>
-  Locate the electroporator at near the centrifuges.
+  Locate the electroporator near the centrifuges.
   </description>
   <note>
   This is an electroporator. An electroporator is a device that gets plasmid DNA into 
@@ -23,29 +23,6 @@
 	</note>
 	<warning>
 	Do not insert anything but an electrocuvette into the electroporator. 1250V is a lot of volts.
-  </warning>
-</step>
-
-<take>
-  <item>
-    <type>Competent Cell Aliquot</type>
-    <quantity>1</quantity>
-    <var>cells</var>
-  </item>
-</take>
-
-<step>
-  <description>
-  This is a tube of competent cells, place it on ice.
-  </description>
-  <note>
-  We have already prepared special cells called competent cells that have been washed to 
-	remove any extra ions which helps this process along. It is important to put the cells 
-	on ice when they're out of the freezer or else they will lose their competency and the 
-	DNA will not transform.
-	</note>
-	<warning>
-	Make sure you keep this on ice!
   </warning>
 </step>
 
@@ -86,13 +63,10 @@
   This is the plasmid DNA that will be transformed. Place it on ice.
   </description>
   <note>
-	This is the plasmid DNA that will be transformed. Plasmid DNA is a circular piece of 
-	DNA that encodes several genes. Plasmid DNA can be broken down into two main portions: 
-	the vector backbone and the insert. The backbone encodes the origin of replication and 
-	the antibiotic resistance. The origin of replication signals cellular machinery to copy 
-	the plasmid when the cell divides. The antibiotic resistance confers resistance to a 
-	certain antibiotic which helps us select for the cell that have the plasmid. In this case
-	the resistance marker is kan.
+	This is the plasmid DNA that will be transformed. It's at a high concentration
+	so you will need to dilute it. Transforming too much DNA will result in too
+	many colonies on a plate or even a lawn of bacteria. Since you want to see
+	individual colonies you will need to dilute.
 	</note>
 	<warning>
 	Make sure you keep this on ice!
@@ -124,13 +98,53 @@
   Dilute the DNA to 100 pg/ul with the molecular grade water.
   </description>
   <note>
-	Find the concentration of the DNA on the side of the tube and figure out how much 
-	water to mix with how much DNA. Label the empty 1.5 mL tube "Diluted DNA"
-	Use the pipetting skills you learned in the earlier 
-	tutorials to figure out which volumes are appropriate.
+	Find the concentration of the DNA on the side of the tube. This should be
+	a number with units of ng/ul. Enter it here.
 	</note>
+	<getdata>
+		<type>number</type>
+		<description>Enter the concentration (number only)</description>
+		<var>conc</var>
+  </getdata>
 	<warning>
 	Make sure you are pipetting appropriate volumes!
+  </warning>
+</step>
+
+<take>
+  <item>
+    <type>Electrocompetent Cell Aliquot</type>
+    <quantity>1</quantity>
+    <var>cells</var>
+  </item>
+</take>
+
+<step>
+  <description>
+  This is a tube of competent cells, place it on ice.
+  </description>
+  <note>
+  We have already prepared special cells called competent cells that have been washed to 
+	remove any extra ions which helps this process along. It is important to put the cells 
+	on ice when they're out of the freezer or else they will lose their competency and the 
+	DNA will not transform.
+	</note>
+	<warning>
+	Make sure you keep this on ice!
+  </warning>
+</step>
+
+<step>
+  <description>
+  Check to see if the cells have thawed.
+  </description>
+  <note>
+  In the time it took for you to read the last page, the cells should have thawed. To verify
+	this, pick up the cell aliquot and flick the tube. If the contents slush around, then the 
+	cells have thawed.
+	</note>
+	<warning>
+	Do not pick the tube up by the bottom, your warm hands will heat the cells up too much.
   </warning>
 </step>
 
