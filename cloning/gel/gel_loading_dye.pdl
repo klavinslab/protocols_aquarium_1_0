@@ -12,7 +12,7 @@
   <argument>
     <name>sample</name>
     <type>string</type>
-    <description>Enter the sample ID to which loading dye is being added</description>
+    <description>Enter the sample IDs to which loading dye will being added</description>
   </argument>
 
   <!-- Calculate volume of 6X dye that's needed to add -->
@@ -37,7 +37,7 @@
 
   <!-- Begin steps -->
   <step>
-    <description>Add %{loading_volume}µL of 6X Loading Dye to sample tube</description>
+    <description>Add %{loading_volume}µL of 6X Loading Dye to each sample</description>
   </step>
 
   <produce>
@@ -47,6 +47,6 @@
       <release>%{sample}</release>
   </produce>
 
-  <release>%{6X Loading Dye}</release>
+  <release>%{dye}</release>
 
 </protocol>
