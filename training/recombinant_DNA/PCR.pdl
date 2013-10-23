@@ -33,11 +33,14 @@
   <assign><lhs>extension_time</lhs><rhs>%{template_length} / 1000.0 * 20</rhs></assign>
 
   <!-- Initial takes -->
-  <take>
-    <object>0.2mL Thin Wall Strip Well Tubes</object>
-    <quantity>1</quantity>
-    <var>tube</var>
-  </take>
+    <take>
+        <item>
+        <type>0.2ml thin wall strip well{temp_id}</type>
+        <quantity>1</quantity>
+        <var>tube</var>
+        </item>
+      </take>
+  
   <take>
     <object>Molecular Grade Water 50mL aliquot</object>
     <quantity>1</quantity>
