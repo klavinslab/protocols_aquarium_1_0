@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol name="Gel Electrophoresis">
 
-  <information>This protocol is for seperating linearized DNA on an agarose gel by fragment size.</information>
+  <information>This protocol is for seperating linearized DNA on an agarose gel by fragment size</information>
 
   <!-- arguments -->
-  <!-- IDEA: arguments should have a maximum length option (only so many wells per gel) -->
   <argument>
     <name>sampleIDs</name>
     <type>string</type>
