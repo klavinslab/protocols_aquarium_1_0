@@ -73,7 +73,7 @@
   
   <!-- TODO: include the sample loading protocol here? -->
   <step>
-    <description>Load all samples</description>
+    <description>Load all samples, then discard the empty tubes in a biohazard bin</description>
     <note>Load the %{ladder} ladder in the first lane, followed by samples in the following order: %{sampleIDs}</note>
   </step>
   <!-- Hook up to power supply -->
@@ -97,8 +97,6 @@
     <description>Hit the 'running man' icon to start the power supply.</description>
     <note>Check for bubbles in the gel box to indicate that voltage is being applied</note>
   </step>
-  <!-- Put away combs -->
-  <release>%{samples}</release>
   
   <produce render="false">
       <object>Running Gel</object>
@@ -106,6 +104,8 @@
       <var>running_gel</var>
       <!-- Consumes gel -->
       <release>%{gel}</release>
+      <release>%{samples}</release>
+      <release>%{power}</release>
   </produce>
 
 </protocol>
