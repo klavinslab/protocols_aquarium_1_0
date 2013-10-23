@@ -275,7 +275,7 @@
 
 <release>[%{ice}[0],%{alu}[0],%{lb}[0]]</release>
 
-<release>[%{water}[0],%{tube}[1, 2],%{dna}[0]]</release>
+<release>[%{water}[0],%{dna}[0],%{cuvette}]</release>
 
 <step>
   <description>
