@@ -125,7 +125,7 @@
 
 <assign>
 	<lhs>voladd</lhs>
-	<rhs>20*%{conc}</rhs>
+	<rhs>10*%{conc}</rhs>
 </assign>
 
 <step>
@@ -137,11 +137,6 @@
 	Then add %{voladd} ul of molecular grade water to the tube. Pipette up and 
 	down to mix well. Set the dilute DNA on ice.
 	</note>
-	<getdata>
-		<type>number</type>
-		<description>Enter the concentration (number only)</description>
-		<var>conc</var>
-  </getdata>
 </step>
 
 <take>
