@@ -41,31 +41,49 @@
         </item>
       </take>
   
-  <take>
-    <object>Molecular Grade Water 50mL aliquot</object>
-    <quantity>1</quantity>
-    <var>MGH2O</var>
-  </take>
-  <take>
-    <object>Template DNA 1ng/µL</object>
-    <quantity>1</quantity>
-    <var>Template</var>
-  </take>
-  <take>
-    <object>primer1</object>
-    <quantity>1</quantity>
-    <var>primer1</var>
-  </take>
-  <take>
-    <object>primer2</object>
-    <quantity>1</quantity>
-    <var>primer2</var>
-  </take>
-  <take>
-    <object>Phusion 2X Master Mix</object>
-    <quantity>1</quantity>
-    <var>Phusion</var>
-  </take>
+    <take>
+        <item>
+        <type>molecular grade water 50ml aliquot{temp_id}</type>
+        <quantity>1</quantity>
+        <var>MGH20</var>
+        </item>
+      </take>
+ 
+   <take>
+        <item>
+        <type>Template DNA 1ng/µL{temp_id}</type>
+        <quantity>1</quantity>
+        <var>Template</var>
+        </item>
+      </take>
+      
+  
+   <take>
+        <item>
+        <type>primer1{temp_id}</type>
+        <quantity>1</quantity>
+        <var>primer1</var>
+        </item>
+      </take>
+      
+      
+     
+   <take>
+        <item>
+        <type>primer2{temp_id}</type>
+        <quantity>1</quantity>
+        <var>primer2</var>
+        </item>
+      </take>
+      
+  
+   <take>
+        <item>
+        <type>Phusion 2X Master Mix{temp_id}</type>
+        <quantity>1</quantity>
+        <var>Phusion</var>
+        </item>
+      </take>
 
   <!-- Begin steps -->
   <!-- Label tubes -->
