@@ -113,11 +113,16 @@
   </step>
 
   <!-- Acquire a thermal cycler -->
-  <take>
-    <object>Thermal Cycler</object>
-    <quantity>1</quantity>
-    <var>ThermalCycler</var>
-  </take>
+   
+   <take>
+        <item>
+        <type>Thermal Cycler{temp_id}</type>
+        <quantity>1</quantity>
+        <var>Thermal Cylcler</var>
+        </item>
+    </take>
+  
+  
 
   <!--  -->
   <!-- TODO: insert a table / newlines to make the note readable? -->
