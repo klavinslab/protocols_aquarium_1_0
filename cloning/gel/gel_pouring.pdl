@@ -67,8 +67,8 @@
   </take>
   
   <step>
-    <description>Measure out %{gel_volume}ml TAE using 100mL graduated cylinder.</description>
-    <note>Add to 250mL flask with agarose.</note>
+    <description>Measure out %{gel_volume}ml TAE using the 100mL graduated cylinder</description>
+    <note>Add to 250mL flask with agarose</note>
   </step>
 
   <release>[%{graduated_cylinder}[0],%{TAE}[0]]</release>
