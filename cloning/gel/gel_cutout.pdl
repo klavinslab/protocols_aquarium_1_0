@@ -87,11 +87,15 @@
         <step>
           <description>Weigh gel slice %{num}</description>
           <note>Use empty eppendorf tube to tare balance</note>
-          <getdata>
-            <type>number</type>
-            <description>Weight of gel slice %{num} in grams</description>
-            <var>x%{num}</var>
-          </getdata>
+
+
+
+
+
+
+
+
+
         </step>
         <assign><lhs>num</lhs><rhs>%{num} + 1</rhs></assign>
       </do>
