@@ -43,7 +43,7 @@
       
       <take>
         <item>
-        <type>fragment</type>
+        <type>fragment_%{temp_id}</type>
         <quantity>1</quantity>
         <var>fragment</var>
         </item>
