@@ -67,20 +67,32 @@
   
   <!-- Begin steps -->
   <step>
-    <description>Thaw %{fragment_num} Gibson aliquot by holding in your hands for several seconds, then put on ice block to keep it cool.</description>
+    <description>Thaw Gibson aliquot by holding in your hands for several seconds, then put on ice block to keep it cool.</description>
   </step>
   <step>
-    <description>Spin down %{fragment_num} Gibson aliquot for 2 seconds on a tabletop mini centrifuge.</description>
+    <description>Spin down Gibson aliquot for 2 seconds on a tabletop mini centrifuge.</description>
     <note>Put back on ice block afterwards</note>
   </step>
 
   <assign>
     <lhs>j</lhs>
-    <rhs>%{fragment_num}</rhs>
+    <rhs>0</rhs>
   </assign>  
+  <while>
+    <condition>%{j} &lt; %{fragment_num}</condition>
+    <do>
+    <step>
+      <description>Add %{fragment_vol_array}[j] µL of fragment %{fragment_id_array} into the gibson aliquot</description>
+    </step>
+    <assign>
+      <lhs>j</lhs>
+      <rhs>%{j} + 1<rhs>
+    </assign>
+    </do>
+  </while>
 
   <step>
-    <description>Add tube to a heat block set to 50°C.</description>
+    <description>Add the tube to a heat block set to 50°C.</description>
   </step>
   
   <release>%{aliquot}</release>
