@@ -15,20 +15,25 @@
     <description>Enter the desired percent agarose (suggested 0.8 to 1.0).</description>
   </argument>
   <argument>
-    <name>comb_number</name>
-    <type>number</type>
-    <description>Enter the desired number of combs (1 or 2)</description>
+    <name>upper_comb_size</name>
+    <type>string</type>
+    <description>Enter the desired comb size for the upper comb ("Large" or "Small")</description>
   </argument>
   <argument>
-    <name>comb_size</name>
+    <name>upper_comb_width</name>
     <type>string</type>
-    <description>Enter the desired comb size ("Large" or "Small")</description>
+    <description>Enter the desired comb width for the upper comb ("thick" or "thin")</description>
+  </argument>  
+  <argument>
+    <name>lower_comb_size</name>
+    <type>string</type>
+    <description>Enter the desired comb size for the lower comb ("Large","Small", or "None")</description>
   </argument>
   <argument>
-    <name>comb_width</name>
+    <name>lower_comb_width</name>
     <type>string</type>
-    <description>Enter the desired comb width ("thick" or "thin")</description>
-  </argument>
+    <description>Enter the desired comb width for the lower comb ("thick","thin", or None)</description>
+  </argument> 
   
 
   <!--- takes -->
@@ -139,18 +144,46 @@
   <release>%{dye}</release>
     
   <!-- Prepare gel box -->
-  <take>
-    <item>
-      <type>Gel Box</type>
-      <quantity>1</quantity>
-      <var>box</var>
-    </item>
-    <item>
-      <type>%{comb_size}_Comb_for_%{gel_volume}ml_gel_box</type>
-      <quantity>%{comb_number}</quantity>
-      <var>comb</var>
-    </item>
-  </take>
+<if>
+  <condition>%{lower_comb_size}="None"</condition>
+  <then>
+
+    <take>  
+      <item>
+        <type>Gel Box</type>
+        <quantity>1</quantity>
+        <var>box</var>
+      </item>
+      <item>
+        <type>%{upper_comb_size} Comb for %{gel_volume}ml gel box</type>
+        <quantity>1</quantity>
+        <var>comb</var>
+      </item>
+    </take>
+  </then>
+  <else>
+    <take>  
+      <item>
+        <type>Gel Box</type>
+        <quantity>1</quantity>
+        <var>box</var>
+      </item>    
+      <item>
+        <type>%{upper_comb_size} Comb for %{gel_volume}ml gel box</type>
+        <quantity>1</quantity>
+        <var>comb</var>
+      </item>
+      <item>
+        <type>%{lower comb size} Comb for %{gel_volume}ml gel box</type>
+        <quantity>1</quantity>
+        <var>comb</var>
+      </item>
+    </take>
+  </else>
+</if>
+  
+  
+  
   <step>
     <description>Set up the gel tray and gel box.</description>
     <note>Rinse gel box, gel tray, and gel comb(s) with DI water. Push the tray down fully into the center of the gel box, forming a seal.</note>
