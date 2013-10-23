@@ -40,10 +40,20 @@
           <var>temp_vol</var>
         </getdata>
       </step>    
+      
+      <take>
+        <item>
+        <type>fragment</type>
+        <quantity>1</quantity>
+        <var>fragment</var>
+        </item>
+      </take>
+      
       <assign>
         <lhs>fragment_id_array</lhs>
         <rhs>%{fragment_id_array} + [%{temp_id}]</rhs>
       </assign>   
+      
       
       <assign>
         <lhs>fragment_vol_array</lhs>
