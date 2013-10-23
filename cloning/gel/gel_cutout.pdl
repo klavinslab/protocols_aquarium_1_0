@@ -97,7 +97,6 @@
       </do>
     </while>
 
-  
   <release>[%{balance}[0],%{tare}[0]]</release>
   <!-- TODO: transform eppendorf tube into product -->
 
