@@ -97,11 +97,11 @@
     <do>
     <assign>
       <lhs>id</lhs>
-      <rhs>%{fragment_vol_array}[%{j}]</rhs>
+      <rhs>%{fragment_id_array}[%{j}]</rhs>
     </assign>
     <assign>
       <lhs>vol</lhs>
-      <rhs>%{fragment_id_array}[%{j}]</rhs>
+      <rhs>%{fragment_vol_array}[%{j}]</rhs>
     </assign>
     <step>
       <description>Add %{vol} µL of fragment_%{id} into the gibson aliquot</description>
