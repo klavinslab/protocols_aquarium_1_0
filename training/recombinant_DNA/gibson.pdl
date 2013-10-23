@@ -83,6 +83,10 @@
     <description>Spin down Gibson aliquot for 2 seconds on a tabletop mini centrifuge.</description>
     <note>Put back on ice block afterwards.</note>
   </step>
+  <step>
+    <description>Label the Gibson aliquot tube.</description>
+    <note>Write the Gibson reaction name (specified when submitted this protocol in bioturk).</note>
+  </step>
 
   <assign>
     <lhs>j</lhs>
@@ -110,7 +114,7 @@
   </while>
 
   <step>
-    <description>Add the tube to a heat block set to 50°C.</description>
+    <description>Transfer the tube in a heat block set to 50°C.</description>
   </step>
   
   <release>%{aliquot}</release>
