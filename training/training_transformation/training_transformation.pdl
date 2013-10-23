@@ -70,7 +70,7 @@
 
 <take>
   <item>
-    <type>Training Plasmid DNA Aliquot</type>
+    <type>Plasmid Stock</type>
     <quantity>1</quantity>
     <var>dna</var>
   </item>
@@ -273,16 +273,16 @@
 	</note>
 </step>
 
-<release>[%{ice}[0],%{cells}[0],%{lb}[0]]</release>
+<release>[%{ice}[0],%{alu}[0],%{lb}[0]]</release>
 
-<release>[%{water}[0]]</release>
+<release>[%{water}[0],%{tube}[1, 2],%{dna}[0]]</release>
 
 <step>
   <description>
   You've completed the first part of transformation.
   </description>
   <note>
-	Something educational here?
+	Have a look at your pending job list and rehearse them/read through them.
 	</note>
 </step>
 
