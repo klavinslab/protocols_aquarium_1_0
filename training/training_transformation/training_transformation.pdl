@@ -33,7 +33,7 @@
   </description>
   <note>
   What you are looking at is an electroporator. An electroporator is a device that gets plasmid DNA into 
-  E.coli cells through a process called electroporation. Turn on the electroporator and 
+  bacteria cells through a process called electroporation. Turn on the electroporator and 
   press the set volts button. Using the up arrow, set the voltage to 1250 V. Then press the 
   time const button.
 	</note>
@@ -60,7 +60,7 @@
 	apply the voltage. Notice the gap between the two metal plates. This is where the 
 	cells will go. Also notice that there is a notch on one side of the cuvette. This 
 	notch will fit one way with the electroporator. Place the electrocuvette on the ice 
-	block to keep it ice cold. Stick it in the side of the block, like in the picture.
+	block to keep it ice cold like in the picture.
 	</note>
 	<warning>
 	Make sure you keep this on ice!
@@ -187,8 +187,7 @@
   </description>
   <note>
 	By now, the cell aliquots should have thawed out. Remove the cell tube from the 
-	ice block and make sure that the contents are a slush and not a solid. Pipette the 
-	DNA into the cell aliquot and mix up and down.
+	ice block. Pipette 1 ul of the diluted DNA into the cell aliquot and mix up and down.
 	</note>
 	<image>pipette_plasmid_into_electrocompotent_cells</image>
 </step>
