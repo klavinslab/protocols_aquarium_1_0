@@ -173,7 +173,7 @@
         <var>comb</var>
       </item>
       <item>
-        <type>%{lower comb size} Comb for %{gel_volume}ml gel box</type>
+        <type>%{lower_comb_size} Comb for %{gel_volume}ml gel box</type>
         <quantity>1</quantity>
         <var>comb</var>
       </item>
@@ -186,13 +186,22 @@
     <note>Rinse gel box, gel tray, and gel comb(s) with DI water. Push the tray down fully into the center of the gel box, forming a seal.</note>
   </step>
   
-  
-  
-  
-  
-  <step>
-    <description>Insert the comb(s) into the gel tray with the %{comb_width} side down</description>
-  </step>
+<if>
+  <condition>%{lower_comb_size}=="None"</condition>
+  <then>
+    <step>
+      <description>Insert a %{upper_comb_size} comb into the upper gel tray slot with the %{upper_comb_width} side down</description>
+    </step>
+  </then>
+  <else>
+    <step>
+      <description>Insert a %{upper_comb_size} comb into the upper gel tray slot with the %{upper_comb_width} side down</description>
+    </step>
+    <step>
+      <description>Insert a %{lower_comb_size} comb into the lower gel tray slot with the %{lower_comb_width} side down</description>
+    </step>
+  </else>
+</if>  
   
   <step>
     <description>Carefully pour the conents of the flask into the gel tray</description>
