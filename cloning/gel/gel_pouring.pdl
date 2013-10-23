@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol name="Gel Pouring">
 
-  <information>This protocol is for preparing and pouring an agarose gel for electrophoresis.</information>
+  <information>This protocol is for preparing and pouring an agarose gel for electrophoresis</information>
 
   <!--- arguments -->
   <argument>
@@ -76,11 +76,6 @@
   <!-- Microwave into solution -->
   <take>
     <item>
-      <type>Heat-Resistant Glove</type>
-      <quantity>1</quantity>
-      <var>glove</var>
-    </item>
-    <item>
       <type>Microwave</type>
       <quantity>1</quantity>
       <var>microwave</var>
@@ -92,10 +87,19 @@
   <step>
     <description>Microwave for %{microwave_time} minute(s).</description>
   </step>
+  
+  <take>
+    <item>
+        <type>Heat-Resistant Glove</type>
+        <quantity>1</quantity>
+        <var>glove</var>
+    </item>
+  </take>
+  
   <step>
     <description>Carefully swirl flask for 5 seconds to check for complete dissolution</description>
     <note>If not completely dissolved, microwave for an additional 30 seconds and repeat this step</note>
-    <warning>Use heat-resistant, waterproof gloves.</warning>
+    <warning>Use heat-resistant, waterproof gloves</warning>
   </step>
      
   <release>%{microwave}</release>
