@@ -7,7 +7,7 @@
   <argument>
     <name>gel_id</name>
     <type>string</type>
-    <description>Enter the input gel ID.</description>
+    <description>Enter the input gel ID</description>
   </argument>
   <take>
     <item>
@@ -32,6 +32,7 @@
   <!-- Camera on -->
   <step>
     <description>Turn on camera by pressing the power button once, located on the top of the camera on the right hand side</description>
+    <warning>This entire protocol, including touching the camera, should be done WITH GLOVES</warning>
   </step>
   <!-- Physical setup -->
   <step>
@@ -53,6 +54,7 @@
   </step>
   <step>
     <description>Set the ISO to 100</description>
+    <!-- TODO: how? -->
   </step>
   <step>
     <description>Switch camera to macro mode</description>
@@ -68,16 +70,16 @@
   </step>
   <step>
     <description>Set exposure time to 4 seconds</description>
-    <!-- TODO: how? -->
+    <note>Rotate the disk around the touch pad on the front of the camera to adjust the exposure</note>
   </step>
   <!-- Camera use -->
   <step>
-    <description>Using the zoom knob, zoom into the gel such that it covers the entire view </description>
-    <!-- TODO: how? -->
+    <description>Zoom into the gel such that it covers the entire view </description>
+    <note>Use the zoom nob on the top of the camera to adjust the zoon</note>
   </step>
   <step>
     <description>Use manual focus to resolve the gel, using the ladder lane as a guide</description>
-    <note>Press right on the tough pad on the front of the camera, then use the zoom knob to adjust the focus</note>
+    <note>Press right on the tough pad on the front of the camera, then rotate the disk around the touch pad to adjust the focus</note>
   </step>
   <step>
     <description>Take a picture</description>
