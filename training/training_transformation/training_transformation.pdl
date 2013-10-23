@@ -125,7 +125,7 @@
 
 <assign>
 	<lhs>voladd</lhs>
-	<rhs>20*conc</rhs>
+	<rhs>20*%{conc}</rhs>
 </assign>
 
 <step>
