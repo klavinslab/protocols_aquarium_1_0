@@ -45,7 +45,7 @@
 
 <take>
   <item>
-    <type>Clean Electrocuvette</type>
+    <type>Electrocuvette</type>
     <quantity>1</quantity>
     <var>cuvette</var>
   </item>
