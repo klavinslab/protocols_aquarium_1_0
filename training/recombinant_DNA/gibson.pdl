@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol>
-<information>Scarlessly assemble DNA using fragments with terminal homologies</information>
+<information>Scarlessly assemble DNA using fragments with terminal homologies.</information>
   <!-- Initial arguments -->
   <argument>
     <name>fragment_num</name>
@@ -68,6 +68,12 @@
   </while>
 
   <take>
+    <item>
+    <type>50C Heat Block</type>
+    <quantity>1</quantity>
+    <var>my_heatblock</type>
+    </item>
+    
     <item>
     <type>Gibson aliquot</type>
     <quantity>1</quantity>
