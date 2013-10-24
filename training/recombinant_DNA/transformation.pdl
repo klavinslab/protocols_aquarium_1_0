@@ -2,7 +2,6 @@
 <protocol>
 
   <information>E.coli Transformation protocol</information>
-  <!--
   <!-- Arguments -->
     <argument>
         <name>Plasmid</name>
@@ -51,8 +50,8 @@
             \nPlace the tube in the tube rack.
             \nThis tube will be used to hold your final transformation.
         </note>
-    </step>-->
-    
+    </step>
+    <!--
     <take>
         <item>
             <type>Plasmid</type><quantity>1</quantity><var>my_plasmid</var>
@@ -67,6 +66,7 @@
             <type>Aluminun tube rack</type><quantity>1</quantity><var>my_alrack</var>
         </item>
     </take>    
+    -->
 
   <!-- Produce -->
   <!-- Final releases -->
