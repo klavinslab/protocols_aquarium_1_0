@@ -7,92 +7,127 @@ This protocol describes how to move yeast plates from the yeast incubator to ref
 </information>
 
 <step>
-  <description>Choose the type of yeast plates you are moving.</description>
+  <description>Choose the type of yeast plates you are moving.</description>s
   <note>
   </note>
     <select>
      <description>Media Types:</description>
       <var>media_type</var>
-      <choice>YPAD</choice>
-      <choice>-His</choice>
-      <choice>-Ura</choice>
-      <choice>-Leu</choice>
-      <choice>-Trp</choice>
+      <choice>YPAD Plate (sterile)</choice>
+      <choice>SDO -His Plate (sterile)</choice>
+      <choice>SDO -Ura Plate (sterile)</choice>
+      <choice>SDO -Leu Plate (sterile)</choice>
+      <choice>SDO -Trp Plate (sterile)</choice>
     </select>
+	<getdata>
+		<type>number</type>
+		<description>Enter the number of plates that are being moved</description>
+		<var>number</var>
+			
+	</getdata>
+
 </step>
 
+
 <step>
-  <description>Take plates out of yeast incubator.</description>
+  <description>When selecting the location of plates:</description>
   <note>
-  Go to the yeast incubator, located at A1.110, take plates that you are moving out of the incubator, and move
-  them to bay 1.
+  Always select from the location A1.110: This is the location of the yeast incubator.
   </note>
 </step>
 
+
+<take>
+	<item>
+		<type>%{media_type}</type>
+		<quantity>%{number}</quantity>
+		<var>plates</var>
+	</item>
+</take>
+
+
 <if> 
-  <condition>%{media_type} == "YPAD"</condition>
+  <condition>%{media_type} == "YPAD Plate (sterile)"</condition>
     <then>
       <step>
-        <description>Move the plates to the Refridgerator R1, located at . Yeast plates are on the top shelf.
+        <description>Move the plates to the Refridgerator R1, located at B0.110. Yeast plates are on the top shelf.
         </description>
         <note>
-        Move the YPAD plates to the row labeled "YPAD", putting them behind the older stack(s) of YPAD plates.
+        Move the plates to the row labeled "YPAD", putting them behind the older stack(s) of plates.
         </note>
       </step>
     </then>
 </if>
 
 <if> 
-  <condition>%{media_type} == "-His"</condition>
+  <condition>%{media_type} == "SDO -His Plate (sterile)"</condition>
     <then>
       <step>
-        <description>Move the plates to the Refridgerator R1, located at . Yeast plates are on the top shelf.
+        <description>Move the plates to the Refridgerator R1, located at B0.110. Yeast plates are on the top shelf.
         </description>
         <note>
-        Move the -His plates to the row labeled "-His", putting them behind the older stack(s) of -His plates.
+        Move theplates to the row labeled "-His", putting them behind the older stack(s) of plates.
         </note>
       </step>
     </then>
 </if>
 
 <if> 
-  <condition>%{media_type} == "-Ura"</condition>
+  <condition>%{media_type} == "SDO -Ura Plate (sterile)"</condition>
     <then>
       <step>
-        <description>Move the plates to the Refridgerator R1, located at . Yeast plates are on the top shelf.
+        <description>Move the plates to the Refridgerator R1, located at B0.110. Yeast plates are on the top shelf.
         </description>
         <note>
-        Move the -Ura plates to the row labeled "-Ura", putting them behind the older stack(s) of -Ura plates.
+        Move the plates to the row labeled "-Ura", putting them behind the older stack(s) of plates.
         </note>
       </step>
     </then>
 </if>
 
 <if> 
-  <condition>%{media_type} == "-Leu"</condition>
+  <condition>%{media_type} == "SDO -Leu Plate (sterile)"</condition>
     <then>
       <step>
-        <description>Move the plates to the Refridgerator R1, located at . Yeast plates are on the top shelf.
+        <description>Move the plates to the Refridgerator R1, located at B0.110. Yeast plates are on the top shelf.
         </description>
         <note>
-        Move the -Leu plates to the row labeled "-Leu", putting them behind the older stack(s) of -Leu plates.
+        Move the plates to the row labeled "-Leu", putting them behind the older stack(s) of plates.
         </note>
       </step>
     </then>
 </if>
 
 <if> 
-  <condition>%{media_type} == "-Trp"</condition>
+  <condition>%{media_type} == "SDO -Trp Plate (sterile)"</condition>
     <then>
       <step>
-        <description>Move the plates to the Refridgerator R1, located at . Yeast plates are on the top shelf.
+        <description>Move the plates to the Refridgerator R1, located at B0.110. Yeast plates are on the top shelf.
         </description>
         <note>
-        Move the -Trp plates to the row labeled "-Trp", putting them behind the older stack(s) of -Trp plates.
+        Move the plates to the row labeled "-Trp", putting them behind the older stack(s) of plates.
         </note>
       </step>
     </then>
 </if>
-  
+
+
+<produce render="false">
+	<object>%{media_type}</object>
+	<quantity>%{number}</quantity>
+	<var>produced_plates</var>
+	
+	<release>%{plates}</release>
+</produce>
+
+
+
+<move>
+	<item>%{produced_plates}</item>
+	<location>"B0.110"</location>
+</move>
+
+
 
 </protocol>
+
