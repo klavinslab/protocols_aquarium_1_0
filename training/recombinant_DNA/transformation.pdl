@@ -83,8 +83,6 @@
             and place the tube of cells in the Aluminum tube rack.\n
             The cuvette should be placed alongside the ice block.
         </note>
-        <image>handle_electrocompetent_cells</image>
-        <warning></warning>
     </step>
     
     <take>
@@ -92,7 +90,7 @@
                 <type>Electrocuvette</type><quantity>1</quantity><var>my_cuvette</var>
         </item>
         <item>
-                <type>DH5alpha</type><quantity>1</quantity><var>my_strain</var>
+                <type>%{Strain}</type><quantity>1</quantity><var>my_strain</var>
         </item>
     </take>
 
