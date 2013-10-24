@@ -93,23 +93,23 @@
   </step>
   <!-- Add water -->
   <step>
-    <description>Pipet 19µL molecular grade water into the strip well tube.</description>
+    <description>Pipet 3.8µL molecular grade water into the strip well tube.</description>
   </step>
   <!-- Add 1ng of template -->
   <step>
-    <description>Pipet 1µL diluted template DNA into the strip well tube.</description>
+    <description>Pipet 0.2µL diluted template DNA into the strip well tube.</description>
   </step>
   <!-- Add first primer -->
   <step>
-    <description>Pipet 2.5µL of primer 1 into the strip well tube.</description>
+    <description>Pipet 0.5µL of primer 1 into the strip well tube.</description>
   </step>
   <!-- Add second primer -->
   <step>
-    <description>Pipet 2.5µL of primer 2 into the strip well tube.</description>
+    <description>Pipet 0.5µL of primer 2 into the strip well tube.</description>
   </step>
   <!-- Add Phusion polymerase master mix -->
   <step>
-    <description>Pipet 25µL of 2X Phusion Master Mix into the strip well tube.</description>
+    <description>Pipet 5µL of 2X Phusion Master Mix into the strip well tube.</description>
   </step>
 
   <!-- Acquire a thermal cycler -->
