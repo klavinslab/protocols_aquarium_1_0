@@ -13,12 +13,13 @@
         <type>string</type>
         <description>The electrocompetent cell type to be used.</description>
     </argument>  
-    
+  <!--    
     <argument>
         <name>Incubator_time</name>
         <type>number</type>
         <description>Time duration in the incubator for recovery.</description>
     </argument>
+  -->
 
   <!-- Initial takes -->
 
