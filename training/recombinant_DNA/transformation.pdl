@@ -91,7 +91,7 @@
                 <type>Clean Electrocuvette</type><quantity>1</quantity><var>my_cuvette</var>
         </item>
         <item>
-                <type>%{Strain}</type><quantity>1</quantity><var>my_strain</var>
+                <type>Electrocompetent_%{Strain}</type><quantity>1</quantity><var>my_strain</var>
         </item>
     </take>
 
