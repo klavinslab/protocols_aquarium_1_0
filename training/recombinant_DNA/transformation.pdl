@@ -21,6 +21,7 @@
     </argument>
 
   <!-- Initial takes -->
+    <!--
     <take>
         <item>
                 <type>Electroporator</type><quantity>1</quantity><var>my_electroporator</var>
@@ -38,6 +39,7 @@
                 <type>1.5 mL Test Tube</type><quantity>1</quantity><var>my_tube</var>
         </item>
     </take>
+    -->
   
   <!-- Begin steps -->
     <step>
@@ -51,7 +53,7 @@
             \nThis tube will be used to hold your final transformation.
         </note>
     </step>
-    <!--
+
     <take>
         <item>
             <type>Plasmid</type><quantity>1</quantity><var>my_plasmid</var>
@@ -66,7 +68,7 @@
             <type>Aluminun tube rack</type><quantity>1</quantity><var>my_alrack</var>
         </item>
     </take>    
-    -->
+
 
   <!-- Produce -->
   <!-- Final releases -->
