@@ -140,6 +140,6 @@
     </produce>
 
   <!-- Final releases -->
-    <release>[%{my_electroporator}[0],%{my_falcon_tube}[0],%{my_tube_rack}[0],%{my_tube}[0],%{my_plasmid}[0],
-    %{my_styblock}[0],%{my_iceblock}[0],%{my_alrack}[0],%{my_cuvette}[0],%{my_strain}[0]]</release>
+    <release>[%{my_electroporator}[0],%{my_falcon_tube}[0],%{my_tube_rack}[0],%{my_tube}[0],%{my_plasmid}[0]]</release>
+    <release>[%{my_styblock}[0],%{my_iceblock}[0],%{my_alrack}[0],%{my_cuvette}[0],%{my_strain}[0]]</release>
 </protocol>
