@@ -53,7 +53,7 @@
             \nThis tube will be used to hold your final transformation.
         </note>
     </step>
-
+<!--
     <take>
         <item>
             <type>Plasmid</type><quantity>1</quantity><var>my_plasmid</var>
@@ -68,6 +68,35 @@
             <type>Aluminun tube rack</type><quantity>1</quantity><var>my_alrack</var>
         </item>
     </take>    
+    
+    -->
+    <step>
+        <description>Arrange Ice Block</description>
+        <note>Put the Ice block in the Styrophoam block, and place the Aluminum tube rack 
+        on top of the ice block.</note>
+    </step>
+
+    <step>
+        <description>Handling Electrocompetent Cells</description>
+        <note>You will now be asked to grab the electrocompetent cells and a cuvette.\n
+            When grabbing the Electrocompetent Cells, take the arranged Ice block with you
+            and place the tube of cells in the Aluminum tube rack.\n
+            The cuvette should be placed alongside the ice block.
+        </note>
+        <image>handle_electrocompetent_cells</image>
+        <warning></warning>
+    </step>
+    
+    <take>
+        <item>
+                <type>Electrocuvette</type><quantity>1</quantity><var>my_cuvette</var>
+        </item>
+        <item>
+                <type>DH5alpha</type><quantity>1</quantity><var>my_strain</var>
+        </item>
+    </take>
+
+
 
 
   <!-- Produce -->
