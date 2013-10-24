@@ -119,8 +119,29 @@
         </note>
         <warning>Must be done QUICKLY</warning>
     </step>
+    
+    <step>
+        <description>Rescue</description>
+        <note>Remove the electrocuvette from the electroporator and QUICKLY add 1 mL of room-temperature LB to it.\n
+            Pipette up and down 5-7 times to extract the cells from the 1mm gap in the cuvette.
+        </note>
+        <warning>Must be done QUICKLY</warning>
+    </step>
+    
+    <step>
+        <description>Transfer to labeled 1.5 mL tube</description>
+        <note></note>
+        <warning></warning>
+    </step>
+    
 
-  <!-- Produce -->
+        <!--Produce-->
+    <produce>
+        <object>1.5 mL Transformation</object>
+        <quantity>1</quantity>
+        <release>1.5 mL Test Tube</release>
+    </produce>
+
   <!-- Final releases -->
 
 </protocol>
