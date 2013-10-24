@@ -52,6 +52,21 @@
             \nThis tube will be used to hold your final transformation.
         </note>
     </step>
+    
+    <take>
+        <item>
+            <type>Plasmid</type><quantity>1</quantity><var>my_plasmid</var>
+        </item>
+        <item>
+                <type>Styrophoam Block</type><quantity>1</quantity><var>my_styblock</var>
+        </item>
+        <item>
+                <type>Ice block</type><quantity>1</quantity><var>my_iceblock</var>
+        </item>
+        <item>
+            <type>Aluminun tube rack</type><quantity>1</quantity><var>my_alrack</var>
+        </item>
+    </take>    
 
   <!-- Produce -->
   <!-- Final releases -->
