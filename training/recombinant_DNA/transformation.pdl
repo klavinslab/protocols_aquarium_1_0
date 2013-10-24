@@ -1,10 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol>
 
-  <information></information>
+  <information>E.coli Transformation protocol</information>
 
   <!-- Arguments -->
+    <argument>
+        <name>Plasmid</name>
+        <type>string</type>
+        <description>The plasmid to be used.</description>
+    </argument>
+    <argument>
+        <name>Strain</name>
+        <type>string</type>
+        <description>The electrocompetent cell type to be used.</description>
+    </argument>  
+    
+    <argument>
+        <name>Incubator_time</name>
+        <type>number</type>
+        <description>Time duration in the incubator for recovery.</description>
+    </argument>
+
   <!-- Initial takes -->
+    <take>
+        <item>
+                <type>Electroporator</type><quantity>1</quantity><var>my_electroporator</var>
+        </item>
+    </take>
+
+    <take>
+        <item>
+                <type>50 mL Falcon Tube LB</type><quantity>1</quantity><var>my_falcon_tube</var>
+        </item>
+        <item>
+                <type>1.5 mL Test Tube Rack</type><quantity>1</quantity><var>my_tube_rack</var>
+        </item>
+        <item>
+                <type>1.5 mL Test Tube</type><quantity>1</quantity><var>my_tube</var>
+        </item>
+    </take>
+  
   <!-- Begin steps -->
   <!-- Produce -->
   <!-- Final releases -->
