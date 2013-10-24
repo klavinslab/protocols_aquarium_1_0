@@ -30,7 +30,7 @@
    
     <take>
         <item>
-        <type>0.2ml strip well tube{temp_id}</type>
+        <type>0.2ml strip well tube</type>
         <quantity>1</quantity>
         <var>tube</var>
         </item>
@@ -38,7 +38,7 @@
   
     <take>
         <item>
-        <type>molecular grade water 50ml aliquot{temp_id}</type>
+        <type>molecular grade water 50ml aliquot</type>
         <quantity>1</quantity>
         <var>MGH20</var>
         </item>
@@ -46,7 +46,7 @@
  
    <take>
         <item>
-        <type>Template DNA{temp_id}</type>
+        <type>Template DNA</type>
         <quantity>1</quantity>
         <var>Template</var>
         </item>
