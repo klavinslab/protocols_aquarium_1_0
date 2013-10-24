@@ -9,28 +9,19 @@
     <description>Enter the template ID.</description>
   </argument>
   <argument>
-    <name>primer1</name>
+    <name>restriction_enzyme</name>
     <type>string</type>
-    <description>Enter the first primer ID.</description>
+    <description>Enter the Enzyme ID</description>
   </argument>
+ 
   <argument>
-    <name>primer2</name>
-    <type>string</type>
-    <description>Enter the second primer ID.</description>
-  </argument>
-  <argument>
-    <name>phusion_anneal</name>
+    <name>template_concentration</name>
     <type>number</type>
-    <description>Enter the anneal temperature.</description>
-  </argument>
-  <argument>
-    <name>template_length</name>
-    <type>number</type>
-    <description>Enter the length of the amplicon in bp.</description>
+    <description>Enter the concentration of the template DNA in ng/µl</description>
   </argument>
 
-  <!-- Extension time math -->
-  <assign><lhs>extension_time</lhs><rhs>%{template_length} / 1000.0 * 20</rhs></assign>
+  <!-- Concentration math -->
+  <assign><lhs>template_volume</lhs><rhs>%{template_concentration}</rhs></assign>
 
   <!-- Initial takes -->
    
@@ -125,14 +116,13 @@
   
   
 
-  <!--  -->
-  <!-- TODO: insert a table / newlines to make the note readable? -->
+ 
   <step>
     <description>Set up the thermal cycler program.</description>
     <note>First step is 98°C for 5 minutes. Second step is 35 cycles of: denature at 98°C for 10 seconds, anneal at %{phusion_anneal}°C for 10 seconds, and extend at 72°C for %{extension_time} seconds. The third and final step is an extension at 72°C for 5 minutes.</note>
   </step>
   <!-- Run the program -->
   <step>
-    <description>Hit 'run' on the thermal cycler and select 10µL setting.</description>
+    <description>Place the tube into a 37ºC incubator for 1 hour</description>
   </step>
 </protocol>
