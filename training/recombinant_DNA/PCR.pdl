@@ -52,7 +52,7 @@
  
    <take>
         <item>
-        <type>Template DNA 1ng/µL{temp_id}</type>
+        <type>Template DNA 1ng/µL</type>
         <quantity>1</quantity>
         <var>Template</var>
         </item>
@@ -61,7 +61,7 @@
   
    <take>
         <item>
-        <type>primer1{temp_id}</type>
+        <type>primer1</type>
         <quantity>1</quantity>
         <var>primer1</var>
         </item>
@@ -71,7 +71,7 @@
      
    <take>
         <item>
-        <type>primer2{temp_id}</type>
+        <type>primer2</type>
         <quantity>1</quantity>
         <var>primer2</var>
         </item>
@@ -80,7 +80,7 @@
   
    <take>
         <item>
-        <type>Phusion 2X Master Mix{temp_id}</type>
+        <type>Phusion 2X Master Mix</type>
         <quantity>1</quantity>
         <var>Phusion</var>
         </item>
@@ -117,7 +117,7 @@
    
    <take>
         <item>
-        <type>Thermal Cycler{temp_id}</type>
+        <type>Thermal Cycler</type>
         <quantity>1</quantity>
         <var>Thermal Cylcler</var>
         </item>
