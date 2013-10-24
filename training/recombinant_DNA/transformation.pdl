@@ -57,7 +57,7 @@
 
     <take>
         <item>
-            <type>Plasmid</type><quantity>1</quantity><var>my_plasmid</var>
+            <type>Plasmid_%{Plasmid}</type><quantity>1</quantity><var>my_plasmid</var>
         </item>
         <item>
                 <type>Styrophoam Block</type><quantity>1</quantity><var>my_styblock</var>
@@ -104,7 +104,7 @@
         <description>Pipette 2 uL of your plasmid into the Electrocompetent Cells tube and mix with the pipette tip.
             Then transfer the mixture, via pipette, into the elevtrocuvette.</description>
     </step>
-    
+<!--    
     <step>
         <description>Electroporation and Rescue</description>
         <note>We will now begin Electroporation and Rescue of the cells.\n
@@ -112,6 +112,7 @@
             After Electroporation, Rescue must happen as quickly as possible.
         </note>
     </step>
+-->
     
     <step>
         <description>Electroporation</description>
