@@ -116,8 +116,6 @@
   <step>
     <description>Transfer the tube in a heat block set to 50°C.</description>
   </step>
-  
-  <release>%{aliquot}</release>
 
 
 </protocol>
