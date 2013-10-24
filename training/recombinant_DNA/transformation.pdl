@@ -139,7 +139,6 @@
     <produce>
         <object>1.5 mL Transformation</object>
         <quantity>1</quantity>
-        <release>%{my_tube}</release>
     </produce>
 
   <!-- Final releases -->
