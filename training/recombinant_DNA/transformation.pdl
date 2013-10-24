@@ -44,7 +44,6 @@
     <step>
         <description>Intialize the Electroporator</description>
         <note>Click on and set the voltage to 1250V</note>
-        <warning></warning>
     </step>
     <step>
         <description>Label the 1.5 mL Test Tube</description>
@@ -52,7 +51,6 @@
             \nPlace the tube in the tube rack.
             \nThis tube will be used to hold your final transformation.
         </note>
-        <warning></warning>
     </step>
 
   <!-- Produce -->
