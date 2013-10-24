@@ -53,9 +53,9 @@
   
    <take>
         <item>
-        <type>{restriction_enzyme}</type>
+        <type>your choosen restriction enzyme</type>
         <quantity>1</quantity>
-        <var>Phusion</var>
+        <var>enzyme</var>
         </item>
       </take>
 
@@ -67,42 +67,21 @@
   </step>
   <!-- Add water -->
   <step>
-    <description>Pipet 3.8µL molecular grade water into the strip well tube.</description>
+    <description>Pipet yµl molecular grade water into the strip well tube.</description>
   </step>
   <!-- Add 1ng of template -->
   <step>
-    <description>Pipet 0.2µL diluted template DNA into the strip well tube.</description>
+    <description>Pipet xµl diluted template DNA into the strip well tube.</description>
   </step>
   <!-- Add first primer -->
-  <step>
-    <description>Pipet 0.5µL of primer 1 into the strip well tube.</description>
-  </step>
-  <!-- Add second primer -->
-  <step>
-    <description>Pipet 0.5µL of primer 2 into the strip well tube.</description>
-  </step>
+
   <!-- Add Phusion polymerase master mix -->
   <step>
-    <description>Pipet 5µL of 2X Phusion Master Mix into the strip well tube.</description>
+    <description>Pipet x amount of enzyme and buffers.</description>
   </step>
 
-  <!-- Acquire a thermal cycler -->
-   
-   <take>
-        <item>
-        <type>Thermal Cycler{temp_id}</type>
-        <quantity>1</quantity>
-        <var>Thermal Cylcler</var>
-        </item>
-    </take>
-  
-  
 
- 
-  <step>
-    <description>Set up the thermal cycler program.</description>
-    <note>First step is 98°C for 5 minutes. Second step is 35 cycles of: denature at 98°C for 10 seconds, anneal at %{phusion_anneal}°C for 10 seconds, and extend at 72°C for %{extension_time} seconds. The third and final step is an extension at 72°C for 5 minutes.</note>
-  </step>
+  
   <!-- Run the program -->
   <step>
     <description>Place the tube into a 37ºC incubator for 1 hour</description>
