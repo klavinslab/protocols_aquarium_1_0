@@ -41,6 +41,13 @@
     </take>
   
   <!-- Begin steps -->
+    <step>
+        <description>Intialize the Electroporator</description>
+        <note>Click on and set the voltage to 1250V</note>
+        <image>initialize_electroporator</image>
+        <warning></warning>
+    </step>
+
   <!-- Produce -->
   <!-- Final releases -->
 
