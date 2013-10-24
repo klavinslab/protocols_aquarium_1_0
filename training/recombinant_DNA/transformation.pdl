@@ -94,7 +94,19 @@
         </item>
     </take>
 
+    <step>
+        <description>Allow the Electrocompetent Cells to thaw slightly</description>
+        <note>Wait until your cells have thawed to a slushy consistency that can be pipetted out.</note>
+        <warning>Do not hold the tube in your hands to warm it up.</warning>
+    </step>
 
+    <step>
+        <description></description>
+        <note>Pipette 2 uL of your plasmid into the Electrocompetent Cells tube and mix with the pipette tip.\n
+            Then transfer the mixture, via pipette, into the elevtrocuvette and place the cap on top. 
+        </note>
+        <warning></warning>
+    </step>
 
 
   <!-- Produce -->
