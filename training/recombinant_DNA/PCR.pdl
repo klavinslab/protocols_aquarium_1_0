@@ -36,7 +36,7 @@
    
     <take>
         <item>
-        <type>0.2ml strip well tube{temp_id}</type>
+        <type>0.2ml strip well tube</type>
         <quantity>1</quantity>
         <var>tube</var>
         </item>
