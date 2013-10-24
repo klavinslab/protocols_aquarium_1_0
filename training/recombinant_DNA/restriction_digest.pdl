@@ -2,6 +2,9 @@
 <protocol name="Phusion PCR">
   <information>Use a restriction enzyme to cut up template DNA at a specific site</information>
 
+ <!-- to do: finish up math for concentrations of dna and enzyme, also add enzymes into data base so known buffers automatically added into the action que -->
+
+
   <!-- Initial arguments -->
   <argument>
     <name>template</name>
