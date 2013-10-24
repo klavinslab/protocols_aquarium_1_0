@@ -43,35 +43,17 @@
  
    <take>
         <item>
-        <type>Template DNA 1ng/µL{temp_id}</type>
+        <type>Template DNA{temp_id}</type>
         <quantity>1</quantity>
         <var>Template</var>
         </item>
       </take>
+  
       
   
    <take>
         <item>
-        <type>primer1{temp_id}</type>
-        <quantity>1</quantity>
-        <var>primer1</var>
-        </item>
-      </take>
-      
-      
-     
-   <take>
-        <item>
-        <type>primer2{temp_id}</type>
-        <quantity>1</quantity>
-        <var>primer2</var>
-        </item>
-      </take>
-      
-  
-   <take>
-        <item>
-        <type>Phusion 2X Master Mix{temp_id}</type>
+        <type>{restriction_enzyme}</type>
         <quantity>1</quantity>
         <var>Phusion</var>
         </item>
