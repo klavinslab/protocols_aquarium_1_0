@@ -33,6 +33,7 @@
   <assign><lhs>extension_time</lhs><rhs>%{template_length} / 1000.0 * 20</rhs></assign>
 
   <!-- Initial takes -->
+   
     <take>
         <item>
         <type>0.2ml thin wall strip well{temp_id}</type>
@@ -132,6 +133,6 @@
   </step>
   <!-- Run the program -->
   <step>
-    <description>Hit 'run' on the thermal cycler and select 50µL setting.</description>
+    <description>Hit 'run' on the thermal cycler and select 10µL setting.</description>
   </step>
 </protocol>
