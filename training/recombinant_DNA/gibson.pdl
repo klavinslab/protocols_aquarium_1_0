@@ -23,6 +23,11 @@
     <rhs>[]</rhs>
   </assign>
   
+  <assign>
+    <lhs>fragment_vol_total</lhs>
+    <rhs>0</rhs>
+  </assign>
+  
   <while>
     <condition>%{i} &gt; 0</condition>
     <do>
@@ -40,6 +45,11 @@
           <var>temp_vol</var>
         </getdata>
       </step>    
+      
+        <assign>
+          <lhs>fragment_vol_total</lhs>
+          <rhs>%{fragment_vol_total} + %{temp_vol}</rhs>
+        </assign>
       
       <take>
         <item>
