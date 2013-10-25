@@ -32,7 +32,7 @@
     <condition>%{i} &gt; 0</condition>
     <do>
       <step>
-        <description>Enter fragment id</description>
+        <description>Enter fragment id and volume</description>
         <getdata>
           <type>string</type>
           <description>fragment id</description>
@@ -76,6 +76,15 @@
       </assign>
     </do>
   </while>
+  
+  <step>
+    <description>Enter volume of molecular grade water to be added</description>
+      <getdata>
+        <type>string</type>
+        <description>vo</description>
+        <var>temp_id</var>
+      </getdata>
+  </step>    
 
   <take>
     <item>
