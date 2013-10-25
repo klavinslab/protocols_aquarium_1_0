@@ -124,7 +124,7 @@
 	<step>
 		<description> Where is the shower and eyewash station located? </description>
 		<note> Locate the shower and eyewash station, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>shower-eyewash_with_map</image>
+		<image>shower-eyewash</image>
 	</step>
 
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
