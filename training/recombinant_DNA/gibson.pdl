@@ -92,7 +92,7 @@
   </take>
   
     <if>
-    <condition>%{fragment_vol_total} &lt; 0</condition>
+    <condition>%{fragment_vol_total} &lt; 5</condition>
     <then>
     
     <take>
