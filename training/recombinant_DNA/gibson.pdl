@@ -147,6 +147,17 @@
     </assign>
     </do>
   </while>
+  
+  <if>
+    <condition>%{water_vol} &gt; 0</condition>
+    <then>
+    <step>
+      <description>Add %{water_vol} µL of MG water into the gibson aliquot</description>
+    </step>
+    
+    </then>
+  </if>
+  
 
   <step>
     <description>Transfer the tube in a heat block set to 50°C.</description>
