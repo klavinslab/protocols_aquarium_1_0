@@ -77,15 +77,6 @@
     </do>
   </while>
   
-  <step>
-    <description>Enter volume of molecular grade water to be added</description>
-      <getdata>
-        <type>string</type>
-        <description>vo</description>
-        <var>temp_id</var>
-      </getdata>
-  </step>    
-
   <take>
     <item>
     <type>50C Heat Block</type>
@@ -100,9 +91,28 @@
     </item>
   </take>
   
+    <if>
+    <condition>%{fragment_vol_total} &lt; 0</condition>
+    <then>
+    
+    <take>
+    <item>
+    <type>50 mL Falcon Tube MG Water</type>
+    <quantity>1</quantity>
+    <var>my_water</var>
+    </item>
+    </take>
+      <assign>
+        <lhs>water_vol</lhs>
+        <rhs>5 - %{fragment_vol_total}</rhs>
+      </assign>
+    </then>
+    </if>
+
+  
   <!-- Begin steps -->
   <step>
-    <description>Thaw Gibson aliquot by holding in your hands for several seconds, then put on ice block to keep it cool.</description>
+    <description>%{water_vol}Thaw Gibson aliquot by holding in your hands for several seconds, then put on ice block to keep it cool.</description>
   </step>
   <step>
     <description>Spin down Gibson aliquot for 2 seconds on a tabletop mini centrifuge.</description>
