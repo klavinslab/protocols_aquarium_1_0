@@ -1,0 +1,22 @@
+<protocol>
+
+  <information>Attempt to produce an item by specifying its object type and sample name and project name.</information>
+
+  <step>
+    <description>How many nanmemoles of DNA is the sample?</description>
+    <getdata>
+      <description>Number of nanomoles</description>
+      <type>number</type>
+      <var>n</var>
+    </getdata>
+  </step>
+
+  <produce>
+    <object>Lyophilized Primer</object>
+    <quantity>1</quantity>
+    <sample_project>Transformation</sample_project>
+    <sample_name>pGFP</sample_name>
+    <data>{ 'nanomoles' => %{n} }</data>
+  </produce>
+
+</protocol>
