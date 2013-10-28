@@ -212,7 +212,7 @@
   </step>
   <step>
     <description>Set autoclave settings and start.</description>
-    <note>For yeast media, autoclave at 110°C for 10 minutes are pressure.\n\nIf using the free-stranding autoclave, set the temperature and time at pressure, then hit start. If using the tabletop autoclave A1, select optional cycle, set the temperature and time, and press 'up' to start.</note>
+    <note>For yeast media, autoclave at 110°C for 10 minutes at pressure.\n\nIf using the free-stranding autoclave, set the temperature and time at pressure, then hit start. If using the tabletop autoclave A1, select optional cycle, set the temperature and time, and press 'up' to start.</note>
   </step>
   <step>
     <description>Wait around until the autoclave finishes.</description>

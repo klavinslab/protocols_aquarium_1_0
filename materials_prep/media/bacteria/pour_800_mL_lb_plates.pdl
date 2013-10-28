@@ -123,7 +123,7 @@
   <!-- Pour -->
   <step>
     <description>Pour 25 mL of media into each plate.</description>
-    <note>Uncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25 mL. Replace the petri dish lid and mark the lid and bottom with line on the side: purple for Amp, green for Kan, and blue for Chlor. Repeat for every plate.</note>
+    <note>Uncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25 mL. Replace the petri dish lid and mark the side with a marker: purple for Amp, green for Kan, and blue for Chlor. Repeat for every plate.</note>
     <getdata>
       <description>Enter the number of plates you poured (varies depending on average pour volume).</description>
       <type>number</type>

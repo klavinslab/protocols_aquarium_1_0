@@ -3,7 +3,11 @@
   <!-- Information -->
   <information>Pour plates from 800 mL of liquid state agar media.</information>
   <!-- Arguments -->
-  <!-- None -->
+  <argument>
+    <name>drop_out_description</name>
+    <type>string</type>
+    <description>If the media is selectable, write the selection description. For example, -His -Leu for a drop out batch or G418 for YPAD with the kanamycin analog. If not applicable, leave this blank.</description>
+  </argument>
   <!-- Get the type of object you want to pour from (molten agar) -->
   <step>
     <select>
@@ -51,7 +55,7 @@
   <!-- Pour -->
   <step>
     <description>Pour 25 mL of media into each plate.</description>
-    <note>Uncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25 mL.\n\nReplace the petri dish lid and mark the lid and bottom with line on the side: red for -His, blue for -Leu, green for -Trp, purple for -Ura. Repeat for every plate.</note>
+    <note>Uncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25 mL.\n\nReplace the petri dish lid and mark the side with a marker: red for -His, blue for -Leu, green for -Trp, purple for -Ura. Repeat for every plate.</note>
     <getdata>
       <description>Enter the number of plates you poured (varies depending on average pour volume).</description>
       <type>number</type>
@@ -67,7 +71,7 @@
   <!-- FIXME: Metacol territory -->
   <step>
     <description>Stack and label.</description>
-    <note>Once the plates are cool, invert all of them lid down. Stack them (lid down) in groups of about 20. Label a piece of lab tape with the media type (YPAD or SDO), your initials, and the date. Apply the tape to the top plate on the stack.</note>
+    <note>Once the plates are cool, invert all of them lid down. Stack them (lid down) in groups of about 20. Label a piece of lab tape with the media type (YPAD or SDO), the selection type (%{drop_out_description}), your initials, and the date. Apply the tape to the top plate on the stack.</note>
   </step>
   <step>
     <description>Place in the 30 degree yeast incubator.</description>
@@ -87,11 +91,17 @@
     <rhs>%{plates}[%{plates_poured}..-1]</rhs>
   </assign>
   <!-- Produce -->
-  <produce>
+  <produce render="false">
     <object>%{plate_name}</object>
     <quantity>%{plates_poured}</quantity>
+    <var>produced_plates</var>
     <release>%{poured_plates}</release>
   </produce>
+  <move>
+    <item>%{produced_plates}</item>
+    <!-- TODO: need to be able to specify the incubator itself as a location -->
+    <location>"A1.110"</location>
+  </move>
   <!-- Release any left over plates -->
   <if>
     <condition>%{plates_poured} &lt; 40</condition>

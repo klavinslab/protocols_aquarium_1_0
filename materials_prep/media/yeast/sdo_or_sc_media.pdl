@@ -268,7 +268,7 @@
   <!-- Add drop out solutions -->
   <step>
     <description>Add sterile drop out supplements</description>
-    <note>Label a piece of laboratory tape with "-His -Leu -Trp -Ura" and attach it to the 1000 mL bottle.\n\nUsing a serological pipet, add 8 mL of each sterile supplement you just got out. As you add each supplement, mark it off on the piece of tape to keep track of your work.</note>
+    <note>Label a piece of laboratory tape with "-His -Leu -Trp -Ura" and attach it to the 1 L bottle.\n\nUsing a serological pipet, add 8 mL of each sterile supplement you just got out. As you add each supplement, black it out with a marker on the piece of tape.</note>
   </step>
   <!-- Add DI water and shake -->
   <include>
@@ -288,25 +288,31 @@
   </include>
 
   <!-- Produce the media -->
-  <!-- TODO: use new 'item' subtag to keep track of exact combination of supplements added -->
+  <!-- TODO: use 'data' key to keep track of exact combination of supplements added -->
   <!-- TODO: same for agar -->
   <if>
     <condition>%{agar} == 1</condition>
     <then>
-      <produce>
+      <produce render="false">
         <object>800 mL SDO agar (unsterile)</object>
         <quantity>1</quantity>
+        <var>sdo</var>
         <release>%{bottle}</release>
       </produce>
     </then>
     <else>
-      <produce>
+      <produce render="false">
         <object>800 mL SDO liquid (unsterile)</object>
         <quantity>1</quantity>
+        <var>sdo</var>
         <release>%{bottle}</release>
       </produce>
     </else>
   </if>
+  <move>
+    <item>%{sdo}</item>
+    <location>"B2.320"</location>
+  </move>
   <!-- Release sterile drop out supplements -->
   <if>
     <condition>%{his}==1</condition>
@@ -332,5 +338,4 @@
       <release>%{ura_solution}</release>
     </then>
   </if>
-
 </protocol>
