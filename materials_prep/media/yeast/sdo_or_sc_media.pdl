@@ -309,6 +309,10 @@
       </produce>
     </else>
   </if>
+  <step>
+    <description>Move the bottle to B1.320</description>
+    <note>This is the autoclave staging area.</note>
+  </step>
   <move>
     <item>%{sdo}</item>
     <location>"B2.320"</location>
