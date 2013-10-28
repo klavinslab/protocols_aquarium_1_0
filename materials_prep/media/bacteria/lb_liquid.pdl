@@ -155,12 +155,12 @@
       </include>
       <!-- Move it to the right place - autoclave staging area-->
       <step>
-        <description>Move the bottle(s) to B1.340.</description>
+        <description>Move the bottle(s) to B1.320.</description>
         <note>When done, click Next.</note>
       </step>
       <move>
         <item>%{produced_bottles}</item>
-        <location>"B1.340"</location>
+        <location>"B1.320"</location>
       </move>
 
       <!-- Final releases -->
