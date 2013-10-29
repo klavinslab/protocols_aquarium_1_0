@@ -13,14 +13,11 @@
     <type>string</type>
     <description>A string that describes the object to label.</description>
   </argument>
-  <step>
-    <description>Label application note</description>
-    <note>If applicable, remove any previous labels just before applying the new ones.</note>
-  </step>
   <!-- TODO: Try to print. If it fails, fall back to hand-drawn labels -->
   <!-- Fallback label - default for now. Tells user to write out stuff by hand -->
   <step>
     <description>Label.</description>
     <note>Label %{item_name} with item id "%{item_id}", the name "%{item_name}", the bottle number, your initials, and the date and time using a piece of lab tape.</note>
+    <warning>Remove any other labels before applying the new one.</warning>
   </step>
 </protocol>

@@ -55,5 +55,9 @@
     <description>With push</description>
     <note>%{fragment_push_array}</note>
   </step>
+  <assign>
+    <lhs>latest_one</lhs>
+    <rhs>%{fragment_array}[0]</rhs>
+  </assign>
 
 </protocol>

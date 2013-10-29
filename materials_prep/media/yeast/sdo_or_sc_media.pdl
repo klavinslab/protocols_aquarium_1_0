@@ -286,7 +286,7 @@
   </include>
   <!-- Put away dry reagents and scale -->
   <release>[%{weigh_paper}[0], %{scale}[0]]</release>
-  <release>[%{nitrogen_base}[0], %{dropout_supplement}[0], %{dextrose}[0], %{adenine}[0]]</release>
+  <release>[%{nitrogen_base}[0], %{dropout_supplement}[0], %{adenine}[0], %{dextrose}[0]]</release>
   <!-- Take drop-out solutions -->
   <!-- TODO: Make this less painful -->
   <if>
@@ -341,6 +341,7 @@
   <step>
     <description>Add sterile drop out supplements</description>
     <note>Label a piece of laboratory tape with "-His -Leu -Trp -Ura" and attach it to the 1 L bottle.\n\nUsing a serological pipet, add 8 mL of each sterile supplement you just got out. As you add each supplement, black it out with a marker on the piece of tape.</note>
+    <warning>Use a separate pipet for each supplement.</warning>
   </step>
   <!-- Add DI water and stir -->
   <step>

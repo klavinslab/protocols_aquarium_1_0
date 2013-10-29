@@ -98,6 +98,32 @@
         </then>
       </if>
 
+
+      <!-- Take stir plate, put bottle on it -->
+      <take>
+        <item>
+          <type>Hot/Stir Plate</type>
+          <quantity>1</quantity>
+          <var>hot_plate</var>
+        </item>
+      </take>
+      <step>
+        <description>Place the agar media bottle on the stir plate.</description>
+        <note>Make sure the cap is not tight so air pressure can slowly equilibrate.</note>
+        <warning>Use heat-resistant, waterproof gloves</warning>
+      </step>
+      <step>
+        <description>Heat stir plate to 50°C and 700 RPM.</description>
+        <!-- FIXME: how long? -->
+        <note>It should take about 30-45 minutes to equilibrate (note: Nick made this number up). Keeping this in mind, click "Next".</note>
+      </step>
+
+      <!-- Lay out plates individually -->
+      <step>
+        <description>Lay out plates on workspace.</description>
+        <note>Lay out plates individually on your workspace, lid side up, in preparation for pouring.</note>
+      </step>
+
       <!-- Run the 'add antibiotics to LB' subprotocol -->
       <include>
         <path>includes/media/lb_agar_add_antibiotics.pdl</path>
@@ -111,15 +137,17 @@
           <value>%{antibiotic_aliquots}</value>
         </return>
       </include>
+      <release>%{hot_plate}</release>
     </then>
+    <else>
+      <!-- Lay out plates individually -->
+      <step>
+        <description>Lay out plates on workspace.</description>
+        <note>Lay out plates individually on your workspace, lid side up, in preparation for pouring.</note>
+      </step>
+    </else>
   </if>
 
-  <!-- Start steps -->
-  <!-- Lay out plates individually -->
-  <step>
-    <description>Lay out plates on workspace.</description>
-    <note>Lay out plates individually on your workspace, lid side up, in preparation for pouring.</note>
-  </step>
   <!-- Pour -->
   <step>
     <description>Pour 25 mL of media into each plate.</description>
@@ -161,19 +189,31 @@
   <if>
     <condition>%{antibiotic_bool}</condition>
     <then>
-      <produce>
+      <produce render="false">
         <object>%{plate_name}</object>
         <quantity>%{plates_poured}</quantity>
+        <var>produced_plates</var>
         <release>%{poured_plates}</release>
         <release>%{antibiotic_aliquots}</release>
       </produce>
+      <move>
+        <item>%{produced_plates}</item>
+        <!-- TODO: need to be able to specify the incubator itself as a location -->
+        <location>"A1.110"</location>
+      </move>
     </then>
     <else>
-      <produce>
+      <produce render="false">
         <object>%{plate_name}</object>
         <quantity>%{plates_poured}</quantity>
+        <var>produced_plates</var>
         <release>%{poured_plates}</release>
       </produce>
+      <move>
+        <item>%{produced_plates}</item>
+        <!-- TODO: need to be able to specify the incubator itself as a location -->
+        <location>"A1.110"</location>
+      </move>
     </else>
   </if>
   <!-- Release any left over plates -->

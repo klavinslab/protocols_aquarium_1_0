@@ -2,6 +2,7 @@
 <protocol>
   <!-- Important:
        Inventory effects: takes antibiotics that should be released in the final product - variable is titled %{antibiotic_aliquots}
+       Takes: It is assumed that a hot plate has been taken and that the bottle is already on it
        -->
 
   <!-- TODO: replace inventory object type's dilution factor with actual mg/mL -->
@@ -40,27 +41,7 @@
     <rhs>%{antibiotic_volume}.ceil</rhs>
   </assign>
 
-  <!-- Take stir plate -->
-  <take>
-    <item>
-      <type>Hot/Stir Plate</type>
-      <quantity>1</quantity>
-      <var>stir_plate</var>
-    </item>
-  </take>
   <!-- Begin steps -->
-  <!-- Put bottle on stir plate -->
-  <step>
-    <description>Place the agar media bottle on the stir plate.</description>
-    <warning>Use heat-resistant, waterproof gloves</warning>
-  </step>
-  <!-- Set stir plate settings -->
-  <step>
-    <description>Heat stir plate to 50°C and 700 RPM.</description>
-    <!-- FIXME: how long? -->
-    <note>It should take about 30-45 minutes to equilibrate (note: Nick made this number up).</note>
-  </step>
-
   <!-- Take the antibiotic aliquots -->
   <assign>
     <lhs>antibiotic_type</lhs>
@@ -76,11 +57,16 @@
 
   <!-- Add antibiotic -->
   <step>
-    <description>Add %{antibiotic_volume} mL of antibiotic</description>
-    <note>Spin thawed solution on benchtop minifuge to remove residue from top of tube. Using a 1000 µL micropipette, add %{antibiotic_volume} mL of antibiotic solution to the LB Agar bottle. Add 1000 µL at a time. Swirl the bottle gently for 10 seconds to mix.</note>
-    <warning>If necessary, thaw antibiotic aliquots with your hand (or other 37°C warmer).</warning>
+    <description>Thaw the antibiotic aliquot(s).</description>
+    <note>The aliquots should thaw at room temperature within 10 minutes. To melt them faster, you can heat with your hand and vortex each tube individually.</note>
   </step>
-
-  <!-- Releases -->
-  <release>%{stir_plate}</release>
+  <step>
+    <description>Add %{antibiotic_volume} mL of antibiotic</description>
+    <note>Bottle setup: keep the bottle on the hot plate while adding antibiotics. Keep the bottle capped whenever you aren't immediately pipetting in antibiotics.\n\nPipetting: for each aliquot, spin on benchtop minifuge before opening. Using a 1000 µL micropipette, add a total of %{antibiotic_volume} mL of antibiotic solution to the LB Agar bottle. You can add 1000 µL at a time. Ampicillin sticks to the side of the pipet tip - you can ignore small amounts of residue.</note>
+    <warning>Make sure the media is at about 50°C (compare to the 50°C heat block using your hand).</warning>
+  </step>
+  <step>
+    <description>Recap the bottle.</description>
+    <note>If you haven't, recap the bottle.</note>
+  </step>
 </protocol>
