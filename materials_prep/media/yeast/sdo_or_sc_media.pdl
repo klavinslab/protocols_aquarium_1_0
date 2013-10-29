@@ -34,6 +34,67 @@
     <description>Prepare agar media? If yes, enter 1. If no, enter 0.</description>
   </argument>
 
+  <!-- Make a string for the selection type (e.g. -His -Trp) -->
+  <assign>
+    <lhs>selection_array</lhs>
+    <rhs>[]</rhs>
+  </assign>
+  <if>
+    <condition>%{agar} == 1</condition>
+    <then>
+      <assign>
+        <lhs>selection_array</lhs>
+        <rhs>%{selection_array}.push("Agar")</rhs>
+      </assign>
+    </then>
+  </if>
+  <if>
+    <condition>%{trp} == 1</condition>
+    <then>
+      <assign>
+        <lhs>selection_array</lhs>
+        <rhs>%{selection_array}.push("-Trp")</rhs>
+      </assign>
+    </then>
+  </if>
+  <if>
+    <condition>%{his} == 1</condition>
+    <then>
+      <assign>
+        <lhs>selection_array</lhs>
+        <rhs>%{selection_array}.push("-His")</rhs>
+      </assign>
+    </then>
+  </if>
+  <if>
+    <condition>%{leu} == 1</condition>
+    <then>
+      <assign>
+        <lhs>selection_array</lhs>
+        <rhs>%{selection_array}.push("-Leu")</rhs>
+      </assign>
+    </then>
+  </if>
+  <if>
+    <condition>%{ura} == 1</condition>
+    <then>
+      <assign>
+        <lhs>selection_array</lhs>
+        <rhs>%{selection_array}.push("-Ura")</rhs>
+      </assign>
+    </then>
+  </if>
+  <!-- Construct media string based on the arguments -->
+  <assign>
+    <lhs>media_name</lhs>
+    <rhs>"SDO " + %{selection_array}.join(" ")</rhs>
+  </assign>
+
+  <assign>
+    <lhs>counter</lhs>
+    <rhs>4</rhs>
+  </assign>
+
   <!-- Initial takes -->
   <!-- Take bottle -->
   <take>
@@ -42,7 +103,18 @@
       <quantity>1</quantity>
       <var>bottle</var>
     </item>
+    <item>
+      <type>Medium Magnetic Stir Bar</type>
+      <quantity>1</quantity>
+      <var>stir_bar</var>
+    </item>
   </take>
+  <!-- Add stir bar -->
+  <step>
+    <description>Add stir bar.</description>
+    <note>Add one stir bar to the bottle.</note>
+  </step>
+
 
   <!-- Take out dry reagents -->
   <take>
@@ -270,23 +342,23 @@
     <description>Add sterile drop out supplements</description>
     <note>Label a piece of laboratory tape with "-His -Leu -Trp -Ura" and attach it to the 1 L bottle.\n\nUsing a serological pipet, add 8 mL of each sterile supplement you just got out. As you add each supplement, black it out with a marker on the piece of tape.</note>
   </step>
-  <!-- Add DI water and shake -->
-  <include>
-    <path>includes/media/add_di_water_and_shake.pdl</path>
-    <setarg>
-      <var>vessel_string</var>
-      <value>%{bottle_string}</value>
-    </setarg>
-    <setarg>
-      <var>volume</var>
-      <value>800</value>
-    </setarg>
-    <setarg>
-      <var>shake_duration</var>
-      <value>60</value>
-    </setarg>
-  </include>
-
+  <!-- Add DI water and stir -->
+  <step>
+    <description>Add DI water and mix</description>
+    <note>Fill with DI water up to the 800 mL mark.</note>
+  </step>
+  <take>
+    <item>
+      <type>Hot/Stir Plate</type>
+      <quantity>1</quantity>
+      <var>hot_plate</var>
+    </item>
+  </take>
+  <step>
+    <description>Stir using the hot plate</description>
+    <note>Set the bottle on the hot plate and mix at 700 rpm for 2 minutes.</note>
+  </step>
+  <release>%{hot_plate}</release>
   <!-- Produce the media -->
   <!-- TODO: use 'data' key to keep track of exact combination of supplements added -->
   <!-- TODO: same for agar -->
@@ -309,6 +381,23 @@
       </produce>
     </else>
   </if>
+  <!-- Label -->
+  <assign>
+    <lhs>item_id</lhs>
+    <rhs>%{sdo}[:id]</rhs>
+  </assign>
+  <include>
+    <path>includes/labels/800_mL_labels.pdl</path>
+    <setarg>
+      <var>item_name</var>
+      <value>%{media_name}</value>
+    </setarg>
+    <setarg>
+      <var>item_id</var>
+      <value>%{item_id}</value>
+    </setarg>
+  </include>
+  <!-- Move -->
   <step>
     <description>Move the bottle to B1.320</description>
     <note>This is the autoclave staging area.</note>
