@@ -530,7 +530,6 @@
 			<step>
 				<description> That is correct! </description>
 				<note> You have successfully located the paper towels in the lab.</note>
-				<image>papertowels</image>
 			</step>
 
 		</then>
@@ -540,6 +539,7 @@
 			<step>
 				<description>That is incorrect.</description>
 				<note>Please return to the paper towels and then answer again.</note>
+				<image>papertowels</image>
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
 			<assign><lhs>Status</lhs><rhs>'Fail - Paper Towels'</rhs></assign>
