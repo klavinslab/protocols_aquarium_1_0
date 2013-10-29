@@ -56,6 +56,7 @@
 			<step>
 				<description>That is incorrect.</description>
 				<note> Please return to the media bay refrigerator and then answer again.</note>
+				<image>media_bay_refrigerator</image> 
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
 			<assign><lhs>Status</lhs><rhs>'Fail - media bay refrigerator'</rhs></assign>
@@ -110,6 +111,7 @@
 			<step>
 				<description>That is incorrect.</description>
  				<note>Please return to the conical sterile beads and then answer again.</note>
+ 				<image>conical_sterile_beads</image>
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
 			<assign><lhs>Status</lhs><rhs>'Fail - conical sterile beads'</rhs></assign>
@@ -163,6 +165,7 @@
 			<step>
 				<description>That is incorrect.</description>
 				<note>Please return to the 37 degree incubator and then answer again.</note>
+				<image>37_degree_incubator</image>
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
 			<assign><lhs>Status</lhs><rhs>'Fail - 37 degree incubator'</rhs></assign>
@@ -216,6 +219,7 @@
 			<step>
 				<description>That is incorrect.</description>
 				<note>Please return to the -20 degree freezer and then answer again.</note>
+				<image>-20_freezer</image>
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
 			<assign><lhs>Status</lhs><rhs>'Fail - -20 degree freezer'</rhs></assign>
@@ -269,6 +273,7 @@
 			<step>
 				<description>That is incorrect.</description>
 				<note>Please return to the -80 degree freezer and then answer again.</note>
+				<image>-80_freezer</image>
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
 			<assign><lhs>Status</lhs><rhs>'Fail - -80 degree freezer'</rhs></assign>
@@ -322,6 +327,7 @@
 			<step>
 				<description>That is incorrect.</description>
 				<note>Please return to the 1.5 mL test tubes and then answer again.</note>
+				<image>1.5_mL_test_tubes</image>
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
 			<assign><lhs>Status</lhs><rhs>'Fail - 1.5 mL test tubes'</rhs></assign>
@@ -375,6 +381,7 @@
 			<step>
 				<description>That is incorrect.</description>
 				<note>Please return to the LB media and then answer again.</note>
+				<image>LB_media</image>
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
 			<assign><lhs>Status</lhs><rhs>'Fail - LB media'</rhs></assign>
