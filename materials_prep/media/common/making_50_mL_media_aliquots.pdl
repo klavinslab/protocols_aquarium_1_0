@@ -7,25 +7,118 @@ This protocol describes how to make a 50 mL aliquot of liquid media.
 </information>
 
 <step>
-  <description>What type of media do you need?</description>
-  <note>Choose the correct source of the type of media you want to aliquot.<note>
-  <select>
-    <description>Media Type:</description>
-      <var>media_type</var>
-      <choice>LB</choice>
-      <choice>TB</choice>
-      <choice>SC plus Adenine</choice>
-      <choice>800 mL SDO liquid (sterile)</choice>
-      <choice>YPAD</choice>
-  </select>
+	<description>What type of media do you need?</description>
+	<note>Choose the correct source of the type of media you want to aliquot.</note>
+	<select>
+		<description>Media Type:</description>
+		<var>media_type</var>
+     		<choice>800 mL LB liquid (sterile)</choice>
+      		<choice>800 mL TB liquid (sterile)</choice>
+      		<choice>800 mL SC Plus Adenine liquid (sterile)</choice>
+      		<choice>800 mL SDO liquid (sterile)</choice>
+		<choice>800 mL YPAD liquid (sterile)</choice>
+  	</select>
+	
 </step>
 
+
 <take>
-  <item>50 mL Falcon Tubes</item>
-  <quantity>1</quantity>
-  <var>tube</var>
+	<item>
+  		<type>50 mL Falcon Tube</type>
+  		<quantity>1</quantity>
+  		<var>tube</var>
+	</item>
+	
+	<item>
+		<type>%{media_type}</type>
+		<quantity>1</quantity>
+		<var>media</var>
+	</item>
+
 </take>
 
+<step>
+	<description>Add 50 mL of media to the 50 mL tube using the serological pieptte.</description>
+	<note>Unscrew the cap of the 50 mL tube and media bottle. Add a 25 mL pipette tip to the serological pipette. Draw up media from the media bottle into the pipette tip until it reaches the 25 mL mark on the tip. Release the media into the 50 mL tube. Repeat this again to add another 25 mL to the 50 mL tube for a total of 50 mL. Screw the cap back on to the 50 mL tube and media bottle.</note>
+</step>
+
+<if>
+	<condition>%{media_type} == "800 mL LB liquid (sterile)"</condition>
+		<then>
+			<produce render="false">
+				<object>50 mL LB liquid aliquot (sterile)</object>
+        			<quantity>1</quantity>
+       				<var>aliquot</var>
+			<release>[%{tube}[0]]</release>
+			</produce>
+		</then>
+</if>
+
+<if>
+	<condition>%{media_type} == "800 mL TB liquid (sterile)"</condition>
+		<then>
+			<produce render="false">
+				<object>50 mL TB liquid aliquot (sterile)</object>
+        			<quantity>1</quantity>
+       				<var>aliquot</var>
+				<release>[%{tube}[0]]</release>
+			</produce>
+		</then>
+</if>
+
+<if>
+	<condition>%{media_type} == "800 mL SDO liquid (sterile)"</condition>
+		<then>
+			<produce render="false">
+				<object>50 mL SDO liquid aliquot (sterile)</object>
+        			<quantity>1</quantity>
+       				<var>aliquot</var>
+			<release>[%{tube}[0]]</release>
+			</produce>
+		</then>
+</if>
+
+<if>
+	<condition>%{media_type} == "800 mL SC Plus Adenine liquid (sterile)"</condition>
+		<then>
+			<produce render="false">
+				<object>50 mL SC Plus Adenine liquid aliquot (sterile)</object>
+        			<quantity>1</quantity>
+       				<var>aliquot</var>
+			<release>[%{tube}[0]]</release>
+			</produce>
+		</then>
+</if>
+
+<if>
+	<condition>%{media_type} == "800 mL YPAD liquid (sterile)"</condition>
+		<then>
+			<produce render="false">
+				<object>50 mL YPAD liquid aliquot (sterile)</object>
+        			<quantity>1</quantity>
+       				<var>aliquot</var>
+			<release>[%{tube}[0]]</release>
+			</produce>
+		</then>
+</if>
+        
+
+<step>
+	<description>Enter the location that you are taking the aliquot to.</description>
+	        <getdata>
+                	<type>string</type>
+                	<description>Location:</description>
+                	<var>location</var>
+                        
+        	</getdata>
+</step>
+
+<release>[%{media_type}[0]]</release>
+
+<move>
+        <item>%{aliquot}</item>
+        <location>%{location}</location>
+</move>
 
     
 </protocol>
