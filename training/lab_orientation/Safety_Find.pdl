@@ -57,6 +57,7 @@
 			<step>
 				<description>That is incorrect.</description>
 				<note> Please return to the sharps container and then answer again.</note>
+				<image>Sharps_Container</image> 
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
 			<assign><lhs>Status</lhs><rhs>'Fail - sharps container'</rhs></assign>
@@ -110,6 +111,7 @@
 			<step>
 				<description>That is incorrect.</description>
  				<note>Please return to the fire extinguisher and then answer again.</note>
+ 				<image>Fire_Extinguisher</image>
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
 			<assign><lhs>Status</lhs><rhs>'Fail - fire extinguisher'</rhs></assign>
@@ -163,6 +165,7 @@
 			<step>
 				<description>That is incorrect.</description>
 				<note>Please return to the shower and eyewash station and then answer again.</note>
+				<image>shower-eyewash</image>
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
 			<assign><lhs>Status</lhs><rhs>'Fail - Shower and Eyewash'</rhs></assign>
@@ -216,6 +219,7 @@
 			<step>
 				<description>That is incorrect.</description>
 				<note>Please return to the fume hood and then answer again.</note>
+				<image>Fume_Hood</image>
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
 			<assign><lhs>Status</lhs><rhs>'Fail - Fume Hood'</rhs></assign>
@@ -269,6 +273,7 @@
 			<step>
 				<description>That is incorrect.</description>
 				<note>Please return to the handwashing sink and then answer again.</note>
+				<image>handwashingsink</image>
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
 			<assign><lhs>Status</lhs><rhs>'Fail - handwashing sink'</rhs></assign>
@@ -322,6 +327,7 @@
 			<step>
 				<description>That is incorrect.</description>
 				<note>Please return to the biohazard boxes and then answer again.</note>
+				<image>Biohazard_Box</image>
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
 			<assign><lhs>Status</lhs><rhs>'Fail - Biohazard boxes'</rhs></assign>
@@ -374,6 +380,7 @@
 			<step>
 				<description>That is incorrect.</description>
 				<note>Please return to the dishwashing sink and then answer again.</note>
+				<image>dishwashingsink</image>
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
 			<assign><lhs>Status</lhs><rhs>'Fail - Dishwashing sink'</rhs></assign>
@@ -426,6 +433,7 @@
 			<step>
 				<description>That is incorrect.</description>
 				<note>Please return to the latex gloves and then answer again.</note>
+				<image>latexgloves</image>
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
 			<assign><lhs>Status</lhs><rhs>'Fail - Latex Gloves'</rhs></assign>
@@ -478,6 +486,7 @@
 			<step>
 				<description>That is incorrect.</description>
 				<note>Please return to the heat resistant gloves and then answer again.</note>
+				<image>Heat_Resistance_Gloves</image>
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
 			<assign><lhs>Status</lhs><rhs>'Fail - Heat Resistant Gloves'</rhs></assign>
@@ -521,6 +530,7 @@
 			<step>
 				<description> That is correct! </description>
 				<note> You have successfully located the paper towels in the lab.</note>
+				<image>papertowels</image>
 			</step>
 
 		</then>
