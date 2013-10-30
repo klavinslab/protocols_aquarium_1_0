@@ -46,7 +46,7 @@
   ALWAYS HOLD THE PIPETTE UPRIGHT. Do not turn the pipette to the side or upside down, especially when pipetting 
   liquid. This messes up the calibration of the pipette.
   </note>
-  <image>pour_dry_into_500ml</image>
+  <image>how_to_hold_pipette_pipetting_intro</image>
 </step>
 
 <step>
@@ -59,6 +59,7 @@
   pipette fits corresponds to the color of the tip box. For example, the large volume (blue) pipettor fits tips 
   from the blue box.
   </note>
+  <image>Three_different_pipettes_pipetting_intro</image>
 </step>
   
 <step>
@@ -68,6 +69,7 @@
   This is the danger number. NEVER exceed the danger number, because it messes up the calibration of the pipette.
   For each pipette, the danger number reads as 100 (from top to bottom) on the number screen.
   </note>
+  <image>danger_number_pipetting_intro</image>
 </step>
 
 <step>
@@ -83,6 +85,7 @@
   counterclockwise (larger volume.) Once the pipette is set to the correct volume, slide the notch back to the locked
   position.
   </note>
+  <image>ten_percent_of_danger_number_pipetting_intro</image>
 </step>
 
 <step>
@@ -97,6 +100,7 @@
   all tips into a tip waste cntainer.Practice adding and releasing tips using all three pipettes until you 
   feel comfortable.
   </note>
+  <image>putting_on_pipette_tip_pipetting_intro</image>
 </step>
 
 <step>
@@ -118,6 +122,7 @@
   most of the liquid, then keeping pressing down to the second stop to release the rest of the liquid. 
   Practice drawing up and releasing liquid using the three different pipettes until you feel comfortable.
   </note>
+  <image>drawing_up_liquid_pipetting_intro</image>
 </step>
 
 <release>[%{smallpipette}[0],%{mediumpipette}[0],%{largepipette}[0]]</release>
