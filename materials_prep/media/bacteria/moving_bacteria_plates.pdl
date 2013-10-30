@@ -3,7 +3,7 @@
 <protocol>
 
 <information>
-This protocol describes how to move bacteria plates from the yeast incubator to refridgerator R1.
+This protocol describes how to move bacteria plates from the yeast incubator to refrigerator R1.
 </information>
 
 <step>
@@ -52,7 +52,7 @@ This protocol describes how to move bacteria plates from the yeast incubator to 
   <condition>%{media_type} == "LB Amp Plate (sterile)"</condition>
     <then>
       <step>
-        <description>Move the plates to the Refridgerator R1, located at B0.110. Bacteria plates are on the second shelf from the top.
+        <description>Move the plates to the Refrigerator R1, located at B0.110. Bacteria plates are on the second shelf from the top.
         </description>
         <note>
         Move the plates to the row labeled "LB + Amp", putting them behind the older stack(s) of plates.
