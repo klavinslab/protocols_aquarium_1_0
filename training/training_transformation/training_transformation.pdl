@@ -113,15 +113,15 @@
 
 <step>
   <description>
-  Dilute the DNA to 100 pg/ul with the molecular grade water.
+  Dilute the DNA to 100 pg/μL with the molecular grade water.
   </description>
   <note>
 	Find the concentration of the DNA on the side of the tube. This should be
-	a number with units of ng/ul. Enter it here.
+	a number with units of ng/μL. Enter it here.
 	</note>
 	<getdata>
 		<type>number</type>
-		<description>Enter the concentration (in ng/ul)</description>
+		<description>Enter the concentration (in ng/μL)</description>
 		<var>conc</var>
   </getdata>
 </step>
@@ -133,7 +133,7 @@
 
 <step>
   <description>
-  (Continued) Dilute the DNA to 100 pg/ul with the molecular grade water.
+  (Continued) Dilute the DNA to 100 pg/μL with the molecular grade water.
   </description>
   <note>
 	Pipette 1 ul of the concentrated plasmid DNA into one of your 1.5 mL tubes.
@@ -210,7 +210,7 @@
   Transfer the entire DNA mixture to the electrocuvette.
   </description>
   <note>
-	Remove the lid of the electrocuvette. Set the medium pipette to 50 ul. The mixture goes 
+	Remove the lid of the electrocuvette. Set the medium pipette to 50 μL. The mixture goes 
 	into the gap between the metal plates. Set aside the now empty aliquot tube.
 	</note>
 	<warning>
@@ -253,7 +253,7 @@
   </description>
   <note>
 	Open the tube of LB media and pipette 200 ul of it into the electrocuvette. Pipette up and down 
-	so the cell slush and the media are well mixed. Transfer 200 ul of this mixture into the second
+	so the cell slush and the media are well mixed. Transfer 200 μL of this mixture into the second
 	1.5 mL tube that you labelled earlier.
 	</note>
 	<warning>
