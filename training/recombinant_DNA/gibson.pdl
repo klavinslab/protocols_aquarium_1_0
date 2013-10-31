@@ -159,7 +159,7 @@
       <rhs>%{fragment_vol_array}[%{j}]</rhs>
     </assign>
     <step>
-      <description>Add %{vol} µL of fragment_%{id} into the gibson aliquot</description>
+      <description>Add %{vol} µL of fragment_%{id} into the gibson aliquot.</description>
     </step>
     <assign>
       <lhs>j</lhs>
@@ -172,7 +172,7 @@
     <condition>%{water_vol} &gt; 0</condition>
     <then>
     <step>
-      <description>Add %{water_vol} µL of MG water into the gibson aliquot</description>
+      <description>Add %{water_vol} µL of MG water into the gibson aliquot.</description>
     </step>
     <release>[%{my_water}[0]]</release>
     </then>
