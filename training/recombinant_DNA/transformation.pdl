@@ -107,6 +107,7 @@
     <step>
         <description>Pipette 2 uL of your plasmid into the Electrocompetent Cells tube and mix with the pipette tip.
             Then transfer the mixture, via pipette, into the elevtrocuvette.</description>
+        <image>pipette_plasmid_into_electrocompotent_cells</image>
     </step>
 <!--    
     <step>
@@ -124,6 +125,7 @@
             Remove the electrocuvette. 
         </note>
         <warning>Must be done QUICKLY</warning>
+        <image>place_cuvette_in_electroporator</image>
     </step>
    
     <step>
@@ -132,10 +134,12 @@
             Pipette up and down 5-7 times to extract the cells from the 1mm gap in the cuvette.
         </note>
         <warning>Must be done QUICKLY</warning>
+        <image>rescue_transformation</image>
     </step>
     
     <step>
         <description>Transfer to labeled 1.5 mL tube</description>
+        <image>transfer_transformation_to_1_5mL_tube</image>
     </step>
     
 
