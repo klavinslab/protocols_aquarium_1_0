@@ -120,6 +120,11 @@
       </assign>
     </then>
     </if>
+    
+      <assign>
+        <lhs>water_vol</lhs>
+        <rhs>5 - %{fragment_vol_total}</rhs>
+      </assign>
 
 
   
