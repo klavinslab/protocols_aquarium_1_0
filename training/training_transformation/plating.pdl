@@ -58,9 +58,11 @@
 
   <!-- Incubating plates -->
   <take>
+    <item>
     <type>37 degree Incubator</type>
     <quantity>1</quantity>
     <var>incubator</var>
+    </item>
   </take>
   <step>
     <description>Place all completed plates in the 37 degree incubator for 16 to 24 hours</description>
