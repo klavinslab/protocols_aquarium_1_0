@@ -186,25 +186,4 @@
 
   <release>[%{my_heatblock}[0]]</release>
 
-  <assign>
-    <lhs>k</lhs>
-    <rhs>0</rhs>
-  </assign>  
-  <while>
-    <condition>%{k} &lt; %{fragment_num}</condition>
-    <do>
-    <assign>
-      <lhs>id</lhs>
-      <rhs>%{fragment_id_array}[%{k}]</rhs>
-    </assign>
-    <release>[%{my_fragment_%{id}}]</release>
-    <assign>
-      <lhs>j</lhs>
-      <rhs>%{j} + 1</rhs>
-    </assign>
-    </do>
-  </while>
-  
-  <release>[%{my_fragment}[0]]</release>
-
 </protocol>
