@@ -58,7 +58,7 @@
 
   <!-- Incubating plates -->
   <take>
-    <object>37 degree Incubator</object>
+    <type>37 degree Incubator</type>
     <quantity>1</quantity>
     <var>incubator</var>
   </take>
