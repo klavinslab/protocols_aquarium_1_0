@@ -11,19 +11,21 @@
   
   <!-- takes -->
   <take>
-    <object>Transformed Cells</object>
+    <item>
+    <type>Transformed Cells</type>
     <quantity>%{samp}</quantity>
     <var>cells</var>
-  </take>
-  <take>
-    <object>LB Agar Plates</object>
+    <\item>
+    <item>
+    <type>LB Agar Plates</type>
     <quantity>%{samp}</quantity>
     <var>plates</var>
-  </take>
-  <take>
-    <object>50 mL Conical Sterile Beads</object>
+    <\item>
+    <item>
+    <type>50 mL Conical Sterile Beads</type>
     <quantity>1</quantity>
     <var>beads</var>
+    <\item>
   </take>
 
   <!-- 
