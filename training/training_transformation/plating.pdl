@@ -33,19 +33,25 @@
     <description>Label the sides of the LB agar plates with sample name, your initials, and the date.</description>
     <note>All of this information is required, as these plates will be incubated overnight and potentially stored.</note>
   </step>
+  
   <step>
     <description>Add 5 to 8 sterile beads to the agar side of each plate and then flip lid side down.</description>
     <warning>Be sure to shake the 50 mL conical gently, or a large number of beads will spill out.</warning>
   </step>
+  
+  <step>
     <description>For up to 6 plates in a row, transfer all of the transformed culture to the center of the agar of each plate.</description>
   </step>
+  
   <step>
     <description>Once each of the up to 6 plates has a pool of transformed cells, gently shake the beads across the plate to evenly spread the liquid until it is dry.</description>
     <note>Be sure to shake the beads directly across the plate with consistent, occasional rotation.</note>
   </step>
+  
   <step>
     <description>Flip the plates lid side down and repeat steps 3 and 4 until all samples are complete.</description>
   </step>
+  
   <step>
     <description>Dispose the beads into a dirty bead receptacle.</description>
     <warning>Be careful not to leave the lid off for too long, or to let the plate face agar side up to avoid contamination.</warning>
