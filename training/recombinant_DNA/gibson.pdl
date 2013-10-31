@@ -76,6 +76,17 @@
       </assign>
     </do>
   </while>
+    
+    <if>
+    <condition>%{fragment_vol_total} &gt; 5</condition>
+    <then>
+    <step>
+    <description>Please ABORT this protocol! The totol volume of your fragments to be added is %{fragment_vol_total}µL, 
+    which is greater than 5µL. Reschedule the protocol and make sure your totol volume of your fragments is less or equal than 5µL.
+    </description>
+    </step>
+    </then>
+    </if>
   
   <take>
     <item>
@@ -109,16 +120,7 @@
       </assign>
     </then>
     </if>
-    
-    <if>
-    <condition>%{fragment_vol_total} &gt; 5</condition>
-    <then>
-    <step>
-    <description>The totol volume of your fragments to be added is %{fragment_vol_total}µL, which is greater than 5µL. 
-    Please abort this protocol and make sure your totol volume of your fragments to be addes is less or equal than 5µL.</description>
-    </step>
-    </then>
-    </if>
+
 
   
   <!-- Begin steps -->
