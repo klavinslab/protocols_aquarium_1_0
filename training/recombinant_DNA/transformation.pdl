@@ -61,7 +61,7 @@
             <type>Plasmid_%{Plasmid}</type><quantity>1</quantity><var>my_plasmid</var>
         </item>
         <item>
-                <type>Styrophoam Block</type><quantity>1</quantity><var>my_styblock</var>
+                <type>Styrofoam Block</type><quantity>1</quantity><var>my_styblock</var>
         </item>
         <item>
                 <type>Ice block</type><quantity>1</quantity><var>my_iceblock</var>
@@ -76,6 +76,7 @@
         <description>Arrange Ice Block</description>
         <note>Put the Ice block in the Styrophoam block, and place the Aluminum tube rack 
         on top of the ice block.</note>
+        <image>arrange_cold_block</image>
     </step>
 
     <step>
@@ -85,6 +86,7 @@
             and place the tube of cells in the Aluminum tube rack.\n
             The cuvette should be placed alongside the ice block.
         </note>
+        <image>handle_electrocompetent_cells</image>        
     </step>
     
     <take>
@@ -99,6 +101,7 @@
     <step>
         <description>Allow the Electrocompetent Cells to thaw slightly</description>
         <note>Wait until your cells have thawed to a slushy consistency that can be pipetted out.</note>
+        <image>thawed_electrocompotent_cells</image>
     </step>
 
     <step>
