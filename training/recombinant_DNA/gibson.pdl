@@ -174,10 +174,7 @@
 
   <step>
     <description>Transfer the tube in a heat block set to 50°C.</description>
-  </step>
-  
-  <step>
-    <description>Be prepared to take the tube out after 15-60 minutes.</description>
+    <note>Be prepared to take the tube out after 15-60 minutes.</note>
   </step>
 
   <release>[%{my_heatblock}[0]]</release>
