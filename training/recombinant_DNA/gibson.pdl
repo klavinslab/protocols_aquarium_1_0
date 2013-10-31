@@ -185,6 +185,6 @@
   </step>
 
   <release>[%{my_heatblock}[0]]</release>
-  <release>[%{my_fragment}]</release>
+  <release>[%{my_fragment}[0]]</release>
 
 </protocol>
