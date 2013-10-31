@@ -55,7 +55,7 @@
         <item>
         <type>fragment_%{temp_id}</type>
         <quantity>1</quantity>
-        <var>my_fragment_%{temp_id}</var>
+        <var>my_fragment</var>
         </item>
       </take>
       
@@ -185,5 +185,6 @@
   </step>
 
   <release>[%{my_heatblock}[0]]</release>
+  <release>[%{my_fragment}]</release>
 
 </protocol>
