@@ -167,6 +167,7 @@
     <step>
       <description>Add %{water_vol} µL of MG water into the gibson aliquot</description>
     </step>
+    <release>[%{my_water}[0]]</release>
     </then>
   </if>
   
@@ -179,5 +180,6 @@
     <description>Be prepared to take the tube out after 15-60 minutes.</description>
   </step>
 
+  <release>[%{my_heatblock}[0]]</release>
 
 </protocol>
