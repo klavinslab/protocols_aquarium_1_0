@@ -1,0 +1,23 @@
+<protocol>
+
+	<information>This is a protocol to play with Urchin's ability to commit to github</information>
+
+	<!--Arguments-->
+    
+	<!--Initial takes-->
+    
+	<!--Begin Steps-->
+    <step>
+        <description>Bla bla bla</description>
+        <note>blabla</note>
+        <image></image>
+        <warning></warning>
+    </step>
+
+	<!--Produce-->
+    
+	<!--Final releases-->
+
+
+
+</protocol>
