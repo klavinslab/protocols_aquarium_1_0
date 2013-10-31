@@ -12,7 +12,7 @@
   <!-- takes -->
   <take>
     <object>Transformed Cells</object>
-    <quantity>1</quantity>
+    <quantity>%{samp}</quantity>
     <var>cells</var>
   </take>
   <take>
@@ -26,7 +26,7 @@
     <var>beads</var>
   </take>
 
-  <!-- begin steps -->
+  <!-- 
   <step>
     <description>Label the sides of the LB agar plates with sample name, your initials, and the date.</description>
     <note>All of this information is required, as these plates will be incubated overnight and potentially stored.</note>
@@ -48,6 +48,8 @@
     <description>Dispose the beads into a dirty bead receptacle.</description>
     <warning>Be careful not to leave the lid off for too long, or to let the plate face agar side up to avoid contamination.</warning>
   </step>
+  
+  -->
 
   <release>[%{cells}[0], %{plates}[0], %{beads}[0]]</release>
   <!-- TODO: clean up bench area, move to incubator -->
