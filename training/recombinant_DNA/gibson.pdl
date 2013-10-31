@@ -55,7 +55,7 @@
         <item>
         <type>fragment_%{temp_id}</type>
         <quantity>1</quantity>
-        <var>fragment</var>
+        <var>my_fragment_%{temp_id}</var>
         </item>
       </take>
       
