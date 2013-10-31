@@ -133,7 +133,7 @@
   </step>
   <step>
     <description>Label the Gibson aliquot tube.</description>
-    <note>Write on the tube fragment IDs.</note>
+    <note>Write down fragment IDs on the tube.</note>
   </step>
 
   <assign>
@@ -167,13 +167,16 @@
     <step>
       <description>Add %{water_vol} µL of MG water into the gibson aliquot</description>
     </step>
-    
     </then>
   </if>
   
 
   <step>
     <description>Transfer the tube in a heat block set to 50°C.</description>
+  </step>
+  
+  <step>
+    <description>Be prepared to take the tube out after 15-60 minutes.</description>
   </step>
 
 
