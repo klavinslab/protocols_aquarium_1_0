@@ -147,10 +147,10 @@
     <produce>
         <object>1.5 mL Transformation</object>
         <quantity>1</quantity>
-        <release>1.5 mL Test Tube</release>
+        <release>%{my_tube}[0]</release>
     </produce>
 
   <!-- Final releases -->
-    <release>[%{my_electroporator}[0],%{my_falcon_tube}[0],%{my_tube_rack}[0],%{my_tube}[0],%{my_plasmid}[0]]</release>
+    <release>[%{my_electroporator}[0],%{my_falcon_tube}[0],%{my_tube_rack}[0],%{my_plasmid}[0]]</release>
     <release>[%{my_styblock}[0],%{my_iceblock}[0],%{my_alrack}[0],%{my_cuvette}[0],%{my_strain}[0]]</release>
 </protocol>
