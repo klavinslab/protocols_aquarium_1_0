@@ -12,7 +12,7 @@
   <!-- takes -->
   <take>
     <object>Transformed Cells</object>
-    <quantity>%{samp}</quantity>
+    <quantity>1</quantity>
     <var>cells</var>
   </take>
   <take>
