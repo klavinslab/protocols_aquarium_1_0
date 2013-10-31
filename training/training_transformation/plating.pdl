@@ -28,7 +28,7 @@
     </item>
   </take>
 
-  <!-- 
+
   <step>
     <description>Label the sides of the LB agar plates with sample name, your initials, and the date.</description>
     <note>All of this information is required, as these plates will be incubated overnight and potentially stored.</note>
@@ -51,7 +51,7 @@
     <warning>Be careful not to leave the lid off for too long, or to let the plate face agar side up to avoid contamination.</warning>
   </step>
   
-  -->
+
 
   <release>[%{cells}[0], %{plates}[0], %{beads}[0]]</release>
   <!-- TODO: clean up bench area, move to incubator -->
