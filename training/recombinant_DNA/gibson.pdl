@@ -76,6 +76,11 @@
       </assign>
     </do>
   </while>
+
+      <assign>
+        <lhs>water_vol</lhs>
+        <rhs>5 - %{fragment_vol_total}</rhs>
+      </assign>
     
     <if>
     <condition>%{fragment_vol_total} &gt; 5</condition>
@@ -121,10 +126,7 @@
     </then>
     </if>
     
-      <assign>
-        <lhs>water_vol</lhs>
-        <rhs>5 - %{fragment_vol_total}</rhs>
-      </assign>
+
 
 
   
