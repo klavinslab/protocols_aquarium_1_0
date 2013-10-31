@@ -1,42 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <protocol>
-  <!--FIXME: Add select for if they want their aliquot to be bioturk trackable or not-->
   <!-- Information -->
   <information>This protocol describes how to make a single 50 mL aliquot of liquid media.</information>
-  <!-- First steps -->
+  <!-- Asks what type of media they want to use -->
   <step>
     <description>What type of media do you need?</description>
     <note>Choose the source of media you want to aliquot.</note>
     <select>
-      <!-- FIXME: Remove "Plus Adenine" from protocol and inventory-->
-      <!-- FIXME: Add TB + Amp and TB + Kan to media options and inventory-->
       <description>Media Type:</description>
       <var>media_type</var>
       <choice>800 mL LB liquid (sterile)</choice>
       <choice>800 mL TB liquid (sterile)</choice>
-      <choice>800 mL SC Plus Adenine liquid (sterile)</choice>
+      <choice>800 mL SC liquid (sterile)</choice>
       <choice>800 mL SDO liquid (sterile)</choice>
       <choice>800 mL YPAD liquid (sterile)</choice>
+      <choice>400 mL TB plus Amp liquid (sterile)</choice>
+      <choice>400 mL LB plus Kan liquid (sterile)</choice>
+    </select>
+  </step>
+  <!-- Asks if they want the aliquot to be personal or shared -->
+  <step>
+    <description>Do you want this 50 mL aliquot to be personal or shared?</description>
+    <note>If it is personal, bioturk will not track the aliquot, and it should be stored in your personal box to only be used by you. If it is shared, the aliquot will be tracked by bioturk, will be stored in the media bay, and can be used by anyone.</note>
+    <select>
+      <description>Personal or shared aliquot?</description>
+      <var>choice</var>
+      <choice>Personal</choice>
+      <choice>Shared</choice>
     </select>
   </step>
   <!-- First takes -->
   <take>
-    <item>
-      <type>50 mL Falcon Tube</type>
-      <quantity>1</quantity>
-      <var>tube</var>
-    </item>
     <item>
       <type>%{media_type}</type>
       <quantity>1</quantity>
       <var>media</var>
     </item>
   </take>
-  <!-- FIXME: add if/else statements for if they say yes or no to tracking-->
-    <!-- FIXME: add if/then statements for tracking including using assign-->
-      <!-- FIXME: add step, produce, release, and move statements-->
-    <!-- FIXME: add statements for not tracking: steps for making aliquot and storing-->
   <!-- Pipetting -->
+  <step>
+    <description>Take a 50 mL Falcon Tube.</description>
+    <note>50 mL Falcon tubes are found at B1.155 and B1.160.</note>
+  </step>
   <step>
     <description>Add 50 mL of media to the 50 mL tube using the serological pipette.</description>
     <note>Loosen the cap of the 50 mL tube and media bottle. Use a 25 mL pipet to transfer 50 mL (25 mL at a time) from the media bottle to the 50 mL falcon tube. Screw the cap back on to the 50 mL tube and media bottle.</note>
@@ -44,82 +49,96 @@
          <note>Loosen the cap of the 50 mL tube and media bottle. Add a 25 mL pipette tip to the serological pipette. Draw up media from the media bottle into the pipette tip until it reaches the 25 mL mark on the tip. Release the media into the 50 mL tube. Repeat this again to add another 25 mL to the 50 mL tube for a total of 50 mL. Screw the cap back on to the 50 mL tube and media bottle.</note>
          -->
   </step>
-  <!-- Produce aliquot of the right type -->
+  <!-- If they want the aliquot to  be shared-->
   <if>
-    <condition>was yes</condition>
-    <then>
-  <produce render="false">
-    <object>%{aliquot_name}</object>
-    <quantity>1</quantity>
-    <var>aliquot</var>
-    <release>[%{tube}[0]]</release>
-  </produce>
-
-    </then>
-    <else>
-
-    </else>
-  </if>
-  <!--
-        <object>50 mL LB liquid aliquot (sterile)</object>
-  <if>
-    <condition>%{media_type} == "800 mL TB liquid (sterile)"</condition>
-    <then>
-      <produce render="false">
-        <object>50 mL TB liquid aliquot (sterile)</object>
-        <quantity>1</quantity>
-        <var>aliquot</var>
-        <release>[%{tube}[0]]</release>
-      </produce>
-    </then>
-  </if>
-  <if>
-    <condition>%{media_type} == "800 mL SDO liquid (sterile)"</condition>
-    <then>
-      <produce render="false">
-        <object>50 mL SDO liquid aliquot (sterile)</object>
-        <quantity>1</quantity>
-        <var>aliquot</var>
-        <release>[%{tube}[0]]</release>
-      </produce>
-    </then>
-  </if>
-  <if>
-    <condition>%{media_type} == "800 mL SC Plus Adenine liquid (sterile)"</condition>
+    <condition>%{choice} == "Shared"</condition>
+      <!-- What to call the produced aliquot -->
       <then>
+        <if>
+          <condition>%{media_type} == "800 mL LB liquid (sterile)"</condition>
+          <then>
+	    <assign>
+	      <lhs>aliquot_name</lhs>
+	      <rhs>50 mL LB liquid aliquot (sterile)</rhs>
+	    </assign>
+          </then>
+        </if>
+        <if>
+          <condition>%{media_type} == "800 mL TB liquid (sterile)"</condition>
+          <then>
+	    <assign>
+	      <lhs>aliquot_name</lhs>
+	      <rhs>50 mL TB liquid aliquot (sterile)</rhs>
+	    </assign>
+          </then>
+        </if>
+        <if>
+          <condition>%{media_type} == "800 mL SC liquid (sterile)"</condition>
+          <then>
+	    <assign>
+	      <lhs>aliquot_name</lhs>
+	      <rhs>50 mL SC liquid aliquot (sterile)</rhs>
+	    </assign>
+          </then>
+        </if>
+        <if>
+          <condition>%{media_type} == "800 mL SDO liquid (sterile)"</condition>
+          <then>
+	    <assign>
+	      <lhs>aliquot_name</lhs>
+	      <rhs>50 mL SDO liquid aliquot (sterile)</rhs>
+	    </assign>
+          </then>
+        </if>
+        <if>
+          <condition>%{media_type} == "800 mL YPAD liquid (sterile)"</condition>
+          <then>
+	    <assign>
+	      <lhs>aliquot_name</lhs>
+	      <rhs>50 mL YPAD liquid aliquot (sterile)</rhs>
+	    </assign>
+          </then>
+        </if>
+        <if>
+          <condition>%{media_type} == "400 mL TB plus Amp liquid (sterile)"</condition>
+          <then>
+	    <assign>
+	      <lhs>aliquot_name</lhs>
+	      <rhs>50 mL TB plus Amp liquid aliquot (sterile)</rhs>
+	    </assign>
+          </then>
+        </if>
+        <if>
+          <condition>%{media_type} == "400 mL TB plus Kan liquid (sterile)"</condition>
+          <then>
+	    <assign>
+	      <lhs>aliquot_name</lhs>
+	      <rhs>50 mL TB plus Kan liquid aliquot (sterile)</rhs>
+	    </assign>
+          </then>
+        </if>
+        <!-- silently produce aliquot and moves aliquot-->
         <produce render="false">
-          <object>50 mL SC Plus Adenine liquid aliquot (sterile)</object>
+          <object>%{aliquot_name}</object>
           <quantity>1</quantity>
           <var>aliquot</var>
-          <release>[%{tube}[0]]</release>
         </produce>
+        <step>
+          <description>Store this aliquot in the media bay at location B1.000</description>
+	  <note>This aliquot can be used by anyone.</note>
+        </step>
+        <move>
+          <item>%{aliquot}</item>
+          <location>"B1.000"</location>
+        </move>
       </then>
   </if>
-  <if>
-    <condition>%{media_type} == "800 mL YPAD liquid (sterile)"</condition>
-      <then>
-        <produce render="false">
-          <object>50 mL YPAD liquid aliquot (sterile)</object>
-          <quantity>1</quantity>
-          <var>aliquot</var>
-          <release>[%{tube}[0]]</release>
-        </produce>
-      </then>
-  </if>
-  -->
-  <!-- Insert the location where you want the aliquot -->
-  <step>
-    <description>Enter the location that you are taking the aliquot to.</description>
-    <getdata>
-      <type>string</type>
-      <description>Location:</description>
-      <var>location</var>
-    </getdata>
-  </step>
-  <!-- Releases -->
+  <!-- If they want the aliquot to be personal-->
+  <else>
+    <step>
+      <description>Store the aliquot in your personal box.</description>
+      <note>This aliquot is for your use only and will not be tracked by bioturk.</note>
+    </step>
+  </else>
   <release>[%{media}[0]]</release>
-  <move>
-    <item>%{aliquot}</item>
-    <location>%{location}</location>
-  </move>
 </protocol>
