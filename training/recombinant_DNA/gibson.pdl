@@ -117,8 +117,8 @@
     <description>The totol volume of your fragments to be added is %{fragment_vol_total}µL, which is greater than 5µL. 
     Please abort this protocol and make sure your totol volume of your fragments to be addes is less or equal than 5µL.</description>
     </step>
-    
-    
+    </then>
+    </if>
 
   
   <!-- Begin steps -->
