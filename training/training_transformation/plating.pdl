@@ -15,17 +15,17 @@
     <type>Transformed Cells</type>
     <quantity>%{samp}</quantity>
     <var>cells</var>
-    <\item>
+    </item>
     <item>
     <type>LB Agar Plates</type>
     <quantity>%{samp}</quantity>
     <var>plates</var>
-    <\item>
+    </item>
     <item>
     <type>50 mL Conical Sterile Beads</type>
     <quantity>1</quantity>
     <var>beads</var>
-    <\item>
+    </item>
   </take>
 
   <!-- 
