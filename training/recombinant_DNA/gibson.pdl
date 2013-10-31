@@ -102,12 +102,23 @@
     <var>my_water</var>
     </item>
     </take>
+    
       <assign>
         <lhs>water_vol</lhs>
         <rhs>5 - %{fragment_vol_total}</rhs>
       </assign>
     </then>
     </if>
+    
+    <if>
+    <condition>%{fragment_vol_total} &gt; 5</condition>
+    <then>
+    <step>
+    <description>The totol volume of your fragments to be added is %{fragment_vol_total}µL, which is greater than 5µL. 
+    Please abort this protocol and make sure your totol volume of your fragments to be addes is less or equal than 5µL.</description>
+    </step>
+    
+    
 
   
   <!-- Begin steps -->
@@ -120,7 +131,7 @@
   </step>
   <step>
     <description>Label the Gibson aliquot tube.</description>
-    <note>Write the Gibson reaction name (specified when submitted this protocol in bioturk).</note>
+    <note>Write on the tube fragment IDs.</note>
   </step>
 
   <assign>
