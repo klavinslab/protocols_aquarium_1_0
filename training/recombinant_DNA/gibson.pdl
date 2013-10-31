@@ -125,7 +125,7 @@
   
   <!-- Begin steps -->
   <step>
-    <description>%{water_vol}Thaw Gibson aliquot by holding in your hands for several seconds, then put on ice block to keep it cool.</description>
+    <description>Thaw Gibson aliquot by holding in your hands for several seconds, then put on ice block to keep it cool.</description>
   </step>
   <step>
     <description>Spin down Gibson aliquot for 2 seconds on a tabletop mini centrifuge.</description>
