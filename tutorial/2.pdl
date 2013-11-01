@@ -1,0 +1,25 @@
+<protocol>
+
+  <argument>
+    <name>x</name>
+    <type>sample</type>
+    <description>A sample</description>
+  </argument>
+
+  <step>
+    <description>x = %{x}</description>
+  </step>
+
+  <take>
+    <item>
+      <id>%{x}</id>
+      <quantity>1</quantity>
+      <var>my_item</var>
+    </item>
+  </take>
+
+  <step>
+    <description>my_item = %{my_item}</description>
+  </step>
+
+</protocol>

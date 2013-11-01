@@ -1,0 +1,39 @@
+<protocol>
+
+  <argument>
+    <name>x</name>
+    <type>sample</type>
+    <description>A sample</description>
+  </argument>
+
+  <argument>
+    <name>y</name>
+    <type>objecttype</type>
+    <description>A container for the sample you will produce.</description>
+  </argument>
+
+  <step>
+    <description>x = %{x} and y = '%{y}'</description>
+  </step>
+
+  <take>
+    <item>
+      <id>%{x}</id>
+      <quantity>1</quantity>
+      <var>my_items</var>
+    </item>
+  </take>
+
+  <step>
+    <description>my_items = %{my_items}</description>
+  </step>
+
+  <produce>
+    <object>%{y}</object>
+    <quantity>1</quantity>
+    <sample>%{my_items}[0]</sample>
+  </produce>
+
+  <release>%{my_items}</release>
+
+</protocol>

@@ -1,0 +1,13 @@
+<protocol>
+
+  <argument>
+    <name>x</name>
+    <type>sample</type>
+    <description>A sample</description>
+  </argument>
+
+  <step>
+    <description>x = %{x}</description>
+  </step>
+
+</protocol>
