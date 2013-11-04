@@ -15,7 +15,7 @@
       <choice>800 mL SDO liquid (sterile)</choice>
       <choice>800 mL YPAD liquid (sterile)</choice>
       <choice>400 mL TB plus Amp liquid (sterile)</choice>
-      <choice>400 mL LB plus Kan liquid (sterile)</choice>
+      <choice>400 mL TB plus Kan liquid (sterile)</choice>
     </select>
   </step>
   <!-- Asks if they want the aliquot to be personal or shared -->
