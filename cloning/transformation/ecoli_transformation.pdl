@@ -58,7 +58,7 @@
 
     <take>
         <item>
-            <type>%{Plasmid}</type><quantity>1</quantity><var>my_plasmid</var>
+            <id>%{Plasmid}</id><quantity>1</quantity><var>my_plasmid</var>
         </item>
         <item>
                 <type>Styrofoam Block</type><quantity>1</quantity><var>my_styblock</var>
@@ -94,7 +94,7 @@
                 <type>Clean Electrocuvette</type><quantity>1</quantity><var>my_cuvette</var>
         </item>
         <item>
-                <type>Electrocompetent_%{Strain}</type><quantity>1</quantity><var>my_strain</var>
+                <id>%{Strain}</id><quantity>1</quantity><var>my_strain</var>
         </item>
     </take>
 
