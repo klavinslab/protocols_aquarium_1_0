@@ -48,7 +48,7 @@
     <!-- Save for training protocol:
          <note>Loosen the cap of the 50 mL tube and media bottle. Add a 25 mL pipette tip to the serological pipette. Draw up media from the media bottle into the pipette tip until it reaches the 25 mL mark on the tip. Release the media into the 50 mL tube. Repeat this again to add another 25 mL to the 50 mL tube for a total of 50 mL. Screw the cap back on to the 50 mL tube and media bottle.</note>
          -->
-  </step>
+  </step>  
   <!-- If they want the aliquot to  be shared-->
   <if>
     <condition>%{choice} == "Shared"</condition>
@@ -59,7 +59,7 @@
           <then>
 	    <assign>
 	      <lhs>aliquot_name</lhs>
-	      <rhs>50 mL LB liquid aliquot (sterile)</rhs>
+	      <rhs>"50 mL LB liquid aliquot (sterile)"</rhs>
 	    </assign>
           </then>
         </if>
@@ -68,7 +68,7 @@
           <then>
 	    <assign>
 	      <lhs>aliquot_name</lhs>
-	      <rhs>50 mL TB liquid aliquot (sterile)</rhs>
+	      <rhs>"50 mL TB liquid aliquot (sterile)"</rhs>
 	    </assign>
           </then>
         </if>
@@ -77,7 +77,7 @@
           <then>
 	    <assign>
 	      <lhs>aliquot_name</lhs>
-	      <rhs>50 mL SC liquid aliquot (sterile)</rhs>
+	      <rhs>"50 mL SC liquid aliquot (sterile)"</rhs>
 	    </assign>
           </then>
         </if>
@@ -86,7 +86,7 @@
           <then>
 	    <assign>
 	      <lhs>aliquot_name</lhs>
-	      <rhs>50 mL SDO liquid aliquot (sterile)</rhs>
+	      <rhs>"50 mL SDO liquid aliquot (sterile)"</rhs>
 	    </assign>
           </then>
         </if>
@@ -95,7 +95,7 @@
           <then>
 	    <assign>
 	      <lhs>aliquot_name</lhs>
-	      <rhs>50 mL YPAD liquid aliquot (sterile)</rhs>
+	      <rhs>"50 mL YPAD liquid aliquot (sterile)"</rhs>
 	    </assign>
           </then>
         </if>
@@ -104,7 +104,7 @@
           <then>
 	    <assign>
 	      <lhs>aliquot_name</lhs>
-	      <rhs>50 mL TB plus Amp liquid aliquot (sterile)</rhs>
+	      <rhs>"50 mL TB plus Amp liquid aliquot (sterile)"</rhs>
 	    </assign>
           </then>
         </if>
@@ -113,7 +113,7 @@
           <then>
 	    <assign>
 	      <lhs>aliquot_name</lhs>
-	      <rhs>50 mL TB plus Kan liquid aliquot (sterile)</rhs>
+	      <rhs>"50 mL TB plus Kan liquid aliquot (sterile)"</rhs>
 	    </assign>
           </then>
         </if>
@@ -134,11 +134,14 @@
       </then>
   </if>
   <!-- If they want the aliquot to be personal-->
-  <else>
-    <step>
-      <description>Store the aliquot in your personal box.</description>
-      <note>This aliquot is for your use only and will not be tracked by bioturk.</note>
-    </step>
-  </else>
+  <if>
+    <condition>%{choice} == "Personal"</condition>
+    <then>
+      <step>
+        <description>Store the aliquot in your personal box.</description>
+        <note>This aliquot is for your use only and will not be tracked by bioturk.</note>
+      </step>
+    </then>
+  </if> 
   <release>[%{media}[0]]</release>
 </protocol>
