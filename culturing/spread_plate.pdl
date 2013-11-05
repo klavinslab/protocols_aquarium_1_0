@@ -6,14 +6,9 @@
   <!-- Arguments -->
   <!-- Need to know sample type/ID/volume -->
   <argument>
-    <name>sample_type</name>
-    <type>string</type>
-    <description>Enter the sample object type (usually cell suspension or reagent).</description>
-  </argument>
-  <argument>
-    <name>sample_id</name>
-    <type>number</type>
-    <description>Enter the ID of the cell suspension or reagent to be spread on the plate.</description>
+    <name>transformation</name>
+    <type>sample</type>
+    <description>A sample</description>
   </argument>
   <!-- Default value or range would be useful here (100-300µL) -->
   <argument>
@@ -29,11 +24,20 @@
 
   <!-- Initial takes -->
   <!-- TODO: How do you take a cell suspension sample with an ID? -->
+  
+    <take>
+    <item>
+      <id>%{transformation}</id>
+      <quantity>1</quantity>
+      <var>my_strain</var>
+    </item>
+    </take>
+
   <take>
     <item>
       <type>%{plate_type}</type>
       <quantity>1</quantity>
-      <var>plate</var>
+      <var>my_plate</var>
     </item>
   </take>
   <!-- Is there a way to add a note (i.e. you will need X number of beads)? -->
@@ -68,6 +72,8 @@
   <produce>
     <object>Spread plate</object>
     <quantity>1</quantity>
+    <release>[%{my_plate}[0]]</release>
   </produce>
-
+  
+  <release>[%{my_strain}[0]]</release>
 </protocol>
