@@ -43,7 +43,7 @@
   <!-- Begin steps -->
     <step>
         <description>Intialize the Electroporator</description>
-        <note>Click on and set the voltage to 1250V</note>
+        <note>Click on the electroporator (if it is not on) and set the voltage to 1250V</note>
     </step>
     <step>
         <description>Label the 1.5 mL Test Tube</description>
@@ -98,19 +98,25 @@
     </step>
 
     <step>
-        <description>Pipette 2 µL of your plasmid into the Electrocompetent Cells tube and mix with the pipette tip.
-            Then transfer the mixture, via pipette, into the elevtrocuvette.</description>
+        <description>Pipette 2 µL of your plasmid into the Electrocompetent Cells tube</description>
+        <note>Swirl the tip gently in the culture to mix. Put back on the aluminum rack after mixing</note>
         <image>pipette_plasmid_into_electrocompotent_cells</image>
     </step>
-    
+
     <step>
         <description>Electroporation and Rescue Preparation</description>
         <note>We will now begin Electroporation and Rescue of the cells.\n
               Please set your pipettor to be 1000 µL, prepare 1000 uL pipette tips, and loosen cap on the 50 mL LB liquid aliquot (sterile).
         </note>
     </step>
-
     
+    <step>
+        <description>Transfer the cells plasmid mixture to electrocuvette</description>
+        <note>Take lid off the electrocuvette.\n
+        Pipette 42 µL of the mixture into the center of the gap of the electrocuvette</note>
+    </step>
+
+
     <step>
         <description>Electroporation</description>
         <note>Put the cuvette in the electroporator and press the PULSE button twice to deliver a pulse.\n
