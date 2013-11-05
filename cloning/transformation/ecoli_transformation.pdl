@@ -68,9 +68,7 @@
     
 
     <step>
-        <description>Arrange Ice Block</description>
-        <note>Put the Ice block in the Styrophoam block, and place the Aluminum tube rack 
-        on top of the ice block.</note>
+        <description>Put Aluminum tube rack on styrofoam ice block</description>
         <image>arrange_cold_block</image>
     </step>
 
