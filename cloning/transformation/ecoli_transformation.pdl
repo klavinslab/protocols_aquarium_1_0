@@ -140,7 +140,7 @@
     </step>
 
     <step>
-        <description>Click off the electroporator</description>
+        <description>Click off the electroporator  %{container}</description>
     </step>
 
 
