@@ -14,12 +14,6 @@
         <description>The electrocompetent cell type to be used.</description>
     </argument>
     
-    <argument>
-        <name>container</name>
-        <type>objecttype</type>
-        <description>A container</description>
-    </argument>
-
   <!--    
     <argument>
         <name>Incubator_time</name>
@@ -140,13 +134,13 @@
     </step>
 
     <step>
-        <description>Click off the electroporator  %{container}</description>
+        <description>Click off the electroporator</description>
     </step>
 
 
         <!--Produce-->
     <produce>
-        <object>%{container}</object>
+        <object>1.5 mL tube transformation</object>
         <quantity>1</quantity>
         <sample>%{my_strain}[0]</sample>
         <release>[%{my_strain}[0]]</release>
