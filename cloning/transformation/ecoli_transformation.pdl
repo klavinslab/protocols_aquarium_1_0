@@ -68,10 +68,7 @@
             <id>%{Plasmid}</id><quantity>1</quantity><var>my_plasmid</var>
         </item>
         <item>
-                <type>Styrofoam Block</type><quantity>1</quantity><var>my_styblock</var>
-        </item>
-        <item>
-                <type>Ice block</type><quantity>1</quantity><var>my_iceblock</var>
+            <type>Styrofoam Ice Block</type><quantity>1</quantity><var>my_iceblock</var>
         </item>
         <item>
             <type>Aluminum Tube Rack</type><quantity>1</quantity><var>my_alrack</var>
@@ -160,5 +157,5 @@
 
   <!-- Final releases -->
     <release>[%{my_electroporator}[0],%{my_falcon_tube}[0],%{my_tube_rack}[0],%{my_plasmid}[0]]</release>
-    <release>[%{my_styblock}[0],%{my_iceblock}[0],%{my_alrack}[0],%{my_tube_box}[0],%{my_cuvette}[0]]</release>
+    <release>[%{my_iceblock}[0],%{my_alrack}[0],%{my_tube_box}[0],%{my_cuvette}[0]]</release>
 </protocol>
