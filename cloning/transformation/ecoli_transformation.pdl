@@ -38,13 +38,13 @@
 
     <take>
         <item>
-                <type>50 mL Falcon Tube LB</type><quantity>1</quantity><var>my_falcon_tube</var>
+                <type>50 mL LB liquid aliquot (sterile)</type><quantity>1</quantity><var>my_falcon_tube</var>
         </item>
         <item>
                 <type>1.5 mL Test Tube Rack</type><quantity>1</quantity><var>my_tube_rack</var>
         </item>
         <item>
-                <type>1.5 mL Test Tube</type><quantity>1</quantity><var>my_tube</var>
+                <type>1.5 mL Tube Box</type><quantity>1</quantity><var>my_tube_box</var>
         </item>
     </take>
 
@@ -155,10 +155,10 @@
         <object>%{container}</object>
         <quantity>1</quantity>
         <sample>%{my_strain}[0]</sample>
-        <release>[%{my_tube}[0],%{my_strain}[0]]</release>
+        <release>[%{my_strain}[0]]</release>
     </produce>
 
   <!-- Final releases -->
     <release>[%{my_electroporator}[0],%{my_falcon_tube}[0],%{my_tube_rack}[0],%{my_plasmid}[0]]</release>
-    <release>[%{my_styblock}[0],%{my_iceblock}[0],%{my_alrack}[0],%{my_cuvette}[0]]</release>
+    <release>[%{my_styblock}[0],%{my_iceblock}[0],%{my_alrack}[0],%{my_tube_box}[0],,%{my_cuvette}[0]]</release>
 </protocol>
