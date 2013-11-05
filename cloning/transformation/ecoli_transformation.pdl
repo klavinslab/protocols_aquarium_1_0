@@ -12,7 +12,14 @@
         <name>Strain</name>
         <type>sample</type>
         <description>The electrocompetent cell type to be used.</description>
-    </argument>  
+    </argument>
+    
+    <argument>
+        <name>container</name>
+        <type>objecttype</type>
+        <description>A container</description>
+    </argument>
+
   <!--    
     <argument>
         <name>Incubator_time</name>
