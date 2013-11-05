@@ -152,7 +152,7 @@
 
         <!--Produce-->
     <produce>
-        <object>%{y}</object>
+        <object>%{container}</object>
         <quantity>1</quantity>
         <sample>%{my_strain}[0]</sample>
         <release>[%{my_tube}[0],%{my_strain}[0]]</release>
