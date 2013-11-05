@@ -109,19 +109,18 @@
     </step>
 
     <step>
-        <description>Pipette 2 uL of your plasmid into the Electrocompetent Cells tube and mix with the pipette tip.
+        <description>Pipette 2 µL of your plasmid into the Electrocompetent Cells tube and mix with the pipette tip.
             Then transfer the mixture, via pipette, into the elevtrocuvette.</description>
         <image>pipette_plasmid_into_electrocompotent_cells</image>
     </step>
-<!--    
+    
     <step>
-        <description>Electroporation and Rescue</description>
+        <description>Electroporation and Rescue Preparation</description>
         <note>We will now begin Electroporation and Rescue of the cells.\n
-            The next few steps will need to be done in rapid succession.\n
-            After Electroporation, Rescue must happen as quickly as possible.
+              Please set your pipettor to be 1000 µL, prepare 1000 uL pipette tips, and loosen cap on the 50 mL LB liquid aliquot (sterile).
         </note>
     </step>
--->
+
     
     <step>
         <description>Electroporation</description>
