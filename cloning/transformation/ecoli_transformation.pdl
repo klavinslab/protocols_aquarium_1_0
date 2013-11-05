@@ -139,12 +139,10 @@
         <image>rescue_transformation</image>
     </step>
 
-<!--    
     <step>
-        <description>Transfer to labeled 1.5 mL tube</description>
-        <image>transfer_transformation_to_1_5mL_tube</image>
+        <description>Click off the electroporator</description>
     </step>
--->
+
 
         <!--Produce-->
     <produce>
