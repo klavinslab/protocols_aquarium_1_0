@@ -41,7 +41,7 @@
                 <type>50 mL LB liquid aliquot (sterile)</type><quantity>1</quantity><var>my_falcon_tube</var>
         </item>
         <item>
-                <type>1.5 mL Test Tube Rack</type><quantity>1</quantity><var>my_tube_rack</var>
+                <type>1.5 mL Tube Rack</type><quantity>1</quantity><var>my_tube_rack</var>
         </item>
         <item>
                 <type>1.5 mL Tube Box</type><quantity>1</quantity><var>my_tube_box</var>
@@ -74,7 +74,7 @@
                 <type>Ice block</type><quantity>1</quantity><var>my_iceblock</var>
         </item>
         <item>
-            <type>Aluminun tube rack</type><quantity>1</quantity><var>my_alrack</var>
+            <type>Aluminum Tube Rack</type><quantity>1</quantity><var>my_alrack</var>
         </item>
     </take>    
     
