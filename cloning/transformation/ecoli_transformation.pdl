@@ -122,26 +122,29 @@
     <step>
         <description>Electroporation</description>
         <note>Put the cuvette in the electroporator and press the PULSE button twice to deliver a pulse.\n
-            Remove the electrocuvette. 
+            Remove the electrocuvette.\n
+            If you hear a pop, please throw away the electrocuvette and re run the protocol from beginning.
         </note>
         <warning>Must be done QUICKLY</warning>
         <image>place_cuvette_in_electroporator</image>
     </step>
    
     <step>
-        <description>Rescue</description>
+        <description>Rescue and Transfer</description>
         <note>Remove the electrocuvette from the electroporator and QUICKLY add 1 mL of room-temperature LB to it.\n
-            Pipette up and down 5-7 times to extract the cells from the 1mm gap in the cuvette.
+            Pipette up and down 5-7 times to extract the cells from the 1mm gap in the cuvette. \n
+            Transfer to labeled 1.5 mL tube.
         </note>
         <warning>Must be done QUICKLY</warning>
         <image>rescue_transformation</image>
     </step>
-    
+
+<!--    
     <step>
         <description>Transfer to labeled 1.5 mL tube</description>
         <image>transfer_transformation_to_1_5mL_tube</image>
     </step>
-    
+-->
 
         <!--Produce-->
     <produce>
