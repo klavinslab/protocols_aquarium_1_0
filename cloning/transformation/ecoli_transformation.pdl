@@ -152,8 +152,9 @@
 
         <!--Produce-->
     <produce>
-        <object>1.5 mL Transformation</object>
+        <object>%{y}</object>
         <quantity>1</quantity>
+        <sample>%{my_strain}[0]</sample>
         <release>[%{my_tube}[0],%{my_strain}[0]]</release>
     </produce>
 
