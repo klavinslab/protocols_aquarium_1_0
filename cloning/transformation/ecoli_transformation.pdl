@@ -124,7 +124,6 @@
     <step>
         <description>Electroporation</description>
         <note>Put the cuvette in the electroporator and press the PULSE button twice to deliver a pulse.\n
-            Remove the electrocuvette.\n
         </note>
         <warning>If you hear a pop, please throw away the electrocuvette, click ABORT and re run the protocol from beginning.</warning>
         <image>place_cuvette_in_electroporator</image>
