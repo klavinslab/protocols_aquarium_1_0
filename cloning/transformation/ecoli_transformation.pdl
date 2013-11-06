@@ -106,7 +106,9 @@
     <step>
         <description>Electroporation and Rescue Preparation</description>
         <note>We will now begin Electroporation and Rescue of the cells.\n
-              Please set your pipettor to be 1000 µL, prepare 1000 uL pipette tips, and loosen cap on the 50 mL LB liquid aliquot (sterile).
+              Please set your pipettors to be 42 µL and 1000 µL.\n
+              Prepare 100 µL and 1000 µL pipette tips.\n 
+              Loosen cap on the 50 mL LB liquid aliquot (sterile).
         </note>
     </step>
     
@@ -129,9 +131,9 @@
    
     <step>
         <description>Rescue and Transfer</description>
-        <note>Remove the electrocuvette from the electroporator and QUICKLY add 1 mL of room-temperature LB to it.\n
+        <note>Remove the electrocuvette from the electroporator and QUICKLY add 1 mL of LB from to it.\n
             Pipette up and down 3-5 times to extract the cells from the 1mm gap in the cuvette. \n
-            Transfer to labeled 1.5 mL tube.
+            Transfer to the labeled 1.5 mL tube.
         </note>
         <warning>Must be done QUICKLY</warning>
         <image>rescue_transformation</image>
