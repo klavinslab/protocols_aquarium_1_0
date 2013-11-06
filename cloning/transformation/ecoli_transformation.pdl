@@ -47,7 +47,7 @@
     </step>
     <step>
         <description>Label the 1.5 mL Test Tube</description>
-        <note>Write the plasmid ID number, strain type, and date on the tube.
+        <note>Write the plasmid ID number %{Plasmid}, strain type %{Strain}, and date on the tube.
             \nPlace the tube in the tube rack.
             \nThis tube will be used to hold your final transformation.
         </note>
