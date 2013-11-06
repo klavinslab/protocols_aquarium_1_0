@@ -43,7 +43,7 @@
   <!-- Begin steps -->
     <step>
         <description>Intialize the Electroporator</description>
-        <note>Click on the electroporator (if it is not on) and set the voltage to 1250V</note>
+        <note>Click on the electroporator if it is off and set the voltage to 1250V</note>
     </step>
     <step>
         <description>Label the 1.5 mL Test Tube</description>
@@ -117,6 +117,7 @@
         <note>Take lid off the electrocuvette.\n
         Pipette 42 µL of the mixture into the center of the gap of the electrocuvette.
         </note>
+        <image>pipette_transformation_mix_to_cuvette</image>
     </step>
 
 
