@@ -1,0 +1,1051 @@
+<protocol>
+
+	<information> This protocol is a teaching tool for locating items used for recombinant DNA protocols in the laboratory. </information>
+	<step>
+		<description>Directions:</description>
+		<note> In each step, you will be asked to find an item in the lab. A picture of the item and a map, with the item's location marked by a yellow dot, are provided. 
+			Walk to the location the item, note the color of the dot that is on or near it, and then return to the computer to submit your answer.  
+			\nYou will fail this protocol if you enter two or more incorrect answers.
+		</note>
+	</step>
+  
+	<step>
+		<description>Where are the 0.2 mL strip well tubes located? </description>
+		<note> Locate the 0.2 mL strip well tubes , note the color of the dot that is on or near them, and then return to the computer. </note>
+		<image>strip_well_tubes_with_map</image> 
+		
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+	<assign><lhs>numberWrong</lhs><rhs>0</rhs></assign>
+	
+	
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the 0.2 mL strip well tubes ? </description>
+		
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'green'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the 0.2 mL strip well tubes.</note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+				<note> Please return to the 0.2 mL strip well tubes  and then answer again.</note>
+				<image>strip_well_tubes_with_map</image> 
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - 0.2 mL strip well tubes'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+   
+	</if>
+	</do>
+	</while>
+
+
+	<step>
+		<description> Where is the DI water located? </description>
+		<note> Locate the DI water, note the color of the dot that is on or near it, and then return to the computer. 
+		\nThese beads are located on the first shelf above the lab bench located at the yellow dot in the picture.</note>
+		<image>molecular_grade_water_with_map</image>
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the DI water? </description>
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'blue'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the DI water. </note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+ 				<note>Please return to the DI water and then answer again.</note>
+				<image>molecular_grade_water_with_map</image>
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - DI water'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+   
+	</if>
+	</do>
+	</while>
+
+
+	<step>
+		<description> Where is the thermal cycler located? </description>
+		<note> Locate the thermal cycler, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<image>thermal_cycler_with_map</image>
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the thermal cycler? </description>
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'yellow'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the thermal cycler.</note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+				<note>Please return to the termal cycler and then answer again.</note>
+				<image>thermal_cycler_with_map</image>
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - Thermal Cycler'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+   
+	</if>
+	</do>
+	</while>
+
+
+	<step>
+		<description> Where is the 50C Heat Block located? </description>
+		<note> Locate the 50C Heat Block, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<image>heat_block_with_map</image>
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the 50C Heat Block freezer? </description>
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'purple'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the 50C Heat Block which contains the ice block needed for ecoli transformation.</note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+				<note>Please return to the 50C Heat Block and then answer again.</note>
+				<image>heat_block_with_map</image>
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - 50C Heat Block'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+   
+	</if>
+	</do>
+	</while>
+
+
+	<step>
+		<description> Where is the molecular grade water located? </description>
+		<note> Locate molecular grade water, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<image>MG_water_with_map</image>
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the molecular grade water? </description>
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'blue'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the molecular grade water. </note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+				<note>Please return to the molecular grade water and then answer again.</note>
+				<image>MG_water_with_map</image>
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - molecular grade water'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+   
+	</if>
+	</do>
+	</while>
+
+
+	<step>
+		<description> Where is the transilluminator located? </description>
+		<note> Locate the transilluminator, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<image>transilluminator_with_map</image>
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the transilluminator? </description>
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'blue'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the transilluminator.</note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+				<note>Please return to the transilluminator and then answer again.</note>
+				<image>transilluminator_with_map</image>
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - transilluminator'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+   
+	</if>
+	</do>
+	</while>
+
+	<step>
+		<description> Where are the razor blades located? </description>
+		<note> Locate the razor blades, note the color of the dot that is on or near them, and then return to the computer. </note>
+		<image>razor_blades_with_map</image>
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the razor blades? </description>
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'green'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the razor blades.</note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+				<note>Please return to the razor blades and then answer again.</note>
+				<image>razor_blades_with_map</image>
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - razor blades'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+   
+	</if>
+	</do>
+	</while>
+
+	<step>
+		<description> Where is the scale located? </description>
+		<note> Locate the scale, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<image>scale_with_map</image>
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the scale? </description>
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'yellow'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the scale.</note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+				<note>Please return to the scale and then answer again.</note>
+				<image>scale_with_map</image>
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - scale'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+   
+	</if>
+	</do>
+	</while>
+
+	<step>
+		<description> Where is the loading dye located? </description>
+		<note> Locate the loading dye, note the color of the dot that is on or near them, and then return to the computer. </note>
+		<image>loading_dye_with_map</image>
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the loading dye? </description>
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'green'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the loading dye.</note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+				<note>Please return to the loading dye and then answer again.</note>
+				<image>razor_blades_with_map</image>
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - loading dye'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+   
+	</if>
+	</do>
+	</while>
+
+	<step>
+		<description> Where is the 1x TAE located? </description>
+		<note> Locate the 1x TAE, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<image>TAE_with_map</image>
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the 1x TAE? </description>
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'purple'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the 1x TAE.</note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+				<note>Please return to the 1x TAE and then answer again.</note>
+				<image>TAE_with_map</image>
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - 1x TAE'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+   
+	</if>
+	</do>
+	</while>
+
+	<step>
+		<description> Where is the gel box power supply located? </description>
+		<note> Locate the gel box power supply, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<image>gel_box_power_supply_with_map</image>
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the gel box power supply? </description>
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'blue'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the gel box power supply.</note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+				<note>Please return to the gel box power supply and then answer again.</note>
+				<image>gel_box_power_supply_with_map</image>
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - gel box power supplyE'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+   
+	</if>
+	</do>
+	</while>
+
+	<step>
+		<description> Where is the camera located? </description>
+		<note> Locate the camera, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<image>camera_with_map</image>
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the camera? </description>
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'yellow'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the camera.</note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+				<note>Please return to the camera and then answer again.</note>
+				<image>camera_with_map</image>
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - camera'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+   
+	</if>
+	</do>
+	</while>
+
+	<step>
+		<description> Where is the 250 mL flask located? </description>
+		<note> Locate the 250 mL flask, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<image>250_mL_flask_with_map</image>
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the 250 mL flask? </description>
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'yellow'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the 250 mL flask.</note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+				<note>Please return to the 250 mL flask and then answer again.</note>
+				<image>250_mL_flask_with_map</image>
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - 250 mL flask'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+   
+	</if>
+	</do>
+	</while>
+
+	<step>
+		<description> Where is the weigh paper located? </description>
+		<note> Locate the weigh paper, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<image>weigh_paper_with_map</image>
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the weigh paper? </description>
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'purple'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the weigh paper.</note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+				<note>Please return to the weigh paper and then answer again.</note>
+				<image>weigh_paper_with_map</image>
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - weigh paper'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+   
+	</if>
+	</do>
+	</while>
+
+	<step>
+		<description> Where is the agarose located? </description>
+		<note> Locate the agarose, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<image>agarose_with_map</image>
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the agarose? </description>
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'blue'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the agarose.</note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+				<note>Please return to the agarose and then answer again.</note>
+				<image>agarose_with_map</image>
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - agarose'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+   
+	</if>
+	</do>
+	</while>
+
+	<step>
+		<description> Where is the 100 mL graduated cyclinder located? </description>
+		<note> Locate the 100 mL graduated cyclinder, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<image>100_mL_graduated_cyclinder_with_map</image>
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the 100 mL graduated cyclinder? </description>
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'green'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the 100 mL graduated cyclinder.</note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+				<note>Please return to the 100 mL graduated cyclinder and then answer again.</note>
+				<image>100_mL_graduated_cyclinder_with_map</image>
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - 100 mL graduated cyclinder'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+   
+	</if>
+	</do>
+	</while>
+
+	<step>
+		<description> Where is the microwave located? </description>
+		<note> Locate the microwave, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<image>microwave_with_map</image>
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the microwave? </description>
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'green'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the microwave.</note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+				<note>Please return to the microwave and then answer again.</note>
+				<image>microwave_with_map</image>
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - microwave'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+   
+	</if>
+	</do>
+	</while>
+
+	<step>
+		<description> Where are the gel boxes located? </description>
+		<note> Locate the gel boxes, note the color of the dot that is on or near them, and then return to the computer. </note>
+		<image>gel_box_with_map</image>
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the gel boxes? </description>
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'blue'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the gel boxes.</note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+				<note>Please return to the gel boxes and then answer again.</note>
+				<image>gel_box_with_map</image>
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - gel boxes'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+   
+	</if>
+	</do>
+	</while>
+
+	<step>
+		<description> Where are the gel box combs located? </description>
+		<note> Locate the gel box combs, note the color of the dot that is on or near them, and then return to the computer. </note>
+		<image>comb_for_gel_box_with_map</image>
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the gel box combs? </description>
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'yellow'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the gel box combs.</note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+				<note>Please return to the gel box combs and then answer again.</note>
+				<image>comb_for_gel_box_with_map</image>
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - gel box combs'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+   
+	</if>
+	</do>
+	</while>
+
+	<if> 
+	<condition>%{numberWrong} > 1</condition>
+		<then>
+			<step>
+				<description> You have failed this protocol. </description>
+				<note> Your score is unsatisfactory. You will have to retake this protocol. </note>
+			</step>
+				<assign><lhs>Status</lhs><rhs>'Fail'</rhs></assign>
+				<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</then>
+
+		<else>
+
+			<step> 
+				<description> Congratulations! You have passed this protocol.</description>
+				<note>You should now be able to find the items needed for recombinant DNA protocols. \n
+				Your primers, phusion 2x Master Mix, and Gibson aliquot are located in the -20 degree freezer.</note>
+			</step>
+				<assign><lhs>Status</lhs><rhs>'Pass'</rhs></assign>
+				<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+</if>
+</protocol>
