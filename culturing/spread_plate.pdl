@@ -58,7 +58,7 @@
   <!-- Add culture on top of plate -->
   <step>
     <description>Transfer the culture or reagent to the center of the plate.</description>
-    <note>Invert the plate again so the beads are on the agar surface. Add %{volume} of your culture of reagent using the P1000 micropipettor and put the lid back on the plate.</note>
+    <note>Invert the plate again so the beads are on the agar surface. Add %{volume} µL of your culture of reagent using the P1000 micropipettor and put the lid back on the plate.</note>
     <warning>Do not place the plate lid on lab bench while you do this.</warning>
   </step> 
   <!-- Shake, then dump out beads -->
