@@ -70,7 +70,7 @@
 
   <!-- Produces -->
   <produce>
-    <object>Petri Dishes</object>
+    <object>Petri Dish</object>
     <quantity>1</quantity>
     <sample>%{my_strain}[0]</sample>
     <release>[%{my_plate}[0]]</release>
