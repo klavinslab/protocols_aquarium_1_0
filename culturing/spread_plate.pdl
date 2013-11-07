@@ -19,7 +19,7 @@
   <argument>
     <name>plate_type</name>
     <type>string</type>
-    <description>Enter the type of plate you want to use.</description>
+    <description>Enter the type of plate you want to use. (e.g. LB Amp Plate (sterile))</description>
   </argument>
 
   <!-- Initial takes -->
