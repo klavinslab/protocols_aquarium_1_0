@@ -42,10 +42,10 @@
   </step>
 
   <!-- Produces -->
-  <produce>
-    <object>Spread plate in incubator</object>
-    <quantity>1</quantity>
-  </produce>
+  <move>
+        <item>%{produced_plates}</item>
+        <location>"B0.110"</location>
+  </move>
   
   <release>%{incubator}</release>
 
