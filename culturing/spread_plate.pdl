@@ -31,17 +31,12 @@
       <quantity>1</quantity>
       <var>my_strain</var>
     </item>
-    </take>
-
-  <take>
     <item>
       <type>%{plate_type}</type>
       <quantity>1</quantity>
       <var>my_plate</var>
     </item>
-  </take>
   <!-- Is there a way to add a note (i.e. you will need X number of beads)? -->
-  <take>
     <item>
       <type>Sterile Glass Bead Aliquot</type>
       <quantity>1</quantity>
