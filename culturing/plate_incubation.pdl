@@ -6,10 +6,11 @@
   <!-- Arguments -->
   <!-- Need to know spread plate ID -->
   <argument>
-    <name>plate_id</name>
-    <type>number</type>
-    <description>Enter the ID of the spread plate to be incubated.</description>
+    <name>plate</name>
+    <type>sample</type>
+    <description>Choose the plate to be incubated.</description>
   </argument>
+
   <argument>
     <name>temperature</name>
     <type>number</type>
@@ -22,14 +23,12 @@
   <!-- TODO: need to be able to take one with a specific ID -->
   <take>
     <item>
-      <type>Spread Plate</type>
+      <id>%{plate}</id>
       <quantity>1</quantity>
-      <var>plate</var>
+      <var>my_plate</var>
     </item>
-  </take>
-  <take>
     <item>
-      <type>%{temperature} Incubator</type>
+      <type>%{temperature} C Incubator</type>
       <quantity>1</quantity>
       <var>incubator</var>
     </item>
@@ -40,12 +39,14 @@
   <step>
     <description>Put the plate in the incubator.</description>
     <note>Incubate the plate upside-down (lid on the bottom) to prevent condensation from dropping on the agar surface.</note>
-  </step> 
+  </step>
 
   <!-- Produces -->
   <produce>
     <object>Spread plate in incubator</object>
     <quantity>1</quantity>
   </produce>
+  
+  <release>%{incubator}</release>
 
 </protocol>
