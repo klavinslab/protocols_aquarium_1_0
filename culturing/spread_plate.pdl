@@ -47,6 +47,9 @@
   <!-- Begin steps -->
   <!-- Add beads to plate -->
   <step>
+    <description>Write down your initials and date on the plate.</description>
+  </step>
+  <step>
     <description>Add sterile glass beads to the plate.</description>
     <note>Invert the plate so that the lid is on the tabletop. Add 5-10 beads to the inside of the lid (lift the plate up). Place the plate back on the lid afterwards.</note>
   </step> 
