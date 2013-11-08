@@ -69,7 +69,14 @@
     <quantity>1</quantity>
     <sample>%{my_strain}[0]</sample>
     <release>[%{my_plate}[0]]</release>
+    <var>r</var>
   </produce>
   
+  <log>
+    <type>RETURN</type>
+    <data>{ 'item' => %{r} }</data>
+  </log>
+  
   <release>[%{my_strain}[0]]</release>
+  
 </protocol>
