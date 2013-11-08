@@ -77,6 +77,6 @@
     <data>{ 'item' => %{r} }</data>
   </log>
   
-  <release>[%{my_strain}[0]]</release>
+  <release>[%{my_strain}[0],%{beads}[0]]</release>
   
 </protocol>
