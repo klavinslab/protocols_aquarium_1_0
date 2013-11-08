@@ -38,7 +38,7 @@
     </item>
   <!-- Is there a way to add a note (i.e. you will need X number of beads)? -->
     <item>
-      <type>Sterile Glass Bead Aliquot</type>
+      <type>Glass Bead Aliquot (sterile)</type>
       <quantity>1</quantity>
       <var>beads</var>
     </item>
