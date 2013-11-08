@@ -149,8 +149,14 @@
         <object>1.5 mL tube transformation</object>
         <quantity>1</quantity>
         <sample>%{my_strain}[0]</sample>
+        <var>r</var>
         <release>[%{my_strain}[0]]</release>
     </produce>
+    
+    <log>
+    <type>RETURN</type>
+    <data>{ 'item' => %{r} }</data>
+    </log>
 
   <!-- Final releases -->
     <release>[%{my_electroporator}[0],%{my_falcon_tube}[0],%{my_plasmid}[0]]</release>
