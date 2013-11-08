@@ -1,6 +1,6 @@
 argument
-  x: number
+  u: number
 end
 
-y = x + 1
+y = u + 1
 
