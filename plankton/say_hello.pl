@@ -4,5 +4,5 @@ end
 
 step
   description: "Hello"
-  note: u
+  note: "%{u}"
 end
