@@ -70,7 +70,7 @@
 	<step>
 		<description> Where is the DI water located? </description>
 		<note> Locate the DI water, note the color of the dot that is on or near it, and then return to the computer. 
-		\nThese beads are located on the first shelf above the lab bench located at the yellow dot in the picture.</note>
+		</note>
 		<image>molecular_grade_water_with_map</image>
 	</step>
 
@@ -232,7 +232,8 @@
 
 	<step>
 		<description> Where is the molecular grade water located? </description>
-		<note> Locate molecular grade water, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<note> Locate molecular grade water, note the color of the dot that is on or near it, and then return to the computer. 
+		\nThe molecular grade water is located in the cabinet above the lab bench at the spot located on the map.</note>
 		<image>MG_water_with_map</image>
 	</step>
 
@@ -815,9 +816,9 @@
 	</while>
 
 	<step>
-		<description> Where is the 100 mL graduated cyclinder located? </description>
-		<note> Locate the 100 mL graduated cyclinder, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>100_mL_graduated_cyclinder_with_map</image>
+		<description> Where is the 100 mL graduated cylinder located? </description>
+		<note> Locate the 100 mL graduated cylinder, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<image>100_mL_graduated_cylinder_with_map</image>
 	</step>
 
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
@@ -827,7 +828,7 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the 100 mL graduated cyclinder? </description>
+		<description> What color was the dot associated with the 100 mL graduated cylinder? </description>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -846,7 +847,7 @@
 			<assign><lhs>task</lhs><rhs>1</rhs></assign>
 			<step>
 				<description> That is correct! </description>
-				<note> You have successfully located the 100 mL graduated cyclinder.</note>
+				<note> You have successfully located the 100 mL graduated cylinder.</note>
 			</step>
 
 		</then>
@@ -855,11 +856,11 @@
    
 			<step>
 				<description>That is incorrect.</description>
-				<note>Please return to the 100 mL graduated cyclinder and then answer again.</note>
-				<image>100_mL_graduated_cyclinder_with_map</image>
+				<note>Please return to the 100 mL graduated cylinder and then answer again.</note>
+				<image>100_mL_graduated_cylinder_with_map</image>
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
-			<assign><lhs>Status</lhs><rhs>'Fail - 100 mL graduated cyclinder'</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - 100 mL graduated cylinder'</rhs></assign>
 			<log><type>MESSAGE</type><data>%{Status}</data></log>
 		</else>
    
@@ -975,7 +976,8 @@
 
 	<step>
 		<description> Where are the gel box combs located? </description>
-		<note> Locate the gel box combs, note the color of the dot that is on or near them, and then return to the computer. </note>
+		<note> Locate the gel box combs, note the color of the dot that is on or near them, and then return to the computer. 
+		\nThey are located in the first drawer of the pictured cabinet.</note>
 		<image>comb_for_gel_box_with_map</image>
 	</step>
 
