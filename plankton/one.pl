@@ -6,5 +6,5 @@ step
 end
 
 log 
-  return: n
+  return: { n: n }
 end
