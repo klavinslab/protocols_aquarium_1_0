@@ -3,5 +3,5 @@ argument
 end
 
 step
-  description "This protocol was passed %{x}"
+  description: "This protocol was passed %{x}"
 end
