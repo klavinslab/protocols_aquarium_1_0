@@ -10,7 +10,7 @@ for the plate and use a software to process the image to get the count."
 	end
 	
 	step
-		description: "Take the plates out from the incubator."
+		description: "Take the plate out from the incubator."
 	end
 
 	step
@@ -20,7 +20,7 @@ for the plate and use a software to process the image to get the count."
 
 	step
 		description: "Put the picture into software and get the count."
-		note: "Wait several seconds for the picture uploaded to Dropbox, open Dropbox/GelImages, under today's date file, you will find the picutre you just took.\n
+		note: "Wait several seconds for the picture uploading to Dropbox, open Dropbox/GelImages, under today's date file, you will find the picutre you just took.\n
 		Open the software, drag the picture into the software and wait for the software to count the colonies"
 		getdata
 			x: number, "Enter the count you got from the software."
