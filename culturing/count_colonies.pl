@@ -5,12 +5,8 @@
 	step
 		description: "This protocol describes how to take a plate from an incubator and 
 count number of colonies on the plate."
-		note: "In this protocol you need to use camera to take picture
-for the plate and use a software to process the image to get the count."
-	end
-	
-	step
-		description: "Take the plate out from the incubator."
+		note: "In this protocol you will use gel station camera to take a picture
+for the plate and use a software on the plate reader computer to process the image to get the count of colonies."
 	end
 	
 	take
