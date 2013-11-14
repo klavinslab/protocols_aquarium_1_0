@@ -48,6 +48,7 @@
   <!-- Add beads to plate -->
   <step>
     <description>Write down your initials and date on the plate.</description>
+    <image>write_on_the_plate</image>
   </step>
   <step>
     <description>Add sterile glass beads to the plate.</description>
