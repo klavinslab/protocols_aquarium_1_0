@@ -9,4 +9,6 @@ count number of colonies on the plate"
 for the plate and use a software to process the image to get the count"
 	end
 	
+	step
+	
 	
