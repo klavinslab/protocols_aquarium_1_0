@@ -10,7 +10,7 @@ for the plate and use a software on the plate reader computer to process the ima
 	end
 	
 	take
-		item 22197
+		item x
 	end
 
 	step
