@@ -12,6 +12,10 @@ for the plate and use a software to process the image to get the count."
 	step
 		description: "Take the plate out from the incubator."
 	end
+	
+	take
+		x
+	end
 
 	step
 		description: "Image the plate with lid off."
