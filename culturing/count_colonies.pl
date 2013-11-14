@@ -10,7 +10,7 @@ for the plate and use a software on the plate reader computer to process the ima
 	end
 	
 	take
-		item x
+		y = item x
 	end
 
 	step
@@ -27,7 +27,7 @@ for the plate and use a software on the plate reader computer to process the ima
 		end
 	end
 	
-	release x
+	release y
 
 
 	
