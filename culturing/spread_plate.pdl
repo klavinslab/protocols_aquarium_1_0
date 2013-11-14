@@ -53,17 +53,20 @@
   <step>
     <description>Add sterile glass beads to the plate.</description>
     <note>Invert the plate so that the lid is on the tabletop. Add 5-10 beads to the inside of the lid (lift the plate up). Place the plate back on the lid afterwards.</note>
+    <image>pour_beads_on_plate</image>
   </step> 
   <!-- Add culture on top of plate -->
   <step>
     <description>Transfer the culture or reagent to the center of the plate.</description>
     <note>Invert the plate again so the beads are on the agar surface. Add %{volume} µL of your culture of reagent using the P1000 micropipettor and put the lid back on the plate.</note>
     <warning>Do not place the plate lid on lab bench while you do this.</warning>
+    <image>pipette_culture_on_plate</image>
   </step> 
   <!-- Shake, then dump out beads -->
   <step>
     <description>Shake the plate to spread the culture or reagent over the surface.</description>
     <note>Use 3-4 sharp shakes, then pour the beads out into the waste bead container. When done, invert the plate (lid down) in preparation for incubation.</note>
+    <image>spread_beads_on_plate</image>
   </step> 
   <!-- Incubation is optional second protocol - temperature, duration will vary -->
 
