@@ -14,7 +14,7 @@ for the plate and use a software to process the image to get the count."
 	end
 	
 	take
-		x
+		item 22197
 	end
 
 	step
