@@ -130,16 +130,9 @@
             Transfer to the labeled 1.5 mL tube.
         </note>
         <warning>If you hear a pop, please throw away the electrocuvette, click ABORT and re run the protocol from beginning.</warning>
-        <image>place_cuvette_in_electroporator</image>
-        <image>rescue_transformation</image>
+        <image>electroporation_rescue.png</image>
     </step>
    
-    <step>
-        <description>Rescue and Transfer</description>
-        <warning>Must be done QUICKLY</warning>
-        <image>rescue_transformation</image>
-    </step>
-
     <step>
         <description>Record the time constant shown on the electroporator. Click off the electroporator.</description>
         <getdata>
