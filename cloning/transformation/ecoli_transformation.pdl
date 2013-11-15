@@ -43,7 +43,8 @@
   <!-- Begin steps -->
     <step>
         <description>Intialize the Electroporator</description>
-        <note>Click on the electroporator if it is off and set the voltage to 1250V</note>
+        <note>Click on the electroporator if it is off and set the voltage to 1250V.\n
+        Click the time constant button, the LCD screen should now show 0.0.</note>
     </step>
     <step>
         <description>Label the 1.5 mL Test Tube</description>
@@ -122,8 +123,11 @@
 
 
     <step>
-        <description>Electroporation</description>
+        <description>Electroporation, Rescue and Transfer</description>
         <note>Put the cuvette in the electroporator and press the PULSE button twice to deliver a pulse.\n
+        Remove the electrocuvette from the electroporator and QUICKLY add 1 mL of LB from to it.\n
+            Pipette up and down 3 times to extract the cells from the 1 mm gap in the electrocuvette. \n
+            Transfer to the labeled 1.5 mL tube.
         </note>
         <warning>If you hear a pop, please throw away the electrocuvette, click ABORT and re run the protocol from beginning.</warning>
         <image>place_cuvette_in_electroporator</image>
@@ -131,16 +135,17 @@
    
     <step>
         <description>Rescue and Transfer</description>
-        <note>Remove the electrocuvette from the electroporator and QUICKLY add 1 mL of LB from to it.\n
-            Pipette up and down 3 times to extract the cells from the 1 mm gap in the electrocuvette. \n
-            Transfer to the labeled 1.5 mL tube.
-        </note>
         <warning>Must be done QUICKLY</warning>
         <image>rescue_transformation</image>
     </step>
 
     <step>
-        <description>Click off the electroporator.</description>
+        <description>Record the time constant shown on the electroporator. Click off the electroporator.</description>
+        <getdata>
+        <type>number</type>
+        <description>Please write down the time constant shown on the electroporator.</description>
+        <var>time_constant</var>
+        </getdata>
     </step>
 
 
