@@ -155,5 +155,5 @@
 
   <!-- Final releases -->
     <release>[%{my_electroporator}[0],%{my_falcon_tube}[0],%{my_plasmid}[0]]</release>
-    <release>[%{my_iceblock}[0],%{my_alrack}[0],%{my_tube_box}[0],%{my_cuvette}[0]]</release>
+    <release>[%{my_iceblock}[0],%{my_alrack}[0],%{my_cuvette}[0]]</release>
 </protocol>
