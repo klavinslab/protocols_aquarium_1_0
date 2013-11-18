@@ -28,14 +28,9 @@
         <item>
                 <type>Electroporator</type><quantity>1</quantity><var>my_electroporator</var>
         </item>
-    </take>
 
-    <take>
         <item>
                 <type>50 mL LB liquid aliquot (sterile)</type><quantity>1</quantity><var>my_falcon_tube</var>
-        </item>
-        <item>
-                <type>1.5 mL Tube Box</type><quantity>1</quantity><var>my_tube_box</var>
         </item>
     </take>
 

@@ -16,7 +16,7 @@ for the plate and use a software on the plate reader computer to process the ima
 	step
 		description: "Image the plate with lid off."
 		note: "Place the plate inverted on the transilluminator, take the lid off, put the camera hood on, turn on the transilluminator, and take a picture by centering around the plate.\n
-		You need to set the camera at manual focus, zoom in to center around the plate until the whole plate takes up the screen. Then click the flower button, choose macro. Set the focus at 2, move the box to the leftmost and take the picture."
+		You need to set the camera at manual shooting mode by turning the dial until the M apppears, zoom in to center around the plate until the whole plate takes up the screen. Then click the flower button, choose macro. Set the shutter speed at 2 seconds, click the button with box on it, move the focus box to the edge of the plate and take the picture by holding the button half way down until you hear two beeps, then press it all the way down to take the picture."
 	end
 
 	step
