@@ -1,6 +1,6 @@
 argument
-  n: number
-  q: string
+  n: number, "A number"
+  q: string, "A string"
   s: sample
   o: object
 end
