@@ -5,14 +5,14 @@ argument
   o: object
 end
 
-place
-  protocol: 'plankton/1.p1'
+place p
+  protocol: "plankton/1.pl"
   argument
     x: q
     y: n
     z: s
     q: o
   end
-  group :klavins
+  group: "klavins"
   marked: true
 end
