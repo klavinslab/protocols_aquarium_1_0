@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<protocol>
+  <!-- Information -->
+  <information>This protocol describes how to make aliquots of media into 14 mL tubes, 125 mL flasks, or 250 mL flasks.</information>
+  <!-- Asks what type of media they want to use -->
+  <step>
+    <description>What type of media do you need?</description>
+    <note>Choose the source of media you want to aliquot.</note>
+    <select>
+      <description>Media Type:</description>
+      <var>media_type</var>
+      <choice>800 mL LB liquid (sterile)</choice>
+      <choice>800 mL TB liquid (sterile)</choice>
+      <choice>800 mL SC liquid (sterile)</choice>
+      <choice>800 mL SDO liquid (sterile)</choice>
+      <choice>800 mL YPAD liquid (sterile)</choice>
+      <choice>400 mL TB plus Amp liquid (sterile)</choice>
+      <choice>400 mL TB plus Kan liquid (sterile)</choice>
+    </select>
+    <select>
+      <description>Vessel type:</description>
+      <var>vessel</var>
+      <choice>14 mL Test Tube</choice>
+      <choice>14 mL Disposable Test Tube</choice>
+      <choice>125 mL Baffled Flask</choice>
+      <choice>250 mL Baffled Flask</choice>
+    </select>
+    <getdata>
+      <description>Number of aliquots to make:</description>
+      <type>number</type>
+      <var>n_aliquots</var>
+    </getdata>
+    <getdata>
+      <description>Volume of media per aliquot in mL.</description>
+      <type>number</type>
+      <var>volume</var>
+    </getdata>
+  </step>
+  <!-- Take out the media -->
+  <take>
+    <item>
+      <type>%{media_type}</type>
+      <quantity>1</quantity>
+      <var>media</var>
+    </item>
+  </take>
+  <!-- If the vessel is autoclaved, take it from inventory. If disposable, not in inventory, so just go get it -->
+  <if>
+    <condition>%{vessel} == "14 mL Test Tube" || %{vessel} == "125 mL Baffled Flask" || %{vessel} == "125 mL Baffled Flask"</condition>
+    <then>
+      <!-- Take autoclavable item from inventory -->
+      <take>
+        <item>
+          <type>%{vessel}</type>
+          <quantity>%{n_aliquots}</quantity>
+          <var>vessels</var>
+        </item>
+      </take>
+    </then>
+    <else>
+      <!-- Take disposable item from bin -->
+      <step>
+        <description>Gather disposable test tubes.</description>
+        <note>Gather %{n_aliquots} %{vessel}s from B1.240.</note>
+      </step>
+    </else>
+  </if>
+  <!-- Pipetting -->
+  <step>
+    <description>Pipet aliquots.</description>
+    <note>Using the serological pipettor and 25 mL serological pipettes, transfer %{volume} mL into each %{vessel} from the %{media_type}. Use a fresh serological pipette every time you return to the media source (%{media_type}). Conserve pipettes by drawing enough media into the pipettor to aspirate into multiple aliquots.</note>
+  </step>
+  <release>%{media}</release>
+  <!-- FIXME: managing the inventory for aliquots is a painful process. The tubes we took will be held as 'in use' until someone directly manages the inventory after cleaning them. -->
+  <step>
+    <description>Enjoy your aliquots!</description>
+    <note>This aliquot is for your use only and will not be tracked by BioTurk.</note>
+  </step>
+</protocol>

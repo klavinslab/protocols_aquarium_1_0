@@ -34,11 +34,11 @@
     <rhs>false</rhs>
   </assign>
   <while>
-    <condition>%{done} != true</condition>
+    <condition>%{done} != "Yes"</condition>
     <do>
       <step>
         <description>Select media to autoclave</description>
-        <note>Select a media option and the number of 800 mL bottles of it that you are autoclaving. Repeating a media choice with a different number will overwrite the previous selection. Keep track of how many bottles you can autoclave at once. If you are done selecting media, select "Done" from the drop down menu.</note>
+        <note>Select a media option and the number of 800 mL bottles of it that you are autoclaving. Repeating a media choice with a different number will overwrite the previous selection. Keep track of how many bottles you can autoclave at once. If you are done selecting media, select "Yes" from the "Done?" drop down menu.</note>
         <select>
           <description>Media Choice</description>
           <var>latest_choice</var>
@@ -46,7 +46,6 @@
           <choice>800 mL YPAD agar (unsterile)</choice>
           <choice>800 mL SDO liquid (unsterile)</choice>
           <choice>800 mL SDO agar (unsterile)</choice>
-          <choice>Done</choice>
         </select>
         <select>
           <description>Number</description>
@@ -55,6 +54,12 @@
           <choice>2</choice>
           <choice>3</choice>
           <choice>4</choice>
+        </select>
+        <select>
+          <description>Done?</description>
+          <var>done</var>
+          <choice>No</choice>
+          <choice>Yes</choice>
         </select>
       </step>
       <if>
@@ -169,56 +174,91 @@
           </assign>
         </then>
       </if>
-      <if>
-        <condition>%{latest_choice} == "Done"</condition>
-        <then>
-          <assign>
-            <lhs>done</lhs>
-            <rhs>true</rhs>
-          </assign>
-        </then>
-      </if>
     </do>
   </while>
 
   <!-- Begin steps -->
   <step>
     <description>Apply autoclave tape.</description>
-    <note>Add autoclave tape to each item. For items with lids, make sure autoclave tape extends fully over the lid and onto the sides of the item, so that one must break the seal in order to use it.</note>
+    <note>Add autoclave tape to each item. For items with lids, loosen the lid. Make sure the autoclave tape extends fully over the lid and onto the sides of the item so that the seal must be broken before using the autoclaved item..</note>
   </step>
   <step>
-    <description>Important autoclave note</description>
-    <note>If you are autoclaving any agar media, use the free-standing autoclave (not the autoclave A1) at the next step.</note>
+    <description>Select your autoclave.</description>
+    <note>If you are autoclaving any agar media, you must select the free-standing autoclave A2.</note>
+    <select>
+      <description>Select your autoclave:</description>
+      <var>autoclave_choice</var>
+      <choice>A1</choice>
+      <choice>A2</choice>
+    </select>
   </step>
-  <take>
-    <item>
-      <type>Autoclave</type>
-      <quantity>1</quantity>
-      <var>autoclave</var>
-    </item>
-  </take>
-  <step>
-    <description>Check the autoclave.</description>
-    <note>For the tabletop autoclave A1, there is not much to check before using it - a low-water indicator will flash if water is low.\n\nFor the free-standing autoclave, check the water level and steam receptacle level. Inside the autoclave, the water should be high enough to almost cover the hexagonal plate. If it is low, fill with DI water. The steam receptacle is a plastic bottle at the front of the autoclave and the water level should be between low and high. If it is above this, empty into the sink.</note>
-  </step>
+  <if>
+    <condition>%{autoclave_choice} == "A1"</condition>
+    <then>
+      <!-- Check the autoclave -->
+      <step>
+        <description>Check the autoclave.</description>
+        <note>A low-water indicator will flash if water is low.</note>
+      </step>
+    </then>
+    <else>
+      <!-- Check the autoclave -->
+      <step>
+        <description>Check the autoclave.</description>
+        <note>Check the water level and steam receptacle level. Inside the autoclave, the water should be high enough to almost cover the hexagonal plate. If it is low, fill with DI water. The steam receptacle is a plastic bottle at the front of the autoclave and the water level should be between low and high. If it is above this, empty into the sink.</note>
+      </step>
+    </else>
+  </if>
   <step>
     <description>Place items in the autoclave.</description>
     <note>Place all items one at a time into the autoclave.</note>
     <warning>Make sure no caps are tight. If a cap is tight, the item may explode.</warning>
   </step>
-  <step>
-    <description>Seal the autoclave.</description>
-    <note>If you are using the tabletop autoclave A1, close the autoclave door until it latches, pull the screw handle over to the front of the autoclave (unscrew if necessary), and rotate it clockwise until it is tight. If you are using the free-standing autoclave, close the hatch and seal by rotating clockwise and secure the magnetic safety device to the hatch.</note>
-  </step>
-  <step>
-    <description>Set autoclave settings and start.</description>
-    <note>For yeast media, autoclave at 110°C for 10 minutes at pressure.\n\nIf using the free-stranding autoclave, set the temperature and time at pressure, then hit start. If using the tabletop autoclave A1, select optional cycle, set the temperature and time, and press 'up' to start.</note>
-  </step>
-  <step>
-    <description>Wait around until the autoclave finishes.</description>
-    <note>This will take between 45 minutes and two hours. You can leave this job running and do other tasks while the autoclave is running - when the autoclave is done, resume by finding the job and resuming it. The large autoclave beeps 5 times in a row *just once* when it is done. The small autoclave produces two long beeps every few seconds until you tell it to stop. When the autoclave finishes, hit next.</note>
-  </step>
-  <!-- TODO: describe basics of undoing latch. Press 'start' on tabletop autoclave to shut it up -->
+  <if>
+    <condition>%{autoclave_choice} == "A1"</condition>
+    <then>
+      <!-- Seal the autoclave -->
+      <step>
+        <description>Seal the autoclave.</description>
+        <note>Close the autoclave door until it latches, pull the screw handle over to the front of the autoclave (unscrew if necessary), and rotate it clockwise until it is tight.</note>
+      </step>
+      <!-- Autoclave settings -->
+      <step>
+        <description>Set autoclave settings and start.</description>
+        <note>Set temperature to 110°C and the timer to 10 minutes at pressure.\n\nSelect optional cycle, set the temperature and time, and press 'up' to start.</note>
+      </step>
+    </then>
+    <else>
+      <!-- Seal the autoclave -->
+      <step>
+        <description>Seal the autoclave.</description>
+        <note>Close the hatch and seal by rotating clockwise and secure the magnetic safety device to the hatch.</note>
+      </step>
+      <!-- Autoclave settings -->
+      <step>
+        <description>Set autoclave settings and start.</description>
+        <note>Set temperature to 110°C and the timer to 10 minutes at pressure.\n\nIf using the free-stranding autoclave, set the temperature and time at pressure, then hit start.</note>
+      </step>
+    </else>
+  </if>
+
+  <if>
+    <condition>%{autoclave_choice} == "A1"</condition>
+    <then>
+      <!-- Wait until autoclave finishes. -->
+      <step>
+        <description>Wait around until the autoclave finishes.</description>
+        <note>This will take between 45 minutes and two hours. You can leave this job running and do other tasks while the autoclave is running - when the autoclave is done, resume by finding the job and resuming it.\n\nAutoclave A1 will continually beep every few seconds when finished.</note>
+      </step>
+    </then>
+    <else>
+      <!-- Wait until autoclave finishes. -->
+      <step>
+        <description>Wait around until the autoclave finishes.</description>
+        <note>This will take between 45 minutes and two hours. You can leave this job running and do other tasks while the autoclave is running - when the autoclave is done, resume by finding the job and resuming it.\n\nAutoclave A2 beeps 5 times in a row *just once* when it is done.</note>
+      </step>
+    </else>
+  </if>
   <take>
     <item>
       <type>Autoclave Gloves</type>
@@ -231,7 +271,6 @@
     <note>When items are around 50°C (no longer hurts to touch), proceed to the next step.</note>
     <warning>Use autoclave gloves. If any of the items contain agar, make sure to launch a pouring protocol soon or keep them at or above 50°C.</warning>
   </step>
-  <release>%{autoclave}</release>
 
   <!-- Produces -->
   <if>

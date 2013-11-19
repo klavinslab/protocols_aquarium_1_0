@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<protocol>
+  <!-- Arguments -->
+  <argument>
+    <name>primer1_id</name>
+    <type>sample</type>
+    <description>Select your first primer.</description>
+  </argument>
+  <argument>
+    <name>primer2_id</name>
+    <type>sample</type>
+    <description>Select your second primer.</description>
+  </argument>
+  <!-- Doesn't work? Error related to concentration data or something
+  <argument>
+    <name>template_id</name>
+    <type>sample</type>
+    <description>Select the template plasmid.</description>
+  </argument>
+  -->
+  <argument>
+    <name>y</name>
+    <type>objecttype</type>
+    <description>You should probably choose PCR mix or something.</description>
+  </argument>
+  <!-- Takes -->
+  <step>
+    <description>y = %{y}</description>
+  </step>
+  <take>
+    <item>
+      <id>%{primer1_id}</id>
+      <quantity>1</quantity>
+      <var>primer1</var>
+    </item>
+    <item>
+      <id>%{primer2_id}</id>
+      <quantity>1</quantity>
+      <var>primer2</var>
+    </item>
+    <!--
+    <item>
+      <id>%{template_id}</id>
+      <quantity>1</quantity>
+      <var>template</var>
+    </item>
+    -->
+  </take>
+  <!-- Steps -->
+  <assign>
+    <lhs>primer1_name</lhs>
+    <rhs>%{primer1}[0][:name]</rhs>
+  </assign>
+  <assign>
+    <lhs>primer2_name</lhs>
+    <rhs>%{primer2}[0][:name]</rhs>
+  </assign>
+  <step>
+    <description>Put water in your tube.</description>
+    <note>19 µL is a good amount.</note>
+  </step>
+  <!-- FIXME: primer1_name is actually the sample type "Primer Aliquot" -->
+  <step>
+    <description>Add %{primer1_name}.</description>
+    <note>Add 2.5 µL of %{primer1_name}.</note>
+  </step>
+  <step>
+    <description>Add %{primer2_name}.</description>
+    <note>Add 2.5 µL of %{primer2_name}.</note>
+  </step>
+  <step>
+    <description>Add 2X Phusion Master Mix.</description>
+    <note>Add 25 µL of 2X Phusion Master Mix.</note>
+    <getdata>
+      <description>Enter your favorite color</description>
+      <type>string</type>
+      <var>z</var>
+    </getdata>
+  </step>
+  <produce>
+    <object>%{y}</object>
+    <quantity>1</quantity>
+    <!-- Will contain this sample here -->
+    <sample>%{primer1}[0]</sample>
+    <data>{"favorite_color" => %{z}}</data>
+    <var>pcr_reaction</var>
+  </produce>
+  <log>
+    <type>produced</type>
+    <data>{"item_id" => %{pcr_reaction}}</data>
+  </log>
+  <release>[%{primer1}[0], %{primer2}[0]]</release>
+</protocol>
