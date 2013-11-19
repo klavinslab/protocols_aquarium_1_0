@@ -22,7 +22,7 @@ for the plate and use a software on the plate reader computer to process the ima
 	step
 		description: "Put the picture into software and get the count."
 		note: "Wait several seconds for the picture uploading to Dropbox, open Dropbox/GelImages, under today's date folder, you will find the picture you just took.\n
-		Open the software, drag the picture into the software and wait for the software to count the colonies"
+		Open the OpenCFU software, drag the picture into the software and wait for the software to count the colonies"
 	end
 	step
 		description: "Record the count."
