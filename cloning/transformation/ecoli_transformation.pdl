@@ -89,7 +89,9 @@
 
     <step>
         <description>Allow the Electrocompetent Cells to thaw slightly</description>
-        <note>Wait until your cells have thawed to a slushy consistency that can be pipetted out.</note>
+        <note>Wait until your cells have thawed to a slushy consistency that can be pipetted out.\n
+        Do not wait too long, the transformation efficiency of the electroporation method is 
+        heavily dependent on keeping electrocompetent cells ice-cold until electroporation.</note>
         <image>thawed_electrocompotent_cells</image>
     </step>
 
