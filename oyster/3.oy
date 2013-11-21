@@ -9,6 +9,7 @@ end
 place p2
   protocol: "plankton/two.pl"
   group: "admin"
+  marked: true
   start: now()
   window: minutes(30)
 end
