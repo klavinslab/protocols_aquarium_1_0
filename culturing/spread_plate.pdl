@@ -42,6 +42,11 @@
       <quantity>1</quantity>
       <var>beads</var>
     </item>
+    <item>
+      <type>Glass Bead Waste Collector</type>
+      <quantity>1</quantity>
+      <var>collector</var>
+    </item>
   </take>
 
   <!-- Begin steps -->
@@ -84,6 +89,6 @@
     <data>{ 'item' => %{r} }</data>
   </log>
   
-  <release>[%{my_strain}[0],%{beads}[0]]</release>
+  <release>[%{my_strain}[0],%{beads}[0],%{collector}[0]]</release>
   
 </protocol>
