@@ -26,10 +26,6 @@
 
     <take>
         <item>
-                <type>Electroporator</type><quantity>1</quantity><var>my_electroporator</var>
-        </item>
-
-        <item>
                 <type>50 mL LB liquid aliquot (sterile)</type><quantity>1</quantity><var>my_falcon_tube</var>
         </item>
     </take>
@@ -156,6 +152,6 @@
     </log>
 
   <!-- Final releases -->
-    <release>[%{my_electroporator}[0],%{my_falcon_tube}[0],%{my_plasmid}[0]]</release>
+    <release>[%{my_falcon_tube}[0],%{my_plasmid}[0]]</release>
     <release>[%{my_iceblock}[0],%{my_alrack}[0],%{my_cuvette}[0]]</release>
 </protocol>
