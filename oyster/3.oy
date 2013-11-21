@@ -1,0 +1,33 @@
+place p1
+  protocol: "plankton/one.pl"
+  group: "admin"
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+place p2
+  protocol: "plankton/two.pl"
+  group: "admin"
+  start: now()
+  window: minutes(30)
+end
+
+place p3
+  protocol: "plankton/three.pl"
+  group: "admin"
+  start: now()
+  window: minutes(30)
+end
+
+place p4
+  protocol: "plankton/four.pl"
+  group: "admin"
+  start: now()
+  window: minutes(30)
+end
+
+transition [p1, p2] => [p3, p4] when !error(0) && !error(1) && completed(0) && completed(1) end
+transition [p3, p4] => [p1, p2] when !error(0) && !error(1) && completed(0) && completed(1) end
+
+wire (p1,"n") => (p2,"x")
