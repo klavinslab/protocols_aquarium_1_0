@@ -5,13 +5,13 @@
 		<description>Directions:</description>
 		<note> In each step, you will be asked to find an item in the lab. A picture of the item and a map, with the item's location marked by a yellow dot, are provided. 
 			Walk to the location the item, note the color of the dot that is on or near it, and then return to the computer to submit your answer.  
-			\nYou will fail this protocol if you enter two or more incorrect answers.
+			\n\nYou will fail this protocol if you enter two or more incorrect answers.
 		</note>
 	</step>
   
 	<step>
-		<description>Where are the 0.2 mL strip well tubes located? </description>
-		<note> Locate the 0.2 mL strip well tubes , note the color of the dot that is on or near them, and then return to the computer. </note>
+		<description>Where are the PCR tubes (0.2 mL strip well tubes)? </description>
+		<note> Their location is B3.365. \nPlease go to the PCR tubes , note the color of the dot that is on or near them, and then return to the computer. </note>
 		<image>strip_well_tubes_with_map</image> 
 		
 	</step>
@@ -68,9 +68,9 @@
 
 
 	<step>
-		<description> Where is the DI water located? </description>
-		<note> Locate the DI water, note the color of the dot that is on or near it, and then return to the computer. 
-		</note>
+		<description> Where is the DI water? </description>
+		<note> Its location is B15.320. \nPlease go to the DI water, note the color of the dot that is on or near it, and then return to the computer. 
+		\nThese beads are located on the first shelf above the lab bench located at the yellow dot in the picture.</note>
 		<image>molecular_grade_water_with_map</image>
 	</step>
 
@@ -123,8 +123,8 @@
 
 
 	<step>
-		<description> Where is the thermal cycler located? </description>
-		<note> Locate the thermal cycler, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<description> Where is the thermal cycler? </description>
+		<note> Its location is B3.330. \nPlease go to the thermal cycler, note the color of the dot that is on or near it, and then return to the computer. </note>
 		<image>thermal_cycler_with_map</image>
 	</step>
 
@@ -177,8 +177,8 @@
 
 
 	<step>
-		<description> Where is the 50C Heat Block located? </description>
-		<note> Locate the 50C Heat Block, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<description> Where is the 50C Heat Block? </description>
+		<note> Its location is B3.340. \nPlease go to the 50C Heat Block, note the color of the dot that is on or near it, and then return to the computer. </note>
 		<image>heat_block_with_map</image>
 	</step>
 
@@ -231,9 +231,8 @@
 
 
 	<step>
-		<description> Where is the molecular grade water located? </description>
-		<note> Locate molecular grade water, note the color of the dot that is on or near it, and then return to the computer. 
-		\nThe molecular grade water is located in the cabinet above the lab bench at the spot located on the map.</note>
+		<description> Where is the molecular grade water? </description>
+		<note> Its location is B3.440. \nPlease go to the molecular grade water, note the color of the dot that is on or near it, and then return to the computer. </note>
 		<image>MG_water_with_map</image>
 	</step>
 
@@ -286,8 +285,8 @@
 
 
 	<step>
-		<description> Where is the transilluminator located? </description>
-		<note> Locate the transilluminator, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<description> Where is the transilluminator? </description>
+		<note> Its location is A7.320. \nPlease go to the transilluminator, note the color of the dot that is on or near it, and then return to the computer. </note>
 		<image>transilluminator_with_map</image>
 	</step>
 
@@ -339,8 +338,9 @@
 	</while>
 
 	<step>
-		<description> Where are the razor blades located? </description>
-		<note> Locate the razor blades, note the color of the dot that is on or near them, and then return to the computer. </note>
+		<description> Where are the razor blades? </description>
+		<note> Their location is A7.325. \nPlease go to the razor blades, note the color of the dot that is on or near them, and then return to the computer. 
+		\nThey are in the top drawer pictured.</note>
 		<image>razor_blades_with_map</image>
 	</step>
 
@@ -392,8 +392,8 @@
 	</while>
 
 	<step>
-		<description> Where is the scale located? </description>
-		<note> Locate the scale, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<description> Where is the scale? </description>
+		<note> Its location is B1.335. \nPlease go to the scale, note the color of the dot that is on or near it, and then return to the computer. </note>
 		<image>scale_with_map</image>
 	</step>
 
@@ -445,8 +445,8 @@
 	</while>
 
 	<step>
-		<description> Where is the loading dye located? </description>
-		<note> Locate the loading dye, note the color of the dot that is on or near them, and then return to the computer. </note>
+		<description> Where is the loading dye? </description>
+		<note> Its location is B15.520. /nPlease go to the loading dye, note the color of the dot that is on or near them, and then return to the computer. </note>
 		<image>loading_dye_with_map</image>
 	</step>
 
@@ -498,8 +498,8 @@
 	</while>
 
 	<step>
-		<description> Where is the 1x TAE located? </description>
-		<note> Locate the 1x TAE, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<description> Where is the 1x TAE? </description>
+		<note> Its location is B15.320. \nPlease go to the 1x TAE, note the color of the dot that is on or near it, and then return to the computer. </note>
 		<image>TAE_with_map</image>
 	</step>
 
@@ -551,8 +551,8 @@
 	</while>
 
 	<step>
-		<description> Where is the gel box power supply located? </description>
-		<note> Locate the gel box power supply, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<description> Where is the gel box power supply? </description>
+		<note> Its location is A7.325. \nPlease go to the gel box power supply, note the color of the dot that is on or near it, and then return to the computer. </note>
 		<image>gel_box_power_supply_with_map</image>
 	</step>
 
@@ -604,8 +604,8 @@
 	</while>
 
 	<step>
-		<description> Where is the camera located? </description>
-		<note> Locate the camera, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<description> Where is the camera? </description>
+		<note> Its location is A7.310. \nPlease go to the camera, note the color of the dot that is on or near it, and then return to the computer. </note>
 		<image>camera_with_map</image>
 	</step>
 
@@ -657,8 +657,8 @@
 	</while>
 
 	<step>
-		<description> Where is the 250 mL flask located? </description>
-		<note> Locate the 250 mL flask, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<description> Where is the 250 mL flask? </description>
+		<note> Its location is A1.505. \nPlease go to the 250 mL flask, note the color of the dot that is on or near it, and then return to the computer. </note>
 		<image>250_mL_flask_with_map</image>
 	</step>
 
@@ -710,8 +710,8 @@
 	</while>
 
 	<step>
-		<description> Where is the weigh paper located? </description>
-		<note> Locate the weigh paper, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<description> Where is the weigh paper? </description>
+		<note> Its location is B1.330. \nPlease go to the weigh paper, note the color of the dot that is on or near it, and then return to the computer. </note>
 		<image>weigh_paper_with_map</image>
 	</step>
 
@@ -763,8 +763,8 @@
 	</while>
 
 	<step>
-		<description> Where is the agarose located? </description>
-		<note> Locate the agarose, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<description> Where is the agarose? </description>
+		<note> Its location is B15.515. \nPlease go to the agarose, note the color of the dot that is on or near it, and then return to the computer. </note>
 		<image>agarose_with_map</image>
 	</step>
 
@@ -816,9 +816,9 @@
 	</while>
 
 	<step>
-		<description> Where is the 100 mL graduated cylinder located? </description>
-		<note> Locate the 100 mL graduated cylinder, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>100_mL_graduated_cylinder_with_map</image>
+		<description> Where is the 100 mL graduated cyclinder? </description>
+		<note> Its location is B15.320. \nPlease go to the 100 mL graduated cyclinder, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<image>100_mL_graduated_cyclinder_with_map</image>
 	</step>
 
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
@@ -828,7 +828,7 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the 100 mL graduated cylinder? </description>
+		<description> What color was the dot associated with the 100 mL graduated cyclinder? </description>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -847,7 +847,7 @@
 			<assign><lhs>task</lhs><rhs>1</rhs></assign>
 			<step>
 				<description> That is correct! </description>
-				<note> You have successfully located the 100 mL graduated cylinder.</note>
+				<note> You have successfully located the 100 mL graduated cyclinder.</note>
 			</step>
 
 		</then>
@@ -856,11 +856,11 @@
    
 			<step>
 				<description>That is incorrect.</description>
-				<note>Please return to the 100 mL graduated cylinder and then answer again.</note>
-				<image>100_mL_graduated_cylinder_with_map</image>
+				<note>Please return to the 100 mL graduated cyclinder and then answer again.</note>
+				<image>100_mL_graduated_cyclinder_with_map</image>
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
-			<assign><lhs>Status</lhs><rhs>'Fail - 100 mL graduated cylinder'</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - 100 mL graduated cyclinder'</rhs></assign>
 			<log><type>MESSAGE</type><data>%{Status}</data></log>
 		</else>
    
@@ -869,8 +869,8 @@
 	</while>
 
 	<step>
-		<description> Where is the microwave located? </description>
-		<note> Locate the microwave, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<description> Where is the microwave? </description>
+		<note> Its location is B15.520. \nPlease go to the microwave, note the color of the dot that is on or near it, and then return to the computer. </note>
 		<image>microwave_with_map</image>
 	</step>
 
@@ -922,8 +922,8 @@
 	</while>
 
 	<step>
-		<description> Where are the gel boxes located? </description>
-		<note> Locate the gel boxes, note the color of the dot that is on or near them, and then return to the computer. </note>
+		<description> Where are the gel boxes? </description>
+		<note> Their location is B2.515. \nPlease go to the gel boxes, note the color of the dot that is on or near them, and then return to the computer. </note>
 		<image>gel_box_with_map</image>
 	</step>
 
@@ -975,9 +975,8 @@
 	</while>
 
 	<step>
-		<description> Where are the gel box combs located? </description>
-		<note> Locate the gel box combs, note the color of the dot that is on or near them, and then return to the computer. 
-		\nThey are located in the first drawer of the pictured cabinet.</note>
+		<description> Where are the gel box combs? </description>
+		<note> Their location is B15.320. \nPlease go to the gel box combs, note the color of the dot that is on or near them, and then return to the computer. </note>
 		<image>comb_for_gel_box_with_map</image>
 	</step>
 
