@@ -1,19 +1,17 @@
 <protocol>
 
-
-
 	<information> This protocol is a teaching tool for locating safety items in the laboratory. </information>
 	<step>
 		<description>Directions:</description>
 		<note> In each step, you will be asked to find an item in the lab. A picture of the item and a map, with the item's location marked by a yellow dot, are provided. 
 			Walk to the location the item, note the color of the dot that is on or near it, and then return to the computer to submit your answer.  
-			\nYou will fail this protocol if you enter two or more incorrect answers.
+			\n\nYou will fail this protocol if you enter two or more incorrect answers.
 		</note>
 	</step>
   
 	<step>
-		<description> Where is the sharps container located? </description>
-		<note> Locate the sharps container, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<description> Where is the sharps container? </description>
+		<note> Its location is B15.215. \nPlease go to the sharps container, note the color of the dot that is on or near it, and then return to the computer. </note>
 		<image>Sharps_Container</image> 
 		
 	</step>
@@ -57,7 +55,7 @@
 			<step>
 				<description>That is incorrect.</description>
 				<note> Please return to the sharps container and then answer again.</note>
-				<image>Sharps_Container</image> 
+				<image>Sharps_Container</image>
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
 			<assign><lhs>Status</lhs><rhs>'Fail - sharps container'</rhs></assign>
@@ -71,7 +69,7 @@
 
 	<step>
 		<description> Where is the fire extinguisher located? </description>
-		<note> Locate the fire extinguisher, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<note> Its location is B16.100. \nLocate the fire extinguisher, note the color of the dot that is on or near it, and then return to the computer. </note>
 		<image>Fire_Extinguisher</image>
 	</step>
 
@@ -111,7 +109,7 @@
 			<step>
 				<description>That is incorrect.</description>
  				<note>Please return to the fire extinguisher and then answer again.</note>
- 				<image>Fire_Extinguisher</image>
+				<image>Fire_Extinguisher</image>
 			</step>
 			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
 			<assign><lhs>Status</lhs><rhs>'Fail - fire extinguisher'</rhs></assign>
@@ -124,8 +122,8 @@
 
 
 	<step>
-		<description> Where is the shower and eyewash station located? </description>
-		<note> Locate the shower and eyewash station, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<description> Where is the shower and eyewash station? </description>
+		<note> Its location is A3.515. \nPlease go to the shower and eyewash station, note the color of the dot that is on or near it, and then return to the computer. </note>
 		<image>shower-eyewash</image>
 	</step>
 
@@ -178,8 +176,8 @@
 
 
 	<step>
-		<description> Where is the fume hood located? </description>
-		<note> Locate the fume hood, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<description> Where is the fume hood? </description>
+		<note> Its location is A5.615. \nPlease go to the fume hood, note the color of the dot that is on or near it, and then return to the computer. </note>
 		<image>Fume_Hood</image>
 	</step>
 
@@ -232,8 +230,8 @@
 
 
 	<step>
-		<description> Where is the handwashing sink located? </description>
-		<note> Locate the handwashing sink, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<description> Where is the handwashing sink? </description>
+		<note> Its location is B2.315. \nPlease go to the handwashing sink, note the color of the dot that is on or near it, and then return to the computer. </note>
 		<image>handwashingsink</image>
 	</step>
 
@@ -286,8 +284,8 @@
 
 
 	<step>
-		<description> Where are the biohazard boxes located? </description>
-		<note> Locate the biohazard boxes, note the color of the dot that is on or near them, and then return to the computer. </note>
+		<description> Where are the biohazard boxes? </description>
+		<note> Their location is B15.400. \nPlease go to the biohazard boxes, note the color of the dot that is on or near them, and then return to the computer. </note>
 		<image>Biohazard_Box</image>
 	</step>
 
@@ -339,8 +337,8 @@
 	</while>
 
 	<step>
-		<description> Where is the dishwashing sink located? </description>
-		<note> Locate the dishwashing sink, note the color of the dot that is on or near it, and then return to the computer. </note>
+		<description> Where is the dishwashing sink? </description>
+		<note> Its location is A8.315. \nPlease go to the dishwashing sink, note the color of the dot that is on or near it, and then return to the computer. </note>
 		<image>dishwashingsink</image>
 	</step>
 
@@ -392,8 +390,8 @@
 	</while>
 
 	<step>
-		<description> Where are the latex gloves located? </description>
-		<note> Locate the latex gloves, note the color of the dot that is on or near them, and then return to the computer. </note>
+		<description> Where are the latex gloves? </description>
+		<note> Their location is B14.320. \nPlease go to the latex gloves, note the color of the dot that is on or near them, and then return to the computer. </note>
 		<image>latexgloves</image>
 	</step>
 
@@ -445,8 +443,8 @@
 	</while>
 
 	<step>
-		<description> Where are the heat resistant gloves located? </description>
-		<note> Locate the heat resistant gloves, note the color of the dot that is on or near them, and then return to the computer. </note>
+		<description> Where are the heat resistant gloves? </description>
+		<note> Their location is B15.320. \nPlease go to the heat resistant gloves, note the color of the dot that is on or near them, and then return to the computer. </note>
 		<image>Heat_Resistance_Gloves</image>
 	</step>
 
@@ -498,8 +496,8 @@
 	</while>
 
 	<step>
-		<description> Where are the paper towels located? </description>
-		<note> Locate the paper towels, note the color of the dot that is on or near them, and then return to the computer. </note>
+		<description> Where are the paper towels? </description>
+		<note> Their location is B15.520. \nPlease go to the paper towels, note the color of the dot that is on or near them, and then return to the computer. </note>
 		<image>papertowels</image>
 	</step>
 
@@ -545,10 +543,118 @@
 			<assign><lhs>Status</lhs><rhs>'Fail - Paper Towels'</rhs></assign>
 			<log><type>MESSAGE</type><data>%{Status}</data></log>
 		</else>
+
+	<step>
+		<description> Where are the goggles? </description>
+		<note> Their location is B3.230. \nPlease go to the goggles, note the color of the dot that is on or near them, and then return to the computer. 
+		/nThe goggles are in the drawer at the given location. </note>
+		<image>goggles</image>
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the goggles? </description>
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'purple'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the goggles in the lab.</note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+				<note>Please return to the goggles and then answer again.</note>
+				<image>goggles</image>
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - goggles'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+
+
    
 	</if>
 	</do>
 	</while>
+
+	<step>
+		<description> Where is the first aid kit? </description>
+		<note> Its location is B7.500. \nPlease go to the first aid kit, note the color of the dot that is on or near them, and then return to the computer. </note>
+		<image>first_aid_kit_with_map</image>
+	</step>
+
+	<assign><lhs>task</lhs><rhs>0</rhs></assign>
+
+	<while>
+	<condition>%{task}==0</condition>
+	<do>
+
+	<step>
+		<description> What color was the dot associated with the first aid kit? </description>
+		<select>
+			<var>answer</var>
+			<description>Please select the correct color</description>
+			<choice>purple</choice>
+			<choice>green</choice>
+			<choice>yellow</choice>
+			<choice>blue</choice>
+		</select>
+	</step>
+
+	<if>
+
+	<condition>%{answer} == 'green'</condition>
+
+		<then>
+			<assign><lhs>task</lhs><rhs>1</rhs></assign>
+			<step>
+				<description> That is correct! </description>
+				<note> You have successfully located the first aid kit in the lab.</note>
+			</step>
+
+		</then>
+
+		<else>
+   
+			<step>
+				<description>That is incorrect.</description>
+				<note>Please return to the first aid kit and then answer again.</note>
+				<image>first_aid_kit_with_map</image>
+			</step>
+			<assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
+			<assign><lhs>Status</lhs><rhs>'Fail - first aid kit'</rhs></assign>
+			<log><type>MESSAGE</type><data>%{Status}</data></log>
+		</else>
+
+
+   
+	</if>
+	</do>
+	</while>
+
 	<if> 
 	<condition>%{numberWrong} > 1</condition>
 		<then>
