@@ -543,6 +543,9 @@
 			<assign><lhs>Status</lhs><rhs>'Fail - Paper Towels'</rhs></assign>
 			<log><type>MESSAGE</type><data>%{Status}</data></log>
 		</else>
+	</if>
+	</do>
+	</while>
 
 	<step>
 		<description> Where are the goggles? </description>
