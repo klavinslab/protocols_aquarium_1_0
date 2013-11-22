@@ -4,10 +4,11 @@ LB CMC Agar
 Description: This protocol is for the preperation of LB CMC Agar. This stuff is used for growing up cellulolytic bacteria for quick cellulolytic screening.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-####Total duration: 3 hours ####
-####Total worktime: 30 minutes
+####Total duration: 24 hours ####
+####Total worktime: 35 minutes
 
     - Day 1: 3 hours
+    - Day 2: 5 minutes
     
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -36,6 +37,10 @@ Day 1:
 	* Thermal Gloves
 		+ Duration: 1 minute
 		+ Location: weigh table
+	* 30 C incubator
+		+ Duration: 16 hours
+		+ Location: Annex room
+
 -----------------------------------------------
 
     * Glass Liter Bottle:
@@ -72,6 +77,15 @@ Day 1:
 		+ Quantity: 1
 		+ Location: Weigh table
 
+Day 2:
+
+	* 30 C incubator
+		+ Duration: 16 hours
+		+ Location: Annex room
+	* 4 C fridge
+		+ Duration: 5 minutes
+		+ Location: Annex room
+
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 ##Protocol:##
@@ -87,7 +101,13 @@ Day 1:
 7. Remove from Autoclave: put on thermal gloves and take bottle out of autoclave, place on stir plate
 8. Stir: Heat to 65C while stirring at 700 rpm
 9. Add Antibiotic: while heating and stirring add 4 mL kan 1.6 mL amp using a P1000 micropipette
+10. Pour plates.
+11. Wait 30 minutes.
+12. Move plates to 30 C incubator to dry out overnight.
 
+Day 2:
+
+1. Move plates from 30 C incubator to appropriate location in fridge.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 ####Additional Information and Settings####
