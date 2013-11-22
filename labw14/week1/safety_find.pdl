@@ -675,5 +675,5 @@
 				<assign><lhs>Status</lhs><rhs>'Pass'</rhs></assign>
 				<log><type>MESSAGE</type><data>%{Status}</data></log>
 		</else>
-</if>
+	</if>
 </protocol>
