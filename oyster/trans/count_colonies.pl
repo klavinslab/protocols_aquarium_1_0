@@ -1,5 +1,5 @@
 argument
-  e_coli_strain_plateid: sample, "Choose the plate you incubated yesterday"
+  e_coli_strain_id: sample, "Choose the plate you incubated yesterday"
 end
 
 step
@@ -13,7 +13,7 @@ step
 end
 	
 take
-  y = item e_coli_strain_plateid
+  y = item e_coli_strain_id
 end
 
 step

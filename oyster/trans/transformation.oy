@@ -16,7 +16,7 @@ place transform
 end
 
 place plate
-  protocol: "oyster/plate.pl"
+  protocol: "oyster/trans/plate.pl"
   argument
     volume: 200
     plate_type: "LB Amp Plate (sterile)"
@@ -26,7 +26,7 @@ place plate
   window: minutes(1)
 end
 
-wire (transform,"transformed_cells_id") => (plate,"ecoli_strain_id")
+wire (transform,"transformed_cells_id") => (plate,"e_coli_strain_id")
 
 place incubate
   protocol: "oyster/trans/plate.pl"
@@ -38,7 +38,7 @@ place incubate
   window: minutes(1)
 end
 
-wire (plate,"plate_id") => (incubate,"e_coli_strain_plateid")
+wire (plate,"plate_id") => (incubate,"e_coli_strain_id")
 
 place image
   protocol: "oyster/count_colonies.pl "
@@ -47,7 +47,7 @@ place image
   window: hours(1)
 end
 
-wire (plate,"plate_id") => (image,"e_coli_strain_plateid")
+wire (plate,"plate_id") => (image,"e_coli_strain_id")
 
 transition [transform] => [plate] when !error(0) && completed(0) end
 transition [plate] => [incubate]  when !error(0) && completed(0) end
