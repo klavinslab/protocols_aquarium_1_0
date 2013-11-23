@@ -43,7 +43,7 @@ step
 end
 
 produce
-  r = 1 "Agar plate" from mystrain[0]
+  r = 1 "Agar plate" from strain[0]
   release plate
 end
 
