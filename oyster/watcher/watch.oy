@@ -1,0 +1,12 @@
+place wait
+  marked: true
+end
+
+place make
+  protocol: "oyster/watcher/make_widget.pl"
+  start: now()
+  window: minutes(30)
+end
+
+transition [wait] => [make] when quantity("Widget") < min_quantity("Widget") end
+transition [make] => [wait] when completed(0) end
