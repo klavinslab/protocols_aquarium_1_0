@@ -49,6 +49,14 @@ end
 
 wire (plate,"plate_id") => (image,"e_coli_strain_id")
 
-transition [transform] => [plate] when !error(0) && completed(0) end
-transition [plate] => [incubate]  when !error(0) && completed(0) end
-transition [incubate] => [image]  when !error(0) && completed(0) end
+# forward transitions
+transition [transform] => [plate]    when !error(0) && completed(0) end
+transition [plate]     => [incubate] when !error(0) && completed(0) end
+transition [incubate]  => [image]    when !error(0) && completed(0) end
+transition [image]     => []         when !error(0) && completed(0) end
+
+# rework transitions
+transition [transform] => [transform] when error(0) end
+transition [plate]     => [plate]     when error(0) end
+transition [incubate]  => [incubate]  when error(0) end
+transition [image]     => [image]     when error(0) end
