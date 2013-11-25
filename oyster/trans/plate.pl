@@ -44,6 +44,7 @@ end
 
 produce
   r = 1 "Agar plate" from strain[0]
+  note: "Keep the plate on the bench to use in the next protocol (incubating)."
   release plate
 end
 

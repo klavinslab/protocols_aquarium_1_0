@@ -7,14 +7,15 @@ end
 
 take
   falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
+  plasmid = item plasmid_id
 end
 
-# TODO: Checklists
-
 step
-  description: "Intialize the Electroporator"
-  note: "Turn on the electroporator if it is off and set the voltage to 1250V.\n
-         Click the time constant button. The LCD screen should show 0.0."
+  description: 
+    "Intialize the Electroporator"
+  note: 
+    "Turn on the electroporator if it is off and set the voltage to 1250V.\n
+     Click the time constant button. The LCD screen should show 0.0."
 end
 
 step
@@ -25,30 +26,21 @@ step
   image: "label_1_5mL_tube"
 end
 
-take
-  plasmid = item plasmid_id
-  iceblock = 1 "Styrofoam Ice Block"
-  alrack = 1 "Aluminum Tube Rack"
-end    
-
-step  
-  description: "Put aluminum tube rack on styrofoam ice block"
-  image: "arrange_cold_block"
-end
-
 step
   description: "Handling Electrocompetent Cells and Electrocuvette"
-  note: "You will next retrieve the electrocompetent cells and a cuvette.\n
-         Bring the ice block arrangement with you
-         and place the tube of cells in the aluminum tube rack.\n
-         The cuvette should be touching the ice block to keep it cool."
+  note: "You will next retrieve a styrofoam ice block, aluminum tube rack, 
+         the electrocompetent cells and a cuvette.\n
+         Place the tube of cells in the aluminum tube rack on top of the ice block."
+  warning: "The cuvette should be touching the ice block to keep it cool."
   image: "handle_electrocompetent_cells"
 end
 
 take
   cuvette = 1 "Clean Electrocuvette"
   strain = item e_coli_strain_id
-end
+  iceblock = 1 "Styrofoam Ice Block"
+  alrack = 1 "Aluminum Tube Rack"
+end 
 
 step
   description: "Allow the Electrocompetent Cells to thaw slightly"
@@ -81,19 +73,16 @@ end
 
 step
   description: "Electroporation, Rescue and Transfer"
-  note: "Put the cuvette in the electroporator and press the PULSE button twice to deliver a pulse.\n
-        Remove the electrocuvette from the electroporator and QUICKLY add 1 mL of LB from to it.\n
-        Pipette up and down 3 times to extract the cells from the 1 mm gap in the electrocuvette. \n
+  note: "Put the cuvette in the electroporator and press the PULSE button twice.\n
+        Remove the electrocuvette from the electroporator and QUICKLY add 1 mL of LB.\n
+        Pipette up and down 3 times to extract the cells from the gap in the electrocuvette. \n
         Transfer to the labeled 1.5 mL tube."
   warning: "If you hear a pop, please throw away the electrocuvette, 
-            click ABORT and re run the protocol from beginning."
+            click ABORT and re r
+un the protocol from beginning."
   image: "electroporation_rescue"
-end
-   
-step
-  description: "Record the time constant shown on the electroporator and turn off the electroporator."
   getdata
-    time_constant: number, "Please enter the time constant shown on the electroporator."
+    time_constant: number, "Enter the time constant shown on the electroporator."
   end
 end
 
@@ -109,6 +98,5 @@ log
   return: { transformed_cells_id: r[:id] }
 end
 
-release [falcon_tube[0],plasmid[0]]
-release [iceblock[0],alrack[0],cuvette[0]]
+release [falcon_tube[0],plasmid[0],iceblock[0],alrack[0],cuvette[0]]
 
