@@ -1,4 +1,3 @@
-information "Count colonies on the plate by camera imaging or human eye!"
 
 argument
   e_coli_strain_id: sample, "Choose the plate you incubated yesterday"
