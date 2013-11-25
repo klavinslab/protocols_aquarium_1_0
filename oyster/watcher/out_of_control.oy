@@ -1,0 +1,9 @@
+place p1
+  protocol: "plankton/one.pl"
+  group: "admin"
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+transition [p1] => [p1] when true end
