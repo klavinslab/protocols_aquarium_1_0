@@ -78,8 +78,7 @@ step
         Pipette up and down 3 times to extract the cells from the gap in the electrocuvette. \n
         Transfer to the labeled 1.5 mL tube."
   warning: "If you hear a pop, please throw away the electrocuvette, 
-            click ABORT and re r
-un the protocol from beginning."
+            click ABORT and re run the protocol from beginning."
   image: "electroporation_rescue"
   getdata
     time_constant: number, "Enter the time constant shown on the electroporator."
