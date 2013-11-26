@@ -8,6 +8,7 @@
     <note>
     This is a wet lab that works with live cultures. Do not bring food or drinks into the lab, do not apply cosmetics in the lab, and do not make any other type of contact with mucous (ex. contact lenses or touching one's mouth).
     </note>
+    <image>sign_caution-chem-no-eat-drinking-area1-lg</image>
   </step>
  
   <step>
@@ -39,7 +40,7 @@
   </step>
   
   <step>
-    <description>All biologically contaminated disposables must be disposed of in the biohazard waste.</description>
+    <description>All biologically contaminated disposables must be disposed in the biohazard waste.</description>
     <note>
     This includes items such as pipette tips, petri dishes, and gloves. Do not dispose of "sharps" in the biohazard waste bag.
     </note>
