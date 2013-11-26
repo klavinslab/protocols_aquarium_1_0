@@ -103,6 +103,7 @@ step
   "Eye Protection"
   note:
   "Eye Protection must be: used during any activites with risk of splashing or aerosolization and as required by laboratory instructor."
+  image: "eye_protection"
 end
 
 
