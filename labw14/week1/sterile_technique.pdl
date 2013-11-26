@@ -4,21 +4,8 @@
 
 <information>This protocol describes methods associated with maintaining a sterile technique.</information>
 
-<take>
-  <item>
-    <type>1.5 mL Tube Box</type>
-    <quantity>1</quantity>
-    <var>tubes</var>
-  </item>
-  <item>
-  <type>14 mL Test Tube</type>
-    <quantity>1</quantity>
-    <var>testtube</var>
-  </item>
-</take>
-
 <step>
-  <description>Take out 1 1.5 mL tube from the box.</description> 
+  <description>Take out 1 1.5 mL tube from 1.5 mL Tube Box.</description> 
   <note>
   When taking a tube out of the box, make sure to only touch the tube you want, and do not touch the inside of
   the tube or inside of the cap. Be sure to close the lid on the box when finished. If the tube is dropped
@@ -51,8 +38,5 @@
   </note>
   <image>open_test_tube_sterile_technique</image>
 </step>
-
-<release>[%{tubes}[0],%{testtube}[0]]</release>
-
 
 </protocol>
