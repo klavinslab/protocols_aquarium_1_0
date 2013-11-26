@@ -1,4 +1,4 @@
-
+information "count colony protocol"
 argument
   e_coli_strain_id: sample, "Choose the plate you incubated yesterday"
 end
