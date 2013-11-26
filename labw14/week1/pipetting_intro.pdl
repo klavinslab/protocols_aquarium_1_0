@@ -3,41 +3,6 @@
 
 <information>This protocol teaches the fundamentals of handling and working with a pipette.</information>
 
-<take>
-  <item>
-    <type>Rainin 10 µL Pipette</type>
-    <quantity>1</quantity>
-    <var>smallpipette</var>
-  </item>
-  <item>
-    <type>Rainin 100 µL Pipette</type>
-    <quantity>1</quantity>
-    <var>mediumpipette</var>
-  </item>
-  <item>
-    <type>Rainin 1000 µL Pipette</type>
-    <quantity>1</quantity>
-    <var>largepipette</var>
-  </item>
-</take>
-<take>
-  <item>
-    <type>Rainin 10 µL Pipette Tip Box</type>
-    <quantity>1</quantity>
-    <var>smalltips</var>
-  </item>
-  <item>
-    <type>Rainin 100 µL Pipette Tip Box</type>
-    <quantity>1</quantity>
-    <var>mediumtips</var>
-  </item>
-  <item>
-    <type>Rainin 1000 µL Pipette Tip Box</type>
-    <quantity>1</quantity>
-    <var>largetips</var>
-  </item>
-</take>
-
 <step>
   <description>Learn how to hold a pipette.</description>
   <note>
@@ -124,9 +89,5 @@
   </note>
   <image>drawing_up_liquid_pipetting_intro</image>
 </step>
-
-<release>[%{smallpipette}[0],%{mediumpipette}[0],%{largepipette}[0]]</release>
-
-<release>[%{smalltips}[0],%{mediumtips}[0],%{largetips}[0]]</release>
   
 </protocol>
