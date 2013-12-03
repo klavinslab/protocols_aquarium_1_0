@@ -8,13 +8,6 @@
 			\n\nYou will fail this protocol if you enter two or more incorrect answers.
 		</note>
 	</step>
-  
-	<step>
-		<description> Where is the sharps container? </description>
-		<note> Its location is B15.215. \nPlease go to the sharps container, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>Sharps_Container</image> 
-		
-	</step>
 
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 	<assign><lhs>numberWrong</lhs><rhs>0</rhs></assign>
@@ -25,7 +18,10 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the sharps container? </description>
+		<description> Where is the sharps container? </description>
+		<note> Its location is B15.215. \nPlease go to the sharps container, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with the sharps container?</note>
+		<image>Sharps_Container</image> 
 		
 		<select>
 			<var>answer</var>
@@ -66,13 +62,6 @@
 	</do>
 	</while>
 
-
-	<step>
-		<description> Where is the fire extinguisher located? </description>
-		<note> Its location is B16.100. \nLocate the fire extinguisher, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>Fire_Extinguisher</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -80,7 +69,10 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the fire extinguisher? </description>
+		<description> Where is the fire extinguisher located? </description>
+		<note> Its location is B16.100. \nLocate the fire extinguisher, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with the fire extinguisher?</note>
+		<image>Fire_Extinguisher</image>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -120,13 +112,6 @@
 	</do>
 	</while>
 
-
-	<step>
-		<description> Where is the shower and eyewash station? </description>
-		<note> Its location is A3.515. \nPlease go to the shower and eyewash station, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>shower-eyewash</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -134,7 +119,10 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the shower and eyewash station? </description>
+		<description> Where is the shower and eyewash station? </description>
+		<note> Its location is A3.515. \nPlease go to the shower and eyewash station, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with the shower and eyewash station?</note>
+		<image>shower-eyewash</image>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -174,13 +162,6 @@
 	</do>
 	</while>
 
-
-	<step>
-		<description> Where is the fume hood? </description>
-		<note> Its location is A5.615. \nPlease go to the fume hood, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>Fume_Hood</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -188,7 +169,10 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the fume hood? </description>
+		<description> Where is the fume hood? </description>
+		<note> Its location is A5.615. \nPlease go to the fume hood, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with the fume hood?</note>
+		<image>Fume_Hood</image>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -228,13 +212,6 @@
 	</do>
 	</while>
 
-
-	<step>
-		<description> Where is the handwashing sink? </description>
-		<note> Its location is B2.315. \nPlease go to the handwashing sink, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>handwashingsink</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -242,7 +219,10 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the handwashing sink? </description>
+		<description> Where is the handwashing sink? </description>
+		<note> Its location is B2.315. \nPlease go to the handwashing sink, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with the handwashing sink?</note>
+		<image>handwashingsink</image>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -282,13 +262,6 @@
 	</do>
 	</while>
 
-
-	<step>
-		<description> Where are the biohazard boxes? </description>
-		<note> Their location is B15.400. \nPlease go to the biohazard boxes, note the color of the dot that is on or near them, and then return to the computer. </note>
-		<image>Biohazard_Box</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -296,7 +269,10 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the biohazard boxes? </description>
+		<description> Where are the biohazard boxes? </description>
+		<note> Their location is B15.400. \nPlease go to the biohazard boxes, note the color of the dot that is on or near them, and then return to the computer. 
+		\n\nWhat color was the dot associated with the biohazard boxes?</note>
+		<image>Biohazard_Box</image>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -336,12 +312,6 @@
 	</do>
 	</while>
 
-	<step>
-		<description> Where is the dishwashing sink? </description>
-		<note> Its location is A8.315. \nPlease go to the dishwashing sink, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>dishwashingsink</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -349,7 +319,11 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the dishwashing sink? </description>
+
+		<description> Where is the dishwashing sink? </description>
+		<note> Its location is A8.315. \nPlease go to the dishwashing sink, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with the dishwashing sink?</note>
+		<image>dishwashingsink</image>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -389,12 +363,6 @@
 	</do>
 	</while>
 
-	<step>
-		<description> Where are the latex gloves? </description>
-		<note> Their location is B14.320. \nPlease go to the latex gloves, note the color of the dot that is on or near them, and then return to the computer. </note>
-		<image>latexgloves</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -402,7 +370,10 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the latex gloves? </description>
+		<description> Where are the latex gloves? </description>
+		<note> Their location is B14.320. \nPlease go to the latex gloves, note the color of the dot that is on or near them, and then return to the computer. 
+		\n\nWhat color was the dot associated with the latex gloves?</note>
+		<image>latexgloves</image>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -442,12 +413,6 @@
 	</do>
 	</while>
 
-	<step>
-		<description> Where are the heat resistant gloves? </description>
-		<note> Their location is B15.320. \nPlease go to the heat resistant gloves, note the color of the dot that is on or near them, and then return to the computer. </note>
-		<image>Heat_Resistance_Gloves</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -455,7 +420,10 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the heat resistant gloves? </description>
+		<description> Where are the heat resistant gloves? </description>
+		<note> Their location is B15.320. \nPlease go to the heat resistant gloves, note the color of the dot that is on or near them, and then return to the computer. 
+		\n\nWhat color was the dot associated with the heat resistant gloves?</note>
+		<image>Heat_Resistance_Gloves</image>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -495,12 +463,6 @@
 	</do>
 	</while>
 
-	<step>
-		<description> Where are the paper towels? </description>
-		<note> Their location is B15.520. \nPlease go to the paper towels, note the color of the dot that is on or near them, and then return to the computer. </note>
-		<image>papertowels</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -508,7 +470,10 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the paper towels? </description>
+		<description> Where are the paper towels? </description>
+		<note> Their location is B15.520. \nPlease go to the paper towels, note the color of the dot that is on or near them, and then return to the computer. 
+		\n\nWhat color was the dot associated with the paper towels?</note>
+		<image>papertowels</image>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -547,13 +512,6 @@
 	</do>
 	</while>
 
-	<step>
-		<description> Where are the goggles? </description>
-		<note> Their location is B3.230. \nPlease go to the goggles, note the color of the dot that is on or near them, and then return to the computer. 
-		/nThe goggles are in the drawer at the given location. </note>
-		<image>goggles</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -561,7 +519,11 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the goggles? </description>
+		<description> Where are the goggles? </description>
+		<note> Their location is B3.230. \nPlease go to the goggles, note the color of the dot that is on or near them, and then return to the computer. 
+		\nThe goggles are in the drawer at the given location. 
+		\n\nWhat color was the dot associated with the goggles?</note>
+		<image>goggles</image>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -603,12 +565,6 @@
 	</do>
 	</while>
 
-	<step>
-		<description> Where is the first aid kit? </description>
-		<note> Its location is B7.500. \nPlease go to the first aid kit, note the color of the dot that is on or near them, and then return to the computer. </note>
-		<image>first_aid_kit_with_map</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -616,7 +572,10 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the first aid kit? </description>
+		<description> Where is the first aid kit? </description>
+		<note> Its location is B7.500. \nPlease go to the first aid kit, note the color of the dot that is on or near them, and then return to the computer. 
+		\n\nWhat color was the dot associated with the first aid kit? </note>
+		<image>first_aid_kit_with_map</image>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -673,7 +632,8 @@
 
 			<step> 
 				<description> Congratulations! You have passed this protocol.</description>
-				<note>You can now successfully locate safety items in the laboratory. </note>
+				<note>You should now be able to find the items needed for recombinant DNA protocols. \n
+				Your primers, phusion 2x Master Mix, and Gibson aliquot are located in the -20 degree freezer.</note>
 			</step>
 				<assign><lhs>Status</lhs><rhs>'Pass'</rhs></assign>
 				<log><type>MESSAGE</type><data>%{Status}</data></log>
