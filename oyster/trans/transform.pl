@@ -65,7 +65,7 @@ step
 end
 
 step
-  description: "Pipette 2 µL of Plasmid Into the Electrocompetent Cells tube"
+  description: "Pipette 2 µL of 100 pg/µL plasmid from tube P into the electrocompetent cells tube"
   note: "Swirl the tip gently in the culture to mix. Put back on the aluminum rack after mixing."
   image: "pipette_plasmid_into_electrocompotent_cells"
 end
@@ -90,7 +90,7 @@ step
   note: "Put the cuvette in the electroporator and press the PULSE button twice.\n
         Remove the electrocuvette from the electroporator and QUICKLY add 1 mL of LB.\n
         Pipette up and down 3 times to extract the cells from the gap in the electrocuvette. \n
-        Transfer to the labeled 1.5 mL tube."
+        Transfer to tube T."
   warning: "If you hear a pop, please throw away the electrocuvette, 
             click ABORT and re run the protocol from beginning."
   image: "electroporation_rescue"
