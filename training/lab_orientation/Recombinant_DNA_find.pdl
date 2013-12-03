@@ -8,13 +8,6 @@
 			\n\nYou will fail this protocol if you enter two or more incorrect answers.
 		</note>
 	</step>
-  
-	<step>
-		<description>Where are the PCR tubes (0.2 mL strip well tubes)? </description>
-		<note> Their location is B3.365. \nPlease go to the PCR tubes , note the color of the dot that is on or near them, and then return to the computer. </note>
-		<image>strip_well_tubes_with_map</image> 
-		
-	</step>
 
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 	<assign><lhs>numberWrong</lhs><rhs>0</rhs></assign>
@@ -25,7 +18,10 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the 0.2 mL strip well tubes ? </description>
+		<description>Where are the PCR tubes (0.2 mL strip well tubes)? </description>
+		<note> Their location is B3.365. \nPlease go to the PCR tubes , note the color of the dot that is on or near them, and then return to the computer. 
+		What color was the dot associated with the 0.2 mL strip well tubes?</note>
+		<image>strip_well_tubes_with_map</image> 
 		
 		<select>
 			<var>answer</var>
@@ -66,14 +62,6 @@
 	</do>
 	</while>
 
-
-	<step>
-		<description> Where is the DI water? </description>
-		<note> Its location is B15.320. \nPlease go to the DI water, note the color of the dot that is on or near it, and then return to the computer. 
-		\nThese beads are located on the first shelf above the lab bench located at the yellow dot in the picture.</note>
-		<image>molecular_grade_water_with_map</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -81,7 +69,10 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the DI water? </description>
+		<description> Where is the DI water? </description>
+		<note> Its location is B15.320. \nPlease go to the DI water, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with the DI water? </note>
+		<image>molecular_grade_water_with_map</image>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -121,13 +112,6 @@
 	</do>
 	</while>
 
-
-	<step>
-		<description> Where is the thermal cycler? </description>
-		<note> Its location is B3.330. \nPlease go to the thermal cycler, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>thermal_cycler_with_map</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -135,7 +119,10 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the thermal cycler? </description>
+		<description> Where is the thermal cycler? </description>
+		<note> Its location is B3.330. \nPlease go to the thermal cycler, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with the thermal cycler? </note>
+		<image>thermal_cycler_with_map</image>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -175,13 +162,6 @@
 	</do>
 	</while>
 
-
-	<step>
-		<description> Where is the 50C Heat Block? </description>
-		<note> Its location is B3.340. \nPlease go to the 50C Heat Block, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>heat_block_with_map</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -189,7 +169,10 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the 50C Heat Block freezer? </description>
+		<description> Where is the 50C Heat Block? </description>
+		<note> Its location is B3.340. \nPlease go to the 50C Heat Block, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with the 50C Heat Block freezer?</note>
+		<image>heat_block_with_map</image>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -229,13 +212,6 @@
 	</do>
 	</while>
 
-
-	<step>
-		<description> Where is the molecular grade water? </description>
-		<note> Its location is B3.440. \nPlease go to the molecular grade water, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>MG_water_with_map</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -243,7 +219,10 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the molecular grade water? </description>
+		<description> Where is the molecular grade water? </description>
+		<note> Its location is B3.440. \nPlease go to the molecular grade water, note the color of the dot that is on or near it, and then return to the computer.
+		\n\nWhat color was the dot associated with the molecular grade water? </note>
+		<image>MG_water_with_map</image>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -283,13 +262,6 @@
 	</do>
 	</while>
 
-
-	<step>
-		<description> Where is the transilluminator? </description>
-		<note> Its location is A7.320. \nPlease go to the transilluminator, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>transilluminator_with_map</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -297,7 +269,10 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the transilluminator? </description>
+		<description> Where is the transilluminator? </description>
+		<note> Its location is A7.320. \nPlease go to the transilluminator, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with the transilluminator?</note>
+		<image>transilluminator_with_map</image>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -337,13 +312,6 @@
 	</do>
 	</while>
 
-	<step>
-		<description> Where are the razor blades? </description>
-		<note> Their location is A7.325. \nPlease go to the razor blades, note the color of the dot that is on or near them, and then return to the computer. 
-		\nThey are in the top drawer pictured.</note>
-		<image>razor_blades_with_map</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -351,7 +319,10 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the razor blades? </description>
+		<description> Where are the razor blades? </description>
+		<note> Their location is A7.325. \nPlease go to the razor blades, note the color of the dot that is on or near them, and then return to the computer. 
+		\nThey are in the top drawer pictured. \n\nWhat color was the dot associated with the razor blades? </note>
+		<image>razor_blades_with_map</image>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -391,12 +362,6 @@
 	</do>
 	</while>
 
-	<step>
-		<description> Where is the scale? </description>
-		<note> Its location is B1.335. \nPlease go to the scale, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>scale_with_map</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -404,7 +369,10 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the scale? </description>
+		<description> Where is the scale? </description>
+		<note> Its location is B1.335. \nPlease go to the scale, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\n What color was the dot associated with the scale? </note>
+		<image>scale_with_map</image>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -444,12 +412,6 @@
 	</do>
 	</while>
 
-	<step>
-		<description> Where is the loading dye? </description>
-		<note> Its location is B15.520. /nPlease go to the loading dye, note the color of the dot that is on or near them, and then return to the computer. </note>
-		<image>loading_dye_with_map</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -457,7 +419,12 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the loading dye? </description>
+		
+		<description> Where is the loading dye? </description>
+		<note> Its location is B15.520. /nPlease go to the loading dye, note the color of the dot that is on or near them, and then return to the computer. 
+		\n\nWhat color was the dot associated with the loading dye?</note>
+		<image>loading_dye_with_map</image>
+
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -497,12 +464,6 @@
 	</do>
 	</while>
 
-	<step>
-		<description> Where is the 1x TAE? </description>
-		<note> Its location is B15.320. \nPlease go to the 1x TAE, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>TAE_with_map</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -510,7 +471,11 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the 1x TAE? </description>
+		<description> Where is the 1x TAE? </description>
+		<note> Its location is B15.320. \nPlease go to the 1x TAE, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with the 1x TAE?</note>
+		<image>TAE_with_map</image>
+
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -550,12 +515,6 @@
 	</do>
 	</while>
 
-	<step>
-		<description> Where is the gel box power supply? </description>
-		<note> Its location is A7.325. \nPlease go to the gel box power supply, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>gel_box_power_supply_with_map</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -563,7 +522,11 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the gel box power supply? </description>
+		<description> Where is the gel box power supply? </description>
+		<note> Its location is A7.325. \nPlease go to the gel box power supply, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with the gel box power supply?</note>
+		<image>gel_box_power_supply_with_map</image>
+
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -603,12 +566,6 @@
 	</do>
 	</while>
 
-	<step>
-		<description> Where is the camera? </description>
-		<note> Its location is A7.310. \nPlease go to the camera, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>camera_with_map</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -616,7 +573,11 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the camera? </description>
+		<description> Where is the camera? </description>
+		<note> Its location is A7.310. \nPlease go to the camera, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with the camera? </note>
+		<image>camera_with_map</image>
+
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -656,12 +617,6 @@
 	</do>
 	</while>
 
-	<step>
-		<description> Where is the 250 mL flask? </description>
-		<note> Its location is A1.505. \nPlease go to the 250 mL flask, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>250_mL_flask_with_map</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -669,7 +624,10 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the 250 mL flask? </description>
+		<description> Where is the 250 mL flask? </description>
+		<note> Its location is A1.505. \nPlease go to the 250 mL flask, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with the 250 mL flask? </note>
+		<image>250_mL_flask_with_map</image>
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -709,12 +667,6 @@
 	</do>
 	</while>
 
-	<step>
-		<description> Where is the weigh paper? </description>
-		<note> Its location is B1.330. \nPlease go to the weigh paper, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>weigh_paper_with_map</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -722,7 +674,11 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the weigh paper? </description>
+		<description> Where is the weigh paper? </description>
+		<note> Its location is B1.330. \nPlease go to the weigh paper, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\n What color was the dot associated with the weigh paper? </note>
+		<image>weigh_paper_with_map</image>
+
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -762,12 +718,6 @@
 	</do>
 	</while>
 
-	<step>
-		<description> Where is the agarose? </description>
-		<note> Its location is B15.515. \nPlease go to the agarose, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>agarose_with_map</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -775,7 +725,11 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the agarose? </description>
+		<description> Where is the agarose? </description>
+		<note> Its location is B15.515. \nPlease go to the agarose, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with the agarose?</note>
+		<image>agarose_with_map</image>
+
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -815,12 +769,6 @@
 	</do>
 	</while>
 
-	<step>
-		<description> Where is the 100 mL graduated cyclinder? </description>
-		<note> Its location is B15.320. \nPlease go to the 100 mL graduated cyclinder, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>100_mL_graduated_cyclinder_with_map</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -828,7 +776,11 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the 100 mL graduated cyclinder? </description>
+		<description> Where is the 100 mL graduated cyclinder? </description>
+		<note> Its location is B15.320. \nPlease go to the 100 mL graduated cyclinder, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with the 100 mL graduated cyclinder? </note>
+		<image>100_mL_graduated_cyclinder_with_map</image>
+
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -868,12 +820,6 @@
 	</do>
 	</while>
 
-	<step>
-		<description> Where is the microwave? </description>
-		<note> Its location is B15.520. \nPlease go to the microwave, note the color of the dot that is on or near it, and then return to the computer. </note>
-		<image>microwave_with_map</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -881,7 +827,11 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the microwave? </description>
+		<description> Where is the microwave? </description>
+		<note> Its location is B15.520. \nPlease go to the microwave, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with the microwave? </note>
+		<image>microwave_with_map</image>
+
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -921,12 +871,6 @@
 	</do>
 	</while>
 
-	<step>
-		<description> Where are the gel boxes? </description>
-		<note> Their location is B2.515. \nPlease go to the gel boxes, note the color of the dot that is on or near them, and then return to the computer. </note>
-		<image>gel_box_with_map</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -934,7 +878,11 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the gel boxes? </description>
+		<description> Where are the gel boxes? </description>
+		<note> Their location is B2.515. \nPlease go to the gel boxes, note the color of the dot that is on or near them, and then return to the computer. 
+		\n\nWhat color was the dot associated with the gel boxes?</note>
+		<image>gel_box_with_map</image>
+
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
@@ -974,12 +922,6 @@
 	</do>
 	</while>
 
-	<step>
-		<description> Where are the gel box combs? </description>
-		<note> Their location is B15.320. \nPlease go to the gel box combs, note the color of the dot that is on or near them, and then return to the computer. </note>
-		<image>comb_for_gel_box_with_map</image>
-	</step>
-
 	<assign><lhs>task</lhs><rhs>0</rhs></assign>
 
 	<while>
@@ -987,7 +929,11 @@
 	<do>
 
 	<step>
-		<description> What color was the dot associated with the gel box combs? </description>
+		<description> Where are the gel box combs? </description>
+		<note> Their location is B15.320. \nPlease go to the gel box combs, note the color of the dot that is on or near them, and then return to the computer. 
+		\n\nWhat color was the dot associated with the gel box combs? </note>
+		<image>comb_for_gel_box_with_map</image>
+
 		<select>
 			<var>answer</var>
 			<description>Please select the correct color</description>
