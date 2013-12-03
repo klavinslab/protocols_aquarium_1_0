@@ -1,6 +1,5 @@
 argument
-  plasmid_id: sample, "The plasmid stock with which to transform"
-  e_coli_strain_id: sample, "The electrocompetent stock to be transformed"
+  student_id: sample, "The plasmid stock with which to transform"
 end
 
 place transform
