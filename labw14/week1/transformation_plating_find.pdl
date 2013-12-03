@@ -3,17 +3,10 @@
         <information> This protocol is a teaching tool for locating items used for plating and ecoli transformation in the laboratory. </information>
         <step>
                 <description>Directions:</description>
-                <note> In each step, you will be asked to find an item in the lab. The item's location address, a picture of the item and a map, with the item's location marked by a yellow dot, are provided. 
+                <note> In each step, you will be asked to find an item in the lab. A picture of the item and a map, with the item's location marked by a yellow dot, are provided. 
                         Walk to the location the item, note the color of the dot that is on or near it, and then return to the computer to submit your answer.  
                         \n\nYou will fail this protocol if you enter two or more incorrect answers.
                 </note>
-        </step>
-  
-        <step>
-                <description>Where is media bay refrigerator? </description>
-                <note> Its location is B0.110. \nPlease go to the media bay refrigerator, note the color of the dot that is on or near it, and then return to the computer. </note>
-                <image>media_bay_refrigerator</image> 
-                
         </step>
 
         <assign><lhs>task</lhs><rhs>0</rhs></assign>
@@ -25,7 +18,10 @@
         <do>
 
         <step>
-                <description> What color was the dot associated with media bay refrigerator? </description>
+		<description>Where is media bay refrigerator? </description>
+                <note> Its location is B0.110. \nPlease go to the media bay refrigerator, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with media bay refrigerator? </note>
+                <image>media_bay_refrigerator</image> 
                 
                 <select>
                         <var>answer</var>
@@ -67,13 +63,6 @@
         </do>
         </while>
 
-
-        <step>
-                <description> Where are the sterile beads located? </description>
-                <note> Their location is B5.470. \nPlease go to the sterile beads, note the color of the dot that is on or near them, and then return to the computer. </note>
-                <image>conical_sterile_beads</image>
-        </step>
-
         <assign><lhs>task</lhs><rhs>0</rhs></assign>
 
         <while>
@@ -81,7 +70,10 @@
         <do>
 
         <step>
-                <description> What color was the dot associated with the sterile beads? </description>
+		<description> Where are the sterile beads? </description>
+                <note> Their location is B5.470. \nPlease go to the sterile beads, note the color of the dot that is on or near them, and then return to the computer.
+                \n\nWhat color was the dot associated with the sterile beads? </note>
+                <image>conical_sterile_beads</image>
                 <select>
                         <var>answer</var>
                         <description>Please select the correct color</description>
@@ -121,13 +113,6 @@
         </do>
         </while>
 
-
-        <step>
-                <description> Where is the 37 degree incubator? </description>
-                <note> Its location is B14.310. \nPlease go to the 37 degree incubator, note the color of the dot that is on or near it, and then return to the computer. </note>
-                <image>37_degree_incubator</image>
-        </step>
-
         <assign><lhs>task</lhs><rhs>0</rhs></assign>
 
         <while>
@@ -135,7 +120,10 @@
         <do>
 
         <step>
-                <description> What color was the dot associated with the 37 degree incubator? </description>
+                <description> Where is the 37 degree incubator? </description>
+                <note> Its location is B14.310. \nPlease go to the 37 degree incubator, note the color of the dot that is on or near it, and then return to the computer.
+		\n\nWhat color was the dot associated with the 37 degree incubator?</note>
+                <image>37_degree_incubator</image>
                 <select>
                         <var>answer</var>
                         <description>Please select the correct color</description>
@@ -175,13 +163,6 @@
         </do>
         </while>
 
-
-        <step>
-                <description> Where is the -20 degree freezer? </description>
-                <note> It's location is D2.115. \nPlease go to the -20 degree freezer, note the color of the dot that is on or near it, and then return to the computer. </note>
-                <image>-20_freezer</image>
-        </step>
-
         <assign><lhs>task</lhs><rhs>0</rhs></assign>
 
         <while>
@@ -189,7 +170,10 @@
         <do>
 
         <step>
-                <description> What color was the dot associated with the -20 degree freezer? </description>
+		<description> Where is the -20 degree freezer? </description>
+                <note> Its location is D2.115. \nPlease go to the -20 degree freezer, note the color of the dot that is on or near it, and then return to the computer.
+		\n\nWhat color was the dot associated with the -20 degree freezer? </note>
+                <image>-20_freezer</image>
                 <select>
                         <var>answer</var>
                         <description>Please select the correct color</description>
@@ -229,13 +213,6 @@
         </do>
         </while>
 
-
-        <step>
-                <description> Where is the -80 degree freezer? </description>
-                <note> Its location is D2.140. \nPlease go to the -80 degree freezer, note the color of the dot that is on or near it, and then return to the computer. </note>
-                <image>-80_freezer</image>
-        </step>
-
         <assign><lhs>task</lhs><rhs>0</rhs></assign>
 
         <while>
@@ -243,7 +220,10 @@
         <do>
 
         <step>
-                <description> What color was the dot associated with the -80 degree freezer? </description>
+                <description> Where is the -80 degree freezer? </description>
+                <note> Its location is D2.140. \nPlease go to the -80 degree freezer, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with the -80 degree freezer?</note>
+                <image>-80_freezer</image>
                 <select>
                         <var>answer</var>
                         <description>Please select the correct color</description>
@@ -283,14 +263,6 @@
         </do>
         </while>
 
-
-        <step>
-                <description> Where are the 1.5 mL test tubes? </description>
-                <note> They are located on all lab benches, but for the purpose of this protocol, their location is B1.360. 
-			\n\nPlease go to the 1.5 mL test tubes in the Media Bay, note the color of the dot that is on or near them, and then return to the computer. </note>
-                <image>1.5_mL_test_tubes</image>
-        </step>
-
         <assign><lhs>task</lhs><rhs>0</rhs></assign>
 
         <while>
@@ -298,7 +270,11 @@
         <do>
 
         <step>
-                <description> What color was the dot associated with the 1.5 test tubes? </description>
+                <description> Where are the 1.5 mL test tubes? </description>
+                <note>They are located on all lab benches, but for the purpose of this protocol, their location is B1.360.
+		\nPlease go to the 1.5 mL test tubes in the Media Bay, note the color of the dot that is on or near them, and then return to the computer. 
+		\n\nWhat color was the dot associated with the 1.5 test tubes? </note>
+                <image>1.5_mL_test_tubes</image>
                 <select>
                         <var>answer</var>
                         <description>Please select the correct color</description>
@@ -338,12 +314,6 @@
         </do>
         </while>
 
-        <step>
-                <description> Where is the LB media? </description>
-                <note> Its location is B1.465. \nPlease go to the LB media, note the color of the dot that is on or near it, and then return to the computer. </note>
-                <image>LB_media</image>
-        </step>
-
         <assign><lhs>task</lhs><rhs>0</rhs></assign>
 
         <while>
@@ -351,7 +321,10 @@
         <do>
 
         <step>
-                <description> What color was the dot associated with the LB media? </description>
+                <description> Where is the LB media located? </description>
+                <note> Its location is B1.465. \nPlease go to the LB media, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with the LB media? </note>
+                <image>LB_media</image>
                 <select>
                         <var>answer</var>
                         <description>Please select the correct color</description>
