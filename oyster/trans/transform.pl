@@ -27,20 +27,6 @@ step
 end
 
 step
-  description: "Label another 1.5 mL Test Tube"
-  note: "Write 'P' on top of the tube.\n
-         Place the tube in the tube rack.\n
-         This tube will hold diluted plasmid."
-  image: "label_1_5mL_tube"
-end
-
-step
-  description: "Dilute plasmid stock to 100 pg/µL"
-  note: "Pipette 1 µL of plasmid stock into the tube labeled P, add 9 µL of molecular grade water into it. 
-  Pipette up and down to mix it. Spin down the tube P on a tabletop mini centrifuge for 3 seconds."
-end
-
-step
   description: "Handling Electrocompetent Cells and Electrocuvette"
   note: "You will next retrieve a styrofoam ice block, aluminum tube rack, 
          the electrocompetent cells and a cuvette.\n
@@ -65,7 +51,7 @@ step
 end
 
 step
-  description: "Pipette 2 µL of 100 pg/µL plasmid from tube P into the electrocompetent cells tube"
+  description: "Pipette 2 µL plasmid into the electrocompetent cells tube"
   note: "Swirl the tip gently in the culture to mix. Put back on the aluminum rack after mixing."
   image: "pipette_plasmid_into_electrocompotent_cells"
 end
