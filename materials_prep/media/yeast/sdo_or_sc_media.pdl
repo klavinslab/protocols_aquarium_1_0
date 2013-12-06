@@ -363,55 +363,29 @@
   <!-- Produce the media -->
   <!-- TODO: use 'data' key to keep track of exact combination of supplements added -->
   <!-- TODO: same for agar -->
-
-  <!-- Naming the output media - differentiate between SDO and SC, agar / no agar -->
   <if>
-    <condition>${agar} == 1</condition>
+    <condition>%{agar} == 1</condition>
     <then>
-      <assign>
-        <lhs>agar_str</lhs>
-        <rhs>" agar"</rhs>
-      </assign>
+      <produce render="false">
+        <object>800 mL SDO agar (unsterile)</object>
+        <quantity>1</quantity>
+        <var>sdo</var>
+        <release>%{bottle}</release>
+      </produce>
     </then>
     <else>
-      <assign>
-        <lhs>agar_str</lhs>
-        <rhs>""</rhs>
-      </assign>
+      <produce render="false">
+        <object>800 mL SDO liquid (unsterile)</object>
+        <quantity>1</quantity>
+        <var>sdo</var>
+        <release>%{bottle}</release>
+      </produce>
     </else>
   </if>
-  <if>
-    <condition>%{his} == 1 && %{leu} == 1 && %{trp} == 1 && %{ura} == 1</condition>
-    <then>
-      <assign>
-        <lhs>media_type</lhs>
-        <rhs>"SC"</rhs>
-      </assign>
-    </then>
-    <else>
-      <assign>
-        <lhs>media_type</lhs>
-        <rhs>"SDO"</rhs>
-      </assign>
-    </else>
-  </if>
-  <assign>
-    <lhs>produced_media_str</lhs>
-    <rhs>"800 mL " + %{media_type} + %{agar_str} + " (unsterile)"</rhs>
-  </assign>
-
-  <!-- Produce -->
-  <produce render="false">
-    <object>%{produced_media_str}</object>
-    <quantity>1</quantity>
-    <var>sd_media</var>
-    <release>%{bottle}</release>
-  </produce>
-
   <!-- Label -->
   <assign>
     <lhs>item_id</lhs>
-    <rhs>%{sd_media}[:id]</rhs>
+    <rhs>%{sdo}[:id]</rhs>
   </assign>
   <include>
     <path>includes/labels/800_mL_labels.pdl</path>
@@ -430,7 +404,7 @@
     <note>This is the autoclave staging area.</note>
   </step>
   <move>
-    <item>%{sd_media}</item>
+    <item>%{sdo}</item>
     <location>"B2.320"</location>
   </move>
   <!-- Release sterile drop out supplements -->
