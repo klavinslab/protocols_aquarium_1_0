@@ -49,14 +49,24 @@ end
 
 wire (plate,"plate_id") => (image,"e_coli_strain_id")
 
+place reimage
+  protocol: "oyster/trans/count_colonies.pl"
+  group: "transformers"
+  start: now
+  window: hours(1)
+end
+
+wire (plate,"plate_id") => (reimage,"e_coli_strain_id")
+
 # forward transitions
 transition [transform] => [plate]    when !error(0) && completed(0) end
 transition [plate]     => [incubate] when !error(0) && completed(0) end
 transition [incubate]  => [image]    when !error(0) && completed(0) end
 transition [image]     => []         when !error(0) && completed(0) end
+transition [reimage]   => []         when !error(0) && completed(0) end
 
 # rework transitions
 transition [transform] => [transform] when error(0) end
 transition [plate]     => [plate]     when error(0) end
 transition [incubate]  => [incubate]  when error(0) end
-transition [image]     => [image]     when error(0) end
+transition [image]     => [reimage]   when error(0) end
