@@ -52,7 +52,7 @@ wire (plate,"plate_id") => (image,"e_coli_strain_id")
 place reimage
   protocol: "oyster/trans/count_colonies.pl"
   group: "transformers"
-  start: now
+  start: now()
   window: hours(1)
 end
 
