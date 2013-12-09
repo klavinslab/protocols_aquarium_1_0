@@ -43,7 +43,7 @@ wire (plate,"plate_id") => (incubate,"e_coli_strain_id")
 place image
   protocol: "oyster/trans/count_colonies.pl"
   group: "transformers"
-  start: hours(20)
+  start: minutes(1)
   window: hours(1)
 end
 
