@@ -10,8 +10,8 @@ place p1
   protocol: "plankton/one.pl"
   group: "admin"
   marked: true
-  start: now()
-  window: minutes(30)
+  start: minutes(1)
+  window: minutes(1)
 end
 
 num = 0
