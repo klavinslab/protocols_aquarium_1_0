@@ -70,3 +70,4 @@ transition [transform] => [transform] when error(0) end
 transition [plate]     => [plate]     when error(0) end
 transition [incubate]  => [incubate]  when error(0) end
 transition [image]     => [reimage]   when error(0) end
+transition [reimage]   => [reimage]   when error(0) end
