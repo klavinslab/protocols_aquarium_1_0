@@ -1,4 +1,4 @@
-information "E.coli Transformation protocol"
+#information "E.coli Transformation protocol"
 
 argument
   plasmid_id: sample, "The plasmid to be used"
