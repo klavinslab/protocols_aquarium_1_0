@@ -4,7 +4,7 @@ end
 
 place safety
   protocol: "protocols/labw14/safety.pl"
-  group: %{student_id}
+  group: student_id
   marked: true
   start: now()
   window: minutes(30)
@@ -12,14 +12,14 @@ end
 
 place safety_find
   protocol: "protocols/labw14/safety_find.pdl"
-  group: %{student_id}
+  group: student_id
   start: now()
   window: minutes(1)
 end
 
 place image
   protocol: "oyster/trans/count_colonies.pl"
-  group: %{student_id}
+  group: student_id
   start: hours(20)
   window: hours(1)
 end
