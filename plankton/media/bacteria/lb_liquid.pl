@@ -34,10 +34,13 @@ step
   note: "Remove any old autoclave tape from %{bottle_string}."
 end
 
-step
-  description: "Clean the spatuala"
-  note: "Use 70%% ethanol and a kimwipe to wipe off the spatula."
+include "plankton/includes/media/clean_spatula.pl"
 end
+
+#step
+#  description: "Clean the spatuala"
+#  note: "Use 70%% ethanol and a kimwipe to wipe off the spatula."
+#end
 
 step
   description: "Add LB powder"

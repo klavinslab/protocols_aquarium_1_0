@@ -46,7 +46,7 @@
   </take>
   <!-- If the vessel is autoclaved, take it from inventory. If disposable, not in inventory, so just go get it -->
   <if>
-    <condition>%{vessel} == "14 mL Test Tube" || %{vessel} == "125 mL Baffled Flask" || %{vessel} == "125 mL Baffled Flask"</condition>
+    <condition>%{vessel} == "14 mL Test Tube" || %{vessel} == "125 mL Baffled Flask" || %{vessel} == "250 mL Baffled Flask"</condition>
     <then>
       <!-- Take autoclavable item from inventory -->
       <take>
@@ -60,7 +60,7 @@
     <else>
       <!-- Take disposable item from bin -->
       <step>
-        <description>Gather disposable test tubes.</description>
+        <description>Gather disposable test tube(s).</description>
         <note>Gather %{n_aliquots} %{vessel}s from B1.240.</note>
       </step>
     </else>

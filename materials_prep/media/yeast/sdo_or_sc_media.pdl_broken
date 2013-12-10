@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<protocol>
+  <!-- Information -->
+  <information>Make 800mL of Synthetic Drop-out or Synthetic Complete media.</information>
+  <!-- how we're referring to the bottle in the steps -->
+  <assign>
+    <lhs>bottle_string</lhs>
+    <rhs>"the 1 L bottle"</rhs>
+  </assign>
+  <!-- Arguments -->
+  <argument>
+    <name>trp</name>
+    <type>number</type>
+    <description>Add tryptophan to media? If yes, enter 1. If no, enter 0.</description>
+  </argument>
+  <argument>
+    <name>his</name>
+    <type>number</type>
+    <description>Add histidine to media? If yes, enter 1. If no, enter 0.</description>
+  </argument>
+  <argument>
+    <name>leu</name>
+    <type>number</type>
+    <description>Add leucine to media? If yes, enter 1. If no, enter 0.</description>
+  </argument>
+  <argument>
+    <name>ura</name>
+    <type>number</type>
+    <description>Add uracil to media? If yes, enter 1. If no, enter 0.</description>
+  </argument>
+  <argument>
+    <name>agar</name>
+    <type>number</type>
+    <description>Prepare agar media? If yes, enter 1. If no, enter 0.</description>
+  </argument>
+
+  <!-- Make a string for the selection type (e.g. -His -Trp) -->
+  <assign>
+    <lhs>selection_array</lhs>
+    <rhs>[]</rhs>
+  </assign>
+  <if>
+    <condition>%{agar} == 1</condition>
+    <then>
+      <assign>
+        <lhs>selection_array</lhs>
+        <rhs>%{selection_array}.push("Agar")</rhs>
+      </assign>
+    </then>
+  </if>
+  <if>
+    <condition>%{trp} == 1</condition>
+    <then>
+      <assign>
+        <lhs>selection_array</lhs>
+        <rhs>%{selection_array}.push("-Trp")</rhs>
+      </assign>
+    </then>
+  </if>
+  <if>
+    <condition>%{his} == 1</condition>
+    <then>
+      <assign>
+        <lhs>selection_array</lhs>
+        <rhs>%{selection_array}.push("-His")</rhs>
+      </assign>
+    </then>
+  </if>
+  <if>
+    <condition>%{leu} == 1</condition>
+    <then>
+      <assign>
+        <lhs>selection_array</lhs>
+        <rhs>%{selection_array}.push("-Leu")</rhs>
+      </assign>
+    </then>
+  </if>
+  <if>
+    <condition>%{ura} == 1</condition>
+    <then>
+      <assign>
+        <lhs>selection_array</lhs>
+        <rhs>%{selection_array}.push("-Ura")</rhs>
+      </assign>
+    </then>
+  </if>
+  <!-- Construct media string based on the arguments -->
+  <assign>
+    <lhs>media_name</lhs>
+    <rhs>"SDO " + %{selection_array}.join(" ")</rhs>
+  </assign>
+
+  <assign>
+    <lhs>counter</lhs>
+    <rhs>4</rhs>
+  </assign>
+
+  <!-- Initial takes -->
+  <!-- Take bottle -->
+  <take>
+    <item>
+      <type>1 L Bottle</type>
+      <quantity>1</quantity>
+      <var>bottle</var>
+    </item>
+    <item>
+      <type>Medium Magnetic Stir Bar</type>
+      <quantity>1</quantity>
+      <var>stir_bar</var>
+    </item>
+  </take>
+  <!-- Add stir bar -->
+  <step>
+    <description>Add stir bar.</description>
+    <note>Add one stir bar to the bottle.</note>
+  </step>
+
+
+  <!-- Take out dry reagents -->
+  <take>
+    <item>
+      <type>Yeast Nitrogen Base Without Amino Acids</type>
+      <quantity>1</quantity>
+      <var>nitrogen_base</var>
+    </item>
+    <item>
+      <type>Yeast Synthetic Drop-out Medium Supplements</type>
+      <quantity>1</quantity>
+      <var>dropout_supplement</var>
+    </item>
+    <item>
+      <type>Dextrose</type>
+      <quantity>1</quantity>
+      <var>dextrose</var>
+    </item>
+  </take>
+  <!-- Take last dry reagent and items required for measuring things -->
+  <take>
+    <item>
+      <type>Adenine (Adenine hemisulfate)</type>
+      <quantity>1</quantity>
+      <var>adenine</var>
+    </item>
+    <item>
+      <type>Scale</type>
+      <quantity>1</quantity>
+      <var>scale</var>
+    </item>
+    <item>
+      <type>Large Weigh Boat</type>
+      <quantity>1</quantity>
+      <var>boat</var>
+    </item>
+  </take>
+  <!-- Begin steps -->
+  <!-- Wipe down spatula first - it's probably dirty -->
+  <include>
+    <path>includes/media/clean_spatula.pdl</path>
+  </include>
+  <!-- Weigh out dry reagents -->
+  <!-- The included protocol consumes a weigh boat -->
+  <!-- Add nitrogen base -->
+  <include>
+    <path>includes/media/measure_dry_add_to_vessels.pdl</path>
+    <setarg>
+      <var>vessel_string</var>
+      <value>%{bottle_string}</value>
+    </setarg>
+    <setarg>
+      <var>reagent</var>
+      <value>"Yeast Nitrogen Base"</value>
+    </setarg>
+    <setarg>
+      <var>mass</var>
+      <value>5.36</value>
+    </setarg>
+    <setarg>
+      <var>boat_type</var>
+      <value>"Large Weigh Boat"</value>
+    </setarg>
+  </include>
+  <!-- Add drop out supplement -->
+  <include>
+    <path>includes/media/measure_dry_add_to_vessels.pdl</path>
+    <setarg>
+      <var>vessel_string</var>
+      <value>%{bottle_string}</value>
+    </setarg>
+    <setarg>
+      <var>reagent</var>
+      <value>"Yeast Synthetic Drop-out Medium Supplement"</value>
+    </setarg>
+    <setarg>
+      <var>mass</var>
+      <value>1.12</value>
+    </setarg>
+    <setarg>
+      <var>boat_type</var>
+      <value>"Large Weigh Boat"</value>
+    </setarg>
+  </include>
+  <!-- Add dextrose -->
+  <include>
+    <path>includes/media/measure_dry_add_to_vessels.pdl</path>
+    <setarg>
+      <var>vessel_string</var>
+      <value>%{bottle_string}</value>
+    </setarg>
+    <setarg>
+      <var>reagent</var>
+      <value>"Dextrose"</value>
+    </setarg>
+    <setarg>
+      <var>mass</var>
+      <value>16</value>
+    </setarg>
+    <setarg>
+      <var>boat_type</var>
+      <value>"Large Weigh Boat"</value>
+    </setarg>
+  </include>
+  <!-- Add agar if specified -->
+  <if>
+    <condition>%{agar}==1</condition>
+    <then>
+      <take>
+        <item>
+          <type>Bacto Agar</type>
+          <quantity>1</quantity>
+          <var>bacto_agar</var>
+        </item>
+      </take>
+      <include>
+        <path>includes/media/measure_dry_add_to_vessels.pdl</path>
+        <setarg>
+          <var>vessel_string</var>
+          <value>%{bottle_string}</value>
+        </setarg>
+        <setarg>
+          <var>reagent</var>
+          <value>"Bacto Agar"</value>
+        </setarg>
+        <setarg>
+          <var>mass</var>
+          <value>16</value>
+        </setarg>
+        <setarg>
+          <var>boat_type</var>
+          <value>"Large Weigh Boat"</value>
+        </setarg>
+      </include>
+      <release>[%{bacto_agar}[0], %{boat}[0]]</release>
+    </then>
+    <else>
+      <release>%{boat}</release>
+    </else>
+  </if>
+
+  <!-- Throw out weigh boat, get out weigh paper -->
+  <take>
+    <item>
+      <type>Weigh Paper</type>
+      <quantity>1</quantity>
+      <var>weigh_paper</var>
+    </item>
+  </take>
+  <!-- Add adenine -->
+  <include>
+    <path>includes/media/measure_dry_add_to_vessels.pdl</path>
+    <setarg>
+      <var>vessel_string</var>
+      <value>%{bottle_string}</value>
+    </setarg>
+    <setarg>
+      <var>reagent</var>
+      <value>"Adenine"</value>
+    </setarg>
+    <setarg>
+      <var>mass</var>
+      <value>0.064</value>
+    </setarg>
+    <setarg>
+      <var>boat_type</var>
+      <value>"Weigh Paper"</value>
+    </setarg>
+  </include>
+  <!-- Put away dry reagents and scale -->
+  <release>[%{weigh_paper}[0], %{scale}[0]]</release>
+  <release>[%{nitrogen_base}[0], %{dropout_supplement}[0], %{adenine}[0], %{dextrose}[0]]</release>
+  <!-- Take drop-out solutions -->
+  <!-- TODO: Make this less painful -->
+  <if>
+    <condition>%{leu}==1</condition>
+    <then>
+      <take>
+        <item>
+          <type>Leucine Solution</type>
+          <quantity>1</quantity>
+          <var>leu_solution</var>
+        </item>
+      </take>
+     </then>
+  </if>
+  <if>
+    <condition>%{his}==1</condition>
+    <then>
+      <take>
+        <item>
+          <type>Histidine Solution</type>
+          <quantity>1</quantity>
+          <var>his_solution</var>
+        </item>
+      </take>
+     </then>
+  </if>
+  <if>
+    <condition>%{trp}==1</condition>
+    <then>
+      <take>
+        <item>
+          <type>Tryptophan Solution</type>
+          <quantity>1</quantity>
+          <var>trp_solution</var>
+        </item>
+      </take>
+     </then>
+  </if>
+  <if>
+    <condition>%{ura}==1</condition>
+    <then>
+      <take>
+        <item>
+          <type>Uracil Solution</type>
+          <quantity>1</quantity>
+          <var>ura_solution</var>
+        </item>
+      </take>
+     </then>
+  </if>
+  <!-- Add drop out solutions -->
+  <step>
+    <description>Add sterile drop out supplements</description>
+    <note>Label a piece of laboratory tape with "-His -Leu -Trp -Ura" and attach it to the 1 L bottle.\n\nUsing a serological pipet, add 8 mL of each sterile supplement you just got out. As you add each supplement, black it out with a marker on the piece of tape.</note>
+    <warning>Use a separate pipet for each supplement.</warning>
+  </step>
+  <!-- Add DI water and stir -->
+  <step>
+    <description>Add DI water and mix</description>
+    <note>Fill with DI water up to the 800 mL mark.</note>
+  </step>
+  <take>
+    <item>
+      <type>Hot/Stir Plate</type>
+      <quantity>1</quantity>
+      <var>hot_plate</var>
+    </item>
+  </take>
+  <step>
+    <description>Stir using the hot plate</description>
+    <note>Set the bottle on the hot plate and mix at 700 rpm for 2 minutes.</note>
+  </step>
+  <release>%{hot_plate}</release>
+  <!-- Produce the media -->
+  <!-- TODO: use 'data' key to keep track of exact combination of supplements added -->
+  <!-- TODO: same for agar -->
+
+  <!-- Naming the output media - differentiate between SDO and SC, agar / no agar -->
+  <if>
+    <condition>${agar} == 1</condition>
+    <then>
+      <assign>
+        <lhs>agar_str</lhs>
+        <rhs>" agar"</rhs>
+      </assign>
+    </then>
+    <else>
+      <assign>
+        <lhs>agar_str</lhs>
+        <rhs>""</rhs>
+      </assign>
+    </else>
+  </if>
+
+  <!-- && didn't work for checking all supplements at once, so checking 1 at a time (ugly code) -->
+  <condition></condition>
+  <assign>
+    <lhs>media_type</lhs>
+    <rhs>"SDO"</rhs>
+  </assign>
+  <if>
+    <condition>%{his} == 1</condition>
+    <then>
+      <if>
+        <condition>%{leu} == 1</condition>
+        <then>
+          <if>
+            <condition>%{trp} = 1</condition>
+            <then>
+              <if>
+                <condition>%{ura} == 1</condition>
+                <then>
+                  <assign>
+                    <lhs>media_type</lhs>
+                    <rhs>"SC"</rhs>
+                  </assign>
+                </then>
+              </if>
+            </then>
+          </if>
+        </then>
+      </if>
+    </then>
+  </if>
+  <assign>
+    <lhs>produced_media_str</lhs>
+    <rhs>"800 mL " + %{media_type} + %{agar_str} + " (unsterile)"</rhs>
+  </assign>
+
+  <!-- Produce -->
+  <produce render="false">
+    <object>%{produced_media_str}</object>
+    <quantity>1</quantity>
+    <var>sd_media</var>
+    <release>%{bottle}</release>
+  </produce>
+
+  <!-- Label -->
+  <assign>
+    <lhs>item_id</lhs>
+    <rhs>%{sd_media}[:id]</rhs>
+  </assign>
+  <include>
+    <path>includes/labels/800_mL_labels.pdl</path>
+    <setarg>
+      <var>item_name</var>
+      <value>%{media_name}</value>
+    </setarg>
+    <setarg>
+      <var>item_id</var>
+      <value>%{item_id}</value>
+    </setarg>
+  </include>
+  <!-- Move -->
+  <step>
+    <description>Move the bottle to B1.320</description>
+    <note>This is the autoclave staging area.</note>
+  </step>
+  <move>
+    <item>%{sd_media}</item>
+    <location>"B2.320"</location>
+  </move>
+  <!-- Release sterile drop out supplements -->
+  <if>
+    <condition>%{his}==1</condition>
+    <then>
+      <release>%{his_solution}</release>
+    </then>
+  </if>
+  <if>
+    <condition>%{leu}==1</condition>
+    <then>
+      <release>%{leu_solution}</release>
+    </then>
+  </if>
+  <if>
+    <condition>%{trp}==1</condition>
+    <then>
+      <release>%{trp_solution}</release>
+    </then>
+  </if>
+  <if>
+    <condition>%{ura}==1</condition>
+    <then>
+      <release>%{ura_solution}</release>
+    </then>
+  </if>
+</protocol>
