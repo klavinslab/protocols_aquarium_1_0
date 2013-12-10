@@ -36,10 +36,10 @@ step
 end
 
 take
-  cuvette = 1 "Clean Electrocuvette"
-  strain = item e_coli_strain_id
   iceblock = 1 "Styrofoam Ice Block"
   alrack = 1 "Aluminum Tube Rack"
+  cuvette = 1 "Clean Electrocuvette"
+  strain = item e_coli_strain_id
 end 
 
 step
@@ -88,6 +88,7 @@ end
 produce
   r = 1 "1.5 mL tube transformation" from strain[0]
   note: "Keep the tube on the bench to use in the next protocol (plating)."
+  location: "Bench"
 end
 
 transformation_id = r[:id]
