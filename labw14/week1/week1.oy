@@ -3,7 +3,7 @@ argument
 end
 
 place safety
-  protocol: "labw14/safety.pl"
+  protocol: "labw14/week1/safety.pl"
   group: "tamimeur"
   marked: true
   start: now()
@@ -11,7 +11,7 @@ place safety
 end
 
 place safety_find
-  protocol: "labw14/safety_find.pdl"
+  protocol: "labw14/week1/safety_find.pdl"
   group: "tamimeur"
   start: now()
   window: minutes(1)
