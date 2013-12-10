@@ -1,61 +1,36 @@
 argument
-  student_id: sample, "The plasmid stock with which to transform"
+  student_id: string, "The id of the student to run this protocol"
 end
 
-place transform
-  protocol: "oyster/trans/transform.pl"
-  argument
-    plasmid_id: plasmid_id
-    e_coli_strain_id: e_coli_strain_id
-  end
-  group: "transformers"
+place safety
+  protocol: "protocols/labw14/safety.pl"
+  group: student_id
   marked: true
   start: now()
   window: minutes(30)
 end
 
-place plate
-  protocol: "oyster/trans/plate.pl"
-  argument
-    volume: 200
-    plate_type: "LB Amp Plate (sterile)"
-  end
-  group: "transformers"
+place safety_find
+  protocol: "protocols/labw14/safety_find.pdl"
+  group: student_id
   start: now()
   window: minutes(1)
 end
-
-wire (transform,"transformed_cells_id") => (plate,"e_coli_strain_id")
-
-place incubate
-  protocol: "oyster/trans/incubate.pl"
-  argument
-    temp: 37
-  end
-  group: "transformers"
-  start: now()
-  window: minutes(1)
-end
-
-wire (plate,"plate_id") => (incubate,"e_coli_strain_id")
 
 place image
   protocol: "oyster/trans/count_colonies.pl"
-  group: "transformers"
+  group: student_id
   start: hours(20)
   window: hours(1)
 end
 
-wire (plate,"plate_id") => (image,"e_coli_strain_id")
 
 # forward transitions
-transition [transform] => [plate]    when !error(0) && completed(0) end
-transition [plate]     => [incubate] when !error(0) && completed(0) end
-transition [incubate]  => [image]    when !error(0) && completed(0) end
+transition [safety] => [safety_find]    when !error(0) && completed(0) end
+transition [safety_find]     => [image] when !error(0) && completed(0) end
 transition [image]     => []         when !error(0) && completed(0) end
 
 # rework transitions
-transition [transform] => [transform] when error(0) end
-transition [plate]     => [plate]     when error(0) end
-transition [incubate]  => [incubate]  when error(0) end
+transition [safety] => [safety] when error(0) end
+transition [safety_find]     => [safety_find]     when error(0) end
 transition [image]     => [image]     when error(0) end
