@@ -28,7 +28,7 @@ end
 
 step
   description: "Handling Electrocompetent Cells and Electrocuvette"
-  note: "You will next retrieve a styrofoam ice block, aluminum tube rack, 
+  note: "You will next retrieve a styrofoam ice block, an aluminum tube rack, 
          the electrocompetent cells and a cuvette.\n
          Place the tube of cells in the aluminum tube rack on top of the ice block."
   warning: "The cuvette should be touching the ice block to keep it cool."
