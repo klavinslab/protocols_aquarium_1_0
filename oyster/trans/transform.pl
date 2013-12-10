@@ -19,7 +19,7 @@ step
 end
 
 step
-  description: "Label the 1.5 mL Test Tube"
+  description: "Label a 1.5 mL tube"
   note: "Write 'T' on top of the tube.\n
          Place the tube in the tube rack.\n
          This tube will eventually hold the transformed cells."
@@ -88,7 +88,6 @@ end
 produce
   r = 1 "1.5 mL tube transformation" from strain[0]
   note: "Keep the tube on the bench to use in the next protocol (plating)."
-  release strain
 end
 
 transformation_id = r[:id]
@@ -97,5 +96,5 @@ log
   return: { transformed_cells_id: r[:id] }
 end
 
-release [falcon_tube[0],plasmid[0],iceblock[0],alrack[0],cuvette[0]]
+release [falcon_tube[0],plasmid[0],iceblock[0],strain[0],alrack[0],cuvette[0]]
 
