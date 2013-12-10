@@ -79,7 +79,7 @@ step
   bullet: "Pipette up and down 3 times to extract the cells from the gap in the cuvette."
   bullet: "Transfer to tube T."
   warning: "If you hear a pop, throw away the cuvette, 
-            click ABORT and re run the protocol from beginning."
+            click ABORT."
   image: "electroporation_rescue"
   getdata
     time_constant: number, "Enter the time constant shown on the electroporator."
