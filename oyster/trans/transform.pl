@@ -75,10 +75,10 @@ end
 step
   description: "Electroporation, Rescue and Transfer"
   bullet: "Put the cuvette in the electroporator and press the PULSE button twice."
-  bullet: "Remove the electrocuvette from the electroporator and QUICKLY add 1 mL of LB."
-  bullet: "Pipette up and down 3 times to extract the cells from the gap in the electrocuvette."
+  bullet: "Remove the cuvette from the electroporator and QUICKLY add 1 mL of LB."
+  bullet: "Pipette up and down 3 times to extract the cells from the gap in the cuvette."
   bullet: "Transfer to tube T."
-  warning: "If you hear a pop, please throw away the electrocuvette, 
+  warning: "If you hear a pop, throw away the cuvette, 
             click ABORT and re run the protocol from beginning."
   image: "electroporation_rescue"
   getdata
