@@ -1,4 +1,3 @@
-
 argument
   e_coli_strain_id: sample, "Choose the plate you incubated yesterday"
 end
@@ -36,7 +35,7 @@ step
   description: 
     "Put the picture into software and get the count."
   note: 
-    "Wait several seconds for the picture uploading to Dropbox. Open Dropbox/GelImages,
+    "Wait several seconds for the picture uploading to Dropbox. In the plate reader computer, open Dropbox/GelImages,
      under today's date folder and find the picture you just took.\n
      Open the OpenCFU software, drag the picture into the software and wait for the
      software to count the colonies"
