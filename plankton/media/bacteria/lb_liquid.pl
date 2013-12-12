@@ -20,13 +20,6 @@ if n_bottle < 1 || n_bottle > 4
 end
 
 
-if n_bottle == 1
-  bottle_string = "the bottle"
-else
-  bottle_string = "each bottle"
-end
-
-
 take
   bottles = n_bottle "1 L Bottle"
   lb_powder = 1 "Difco LB Broth, Miller"
@@ -40,7 +33,7 @@ end
 
 step
   description: "Remove autoclave tape"
-  note: "Remove any old autoclave tape from %{bottle_string}."
+  note: "Remove any old autoclave tape from each bottle."
 end
 
 
@@ -58,12 +51,12 @@ end
 
 step
   description: "Add deionized water"
-  note: "Fill %{bottle_string} to the 800 mL mark with deionized water."
+  note: "Fill each bottle to the 800 mL mark with deionized water."
 end
 
 step
   description: "Cap and mix."
-  note: "Tightly close the caps on %{bottle_string} and shake (each) until all contents are dissolved. To check for dissolution, let bottle rest for 10 seconds, and then pick up and look for sediment on the bottom. This should take approximately 20 seconds."
+  note: "Tightly close the caps on each bottle and shake until all contents are dissolved. To check for dissolution, let bottle rest for 10 seconds, and then pick up and look for sediment on the bottom. This should take approximately 20 seconds."
 end
 
 produce
