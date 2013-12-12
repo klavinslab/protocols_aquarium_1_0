@@ -15,5 +15,5 @@ end
 # TODO: Attempt to print label first. If that fails, fall back on what is currently below this message.
 step
     description: "Label"
-    note: "Label %{input_item_string} with the following:\n\n%{object_type}, the bottle number, your initials, and the time using a piece of lab tape."
+    note: "Label %{input_item_string} with the following using a piece of lab tape:\n\n%{object_type}, your initials, and the time."
 end

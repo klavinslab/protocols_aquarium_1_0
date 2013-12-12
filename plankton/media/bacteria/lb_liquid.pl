@@ -34,7 +34,7 @@ end
 
 include "plankton/includes/labeling/temporary_label.pl"
   input_item_string: "each bottle"
-  object_type: product_name
+  object_type: product_name + ", the bottle number"
 end
 
 
