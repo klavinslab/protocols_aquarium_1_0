@@ -1,10 +1,13 @@
 information "Prepare unsterile bottle(s) of 800 mL LB Media (rich media for bacteria), ready to be autoclaved."
 
+
 product_name = "800 mL LB Liquid (unsterile)"
+
 
 argument
   n_bottle: number, "Enter the number of bottles you want to make (maximum of 4)."
 end
+
 
 if n_bottle < 1 || n_bottle > 4
   step
@@ -15,6 +18,7 @@ if n_bottle < 1 || n_bottle > 4
     end
   end
 end
+
 
 if n_bottle == 1
   bottle_string = "the bottle"
@@ -28,19 +32,22 @@ take
   lb_powder = 1 "Difco LB Broth, Miller"
 end
 
+include "plankton/includes/labeling/temporary_label.pl"
+  input_item_string: "each bottle"
+  object_type: product_name
+end
+
 
 step
   description: "Remove autoclave tape"
   note: "Remove any old autoclave tape from %{bottle_string}."
 end
 
+
+# Clean the spatula - standardized protocol
 include "plankton/includes/media/clean_spatula.pl"
 end
 
-#step
-#  description: "Clean the spatuala"
-#  note: "Use 70%% ethanol and a kimwipe to wipe off the spatula."
-#end
 
 step
   description: "Add LB powder"
