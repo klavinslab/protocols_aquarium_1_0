@@ -1,7 +1,7 @@
-information "Prepare unsterile bottle(s) of 800 mL LB Media (rich media for bacteria), ready to be autoclaved."
+information "Prepare unsterile bottle(s) of 800 mL TB Media (rich media for bacteria), ready to be autoclaved."
 
 
-product_name = "800 mL LB Liquid (unsterile)"
+product_name = "800 mL TB Liquid (unsterile)"
 
 
 argument
@@ -22,7 +22,7 @@ end
 
 take
   bottles = n_bottle "1 L Bottle"
-  lb_powder = 1 "Difco LB Broth, Miller"
+  tb_powder = 1 "Terrific Broth, modified"
 end
 
 
@@ -42,13 +42,24 @@ end
 # Add LB Powder
 include "plankton/includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
-  reagent: "%{lb_powder}"
-  mass: 20
+  reagent: "%{tb_powder}"
+  mass: 38.08
 end
 
 
 # Clean the spatula before returning it
 include "plankton/includes/materials_prep/clean_spatula.pl"
+end
+
+
+take
+  glycerol = 1 "50 percent Glycerol (sterile)"
+end
+
+
+step
+  description: "Add glycerol"
+  note: "Add 12.8 mL of 50%% glycerol to each bottle using a serological pipetter. Use a fresh pipet for each bottle."
 end
 
 
@@ -72,4 +83,4 @@ produce
 end
 
 
-release lb_powder
+release [tb_powder[0], glycerol[0]]
