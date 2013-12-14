@@ -26,7 +26,6 @@ take
 end
 
 
-# Make a temporary label for the bottles - just a number
 step
   description: "Add temporary labels"
   note: "Using lab tape, number each bottle (from 1 up to 4)."

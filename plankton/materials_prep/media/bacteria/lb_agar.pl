@@ -1,7 +1,7 @@
-information "Prepare unsterile bottle(s) of 800 mL LB Media (rich media for bacteria), ready to be autoclaved."
+information "Prepare unsterile bottle(s) of 800 mL LB Agar (rich media for bacteria), ready to be autoclaved."
 
 
-product_name = "800 mL LB Liquid (unsterile)"
+product_name = "800 mL LB Agar (unsterile)"
 
 
 argument
@@ -22,7 +22,14 @@ end
 
 take
   bottles = n_bottle "1 L Bottle"
-  lb_powder = 1 "Difco LB Broth, Miller"
+  lb_powder = 1 "LB Agar Powder"
+  stir_bar = n_bottle "Medium Magnetic Stir Bar"
+end
+
+
+step
+  description: "Add stir bar(s)."
+  note: "Add one stir bar to each bottle."
 end
 
 
@@ -42,7 +49,7 @@ end
 include "plankton/includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
   reagent: "%{lb_powder}"
-  mass: 20
+  mass: 29.6
 end
 
 
@@ -71,4 +78,4 @@ produce
 end
 
 
-release lb_powder
+release [lb_powder[0], stir_bar[0]]
