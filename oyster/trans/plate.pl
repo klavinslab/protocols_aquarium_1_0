@@ -9,8 +9,8 @@ end
 take
   strain = item e_coli_strain_id
   plate = 1 plate_type
-  beads = 1 "Glass Bead Aliquot (sterile)"
-  collector = 1 "Glass Bead Waste Collector"
+#  beads = 1 "Glass Bead Aliquot (sterile)"
+#  collector = 1 "Glass Bead Waste Collector"
   note: "Do not take plate from top of the stack if there is a date stick on it, take from the middle of the stack."
 end
 
@@ -54,5 +54,5 @@ log
   return: { plate_id: r[:id] }
 end
   
-release [ strain[0], beads[0], collector[0] ]
+release [ strain[0]]
  
