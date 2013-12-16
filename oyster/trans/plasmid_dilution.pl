@@ -19,7 +19,7 @@ end
 produce
   r = 1 "Plasmid Stock" from plasmid[0]
   data
-    concentration: %{final_conc}
+    concentration: 1
     unit: "ng/µL"
   end
 end
