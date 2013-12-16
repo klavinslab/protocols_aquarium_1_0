@@ -26,13 +26,37 @@ place sterile_technique
   window: minutes(30)
 end
 
-place image
-  protocol: "oyster/trans/count_colonies.pl"
+place pipetting_intro
+  protocol: "labw14/week1/pipetting_intro.pdl"
   group: "tamimeur"
-  start: hours(20)
-  window: hours(1)
+  marked: true
+  start: now()
+  window: minutes(30)
 end
 
+place large_vol_exercise
+  protocol: "labw14/week1/large_vol_exercise.pdl"
+  group: "tamimeur"
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+place small_vol_exercise
+  protocol: "labw14/week1/small_vol_exercise.pdl"
+  group: "tamimeur"
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+place calc_pipetting_error
+  protocol: "labw14/week1/calc_pipetting_error.pdl"
+  group: "tamimeur"
+  marked: true
+  start: now()
+  window: minutes(30)
+end
 
 # forward transitions
 transition [safety] => [safety_find]    when !error(0) && completed(0) end
