@@ -59,22 +59,23 @@ end
 
 step
   description: "Electroporation and Rescue Preparation"
-  note: "Set your pipettors to be 42 µL and 1000 µL.\n
-         Prepare 100 µL and 1000 µL pipette tips.\n 
-         Loosen cap on the 50 mL LB liquid aliquot (sterile)."
+  bullet: "Set your pipettors to be 42 µL and 1000 µL."
+  bullet: "Prepare 100 µL and 1000 µL pipette tips."
+  bullet: "Loosen cap on the 50 mL LB liquid aliquot (sterile)."
+  bullet: "Take the black plastic cuvette holder out of electroporator."
 end
     
 step
   description: "Transfer the cells-plasmid mixture to electrocuvette."
-  note: "Take lid off the electrocuvette.\n
+  note: "Take lid off the cuvette.\n
         Pipette 42 µL of the mixture into the center of the gap of the electrocuvette."
-  warning: "Hold the plastic sides of electrocuvette during pipetting."
+  warning: "Hold the plastic sides of cuvette during pipetting."
   image: "pipette_transformation_mix_to_cuvette"
 end
 
 step
   description: "Electroporation, Rescue and Transfer"
-  bullet: "Put the cuvette in the electroporator and press the PULSE button twice."
+  bullet: "Put the cuvette in the cuvette holder, slide into electroporator and press the PULSE button twice."
   bullet: "Remove the cuvette from the electroporator and QUICKLY add 1 mL of LB."
   bullet: "Pipette up and down 3 times to extract the cells from the gap in the cuvette."
   bullet: "Transfer to tube T."
