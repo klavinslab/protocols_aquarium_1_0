@@ -2,6 +2,7 @@ argument
   student_id: string, "The id of the student to run this protocol"
 end
 
+
 place safety
   protocol: "labw14/week1/safety.pl"
   group: "tamimeur"
@@ -17,6 +18,14 @@ place safety_find
   window: minutes(1)
 end
 
+place sterile_technique
+  protocol: "labw14/week1/sterile_technique.pdl"
+  group: "tamimeur"
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
 place image
   protocol: "oyster/trans/count_colonies.pl"
   group: "tamimeur"
@@ -27,10 +36,19 @@ end
 
 # forward transitions
 transition [safety] => [safety_find]    when !error(0) && completed(0) end
-transition [safety_find]     => [image] when !error(0) && completed(0) end
-transition [image]     => []         when !error(0) && completed(0) end
+transition [safety_find]     => [sterile_techinque] when !error(0) && completed(0) end
+transition [sterile_technique] => [pipetting_intro]    when !error(0) && completed(0) end
+transition [pipetting_intro] => [large_vol_exercise]    when !error(0) && completed(0) end
+transition [large_vol_exercise] => [small_vol_exercise]    when !error(0) && completed(0) end
+transition [small_vol_exercise] => [calc_pipetting_error]   when !error(0) && completed(0) end
+
 
 # rework transitions
+transition [sterile_technique] => [safety] when error(0) end
 transition [safety] => [safety] when error(0) end
 transition [safety_find]     => [safety_find]     when error(0) end
-transition [image]     => [image]     when error(0) end
+transition [sterile_techinque]     => [sterile_technique]     when error(0) end
+transition [pipetting_intro]     => [pipetting_intro]     when error(0) end
+transition [large_vol_exercise] => [large_vol_exercise]    when error(0) end
+transition [small_vol_exercise] => [small_vol_exercise]   when error(0) end
+transition [calc_pipetting_error] => [calc_pipetting_error]   when error(0) end
