@@ -21,41 +21,36 @@ end
 place sterile_technique
   protocol: "labw14/week1/sterile_technique.pdl"
   group: "tamimeur"
-  marked: true
   start: now()
-  window: minutes(30)
+  window: minutes(1)
 end
 
 place pipetting_intro
   protocol: "labw14/week1/pipetting_intro.pdl"
   group: "tamimeur"
-  marked: true
   start: now()
-  window: minutes(30)
+  window: minutes(1)
 end
 
 place large_vol_exercise
   protocol: "labw14/week1/large_vol_exercise.pdl"
   group: "tamimeur"
-  marked: true
   start: now()
-  window: minutes(30)
+  window: minutes(1)
 end
 
 place small_vol_exercise
   protocol: "labw14/week1/small_vol_exercise.pdl"
   group: "tamimeur"
-  marked: true
   start: now()
-  window: minutes(30)
+  window: minutes(1)
 end
 
 place calc_pipetting_error
   protocol: "labw14/week1/calc_pipetting_error.pdl"
   group: "tamimeur"
-  marked: true
   start: now()
-  window: minutes(30)
+  window: minutes(1)
 end
 
 # forward transitions
