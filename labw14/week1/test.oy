@@ -15,11 +15,11 @@ end
 
 # forward transitions
 transition [safety] => [safety_find]    when !error(0) && completed(0) end
-transition [safety_find]     => [] when !error(0) && completed(0) && return_value(0,"Status") == 'Pass' end
+transition [safety_find]     => [] when !error(0) && completed(0) && return_value(0,"Status") == "Pass" end
 
 
 
 # rework transitions
 transition [safety] => [safety] when error(0) end
-transition [safety_find]     => [safety_find]     when error(0) && completed(0) && return_value(0,"Status") == 'Fail' end
+transition [safety_find]     => [safety_find]     when error(0) && completed(0) && return_value(0,"Status") == "Fail" end
 
