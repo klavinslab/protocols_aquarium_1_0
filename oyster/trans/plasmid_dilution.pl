@@ -18,11 +18,11 @@ step
 end
 
 x = 0
-while x < 10
+while x < count
 produce
   r = 1 "Plasmid Stock" from plasmid[0]
   data
-    concentration: 1
+    concentration: final_conc
     unit: "ng/µL"
   end
 end
