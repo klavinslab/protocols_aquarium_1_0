@@ -10,7 +10,10 @@ take
   plasmid = item plasmid_id
 end
 
+if count > 4
 volume = aliquot * (count+1)
+else
+volume = aliquot * count
 
 step
   description:
