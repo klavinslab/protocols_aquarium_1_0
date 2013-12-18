@@ -3,7 +3,7 @@ information "Prepare sterile bottle(s) of antibiotic stocks (Amp, Kan, or Chlor)
 
 argument
   antibiotic_type: string, "Enter the type of antibiotic stock you want to make (options are Amp, Kan, or Chlor)."
-#  n_bottles: number, "Enter the number of bottles you want to make."
+  n_bottles: number, "Enter the number of bottles you want to make."
 end
 
 
