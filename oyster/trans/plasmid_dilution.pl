@@ -1,10 +1,11 @@
 argument
   plasmid_id: sample, "The plasmid to be diluted"
   final_conc: number, "The desired final plasmid concentration"
+  count: number, "Number of diluted aliquots you want to make"
 end
 
 take
-  falcon_tube = 1 "50 mL Molecular Grade Water aliquot"
+  falcon_tube = 1 "50 mL TE aliquot"
   plasmid = item plasmid_id
 end
 
@@ -16,12 +17,16 @@ step
   image: "label_1_5mL_tube"
 end
 
+x = 0
+while x < 10
 produce
   r = 1 "Plasmid Stock" from plasmid[0]
   data
     concentration: 1
     unit: "ng/µL"
   end
+end
+x = x + 1
 end
   
 release [falcon_tube[0],plasmid[0]]
