@@ -24,6 +24,11 @@ step
 end
 
 step
+  description:
+    "Add calculated volume of plasmid stock to make the final concentration to be %{final_conc} ng/µL."
+end
+
+step
   description: 
     "Take out %{count} 1.5 mL tube"
   note: 
