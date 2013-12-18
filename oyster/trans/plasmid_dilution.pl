@@ -9,12 +9,25 @@ take
   plasmid = item plasmid_id
 end
 
+volume = 10 * count
+
+step
+  description:
+    "Lable a 1.5 mL tube"
+  note:
+    "Write 'D' on top of the tube."
+end
+
+step
+  description:
+    "Add %{volume} µL of TE into tube D"
+end
+
 step
   description: 
-    "Label a 1.5 mL tube"
+    "Take out %{count} 1.5 mL tube"
   note: 
-    "Write 'D' on top of the tube."
-  image: "label_1_5mL_tube"
+    "Add 10 µL of diluted plasmid from tube D to each tube"
 end
 
 x = 0
