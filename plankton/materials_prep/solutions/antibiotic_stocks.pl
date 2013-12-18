@@ -46,11 +46,11 @@ end
 
 
 if antibiotic_type == "Kan"
-#  include "plankton/includes/materials_prep/add_dry_reagent.pl"
-#    container: "each bottle"
-#    reagent: "%{antibiotic}"
-#    mass: 0.5
-#  end
+  include "plankton/includes/materials_prep/add_dry_reagent.pl"
+    container: "each bottle"
+    reagent: "%{antibiotic}"
+    mass: 0.5
+  end
 
   # Clean the spatula before returning it
   include "plankton/includes/materials_prep/clean_spatula.pl" end
@@ -64,15 +64,14 @@ if antibiotic_type == "Kan"
     note: "Using a serological pipetter, add 50 mL molecular grade water to each bottle. Use a new pipet for each bottle."
   end
 elsif antibiotic_type == "Chlor"
-#  include "plankton/includes/materials_prep/add_dry_reagent.pl"
-#    container: "each bottle"
-#    reagent: "%{antibiotic}"
-#    mass: 0.34
-#  end
-#
-#  # Clean the spatula before returning it
-#  include "plankton/includes/materials_prep/clean_spatula.pl"
-#  end
+  include "plankton/includes/materials_prep/add_dry_reagent.pl"
+    container: "each bottle"
+    reagent: "%{antibiotic}"
+    mass: 0.34
+  end
+
+  # Clean the spatula before returning it
+  include "plankton/includes/materials_prep/clean_spatula.pl" end
 
   take
     ethanol = 1 "95% Ethanol"
@@ -93,30 +92,30 @@ else
   end
 end
 
-#step
-#  description: "Vortex each bottle"
-#  note: "Shake and vortex each bottle for about 10 seconds to mix."
-#end
-#
-#
-#if antibiotic_type == "Amp"
-#  produce
-#    produced_bottles = n_bottle "Ampicillin Stock"
-#    release antibiotic
-#    note: "Write Ampicillin Stock and the date on the label in addition to the above id number."
-#  end
-#elsif antibiotic_type == "Kan"
-#  produce
-#    produced_bottles = n_bottle "Ampicillin Stock"
-#    release bottles
-#    note: "Write Kanamycin Stock and the date on the label in addition to the above id number."
-#  end
-#  release [antibiotic[0], water[0]]
-#else
-#  produce
-#    produced_bottles = n_bottle "Chloramphenicol Stock"
-#    release bottles
-#    note: "Write Chloramphenicol Stock and the date on the label in addition to the above id number."
-#  end
-#  release [antibiotic[0], ethanol[0]]
-#end
+step
+  description: "Vortex each bottle"
+  note: "Shake and vortex each bottle for about 10 seconds to mix."
+end
+
+
+if antibiotic_type == "Amp"
+  produce
+    produced_bottles = n_bottle "Ampicillin Stock"
+    release antibiotic
+    note: "Write Ampicillin Stock and the date on the label in addition to the above id number."
+  end
+elsif antibiotic_type == "Kan"
+  produce
+    produced_bottles = n_bottle "Ampicillin Stock"
+    release bottles
+    note: "Write Kanamycin Stock and the date on the label in addition to the above id number."
+  end
+  release [antibiotic[0], water[0]]
+else
+  produce
+    produced_bottles = n_bottle "Chloramphenicol Stock"
+    release bottles
+    note: "Write Chloramphenicol Stock and the date on the label in addition to the above id number."
+  end
+  release [antibiotic[0], ethanol[0]]
+end
