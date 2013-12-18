@@ -1,20 +1,25 @@
+place safety
+  protocol: "labw14/week1/safety.pl"
+  group: "tamimeur"
+  marked: true
+  start: now()
+  window: minutes(30)
+end
 
+place safety_find
+  protocol: "labw14/week1/safety_find.pdl"
+  group: "tamimeur"
+  start: now()
+  window: minutes(1)
+end
 
 # forward transitions
 transition [safety] => [safety_find]    when !error(0) && completed(0) end
-transition [safety_find]     => [sterile_technique] when !error(0) && completed(0) && return_value(0,"Status") == 'Pass' end
-transition [sterile_technique] => [pipetting_intro]    when !error(0) && completed(0) end
-transition [pipetting_intro] => [large_vol_exercise]    when !error(0) && completed(0) end
-transition [large_vol_exercise] => [small_vol_exercise]    when !error(0) && completed(0) end
-transition [small_vol_exercise] => [calc_pipetting_error]   when !error(0) && completed(0) end
-transition [small_vol_exercise] => []   when !error(0) && completed(0) end
+transition [safety_find]     => [] when !error(0) && completed(0) && return_value(0,"Status") == 'Pass' end
+
 
 
 # rework transitions
 transition [safety] => [safety] when error(0) end
 transition [safety_find]     => [safety_find]     when error(0) && completed(0) && return_value(0,"Status") == 'Fail' end
-transition [sterile_technique]     => [sterile_technique]     when error(0) end
-transition [pipetting_intro]     => [pipetting_intro]     when error(0) end
-transition [large_vol_exercise] => [large_vol_exercise]    when error(0) end
-transition [small_vol_exercise] => [small_vol_exercise]   when error(0) end
-transition [calc_pipetting_error] => [calc_pipetting_error]   when error(0) end
+
