@@ -33,7 +33,7 @@ step
   description: 
     "Take out %{count} 1.5 mL tube"
   note: 
-    "Add 10 µL of diluted plasmid from tube D to each tube."
+    "Add %{aliquot} µL of diluted plasmid from tube D to each tube."
 end
 
 x = 0
