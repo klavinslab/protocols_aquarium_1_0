@@ -22,7 +22,7 @@ end
 
 take
   bottles = n_bottle "1 L Bottle"
-  lb_powder = 1 "LB Agar Powder"
+  lb_powder = 1 "LB Agar Miller"
   stir_bar = n_bottle "Medium Magnetic Stir Bar"
 end
 
