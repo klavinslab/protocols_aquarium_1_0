@@ -6,7 +6,7 @@ place safety
   window: minutes(30)
 end
 
-place safety_find
+place test
   protocol: "labw14/week1/test.pdl"
   group: "tamimeur"
   start: now()
