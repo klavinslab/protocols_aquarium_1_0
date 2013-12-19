@@ -21,5 +21,5 @@ transition [test]     => [] when !error(0) && completed(0) && return_value(0,"nu
 
 # rework transitions
 transition [safety] => [safety] when error(0) end
-transition [test]     => [test]     when error(0) && completed(0) && return_value(0,"numberWrong") != 1 end
+transition [test]     => [test]     when error(0) || ( completed(0) && return_value(0,"numberWrong") != 1 ) end
 
