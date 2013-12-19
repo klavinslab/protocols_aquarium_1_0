@@ -49,7 +49,7 @@ end
 include "plankton/includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
   reagent: "%{lb_powder}"
-  mass: 29.6
+  grams: 29.6
 end
 
 

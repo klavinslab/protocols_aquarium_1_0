@@ -42,7 +42,7 @@ end
 include "plankton/includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
   reagent: "%{tb_powder}"
-  mass: 38.08
+  grams: 38.08
 end
 
 

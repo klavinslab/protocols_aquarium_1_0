@@ -49,7 +49,7 @@ if antibiotic_type == "Kan"
   include "plankton/includes/materials_prep/add_dry_reagent.pl"
     container: "each bottle"
     reagent: "%{antibiotic}"
-    mass: 0.5
+    grams: 0.5
   end
 
   # Clean the spatula before returning it
@@ -67,7 +67,7 @@ elsif antibiotic_type == "Chlor"
   include "plankton/includes/materials_prep/add_dry_reagent.pl"
     container: "each bottle"
     reagent: "%{antibiotic}"
-    mass: 0.34
+    grams: 0.34
   end
 
   # Clean the spatula before returning it
