@@ -106,7 +106,7 @@ if antibiotic_type == "Amp"
   end
 elsif antibiotic_type == "Kan"
   produce
-    produced_bottles = n_bottle "Ampicillin Stock"
+    produced_bottles = n_bottle "Kanamycin Stock"
     release bottles
     note: "Write Kanamycin Stock and the date on the label in addition to the above id number."
   end

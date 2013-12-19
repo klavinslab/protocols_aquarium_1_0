@@ -1,4 +1,4 @@
-information "Prepare sterile bottle(s) of antibiotic stocks (Amp, Kan, or Chlor)."
+information "Prepare aliquots of antibiotic stocks (Amp, Kan, or Chlor)."
 
 
 argument
@@ -17,104 +17,66 @@ end
 
 
 if antibiotic_type == "Amp"
-  take
-    antibiotic = n_bottles "Ampicillin Sodium Salt"
+  step
+    description: "How many ampicillin stock bottles do you want to use?"
+    getdata
+      n_bottles: number, "Enter the number of ampicillin stock bottles you want to use.", [1, 2, 3, 4]
+    end
   end
+  take
+    antibiotic_stock = n_bottles "Ampicillin Stock"
+  end
+  antibiotic_label = "Amp"
+  aliquot_number = n_bottles * 4
+  product_name = "100X 1mL Ampicillin Aliquot"
 elsif antibiotic_type == "Kan"
   take
-    bottles = n_bottles "100 mL Bottle"
-    antibiotic = 1 "Kanamycin Sulfate"
+    antibiotic_stock = 1 "Kanamycin Stock"
   end
+  antibiotic_label = "Kan"
+  aliquot_number = 8
+  product_name = "200X 1mL Kanamycin Aliquot"
 else
   take
-    bottles = n_bottles "100 mL Bottle"
-    antibiotic = 1 "Chloramphenicol"
+    antibiotic_stock = 1 "Chloramphenicol Stock"
   end
-end
-
-step
-  description: "Add temporary labels"
-  note: "Using lab tape, number each bottle."
+  antibiotic_label = "Chlor"
+  aliquot_number = 2
+  product_name = "1000X 1mL Chloramphenicol Aliquot"
 end
 
 
 step
-  description: "Remove autoclave tape"
-  note: "Remove any old autoclave tape from each bottle."
+  description: "Take out and label 1.5 mL tubes"
+  note: "Take out and close %{aliquot_number} of 1.5 mL tubes. Label their tops with '%{antibiotic_label}'."
 end
 
 
-if antibiotic_type == "Kan"
-  include "plankton/includes/materials_prep/add_dry_reagent.pl"
-    container: "each bottle"
-    reagent: "%{antibiotic}"
-    mass: 0.5
+step
+  description: "Make 1 mL aliquots"
+  note: "Using a 1000 µL micropipetter, aliquot 1 mL to each 1.5 mL tube from the antibiotic stock. If you are using ampicillin, take out and label more 1.5 mL tubes as necessary."
+  getdata
+    exact_count: string, "Did you make exactly %{aliquot_number} aliquots?", ["Yes", "No"]
   end
+end
 
-  # Clean the spatula before returning it
-  include "plankton/includes/materials_prep/clean_spatula.pl" end
 
-  take
-    water = 1 "Molecular Biology Grade Water"
-  end
-
+if exact_count == "No"
   step
-    description: "Add 50 mL molecular grade water"
-    note: "Using a serological pipetter, add 50 mL molecular grade water to each bottle. Use a new pipet for each bottle."
-  end
-elsif antibiotic_type == "Chlor"
-  include "plankton/includes/materials_prep/add_dry_reagent.pl"
-    container: "each bottle"
-    reagent: "%{antibiotic}"
-    mass: 0.34
-  end
-
-  # Clean the spatula before returning it
-  include "plankton/includes/materials_prep/clean_spatula.pl" end
-
-  take
-    ethanol = 1 "95% Ethanol"
-  end
-
-  step
-    description: "Add 10 mL of 95%% ethanol"
-    note: "Using a serological pipetter, add 10 mL of ethanol to each bottle. Use a new pipet for each bottle."
+    description: "How many aliquots did you make?"
+    getdata
+      number_made: number, "How many aliquots did you make? Include partial aliquots in your count"
+    end
   end
 else
-  take
-    water = 1 "Molecular Biology Grade Water"
-  end
-
-  step
-    description: "Add 20 mL of molecular grade water"
-    note: "Using a serological pipetter, add 20 mL of molecular grade water to each small bottle of dry ampicillin. Use a new pipet for each bottle and recap immediately after aspiration."
-  end
-end
-
-step
-  description: "Vortex each bottle"
-  note: "Shake and vortex each bottle for about 10 seconds to mix."
+  number_made = aliquot_number
 end
 
 
-if antibiotic_type == "Amp"
-  produce
-    produced_bottles = n_bottle "Ampicillin Stock"
-    release antibiotic
-    note: "Write Ampicillin Stock and the date on the label in addition to the above id number."
-  end
-elsif antibiotic_type == "Kan"
-  produce
-    produced_bottles = n_bottle "Ampicillin Stock"
-    release bottles
-    note: "Write Kanamycin Stock and the date on the label in addition to the above id number."
-  end
-  release [antibiotic[0], water[0]]
-else
-  produce
-    produced_bottles = n_bottle "Chloramphenicol Stock"
-    release bottles
-    note: "Write Chloramphenicol Stock and the date on the label in addition to the above id number."
-  end
-  release [antibiotic[0], ethanol[0]]
+produce
+  produced_aliquots = number_made product_name
+  note: "Write the id number on the side of each aliquot."
 end
+
+
+release antibiotic_stock
