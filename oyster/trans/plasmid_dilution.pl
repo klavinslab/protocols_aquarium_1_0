@@ -1,8 +1,8 @@
 argument
   plasmid_id: sample, "The plasmid to be diluted"
-  final_conc: number, "The desired final plasmid concentration"
+  final_conc: number, "The desired final plasmid concentration (ng/µL)"
   count: number, "Number of diluted aliquots you want to make"
-  aliquot: number, "Volume of each aliquots you want to make"
+  aliquot: number, "Volume (µL) of each aliquots you want to make"
 end
 
 take
