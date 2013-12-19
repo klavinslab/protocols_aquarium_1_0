@@ -10,7 +10,6 @@
                 </getdata>
         </step>
 
-        <assign><lhs>numberWrong</lhs><rhs>1</rhs></assign>
         
         <log><type>return</type><data>{ :numberWrong => %{numberWrong} }</data></log>
         
