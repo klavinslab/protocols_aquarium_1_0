@@ -1,16 +1,16 @@
-
-
 <protocol>
 
         <information> This protocol is a test. </information>
         <step>
-                <description>Directions:</description>
-                <note> Test.
-                </note>
+                <description>Test:</description>
+                <getdata>
+                        <type>number</type>
+                        <description>Enter 1 if you want to live!</description>
+                        <var>numberWrong</var>
+                </getdata>
         </step>
 
-        <assign><lhs>numberWrong</lhs><rhs>1</rhs></assign>
         
-        <log><type>return</type><data>%{numberWrong}</data></log>
+        <log><type>return</type><data>{ :numberWrong => %{numberWrong} }</data></log>
         
 </protocol>

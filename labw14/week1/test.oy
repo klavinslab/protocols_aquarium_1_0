@@ -7,7 +7,7 @@ place safety
 end
 
 place test
-  protocol: "labw14/week1/test.pdl"
+  protocol: "labw14/week1/safety_find.pdl"
   group: "tamimeur"
   start: now()
   window: minutes(1)
@@ -15,11 +15,11 @@ end
 
 # forward transitions
 transition [safety] => [test]    when !error(0) && completed(0) end
-transition [test]     => [] when !error(0) && completed(0) && return_value(0,"numberWrong") == 1 end
+transition [test]     => [] when !error(0) && completed(0) && return_value(0,"numberWrong") <= 2 end
 
 
 
 # rework transitions
 transition [safety] => [safety] when error(0) end
-transition [test]     => [test]     when error(0) && completed(0) && return_value(0,"numberWrong") != 1 end
+transition [test]     => [test]     when error(0) || ( completed(0) && return_value(0,"numberWrong") > 2 ) end
 
