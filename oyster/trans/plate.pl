@@ -28,6 +28,10 @@ step
 end
 
 step
+  description: "Vortex the sample"
+end
+
+step
   description: "Transfer the sample to the center of the plate"
   note: "Invert the plate so the beads are on the agar surface. Lift the lid and 
          pipette %{volume} µL of sample on the agar surface
