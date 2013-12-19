@@ -1,0 +1,16 @@
+
+
+<protocol>
+
+        <information> This protocol is a test. </information>
+        <step>
+                <description>Directions:</description>
+                <note> Test.
+                </note>
+        </step>
+
+        <assign><lhs>numberWrong</lhs><rhs>1</rhs></assign>
+        
+        <log><type>return</type><data>%{numberWrong}</data></log>
+        
+</protocol>

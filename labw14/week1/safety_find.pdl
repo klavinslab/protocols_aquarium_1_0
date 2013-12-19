@@ -639,4 +639,7 @@
 				<log><type>MESSAGE</type><data>%{Status}</data></log>
 		</else>
 	</if>
+	
+	
+	<log><type>RETURN</type><data>%{numberWrong}</data></log>
 </protocol>

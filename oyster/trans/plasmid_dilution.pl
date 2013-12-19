@@ -1,7 +1,8 @@
 argument
   plasmid_id: sample, "The plasmid to be diluted"
-  final_conc: number, "The desired final plasmid concentration"
+  final_conc: number, "The desired final plasmid concentration (ng/µL)"
   count: number, "Number of diluted aliquots you want to make"
+  aliquot: number, "Volume (µL) of each aliquots you want to make"
 end
 
 take
@@ -9,7 +10,11 @@ take
   plasmid = item plasmid_id
 end
 
-volume = 10 * count
+if count > 4
+volume = aliquot * (count+1)
+else
+volume = aliquot * count
+end
 
 step
   description:
@@ -32,7 +37,12 @@ step
   description: 
     "Take out %{count} 1.5 mL tube"
   note: 
-    "Add 10 µL of diluted plasmid from tube D to each tube."
+    "Add %{aliquot} µL of diluted plasmid from tube D to each tube."
+end
+
+step
+  description:
+    "Throw out the tube D"
 end
 
 x = 0
