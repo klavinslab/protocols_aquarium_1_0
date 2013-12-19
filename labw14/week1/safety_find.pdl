@@ -641,5 +641,5 @@
 	</if>
 	
 	
-	<log><type>RETURN</type><data>%{numberWrong}</data></log>
+	<log><type>return</type><data>{ :numberWrong => %{numberWrong} }</data></log>
 </protocol>
