@@ -1,4 +1,3 @@
-
 <protocol>
 
         <information> This protocol is a test. </information>
@@ -13,6 +12,6 @@
 
         <assign><lhs>numberWrong</lhs><rhs>1</rhs></assign>
         
-        <log><type>return</type><data>%{numberWrong}</data></log>
+        <log><type>return</type><data>{ :numberWrong => %{numberWrong} }</data></log>
         
 </protocol>
