@@ -20,7 +20,7 @@ place plate
   protocol: "oyster/trans/plate.pl"
   argument
     volume: 200
-    plate_type: "LB Kan Plate (sterile)"
+    plate_type: plate_type
   end
   group: "transformers"
   start: now()
