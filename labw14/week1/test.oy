@@ -7,7 +7,7 @@ place safety
 end
 
 place test
-  protocol: "labw14/week1/test.pl"
+  protocol: "labw14/week1/test.pdl"
   group: "tamimeur"
   start: now()
   window: minutes(1)
