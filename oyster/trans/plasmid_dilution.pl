@@ -40,6 +40,11 @@ step
     "Add %{aliquot} µL of diluted plasmid from tube D to each tube."
 end
 
+step
+  description:
+    "Throw out the tube D"
+end
+
 x = 0
 while x < count
 produce
