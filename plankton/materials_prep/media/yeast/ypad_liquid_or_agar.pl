@@ -148,7 +148,8 @@ end
 if add_agar == "Yes"
   produce
     produced_bottles = n_bottle product_name
-    release bottles, stir_bars
+    release bottles
+    release stir_bars
     note: "Write %{product_name} and the date on the label in addition to the above id number."
     location: "B1.320"
   end
