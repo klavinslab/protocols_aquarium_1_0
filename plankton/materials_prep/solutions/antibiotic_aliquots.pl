@@ -1,4 +1,9 @@
 information "Prepare aliquots of antibiotic stocks (Amp, Kan, or Chlor)."
+# TODO: Combine into single protocol with stocks
+# (1) Use 50 mL falcon tubes
+# (2) Aliquot out to 1.5 mL tubes
+# (3) New labeling scheme - label sides of tubes, then put in box, then put tape over it with id number + label e.g. 'amp'. Use color as well?
+# (4) One box per antibiotic
 
 
 argument
@@ -8,7 +13,7 @@ end
 
 if antibiotic_type != "Amp" && antibiotic_type != "Kan" && antibiotic_type != "Chlor"
   step
-    description: "The antibiotic type was incorrectly entered."
+    description: "The antibiotic type was incorrectly entered as %{antibiotic_type}."
     getdata
       antibiotic_type: string, "Enter the type of antibiotic stock you want to make.", ["Amp", "Kan", "Chlor"]
     end
@@ -27,18 +32,29 @@ if antibiotic_type == "Amp"
     antibiotic_stock = n_bottles "Ampicillin Stock"
   end
   antibiotic_label = "Amp"
-  aliquot_number = n_bottles * 4
+  aliquot_number = n_bottles * 20
   product_name = "100X 1mL Ampicillin Aliquot"
 elsif antibiotic_type == "Kan"
   take
     antibiotic_stock = 1 "Kanamycin Stock"
   end
+  # TODO: takes a long time to thaw at room temp. Can we incubate / microwave?
+  # Could also try putting sterile stir bar
+  step
+    description: "Thaw"
+    note: "If necessary, thaw the Kanamycin Stock at roomp temp, vortexing every 5 minutes. This should take between 30 and 60 minutes."
+  end
   antibiotic_label = "Kan"
-  aliquot_number = 8
+  aliquot_number = 10
   product_name = "200X 1mL Kanamycin Aliquot"
 else
+  # TODO: make smaller aliquots of chlor? It gets used very slowly.
   take
     antibiotic_stock = 1 "Chloramphenicol Stock"
+  end
+  step
+    description: "Thaw"
+    note: "If necessary, thaw the Ampicillin Stock at roomp temp, vortexing every 5 minutes. This should take between 30 and 60 minutes."
   end
   antibiotic_label = "Chlor"
   aliquot_number = 2

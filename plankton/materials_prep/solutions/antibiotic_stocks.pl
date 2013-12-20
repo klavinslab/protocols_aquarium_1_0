@@ -4,12 +4,13 @@ information "Prepare sterile bottle(s) of antibiotic stocks (Amp, Kan, or Chlor)
 argument
   antibiotic_type: string, "Enter the type of antibiotic stock you want to make (options are Amp, Kan, or Chlor)."
   n_bottles: number, "Enter the number of bottles you want to make."
+  # TODO: input check n_bottles
 end
 
 
 if antibiotic_type != "Amp" && antibiotic_type != "Kan" && antibiotic_type != "Chlor"
   step
-    description: "The antibiotic type was incorrectly entered."
+    description: "The antibiotic type was incorrectly entered as %{antibiotic_type}."
     getdata
       antibiotic_type: string, "Enter the type of antibiotic stock you want to make.", ["Amp", "Kan", "Chlor"]
     end

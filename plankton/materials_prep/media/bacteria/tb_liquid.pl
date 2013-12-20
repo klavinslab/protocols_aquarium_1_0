@@ -11,7 +11,7 @@ end
 
 if n_bottle < 1 || n_bottle > 4
   step
-    description: "There were more than 4 bottles specified or the number is negative"
+    description: "The number of bottles was incorrectly entered as %{n_bottle}."
     note: "You can only specify 1-4 bottles!"
     getdata
       n_bottle: number, "Enter the number of bottles you want to make.", [1, 2, 3, 4]
