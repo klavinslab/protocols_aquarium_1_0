@@ -42,6 +42,10 @@ if add_agar == "Yes"
     agar = 1 "Bacto Agar"
     stir_bars = n_bottle "Medium Magnetic Stir Bar"
   end
+  step
+    description: "Add stir bars"
+    note: "Add one stir bar to each bottle."
+  end
 else
   product_name = "800 mL YPAD liquid (unsterile)"
   take
@@ -59,7 +63,7 @@ end
 
 step
   description: "Remove autoclave tape"
-  note: "Remove any old autoclave tape from each bottle."
+  note: "Remove any autoclave tape from each bottle."
 end
 
 
