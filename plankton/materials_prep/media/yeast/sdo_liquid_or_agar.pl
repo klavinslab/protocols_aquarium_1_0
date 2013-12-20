@@ -125,41 +125,65 @@ else
 end
 
 
+nitrogen_base_name = nitrogen_base[0][:name]
+dropout_name = dropout[0][:name]
+dextrose_name = dextrose[0][:name]
+adenine_name = adenine[0][:name]
+
+
 include "plankton/includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
-  reagent: "%{nitrogen_base}"
+  reagent: nitrogen_base_name
   grams: 5.36
 end
 
 
 include "plankton/includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
-  reagent: "%{drop_out}"
+  reagent: dropout_name
   grams: 1.12
 end
 
 
 include "plankton/includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
-  reagent: "%{dextrose}"
+  reagent: dextrose_name
   grams: 16
 end
 
 
 include "plankton/includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
-  reagent: "%{adenine}"
+  reagent: adenine_name
   grams: 0.064
 end
 
 
+#Agar
 if add_agar == "Yes"
-  include "plankton/includes/materials_prep/add_dry_reagent.pl"
-    container: "each bottle"
-    reagent: "%{agar}"
-    grams: 16
+  agar_name = agar[0][:name]
+  step
+    description: "Clean the spatula"
+    note: "Use 70%% ethanol and a new kim wipe to wipe off the spatula."
+  end
+  step
+    description: "Measure and add 16 g of %{agar_name}"
+    note: "Using a scale, weigh out 16 g of %{agar_name} and add to each bottle."
+    image: "pouring_dry_reagent_into_1_L_bottle"
+  end
+  step
+    description: "Clean the spatula"
+    note: "Use 70%% ethanol and a new kim wipe to wipe off the spatula."
   end
 end
+# TODO: re-enable after include bugfix
+#if add_agar == "Yes"
+#  include "plankton/includes/materials_prep/add_dry_reagent.pl"
+#    container: "each bottle"
+#    reagent: agar_name
+#    grams: 16
+#  end
+#end
 
 
 # Clean the spatula before returning it
@@ -167,7 +191,7 @@ include "plankton/includes/materials_prep/clean_spatula.pl"
 end
 
 
-release [yeast_nitrogen_base[0], drop_out[0], dextrose[0], adenine[0]]
+release [yeast_nitrogen_base[0], dropout[0], dextrose[0], adenine[0]]
 if add_gar == "Yes"
   release agar
 end
@@ -235,7 +259,7 @@ produce
 end
 
 
-release [yeast_nitrogen_base[0], drop_out[0], dextrose[0], adenine[0]]
+release [yeast_nitrogen_base[0], dropout[0], dextrose[0], adenine[0]]
 release supplements
 if add_agar == "Yes"
   release agar

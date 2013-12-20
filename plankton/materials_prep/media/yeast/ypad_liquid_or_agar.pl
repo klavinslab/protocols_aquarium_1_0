@@ -67,41 +67,65 @@ step
 end
 
 
+yeast_extract_name = yeast_extract[0][:name]
+tryptone_name = tryptone[0][:name]
+dextrose_name = dextrose[0][:name]
+adenine_name = adenine[0][:name]
+
+
 include "plankton/includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
-  reagent: "%{yeast_extract}"
+  reagent: yeast_extract_name
   grams: 8
 end
 
 
 include "plankton/includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
-  reagent: "%{tryptone}"
+  reagent: tryptone_name
   grams: 16
 end
 
 
 include "plankton/includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
-  reagent: "%{dextrose}"
+  reagent: dextrose_name
   grams: 16
 end
 
 
 include "plankton/includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
-  reagent: "%{adenine}"
+  reagent: adenine_name
   grams: 0.064
 end
 
 
+# Agar
 if add_agar == "Yes"
-  include "plankton/includes/materials_prep/add_dry_reagent.pl"
-    container: "each bottle"
-    reagent: "%{agar}"
-    grams: 16
+  agar_name = agar[0][:name]
+  step
+    description: "Clean the spatula"
+    note: "Use 70%% ethanol and a new kim wipe to wipe off the spatula."
+  end
+  step
+    description: "Measure and add 16 g of %{agar_name}"
+    note: "Using a scale, weigh out 16 g of %{agar_name} and add to each bottle."
+    image: "pouring_dry_reagent_into_1_L_bottle"
+  end
+  step
+    description: "Clean the spatula"
+    note: "Use 70%% ethanol and a new kim wipe to wipe off the spatula."
   end
 end
+# TODO: re-enable after include bugfix
+#if add_agar == "Yes"
+#  include "plankton/includes/materials_prep/add_dry_reagent.pl"
+#    container: "each bottle"
+#    reagent: agar_name
+#    grams: 16
+#  end
+#end
 
 
 # Clean the spatula before returning it

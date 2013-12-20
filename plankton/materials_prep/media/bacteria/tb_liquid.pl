@@ -34,14 +34,15 @@ end
 
 step
   description: "Remove autoclave tape"
-  note: "Remove any old autoclave tape from each bottle."
+  note: "Remove any autoclave tape from each bottle."
 end
 
 
 # Add LB Powder
+tb_name = tb_powder[0][:name]
 include "plankton/includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
-  reagent: "%{tb_powder}"
+  reagent: tb_name
   grams: 38.08
 end
 
