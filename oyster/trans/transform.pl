@@ -89,7 +89,7 @@ end
 
 produce
   r = 1 "1.5 mL tube transformation" from strain[0]
-  note: "Keep the tube on the bench to use in the next protocol (plating)."
+  note: "Keep the tube on the bench to use in the next protocol."
   location: "Bench"
 end
 
