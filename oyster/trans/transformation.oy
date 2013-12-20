@@ -9,6 +9,7 @@ place transform
   argument
     plasmid_id: plasmid_id
     e_coli_strain_id: e_coli_strain_id
+    plate_type: plate_type
   end
   group: "transformers"
   marked: true
