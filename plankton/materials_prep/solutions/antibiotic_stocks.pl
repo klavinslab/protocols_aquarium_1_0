@@ -136,20 +136,20 @@ end
 
 if antibiotic_type == "Amp"
   produce
-    produced_bottles = n_bottle "Ampicillin Stock"
+    produced_bottles = n_bottles "Ampicillin Stock"
     release antibiotic
     note: "Write Ampicillin Stock and the date on the label in addition to the above id number."
   end
 elsif antibiotic_type == "Kan"
   produce
-    produced_bottles = n_bottle "Kanamycin Stock"
+    produced_bottles = n_bottles "Kanamycin Stock"
     release bottles
     note: "Write Kanamycin Stock and the date on the label in addition to the above id number."
   end
   release [antibiotic[0], water[0]]
 else
   produce
-    produced_bottles = n_bottle "Chloramphenicol Stock"
+    produced_bottles = n_bottles "Chloramphenicol Stock"
     release bottles
     note: "Write Chloramphenicol Stock and the date on the label in addition to the above id number."
   end
