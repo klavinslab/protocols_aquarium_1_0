@@ -243,7 +243,7 @@ end
 
 
 step
-  description: "Stir using the hot plate."
+  description: "Stir using the hot plate"
   note: "One at a time, set each bottle on the hot plate and mix at 700 rpm for 2 minutes."
 end
 
