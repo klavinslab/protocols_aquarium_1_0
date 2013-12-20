@@ -8,7 +8,6 @@ end
 take
   falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
   plasmid = item plasmid_id
-  note: "The Plasmid Stock is located in the Transformation Efficiency box."
 end
 
 step
