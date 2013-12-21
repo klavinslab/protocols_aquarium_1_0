@@ -1,8 +1,8 @@
 argument
   n: number, "A number"
   q: string, "A string"
-  s: sample
-  o: object
+  s: sample, "A sample"
+  o: object, "An object type"
 end
 
 place p

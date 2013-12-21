@@ -1,5 +1,6 @@
 argument
   nmax: number, "The number of cycles"
+  names: string array, "An array of names (for testing the UI)"
 end
 
 ###########################################################

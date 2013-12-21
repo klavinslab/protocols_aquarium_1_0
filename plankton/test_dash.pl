@@ -1,0 +1,1 @@
+information "This job makes iptg x-gal plates."take  iptg = 1 "IPTG 1M stock solution"  xgal = 1 "x gal stock solution"endstep  description: "Melt the agar and cool to 50C"  note: "Loosen the cap on a bottle of LB Agar and melt it in the microwave for 20 minutes at 20%%."end

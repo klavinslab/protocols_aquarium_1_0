@@ -4,9 +4,9 @@
   #
 
   argument
-    x: string, "Name"
-    y: number, "Mass"
-    z: sample  
+    x: string array, "Name"
+    y: number array, "Masses"
+    z: sample array, "Sample type"
     q: object, "Container"
   end
 
@@ -14,12 +14,26 @@
   n = m+y
 
   step
+
     description: "The first step"
-    note: "
-      In this step, n = %{n}.
-    "
+
+    note: "x = %{x}."
+    note: "y = %{y}."
+    note: "z = %{z}."
+    note: "q = %{q}."
+
     warning: "Careful!"
-    warning: "Really!"
+
+  end
+
+  take
+    x = item z[0]
+  end
+
+  c = x[0][:data][:concentration]
+
+  step
+    description: "%{x} = > %{c}"
   end
 
   n = n+1
@@ -28,3 +42,5 @@
     description: "The second step"
     note: "Now n = %{n}."
   end
+
+  release x
