@@ -6,6 +6,13 @@ argument
   plate_type: object, "The plate on which the transformed cells to be plated"
 end
 
+if plate_type == "LB Amp Plate (sterile)"
+  step
+    description:
+      "Yay"
+  end
+end
+
 take
   falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
   plasmid = item plasmid_id
