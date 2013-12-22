@@ -73,7 +73,7 @@ end
 wire (plate,"plate_id") => (reimage,"e_coli_strain_id")
 
 # forward transitions
-transition [transform] => [plate]    when !error(0) && completed(0) && %{plate_type} == "LB Amp Plate (sterile)" end
+transition [transform] => [plate]    when !error(0) && completed(0) end
 transition [plate]     => [incubate] when !error(0) && completed(0) end
 transition [incubate]  => [image]    when !error(0) && completed(0) end
 transition [image]     => []         when !error(0) && completed(0) end
