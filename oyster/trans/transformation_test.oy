@@ -27,7 +27,7 @@ place tube_incubation
   window: minutes(1)
 end
 
-wire (transform,"transformed_cells_id") => (tube_incubation"e_coli_strain_id")
+wire (transform,"transformed_cells_id") => (tube_incubation,"e_coli_strain_id")
 
 place plate
   protocol: "oyster/trans/plate.pl"
