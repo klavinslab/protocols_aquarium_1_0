@@ -51,7 +51,7 @@ place plate_tube_incubate
     plate_type: plate_type
   end
   group: "transformers"
-  start: minutes(45)
+  start: minutes(1)
   window: minutes(1)
 end
 
