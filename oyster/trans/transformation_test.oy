@@ -68,11 +68,9 @@ place incubate
   window: minutes(1)
 end
 
-if plate_type == "LB Amp Plate (sterile)"
 wire (plate,"plate_id") => (incubate,"e_coli_strain_id")
-else
 wire (plate_tube_incubate, "plate_id") =>  (incubate,"e_coli_strain_id")
-end
+
 
 place image
   protocol: "oyster/trans/count_colonies.pl"
