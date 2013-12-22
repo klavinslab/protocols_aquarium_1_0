@@ -73,7 +73,7 @@ end
 wire (plate,"plate_id") => (reimage,"e_coli_strain_id")
 
 # forward transitions
-transition [transform] => [plate]    when !error(0) && completed(0) end
+transition [transform] => [plate]    when !error(0) && completed(0) && return_value(0,"tube_incubation_choice") == 0 end
 transition [plate]     => [incubate] when !error(0) && completed(0) end
 transition [incubate]  => [image]    when !error(0) && completed(0) end
 transition [image]     => []         when !error(0) && completed(0) end
