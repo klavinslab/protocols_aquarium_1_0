@@ -7,10 +7,9 @@ argument
 end
 
 if plate_type == "LB Amp Plate (sterile)"
-  step
-    description:
-      "Yay"
-  end
+  tube_incubation_choice = 0
+else
+  tube_incubation_choice = 1
 end
 
 take
@@ -20,7 +19,7 @@ end
 
 step
   description: 
-    "Intialize the Electroporator"
+    "Intialize the Electroporator %{tube_incubation}"
   note: 
     "Turn on the electroporator if it is off and set the voltage to 1250V by clicking up and down button.\n
      Click the time constant button. The LCD screen should show 0.0."
