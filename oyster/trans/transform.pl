@@ -3,6 +3,7 @@
 argument
   plasmid_id: sample, "The plasmid to be used"
   e_coli_strain_id: sample, "The electrocompetent cell type to be used."
+  plate_type: object, "The plate on which the transformed cells to be plated"
 end
 
 take
