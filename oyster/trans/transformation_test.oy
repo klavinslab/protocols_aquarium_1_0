@@ -17,17 +17,6 @@ place transform
   window: minutes(30)
 end
 
-place tube_incubate
-  protocol: "oyster/trans/incubate.pl"
-  argument
-    temp: 37
-  end
-  group: "transformers"
-  start: now()
-  window: minutes(1)
-end
-
-wire (transform,"transformed_cells_id") => (tube_incubation,"e_coli_strain_id")
 
 place plate
   protocol: "oyster/trans/plate.pl"
@@ -42,6 +31,19 @@ end
 
 wire (transform,"transformed_cells_id") => (plate,"e_coli_strain_id")
 
+
+place tube_incubate
+  protocol: "oyster/trans/incubate.pl"
+  argument
+    temp: 37
+  end
+  group: "transformers"
+  start: now()
+  window: minutes(1)
+end
+
+wire (transform,"transformed_cells_id") => (tube_incubate,"e_coli_strain_id")
+
 place plate_after_tube_incubate
   protocol: "oyster/trans/plate.pl"
   argument
@@ -52,6 +54,9 @@ place plate_after_tube_incubate
   start: minutes(45)
   window: minutes(1)
 end
+
+wire (tube_incubate,"e_coli_strain_id") => (plate_after_tube_incubate,"e_coli_strain_id")
+
 
 place incubate
   protocol: "oyster/trans/incubate.pl"
@@ -64,6 +69,7 @@ place incubate
 end
 
 wire (plate,"plate_id") => (incubate,"e_coli_strain_id")
+wire (plate_after_tube_incubate, "plate_id") =>  (incubate,"e_coli_strain_id")
 
 place image
   protocol: "oyster/trans/count_colonies.pl"
