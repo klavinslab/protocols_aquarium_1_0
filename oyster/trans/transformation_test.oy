@@ -68,7 +68,7 @@ place incubate
   window: minutes(1)
 end
 
-if 1 == 1 
+if plate_type == "LB Amp Plate (sterile)"
 wire (plate,"plate_id") => (incubate,"e_coli_strain_id")
 end
 
