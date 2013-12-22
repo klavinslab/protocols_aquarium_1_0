@@ -68,7 +68,10 @@ place incubate
   window: minutes(1)
 end
 
+if 1 == 1 
 wire (plate,"plate_id") => (incubate,"e_coli_strain_id")
+end
+
 wire (plate_tube_incubate, "plate_id") =>  (incubate,"e_coli_strain_id")
 
 place image
