@@ -6,7 +6,7 @@ argument
 end
 
 place p
-  protocol: "plankton/1.pl"
+  protocol: "plankton/sandbox/1.pl"
   argument
     x: q
     y: n

@@ -1,5 +1,5 @@
 place p1
-  protocol: "plankton/one.pl"
+  protocol: "plankton/sandbox/one.pl"
   group: "admin"
   marked: true
   start: now()
@@ -7,7 +7,7 @@ place p1
 end
 
 place p2
-  protocol: "plankton/two.pl"
+  protocol: "plankton/sandbox/two.pl"
   group: "admin"
   start: now()
   argument
@@ -17,14 +17,14 @@ place p2
 end
 
 place p3
-  protocol: "plankton/three.pl"
+  protocol: "plankton/sandbox/three.pl"
   group: "admin"
   start: now()
   window: minutes(30)
 end
 
 place p4
-  protocol: "plankton/four.pl"
+  protocol: "plankton/sandbox/four.pl"
   group: "admin"
   start: now()
   window: minutes(30)

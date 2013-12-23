@@ -8,7 +8,7 @@ end
 #
 
 place p1
-  protocol: "plankton/one.pl"
+  protocol: "plankton/sandbox/one.pl"
   group: "admin"
   marked: true
   start: minutes(1)
@@ -18,7 +18,7 @@ end
 num = 0
 
 place p2
-  protocol: "plankton/two.pl"
+  protocol: "plankton/sandbox/two.pl"
   argument
     y: num
   end
