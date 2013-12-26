@@ -1,5 +1,4 @@
 information "Make 800mL of Synthetic Drop-out or Synthetic Complete media."
-# TODO: Use item :name key for includes
 # TODO: Add supplement data to produced item
 
 
@@ -162,28 +161,12 @@ end
 #Agar
 if add_agar == "Yes"
   agar_name = agar[0][:name]
-  step
-    description: "Clean the spatula"
-    note: "Use 70%% ethanol and a new kim wipe to wipe off the spatula."
-  end
-  step
-    description: "Measure and add 16 g of %{agar_name}"
-    note: "Using a scale, weigh out 16 g of %{agar_name} and add to each bottle."
-    image: "pouring_dry_reagent_into_1_L_bottle"
-  end
-  step
-    description: "Clean the spatula"
-    note: "Use 70%% ethanol and a new kim wipe to wipe off the spatula."
+  include "plankton/includes/materials_prep/add_dry_reagent.pl"
+    container: "each bottle"
+    reagent: agar_name
+    grams: 16
   end
 end
-# TODO: re-enable after include bugfix
-#if add_agar == "Yes"
-#  include "plankton/includes/materials_prep/add_dry_reagent.pl"
-#    container: "each bottle"
-#    reagent: agar_name
-#    grams: 16
-#  end
-#end
 
 
 # Clean the spatula before returning it
@@ -191,8 +174,8 @@ include "plankton/includes/materials_prep/clean_spatula.pl"
 end
 
 
-release [yeast_nitrogen_base[0], dropout[0], dextrose[0], adenine[0]]
-if add_gar == "Yes"
+release [nitrogen_base[0], dropout[0], dextrose[0], adenine[0]]
+if add_agar == "Yes"
   release agar
 end
 
@@ -231,6 +214,9 @@ step
 end
 
 
+release supplements
+
+
 step
   description: "Add deionized water"
   note: "Fill each bottle to the 800 mL mark with deionized water."
@@ -253,14 +239,14 @@ release hot_plate
 
 produce
   produced_bottles = n_bottle product_name
-  release bottles, stir_bars
+  data
+    his: add_his
+    leu: add_leu
+    trp: add_trp
+    ura: add_ura
+  end
+  release bottles
+  release stir_bars
   note: "Write %{product_name} and the date on the label in addition to the above id number."
   location: "B1.320"
-end
-
-
-release [yeast_nitrogen_base[0], dropout[0], dextrose[0], adenine[0]]
-release supplements
-if add_agar == "Yes"
-  release agar
 end
