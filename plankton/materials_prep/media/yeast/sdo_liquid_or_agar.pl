@@ -209,7 +209,7 @@ end
 
 step
   description: "Add sterile drop out supplements"
-  note: "Label a piece of laboratory tape with '-His -Leu -Trp -Ura' and attach it to the 1 L bottle.\n\nUsing a serological pipet, add 8 mL of each sterile supplement you just got out. As you add each supplement, black it out with a marker on the piece of tape."
+  note: "Label a piece of white laboratory tape with '-His -Leu -Trp -Ura' and attach it to the 1 L bottle.\n\nUsing a serological pipet, add 8 mL of each sterile supplement you just got out. As you add each supplement, black it out with a marker on the piece of tape."
   warning: "Use a separate pipet for each supplement."
 end
 
@@ -247,6 +247,6 @@ produce
   end
   release bottles
   release stir_bars
-  note: "Write %{product_name} and the date on the label in addition to the above id number."
+  note: "Write %{product_name} and the date on the label in addition to the above id number.\n\nMark the label according to the solutions that were left out - mark red for -His, blue for -Leu, green for -Trp, purple for -Ura."
   location: "B1.320"
 end

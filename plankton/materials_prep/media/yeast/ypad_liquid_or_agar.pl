@@ -103,29 +103,13 @@ end
 
 # Agar
 if add_agar == "Yes"
-  agar_name = agar[0][:name]
-  step
-    description: "Clean the spatula"
-    note: "Use 70%% ethanol and a new kim wipe to wipe off the spatula."
-  end
-  step
-    description: "Measure and add 16 g of %{agar_name}"
-    note: "Using a scale, weigh out 16 g of %{agar_name} and add to each bottle."
-    image: "pouring_dry_reagent_into_1_L_bottle"
-  end
-  step
-    description: "Clean the spatula"
-    note: "Use 70%% ethanol and a new kim wipe to wipe off the spatula."
+ agar_name = agar[0][:name]
+  include "plankton/includes/materials_prep/add_dry_reagent.pl"
+    container: "each bottle"
+    reagent: agar_name
+    grams: 16
   end
 end
-# TODO: re-enable after include bugfix
-#if add_agar == "Yes"
-#  include "plankton/includes/materials_prep/add_dry_reagent.pl"
-#    container: "each bottle"
-#    reagent: agar_name
-#    grams: 16
-#  end
-#end
 
 
 # Clean the spatula before returning it
