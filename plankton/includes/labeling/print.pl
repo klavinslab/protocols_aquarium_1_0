@@ -1,5 +1,8 @@
 # Example query for printer:
 # http://bioturk.ee.washington.edu:3008/devices/4e5becf4-d281-03d3-cfbc-6aab729a7fb5/command?cmd=print&text=Hello&qrcode=World
+# TODO:
+# (1) Get basic http requests working properly - arguments aren't being sent?
+# (2) Send
 
 #argument
 #  text: string, "Text to be printed on the label. Cannot be blank."

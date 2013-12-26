@@ -5,12 +5,12 @@ http
   query
     cmd: "info"
   end
-  query
-    cmd: "print"
-    text: "Hello World!"
-    qrcode: "This would be an item id"
-    barcode: "So would this"
-  end
+  #query
+  #  cmd: "print"
+  #  text: "Hello World!"
+  #  qrcode: "This would be an item id"
+  #  #barcode: "So would this"  # barcodes don't work right now?
+  #end
   status: s
   body: b
 end
