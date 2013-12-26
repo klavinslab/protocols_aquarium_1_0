@@ -103,7 +103,7 @@ end
 
 # Agar
 if add_agar == "Yes"
- agar_name = agar[0][:name]
+  agar_name = agar[0][:name]
   include "plankton/includes/materials_prep/add_dry_reagent.pl"
     container: "each bottle"
     reagent: agar_name
