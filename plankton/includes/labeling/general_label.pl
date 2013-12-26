@@ -18,6 +18,7 @@ end
 
 
 # TODO: Attempt to print label first. If that fails, fall back on what is currently below this message.
+
 step
   description: "Label"
   note: "Label %{item_string} with the following:\n\n%{object_type}, id: %{item_id}, your initials, and the date using a piece of lab tape."
