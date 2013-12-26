@@ -50,32 +50,13 @@ antibiotic_name = antibiotic[0][:name]
 
 
 if antibiotic_type == "Kan"
-  step
-    description: "Clean the spatula"
-    note: "Use 70%% ethanol and a new kim wipe to wipe off the spatula."
-  end
-  step
-    description: "Measure and add 0.5 g of %{antibiotic_name}"
-    note: "Using a scale, weigh out 0.5 g of %{antibiotic_name} and add to each bottle."
-    image: "pouring_dry_reagent_into_1_L_bottle"
-  end
-  step
-    description: "Clean the spatula"
-    note: "Use 70%% ethanol and a new kim wipe to wipe off the spatula."
+  include "plankton/includes/materials_prep/add_dry_reagent.pl"
+    container: "each bottle"
+    reagent: antibiotic_name
+    grams: 0.5
   end
 
-  # TODO: re-enable after include bugfix
-  ## Clean the spatula
-  #include "plankton/includes/materials_prep/clean_spatula.pl"
-  #end
-  #
-  #include "plankton/includes/materials_prep/add_dry_reagent.pl"
-  #  container: "each bottle"
-  #  reagent: antibiotic_name
-  #  grams: 0.5
-  #end
-  #
-  #include "plankton/includes/materials_prep/clean_spatula.pl" end
+  include "plankton/includes/materials_prep/clean_spatula.pl" end
 
   take
     water = 1 "Molecular Biology Grade Water"
@@ -86,28 +67,13 @@ if antibiotic_type == "Kan"
     note: "Using a serological pipetter, add 50 mL molecular grade water to each bottle. Use a new pipet for each bottle."
   end
 elsif antibiotic_type == "Chlor"
-  step
-    description: "Clean the spatula"
-    note: "Use 70%% ethanol and a new kim wipe to wipe off the spatula."
+  include "plankton/includes/materials_prep/add_dry_reagent.pl"
+    container: "each bottle"
+    reagent: antibiotic_name
+    grams: 0.34
   end
-  step
-    description: "Measure and add 0.34 g of %{antibiotic_name}"
-    note: "Using a scale, weigh out 0.34 g of %{antibiotic_name} and add to each bottle."
-    image: "pouring_dry_reagent_into_1_L_bottle"
-  end
-  step
-    description: "Clean the spatula"
-    note: "Use 70%% ethanol and a new kim wipe to wipe off the spatula."
-  end
-
-  # TODO: re-enable after include bugfix
-  #include "plankton/includes/materials_prep/add_dry_reagent.pl"
-  #  container: "each bottle"
-  #  reagent: antibiotic_name
-  #  grams: 0.34
-  #end
-  ## Clean the spatula before returning it
-  #include "plankton/includes/materials_prep/clean_spatula.pl" end
+  # Clean the spatula before returning it
+  include "plankton/includes/materials_prep/clean_spatula.pl" end
 
   take
     ethanol = 1 "95% Ethanol"
