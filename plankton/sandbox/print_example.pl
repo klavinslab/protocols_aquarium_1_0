@@ -1,7 +1,7 @@
 http
   host: "http://bioturk.ee.washington.edu"
   port: "3008"
-  path: "/devices/4e5becf4-d281-03d3-cfbc-6aab729a7fb5/command?cmd=info"
+  path: "/devices/4e5becf4-d281-03d3-cfbc-6aab729a7fb5/command"
   query
     cmd: "info"
   end
