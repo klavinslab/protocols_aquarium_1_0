@@ -9,7 +9,7 @@ end
 
 place p1
   protocol: "plankton/sandbox/one.pl"
-  group: "admin"
+  group: aquarium_user
   marked: true
   start: now()
   window: hours(1)
@@ -22,7 +22,7 @@ place p2
   argument
     y: num
   end
-  group: "klavins"
+  group: aquarium_user
   start: now()
   window: hours(8)
 end
