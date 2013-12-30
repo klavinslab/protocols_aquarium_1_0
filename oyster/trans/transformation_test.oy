@@ -32,7 +32,7 @@ end
 wire (transform,"transformed_cells_id") => (plate,"e_coli_strain_id")
 
 
-place tube_incubate
+place incubate_tube
   protocol: "oyster/trans/incubate.pl"
   argument
     temp: 37
@@ -42,9 +42,9 @@ place tube_incubate
   window: minutes(1)
 end
 
-wire (transform,"transformed_cells_id") => (tube_incubate,"e_coli_strain_id")
+wire (transform,"transformed_cells_id") => (incubate_tube,"e_coli_strain_id")
 
-place plate_tube_incubate
+place plate_tube
   protocol: "oyster/trans/plate.pl"
   argument
     volume: 200
@@ -55,7 +55,7 @@ place plate_tube_incubate
   window: minutes(1)
 end
 
-wire (transform,"transformed_cells_id") => (plate_tube_incubate,"e_coli_strain_id")
+wire (transform,"transformed_cells_id") => (plate_tube,"e_coli_strain_id")
 
 
 place incubate
@@ -69,7 +69,7 @@ place incubate
 end
 
 wire (plate,"plate_id") => (incubate,"e_coli_strain_id")
-wire (plate_tube_incubate, "plate_id") =>  (incubate,"e_coli_strain_id")
+wire (plate_tube, "plate_id") =>  (incubate,"e_coli_strain_id")
 
 
 place image
@@ -97,9 +97,9 @@ transition [incubate]  => [image]    when !error(0) && completed(0) end
 transition [image]     => []         when !error(0) && completed(0) end
 transition [reimage]   => []         when !error(0) && completed(0) end
 
-transition [transform] => [tube_incubate] when !error(0) && completed(0) && return_value(0,"tube_incubation_choice") == 1 end
-transition [tube_incubate] =>[plate_tube_incubate] when !error(0) && completed(0) end
-transition [plate_tube_incubate]     => [incubate] when !error(0) && completed(0) end
+transition [transform] => [incubate_tube] when !error(0) && completed(0) && return_value(0,"tube_incubation_choice") == 1 end
+transition [incubate_tube] =>[plate_tube] when !error(0) && completed(0) end
+transition [plate_tube]     => [incubate] when !error(0) && completed(0) end
 
 
 # rework transitions
