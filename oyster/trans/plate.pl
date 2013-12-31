@@ -29,7 +29,7 @@ end
 
 step
   description: "Vortex the sample"
-  note: "Vortex the sample on vortexor"
+  note: "Vortex the sample on vortexor."
   image: "vortex_tube"
 end
 
