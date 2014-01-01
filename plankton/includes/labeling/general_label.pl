@@ -17,9 +17,26 @@ argument
 end
 
 
-# TODO: Attempt to print label first. If that fails, fall back on what is currently below this message.
+# TODO: test + implement multiple-copy printing
+#argument
+#  copies: number, "The number of labels to print."
+#end
 
-step
-  description: "Label"
-  note: "Label %{item_string} with the following:\n\n%{object_type}, id: %{item_id}, your initials, and the date using a piece of lab tape."
+
+text_label = object_type + " | " + "id: " + item_id
+
+
+# Try to print to the label printer
+include "plankton/includes/devices/labelprinter.pl"
+  text: text_label
+  qrcode: item_id
+  printed = printed
+end
+
+
+if printed == "False"
+  step
+    description: "Label"
+    note: "Label a piece of white lab tape with:\n\n%{text_label}"
+  end
 end
