@@ -3,6 +3,7 @@ information "Do a Google search on life."
 
 http
   host: "http://www.google.com"
+  path: "/search"
   port: "80"
   query
     q: "life"
