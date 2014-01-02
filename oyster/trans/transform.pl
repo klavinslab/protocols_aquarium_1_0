@@ -19,7 +19,7 @@ end
 
 step
   description: 
-    "Intialize the Electroporator %{tube_incubation_choice}"
+    "Intialize the Electroporator"
   note: 
     "Turn on the electroporator if it is off and set the voltage to 1250V by clicking up and down button.\n
      Click the time constant button. The LCD screen should show 0.0."
