@@ -11,11 +11,25 @@ place transform
     e_coli_strain_id: e_coli_strain_id
     plate_type: plate_type
   end
-  group: 
+  group: "transformers"
   marked: true
   start: now()
   window: minutes(30)
 end
+
+
+place incubate_tube
+  protocol: "oyster/trans/incubate_tube.pl"
+  argument
+    temp: 37
+  end
+  group: "transformers"
+  start: now()
+  window: minutes(1)
+end
+
+wire (transform,"transformed_cells_id") => (incubate_tube,"e_coli_strain_id")
+
 
 place plate
   protocol: "oyster/trans/plate.pl"
@@ -23,19 +37,20 @@ place plate
     volume: 200
     plate_type: plate_type
   end
-  group: 
-  start: now()
+  group: "transformers"
+  start: minutes(1)
   window: minutes(1)
 end
 
 wire (transform,"transformed_cells_id") => (plate,"e_coli_strain_id")
+
 
 place incubate
   protocol: "oyster/trans/incubate.pl"
   argument
     temp: 37
   end
-  group: 
+  group: "transformers"
   start: now()
   window: minutes(1)
 end
@@ -44,7 +59,7 @@ wire (plate,"plate_id") => (incubate,"e_coli_strain_id")
 
 place image
   protocol: "oyster/trans/count_colonies.pl"
-  group: 
+  group: "transformers"
   start: hours(20)
   window: hours(1)
 end
@@ -53,7 +68,7 @@ wire (plate,"plate_id") => (image,"e_coli_strain_id")
 
 place reimage
   protocol: "oyster/trans/count_colonies.pl"
-  group: 
+  group: "transformers"
   start: now()
   window: hours(1)
 end
@@ -63,13 +78,17 @@ wire (plate,"plate_id") => (reimage,"e_coli_strain_id")
 # forward transitions
 transition [transform] => [plate]    when !error(0) && completed(0) && return_value(0,"tube_incubation_choice") == 0 end
 transition [plate]     => [incubate] when !error(0) && completed(0) end
+transition [transform] => [incubate_tube] when !error(0) && completed(0) && return_value(0,"tube_incubation_choice") == 1 end
+transition [incubate_tube] =>[plate] when !error(0) && completed(0) end
 transition [incubate]  => [image]    when !error(0) && completed(0) end
 transition [image]     => []         when !error(0) && completed(0) end
 transition [reimage]   => []         when !error(0) && completed(0) end
 
+
 # rework transitions
 transition [transform] => [transform] when error(0) end
 transition [plate]     => [plate]     when error(0) end
+transition [incubate_tube] => [incubate_tube] when error(0) end
 transition [incubate]  => [incubate]  when error(0) end
 transition [image]     => [reimage]   when error(0) end
 transition [reimage]   => [reimage]   when error(0) end
