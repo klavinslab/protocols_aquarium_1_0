@@ -7,7 +7,7 @@ take
 end
 
 produce
-  y = 1 "Glycerol Stock" from gc[0]
+  y = 1 "E coli Glycerol Stock" from gc[0]
 end
 
 release gc
