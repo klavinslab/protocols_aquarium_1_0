@@ -19,7 +19,7 @@ end
 
 
 place incubate_tube
-  protocol: "oyster/trans/incubate.pl"
+  protocol: "oyster/trans/incubate_tube.pl"
   argument
     temp: 37
   end
