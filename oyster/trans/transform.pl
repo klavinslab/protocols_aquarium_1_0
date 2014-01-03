@@ -95,7 +95,7 @@ step
 end
 
 produce
-  r = 1 "1.5 mL tube transformation" from strain[0]
+  r = 1 "Transformed E coli 1.5mL tube" of "pLAB1 in Z1"
   note: "Keep the tube on the bench to use in the next protocol."
   location: "Bench"
 end
