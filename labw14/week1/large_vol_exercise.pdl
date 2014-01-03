@@ -6,16 +6,19 @@
 
 <step>
   <description>
-  Take out 2 1.5 mL tubes, close the caps, and label them A and B on the top of each cap.
+  Label Caps
   </description>
   <note>
-  Be careful to always use a sterile technique when handling the tubes.
+  Take out two 1.5 mL tubes, close the caps, and label them A and B on the top of each cap.
   </note>
+  <warning>
+  Be careful to always use a sterile technique when handling the tubes.
+  </warning>
   <image>Labeled_tubes_large_volume_exercise</image>
 </step>
 
 <step>
-  <description>Add Solution I to Tube A.</description>
+  <description>Add Solution I to Tube A</description>
   <note>
   Add 100 μL of Solution I to the tube labeled A, making sure to open and close the caps of the tube and test
   tube by using a sterile technique. Be sure to use the correct pipette and set it to 100 μL before adding a tip.
@@ -24,7 +27,7 @@
 </step>
 
 <step>
-  <description>Add Solution I to Tube B.</description>
+  <description>Add Solution I to Tube B</description>
   <note>
    Using a fresh tip and maintaining a sterile technique, add 150 μL of Solution I to Tube B. Be sure to change 
    the volume of the pipette before adding a new tip.
@@ -33,7 +36,7 @@
 </step>
 
 <step>
-  <description>Add Solution II to Tube A.</description>
+  <description>Add Solution II to Tube A</description>
   <note>
   Using a fresh tip and maintaining a sterile technique, add 200 μL of Solution II to Tube A. Be sure to 
   change the volume of the pipette before adding a new tip.
@@ -42,7 +45,7 @@
 </step>
 
 <step>
-  <description>Add Solution II to tube B.</description>
+  <description>Add Solution II to tube B</description>
   <note>
   Using a fresh tip and maintaining a sterile technique, add 250 μL of Solution II to Tube B. Be sure to change
   the volume of the pipette before adding a new tip.
@@ -51,7 +54,7 @@
 </step>
 
 <step>
-  <description>Add Solution III to tube A.</description>
+  <description>Add Solution III to tube A</description>
   <note>
   Using a fresh tip and maintaining a sterile technique, add 150 μL of Solution III to Tube A. Be sure to change
   the volume of the pipette before adding a new tip.
@@ -60,7 +63,7 @@
 </step>
 
 <step>
-  <description>Add Solution III to tube B.</description>
+  <description>Add Solution III to tube B</description>
   <note>
   Using a fresh tip and maintaining a sterile technique, add 350 μL of Solution III to Tube B. Be sure to change
   the volume of the pipette before adding a new tip.
@@ -69,7 +72,7 @@
 </step>
 
 <step>
-  <description>Add Solution IV to tube A.</description>
+  <description>Add Solution IV to tube A</description>
   <note>
   Using a fresh tip and maintaining a sterile technique, add 550 μL of Solution III to Tube A. Be sure to change
   the volume of the pipette before adding a new tip.
@@ -78,7 +81,7 @@
 </step>
 
 <step>
-  <description>Add Solution IV to tube B.</description>
+  <description>Add Solution IV to tube B</description>
   <note>
   Using a fresh tip and maintaining a sterile technique, add 250 μL of Solution IV to Tube B. Be sure to change
   the volume of the pipette before adding a new tip.
@@ -87,9 +90,9 @@
 </step>
 
 <step>
-  <description>Tube A and Tube B should each contain 1000 μL of liquid.</description>
+  <description>Tube A and Tube B Should Each Contain 1000 μL of Liquid</description>
   <note>
-  This is the total volume. 
+  These are the total volumes. 
   </note>
   <image>Total_volume_large_volume_exercise</image>
 </step>
