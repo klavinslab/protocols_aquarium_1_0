@@ -1,0 +1,18 @@
+place wait
+  marked: true
+end
+
+place one
+  protocol: "plankton/sandbox/one.pl"
+  group: "klavins"
+  marked: false
+  start: now()
+  window: minutes(30)
+end
+
+transition [ wait ] => [ one ] when minutes_elapsed(0,1) end
+transition [ one ] => [] when completed(0) end
+
+
+
+  
