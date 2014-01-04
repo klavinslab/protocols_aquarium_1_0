@@ -9,7 +9,6 @@ end
 
 step
   description: "Put the tube in a small green tube holder and then place in the %{temp}°C incubator, location is B14.310."
-  image: "put_plate_incubator"
 end
 
 modify
