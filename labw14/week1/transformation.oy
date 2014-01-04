@@ -48,7 +48,7 @@ wire (transform,"transformed_cells_id") => (plate,"e_coli_strain_id")
 
 
 place incubate
-  protocol: "labw14/week1/incubate.pl"
+  protocol: "labw14/week1/trans/incubate.pl"
   argument
     temp: 37
   end
