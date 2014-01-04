@@ -5,7 +5,7 @@ argument
 end
 
 place transform
-  protocol: "oyster/trans/transform.pl"
+  protocol: "labw14/week1/trans/transform.pl"
   argument
     plasmid_id: plasmid_id
     e_coli_strain_id: e_coli_strain_id
@@ -19,7 +19,7 @@ end
 
 
 place incubate_tube
-  protocol: "oyster/trans/incubate_tube.pl"
+  protocol: "labw14/week1/trans/incubate_tube.pl"
   argument
     temp: 37
   end
@@ -32,7 +32,7 @@ wire (transform,"transformed_cells_id") => (incubate_tube,"e_coli_strain_id")
 
 
 place plate
-  protocol: "oyster/trans/plate.pl"
+  protocol: "labw14/week1/trans/plate.pl"
   argument
     volume: 200
     plate_type: plate_type
@@ -46,7 +46,7 @@ wire (transform,"transformed_cells_id") => (plate,"e_coli_strain_id")
 
 
 place incubate
-  protocol: "oyster/trans/incubate.pl"
+  protocol: "labw14/week1/incubate.pl"
   argument
     temp: 37
   end
@@ -58,7 +58,7 @@ end
 wire (plate,"plate_id") => (incubate,"e_coli_strain_id")
 
 place image
-  protocol: "oyster/trans/count_colonies.pl"
+  protocol: "labw14/week1/trans/count_colonies.pl"
   group: "transformers"
   start: hours(20)
   window: hours(1)
@@ -67,7 +67,7 @@ end
 wire (plate,"plate_id") => (image,"e_coli_strain_id")
 
 place reimage
-  protocol: "oyster/trans/count_colonies.pl"
+  protocol: "labw14/week1/count_colonies.pl"
   group: "transformers"
   start: now()
   window: hours(1)
