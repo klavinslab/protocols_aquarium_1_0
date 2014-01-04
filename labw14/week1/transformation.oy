@@ -69,7 +69,7 @@ end
 wire (plate,"plate_id") => (image,"e_coli_strain_id")
 
 place reimage
-  protocol: "labw14/week1/count_colonies.pl"
+  protocol: "labw14/week1/trans/image.pl"
   group: "transformers"
   start: now()
   window: hours(1)
