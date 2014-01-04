@@ -1,6 +1,6 @@
 argument
   plasmid_id: sample, "The plasmid stock with which to transform"
-  e_coli_strain_id: sample, "The electrocompetent stock to be transformed"
+  e_coli_strain_id: object, "The electrocompetent aliquot to be transformed"
   plate_type: object, "The plate on which the transformed cells to be plated"
 end
 
