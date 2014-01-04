@@ -1,6 +1,6 @@
 argument
   plasmid_id: sample, "The plasmid stock with which to transform"
-  e_coli_strain_id: object, "The electrocompetent aliquot to be transformed"
+  e_coli_strain_type: object, "The electrocompetent aliquot to be transformed"
   plate_type: object, "The plate on which the transformed cells to be plated"
 end
 
@@ -8,7 +8,7 @@ place transform
   protocol: "labw14/week1/trans/transform.pl"
   argument
     plasmid_id: plasmid_id
-    e_coli_strain_id: e_coli_strain_id
+    e_coli_strain_type: e_coli_strain_type
     plate_type: plate_type
   end
   group: "transformers"
