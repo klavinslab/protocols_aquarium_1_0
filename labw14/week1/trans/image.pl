@@ -35,7 +35,7 @@ step
   description: 
     "Rename the picture in Dropbox"
   note: 
-    "Wait several seconds for the picture uploading to Dropbox. In touch screen computer, open Dropbox/GelImages,
+    "Wait several seconds for the picture uploading to Dropbox. In gel room touch screen computer, open Dropbox/GelImages,
      under today's date folder and find the picture you just took.\n
      Rename the picture as the item number shown on your plate."
 end
