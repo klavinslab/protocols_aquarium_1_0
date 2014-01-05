@@ -1,11 +1,11 @@
 argument
-  e_coli_strain_id_1: sample, "The first plate to be incubated."
+  e_coli_strain_id: sample, "The first plate to be incubated."
 #  e_coli_strain_id_2: sample, "The second plate to be incubated"
   temp: number, "The temperature (in °C) at which to incubate the plate."
 end
 
 take
-  y1 = item e_coli_strain_id_1
+  y1 = item e_coli_strain_id
 #  y2 = item e_coli_strain_id_2
 end
 
