@@ -3,13 +3,13 @@ information "Spread cells onto a 25mL petri dish containing ~25mL agar media."
 argument
    e_coli_strain_id: sample, "A sample"
    volume: number, "The volume (µL) to plate"
-   plate_type_1: object, "Type of plate (from the solidmedia category)"
+   plate_type: object, "Type of plate (from the solidmedia category)"
 #   plate_type_2: object, "Type of inducer plate (from the solidmedia category)"
 end
 
 take
   strain = item e_coli_strain_id
-  plate_1 = 1 plate_type_1
+  plate = 1 plate_type
 #  plate_2 = 1 plate_type_2
 #  beads = 1 "Glass Bead Aliquot (sterile)"
 #  collector = 1 "Glass Bead Waste Collector"
@@ -55,7 +55,7 @@ produce
   r1 = 1 "Transformed E coli plate" of "pLAB1 in Z1"
   note: "Keep the plate on the bench to use in the next protocol (incubating)."
   location: "Bench"
-  release plate_1
+  release plate
 end
 
 #produce
@@ -66,7 +66,7 @@ end
 #end
 
 log
-  return: { plate_id_1: r1[:id]}
+  return: { plate_id: r1[:id]}
 end
   
 release [ strain[0]]
