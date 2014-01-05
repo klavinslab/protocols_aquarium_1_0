@@ -66,7 +66,7 @@ produce
 end
 
 log
-  return: { plate_1_id: r1[:id], plate_2_id: r2[:id]}
+  return: { plate_id_1: r1[:id], plate_id_2: r2[:id]}
 end
   
 release [ strain[0]]
