@@ -57,7 +57,8 @@ place incubate
   window: minutes(1)
 end
 
-wire (plate,"plate_id") => (incubate,"e_coli_strain_id")
+wire (plate,"plate_id_1") => (incubate,"e_coli_strain_id_1")
+wire (plate,"plate_id_2") => (incubate,"e_coli_strian_id_2")
 
 place image
   protocol: "labw14/week1/trans/image.pl"
@@ -66,7 +67,7 @@ place image
   window: hours(1)
 end
 
-wire (plate,"plate_id") => (image,"e_coli_strain_id")
+wire (plate,"plate_id_1") => (image,"e_coli_strain_id")
 
 place reimage
   protocol: "labw14/week1/trans/image.pl"
