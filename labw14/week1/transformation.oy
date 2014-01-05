@@ -40,7 +40,6 @@ place plate
   argument
     volume: 200
     plate_type_1: plate_type_1
-    plate_type_2: plate_type_2
   end
   group: "transformers"
   start: now()
@@ -61,7 +60,6 @@ place incubate
 end
 
 wire (plate,"plate_id_1") => (incubate,"e_coli_strain_id_1")
-wire (plate,"plate_id_2") => (incubate,"e_coli_strian_id_2")
 
 place image
   protocol: "labw14/week1/trans/image.pl"
