@@ -35,7 +35,7 @@ end
 wire (transform,"transformed_cells_id") => (incubate_tube,"e_coli_strain_id")
 
 
-place plate
+place plate_1
   protocol: "labw14/week1/trans/plate.pl"
   argument
     volume: 200
