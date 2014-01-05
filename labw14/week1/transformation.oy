@@ -39,17 +39,30 @@ place plate_1
   protocol: "labw14/week1/trans/plate.pl"
   argument
     volume: 200
-    plate_type_1: plate_type_1
+    plate_type: plate_type_1
   end
   group: "transformers"
   start: now()
   window: minutes(1)
 end
 
-wire (transform,"transformed_cells_id") => (plate,"e_coli_strain_id")
+wire (transform,"transformed_cells_id") => (plate_1,"e_coli_strain_id")
+
+place plate_2
+  protocol: "labw14/week1/trans/plate.pl"
+  argument
+    volume: 200
+    plate_type: plate_type_2
+  end
+  group: "transformers"
+  start: now()
+  window: minutes(1)
+end
+
+wire (transform,"transformed_cells_id") => (plate_2,"e_coli_strain_id")
 
 
-place incubate
+place incubate_1
   protocol: "labw14/week1/trans/incubate.pl"
   argument
     temp: 37
@@ -59,35 +72,72 @@ place incubate
   window: minutes(1)
 end
 
-wire (plate,"plate_id_1") => (incubate,"e_coli_strain_id_1")
+wire (plate_1,"plate_id") => (incubate_1,"e_coli_strain_id")
 
-place image
+place incubate_2
+  protocol: "labw14/week1/trans/incubate.pl"
+  argument
+    temp: 37
+  end
+  group: "transformers"
+  start: now()
+  window: minutes(1)
+end
+
+wire (plate_2,"plate_id") => (incubate_2,"e_coli_strain_id")
+
+place image_1
   protocol: "labw14/week1/trans/image.pl"
   group: "transformers"
   start: hours(20)
   window: hours(1)
 end
 
-wire (plate,"plate_id_1") => (image,"e_coli_strain_id")
+wire (plate_1,"plate_id") => (image_1,"e_coli_strain_id")
 
-place reimage
+
+place image_2
+  protocol: "labw14/week1/trans/image.pl"
+  group: "transformers"
+  start: hours(20)
+  window: hours(1)
+end
+
+wire (plate_2,"plate_id") => (image_2,"e_coli_strain_id")
+
+
+place reimage_1
   protocol: "labw14/week1/trans/image.pl"
   group: "transformers"
   start: now()
   window: hours(1)
 end
 
-wire (plate,"plate_id") => (reimage,"e_coli_strain_id")
+wire (plate_1,"plate_id") => (reimage_1,"e_coli_strain_id")
+
+
+place reimage_2
+  protocol: "labw14/week1/trans/image.pl"
+  group: "transformers"
+  start: now()
+  window: hours(1)
+end
+
+wire (plate_2,"plate_id") => (reimage_2,"e_coli_strain_id")
 
 # forward transitions
 transition [transform] => [plate]    when !error(0) && completed(0) && return_value(0,"tube_incubation_choice") == 0 end
 transition [plate]     => [incubate] when !error(0) && completed(0) end
 transition [transform] => [incubate_tube] when !error(0) && completed(0) && return_value(0,"tube_incubation_choice") == 1 end
-transition [incubate_tube] =>[plate] when !error(0) && completed(0) end
-transition [incubate]  => [image]    when !error(0) && completed(0) end
-transition [image]     => []         when !error(0) && completed(0) end
-transition [reimage]   => []         when !error(0) && completed(0) end
-
+transition [incubate_tube] =>[plate_1] when !error(0) && completed(0) end
+transition [plate_1]   => [plate_2]  when !error(0) && completed(0) end
+transition [plate_2]   => [incubate_1] when !error(0) && completed(0) end
+transition [incubate_1]   => [incubate_2]  when !error(0) && completed(0) end
+transition [incubate_2]  => [image_1]    when !error(0) && completed(0) end
+transition [image_1]  => [image_2]    when !error(0) && completed(0) end
+transition [image_2]     => []         when !error(0) && completed(0) end
+transition [reimage_1]   => []         when !error(0) && completed(0) end
+transition [reimage_2]   => []         when !error(0) && completed(0) end
 
 # rework transitions
 transition [transform] => [transform] when error(0) end
