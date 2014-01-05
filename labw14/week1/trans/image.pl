@@ -33,24 +33,11 @@ end
 
 step
   description: 
-    "Put the picture into software and get the count."
+    "Rename the picture in Dropbox"
   note: 
-    "Wait several seconds for the picture uploading to Dropbox. In the plate reader computer, open Dropbox/GelImages,
+    "Wait several seconds for the picture uploading to Dropbox. In touch screen computer, open Dropbox/GelImages,
      under today's date folder and find the picture you just took.\n
-     Open the OpenCFU software, drag the picture into the software and wait for the
-     software to count the colonies"
-end
-
-step
-  description: 
-    "Record the count."
-  note:
-    "If the software recognizes the coloines correctly and give a reasonbale count, record
-     that number below. If not, count the number of colonies by dividing up the plate in
-     four regions, get the count in each region and sum up as the final count." 
-  getdata
-    count: number, "Enter the count."
-  end
+     Rename the picture as the item number shown on your plate.
 end
 
 step
