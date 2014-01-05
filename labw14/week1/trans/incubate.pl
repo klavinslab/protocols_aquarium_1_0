@@ -1,5 +1,5 @@
 argument
-  e_coli_strain_id: sample, "The first plate to be incubated."
+  e_coli_strain_id: sample, "The plate to be incubated."
 #  e_coli_strain_id_2: sample, "The second plate to be incubated"
   temp: number, "The temperature (in °C) at which to incubate the plate."
 end
