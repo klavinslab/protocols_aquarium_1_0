@@ -99,7 +99,7 @@ wire (plate_1,"plate_id") => (image_1,"e_coli_strain_id")
 place image_2
   protocol: "labw14/week1/trans/image.pl"
   group: "transformers"
-  start: hours(20)
+  start: now()
   window: hours(1)
 end
 
