@@ -43,7 +43,7 @@ place plate
     plate_type_2: plate_type_2
   end
   group: "transformers"
-  start: minutes(1)
+  start: now()
   window: minutes(1)
 end
 
