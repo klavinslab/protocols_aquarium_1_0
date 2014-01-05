@@ -10,8 +10,8 @@ take
 end
 
 step
-  description: "Put the plates in the %{temp}°C incubator, location is B14.310."
-  note: "Incubate the plates upside-down (lid on the bottom) to prevent condensation."
+  description: "Put the plate(s) in the %{temp}°C incubator, location is B14.310."
+  note: "Incubate the plate(s) upside-down (lid on the bottom) to prevent condensation."
   image: "put_plate_incubator"
 end
 
