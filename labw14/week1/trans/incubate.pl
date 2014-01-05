@@ -1,12 +1,12 @@
 argument
   e_coli_strain_id_1: sample, "The first plate to be incubated."
-  e_coli_strain_id_2: sample, "The second plate to be incubated"
+#  e_coli_strain_id_2: sample, "The second plate to be incubated"
   temp: number, "The temperature (in °C) at which to incubate the plate."
 end
 
 take
   y1 = item e_coli_strain_id_1
-  y2 = item e_coli_strain_id_2
+#  y2 = item e_coli_strain_id_2
 end
 
 step
@@ -21,8 +21,3 @@ modify
   inuse:0
 end
 
-modify
-  y2[0]
-  location:"B14.310"
-  inuse:0
-end
