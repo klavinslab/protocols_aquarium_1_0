@@ -1,4 +1,4 @@
-information "Spread cells onto a 25mL petri dish containing ~25mL agar media."
+information "Spread cells onto a petri dish containing ~25mL agar media."
 
 argument
    e_coli_strain_id: sample, "A sample"
