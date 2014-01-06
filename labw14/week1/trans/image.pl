@@ -4,12 +4,10 @@ end
 
 step
   description: 
-    "This protocol describes how to take a plate from an incubator and 
-     count number of colonies on the plate." 
+    "This protocol describes how to take a picuture of a plate." 
   note: 
     "In this protocol you will use the gel station camera to take a picture
-     of the plate and use software on the plate reader computer to process 
-     the image to get the count of colonies."
+     of the plate."
 end
 	
 take
