@@ -9,6 +9,14 @@ e_coli_strain_type = "MG1655Z1 Electrocompetent Aliquot"
 plate_type_1 = "LB Kan Plate (sterile)"
 plate_type_2 = "LB Kan Plate (sterile) 0.25 mM IPTG"
 
+place transform_find
+  protocol: "labw14/week1/trans/transform_plating_find.pdl"
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
 place transform
   protocol: "labw14/week1/trans/transform.pl"
   argument
@@ -17,9 +25,8 @@ place transform
     plate_type: plate_type_1
   end
   group: aquarium_user
-  marked: true
   start: now()
-  window: minutes(30)
+  window: minutes(1)
 end
 
 
@@ -127,6 +134,7 @@ end
 wire (plate_2,"plate_id") => (reimage_2,"transformed_e_coli_strain_id")
 
 # forward transitions
+transition [transform_find] => [transform] when !error(0) && completed(0) && return_value(0,"Status") == 'Fail' end
 transition [transform] => [incubate_tube] when !error(0) && completed(0) && return_value(0,"tube_incubation_choice") == 1 end
 transition [incubate_tube] =>[plate_1] when !error(0) && completed(0) end
 transition [plate_1]   => [plate_2]  when !error(0) && completed(0) end
@@ -139,6 +147,7 @@ transition [reimage_1]   => []         when !error(0) && completed(0) end
 transition [reimage_2]   => []         when !error(0) && completed(0) end
 
 # rework transitions
+transition [transform_find]     => [transform_find]    when error(0) || ( completed(0) && return_value(0,"Status") == 'Pass') end
 transition [transform] => [transform] when error(0) end
 transition [plate_1]     => [plate_1]     when error(0) end
 transition [plate_2]     => [plate_2]     when error(0) end
