@@ -97,8 +97,8 @@ wire (plate_2,"plate_id") => (incubate_2,"e_coli_strain_id")
 place image_1
   protocol: "labw14/week1/trans/image.pl"
   group: aquarium_user
-  start: now()
-  window: hours(1)
+  start: hours(18)
+  window: hours(4)
 end
 
 wire (plate_1,"plate_id") => (image_1,"transformed_e_coli_strain_id")
