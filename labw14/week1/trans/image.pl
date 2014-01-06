@@ -11,7 +11,7 @@ step
 end
 	
 take
-  y = item transformed_e_coli_strain_id
+  y = item Transformed_E_coli_Strain_id
 end
 
 step
