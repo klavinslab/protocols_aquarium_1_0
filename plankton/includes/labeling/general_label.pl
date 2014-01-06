@@ -21,22 +21,12 @@ end
 #argument
 #  copies: number, "The number of labels to print."
 #end
-
-
-text_label = object_type + " | " + "id: " + item_id
-
-
-# Try to print to the label printer
-include "plankton/includes/devices/labelprinter.pl"
-  text: text_label
-  qrcode: item_id
-  printed = printed
-end
+printed = "False"
 
 
 if printed == "False"
   step
     description: "Label"
-    note: "Label a piece of white lab tape with:\n\n%{text_label}"
+    note: "Label a piece of white lab tape with:\n\n%{object_type} | id: %{item_id}"
   end
 end
