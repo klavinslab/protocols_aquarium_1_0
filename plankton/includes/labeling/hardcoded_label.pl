@@ -1,2 +1,4 @@
-include "plankton/includes/devices/labprinter.pl"
+include "plankton/includes/devices/labelprinter.pl"
+  text: "test"
+  qrcode: "1234"
 end

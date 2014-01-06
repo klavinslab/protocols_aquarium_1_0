@@ -2,8 +2,12 @@ information "Pour LB plates from 200, 400, or 800 mL sources."
 
 
 argument
+  n: number, "Enter the number of bottles you are pouring."
   volume: number, "Enter the volume of LB Agar you are pouring in mL. Valid options are 200, 400, or 800."
   antibiotic: string, "Enter the type of antibiotic you want. Valid options are Amp, Kan, Chlor or None."
+  iptg: string, "Add IPTG? Enter Yes or No."
+  atc: string, "Add aTc? Enter Yes or No."
+  xgal: string, "Add X-gal? Enter Yes or No."
 end
 
 
@@ -15,6 +19,32 @@ if volume != 200 && volume != 400 && volume != 800
     end
   end
 end
+if iptg != "Yes" || iptg != "No"
+  step
+    description: "The IPTG preference was incorrectly entered as %{iptg}."
+    getdata
+      iptg: string, "Add IPTG?", ["Yes", "No"]
+    end
+  end
+end
+if atc != "Yes" || iptg != "No"
+  step
+    description: "The aTc preference was incorrectly entered as %{atc}."
+    getdata
+      atc: string, "Add aTc?", ["Yes", "No"]
+    end
+  end
+end
+if xgal != "Yes" || iptg != "No"
+  step
+    description: "The X-gal preference was incorrectly entered as %{xgal}."
+    getdata
+      xgal: string, "Add X-gal?", ["Yes", "No"]
+    end
+  end
+end
+
+
 if volume == 200
   bottle_type = "LB Agar: 200 mL"
 elsif volume == 400
@@ -52,26 +82,74 @@ end
 
 
 take
-  bottle = 1 bottle_type
-  antibiotic_aliquots = antibiotic_number antibiotic_name
-  hot_plate = 1 "Hot/Stir Plate"
+  bottles = n bottle_type
 end
 
 
-step
-  description: "Thaw the antibiotic aliquot(s)"
-  note: "The aliquots should thaw at room temperature within 10 minutes. You can melt them faster by heating with your hand and vortexing."
+if antibiotic != "None"
+  take
+    antibiotic_aliquots = antibiotic_number antibiotic_name
+  end
+
+  step
+    description: "Thaw the antibiotic aliquot(s)"
+    note: "The aliquots should thaw at room temperature within 10 minutes. You can melt them faster by heating with your hand and vortexing."
+ end
+
+  step
+    description: "Add %{antibiotic_volume} mL of %{antibiotic_name}"
+    note: "Repeat this step for each bottle. If possible, keep bottles at in a 37°C heat bath or incubator when not on a hot plate. Otherwise, work quickly.\n\nBottle setup: keep the bottle on the hot plate at B1.335 while adding antibiotics. Keep the bottle capped whenever you aren't immediately pipetting in antibiotics.\n\nPipetting: for each aliquot, spin on benchtop minifuge before opening. Using a 1000 µL micropipette, add a total of %{antibiotic_volume} mL of antibiotic solution to the LB Agar bottle. You can add 1000 µL at a time. Ampicillin sticks to the side of the pipet tip, but you can ignore small amounts of residue.\n\nRecap the bottle when finished."
+    warning: "Make sure the media is at about 50°C (compare to the 50°C heat block using your hand)"
+  end
+end
+
+if iptg == "Yes"
+  take
+    iptg_aliquot = 1 "IPTG 1M stock solution"
+  end
+
+  iptg_volume = 120 * volume / 800
+
+  step
+    description: "Add %{iptg_volume} µL of IPTG"
+    note: "Repeat this step for each bottle. If possible, keep bottles at in a 37°C heat bath or incubator when not on a hot plate. Otherwise, work quickly.\n\nBottle setup: keep the bottle on the hot plate at B1.335 while adding IPTG. Keep the bottle capped whenever you aren't immediately pipetting in antibiotics.\n\nPipetting: for each aliquot, spin on benchtop minifuge before opening. Using a 1000 µL micropipette, add a total of %{iptg_volume} µL of antibiotic solution to the LB Agar bottle. You can add 1000 µL at a time.\n\nRecap the bottle when finished."
+    warning: "Make sure the media is at about 50°C (compare to the 50°C heat block using your hand)"
+  end
 end
 
 
-step
-  description: "Add %{antibiotic_volume} mL of %{antibiotic_name}"
-  note: "Bottle setup: keep the bottle on the hot plate while adding antibiotics. Keep the bottle capped whenever you aren't immediately pipetting in antibiotics.\n\nPipetting: for each aliquot, spin on benchtop minifuge before opening. Using a 1000 µL micropipette, add a total of %{antibiotic_volume} mL of antibiotic solution to the LB Agar bottle. You can add 1000 µL at a time. Ampicillin sticks to the side of the pipet tip, but you can ignore small amounts of residue.\n\nRecap the bottle when finished."
-  warning: "Make sure the media is at about 50°C (compare to the 50°C heat block using your hand)"
+if atc == "Yes"
+  # FIXME: add this to inventory
+  take
+    atc = "aTc 100 mg/mL stock solution"
+  end
+
+  # FIXME: Figure out this calculation (currently is the one for IPTG)
+  atc_volume = 120 * volume / 800
+
+  step
+    description: "Add %{atc_volume} µL of aTc"
+    note: "Repeat this step for each bottle. If possible, keep bottles at in a 37°C heat bath or incubator when not on a hot plate. Otherwise, work quickly.\n\nBottle setup: keep the bottle on the hot plate at B1.335 while adding aTc. Keep the bottle capped whenever you aren't immediately pipetting in antibiotics.\n\nPipetting: for each aliquot, spin on benchtop minifuge before opening. Using a 1000 µL micropipette, add a total of %{atc_volume} µL of antibiotic solution to the LB Agar bottle. You can add 1000 µL at a time.\n\nRecap the bottle when finished."
+    warning: "Make sure the media is at about 50°C (compare to the 50°C heat block using your hand)"
+  end
 end
 
 
-release hot_plate
+if xgal == "Yes"
+  take
+    xgal_aliquot = 1 "xgal stock solution"
+  end
+
+
+  # FIXME: Figure out this calculation (currently is the one for IPTG)
+  xgal_volume = 1600 * volume / 800
+
+  step
+    description: "Add %{xgal_volume} µL of X-gal"
+    note: "Repeat this step for each bottle. If possible, keep bottles at in a 37°C heat bath or incubator when not on a hot plate. Otherwise, work quickly.\n\nBottle setup: keep the bottle on the hot plate at B1.335 while adding aTc. Keep the bottle capped whenever you aren't immediately pipetting in antibiotics.\n\nPipetting: for each aliquot, spin on benchtop minifuge before opening. Using a 1000 µL micropipette, add a total of %{xgal_volume} µL of antibiotic solution to the LB Agar bottle. You can add 1000 µL at a time.\n\nRecap the bottle when finished."
+    warning: "Make sure the media is at about 50°C (compare to the 50°C heat block using your hand)"
+  end
+end
 
 
 step
@@ -82,7 +160,7 @@ end
 
 step
   description: "Pour 25 mL of media into each plate."
-  note: "Uncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25 mL. Replace the petri dish lid and mark the side with a marker: purple for Amp, green for Kan, and blue for Chlor. Repeat for every plate."
+  note: "Repeat this step for each bottle.\n\nUncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25 mL. Replace the petri dish lid and mark the side with a marker: purple for Amp, green for Kan, and blue for Chlor. Repeat for every plate."
   getdata
     plates_poured: number, "Enter the number of plates you actually poured."
   end
@@ -97,7 +175,7 @@ end
 
 step
   description: "Stack and label."
-  note: "Once the plates are cool, invert all of them lid down. Stack them (lid down) in groups of about 20. Label a piece of lab tape with LB, the antibiotic type, your initials, and the date. Apply the tape to the top plate on the stack."
+  note: "Once the plates are cool, invert all of them lid down. Stack them (lid down) in groups of about 20. Label a piece of lab tape with LB, the antibiotic type if applicable, the inducer if applicable, X-gal if applicable. Apply the tape to the top plate on the stack."
 end
 
 
@@ -133,14 +211,14 @@ end
 
 if volume == 200
   produce
-    1 "1 L Bottle (dirty)"
+    n "1 L Bottle (dirty)"
   end
 elsif volume == 400
   produce
-    1 "500 mL Bottle (dirty)"
+    n "500 mL Bottle (dirty)"
   end
 else
   produce
-    1 "250 mL Bottle (dirty)"
+    n "250 mL Bottle (dirty)"
   end
 end

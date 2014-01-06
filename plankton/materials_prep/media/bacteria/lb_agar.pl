@@ -1,4 +1,5 @@
 information "Prepare unsterile bottle(s) of 800 mL LB Agar (rich media for bacteria), ready to be autoclaved."
+# FIXME: parameterize for adding IPTG, aTc, X-Gal
 
 
 product_name = "800 mL LB Agar (unsterile)"
@@ -73,7 +74,7 @@ end
 
 produce
   produced_bottles = n_bottle product_name
-  elease bottles
+  release bottles
   note: "Write %{product_name} and the date on the label in addition to the above id number."
   location: "B1.320"
 end

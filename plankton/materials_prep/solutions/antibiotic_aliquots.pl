@@ -21,6 +21,7 @@ if antibiotic_type != "Amp" && antibiotic_type != "Kan" && antibiotic_type != "C
 end
 
 
+# TODO: make this an argument?
 if antibiotic_type == "Amp"
   step
     description: "How many ampicillin stock bottles do you want to use?"

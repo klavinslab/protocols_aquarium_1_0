@@ -18,10 +18,12 @@ if antibiotic_type != "Amp" && antibiotic_type != "Kan" && antibiotic_type != "C
 end
 
 
+# FIXME: images for these, especially ampicillin since it's not obvious it's a brown bottle
 if antibiotic_type == "Amp"
   take
     antibiotic = n_bottles "Ampicillin Sodium Salt"
   end
+  # FIXME: no autoclave tape on this - step shouldn't apply.
 elsif antibiotic_type == "Kan"
   take
     bottles = n_bottles "100 mL Bottle"
@@ -62,6 +64,7 @@ if antibiotic_type == "Kan"
     water = 1 "Molecular Biology Grade Water"
   end
 
+  # TODO: add serological pipetter to inventory, take/release it?
   step
     description: "Add 50 mL molecular grade water"
     note: "Using a serological pipetter, add 50 mL molecular grade water to each bottle. Use a new pipet for each bottle."
