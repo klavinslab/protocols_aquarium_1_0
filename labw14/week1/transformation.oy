@@ -16,7 +16,7 @@ place transform
     e_coli_strain_type: e_coli_strain_type
     plate_type: plate_type_1
   end
-  group: "transformers"
+  group: aquarium_user
   marked: true
   start: now()
   window: minutes(30)
@@ -28,7 +28,7 @@ place incubate_tube
   argument
     temp: 37
   end
-  group: "transformers"
+  group: aquarium_user
   start: now()
   window: minutes(1)
 end
@@ -42,7 +42,7 @@ place plate_1
     volume: 200
     plate_type: plate_type_1
   end
-  group: "transformers"
+  group: aquarium_user
   start: now()
   window: minutes(1)
 end
@@ -55,7 +55,7 @@ place plate_2
     volume: 200
     plate_type: plate_type_2
   end
-  group: "transformers"
+  group: aquarium_user
   start: now()
   window: minutes(1)
 end
@@ -68,7 +68,7 @@ place incubate_1
   argument
     temp: 37
   end
-  group: "transformers"
+  group: aquarium_user
   start: now()
   window: minutes(1)
 end
@@ -80,7 +80,7 @@ place incubate_2
   argument
     temp: 37
   end
-  group: "transformers"
+  group: aquarium_user
   start: now()
   window: minutes(1)
 end
@@ -89,7 +89,7 @@ wire (plate_2,"plate_id") => (incubate_2,"e_coli_strain_id")
 
 place image_1
   protocol: "labw14/week1/trans/image.pl"
-  group: "transformers"
+  group: aquarium_user
   start: minutes(1)
   window: hours(1)
 end
@@ -99,7 +99,7 @@ wire (plate_1,"plate_id") => (image_1,"e_coli_strain_id")
 
 place image_2
   protocol: "labw14/week1/trans/image.pl"
-  group: "transformers"
+  group: aquarium_user
   start: now()
   window: hours(1)
 end
@@ -109,7 +109,7 @@ wire (plate_2,"plate_id") => (image_2,"e_coli_strain_id")
 
 place reimage_1
   protocol: "labw14/week1/trans/image.pl"
-  group: "transformers"
+  group: aquarium_user
   start: now()
   window: hours(1)
 end
@@ -119,7 +119,7 @@ wire (plate_1,"plate_id") => (reimage_1,"e_coli_strain_id")
 
 place reimage_2
   protocol: "labw14/week1/trans/image.pl"
-  group: "transformers"
+  group: aquarium_user
   start: now()
   window: hours(1)
 end
