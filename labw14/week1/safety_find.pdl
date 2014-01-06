@@ -520,7 +520,7 @@
 
 	<step>
 		<description> Where are the goggles? </description>
-		<note> Their location is B3.230. \nPlease go to the goggles, note the color of the dot that is on or near them, and then return to the computer. 
+		<note> Their location is B7.235. \nPlease go to the goggles, note the color of the dot that is on or near them, and then return to the computer. 
 		\nThe goggles are in the drawer at the given location. 
 		\n\nWhat color was the dot associated with the goggles?</note>
 		<image>goggles</image>
