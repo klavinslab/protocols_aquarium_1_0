@@ -11,6 +11,13 @@ place safety_find
   window: minutes(30)
 end
 
+place sterile_technique
+  protocol: "labw14/week1/sterile_technique.pdl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
 place pipetting_intro
   protocol: "labw14/week1/pipetting_intro.pdl"
   group: aquarium_user
