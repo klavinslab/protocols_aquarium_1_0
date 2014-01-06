@@ -134,7 +134,7 @@ end
 wire (plate_2,"plate_id") => (reimage_2,"transformed_e_coli_strain_id")
 
 # forward transitions
-transition [transform_find] => [transform] when !error(0) && completed(0) && return_value(0,"Status") == 'Fail' end
+transition [transform_find] => [transform] when !error(0) && completed(0) && return_value(0,"Status") == "Pass" end
 transition [transform] => [incubate_tube] when !error(0) && completed(0) && return_value(0,"tube_incubation_choice") == 1 end
 transition [incubate_tube] =>[plate_1] when !error(0) && completed(0) end
 transition [plate_1]   => [plate_2]  when !error(0) && completed(0) end
@@ -147,7 +147,7 @@ transition [reimage_1]   => []         when !error(0) && completed(0) end
 transition [reimage_2]   => []         when !error(0) && completed(0) end
 
 # rework transitions
-transition [transform_find]     => [transform_find]    when error(0) || ( completed(0) && return_value(0,"Status") == 'Pass') end
+transition [transform_find]     => [transform_find]    when error(0) || ( completed(0) && return_value(0,"Status") == "Fail") end
 transition [transform] => [transform] when error(0) end
 transition [plate_1]     => [plate_1]     when error(0) end
 transition [plate_2]     => [plate_2]     when error(0) end
