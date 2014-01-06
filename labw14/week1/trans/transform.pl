@@ -106,5 +106,5 @@ log
   return: { transformed_cells_id: r[:id], tube_incubation_choice : tube_incubation_choice }
 end
 
-release [falcon_tube[0],plasmid[0],iceblock[0],strain[0],alrack[0],cuvette[0]]
+release [falcon_tube[0],plasmid[0],alrack[0],iceblock[0],strain[0],cuvette[0]]
 
