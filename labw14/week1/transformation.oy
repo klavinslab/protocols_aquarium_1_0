@@ -10,7 +10,7 @@ plate_type_1 = "LB Kan Plate (sterile)"
 plate_type_2 = "LB Kan Plate (sterile) 0.25 mM IPTG"
 
 place transform_find
-  protocol: "labw14/week1/trans/transform_plating_find.pdl"
+  protocol: "labw14/week1/transform_plating_find.pdl"
   group: aquarium_user
   marked: true
   start: now()
