@@ -4,10 +4,10 @@ end
 
 step
   description: 
-    "This protocol describes how to take a picuture of a plate." 
+    "This protocol describes how to take a picuture of a plate and count number of colonies on the plate." 
   note: 
     "In this protocol you will use the gel station camera to take a picture
-     of the plate."
+     of the plate and use software or human eye to get colony count on the plate."
 end
 	
 take
@@ -36,6 +36,25 @@ step
     "Wait several seconds for the picture uploading to Dropbox. In gel room touch screen computer, open Dropbox/GelImages,
      under today's date folder and find the picture you just took.\n
      Rename the picture as the item number shown on your plate."
+end
+
+step
+  description: 
+    "Drag the picture into OpenCFU software and get the count."
+  note: 
+    "Open the OpenCFU software, drag the picture into the software and wait for the software to count the colonies."
+end
+
+step
+  description: 
+    "Record the count."
+  note:
+    "If the software recognizes the coloines correctly and give a reasonbale count, record
+     that number below. If not, count the number of colonies by dividing up the plate in
+     four regions, get the count in each region and sum up as the final count." 
+  getdata
+    count: number, "Enter the count."
+  end
 end
 
 step
