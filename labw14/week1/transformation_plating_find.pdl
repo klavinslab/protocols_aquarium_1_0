@@ -384,4 +384,5 @@
                                 <log><type>MESSAGE</type><data>%{Status}</data></log>
                 </else>
 </if>
+<log><type>return</type><data>{ :Status => %{Status} }</data></log>
 </protocol>
