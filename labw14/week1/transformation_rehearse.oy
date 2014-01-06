@@ -1,0 +1,151 @@
+argument
+  plasmid_id: sample, "The plasmid stock with which to transform"
+#  e_coli_strain_type: object, "The electrocompetent aliquot to be transformed"
+#  plate_type_1: object, "The plate on which the transformed cells to be plated"
+#  plate_type_2: object, "The inducer plate on which the transformed cells to be plated"
+end
+
+e_coli_strain_type = "MG1655Z1 Electrocompetent Aliquot"
+plate_type_1 = "LB Kan Plate (sterile)"
+plate_type_2 = "LB Kan Plate (sterile) 0.25 mM IPTG"
+
+place transform
+  protocol: "labw14/week1/trans/transform.pl"
+  argument
+    plasmid_id: plasmid_id
+    e_coli_strain_type: e_coli_strain_type
+    plate_type: plate_type_1
+  end
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+
+place incubate_tube
+  protocol: "labw14/week1/trans/incubate_tube.pl"
+  argument
+    temp: 37
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+wire (transform,"transformed_cells_id") => (incubate_tube,"e_coli_strain_id")
+
+
+place plate_1
+  protocol: "labw14/week1/trans/plate.pl"
+  argument
+    volume: 200
+    plate_type: plate_type_1
+  end
+  group: aquarium_user
+  start: minutes(1)
+  window: minutes(1)
+end
+
+wire (transform,"transformed_cells_id") => (plate_1,"e_coli_strain_id")
+
+place plate_2
+  protocol: "labw14/week1/trans/plate.pl"
+  argument
+    volume: 200
+    plate_type: plate_type_2
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+wire (transform,"transformed_cells_id") => (plate_2,"e_coli_strain_id")
+
+
+place incubate_1
+  protocol: "labw14/week1/trans/incubate.pl"
+  argument
+    temp: 37
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+wire (plate_1,"plate_id") => (incubate_1,"e_coli_strain_id")
+
+place incubate_2
+  protocol: "labw14/week1/trans/incubate.pl"
+  argument
+    temp: 37
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+wire (plate_2,"plate_id") => (incubate_2,"e_coli_strain_id")
+
+place image_1
+  protocol: "labw14/week1/trans/image.pl"
+  group: aquarium_user
+  start: minutes(1)
+  window: hours(1)
+end
+
+wire (plate_1,"plate_id") => (image_1,"e_coli_strain_id")
+
+
+place image_2
+  protocol: "labw14/week1/trans/image.pl"
+  group: aquarium_user
+  start: now()
+  window: hours(1)
+end
+
+wire (plate_2,"plate_id") => (image_2,"e_coli_strain_id")
+
+
+place reimage_1
+  protocol: "labw14/week1/trans/image.pl"
+  group: aquarium_user
+  start: now()
+  window: hours(1)
+end
+
+wire (plate_1,"plate_id") => (reimage_1,"e_coli_strain_id")
+
+
+place reimage_2
+  protocol: "labw14/week1/trans/image.pl"
+  group: aquarium_user
+  start: now()
+  window: hours(1)
+end
+
+wire (plate_2,"plate_id") => (reimage_2,"e_coli_strain_id")
+
+# forward transitions
+transition [transform] => [incubate_tube] when !error(0) && completed(0) && return_value(0,"tube_incubation_choice") == 1 end
+transition [incubate_tube] =>[plate_1] when !error(0) && completed(0) end
+transition [plate_1]   => [plate_2]  when !error(0) && completed(0) end
+transition [plate_2]   => [incubate_1] when !error(0) && completed(0) end
+transition [incubate_1]   => [incubate_2]  when !error(0) && completed(0) end
+transition [incubate_2]  => [image_1]    when !error(0) && completed(0) end
+transition [image_1]  => [image_2]    when !error(0) && completed(0) end
+transition [image_2]     => []         when !error(0) && completed(0) end
+transition [reimage_1]   => []         when !error(0) && completed(0) end
+transition [reimage_2]   => []         when !error(0) && completed(0) end
+
+# rework transitions
+transition [transform] => [transform] when error(0) end
+transition [plate_1]     => [plate_1]     when error(0) end
+transition [plate_2]     => [plate_2]     when error(0) end
+transition [incubate_tube] => [incubate_tube] when error(0) end
+transition [incubate_1]  => [incubate_1]  when error(0) end
+transition [incubate_2]  => [incubate_2]  when error(0) end
+transition [image_1]     => [reimage_1]   when error(0) end
+transition [reimage_1]   => [reimage_1]   when error(0) end
+transition [image_2]     => [reimage_2]   when error(0) end
+transition [reimage_2]   => [reimage_2]   when error(0) end
