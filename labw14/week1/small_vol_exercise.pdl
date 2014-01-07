@@ -5,11 +5,12 @@
 
 <step>
   <description>
-  Take out 3 1.5 mL tubes, close the caps, and label them C - E on the top of each cap.
+  Label the Tubes.
   </description>
   <note>
-  Be careful to always use a sterile technique when handling the tubes.
+  Take out 3 1.5 mL tubes, close the caps, and label them C - E on the top of each cap.
   </note>
+  <warning>Be careful to always use a sterile technique when handling the tubes.</warning>
   <image>labeled_tubes_small_volume_exercise</image>
 </step>
 
@@ -109,7 +110,7 @@
 <step>
   <description>Tubes C, D, and E should each contain 10 μL of liquid.</description>
   <note>
-  This is the total volume.
+  These are the total volumes.
   </note>
   <image>10_mL_total_small_volume_exercise</image>
 </step>
