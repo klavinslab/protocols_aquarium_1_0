@@ -1,7 +1,6 @@
 
-
 place safety
-  protocol: "labw14/week1/safety.pdl"
+  protocol: "labw14/week1/safety.pl"
   group: aquarium_user
   marked: true
   start: now()
