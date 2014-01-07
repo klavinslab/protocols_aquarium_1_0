@@ -71,7 +71,7 @@
 
         <step>
 		<description> Where are the sterile beads? </description>
-                <note> Their location is B5.470. \nPlease go to the sterile beads, note the color of the dot that is on or near them, and then return to the computer.
+                <note> Their location is B7.415 or B9.415. \nPlease go to the sterile beads, note the color of the dot that is on or near them, and then return to the computer.
                 \n\nWhat color was the dot associated with the sterile beads? </note>
                 <image>conical_sterile_beads</image>
                 <select>
@@ -221,7 +221,7 @@
 
         <step>
                 <description> Where is the -80 degree freezer? </description>
-                <note> Its location is D2.140. \nPlease go to the -80 degree freezer, note the color of the dot that is on or near it, and then return to the computer. 
+                <note> Its location is C0.000. \nPlease go to the -80 degree freezer, note the color of the dot that is on or near it, and then return to the computer. 
 		\n\nWhat color was the dot associated with the -80 degree freezer?</note>
                 <image>-80_freezer</image>
                 <select>
