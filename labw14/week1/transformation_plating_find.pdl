@@ -311,58 +311,7 @@
                 </else>
    
         </if>
-        </do>
-        </while>
 
-        <assign><lhs>task</lhs><rhs>0</rhs></assign>
-
-        <while>
-        <condition>%{task}==0</condition>
-        <do>
-
-        <step>
-                <description> Where is the LB media located? </description>
-                <note> Its location is B1.465. \nPlease go to the LB media, note the color of the dot that is on or near it, and then return to the computer. 
-		\n\nWhat color was the dot associated with the LB media? </note>
-                <image>LB_media</image>
-                <select>
-                        <var>answer</var>
-                        <description>Please select the correct color</description>
-                        <choice>purple</choice>
-                        <choice>green</choice>
-                        <choice>yellow</choice>
-                        <choice>blue</choice>
-                </select>
-        </step>
-
-        <if>
-
-        <condition>%{answer} == 'yellow'</condition>
-
-                <then>
-                        <assign><lhs>task</lhs><rhs>1</rhs></assign>
-                        <step>
-                                <description> That is correct! </description>
-                                <note> You have successfully located the LB media which is used for ecoli transformation.</note>
-                        </step>
-
-                </then>
-
-                <else>
-   
-                        <step>
-                                <description>That is incorrect.</description>
-                                <note>Please return to the LB media and then answer again.</note>
-                                <image>LB_media</image>
-                        </step>
-                        <assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
-                        <assign><lhs>Status</lhs><rhs>'Fail - LB media'</rhs></assign>
-                        <log><type>MESSAGE</type><data>%{Status}</data></log>
-                </else>
-   
-        </if>
-        </do>
-        </while>
         <if> 
         <condition>%{numberWrong} > 1</condition>
                 <then>
