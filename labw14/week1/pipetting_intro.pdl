@@ -18,11 +18,8 @@
   <description>Understand the difference between the three pipettes.</description>
   <note>
   We use three different pipettes in this lab that pipette three different volumes. They can generally be
-  thought of as small, medium, and large volume pipettes: the pipette with the red button pipettes small volumes
-  (0.5 - 10 µL), the one with the green button pipettes medium volumes (10 - 100 µL), and the pipette with
-  the blue button pipettes large volumes (100 - 1000 µL). Each pipette fits a different size of tip, the tips each
-  pipette fits corresponds to the color of the tip box. For example, the large volume (blue) pipettor fits tips 
-  from the blue box.
+  thought of as small, medium, and large volume pipettes: the small pipette pipettes small volumes
+  (0.5 - 10 µL), the medium pipette pipettes medium volumes (10 - 100 µL), and the large pipette pipettes large volumes (100 - 1000 µL). Each pipette fits a different size of tip, and each tip size has its own box.
   </note>
   <image>Three_different_pipettes_pipetting_intro</image>
 </step>
@@ -43,10 +40,10 @@
   The current volume of a pipette is read from the number screen, from top to bottom. The actual volume
   of the pipette depends on what pipette is being used, and what the min/max is. The numbers can be read as
   a percentage of the maximum volume. For example, a reading of 010 means 10 percent of the max volume. For 
-   the small volume (red) pipette, 010 or 10 percent of the the max volume is 1 µL, for the medium volume
-  (green) pipette, 010 is 10 µL, and for the large volume (blue) pipette, 010 is 100 µL.
+   the small volume pipette, 010 or 10 percent of the the max volume is 1 µL, for the medium volume
+  pipette, 010 is 10 µL, and for the large volume pipette, 010 is 100 µL.
   To change the volume of the pipette, slide the notch at the top of the pipette from locked (a closed lock)
-  to unlocked (an open lock.) The volume can be changed by rotating the button clockwise (smaller volume) or
+  to unlocked (an open lock). Note that some of the pipettes do not have a locked or unlocked position. The volume can be changed by rotating the button clockwise (smaller volume) or
   counterclockwise (larger volume.) Once the pipette is set to the correct volume, slide the notch back to the locked
   position.
   </note>
