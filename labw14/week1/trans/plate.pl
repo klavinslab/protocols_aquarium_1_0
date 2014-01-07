@@ -69,5 +69,10 @@ log
   return: { plate_id: r1[:id]}
 end
   
-release [ strain[0]]
+modify
+  strain[0]
+  location:"Bench"
+  inuse:0
+end
+
  
