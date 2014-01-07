@@ -170,9 +170,9 @@
         <do>
 
         <step>
-		<description> Where is the -20 degree freezer? </description>
-                <note> Its location is D2.115. \nPlease go to the -20 degree freezer, note the color of the dot that is on or near it, and then return to the computer.
-		\n\nWhat color was the dot associated with the -20 degree freezer? </note>
+		<description> Where is the M20 freezer? </description>
+                <note> Its location is D2.115. \nPlease go to the M20 freezer, note the color of the dot that is on or near it, and then return to the computer.
+		\n\nWhat color was the dot associated with the M20 freezer? </note>
                 <image>-20_freezer</image>
                 <select>
                         <var>answer</var>
@@ -192,7 +192,7 @@
                         <assign><lhs>task</lhs><rhs>1</rhs></assign>
                         <step>
                                 <description> That is correct! </description>
-                                <note> You have successfully located the -20 degree freezer which contains the ice block needed for ecoli transformation.</note>
+                                <note> You have successfully located the M20 freezer which contains the ice block needed for ecoli transformation.</note>
                         </step>
 
                 </then>
@@ -201,7 +201,7 @@
    
                         <step>
                                 <description>That is incorrect.</description>
-                                <note>Please return to the -20 degree freezer and then answer again.</note>
+                                <note>Please return to the M20 freezer and then answer again.</note>
                                 <image>-20_freezer</image>
                         </step>
                         <assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
@@ -220,9 +220,9 @@
         <do>
 
         <step>
-                <description> Where is the -80 degree freezer? </description>
-                <note> Its location is C0.000. \nPlease go to the -80 degree freezer, note the color of the dot that is on or near it, and then return to the computer. 
-		\n\nWhat color was the dot associated with the -80 degree freezer?</note>
+                <description> Where is the M80 freezer? </description>
+                <note> Its location is C0.000. \nPlease go to the M80 freezer, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with the M80 freezer?</note>
                 <image>-80_freezer</image>
                 <select>
                         <var>answer</var>
@@ -242,7 +242,7 @@
                         <assign><lhs>task</lhs><rhs>1</rhs></assign>
                         <step>
                                 <description> That is correct! </description>
-                                <note> You have successfully located the -80 degree freezer which contains the competent cells. </note>
+                                <note> You have successfully located the M80 freezer which contains the competent cells. </note>
                         </step>
 
                 </then>
@@ -251,7 +251,7 @@
    
                         <step>
                                 <description>That is incorrect.</description>
-                                <note>Please return to the -80 degree freezer and then answer again.</note>
+                                <note>Please return to the M80 freezer and then answer again.</note>
                                 <image>-80_freezer</image>
                         </step>
                         <assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
