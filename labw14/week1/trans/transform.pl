@@ -15,6 +15,7 @@ end
 take
   falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
   plasmid = item plasmid_id
+  electroporator = 1 "Electroporator"
 end
 
 step
@@ -106,5 +107,5 @@ log
   return: { transformed_cells_id: r[:id], tube_incubation_choice : tube_incubation_choice }
 end
 
-release [falcon_tube[0],plasmid[0],alrack[0],iceblock[0],strain[0],cuvette[0]]
+release [electroporator[0],falcon_tube[0],plasmid[0],alrack[0],iceblock[0],strain[0],cuvette[0]]
 
