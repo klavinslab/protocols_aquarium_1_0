@@ -18,9 +18,9 @@
         <do>
 
         <step>
-		<description>Where is media bay refrigerator? </description>
-                <note> Its location is B0.110. \nPlease go to the media bay refrigerator, note the color of the dot that is on or near it, and then return to the computer. 
-		\n\nWhat color was the dot associated with media bay refrigerator? </note>
+		<description>Where is refrigerator R1 (fridge with sterile media)? </description>
+                <note> Its location is B0.110. \nPlease go to refrigerator R1, note the color of the dot that is on or near it, and then return to the computer. 
+		\n\nWhat color was the dot associated with refrigerator R1? </note>
                 <image>media_bay_refrigerator</image> 
                 
                 <select>
@@ -41,7 +41,7 @@
                         <assign><lhs>task</lhs><rhs>1</rhs></assign>
                         <step>
                                 <description> That is correct! </description>
-                                <note> You have successfully located the media bay refrigerator which is where you will find the LB Agar Plates
+                                <note> You have successfully located refrigerator R1 which is where you will find the sterile media Plates
                                 for plating.</note>
                         </step>
 
@@ -51,7 +51,7 @@
    
                         <step>
                                 <description>That is incorrect.</description>
-                                <note> Please return to the media bay refrigerator and then answer again.</note>
+                                <note> Please return to refrigerator R1 and then answer again.</note>
                                 <image>media_bay_refrigerator</image> 
                         </step>
                         <assign><lhs>numberWrong</lhs><rhs>%{numberWrong}+1</rhs></assign>
