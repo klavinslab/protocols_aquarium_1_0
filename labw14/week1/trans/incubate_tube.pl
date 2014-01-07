@@ -8,7 +8,13 @@ take
 end
 
 step
-  description: "Put the tube in a small green tube holder and then place in the %{temp}°C incubator, location is B14.310."
+  description: "Put the tube in a small green tube holder."
+	image: "green_tube_holder"
+end
+
+step
+  description: "Place in the %{temp}°C incubator, location is B14.310."
+	image: "put_green_tube_holder_to_incubator"
 end
 
 modify
