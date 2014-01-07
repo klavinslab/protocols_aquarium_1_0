@@ -49,7 +49,7 @@ step
   note: 
     "Wait several seconds for the picture uploading to Dropbox. In gel room touch screen computer, open Dropbox/GelImages,
      under today's date folder and find the picture you just took.\n
-     Rename the picture as the plate_id, where id should be replaced as the item number shown on your plate.\n
+     Rename the picture as the plate_id, where id should be replaced with the item number shown on your plate.\n
      For example, a plate with id 798 should have picture name plate_798."
 end
 
