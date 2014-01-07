@@ -35,7 +35,8 @@ step
   note: 
     "Wait several seconds for the picture uploading to Dropbox. In gel room touch screen computer, open Dropbox/GelImages,
      under today's date folder and find the picture you just took.\n
-     Rename the picture as the item number shown on your plate."
+     Rename the picture as the plate_id, where id should be replaced as the item number shown on your plate.\n
+     For example, a plate with id 798 should have picture name plate_798."
 end
 
 step
@@ -62,12 +63,12 @@ step
     "Store the plate in 4C fridge."
   note:
     "Turn off the transillumniator and camera, take the plate from transilluminator, wrap up
-     the plate with parafilm and put it the in the fridge located at D2.100."
+     the plate with parafilm and put it the in the box 0 in deli fridge located at D2.100."
 end
 	
 modify
   y[0]
-  location: "D2.100"
+  location: "DFP.0"
   inuse: 0
 end
 
