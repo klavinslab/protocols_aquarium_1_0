@@ -16,10 +16,10 @@ end
 
 step
   description: 
-    "Image the plate without the lid"
+    "Put the camera hood on transilluminator"
   note: 
     "Place the agar part of the plate inverted on the transilluminator.
-     Turn the on camera and transilluminator. Take a picture by centering 
+     Place the camera hood on the transilluminator. Turn on transilluminator. Take a picture by centering 
      around the plate.\n
      You need to set the camera at manual shooting mode by turning the dial until the 
      M apppears, zoom in to center around the plate until the whole plate takes up the
@@ -28,6 +28,20 @@ step
      the picture by holding the button half way down until you hear two beeps, then press
      it all the way down to take the picture."
 end
+
+step
+  description: 
+    "Take a picture using the camera"
+  note: 
+    "Turn on the camera.\n
+     Set the camera at manual shooting mode by turning the dial until the 
+     M apppears, zoom in to center around the plate until the whole plate takes up the
+     screen. Then click the flower button and choose macro. Set the shutter speed at 2 seconds,
+     click the button with box on it, move the focus box to the edge of the plate and take
+     the picture by holding the button half way down until you hear two beeps, then press
+     it all the way down to take the picture."
+end
+
 
 step
   description: 
