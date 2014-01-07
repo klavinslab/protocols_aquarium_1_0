@@ -94,7 +94,7 @@ place image_1
   window: hours(1)
 end
 
-wire (plate_1,"plate_id") => (image_1,"e_coli_strain_id")
+wire (plate_1,"plate_id") => (image_1,"Transformed_E_coli_Strain_id")
 
 
 place image_2
@@ -104,7 +104,7 @@ place image_2
   window: hours(1)
 end
 
-wire (plate_2,"plate_id") => (image_2,"e_coli_strain_id")
+wire (plate_2,"plate_id") => (image_2,"Transformed_E_coli_Strain_id")
 
 
 place reimage_1
@@ -114,7 +114,7 @@ place reimage_1
   window: hours(1)
 end
 
-wire (plate_1,"plate_id") => (reimage_1,"e_coli_strain_id")
+wire (plate_1,"plate_id") => (reimage_1,"Transformed_E_coli_Strain_id")
 
 
 place reimage_2
@@ -124,7 +124,7 @@ place reimage_2
   window: hours(1)
 end
 
-wire (plate_2,"plate_id") => (reimage_2,"e_coli_strain_id")
+wire (plate_2,"plate_id") => (reimage_2,"Transformed_E_coli_Strain_id")
 
 # forward transitions
 transition [transform] => [incubate_tube] when !error(0) && completed(0) && return_value(0,"tube_incubation_choice") == 1 end
