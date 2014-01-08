@@ -135,7 +135,7 @@ transition [incubate_1]   => [incubate_2]  when !error(0) && completed(0) end
 transition [incubate_2]  => [image_1]    when !error(0) && completed(0) end
 transition [image_1]  => [image_2]    when !error(0) && completed(0) end
 transition [image_2]     => []         when !error(0) && completed(0) end
-transition [reimage_1]   => []         when !error(0) && completed(0) end
+transition [reimage_1] => [image_2]  when !error(0) && completed(0) end
 transition [reimage_2]   => []         when !error(0) && completed(0) end
 
 # rework transitions
