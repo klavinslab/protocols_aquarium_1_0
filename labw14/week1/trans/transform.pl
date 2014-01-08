@@ -69,8 +69,9 @@ step
 end
 
 step
-  description: "Pipette 2 µL Plasmid Stock %{plasmid_id} into the electrocompetent cells tube"
-  note: "Swirl the tip gently in the culture to mix. Put back on the aluminum rack after mixing."
+  description: "Pipette 2 µL Plasmid Stock into the electrocompetent cells tube"
+  note: "The Plasmid Stock has item number %{plasmid_id} on it. \n
+        Swirl the tip gently in the culture to mix. Put back on the aluminum rack after mixing."
 #  warning: "Vortex the plasmid stock before pipetting into the electrocompetent cells"
   image: "pipette_plasmid_into_electrocompotent_cells"
 end
@@ -93,7 +94,7 @@ end
 
 step
   description: "Electroporation, Rescue and Transfer"
-  bullet: "Put the cuvette in the cuvette holder, slide into electroporator and press the PULSE button twice."
+  bullet: "Put the cuvette in the cuvette holder, slide into electroporator and press the PULSE button twice quickly."
   bullet: "Remove the cuvette from the electroporator and QUICKLY add 1 mL of LB."
   bullet: "Pipette up and down 3 times to extract the cells from the gap in the cuvette."
   bullet: "Transfer to tube T."
