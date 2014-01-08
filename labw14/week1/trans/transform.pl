@@ -35,25 +35,34 @@ step
 end
 
 step
-  description: "Handling Electrocompetent Cells and Electrocuvette"
+  description: "Arange Ice Block and Electrocuvette"
   note: "You will next retrieve a styrofoam ice block, an aluminum tube rack, 
-         the electrocompetent cells and a cuvette.\n
-         Place the tube of cells in the aluminum tube rack on top of the ice block."
+         and a cuvette.\n
+         Put the aluminum tube rack on top of the ice block."
   warning: "The cuvette should be touching the ice block to keep it cool."
-  image: "handle_electrocompetent_cells"
+
 end
 
 take
   iceblock = 1 "Styrofoam Ice Block"
   alrack = 1 "Aluminum Tube Rack"
   cuvette = 1 "Clean Electrocuvette"
-  strain = 1 e_coli_strain_type
 end 
+
+step
+  description:"Retrieve Electrocompetent Cells"
+  note: "You will next retrieve a tube of electrocompetent cells and put it on the aluminum tube rack."
+  image: "handle_electrocompetent_cells"
+end
+
+take
+  strain = 1 e_coli_strain_type
+end
 
 step
   description: "Allow the Electrocompetent Cells to thaw slightly"
   note:  "Wait until the cells have thawed to a slushy consistency that can be pipetted out."
-  warning: "Around 10-15 seconds is enough! Transformation efficiency  
+  warning: "Around 10-15 seconds is enough!. Transformation efficiency  
         depends on keeping electrocompetent cells ice-cold until electroporation."
   image: "thawed_electrocompotent_cells"
 end
