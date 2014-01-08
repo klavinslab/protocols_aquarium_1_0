@@ -69,7 +69,7 @@ step
 end
 
 step
-  description: "Pipette 2 µL plasmid into the electrocompetent cells tube"
+  description: "Pipette 2 µL Plasmid Stock %{plasmid_id} into the electrocompetent cells tube"
   note: "Swirl the tip gently in the culture to mix. Put back on the aluminum rack after mixing."
 #  warning: "Vortex the plasmid stock before pipetting into the electrocompetent cells"
   image: "pipette_plasmid_into_electrocompotent_cells"
