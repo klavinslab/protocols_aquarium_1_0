@@ -40,6 +40,7 @@ step
          and a cuvette.\n
          Put the aluminum tube rack on top of the ice block."
   warning: "The cuvette should be touching the ice block to keep it cool."
+  image: "arrange_cold_block"
 
 end
 
@@ -62,7 +63,7 @@ end
 step
   description: "Allow the Electrocompetent Cells to thaw slightly"
   note:  "Wait until the cells have thawed to a slushy consistency that can be pipetted out."
-  warning: "Around 10-15 seconds is enough!. Transformation efficiency  
+  warning: "Around 10-15 seconds is enough! Transformation efficiency  
         depends on keeping electrocompetent cells ice-cold until electroporation."
   image: "thawed_electrocompotent_cells"
 end
