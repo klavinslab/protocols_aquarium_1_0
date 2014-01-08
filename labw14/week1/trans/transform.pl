@@ -35,11 +35,9 @@ step
 end
 
 step
-  description: "Arange Ice Block and Electrocuvette"
-  note: "You will next retrieve a styrofoam ice block, an aluminum tube rack, 
-         and a cuvette.\n
+  description: "Arange Ice Block"
+  note: "You will next retrieve a styrofoam ice block and an aluminum tube rack.\n
          Put the aluminum tube rack on top of the ice block."
-  warning: "The cuvette should be touching the ice block to keep it cool."
   image: "arrange_cold_block"
 
 end
@@ -47,17 +45,19 @@ end
 take
   iceblock = 1 "Styrofoam Ice Block"
   alrack = 1 "Aluminum Tube Rack"
-  cuvette = 1 "Clean Electrocuvette"
 end 
 
 step
-  description:"Retrieve Electrocompetent Cells"
-  note: "You will next retrieve a tube of electrocompetent cells and put it on the aluminum tube rack."
+  description:"Retrieve Cuvette and Electrocompetent Cells"
+  note: "You will next retrieve a Clean Electrocuvette, put it inside the styrofoam touching ice block.\n
+        Then grab a tube of electrocompetent cells and put it on the aluminum tube rack."
   image: "handle_electrocompetent_cells"
+  warning: "The cuvette metal sides should be touching the ice block to keep it cool."
 end
 
 take
   strain = 1 e_coli_strain_type
+  cuvette = 1 "Clean Electrocuvette"
 end
 
 step
@@ -71,7 +71,7 @@ end
 step
   description: "Pipette 2 µL plasmid into the electrocompetent cells tube"
   note: "Swirl the tip gently in the culture to mix. Put back on the aluminum rack after mixing."
-  warning: "Vortex the plasmid stock before pipetting into the electrocompetent cells"
+#  warning: "Vortex the plasmid stock before pipetting into the electrocompetent cells"
   image: "pipette_plasmid_into_electrocompotent_cells"
 end
 
@@ -86,7 +86,7 @@ end
 step
   description: "Transfer the cells-plasmid mixture to electrocuvette."
   note: "Take lid off the cuvette.\n
-        Pipette 42 µL of the mixture into the center of the gap of the electrocuvette."
+        Pipette 42 µL of the mixture from the electrocompetent cells tube into the center of the gap of the electrocuvette."
   warning: "Hold the plastic sides of cuvette during pipetting."
   image: "pipette_transformation_mix_to_cuvette"
 end
