@@ -6,8 +6,8 @@
 <step>
   <description>Know the total volume.</description>
   <note>
-  The total volume is the volume that the liquid SHOULD be after pipetting. For the large volume pipetting exercise,
-  the total volume is 1000 μL. For the small volume pipetting exercise, the total volume is 10 μL.
+  The total volume is the volume that the liquid SHOULD be after pipetting. If you just executed the large volume pipetting exercise,
+  the total volume is 1000 μL. If you just executed the small volume pipetting exercise, the total volume is 10 μL.
   </note>
 </step>
 
