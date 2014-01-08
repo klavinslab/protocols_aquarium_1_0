@@ -112,8 +112,6 @@ produce
   location: "Bench"
 end
 
-transformation_id = r[:id]
-    
 log
   return: { transformed_cells_id: r[:id], tube_incubation_choice : tube_incubation_choice }
 end
