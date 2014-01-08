@@ -1,0 +1,52 @@
+
+place sterile_technique
+  protocol: "labw14/week1/sterile_technique.pdl"
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(1)
+end
+
+place pipetting_intro
+  protocol: "labw14/week1/pipetting_intro.pdl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place large_vol_exercise
+  protocol: "labw14/week1/large_vol_exercise.pdl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place small_vol_exercise
+  protocol: "labw14/week1/small_vol_exercise.pdl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place calc_pipetting_error
+  protocol: "labw14/week1/calc_pipetting_error.pdl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+
+# forward transitions
+transition [sterile_technique] => [pipetting_intro]    when !error(0) && completed(0) end
+transition [pipetting_intro] => [large_vol_exercise]    when !error(0) && completed(0) end
+transition [large_vol_exercise] => [small_vol_exercise]    when !error(0) && completed(0) end
+transition [small_vol_exercise] => [calc_pipetting_error]   when !error(0) && completed(0) end
+transition [small_vol_exercise] => []   when !error(0) && completed(0) end
+
+
+# rework transitions
+transition [sterile_technique]     => [sterile_technique]     when error(0) end
+transition [pipetting_intro]     => [pipetting_intro]     when error(0) end
+transition [large_vol_exercise] => [large_vol_exercise]    when error(0) end
+transition [small_vol_exercise] => [small_vol_exercise]   when error(0) end
+transition [calc_pipetting_error] => [calc_pipetting_error]   when error(0) end
