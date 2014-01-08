@@ -19,8 +19,7 @@ step
     "Put the camera hood on transilluminator"
   note: 
     "Go the the Gel room, place the agar part of the plate inverted on the transilluminator.
-     Place the camera hood on the transilluminator. Turn on transilluminator. Take a picture by centering 
-     around the plate.\n"
+     Place the camera hood on the transilluminator. Turn on transilluminator by sliding you hand into the hood.\n"
 end
 
 step
@@ -70,8 +69,8 @@ step
   description: 
     "Store the plate in 4C fridge."
   note:
-    "Turn off the transillumniator and camera, take the plate from transilluminator, wrap up
-     the plate with parafilm and put it the in the box 0 in deli fridge located at D2.100."
+    "Turn off the transillumniator and camera, remove the camera hood, take the plate from transilluminator, wrap up
+     the plate with parafilm and put it the in the Box 0 in deli fridge located at D2.100."
 end
 	
 modify
