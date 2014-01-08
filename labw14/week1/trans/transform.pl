@@ -109,7 +109,7 @@ end
 
 produce
   r = 1 "Transformed E coli 1.5 mL tube" of "pLAB1 in Z1"
-  note: "Keep the tube on the bench to use in the next protocol."
+  note: "Keep the tube on the bench to use in the next protocol. (no need to edit the location below)"
   location: "Bench"
 end
 
