@@ -63,15 +63,16 @@ end
 step
   description: "Allow the Electrocompetent Cells to thaw slightly"
   note:  "Wait until the cells have thawed to a slushy consistency that can be pipetted out."
-  warning: "Around 10-15 seconds is enough! Transformation efficiency  
+  warning: "Wait 10-15 seconds is enough! Transformation efficiency  
         depends on keeping electrocompetent cells ice-cold until electroporation."
   image: "thawed_electrocompotent_cells"
 end
 
 step
-  description: "Pipette 2 µL Plasmid Stock into the electrocompetent cells tube"
-  note: "The Plasmid Stock has item number %{plasmid_id} on it. \n
-        Swirl the tip gently in the culture to mix. Put back on the aluminum rack after mixing."
+  description: "Pipette 2 µL Plasmid Stock (sample id: %{plasmid_id}) into the electrocompetent cells tube"
+  bullet: "Pieptte into the culture, not on the side of the tube."
+  bullet: "Swirl the tip gently in the culture to mix after pieptting."
+  bullet: "Put back on the aluminum rack after mixing."
 #  warning: "Vortex the plasmid stock before pipetting into the electrocompetent cells"
   image: "pipette_plasmid_into_electrocompotent_cells"
 end
