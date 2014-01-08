@@ -9,6 +9,14 @@ e_coli_strain_type = "MG1655Z1 Electrocompetent Aliquot"
 plate_type_1 = "LB Kan Plate (sterile)"
 plate_type_2 = "LB Kan Plate (sterile) 0.25 mM IPTG"
 
+place transform_find
+  protocol: "labw14/week1/transformation_plating_find.pdl"
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
 place transform
   protocol: "labw14/week1/trans/transform.pl"
   argument
@@ -17,9 +25,8 @@ place transform
     plate_type: plate_type_1
   end
   group: aquarium_user
-  marked: true
   start: now()
-  window: minutes(30)
+  window: minutes(1)
 end
 
 
@@ -43,7 +50,7 @@ place plate_1
     plate_type: plate_type_1
   end
   group: aquarium_user
-  start: minutes(1)
+  start: now()
   window: minutes(1)
 end
 
@@ -62,6 +69,15 @@ end
 
 wire (transform,"transformed_cells_id") => (plate_2,"e_coli_strain_id")
 
+
+place dispose_tube
+  protocol: "labw14/week1/trans/dispose_tube.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+wire (transform,"transformed_cells_id") => (dispose_tube,"Transformed_E_coli_Strain_id")
 
 place incubate_1
   protocol: "labw14/week1/trans/incubate.pl"
@@ -90,8 +106,8 @@ wire (plate_2,"plate_id") => (incubate_2,"e_coli_strain_id")
 place image_1
   protocol: "labw14/week1/trans/image.pl"
   group: aquarium_user
-  start: minutes(1)
-  window: hours(1)
+  start: now()
+  window: hours(4)
 end
 
 wire (plate_1,"plate_id") => (image_1,"Transformed_E_coli_Strain_id")
@@ -116,25 +132,39 @@ end
 
 wire (plate_1,"plate_id") => (reimage_1,"Transformed_E_coli_Strain_id")
 
+
+place reimage_2
+  protocol: "labw14/week1/trans/image.pl"
+  group: aquarium_user
+  start: now()
+  window: hours(1)
+end
+
+wire (plate_2,"plate_id") => (reimage_2,"Transformed_E_coli_Strain_id")
+
 # forward transitions
+transition [transform_find] => [transform] when !error(0) && completed(0) && return_value(0,"Status") == "Pass" end
 transition [transform] => [incubate_tube] when !error(0) && completed(0) && return_value(0,"tube_incubation_choice") == 1 end
 transition [incubate_tube] =>[plate_1] when !error(0) && completed(0) end
 transition [plate_1]   => [plate_2]  when !error(0) && completed(0) end
-transition [plate_2]   => [incubate_1] when !error(0) && completed(0) end
+transition [plate_2]   => [dispose_tube] when !error(0) && completed(0) end
+transition [dipose_tube] => [incubate_1] when !error(0) && completed(0) end
 transition [incubate_1]   => [incubate_2]  when !error(0) && completed(0) end
 transition [incubate_2]  => [image_1]    when !error(0) && completed(0) end
 transition [image_1]  => [image_2]    when !error(0) && completed(0) end
 transition [image_2]     => []         when !error(0) && completed(0) end
 transition [reimage_1] => [image_2]  when !error(0) && completed(0) end
-transition [reimage_2]   => []         when !error(0) && completed(0) end
 
 # rework transitions
+transition [transform_find]     => [transform_find]    when error(0) || ( completed(0) && return_value(0,"Status") == "Fail") end
 transition [transform] => [transform] when error(0) end
+transition [incubate_tube] => [incubate_tube] when error(0) end
 transition [plate_1]     => [plate_1]     when error(0) end
 transition [plate_2]     => [plate_2]     when error(0) end
-transition [incubate_tube] => [incubate_tube] when error(0) end
+transition [dipose_tube] => [dispose_tube] when error(0) end
 transition [incubate_1]  => [incubate_1]  when error(0) end
 transition [incubate_2]  => [incubate_2]  when error(0) end
 transition [image_1]     => [reimage_1]   when error(0) end
 transition [reimage_1]   => [reimage_1]   when error(0) end
-transition [image_2]     => [image_2]   when error(0) end
+transition [image_2]     => [reimage_2]   when error(0) end
+transition [reimage_2]   => [reimage_2]   when error(0) end
