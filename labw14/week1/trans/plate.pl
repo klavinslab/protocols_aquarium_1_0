@@ -46,7 +46,7 @@ end
 
 step
   description: "Shake the plate to spread the sample over the surface."
-  note: "Use 4 sharp shakes, turn 90 degrees between two shakes, then pour the beads out into the waste bead container. 
+  note: "Use 4 sharp shakes, turn 90 degrees between two shakes (keep the plate level while turning), then pour the beads out into the waste bead container. 
          When done, place the plate lid down on the bench in preparation for incubation."
   image: "spread_beads_on_plate"
 end
