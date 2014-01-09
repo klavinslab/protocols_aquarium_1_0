@@ -13,8 +13,8 @@ place pour_gel
   window: minutes(1)
 end
 
-place dpn1_digest
-  protocol: "labw14/week2/dpn1_digest.pl"
+place restriction_digest
+  protocol: "labw14/week2/restriction_digest.pl"
   group: aquarium_user
   start: now()
   window: minutes(1)
