@@ -1,5 +1,5 @@
-place pcr_prepare
-  protocol: "labw14/week2/pcr_prepare.pl"
+place pcr
+  protocol: "labw14/week2/pcr.pl"
   group: aquarium_user
   marked: true
   start: now()
