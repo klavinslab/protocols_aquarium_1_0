@@ -50,6 +50,7 @@ release media
 
 
 # Containers disappear into the ether. FIXME?
+# FIXME: item is not an 'item hash'. Probably need to modify one at a time
 if container == "14 mL Test Tube" || container == "125 mL Baffled Flask" || container == "250 mL Baffled Flask"
   modify
     containers

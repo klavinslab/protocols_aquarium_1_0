@@ -59,7 +59,7 @@ end
 
 step
   description: "Add glycerol"
-  note: "Add 12.8 mL of 50%% glycerol to each bottle using a serological pipetter. Use a fresh pipet for each bottle."
+  note: "Add 12.8 mL of 50%% glycerol to each bottle using a serological pipetter and a 10 mL pipet (go above the 10 mL mark). Use a fresh pipet for each bottle. Make sure to expel all of the glycerol."
 end
 
 

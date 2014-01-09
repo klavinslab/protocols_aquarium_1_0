@@ -1,5 +1,6 @@
 information "Prepare unsterile bottle(s) of 800 mL YPAD (rich yeast media), ready to be autoclaved."
 # FIXME: add black stripe to plates
+# Add stir bar
 
 
 argument

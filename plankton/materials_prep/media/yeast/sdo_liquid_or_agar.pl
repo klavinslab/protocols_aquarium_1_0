@@ -2,6 +2,7 @@ information "Make 800mL of Synthetic Drop-out or Synthetic Complete media."
 # TODO: Add supplement data to produced item
 
 
+# FIXME: if dropping out only one aa, put drop out solutions on single take
 argument
   n_bottle: number, "Enter the number of bottles you want to make (maximum of 4)."
   add_agar: string, "Add agar to the media? Enter Yes or No."
@@ -247,6 +248,6 @@ produce
   end
   release bottles
   release stir_bars
-  note: "Write %{product_name} and the date on the label in addition to the above id number.\n\nMark the label according to the solutions that were left out - mark red for -His, blue for -Leu, green for -Trp, purple for -Ura."
+  note: "Write %{product_name} and the date on a new label in addition to the above id number. Mark the label according to the solutions that were left out - mark red for -His, blue for -Leu, green for -Trp, purple for -Ura."
   location: "B1.320"
 end

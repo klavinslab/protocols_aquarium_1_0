@@ -1,6 +1,7 @@
 information "Pour LB plates from 200, 400, or 800 mL sources."
 
 
+# TODO: Add the date to each plate (using stamp eventually)
 argument
   n: number, "Enter the number of bottles you are pouring."
   volume: number, "Enter the volume of LB Agar you are pouring in mL. Valid options are 200, 400, or 800."
@@ -127,6 +128,7 @@ if atc == "Yes"
   # FIXME: Figure out this calculation (currently is the one for IPTG)
   atc_volume = 120 * volume / 800
 
+  # FIXME: Expected atomic expression at ':' for line 131 (description line below?)
   step
     description: "Add %{atc_volume} µL of aTc"
     note: "Repeat this step for each bottle. If possible, keep bottles at in a 37°C heat bath or incubator when not on a hot plate. Otherwise, work quickly.\n\nBottle setup: keep the bottle on the hot plate at B1.335 while adding aTc. Keep the bottle capped whenever you aren't immediately pipetting in antibiotics.\n\nPipetting: for each aliquot, spin on benchtop minifuge before opening. Using a 1000 µL micropipette, add a total of %{atc_volume} µL of antibiotic solution to the LB Agar bottle. You can add 1000 µL at a time.\n\nRecap the bottle when finished."

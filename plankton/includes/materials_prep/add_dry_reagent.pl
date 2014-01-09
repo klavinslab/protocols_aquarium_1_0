@@ -27,6 +27,6 @@ end
 # Add the reagents
 step
   description: "Measure and add %{grams} g of %{reagent}"
-  note: "Using a scale, weigh out %{grams} g of %{reagent} and add to %{container}."
+  note: "Using a scale, weigh out %{grams} g of %{reagent} and add to %{container}.\n\nDo not return any excess to the source bottle."
   image: "pouring_dry_reagent_into_1_L_bottle"
 end

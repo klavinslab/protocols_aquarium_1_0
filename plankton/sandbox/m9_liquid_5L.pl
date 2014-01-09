@@ -1,14 +1,18 @@
 information "Prepare sterile 5L carboy of M9 Media (minimal media for bacteria)."
+# biotin filter sterilized
+# 1M mgso4 and cacl2 are mixed together in large volume of water (25 mL), then filter sterilized
+# Nutrients are all filter sterilized
+# Autoclaved DI water added directly to M9
 
 product_name = "5L Carboy M9 Liquid"
 
 argument
-  caa: number, "Enter the percent of casamino acids (typically 0, or 0.05)" 
+  caa: number, "Enter the percent of casamino acids (typically 0, or 0.05)"
   glycerol: number, "Enter the percent glycerol desired (typically 0, or 0.1)"
-  lactose: number, "enter the precent lactose desired (typically 0, or 0.18 =5mM)" 
+  lactose: number, "enter the precent lactose desired (typically 0, or 0.18 =5mM)"
   glucose: number, "Enter the percent glucose desired (typically 0.5)"
 end
- 
+
 #TODO: make sure these names are good.
 take
   bottles = 1 "5 L Carboy"  #exists
@@ -30,13 +34,13 @@ if lactose > 0
 end
 
 if caa > 0
-  take 
+  take
     casAA = 1 "Bacto Casamino Acids" #exists
   end
 end
 
 if glucose > 0
-  take 
+  take
     glu = 1  "Dextrose" #exists
   end
 end
@@ -68,7 +72,7 @@ step
   note: "Using the serological pipette 5 mL MgSO4 stock solution into the 5L bottle"
 end
 
-step 
+step
   description: "Clean the spatuala"
   note: "Use 70 percent ethanol and a kimwipe to wipe off the spatula."
 end
@@ -115,7 +119,7 @@ end
 step
   description: "Cap and mix."
   note: "Tightly close the cap(s) on bottle(s) and shake (each) until all contents are dissolved.
-         To check for dissolution, let bottle rest for 10 seconds, and then pick up and look for sediment on the bottom. 
+         To check for dissolution, let bottle rest for 10 seconds, and then pick up and look for sediment on the bottom.
          This should take approximately 20 seconds."
 end
 
@@ -133,17 +137,17 @@ release filter
 release m9_powder
 
 if glycerol > 0
-  release gly 
+  release gly
 end
 
 if lactose > 0
-  release lac 
+  release lac
 end
 
 if caa > 0
-  release casAA 
+  release casAA
 end
 
 if glucose > 0
-  release glu 
+  release glu
 end

@@ -1,5 +1,7 @@
 information "Autoclave bacterial media"
 
+# FIXME: in this and yeast autoclaving protocol, should produce sterile versions of items!
+# FIXME:
 argument
   lb_liquid_n: number, "Enter the number of LB liquid media bottles to autoclave."
 end
@@ -38,9 +40,9 @@ end
 
 
 # Take solid media bottles
-if lb_agar_n > 1
+if lb_agar_n > 0
   # Autoclave A1 can't handle agar, so don't use it
-  autoclave = "A1"
+  autoclave = "A2"
 else
   step
     description: "Select an autoclave"
