@@ -62,9 +62,8 @@ end
 
 step
   description: "Allow the Electrocompetent Cells to thaw slightly"
-  note:  "Wait until the cells have thawed to a slushy consistency that can be pipetted out."
-  warning: "Wait 10-15 seconds is enough! Transformation efficiency  
-        depends on keeping electrocompetent cells ice-cold until electroporation."
+  note:  "Wait about 15-30 seconds till the cells have thawed to a slushy consistency."
+  warning: "Transformation efficiency depends on keeping electrocompetent cells ice-cold until electroporation."
   image: "thawed_electrocompotent_cells"
 end
 
