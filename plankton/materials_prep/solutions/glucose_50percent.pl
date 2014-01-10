@@ -1,4 +1,4 @@
-information "Prepare a 20% (g / mL) filter-sterilized solution of Dextrose"
+information "Prepare a 20%% (g / mL) filter-sterilized solution of Dextrose"
 
 
 take
