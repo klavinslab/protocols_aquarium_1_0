@@ -4,7 +4,6 @@ argument
   plasmid_id: sample, "The plasmid stock"
 end
 
-
 place pcr
   protocol: "labw14/week2/pcr.pl"
   group: aquarium_user
@@ -15,15 +14,15 @@ end
 
 wire (pcr,"") => (restriction_digest,"")
 
-place pour_gel
-  protocol: "labw14/week2/pour_gel.pl"
+place restriction_digest
+  protocol: "labw14/week2/restriction_digest.pl"
   group: aquarium_user
   start: now()
   window: minutes(1)
 end
 
-place restriction_digest
-  protocol: "labw14/week2/restriction_digest.pl"
+place pour_gel
+  protocol: "labw14/week2/pour_gel.pl"
   group: aquarium_user
   start: minutes(5)
   window: minutes(1)
