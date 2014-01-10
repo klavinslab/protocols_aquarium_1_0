@@ -3,7 +3,7 @@ argument
 end
 
 produce
-  r = "Gel Slice in 1.5 mL tube" of "fLAB2"
+  r = "Gel Slice" of "fLAB2"
   location = "Bench"
 end
 
