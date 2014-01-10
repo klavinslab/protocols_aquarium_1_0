@@ -55,7 +55,7 @@ end
 
 
 # Take solid media bottles
-if sdo_agar_n > 1 || ypad_agar_n > 1
+if sdo_agar_n > 0 || ypad_agar_n > 0
   # Autoclave A1 can't handle agar, so don't use it
   autoclave = "A2"
 else
