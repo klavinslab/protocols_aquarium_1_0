@@ -14,3 +14,7 @@ produce
   location: "Thermal Cycler"
 end
 
+log
+  return: { PCR_Result_id: r[:id]}
+end
+
