@@ -34,7 +34,14 @@ place small_vol_exercise
   window: minutes(1)
 end
 
-place calc_pipetting_error
+place calc_pipetting_error_small
+  protocol: "labw14/week1/calc_pipetting_error.pdl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place calc_pipetting_error_large
   protocol: "labw14/week1/calc_pipetting_error.pdl"
   group: aquarium_user
   start: now()
@@ -46,10 +53,10 @@ end
 transition [safety_find]     => [sterile_technique] when !error(0) && completed(0) && return_value(0,"numberWrong") <= 2 end
 transition [sterile_technique] => [pipetting_intro]    when !error(0) && completed(0) end
 transition [pipetting_intro] => [large_vol_exercise]    when !error(0) && completed(0) end
-transition [large_vol_exercise] => [calc_pipetting_error]    when !error(0) && completed(0) end
-transition [calc_pipetting_error] => [small_vol_exercise]   when !error(0) && completed(0) end
-transition [small_vol_exercise] => [calc_pipetting_error]   when !error(0) && completed(0) end
-transition [calc_pipetting_error] => []   when !error(0) && completed(0) end
+transition [large_vol_exercise] => [calc_pipetting_error_large]    when !error(0) && completed(0) end
+transition [calc_pipetting_error_large] => [small_vol_exercise]   when !error(0) && completed(0) end
+transition [small_vol_exercise] => [calc_pipetting_error_small]   when !error(0) && completed(0) end
+transition [calc_pipetting_error_small] => []   when !error(0) && completed(0) end
 
 
 # rework transitions
@@ -58,4 +65,5 @@ transition [sterile_technique]     => [sterile_technique]     when error(0) end
 transition [pipetting_intro]     => [pipetting_intro]     when error(0) end
 transition [large_vol_exercise] => [large_vol_exercise]    when error(0) end
 transition [small_vol_exercise] => [small_vol_exercise]   when error(0) end
-transition [calc_pipetting_error] => [calc_pipetting_error]   when error(0) end
+transition [calc_pipetting_error_small] => [calc_pipetting_error_small]   when error(0) end
+transition [calc_pipetting_error_large] => [calc_pipetting_error_large]   when error(0) end
