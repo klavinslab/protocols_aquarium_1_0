@@ -1,4 +1,4 @@
-information: "Prepare an 800 mL bottle of M9 Minimal Media with options for carbon source, biotin, and CAS amino acids."
+information "Prepare an 400 mL bottle of M9 Minimal Media with options for carbon source and biotin."
 # Inputs without protocols:
 #   5X M9 Salts @ 160 mL
 #   100X MgSO4 CaCl2 @ 8 mL
@@ -8,22 +8,23 @@ information: "Prepare an 800 mL bottle of M9 Minimal Media with options for carb
 
 
 argument
-  nutrient: string, "The carbon nutrient used in this batch of M9 (glucose or cellobiose)."
-  biotion: string, "Add biotin? (Yes or No)."
-  casaa: string, "Add CAS amino acids? (Yes or No)."
+  glucose_percent: number, "The percentage of glucose in the final product. If 0, none will be added. The standard is 2."
+  cellobiose_percent: number, "The percentage of cellobiose in the final product. If 0, none will be added."
+  biotin: string, "Add biotin? (Yes or No)."
+# FIXME: PDL version didn't have a CAS amino acid addition step!
+#  casaa: string, "Add CAS amino acids? (Yes or No)."
 end
 
 
 take
-  bottle = 1 "1000 mL Bottle"
-  salts = 1 "5X M9 Salts"
-  saltsol = "100X MgSO4 CaCl2"  # TODO: When preparing this, add CaCl2 first
-  water = "DI Water, Sterile)"
+  bottle = 1 "500 mL Bottle"
+  salts = 1 "5X Difco M9 Salts Solution"
+  saltsol = 1 "100X MgSO4 CaCl2"  # TODO: When preparing this, add CaCl2 first
+  water = 1 "DI Water, Sterile"
 end
 
 
 # TODO: Input checking a la SDO liquid protocol
-# FIXME: PDL version didn't have a CAS amino acid addition step!
 #if casaa == "Yes"
 #  take
 #    casaa_aliquot = 1 "Sterile CAS amino acid solution"
@@ -33,14 +34,14 @@ end
 
 step
   description: "Add M9 salts"
-  note: "Using a serological pipette and 25 mL tip, add 160 mL of 5x M9 salts to the bottle. To conserve tips, use the same one repeatedly, adding 30 mL 5 times, then finally 10 mL."
+  note: "Using a serological pipette and 25 mL tip, add 80 mL of 5x M9 salts to the bottle. To conserve tips, use the same one repeatedly, adding 30 mL 2 times, then finally 20 mL."
   warning: "Sterile technique is very important for this step."
 end
 
 
 step
   description: "Add 100X MgSO4 CaCl2 solution"
-	note: "Using the serological pipette or 1000 µL pipette (depending on how much you're adding), add 8 mL of 100x MgSO4 CaCl2 solution."
+	note: "Using a serological pipette, add 4 mL of 100x MgSO4 CaCl2 solution."
 end
 
 
@@ -50,39 +51,43 @@ if biotin == "Yes"
   end
   step
     description: "Add biotin"
-    note: "Using a 1000 µL pipette, add 3.2 mL of 250x biotin."
+    note: "Using a 1000 µL pipette, add 1.6 mL of 250x biotin."
   end
   release biotin_aliquot
 end
 
 
-if nutrient == "cellobiose"
+if cellobiose_percent != 0
   take
-    cb = "4% Sterile Filtered Cellobiose"
+    cb = 1 "4%% Sterile Filtered Cellobiose"
   end
+  # c1v1 = c2v2 -> v1 = c2v2/c1
+  cellobiose_volume = (cellobiose_percent / 100) * 400 / 4
   step
     description: "Add cellobiose"
-    note: "Using the serological pipette, add 80 mL of 4%% cellobiose."
+    note: "Using the serological pipette, add %{cellobiose_volume} mL of 4%% cellobiose."
   end
   release cb
 end
 
 
-if nutrient == "glucose"
+if glucose_percent != 0
   take
-    gluc = "20% Sterile Filtered Glucose"
+    dextrose = 1 "20%% Dextrose Solution (sterile)"
   end
+  # c1v1 = c2v2 -> v1 = c2v2/c1
+  glucose_volume = (glucose_percent / 100) * 400 / 20
   step
-    description: "Add glucose"
-		note: "Using the serological pipette, add 80 mL of 20%% glucose."
+    description: "Add dextrose"
+		note: "Using the serological pipette, add %{glucose_volume} mL of 20%% Dextrose."
   end
-  release gluc
+  release dextrose
 end
 
 
 step
   description: "Add water"
-  note: "Fill to the 800 mL line with sterile water."
+  note: "Fill to the 400 mL line with sterile water."
 end
 
 
@@ -97,7 +102,7 @@ if nutrient == "cellobiose"
   end
 elsif nutrient == "glucose"
   produce
-    m9 = 1 "M9 Media Glucose"
+    m9 = 1 "mL M9 Media Glucose"
     release bottle
   end
 end
