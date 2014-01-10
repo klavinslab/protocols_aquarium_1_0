@@ -1,0 +1,77 @@
+#pcr first, protocol ends, metacol lets thermal cycle finish by scheduling restriction digest for 30 min later
+#restriction digest starts and completes, metacol lets incubation finish by scheduling pour gel for an hour later
+#pour gel starts and completes, also transitions to 
+#after restriction digest is done, and while it's incubating 
+
+place one
+  protocol: "labw14/week2/one.pl"
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+place two
+  protocol: "labw14/week2/two.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place three
+  protocol: "labw14/week2/three.pl"
+  group: aquarium_user
+  start: minutes(5)
+  window: minutes(1)
+end
+
+place wait
+  marked: false
+end
+
+place four
+  protocol: "labw14/week2/four.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place five
+  protocol: "labw14/week1/five.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place six
+  protocol: "labw14/week1/six.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place seven
+  protocol: "labw14/week1/seven.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+# forward transitions
+transition [one]     => [two,three] when !error(0) && completed(0) end
+transition [three, two] => [four] when !error(0) && completed(0) end
+transition [four] => [five] when minutes_elapsed(0,1) end
+transition [five] => [six] when !error(0) && completed(0) end
+transition [six] => [seven] when !error(0) && completed(0) end
+transition [seven] => [] when !error(0) && completed(0) end
+=
+
+# rework transitions
+transition [one]     => [one]    when error(0) end
+transition [two]     => [two]     when error(0) end
+transition [three]     => [three]     when error(0) end
+transition [four] => [four]    when error(0) end
+transition [five] => [five]   when error(0) end
+transition [six] => [six]   when error(0) end
+transition [seven] => [seven]   when error(0) end
+
