@@ -8,24 +8,24 @@ end
 
 
 percentage = 20
-ml = 50
+ml = 30
 
 
 include "plankton/includes/materials_prep/add_dry_reagent.pl"
-  container: "each tube"
+  container: "the falcon tube"
   reagent: "Dextrose"
   grams: (percentage / 100) * ml
 end
 
 
 step
-  description: "Fill falcon tube to 50 mL mark with dI water."
-  note: "Fill the falcon tube up to the 50 mL mark with deionized water from jug J1 at B15.530."
+  description: "Fill falcon tube to %{ml} mL mark with dI water."
+  note: "Fill the falcon tube up to the %{ml} mL mark with deionized water from jug J1 at B15.530."
 end
 
 
 include "plankton/includes/materials_prep/filter_sterilize_syringe.pl"
-  volume: 50
+  volume: ml
   name: "the dextrose solution"
 end
 

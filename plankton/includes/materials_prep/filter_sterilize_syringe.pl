@@ -12,15 +12,21 @@ end
 
 
 step
+  description: "Prepare the falcon tube"
+  note: "Label the new Falcon tube temporarily as 'filter sterilized'. Loosen the cap(s) of the new falcon tube and %{name}."
+end
+
+
+step
   description: "Draw up %{volume} mL of %{name} into the syringe and attach the filter"
-  note: "Loosen the cap of the falcon tube. Remove the backing from the filter package so the filter is easy to access.\n\nUsing the syringe (without filter), draw up %{volume} mL of %{name}. Screw the syringe onto the filter."
+  note: "Remove the backing from the filter package so the filter is easy to access.\n\nUsing the syringe (without filter), draw up %{volume} mL of %{name}. Screw the syringe onto the filter."
   warning: "Never touch the bottom or sides of the filter - they must remain sterile."
 end
 
 
 step
   description: "Dispense into falcon tube"
-  note: "Dispense the solution through the filter into the falcon tube. When done dispensing, replace the falcon tube cap."
+  note: "Dispense the solution through the filter into the falcon tube. Replace all caps when you have finished dispensing."
   warning: "Do not touch the filter to the falcon tube."
 end
 
