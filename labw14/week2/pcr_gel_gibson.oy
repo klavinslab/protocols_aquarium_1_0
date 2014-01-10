@@ -1,3 +1,8 @@
+#pcr first, protocol ends, metacol lets thermal cycle finish by scheduling restriction digest for 30 min later
+#restriction digest starts and completes, metacol lets incubation finish by scheduling pour gel for an hour later
+#pour gel starts and completes, also transitions to 
+#after restriction digest is done, and while it's incubating 
+
 argument
   primer1: sample, "The first primer"
   primer2: sample, "The second primer"
@@ -29,6 +34,10 @@ place pour_gel
 end
 
 wire (restirction_digest,"") => (run_gel,"")
+
+place wait
+  marked: false
+end
 
 place run_gel
   protocol: "labw14/week2/run_gel.pl"
@@ -66,7 +75,8 @@ end
 
 # forward transitions
 transition [pcr]     => [pour_gel, restriction_digest] when !error(0) && completed(0) end
-transition [restriction_digest, pour_gel] => [run_gel] when !error(0) && completed(0) end
+transition [restriction_digest, pour_gel] => [wait] when !error(0) && completed(0) end
+transition [wait] => [pour_gel] when minutes_elapsed(0,1) end
 transition [run_gel] => [image_cut_gel] when !error(0) && completed(0) end
 transition [image_cut_gel] => [purify_gel] when !error(0) && completed(0) end
 transition [purify_gel] => [gibson] when !error(0) && completed(0) end
