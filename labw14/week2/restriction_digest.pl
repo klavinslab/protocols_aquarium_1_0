@@ -1,7 +1,0 @@
-argument:
-  
-end
-
-produce:
-
-end
