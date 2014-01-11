@@ -21,7 +21,7 @@ end
 place three
   protocol: "labw14/week2/three.pl"
   group: aquarium_user
-  start: minutes(5)
+  start: minutes(3)
   window: minutes(1)
 end
 
