@@ -37,21 +37,21 @@ place four
 end
 
 place five
-  protocol: "labw14/week1/five.pl"
+  protocol: "labw14/week2/five.pl"
   group: aquarium_user
   start: now()
   window: minutes(1)
 end
 
 place six
-  protocol: "labw14/week1/six.pl"
+  protocol: "labw14/week2/six.pl"
   group: aquarium_user
   start: now()
   window: minutes(1)
 end
 
 place seven
-  protocol: "labw14/week1/seven.pl"
+  protocol: "labw14/week2/seven.pl"
   group: aquarium_user
   start: now()
   window: minutes(1)
