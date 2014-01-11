@@ -60,7 +60,7 @@ end
 # forward transitions
 transition [one]     => [two,three] when !error(0) && completed(0) end
 transition [three, two] => [four] when !error(0) && completed(0) end
-transition [four] => [five] when minutes_elapsed(0,1) end
+transition [four] => [five] when !error(0) && completed(0) end
 transition [five] => [six] when !error(0) && completed(0) end
 transition [six] => [seven] when !error(0) && completed(0) end
 transition [seven] => [] when !error(0) && completed(0) end
