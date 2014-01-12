@@ -6,5 +6,5 @@ step
 end
 
 log
-  return: { x: x, y: y }
+  return: { x: [x, { name: "asd" }], y: y }
 end
