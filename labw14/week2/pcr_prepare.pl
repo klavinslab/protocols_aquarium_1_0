@@ -1,6 +1,6 @@
 argument
-  primer_id_1: sample, "The first primer"
-  primer_id_2: sample, "The second primer"
+  primer1_id: sample, "The first primer"
+  primer2_id: sample, "The second primer"
   plasmid_id: sample, "The plasmid stock"
 end
 
