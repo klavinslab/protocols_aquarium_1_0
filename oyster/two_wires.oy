@@ -1,0 +1,20 @@
+place first
+  protocol: "oyster/two_outputs.pl"
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: hours(1)
+end
+
+place second
+  protocol: "oyster/two_inputs.pl"
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: hours(1)
+end
+
+wire (first,"x") => (second,"x")
+wire (first,"y") => (second,"y")
+
+transition [ first ] => [ second ] when completed(0) end
