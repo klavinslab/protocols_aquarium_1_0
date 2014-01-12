@@ -1,6 +1,6 @@
 step
   description: "Go to the thermal cycler to pick up the PCR tube you put in the previous pcr_prepare protocol."
-  note: "Put on you bench after you picked up the PCR tube"
+  note: "Put it on you bench after you picked up the PCR tube"
 end
 
 produce
