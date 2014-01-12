@@ -3,7 +3,9 @@ argument
   y: number
 end
 
+z = y * 2
+
 step
   description: "Arguments"
-  note: "x = %{x} and y = %{y}"
+  note: "x = %{x}, y = %{y}, z = %{z}"
 end

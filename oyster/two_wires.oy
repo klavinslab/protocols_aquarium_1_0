@@ -9,7 +9,7 @@ end
 place second
   protocol: "oyster/two_inputs.pl"
   group: aquarium_user
-  marked: true
+  marked: false
   start: now()
   window: hours(1)
 end
