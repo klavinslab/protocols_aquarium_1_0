@@ -3,6 +3,7 @@ argument
   y: number
 end
 
+w = x[0][:name]
 z = y * 2
 
 step
