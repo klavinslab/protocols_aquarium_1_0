@@ -5,8 +5,9 @@ argument
 end
 
 step
-    description: "PCR Protocol"
+    description: "This protocol prepares the PCR mix in PCR tube and starts it in thermal cycler"
 end
+
 
 
 
