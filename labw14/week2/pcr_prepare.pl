@@ -18,14 +18,17 @@ end
 
 step
   description: "Pipet 1 µL of plasmid with id %{plasmid_id} into the tube."
+  note: "Carefully to pipet into the liquid, not on the side of the tube."
 end
 
 step
   description: "Pipet 2.5 µL of primer with id %{primer1} into the tube."
+  note: "Carefully to pipet into the liquid, not on the side of the tube."
 end
 
 step
   description: "Pipet 2.5 µL of primer with id %{primer2} into the tube."
+  note: "Carefully to pipet into the liquid, not on the side of the tube."
 end
 
 step
