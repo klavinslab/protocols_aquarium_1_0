@@ -1,6 +1,7 @@
 argument
   x: string
   y: number
+  q: number
 end
 
 z = y * 2

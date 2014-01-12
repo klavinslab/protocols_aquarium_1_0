@@ -8,6 +8,9 @@ end
 
 place second
   protocol: "oyster/two_inputs.pl"
+  argument
+    q: 123
+  end
   group: aquarium_user
   marked: false
   start: now()
