@@ -21,15 +21,29 @@ step
 end
 
 step
-  description: "Pipet 2.5 µL of primer with id %{primer_1_id} into the tube."
+  description: "Pipet 2.5 µL of primer with id %{primer1} into the tube."
 end
 
 step
-  description: "Pipet 2.5 µL of primer with id %{primer_2_id} into the tube."
+  description: "Pipet 2.5 µL of primer with id %{primer2} into the tube."
 end
 
 step
   description: "Pipet 25 µL of 2X Phusion Master Mix into the tube."
+  note: "Use the tip to gently mix"
+end
+
+step
+  description: "Place the tube into an available thermal cycler"
+end
+
+step
+  description: "Choose program to run on the thermal cycler"
+end
+
+step
+  description: "Hit 'run' on the thermal cycler and select 50µL setting."
+  note: "Coordinate with your fellow classmates to put all their samples before hit run."
 end
 
 
