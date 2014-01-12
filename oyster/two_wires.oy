@@ -6,10 +6,12 @@ place first
   window: hours(1)
 end
 
+s = "a random string"
+
 place second
   protocol: "oyster/two_inputs.pl"
   argument
-    q: "a random string"
+    q: s
   end
   group: aquarium_user
   marked: false
