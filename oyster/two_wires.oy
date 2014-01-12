@@ -9,7 +9,7 @@ end
 place second
   protocol: "oyster/two_inputs.pl"
   argument
-    q: 123
+    q: "a random string"
   end
   group: aquarium_user
   marked: false
