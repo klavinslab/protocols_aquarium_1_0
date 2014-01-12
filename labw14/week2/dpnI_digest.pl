@@ -8,6 +8,7 @@ end
 
 step 
   description: "Add 1 µL of DpnI into the PCR result."
+  note: "Gently mix with pipette tip."
 end
 
 modify
