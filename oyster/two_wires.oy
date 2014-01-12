@@ -18,3 +18,4 @@ wire (first,"x") => (second,"x")
 wire (first,"y") => (second,"y")
 
 transition [ first ] => [ second ] when completed(0) end
+transition [ second ] => [ ] when completed(0) end
