@@ -33,13 +33,15 @@ step
   description: "Remove the camera hood, cut out the gel slice with length 1799bp"
 	note: "It may help to turn the lights off during this step. Use the ladder to locate where
 	1799bp is. Use the razor blade to cut around the band. Try to remove as much excess gel
-	as possible. Do not remove any gel that contains the band."
+	as possible. Do not remove any gel that contains the band as this will limit the amount
+	of DNA that can be extracted."
 end
 
 step
   description: "Put the gel slice into a 1.5 mL tube"
 	note: "Slide the gel slice onto the razor blade, open the tube and push the slice in. If the
-	slice is to big, trim down excess gel."
+	slice is to big, trim down excess gel. Again, do not trim gel that contains the band, only
+	excess gel around the band."
 end
 
 step
