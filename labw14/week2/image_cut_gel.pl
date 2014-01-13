@@ -1,18 +1,19 @@
-argument
-  Gel_Lane_id: sample, "The gel lane you got after run the gel"
-end
+# Temp comment out argument for testing
+#argument
+#  Gel_Lane_id: sample, "The gel lane you got after run the gel"
+#end
 
 step
   description: "Take the gel out of gel box and put it on transilluminator"
-	note: "Carefully remove the holder as the gel is slippery and may fall out unexpectedly.
-	Slide the gel off of the holder and onto the transilluminator"
+  note: "Carefully remove the holder as the gel is slippery and may fall out unexpectedly.
+  Slide the gel off of the holder and onto the transilluminator"
 end
 
 step
   description: "Wear the UV protection glasses"
-	note: "The UV protection glasses are located above the bench in the gel station. 
-	Though the transilluminators we are using emit in the visible blue spectrum, these 
-	goggles protect your eyes from the bright lights and allows you to see the DNA band."
+  note: "The UV protection glasses are located above the bench in the gel station. 
+  Though the transilluminators we are using emit in the visible blue spectrum, these 
+  goggles protect your eyes from the bright lights and allows you to see the DNA band."
 end
 
 step
