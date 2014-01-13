@@ -13,7 +13,8 @@ step
   description: "Wear the UV protection glasses"
   note: "The UV protection glasses are located above the bench in the gel station. 
   Though the transilluminators we are using emit in the visible blue spectrum, these 
-  goggles protect your eyes from the bright lights and allows you to see the DNA band."
+  goggles protect your eyes from the bright lights and allows you to see the DNA band.
+  If you wear glasses, wear the goggles over your glasses."
 end
 
 step
