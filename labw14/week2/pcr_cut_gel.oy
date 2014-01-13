@@ -1,5 +1,17 @@
+argument
+  primer1: sample, "The first primer"
+  primer2: sample, "The second primer"
+  plasmid_id: sample, "The plasmid stock"
+end
+
+
 place pcr_prep
   protocol: "labw14/week2/pcr_prepare.pl"
+  argument
+    primer1: primer1
+    primer2: primer2
+    plasmid_id: plasmid_id
+  end
   group: aquarium_user
   marked: true
   start: now()
@@ -37,7 +49,7 @@ end
 
 
 # forward transitions
-transition [pcr_prep]     => [two,three] when !error(0) && completed(0) end
+transition [pcr_prep]     => [run_gel,] when !error(0) && completed(0) end
 transition [three, two] => [four] when !error(0) && completed(0) end
 transition [four] => [] when !error(0) && completed(0) end
 
