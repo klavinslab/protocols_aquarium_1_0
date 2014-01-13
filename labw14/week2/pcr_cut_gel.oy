@@ -1,5 +1,5 @@
 place pcr_prep
-  protocol: "labw14/week2/pcr_prep.pl"
+  protocol: "labw14/week2/pcr_prepare.pl"
   group: aquarium_user
   marked: true
   start: now()
@@ -37,14 +37,14 @@ end
 
 
 # forward transitions
-transition [one]     => [two,three] when !error(0) && completed(0) end
+transition [pcr_prep]     => [two,three] when !error(0) && completed(0) end
 transition [three, two] => [four] when !error(0) && completed(0) end
 transition [four] => [] when !error(0) && completed(0) end
 
 
 
 # rework transitions
-transition [one]     => [one]    when error(0) end
+transition [pcr_prep]     => [pcr_prep]    when error(0) end
 transition [two]     => [two]     when error(0) end
 transition [three]     => [three]     when error(0) end
 transition [four] => [four]    when error(0) end
