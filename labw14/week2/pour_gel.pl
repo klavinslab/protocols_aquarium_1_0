@@ -64,13 +64,6 @@ end
 release [agarose[0], gel_green[0]]
 
 
-step
-  description: "Allow the agarose to cool to 50°C"
-  note: "Allow the agarose to cool to about 50°C on the benchtop (50°C should not hurt to touch). This should take 5 to 10 minutes."
-  warning: "Pouring the gel when it's still boiling hot will probably result in burning yourself."
-end
-
-
 if comb_n == 1
   step
     description: "Add comb"
