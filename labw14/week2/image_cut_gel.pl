@@ -51,11 +51,11 @@ step
   Spray the surface of the transilluminator with ethanol and wipe until dry with kimwipes or paper towel."
 end
 
-produce
-  r = "Gel Slice" of "fLAB2"
-  location = "Bench"
-end
+#produce
+#  r = "Gel Slice" of "fLAB2"
+#  location = "Bench"
+#end
 
-log
-  return: {Gel_Slice_id: r[:id]}
-end
+#log
+#  return: {Gel_Slice_id: r[:id]}
+#end
