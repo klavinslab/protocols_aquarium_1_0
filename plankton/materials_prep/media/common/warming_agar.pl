@@ -5,9 +5,7 @@ information "Warm up a bottle of solid agar in a microwave to a molten state so 
 
 # Chose media type
 step
-  
   description: "What type of agar?"
-  
   note: "Choose the type of agar to warm up."
   get data
     media_type: string, "Media Type", ["200 mL LB Agar (sterile)",
