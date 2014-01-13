@@ -18,10 +18,17 @@ place pcr_prep
   window: minutes(30)
 end
 
+place pour_gel
+  protocol: "labw14/week2/pour_gel.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
 place pcr_finish
   protocol: "labw14/week2/pcr_finish.pl"
   group: aquarium_user
-  start: now()
+  start: minutes(5)
   window: minutes(1)
 end
 
@@ -35,7 +42,7 @@ end
 place run_gel
   protocol: "labw14/week2/run_gel.pl"
   group: aquarium_user
-  start: minutes(3)
+  start: now()
   window: minutes(1)
 end
 
@@ -49,8 +56,8 @@ end
 
 
 # forward transitions
-transition [pcr_prep]     => [run_gel,] when !error(0) && completed(0) end
-transition [three, two] => [four] when !error(0) && completed(0) end
+transition [pcr_prep]     => [pour_gel,pcr_finish] when !error(0) && completed(0) end
+transition [pour_gel, pcr_finish] => [dpn1_digest] when !error(0) && completed(0) end
 transition [four] => [] when !error(0) && completed(0) end
 
 
