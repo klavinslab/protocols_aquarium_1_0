@@ -58,3 +58,7 @@ end
 produce
   gel_lane = 1 "Gel Lane" of "Fragment" from fragment[0]
 end
+
+log
+  return: { Gel_lane_id: gel_lane[:id]}
+end
