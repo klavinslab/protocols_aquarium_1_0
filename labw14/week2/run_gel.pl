@@ -2,16 +2,16 @@ information "Load and run an agarose gel."
 
 
 argument
-  fragment_in_pcr: sample
-  ladder_1_kb: sample
+  fragment_one: sample
+  ladder_one: sample
   fragment_volume: number, "The volume of PCR fragment to load in µL."
 end
 
 
 take
   gel = 1 "1% Agarose Gel in box"
-  fragment = item fragment_in_pcr
-  ladder = item ladder_1_kb
+  fragment = item fragment_one
+  ladder = item ladder_one
   loading_dye = 1 "6X Loading Dye"
 end
 
