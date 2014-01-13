@@ -56,7 +56,7 @@ end
 
 
 produce
-  gel_lane = 1 "Gel Lane" of "Fragment" from fragment[0]
+  gel_lane = 1 "Gel Lane" from fragment[0]
 end
 
 log
