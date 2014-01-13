@@ -5,7 +5,7 @@ end
 step
   description: "Take the gel out of gel box and put it on transilluminator"
 	note: "Carefully remove the holder as the gel is slippery and may fall out unexpectedly.
-		Slide the gel off of the holder and onto the transilluminator"
+	Slide the gel off of the holder and onto the transilluminator"
 end
 
 step
