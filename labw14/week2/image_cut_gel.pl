@@ -47,8 +47,10 @@ end
 
 step
   description: "Clean up the transilluminator and gel station"
-  note: "Turn off the transilluminator. Dispose of the gel by placing it in the waste container. 
-  Spray the surface of the transilluminator with ethanol and wipe until dry with kimwipes or paper towel."
+  note: "Turn off the transilluminator. Dispose of the gel and any gel fragments by placing it in the waste container. 
+  Spray the surface of the transilluminator with ethanol and wipe until dry using kimwipes or paper towel. If the
+  lights in the room are turned off, turn the lights back on. Remove the UV goggles and put them back where you
+  found them."
 end
 
 #produce
