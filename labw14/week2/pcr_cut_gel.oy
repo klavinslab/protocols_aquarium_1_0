@@ -1,3 +1,5 @@
+#each team gets their own primers and plasmids
+
 argument
   primer1: sample, "The first primer"
   primer2: sample, "The second primer"
