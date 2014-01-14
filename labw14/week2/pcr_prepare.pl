@@ -32,7 +32,7 @@ step
 end
 
 step
-  description: "Place the tube into an available thermal cycler"
+  description: "Place the tube into thermal cycler T2"
 end
 
 step
