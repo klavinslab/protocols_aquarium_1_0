@@ -1,4 +1,3 @@
- Temp comment out argument for testing
 argument
   Gel_Lane_id: sample, "The gel lane you got after run the gel"
 end
