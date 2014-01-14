@@ -83,11 +83,6 @@ step
   found them."
 end
 
-step
-  description: "Empty leftover TAE in the gel box into the dishwashing sink"
-  note: "Leave the gel box to dry on the drying rack"
-end
-
 produce
   r = 1 "Gel Slice" of "fLAB2"
 end
