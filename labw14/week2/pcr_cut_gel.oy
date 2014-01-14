@@ -70,7 +70,7 @@ end
 
 # forward transitions
 transition [pcr_prep]     => [pour_gel,pcr_finish] when !error(0) && completed(0) end
-transition [pour_gel, pcr_finish] => [run_gel] when !error(0) && completed(0) end
+transition [pour_gel, pcr_finish] => [run_gel] when !error(0) && completed(0) && !error(1) && completed(1) end
 transition [run_gel] => [image_cut_gel] when !error(0) && completed(0) end
 transition [image_cut_gel] => [] when !error(0) && completed(0) end
 
