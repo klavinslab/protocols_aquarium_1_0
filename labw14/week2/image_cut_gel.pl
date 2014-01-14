@@ -68,7 +68,7 @@ step
 end
 
 produce
-  r = "Gel Slice" of "fLAB1"
+  r = "Gel Slice" of "fLAB2"
   location = "Bench"
 end
 
