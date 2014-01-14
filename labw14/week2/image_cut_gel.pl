@@ -60,7 +60,7 @@ end
 
 step
   description: "Remove the camera hood, cut out the gel slice with length 1799bp" 
-  note: "It may help to turn the lights off during this step. Use the ladder to locate where
+  note: "It may help to turn the romm lights off during this step. Use the ladder to locate where
   1799bp is. Use the razor blade to cut around the band. Try to remove as much excess gel
   as possible. Do not remove any gel that contains the band as this will limit the amount
   of DNA that can be extracted."
@@ -81,11 +81,6 @@ step
   Spray the surface of the transilluminator with ethanol and wipe until dry using kimwipes or paper towel. If the
   lights in the room are turned off, turn the lights back on. Remove the UV goggles and put them back where you
   found them."
-end
-
-step
-  description: "Empty leftover TAE in the gel box into the dishwashing sink"
-  note: "Leave the gel box to dry on the drying rack"
 end
 
 produce
