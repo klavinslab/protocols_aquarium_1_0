@@ -7,45 +7,37 @@ argument
 end
 
 
-take
-  gel_box = 1 "49 mL Gel Box With Casting Tray (clean)"
-  agarose = 1 "Ultrapure* Agarose"
+step
+  description: "Transfer this protocol to the gel room."
+  note: "Log out, go to the gel room (A5, A6, A7), and log in there to run this protocol - it will be under 'Protocols > Pending Jobs'."
 end
 
 
-# FIXME: By convention there will always be beakers available for melting + pouring gels?
-#   Idea: put stuff in the gel room:
-#     Microwave
-#     Beakers
-#     Agarose
-#     Combs
-step
-  description: "Go to the gel room (A5, A6, A7) to run this protocol."
+take
+  agarose = 1 "Ultrapure* Agarose"
 end
 
 
 gel_volume = 50.0
 agarose_mass = (percentage / 100.0) * gel_volume
 step
-  description: "Measure and add agarose"
-  note: "Go to the station at A5.300. Using a digital scale, measure out %{agarose_mass} g of agarose powder and add it to a clean beaker."
+  description: "Add %{agarose_mass} g agarose to flask"
+  note: "Go to the station at A5.300. Using a digital scale, measure out %{agarose_mass} g of agarose powder and add it to a clean flask. Add agarose by tipping and shaking the bag and remove excess to the waste container by folding the weigh paper."
 end
 
 
 step
   description: "Add 1X TAE"
-  note: "If the beaker is not graduated with a 50 mL mark, get a graduated cylinder from the rack at A1.505. Add 50 mL of 1X TAE from jug J2 at A5.500 to the beaker."
+  note: "Get a graduated cylinder from on top of the microwave at A5.305. Measure and add 50 mL of 1X TAE from jug J2 at A5.500 to the flask."
 end
 
 
 step
   description: "Microwave into solution"
-  note: "Place the beaker in the microwave and heat on high until it begins to boil, then immediately stop the microwave. Without picking up the beaker directly with your hand, carefully swirl the (superheated) mixture. Repeat microwaving and swirling until the agarose has gone completely into solution (no agarose wisps are visible). When done, move to the station at A7.325 and take the beaker with you."
-  bullet: "This strategy works with the white microwave:"
-  bullet: "Microwave 35 seconds on high, then swirl."
-  bullet: "Microwave 10 second on high, then swirl."
-  bullet: "Microwave 7 seconds on high, then swirl. The agarose should now be in solution."
-  warning: "Use a paper towel to handle the beaker."
+  bullet: "Swirl the flask to mix for about two seconds."
+  bullet: "Microwave 70 seconds on high, then swirl. The agarose should now be in solution."
+  bullet: "If it is not in solution, microwave 7 seconds on high, then swirl. Repeat until dissolved."
+  warning: "Use a paper towel to handle the flask."
 end
 
 
@@ -54,25 +46,32 @@ take
 end
 
 
+gel_green_volume = gel_volume / 10.0  # in µL
 step
-  description: "Add GelGreen"
-  note: "Using a 10 µL pipetter, pipet 5 µL of GelGreen directly into the agarose, then swirl to mix."
+  description: "Add %{gel_green_volume} µL GelGreen"
+  note: "Using a 10 µL pipetter, pipet %{gel_green_volume} µL of GelGreen directly into the agarose, then swirl to mix."
   warning: "GelGreen is supposedly safe, but stains DNA and can transit cell membranes (limit your exposure)."
+  warning: "GelGreen is photolabile. Limit its exposure to light by putting it back in the box."
 end
 
 
 release [agarose[0], gel_green[0]]
 
 
+take
+  gel_box = 1 "49 mL Gel Box With Casting Tray (clean)"
+end
+
+
 if comb_n == 1
   step
     description: "Add comb"
-    note: "With the electrodes facing away from you, add a purple comb to the left side of the casting tray, thinner side down. Make sure it is well-situated in the groove on the casting tray."
+    note: "Retrieve a 6-well purple comb from A7.325. Position the gel box With the electrodes facing away from you. Add a purple comb to the side of the casting tray nearest the side of the gel box, thicker side down. Make sure it is well-situated in the groove of the casting tray."
   end
 else
   step
     description: "Add combs"
-    note: "With the electrodes facing away from you, add a purple comb to the left side of the casting tray, thinner side down. Make sure it is well-situated in the groove on the casting tray.\n\nRepeat for the second comb, but use the middle groove of the casting tray."
+    note: "Retrieve two 6-well purple combs from A7.325. Position the gel box With the electrodes facing away from you. Add a purple comb to each casting tray groove, thicker side down. Make sure it is well-situated in the groove of the casting tray."
   end
 end
 
@@ -84,14 +83,13 @@ end
 
 step
   description: "Pour the gel"
-  note: "Using autoclave gloves, pour the gel from the beaker into the casting tray. Pour slowly and in a corner for best results. Pop any bubbles with a 10 µL pipet tip."
+  note: "Using autoclave gloves, pour the gel from the flask into the casting tray. Pour slowly and in a corner for best results. Pop any bubbles with a 10 µL pipet tip."
 end
 
 release gloves
 
 
 produce
-  # FIXME: percentage should be in data field
   gel = 1 "50 mL 1 Percent Agarose Gel in Gel Box"
   release gel_box
 end
