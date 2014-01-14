@@ -28,7 +28,7 @@ step
   bullet: "Fill the gel box with 1X TAE until it just covers the center of the gel box."
   bullet: "With the gel box electrodes facing away from you, place the gel (in casting tray) back in the gel box such that the top lane is on your left."
 end
-
+ 
 
 step
   description: "Load the ladder"
