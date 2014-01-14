@@ -69,7 +69,6 @@ end
 
 produce
   r = 1 "Gel Slice" of "fLAB2"
-  location: "Bench"
 end
 
 log
