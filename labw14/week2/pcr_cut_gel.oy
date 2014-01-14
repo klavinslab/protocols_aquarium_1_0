@@ -7,7 +7,7 @@ argument
   enzyme_id: sample, "The Phsion HF Master Mix stock"
 #  ladder: sample, "The ladder for your gel"
 end
-ladder = 823
+ladder = 822
 
 
 place pcr_prep
@@ -40,7 +40,7 @@ end
 place pcr_finish
   protocol: "labw14/week2/pcr_finish.pl"
   group: aquarium_user
-  start: minutes(1)
+  start: minutes(70)
   window: minutes(1)
 end
 
@@ -61,7 +61,7 @@ wire (pcr_finish,"PCR_Result_id") => (run_gel,"fragment_one")
 place image_cut_gel
   protocol: "labw14/week2/image_cut_gel.pl"
   group: aquarium_user
-  start: now()
+  start: minutes(40)
   window: minutes(1)
 end
 
