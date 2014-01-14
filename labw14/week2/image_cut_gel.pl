@@ -18,8 +18,8 @@ step
   description: "Wear the UV protection glasses"
   note: "The UV protection glasses are located above the bench in the gel station. 
   Though the transilluminators we are using emit in the visible blue spectrum, these 
-  goggles protect your eyes from the bright lights and allows you to see the DNA band.
-  If you wear glasses, wear the goggles over your glasses."
+  glasses protect your eyes from the bright lights and allows you to see the DNA band.
+  If you wear glasses, wear the glasses over your glasses."
   image: "wear_uv"
 end
 
@@ -40,7 +40,7 @@ step
   bullet: "Switch the camera to macro mode by pressing the button with a flower and
   rotating the menu wheel to the flower icon."
   bullet: "Set the ISO to 100 by turning the larger dial"
-  bullet: "Set the white balance to tungsten by pressing the center button and navigating to tungston."
+  bullet: "Set the white balance to tungsten by pressing the center button and navigating to tungsten."
   bullet: "Set the shutter speed to 4 seconds by turning the menu wheel."
 end
 
