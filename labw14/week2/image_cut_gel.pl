@@ -1,5 +1,5 @@
 argument
-  gel_Lane: sample, "The gel lane you got after run the gel"
+  gel: sample, "The gel lane you got after run the gel"
 end
 
 step
