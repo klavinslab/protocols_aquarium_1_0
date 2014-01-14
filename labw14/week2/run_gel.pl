@@ -9,7 +9,7 @@ end
 
 
 take
-  gel = 1 "1 Percent Agarose Gel in box"
+  gel = 1 "50 mL 1 Percent Agarose Gel in Gel Box"
   fragment = item fragment_one
   ladder = item ladder_one
   loading_dye = 1 "6X Loading Dye"
@@ -25,10 +25,11 @@ end
 step
   description: "Set up the gel box."
   bullet: "Carefully remove the casting tray from the gel box, keeping it level (the gel can slide off)."
-  bullet: "Fill the gel box with 1X TAE until it just covers the center of the gel box."
+  bullet: "Fill the gel box with 1X TAE from A5.500 until it just covers the center of the gel box."
   bullet: "With the gel box electrodes facing away from you, place the gel (in casting tray) back in the gel box such that the top lane is on your left."
+  bullet: "Carefully remove the comb(s)."
 end
- 
+
 
 step
   description: "Load the ladder"
@@ -51,7 +52,7 @@ end
 
 step
   description: "Start electrophoresis"
-  note: "Carefully attach the gel box lid to the gel box, being careful not to bump the samples out of the wells. Hit the start button on the gel boxes - usually a small running person icon."
+  note: "Carefully attach the gel box lid to the gel box, being careful not to bump the samples out of the wells. Attach the red electrode to the red terminal of the power supply, and the black electrode to the neighboring black terminal. Hit the start button on the gel boxes - usually a small running person icon."
 end
 
 
