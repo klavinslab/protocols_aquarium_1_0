@@ -1,6 +1,6 @@
-#argument
-#  Gel_Lane_id: sample, "The gel lane you got after run the gel"
-#end
+argument
+  Gel_Lane_id: sample, "The gel lane you got after run the gel"
+end
 
 step
   description: "Take the gel out of gel box and put it on transilluminator"
