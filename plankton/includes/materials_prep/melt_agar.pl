@@ -11,7 +11,7 @@ end
 
 step
   description: "Set the time and power."
-  note: "To set the cook time, press "Cook" then "200" for 2 minutes. To set the power, press "Power" then %{power}. Press "Start".
+  note: "To set the cook time, press 'Cook' then '200' for 2 minutes. To set the power, press 'Power' then %{power}. Press 'Start.'"
   warning: "Keep an eye on it to make sure it does not boil over."
 end
 
