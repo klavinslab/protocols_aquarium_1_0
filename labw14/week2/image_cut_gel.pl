@@ -23,16 +23,24 @@ step
 end
 
 step
-  description: "Turn on the camera, center around the gel and take a picture"
+  description: "Turn on the camera"
   note: "The camera is turned on by pressing the power button once. 
-  The camera settings must be properly adjusted if they are not already."
+end
+
+step
+  description: "Adjust camera settings"
+  note: "The camera settings must be properly adjusted for gel photography if they are not already."
   bullet: "Turn the large dial to manual (M)"
   bullet: "Switch the camera to macro mode by pressing the button with a flower and
   rotating the menu wheel to the flower icon."
   bullet: "Set the ISO to 100"
   bullet: "Set the white balance to tungsten."
   bullet: "Set the exposure time to 4 seconds."
-  bullet: "Zoom in such that the gel takes up the entire field of view."
+end
+
+step
+  description: "Take a picture of the gel."
+  note: "Zoom in such that the gel takes up the entire field of view."
   note: "Press the trigger half way to focus and all the way down to take the photo. Leave the camera on
   as it takes time to transmit the photo to the computer wirelessly"
 end
