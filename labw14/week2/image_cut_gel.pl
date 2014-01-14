@@ -1,6 +1,6 @@
-argument
-  Gel_Lane_id: sample, "The gel lane you got after run the gel"
-end
+#argument
+#  Gel_Lane_id: sample, "The gel lane you got after run the gel"
+#end
 
 step
   description: "Take the gel out of gel box and put it on transilluminator"
@@ -67,11 +67,11 @@ step
   found them."
 end
 
-#produce
-#  r = "Gel Slice" of "fLAB2"
-#  location = "Bench"
-#end
+produce
+  r = "Gel Slice" of "fLAB2"
+  location = "Bench"
+end
 
-#log
-#  return: {Gel_Slice_id: r[:id]}
-#end
+log
+  return: {Gel_Slice_id: r[:id]}
+end
