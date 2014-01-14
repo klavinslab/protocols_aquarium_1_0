@@ -69,7 +69,7 @@ end
 
 produce
   r = 1 "Gel Part" of "fLAB2"
-  location = "Bench"
+#  location = "Bench"
 end
 
 log
