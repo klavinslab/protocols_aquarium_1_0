@@ -23,7 +23,7 @@ end
 
 step
   description: "Turn on the camera"
-  note: "The camera is turned on by pressing the power button once. 
+  note: "The camera is turned on by pressing the power button once."
 end
 
 step
