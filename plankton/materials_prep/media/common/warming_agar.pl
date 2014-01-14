@@ -38,7 +38,7 @@ end
 if media_type == "400 mL LB Agar (sterile"
   produce "500 mL Bottle (dirty)"
 else
-  produce "250 mL Bottle (dirty"
+  produce "250 mL Bottle (dirty)"
 end
 
 produce
