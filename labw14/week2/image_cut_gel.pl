@@ -18,13 +18,13 @@ step
   description: "Wear the UV protection glasses"
   note: "The UV protection glasses are located above the bench in the gel station. 
   Though the transilluminators we are using emit in the visible blue spectrum, these 
-  goggles protect your eyes from the bright lights and allows you to see the DNA band.
-  If you wear glasses, wear the goggles over your glasses."
+  glasses protect your eyes from the bright lights and allows you to see the DNA band.
+  If you wear glasses, wear the glasses over your glasses."
   image: "wear_uv"
 end
 
 step
-  description: "Turn on the transilluminator, put on the camera rig"
+  description: "Turn on the transilluminator, put on the camera hood"
   note: "The on switch for the transilluminator is located on the side."
 end
 
@@ -40,7 +40,7 @@ step
   bullet: "Switch the camera to macro mode by pressing the button with a flower and
   rotating the menu wheel to the flower icon."
   bullet: "Set the ISO to 100 by turning the larger dial"
-  bullet: "Set the white balance to tungsten by pressing the center button and navigating to tungston."
+  bullet: "Set the white balance to tungsten by pressing the center button and navigating to tungsten."
   bullet: "Set the shutter speed to 4 seconds by turning the menu wheel."
 end
 
@@ -59,7 +59,7 @@ step
 end
 
 step
-  description: "Remove the camera rig, cut out the gel slice with length 1799bp" 
+  description: "Remove the camera hood, cut out the gel slice with length 1799bp" 
   note: "It may help to turn the lights off during this step. Use the ladder to locate where
   1799bp is. Use the razor blade to cut around the band. Try to remove as much excess gel
   as possible. Do not remove any gel that contains the band as this will limit the amount

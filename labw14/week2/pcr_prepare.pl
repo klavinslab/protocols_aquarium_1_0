@@ -20,32 +20,19 @@ step
   description: "Label a 0.2mL PCR tube. Write your initials on it."
 end
 
-step
-  description: "Pipet 19 µL molecular grade water into the labeled PCR tube."
+step 
+  description: "Prepare Reaction"
+  check:"Pipet 19 µL molecular grade water into the labeled PCR tube."
+  check: "Pipet 1 µL of plasmid with id %{plasmid_id} into the tube."
+  check: "Pipet 2.5 µL of primer with id %{primer1} into the tube."
+  check: "Pipet 2.5 µL of primer with id %{primer2} into the tube."
+  check: "Pipet 25 µL of Phusion Master Mix with id %{enzyme_id} into the tube."
+  check: "Use the tip to gently mix."
+  note: "Be careful to pipette into the liquid, not the side of the tube."
 end
 
 step
-  description: "Pipet 1 µL of plasmid with id %{plasmid_id} into the tube."
-  note: "Carefully to pipet into the liquid, not on the side of the tube."
-end
-
-step
-  description: "Pipet 2.5 µL of primer with id %{primer1} into the tube."
-  note: "Carefully to pipet into the liquid, not on the side of the tube."
-end
-
-step
-  description: "Pipet 2.5 µL of primer with id %{primer2} into the tube."
-  note: "Carefully to pipet into the liquid, not on the side of the tube."
-end
-
-step
-  description: "Pipet 25 µL of Phusion Master Mix with id %{enzyme_id} into the tube."
-  note: "Use the tip to gently mix"
-end
-
-step
-  description: "Place the tube into an available thermal cycler"
+  description: "Place the tube into thermal cycler T2 at B3.335"
 end
 
 step
