@@ -40,7 +40,7 @@ step
 end
 
 step
-  description: "Pipet 25 µL of 2X Phusion Master Mix into the tube."
+  description: "Pipet 25 µL of Phusion Master Mix with id %{enzyme_id} into the tube."
   note: "Use the tip to gently mix"
 end
 
@@ -50,6 +50,7 @@ end
 
 step
   description: "Choose program to run on the thermal cycler"
+  note: "Click saved protocol, choose LABW14 folder, choose CLONEPCR."
 end
 
 step
