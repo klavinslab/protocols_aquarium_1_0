@@ -67,11 +67,11 @@ step
   found them."
 end
 
-#produce
-#  r = "Gel Slice" of "fLAB1"
-#  location = "Bench"
-#end
+produce
+  r = "Gel Slice" of "fLAB1"
+  location = "Bench"
+end
 
-#log
-#  return: {Gel_Slice_id: r[:id]}
-#end
+log
+  return: {Gel_Slice_id: r[:id]}
+end
