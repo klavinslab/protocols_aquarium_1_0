@@ -64,7 +64,7 @@ place image_cut_gel
   window: minutes(1)
 end
 
-#wire (run_gel,"Gel_lane_id") => (image_cut_gel,"")
+#wire (run_gel,"Gel_lane_id") => (image_cut_gel,"gel")
 
 
 
