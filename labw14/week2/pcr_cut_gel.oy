@@ -5,6 +5,7 @@ argument
   primer2: sample, "The second primer"
   plasmid_id: sample, "The plasmid stock"
   enzyme_id: sample, "The Phsion HF Master Mix stock"
+  ladder: sample, "The ladder for your gel"
 end
 
 
@@ -45,12 +46,16 @@ end
 #first step is make sure gel has solidified 
 place run_gel
   protocol: "labw14/week2/run_gel.pl"
+  argument
+    ladder_one: ladder
+    fragment_volume: 2
+  end
   group: aquarium_user
   start: now()
   window: minutes(1)
 end
 
-wire (pcr_finish,"PCR_Result_id") => (run_gel,"fragment_in_pcr")
+wire (pcr_finish,"PCR_Result_id") => (run_gel,"fragment_one")
 
 place image_cut_gel
   protocol: "labw14/week2/four.pl"
@@ -58,6 +63,8 @@ place image_cut_gel
   start: now()
   window: minutes(1)
 end
+
+#wire (run_gel,"Gel_lane_id") => (image_cut_gel,"")
 
 
 
