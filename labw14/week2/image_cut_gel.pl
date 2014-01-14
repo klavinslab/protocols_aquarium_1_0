@@ -20,6 +20,7 @@ step
   Though the transilluminators we are using emit in the visible blue spectrum, these 
   goggles protect your eyes from the bright lights and allows you to see the DNA band.
   If you wear glasses, wear the goggles over your glasses."
+  image: "wear_uv"
 end
 
 step
@@ -54,6 +55,7 @@ step
   description: "Take razor blade from shelf above station" 
   note: "Razor blades are located in a petri dish next to the goggles. Take one out and carefully
   clean the blade using ethanol and a kimwipe"
+  image: "spray_blade"
 end
 
 step
@@ -62,6 +64,7 @@ step
   1799bp is. Use the razor blade to cut around the band. Try to remove as much excess gel
   as possible. Do not remove any gel that contains the band as this will limit the amount
   of DNA that can be extracted."
+  image: "cut_gel"
 end
 
 step
@@ -69,6 +72,7 @@ step
   note: "Slide the gel slice onto the razor blade, open the tube and push the slice in. If the
   slice is to big, trim down excess gel. Again, do not trim gel that contains the band, only
   excess gel around the band."
+  image: "slice_tube"
 end
 
 step
