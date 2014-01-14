@@ -2,14 +2,14 @@ argument
   primer1: sample, "The first primer"
   primer2: sample, "The second primer"
   plasmid_id: sample, "The plasmid stock"
-  Phusion_HF_Master_Mix_id: sample, "The Phsion HF Master Mix stock"
+  enzyme_id: sample, "The Phsion HF Master Mix stock"
 end
 
 take
   primer1_stock = item primer1
   primer2_stock = item primer2
   plasmid_stock = item plasmid_id
-  phusion_stock = item Phusion_HF_Master_Mix_id
+  phusion_stock = item enzyme_id
 end
 
 step
