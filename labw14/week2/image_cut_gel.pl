@@ -60,7 +60,7 @@ end
 
 step
   description: "Remove the camera hood, cut out the gel slice with length 1799bp" 
-  note: "It may help to turn the lights off during this step. Use the ladder to locate where
+  note: "It may help to turn the romm lights off during this step. Use the ladder to locate where
   1799bp is. Use the razor blade to cut around the band. Try to remove as much excess gel
   as possible. Do not remove any gel that contains the band as this will limit the amount
   of DNA that can be extracted."
