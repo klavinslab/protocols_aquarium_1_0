@@ -5,8 +5,9 @@ argument
   primer2: sample, "The second primer"
   plasmid_id: sample, "The plasmid stock"
   enzyme_id: sample, "The Phsion HF Master Mix stock"
-  ladder: sample, "The ladder for your gel"
+#  ladder: sample, "The ladder for your gel"
 end
+ladder = 823
 
 
 place pcr_prep
@@ -64,7 +65,7 @@ place image_cut_gel
   window: minutes(1)
 end
 
-#wire (run_gel,"Gel_lane_id") => (image_cut_gel,"gel")
+wire (run_gel,"Gel_lane_id") => (image_cut_gel,"gel")
 
 
 
