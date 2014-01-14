@@ -4,6 +4,12 @@ argument
   plasmid_id: sample, "The plasmid stock"
 end
 
+take
+  primer1_stock = item primer1
+  primer2_stock = item primer2
+  plasmid_stock = item plasmid_id
+end
+
 step
   description: "This protocol prepares the PCR mix in PCR tube and starts it in thermal cycler."
 end
