@@ -3,6 +3,11 @@ argument
 end
 
 step
+  description: "Wipe down transilluminator"
+  note: "Spray with ethanol and wipe down with a kimwipe"
+end
+
+step
   description: "Take the gel out of gel box and put it on transilluminator"
   note: "Carefully remove the holder from the gel box. The gel is slippery and may fall out unexpectedly.
   Slide the gel off of the holder and onto the surface of the transilluminator"
@@ -32,9 +37,9 @@ step
   bullet: "Turn the large dial to manual (M)"
   bullet: "Switch the camera to macro mode by pressing the button with a flower and
   rotating the menu wheel to the flower icon."
-  bullet: "Set the ISO to 100"
-  bullet: "Set the white balance to tungsten."
-  bullet: "Set the exposure time to 4 seconds."
+  bullet: "Set the ISO to 100 by turning the larger dial"
+  bullet: "Set the white balance to tungsten by pressing the center button and navigating to tungston."
+  bullet: "Set the shutter speed to 4 seconds by turning the menu wheel."
 end
 
 step
@@ -42,6 +47,12 @@ step
   note: "Zoom in such that the gel takes up the entire field of view."
   note: "Press the trigger half way to focus and all the way down to take the photo. Leave the camera on
   as it takes time to transmit the photo to the computer wirelessly"
+end
+
+step
+  description: "Take razor blade from shelf above station" 
+  note: "Razor blades are located in a petri dish next to the goggles. Take one out and carefully
+  clean the blade using ethanol and a kimwipe"
 end
 
 step
@@ -65,6 +76,11 @@ step
   Spray the surface of the transilluminator with ethanol and wipe until dry using kimwipes or paper towel. If the
   lights in the room are turned off, turn the lights back on. Remove the UV goggles and put them back where you
   found them."
+end
+
+step
+  description: "Empty leftover TAE in the gel box into the dishwashing sink"
+  note: "Leave the gel box to dry on the drying rack"
 end
 
 produce
