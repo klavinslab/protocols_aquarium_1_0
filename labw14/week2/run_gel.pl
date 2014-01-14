@@ -31,16 +31,19 @@ step
 end
 
 
-step
-  description: "Load the ladder"
-  note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) into the first (top-left) well of the gel."
-end
-
-
 dye_volume = fragment_volume / 5.0
 step
   description: "Add loading dye to the PCR fragment"
   note: "Using a 10 µL or 100 µL pipetter, add %{dye_volume} µL of loading dye to the PCR results with id %{fragment_one}."
+end
+
+
+release loading_dye
+
+
+step
+  description: "Load the ladder"
+  note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder} into the first (top-left) well of the gel."
 end
 
 
@@ -57,8 +60,13 @@ step
 end
 
 
+release ladder
+
+
 produce
   gel_lane = 1 "Gel Lane" from fragment[0]
+  release fragment_one
+  release gel
 end
 
 log
