@@ -4,6 +4,7 @@ argument
   primer1: sample, "The first primer"
   primer2: sample, "The second primer"
   plasmid_id: sample, "The plasmid stock"
+  enzyme_id: sample, "The Phsion HF Master Mix stock"
 end
 
 
@@ -13,6 +14,7 @@ place pcr_prep
     primer1: primer1
     primer2: primer2
     plasmid_id: plasmid_id
+    enzyme_id: enzyme_id
   end
   group: aquarium_user
   marked: true
