@@ -28,10 +28,11 @@ step
   bullet: "Turn the large dial to manual (M)"
   bullet: "Switch the camera to macro mode by pressing the button with a flower and
   rotating the menu wheel to the flower icon."
+  bullet: "Set the ISO to 100"
   bullet: "Set the white balance to tungsten."
-  bullet: "Set the exposure time to 3.5 seconds."
+  bullet: "Set the exposure time to 4 seconds."
   bullet: "Zoom in such that the gel takes up the entire field of view."
-  bullet: "Press the trigger half way to focus and all the way to take the photo."
+  bullet: "Press the trigger half way to focus and all the way down to take the photo."
 end
 
 step
