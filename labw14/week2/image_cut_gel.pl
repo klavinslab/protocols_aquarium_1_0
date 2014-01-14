@@ -18,7 +18,7 @@ step
 end
 
 step
-  description: "Turn on the transilluminator, put on the camera hood"
+  description: "Turn on the transilluminator, put on the camera rig"
   note: "The on switch for the transilluminator is located on the side."
 end
 
@@ -46,7 +46,7 @@ step
 end
 
 step
-  description: "Remove the camera hood, cut out the gel slice with length 1799bp" 
+  description: "Remove the camera rig, cut out the gel slice with length 1799bp" 
   note: "It may help to turn the lights off during this step. Use the ladder to locate where
   1799bp is. Use the razor blade to cut around the band. Try to remove as much excess gel
   as possible. Do not remove any gel that contains the band as this will limit the amount
