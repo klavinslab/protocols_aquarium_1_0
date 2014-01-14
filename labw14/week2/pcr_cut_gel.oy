@@ -39,7 +39,7 @@ end
 place pcr_finish
   protocol: "labw14/week2/pcr_finish.pl"
   group: aquarium_user
-  start: minutes(5)
+  start: minutes(1)
   window: minutes(1)
 end
 
