@@ -10,4 +10,5 @@ end
 
 produce
   gel_box = 1 "49 mL Gel Box With Casting Tray (clean)"
+  location: "A7.325"
 end
