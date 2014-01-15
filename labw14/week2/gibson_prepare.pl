@@ -4,6 +4,7 @@ argument
 end
 
 take
+  x = 1 "Gibson Aliquot"
   y1 = item fragment1
   y2 = item fragment2
 end
