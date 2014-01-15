@@ -32,7 +32,7 @@ place dpnI_digest
   window: minutes(1)
 end
 
-wire (purify_gel,"Fragment_Stock_id") => (dpn1_digest,"fragment")
+wire (purify_gel,"Fragment_Stock_id") => (dpnI_digest,"fragment")
 
 
 place pcr_purification
