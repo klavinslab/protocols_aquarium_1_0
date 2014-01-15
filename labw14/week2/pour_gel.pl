@@ -14,13 +14,17 @@ end
 
 
 take
-  agarose = 1 "Ultrapure* Agarose"
+  glasses = 1 "Clear Protective Glasses"
 end
 
 
 step
-  description: "Wear protective goggles"
-  note: "Clear protective goggles are located in A7.510."
+  description: "Put on the clear protective glasses"
+end
+
+
+take
+  agarose = 1 "Ultrapure* Agarose"
 end
 
 
@@ -131,7 +135,9 @@ end
 
 step
   description: "Clean up!"
-  checkbox: "Put all goggles back in A7.510."
   checkbox: "Place the graduated cylinder back on top of microwave M2."
   checkbox: "Place the flask back on top of microwave M2."
 end
+
+
+release glasses

@@ -9,6 +9,16 @@ end
 
 
 take
+  glasses = 1 "Clear Protective Glasses"
+end
+
+
+step
+  description: "Wear clear protective glasses"
+end
+
+
+take
   gel = 1 "50 mL 1 Percent Agarose Gel in Gel Box"
   fragment = item fragment_one
   ladder = item ladder_one
@@ -76,6 +86,9 @@ end
 
 
 release fragment_one  # Throw away the tube / save extra
+
+
+release glasses
 
 
 log
