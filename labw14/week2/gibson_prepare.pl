@@ -10,16 +10,15 @@ step
 end
 
 step
-  description: "Add 2.5 µL of fragment 1 with id %{fragment1} to the labeled tube."
-end
-
-step
-  description: "Add 2.5 µL of fragment 2 with id %{fragment2} to the labeled tube."
+  description: "Prepare the Gibson reaction"
+  check: "Add 1 µL of molecular grade water to the labeled tube."
+  check: "Add 2 µL of fragment 1 with id %{fragment1} to the tube."
+  check: "Add 2 µL of fragment 2 with id %{fragment2} to the tube."
   note: "Gently mix with pipette tip."
 end
 
 step
-  description: "Incubate the tube in an 50 C heat block."
+  description: "Incubate the tube in a 50 C heat block."
   note: "Wait 40 minutes for your next gibson_finish protocol."
 end
 
