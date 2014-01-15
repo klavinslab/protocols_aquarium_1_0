@@ -36,3 +36,5 @@ modify
   location:"B14.310"
   inuse:0
 end
+
+release [neb4[0],bsa_buffer[0],dpn_enzyme[0]]
