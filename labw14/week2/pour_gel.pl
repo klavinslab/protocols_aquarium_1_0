@@ -135,8 +135,8 @@ end
 
 step
   description: "Clean up!"
-  checkbox: "Place the graduated cylinder back on top of microwave M2."
-  checkbox: "Place the flask back on top of microwave M2."
+  check: "Place the graduated cylinder back on top of microwave M2."
+  check: "Place the flask back on top of microwave M2."
 end
 
 
