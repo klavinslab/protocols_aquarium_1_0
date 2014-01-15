@@ -2,6 +2,10 @@ argument
   Gel_Slice_id: sample, "Choose the Gel Slice you need to purify."
 end
 
+take
+  gel_slice = item Gel_Slice_id
+end
+
 step
   description: "Weigh the gel slice on a scale"
   note: "Use an empty 1.5 mL tube to zero the scale first, then put the gel slice tube on the scale."
