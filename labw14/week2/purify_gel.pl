@@ -100,7 +100,7 @@ step
 end
     
 produce
-  r = 1 "Fragment Stock" of "pLAB3"
+  r = 1 "Fragment Stock" of "fLAB1"
   location: "Bench"
 end
 
