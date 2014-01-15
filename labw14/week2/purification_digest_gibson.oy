@@ -20,8 +20,8 @@ place purify_gel
 end
 
 
-place dpn1_digest
-  protocol: "labw14/week2/dpn1_digest.pl"
+place dpnI_digest
+  protocol: "labw14/week2/dpnI_digest.pl"
   argument
     neb: neb
     bsa: bsa
@@ -69,8 +69,8 @@ end
 
 
 # forward transitions
-transition [purify_gel]     => [dpn1_digest] when !error(0) && completed(0) end
-transition [dpn1_digest] => [pcr_purification] when !error(0) && completed(0) end
+transition [purify_gel]     => [dpnI_digest] when !error(0) && completed(0) end
+transition [dpnI_digest] => [pcr_purification] when !error(0) && completed(0) end
 transition [pcr_purification] => [gibson_prepare] when !error(0) && completed(0) end
 transition [gibson_prepare] => [gibson_finish] when !error(0) && completed(0) end
 transition [gibson_finish] => [stock_fragment] when !error(0) && completed(0) end
@@ -79,7 +79,7 @@ transition [stock_fragment] => [] when !error(0) && completed(0) end
 
 # rework transitions
 transition [purify_gel]     => [purify_gel]    when error(0) end
-transition [dpn1_digest]     => [dpn1_digest]     when error(0) end
+transition [dpnI_digest]     => [dpnI_digest]     when error(0) end
 transition [pcr_purification]     => [pcr_purification]     when error(0) end
 transition [gibson_prepare]     => [gibson_prepare]     when error(0) end
 transition [gibson_finish] => [gibson_finish]    when error(0) end
