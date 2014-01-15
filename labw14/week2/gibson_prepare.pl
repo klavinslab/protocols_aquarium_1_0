@@ -17,9 +17,9 @@ end
 
 step
   description: "Prepare the Gibson reaction"
-  check: "Add 1 µL of molecular grade water to the labeled tube."
-  check: "Add 2 µL of fragment 1 with id %{fragment1} to the tube."
-  check: "Add 2 µL of fragment 2 with id %{fragment2} to the tube."
+  check: "Add 2 µL of molecular grade water to the labeled tube."
+  check: "Add 1.5 µL of fragment 1 with id %{fragment1} to the tube."
+  check: "Add 1.5 µL of fragment 2 with id %{fragment2} to the tube."
   note: "Gently mix with pipette tip."
 end
 
