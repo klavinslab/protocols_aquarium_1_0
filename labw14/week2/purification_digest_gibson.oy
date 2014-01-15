@@ -46,6 +46,9 @@ wire (purify_gel,"Fragment_Stock_id") => (pcr_purification,"fragment")
 
 place gibson_prepare
   protocol: "labw14/week2/gibson_prepare.pl"
+  argument 
+    fragment2: fragment2
+  end
   group: aquarium_user
   start: now()
   window: minutes(1)
