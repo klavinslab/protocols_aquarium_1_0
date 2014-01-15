@@ -72,8 +72,8 @@ end
 step
   description: "Trim the gel slice"
   note: "Try to remove as much excess gel as possible. Do not remove any gel that contains the band 
-  as this will limit the amount of DNA that can be extracted. Basically, try to cut away everything
-  that is not glowing."
+  as this will limit the amount of DNA that can be extracted. In essence, try to cut away everything
+  that is not glowing. It is important to trim the gel as excess gel will complicate the next protocol."
 end
 
 step
