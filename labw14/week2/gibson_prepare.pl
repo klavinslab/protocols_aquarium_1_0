@@ -26,6 +26,7 @@ end
 step
   description: "Incubate the tube in a 50 C heat block."
   note: "Wait 30 minutes for your next gibson_finish protocol."
+  release x
 end
 
 release [y1[0],y2[0]]
