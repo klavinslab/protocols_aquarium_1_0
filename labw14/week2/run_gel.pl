@@ -35,10 +35,12 @@ end
 
 step
   description: "Set up the gel box."
-  bullet: "Carefully remove the casting tray from the gel box, keeping it level (the gel can slide off)."
-  bullet: "Fill the gel box with 1X TAE from A5.500 until it just covers the center of the gel box."
-  bullet: "With the gel box electrodes facing away from you, place the gel (in casting tray) back in the gel box such that the top lane is on your left."
-  bullet: "Carefully remove the comb(s) and place them in the appropriate box in A7.325."
+  check: "Carefully remove the casting tray (with gel) and place it on the bench."
+  check: "Using the graduated cylinder at A5.305, fill the gel box with 200 mL of 1X TAE from J2 at A5.500. TAE should just cover the center of the gel box."
+  check: "With the gel box electrodes facing away from you, place the casting tray (with gel) back in the gel box. The top lane should be on your left, as the DNA will move to the right."
+  check: "Using the graduated cylinder, add 50 mL of 1X TAE from J2 at A5.500 so that the surface of the gel is covered."
+  check: "Carefully remove the comb(s) and place them in the appropriate box in A7.325."
+  check: "Put the graduated cylinder back at A5.305."
   image: "gel_fill_TAE_to_line"
 end
 
