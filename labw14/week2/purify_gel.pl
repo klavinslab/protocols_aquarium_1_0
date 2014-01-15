@@ -14,6 +14,21 @@ step
   end
 end
 
+while gel_weight > 150
+  step
+    description: "Go back to Gel room to trim you gel slice"
+    note: "Wait for the gel slice to thaw, put on the transiluminator, trim the non DNA part of your gel."
+  end
+  step
+    description: "Weigh the gel slice on a scale at A5.300"
+    note: "Use an empty 1.5 mL tube to zero the scale first, then put the gel slice tube on the scale."
+    getdata
+      gel_weight: number, "Enter the gel slice weight shown on the scale in mg. If it shows 0.134 on scale, you enter 134 below."
+    end
+end
+end
+
+
 QG_volume = 3 * gel_weight
 
 QG_volume_plus = QG_volume + 100
