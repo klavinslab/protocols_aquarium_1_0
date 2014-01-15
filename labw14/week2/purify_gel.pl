@@ -19,7 +19,7 @@ QG_volume = 3 * gel_weight
 QG_volume_plus = QG_volume + 100
 
 step
-  description: "Add %{QG_volume} µL buffer QG into the gel slice tube with id %{Gel_Slice_id}"
+  description: "Add %{QG_volume} µL buffer QG into the gel slice tube with id %{gel}"
 end
 
 step
