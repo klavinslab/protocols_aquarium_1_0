@@ -34,7 +34,7 @@ end
 
 wire (purify_gel,"Fragment_Stock_id") => (dpnI_digest,"fragment")
 
-
+#change to 40 min
 place pcr_purification
   protocol: "labw14/week2/pcr_purification.pl"
   group: aquarium_user
@@ -56,6 +56,7 @@ end
 
 wire (purify_gel,"Fragment_Stock_id") => (gibson_prepare,"fragment1")
 
+#change to 25 min
 place gibson_finish
   protocol: "labw14/week2/gibson_finish.pl"
   group: aquarium_user
