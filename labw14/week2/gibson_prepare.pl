@@ -3,6 +3,11 @@ argument
   fragment2: sample, "Fragment 2 for Gibson reaction"
 end
 
+take
+  y1 = item fragment1
+  y2 = item fragment2
+end
+
 information "Scarlessly assemble DNA using fragments with terminal homologies."
 
 step
@@ -22,3 +27,4 @@ step
   note: "Wait 30 minutes for your next gibson_finish protocol."
 end
 
+release [y1[0],y2[0]]
