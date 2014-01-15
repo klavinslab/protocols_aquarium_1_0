@@ -4,6 +4,8 @@ end
 neb = 669
 bsa = 799
 dnp = 685
+fragment2 = 874
+#need to change fragment2 to 873 when run on production server.
 
 
 place purify_gel
@@ -48,6 +50,8 @@ place gibson_prepare
   start: now()
   window: minutes(1)
 end
+
+wire (purify_gel,"Fragment_Stock_id") => (gibson_prepare,"fragment1")
 
 place gibson_finish
   protocol: "labw14/week2/gibson_finish.pl"
