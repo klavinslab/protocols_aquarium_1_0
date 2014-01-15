@@ -50,7 +50,7 @@ end
 step
   description: "When all group samples are loaded, hit 'run' on the thermal cycler and select 50µL setting."
   note: "Coordinate with your fellow classmates to put all their samples before hit run."
-  image: "thermal_cycler_selected"
+  image: "thermal_cycler_select"
 end
 
 
