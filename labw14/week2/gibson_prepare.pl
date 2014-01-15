@@ -26,7 +26,12 @@ end
 step
   description: "Incubate the tube in a 50 C heat block."
   note: "Wait 30 minutes for your next gibson_finish protocol."
-  release x
 end
 
+#release x
+
 release [y1[0],y2[0]]
+
+log
+  return: {Gibson_Alliquot_id: x[:id]}
+end
