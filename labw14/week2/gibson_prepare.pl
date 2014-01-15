@@ -25,13 +25,22 @@ end
 
 step
   description: "Incubate the tube in a 50 C heat block."
-  note: "Wait 30 minutes for your next gibson_finish protocol."
+  note: "Wait 25 minutes for your the Gibson to complete."
 end
 
-#release x
+step
+  description: "WAIT HERE for 25 MINUTES. Hit Next after 25 minutes."
+end
+
+step
+  description: "Pick up the tube you incubated on the 50 C heat block"
+  note: "Place in the M20 box slot specified in next page."
+end
+
+produce
+  r = 1 "Gibson Reaction Result" of "pLAB3"
+  release x
+end
 
 release [y1[0],y2[0]]
 
-log
-  return: {Gibson_Alliquot_id: x[:id]}
-end
