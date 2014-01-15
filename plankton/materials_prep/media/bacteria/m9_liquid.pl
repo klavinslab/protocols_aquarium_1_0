@@ -11,8 +11,6 @@ argument
   glucose_percent: number, "The percentage of glucose in the final product. If 0, none will be added. The standard is 2."
   cellobiose_percent: number, "The percentage of cellobiose in the final product. If 0, none will be added."
   biotin: string, "Add biotin? (Yes or No)."
-# FIXME: PDL version didn't have a CAS amino acid addition step!
-#  casaa: string, "Add CAS amino acids? (Yes or No)."
 end
 
 
@@ -25,16 +23,9 @@ end
 
 
 # TODO: Input checking a la SDO liquid protocol
-#if casaa == "Yes"
-#  take
-#    casaa_aliquot = 1 "Sterile CAS amino acid solution"
-#  end
-#end
-
-
 step
   description: "Add M9 salts"
-  note: "Using a serological pipette and 25 mL tip, add 80 mL of 5x M9 salts to the bottle. To conserve tips, use the same one repeatedly, adding 30 mL 2 times, then finally 20 mL."
+  note: "Using a serological pipette and 25 mL tip, add 80 mL of 5X M9 salts to the bottle. To conserve tips, use the same one repeatedly, adding 30 mL 2 times, then finally 20 mL."
   warning: "Sterile technique is very important for this step."
 end
 
@@ -62,7 +53,7 @@ if cellobiose_percent != 0
     cb = 1 "4%% Sterile Filtered Cellobiose"
   end
   # c1v1 = c2v2 -> v1 = c2v2/c1
-  cellobiose_volume = (cellobiose_percent / 100) * 400 / 4
+  cellobiose_volume = (cellobiose_percent / 100.0) * 400.0 / 4.0
   step
     description: "Add cellobiose"
     note: "Using the serological pipette, add %{cellobiose_volume} mL of 4%% cellobiose."
@@ -76,7 +67,7 @@ if glucose_percent != 0
     dextrose = 1 "20%% Dextrose Solution (sterile)"
   end
   # c1v1 = c2v2 -> v1 = c2v2/c1
-  glucose_volume = (glucose_percent / 100) * 400 / 20
+  glucose_volume = (glucose_percent / 100.0) * 400.0 / 20.0
   step
     description: "Add dextrose"
 		note: "Using the serological pipette, add %{glucose_volume} mL of 20%% Dextrose."
@@ -94,15 +85,26 @@ end
 release [salts[0], saltsol[0], water[0]]
 
 
-# FIXME: Figure out the object types vs. data fields for biotin / casaa options
-if nutrient == "cellobiose"
-  produce
-    m9 = 1 "M9 Media Cellobiose"
-    release bottle
-  end
-elsif nutrient == "glucose"
-  produce
-    m9 = 1 "mL M9 Media Glucose"
-    release bottle
-  end
+product_label_prefix = "400 mL M9 liquid"
+if cellobiose != 0 && glucose == 0
+  product_label_suffix = " Cellobiose"
+elsif glucose != 0 && cellobiose == 0
+  product_label_suffix = " Glucose"
+else
+  product_label_suffix = " Cellobiose + Glucose"
+end
+
+
+additions = ""
+if biotin == "Yes"
+  additions = additions + " +biotin"
+end
+
+
+product_label = product_label_prefix + product_labe_suffix + additions
+
+
+produce
+  m9 = 1 product_label
+  release bottle
 end
