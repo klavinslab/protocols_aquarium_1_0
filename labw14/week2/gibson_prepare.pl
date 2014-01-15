@@ -24,7 +24,7 @@ step
 end
 
 step
-  description: "Incubate the tube in a 50 C heat block."
+  description: "Incubate the tube in a 50 C heat block at B3.340"
   note: "Wait 25 minutes for your the Gibson to complete."
 end
 
