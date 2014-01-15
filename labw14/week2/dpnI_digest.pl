@@ -4,11 +4,9 @@ argument
   bsa: sample, "Choose BSA buffer"
   dpn: sample, "Choose DpnI enzyme"
 end
-take
-  y = item fragment
-end
 
 take
+  y = item fragment
   neb4 = item neb
   bsa_buffer = item bsa
 end
