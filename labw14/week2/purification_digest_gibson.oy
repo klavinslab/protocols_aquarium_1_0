@@ -10,43 +10,33 @@ end
 ladder = 822
 
 
-place pcr_prep
-  protocol: "labw14/week2/pcr_prepare.pl"
-  argument
-    primer1: primer1
-    primer2: primer2
-    plasmid_id: plasmid_id
-    enzyme_id: enzyme_id
-  end
+place purify_gel
+  protocol: "labw14/week2/purify_gel.pl"
   group: aquarium_user
   marked: true
   start: now()
   window: minutes(30)
 end
 
-#stagger
-place pour_gel
-  protocol: "labw14/week2/pour_gel.pl"
-  argument
-    percentage: 1
-    comb_n: 1
-  end
+
+place dpn1_digest
+  protocol: "labw14/week2/dpn1_digest_shell.pl"
   group: aquarium_user
   start: now()
   window: minutes(120)
 end
 
-#first step is wait until thermal cycler is done
-place pcr_finish
-  protocol: "labw14/week2/pcr_finish.pl"
+
+place pcr_purification
+  protocol: "labw14/week2/pcr_purification_shell.pl"
   group: aquarium_user
-  start: minutes(70)
+  start: minutes(40)
   window: minutes(1)
 end
 
-#first step is make sure gel has solidified 
-place run_gel
-  protocol: "labw14/week2/run_gel.pl"
+
+place gibson_prepare
+  protocol: "labw14/week2/gibson_prepare.pl"
   argument
     ladder_one: ladder
     fragment_volume: 50
