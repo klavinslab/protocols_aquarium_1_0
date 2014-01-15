@@ -106,6 +106,7 @@ end
 produce
   r = 1 "Fragment Stock" of "fLAB1"
   location: "Bench"
+  release gel_slice
 end
 
 log
