@@ -4,7 +4,7 @@ end
 
 step
   description: "Weigh the gel slice on a scale"
-  note: "Use a empty 1.5 mL tube to zero the scale first, then put the gel slice tube on the scale."
+  note: "Use an empty 1.5 mL tube to zero the scale first, then put the gel slice tube on the scale."
   getdata
     gel_weight: number, "Enter the gel slice weight shown on the scale in mg. If it shows 0.134 on scale, you enter 134 below."
   end
@@ -20,7 +20,7 @@ end
 
 step
   description: "Incubate the tube in a 50 C heat block for 10 minutes."
-  note: "Vortex after 5 minutes incubation and put back in the 50 C until 10 minutes totoal time reached"
+  note: "Vortex after 5 minutes of incubation and put back in the 50 C until 10 minutes totoal time reached"
 end
 
 step
@@ -73,7 +73,7 @@ step
 end
 
 step
-  description: "Take the colum out of centrifuge and empty collection tube"
+  description: "Take the columm out of centrifuge and empty collection tube"
   note: "Empty the waste in collection tube into a liquid waster collector on bench, put the collection tube back on afterwards."
 end
 
@@ -100,8 +100,8 @@ step
 end
     
 produce
-  r = "Fragment Stock" of "pLAB3"
-  location = "Bench"
+  r = 1 "Fragment Stock" of "pLAB3"
+  location: "Bench"
 end
 
 log
