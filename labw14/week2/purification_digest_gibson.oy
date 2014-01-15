@@ -25,7 +25,7 @@ place dpnI_digest
   argument
     neb: neb
     bsa: bsa
-    dnp: dpn
+    dpn: dpn
   end
   group: aquarium_user
   start: now()
