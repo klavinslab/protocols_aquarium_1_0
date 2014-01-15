@@ -54,7 +54,7 @@ step
 end
 
 step
-  description: "Add 750 µL PE buffer to column and wait 5 minutes"
+  description: "Add 750 µL PE buffer to column and wait 3 minutes"
 end
 
 step
