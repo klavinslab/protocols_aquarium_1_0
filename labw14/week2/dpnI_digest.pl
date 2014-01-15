@@ -1,9 +1,15 @@
 argument
   fragment: sample, "The purified fragment that needs to be digested"
+  neb: sample, "Choose NEB4 buffer"
+  bsa: sample, "Choose BSA buffer"
+  dpn: sample, "Choose DpnI enzyme"
 end
 
 take
   y = item fragment
+  neb4 = item neb
+  bsa_buffer = item bsa
+  dpn_enzyme = item dpn
 end
 
 step 
