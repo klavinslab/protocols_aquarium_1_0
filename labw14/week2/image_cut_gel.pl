@@ -2,6 +2,10 @@ argument
   gel: sample, "The gel lane you got after run the gel"
 end
 
+take
+  y = item gel
+end
+
 step
   description: "Wipe down transilluminator"
   note: "Spray with ethanol and wipe down with a kimwipe"
@@ -93,6 +97,7 @@ end
 
 produce
   r = 1 "Gel Slice" of "fLAB1"
+  release y
 end
 
 log
