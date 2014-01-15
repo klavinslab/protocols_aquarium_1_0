@@ -99,7 +99,7 @@ step
 end
 
 step
-  description: "Dicard the column and place the tube with lid closed on the bench"
+  description: "Dicard the column and place the tube on the bench"
   bullet: "Column can go to the tip waster collector."
 end
     
