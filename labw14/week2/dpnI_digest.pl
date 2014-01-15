@@ -1,9 +1,9 @@
 argument
-  PCR_Result_id: sample, "The PCR result from thermal cycler"
+  fragment: sample, "The purified fragment that needs to be digested"
 end
 
 take
-  y = item PCR_Result_id
+  y = item fragment
 end
 
 step 
@@ -13,6 +13,6 @@ end
 
 modify
   y[0]
-  location:"Bench"
+  location:"B14.310"
   inuse:0
 end
