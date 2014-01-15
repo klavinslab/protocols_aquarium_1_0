@@ -34,6 +34,7 @@ end
 step
   description: "You will now be asked to use the lab thermal cycler"
   note: "The thermal cycler will be shared by all groups."
+  image: "thermal_cycler_off"
 end
 
 step
@@ -41,13 +42,15 @@ step
 end
 
 step
-  description: "Choose program to run on the thermal cycler"
-  note: "Click saved protocol, choose LABW14 folder, choose CLONEPCR. Wait for all other groups to load in their samples."
+  description: "Choose program on the thermal cycler"
+  note: "Click Home then click Saved Protocol, choose LABW14 folder, choose CLONEPCR. Wait for all other groups to load in their samples."
+  image: "thermal_cycler_home"
 end
 
 step
   description: "When all group samples are loaded, hit 'run' on the thermal cycler and select 50µL setting."
   note: "Coordinate with your fellow classmates to put all their samples before hit run."
+  image: "thermal_cycler_selected"
 end
 
 
