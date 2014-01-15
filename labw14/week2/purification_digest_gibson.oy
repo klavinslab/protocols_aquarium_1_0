@@ -1,16 +1,23 @@
-#each team gets their own primers and plasmids
-
 argument
-  primer1: sample, "The first primer"
-  primer2: sample, "The second primer"
-  plasmid_id: sample, "The plasmid stock"
-  enzyme_id: sample, "The Phsion HF Master Mix stock"
+  gel: sample, "Choose the Gel Slice you need to purify."
+  fragment2: sample, "Choose the aliquot for the Gibson backbone"
 end
-ladder = 822
+neb = 669
+bsa = 799
+dpn = 685
+
+
+#fragment2 = 873
+
+#rehearsal server uses 872
+#need to change fragment2 to 873 when run on production server.
 
 
 place purify_gel
   protocol: "labw14/week2/purify_gel.pl"
+  argument
+    gel: gel
+  end
   group: aquarium_user
   marked: true
   start: now()
@@ -18,47 +25,70 @@ place purify_gel
 end
 
 
-place dpn1_digest
-  protocol: "labw14/week2/dpn1_digest_shell.pl"
+place dpnI_digest
+  protocol: "labw14/week2/dpnI_digest.pl"
+  argument
+    neb: neb
+    bsa: bsa
+    dpn: dpn
+  end
   group: aquarium_user
   start: now()
-  window: minutes(120)
+  window: minutes(1)
 end
 
+wire (purify_gel,"Fragment_Stock_id") => (dpnI_digest,"fragment")
 
+#change to 40 min
 place pcr_purification
-  protocol: "labw14/week2/pcr_purification_shell.pl"
+  protocol: "labw14/week2/pcr_purification.pl"
   group: aquarium_user
   start: minutes(40)
   window: minutes(1)
 end
 
+wire (purify_gel,"Fragment_Stock_id") => (pcr_purification,"fragment")
 
 place gibson_prepare
   protocol: "labw14/week2/gibson_prepare.pl"
+  argument 
+    fragment2: fragment2
+  end
   group: aquarium_user
   start: now()
   window: minutes(1)
 end
 
-#wire (pcr_finish,"PCR_Result_id") => (run_gel,"fragment_one")
+wire (purify_gel,"Fragment_Stock_id") => (gibson_prepare,"fragment1")
 
+#change to 25 min
+#place gibson_finish
+#  protocol: "labw14/week2/gibson_finish.pl"
+#  group: aquarium_user
+#  start: minutes(1)
+#  window: minutes(1)
+#end
+
+place stock_fragment
+  protocol: "labw14/week2/stock_fragment.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
 
 
 # forward transitions
-transition [purify_gel]     => [dpn1_digest] when !error(0) && completed(0) end
-transition [dpn1_digest] => [pcr_purification] when !error(0) && completed(0)
+transition [purify_gel]     => [dpnI_digest] when !error(0) && completed(0) end
+transition [dpnI_digest] => [pcr_purification] when !error(0) && completed(0) end
 transition [pcr_purification] => [gibson_prepare] when !error(0) && completed(0) end
-transition [gibson_prepare] => [gibson_finish] when !error(0) && completed(0) end
-transition [gibson_finish] => [] when !error(0) && completed(0) end
-
+transition [gibson_prepare] => [stock_fragment] when !error(0) && completed(0) end
+transition [stock_fragment] => [] when !error(0) && completed(0) end
 
 
 # rework transitions
-transition [pcr_prep]     => [pcr_prep]    when error(0) end
-transition [pour_gel]     => [pour_gel]     when error(0) end
-transition [pcr_finish]     => [pcr_finish]     when error(0) end
-transition [run_gel]     => [run_gel]     when error(0) end
-transition [image_cut_gel] => [image_cut_gel]    when error(0) end
-transition [clean_gel_box] => [clean_gel_box]    when error(0) end
+transition [purify_gel]     => [purify_gel]    when error(0) end
+transition [dpnI_digest]     => [dpnI_digest]     when error(0) end
+transition [pcr_purification]     => [pcr_purification]     when error(0) end
+transition [gibson_prepare]     => [gibson_prepare]     when error(0) end
+transition [stock_fragment] =>[stock_fragment] when error(0) end
 
