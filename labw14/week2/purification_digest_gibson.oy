@@ -1,10 +1,13 @@
 argument
   gel: sample, "Choose the Gel Slice you need to purify."
+  fragment2: sample, "Choose the aliquot for the Gibson backbone"
 end
 neb = 669
 bsa = 799
 dpn = 685
-fragment2 = 873
+
+
+#fragment2 = 873
 
 #rehearsal server uses 872
 #need to change fragment2 to 873 when run on production server.
