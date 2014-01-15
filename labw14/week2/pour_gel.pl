@@ -46,7 +46,7 @@ end
 
 step
   description: "Clean up weigh area"
-  note: "Using a 70% ethanol spray bottle and kimwipes, wipe down the weigh area."
+  note: "Using a 70%% ethanol spray bottle and kimwipes, wipe down the weigh area."
 end
 
 

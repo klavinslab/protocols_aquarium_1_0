@@ -87,7 +87,7 @@ produce
 end
 
 
-release fragment_one  # Throw away the tube / save extra
+release fragment  # Throw away the tube / save extra
 
 
 release glasses
