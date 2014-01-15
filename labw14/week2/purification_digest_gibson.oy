@@ -4,7 +4,9 @@ end
 neb = 669
 bsa = 799
 dpn = 685
-fragment2 = 874
+fragment2 = 873
+
+#rehearsal server uses 872
 #need to change fragment2 to 873 when run on production server.
 
 
@@ -38,7 +40,7 @@ wire (purify_gel,"Fragment_Stock_id") => (dpnI_digest,"fragment")
 place pcr_purification
   protocol: "labw14/week2/pcr_purification.pl"
   group: aquarium_user
-  start: minutes(1)
+  start: minutes(40)
   window: minutes(1)
 end
 
