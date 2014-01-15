@@ -1,4 +1,4 @@
-information "Autoclave bacterial media"
+information "Autoclave at 121C for 15 minutes"
 
 argument
   m9_salts_5x_n: number, "Enter the number of 800 mL bottles of 5X M9 salts to autoclave."
@@ -80,6 +80,7 @@ end
 if m9_salts_5x_n > 0
   produce
     mi_salts_5x_sterile = m9_salts_5x_n "800 mL Difco M9 Minimal Salts Solution, 5X (sterile)"
+    location: items_location
   end
 end
 
