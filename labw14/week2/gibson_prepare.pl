@@ -19,6 +19,6 @@ end
 
 step
   description: "Incubate the tube in a 50 C heat block."
-  note: "Wait 40 minutes for your next gibson_finish protocol."
+  note: "Wait 30 minutes for your next gibson_finish protocol."
 end
 
