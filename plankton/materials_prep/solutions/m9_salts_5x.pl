@@ -21,9 +21,9 @@ end
 
 
 produce
-  m9_salts = 1 "Difco M9 Minimal Salts Solution, 5X (unsterile)"
+  m9_salts = 1 "800 mL Difco M9 Minimal Salts Solution, 5X (unsterile)"
   release bottle
-  note: "Write Difco M9 Minimal Salts Solution, 5X (unsterile) and the date on the label in addition to the id number. Place the bottle in the autoclave staging area - B1.320."
+  note: "Write 800 mL Difco M9 Minimal Salts Solution, 5X (unsterile) and the date on the label in addition to the id number. Place the bottle in the autoclave staging area - B1.320."
   location: "B1.320"
 end
 

@@ -47,9 +47,9 @@ end
 
 
 if volume == 200
-  bottle_type = "LB Agar: 200 mL"
+  bottle_type = "200 mL LB Agar (molten)"
 elsif volume == 400
-  bottle_type = "LB Agar: 400 mL"
+  bottle_type = "400 mL LB Agar (molten)"
 else
   bottle_type = "800 mL LB Agar (sterile)"
 end
