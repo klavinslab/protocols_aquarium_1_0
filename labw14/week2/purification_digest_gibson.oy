@@ -52,7 +52,7 @@ end
 place gibson_finish
   protocol: "labw14/week2/gibson_finish.pl"
   group: aquarium_user
-  start: minutes(40)
+  start: minutes(25)
   window: minutes(1)
 end
 
