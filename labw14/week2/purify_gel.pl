@@ -1,9 +1,9 @@
 argument
-  Gel_Slice_id: sample, "Choose the Gel Slice you need to purify."
+  gel: sample, "Choose the Gel Slice you need to purify."
 end
 
 take
-  gel_slice = item Gel_Slice_id
+  gel_slice = item gel
 end
 
 step
