@@ -8,7 +8,7 @@ end
 
 
 step
-  description: "Transfer this protocol to the gel room."
+  description: "Transfer this protocol to the gel room"
   note: "Log out, go to the gel room (A5, A6, A7), and log in there to run this protocol - it will be under 'Protocols > Pending Jobs'."
 end
 
@@ -18,12 +18,31 @@ take
 end
 
 
+step
+  description: "Wear protective goggles"
+  note: "Clear protective goggles are located in A7.510."
+end
+
+
+step
+  description: "Work in the gel weigh area"
+  note: "Work in the gel weigh area (A5.300-A5.305) until otherwise indicated."
+end
+
+
 gel_volume = 50.0
 agarose_mass = (percentage / 100.0) * gel_volume
+error = agarose_mass * 0.05
 step
   description: "Add %{agarose_mass} g agarose to flask"
-  note: "Go to the station at A5.300. Using a digital scale, measure out %{agarose_mass} g of agarose powder and add it to a clean flask. Add agarose by tipping and shaking the bag and remove excess to the waste container by folding the weigh paper."
+  note: "Go to the station at A5.300. Obtain a flask from on top of the microwave M2. Using a digital scale, measure out %{agarose_mass} g (+/- %{error} g) of agarose powder and add it to the flask. Add agarose by tipping and shaking the bag and remove excess to the waste container by folding the weigh paper."
   image: "gel_measure_agarose"
+end
+
+
+step
+  description: "Clean up weigh area"
+  note: "Using a 70% ethanol spray bottle and kimwipes, wipe down the weigh area."
 end
 
 
@@ -37,10 +56,16 @@ end
 step
   description: "Microwave into solution"
   bullet: "Swirl the flask to mix for about two seconds."
-  bullet: "Microwave 70 seconds on high, then swirl. The agarose should now be in solution."
+  bullet: "Microwave 70 seconds on high in microwave M2, then swirl. The agarose should now be in solution."
   bullet: "If it is not in solution, microwave 7 seconds on high, then swirl. Repeat until dissolved."
   warning: "Use a paper towel to handle the flask."
   image: "gel_in_solution"
+end
+
+
+step
+  description: "Work in the gel pouring area"
+  note: "For the remainder of this protocol, work in the gel pouring area (A7.320-A7.325). Carefully transfer the flask containing molten agar to A7.320 using a paper towel."
 end
 
 
@@ -52,7 +77,7 @@ end
 gel_green_volume = gel_volume / 10.0  # in µL
 step
   description: "Add %{gel_green_volume} µL GelGreen"
-  note: "Using a 10 µL pipetter, pipet %{gel_green_volume} µL of GelGreen directly into the agarose, then swirl to mix."
+  note: "Using a 10 µL pipetter, take up %{gel_green_volume} µL of GelGreen into the pipet tip. Expel the GelGreen directly into the molten agar (under the surface), then swirl to mix."
   warning: "GelGreen is supposedly safe, but stains DNA and can transit cell membranes (limit your exposure)."
   warning: "GelGreen is photolabile. Limit its exposure to light by putting it back in the box."
   image: "gel_add_gelgreen"
@@ -83,21 +108,30 @@ end
 
 
 take
-  gloves = 1 "Autoclave Gloves"
+  glove = 1 "Gel Pouring Glove"
 end
 
 
 step
   description: "Pour the gel"
-  note: "Using autoclave gloves, pour the gel from the flask into the casting tray. Pour slowly and in a corner for best results. Pop any bubbles with a 10 µL pipet tip."
+  note: "Using the gel pouring autoclave glove, pour the gel from the flask into the casting tray. Pour slowly and in a corner for best results. Pop any bubbles with a 10 µL pipet tip."
   image: "gel_pouring"
 end
 
-release gloves
+release glove
 
 
 produce
   gel = 1 "50 mL 1 Percent Agarose Gel in Gel Box"
   location: "A7.325"
+  note: "Write the id on a piece of lab tape. Add your initials as well."
   release gel_box
+end
+
+
+step
+  description: "Clean up!"
+  checkbox: "Put all goggles back in A7.510."
+  checkbox: "Place the graduated cylinder back on top of microwave M2."
+  checkbox: "Place the flask back on top of microwave M2."
 end

@@ -28,7 +28,7 @@ step
   bullet: "Carefully remove the casting tray from the gel box, keeping it level (the gel can slide off)."
   bullet: "Fill the gel box with 1X TAE from A5.500 until it just covers the center of the gel box."
   bullet: "With the gel box electrodes facing away from you, place the gel (in casting tray) back in the gel box such that the top lane is on your left."
-  bullet: "Carefully remove the comb(s)."
+  bullet: "Carefully remove the comb(s) and place them in the appropriate box in A7.325."
   image: "gel_fill_TAE_to_line"
 end
 
@@ -71,9 +71,12 @@ release ladder
 
 produce
   gel_lane = 1 "Gel Lane" from fragment[0]
-  release fragment_one
   release gel
 end
+
+
+release fragment_one  # Throw away the tube / save extra
+
 
 log
   return: { Gel_lane_id: gel_lane[:id]}
