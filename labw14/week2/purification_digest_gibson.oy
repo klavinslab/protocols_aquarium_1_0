@@ -43,7 +43,7 @@ wire (purify_gel,"Fragment_Stock_id") => (dpnI_digest,"fragment")
 place pcr_purification
   protocol: "labw14/week2/pcr_purification.pl"
   group: aquarium_user
-  start: minutes(1)
+  start: minutes(40)
   window: minutes(1)
 end
 
