@@ -44,7 +44,7 @@ end
 
 step
   description: "Centrifuge at top speed (Make sure to balance in the centrifuge!)"
-  bullet: "Place the tube into centrifuge, balance with another team's column."
+  bullet: "Place the tube into centrifuge at B14.320, balance with another team's column."
   bullet: "Select 17,000 g and 1 minutes, press start."
 end
 
