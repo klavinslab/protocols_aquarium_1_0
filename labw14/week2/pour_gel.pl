@@ -13,6 +13,12 @@ step
 end
 
 
+step
+  description: "Work in the gel weigh area"
+  note: "Work in the gel weigh area (A5.300-A5.305) until otherwise indicated."
+end
+
+
 take
   glasses = 1 "Clear Protective Glasses"
 end
@@ -25,12 +31,6 @@ end
 
 take
   agarose = 1 "Ultrapure* Agarose"
-end
-
-
-step
-  description: "Work in the gel weigh area"
-  note: "Work in the gel weigh area (A5.300-A5.305) until otherwise indicated."
 end
 
 
