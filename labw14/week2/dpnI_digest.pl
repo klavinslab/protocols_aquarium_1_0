@@ -7,8 +7,22 @@ take
 end
 
 step 
-  description: "Add 1 µL of DpnI into the PCR result."
-  note: "Gently mix with pipette tip."
+  description: "Prepare DpnI digestion reaction"
+  check: "Pipet 18.2 µL molecular grade water into fragment tube with id %{fragment}."
+  check: "Pipet 5 µL NEB4 buffer into the tube."
+  check: "Pipet 0.5 µL BSA buffer into the tube."
+  check: "Pipet 0.3 µL DpnI enzyme into the tube."
+  note: "Be careful to pipet into the liquid, not the side of the tube."
+end
+
+step
+  description: "Put the tube in a small green tube holder."
+  image: "green_tube_holder"
+end
+
+step
+  description: "Place in the 37°C incubator, location is B14.310."
+  image: "put_green_tube_holder_to_incubator"
 end
 
 modify
