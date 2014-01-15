@@ -44,7 +44,7 @@ end
 
 step
   description: "Centrifuge at top speed (Make sure to balance in the centrifuge!)"
-  bullet: "Place the tube into centrifuge, balance with other team's tube or add same volume water into a 1.5 mL tube to use as a blance tube."
+  bullet: "Place the tube into centrifuge, balance with another team's column."
   bullet: "Select 17,000 g and 1 minutes, press start."
 end
 
@@ -59,7 +59,7 @@ end
 
 step
   description: "Centrifuge at top speed (Make sure to balance in the centrifuge!)"
-  bullet: "Place the tube into centrifuge, balance with other team's tube or add same volume water into a 1.5 mL tube to use as a blance tube."
+  bullet: "Place the tube into centrifuge, balance with another team's column."
   bullet: "Select 17,000 g and 1 minutes, press start."
 end
 
@@ -71,7 +71,7 @@ end
 
 step
   description: "Remove the residual PE buffer by centrifuge"
-  bullet: "Place the tube into centrifuge, balance with other team's tube or add same volume water into a 1.5 mL tube to use as a blance tube."
+  bullet: "Place the tube into centrifuge, balance with another team's column."
   bullet: "Select 17,000 g and 1 minutes, press start."
   warning: "Make sure to balance in the centrifuge!"
 end
@@ -94,7 +94,7 @@ end
 
 step
   description: "Centrifuge at top speed"
-  bullet: "Place labeled tube with the column into centrifuge, balance with other team's tube with column."
+  bullet: "Place labeled tube with the column into centrifuge, balance with another team's column."
   bullet: "Select 17,000 g and 1 minutes, press start."
 end
 
