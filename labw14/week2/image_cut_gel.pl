@@ -83,6 +83,14 @@ step
   found them."
 end
 
+step
+  description: 
+    "Rename the picture in Dropbox"
+  note: 
+    "In gel room touch screen computer, open Dropbox/GelImages, under today's date folder and find the picture you just took.\n
+     Rename the picture as the labw14_gel_group_id, id should be replaced as your group number (1-8)."
+end
+
 produce
   r = 1 "Gel Slice" of "fLAB2"
 end
