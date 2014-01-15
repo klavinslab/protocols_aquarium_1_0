@@ -1,94 +1,94 @@
-#pcr first, protocol ends, metacol lets thermal cycle finish by scheduling restriction digest for 30 min later
-#restriction digest starts and completes, metacol lets incubation finish by scheduling pour gel for an hour later
-#pour gel starts and completes, also transitions to 
-#after restriction digest is done, and while it's incubating 
+#each team gets their own primers and plasmids
 
 argument
   primer1: sample, "The first primer"
   primer2: sample, "The second primer"
   plasmid_id: sample, "The plasmid stock"
+  enzyme_id: sample, "The Phsion HF Master Mix stock"
+#  ladder: sample, "The ladder for your gel"
 end
+ladder = 822
 
-place pcr
-  protocol: "labw14/week2/pcr.pl"
+
+place pcr_prep
+  protocol: "labw14/week2/pcr_prepare.pl"
+  argument
+    primer1: primer1
+    primer2: primer2
+    plasmid_id: plasmid_id
+    enzyme_id: enzyme_id
+  end
   group: aquarium_user
   marked: true
   start: now()
   window: minutes(30)
 end
 
-wire (pcr,"") => (restriction_digest,"")
-
-place restriction_digest
-  protocol: "labw14/week2/restriction_digest.pl"
-  group: aquarium_user
-  start: now()
-  window: minutes(1)
-end
-
+#stagger
 place pour_gel
   protocol: "labw14/week2/pour_gel.pl"
+  argument
+    percentage: 1
+    comb_n: 1
+  end
   group: aquarium_user
-  start: minutes(5)
+  start: now()
+  window: minutes(120)
+end
+
+#first step is wait until thermal cycler is done
+place pcr_finish
+  protocol: "labw14/week2/pcr_finish.pl"
+  group: aquarium_user
+  start: minutes(70)
   window: minutes(1)
 end
 
-wire (restirction_digest,"") => (run_gel,"")
-
-place wait
-  marked: false
-end
-
+#first step is make sure gel has solidified 
 place run_gel
   protocol: "labw14/week2/run_gel.pl"
+  argument
+    ladder_one: ladder
+    fragment_volume: 50
+  end
   group: aquarium_user
   start: now()
   window: minutes(1)
 end
 
-wire (run_gel,"") => (image_cut_gel, "")
+wire (pcr_finish,"PCR_Result_id") => (run_gel,"fragment_one")
 
 place image_cut_gel
-  protocol: "labw14/week1/image_cut_gel.pl"
+  protocol: "labw14/week2/image_cut_gel.pl"
+  group: aquarium_user
+  start: minutes(40)
+  window: minutes(1)
+end
+
+wire (run_gel,"Gel_lane_id") => (image_cut_gel,"gel")
+
+place clean_gel_box
+  protocol: "labw14/week2/clean_gel_box.pl"
   group: aquarium_user
   start: now()
   window: minutes(1)
 end
 
-wire (image_cut_gel,"") => (purify_gel,"")
-
-place purify_gel
-  protocol: "labw14/week1/purify_gel.pl"
-  group: aquarium_user
-  start: now()
-  window: minutes(1)
-end
-
-wire (purify_gel,"") => (gibson,"")
-
-place gibson
-  protocol: "labw14/week1/gibson.pl"
-  group: aquarium_user
-  start: now()
-  window: minutes(1)
-end
 
 # forward transitions
-transition [pcr]     => [pour_gel, restriction_digest] when !error(0) && completed(0) end
-transition [restriction_digest, pour_gel] => [wait] when !error(0) && completed(0) end
-transition [wait] => [pour_gel] when minutes_elapsed(0,1) end
+transition [pcr_prep]     => [pour_gel,pcr_finish] when !error(0) && completed(0) end
+transition [pour_gel, pcr_finish] => [run_gel] when !error(0) && completed(0) && !error(1) && completed(1) end
 transition [run_gel] => [image_cut_gel] when !error(0) && completed(0) end
-transition [image_cut_gel] => [purify_gel] when !error(0) && completed(0) end
-transition [purify_gel] => [gibson] when !error(0) && completed(0) end
-transition [gibson] => [] when !error(0) && completed(0) end
+transition [image_cut_gel] => [clean_gel_box] when !error(0) && completed(0) end
+transition [clean_gel_box] => [] when !error(0) && completed(0) end
+
 
 
 # rework transitions
-transition [pcr]     => [pcr]    when error(0) end
-transition [restriction_digest]     => [restriction_digest]     when error(0) end
+transition [pcr_prep]     => [pcr_prep]    when error(0) end
 transition [pour_gel]     => [pour_gel]     when error(0) end
-transition [run_gel] => [run_gel]    when error(0) end
-transition [image_cut_gel] => [image_cut_gel]   when error(0) end
-transition [purify_gel] => [purify_gel]   when error(0) end
-transition [gibson] => [gibson]   when error(0) end
+transition [pcr_finish]     => [pcr_finish]     when error(0) end
+transition [run_gel]     => [run_gel]     when error(0) end
+transition [image_cut_gel] => [image_cut_gel]    when error(0) end
+transition [clean_gel_box] => [clean_gel_box]    when error(0) end
 
