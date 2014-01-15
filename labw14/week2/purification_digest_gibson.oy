@@ -70,7 +70,7 @@ end
 
 # forward transitions
 transition [purify_gel]     => [dpn1_digest] when !error(0) && completed(0) end
-transition [dpn1_digest] => [pcr_purification] when !error(0) && completed(0)
+transition [dpn1_digest] => [pcr_purification] when !error(0) && completed(0) end
 transition [pcr_purification] => [gibson_prepare] when !error(0) && completed(0) end
 transition [gibson_prepare] => [gibson_finish] when !error(0) && completed(0) end
 transition [gibson_finish] => [stock_fragment] when !error(0) && completed(0) end
