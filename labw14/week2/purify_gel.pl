@@ -33,7 +33,7 @@ step
 end
 
 step
-  description: "Label a pink pink Qiagen column"
+  description: "Label a pink Qiagen column"
   note: "Write you initials on it."
 end
 
@@ -49,7 +49,7 @@ step
 end
 
 step
-  description: "Take the colum out of centrifuge and empty collection tube"
+  description: "Take the column out of centrifuge and empty collection tube"
   note: "Empty the waste in collection tube into a liquid waster collector on bench, put the collection tube back on afterwards."
 end
 
@@ -64,20 +64,20 @@ step
 end
 
 step
-  description: "Take the colum out of centrifuge and empty collection tube"
+  description: "Take the column out of centrifuge and empty collection tube"
   note: "Empty the waste in collection tube into a liquid waster collector on bench, put the collection tube back on afterwards."
 end
 
 
 step
   description: "Remove the residual PE buffer by centrifuge"
-  bullet: "Make sure to balance in the centrifuge!"
   bullet: "Place the tube into centrifuge, balance with other team's tube or add same volume water into a 1.5 mL tube to use as a blance tube."
   bullet: "Select 17,000 g and 1 minutes, press start."
+  warning: "Make sure to balance in the centrifuge!"
 end
 
 step
-  description: "Take the columm out of centrifuge and empty collection tube"
+  description: "Take the column out of centrifuge and empty collection tube"
   note: "Empty the waste in collection tube into a liquid waster collector on bench, put the collection tube back on afterwards."
 end
 
@@ -89,7 +89,7 @@ end
 
 step
   description: "Add 30 µL of EB buffer to the center of column membrane and wait for 1 minutes."
-  bullet: "Be very careful to not pipette on the wall of the tube."
+  warning: "Be very careful to not pipette on the wall of the tube."
 end
 
 step
