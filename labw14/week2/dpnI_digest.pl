@@ -4,20 +4,30 @@ argument
   bsa: sample, "Choose BSA buffer"
   dpn: sample, "Choose DpnI enzyme"
 end
-
 take
   y = item fragment
+end
+
+take
   neb4 = item neb
   bsa_buffer = item bsa
+end
+
+step
+  description: "Use a -20 C blue ice block tube holder to grab the enzyme"
+  note: "The enzyme are temperature sensitive."
+end
+
+take
   dpn_enzyme = item dpn
 end
 
 step 
   description: "Prepare DpnI digestion reaction"
   check: "Pipet 18.2 µL molecular grade water into fragment tube with id %{fragment}."
-  check: "Pipet 5 µL NEB4 buffer into the tube."
-  check: "Pipet 0.5 µL BSA buffer into the tube."
-  check: "Pipet 0.3 µL DpnI enzyme into the tube."
+  check: "Pipet 5 µL NEB4 buffer with id %{neb} into the tube."
+  check: "Pipet 0.5 µL BSA buffer with id %{bsa} into the tube."
+  check: "Pipet 0.3 µL DpnI enzyme with id %{dpn} into the tube."
   note: "Be careful to pipet into the liquid, not the side of the tube."
 end
 
