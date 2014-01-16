@@ -14,7 +14,7 @@ step
   end
 end
 
-while gel_weight > 150
+while gel_weight > 200 
   step
     description: "Go back to Gel room to trim you gel slice"
     note: "Wait for the gel slice to thaw, put on the transiluminator, trim the non DNA part of your gel."
