@@ -9,10 +9,10 @@ end
 
 step
   description: "Update the location in the inventory system"
-  note: "Go to Fragment: fLAB1, find your Fragment Stock, update its location."
+  note: "Go to Fragment: fLAB1, find your Fragment Stock, update its location as M20.0.0.x where x should be replaced as the location you placed."
 end
 
 step
-  description: "Congraluations on finishing Week 2 lab session of the class!!! Give your team mate a High Five!"
+  description: "Congraluations on finishing Week 2 lab session of the class! Give your team mate a High Five!"
   note: "You can give your TA a high five too!"
 end
