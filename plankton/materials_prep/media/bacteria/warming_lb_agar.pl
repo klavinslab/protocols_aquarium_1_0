@@ -30,7 +30,12 @@ else
   end
 end
 
-molten_string = media_type[0..-10] + "(molten)"
+if media_type == "200 mL LB Agar (sterile)"
+    molten_string = "200 mL LB Agar (molten)"
+else
+    molten_string = "400 mL LB Agar (molten)"
+end
+
 produce
   product = 1 molten_string
   release media
