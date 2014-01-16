@@ -109,7 +109,7 @@ if iptg == "Yes"
     iptg_aliquot = 1 "IPTG 1M stock solution"
   end
 
-  iptg_volume = 120 * volume / 800
+  iptg_volume = 120.0 * volume / 800
 
   step
     description: "Add %{iptg_volume} µL of IPTG"
@@ -122,13 +122,13 @@ end
 if atc == "Yes"
   # FIXME: add this to inventory
   take
-    atc = "aTc 100 mg/mL stock solution"
+    # FIXME: bioturk gives a useless message if number is omitted - it actually points to atomic expression error at next 'step'
+    atc = 1 "aTc 100 mg/mL stock solution"
   end
 
   # FIXME: Figure out this calculation (currently is the one for IPTG)
-  atc_volume = 120 * volume / 800
+  atc_volume = 120.0 * volume / 800
 
-  # FIXME: Expected atomic expression at ':' for line 131 (description line below?)
   step
     description: "Add %{atc_volume} µL of aTc"
     note: "Repeat this step for each bottle. If possible, keep bottles at in a 37°C heat bath or incubator when not on a hot plate. Otherwise, work quickly.\n\nBottle setup: keep the bottle on the hot plate at B1.335 while adding aTc. Keep the bottle capped whenever you aren't immediately pipetting in antibiotics.\n\nPipetting: for each aliquot, spin on benchtop minifuge before opening. Using a 1000 µL micropipette, add a total of %{atc_volume} µL of antibiotic solution to the LB Agar bottle. You can add 1000 µL at a time.\n\nRecap the bottle when finished."
