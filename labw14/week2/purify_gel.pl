@@ -43,7 +43,7 @@ step
 end
 
 step
-  description: "Take out the tube from 50 C heat blcok"
+  description: "Take out the tube from 50 C heat block"
   note: "Place it on bench in a tube rack."
 end
 
