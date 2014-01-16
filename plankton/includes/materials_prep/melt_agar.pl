@@ -23,10 +23,10 @@ end
 
 step
   description: "Continue microwaving until molten"
-  check: "Microwave 1 minute 30 seconds at power %{power}%, then swirl"
-  check: "Microwave 1 minute at power %{power}%, then swirl"
-  check: "Microwave 1 minute at power %{power}%, then swirl"
-  check: "Microwave 30 seconds at power %{power}%, then swirl"
-  check: "Microwave 30 seconds at power %{power}%, then swirl"
+  check: "Microwave 1 minute 30 seconds at power %{power}, then swirl"
+  check: "Microwave 1 minute at power %{power}, then swirl"
+  check: "Microwave 1 minute at power %{power}, then swirl"
+  check: "Microwave 30 seconds at power %{power}, then swirl"
+  check: "Microwave 30 seconds at power %{power}, then swirl"
   warning: "To check if the agar is completely melted, CAREFULLY hold the agar up to the light and swirl. If no solid agar is present, it is done."
 end
