@@ -11,12 +11,12 @@ step
 end
 
 step
-  description: "Label a pink Qiagen column"
+  description: "Label a pink QIAquick spin column"
   note: "Write you initials on it."
 end
 
 step
-  description: "Add the tube content to the labeled Qiagen column"
+  description: "Add the tube content to the labeled QIAquick spin column"
   note: "Tube content volume is 300 µL."
 end
 
