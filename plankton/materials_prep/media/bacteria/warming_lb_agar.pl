@@ -30,7 +30,7 @@ else
   end
 end
 
-molten_string = media_type[..-9] + "(molten)"
+molten_string = media_type[0..-10] + "(molten)"
 produce
   product = 1 molten_string
   release media
