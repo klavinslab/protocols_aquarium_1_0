@@ -44,7 +44,7 @@ place plate_1
     plate_type: plate_type_1
   end
   group: aquarium_user
-  start: minutes(1)
+  start: minutes(35)
   window: minutes(1)
 end
 
@@ -125,7 +125,7 @@ wire (plate_3,"plate_id") => (incubate_3,"e_coli_strain_id")
 place image_1
   protocol: "labw14/week1/trans/image.pl"
   group: aquarium_user
-  start: minutes(1)
+  start: hours(18)
   window: hours(4)
 end
 
