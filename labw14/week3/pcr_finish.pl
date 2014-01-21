@@ -4,11 +4,11 @@ step
 end
 
 produce
-  r = 1 "PCR Result" of "fLAB3"
+  r = 1 "Colony PCR product" of "pLAB3 in Z1"
   note: "Keep the tube on the bench to use in the next protocol. (no need to edit the location below)"
   location: "Bench"
 end
 
 log
-  return: { PCR_Result_id: r[:id]}
+  return: {PCR_Result_id: r[:id]}
 end
