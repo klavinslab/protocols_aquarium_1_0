@@ -80,19 +80,8 @@ end
 
 release ladder
 
-
-produce
-  gel_lane = 1 "Gel Lane" from fragment[0]
-  release gel
-end
-
-
 release fragment  # Throw away the tube / save extra
 
 
 release glasses
 
-
-log
-  return: { Gel_lane_id: gel_lane[:id]}
-end
