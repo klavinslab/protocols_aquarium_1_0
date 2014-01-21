@@ -1,18 +1,10 @@
-argument
-  gel: sample, "The gel lane you got after run the gel"
-end
-
-take
-  y = item gel
-end
-
 step
   description: "Wipe down transilluminator"
   note: "Spray with ethanol and wipe down with a kimwipe"
 end
 
 step
-  description: "Take the gel out of gel box and put it on transilluminator"
+  description: "Take the gel (the one you just finished electrophoresis) out of gel box and put it on transilluminator"
   note: "Carefully remove the holder from the gel box. The gel is slippery and may fall out unexpectedly.
   Slide the gel off of the holder and onto the surface of the transilluminator"
   image: "slide_gel"
