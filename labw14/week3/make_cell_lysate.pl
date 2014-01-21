@@ -7,20 +7,16 @@ take
 end
 
 step
-  description: "Label two 0.2mL PCR tubes. Write your initials on both."
-  note: "On one tube write CW for cell water and on the other write B for boil"
+  description: "Label a 0.2mL PCR tube. Write your initials on it."
 end
 
 step
   description: "Prepare cell water solution"
   note: "This step makes an isotonic solution to temporarly keep cells in while you do the colony PCR"
-  check: "Add 40 µL of PBS (phosphate buffered saline) in the cell water tube"
+  check: "Add 40 µL of PBS (phosphate buffered saline) in the tube"
   check: "Use 10 µL pipette tip to pick a colony from the plate and add into the tube with swirl the tips several times."
 end
 
-step
-  description: "Transfer 20 µL cell water to boil tube"
-end
 
 step
   description: "Place the boil tube in the thermal cycler"
@@ -33,7 +29,6 @@ step
   timer: { hours: 0, minutes: 10, seconds: 0 }
 end
 
-# produce the cell water
 # produce boiled cell water
 
 
