@@ -25,9 +25,15 @@ end
 step
   description: "Place the boil tube in the thermal cycler"
   note: "Find and initiate the boil protocol on the thermal cycler"
+  note: "Make sure the protocol is to heat to 98 C for 10 minutes and then cool to 4 C"
+end
+
+step
+  description: "Wait for 10 minutes for the cells to boil"
+  timer: { hours: 0, minutes: 10, seconds: 0 }
 end
 
 # produce the cell water
-
+# produce boiled cell water
 
 
