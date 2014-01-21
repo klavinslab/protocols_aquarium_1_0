@@ -1,0 +1,94 @@
+argument
+  gel: sample, "Choose the Gel Slice you need to purify."
+  fragment2: sample, "Choose the aliquot for the Gibson backbone"
+end
+neb = 669
+bsa = 799
+dpn = 685
+
+
+#fragment2 = 873
+
+#rehearsal server uses 872
+#need to change fragment2 to 873 when run on production server.
+
+
+place purify_gel
+  protocol: "labw14/week2/purify_gel.pl"
+  argument
+    gel: gel
+  end
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+
+place dpnI_digest
+  protocol: "labw14/week2/dpnI_digest.pl"
+  argument
+    neb: neb
+    bsa: bsa
+    dpn: dpn
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+wire (purify_gel,"Fragment_Stock_id") => (dpnI_digest,"fragment")
+
+#change to 40 min
+place pcr_purification
+  protocol: "labw14/week2/pcr_purification.pl"
+  group: aquarium_user
+  start: minutes(40)
+  window: minutes(1)
+end
+
+wire (purify_gel,"Fragment_Stock_id") => (pcr_purification,"fragment")
+
+place gibson_prepare
+  protocol: "labw14/week2/gibson_prepare.pl"
+  argument 
+    fragment2: fragment2
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+wire (purify_gel,"Fragment_Stock_id") => (gibson_prepare,"fragment1")
+
+#change to 25 min
+#place gibson_finish
+#  protocol: "labw14/week2/gibson_finish.pl"
+#  group: aquarium_user
+#  start: minutes(1)
+#  window: minutes(1)
+#end
+
+place stock_fragment
+  protocol: "labw14/week2/stock_fragment.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+
+# forward transitions
+transition [purify_gel]     => [dpnI_digest] when !error(0) && completed(0) end
+transition [dpnI_digest] => [pcr_purification] when !error(0) && completed(0) end
+transition [pcr_purification] => [gibson_prepare] when !error(0) && completed(0) end
+transition [gibson_prepare] => [stock_fragment] when !error(0) && completed(0) end
+transition [stock_fragment] => [] when !error(0) && completed(0) end
+
+
+# rework transitions
+transition [purify_gel]     => [purify_gel]    when error(0) end
+transition [dpnI_digest]     => [dpnI_digest]     when error(0) end
+transition [pcr_purification]     => [pcr_purification]     when error(0) end
+transition [gibson_prepare]     => [gibson_prepare]     when error(0) end
+transition [stock_fragment] =>[stock_fragment] when error(0) end
+
