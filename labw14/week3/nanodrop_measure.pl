@@ -8,22 +8,22 @@ end
 
 
 step
-  description: "Initialize the Nanodrop"
+  description: "Go the location B2.202, find the Nanodrop"
 end
 
 step
-  description: "Blank with buffer EB"
+  description: "Add 2 μL of buffer EB on the Nanodrop, click Blank in the software"
 end
 
 step
-  description: "Add 2 μL of your sample with id %{fragment} to the nanodrop"
+  description: "Add 2 μL of your sample with id %{fragment} to the nanodrop and then click Measure in the software"
 end
 
 step
   description: "Record the concentration shown on the nanodrop computer"
   getdata
- 	  conc: number,"Write down the number shown on the computer after ng/μL"
-	end
+    conc: number,"Write down the number shown on the computer after ng/μL"
+  end
 end
 
 release y
