@@ -9,7 +9,7 @@ end
 information "Measure DNA concentration using Nanodrop spectrophotometer."
 
 step
-  description: "Go the location B2.202, find the Nanodrop"
+  description: "Go the location B3.405, find the Nanodrop"
 end
 
 step
