@@ -4,7 +4,7 @@ step
 end
 
 produce
-  r = 1 "PCR Result" of "fLAB1"
+  r = 1 "PCR Result" of "fLAB3"
   note: "Keep the tube on the bench to use in the next protocol. (no need to edit the location below)"
   location: "Bench"
 end
