@@ -11,11 +11,11 @@ step
 end
 
 step
-  description: "Add 2 μL of buffer EB on the Nanodrop, click Blank in the software"
+  description: "Wipe pedestal clean with Kimwipe. Add 2 μL of buffer EB on the pedestal, click Blank in the software"
 end
 
 step
-  description: "Add 2 μL of your sample with id %{fragment} to the nanodrop and then click Measure in the software"
+  description: "Wipe pedestal clean with Kimwipe. Add 2 μL of your sample with id %{fragment} to the nanodrop and then click Measure in the software"
 end
 
 step
