@@ -6,7 +6,6 @@ take
   y = item fragment
 end
 
-
 step
   description: "Go the location B2.202, find the Nanodrop"
 end
