@@ -57,7 +57,7 @@ end
 wire (pcr_finish,"PCR_Result_id") => (run_gel,"fragment_one")
 
 place image_gel
-  protocol: "labw14/week2/image_gel.pl"
+  protocol: "labw14/week3/image_gel.pl"
   group: aquarium_user
   start: minutes(1)
   window: minutes(1)
