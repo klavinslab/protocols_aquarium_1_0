@@ -34,7 +34,7 @@ place pcr_prep
   start: now()
   window: minutes(1)
 end
-wire (cell_lysate,"Cell_lysate_id") => (pcr_prep,"plasmid_id")
+wire (cell_lysate,"Cell_Lysate_id") => (pcr_prep,"plasmid_id")
 
 place pcr_finish
   protocol: "labw14/week3/colony_pcr_finish.pl"
