@@ -5,14 +5,16 @@ argument
   primer2: sample, "The second primer"
   plasmid_id: sample, "The plasmid stock"
   enzyme_id: sample, "The Phsion HF Master Mix stock"
+  Transformed_E_coli_Strain_id, sample, "Choose the plate that you want to do colony PCR."
 #  ladder: sample, "The ladder for your gel"
 end
-ladder = 822
+ladder = 823
 
 
 place cell_lysate
   protocol: "labw14/week3/make_cell_lysate.pl"
   argument
+    Transformed_E_coli_Strain_id: Transformed_E_coli_Strain_id
   end
   group: aquarium_user
   marked: true
@@ -20,23 +22,29 @@ place cell_lysate
   window: minutes(1)
 end
 
-place colony_pcr_prepare
+place pcr_prepare
   protocol: "labw14/week3/colony_pcr_prepare.pl"
+  argument
+    primer1: primer1
+    primer2: primer2
+    plasmid_id: plasmid_id
+    enzyme_id: enzyme_id
+  end
   group: aquarium_user
   start: now()
   window: minutes(1)
 end
 
-place colony_pcr_finish
+place pcr_finish
   protocol: "labw14/week3/colony_pcr_finish.pl"
   group: aquarium_user
-  start: minutes(70)
+  start: minutes(1)
   window: minutes(1)
 end
 
 #first step is make sure gel has solidified 
 place run_gel
-  protocol: "labw14/week2/run_gel.pl"
+  protocol: "labw14/week3/run_gel.pl"
   argument
     ladder_one: ladder
     fragment_volume: 50
@@ -48,14 +56,14 @@ end
 
 wire (pcr_finish,"PCR_Result_id") => (run_gel,"fragment_one")
 
-place image_cut_gel
-  protocol: "labw14/week2/image_cut_gel.pl"
+place image_gel
+  protocol: "labw14/week2/image_gel.pl"
   group: aquarium_user
-  start: minutes(40)
+  start: minutes(1)
   window: minutes(1)
 end
 
-wire (run_gel,"Gel_lane_id") => (image_cut_gel,"gel")
+#wire (run_gel,"Gel_lane_id") => (image_cut_gel,"gel")
 
 place clean_gel_box
   protocol: "labw14/week2/clean_gel_box.pl"
@@ -66,19 +74,21 @@ end
 
 
 # forward transitions
-transition [pcr_prep]     => [pour_gel,pcr_finish] when !error(0) && completed(0) end
-transition [pour_gel, pcr_finish] => [run_gel] when !error(0) && completed(0) && !error(1) && completed(1) end
-transition [run_gel] => [image_cut_gel] when !error(0) && completed(0) end
+
+transition [cell_lysate]     => [pcr_prep] when !error(0) && completed(0) end
+transition [pcr_prep]     => [pcr_finish] when !error(0) && completed(0) end
+transition [pcr_finish] => [run_gel] when !error(0) && completed(0) && !error(1) && completed(1) end
+transition [run_gel] => [image_gel] when !error(0) && completed(0) end
 transition [image_cut_gel] => [clean_gel_box] when !error(0) && completed(0) end
 transition [clean_gel_box] => [] when !error(0) && completed(0) end
 
 
 
 # rework transitions
+transition [cell_lysate]     => [cell_lysate]    when error(0) end
 transition [pcr_prep]     => [pcr_prep]    when error(0) end
-transition [pour_gel]     => [pour_gel]     when error(0) end
 transition [pcr_finish]     => [pcr_finish]     when error(0) end
 transition [run_gel]     => [run_gel]     when error(0) end
-transition [image_cut_gel] => [image_cut_gel]    when error(0) end
+transition [image_gel] => [image_gel]    when error(0) end
 transition [clean_gel_box] => [clean_gel_box]    when error(0) end
 
