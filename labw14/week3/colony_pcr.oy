@@ -79,7 +79,7 @@ transition [cell_lysate]     => [pcr_prep] when !error(0) && completed(0) end
 transition [pcr_prep]     => [pcr_finish] when !error(0) && completed(0) end
 transition [pcr_finish] => [run_gel] when !error(0) && completed(0) end
 transition [run_gel] => [image_gel] when !error(0) && completed(0) end
-transition [image_cut_gel] => [clean_gel_box] when !error(0) && completed(0) end
+transition [image_gel] => [clean_gel_box] when !error(0) && completed(0) end
 transition [clean_gel_box] => [] when !error(0) && completed(0) end
 
 
