@@ -8,7 +8,7 @@ argument
   Transformed_E_coli_Strain_id: sample, "Choose the plate that you want to do colony PCR."
 #  ladder: sample, "The ladder for your gel"
 end
-ladder = 822
+ladder = 823
 enzyme_id = 711
 
 
@@ -48,7 +48,7 @@ place run_gel
   protocol: "labw14/week3/run_gel.pl"
   argument
     ladder_one: ladder
-    fragment_volume: 50
+    fragment_volume: 20
   end
   group: aquarium_user
   start: now()
