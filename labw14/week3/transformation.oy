@@ -7,7 +7,7 @@ end
 
 e_coli_strain_type = "MG1655Z1 Electrocompetent Aliquot"
 plate_type_1 = "LB Kan Plate (sterile)"
-plate_type_2 = "LB Kan Plate (sterile) aTc 21ng/mL"
+plate_type_2 = "LB Kan Plate (sterile) 0.25 mM IPTG"
 plate_type_3 = "LB Kan Plate (sterile) aTc 42ng/mL"
 
 place transform
