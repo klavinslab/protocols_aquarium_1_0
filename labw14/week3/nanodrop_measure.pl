@@ -13,13 +13,21 @@ step
 end
 
 step
-  description: "Wipe pedestals with Kimwipe. Add 2 μL of buffer EB on the pedestal, click Blank in the software"
-  note: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal."
+  description: "Blank the Nanodrop"
+  check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
+  check: "Add 2 μL of Buffer EB on the lower pedestal."
+  check: "Close the pedestal."
+  check: "Click Measure in the software."
 end
 
+
+
 step
-  description: "Wipe pedestals with Kimwipe. Add 2 μL of your sample with id %{fragment} to the nanodrop and then click Measure in the software"
-  note: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal."
+  description: "Blank the Nanodrop"
+  check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
+  check: "Add 2 μL of your sample with id %{fragment} on the lower pedestal."
+  check: "Close the pedestal."
+  check: "Click Measure in the software."
 end
 
 step
