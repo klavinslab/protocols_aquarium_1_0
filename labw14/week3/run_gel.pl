@@ -19,7 +19,7 @@ end
 
 
 take
-  gel = 1 "50 mL 1 Percent Agarose Gel in Gel Box"
+  gel = 1 "49 mL 1 Percent Agarose Gel in Gel Box"
   fragment = item fragment_one
   ladder = item ladder_one
   loading_dye = 1 "Gel Loading Dye Blue (6X)"
