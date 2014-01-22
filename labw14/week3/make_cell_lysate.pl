@@ -19,9 +19,14 @@ end
 
 
 step
-  description: "Place the boil tube in the thermal cycler"
-  note: "Find and initiate the boil protocol on the thermal cycler"
-  note: "Make sure the protocol is to heat to 98 C for 10 minutes and then cool to 4 C"
+  description: "Place the tube into thermal cycler T2 at B3.335"
+end
+
+step
+  description: "Choose program on the thermal cycler"
+  check: "Click Home then click Saved Protocol, choose LABW14 folder, choose BOIL."
+  check: "Close the lid and click start."
+  image: "thermal_cycler_home"
 end
 
 step
