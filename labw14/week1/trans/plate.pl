@@ -52,7 +52,7 @@ step
 end
 
 produce
-  r1 = 1 "Transformed E coli plate" of "pLAB1 in Z1"
+  r1 = 1 "Transformed E coli plate" from strain[0]
   note: "Keep the plate on the bench to use in the next protocol (incubating)."
   location: "Bench"
   release plate
