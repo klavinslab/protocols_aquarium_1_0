@@ -17,7 +17,7 @@ step
   check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
   check: "Add 2 μL of Buffer EB on the lower pedestal."
   check: "Close the pedestal."
-  check: "Click Measure in the software."
+  check: "Click Blank in the software."
 end
 
 
