@@ -22,7 +22,7 @@ place cell_lysate
   window: minutes(1)
 end
 
-place pcr_prepare
+place pcr_prep
   protocol: "labw14/week3/colony_pcr_prepare.pl"
   argument
     primer1: primer1
@@ -77,7 +77,7 @@ end
 
 transition [cell_lysate]     => [pcr_prep] when !error(0) && completed(0) end
 transition [pcr_prep]     => [pcr_finish] when !error(0) && completed(0) end
-transition [pcr_finish] => [run_gel] when !error(0) && completed(0) && !error(1) && completed(1) end
+transition [pcr_finish] => [run_gel] when !error(0) && completed(0) end
 transition [run_gel] => [image_gel] when !error(0) && completed(0) end
 transition [image_cut_gel] => [clean_gel_box] when !error(0) && completed(0) end
 transition [clean_gel_box] => [] when !error(0) && completed(0) end
