@@ -5,7 +5,7 @@ argument
   primer2: sample, "The second primer"
   plasmid_id: sample, "The plasmid stock"
   enzyme_id: sample, "The Phsion HF Master Mix stock"
-  Transformed_E_coli_Strain_id, sample, "Choose the plate that you want to do colony PCR."
+  Transformed_E_coli_Strain_id: sample, "Choose the plate that you want to do colony PCR."
 #  ladder: sample, "The ladder for your gel"
 end
 ladder = 823
