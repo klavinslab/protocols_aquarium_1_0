@@ -29,6 +29,14 @@ step
   timer: { hours: 0, minutes: 10, seconds: 0 }
 end
 
+produce
+  r = 1 "Cell Lysate" of "pLAB3 in Z1"
+  note: "Keep the tube on the bench to use in the next protocol. (no need to edit the location below)"
+  location: "Bench"
+end
+
+
+
 # produce boiled cell water
 
 
