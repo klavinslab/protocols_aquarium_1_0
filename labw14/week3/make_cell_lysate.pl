@@ -35,8 +35,9 @@ produce
   location: "Bench"
 end
 
-
-
+log
+  return: {Cell_Lysate_id: r[:id]}
+end
 # produce boiled cell water
 
 
