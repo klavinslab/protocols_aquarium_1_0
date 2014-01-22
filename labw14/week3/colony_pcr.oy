@@ -8,7 +8,7 @@ argument
   Transformed_E_coli_Strain_id: sample, "Choose the plate that you want to do colony PCR."
 #  ladder: sample, "The ladder for your gel"
 end
-ladder = 823
+ladder = 822
 enzyme_id = 711
 
 
