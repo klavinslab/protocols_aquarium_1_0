@@ -24,6 +24,7 @@ end
 
 step
   description: "Measure your sample"
+  check: "Open the pedestal"
   check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
   check: "Add 2 μL of your sample with id %{fragment} on the lower pedestal."
   check: "Close the pedestal."
