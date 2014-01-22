@@ -38,6 +38,12 @@ step
   end
 end
 
+step
+  description: "Clean the Nanodrop"
+  check: "Open the pedestal"
+  check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
+end
+
 release y
 
 
