@@ -22,11 +22,11 @@ end
 
 step 
   description: "Prepare Reaction"
-  check:"Pipet 19 µL molecular grade water into the labeled PCR tube."
+  check:"Pipet 7 µL molecular grade water into the labeled PCR tube."
   check: "Pipet 1 µL of plasmid with id %{plasmid_id} into the tube."
-  check: "Pipet 2.5 µL of primer with id %{primer1} into the tube."
-  check: "Pipet 2.5 µL of primer with id %{primer2} into the tube."
-  check: "Pipet 25 µL of Phusion Master Mix with id %{enzyme_id} into the tube."
+  check: "Pipet 1 µL of primer with id %{primer1} into the tube."
+  check: "Pipet 1 µL of primer with id %{primer2} into the tube."
+  check: "Pipet 10 µL of Phusion Master Mix with id %{enzyme_id} into the tube."
   check: "Use the tip to gently mix."
   note: "Be careful to pipette into the liquid, not the side of the tube."
 end
@@ -43,7 +43,7 @@ end
 
 step
   description: "Choose program on the thermal cycler"
-  note: "Click Home then click Saved Protocol, choose LABW14 folder, choose CLONEPCR. Wait for all other groups to load in their samples."
+  note: "Click Home then click Saved Protocol, choose LABW14 folder, choose COLONYPCR. Wait for all other groups to load in their samples."
   image: "thermal_cycler_home"
 end
 
