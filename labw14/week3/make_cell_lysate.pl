@@ -1,5 +1,5 @@
 argument
-  Transformed_E_coli_Strain_id, sample, "Choose the plate that you want to do colony PCR."
+  Transformed_E_coli_Strain_id: sample, "Choose the plate that you want to do colony PCR."
 end
 
 take
