@@ -39,7 +39,7 @@ wire (cell_lysate,"Cell_Lysate_id") => (pcr_prep,"plasmid_id")
 place pcr_finish
   protocol: "labw14/week3/colony_pcr_finish.pl"
   group: aquarium_user
-  start: minutes(1)
+  start: minutes(60)
   window: minutes(1)
 end
 
@@ -60,7 +60,7 @@ wire (pcr_finish,"PCR_Result_id") => (run_gel,"colony")
 place image_gel
   protocol: "labw14/week3/image_gel.pl"
   group: aquarium_user
-  start: minutes(1)
+  start: minutes(30)
   window: minutes(1)
 end
 
