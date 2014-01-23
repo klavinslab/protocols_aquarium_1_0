@@ -26,6 +26,7 @@ step
   description: "Choose program on the thermal cycler"
   check: "Click Home then click Saved Protocol, choose LABW14 folder, choose BOIL."
   check: "Close the lid and click start."
+  check: "Choose 40 µL option."
   image: "thermal_cycler_home"
 end
 
