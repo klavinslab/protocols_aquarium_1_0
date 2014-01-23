@@ -13,11 +13,13 @@ take
   phusion_stock = item enzyme_id
 end
 
+
+
 take
-  primer1_stock[0] = item primer_f[0]
-  primer2_stock[0] = item primer_r[0]
-  primer1_stock[1] = item primer_f[1]
-  primer2_stock[1] = item primer_r[1]
+  primer1_stock0 = item primer_f[0]
+  primer2_stock0 = item primer_r[0]
+  primer1_stock1 = item primer_f[1]
+  primer2_stock1 = item primer_r[1]
 #  primer1_stock[2] = item primer_f[2]
 #  primer2_stock[2] = item primer_r[2]
 #  primer1_stock[3] = item primer_f[3]
@@ -31,6 +33,10 @@ take
 #  primer1_stock[7] = item primer_f[7]
 #  primer2_stock[7] = item primer_r[7]
 end
+
+primer_f_items = [primer1_stock0[0],primer1_stock1[0]]
+primer_r_items = [primer2_stock0[0],primer2_stock1[0]]
+
 
 step
   description: "This protocol prepares the PCR mix in
@@ -67,8 +73,8 @@ step
   image: "thermal_cycler_home"
 end
 
-release primer_f
-release primer_r
+release primer_f_items
+release primer_r_items
 release [plasmid_stock[0],phusion_stock[0]]
 
 
