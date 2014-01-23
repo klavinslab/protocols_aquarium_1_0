@@ -8,14 +8,13 @@ step
 end
 
 ii= 0
-rary = []
 while ii<length(names)
   produce
-    r = 1 "PCR Result" of names[ii]
+    1 "PCR Result" of names[ii]
     note: "Keep the tube on the bench to use in the next protocol.  (no need to edit the location below)"
     location: "Bench"
   end
-  rary = append(rary,r)
   ii = ii+1
 end
+
 
