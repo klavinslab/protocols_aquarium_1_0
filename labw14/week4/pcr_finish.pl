@@ -9,7 +9,7 @@ end
 
 ii= 0
 rary = []
-while ii<8
+while ii<length(names)
   produce
     r = 1 "PCR Result" of names[ii]
     note: "Keep the tube on the bench to use in the next protocol.  (no need to edit the location below)"
@@ -19,6 +19,3 @@ while ii<8
   ii = ii+1
 end
 
-log
-  return: { PCR_Result_id: rary}
-end

@@ -25,7 +25,7 @@ end
 #first step is wait until thermal cycler is done
 place pcr_finish
   argument
-    names: ["test1","test2"]
+    names: ["ag43 keio cassette","fly keio cassette"]
   end
   protocol: "labw14/week2/pcr_finish.pl"
   group: aquarium_user
