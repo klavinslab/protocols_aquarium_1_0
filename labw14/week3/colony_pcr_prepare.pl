@@ -17,7 +17,7 @@ step
 end
 
 step
-  description: "Label a 0.2mL PCR tube. Write your initials on it."
+  description: "Label a 0.2 mL PCR tube. Write your initials on it."
 end
 
 step 
