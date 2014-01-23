@@ -1,0 +1,38 @@
+#each team gets their own primers and plasmids
+
+argument
+  primer_f: sample array, "The 8 forward primers"
+  primer_r: sample array, "The 8 reverse primers"
+  enzyme_id: sample, "The Phsion HF Master Mix stock"
+  plasmid_id: sample, "template"
+end
+
+
+place pcr_prep
+  protocol: "labw14/week4/pcr_prepare.pl"
+  argument
+    primer_f: primer_f
+    primer_r: primer_r
+    plasmid_id: plasmid_id
+    enzyme_id: enzyme_id
+  end
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+#first step is wait until thermal cycler is done
+place pcr_finish
+  argument
+    names: ["test1","test2"]
+  end
+  protocol: "labw14/week2/pcr_finish.pl"
+  group: aquarium_user
+  start: minutes(70)
+  window: minutes(1)
+end
+
+
+# forward transitions
+transition [pcr_prep]     => [pcr_finish] when !error(0) && completed(0) end
