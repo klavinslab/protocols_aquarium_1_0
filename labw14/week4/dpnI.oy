@@ -16,6 +16,7 @@ place dpnI_digest
     bsa: bsa
     dpn: dpn
   end
+  marked: true
   group: aquarium_user
   start: now()
   window: minutes(1)
