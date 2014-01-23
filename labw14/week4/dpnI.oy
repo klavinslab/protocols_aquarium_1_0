@@ -11,7 +11,7 @@ dpn = 685
 place dpnI_digest
   protocol: "labw14/week2/dpnI_digest.pl"
   argument
-    fragments: fragments
+    fragments: ldna
     neb: neb
     bsa: bsa
     dpn: dpn
