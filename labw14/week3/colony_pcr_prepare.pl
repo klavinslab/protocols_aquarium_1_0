@@ -17,7 +17,7 @@ step
 end
 
 step
-  description: "Label a 0.2mL PCR tube. Write your initials on it."
+  description: "Label a 0.2 mL PCR tube. Write your initials on it."
 end
 
 step 
@@ -30,6 +30,8 @@ step
   check: "Use the tip to gently mix."
   note: "Be careful to pipette into the liquid, not the side of the tube."
 end
+
+release phusion_stock
 
 step
   description: "You will now be asked to use the lab thermal cycler"
@@ -54,6 +56,6 @@ step
 end
 
 
-release [primer1_stock[0],primer2_stock[0],plasmid_stock[0],phusion_stock[0]]
+release [primer1_stock[0],primer2_stock[0],plasmid_stock[0]]
 
 
