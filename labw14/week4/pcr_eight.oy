@@ -36,3 +36,5 @@ end
 
 # forward transitions
 transition [pcr_prep]     => [pcr_finish] when !error(0) && completed(0) end
+transition [pcr_finish] => [] when !error(0) && completed(0) end
+
