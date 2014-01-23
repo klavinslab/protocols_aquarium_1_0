@@ -31,6 +31,8 @@ step
   note: "Be careful to pipette into the liquid, not the side of the tube."
 end
 
+release phusion_stock
+
 step
   description: "You will now be asked to use the lab thermal cycler"
   note: "The thermal cycler will be shared by all groups."
@@ -54,6 +56,6 @@ step
 end
 
 
-release [primer1_stock[0],primer2_stock[0],plasmid_stock[0],phusion_stock[0]]
+release [primer1_stock[0],primer2_stock[0],plasmid_stock[0]]
 
 
