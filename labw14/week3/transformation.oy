@@ -44,7 +44,7 @@ place plate_1
     plate_type: plate_type_1
   end
   group: aquarium_user
-  start: minutes(1)
+  start: minutes(35)
   window: minutes(1)
 end
 
