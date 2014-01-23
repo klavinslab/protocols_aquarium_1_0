@@ -2,7 +2,7 @@ information "Load and run an agarose gel."
 
 
 argument
-  fragment_one: sample
+  colony: sample
   ladder_one: sample
   fragment_volume: number, "The volume of PCR fragment to load in µL."
 end
@@ -20,7 +20,7 @@ end
 
 take
   gel = 1 "50 mL 1 Percent Agarose Gel in Gel Box"
-  fragment = item fragment_one
+  fragment = item colony
   ladder = item ladder_one
   loading_dye = 1 "Gel Loading Dye Blue (6X)"
 end

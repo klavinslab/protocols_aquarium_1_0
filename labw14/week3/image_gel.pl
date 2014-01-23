@@ -60,5 +60,5 @@ step
     "Rename the picture in Dropbox"
   note: 
     "In gel room touch screen computer, open Dropbox/GelImages, under today's date folder and find the picture you just took.\n
-     Rename the picture as the labw14_week3_gel"
+     Rename the picture as the labw14_week3_gel_group_id, id should be replaced as your group id."
 end

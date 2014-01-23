@@ -69,19 +69,20 @@ end
 
 step
   description: "Pipette 2 µL Plasmid Stock (sample id: %{plasmid_id}) into the electrocompetent cells tube"
-  bullet: "Pieptte into the culture, not on the side of the tube."
-  bullet: "Swirl the tip gently in the culture to mix after pieptting."
-  bullet: "Put back on the aluminum rack after mixing."
+  check: "Pieptte into the culture, not on the side of the tube."
+  check: "Swirl the tip gently in the culture to mix after pieptting."
+  check: "Put back on the aluminum rack after mixing."
 #  warning: "Vortex the plasmid stock before pipetting into the electrocompetent cells"
   image: "pipette_plasmid_into_electrocompotent_cells"
 end
 
 step
   description: "Electroporation and Rescue Preparation"
-  bullet: "Set your pipettors to be 42 µL and 1000 µL."
-  bullet: "Prepare 100 µL and 1000 µL pipette tips."
-  bullet: "Loosen cap on the 50 mL LB liquid aliquot (sterile)."
-  bullet: "Take the black plastic cuvette holder out of electroporator."
+  check: "Set your pipettors to be 42 µL and 1000 µL."
+  check: "Prepare 100 µL and 1000 µL pipette tips."
+  check: "Loosen cap on the 50 mL LB liquid aliquot (sterile)."
+  check: "Take the black plastic cuvette holder out of electroporator."
+  warning: "When you prepare the pieptte tips, do not let the tip touch anything (such as the bench)."
 end
     
 step

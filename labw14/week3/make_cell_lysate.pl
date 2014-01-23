@@ -1,5 +1,5 @@
 argument
-  Transformed_E_coli_Strain_id, sample, "Choose the plate that you want to do colony PCR."
+  Transformed_E_coli_Strain_id: sample, "Choose the plate that you want to do colony PCR."
 end
 
 take
@@ -19,9 +19,14 @@ end
 
 
 step
-  description: "Place the boil tube in the thermal cycler"
-  note: "Find and initiate the boil protocol on the thermal cycler"
-  note: "Make sure the protocol is to heat to 98 C for 10 minutes and then cool to 4 C"
+  description: "Place the tube into thermal cycler T2 at B3.335"
+end
+
+step
+  description: "Choose program on the thermal cycler"
+  check: "Click Home then click Saved Protocol, choose LABW14 folder, choose BOIL."
+  check: "Close the lid and click start."
+  image: "thermal_cycler_home"
 end
 
 step
@@ -29,6 +34,15 @@ step
   timer: { hours: 0, minutes: 10, seconds: 0 }
 end
 
+produce
+  r = 1 "Cell Lysate" of "pLAB3 in Z1"
+  note: "Keep the tube on the bench to use in the next protocol. (no need to edit the location below)"
+  location: "Bench"
+end
+
+log
+  return: {Cell_Lysate_id: r[:id]}
+end
 # produce boiled cell water
 
 
