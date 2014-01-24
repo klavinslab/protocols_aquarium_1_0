@@ -187,7 +187,7 @@ step
 end
 
 
-poured_plates = plates[0, plates_poured]
+poured_plates = plates[0..plates_poured]
 empty_plates = plates[plates_poured..-1]
 
 
