@@ -9,7 +9,7 @@ bsa = 799
 dpn = 685
 
 place dpnI_digest
-  protocol: "labw14/week2/dpnI_digest.pl"
+  protocol: "labw14/week4/dpnI_digest.pl"
   argument
     fragments: ldna
     neb: neb
@@ -24,7 +24,7 @@ end
 
 
 place stock_fragment
-  protocol: "labw14/week2/stock_fragment.pl"
+  protocol: "labw14/week4/stock_fragment.pl"
   group: aquarium_user
   start: minutes(120)
   window: minutes(1)

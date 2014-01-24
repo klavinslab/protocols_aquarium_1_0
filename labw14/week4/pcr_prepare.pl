@@ -14,28 +14,19 @@ take
 end
 
 
+primer_f_items = []
+primer_r_items = []
 
-take
-  primer1_stock0 = item primer_f[0]
-  primer2_stock0 = item primer_r[0]
-  primer1_stock1 = item primer_f[1]
-  primer2_stock1 = item primer_r[1]
-#  primer1_stock[2] = item primer_f[2]
-#  primer2_stock[2] = item primer_r[2]
-#  primer1_stock[3] = item primer_f[3]
-#  primer2_stock[3] = item primer_r[3]
-#  primer1_stock[4] = item primer_f[4]
-#  primer2_stock[4] = item primer_r[4]
-#  primer1_stock[5] = item primer_f[5]
-#  primer2_stock[5] = item primer_r[5]
-#  primer1_stock[6] = item primer_f[6]
-#  primer2_stock[6] = item primer_r[6]
-#  primer1_stock[7] = item primer_f[7]
-#  primer2_stock[7] = item primer_r[7]
+ii=0
+while ii<length(primer_f)
+  take
+    p1 = item primer_f[ii]
+    p2 = item primer_r[ii]
+  end
+  primer_f_items = append(primer_f_items,p1)
+  primer_r_items = append(primer_r_items,p2)
+  ii = ii+1
 end
-
-primer_f_items = [primer1_stock0[0],primer1_stock1[0]]
-primer_r_items = [primer2_stock0[0],primer2_stock1[0]]
 
 
 step
