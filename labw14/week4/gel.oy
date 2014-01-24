@@ -4,7 +4,7 @@ argument
   ldna: sample array, "The pcr fragments" 
 #  ladder: sample, "The ladder for your gel"
 end
-ladder = 822 #1kb ladder aliquot
+ladder = 823 #1kb ladder aliquot
 
 #stagger
 place pour_gel
