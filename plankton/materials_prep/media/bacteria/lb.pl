@@ -2,12 +2,14 @@ information "Prepare unsterile bottle(s) of 800 mL LB Agar (rich media for bacte
 # FIXME: parameterize for adding IPTG, aTc, X-Gal
 
 
-product_name = "800 mL LB Agar (unsterile)"
 
 
 argument
   n_bottle: number, "Enter the number of bottles you want to make (maximum of 4)."
+  add_agar: string, "Make agar media? (Yes or No)"
 end
+
+
 
 
 if n_bottle < 1 || n_bottle > 4
@@ -21,10 +23,33 @@ if n_bottle < 1 || n_bottle > 4
 end
 
 
-take
-  bottles = n_bottle "1 L Bottle"
-  lb_powder = 1 "LB Agar Miller"
-  stir_bar = n_bottle "Medium Magnetic Stir Bar"
+if add_agar != "Yes" && add_agar != "No"
+  step
+    description: "The question of whether this is to be agar media was incorrectly entered as %{add_agar}."
+    note: "You can only specify Yes or No! Hassle the person who scheduled this protocol."
+    getdata
+      add_agar: string, "Should this be a batch of agar media?", ["Yes", "No"]
+    end
+  end
+end
+
+
+if add_agar == "Yes"
+  product_name = "800 mL LB Agar (unsterile)"
+  lb_grams = 29.6
+  take
+    bottles = n_bottle "1 L Bottle"
+    lb_powder = 1 "Difco LB Broth, Miller"
+    stir_bars = n_bottle "Medium Magnetic Stir Bar"
+  end
+else
+  product_name = "800 mL LB Liquid (unsterile)"
+  lb_grams = 20.0
+  take
+    bottles = n_bottle "1 L Bottle"
+    lb_powder = 1 "LB Agar Miller"
+    stir_bars = n_bottle "Medium Magnetic Stir Bar"
+  end
 end
 
 
@@ -75,9 +100,10 @@ end
 produce
   produced_bottles = n_bottle product_name
   release bottles
+  release stir_bars
   note: "Write %{product_name} and the date on the label in addition to the above id number."
   location: "B1.320"
 end
 
 
-release [lb_powder[0], stir_bar[0]]
+release lb_powder

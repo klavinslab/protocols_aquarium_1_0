@@ -75,10 +75,14 @@ dextrose_name = dextrose[0][:name]
 adenine_name = adenine[0][:name]
 
 
-include "plankton/includes/materials_prep/add_dry_reagent.pl"
-  container: "each bottle"
-  reagent: yeast_extract_name
-  grams: 8
+# Agar
+if add_agar == "Yes"
+  agar_name = agar[0][:name]
+  include "plankton/includes/materials_prep/add_dry_reagent.pl"
+    container: "each bottle"
+    reagent: agar_name
+    grams: 16
+  end
 end
 
 
@@ -98,19 +102,15 @@ end
 
 include "plankton/includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
-  reagent: adenine_name
-  grams: 0.064
+  reagent: yeast_extract_name
+  grams: 8
 end
 
 
-# Agar
-if add_agar == "Yes"
-  agar_name = agar[0][:name]
-  include "plankton/includes/materials_prep/add_dry_reagent.pl"
-    container: "each bottle"
-    reagent: agar_name
-    grams: 16
-  end
+include "plankton/includes/materials_prep/add_dry_reagent.pl"
+  container: "each bottle"
+  reagent: adenine_name
+  grams: 0.064
 end
 
 
