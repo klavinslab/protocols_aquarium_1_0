@@ -24,7 +24,7 @@ end
 take
   bottles = n_bottle "1 L Bottle"
   lb_powder = 1 "LB Agar Miller"
-  stir_bar = n_bottle "Medium Magnetic Stir Bar"
+  stir_bars = n_bottle "Medium Magnetic Stir Bar"
 end
 
 
@@ -75,9 +75,10 @@ end
 produce
   produced_bottles = n_bottle product_name
   release bottles
+  release stir_bars
   note: "Write %{product_name} and the date on the label in addition to the above id number."
   location: "B1.320"
 end
 
 
-release [lb_powder[0], stir_bar[0]]
+release lb_powder
