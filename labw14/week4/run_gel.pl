@@ -2,29 +2,26 @@ information "Load and run an agarose gel."
 
 
 argument
-  fragment_one: sample
+  fragments: sample array
   ladder_one: sample
   fragment_volume: number, "The volume of PCR fragment to load in µL."
 end
 
-
-take
-  glasses = 1 "Clear Protective Glasses"
-end
-
-
-step
-  description: "Wear clear protective glasses"
-end
-
-
 take
   gel = 1 "50 mL 1 Percent Agarose Gel in Gel Box"
-  fragment = item fragment_one
   ladder = item ladder_one
   loading_dye = 1 "Gel Loading Dye Blue (6X)"
 end
 
+ii = 0
+frag = []
+while ii<length(fragments)
+  take
+    f = item fragments[ii]
+  end
+  frag = append(frag,f[0])
+  ii = ii+1
+end
 
 step
   description: "Set up the power supply."
@@ -48,7 +45,7 @@ end
 dye_volume = fragment_volume / 5.0
 step
   description: "Add loading dye to the PCR fragment"
-  note: "Using a 10 µL or 100 µL pipetter, add %{dye_volume} µL of loading dye to the PCR results with id %{fragment_one}."
+  note: "Using a 10 µL or 100 µL pipetter, add %{dye_volume} µL of loading dye to the PCR results with id %{fragments}."
   image: "gel_add_loading_dye"
 end
 
@@ -80,19 +77,21 @@ end
 
 release ladder
 
-
-produce
-  gel_lane = 1 "Gel Lane" from fragment[0]
-  release gel
+ii=0
+lane_ids = []
+while ii<length(frag)
+  produce
+    gel_lane = 1 "Gel Lane" from frag[0]
+    location: "Bench"
+    release gel
+  end
+  lane_ids = append(lane_ids,gel_lane[:id])
+  ii = ii+1
 end
 
-
-release fragment  # Throw away the tube / save extra
-
-
-release glasses
+release frag  # Throw away the tube / save extra
 
 
 log
-  return: { Gel_lane_id: gel_lane[:id]}
+  return: { Gel_lane_ids: lane_ids}
 end

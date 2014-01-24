@@ -39,7 +39,7 @@ place image_cut_gel
   window: minutes(1)
 end
 
-wire (run_gel,"Gel_lane_id") => (image_cut_gel,"gel")
+wire (run_gel,"Gel_lane_ids") => (image_cut_gel,"gels")
 
 place clean_gel_box
   protocol: "labw14/week4/clean_gel_box.pl"
@@ -47,6 +47,7 @@ place clean_gel_box
   start: now()
   window: minutes(1)
 end
+
 
 
 # forward transitions
