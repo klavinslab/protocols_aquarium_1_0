@@ -27,7 +27,7 @@ place pcr_finish
   argument
     names: ["lacI keio cassette","ag43 keio cassette","galK keio cassette","lsr keio cassette","luxS keio cassette","rbsD keio cassette","xyl keio cassette","fly keio cassette"]
   end
-  protocol: "labw14/week2/pcr_finish.pl"
+  protocol: "labw14/week4/pcr_finish.pl"
   group: aquarium_user
   start: minutes(70)
   window: minutes(1)
