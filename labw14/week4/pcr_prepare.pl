@@ -23,8 +23,8 @@ while ii<length(primer_f)
     p1 = item primer_f[ii]
     p2 = item primer_r[ii]
   end
-  primer_f_items = append(primer_f_items,p1)
-  primer_r_items = append(primer_r_items,p2)
+  primer_f_items = append(primer_f_items,p1[0])
+  primer_r_items = append(primer_r_items,p2[0])
   ii = ii+1
 end
 
