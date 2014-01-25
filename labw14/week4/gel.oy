@@ -4,7 +4,7 @@ argument
   ldna: sample array, "The pcr fragments" 
 #  ladder: sample, "The ladder for your gel"
 end
-ladder = 822 #1kb ladder aliquot
+ladder = 823 #1kb ladder aliquot
 
 #stagger
 place pour_gel
@@ -35,8 +35,8 @@ end
 place image_cut_gel
   protocol: "labw14/week4/image_cut_gel.pl"
   group: aquarium_user
-  start: minutes(40)
-  window: minutes(1)
+  start: now()
+  window: minutes(200)
 end
 
 wire (run_gel,"Gel_lane_ids") => (image_cut_gel,"gels")
@@ -47,6 +47,7 @@ place clean_gel_box
   start: now()
   window: minutes(1)
 end
+
 
 
 

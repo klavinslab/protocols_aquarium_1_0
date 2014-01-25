@@ -5,11 +5,11 @@ end
 
 ii = 0
 y = []
-while ii<0
+while ii<length(gels)
   take
-    y = item gel[0]
+    temp = item gels[ii]
   end
-  y = append(y,y[0])
+  y = append(y,temp[0])
   ii= ii+1
 end
 
@@ -49,11 +49,17 @@ step
   found them."
 end
 
-produce
-  r = 1 "Gel Slice" of "fLAB1"
-  release y
+ii=0
+ret=[]
+while ii<length(y)
+  produce
+    r = 1 "Gel Slice" from y[ii]
+    release y[ii]
+  end
+  ret = append(ret,r[:id])
+  ii = ii + 1
 end
 
 log
-  return: {Gel_Slice_id: r[:id]}
+  return: {Gel_Slice_ids: ret }
 end

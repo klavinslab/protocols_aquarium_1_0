@@ -81,7 +81,7 @@ ii=0
 lane_ids = []
 while ii<length(frag)
   produce
-    gel_lane = 1 "Gel Lane" from frag[0]
+    gel_lane = 1 "Gel Lane" from frag[ii]
     location: "Bench"
     release gel
   end
