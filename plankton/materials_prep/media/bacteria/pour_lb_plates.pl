@@ -48,13 +48,13 @@ end
 
 if volume == 200
   bottle_type = "200 mL LB Agar (sterile)"
-  n_empty_plates = 10
+  n_empty_plates = 10 * n
 elsif volume == 400
   bottle_type = "400 mL LB Agar (sterile)"
-  n_empty_plates = 20
+  n_empty_plates = 20 * n
 else
   bottle_type = "800 mL LB Agar (sterile)"
-  n_empty_plates = 40
+  n_empty_plates = 40 * n
 end
 
 
@@ -69,12 +69,12 @@ end
 if antibiotic == "Amp"
   antibiotic_name = "100X 1 mL Ampicillin Aliquot"
   antibiotic_volume = volume / 100.0
-  antibiotic_number = antibiotic_volume
+  antibiotic_number = antibiotic_volume * n
   product_name = "LB Amp Plate (sterile)"
 elsif antibiotic == "Kan"
   antibiotic_name = "200X 1 mL Kanamycin Aliquot"
   antibiotic_volume = volume / 200.0
-  antibiotic_number = antibiotic_volume
+  antibiotic_number = antibiotic_volume * n
   product_name = "LB Kan Plate (sterile)"
 elsif antibiotic == "Chlor"
   antibiotic_name = "1000X 1 mL Chloramphenicol aliquot"
