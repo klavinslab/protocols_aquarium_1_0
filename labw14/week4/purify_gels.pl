@@ -2,12 +2,18 @@ argument
   gel: sample array, "Choose the Gel Slice you need to purify."
 end
 
-take
-  gel_slice = item gel
+ii=0
+slices = []
+while ii<length(gel)
+  take
+    gel_slice = item gel[ii]
+  end
+  slices = append(slices,gel_slice[0])
+  ii = ii+1
 end
 
 step
-  description: "Add equal palts w/v buffer QG into the gel slice tube"
+  description: "Add equal parts w/v buffer QG into the gel slice tube"
 end
 
 step
@@ -27,7 +33,7 @@ end
 
 step
   description: "Add the tube content to the labeled QIAquick Spin column"
-  note: "Tube content volume shoud be around %{QG_volume_plus} µL."
+  note: "."
 end
 
 step
@@ -91,12 +97,14 @@ step
   bullet: "Column can go to the tip waster collector."
 end
 
-produce
-  r = 1 "Fragment Stock" of "fLAB1"
-  location: "Bench"
-  release gel_slice
+
+ii = 0
+while ii < length(slices)
+  produce
+    r = 1 "Fragment Stock" from slices[ii]
+    location: "Bench"
+    release gel_slice
+  end
+  ii = ii+1
 end
 
-log
-  return: {Fragment_Stock_id: r[:id]}
-end
