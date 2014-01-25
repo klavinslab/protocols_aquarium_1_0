@@ -26,6 +26,7 @@ step
   description: "Choose program on the thermal cycler"
   check: "Click Home then click Saved Protocol, choose LABW14 folder, choose BOIL."
   check: "Close the lid and click start."
+  check: "Choose 40 µL option."
   image: "thermal_cycler_home"
 end
 
@@ -33,6 +34,8 @@ step
   description: "Wait for 10 minutes for the cells to boil"
   timer: { hours: 0, minutes: 10, seconds: 0 }
 end
+
+release y
 
 produce
   r = 1 "Cell Lysate" of "pLAB3 in Z1"

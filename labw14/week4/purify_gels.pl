@@ -1,40 +1,19 @@
 argument
-  gel: sample, "Choose the Gel Slice you need to purify."
+  gel: sample array, "Choose the Gel Slice you need to purify."
 end
 
-take
-  gel_slice = item gel
+ii=0
+slices = []
+while ii<length(gel)
+  take
+    gel_slice = item gel[ii]
+  end
+  slices = append(slices,gel_slice[0])
+  ii = ii+1
 end
 
 step
-  description: "Weigh the gel slice on a scale at A5.300"
-  note: "Use an empty 1.5 mL tube to zero the scale first, then put the gel slice tube on the scale."
-  getdata
-    gel_weight: number, "Enter the gel slice weight shown on the scale in mg. If it shows 0.134 on scale, you enter 134 below."
-  end
-end
-
-while gel_weight > 200 
-  step
-    description: "Go back to Gel room to trim you gel slice"
-    note: "Wait for the gel slice to thaw, put on the transiluminator, trim the non DNA part of your gel."
-  end
-  step
-    description: "Weigh the gel slice on a scale at A5.300"
-    note: "Use an empty 1.5 mL tube to zero the scale first, then put the gel slice tube on the scale."
-    getdata
-      gel_weight: number, "Enter the gel slice weight shown on the scale in mg. If it shows 0.134 on scale, you enter 134 below."
-    end
-end
-end
-
-
-QG_volume = 3 * gel_weight
-
-QG_volume_plus = QG_volume + 100
-
-step
-  description: "Add %{QG_volume} µL buffer QG into the gel slice tube with id %{gel}"
+  description: "Add equal parts w/v buffer QG into the gel slice tube"
 end
 
 step
@@ -54,7 +33,7 @@ end
 
 step
   description: "Add the tube content to the labeled QIAquick Spin column"
-  note: "Tube content volume shoud be around %{QG_volume_plus} µL."
+  note: "."
 end
 
 step
@@ -117,13 +96,15 @@ step
   description: "Dicard the column and place the tube on the bench"
   bullet: "Column can go to the tip waster collector."
 end
-    
-produce
-  r = 1 "Fragment Stock" of "fLAB1"
-  location: "Bench"
-  release gel_slice
+
+
+ii = 0
+while ii < length(slices)
+  produce
+    r = 1 "Fragment Stock" from slices[ii]
+    location: "Bench"
+    release gel_slice
+  end
+  ii = ii+1
 end
 
-log
-  return: {Fragment_Stock_id: r[:id]}
-end

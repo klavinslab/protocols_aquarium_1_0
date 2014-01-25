@@ -20,7 +20,7 @@ if volume != 200 && volume != 400 && volume != 800
     end
   end
 end
-if iptg != "Yes" || iptg != "No"
+if iptg != "Yes" && iptg != "No"
   step
     description: "The IPTG preference was incorrectly entered as %{iptg}."
     getdata
@@ -28,7 +28,7 @@ if iptg != "Yes" || iptg != "No"
     end
   end
 end
-if atc != "Yes" || iptg != "No"
+if atc != "Yes" && iptg != "No"
   step
     description: "The aTc preference was incorrectly entered as %{atc}."
     getdata
@@ -36,7 +36,7 @@ if atc != "Yes" || iptg != "No"
     end
   end
 end
-if xgal != "Yes" || iptg != "No"
+if xgal != "Yes" && iptg != "No"
   step
     description: "The X-gal preference was incorrectly entered as %{xgal}."
     getdata
@@ -47,11 +47,14 @@ end
 
 
 if volume == 200
-  bottle_type = "200 mL LB Agar (molten)"
+  bottle_type = "200 mL LB Agar (sterile)"
+  n_empty_plates = 10 * n
 elsif volume == 400
-  bottle_type = "400 mL LB Agar (molten)"
+  bottle_type = "400 mL LB Agar (sterile)"
+  n_empty_plates = 20 * n
 else
   bottle_type = "800 mL LB Agar (sterile)"
+  n_empty_plates = 40 * n
 end
 
 
@@ -66,24 +69,27 @@ end
 if antibiotic == "Amp"
   antibiotic_name = "100X 1 mL Ampicillin Aliquot"
   antibiotic_volume = volume / 100.0
-  antibiotic_number = antibiotic_volume
+  antibiotic_number = antibiotic_volume * n
   product_name = "LB Amp Plate (sterile)"
 elsif antibiotic == "Kan"
   antibiotic_name = "200X 1 mL Kanamycin Aliquot"
   antibiotic_volume = volume / 200.0
-  antibiotic_number = antibiotic_volume
+  antibiotic_number = antibiotic_volume * n
   product_name = "LB Kan Plate (sterile)"
 elsif antibiotic == "Chlor"
   antibiotic_name = "1000X 1 mL Chloramphenicol aliquot"
   antibiotic_volume = volume / 1000.0
   antibiotic_number = 1
-  # TODO: try ceil and/or see if ceil is necessary
+  # TODO: does 'ceil' functionality exist? Would be useful for calculations
   product_name = "LB Chlor Plate (sterile)"
+elsif antibiotic == "None"
+  product_name = "LB Plate (sterile)"
 end
 
 
 take
   bottles = n bottle_type
+  plates = n_empty_plates "Petri Dish"
 end
 
 
@@ -131,7 +137,7 @@ if atc == "Yes"
 
   step
     description: "Add %{atc_volume} µL of aTc"
-    note: "Repeat this step for each bottle. If possible, keep bottles at in a 37°C heat bath or incubator when not on a hot plate. Otherwise, work quickly.\n\nBottle setup: keep the bottle on the hot plate at B1.335 while adding aTc. Keep the bottle capped whenever you aren't immediately pipetting in antibiotics.\n\nPipetting: for each aliquot, spin on benchtop minifuge before opening. Using a 1000 µL micropipette, add a total of %{atc_volume} µL of antibiotic solution to the LB Agar bottle. You can add 1000 µL at a time.\n\nRecap the bottle when finished."
+    note: "Repeat this step for each bottle. If possible, keep bottles at in a 37°C heat bath or incubator when not on a hot plate. Otherwise, work quickly.\n\nBottle setup: keep the bottle on the hot plate at B1.335 while adding aTc. Keep the bottle capped whenever you aren't immediately pipetting inducer.\n\nPipetting: for each aliquot, spin on benchtop minifuge before opening. Using a 1000 µL micropipette, add a total of %{atc_volume} µL of inducer to the LB Agar bottle. You can add 1000 µL at a time.\n\nRecap the bottle when finished."
     warning: "Make sure the media is at about 50°C (compare to the 50°C heat block using your hand)"
   end
 end
@@ -148,7 +154,7 @@ if xgal == "Yes"
 
   step
     description: "Add %{xgal_volume} µL of X-gal"
-    note: "Repeat this step for each bottle. If possible, keep bottles at in a 37°C heat bath or incubator when not on a hot plate. Otherwise, work quickly.\n\nBottle setup: keep the bottle on the hot plate at B1.335 while adding aTc. Keep the bottle capped whenever you aren't immediately pipetting in antibiotics.\n\nPipetting: for each aliquot, spin on benchtop minifuge before opening. Using a 1000 µL micropipette, add a total of %{xgal_volume} µL of antibiotic solution to the LB Agar bottle. You can add 1000 µL at a time.\n\nRecap the bottle when finished."
+    note: "Repeat this step for each bottle. If possible, keep bottles at in a 37°C heat bath or incubator when not on a hot plate. Otherwise, work quickly.\n\nBottle setup: keep the bottle on the hot plate at B1.335 while adding aTc. Keep the bottle capped whenever you aren't immediately pipetting in substrate.\n\nPipetting: for each aliquot, spin on benchtop minifuge before opening. Using a 1000 µL micropipette, add a total of %{xgal_volume} µL of substrate to the LB Agar bottle. You can add 1000 µL at a time.\n\nRecap the bottle when finished."
     warning: "Make sure the media is at about 50°C (compare to the 50°C heat block using your hand)"
   end
 end
@@ -164,7 +170,7 @@ step
   description: "Pour 25 mL of media into each plate."
   note: "Repeat this step for each bottle.\n\nUncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25 mL. Replace the petri dish lid and mark the side with a marker: purple for Amp, green for Kan, and blue for Chlor. Repeat for every plate."
   getdata
-    plates_poured: number, "Enter the number of plates you actually poured."
+    n_poured: number, "Enter the number of plates you actually poured."
   end
 end
 
@@ -183,44 +189,60 @@ end
 
 step
   description: "Place in the 30 degree yeast incubator."
-  note: "Place the plates in the 30 degree yeast incubator at A1.110 to dry overnight."
+  note: "Place the poured plates in the 30 degree yeast incubator at A1.110 to dry overnight."
 end
 
 
-poured_plates = plates[0, plates_poured]
-empty_plates = plates[plates_poured..-1]
+# Make an array accounting for the plates that are now empty so they can be released at the end and put back in the inventory
+# Do the same for plates poured so they can be released when producing the new plates
+ii = 0
+poured_plates = []
+empty_plates = []
+while ii < length(plates)
+  if ii < n_poured
+    poured_plates = append(poured_plates, plates[ii])
+  else
+    empty_plates = append(empty_plates, plates[ii])
+  end
+  ii = ii + 1
+end
 
 
 if antibiotic == "None"
   produce
-    poured_plates product_name
+    n_poured product_name
+    release poured_plates
     location: "A1.110"
   end
 else
   produce
-    poured_plates product_name
+    n_poured product_name
     # FIXME: these aliquots are spent and should be disposed? But releasing isn't right either.
+    release poured_plates
     release antibiotic_aliquots
     location: "A1.110"
   end
 end
 
 
-if plates_poured < 40
+if n_poured < 40
   release empty_plates
 end
 
 
-if volume == 200
+if volume == 800
   produce
     n "1 L Bottle (dirty)"
+    location: "A8.310"
   end
 elsif volume == 400
   produce
     n "500 mL Bottle (dirty)"
+    location: "A8.310"
   end
-else
+elsif volume == 200
   produce
     n "250 mL Bottle (dirty)"
+    location: "A8.310"
   end
 end
