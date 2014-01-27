@@ -48,13 +48,13 @@ end
 
 if volume == 200
   bottle_type = "200 mL LB Agar (sterile)"
-  n_empty_plates = 10
+  n_empty_plates = 10 * n
 elsif volume == 400
   bottle_type = "400 mL LB Agar (sterile)"
-  n_empty_plates = 20
+  n_empty_plates = 20 * n
 else
   bottle_type = "800 mL LB Agar (sterile)"
-  n_empty_plates = 40
+  n_empty_plates = 40 * n
 end
 
 
@@ -69,12 +69,12 @@ end
 if antibiotic == "Amp"
   antibiotic_name = "100X 1 mL Ampicillin Aliquot"
   antibiotic_volume = volume / 100.0
-  antibiotic_number = antibiotic_volume
+  antibiotic_number = antibiotic_volume * n
   product_name = "LB Amp Plate (sterile)"
 elsif antibiotic == "Kan"
   antibiotic_name = "200X 1 mL Kanamycin Aliquot"
   antibiotic_volume = volume / 200.0
-  antibiotic_number = antibiotic_volume
+  antibiotic_number = antibiotic_volume * n
   product_name = "LB Kan Plate (sterile)"
 elsif antibiotic == "Chlor"
   antibiotic_name = "1000X 1 mL Chloramphenicol aliquot"
@@ -137,7 +137,7 @@ if atc == "Yes"
 
   step
     description: "Add %{atc_volume} µL of aTc"
-    note: "Repeat this step for each bottle. If possible, keep bottles at in a 37°C heat bath or incubator when not on a hot plate. Otherwise, work quickly.\n\nBottle setup: keep the bottle on the hot plate at B1.335 while adding aTc. Keep the bottle capped whenever you aren't immediately pipetting in antibiotics.\n\nPipetting: for each aliquot, spin on benchtop minifuge before opening. Using a 1000 µL micropipette, add a total of %{atc_volume} µL of antibiotic solution to the LB Agar bottle. You can add 1000 µL at a time.\n\nRecap the bottle when finished."
+    note: "Repeat this step for each bottle. If possible, keep bottles at in a 37°C heat bath or incubator when not on a hot plate. Otherwise, work quickly.\n\nBottle setup: keep the bottle on the hot plate at B1.335 while adding aTc. Keep the bottle capped whenever you aren't immediately pipetting inducer.\n\nPipetting: for each aliquot, spin on benchtop minifuge before opening. Using a 1000 µL micropipette, add a total of %{atc_volume} µL of inducer to the LB Agar bottle. You can add 1000 µL at a time.\n\nRecap the bottle when finished."
     warning: "Make sure the media is at about 50°C (compare to the 50°C heat block using your hand)"
   end
 end
@@ -154,7 +154,7 @@ if xgal == "Yes"
 
   step
     description: "Add %{xgal_volume} µL of X-gal"
-    note: "Repeat this step for each bottle. If possible, keep bottles at in a 37°C heat bath or incubator when not on a hot plate. Otherwise, work quickly.\n\nBottle setup: keep the bottle on the hot plate at B1.335 while adding aTc. Keep the bottle capped whenever you aren't immediately pipetting in antibiotics.\n\nPipetting: for each aliquot, spin on benchtop minifuge before opening. Using a 1000 µL micropipette, add a total of %{xgal_volume} µL of antibiotic solution to the LB Agar bottle. You can add 1000 µL at a time.\n\nRecap the bottle when finished."
+    note: "Repeat this step for each bottle. If possible, keep bottles at in a 37°C heat bath or incubator when not on a hot plate. Otherwise, work quickly.\n\nBottle setup: keep the bottle on the hot plate at B1.335 while adding aTc. Keep the bottle capped whenever you aren't immediately pipetting in substrate.\n\nPipetting: for each aliquot, spin on benchtop minifuge before opening. Using a 1000 µL micropipette, add a total of %{xgal_volume} µL of substrate to the LB Agar bottle. You can add 1000 µL at a time.\n\nRecap the bottle when finished."
     warning: "Make sure the media is at about 50°C (compare to the 50°C heat block using your hand)"
   end
 end
@@ -233,13 +233,16 @@ end
 if volume == 800
   produce
     n "1 L Bottle (dirty)"
+    location: "A8.310"
   end
 elsif volume == 400
   produce
     n "500 mL Bottle (dirty)"
+    location: "A8.310"
   end
 elsif volume == 200
   produce
     n "250 mL Bottle (dirty)"
+    location: "A8.310"
   end
 end
