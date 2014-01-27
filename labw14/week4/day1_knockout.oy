@@ -1,0 +1,32 @@
+
+argument
+  log_cells: sample array, "the logphase cells" 
+end 
+
+place heat_shock
+  protocol: "labw14/week4/heat_shock.pl"
+  argument
+    cells_flask: log_cells
+  end
+  marked: true
+  group: aquarium_user
+  start: now()
+  window: minutes(10)
+end
+
+#first step is make sure gel has solidified 
+place quick_comp
+  protocol: "labw14/week4/quick_comp.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+wire (heat_shock,"cell_id") => (quick_comp,"shocked_cells")
+
+ 
+
+# forward transitions
+transition [heat_shock] => [quick_comp] when !error(0) && completed(0) end 
+transition [quick_comp] => [] when !error(0) && completed(0) end
+
