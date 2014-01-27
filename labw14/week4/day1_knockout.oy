@@ -1,12 +1,13 @@
 
 argument
-  log_cells: sample array, "the logphase cells" 
+  logcells: sample, "the logphase cells" 
 end 
+#log_cells = "BF001"
 
 place heat_shock
   protocol: "labw14/week4/heat_shock.pl"
   argument
-    cells_flask: log_cells
+    cells_flask: logcells
   end
   marked: true
   group: aquarium_user
