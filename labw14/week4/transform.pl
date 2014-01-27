@@ -21,8 +21,7 @@ end
 
 step
   description: "Label a 1.5 mL tube"
-  note: "Write 'T' on top of the tube.\n
-         Place the tube in the tube rack.\n
+  note: "Place the tube in the tube rack.\n
          This tube will eventually hold the transformed cells."
   image: "label_1_5mL_tube"
 end
@@ -99,7 +98,7 @@ produce
 end
 
 log
-  return: { transformed_cells_id: r[:id], tube_incubation_choice : tube_incubation_choice }
+  return: { transformed_cells_id: r[:id]}
 end
 
 release [electroporator[0]]
