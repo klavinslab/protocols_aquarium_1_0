@@ -49,7 +49,7 @@ step
 end
 
 take
-  strain = 1 e_coli_strain_type
+  strain = 1 item e_coli_strain_type
   cuvette = 1 "Clean Electrocuvette"
 end
 

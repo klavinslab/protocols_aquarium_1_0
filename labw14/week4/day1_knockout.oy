@@ -42,6 +42,6 @@ wire (quick_comp,"comp_cell_id") => (transform,"e_coli_strain_type")
 
 # forward transitions
 transition [heat_shock] => [quick_comp] when !error(0) && completed(0) end 
-transition [quick_comp] => [heat_shock] when !error(0) && completed(0) end 
-transition [heat_shock] => [] when !error(0) && completed(0) end
+transition [quick_comp] => [transform] when !error(0) && completed(0) end 
+transition [transform] => [] when !error(0) && completed(0) end
 
