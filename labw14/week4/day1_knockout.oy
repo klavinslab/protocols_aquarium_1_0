@@ -1,5 +1,5 @@
 argument
-  e_coli_strain_logcells: sample, "the logphase cells" 
+  e_coli_strain_logcells: sample, "the log phase cells" 
   fragment_ldna: sample, "the keio cassette you wish to transform"
 end 
 #log_cells = "BF001"
@@ -17,7 +17,7 @@ place heat_shock
   window: minutes(10)
 end
 
-#first step is make sure gel has solidified 
+
 place quick_comp
   protocol: "labw14/week4/quick_comp.pl"
   group: aquarium_user
