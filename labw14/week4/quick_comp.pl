@@ -43,7 +43,7 @@ while ii<3
   end
 
   step
-    descritpion: "remove supernatant"
+    description: "remove supernatant"
     note: "Using your P-1000, carefully aspirate the supernatant and suspend cells in 1 ml of ice-cold H2O."
     warning: "the pellet will be very fragile!  Try not to disturbe it."
   end
