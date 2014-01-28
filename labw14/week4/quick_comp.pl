@@ -16,7 +16,7 @@ end
 
 step
   description: "Centrifuge at 4,600g  for 7 minutes at 4C"
-  note: "While waiting for the centrifuge put five 1.5ml centrifuge tubes on ice."
+  note: "While waiting for the centrifuge put five 1.5 ml tubes on ice."
 end
 
 step
