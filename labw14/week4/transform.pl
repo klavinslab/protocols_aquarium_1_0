@@ -4,6 +4,7 @@
 argument
   plasmid_id: sample, "The plasmid to be used"
   e_coli_strain_type: sample, "One electrocompetent aliquot (of the 4 made in the previous protocol) to be transformed"
+  dna_vol: number
 end
 
 take
@@ -54,7 +55,7 @@ take
 end
 
 step
-  description: "Pipette 2 µL Fragment (sample id: %{plasmid_id}) into the electrocompetent cells tube"
+  description: "Pipette %{dna_vol} µL Fragment (sample id: %{plasmid_id}) into the electrocompetent cells tube"
   bullet: "Pieptte into the culture, not on the side of the tube."
   bullet: "Swirl the tip gently in the culture to mix after pieptting."
   bullet: "Put back on the aluminum rack after mixing."
