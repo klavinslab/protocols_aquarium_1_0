@@ -69,6 +69,6 @@ log
   return: { plate_id: r1[:id]}
 end
   
-release strain[0]
+release strain
 
  
