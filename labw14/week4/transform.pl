@@ -93,11 +93,21 @@ step
   end
 end
 
-produce
-  r = 1 "Transformed E coli 1.5 mL tube" of "pLAB1 in Z1"
-  note: "Move this tube to the 30C incubator"
-  location: "A1.something"
+if time_constant >= 3
+  produce
+    r = 1 "Transformed E coli 1.5 mL tube" of "pLAB1 in Z1"
+    note: "Move this tube to the 30C incubator"
+    location: "A1.something"
+  end
+else
+  step
+    description: "Transformation Unsuccessful"
+    note: "Your time constant value was too low, resulting in an unsuccessful transformation.\n
+    You must now discard your Transformed E.coli 1.5 mL tube and repeat this protocol."
+    end
 end
+
+
 
 log
   return: { transformed_cells_id: r[:id], time_constant: time_constant}
