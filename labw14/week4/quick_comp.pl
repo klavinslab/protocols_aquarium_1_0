@@ -68,6 +68,7 @@ end
 
 produce
   competent_cells = 1 "Electrocompetent aliquot" from cells
+  note: "Write the same item number on all four aliquots"
   location: "Bench"
   release cells
 end
