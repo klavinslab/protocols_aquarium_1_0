@@ -86,7 +86,7 @@ place plate_1
     volume: 200
     plate_type: plate_type_1
   end
-  start: hours(2)
+  start: hours(3)
   window: hours(1)
 end
 
@@ -97,7 +97,7 @@ place plate_2
     volume: 200
     plate_type: plate_type_1
   end
-  start: hours(2)
+  start: hours(3)
   window: hours(1)
 end
 
