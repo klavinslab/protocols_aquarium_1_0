@@ -149,7 +149,7 @@ transition [heat_shock] => [heat_shock] when error(0) end
 transition [quick_comp] => [quick_comp] when error(0) end 
 transition [transform] => [transform] when error(0) end 
 transition [transform2] => [transform2] when error(0) end
-transition [incubate_1] => [incubate_1] when error(0) end
+transition [incubate_tube_1] => [incubate_tube_1] when error(0) end
 transition [incubate_2] => [incubate_2] when error(0) end
 
 
