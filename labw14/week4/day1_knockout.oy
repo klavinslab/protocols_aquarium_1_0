@@ -82,7 +82,7 @@ transition [ transform2 ] => [ transform2 ] when !error(0) && ( completed(0) && 
 end
 
 #T2 -> []
-transition [ transform2 ] => [ transform2 ] when !error(0) && ( completed(0) && return_value(0, "time_constant") < 3 && num_trans == 4)
+transition [ transform2 ] => [] when !error(0) && ( completed(0) && return_value(0, "time_constant") < 3 && num_trans == 4)
     do
         num_trans = num_trans + 1
     end
