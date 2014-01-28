@@ -14,7 +14,7 @@ end
 
 step
   description: "Place in the %{temp}°C incubator, location is A1.110."
-        image: "put_green_tube_holder_to_incubator"
+        #image: "put_green_tube_holder_to_incubator"
 end
 
 modify
