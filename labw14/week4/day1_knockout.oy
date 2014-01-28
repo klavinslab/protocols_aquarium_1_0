@@ -81,7 +81,7 @@ wire (transform2,"transformed_cells_id") => (incubate_tube_2,"e_coli_strain_id")
 
 place plate_1
   protocol: "labw14/week4/plate.pl"
-  group: transformers
+  group: admin
   argument
     volume: 200
     plate_type: plate_type_1
@@ -92,7 +92,7 @@ end
 
 place plate_2
   protocol: "labw14/week4/plate.pl"
-  group: transformers
+  group: admin
   argument
     volume: 200
     plate_type: plate_type_1
