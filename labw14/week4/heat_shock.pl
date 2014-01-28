@@ -1,1 +1,55 @@
-information "Heat shock temperature sensitive cells."argument  cells_flask: sample , "cells to be heat shocked"endtake  cells = item cells_flask  tube = 1 "50 mL Falcon Tube"endcells = cells[0]tube = tube[0]step  description: "Transfer the cells to a 50ml falcon tube"  note: "pour the logphase cells from the shaker flask into the 50ml falcon tube.  The volume should be approximately 18ml"endstep  description: "locate the 42C heat bath"  note: "The next steps are time sensitive so you must know beforehand where the bath is"  image: "heat_bath"endstep  description: "place cells in heat bath"  note: "Don't press next until you are ready to walk the cells over to the bath."  image: "tube_in_bath"endstep  description: "Wait 15 minutes."  note: "While you wait you can prep an ice bath"  check: "find a styrofoam box."  check: "put a 50 ml tube rack inside with some ice or ice packs."  check: "fill with water half way up the tube rack"  image: "rack_in_ice_water"  timer: { hours: 0, minutes: 15, seconds: 0 }  warning: "This is a time sensitive step!  Do not leave the cells in the bath longer than 15 minutes."endstep  description: "Chill the cells"  note: "Submerge the cells in the ice bath you just made.  Make sure the cells have fully chilled for 5-10 min before continuing."endproduce  hot_cells = 1 "Heat shocked tube" from cells  location: "Bench"  release [cells, tube]endlog  return: { cell_id: hot_cells[:id]}end
+information "Heat shock temperature sensitive cells."
+
+argument
+  cells_flask: sample , "cells to be heat shocked"
+end
+
+take
+  cells = item cells_flask
+  tube = 1 "50 mL Falcon Tube"
+end
+cells = cells[0]
+tube = tube[0]
+
+step
+  description: "Transfer the cells to a 50ml falcon tube"
+  note: "pour the logphase cells from the shaker flask into the 50ml falcon tube.  The volume should be approximately 18ml"
+end
+
+step
+  description: "locate the 42C heat bath at A1.535"
+  note: "The next steps are time sensitive so you must know beforehand where the bath is"
+  image: "heat_bath"
+end
+
+step
+  description: "place cells in heat bath"
+  note: "Don't press next until you are ready to walk the cells over to the bath."
+  image: "tube_in_bath"
+end
+
+step
+  description: "Wait 15 minutes."
+  note: "While you wait you can prep an ice bath"
+  check: "find a styrofoam box."
+  check: "put a 50 ml tube rack inside with some ice or ice packs."
+  check: "fill with water half way up the tube rack"
+  image: "rack_in_ice_water"
+  timer: { hours: 0, minutes: 15, seconds: 0 }
+  warning: "This is a time sensitive step!  Do not leave the cells in the bath longer than 15 minutes."
+end
+
+step
+  description: "Chill the cells"
+  note: "Submerge the cells in the ice bath you just made.  Make sure the cells have fully chilled for 5-10 min before continuing."
+end
+
+produce
+  hot_cells = 1 "Heat shocked tube" from cells
+  location: "Bench"
+  release [cells, tube]
+end
+
+log
+  return: { cell_id: hot_cells[:id]}
+end
