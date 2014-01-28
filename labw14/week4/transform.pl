@@ -101,7 +101,7 @@ end
 
 log
   return: { transformed_cells_id: r[:id]}
-  return: { time_constant: time_constant}
+  return: { time_constant: {%time_constant}}
 end
 
 release [electroporator[0]]
