@@ -151,5 +151,6 @@ transition [transform] => [transform] when error(0) end
 transition [transform2] => [transform2] when error(0) end
 transition [incubate_tube_1] => [incubate_tube_1] when error(0) end
 transition [incubate_tube_2] => [incubate_tube_2] when error(0) end
-
+transition [plate_1] => [plate_1] when error(0) end
+transition [plate_2] => [plate_2] when error(0) end
 
