@@ -31,8 +31,8 @@ step
 end
 
 step
-  description: "Transfer into one of the prechilled 1.5mL centrifuge tube."
-  note: "Using your Pipettor P1000 (100-1000 μL pipettor), transfer the culture form the 50mL falcon tube to the 1.5 mL centrifuge tube on ice."
+  description: "Transfer into one of the prechilled 1.5 mL centrifuge tube."
+  note: "Using your Pipettor P1000 (100-1000 μL pipettor), transfer the culture form the 50 mL falcon tube to the 1.5 mL centrifuge tube on ice."
 end
 
 ii = 0
