@@ -61,7 +61,7 @@ place incubate_tube
   end
   group: aquarium_user
   start: now()
-  windwo: minutes(2)
+  window: minutes(2)
 end
 
 wire (transform,"transformed_cells_id") => (incubate_tube,"e_coli_strain_id")
