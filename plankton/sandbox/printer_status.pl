@@ -9,17 +9,6 @@ step
 end
 
 
-# http
-#   host: "http://bioturk.ee.washington.edu"
-#   port: "3008"
-#   path: "/devices/f7282f5c-ac01-77a5-5ef9-a9861beef515/command"
-#   query
-#     cmd: info_string
-#   end
-#   status: s
-#   body: b
-# end
-
 
 step
   description: "Request status"
@@ -31,18 +20,6 @@ step
   description: "info query launched from string literal"
   note: "Click next to launch the query"
 end
-
-
-# http
-#   host: "http://bioturk.ee.washington.edu"
-#   port: "3008"
-#   path: "/devices/f7282f5c-ac01-77a5-5ef9-a9861beef515/command"
-#   query
-#     cmd: "info"
-#   end
-#   status: s
-#   body: b
-# end
 
 
 step
