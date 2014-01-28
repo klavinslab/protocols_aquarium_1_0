@@ -1,8 +1,5 @@
 
 
-info_string = "info"
-
-
 step
   description: "info query launched from variable"
   note: "Click next to launch the query"
