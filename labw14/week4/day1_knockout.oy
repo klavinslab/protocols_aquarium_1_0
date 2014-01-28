@@ -55,7 +55,7 @@ end
 wire (quick_comp,"comp_cell_id") => (transform2,"e_coli_strain_type")
 
 place incubate_tube_1
-  protocol: "labw14/week4/incbuate_tube.pl"
+  protocol: "labw14/week4/incubate_tube.pl"
   argument
     temp: 30
   end
@@ -68,7 +68,7 @@ wire (transform,"transformed_cells_id") => (incubate_tube_1,"e_coli_strain_id")
 
 
 place incubate_tube_2
-  protocol: "labw14/week4/incbuate_tube.pl"
+  protocol: "labw14/week4/incubate_tube.pl"
   argument
     temp: 30
   end
