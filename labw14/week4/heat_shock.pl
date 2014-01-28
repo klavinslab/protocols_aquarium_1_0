@@ -12,12 +12,12 @@ cells = cells[0]
 tube = tube[0]
 
 step
-  description: "Transfer the cells to a 50ml falcon tube"
-  note: "Pour the logphase cells from the shaker flask into the 50ml falcon tube. The volume should be approximately 18ml"
+  description: "Transfer the cells to a 50 ml Falcon Tube"
+  note: "Pour the logphase cells from the shaker flask into the 50 ml tube. The volume should be approximately 18 ml"
 end
 
 step
-  description: "Locate the 42C heat bath at A1.535"
+  description: "Locate the 42 C heat bath at A1.535"
   note: "The next steps are time sensitive so you must know beforehand where the bath is"
   image: "heat_bath"
 end
