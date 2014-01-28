@@ -15,12 +15,12 @@ step
 end
 
 step
-  description: "centrifuge at 4,600g  for 7 minutes at 4C"
+  description: "Centrifuge at 4,600g  for 7 minutes at 4C"
   note: "while waiting for the centrifuge put five 1.5ml centrifuge tubes on ice."
 end
 
 step
-  description: "pour off supernatant"
+  description: "Pour off supernatant"
   note: "use your P-1000 to remove any remaining supernatant but be careful not to desturb the pellet"
   warning: "Try not to leave any more supernatant than you have to (but don't disturb the pellet)"
 end
@@ -31,19 +31,19 @@ step
 end
 
 step
-  description: "transfer into one of the prechilled 1.5ml centrifuge tube."
+  description: "Transfer into one of the prechilled 1.5ml centrifuge tube."
   note: "using your P-1000, transfer the culture form the 50ml falcon tube to the 1.5ml centrifuge tube on ice."
 end
 
 ii = 0
 while ii<3
   step
-    description: "centrifuge at 10,000 g for 30s at 4c"
+    description: "Centrifuge at 10,000 g for 30s at 4c"
     note: "Centrifuge at 10,000g in refrigerated microcentrifuge for 30 s at 4 C."
   end
 
   step
-    description: "remove supernatant"
+    description: "Remove supernatant"
     note: "Using your P-1000, carefully aspirate the supernatant and suspend cells in 1 ml of ice-cold H2O."
     warning: "the pellet will be very fragile!  Try not to disturbe it."
   end
@@ -62,7 +62,7 @@ step
 end
 
 step
-  description: "make four aliquots"
+  description: "Make four aliquots"
   note: "Transfer 50 ul of the resuspended pellet into each of the four remaining pre-chilled 1.5ml centrifuge tubes.  Discard the source tube along with any remaining cells."
 end
 
