@@ -1,4 +1,4 @@
-information "make competent cells for immediate use."
+information "Make competent cells for immediate use."
 
 argument
   shocked_cells: sample , "heat shocked cells"
@@ -11,17 +11,17 @@ cells = cells[0]
 
 step
   description: "NOTE"
-  warning: "it is essential to keep EVERYTHING cold throughout this entire protocol; all cells and containers should be on ice when not in use."
+  warning: "It is essential to keep EVERYTHING cold throughout this entire protocol; all cells and containers should be on ice when not in use."
 end
 
 step
   description: "Centrifuge at 4,600g  for 7 minutes at 4C"
-  note: "while waiting for the centrifuge put five 1.5ml centrifuge tubes on ice."
+  note: "While waiting for the centrifuge put five 1.5ml centrifuge tubes on ice."
 end
 
 step
   description: "Pour off supernatant"
-  note: "use your P-1000 to remove any remaining supernatant but be careful not to desturb the pellet"
+  note: "Use your P-1000 (100-1000 μL pipettor) to remove any remaining supernatant but be careful not to desturb the pellet."
   warning: "Try not to leave any more supernatant than you have to (but don't disturb the pellet)"
 end
 
@@ -67,7 +67,7 @@ step
 end
 
 produce
-  competent_cells = 4 "Electrocompetent aliquot" from cells
+  competent_cells = 1 "Electrocompetent aliquot" from cells
   location: "Bench"
   release cells
 end
