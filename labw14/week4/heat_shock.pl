@@ -47,6 +47,7 @@ end
 
 produce
   hot_cells = 1 "Heat shocked tube" from cells
+  note: "Make sure to keep the cells in the ice bath for the next step."
   location: "Bench"
   release [cells, tube]
 end
