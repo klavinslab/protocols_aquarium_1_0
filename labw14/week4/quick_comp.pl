@@ -73,5 +73,5 @@ produce
 end
 
 log
-  return: { comp_cell_id: competent_cells[0][:id]}
+  return: { comp_cell_id: competent_cells[:id]}
 end
