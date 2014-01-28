@@ -95,7 +95,7 @@ end
 
 produce
   r = 1 "Transformed E coli 1.5 mL tube" of "pLAB1 in Z1"
-  note: "Be sure to write down the item number on the tube and move it to the 30C incubator"
+  note: "Move this tube to the 30C incubator"
   location: "A1.something"
 end
 
