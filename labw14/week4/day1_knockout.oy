@@ -17,7 +17,7 @@ place heat_shock
   window: minutes(10)
 end
 
-#first step is make sure gel has solidified 
+
 place quick_comp
   protocol: "labw14/week4/quick_comp.pl"
   group: aquarium_user
