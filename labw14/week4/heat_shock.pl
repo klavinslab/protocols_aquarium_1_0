@@ -6,13 +6,18 @@ end
 
 take
   cells = item cells_flask
-  tube = 1 "50 mL Falcon Tube"
+#  tube = 1 "50 mL Falcon Tube"
 end
 cells = cells[0]
 tube = tube[0]
 
 step
-  description: "Transfer the cells to a 50 mL Falcon Tube by pouring"
+  description: "Label a 50 mL Falcon tube"
+  note: "Write you initials and date on the cap of the tube."
+end
+
+step
+  description: "Transfer the cells to the labeled 50 mL Falcon Tube by pouring"
   note: "Pour the log phase cells from the shaker flask into the 50 mL tube. The volume should be approximately 18 mL."
 end
 
