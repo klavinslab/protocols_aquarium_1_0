@@ -57,38 +57,42 @@ wire (quick_comp,"comp_cell_id") => (transform2,"e_coli_strain_type")
 transition [heat_shock] => [quick_comp] when !error(0) && completed(0) end 
 transition [quick_comp] => [transform] when !error(0) && completed(0) end 
 
-# first time transform success transition
-transition [transform] => [] when !error(0) && completed(0) && return_value(0, "time_constant") >= 3 && num_trans < 4 end
+# T1 -> []
+transition [transform] => [] when !error(0) && completed(0) && return_value(0, "time_constant") >= 3 end
 
-# transformation failed and num_trans <= 2
-transition [ transform ] => [ transform ] when error(0) || ( completed(0) && return_value(0, "time_constant") < 3 && num_trans <= 2)
+# T1 -> T1
+transition [ transform ] => [ transform ] when !error(0) && ( completed(0) && return_value(0, "time_constant") < 3 && num_trans == 1)
     do
         num_trans = num_trans + 1
     end
 end
 
-
-# transformation failed and num_trans > 2
-transition [ transform ] => [ transform2 ] when error(0) || ( completed(0) && return_value(0, "time_constant") < 3 && num_trans > 2 && num_trans <= 4)
+# T1 -> T2
+transition [ transform ] => [ transform2 ] when !error(0) && ( completed(0) && return_value(0, "time_constant") < 3 && num_trans == 2)
     do
         num_trans = num_trans + 1
     end
 end
 
-transition [ transform2 ] => [ transform2 ] when error(0) || ( completed(0) && return_value(0, "time_constant") < 3 && num_trans > 2 && num_trans <= 4)
+#T2 -> T2
+transition [ transform2 ] => [ transform2 ] when !error(0) && ( completed(0) && return_value(0, "time_constant") < 3 && num_trans == 3)
     do
         num_trans = num_trans + 1
     end
 end
 
-#transformation failed completely and num_trans > 4
-transition [ transform2 ] => [] when !error(0) && ( completed(0) && return_value(0, "time_constant") < 3 && num_trans > 4)
+#T2 -> []
+transition [ transform2 ] => [ transform2 ] when !error(0) && ( completed(0) && return_value(0, "time_constant") < 3 && num_trans == 4)
+    do
+        num_trans = num_trans + 1
+    end
+end
 
 
 # remaining reverse transitions
 transition [heat_shock] => [heat_shock] when error(0) end 
 transition [quick_comp] => [quick_comp] when error(0) end 
-
-#transition [transform] => [transform] when error(0) end 
+transition [transform] => [transform] when error(0) end 
+transition [transform2] => [transform2] when error(0) end
 
 
