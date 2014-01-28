@@ -96,8 +96,8 @@ end
 if time_constant >= 3
   produce
     r = 1 "Transformed E coli 1.5 mL tube" of "pLAB1 in Z1"
-    note: "Move this tube to the 30C incubator"
-    location: "A1.something"
+    note: "Move this tube in a green tube holder and incubate in the 30C incubator located at A1.110"
+    location: "A1.110"
   end
   
   log
