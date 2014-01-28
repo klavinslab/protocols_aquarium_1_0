@@ -12,7 +12,7 @@ end
 
 step
   description: "Request status"
-  note: "\n\nStatus code: %{s}\n\nBody: %{b}"
+  note: "Status code: %{s}Body: %{b}"
 end
 
 
@@ -24,5 +24,5 @@ end
 
 step
   description: "Request status"
-  note: "\n\nStatus code: %{s}\n\nBody: %{b}"
+  note: "Status code: %{s}Body: %{b}"
 end
