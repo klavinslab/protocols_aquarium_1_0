@@ -10,8 +10,8 @@
     q: object, "Container"
   end
 
-  m = y
-  n = m+y
+  m = y[0]
+  n = m+y[0]
 
   step
 
