@@ -58,31 +58,31 @@ transition [heat_shock] => [quick_comp] when !error(0) && completed(0) end
 transition [quick_comp] => [transform] when !error(0) && completed(0) end 
 
 # T1 -> []
-transition [transform] => [] when !error(0) && completed(0) && return_value(0, "time_constant") >= 3 end
+transition [transform] => [] when !error(0) && completed(0) && (return_value(0,"time_constant") >= 3) end
 
 # T1 -> T1
-transition [ transform ] => [ transform ] when !error(0) && ( completed(0) && return_value(0, "time_constant") < 3 && num_trans == 1)
+transition [ transform ] => [ transform ] when !error(0) && completed(0) && (return_value(0,"time_constant") < 3) && (num_trans == 1)
     do
         num_trans = num_trans + 1
     end
 end
 
 # T1 -> T2
-transition [ transform ] => [ transform2 ] when !error(0) && ( completed(0) && return_value(0, "time_constant") < 3 && num_trans == 2)
+transition [ transform ] => [ transform2 ] when !error(0) && completed(0) && (return_value(0,"time_constant") < 3) && (num_trans == 2)
     do
         num_trans = num_trans + 1
     end
 end
 
 #T2 -> T2
-transition [ transform2 ] => [ transform2 ] when !error(0) && ( completed(0) && return_value(0, "time_constant") < 3 && num_trans == 3)
+transition [ transform2 ] => [ transform2 ] when !error(0) && completed(0) && (return_value(0,"time_constant") < 3) && (num_trans == 3)
     do
         num_trans = num_trans + 1
     end
 end
 
 #T2 -> []
-transition [ transform2 ] => [] when !error(0) && ( completed(0) && return_value(0, "time_constant") < 3 && num_trans == 4)
+transition [ transform2 ] => [] when !error(0) && completed(0) && (return_value(0,"time_constant") < 3) && (num_trans == 4)
     do
         num_trans = num_trans + 1
     end
