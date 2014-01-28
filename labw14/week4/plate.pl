@@ -53,8 +53,8 @@ end
 
 produce
   r1 = 1 "Transformed E coli plate" from strain[0]
-  note: "Keep the plate on the bench to use in the next protocol (incubating)."
-  location: "Bench"
+  note: "Plate upside down in 30 C incubator at A1.110."
+  location: "A1.110"
   release plate
 end
 
@@ -69,10 +69,6 @@ log
   return: { plate_id: r1[:id]}
 end
   
-modify
-  strain[0]
-  location:"Bench"
-  inuse:0
-end
+release strain[0]
 
  
