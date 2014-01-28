@@ -3,7 +3,7 @@
 
 argument
   plasmid_id: sample, "The plasmid to be used"
-  e_coli_strain_type: sample, "The electrocompetent aliquot to be transformed"
+  e_coli_strain_type: sample, "One electrocompetent aliquot (of the 4 made in the previous protocol) to be transformed"
 end
 
 take
