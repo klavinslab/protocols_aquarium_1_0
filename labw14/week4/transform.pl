@@ -100,12 +100,9 @@ produce
 end
 
 log
-  return: { transformed_cells_id: r[:id]}
+  return: { transformed_cells_id: r[:id], time_constant: time_constant}
 end
 
-log 
-    return: { time_constant: time_constant}
-end
 
 release [electroporator[0]]
 release [falcon_tube[0],plasmid[0],alrack[0],iceblock[0],strain[0],cuvette[0]]
