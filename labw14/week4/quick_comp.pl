@@ -44,7 +44,7 @@ while ii<3
 
   step
     description: "Remove supernatant"
-    note: "Using your Pipettor P1000, carefully aspirate the supernatant and suspend cells in 1 mL of ice-cold molecular grade water."
+    note: "Using your Pipettor P1000, carefully aspirate the supernatant."
     warning: "The pellet will be very fragile! Try not to disturbe it."
   end
 
