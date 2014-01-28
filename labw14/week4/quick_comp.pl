@@ -16,7 +16,7 @@ end
 
 step
   description: "Centrifuge at 4,600 g  for 7 minutes at 4C"
-  note: "While waiting for the centrifuge put five 1.5 ml tubes on ice."
+  note: "While waiting for the centrifuge put five 1.5 mL tubes on ice."
 end
 
 step
@@ -26,7 +26,7 @@ step
 end
 
 step
-  description: "Add 1 ml ice cold sterile molecular grade water"
+  description: "Add 1 mL ice cold sterile molecular grade water"
   note: "Use your P-1000 (100-1000 μL pipettor) add 1 ml ice cold molecular grade water and resuspend the pellet by gently pipetting up and down."
 end
 
@@ -44,7 +44,7 @@ while ii<3
 
   step
     description: "Remove supernatant"
-    note: "Using your P-1000, carefully aspirate the supernatant and suspend cells in 1 ml of ice-cold molecular grade water."
+    note: "Using your P-1000, carefully aspirate the supernatant and suspend cells in 1 mL of ice-cold molecular grade water."
     warning: "The pellet will be very fragile! Try not to disturbe it."
   end
 
@@ -58,12 +58,12 @@ while ii<3
 end
 
 step
-  description: "Suspend the cell pellet in 200 ul of sterile cold molecular grade water and keep on ice."
+  description: "Suspend the cell pellet in 200 µL of sterile cold molecular grade water and keep on ice."
 end
 
 step
   description: "Make four aliquots"
-  note: "Transfer 50 µL of the resuspended pellet into each of the four remaining pre-chilled 1.5 ml centrifuge tubes. Discard the source tube along with any remaining cells."
+  note: "Transfer 50 µL of the resuspended pellet into each of the four remaining pre-chilled 1.5 mL centrifuge tubes. Discard the source tube along with any remaining cells."
 end
 
 produce
