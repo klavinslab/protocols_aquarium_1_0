@@ -1,4 +1,3 @@
-
 argument
   e_coli_strain_logcells: sample, "the logphase cells" 
   fragment_ldna: sample, "the keio cassette you wish to transform"
@@ -30,6 +29,7 @@ place transform
   protocol: "labw14/week4/transform.pl"
   argument
     plasmid_id: fragment_ldna
+    dna_vol: 2
   end
   group: aquarium_user
   start: now()
@@ -38,7 +38,18 @@ end
 
 wire (quick_comp,"comp_cell_id") => (transform,"e_coli_strain_type")
 
+place transform2
+  protocol: "labw14/week4/transform.pl"
+  argument
+    plasmid_id: fragment_ldna
+    dna_vol: 1
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
 
+wire (quick_comp,"comp_cell_id") => (transform2,"e_coli_strain_type")
 
 # forward transitions
 transition [heat_shock] => [quick_comp] when !error(0) && completed(0) end 
