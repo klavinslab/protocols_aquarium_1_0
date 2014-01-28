@@ -53,6 +53,22 @@ end
 
 wire (quick_comp,"comp_cell_id") => (transform2,"e_coli_strain_type")
 
+place incubate
+  protocol: "labw14/week4/incbuate.pl"
+  start: now()
+  windwo: minutes(2)
+end
+
+place plate
+  protocol: "labw14/week4/plate.pl"
+  group: transformers
+  start: now()
+  window: hours(1)
+end
+  
+
+
+
 # forward transitions
 transition [heat_shock] => [quick_comp] when !error(0) && completed(0) end 
 transition [quick_comp] => [transform] when !error(0) && completed(0) end 
