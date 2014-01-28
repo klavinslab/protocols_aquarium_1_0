@@ -26,8 +26,8 @@ step
 end
 
 step
-  description: "Add 1ml ice cold sterile Mol-H2O"
-  note: "use your P-1000 add 1ml ice cold Molecular biology grade H2O and resuspend the pellet by gently pipetting up and down."
+  description: "Add 1ml ice cold sterile molecular grade water"
+  note: "Use your P-1000 add 1 ml ice cold molecular grade water and resuspend the pellet by gently pipetting up and down."
 end
 
 step
@@ -44,26 +44,26 @@ while ii<3
 
   step
     description: "Remove supernatant"
-    note: "Using your P-1000, carefully aspirate the supernatant and suspend cells in 1 ml of ice-cold H2O."
+    note: "Using your P-1000, carefully aspirate the supernatant and suspend cells in 1 ml of ice-cold molecular grade water."
     warning: "the pellet will be very fragile!  Try not to disturbe it."
   end
 
   if ii<2
     step
-      description: "Add 1ml ice cold sterile Mol-H2O"
-      note: "use your P-1000 add 1ml ice cold Molecular biology grade H2O and resuspend the pellet by gently pipetting up and down."
+      description: "Add 1ml ice cold sterile molecular grade water"
+      note: "use your P-1000 add 1ml ice cold molecular grade water and resuspend the pellet by gently pipetting up and down."
     end
   end
   ii = ii+1
 end
 
 step
-  description: "Suspend the cell pellet in 200 ul of sterile cold Mol-H2O and keep on ice."
+  description: "Suspend the cell pellet in 200 ul of sterile cold molecular grade water and keep on ice."
 end
 
 step
   description: "Make four aliquots"
-  note: "Transfer 50 ul of the resuspended pellet into each of the four remaining pre-chilled 1.5ml centrifuge tubes.  Discard the source tube along with any remaining cells."
+  note: "Transfer 50 ul of the resuspended pellet into each of the four remaining pre-chilled 1.5ml centrifuge tubes. Discard the source tube along with any remaining cells."
 end
 
 produce
