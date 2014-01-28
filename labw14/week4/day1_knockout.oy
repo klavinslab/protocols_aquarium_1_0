@@ -3,6 +3,7 @@ argument
   fragment_ldna: sample, "the keio cassette you wish to transform"
 end 
 #log_cells = "BF001"
+plate_type_1 = "LB Kan Plate (sterile)"
 
 num_trans = 1
 
@@ -54,21 +55,32 @@ end
 wire (quick_comp,"comp_cell_id") => (transform2,"e_coli_strain_type")
 
 place incubate
-  protocol: "labw14/week4/incbuate.pl"
+  protocol: "labw14/week4/incbuate_tube.pl"
+  argument
+    temp: 30
+  end
+  group: aquarium_user
   start: now()
   windwo: minutes(2)
 end
 
+wire (transform,"transformed_cells_id") => (incubate_tube,"e_coli_strain_id")
+wire (transform2,"transformed_cells_id") => (incubate_tube,"e_coli_strain_id")
+
 place plate
   protocol: "labw14/week4/plate.pl"
   group: transformers
+  argument
+    volume: 200
+    plate_type: plate_type_1
+  end
   start: now()
   window: hours(1)
 end
+
+wire (transform,"transformed_cells_id") => (plate,"e_coli_strain_id")
+wire (transform2,"transformed_cells_id") => (incubate_tube,"e_coli_strain_id")
   
-
-
-
 # forward transitions
 transition [heat_shock] => [quick_comp] when !error(0) && completed(0) end 
 transition [quick_comp] => [transform] when !error(0) && completed(0) end 
