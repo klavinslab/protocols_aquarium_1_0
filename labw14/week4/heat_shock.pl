@@ -31,9 +31,9 @@ end
 step
   description: "Wait 15 minutes."
   note: "While you wait you can prep an ice bath"
-  check: "find a styrofoam box."
-  check: "put a 50 ml tube rack inside with some ice or ice packs."
-  check: "fill with water half way up the tube rack"
+  check: "Find a styrofoam box."
+  check: "Put a 50 ml tube rack inside with some ice or ice packs."
+  check: "Fill with water half way up the tube rack"
   image: "rack_in_ice_water"
   timer: { hours: 0, minutes: 15, seconds: 0 }
   warning: "This is a time sensitive step!  Do not leave the cells in the bath longer than 15 minutes."
