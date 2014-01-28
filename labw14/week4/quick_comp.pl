@@ -63,7 +63,7 @@ end
 
 step
   description: "make four aliquots"
-  note: "Transfer 50 ul of the resuspended pellet into each of the four remaining pre-chilled 1.5ml centrifuge tubes.  Discrard the source tube along with any remaining cells."
+  note: "Transfer 50 ul of the resuspended pellet into each of the four remaining pre-chilled 1.5ml centrifuge tubes.  Discard the source tube along with any remaining cells."
 end
 
 produce
