@@ -13,7 +13,7 @@ tube = tube[0]
 
 step
   description: "Transfer the cells to a 50 ml Falcon Tube"
-  note: "Pour the logphase cells from the shaker flask into the 50 ml tube. The volume should be approximately 18 ml"
+  note: "Pour the log phase cells from the shaker flask into the 50 mL tube. The volume should be approximately 18 ml"
 end
 
 step
@@ -32,7 +32,7 @@ step
   description: "Wait 15 minutes."
   note: "While you wait you can prep an ice bath"
   check: "Find a styrofoam box."
-  check: "Put a 50 ml tube rack inside with some ice or ice packs."
+  check: "Put a 50 mL tube rack inside with some ice or ice packs."
   check: "Fill with water half way up the tube rack"
   image: "rack_in_ice_water"
   timer: { hours: 0, minutes: 15, seconds: 0 }
