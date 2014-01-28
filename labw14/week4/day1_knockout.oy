@@ -54,7 +54,7 @@ end
 
 wire (quick_comp,"comp_cell_id") => (transform2,"e_coli_strain_type")
 
-place incubate
+place incubate_tube
   protocol: "labw14/week4/incbuate_tube.pl"
   argument
     temp: 30
@@ -84,9 +84,12 @@ wire (transform2,"transformed_cells_id") => (incubate_tube,"e_coli_strain_id")
 # forward transitions
 transition [heat_shock] => [quick_comp] when !error(0) && completed(0) end 
 transition [quick_comp] => [transform] when !error(0) && completed(0) end 
+transition [incubate_tube] => [plate] when !error(0) && completed(0) end 
+transition [plate] => [] when !error(0) && completed(0) end 
+
 
 # T1 -> []
-transition [transform] => [] when !error(0) && completed(0) && (return_value(0,"time_constant") >= 3) end
+transition [transform] => [incubate_tube] when !error(0) && completed(0) && (return_value(0,"time_constant") >= 3) end
 
 # T1 -> T1
 transition [ transform ] => [ transform ] when !error(0) && completed(0) && (return_value(0,"time_constant") < 3) && (num_trans == 1)
@@ -110,7 +113,7 @@ transition [ transform2 ] => [ transform2 ] when !error(0) && completed(0) && (r
 end
 
 #T2 -> []
-transition [ transform2 ] => [] when !error(0) && completed(0) && (return_value(0,"time_constant") < 3) && (num_trans == 4)
+transition [ transform2 ] => [incubate_tube] when !error(0) && completed(0) && (return_value(0,"time_constant") < 3) && (num_trans == 4)
     do
         num_trans = num_trans + 1
     end
