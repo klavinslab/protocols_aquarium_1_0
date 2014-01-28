@@ -1,4 +1,5 @@
-#information "E.coli Transformation protocol"
+#TODO: Fix s.t. if time constant is < 3.0 then grab another aliquot (Same ID) and use half as much DNA
+# once a good time constant or 4 tries end protocol.
 
 argument
   plasmid_id: sample, "The plasmid to be used"
