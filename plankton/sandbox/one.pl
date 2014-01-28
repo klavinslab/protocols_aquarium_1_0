@@ -6,5 +6,5 @@ step
 end
 
 log 
-  return: { n: n }
+  return: { n: n, m: 2*n }
 end
