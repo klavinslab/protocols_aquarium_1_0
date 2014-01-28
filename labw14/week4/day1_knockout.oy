@@ -92,7 +92,7 @@ end
 
 place plate_2
   protocol: "labw14/week4/plate.pl"
-  group: admin
+  group: "admin"
   argument
     volume: 200
     plate_type: plate_type_1
