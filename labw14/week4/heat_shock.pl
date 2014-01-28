@@ -12,8 +12,8 @@ cells = cells[0]
 tube = tube[0]
 
 step
-  description: "Transfer the cells to a 50 ml Falcon Tube"
-  note: "Pour the log phase cells from the shaker flask into the 50 mL tube. The volume should be approximately 18 ml"
+  description: "Transfer the cells to a 50 mL Falcon Tube"
+  note: "Pour the log phase cells from the shaker flask into the 50 mL tube. The volume should be approximately 18 mL"
 end
 
 step

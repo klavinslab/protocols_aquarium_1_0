@@ -27,12 +27,12 @@ end
 
 step
   description: "Add 1 mL ice cold sterile molecular grade water"
-  note: "Use your P-1000 (100-1000 μL pipettor) add 1 ml ice cold molecular grade water and resuspend the pellet by gently pipetting up and down."
+  note: "Use your P-1000 (100-1000 μL pipettor) add 1 mL ice cold molecular grade water and resuspend the pellet by gently pipetting up and down."
 end
 
 step
-  description: "Transfer into one of the prechilled 1.5ml centrifuge tube."
-  note: "Using your P-1000 (100-1000 μL pipettor), transfer the culture form the 50ml falcon tube to the 1.5 ml centrifuge tube on ice."
+  description: "Transfer into one of the prechilled 1.5mL centrifuge tube."
+  note: "Using your P-1000 (100-1000 μL pipettor), transfer the culture form the 50mL falcon tube to the 1.5 mL centrifuge tube on ice."
 end
 
 ii = 0
@@ -50,8 +50,8 @@ while ii<3
 
   if ii<2
     step
-      description: "Add 1 ml ice cold sterile molecular grade water"
-      note: "Use your P-1000 add 1 ml ice cold molecular grade water and resuspend the pellet by gently pipetting up and down."
+      description: "Add 1 mL ice cold sterile molecular grade water"
+      note: "Use your P-1000 add 1 mL ice cold molecular grade water and resuspend the pellet by gently pipetting up and down."
     end
   end
   ii = ii+1
