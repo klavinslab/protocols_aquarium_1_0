@@ -45,6 +45,10 @@ step
 end
 
 step
+  description: "Go grab the cells and prepare to put in the ice bath"
+end
+
+step
   description: "Chill the cells"
   note: "Submerge the cells in the ice bath you just made.  Make sure the cells have fully chilled for 5-10 minutes before continuing."
   timer: { hours: 0, minutes: 8, seconds: 0 }
