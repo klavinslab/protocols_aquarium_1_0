@@ -22,7 +22,7 @@ step
 end
 
 step
-  description: "Locate the 42 C heat bath at A1.535"
+  description: "Locate the 42 C heat bath at B13.105"
   note: "The next steps are time sensitive so you must know beforehand where the bath is."
   image: "heat_bath"
 end
