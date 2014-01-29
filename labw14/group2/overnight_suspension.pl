@@ -41,7 +41,7 @@ step
 end
 
 produce
-  tube = 1 "Overnight suspension" from plate[0]
+  t = 1 "Overnight suspension culture" from plate[0]
   note: "Keep on bench"
   location: "Bench"
 end 
