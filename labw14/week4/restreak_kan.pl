@@ -30,8 +30,7 @@ step
   description: "Pick four colonies and transfer a different colony into each of the four 1.5 mL tubes"
   check: "Find a colony that is not touching any other colony."
   check: "Take a 200 μL tip (the one used by the 10-100 μL or 20-200 μL pipettor) by hand."
-  check: "With the pipette tip, scrape up the colony and then mix it into one of the 1.5mL tubes."
-  check: "Scrape the end of the tip against the wall of the tube below the liquid level to ensure the colony has been deposited"
+  check: "With the pipette tip, scrape up the colony and then mix it into one of the 1.5mL tubes. Scrape the end of the tip against the wall of the tube below the liquid level to ensure the colony has been deposited"
   check: "Repeat the above untill each 1.5 mL tube has a single colony."
   warning: "Be gentle.  The agar is soft."
 end
@@ -49,21 +48,19 @@ end
 
 step
   description: "Store the old plate in 4C fridge."
-	note: "Wrap up the plate with id %{e_coli_strain_plate} using parafilm and put it in the Box 1 in deli fridge located at D2.100."
+  note: "Wrap up the plate with id %{e_coli_strain_plate} using parafilm and put it in the Box 1 in deli fridge located at D2.100."
 end
 
 
-#TODO: produce this with location 30C incubator
 produce
   1 "Agar plate" from plate[0]
-	note: "Place the streaked plate upside-down (lid on the bottom) in 30 C incubator at A1.110"
+  note: "Place the streaked plate upside-down (lid on the bottom) in 30 C incubator at A1.110"
   release sector_plate
-	location: "A1.110"
+  location: "A1.110"
 end
 
 release lb
 
-#TODO:  This shoμLd be put in the fridge, not back in the incubator.
 modify
   plate[0]
 	location: "DFP.0"
