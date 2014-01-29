@@ -37,7 +37,7 @@ step
   description: "Prepare culture tube"
   bullet: "Loosen cap of LB aliquot"
   bullet: "Put tip in pipette and add 2 mL of of LB in 14 ml test tube (culture tube)"
-  bullet: "recap LB aliquot"
+  bullet: "Recap LB aliquot"
 end
 
 step
@@ -51,7 +51,7 @@ end
 
 step
   description: "Transfer Colony"
-  note: "Take a pipette tip an carefully lift off the selected colony from the plate and scrape onto side of culture tube so that the cells are suspended in the media."
+  note: "Take a pipette tip and carefully lift off the selected colony from the plate and scrape onto side of culture tube so that the cells are suspended in the media."
 end
 
 produce
