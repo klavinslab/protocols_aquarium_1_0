@@ -9,17 +9,16 @@ take
 end
 
 step
- description: "lable a 14 mL Test Tube with your initials and the date"
+ description: "Lable a 14 mL Test Tube with your initials and the date"
 end
 
 step
- description: "use a 10uL pipette tip to transfer one colony from the plate into your test tube"
- note: "carefully hold the test tube at a steep angle so the pipette tip can reach the fluid, swirl the pipette tip to mix"
+ description: "Use a 10uL pipette tip to transfer one colony from the plate into your test tube"
+ note: "Carefully hold the test tube at a steep angle so the pipette tip can reach the fluid, swirl the pipette tip to mix"
 end
 
 produce
- 1 "overnight suspension culture" of "Transformed_E_coli_Strain_id"
- note: "Make sure to write the item number on the tube"
+ 1 "Overnight suspension culture" of Transformed_E_coli_Strain_id
  release test_tube
 end
 
