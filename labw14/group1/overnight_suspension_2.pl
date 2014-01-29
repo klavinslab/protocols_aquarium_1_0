@@ -47,7 +47,7 @@ step
 
   description: "Overnight Suspension"
   note: "We will now incubate the cells"
-  check: "Place the test tube in the 37C shaker"
+  check: "Place the test tube in the 37C Shaker Incubator"
   
 end
 
