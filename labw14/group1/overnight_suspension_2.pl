@@ -14,8 +14,7 @@ take
 end
   
 take
-  tube = 1 "14 mL test tube from media bayitem Transformed_E_coli_Strain_id"
-  location: "B1.450"
+  tube = 1 "14 mL test tube from media bay"
 end
 
 
