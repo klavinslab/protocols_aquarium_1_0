@@ -39,7 +39,6 @@ step
 end
 
 produce
-   description: "Overnight Suspension"
    note: "We will now incubate the cells in the 37C Shaker Incubator"
    suspension = 1 "Overnight suspension culture" from plate[0]
    location: "B13.425"
