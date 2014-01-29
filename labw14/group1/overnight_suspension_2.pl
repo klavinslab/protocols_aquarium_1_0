@@ -25,7 +25,7 @@ step
   bullet: "Label the 14 mL test tube."
   check: "Use 1000 uL pipetter to pipett 2 mL of LB Aliquot to the test tube"
   warning: "Make sure that the LB media is not contaminated"
-  warning: "Make sure that the test tube is capped after tranfer of LB Media"
+  warning: "Make sure that the test tube is capped after transfer of LB Media"
   warning: "Do not let the pipetter itself touch the LB media"
 end 
 
@@ -39,17 +39,12 @@ step
 end
 
 produce
+   description: "Overnight Suspension"
+   note: "We will now incubate the cells in the 37C Shaker Incubator"
    suspension = 1 "Overnight suspension culture" from plate[0]
    location: "B13.425"
 end
 
-step
-
-  description: "Overnight Suspension"
-  note: "We will now incubate the cells"
-  check: "Place the test tube in the 37C Shaker Incubator"
-  
-end
 
 release plate
 release LB
