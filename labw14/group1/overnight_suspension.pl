@@ -25,7 +25,7 @@ produce
 end
 
 release falcon_tube
-release plate
+release [falcon_tube, plate]
 
  
 
