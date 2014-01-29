@@ -28,7 +28,8 @@ produce
  location:"B13.425"
 end
 
-release concat(falcon_tube, plate)
+release [falcon_tube[0], plate[0]]
+#release concat(falcon_tube, plate)
 
  
 
