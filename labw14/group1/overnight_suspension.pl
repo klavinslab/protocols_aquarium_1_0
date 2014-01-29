@@ -24,10 +24,9 @@ produce
  location:"B13.425"
 end
 
-release
- falcon_tube
- plate
-end
+release falcon_tube
+release plate
+
  
 
 
