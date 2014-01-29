@@ -17,11 +17,19 @@ end
 
 take
   plate = item Transformed_E_coli_Strain_id
-  note: "Place the transformed plate on the bench"
+  note: "Place the items on the bench"
   
   lb = 1 "50 mL LB liquid aliquot (sterile)"
-  test_tube = 1 "14 mL TestTube"
+  test_tube = 1 "14 mL Test Tube"
+end
+
+step
+  description: "Label test tube"
+  note: "Label the test tube with your initials and the date"
 end
 
 
-release plate
+
+
+release concat(plate, test_tube)
+release lb
