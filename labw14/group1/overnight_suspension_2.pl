@@ -47,6 +47,6 @@ end
 
 objects = [plate,LB]
 
-release objects
+release objects[0] objects[1]
  
 
