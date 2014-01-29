@@ -46,6 +46,14 @@ produce
   location: "Bench"
 end 
 
+step
+  description:
+      "Store tube in incubator"
+  note:
+    "Store the tube in the 37 degC shaker incubator located at B13.425."
+end
+
+release [falcon_tube[0], plate[0]]
 
 
 
