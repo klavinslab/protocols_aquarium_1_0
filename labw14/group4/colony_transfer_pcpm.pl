@@ -31,4 +31,4 @@ end
 
 
 
-release [plate, lb, test_tube]
+release [plate[0], lb[0], test_tube[0]]
