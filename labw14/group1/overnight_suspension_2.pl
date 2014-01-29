@@ -45,8 +45,8 @@ produce
    note: "We will now incubate the cells in the 37C Shaker Incubator"
 end
 
+objects = [plate,LB]
 
-release plate
-release LB
+release objects
  
 
