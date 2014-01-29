@@ -47,10 +47,8 @@ end
 
 step
   description: "return all equipment to specified areas"
-  note: "remember to wrap plate with parafilm"
-  release [colony_plate[0]]
-  check: "Return LB to Bench"
-  release [aliquot[0]]
+  note: "Remember to wrap plate with parafilm"
   check: "Return test tube rack to Bench"
 end
 
+release concat(colony_plate, aliquot)
