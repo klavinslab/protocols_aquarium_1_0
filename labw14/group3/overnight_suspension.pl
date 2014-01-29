@@ -23,20 +23,20 @@ step
   description: "Pipette 2 mL of LB into 14 mL tube"
   note: "Use proper sterile technique. Use the 1000 μL pipetter."
   bullet: "Set pipetter to 1000μL"
-  bullet: "loosen cap on LB aliquot"
-  bullet: "pipette 2 mL of LB into 14 mL tube"
+  bullet: "Loosen cap on LB aliquot"
+  bullet: "Pipette 2 mL of LB into 14 mL tube"
   bullet: "Recap test tube and LB"
   warning: "Use new tip after every ejection"
 end
 
 step
   description: "Add a colony to suspension"
-  note: "select desired colony prior to opening plate. Mark desired colony with circle and intials and date"
+  note: "Select desired colony prior to opening plate. Mark desired colony with circle and intials and date"
   note: "Selection of your colony should be based on size (medium-big, not too big), isolated, and round in shape." 
   bullet: "Take a sterile pipette tip, pick up your desired colony by gently scraping the tip to the colony."
   bullet: "Tilt 14 mL tube such that you can reach the broth with your tip."
   bullet: "Scrape colony into broth, using a swirling motion"
-  warning: "DON'T SPILL THE BROTH"
+  warning: "!DON'T SPILL THE BROTH!"
 end
 
 produce
@@ -46,7 +46,7 @@ produce
 end
 
 step
-  description: "return all equipment to specified areas"
+  description: "Return all equipment to specified areas"
   note: "Remember to wrap plate with parafilm"
   check: "Return test tube rack to Bench"
 end
