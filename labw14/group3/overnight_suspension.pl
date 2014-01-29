@@ -50,6 +50,7 @@ step
   note: "remember to wrap plate with parafilm"
   release [colony_plate[0]]
   check: "Return LB to Bench"
+  release [aliquot[0]]
   check: "Return test tube rack to Bench"
 end
 
