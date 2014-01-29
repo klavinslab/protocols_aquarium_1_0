@@ -31,5 +31,4 @@ end
 
 
 
-release concat(plate, test_tube)
-release lb
+release concat(plate, test_tube, lb)
