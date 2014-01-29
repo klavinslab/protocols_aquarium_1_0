@@ -18,8 +18,7 @@ take
   location: "B1.450"
 end
 
-step
 
-  release plate
-  
-end
+release plate
+ 
+
