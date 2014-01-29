@@ -4,6 +4,7 @@ end
 
 step
  description: "This protocol describes the process of overnight suspension"
+end
 
 take
   falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
