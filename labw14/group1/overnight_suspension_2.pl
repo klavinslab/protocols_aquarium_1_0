@@ -39,9 +39,10 @@ step
 end
 
 produce
-   note: "We will now incubate the cells in the 37C Shaker Incubator"
+
    suspension = 1 "Overnight suspension culture" from plate[0]
    location: "B13.425"
+   note: "We will now incubate the cells in the 37C Shaker Incubator"
 end
 
 
