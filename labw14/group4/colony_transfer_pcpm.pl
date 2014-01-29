@@ -14,3 +14,9 @@ step
   description: "Wear gloves"
   note: "please put on a pair of gloves"
 end
+
+take
+  plate = item Transformed_E_coli_Strain_id
+end
+
+release plate
