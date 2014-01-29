@@ -1,5 +1,4 @@
 
-
 argument
   Transformed_E_coli_Strain_id: sample, "Choose the plate you incubated yesterday"
 end
@@ -53,5 +52,6 @@ step
   check: "Return plate to DFP.0"
   check: "Return LB to Bench"
   check: "Return test tube rack to Bench"
-  release colony_plate[0]
 end
+
+  release [colony_plate[0]]
