@@ -10,8 +10,9 @@ end
 cells = cells[0]
 
 step
-  description: "NOTE"
-  warning: "It is essential to keep EVERYTHING cold throughout this entire protocol; all cells and containers should be on ice when not in use."
+  description: "Important notes before starting"
+  note: "When chilling 1.5ml centrifuge tubes on ice use the aluminum block on an ice block, as you did for the transformation protocol."
+  warning: "It is essential to keep EVERYTHING cold but NOT FROZEN throughout this entire protocol; all cells and containers should be on ice when not in use."
 end
 
 step
@@ -58,7 +59,7 @@ while ii<3
 end
 
 step
-  description: "Suspend the cell pellet in 200 µL of sterile cold molecular grade water and keep on ice."
+  description: "Suspend the cell pellet in 200 µL of sterile cold molecular grade water and keep it cool."
 end
 
 step
