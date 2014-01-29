@@ -14,8 +14,8 @@ take
 end
   
 take
-  tube = 1 "14 mL test tube from media bay"
-  LB = 1 "50 mL LB Aliquot"
+  tube = 1 "14 mL Test Tube"
+  LB = 1 "50 mL LB liquid aliquot (sterile)"
 end
 
 step 
@@ -40,6 +40,7 @@ end
 
 produce
    suspension = 1 "Overnight suspension culture" from plate[0]
+   location: "B13.425"
 end
 
 step
