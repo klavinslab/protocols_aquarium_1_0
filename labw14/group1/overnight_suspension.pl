@@ -18,7 +18,7 @@ step
 end
 
 produce
- r = 1 "overnight suspension culture" of Transformed_E_coli_Strain_id
+ 1 "overnight suspension culture" of Transformed_E_coli_Strain_id
  note: "Make sure to write the item number on the tube"
  release test_tube
 end
