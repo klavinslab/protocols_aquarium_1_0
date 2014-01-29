@@ -66,7 +66,7 @@ end
 
 step
   description: "Electroporation and Rescue Preparation"
-  check: "Set your pipettors to be 42 µL and 1000 µL."
+  check: "Set your pipettors to be 50 µL and 1000 µL."
   check: "Prepare 100 µL and 1000 µL pipette tips."
   check: "Loosen cap on the 50 mL LB liquid aliquot (sterile)."
   check: "Take the black plastic cuvette holder out of electroporator."
