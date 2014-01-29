@@ -7,3 +7,10 @@
 
 argument
   Transformed_E_coli_Strain_id: sample, "Use the plate you transformed yesterday"
+end
+
+
+step
+  description: "Wear gloves"
+  note: "please put on a pair of gloves"
+end
