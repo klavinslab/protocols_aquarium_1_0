@@ -1,4 +1,3 @@
-
 argument
   Transformed_E_coli_Strain_id: sample, "Choose the plate you incubated yesterday"
 end
@@ -49,9 +48,8 @@ end
 step
   description: "return all equipment to specified areas"
   note: "remember to wrap plate with parafilm"
-  check: "Return plate to DFP.0"
+  release [colony_plate[0]]
   check: "Return LB to Bench"
   check: "Return test tube rack to Bench"
 end
 
-  release [colony_plate[0]]
