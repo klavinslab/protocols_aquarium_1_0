@@ -1,5 +1,5 @@
 arguement
- Transformed_E_coli_Strain_id: sample
+ Transformed_E_coli_Strain_id = 1037
 end
 
 take
