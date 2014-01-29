@@ -39,7 +39,7 @@ step
 end
 
 produce
-    1 "Overnight suspension culture"
+    1 "Overnight suspension culture" from plate[0]
 end
 
 step
