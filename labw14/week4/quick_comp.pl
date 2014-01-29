@@ -38,8 +38,8 @@ end
 ii = 0
 while ii<3
   step
-    description: "Centrifuge at 10,000 g for 30 s at 4 C"
-    note: "Centrifuge at 10,000 g in refrigerated microcentrifuge for 30 s at 4 C."
+    description: "Centrifuge at 10,000 g for 1 min at 4 C"
+    note: "Centrifuge at 10,000 g in refrigerated microcentrifuge for 1 min at 4 C."
   end
 
   step
