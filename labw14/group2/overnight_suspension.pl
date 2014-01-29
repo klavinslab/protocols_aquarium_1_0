@@ -41,7 +41,7 @@ step
 end
 
 produce
-  tube = 1 "Overnight suspension" from Transformed_E_coli_Strain_id
+  tube = 1 "Overnight suspension" from plate[0]
   note: "Keep on bench"
   location: "Bench"
 end 
