@@ -24,7 +24,6 @@ produce
  location:"B13.425"
 end
 
-release falcon_tube
 release [falcon_tube[0], plate[0]]
 
  
