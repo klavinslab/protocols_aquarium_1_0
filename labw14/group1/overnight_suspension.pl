@@ -5,7 +5,7 @@ end
 take
   falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
   test_tube = 1 "14 mL Test Tube"
-  y = item Transformed_E_coli_Strain_id
+  plate = item Transformed_E_coli_Strain_id
 end
 
 step
@@ -18,7 +18,7 @@ step
 end
 
 produce
- 1 "Overnight suspension culture" of "Transformed_E_coli_Strain_id"
+ 1 "Overnight suspension culture" of "Transformed_E_coli_Strain_id" from plate[0]
  release test_tube
 end
 
