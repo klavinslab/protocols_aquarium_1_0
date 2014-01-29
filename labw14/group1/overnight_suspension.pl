@@ -17,6 +17,10 @@ step
 end
 
 step
+ description: "Use the 1000uL pipette to add 2mL from the LB liquid aliquot to the test tube"
+end
+
+step
  description: "Use a 10uL pipette tip to transfer one colony from the plate into your test tube"
  note: "Carefully hold the test tube at a steep angle so the pipette tip can reach the fluid, swirl the pipette tip to mix"
 end
