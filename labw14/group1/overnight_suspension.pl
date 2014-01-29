@@ -18,7 +18,7 @@ step
 end
 
 produce
- 1 "Overnight suspension culture" of "Transformed_E_coli_Strain_id" from plate[0]
+ 1 "Overnight suspension culture" from plate[0]
  release test_tube
 end
 
