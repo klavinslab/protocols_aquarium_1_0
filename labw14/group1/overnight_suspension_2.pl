@@ -26,7 +26,7 @@ step
   check: "Use 1000 uL pipetter to pipett 2 mL of LB Aliquot to the test tube"
   warning: "Make sure that the LB media is not contaminated"
   warning: "Make sure that the test tube is capped after tranfer of LB Media"
-  warning: "Do not let the pipetter itself touch the LB media""
+  warning: "Do not let the pipetter itself touch the LB media"
 end 
 
 step
@@ -39,7 +39,7 @@ step
 end
 
 produce
-    1 "Overnight suspension culture" from plate[0]
+   suspension = 1 "Overnight suspension culture" from plate[0]
 end
 
 step
