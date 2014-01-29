@@ -30,6 +30,27 @@ step
      Using a 100ul pipette tip scrape off a colony."
 end
 
+step
+  description: 
+    "Deposit colony into 14 mL test tube"
+  note:
+    "Take the cap off of the test tube and lightly tilt the tube until the solution is close to the top. \n
+    Take the pipette tip with the colony and place the tip into the solution and swirl gently.\n 
+    Take the tip out and discard it. \n
+    Recap the test tube."
+end
+
+produce
+  tube = 1 "Overnight suspension" from Transformed_E_coli_Strain_id
+  note: "Keep on bench"
+  location: "Bench"
+end 
+
+
+
+
+  
+
     
     
 
