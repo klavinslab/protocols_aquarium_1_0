@@ -25,7 +25,7 @@ produce
 end
 
 release falcon_tube
-release [falcon_tube, plate]
+release [falcon_tube[0], plate[0]]
 
  
 
