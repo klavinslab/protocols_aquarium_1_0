@@ -20,7 +20,7 @@ take
   note: "Place the transformed plate on the bench"
   
   lb = 1 "50 mL LB liquid aliquot (sterile)"
-  test_tube = 1 "14 mL Test Tube"
+  test_tube = 1 "14 mL TestTube"
 end
 
 
