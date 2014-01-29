@@ -5,6 +5,7 @@ argument
   plasmid_id: sample, "The plasmid to be used"
   e_coli_strain_type: sample, "One electrocompetent aliquot (of the 4 made in the previous protocol) to be transformed"
   dna_vol: number
+  strain_name: string, "Enter the name of the strain you are producing"
 end
 
 take
@@ -95,7 +96,7 @@ end
 
 if time_constant >= 3
   produce
-    r = 1 "Transformed E coli 1.5 mL tube" of "pLAB1 in Z1"
+    r = 1 "1.5 mL tube transformation" of strain_name 
     note: "Keep on the bench"
     location: "Bench"
   end
