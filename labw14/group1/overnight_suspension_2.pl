@@ -4,6 +4,11 @@ argument
   
 end
 
+step
+  description: 
+    "This protocol describes the process for overnight suspension of transformed E Coli strains." 
+end
+
 take
   plate = item Transformed_E_coli_Strain_id
 end
