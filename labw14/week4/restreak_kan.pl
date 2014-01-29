@@ -3,8 +3,8 @@ argument
 end
 
 take
-  sector_plate = object "LB Kan Plate (sterile)"
-  lb = object "50 mL LB liquid aliquot (sterile)"
+  sector_plate = 1 "LB Kan Plate (sterile)"
+  lb = 1 "50 mL LB liquid aliquot (sterile)"
 end
 
 step
@@ -41,13 +41,19 @@ step
   bullet: "pipette 20ul from one of the 1.5 ml tubes on to the outer edge of the plate in the center of one of the sectors"
   bullet: "take a fresh 200 ul tip (green box) by hand"
   bullet: "At a low angle streak the tip starting from the liquid gently drag the tip back and fourth from sector edge to sector edge in non-overlapping lines eventually reaching near the center."
+  bullet: "discard the 1.5 ml tube you just used"
+  bullet: "repeat until you have run out of tubes and empty sectors"
   warning: "do not cross the sector lines with a streak"
-  #TODO: image would be great
+  image: "sector_streak"
 end
 
+#TODO: produce this with location 30C incubator
 produce
   1 "Agar plate" from plate
   release sector_plate
 end
 
 release lb
+
+#TODO:  This should be put in the fridge, not back in the incubator.
+release plate
