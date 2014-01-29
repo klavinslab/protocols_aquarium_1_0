@@ -9,7 +9,7 @@ take
 #  tube = 1 "50 mL Falcon Tube"
 end
 cells = cells[0]
-tube = tube[0]
+
 
 step
   description: "Label a 50 mL Falcon tube"
@@ -58,7 +58,7 @@ produce
   hot_cells = 1 "Heat shocked tube" from cells
   note: "Make sure to keep the cells in the ice bath for the next step."
   location: "Bench"
-  release [cells, tube]
+  release cells
 end
 
 log
