@@ -2,6 +2,9 @@ argument
  Transformed_E_coli_Strain_id: sample, "A plate"
 end
 
+step
+ description: "This protocol describes the process of overnight suspension"
+
 take
   falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
   test_tube = 1 "14 mL Test Tube"
