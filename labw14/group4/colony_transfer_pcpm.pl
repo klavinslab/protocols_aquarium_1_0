@@ -17,6 +17,11 @@ end
 
 take
   plate = item Transformed_E_coli_Strain_id
+  note: "Place the transformed plate on the bench"
+  
+  lb = 1 "50 mL LB liquid aliquot (sterile)"
+  test_tube = 1 "14 mL Test Tube"
 end
+
 
 release plate
