@@ -28,19 +28,19 @@ end
 
 step
   description: "Pick four colonies and transfer a different colony into each of the four 1.5 mL tubes"
-  check: "Find a colony that is not touching any other colony."
-  check: "Take a 200 μL tip (the one used by the 10-100 μL or 20-200 μL pipettor) by hand."
-  check: "With the pipette tip, scrape up the colony and then mix it into one of the 1.5mL tubes. Scrape the end of the tip against the wall of the tube below the liquid level to ensure the colony has been deposited"
+  bullet: "Find a colony that is not touching any other colony."
+  bullet: "Take a 200 μL tip (the one used by the 10-100 μL or 20-200 μL pipettor) by hand."
+  bullet: "With the pipette tip, scrape up the colony and then mix it into one of the 1.5mL tubes. Scrape the end of the tip against the wall of the tube below the liquid level to ensure the colony has been deposited"
   check: "Repeat the above untill each 1.5 mL tube has a single colony."
   warning: "Be gentle.  The agar is soft."
 end
 
 step
   description: "Deposit each colony into a sector and streak"
-  check: "Pipette 20 μL from one of the 1.5 mL tubes on to the outer edge of the plate in the center of one of the sectors"
-  check: "Take a fresh 200 μL tip by hand"
-  check: "At a low angle streak the tip starting from the liquid gently drag the tip back and fourth from sector edge to sector edge in non-overlapping lines eventually reaching near the center."
-  check: "Discard the 1.5 mL tube you just used"
+  bullet: "Pipette 5 μL from one of the 1.5 mL tubes on to the outer edge of the plate in the center of one of the sectors"
+  bullet: "Take a fresh 200 μL tip by hand"
+  bullet: "At a low angle streak the tip starting from the liquid gently drag the tip back and fourth from sector edge to sector edge in non-overlapping lines eventually reaching near the center."
+  bullet: "Discard the 1.5 mL tube you just used"
   check: "Repeat until you have run out of tubes and empty sectors"
   warning: "Do not cross the sector lines with a streak"
   warning: "Streak lines should not cross"
