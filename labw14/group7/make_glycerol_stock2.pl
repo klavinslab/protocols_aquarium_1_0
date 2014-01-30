@@ -13,12 +13,14 @@ take
 end
 
 step
- description: "Label your 1.5mL steile tube with the sample ID number, as well as your initial and todays date (mm/dd/yyyy).  This sample will potentially be kept in the freexer for many months, so be sure to label both the cap and the side of the tube foe redundancy."
+ description: "Add 900uL glycerol stock to the 1.5mL sterile tube"
+ note: "Be sure to use STERILE technique while handling the gylcerol stock.  If you contaminate this stock
+        it wil ruin everyone else's experients! This means: loosen caps before loading the pipette tip, and
+        do not touch the inside of the jar with the micropipetter"
 end
 
 step
- description: "Add 900uL glycerol stock, then 900uL cell culture to the 1.5mL sterile tube"
- note: "Be sure to use STERILE technique while handling the gylcerol stock.  If you contaminate this stock it wil ruin everyone else's experients! This means: loosen caps before loading the pipette tip, and do not touch the inside of the jar with the micropipetter"
+ description: "Add 900uL cell culture to the 1.5mL sterile tube"
 end
 
 step
@@ -27,7 +29,9 @@ end
 
 produce
  s = 1 "Transformed E coli Glycerol Stock" from cell_culture_tube[0]
- note: "Place your glycerol/cell culture mixture into the -80 C freezer"
+ note: "Make sure to also add your initials and todays date (mm/dd/yyyy).  This sample will potentially be
+        kept in the freezer for many months, so be sure to label both the cap and the side of the tube for
+        redundancy.  Place your glycerol/cell culture mixture into the -80 C freezer"
 end
 
 #release [falcon_tube[0], plate[0]]
