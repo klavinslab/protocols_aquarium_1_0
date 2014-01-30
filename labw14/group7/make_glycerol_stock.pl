@@ -15,8 +15,7 @@ end
 
 step
   description: "Label a sterile tube with your initials AND date"
-  note: "Place the tube in a test tube rack.\n
-  This tube will be stored in the -80C Freezer."
+  note: "Place the tube in a test tube rack.  This tube will be stored in the -80C Freezer."
   #Need to label this tube with a number now
 end
 
