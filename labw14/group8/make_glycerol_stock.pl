@@ -30,11 +30,12 @@ step
   check: "Loosen the cap on the gylcerol stock and the cryo tube"
   check: "Pipette from the glycerol stock to the cryotube. Be sure to not touch the inside of the glycerol container to maintain its sterility."
   check: "Pipette from the suspended strain into the cryotube."
+  check: "Vortex the cryo tube after strongly tightening the cap for 30 seconds."
 end
 
 produce
    r = 1 "Transformed E coli Glycerol Stock" from strain[0]
-   warning: "Also label the cryo tube on the side (not cap) with your initials and the date (with year, since it may be in storage for decades)."
+   note: "Also label the cryo tube on the side (not cap) with your initials and the date (with year, since it may be in storage for decades)."
    release result_tube
 end
 
