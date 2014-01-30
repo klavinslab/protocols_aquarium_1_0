@@ -25,7 +25,7 @@ end
 
 
 step
-  description: "Prepare to a 50 / 50 by volume combination of the strain and 50%% glycerol"
+  description: "Prepare a 50 / 50 by volume combination of the strain and 50%% glycerol"
   check: "Take the 1000uL micropipettor and set to 900uL"
   check: "Loosen the cap on the gylcerol stock and the cryo tube"
   check: "Pipette from the glycerol stock to the cryotube. Be sure to not touch the inside of the glycerol container to maintain its sterility."
@@ -44,7 +44,7 @@ step
   description: "Return materials"
   note: "Return glycerol stock, tidy your station, and dispose of suspended strain with proper sterile technique. (3 steps)"
   check: "Return the glycerol stock to its original location"
-  check: "Take the suspended colony tube to the dish cleaning station. Add twice to 3x its orignal volume of 20% bleach. Recap the tube and place it in the dirty tube rack."
+  check: "Take the suspended colony tube to the dish cleaning station. Add twice to 3x its orignal volume of 20%% bleach. Recap the tube and place it in the dirty tube rack."
   check: "Clean your station and dispose of your gloves"
 end
 
