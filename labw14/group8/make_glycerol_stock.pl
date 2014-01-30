@@ -53,7 +53,6 @@ step
 end
 
 produce
-   description: "Put new stock in fridge"
    r = 1 “Transformed E coli Glycerol Stock” from strain[0]
    location: "B13.425"
    release result_tube
