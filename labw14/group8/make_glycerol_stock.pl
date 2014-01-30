@@ -53,7 +53,7 @@ step
 end
 
 produce
-   r = 1 “Transformed E coli Glycerol Stock” from strain[0]
+   r = 1 "Transformed E coli Glycerol Stock" from strain[0]
    location: "B13.425"
    release result_tube
    note: "We will now place the stock into the -80C Fridge"
