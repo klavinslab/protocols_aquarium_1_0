@@ -5,7 +5,7 @@ end
 take
   cells_to_store = item Transformed_E_coli_Strain_id
   glycerol = 1 "50 percent Glycerol (sterile)"
-  sterile_tube = 1 "Vryo Tube"
+  sterile_tube = 1 "Cryo Tube"
 end
 
 step
