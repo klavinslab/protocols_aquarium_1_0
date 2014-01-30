@@ -58,5 +58,5 @@ produce
    note: "We will now incubate the cells in the 37C Shaker Incubator"
 end
 
-objects = concat(plate,LB)
+objects = concat(glycerol)
 release objects
