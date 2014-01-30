@@ -34,17 +34,17 @@ end
 
 produce
    r = 1 "Transformed E coli Glycerol Stock" from strain[0]
-   note: "Also label the cryo tube on the side (not cap) with your initials and the date (with year, since it may be in storage for decades)."
+   warning: "Also label the cryo tube on the side (not cap) with your initials and the date (with year, since it may be in storage for decades)."
    release result_tube
 end
 
 
 
 step
-  description: "Return materials"
-  note: "Return glycerol stock, tidy your station, and dispose of suspended strain with proper sterile technique. (3 steps)"
+  description: "Return materials and clean"
+  note: "Return glycerol stock, tidy your station, and dispose of suspended strain with proper sterile technique"
   check: "Return the glycerol stock to its original location"
-  check: "Take the suspended colony tube to the dish cleaning station. Add twice to 3x its orignal volume of 20%% bleach. Recap the tube and place it in the dirty tube rack."
+  check: "Take the suspended colony tube to the dish cleaning station. Add 20%% bleach until the volume of liquid is 2-3x the original. Recap the tube and place it in the dirty tube rack. This will kill the cells within about 20 minutes."
   check: "Clean your station and dispose of your gloves"
 end
 
