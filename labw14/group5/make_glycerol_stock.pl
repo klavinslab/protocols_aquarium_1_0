@@ -8,7 +8,7 @@ end
 
 take
   glycerol_bottle = 1 "50 percent Glycerol (sterile)"
-  glecerol_tube = 1 "Cyro tube"
+  glycerol_tube = 1 "Cyro tube"
   tube = item Transformed_E_coli_Strain_id
 end
 
