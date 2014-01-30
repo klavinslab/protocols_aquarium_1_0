@@ -34,6 +34,7 @@ step
   description: "Vortex the sample"
   note: "Use the more powerful VWR analog vortex mixer at speed 10"
   #note: "Next: Store the sample in the -80C fridge"
+end
 
 produce
   s = 1 "Overnight suspension culture" from cells_to_store[0]
