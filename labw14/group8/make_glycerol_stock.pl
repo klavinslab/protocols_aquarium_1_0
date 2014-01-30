@@ -7,7 +7,7 @@ end
 step
   note: 
     "This protocol describes the process for preparing a transformed strain (that has been suspended overnight) 
-     for long-term storage (even for 10's of years), by making a 50 / 50 by volume combination with a 50% glycerol
+     for long-term storage (even for 10's of years), by making a 50 / 50 by volume combination with a 50%% glycerol
      solution. The steps are below. Check them off as you read them, then continue on."
   check: "Take the suspended strain, gylcerol stock, and a cryo tube that will hold the result"
   check: "Pipette 900 microliters of glycerol stock, then the same amount from the strain, into the cryo tube. (3 steps)"
