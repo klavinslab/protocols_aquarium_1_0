@@ -56,7 +56,8 @@ produce
    
    r = 1 “Transformed E coli Glycerol Stock” from strain[0]
    location: "B13.425"
-   note: "We will now incubate the cells in the 37C Shaker Incubator"
+   release result_tube
+   note: "We will now place the stock into the -80C Fridge"
 end
 
 objects = concat(glycerol)
