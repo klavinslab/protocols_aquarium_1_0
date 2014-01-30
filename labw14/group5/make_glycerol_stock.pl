@@ -37,4 +37,4 @@ produce
  note: "Place your Cyro tube in the -80 C refrigerator"
 end
 
-release [glycerol_bottle[0]]
+release [glycerol_bottle[0], tube[0]]
