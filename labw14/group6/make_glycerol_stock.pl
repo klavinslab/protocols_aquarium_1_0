@@ -1,4 +1,4 @@
-arguement
+argument
   Transformed_E_Coli_Strain_id: sample, "Overnight suspension culture" 
   # User is prompted to select his desired suspension in order to begin the protocol
   
