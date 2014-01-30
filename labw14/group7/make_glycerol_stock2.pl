@@ -26,7 +26,7 @@ step
 end
 
 produce
- s = item “Transformed E coli Glycerol Stocks” from cell_culture_tube[0]
+ s = 1 “Transformed E coli Glycerol Stock” from cell_culture_tube[0]
  note: "Place your glycerol/cell culture mixture into the -80 C freezer"
 end
 
