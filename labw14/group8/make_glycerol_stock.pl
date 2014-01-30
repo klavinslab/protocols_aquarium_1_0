@@ -59,5 +59,5 @@ produce
    note: "We will now place the stock into the -80C Fridge"
 end
 
-objects = concat(glycerol)
-release objects
+release glycerol
+release strain
