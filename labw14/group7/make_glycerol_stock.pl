@@ -41,4 +41,4 @@ produce
 end
 
 
-release concat(cells_to_store, glycerol, sterile_tube)
+release concat(cells_to_store, glycerol)
