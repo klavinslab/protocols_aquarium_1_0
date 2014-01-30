@@ -43,11 +43,13 @@ step
   check: "Discard the 1.5 mL tube you just used"
   check: "Repeat until you have run out of tubes and empty sectors"
   warning: "Do not cross the sector lines with a streak"
+  warning: "Streak lines should not cross"
+  warning: "You are not trying to spead the liquid.  You are just trying to get some cells on the tip so you deposit individual cells as you streak.  That 5 μl probably have 10,000 cells and you only want one by the end of the streak."
   image: "sector_streak"
 end
 
 step
-  description: "Store the old plate in 4C fridge."
+  description: "Store the plate %{e_coli_strain_plate} in 4C fridge."
   note: "Wrap up the plate with id %{e_coli_strain_plate} using parafilm and put it in the Box 1 in deli fridge located at D2.100."
 end
 
