@@ -26,7 +26,7 @@ end
 step 
   description: "Pipette 900 microliters of glycerol stock, then the same amount from the strain with a different tip, into the cryo tube."
   
-  bullet: "Label the 14 mL test tube."
+  check: "Label the 14 mL test tube."
   check: "Use 1000 uL pipetter to pipett 2 mL of LB Aliquot to the test tube"
   warning: "Make sure that the LB media is not contaminated"
   warning: "Make sure that the test tube is capped after transfer of LB Media"
