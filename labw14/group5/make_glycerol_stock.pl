@@ -1,5 +1,5 @@
 argument
- Overnight_suspension_cultures_id: sample, "A tube with overnight suspension culture"
+ Overnight_suspension_culture_id: sample, "A tube with overnight suspension culture"
 end
 
 step
@@ -9,7 +9,7 @@ end
 take
   glycerol_bottle = 1 "50 percent Glycerol (sterile)"
   glecerol_tube = 1 "Cyro tube"
-  tube = item Overnight_suspension_cultures_id
+  tube = item Overnight_suspension_culture_id
 end
 
 #step
