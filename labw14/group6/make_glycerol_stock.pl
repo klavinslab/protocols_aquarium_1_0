@@ -14,7 +14,7 @@ end
 
 
 take 
-  glycerol_sol = 1 "50 percent Glycerol solution (sterile)"  
+  glycerol_sol = 1 "50 percent Glycerol (sterile)"  
   cryo_tube = 1 "Cryo Tube"
   overnight_culture = item Transformed_E_coli_Strain_id
   # Tells the user what to gather for this protocol
