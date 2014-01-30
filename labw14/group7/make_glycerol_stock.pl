@@ -3,9 +3,9 @@ argument
 end
 
 take
-  culture = item Transformed_E_coli_Strain_id
-  glycerol = 1 "Glycerol Container"
-  sterile_tube = 1 "Sterile Tube (B5.440)"
+  cells_to_store = item Transformed_E_coli_Strain_id
+  glycerol = 1 "50 percent Glycerol (sterile)"
+  sterile_tube = 1 "Vryo Tube"
 end
 
 step
@@ -36,9 +36,9 @@ step
   note: "Next: Store the sample in the -80C fridge"
 
 produce
-  s = 1 "Overnight suspension culture" from culture[0]
+  s = 1 "Overnight suspension culture" from cells_to_store[0]
   note: "Place in -80 degree freezer, at location:"
-  location: "B13.425"
+  location: "Bench"
 end
 
 step
@@ -46,4 +46,4 @@ step
   check: "Return test tube rack to Bench"
 end
 
-release concat(culture, glycerol)
+release concat(cells_to_store, glycerol)
