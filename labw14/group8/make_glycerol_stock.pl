@@ -5,7 +5,7 @@ argument
 end
 
 step
-  description: 
+  note: 
     "This protocol describes the process for preparing a transformed strain (that has been suspended overnight) 
      for long-term storage (even for 10's of years), by making a 50 / 50 by volume combination with a 50% glycerol
      solution. The steps are below. Check them off as you read them, then continue on."
@@ -16,7 +16,7 @@ step
 end
 
 take
-  description:
+  note:
     "First we take the suspended strain from it's location (one of the 37C suspenders ie SI3), gylcerol stock, and a cryo tube that will hold the result."
   strain = item Overnight_Suspension_Culture_id
   glycerol = 1 "50 percent Glycerol (sterile)"
@@ -25,7 +25,7 @@ end
 
 
 step 
-  description: "Pipette 900 microliters of glycerol stock, then the same amount from the strain with a different tip, into the cryo tube."
+  note: "Pipette 900 microliters of glycerol stock, then the same amount from the strain with a different tip, into the cryo tube."
   
   check: "Label the 14 mL test tube."
   check: "Use 1000 uL pipetter to pipett 2 mL of LB Aliquot to the test tube"
@@ -36,7 +36,7 @@ end
 
 step
 
-  description: "Store the result in the -80C fridge"
+  note: "Store the result in the -80C fridge"
   note: "We will add a tranformed E Coli colony to the prepared media"
   check: "Remove the parafilm from the plate"
   check: "Use a pipetter tip to pick 1 colony from the plate"
@@ -45,7 +45,7 @@ end
 
 step
 
-  description: ""Return glycerol stock, tidy your station, and dispose of suspended strain with proper sterile technique. (3 steps)""
+  note: "Return glycerol stock, tidy your station, and dispose of suspended strain with proper sterile technique. (3 steps)""
   note: "We will add a tranformed E Coli colony to the prepared media"
   check: "Remove the parafilm from the plate"
   check: "Use a pipetter tip to pick 1 colony from the plate"
@@ -53,7 +53,7 @@ step
 end
 
 produce
-
+   
    r = 1 “Transformed E coli Glycerol Stock” from strain[0]
    location: "B13.425"
    note: "We will now incubate the cells in the 37C Shaker Incubator"
