@@ -17,12 +17,13 @@ step
   description: "Label a sterile tube with your initials AND date"
   note: "Place the tube in a test tube rack.\n
   This tube will be stored in the -80C Freezer."
+  #Need to label this tube with a number now
 end
 
 step
   description: "Pipette 900ul of glycerol into the sterile tube"
   note: "Be careful not to contaminate the glycerol bottle.  Use the 1000 μL pipetter."
-  note: "Next: Pipette 900ul of cell suspension into the sterile tube"
+  #note: "Next: Pipette 900ul of cell suspension into the sterile tube"
 end
 
 step
@@ -33,7 +34,7 @@ end
 step
   description: "Vortex the sample"
   note: "Use the more powerful VWR analog vortex mixer at speed 10"
-  note: "Next: Store the sample in the -80C fridge"
+  #note: "Next: Store the sample in the -80C fridge"
 
 produce
   s = 1 "Overnight suspension culture" from cells_to_store[0]
