@@ -18,7 +18,7 @@ end
 take
   note:
     "First we take the suspended strain from it's location (one of the 37C suspenders ie SI3), gylcerol stock, and a cryo tube that will hold the result."
-  strain = item Overnight_Suspension_Culture_id
+  strain = item Transformed_E_coli_Strain_id
   glycerol = 1 "50 percent Glycerol (sterile)"
   result_tube = 1 "Cyro Tube"
 end
