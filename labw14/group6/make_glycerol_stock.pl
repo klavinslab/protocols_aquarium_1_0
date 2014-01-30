@@ -48,7 +48,7 @@ step
 end
 
 produce
-  r = 1 "Transformed E coli Glycerol Stock" from culture[0]
+  r = 1 "Transformed E coli Glycerol Stock" from overnight_culture[0]
   release cyro_tube
   # The product is created and the user is told to put it in the freezer. The Cyro tube has been consumed.
   
