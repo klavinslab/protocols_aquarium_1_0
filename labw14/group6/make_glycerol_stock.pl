@@ -6,7 +6,7 @@ end
 
 
 step
-  description: "This protocol described the preparation of glycerol stock from an overnight suspension."
+  description: "This protocol describes the preparation of glycerol stock from an overnight suspension."
   # Orients the user to this protocol's purpose
   
 end
