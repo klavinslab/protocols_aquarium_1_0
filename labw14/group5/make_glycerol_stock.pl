@@ -33,7 +33,7 @@ end
 
 produce
  1 "Transformed E coli Glycerol Stock" from tube[0]
- release glycerol_tube
+ #release glycerol_tube
  note: "Place your Cyro tube in the -80 C refrigerator"
 end
 
