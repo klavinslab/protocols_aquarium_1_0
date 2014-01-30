@@ -14,9 +14,9 @@ take
 end
 
 step
-  description: "Label a sterile tube with your initials AND date"
+  description: "Label the sterile cryo tube with your initials AND date"
   note: "Place the tube in a test tube rack.  This tube will be stored in the -80C Freezer."
-  #Need to label this tube with a number now
+  #Want to label this tube with a number now
 end
 
 step
@@ -37,13 +37,8 @@ step
 end
 
 produce
-  s = 1 "Transformed E coli Glycerol Stock" from cells_to_store[0]
-  note: "Place in -80 degree freezer, at location:"
+  s = 1 "Transformed E coli Glycerol Stock" from sterile_tube[0]
 end
 
-step
-  description: "Return all equipment"
-  check: "Return test tube rack to Bench"
-end
 
-release concat(cells_to_store, glycerol)
+release concat(cells_to_store, glycerol, sterile_tube)
