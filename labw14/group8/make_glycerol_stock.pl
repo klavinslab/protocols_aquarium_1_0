@@ -46,9 +46,11 @@ step
   check: "Return the glycerol stock to its original location"
   check: "Take the suspended colony tube to the dish cleaning station. Add 20%% bleach until the volume of liquid is 2-3x the original. Recap the tube and place it in the dirty tube rack. This will kill the cells within about 20 minutes."
   check: "Clean your station and dispose of your gloves"
+  release glycerol
+  release strain
 end
 
 
 
-release glycerol
-release strain
+
+
