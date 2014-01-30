@@ -9,8 +9,7 @@ end
 take
   cell_culture_tube = item Transformed_E_coli_Strain_id
   glycerol = 1 "50 percent Glycerol (sterile)"
-  sterile_tube = 1 "1.5mL sterile tube"
-  sample_holder = 1 "1.5mL tube holding tray"
+  sterile_tube = 1 "Cryo Tube"
 end
 
 step
@@ -27,11 +26,9 @@ step
 end
 
 produce
- s = 1 “Transformed E coli Glycerol Stock” from cell_culture_tube[0]
- release sterile_tube
+ s = item “Transformed E coli Glycerol Stocks” from cell_culture_tube[0]
  note: "Place your glycerol/cell culture mixture into the -80 C freezer"
- location:"M80.0.xx"
 end
 
-release [falcon_tube[0], plate[0]]
+#release [falcon_tube[0], plate[0]]
 #release concat(falcon_tube, plate)
