@@ -15,7 +15,7 @@ end
 
 take 
   glycerol_sol = 1 "50 percent Glycerol solution (sterile)"  
-  cyro_tube = 1 "Cyro Tube"
+  cryo_tube = 1 "Cryo Tube"
   overnight_culture = item Transformed_E_coli_Strain_id
   # Tells the user what to gather for this protocol
   
@@ -42,15 +42,15 @@ step
 end
 
 step
-  description: "Vortex the Cyro tube."
+  description: "Vortex the Cryo tube."
   note: "Hold against the vortexer for about thirty seconds at the highest setting."
   
 end
 
 produce
   r = 1 "Transformed E coli Glycerol Stock" from overnight_culture[0]
-  release cyro_tube
-  # The product is created and the user is told to put it in the freezer. The Cyro tube has been consumed.
+  release cryo_tube
+  # The product is created and the user is told to put it in the freezer. The Cryo tube has been consumed.
   
 end
   
