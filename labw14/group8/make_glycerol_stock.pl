@@ -1,6 +1,6 @@
 argument
   
-  Overnight_Suspension_Culture_id: sample, "The tube containing the overnight suspended colonies"
+  Transformed_E_coli_Strain_id: sample, "The tube containing the overnight suspended colonies"
   
 end
 
