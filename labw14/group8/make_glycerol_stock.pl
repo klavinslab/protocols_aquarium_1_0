@@ -19,8 +19,8 @@ end
 take
   strain = item Transformed_E_coli_Strain_id
   glycerol = 1 "50 percent Glycerol (sterile)"
-  result_tube = 1 "Cyro Tube"
-  note: "Place the cyro tube in a holder and the tube with suspended culture in a tube rack, both on the bench. The gylcerol can be set on the bench."
+  result_tube = 1 "Cryo Tube"
+  note: "Place the cryo tube in a holder and the tube with suspended culture in a tube rack, both on the bench. The gylcerol can be set on the bench."
 end
 
 
@@ -34,9 +34,8 @@ end
 
 produce
    r = 1 "Transformed E coli Glycerol Stock" from strain[0]
-   check: "Also label the cryo tube on the side (not cap) with your initials and the date (with year, since it may be in storage for decades)."
+   note: "Also label the cryo tube on the side (not cap) with your initials and the date (with year, since it may be in storage for decades)."
    release result_tube
-   note: "We will now place the stock into the -80C Fridge"
 end
 
 
