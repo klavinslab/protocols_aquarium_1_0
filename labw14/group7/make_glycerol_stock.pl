@@ -16,24 +16,14 @@ end
 step
   description: "Label the sterile cryo tube with your initials AND date"
   note: "Place the tube in a test tube rack.  This tube will be stored in the -80C Freezer."
-  #Want to label this tube with a number now
 end
 
 step
-  description: "Pipette 900ul of glycerol into the sterile tube"
+  description: "Pipette the glycerol and cell suspension into the sterile tube, then vortex it"
   note: "Be careful not to contaminate the glycerol bottle.  Use the 1000 μL pipetter."
-  note: "Next: Pipette 900ul of cell suspension into the sterile tube"
-end
-
-step
-  description: "Pipette 900ul of cell suspension into the sterile tube"
-  note: "Next: Vortex the sample for 15s on high power."
-end
-
-step
-  description: "Vortex the sample"
-  note: "Use the more powerful VWR analog vortex mixer at speed 10"
-  note: "Next: Store the sample in the -80C fridge"
+  check: "Pipette 900ul of glycerol into the sterile tube"
+  check: "Pipette 900ul of cell suspension into the sterile tube"
+  check: "Next: Vortex the sample for 15s on high power. Use the more powerful VWR analog vortex mixer at speed 10"
 end
 
 produce
