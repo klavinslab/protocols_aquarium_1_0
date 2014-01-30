@@ -27,7 +27,7 @@ step
 end
 
 produce
- 1 “Transformed E coli Glycerol Stock” from sterile_tube[0]
+ s= 1 “Transformed E coli Glycerol Stock” from sterile_tube[0]
  release sterile_tube
  note: "Place your glycerol/cell culture mixture into the -80 C freezer"
  location:"M80.0.xx"
