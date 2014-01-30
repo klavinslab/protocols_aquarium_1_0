@@ -45,7 +45,7 @@ end
 
 step
 
-  note: "Return glycerol stock, tidy your station, and dispose of suspended strain with proper sterile technique. (3 steps)""
+  note: "Return glycerol stock, tidy your station, and dispose of suspended strain with proper sterile technique. (3 steps)"
   note: "We will add a tranformed E Coli colony to the prepared media"
   check: "Remove the parafilm from the plate"
   check: "Use a pipetter tip to pick 1 colony from the plate"
