@@ -1,5 +1,5 @@
 argument
-  Transformed_E_Coli_Strain_id: sample, "Overnight suspension culture" 
+  Transformed_E_coli_Strain_id: sample, "Overnight suspension culture" 
   # User is prompted to select his desired suspension in order to begin the protocol
   
 end
@@ -16,7 +16,7 @@ end
 take 
   glycerol_sol = 1 "50 percent Glycerol solution (sterile)"  
   cyro_tube = 1 "Cyro Tube"
-  overnight_culture = item Transformed_E_Coli_Strain_id
+  overnight_culture = item Transformed_E_coli_Strain_id
   # Tells the user what to gather for this protocol
   
 end
