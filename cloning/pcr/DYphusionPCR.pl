@@ -3,7 +3,7 @@ argument
   tanneal: number, "The anneal temperature in degrees C"
   enzyme_id: sample, "The Phsion HF Master Mix stock"
   num: number, "The number of PCR reactions, 1-12"
-  primer1_1: sample, "The first primer: reaction 1"
+  primer1: sample, "The first primer: reaction 1"
   primer1_2: sample, "The second primer: reaction 1"
   plasmid1: sample, "The plasmid stock: reaction 1"
   primer2_1: sample, "The first primer: reaction 2"
