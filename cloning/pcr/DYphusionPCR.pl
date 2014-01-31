@@ -7,7 +7,7 @@ argument
   primer1_2: sample, "The second primer: reaction 1"
   plasmid1: sample, "The plasmid stock: reaction 1"
   primer2_1: sample, "The first primer: reaction 2"
-  primer2$2: sample, "The second primer: reaction 2"
+  primer2_2: sample, "The second primer: reaction 2"
   plasmid2: sample, "The plasmid stock: reaction 2"
   primer3x1: sample, "The first primer: reaction 3"
   primer3_2: sample, "The second primer: reaction 3"
