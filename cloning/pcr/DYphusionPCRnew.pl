@@ -58,8 +58,9 @@ end
 
 x=0
 while x < y
+  a=template_ids[x][:id]
   step 
-    description: "Pipet 1 µL of plasmid with id %{template_ids[x]} into well %{x+1}."
+    description: "Pipet 1 µL of plasmid with id %{a} into well %{x+1}."
   end
   x = x+1
 end
