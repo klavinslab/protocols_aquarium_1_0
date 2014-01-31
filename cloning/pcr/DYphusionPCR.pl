@@ -6,82 +6,82 @@ argument
   primer1_1: sample, "The first primer: reaction 1"
   primer1_2: sample, "The second primer: reaction 1"
   plasmid1: sample, "The plasmid stock: reaction 1"
-  p2rimer1: sample, "The first primer: reaction 2"
-  p2rimer2: sample, "The second primer: reaction 2"
-  p2lasmid: sample, "The plasmid stock: reaction 2"
-  p3rimer1: sample, "The first primer: reaction 3"
-  p3rimer2: sample, "The second primer: reaction 3"
-  p3lasmid: sample, "The plasmid stock: reaction 3"
-  p4rimer1: sample, "The first primer: reaction 4"
-  p4rimer2: sample, "The second primer: reaction 4"
-  p4lasmid: sample, "The plasmid stock: reaction 4"
-  p5rimer1: sample, "The first primer: reaction 5"
-  p5rimer2: sample, "The second primer: reaction 5"
-  p5lasmid: sample, "The plasmid stock: reaction 5"
-  p6rimer1: sample, "The first primer: reaction 6"
-  p6rimer2: sample, "The second primer: reaction 6"
-  p6lasmid: sample, "The plasmid stock: reaction 6"
-  p7rimer1: sample, "The first primer: reaction 7"
-  p7rimer2: sample, "The second primer: reaction 7"
-  p7lasmid: sample, "The plasmid stock: reaction 7"
-  p8rimer1: sample, "The first primer: reaction 8"
-  p8rimer2: sample, "The second primer: reaction 8"
-  p8lasmid: sample, "The plasmid stock: reaction 8"
-  p9rimer1: sample, "The first primer: reaction 9"
-  p9rimer2: sample, "The second primer: reaction 9"
-  p9lasmid: sample, "The plasmid stock: reaction 9"
-  p10rimer1: sample, "The first primer: reaction 10"
-  p10rimer2: sample, "The second primer: reaction 10"
-  p10lasmid: sample, "The plasmid stock: reaction 10"
-  p11rimer1: sample, "The first primer: reaction 11"
-  p11rimer2: sample, "The second primer: reaction 11"
-  p11lasmid: sample, "The plasmid stock: reaction 11"
-  p12rimer1: sample, "The first primer: reaction 12"
-  p12rimer2: sample, "The second primer: reaction 12"
-  p12lasmid: sample, "The plasmid stock: reaction 12"
+  primer2_1: sample, "The first primer: reaction 2"
+  primer2_2: sample, "The second primer: reaction 2"
+  plasmid2: sample, "The plasmid stock: reaction 2"
+  primer3_1: sample, "The first primer: reaction 3"
+  primer3_2: sample, "The second primer: reaction 3"
+  plasmid3: sample, "The plasmid stock: reaction 3"
+  primer4_1: sample, "The first primer: reaction 4"
+  primer4_2: sample, "The second primer: reaction 4"
+  plasmid4: sample, "The plasmid stock: reaction 4"
+  primer5_1: sample, "The first primer: reaction 5"
+  primer5_2: sample, "The second primer: reaction 5"
+  plasmid5: sample, "The plasmid stock: reaction 5"
+  primer6_1: sample, "The first primer: reaction 6"
+  primer6_2: sample, "The second primer: reaction 6"
+  plasmid6: sample, "The plasmid stock: reaction 6"
+  primer7_1: sample, "The first primer: reaction 7"
+  primer7_2: sample, "The second primer: reaction 7"
+  plasmid7: sample, "The plasmid stock: reaction 7"
+  primer8_1: sample, "The first primer: reaction 8"
+  primer8_2: sample, "The second primer: reaction 8"
+  plasmid8: sample, "The plasmid stock: reaction 8"
+  primer9_1: sample, "The first primer: reaction 9"
+  primer9_2: sample, "The second primer: reaction 9"
+  plasmid9: sample, "The plasmid stock: reaction 9"
+  primer10_1: sample, "The first primer: reaction 10"
+  primer10_2: sample, "The second primer: reaction 10"
+  plasmid10: sample, "The plasmid stock: reaction 10"
+  primer11_1: sample, "The first primer: reaction 11"
+  primer11_2: sample, "The second primer: reaction 11"
+  plasmid11: sample, "The plasmid stock: reaction 11"
+  primer12_1: sample, "The first primer: reaction 12"
+  primer12_2: sample, "The second primer: reaction 12"
+  plasmid12: sample, "The plasmid stock: reaction 12"
 end
 
 take
   phusion_stock = item enzyme_id
-  1primer1_stock = item 1primer1
-  1primer2_stock = item 1primer2
-  2primer1_stock = item 2primer1
-  2primer2_stock = item 2primer2
-  3primer1_stock = item 3primer1
-  3primer2_stock = item 3primer2
-  4primer1_stock = item 4primer1
-  4primer2_stock = item 4primer2
-  5primer1_stock = item 5primer1
-  5primer2_stock = item 5primer2
-  6primer1_stock = item 6primer1
-  6primer2_stock = item 6primer2
-  7primer1_stock = item 7primer1
-  7primer2_stock = item 7primer2
-  8primer1_stock = item 8primer1
-  8primer2_stock = item 8primer2
-  9primer1_stock = item 9primer1
-  9primer2_stock = item 9primer2
-  10primer1_stock = item 10primer1
-  10primer2_stock = item 10primer2
-  11primer1_stock = item 11primer1
-  11primer2_stock = item 11primer2
-  12primer1_stock = item 12primer1
-  12primer2_stock = item 12primer2
+  primer1_1_stock = item primer1_1
+  primer1_2_stock = item primer1_2
+  primer2_1_stock = item primer2_1
+  primer2_2_stock = item primer2_2
+  primer3_1_stock = item primer3_1
+  primer3_2_stock = item primer3_2
+  primer4_1_stock = item primer4_1
+  primer4-2_stock = item primer4_2
+  primer5_1_stock = item primer5_1
+  primer5_2_stock = item primer5_2
+  primer6_1_stock = item primer6_1
+  primer6_2_stock = item primer6_2
+  primer7_1_stock = item primer7_1
+  primer7_2_stock = item primer7_2
+  primer8_1_stock = item primer8_1
+  primer8_2_stock = item primer8_2
+  primer9_1_stock = item primer9_1
+  primer9_2_stock = item primer9_2
+  primer10_1_stock = item primer10_1
+  primer10_2_stock = item primer10_2
+  primer11_1_stock = item primer11_1
+  primer11_2_stock = item primer11_2
+  primer12_1_stock = item primer12_1
+  primer12_2_stock = item primer12_2
 end
 
 take
-  1plasmid_stock = item 1plasmid
-  2plasmid_stock = item 2plasmid
-  3plasmid_stock = item 3plasmid
-  4plasmid_stock = item 4plasmid
-  5plasmid_stock = item 5plasmid
-  6plasmid_stock = item 6plasmid
-  7plasmid_stock = item 7plasmid
-  8plasmid_stock = item 8plasmid
-  9plasmid_stock = item 9plasmid
-  10plasmid_stock = item 10plasmid
-  11plasmid_stock = item 11plasmid
-  12plasmid_stock = item 12plasmid
+  plasmid1_stock = item plasmid1
+  plasmid2_stock = item plasmid2
+  plasmid3_stock = item plasmid3
+  plasmid4_stock = item plasmid4
+  plasmid5_stock = item plasmid5
+  plasmid6_stock = item plasmid6
+  plasmid7_stock = item plasmid7
+  plasmid8_stock = item plasmid8
+  plasmid9_stock = item plasmid9
+  plasmid10_stock = item plasmid10
+  plasmid11_stock = item plasmid11
+  plasmid12_stock = item plasmid12
 end
 
 step
