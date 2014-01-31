@@ -103,46 +103,46 @@ end
 
 step 
   description: "Next, add plasmid. IGNORE STEPS THAT TELL YOU TO ADD WATER"
-  check: "Pipet 1 µL of plasmid with id %{1plasmid} into well 1."
-  check: "Pipet 1 µL of plasmid with id %{2plasmid} into well 2."
-  check: "Pipet 1 µL of plasmid with id %{3plasmid} into well 3."
-  check: "Pipet 1 µL of plasmid with id %{4plasmid} into well 4."
-  check: "Pipet 1 µL of plasmid with id %{5plasmid} into well 5."
-  check: "Pipet 1 µL of plasmid with id %{6plasmid} into well 6."
-  check: "Pipet 1 µL of plasmid with id %{7plasmid} into well 7."
-  check: "Pipet 1 µL of plasmid with id %{8plasmid} into well 8."
-  check: "Pipet 1 µL of plasmid with id %{9plasmid} into well 9."
-  check: "Pipet 1 µL of plasmid with id %{10plasmid} into well 10."
-  check: "Pipet 1 µL of plasmid with id %{11plasmid} into well 11."
-  check: "Pipet 1 µL of plasmid with id %{12plasmid} into well 12."
+  check: "Pipet 1 µL of plasmid with id %{plasmid1} into well 1."
+  check: "Pipet 1 µL of plasmid with id %{plasmid2} into well 2."
+  check: "Pipet 1 µL of plasmid with id %{plasmid3} into well 3."
+  check: "Pipet 1 µL of plasmid with id %{plasmid4} into well 4."
+  check: "Pipet 1 µL of plasmid with id %{plasmid5} into well 5."
+  check: "Pipet 1 µL of plasmid with id %{plasmid6} into well 6."
+  check: "Pipet 1 µL of plasmid with id %{plasmid7} into well 7."
+  check: "Pipet 1 µL of plasmid with id %{plasmid8} into well 8."
+  check: "Pipet 1 µL of plasmid with id %{plasmid9} into well 9."
+  check: "Pipet 1 µL of plasmid with id %{plasmid10} into well 10."
+  check: "Pipet 1 µL of plasmid with id %{plasmid11} into well 11."
+  check: "Pipet 1 µL of plasmid with id %{plasmid12} into well 12."
 end
 
 step 
   description: "Next, add the primers. IGNORE STEPS THAT TELL YOU TO ADD WATER"
-  check: "Pipet 2.5 µL of primer with id %{1primer1} into well 1."
-  check: "Pipet 2.5 µL of primer with id %{1primer2} into well 1."
-  check: "Pipet 2.5 µL of primer with id %{2primer1} into well 2."
-  check: "Pipet 2.5 µL of primer with id %{2primer2} into well 2."
-  check: "Pipet 2.5 µL of primer with id %{3primer1} into well 3."
-  check: "Pipet 2.5 µL of primer with id %{3primer2} into well 3."
-  check: "Pipet 2.5 µL of primer with id %{4primer1} into well 4."
-  check: "Pipet 2.5 µL of primer with id %{4primer2} into well 4."
-  check: "Pipet 2.5 µL of primer with id %{5primer1} into well 5."
-  check: "Pipet 2.5 µL of primer with id %{5primer2} into well 5."
-  check: "Pipet 2.5 µL of primer with id %{6primer1} into well 6."
-  check: "Pipet 2.5 µL of primer with id %{6primer2} into well 6."
-  check: "Pipet 2.5 µL of primer with id %{7primer1} into well 7."
-  check: "Pipet 2.5 µL of primer with id %{7primer2} into well 7."
-  check: "Pipet 2.5 µL of primer with id %{8primer1} into well 8."
-  check: "Pipet 2.5 µL of primer with id %{8primer2} into well 8."
-  check: "Pipet 2.5 µL of primer with id %{9primer1} into well 9."
-  check: "Pipet 2.5 µL of primer with id %{9primer2} into well 9."
-  check: "Pipet 2.5 µL of primer with id %{10primer1} into well 10."
-  check: "Pipet 2.5 µL of primer with id %{10primer2} into well 10."
-  check: "Pipet 2.5 µL of primer with id %{11primer1} into well 11."
-  check: "Pipet 2.5 µL of primer with id %{11primer2} into well 11."
-  check: "Pipet 2.5 µL of primer with id %{12primer1} into well 12."
-  check: "Pipet 2.5 µL of primer with id %{12primer2} into well 12."
+  check: "Pipet 2.5 µL of primer with id %{primer1_1} into well 1."
+  check: "Pipet 2.5 µL of primer with id %{primer1_2} into well 1."
+  check: "Pipet 2.5 µL of primer with id %{primer2_1} into well 2."
+  check: "Pipet 2.5 µL of primer with id %{primer2_2} into well 2."
+  check: "Pipet 2.5 µL of primer with id %{primer3_1} into well 3."
+  check: "Pipet 2.5 µL of primer with id %{primer3_2} into well 3."
+  check: "Pipet 2.5 µL of primer with id %{primer4_1} into well 4."
+  check: "Pipet 2.5 µL of primer with id %{primer4_2} into well 4."
+  check: "Pipet 2.5 µL of primer with id %{primer5_1} into well 5."
+  check: "Pipet 2.5 µL of primer with id %{primer5_2} into well 5."
+  check: "Pipet 2.5 µL of primer with id %{primer6_1} into well 6."
+  check: "Pipet 2.5 µL of primer with id %{primer6_2} into well 6."
+  check: "Pipet 2.5 µL of primer with id %{primer7_1} into well 7."
+  check: "Pipet 2.5 µL of primer with id %{primer7_2} into well 7."
+  check: "Pipet 2.5 µL of primer with id %{primer8_1} into well 8."
+  check: "Pipet 2.5 µL of primer with id %{primer8_2} into well 8."
+  check: "Pipet 2.5 µL of primer with id %{primer9_1} into well 9."
+  check: "Pipet 2.5 µL of primer with id %{primer9_2} into well 9."
+  check: "Pipet 2.5 µL of primer with id %{primer10_1} into well 10."
+  check: "Pipet 2.5 µL of primer with id %{primer10_2} into well 10."
+  check: "Pipet 2.5 µL of primer with id %{primer11_1} into well 11."
+  check: "Pipet 2.5 µL of primer with id %{primer11_2} into well 11."
+  check: "Pipet 2.5 µL of primer with id %{primer12_1} into well 12."
+  check: "Pipet 2.5 µL of primer with id %{primer12_2} into well 12."
 end
 
 step 
@@ -161,12 +161,12 @@ step
 end
 
 
-release [1primer1_stock[0],1primer2_stock[0],2primer1_stock[0],2primer2_stock[0],3primer1_stock[0],3primer2_stock[0]]
-release [4primer1_stock[0],4primer2_stock[0],5primer1_stock[0],5primer2_stock[0],6primer1_stock[0],6primer2_stock[0]]
-release [7primer1_stock[0],7primer2_stock[0],8primer1_stock[0],8primer2_stock[0],9primer1_stock[0],9primer2_stock[0]]
-release [10primer1_stock[0],10primer2_stock[0],11primer1_stock[0],11primer2_stock[0],12primer1_stock[0],12primer2_stock[0]]
-release [1plasmid_stock[0],2plasmid_stock[0],3plasmid_stock[0],4plasmid_stock[0],5plasmid_stock[0],6plasmid_stock[0]]
-release [7plasmid_stock[0],8plasmid_stock[0],9plasmid_stock[0],10plasmid_stock[0],11plasmid_stock[0],12plasmid_stock[0]]
+release [primer1_1_stock[0],primer1_2_stock[0],primer2_1_stock[0],primer2_2_stock[0],primer3_1_stock[0],primer3_2_stock[0]]
+release [primer4_1_stock[0],primer4_2_stock[0],primer5_1_stock[0],primer5_2_stock[0],primer6_1_stock[0],primer6_2_stock[0]]
+release [primer7_1_stock[0],primer7_2_stock[0],primer8_1_stock[0],primer8_2_stock[0],primer9_1_stock[0],primer9_2_stock[0]]
+release [primer10_1_stock[0],primer10_2_stock[0],primer11_1_stock[0],primer11_2_stock[0],primer12_1_stock[0],primer12_2_stock[0]]
+release [plasmid1_stock[0],plasmid2_stock[0],plasmid3_stock[0],plasmid4_stock[0],plasmid5_stock[0],plasmid6_stock[0]]
+release [plasmid7_stock[0],plasmid8_stock[0],plasmid9_stock[0],plasmid10_stock[0],plasmid11_stock[0],plasmid12_stock[0]]
 
 release [phusion_stock[0]]
 
