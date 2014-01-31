@@ -25,37 +25,39 @@ end
 
 step
   description: "Grab a 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
-  note: "These wells will be refered to as 1 - 12"
   check: "Label the left most well with your initials"
   check: "Label the right most well with the number 1"
+  note: "These wells will be refered to as 1 - 12"
 end
 
 if length(forward_ids) > 12
   step
     description: "Grab a second 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
-    note: "These wells will be refered to as 13 - 24"
     check: "Label the left most well with your initials"
     check: "Label the right most well with the number 2"
+    note: "These wells will be refered to as 13 - 24"
   end
 end
 
 if length(forward_ids) > 24
   step
     description: "Grab a third 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
-    note: "These wells will be refered to as 25 - 36"
     check: "Label the left most well with your initials"
     check: "Label the right most well with the number 3"
+    note: "These wells will be refered to as 25 - 36"
   end
 end
 
+y=length(forward_ids)
+
 step 
   description: "Begin by adding water"
-  note:"Pipet 19 µL molecular grade water into wells 1 through %{length(forward_ids)}."
+  note:"Pipet 19 µL molecular grade water into wells 1 through %{y}."
   warning: "Be careful to pipette into the liquid, not the side of the tube."
 end
 
 x=0
-while x < length(forward_ids)-1
+while x < y-1
   step 
     description: "Pipet 1 µL of plasmid with id %{template_ids[x]} into well %{x+1}."
   end
@@ -63,7 +65,7 @@ while x < length(forward_ids)-1
 end
 
 x=0
-while x < length(forward_ids)-1
+while x < y-1
   step 
     description: "Add both forward and reverse primers"
     check: "Pipet 2.5 µL of primer with id %{forward_ids[x]} into well %{x+1}."
@@ -74,7 +76,7 @@ end
 
 step 
   description: "Finally, add Phusion Master Mix. USE A NEW PIPETTE TIP FOR EACH WELL AND PIPETTE UP AND DOWN TO MIX"
-  note:"Pipet 25 µL Phusion Master Mix with id %{enzyme_id} into wells 1 through %{length(forward_ids)}."
+  note:"Pipet 25 µL Phusion Master Mix with id %{enzyme_id} into wells 1 through %{y}."
 end
 
 step
