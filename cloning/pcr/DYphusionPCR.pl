@@ -3,70 +3,70 @@ argument
   tanneal: number, "The anneal temperature in degrees C"
   enzyme_id: sample, "The Phsion HF Master Mix stock"
   num: number, "The number of PCR reactions, 1-12"
-  primer1_1: sample, "The first primer: reaction 1"
-  primer1_2: sample, "The second primer: reaction 1"
+  primer1x1: sample, "The first primer: reaction 1"
+  primer1x2: sample, "The second primer: reaction 1"
   plasmid1: sample, "The plasmid stock: reaction 1"
-  primer2_1: sample, "The first primer: reaction 2"
-  primer2_2: sample, "The second primer: reaction 2"
+  primer2x1: sample, "The first primer: reaction 2"
+  primer2x2: sample, "The second primer: reaction 2"
   plasmid2: sample, "The plasmid stock: reaction 2"
   primer3x1: sample, "The first primer: reaction 3"
-  primer3_2: sample, "The second primer: reaction 3"
+  primer3x2: sample, "The second primer: reaction 3"
   plasmid3: sample, "The plasmid stock: reaction 3"
-  primer4_1: sample, "The first primer: reaction 4"
-  primer4_2: sample, "The second primer: reaction 4"
+  primer4x1: sample, "The first primer: reaction 4"
+  primer4x2: sample, "The second primer: reaction 4"
   plasmid4: sample, "The plasmid stock: reaction 4"
-  primer5_1: sample, "The first primer: reaction 5"
-  primer5_2: sample, "The second primer: reaction 5"
+  primer5x1: sample, "The first primer: reaction 5"
+  primer5x2: sample, "The second primer: reaction 5"
   plasmid5: sample, "The plasmid stock: reaction 5"
-  primer6_1: sample, "The first primer: reaction 6"
-  primer6_2: sample, "The second primer: reaction 6"
+  primer6x1: sample, "The first primer: reaction 6"
+  primer6x2: sample, "The second primer: reaction 6"
   plasmid6: sample, "The plasmid stock: reaction 6"
-  primer7_1: sample, "The first primer: reaction 7"
-  primer7_2: sample, "The second primer: reaction 7"
+  primer7x1: sample, "The first primer: reaction 7"
+  primer7x2: sample, "The second primer: reaction 7"
   plasmid7: sample, "The plasmid stock: reaction 7"
-  primer8_1: sample, "The first primer: reaction 8"
-  primer8_2: sample, "The second primer: reaction 8"
+  primer8x1: sample, "The first primer: reaction 8"
+  primer8x2: sample, "The second primer: reaction 8"
   plasmid8: sample, "The plasmid stock: reaction 8"
-  primer9_1: sample, "The first primer: reaction 9"
-  primer9_2: sample, "The second primer: reaction 9"
+  primer9x1: sample, "The first primer: reaction 9"
+  primer9x2: sample, "The second primer: reaction 9"
   plasmid9: sample, "The plasmid stock: reaction 9"
-  primer10_1: sample, "The first primer: reaction 10"
-  primer10_2: sample, "The second primer: reaction 10"
+  primer10x1: sample, "The first primer: reaction 10"
+  primer10x2: sample, "The second primer: reaction 10"
   plasmid10: sample, "The plasmid stock: reaction 10"
-  primer11_1: sample, "The first primer: reaction 11"
-  primer11_2: sample, "The second primer: reaction 11"
+  primer11x1: sample, "The first primer: reaction 11"
+  primer11x2: sample, "The second primer: reaction 11"
   plasmid11: sample, "The plasmid stock: reaction 11"
-  primer12_1: sample, "The first primer: reaction 12"
-  primer12_2: sample, "The second primer: reaction 12"
+  primer12x1: sample, "The first primer: reaction 12"
+  primer12x2: sample, "The second primer: reaction 12"
   plasmid12: sample, "The plasmid stock: reaction 12"
 end
 
 take
   phusion_stock = item enzyme_id
-  primer1_1_stock = item primer1_1
-  primer1_2_stock = item primer1_2
-  primer2_1_stock = item primer2_1
-  primer2_2_stock = item primer2_2
-  primer3_1_stock = item primer3_1
-  primer3_2_stock = item primer3_2
-  primer4_1_stock = item primer4_1
-  primer4-2_stock = item primer4_2
-  primer5_1_stock = item primer5_1
-  primer5_2_stock = item primer5_2
-  primer6_1_stock = item primer6_1
-  primer6_2_stock = item primer6_2
-  primer7_1_stock = item primer7_1
-  primer7_2_stock = item primer7_2
-  primer8_1_stock = item primer8_1
-  primer8_2_stock = item primer8_2
-  primer9_1_stock = item primer9_1
-  primer9_2_stock = item primer9_2
-  primer10_1_stock = item primer10_1
-  primer10_2_stock = item primer10_2
-  primer11_1_stock = item primer11_1
-  primer11_2_stock = item primer11_2
-  primer12_1_stock = item primer12_1
-  primer12_2_stock = item primer12_2
+  primer1x1_stock = item primer1x1
+  primer1x2_stock = item primer1x2
+  primer2x1_stock = item primer2x1
+  primer2x2_stock = item primer2x2
+  primer3x1_stock = item primer3x1
+  primer3x2_stock = item primer3x2
+  primer4x1_stock = item primer4x1
+  primer4x2_stock = item primer4x2
+  primer5x1_stock = item primer5x1
+  primer5x2_stock = item primer5x2
+  primer6x1_stock = item primer6x1
+  primer6x2_stock = item primer6x2
+  primer7x1_stock = item primer7x1
+  primer7x2_stock = item primer7x2
+  primer8x1_stock = item primer8x1
+  primer8x2_stock = item primer8x2
+  primer9x1_stock = item primer9x1
+  primer9x2_stock = item primer9x2
+  primer10x1_stock = item primer10x1
+  primer10x2_stock = item primer10x2
+  primer11x1_stock = item primer11x1
+  primer11x2_stock = item primer11x2
+  primer12x1_stock = item primer12x1
+  primer12x2_stock = item primer12x2
 end
 
 take
@@ -119,30 +119,30 @@ end
 
 step 
   description: "Next, add the primers. IGNORE STEPS THAT TELL YOU TO ADD WATER"
-  check: "Pipet 2.5 µL of primer with id %{primer1_1} into well 1."
-  check: "Pipet 2.5 µL of primer with id %{primer1_2} into well 1."
-  check: "Pipet 2.5 µL of primer with id %{primer2_1} into well 2."
-  check: "Pipet 2.5 µL of primer with id %{primer2_2} into well 2."
-  check: "Pipet 2.5 µL of primer with id %{primer3_1} into well 3."
-  check: "Pipet 2.5 µL of primer with id %{primer3_2} into well 3."
-  check: "Pipet 2.5 µL of primer with id %{primer4_1} into well 4."
-  check: "Pipet 2.5 µL of primer with id %{primer4_2} into well 4."
-  check: "Pipet 2.5 µL of primer with id %{primer5_1} into well 5."
-  check: "Pipet 2.5 µL of primer with id %{primer5_2} into well 5."
-  check: "Pipet 2.5 µL of primer with id %{primer6_1} into well 6."
-  check: "Pipet 2.5 µL of primer with id %{primer6_2} into well 6."
-  check: "Pipet 2.5 µL of primer with id %{primer7_1} into well 7."
-  check: "Pipet 2.5 µL of primer with id %{primer7_2} into well 7."
-  check: "Pipet 2.5 µL of primer with id %{primer8_1} into well 8."
-  check: "Pipet 2.5 µL of primer with id %{primer8_2} into well 8."
-  check: "Pipet 2.5 µL of primer with id %{primer9_1} into well 9."
-  check: "Pipet 2.5 µL of primer with id %{primer9_2} into well 9."
-  check: "Pipet 2.5 µL of primer with id %{primer10_1} into well 10."
-  check: "Pipet 2.5 µL of primer with id %{primer10_2} into well 10."
-  check: "Pipet 2.5 µL of primer with id %{primer11_1} into well 11."
-  check: "Pipet 2.5 µL of primer with id %{primer11_2} into well 11."
-  check: "Pipet 2.5 µL of primer with id %{primer12_1} into well 12."
-  check: "Pipet 2.5 µL of primer with id %{primer12_2} into well 12."
+  check: "Pipet 2.5 µL of primer with id %{primer1x1} into well 1."
+  check: "Pipet 2.5 µL of primer with id %{primer1x2} into well 1."
+  check: "Pipet 2.5 µL of primer with id %{primer2x1} into well 2."
+  check: "Pipet 2.5 µL of primer with id %{primer2x2} into well 2."
+  check: "Pipet 2.5 µL of primer with id %{primer3x1} into well 3."
+  check: "Pipet 2.5 µL of primer with id %{primer3x2} into well 3."
+  check: "Pipet 2.5 µL of primer with id %{primer4x1} into well 4."
+  check: "Pipet 2.5 µL of primer with id %{primer4x2} into well 4."
+  check: "Pipet 2.5 µL of primer with id %{primer5x1} into well 5."
+  check: "Pipet 2.5 µL of primer with id %{primer5x2} into well 5."
+  check: "Pipet 2.5 µL of primer with id %{primer6x1} into well 6."
+  check: "Pipet 2.5 µL of primer with id %{primer6x2} into well 6."
+  check: "Pipet 2.5 µL of primer with id %{primer7x1} into well 7."
+  check: "Pipet 2.5 µL of primer with id %{primer7x2} into well 7."
+  check: "Pipet 2.5 µL of primer with id %{primer8x1} into well 8."
+  check: "Pipet 2.5 µL of primer with id %{primer8x2} into well 8."
+  check: "Pipet 2.5 µL of primer with id %{primer9x1} into well 9."
+  check: "Pipet 2.5 µL of primer with id %{primer9x2} into well 9."
+  check: "Pipet 2.5 µL of primer with id %{primer10x1} into well 10."
+  check: "Pipet 2.5 µL of primer with id %{primer10x2} into well 10."
+  check: "Pipet 2.5 µL of primer with id %{primer11x1} into well 11."
+  check: "Pipet 2.5 µL of primer with id %{primer11x2} into well 11."
+  check: "Pipet 2.5 µL of primer with id %{primer12x1} into well 12."
+  check: "Pipet 2.5 µL of primer with id %{primer12x2} into well 12."
 end
 
 step 
@@ -161,10 +161,10 @@ step
 end
 
 
-release [primer1_1_stock[0],primer1_2_stock[0],primer2_1_stock[0],primer2_2_stock[0],primer3_1_stock[0],primer3_2_stock[0]]
-release [primer4_1_stock[0],primer4_2_stock[0],primer5_1_stock[0],primer5_2_stock[0],primer6_1_stock[0],primer6_2_stock[0]]
-release [primer7_1_stock[0],primer7_2_stock[0],primer8_1_stock[0],primer8_2_stock[0],primer9_1_stock[0],primer9_2_stock[0]]
-release [primer10_1_stock[0],primer10_2_stock[0],primer11_1_stock[0],primer11_2_stock[0],primer12_1_stock[0],primer12_2_stock[0]]
+release [primer1x1_stock[0],primer1x2_stock[0],primer2x1_stock[0],primer2x2_stock[0],primer3x1_stock[0],primer3x2_stock[0]]
+release [primer4x1_stock[0],primer4x2_stock[0],primer5x1_stock[0],primer5x2_stock[0],primer6x1_stock[0],primer6x2_stock[0]]
+release [primer7x1_stock[0],primer7x2_stock[0],primer8x1_stock[0],primer8x2_stock[0],primer9x1_stock[0],primer9x2_stock[0]]
+release [primer10x1_stock[0],primer10x2_stock[0],primer11x1_stock[0],primer11x2_stock[0],primer12x1_stock[0],primer12x2_stock[0]]
 release [plasmid1_stock[0],plasmid2_stock[0],plasmid3_stock[0],plasmid4_stock[0],plasmid5_stock[0],plasmid6_stock[0]]
 release [plasmid7_stock[0],plasmid8_stock[0],plasmid9_stock[0],plasmid10_stock[0],plasmid11_stock[0],plasmid12_stock[0]]
 
