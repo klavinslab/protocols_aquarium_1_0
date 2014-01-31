@@ -57,7 +57,7 @@ step
 end
 
 x=0
-while x < y-1
+while x < y
   step 
     description: "Pipet 1 µL of plasmid with id %{template_ids[x]} into well %{x+1}."
   end
@@ -65,7 +65,7 @@ while x < y-1
 end
 
 x=0
-while x < y-1
+while x < y
   step 
     description: "Add both forward and reverse primers"
     check: "Pipet 2.5 µL of primer with id %{forward_ids[x]} into well %{x+1}."
