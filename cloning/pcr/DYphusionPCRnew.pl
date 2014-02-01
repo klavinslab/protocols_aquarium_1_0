@@ -76,11 +76,13 @@ end
 
 x=0
 while x < y
+  a=forward_ids[x]
+  b=reverse_ids[x]
   z=x+1
   step 
     description: "Add both forward and reverse primers"
-    check: "Pipet 2.5 µL of primer with id %{forward_ids[x]} into well %{z}."
-    check: "Pipet 2.5 µL of primer with id %{reverse_ids[x]} into well %{z}."
+    check: "Pipet 2.5 µL of primer with id %{a} into well %{z}."
+    check: "Pipet 2.5 µL of primer with id %{b} into well %{z}."
   end
   x = x+1
 end
