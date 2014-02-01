@@ -1,9 +1,9 @@
 argument
-  tanneal: number, "The anneal temperature in degrees C"
   enzyme_id: sample("Enzyme"), "The Phsion HF Master Mix stock"
   forward_ids: sample("Primer") array, "Forward Primers"
   reverse_ids: sample("Primer") array, "Reverse Primers"
   template_ids: sample("Plasmid") array, "Plasmid Templates"  
+  tanneal: number, "The anneal temperature in degrees C"
 end
 
 take
@@ -29,7 +29,6 @@ step
   check: "Label the right most well with the number 1"
   note: "These wells will be refered to as 1 - 12"
 end
-
 if length(forward_ids) > 12
   step
     description: "Grab a second 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
@@ -38,7 +37,6 @@ if length(forward_ids) > 12
     note: "These wells will be refered to as 13 - 24"
   end
 end
-
 if length(forward_ids) > 24
   step
     description: "Grab a third 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
@@ -47,22 +45,21 @@ if length(forward_ids) > 24
     note: "These wells will be refered to as 25 - 36"
   end
 end
+if length(forward_ids) > 36
+  step
+    description: "Grab a fourth 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
+    check: "Label the left most well with your initials"
+    check: "Label the right most well with the number 4"
+    note: "These wells will be refered to as 37 - 48"
+  end
+end
 
 y=length(forward_ids)
 
 step 
-  description: "Begin by adding water"
-  note:"Pipet 19 µL molecular grade water into wells 1 through %{y}."
-  warning: "Be careful to pipette into the liquid, not the side of the tube."
+  description: "Pipet 19 µL molecular grade water into wells 1 through %{y}."
+  note:"Be careful to pipette into the liquid, not the side of the tube."
 end
-
-
-
-
-
-
-
-
 
 x=0
 while x < y
@@ -88,8 +85,8 @@ while x < y
 end
 
 step 
-  description: "Finally, add Phusion Master Mix. USE A NEW PIPETTE TIP FOR EACH WELL AND PIPETTE UP AND DOWN TO MIX"
-  note:"Pipet 25 µL Phusion Master Mix with id %{enzyme_id} into wells 1 through %{y}."
+  description:"Pipet 25 µL Phusion Master Mix with id %{enzyme_id} into wells 1 through %{y}."
+  note:"USE A NEW PIPETTE TIP FOR EACH WELL AND PIPETTE UP AND DOWN TO MIX"
 end
 
 step
