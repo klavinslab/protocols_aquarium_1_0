@@ -66,7 +66,7 @@ end
 
 x=0
 while x < y
-  a=template_ids[x][:id]
+  a=template_ids[x]
   step 
     description: "Pipet 1 µL of plasmid with id %{a} into well %{x+1}."
   end
