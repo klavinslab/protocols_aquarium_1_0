@@ -21,14 +21,8 @@ take
   
 end
 
+
 # The following three steps tell the user what to do with the items he has gathered
-step
-  description: "Cap the tube and label it with your initials and date."
-  warning: "Make sure to include the year on your label."
-  
-end
-
-
 step
   description: "Pipette 900 µL stock 50 percent Glycerol into the Cyro tube."
   warning: "Make sure not to touch the sides of the Glycerol bottle with the pipetter."
@@ -46,6 +40,14 @@ step
   note: "Hold against the vortexer for about thirty seconds at the highest setting."
   
 end
+
+step
+  description: "Cap the tube and label it with your initials and date."
+  warning: "Make sure to include the year on your label."
+  
+end
+
+
 
 produce
   r = 1 "Transformed E coli Glycerol Stock" from overnight_culture[0]
