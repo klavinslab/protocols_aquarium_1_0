@@ -26,14 +26,14 @@ end
 step
   description: "Grab a 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
   check: "Label the left most well with your initials"
-  check: "Label the right most well with the number 1"
+  check: "Label the right most well with the letter A"
   note: "These wells will be refered to as 1 - 12"
 end
 if length(forward_ids) > 12
   step
     description: "Grab a second 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
     check: "Label the left most well with your initials"
-    check: "Label the right most well with the number 2"
+    check: "Label the right most well with the letter B"
     note: "These wells will be refered to as 13 - 24"
   end
 end
@@ -41,7 +41,7 @@ if length(forward_ids) > 24
   step
     description: "Grab a third 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
     check: "Label the left most well with your initials"
-    check: "Label the right most well with the number 3"
+    check: "Label the right most well with the letter C"
     note: "These wells will be refered to as 25 - 36"
   end
 end
@@ -49,8 +49,16 @@ if length(forward_ids) > 36
   step
     description: "Grab a fourth 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
     check: "Label the left most well with your initials"
-    check: "Label the right most well with the number 4"
+    check: "Label the right most well with the letter D"
     note: "These wells will be refered to as 37 - 48"
+  end
+end
+if length(forward_ids) > 48
+  step
+    description: "Grab a fourth 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
+    check: "Label the left most well with your initials"
+    check: "Label the right most well with the letter E"
+    note: "These wells will be refered to as 49 - 60"
   end
 end
 
