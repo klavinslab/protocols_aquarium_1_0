@@ -13,16 +13,17 @@ take
 end
 
 step
- description: "Lable a 14 mL Test Tube with your initials and the date"
+ description: "Media Preperation"
+ check: "Lable a 14 mL Test Tube with your initials and the date"
+ check: "Use the 1000uL pipetter to add 2mL from the LB liquid aliquot to the test tube"
 end
 
 step
- description: "Use the 1000uL pipette to add 2mL from the LB liquid aliquot to the test tube"
-end
-
-step
- description: "Use a 10uL pipette tip to transfer one colony from the plate into your test tube"
- note: "Carefully hold the test tube at a steep angle so the pipette tip can reach the fluid, swirl the pipette tip to mix"
+ description: "Add cells to previously prepared growth media."
+ note: "Use a 10uL pipette tip to transfer one colony from the plate into your test tube"
+ check: "Place a clean tip on the 10uL pipetter"
+ check: "Carefully use the tip of the pipetter to scrape up one of the colonies from the plate"
+ check: "Eject the pipette tip into 14 mL test tube, swirl tube to mix"
 end
 
 produce
@@ -32,8 +33,7 @@ produce
  location:"B13.425"
 end
 
-release [falcon_tube[0], plate[0]]
-#release concat(falcon_tube, plate)
+release concat(falcon_tube, plate)
 
  
 
