@@ -35,6 +35,13 @@ step
 end
 
 step
+  description: "Save some cells for later"
+  check: "take 1ul from tube 3 and put it into a 1.5ml tube of LB+kan"
+  check: "take 1ul from tube 4 and put it into a 1.5ml tube of LB+kan"
+end
+#TODO: fix up the above
+
+step
   description: "boil at 95 degrees"
   note: "coordinate with another group and boil your cells (tubes 1-4) at 95 degrees in the thermocycler using program XXXXFILL ME INXXXX"
 end
