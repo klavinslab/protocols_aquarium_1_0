@@ -99,8 +99,9 @@ end
 if comb_n == 1
   step
     description: "Add comb"
-    note: "Retrieve a 6-well purple comb from A7.325. Position the gel box With the electrodes facing away from you. Add a purple comb to the side of the casting tray nearest the side of the gel box, thicker side down. Make sure it is well-situated in the groove of the casting tray."
+    note: "Retrieve a 12-well purple comb from A7.325. Position the gel box With the electrodes facing away from you. Add a purple comb to the side of the casting tray nearest the side of the gel box, thicker side down. Make sure it is well-situated in the groove of the casting tray."
     image: "gel_comb_placement"
+    warning: "Do not use the 6-well purple comb this time since we have 8 samples to load!"
   end
 else
   step
