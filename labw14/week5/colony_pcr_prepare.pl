@@ -24,17 +24,19 @@ end
 
 ii = 0
 while ii < 4
-  t = ii+1
+  t = ii + 1
+  ii = ii + 1
   jj = 0
   while jj < length(prev)
     r = prev[jj]
+    jj= jj + 1
     step 
       description: "Prepare Reaction"
       check:"Pipet 5 µL molecular grade water into the newly labeled PCR tube."
       check: "Pipet 3 µL of boiled cell %{t} into the tube."
-      check: "Pipet 1 µL of primer with id %{fwd} into the tube."
+      check: "Pipet 1 µL of primer with id %{pfwd} into the tube."
       check: "Pipet 1 µL of primer with id %{r} into the tube."
-      check: "Pipet 10 µL of Phusion Master Mix with id %{enzyme_id} into the tube."
+      check: "Pipet 10 µL of Phusion HF Master Mix with id %{enzyme_id} into the tube."
       check: "Use the tip to gently mix."
       note: "Be careful to pipette into the liquid, not the side of the tube."
     end
