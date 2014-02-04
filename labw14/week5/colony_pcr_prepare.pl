@@ -13,7 +13,7 @@ take
 end
 
 step
-  description: "Take eight 0.2 mL PCR tubes from PCR strip. Write your initials on it. Label from left to right as 1 to 8"
+  description: "Take eight 0.2 mL PCR tubes from PCR strip. Write your initials on it. Label from left to right as 1 to 8."
 end
 
 step
