@@ -71,7 +71,7 @@ step
 end
 
 
-release [fwd[0],phusion_stock[0]]
+release fwd
 release revs
 
 
