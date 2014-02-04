@@ -37,7 +37,7 @@ end
 place finish_pcr
   protocol: "labw14/week5/finish_colony_pcr.pl"
   group: aquarium_user
-  start: minutes(1) #change to 60
+  start: minutes(60) #change to 60
   window: minutes(1)
 end
 
@@ -66,7 +66,7 @@ end
 place image_gel
   protocol: "labw14/week5/image_gel.pl"
   group: aquarium_user
-  start: minutes(1) #change to 30
+  start: minutes(30)
   window: minutes(1)
 end
 
