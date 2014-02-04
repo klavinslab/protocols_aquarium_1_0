@@ -30,7 +30,7 @@ end
 
 produce
  s = 1 "Transformed E coli Glycerol Stock" from cell_culture_tube[0]
- note: "Make sure to also add your initials and todays date (mm/dd/yyyy) in addition to the item ID number.
+ note: "Make sure to also add your initials and todays date (mm/dd/yyyy) in addition to the item ID number."
  note: "This glycerol/cell culture mixture will potentially be stored in the -80 C freezer for many months,
         so be sure to label both the cap and the side of the tube for redundancy."
 end
