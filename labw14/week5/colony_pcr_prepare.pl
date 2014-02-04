@@ -13,11 +13,11 @@ take
 end
 
 step
-  description: "Label eight 0.2 mL PCR tubes. Write your initials on it. Label from left to right as 1 to 8"
+  description: "Take eight 0.2 mL PCR tubes from PCR strip. Write your initials on it. Label from left to right as 1 to 8"
 end
 
 step
-  description: "Spin the boiled cells down in the microcentrifuge on your bench for 1 minute"
+  description: "Spin the boiled cells 1-4 down in the microcentrifuge on your bench for 1 minute"
   warning: "Be extremely careful not to distrube the spun tubes.  They won't look any different but even the slightest tap can be detrimental."
 end
 
@@ -30,7 +30,7 @@ while ii < length(templates)
     step 
       description: "Prepare Reaction"
       check:"Pipet 5 µL molecular grade water into the labeled PCR tube."
-      check: "Pipet 3 µL of template %{t} into the tube."
+      check: "Pipet 3 µL of boiled cell %{t} into the tube."
       check: "Pipet 1 µL of primer with id %{fwd} into the tube."
       check: "Pipet 1 µL of primer with id %{r} into the tube."
       check: "Pipet 10 µL of Phusion Master Mix with id %{enzyme_id} into the tube."
