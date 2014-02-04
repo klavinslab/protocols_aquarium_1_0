@@ -55,12 +55,13 @@ step
   bullet: "Take a pipette tip"
   bullet: "Carefully lift off the selected colony from the plate"
   bullet: "Scrape pipette tip onto side of culture tube so that the cells are suspended in the media."
-  bullet: "Discard tip and close culture plate"
+  bullet: "Discard tip"
+  bullet: "Place lid on culture plate and reseal with parafilm"
 end
 
 produce
   1 "Overnight suspension culture" from plate[0]
-  note: "Wrap the plate in parafilm and place in 37.0 degree incubator"
+  note: "Place 14 ml test tube in 37.0 degree incubator"
   location: "B13.425"
   release test_tube[0]
 end
