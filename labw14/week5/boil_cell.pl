@@ -13,7 +13,7 @@ step
 end
 
 step
-  description: "Add 20 μL molecular grade water to tubes 1-4"
+  description: "Add 20 μL molecular grade water to tube 1-4"
 end
 
 t1= template[0]
