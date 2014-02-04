@@ -18,9 +18,11 @@ step
  check: "Add 900uL 50%% glycerol stock to the 1.5mL sterile tube"
  note: "Be sure to use STERILE technique while handling the gylcerol stock.  If you contaminate this stock
         it wil ruin everyone else's experients! This means: loosen caps before loading the pipette tip, and
-        do not touch the inside of the jar with the micropipetter"
+        do not touch the inside of the jar with the micropipetter.  You must hold the cap in your hand while
+        extracting fluid with the micro-pipetter, rather than placing it on the lab bench.
+        do not try to re-use pipette tips."
  check: "Add 900uL cell culture to the 1.5mL sterile tube"
- check: "Vortex the 1.5mL sterile tube for 20sec on high"
+ check: "Vortex the 1.5mL sterile tube for 15s on high power. Use the more powerful VWR analog vortex mixer at speed 10"
 end
 
 produce
@@ -31,4 +33,4 @@ produce
 end
 
 release [cell_culture_tube[0], glycerol[0]]
-#release concat(falcon_tube, plate)
+#elease concat(cells_to_store, glycerol)
