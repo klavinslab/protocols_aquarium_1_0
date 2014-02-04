@@ -17,7 +17,7 @@ end
 
 take
   plate = item Transformed_E_coli_Strain_id
-  note: "Place the items on the bench"
+  note: "Place the items on the bench. Check the LB aliquot for contamination by swirling it and holding it up to the light to watch for suspended particles."
   
   lb = 1 "50 mL LB liquid aliquot (sterile)"
   test_tube = 1 "14 mL Test Tube"
@@ -38,6 +38,7 @@ step
   bullet: "Loosen cap of LB aliquot"
   bullet: "Put tip in pipette and add 2 mL of of LB in 14 ml test tube (culture tube)"
   bullet: "Recap LB aliquot"
+  bullet: "Discard Tip"
 end
 
 step
@@ -56,7 +57,7 @@ end
 
 produce
   1 "Overnight suspension culture" from plate[0]
-  note: "Put in 37.0 degree incubator"
+  note: "Wrap the plate in parafilm and place in 37.0 degree incubator"
   location: "B13.425"
   release test_tube[0]
 end
