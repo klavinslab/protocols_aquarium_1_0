@@ -1,6 +1,6 @@
 argument
   enzyme_id: sample("Enzyme"), "The Phsion HF Master Mix stock"
-  fragment_names: number array, "Fragment Names"
+  fragment_names: string array, "Fragment Names"
   forward_ids: sample("Primer") array, "Forward Primers"
   reverse_ids: sample("Primer") array, "Reverse Primers"
   template_ids: sample("Plasmid") array, "Plasmid Templates"  
