@@ -1,5 +1,5 @@
 argument 
-  Transformed_E_coli_Strain_id: sample, "This is the plate that we are drawing colonies from" 
+  Transformed_E_coli_Strain_id: sample, "This is the plate from which we draw colonies" 
 end
 
 take 
@@ -17,17 +17,17 @@ step
   description:
     "Pipette 2 mL of LB into your test tube"
   note :
-    "1. Make sure to not contaminate the LB media.\n
-    2. Set the 1 mL pipettor to 100 and pipette the LB solution twice into the tube"
+    "NOTE: NEVER CONTAMINATE LB MEDIA.\n
+    Use the 1000 uL pippete to add 2mL of LB into your tube. "
 end
 
 step
   description:
     "Pick up a colony"
   note:
-    "1. Choose a colony that is medium sized, isolated and round.\n
-     2. Label the colony on the back of the plate with your initials. \n
-     3. Using a 10 ul pipette tip scrape off a colony."
+    "1. Locate a colony that is medium sized, isolated and round.\n
+     2. Label it on the back of the plate with your initials. \n
+     3. Using a 10 ul pipette tip scrape off the colony."
 end
 
 step
@@ -35,7 +35,7 @@ step
     "Deposit colony into 14 mL test tube"
   note:
     "1. Take the cap off of the test tube and slightly tilt it. \n
-    2. Place the pipette tip with the colony into the solution and swirl gently.\n 
+    2. Place the pipette tip with the colony into the test tube solution and swirl gently.\n 
     3. Take the tip out and discard it. "
 end
 
