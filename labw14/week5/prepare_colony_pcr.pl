@@ -43,7 +43,7 @@ while ii < 4
       check: "Pipet 1 µL of primer with id %{pfwd} into tube %{tube_number}."
       check: "Pipet 1 µL of primer with id %{r} into tube %{tube_number}."
       check: "Use the tip to gently mix."
-      note: "Be careful to pipette into the liquid, not the side of the tube."
+      note: "Be careful to pipette into the liquid, not the side of the tube. Always use a new tip."
       warning: "Be extremely careful not to distrube the boiled cell tubes. They won't look any different but even the slightest tap can be detrimental."
     end
   end
@@ -52,6 +52,7 @@ end
 step
   description: "Prepare reaction"
   check: "Pipet 10 µL of Phusion HF Master Mix with id %{enzyme_id} into each PCR tube 1-8."
+  note: "Use the tip to gently mix after each pipette."
 end
 
 release phusion_stock
