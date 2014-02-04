@@ -1,6 +1,6 @@
 # Protocol to transfer colonies from tube to plate
 #
-#Authors: Pramod Chevali, Patrick Ma
+#Authors: Pramod Chavali, Patrick Ma
 #
 # January 29, 2014
 ##
@@ -36,9 +36,9 @@ end
 step
   description: "Prepare culture tube"
   bullet: "Loosen cap of LB aliquot"
-  bullet: "Put tip in pipette and add 2 mL of of LB in 14 ml test tube (culture tube)"
+  bullet: "Put tip in pipette and add 1 mL of of LB in 14 ml test tube (culture tube)"
+  bullet: "Discard tip and repeat previous step for a total of 2 ml in the test tube"
   bullet: "Recap LB aliquot"
-  bullet: "Discard Tip"
 end
 
 step
