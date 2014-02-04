@@ -18,7 +18,7 @@ end
 
 step
   description: "Spin down the boiled cell 1-4 in the microcentrifuge on your bench for 1 minute"
-  note: "The boiled cell 1-4 are the PCR tubes you took from thermal cylcler from your previous protocol."
+  note: "The boiled cell 1-4 are four PCR tubes you took from thermal cylcler from your previous protocol."
   warning: "Be extremely careful not to distrube the spun tubes.  They won't look any different but even the slightest tap can be detrimental."
 end
 
