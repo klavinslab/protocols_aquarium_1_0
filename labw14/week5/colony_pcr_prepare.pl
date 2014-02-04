@@ -25,11 +25,12 @@ end
 ii = 0
 while ii < length(templates)
   t = ii+1
+  jj = 0
   while jj < length(prev)
     r = prev[jj]
     step 
       description: "Prepare Reaction"
-      check:"Pipet 5 µL molecular grade water into the labeled PCR tube."
+      check:"Pipet 5 µL molecular grade water into the newly labeled PCR tube."
       check: "Pipet 3 µL of boiled cell %{t} into the tube."
       check: "Pipet 1 µL of primer with id %{fwd} into the tube."
       check: "Pipet 1 µL of primer with id %{r} into the tube."
