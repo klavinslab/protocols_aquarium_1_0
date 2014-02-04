@@ -9,41 +9,59 @@ take
 end
 
 step
-  description: "Take 4 tubes from a PCR tube strip and label them 1 through 4 on the side." 
+  description: "Take 4 tubes from a PCR tube strip and label them 1 through 4 on the side, also write your initials on it." 
 end
 
 step
-  description: "add 20 ul molecular grade water to tubes 1-4"
+  description: "Add 20 μL molecular grade water to tubes 1-4"
 end
 
 t1= template[0]
 t2= template[1]
 step
-  description: "take 1 ul from tube %{t1} and transfer it to tube 1"
+  description: "Take 1 μL from tube %{t1} and transfer it to tube 1"
 end
 step
-  description: "take 1 ul from tube %{t2} and transfer it to tube 2"
+  description: "Take 1 μL from tube %{t2} and transfer it to tube 2"
 end
 
 step
   description: "Pick a colony from the plate sector 3 and put it into tube 3"
-  note: "Find a colony in your plate sector 3 and pick up the entire colony with a 200 ul (green box) pipette tip.  Then transfer it to tube 3."
+  note: "Find a colony in your plate sector 3 and pick up the entire colony with a 200 μL (green box) pipette tip.  Then transfer it to tube 3."
 end
 step
   description: "Pick a colony from the plate sector 4 and put it into tube 3"
-  note: "Find a colony in your plate sector 4 and pick up the entire colony with a 200 ul (green box) pipette tip.  Then transfer it to tube 4."
+  note: "Find a colony in your plate sector 4 and pick up the entire colony with a 200 μL (green box) pipette tip.  Then transfer it to tube 4."
 end
 
 step
   description: "Save some cells for later"
-  check: "take 1 ul from tube 3 and put it into a 1.5 ml tube of LB+kan"
-  check: "take 1 ul from tube 4 and put it into a 1.5 ml tube of LB+kan"
+  check: "Labe two 1.5 mL tubes with your initials, date and save3 and save4 for each tube."
+	check: "Add 1 mL of LB+Kan into the each tube."
+	check: "Take 1 μL from tube 3 and put it into tube save3."
+  check: "Take 1 μL from tube 4 and put it into tube save4."
 end
 #TODO: fix up the above
 
 step
-  description: "boil at 95 degrees"
-  note: "coordinate with another group and boil your cells (tubes 1-4) at 95 degrees in the thermocycler using program XXXXFILL ME INXXXX"
+  description: "Place the tube 1-4 into thermal cycler T2 at B3.335"
+end
+
+step
+  description: "Choose program on the thermal cycler"
+  check: "Click Home then click Saved Protocol, choose LABW14 folder, choose BOIL."
+  check: "Close the lid and click start."
+  check: "Choose 20 µL option."
+  image: "thermal_cycler_home"
+end
+step
+  description: "Wait for 12 minutes for the cells to boil"
+	timer: { hours: 0, minutes: 12, seconds: 0 }
+end
+
+step
+  description: "Open the lid and take 4 PCR tubes you placed."
+  note: "Place the tube on your bench, these four tubes will be used as your template for the following reaction setup."
 end
 #produces 4 templates.  each template has 3 primers and 2 reactions (f+r1,f+r2)
 
@@ -58,6 +76,5 @@ end
 
 release liquidtemplate
 release platetemplate
-
 
 
