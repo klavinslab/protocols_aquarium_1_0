@@ -19,10 +19,10 @@ end
 t1= template[0]
 t2= template[1]
 step
-  description: "Take 1 μL from tube %{t1} and transfer it to tube 1"
+  description: "Take 1 μL from tube with id %{t1} and transfer it to tube 1"
 end
 step
-  description: "Take 1 μL from tube %{t2} and transfer it to tube 2"
+  description: "Take 1 μL from tube with id %{t2} and transfer it to tube 2"
 end
 
 step
