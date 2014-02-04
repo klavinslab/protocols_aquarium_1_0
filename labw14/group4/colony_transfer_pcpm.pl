@@ -52,7 +52,10 @@ end
 
 step
   description: "Transfer Colony"
-  note: "Take a pipette tip and carefully lift off the selected colony from the plate and scrape onto side of culture tube so that the cells are suspended in the media."
+  bullet: "Take a pipette tip"
+  bullet: "Carefully lift off the selected colony from the plate"
+  bullet: "Scrape pipette tip onto side of culture tube so that the cells are suspended in the media."
+  bullet: "Discard tip and close culture plate"
 end
 
 produce
