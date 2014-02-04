@@ -1,7 +1,7 @@
 argument
   template: sample array, "prepicked liquied cultures from colonies"
   template_plate: sample, "your plate from last week"
-  pfwd: sample("Primer"), "The forward primer"
+  pfwd: sample, "The forward primer"
   prev: sample array, "two reverse primers"
 #  enzyme_id: sample, "The Phsion HF Master Mix stock"
 #  ladder: sample, "The ladder for your gel"
