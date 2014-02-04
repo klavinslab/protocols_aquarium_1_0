@@ -1,34 +1,43 @@
 argument
-  primer1: sample, "The first primer"
-  primer2: sample, "The second primer"
-  plasmid_id: sample, "The plasmid stock"
+  pfwd: sample, "The forward primer"
+  prev: sample array, "two reverse primers"
+  #templates: sample array, "The templates you just made" #just assume you have it
   enzyme_id: sample, "The Phsion HF Master Mix stock"
 end
 
 take
-  primer1_stock = item primer1
-  primer2_stock = item primer2
-  plasmid_stock = item plasmid_id
+  fwd = item pfwd
+  revs = item prev
+  #genomicdna = item templates
   phusion_stock = item enzyme_id
 end
 
 step
-  description: "This protocol prepares the PCR mix in PCR tube and starts it in thermal cycler."
+  description: "Label eight 0.2 mL PCR tubes. Write your initials on it."
 end
 
 step
-  description: "Label a 0.2 mL PCR tube. Write your initials on it."
+  description: "spin the boiled cells down in the microcentrifuge on your bench for 1 minute"
+  warning: "be extremely careful not to distrube the spun tubes.  They won't look any different but even the slightest tap can be detrimental."
 end
 
-step 
-  description: "Prepare Reaction"
-  check:"Pipet 7 µL molecular grade water into the labeled PCR tube."
-  check: "Pipet 1 µL of plasmid with id %{plasmid_id} into the tube."
-  check: "Pipet 1 µL of primer with id %{primer1} into the tube."
-  check: "Pipet 1 µL of primer with id %{primer2} into the tube."
-  check: "Pipet 10 µL of Phusion Master Mix with id %{enzyme_id} into the tube."
-  check: "Use the tip to gently mix."
-  note: "Be careful to pipette into the liquid, not the side of the tube."
+
+ii = 0
+while ii < length(templates)
+  t = ii+1
+  while jj < length(prev)
+    r = prev[jj]
+    step 
+      description: "Prepare Reaction"
+      check:"Pipet 5 µL molecular grade water into the labeled PCR tube."
+      check: "Pipet 3 µL of template %{t} into the tube."
+      check: "Pipet 1 µL of primer with id %{fwd} into the tube."
+      check: "Pipet 1 µL of primer with id %{r} into the tube."
+      check: "Pipet 10 µL of Phusion Master Mix with id %{enzyme_id} into the tube."
+      check: "Use the tip to gently mix."
+      note: "Be careful to pipette into the liquid, not the side of the tube."
+    end
+  end
 end
 
 release phusion_stock
@@ -40,7 +49,7 @@ step
 end
 
 step
-  description: "Place the tube into thermal cycler T2 at B3.335"
+  description: "Place the tube strip into thermal cycler T2 at B3.335"
 end
 
 step
@@ -56,6 +65,7 @@ step
 end
 
 
-release [primer1_stock[0],primer2_stock[0],plasmid_stock[0]]
+release [fwd[0],phusion_stock[0]]
+release revs
 
 
