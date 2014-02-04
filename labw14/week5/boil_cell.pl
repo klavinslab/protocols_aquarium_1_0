@@ -13,7 +13,7 @@ step
 end
 
 step
-  description: "Add 20 μL molecular grade water to tube 1-4"
+  description: "Add 20 μL molecular grade water to each tube 1-4"
 end
 
 t1= template[0]
@@ -61,7 +61,7 @@ end
 
 step
   description: "Open the lid and take the four PCR tubes you placed."
-  note: "Place the tube on your bench, these four tubes will be used as your boiled cell 1-4 for the following reaction setup."
+  note: "Place tubes on your bench, these four tubes will be used as your boiled cell 1-4 for the following reaction setup."
 end
 #produces 4 templates.  each template has 3 primers and 2 reactions (f+r1,f+r2)
 
