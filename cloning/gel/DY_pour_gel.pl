@@ -16,6 +16,7 @@ end
 step
   description: "Work in the gel weigh area"
   note: "Work in the gel weigh area (A5.300-A5.305) until otherwise indicated."
+  warning: "Wear gloves at all times!"
 end
 
 
