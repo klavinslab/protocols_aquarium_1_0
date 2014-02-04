@@ -23,7 +23,7 @@ end
 
 
 ii = 0
-while ii < length(templates)
+while ii < 4
   t = ii+1
   jj = 0
   while jj < length(prev)
