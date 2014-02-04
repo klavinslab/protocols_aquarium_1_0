@@ -30,15 +30,15 @@ step
   note: "Find a colony in your plate sector 3 and pick up the entire colony with a 200 μL (green box) pipette tip.  Then transfer it to tube 3."
 end
 step
-  description: "Pick a colony from the plate sector 4 and put it into tube 3"
+  description: "Pick a colony from the plate sector 4 and put it into tube 4"
   note: "Find a colony in your plate sector 4 and pick up the entire colony with a 200 μL (green box) pipette tip.  Then transfer it to tube 4."
 end
 
 step
   description: "Save some cells for later"
-  check: "Labe two 1.5 mL tubes with your initials, date and save3 and save4 for each tube."
-	check: "Add 1 mL of LB+Kan into the each tube."
-	check: "Take 1 μL from tube 3 and put it into tube save3."
+  check: "Labe two 1.5 mL tubes with your initials, date. Write save3 the first tube and save4 on second tube."
+  check: "Add 1 mL of LB+Kan into the each tube."
+  check: "Take 1 μL from tube 3 and put it into tube save3."
   check: "Take 1 μL from tube 4 and put it into tube save4."
 end
 #TODO: fix up the above
