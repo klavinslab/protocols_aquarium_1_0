@@ -113,15 +113,11 @@ release forward_primer_stock
 release reverse_primer_stock
 release plasmid_stock
 
-
-
 x=0
 while x < y
-#  a=fragment_names[x]
   produce
     q = 1 "PCR Result" of fragment_names[x]
     location: "Thermocycler"
   end
   x = x+1
 end
-
