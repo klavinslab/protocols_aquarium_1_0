@@ -1,5 +1,6 @@
 argument
   enzyme_id: sample("Enzyme"), "The Phsion HF Master Mix stock"
+  fragment_names: number array, "Fragment Names"
   forward_ids: sample("Primer") array, "Forward Primers"
   reverse_ids: sample("Primer") array, "Reverse Primers"
   template_ids: sample("Plasmid") array, "Plasmid Templates"  
@@ -111,3 +112,15 @@ release [phusion_stock[0]]
 release forward_primer_stock
 release reverse_primer_stock
 release plasmid_stock
+
+
+
+x=0
+while x < y
+  a=fragment_names[x]
+  produce
+    q = 1 "Fragment" of "%{a}"
+  end
+  x = x+1
+end
+
