@@ -38,12 +38,13 @@ step
   bullet: "Set the ISO to 100 by turning the larger dial"
   bullet: "Set the white balance to tungsten by pressing the center button and navigating to tungsten."
   bullet: "Set the shutter speed to 4 seconds by turning the menu wheel."
+  bullet: "Adjust the focus by manully tuning the focus"
 end
 
 step
   description: "Take a picture of the gel."
   note: "Zoom in such that the gel takes up the entire field of view."
-  note: "Press the trigger half way to focus and all the way down to take the photo. Leave the camera on
+  note: "Press the trigger half way to focus until you hear two beeps and all the way down to take the photo. Leave the camera on
   as it takes time to transmit the photo to the computer wirelessly"
 end
 
@@ -60,5 +61,5 @@ step
     "Rename the picture in Dropbox"
   note: 
     "In gel room touch screen computer, open Dropbox/GelImages, under today's date folder and find the picture you just took.\n
-     Rename the picture as the labw14_week3_gel_group_id, id should be replaced as your group id."
+     Rename the picture as the labw14_week5_gel_group_id, id should be replaced as your group id."
 end
