@@ -36,8 +36,8 @@ end
 
 step
   description: "Save some cells for later"
-  check: "take 1ul from tube 3 and put it into a 1.5ml tube of LB+kan"
-  check: "take 1ul from tube 4 and put it into a 1.5ml tube of LB+kan"
+  check: "take 1 ul from tube 3 and put it into a 1.5 ml tube of LB+kan"
+  check: "take 1 ul from tube 4 and put it into a 1.5 ml tube of LB+kan"
 end
 #TODO: fix up the above
 
