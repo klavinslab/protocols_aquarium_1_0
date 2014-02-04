@@ -17,12 +17,14 @@ step
 end
 
 step
-  description: "Spin the boiled cells 1-4 down in the microcentrifuge on your bench for 1 minute"
+  description: "Spin down the boiled cell 1-4 in the microcentrifuge on your bench for 1 minute"
+  note: "The boiled cell 1-4 are the PCR tubes you took from thermal cylcler from your previous protocol."
   warning: "Be extremely careful not to distrube the spun tubes.  They won't look any different but even the slightest tap can be detrimental."
 end
 
 
 ii = 0
+tube_number = 0
 while ii < 4
   t = ii + 1
   ii = ii + 1
@@ -30,9 +32,10 @@ while ii < 4
   while jj < length(prev)
     r = prev[jj]
     jj= jj + 1
+    tube_number = tube_number + 1
     step 
       description: "Prepare Reaction"
-      check:"Pipet 5 µL molecular grade water into the newly labeled PCR tube."
+      check:"Pipet 5 µL molecular grade water into the newly labeled PCR tube %{tube_number}."
       check: "Pipet 3 µL of boiled cell %{t} into the tube."
       check: "Pipet 1 µL of primer with id %{pfwd} into the tube."
       check: "Pipet 1 µL of primer with id %{r} into the tube."
