@@ -13,12 +13,12 @@ take
 end
 
 step
-  description: "Label eight 0.2 mL PCR tubes. Write your initials on it."
+  description: "Label eight 0.2 mL PCR tubes. Write your initials on it. Label from left to right as 1 to 8"
 end
 
 step
-  description: "spin the boiled cells down in the microcentrifuge on your bench for 1 minute"
-  warning: "be extremely careful not to distrube the spun tubes.  They won't look any different but even the slightest tap can be detrimental."
+  description: "Spin the boiled cells down in the microcentrifuge on your bench for 1 minute"
+  warning: "Be extremely careful not to distrube the spun tubes.  They won't look any different but even the slightest tap can be detrimental."
 end
 
 
