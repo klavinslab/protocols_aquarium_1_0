@@ -120,7 +120,8 @@ while x < y
   a=fragment_names[x]
   produce
 #    q = 1 "PCR Results" of "%{a}"
-    q = 1 "PCR Results" of "fYG1"
+    q = 1 "PCR Result" of "fYG1"
+    location: "Thermocycler"
   end
   x = x+1
 end
