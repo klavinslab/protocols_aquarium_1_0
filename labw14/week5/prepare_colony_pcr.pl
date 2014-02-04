@@ -22,6 +22,10 @@ step
   warning: "Be extremely careful not to distrube the spun tubes.  They won't look any different but even the slightest tap can be detrimental."
 end
 
+step
+  description: "Prepare reaction"
+  check: "Pipet 5 µL molecular grade water into each newly labeled PCR tube 1-8."
+end
 
 ii = 0
 tube_number = 0
@@ -34,17 +38,20 @@ while ii < 4
     jj= jj + 1
     tube_number = tube_number + 1
     step 
-      description: "Prepare Reaction"
-      check:"Pipet 5 µL molecular grade water into the newly labeled PCR tube %{tube_number}."
+      description: "Prepare reaction"
       check: "Pipet 3 µL of boiled cell %{t} into tube %{tube_number}."
       check: "Pipet 1 µL of primer with id %{pfwd} into tube %{tube_number}."
       check: "Pipet 1 µL of primer with id %{r} into tube %{tube_number}."
-      check: "Pipet 10 µL of Phusion HF Master Mix with id %{enzyme_id} into tube %{tube_number}."
       check: "Use the tip to gently mix."
       note: "Be careful to pipette into the liquid, not the side of the tube."
       warning: "Be extremely careful not to distrube the boiled cell tube. They won't look any different but even the slightest tap can be detrimental."
     end
   end
+end
+
+step
+  description: "Prepare reaction"
+  check: "Pipet 10 µL of Phusion HF Master Mix with id %{enzyme_id} into each PCR tube 1-8."
 end
 
 release phusion_stock
