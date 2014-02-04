@@ -2,7 +2,7 @@ information "Load and run an agarose gel."
 
 
 argument
-  fragment_one: sample
+  fragment_names: sample("Fragment") array, "Fragment Names"
   ladder_one: sample
   fragment_volume: number, "The volume of PCR fragment to load in µL."
 end
@@ -20,9 +20,24 @@ end
 
 take
   gel = 1 "50 mL 1 Percent Agarose Gel in Gel Box"
-  fragment = item fragment_one
+  fragment = item fragment_names
   ladder = item ladder_one
   loading_dye = 1 "Gel Loading Dye Blue (6X)"
+end
+if length(fragment_names) > 10
+  take
+    gel = 1 "50 mL 1 Percent Agarose Gel in Gel Box"
+  end
+end
+if length(fragment_names) > 20
+  take
+    gel = 1 "50 mL 1 Percent Agarose Gel in Gel Box"
+  end
+end
+if length(fragment_names) > 30
+  take
+    gel = 1 "50 mL 1 Percent Agarose Gel in Gel Box"
+  end
 end
 
 
@@ -34,32 +49,52 @@ end
 
 
 step
-  description: "Set up the gel box."
-  check: "Carefully remove the casting tray (with gel) and place it on the bench."
-  check: "Using the graduated cylinder at A5.305, fill the gel box with 200 mL of 1X TAE from J2 at A5.500. TAE should just cover the center of the gel box."
-  check: "With the gel box electrodes facing away from you, place the casting tray (with gel) back in the gel box. The top lane should be on your left, as the DNA will move to the right."
+  description: "Set up the gel box(s)."
+  check: "Carefully remove the casting tray(s) (with gel(s)) and place it on the bench."
+  check: "Using the graduated cylinder at A5.305, fill the gel box(s) with 200 mL of 1X TAE from J2 at A5.500. TAE should just cover the center of the gel box(s)."
+  check: "With the gel box(s) electrodes facing away from you, place the casting tray(s) (with gel(s)) back in the gel box(s). The top lane(s) should be on your left, as the DNA will move to the right."
   check: "Using the graduated cylinder, add 50 mL of 1X TAE from J2 at A5.500 so that the surface of the gel is covered."
-  check: "Carefully remove the comb(s) and place them in the appropriate box in A7.325."
+  check: "Carefully remove the comb(s) and place them in the appropriate box(s) in A7.325."
   check: "Put the graduated cylinder back at A5.305."
   image: "gel_fill_TAE_to_line"
 end
 
-
+num = length(fragment_names)
 dye_volume = fragment_volume / 5.0
 step
-  description: "Add loading dye to the PCR fragment"
-  note: "Using a 10 µL or 100 µL pipetter, add %{dye_volume} µL of loading dye to the PCR results with id %{fragment_one}."
+  description: "Add loading dye to each of the the %{num} PCR fragments"
+  note: "Add %{dye_volume} µL of loading dye to the PCR results."
   image: "gel_add_loading_dye"
 end
 
-
 release loading_dye
-
 
 step
   description: "Load the ladder"
-  note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into the first (top-left) well of the gel."
+  note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into the FIRST (top-left) well."
   image: "gel_begin_loading"
+end
+if length(fragment_names) > 5
+  step
+    description: "Load the ladder"
+    note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into the SIXTH (bottom-left) well."
+    image: "gel_begin_loading"
+  end
+end
+if length(fragment_names) > 10
+  step
+    description: "Load the ladder in gel box 2"
+    note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into the TWELFTH (Gel 2: top-second to left) well."
+    image: "gel_begin_loading"
+  end
+end
+end
+if length(fragment_names) > 15
+  step
+    description: "Load the ladder in gel box 2"
+    note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into the SECOND (top-second to left) well of the gel."
+    image: "gel_begin_loading"
+  end
 end
 
 
