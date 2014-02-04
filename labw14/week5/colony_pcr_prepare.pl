@@ -36,12 +36,13 @@ while ii < 4
     step 
       description: "Prepare Reaction"
       check:"Pipet 5 µL molecular grade water into the newly labeled PCR tube %{tube_number}."
-      check: "Pipet 3 µL of boiled cell %{t} into the tube."
-      check: "Pipet 1 µL of primer with id %{pfwd} into the tube."
-      check: "Pipet 1 µL of primer with id %{r} into the tube."
-      check: "Pipet 10 µL of Phusion HF Master Mix with id %{enzyme_id} into the tube."
+      check: "Pipet 3 µL of boiled cell %{t} into tube %{tube_number}."
+      check: "Pipet 1 µL of primer with id %{pfwd} into tube %{tube_number}."
+      check: "Pipet 1 µL of primer with id %{r} into tube %{tube_number}."
+      check: "Pipet 10 µL of Phusion HF Master Mix with id %{enzyme_id} into tube %{tube_number}."
       check: "Use the tip to gently mix."
       note: "Be careful to pipette into the liquid, not the side of the tube."
+      warning: "Be extremely careful not to distrube the boiled cell tube. They won't look any different but even the slightest tap can be detrimental."
     end
   end
 end
