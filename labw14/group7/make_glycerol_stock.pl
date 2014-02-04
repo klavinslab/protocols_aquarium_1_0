@@ -25,11 +25,11 @@ step
  note: " - Do not touch the inside of the tube with the micropipetter."
  note: " - Do not re-use pipette tips."
  check: "Pipette 900uL of cell suspension into the 1.5mL sterile tube"
- check: "Vortex the 1.5mL sterile tube for 15s using the VWR analog vortex mixer at speed 10."
+ check: "Vortex the 1.5mL sterile tube for 15s at speed 10 using the VWR analog vortex mixer."
 end
 
 produce
- s = 1 "Transformed E. Coli in Glycerol Stock" from cell_culture_tube[0]
+ s = 1 "transformed E. Coli in 50% glycerol" from cell_culture_tube[0]
  note: "Make sure to also add your initials and todays date (mm/dd/yyyy) in addition to the item ID number.
         This glycerol/cell culture mixture will potentially be stored in the -80 C freezer for many months,
         so be sure to label both the cap and the side of the tube for redundancy."
