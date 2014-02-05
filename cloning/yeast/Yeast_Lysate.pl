@@ -3,7 +3,7 @@ argument
 end
 
 take
-  strains= item unique(YeastStrain_id)
+  strains = item YeastStrain_id
 end
 
 step
