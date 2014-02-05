@@ -1,5 +1,5 @@
 place p1
-    protocol: "labw14/group1/osusmeta.pl "
+    protocol: "labw14/group1/osusmeta.pl"
     group: "group1"
     marked: true
     argument
@@ -10,7 +10,7 @@ place p1
 end
 
 place p2
-    protocol: "labw14/group1/mglycstock.pl "
+    protocol: "labw14/group1/mglycstock.pl"
     group: "group1"
     argument
       Transformed_E_coli_Strain_id: sample
