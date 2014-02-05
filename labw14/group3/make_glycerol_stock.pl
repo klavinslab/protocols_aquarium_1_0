@@ -9,7 +9,7 @@ end
 
 take
   cells_to_store = item suspension
-  #glycerol = 1 "50 percent Glycerol (sterile)"
+  glycerol = 1 "50 percent Glycerol (sterile)"
   sterile_tube = 1 "Cryo Tube"
 end
 
@@ -31,4 +31,4 @@ produce
 end
 
 
-release cells_to_store
+release concat(cells_to_store, glycerol)
