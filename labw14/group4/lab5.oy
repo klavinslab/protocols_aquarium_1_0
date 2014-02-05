@@ -15,7 +15,7 @@ place suspension
   end
 end
 
-wire (suspension, "suspended_cells_id") => (glycerol_stock, "Transformed_E_coli_Strain_id")
+wire (suspension, "suspended_cells_id") => (glycerol_stock, "culture_tube")
 
 # proceed forward
 transition [suspension] => [glycerol_stock] when !error(0) && completed(0) end
