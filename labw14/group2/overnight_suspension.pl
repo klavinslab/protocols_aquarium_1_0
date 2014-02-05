@@ -1,5 +1,5 @@
 argument 
-  e_id: sample array, ("Transformed E coli Strain"), "This is the plate from which we draw colonies" 
+  e_id: sample ("Transformed E coli Strain") array, "This is the plate from which we draw colonies" 
 end
 
 take 
