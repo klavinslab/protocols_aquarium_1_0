@@ -40,6 +40,7 @@ step
 end
 
 x = 0
+r = 0
 
 while x < length(e_id)
 
@@ -48,6 +49,7 @@ while x < length(e_id)
     note: "Keep on bench"
     location: "Bench"
   end
+  r[x] = t
   x = x + 1
 end
 
@@ -58,7 +60,7 @@ end
 
 step
   description:
-      "Store tube in incubator %{t}"
+      "Store tube in incubator %{r}"
   note:
     "Store the tube in the 37 degC shaker incubator located at B13.425."
 end
