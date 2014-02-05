@@ -25,11 +25,13 @@ step
  warning: "Be as sterile as possible. Do not touch the inside of the glycerol bottle with either a tip or pipette."
 end
 
-
-produce
- 1 "Transformed E coli Glycerol Stock" from tube
- release glycerol_tube
- note: "Place your Cryo tube in the -80 C refrigerator"
+while x < length(tube)
+ produce
+  r = concat(r, 1 "Transformed E coli Glycerol Stock" from tube)
+  release glycerol_tube
+  note: "Place your Cryo tube in the -80 C refrigerator"
+ end
+ x = x + 1
 end
 
 release [glycerol_bottle[0], tube]
