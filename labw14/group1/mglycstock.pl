@@ -8,7 +8,7 @@ end
 
 take
   glycerol_bottle = 1 "50 percent Glycerol (sterile)"
-  glycerol_tube = 1 "Cryo tube"
+  glycerol_tube = length(tube) "Cryo tube"
   tube = item Transformed_E_coli_Strain_id
 end
 
@@ -38,5 +38,5 @@ while x < length(tube)
  x = x + 1
 end
 
-release glycerol_bottle[0]
+release glycerol_bottle
 release tube
