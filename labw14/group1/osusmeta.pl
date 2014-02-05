@@ -28,7 +28,7 @@ end
 
 produce
  a = length(plate)
- r = a "Overnight suspension culture" from plate
+ r = "Overnight suspension culture" from plate
  release test_tube
  note: "Place your suspension culture test tube in the 37 C Shaker Incubator"
  location:"B13.425"
