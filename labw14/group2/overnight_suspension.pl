@@ -1,5 +1,5 @@
 argument 
-  e_id: sample("Transformed E coli Strain"), "This is the plate from which we draw colonies" 
+  e_id: sample array ("Transformed E coli Strain"), "This is the plate from which we draw colonies" 
 end
 
 take 
@@ -40,7 +40,7 @@ step
 end
 
 produce
-  t = 1 "Overnight suspension culture" from plate[0]
+  t = 1 "Overnight suspension culture" from plate
   note: "Keep on bench"
   location: "Bench"
 end 
