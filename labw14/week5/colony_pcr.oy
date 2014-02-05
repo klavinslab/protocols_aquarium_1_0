@@ -3,11 +3,11 @@ argument
   template_plate: sample, "your plate from last week"
   pfwd: sample, "The forward primer"
   prev: sample array, "two reverse primers"
-#  enzyme_id: sample, "The Phsion HF Master Mix stock"
+  enzyme_id: sample, "The Phsion HF Master Mix stock"
 #  ladder: sample, "The ladder for your gel"
 end
 ladder = 822
-enzyme_id = 711
+# enzyme_id = 711
 
 
 place boil_cell
