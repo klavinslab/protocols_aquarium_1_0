@@ -38,5 +38,5 @@ while x < length(tube)
  x = x + 1
 end
 
-release glycerol_bottle[0]
+release glycerol_bottle
 release tube
