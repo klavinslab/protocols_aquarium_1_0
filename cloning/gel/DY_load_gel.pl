@@ -1,22 +1,18 @@
 information "Load and run an agarose gel."
 
-
 argument
   fragment_names: sample("Fragment") array, "Fragment Names"
   ladder_one: sample
   fragment_volume: number, "The volume of PCR fragment to load in µL."
 end
 
-
 take
   glasses = 1 "Clear Protective Glasses"
 end
 
-
 step
   description: "Wear clear protective glasses"
 end
-
 
 take
   gel = 1 "50 mL 1 Percent Agarose Gel in Gel Box"
@@ -40,13 +36,11 @@ if length(fragment_names) > 30
   end
 end
 
-
 step
   description: "Set up the power supply."
   note: "In the gel room, obtain a power supply and set it to 100 V and with a 40 minute timer.\n\nAttach the electrodes of an appropriate gel box lid from A7.525 to the power supply."
   image: "gel_power_settings"
 end
-
 
 step
   description: "Set up the gel box(s)."
@@ -71,20 +65,21 @@ release loading_dye
 
 step
   description: "Load the ladder"
-  note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into the FIRST (top-left) well."
+  note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 1 (top-left)."
   image: "gel_begin_loading"
 end
 if length(fragment_names) > 5
   step
     description: "Load the ladder"
-    note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into the SIXTH (bottom-left) well."
+    note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into  well 7 (bottom-left)."
     image: "gel_begin_loading"
   end
 end
 if length(fragment_names) > 10
   step
     description: "Load the ladder in gel box 2"
-    note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into the TWELFTH (Gel 2: top-second to left) well."
+    note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 14 (Gel 2: top-second to left)."
+    warning: "Note that the ladder should be loaded in the second column to denote that this is gel 2"
     image: "gel_begin_loading"
   end
 end
@@ -92,15 +87,49 @@ end
 if length(fragment_names) > 15
   step
     description: "Load the ladder in gel box 2"
-    note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into the SECOND (top-second to left) well of the gel."
+    note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 20 (Gel 2: bottom-second to left)."
+    warning: "Note that the ladder should be loaded in the second column to denote that this is gel 2"
+    image: "gel_begin_loading"
+  end
+end
+if length(fragment_names) > 20
+  step
+    description: "Load the ladder in gel box 3"
+    note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 27 (Gel 3: top-third to left)."
+    warning: "Note that the ladder should be loaded in the third column to denote that this is gel 3"
+    image: "gel_begin_loading"
+  end
+end
+end
+if length(fragment_names) > 25
+  step
+    description: "Load the ladder in gel box 3"
+    note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 33 (Gel 3: bottom-third to left)."
+    warning: "Note that the ladder should be loaded in the third column to denote that this is gel 3"    
+    image: "gel_begin_loading"
+  end
+end
+if length(fragment_names) > 20
+  step
+    description: "Load the ladder in gel box 4"
+    note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 40 (Gel 3: top-fourth to left)."
+    warning: "Note that the ladder should be loaded in the fourth column to denote that this is gel 4"
+    image: "gel_begin_loading"
+  end
+end
+end
+if length(fragment_names) > 25
+  step
+    description: "Load the ladder in gel box 4"
+    note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 46 (Gel 3: bottom-fourth to left)."
+    warning: "Note that the ladder should be loaded in the fourth column to denote that this is gel 4"
     image: "gel_begin_loading"
   end
 end
 
-
 step
   description: "Load the PCR"
-  note: "Using a 100 µL pipetter, pipet %{fragment_volume} µL of the PCR results (containing loading dye) into the second well of the gel."
+  note: "Using a 100 µL pipetter, pipet %{fragment_volume} µL of the PCR results (containing loading dye) into the gel(s)."
   image: "gel_begin_loading"
 end
 
