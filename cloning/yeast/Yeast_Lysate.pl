@@ -93,7 +93,7 @@ step
 end
 
 step
-  descriptoin: "pipet 10µl of the supernatant of the spundown strip-well tubes 1 through %{y} into the new corresponding strip-well tubes 1 through %{y}"
+  description: "pipet 10µl of the supernatant of the spundown strip-well tubes 1 through %{y} into the new corresponding strip-well tubes 1 through %{y}"
 end
 
 release(strains)
