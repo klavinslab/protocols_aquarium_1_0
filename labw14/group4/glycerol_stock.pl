@@ -1,6 +1,6 @@
 argument
   
-  Transformed_E_coli_Strain_id: sample, "The tube containing the overnight suspended colonies"
+  culture_tube: sample, "The tube containing the overnight suspended colonies"
   
 end
 
@@ -17,7 +17,7 @@ step
 end
 
 take
-  strain = item Transformed_E_coli_Strain_id
+  strain = item culture_tube
   glycerol = 1 "50 percent Glycerol (sterile)"
   result_tube = 1 "Cryo Tube"
   note: "Place the cryo tube in a holder and the tube with suspended culture in a tube rack, both on the bench. The gylcerol can be set on the bench."
