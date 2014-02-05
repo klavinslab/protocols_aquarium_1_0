@@ -3,7 +3,7 @@ place p1
     group: "group1"
     marked: true
     argument
-      Transformed_E_coli_Strain_id: sample 
+      Transformed_E_coli_Strain_id: Transformed_E_coli_Strain_id
     end
     start: now()
     window: minutes(30)
@@ -13,7 +13,7 @@ place p2
     protocol: "labw14/group1/mglycstock.pl"
     group: "group1"
     argument
-      Transformed_E_coli_Strain_id: sample
+      Transformed_E_coli_Strain_id: Transformed_E_coli_Strain_id
     end
     start: minutes(0.5)
     window: hours(8)
