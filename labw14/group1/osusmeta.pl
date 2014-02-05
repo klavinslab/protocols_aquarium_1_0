@@ -26,20 +26,25 @@ step
  check: "Eject the pipette tip into 14 mL test tube, swirl tube to mix"
 end
 
-x = 0
-a = []
+produce
+ a = 1 "Overnight suspension culture" from plate[0]
+ note: "Place your suspension culture test tube in the 37 C Shaker Incubator"
+ location:"B13.425"
+end
+ 
+x = 1
+
 while x < length(plate)
  produce
   r = 1 "Overnight suspension culture" from plate[x]
   a = concat(a,r)
-  release test_tube
   note: "Place your suspension culture test tube in the 37 C Shaker Incubator"
   location:"B13.425"
  end
  x = x+1
 end
 
-release concat(falcon_tube, plate)
+release concat(falcon_tube, plate, test_tube)
 
 log
  return: {Transformed_E_coli_Strain_id: a[:id]}
