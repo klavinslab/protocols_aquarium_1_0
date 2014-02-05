@@ -1,6 +1,3 @@
-argument
-  Transformed_E_coli_Strain_id: sample, "Choose the plate you incubated yesterday"
-end
 
 place overnight_suspension
   protocol: "labw14/group3/overnight_suspension_0.pl"
