@@ -49,13 +49,13 @@ while x < length(e_id)
     note: "Keep on bench"
     location: "Bench"
   end
-  r[x] = t
+  r[x] = t[:id]
   x = x + 1
 end
 
   
   log
-    return: {e_id2: t[:id]}
+    return: {e_id2: r}
   end
 
 step
