@@ -1,15 +1,12 @@
-
 place os
-  protocol: protocols/labw14/group2/overnight_suspension.pl
+  protocol: "labw14/group2/overnight_suspension.pl"
   group: "aquarium_user"
   marked: true
   start: now()
 end
 
-wire (os, "e_id") => (gs, "e_id")
-
 place gs
-  protocol: protocols/labw14/group2/glycerol_stock.pl
+  protocol: "labw14/group2/glycerol_stock.pl"
   group: "aquarium_user"
   start: hours(.05)
   window: hours(1)
