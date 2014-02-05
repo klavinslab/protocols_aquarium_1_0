@@ -26,11 +26,15 @@ step
  check: "Eject the pipette tip into 14 mL test tube, swirl tube to mix"
 end
 
-produce
- r = length(plate) "Overnight suspension culture" from plate
- release test_tube
- note: "Place your suspension culture test tube in the 37 C Shaker Incubator"
- location:"B13.425"
+x = 0
+while x < length(plate)
+ produce
+  r = 1 "Overnight suspension culture" from plate[x]
+  release test_tube
+  note: "Place your suspension culture test tube in the 37 C Shaker Incubator"
+  location:"B13.425"
+ end
+ x = x+1
 end
 
 release concat(falcon_tube, plate)
