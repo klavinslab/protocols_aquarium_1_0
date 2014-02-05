@@ -26,6 +26,8 @@ step
  check: "Eject the pipette tip into 14 mL test tube, swirl tube to mix"
 end
 
+sus = [0]
+
 produce
  a = 1 "Overnight suspension culture" from plate[0]
  note: "Place your suspension culture test tube in the 37 C Shaker Incubator"
