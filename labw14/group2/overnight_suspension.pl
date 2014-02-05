@@ -40,7 +40,7 @@ step
 end
 
 produce
-  t = 1 "Overnight suspension culture" from plate
+  t = 1 "Overnight suspension culture" from plate[]
   note: "Keep on bench"
   location: "Bench"
 end 
