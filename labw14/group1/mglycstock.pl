@@ -26,11 +26,10 @@ step
 end
 
 x = 0
-a = []
+
 while x < length(tube)
  produce
   r = 1 "Transformed E coli Glycerol Stock" from tube[x]
-  a = concat(a, r)
   release glycerol_tube
   note: "Place your Cryo tube in the -80 C refrigerator"
  end
