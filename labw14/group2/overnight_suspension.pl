@@ -58,7 +58,7 @@ end
 
 step
   description:
-      "Store tube in incubator"
+      "Store tube in incubator %{t}"
   note:
     "Store the tube in the 37 degC shaker incubator located at B13.425."
 end
