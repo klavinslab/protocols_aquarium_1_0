@@ -36,4 +36,4 @@ end
 transition [p2] => [] when !error(1) && completed(1)
 end
 
-wire (p1, "r") => (p2, "Transformed_E_coli_Strain_id")
+wire (p1, "Transformed_E_coli_Strain_id") => (p2, "Transformed_E_coli_Strain_id")
