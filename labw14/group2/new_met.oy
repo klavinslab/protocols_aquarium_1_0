@@ -12,6 +12,8 @@ place os
   start: now()
 end
 
+wire (os, "e_id") => (gs, "e_id")
+
 place gs
   protocol: "labw14/group2/glycerol_stock.pl"
   group: aquarium_user
@@ -19,7 +21,7 @@ place gs
   window: hours(1)
 end
 
-transition [os] => [gs] when !error(0) end
+transition [os] => [gs] when !error(0) && completed(0) end
 transition [os] => [os] when error(0) end
 transition [gs] => [gs] when error(0) end
 transition [gs] => [] when !error(0) && completed(0) end
