@@ -1,5 +1,5 @@
 argument
-  suspension sample, "Choose the overnight suspension culture you incubated yesterday"
+  suspension: sample, "Choose the overnight suspension culture you incubated yesterday"
 end
 
 step
