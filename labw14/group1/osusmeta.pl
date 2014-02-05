@@ -1,5 +1,5 @@
 argument
- Transformed_E_coli_Strain_id: sample, "A plate"
+ Transformed_E_coli_Strain_id: sample array, "A plate"
 end
 
 step
@@ -27,7 +27,7 @@ step
 end
 
 produce
- r = 1 "Overnight suspension culture" from plate[0]
+ r = 1 "Overnight suspension culture" from plate
  release test_tube
  note: "Place your suspension culture test tube in the 37 C Shaker Incubator"
  location:"B13.425"
