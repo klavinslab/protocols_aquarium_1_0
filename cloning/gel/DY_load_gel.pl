@@ -7,14 +7,6 @@ argument
 end
 
 take
-  glasses = 1 "Clear Protective Glasses"
-end
-
-step
-  description: "Wear clear protective glasses"
-end
-
-take
   gel = 1 "50 mL 1 Percent Agarose Gel in Gel Box"
   fragment = item fragment_names
   ladder = item ladder_one
@@ -226,18 +218,19 @@ x=0
 while x < num
   produce
     gel_lane = 1 "Gel Lane" of fragment_names[x]
-
   end
   x=x+1
 end
 
-
-
-
-
-          release gel
-
-
 release ladder
 release fragment
-release glasses
+release gel
+if length(fragment_names) > 10
+  release gel
+end
+if length(fragment_names) > 20
+  release gel
+end
+if length(fragment_names) > 30
+  release gel
+end
