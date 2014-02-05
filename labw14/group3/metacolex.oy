@@ -1,0 +1,23 @@
+argument
+  Transformed_E_coli_Strain_id: sample, "Choose the plate you incubated yesterday"
+end
+
+place overnight_suspension
+  protocol: "labw14/group3/overnight_suspension_0.pl"
+  argument
+    Transformed_E_coli_Strain_id: sample, "Choose the plate you incubated yesterday"
+  end
+  marked: true
+  group: aquarium_user
+  start: now()
+  window: minutes(10)
+end
+
+place make_glycerol_stock
+  protocol: "labw14/group3/make_glycerol_stock.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(10)
+end
+
+wire
