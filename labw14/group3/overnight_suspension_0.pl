@@ -1,5 +1,5 @@
 argument
-  Transformed_E_coli_Strain_id: sample, "Choose the plate you incubated yesterday"
+  cell_plate: sample, "Choose the plate you incubated yesterday"
 end
 
 take
