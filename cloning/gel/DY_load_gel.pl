@@ -6,15 +6,12 @@ argument
   fragment_volume: number, "The volume of PCR fragment to load in µL."
 end
 
-b=length(fragment_names)%10
-if b>0
-  a=1+length(fragment_names)/10
-else
-  a=length(fragment_names)/10
-end
+a=length(fragment_names)-1
+b=a/10
+c=b+1
 
 take
-  gel = a "50 mL 1 Percent Agarose Gel in Gel Box"
+  gel = c "50 mL 1 Percent Agarose Gel in Gel Box"
   fragment = item fragment_names
   ladder = item ladder_one
   loading_dye = 1 "Gel Loading Dye Blue (6X)"
