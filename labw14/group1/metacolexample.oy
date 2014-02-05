@@ -25,8 +25,8 @@ place p2
 end
 
 
-#transition [p1] => [p1] when error(0)
-#end
+transition [p1] => [p1] when error(0)
+end
 
 transition [p1] => [p2] when !error(0) && completed(0)
 end
