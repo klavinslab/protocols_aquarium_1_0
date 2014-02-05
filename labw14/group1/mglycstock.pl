@@ -25,6 +25,8 @@ step
  warning: "Be as sterile as possible. Do not touch the inside of the glycerol bottle with either a tip or pipette."
 end
 
+x = 0
+a = []
 while x < length(tube)
  produce
   r = 1 "Transformed E coli Glycerol Stock" from tube[x]
