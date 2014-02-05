@@ -27,6 +27,7 @@ step
 end
 
 x = 0
+a = []
 while x < length(plate)
  produce
   r = 1 "Overnight suspension culture" from plate[x]
