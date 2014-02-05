@@ -1,5 +1,12 @@
+argument 
+  e_id: sample("Transformed E coli Strain"), "This is the plate from which we draw colonies" 
+end
+
 place os
   protocol: "labw14/group2/overnight_suspension.pl"
+  argument
+    e_id: e_id
+  end
   group: aquarium_user
   marked: true
   start: now()
