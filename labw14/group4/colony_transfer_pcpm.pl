@@ -60,10 +60,13 @@ step
 end
 
 produce
-  1 "Overnight suspension culture" from plate[0]
+  culture: 1 "Overnight suspension culture" from plate[0]
   note: "Place 14 ml test tube in 37.0 degree incubator"
   location: "B13.425"
   release test_tube[0]
 end
+
+log
+  return: {suspended_cells_id: culture[:id]}
 
 release [plate[0], lb[0]]
