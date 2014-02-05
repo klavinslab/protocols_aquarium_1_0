@@ -15,7 +15,7 @@ end
 place gs
   protocol: "labw14/group2/glycerol_stock.pl"
   group: aquarium_user
-  start: hours(.05)
+  start: hours(.01)
   window: hours(1)
 end
 
