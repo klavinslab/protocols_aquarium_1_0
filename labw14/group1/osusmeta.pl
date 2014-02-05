@@ -30,6 +30,7 @@ produce
  a = 1 "Overnight suspension culture" from plate[0]
  note: "Place your suspension culture test tube in the 37 C Shaker Incubator"
  location:"B13.425"
+ sus[0] = a
 end
  
 x = 1
@@ -37,7 +38,7 @@ x = 1
 while x < length(plate)
  produce
   r = 1 "Overnight suspension culture" from plate[x]
-  a = concat(a,r)
+  sus[x] = r
   note: "Place your suspension culture test tube in the 37 C Shaker Incubator"
   location:"B13.425"
  end
