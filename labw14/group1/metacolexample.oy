@@ -1,3 +1,7 @@
+argument 
+    Transformed_E_coli_Strain_id: sample, "The Plate to be used"
+end
+
 place p1
     protocol: "labw14/group1/osusmeta.pl"
     group: "group1"
