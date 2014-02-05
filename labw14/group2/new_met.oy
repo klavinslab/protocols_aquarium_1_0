@@ -1,13 +1,13 @@
 place os
   protocol: "labw14/group2/overnight_suspension.pl"
-  group: aquarium user
+  group: aquarium_user
   marked: true
   start: now()
 end
 
 place gs
   protocol: "labw14/group2/glycerol_stock.pl"
-  group: aquarium user
+  group: aquarium_user
   start: hours(.05)
   window: hours(1)
 end
