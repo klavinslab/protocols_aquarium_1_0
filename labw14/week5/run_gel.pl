@@ -28,7 +28,7 @@ end
 
 step
   description: "Set up the power supply."
-  note: "In the gel room, obtain a power supply and set it to 100 V and with a 40 minute timer.\n\nAttach the electrodes of an appropriate gel box lid from A7.525 to the power supply."
+  note: "In the gel room, obtain a power supply and set it to 120 V and with a 30 minutes timer.\n\nAttach the electrodes of an appropriate gel box lid from A7.525 to the power supply."
   image: "gel_power_settings"
 end
 
