@@ -25,6 +25,8 @@ wire (overnight_suspension,"sus_id") => (make_glycerol_stock,"suspension")
 
 
 transition [overnight_suspension] => [make_glycerol_stock] when !error(0) && completed(0) end
+transition [make_glycerol_stock] => [] when !error(0) && completed(0) end 
 
 transition [overnight_suspension] => [overnight_suspension] when error(0)  end 
 transition [make_glycerol_stock] => [make_glycerol_stock] when error(0) end 
+
