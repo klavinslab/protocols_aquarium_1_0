@@ -29,7 +29,7 @@ end
 transition [p2] => [p2] when error(1)
 end
 
-transion [p2] => [] when !error(1) && completed(1)
+transition [p2] => [] when !error(1) && completed(1)
 end
 
 wire (p1, "r") => (p2, "Transformed_E_coli_Strain_id")
