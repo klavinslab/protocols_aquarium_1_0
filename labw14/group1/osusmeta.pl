@@ -29,7 +29,8 @@ end
 x = 0
 while x < length(plate)
  produce
-  r = concat(r, 1 "Overnight suspension culture" from plate[x])
+  r = 1 "Overnight suspension culture" from plate[x]
+  a = concat(a,r)
   release test_tube
   note: "Place your suspension culture test tube in the 37 C Shaker Incubator"
   location:"B13.425"
@@ -40,5 +41,5 @@ end
 release concat(falcon_tube, plate)
 
 log
- return: {Transformed_E_coli_Strain_id: r[:id]}
+ return: {Transformed_E_coli_Strain_id: a[:id]}
 end
