@@ -20,7 +20,7 @@ place p2
     argument
       Transformed_E_coli_Strain_id: Transformed_E_coli_Strain_id
     end
-    start: minutes(0.5)
+    start: minutes(0.1)
     window: hours(8)
 end
 
