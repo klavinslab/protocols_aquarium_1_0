@@ -1,5 +1,5 @@
 argument
-  Transformed_E_coli_Strain_id: sample, "Choose the overnight suspension culture you incubated yesterday"
+  suspension sample, "Choose the overnight suspension culture you incubated yesterday"
 end
 
 step
