@@ -20,4 +20,10 @@ place make_glycerol_stock
   window: minutes(10)
 end
 
-wire
+wire (overnight_suspension,"sus_id") => (make_glycerol_stock,"suspension")
+
+
+transition [overnight_suspension] => [make_glycerol_stock] when !error(0) && completed(0) && minutes_elapsed(0,.5) end
+
+transition [overnight_suspension] => [overnight_suspension] when error(0)  end 
+transition [make_glycerol_stock] => [make_glycerol_stock] when error(0) end 
