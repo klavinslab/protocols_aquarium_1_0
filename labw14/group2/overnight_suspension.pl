@@ -46,7 +46,7 @@ produce
 end 
 
 log
-  return {e_id2: t[:id]}
+  return: {e_id2: t[:id]}
 end
 
 step
