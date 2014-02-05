@@ -27,7 +27,8 @@ step
 end
 
 produce
- r = 1 "Overnight suspension culture" from plate
+ a = length(plate)
+ r = a "Overnight suspension culture" from plate
  release test_tube
  note: "Place your suspension culture test tube in the 37 C Shaker Incubator"
  location:"B13.425"
