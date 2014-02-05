@@ -68,5 +68,6 @@ end
 
 log
   return: {suspended_cells_id: culture[:id]}
+end
 
 release [plate[0], lb[0]]
