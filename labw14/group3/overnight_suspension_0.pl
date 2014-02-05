@@ -52,3 +52,7 @@ step
 end
 
 release concat(colony_plate, aliquot)
+
+log
+  return: { sus_id: s[:id]}
+end
