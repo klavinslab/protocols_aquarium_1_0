@@ -1,3 +1,7 @@
+argument 
+  e_id: sample("Transformed E coli Strain"), "This is the plate from which we draw colonies" 
+end
+
 take 
   falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
   test_tube = 1 "14 mL Test Tube"
