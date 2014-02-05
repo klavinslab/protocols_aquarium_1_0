@@ -44,6 +44,14 @@ if xgal != "Yes" && iptg != "No"
     end
   end
 end
+if antibiotic != "Amp" && antibiotic != "Kan" && antibiotic != "Chlor" && antibiotic != "None"
+  step
+    description: "The antibiotic preference was incorrectly entered as %{antibiotic}."
+    getdata
+      antibiotic: string, "Enter the type of antibiotic you want to add. If none, select 'None'.", ["Amp", "Kan", "Chlor", "None"]
+    end
+  end
+end
 
 
 if volume == 200
@@ -58,14 +66,6 @@ else
 end
 
 
-if antibiotic != "Amp" && antibiotic != "Kan" && antibiotic != "Chlor" && antibiotic != "None"
-  step
-    description: "The antibiotic preference was incorrectly entered as %{antibiotic}."
-    getdata
-      antibiotic: string, "Enter the type of antibiotic you want to add. If none, select 'None'.", ["Amp", "Kan", "Chlor", "None"]
-    end
-  end
-end
 if antibiotic == "Amp"
   antibiotic_name = "100X 1 mL Ampicillin Aliquot"
   antibiotic_volume = volume / 100.0
@@ -168,13 +168,20 @@ end
 
 step
   description: "Pour 25 mL of media into each plate."
-  note: "Repeat this step for each bottle.\n\nUncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25 mL. Replace the petri dish lid and mark the side with a marker: purple for Amp, green for Kan, and blue for Chlor. Repeat for every plate."
+  note: "Repeat this step for each bottle.\n\nUncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25 mL. Replace the petri dish lid."
   getdata
     n_poured: number, "Enter the number of plates you actually poured."
   end
 end
 
 
+step
+  description: "Mark the side of each plate"
+  note: "Mark the side of each poured plate with a marker: purple for Amp, green for Kan, and blue for Chlor."
+end
+
+
+# IDEA: Split here and use metacol for the wait?
 step
   description: "Let plates cool."
   note: "Let the plates cool until solid. You can verify that the plates are cool because the agar becomes opaque. If you keep them separate and unstacked, they will cool much faster and more evenly. This should take 10-20 minutes."
@@ -195,6 +202,7 @@ end
 
 # Make an array accounting for the plates that are now empty so they can be released at the end and put back in the inventory
 # Do the same for plates poured so they can be released when producing the new plates
+# FIXME: this is releasing 0 plates?
 ii = 0
 poured_plates = []
 empty_plates = []
