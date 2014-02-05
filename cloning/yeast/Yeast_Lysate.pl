@@ -68,12 +68,44 @@ while z< y
 end
 
 step
-  description: "Cap"
+  description: "Remove all of the pipets from the strip-well tubes and cap all the strip-well tubes."
+  note: "after the tubes are capped vortex all of them"
+end
 
+step
+  description: "Heat strip-well tubes in thermal cylcer at 90ºC for 5 minutes"
+end
 
+step
+  description: "Remove strip-well tubes from thermal cycler"
+end
 
+step
+  description: "Spin down the tubes in the benchtop centrifuge until a small pellet is visible at the bottom of the tubes"
+end
 
+step
+  description: "Label 1-%{y} more strip-well tubes in the manner described earlier in the protocol"
+end
 
+step
+  description: "pipet 40µl of Molecular grade water into the new tubes 1-%{y}"
+end
 
+step
+  descriptoin: "pipet 10µl of the supernatant of the spundown strip-well tubes 1-%{y} into the new corresponding strip-well tubes 1-%{y}"
+end
 
+release(strains)
+
+count=0
+  while count < y 
+    produce
+      q=1 "Lysate" of YeastStrain_id[count]
+      location "benchtop"
+    end
+  count=count+1
+end
+
+  
 
