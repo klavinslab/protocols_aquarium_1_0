@@ -1,5 +1,5 @@
 argument 
-  e_id: sample("Transformed_E_coli_Strain_id"), "This is the plate from which we draw colonies" 
+  e_id: sample ("Transformed E coli Strain") array, "This is the plate from which we draw colonies" 
 end
 
 take 
@@ -39,15 +39,28 @@ step
     3. Take the tip out and discard it. "
 end
 
-produce
-  t = 1 "Overnight suspension culture" from plate[0]
-  note: "Keep on bench"
-  location: "Bench"
-end 
+x = 0
+r = 0
+
+while x < length(e_id)
+
+  produce
+    t = 1 "Overnight suspension culture" from plate[x]
+    note: "Keep on bench"
+    location: "Bench"
+  end
+  r[x] = t[:id]
+  x = x + 1
+end
+
+  
+  log
+    return: {e_id2: r}
+  end
 
 step
   description:
-      "Store tube in incubator"
+      "Store tube in incubator %{r}"
   note:
     "Store the tube in the 37 degC shaker incubator located at B13.425."
 end

@@ -1,5 +1,5 @@
 argument
- Transformed_E_coli_Strain_id: sample, "A tube with overnight suspension culture"
+ Transformed_E_coli_Strain_id: sample array, "A tube with overnight suspension culture"
 end
 
 step
@@ -25,11 +25,15 @@ step
  warning: "Be as sterile as possible. Do not touch the inside of the glycerol bottle with either a tip or pipette."
 end
 
+x = 0
 
-produce
- 1 "Transformed E coli Glycerol Stock" from tube[0]
- release glycerol_tube
- note: "Place your Cryo tube in the -80 C refrigerator"
+while x < length(tube)
+ produce
+  r = 1 "Transformed E coli Glycerol Stock" from tube[x]
+  release glycerol_tube
+  note: "Place your Cryo tube in the -80 C refrigerator"
+ end
+ x = x + 1
 end
 
-release [glycerol_bottle[0], tube[0]]
+release [glycerol_bottle[0], tube]

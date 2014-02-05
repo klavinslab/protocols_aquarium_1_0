@@ -1,16 +1,26 @@
+argument 
+  e_id: sample array, "This is the plate from which we draw colonies" 
+end
+
 place os
   protocol: "labw14/group2/overnight_suspension.pl"
-  group: "aquarium_user"
+  argument
+    e_id: e_id
+  end
+  group: aquarium_user
   marked: true
   start: now()
 end
 
+
 place gs
   protocol: "labw14/group2/glycerol_stock.pl"
-  group: "aquarium_user"
-  start: hours(.05)
+  group: aquarium_user
+  start: now()
   window: hours(1)
 end
+
+wire (os, "e_id2") => (gs, "e_id2")
 
 transition [os] => [gs] when !error(0) && completed(0) end
 transition [os] => [os] when error(0) end

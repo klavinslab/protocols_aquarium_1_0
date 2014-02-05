@@ -1,0 +1,38 @@
+# metacol to do the colony suspension plus glycerol stock
+
+argument
+  Transformed_E_coli_Strain_id: sample, "The sample you wish to use"
+end
+
+
+place suspension
+  protocol: "labw14/group4/colony_transfer_pcpm.pl"
+  group: aquarium_user
+  start: now()
+  marked: true
+  argument
+    Transformed_E_coli_Strain_id: Transformed_E_coli_Strain_id
+  end
+end
+
+place glycerol_stock
+  protocol: "labw14/group4/glycerol_stock.pl"
+  group: aquarium_user
+  start: hours(18)
+  window: hours(4)
+end
+
+wire (suspension, "suspended_cells_id") => (glycerol_stock, "culture_tube")
+
+# proceed forward
+transition [suspension] => [glycerol_stock] when !error(0) && completed(0) end
+
+# some error occured
+transition [suspension] => [suspension] when error(0) end
+
+# done with metacol
+transition [glycerol_stock] => [] when !error(0) && completed(0) end
+
+# error occured
+transition [glycerol_stock] => [glycerol_stock] when error(0) end
+

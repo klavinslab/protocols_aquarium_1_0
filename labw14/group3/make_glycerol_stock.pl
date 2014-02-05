@@ -1,5 +1,5 @@
 argument
-  Transformed_E_coli_Strain_id: sample, "Choose the overnight suspension culture you incubated yesterday"
+  suspension: sample, "Choose the overnight suspension culture you incubated yesterday"
 end
 
 step
@@ -8,7 +8,7 @@ step
 end
 
 take
-  cells_to_store = item Transformed_E_coli_Strain_id
+  cells_to_store = item suspension
   glycerol = 1 "50 percent Glycerol (sterile)"
   sterile_tube = 1 "Cryo Tube"
 end

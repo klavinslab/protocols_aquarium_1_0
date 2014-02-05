@@ -1,19 +1,24 @@
+argument 
+    #Transformed_E_coli_Strain_id: sample, "The Plate to be used"
+    Transformed_E_coli_Strain_id: sample array, "The Plate to be used"
+end
+
 place p1
-    protocol: "osusmeta.pl"
+    protocol: "labw14/group1/osusmeta.pl"
     group: "group1"
     marked: true
     argument
-      Transformed_E_coli_Strain_id: sample 
+      Transformed_E_coli_Strain_id: Transformed_E_coli_Strain_id
     end
     start: now()
     window: minutes(30)
 end
 
 place p2
-    protocol: "mglycstock.pl"
+    protocol: "labw14/group1/mglycstock.pl"
     group: "group1"
-    arguement
-      Transformed_E_coli_Strain_id: sample
+    argument
+      Transformed_E_coli_Strain_id: Transformed_E_coli_Strain_id
     end
     start: minutes(0.5)
     window: hours(8)
@@ -26,10 +31,10 @@ end
 transition [p1] => [p2] when !error(0) && completed(0)
 end
 
-transition [p2] => [p2] when error(1)
+transition [p2] => [p2] when error(0)
 end
 
-transion [p2] => [] when !error(1) && completed(1)
+transition [p2] => [] when !error(0) && completed(0)
 end
 
-wire (p1, "r") => (p2, "Transformed_E_coli_Strain_id")
+wire (p1, "Transformed_E_coli_Strain_id") => (p2, "Transformed_E_coli_Strain_id")
