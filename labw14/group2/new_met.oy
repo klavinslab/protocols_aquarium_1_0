@@ -15,4 +15,4 @@ end
 transition [os] => [gs] when !error(0) && completed(0) end
 transition [os] => [os] when error(0) end
 transition [gs] => [gs] when error(0) end
-transitoin [gs] => [] when !error(0) && completed(0) end
+transition [gs] => [] when !error(0) && completed(0) end
