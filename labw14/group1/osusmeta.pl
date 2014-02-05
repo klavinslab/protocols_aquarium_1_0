@@ -34,11 +34,14 @@ while x < length(plate)
   note: "Place your suspension culture test tube in the 37 C Shaker Incubator"
   location:"B13.425"
  end
+ log
+ return: {Transformed_E_coli_Strain_id: r[:id]}
+ end
  x = x+1
 end
 
 release [concat(falcon_tube, plate), test_tube]
 
-log
- return: {Transformed_E_coli_Strain_id: r[:id]}
-end
+#log
+# return: {Transformed_E_coli_Strain_id: r[:id]}
+#end
