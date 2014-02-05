@@ -1,5 +1,5 @@
 argument
-  YeastStrain_id: sample("Yeast Strain") array, "yeast strains"
+  YeastStrain_id: sample("Yeast Strain") array, "Yeast Strain"
 end
 
 take
