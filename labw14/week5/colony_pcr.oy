@@ -4,7 +4,7 @@ argument
   pfwd: sample, "The forward primer"
   prev: sample array, "two reverse primers"
   enzyme_id: sample, "The Phsion HF Master Mix stock"
-#  ladder: sample, "The ladder for your gel"
+  ladder: sample, "The ladder for your gel"
 end
 ladder = 822
 # enzyme_id = 711
