@@ -18,7 +18,7 @@ end
 place glycerol_stock
   protocol: "labw14/group4/glycerol_stock.pl"
   group: aquarium_user
-  start: now() #hours(18)
+  start: hours(18)
   window: hours(4)
 end
 
