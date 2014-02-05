@@ -15,6 +15,13 @@ place suspension
   end
 end
 
+place glycerol_stock
+  protocol: "labw14/group4/glycerol_stock.pl"
+  group: aquarium_user
+  start: hours(18)
+  window: hours(4)
+end
+
 wire (suspension, "suspended_cells_id") => (glycerol_stock, "culture_tube")
 
 # proceed forward
@@ -22,13 +29,6 @@ transition [suspension] => [glycerol_stock] when !error(0) && completed(0) end
 
 # some error occured
 transition [suspension] => [suspension] when error(0) end
-
-place glycerol_stock
-  protocol: "labw14/group4/glycerol_stock.pl"
-  group: aquarium_user
-  start: hours(18)
-  window: hours(4)
-end
 
 # done with metacol
 transition [glycerol_stock] => [] when !error(0) && completed(0) end
