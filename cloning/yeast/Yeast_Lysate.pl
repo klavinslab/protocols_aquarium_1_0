@@ -89,7 +89,7 @@ step
 end
 
 step
-  description: "pipet 40µl of Molecular grade water into the new tubes 1-%{y}"
+  description: "pipet 40µl of Molecular grade water into the new tubes 1 through %{y}"
 end
 
 step
