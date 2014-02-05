@@ -1,5 +1,5 @@
 argument 
-  e_id: sample("Transformed_E_coli_Strain_id"), "This is the plate from which we draw colonies" 
+  e_id: sample("Transformed_E_coli_Strains"), "This is the plate from which we draw colonies" 
 end
 
 take 
