@@ -37,8 +37,7 @@ while x < length(plate)
  x = x+1
 end
 
-release concat(falcon_tube, plate)
-release test_tube
+release [concat(falcon_tube, plate), test_tube]
 
 log
  return: {Transformed_E_coli_Strain_id: r[:id]}
