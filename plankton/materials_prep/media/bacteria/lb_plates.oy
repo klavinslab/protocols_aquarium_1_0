@@ -1,0 +1,129 @@
+# Chains lb plate protocols together:
+#   1) Unsterile agar media
+#   2) Autoclaving
+#   3) Pouring
+#   4) Moving
+
+
+argument
+  n: number, "The number of batches to make (one batch makes about 35 plates)"
+  antibiotic: string, "The type of antibiotic to add (Amp, Kan, Chlor, or None)"
+end
+
+
+place lb_agar_unsterile
+  protocol: "plankton/materials_prep/media/bacteria/lb.pl"
+  argument
+    n_bottle: n
+    add_agar: "Yes"
+  end
+  group: mediabay
+  marked: true
+  start: now()
+  window: minutes(60)
+end
+
+
+place autoclave
+  protocol: "plankton/materials_prep/media/bacteria/autoclave_bacteria_media.pl"
+  argument
+    lb_agar_n: n
+    lb_liquid_n: 0
+    tb_liquid_n: 0
+  end
+  group: mediabay
+  start: now()
+  window: minutes(60)
+end
+
+
+# IDEA: make protocol to ask if source bottle is molten - return that value to metacol
+# At metacol level, pseudocode is: if not all molten: go to place that launches melt protocol and return to state that
+# launches the 'is it molten?' question, else: go to pour plates place
+place pour_plates
+  protocol: "plankton/materials_prep/media/bacteria/pour_lb_plates.pl"
+  argument
+    n: n
+    volume: 800
+    antibiotic:
+    iptg:
+    atc:
+    xgal:
+  end
+  group: mediabay
+  marked: true
+  start: now()
+  window: minutes(20)
+end
+
+
+place move_plates
+  protocol: "plankton/materials_prep/media/bacteria/lb.pl"
+  argument
+    n_bottle: n
+    add_agar: "Yes"
+  end
+  group: mediabay
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+
+
+#first step is wait until thermal cycler is done
+place pcr_finish
+  protocol: "labw14/week2/pcr_finish.pl"
+  group: aquarium_user
+  start: minutes(70)
+  window: minutes(1)
+end
+
+#first step is make sure gel has solidified
+place run_gel
+  protocol: "labw14/week2/run_gel.pl"
+  argument
+    ladder_one: ladder
+    fragment_volume: 50
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+wire (pcr_finish,"PCR_Result_id") => (run_gel,"fragment_one")
+
+place image_cut_gel
+  protocol: "labw14/week2/image_cut_gel.pl"
+  group: aquarium_user
+  start: minutes(40)
+  window: minutes(1)
+end
+
+wire (run_gel,"Gel_lane_id") => (image_cut_gel,"gel")
+
+place clean_gel_box
+  protocol: "labw14/week2/clean_gel_box.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+
+# forward transitions
+transition [pcr_prep]     => [pour_gel,pcr_finish] when !error(0) && completed(0) end
+transition [pour_gel, pcr_finish] => [run_gel] when !error(0) && completed(0) && !error(1) && completed(1) end
+transition [run_gel] => [image_cut_gel] when !error(0) && completed(0) end
+transition [image_cut_gel] => [clean_gel_box] when !error(0) && completed(0) end
+transition [clean_gel_box] => [] when !error(0) && completed(0) end
+
+
+
+# rework transitions
+transition [pcr_prep]     => [pcr_prep]    when error(0) end
+transition [pour_gel]     => [pour_gel]     when error(0) end
+transition [pcr_finish]     => [pcr_finish]     when error(0) end
+transition [run_gel]     => [run_gel]     when error(0) end
+transition [image_cut_gel] => [image_cut_gel]    when error(0) end
+transition [clean_gel_box] => [clean_gel_box]    when error(0) end
+

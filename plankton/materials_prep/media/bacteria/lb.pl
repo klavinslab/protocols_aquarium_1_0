@@ -1,15 +1,12 @@
-information "Prepare unsterile bottle(s) of 800 mL LB Agar (rich media for bacteria), ready to be autoclaved."
+information "Prepare unsterile bottle(s) of LB (rich media for bacteria)."
 # FIXME: parameterize for adding IPTG, aTc, X-Gal
-
-
 
 
 argument
   n_bottle: number, "Enter the number of bottles you want to make (maximum of 4)."
+  volume: number, "Enter the media volume (200, 400, or 800 mL)."
   add_agar: string, "Make agar media? (Yes or No)"
 end
-
-
 
 
 if n_bottle < 1 || n_bottle > 4
@@ -18,6 +15,16 @@ if n_bottle < 1 || n_bottle > 4
     note: "You can only specify 1-4 bottles!"
     getdata
       n_bottle: number, "Enter the number of bottles you want to make.", [1, 2, 3, 4]
+    end
+  end
+end
+
+
+if volume != 200 && volume != 400 && volume != 800
+  step
+    description: "The LB volume was incorrectly entered as %{volume}."
+    getdata
+      volume: number, "Enter the volume of LB to make.", [200, 400, 800]
     end
   end
 end
@@ -34,20 +41,29 @@ if add_agar != "Yes" && add_agar != "No"
 end
 
 
+if volume == 200
+  bottle_type = "250 mL Bottle"
+elsif volume == 400
+  bottle_type = "500 mL Bottle"
+elsif volume == 800
+  bottle_type = "1 L Bottle"
+end
+
+
 if add_agar == "Yes"
   product_name = "800 mL LB Agar (unsterile)"
   lb_grams = 29.6
   take
-    bottles = n_bottle "1 L Bottle"
-    lb_powder = 1 "Difco LB Broth, Miller"
+    bottles = n_bottle bottle_type
+    lb_powder = 1 "LB Agar Miller"
     stir_bars = n_bottle "Medium Magnetic Stir Bar"
   end
 else
   product_name = "800 mL LB Liquid (unsterile)"
   lb_grams = 20.0
   take
-    bottles = n_bottle "1 L Bottle"
-    lb_powder = 1 "LB Agar Miller"
+    bottles = n_bottle bottle_type
+    lb_powder = 1 "Difco LB Broth, Miller"
     stir_bars = n_bottle "Medium Magnetic Stir Bar"
   end
 end
@@ -76,7 +92,7 @@ lb_name = lb_powder[0][:name]
 include "plankton/includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
   reagent: lb_name
-  grams: 29.6
+  grams: lb_grams
 end
 
 
