@@ -1,5 +1,5 @@
 argument
-  e_id2: sample("Transformed E coli Strain"), "Overnight suspension culture" 
+  e_id2: sample("Transformed E coli Strain") array, "Overnight suspension culture" 
   # User is prompted to select his desired suspension in order to begin the protocol
   
 end
@@ -47,13 +47,16 @@ step
   
 end
 
+x = 0
 
-
-produce
-  r = 1 "Transformed E coli Glycerol Stock" from overnight_culture[0]
-  release cryo_tube
-  # The product is created and the user is told to put it in the freezer. The Cryo tube has been consumed.
+while x < length(e_id2)
+  produce
+    r = 1 "Transformed E coli Glycerol Stock" from overnight_culture[0]
+    release cryo_tube
+    # The product is created and the user is told to put it in the freezer. The Cryo tube has been consumed.
+  end
   
+  x = x + 1
 end
   
 
