@@ -30,16 +30,18 @@ else
   end
 end
 
-if media_type == "200 mL LB Agar (sterile)"
-    molten_string = "200 mL LB Agar (molten)"
-else
-    molten_string = "400 mL LB Agar (molten)"
-end
+#if media_type == "200 mL LB Agar (sterile)"
+#    molten_string = "200 mL LB Agar (molten)"
+#else
+#    molten_string = "400 mL LB Agar (molten)"
+#end
 
-produce
-  product = 1 molten_string
-  release media
-  location: "B1.305"
-end
+#produce
+#  product = 1 molten_string
+#  release media
+#  location: "B1.305"
+#end
+
+release media
 
 release gloves
