@@ -39,11 +39,18 @@ step
     3. Take the tip out and discard it. "
 end
 
-produce
-  t = 1 "Overnight suspension culture" from plate[]
-  note: "Keep on bench"
-  location: "Bench"
-end 
+x = 0
+
+while x < length(e_id)
+
+  produce
+    t = 1 "Overnight suspension culture" from plate[x]
+    note: "Keep on bench"
+    location: "Bench"
+  end
+  
+  x = x + 1
+end
 
 log
   return: {e_id2: t[:id]}
