@@ -1,5 +1,5 @@
 argument
- Transformed_E_coli_Strain_id: sample, "A plate"
+ Transformed_E_coli_Strain_id: sample array, "A plate"
 end
 
 step
@@ -26,15 +26,22 @@ step
  check: "Eject the pipette tip into 14 mL test tube, swirl tube to mix"
 end
 
-produce
- r = 1 "Overnight suspension culture" from plate[0]
- release test_tube
- note: "Place your suspension culture test tube in the 37 C Shaker Incubator"
- location:"B13.425"
+ii = 0
+r  = []
+
+while ii < length(Transformed_E_coli_Strain_id)
+ produce
+  y = 1 "Overnight suspension culture" from plate[ii]
+  release test_tube
+  note: "Place your suspension culture test tube in the 37 C Shaker Incubator"
+  location:"B13.425"
+ end
+ r = append(r,y[:id])
+ ii=ii+1
 end
 
 log
-  return: { overnight_suspension_id: r[:id]}
+  return: { overnight_suspension_id: r}
 end
 
 release concat(falcon_tube, plate)
