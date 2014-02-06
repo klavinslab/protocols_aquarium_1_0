@@ -50,7 +50,7 @@ sds=x*3
 h20=x*27
 
 step
-  description: "Grab a 1.5ml tube and pipet in %{sds}µl of 2% sds solution into it, then pipet in %{h20} µl of molecular grade water. Mix the 1.5ml tube with the vortexter"
+  description: "Grab a 1.5ml tube and pipet in %{sds}µl of 2%% sds solution into it, then pipet in %{h20} µl of molecular grade water. Mix the 1.5ml tube with the vortexter"
 end
 
 step
