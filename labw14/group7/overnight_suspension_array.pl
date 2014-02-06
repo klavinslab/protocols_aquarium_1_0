@@ -16,7 +16,7 @@ step
 end
 
 step
-  description: "Label %(n) 14 mL tubes with your initials and date.  Number them 1 to %{n}"
+  description: "Label %{n} 14 mL tubes with your initials and date.  Number them 1 to %{n}"
   note: "place the tubes in a test tube rack.\n
   These tubes will eventually hold the transformed cells"
 end
