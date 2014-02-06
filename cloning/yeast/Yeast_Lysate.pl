@@ -1,6 +1,6 @@
 argument
   YeastStrain_id: sample("Yeast Strain") array, "Yeast Strain"
-  ColonyNumber: int
+  ColonyNumber: number, "Number of desired colonies from each plate to lysate"
 end
 
 take
