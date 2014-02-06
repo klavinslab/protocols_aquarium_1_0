@@ -41,7 +41,7 @@ step
   note: "Match each plate to its corresponding tube.  For each pair:"
   note: " "
   
-  check: "add a colony from plate %{colony_plate_array(i)} to tube %{i}"
+  check: "add a colony from plate %{colony_plate_array[i]} to tube %{i}"
   
   note: "Select the desired colony prior to opening plate. Mark desired colony with circle and intials and date"
   note: "Selection of your colony should be based on size (medium-big, not too big), isolated, and round in shape." 
