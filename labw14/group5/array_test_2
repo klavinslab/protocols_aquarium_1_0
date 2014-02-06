@@ -41,7 +41,7 @@ while ii < length(Transformed_E_coli_Strain_id)
 end
 
 log
-  return: { overnight_suspension_id: r}
+  return: {overnight_suspension_id: r}
 end
 
 release concat(falcon_tube, plate)
