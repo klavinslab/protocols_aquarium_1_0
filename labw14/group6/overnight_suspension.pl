@@ -47,11 +47,11 @@ i = 0
 while i < n
   produce
     y = 1 "Overnight suspension culture" from cell_plate[i]
+    note: "Place in 37 degree incubator at B13.425 for 18-24 hours"
+    location: "B13.425"
   end
   s = append(s,y[:id])
   i = i+1
-  note: "Place in 37 degree incubator at B13.425 for 18-24 hours"
-  location: "B13.425"
 end
 
 step
