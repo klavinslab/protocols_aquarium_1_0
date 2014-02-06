@@ -1,11 +1,13 @@
 argument
-  Transformed_E_coli_Strain_plate: sample, "Choose the plate you incubated yesterday"
+  Transformed_E_coli_Strain_plate: sample array, "Choose the plates you incubated yesterday"
 end
 
+n = length(Transformed_E_coli_Strain_plate)
+
 take
-  colony_plate = item Transformed_E_coli_Strain_plate
+  colony_plate_array = item Transformed_E_coli_Strain_plate
   aliquot = 1 "50 mL LB liquid aliquot (sterile)"
-  test_tube = 1 "14 mL Test Tube"
+  test_tube = n "14 mL Test Tube"
 end
 
 step
@@ -14,44 +16,45 @@ step
 end
 
 step
-  description: "Label a 14 mL tube with your initials AND date"
-  note: "place the tube in a test tube rack.\n
-  This tube will eventually hold the transformed cells"
+  description: "Label %(n) 14 mL tubes with your initials and date.  Number them 1 to %(n)"
+  note: "place the tubes in a test tube rack.\n
+  These tubes will eventually hold the transformed cells"
 end
 
 step
-  description: "Pipette 2 mL of LB into 14 mL tube"
+  description: "Pipette 2 mL of LB into each 14 mL tube"
   note: "Use proper sterile technique. Use the 1000 μL pipetter."
   bullet: "Set pipetter to 1000μL"
   bullet: "Loosen cap on LB aliquot"
-  bullet: "Pipette 2 mL of LB into 14 mL tube"
+  bullet: "Pipette 2 mL of LB into each of %(n) 14 mL tubes"
   bullet: "Recap test tube and LB"
-  warning: "Use new tip after every ejection"
 end
 
 step
-  description: "Add a colony to suspension"
-  note: "Select desired colony prior to opening plate. Mark desired colony with circle and intials and date"
+  description: "Add a colony to each of %(n) suspensions"
+  note: "Match each plate to its corresponding tube.  For each pair:"
+  note: " "
+  note: "Select the desired colony prior to opening plate. Mark desired colony with circle and intials and date"
   note: "Selection of your colony should be based on size (medium-big, not too big), isolated, and round in shape." 
-  bullet: "Take a sterile pipette tip, pick up your desired colony by gently scraping the tip to the colony."
+  bullet: "Take a sterile pipette tip, pick up the desired colony by gently scraping the tip to the colony."
   bullet: "Tilt 14 mL tube such that you can reach the broth with your tip."
   bullet: "Scrape colony into broth, using a swirling motion"
   warning: "!DON'T SPILL THE BROTH!"
 end
 
 produce
-  s = 1 "Overnight suspension culture" from colony_plate[0]
-  note: "Place in 37 degree incubator at B13.425 for 18-24 hours"
+  s = n "Overnight suspension culture" from colony_plate_array[0]
+  note: "Place all in 37 degree incubator at B13.425 for 18-24 hours"
   location: "B13.425"
 end
 
 step
   description: "Return all equipment to specified areas"
-  note: "Remember to wrap plate with parafilm"
+  note: "Remember to wrap plates with parafilm"
   check: "Return test tube rack to Bench"
 end
 
-release concat(colony_plate, aliquot)
+release concat(colony_plate_array, aliquot)
 
 log
   return: { transformed_cells_id: s[:id]}
