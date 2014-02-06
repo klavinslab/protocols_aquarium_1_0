@@ -63,6 +63,7 @@ while z< y
   f=z+1
   step
     description: "Take an unused small pipet tip and scrape a small amount of cells off a colony from %{a} and place it into well %{f}"
+    note: "If you're already picked a colony for this strain make sure you pick a different one for this well"
   end
   z=z+1
 end
