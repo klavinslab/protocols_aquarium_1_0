@@ -1,11 +1,13 @@
 argument
-  colony_plate: sample, "Choose the plate you incubated yesterday"
+  colony_plate: sample array, "Choose the plate(s) you incubated yesterday"
 end
+
+n = length(colony_plate)
 
 take
   cell_plate = item colony_plate
-  aliquot = 1 "50 mL LB liquid aliquot (sterile)"
-  test_tube = 1 "14 mL Test Tube"
+  aliquot = n "50 mL LB liquid aliquot (sterile)"
+  test_tube = n "14 mL Test Tube"
 end
 
 step
@@ -14,13 +16,13 @@ step
 end
 
 step
-  description: "Label a 14 mL tube with your initials AND date"
-  note: "place the tube in a test tube rack.\n
-  This tube will eventually hold the transformed cells"
+  description: "Label %{n} 14 mL tubes with your initials, identifier, AND date"
+  note: "place each tube in a test tube rack.\n
+  These tubes will eventually hold the transformed cells"
 end
 
 step
-  description: "Pipette 2 mL of LB into 14 mL tube"
+  description: "Pipette 2 mL of LB into each 14 mL tube"
   note: "Use proper sterile technique. Use the 1000 μL pipetter."
   bullet: "Set pipetter to 1000μL"
   bullet: "Loosen cap on LB aliquot"
@@ -30,19 +32,27 @@ step
 end
 
 step
-  description: "Add a colony to suspension"
-  note: "Select desired colony prior to opening plate. Mark desired colony with circle and intials and date"
+  description: "Add a colony to each suspension"
+  note: "For each tube, select desired colony prior to opening plate. Mark desired colony with circle and intials and date"
   note: "Selection of your colony should be based on size (medium-big, not too big), isolated, and round in shape." 
   bullet: "Take a sterile pipette tip, pick up your desired colony by gently scraping the tip to the colony."
   bullet: "Tilt 14 mL tube such that you can reach the broth with your tip."
   bullet: "Scrape colony into broth, using a swirling motion"
+  bullet: "Repeat the process for every suspension you wish to prepare."
   warning: "!DON'T SPILL THE BROTH!"
 end
 
-produce
-  s = 1 "Overnight suspension culture" from cell_plate[0]
-  note: "Place in 37 degree incubator at B13.425 for 18-24 hours"
-  location: "B13.425"
+i = 0
+s = []
+
+while i < n
+  produce
+    y = 1 "Overnight suspension culture" from cell_plate[i]
+    note: "Place in 37 degree incubator at B13.425 for 18-24 hours"
+    location: "B13.425"
+  end
+  s = append(s,y[:id])
+  i = i+1
 end
 
 step
@@ -54,5 +64,5 @@ end
 release concat(cell_plate, aliquot)
 
 log
-  return: { sus_id: s[:id] }
+  return: { sus_id: s }
 end

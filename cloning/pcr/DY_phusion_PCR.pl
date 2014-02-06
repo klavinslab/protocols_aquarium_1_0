@@ -67,7 +67,7 @@ y=length(forward_ids)
 
 step 
   description: "Pipet 19 µL molecular grade water into wells 1 through %{y}."
-  note:"Be careful to pipette into the liquid, not the side of the tube."
+  note:"Be careful to pipette into the bottom of the tube, not onto the side of the tube."
 end
 
 x=0

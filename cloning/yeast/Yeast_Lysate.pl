@@ -1,5 +1,6 @@
 argument
   YeastStrain_id: sample("Yeast Strain") array, "Yeast Strain"
+  ColonyNumber: number, "Number of desired colonies from each plate to lysate"
 end
 
 take
@@ -63,6 +64,7 @@ while z< y
   f=z+1
   step
     description: "Take an unused small pipet tip and scrape a small amount of cells off a colony from %{a} and place it into well %{f}"
+    note: "If you're already picked a colony for this strain make sure you pick a different one for this well"
   end
   z=z+1
 end
@@ -97,13 +99,16 @@ step
 end
 
 
-
+ColonyCount=0
 count=0
   while count < y 
     strain = strains[count]
-    produce
-      q=1 "Lysate" from strain
-      location: "Benchtop"
+      while ColonyCount < ColonyNumber
+      produce
+        q=1 "Lysate" from strain
+        location: "Benchtop"
+      end
+      ColonyCount=ColonyCount+1
     end
   count=count+1
 end

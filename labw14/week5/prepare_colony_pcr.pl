@@ -1,5 +1,5 @@
 argument
-  pfwd: sample, "The forward primer"
+  pfwd: sample("Primer"), "The forward primer"
   prev: sample array, "two reverse primers"
   #templates: sample array, "The templates you just made" #just assume you have it
   enzyme_id: sample, "The Phsion HF Master Mix stock"

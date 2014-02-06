@@ -1,0 +1,9 @@
+place p2
+  protocol: "labw14/group5/make_glycerol_stock.pl"
+  group: "group5"
+  marked: true
+  start: now()
+  window: minutes(1)
+end
+
+transition [p2] => [] when !error(0) && completed(0) end

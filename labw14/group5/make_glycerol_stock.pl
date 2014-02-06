@@ -1,5 +1,5 @@
 argument
- Transformed_E_coli_Strain_id: sample, "A tube with overnight suspension culture"
+ Transformed_E_coli_Strain_id: sample array, "A tube with overnight suspension culture"
 end
 
 step

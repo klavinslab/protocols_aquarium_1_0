@@ -1,9 +1,9 @@
 argument
-  colony_plate: sample, "Choose the plate you incubated yesterday"
+  Transformed_E_coli_Strain_plate: sample, "Choose the plate you incubated yesterday"
 end
 
 take
-  cell_plate = item colony_plate
+  colony_plate = item Transformed_E_coli_Strain_plate
   aliquot = 1 "50 mL LB liquid aliquot (sterile)"
   test_tube = 1 "14 mL Test Tube"
 end
@@ -40,7 +40,7 @@ step
 end
 
 produce
-  s = 1 "Overnight suspension culture" from cell_plate[0]
+  s = 1 "Overnight suspension culture" from colony_plate[0]
   note: "Place in 37 degree incubator at B13.425 for 18-24 hours"
   location: "B13.425"
 end
@@ -51,8 +51,11 @@ step
   check: "Return test tube rack to Bench"
 end
 
-release concat(cell_plate, aliquot)
+release concat(colony_plate, aliquot)
 
 log
-  return: { sus_id: s[:id] }
+  return: { transformed_cells_id: s[:id]}
 end
+#log
+#  return: { transformed_cells_id: r[:id], tube_incubation_choice : tube_incubation_choice }
+#end
