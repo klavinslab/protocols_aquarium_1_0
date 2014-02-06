@@ -4,6 +4,7 @@ information "Pour a 50 mL agarose gel."
 argument
   percentage: number, "Enter the percentage gel to make (e.g. 1 = 1%)"
   comb_n: number, "Enter the number of combs to use (1 or 2)."
+  well_n: number, "Enter the number of wells for the comb."
 end
 
 
@@ -98,15 +99,15 @@ end
 
 if comb_n == 1
   step
-    description: "Add 10-well comb"
-    note: "Retrieve a 10-well purple comb from A7.325. Position the gel box With the electrodes facing away from you. Add a purple comb to the side of the casting tray nearest the side of the gel box, thicker side down. Make sure it is well-situated in the groove of the casting tray."
+    description: "Add %{well_n}-well comb"
+    note: "Retrieve a %{well_n}-well purple comb from A7.325. Position the gel box With the electrodes facing away from you. Add a purple comb to the side of the casting tray nearest the side of the gel box, thicker side down. Make sure it is well-situated in the groove of the casting tray."
     image: "gel_comb_placement"
     warning: "Do not use the 6-well purple comb this time since we have 8 samples to load!"
   end
 else
   step
-    description: "Add combs"
-    note: "Retrieve two 6-well purple combs from A7.325. Position the gel box With the electrodes facing away from you. Add a purple comb to each casting tray groove, thicker side down. Make sure it is well-situated in the groove of the casting tray."
+    description: "Add two %{well_n}-well combcombs"
+    note: "Retrieve two %{well_n}-well purple combs from A7.325. Position the gel box With the electrodes facing away from you. Add a purple comb to each casting tray groove, thicker side down. Make sure it is well-situated in the groove of the casting tray."
     image: "gel_comb_placement"
   end
 end
