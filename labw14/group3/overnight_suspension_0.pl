@@ -40,7 +40,7 @@ step
 end
 
 produce
-  s = 1 "Overnight suspension culture" from colony_plate[0]
+  s = 1 "Overnight suspension culture" from Transformed_E_coli_Strain_id[0]
   note: "Place in 37 degree incubator at B13.425 for 18-24 hours"
   location: "B13.425"
 end
@@ -51,7 +51,7 @@ step
   check: "Return test tube rack to Bench"
 end
 
-release concat(colony_plate, aliquot)
+release concat(Transformed_E_coli_Strain_id, aliquot)
 
 log
   return: { sus_id: s[:id]}
