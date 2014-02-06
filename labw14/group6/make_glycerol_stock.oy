@@ -22,7 +22,7 @@ place one
   protocol: "labw14/group3/overnight_suspension_0.pl"
   
   argument
-    Transformed_E_coli_Strain_id: input1
+    colony_plate: input1
   end
   
   group: aquarium_user
