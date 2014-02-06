@@ -43,6 +43,7 @@ step
 end
 
 i = 0
+s = []
 
 while i < n
   produce
