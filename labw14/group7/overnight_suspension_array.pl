@@ -36,7 +36,7 @@ end
 
 i=1
 while i<n+1
-currentPlate = plate_array[i]
+currentPlate = plate_array[i-1]
 step
   description: "Add a colony to to tube %{i}"
   check: "Add a colony from plate %{currentPlate} to tube %{i}"
