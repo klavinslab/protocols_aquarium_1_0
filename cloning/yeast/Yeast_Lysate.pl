@@ -1,5 +1,6 @@
 argument
   YeastStrain_id: sample("Yeast Strain") array, "Yeast Strain"
+  ColonyNumber: int
 end
 
 take
