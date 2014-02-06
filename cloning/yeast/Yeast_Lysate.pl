@@ -99,13 +99,16 @@ step
 end
 
 
-
+ColonyCount=0
 count=0
   while count < y 
     strain = strains[count]
-    produce
-      q=1 "Lysate" from strain
-      location: "Benchtop"
+      while ColonyCount < ColonyNumber
+      produce
+        q=1 "Lysate" from strain
+        location: "Benchtop"
+        ColonyCount=ColonyCount+1
+      end
     end
   count=count+1
 end
