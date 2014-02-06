@@ -34,7 +34,7 @@ place one
 end
 
 
-wire ( one, output1 ) => ( two, input2 )
+wire ( one, "output1" ) => ( two, "input2" )
 
 place two
   protocol: "labw14/group6/make_glycerol_stock.pl"
