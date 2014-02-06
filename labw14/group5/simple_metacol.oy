@@ -9,7 +9,6 @@ end
 place p2
   protocol: "labw14/group5/make_glycerol_stock.pl"
   group: aquarium_user
-  marked: false
   start: hours(2)
   window: minutes(1)
 end
