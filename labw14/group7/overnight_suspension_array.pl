@@ -1,5 +1,5 @@
 argument
-  plate_array: sample array, "Choose the plates you incubated yesterday"
+  plate_array: sample("Transformed E coli plate") array, "Choose the plates you incubated yesterday"
 end
 
 n = length(plate_array)
@@ -39,10 +39,7 @@ while i<n
 step
   description: "Add a colony to each of %{n} suspensions"
   note: "Match each plate to its corresponding tube.  For each pair:"
-  note: " "
-  
   check: "add a colony from plate %{plate_array[i]} to tube %{i}"
-  
   note: "Select the desired colony prior to opening plate. Mark desired colony with circle and intials and date"
   note: "Selection of your colony should be based on size (medium-big, not too big), isolated, and round in shape." 
   bullet: "Take a sterile pipette tip, pick up the desired colony by gently scraping the tip to the colony."
@@ -50,6 +47,7 @@ step
   bullet: "Scrape colony into broth, using a swirling motion"
   warning: "!DON'T SPILL THE BROTH!"
 end
+i= i+1
 end
 
 i=0;
@@ -59,6 +57,7 @@ while i<n
     note: "Place all in 37 degree incubator at B13.425 for 18-24 hours"
     location: "B13.425"
   end
+i= i+1
 end
 
 step
