@@ -1,6 +1,6 @@
 place p1
   protocol: "labw14/group5/overnight_suspension.pl"
-  group: "group5"
+  group: aquarium_user
   marked: true
   start: now()
   window: minutes(1)
@@ -8,12 +8,15 @@ end
 
 place p2
   protocol: "labw14/group5/make_glycerol_stock.pl"
-  group: "group5"
-  marked: true
+  group: aquarium_user
+  marked: false
   start: hours(2)
   window: minutes(1)
 end
 
+#forward transitions
 transition [p1] => [p2] when !error(0) && completed(0) && hours_elapsed(0,2) end
+
+#rework transitions
 transition [p1] => [p1] when error(0) end
 transition [p2] => [p2] when error(0) end
