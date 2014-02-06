@@ -214,9 +214,12 @@ poured_plates = []
 empty_plates = []
 while ii < n_empty_plates
   if ii < n_poured
-    poured_plates = append(poured_plates, plates[ii])
+    # FIXME: replaced with commented lines after fix to multiple takes
+    poured_plates = append(poured_plates, plates[0])
+    #poured_plates = append(poured_plates, plates[ii])
   else
-    empty_plates = append(empty_plates, plates[ii])
+    empty_plates = append(empty_plates, plates[0])
+    #empty_plates = append(empty_plates, plates[ii])
   end
   ii = ii + 1
 end
@@ -244,18 +247,16 @@ end
 
 
 if volume == 800
-  produce
-    n "1 L Bottle (dirty)"
-    location: "A8.310"
-  end
+  empty_bottle_type = "1 L Bottle (dirty)"
 elsif volume == 400
-  produce
-    n "500 mL Bottle (dirty)"
-    location: "A8.310"
-  end
+  empty_bottle_type = "500 mL Bottle (dirty)"
 elsif volume == 200
-  produce
-    n "250 mL Bottle (dirty)"
-    location: "A8.310"
-  end
+  empty_bottle_type = "250 mL Bottle (dirty)"
+end
+
+
+produce
+  n empty_bottle_type
+  location: "A8.310"
+  note: "Rinse out in the sink at A8.310 first"
 end
