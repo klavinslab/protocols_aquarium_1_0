@@ -58,8 +58,8 @@ while i<n+1
     note: "Place all in 37 degree incubator at B13.425 for 18-24 hours."
     note: "This was tube %{i}"
     location: "Bench"
-    return_array = append(return_array,s[:id])
   end
+  return_array = append(return_array,s[:id])
 i= i+1
 end
 
