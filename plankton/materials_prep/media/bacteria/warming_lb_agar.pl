@@ -15,7 +15,14 @@ if volume != 200 && volume != 400
     end
   end
 end
-media_type = volume + " mL LB Agar (sterile")
+
+# BUG: shouldn't this work? Concatenating ints/strings also doesn't work
+#media_type = "%{volume} mL LB Agar (sterile)"
+if volume == 200
+  media_type = "200 mL LB Agar (sterile)"
+else
+  media_type = "400 mL LB Agar (sterile)"
+end
 
 
 # Take media type
@@ -23,6 +30,7 @@ take
   media = n media_type
   gloves = 1 "Autoclave Gloves"
 end
+
 
 # Melt agar
 if media_type == "400 mL LB Agar (sterile)"
