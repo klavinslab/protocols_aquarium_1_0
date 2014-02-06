@@ -34,8 +34,6 @@ place one
 end
 
 
-wire ( one, "output1" ) => ( two, "input2" )
-
 place two
   protocol: "labw14/group6/make_glycerol_stock.pl"
   argument
@@ -46,6 +44,7 @@ place two
   window: minutes(1)Transformed_E_coli_Strain_id
 end
 
+wire ( one, "output1" ) => ( two, "input2" )
 transition [ one ] => [ two ] when !error(0) && completed(0) end
 transition [ one ] => [one] when error(0) end
 
