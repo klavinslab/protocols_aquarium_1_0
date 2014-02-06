@@ -19,12 +19,6 @@ step
   warning: "Wear gloves at all times!"
 end
 
-
-take
-  glasses = 1 "Clear Protective Glasses"
-end
-
-
 step
   description: "Put on the clear protective glasses"
 end
@@ -139,6 +133,3 @@ step
   check: "Place the graduated cylinder back on top of microwave M2."
   check: "Place the flask back on top of microwave M2."
 end
-
-
-release glasses

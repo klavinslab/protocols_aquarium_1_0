@@ -38,7 +38,7 @@ while ii < 4
     jj= jj + 1
     tube_number = tube_number + 1
     step 
-      description: "Prepare reaction"
+      description: "Prepare reaction for tube %{tube_number}"
       check: "Pipet 3 µL of boiled cell %{t} into tube %{tube_number}."
       check: "Pipet 1 µL of primer with id %{pfwd} into tube %{tube_number}."
       check: "Pipet 1 µL of primer with id %{r} into tube %{tube_number}."

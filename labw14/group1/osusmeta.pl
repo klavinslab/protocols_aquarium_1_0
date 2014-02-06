@@ -27,21 +27,21 @@ step
 end
 
 x = 0
-
+r = []
 while x < length(plate)
  produce
-  r = 1 "Overnight suspension culture" from plate[x]
+  r1 = 1 "Overnight suspension culture" from plate[x]
   note: "Place your suspension culture test tube in the 37 C Shaker Incubator"
   location:"B13.425"
  end
- log
- return: {Transformed_E_coli_Strain_id: r[:id]}
- end
+ r = append(r,r1[:id])
  x = x+1
 end
 
-release [concat(falcon_tube, plate), test_tube]
+#release [concat(falcon_tube, plate), test_tube]
+release concat(falcon_tube, test_tube)
+release plate
 
-#log
-# return: {Transformed_E_coli_Strain_id: r[:id]}
-#end
+log
+ return: {Transformed_E_coli_Strain_id: r}
+end

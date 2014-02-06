@@ -3,7 +3,7 @@ argument
 end
 
 take
-  strains = item YeastStrain_id
+  strains = item unique(YeastStrain_id)
 end
 
 step
@@ -50,11 +50,11 @@ sds=x*3
 h20=x*27
 
 step
-  description: "Grab a 1.5ml tube and pipet in %{sds}µl of 2% sds solution into it, then pipet in %{h20} µl of molecular grade water. Mix the 1.5ml tube with the vortexter"
+  description: "Grab a 1.5 ml tube and pipet in %{sds}µl of 2%% sds solution into it, then pipet in %{h20} µl of molecular grade water. Mix the 1.5ml tube with the vortexter"
 end
 
 step
-  description: "Pipet 30µl of the SDS mix created in the last step into stripwells 1 through %{y}."
+  description: "Pipet 30µl of the SDS mix created in the last step into the stripwells"
 end
 
 z=0
@@ -85,27 +85,28 @@ step
 end
 
 step
-  description: "Label 1-%{y} more strip-well tubes in the manner described earlier in the protocol"
+  description: "Label %{y} more strip-well tubes in the manner described earlier in the protocol"
 end
 
 step
-  description: "pipet 40µl of Molecular grade water into the new tubes 1 through %{y}"
+  description: "pipet 40µl of Molecular grade water into the new tubes."
 end
 
 step
-  description: "pipet 10µl of the supernatant of the spundown strip-well tubes 1 through %{y} into the new corresponding strip-well tubes 1 through %{y}"
+  description: "pipet 10µl of the supernatant of the spundown strip-well tubes into the new corresponding strip-well tubes."
 end
 
-release(strains)
+
 
 count=0
   while count < y 
+    strain = strains[count]
     produce
-      q=1 "Lysate" of YeastStrain_id[count]
-      location "benchtop"
+      q=1 "Lysate" from strain
+      location: "Benchtop"
     end
   count=count+1
 end
 
   
-
+release(strains)

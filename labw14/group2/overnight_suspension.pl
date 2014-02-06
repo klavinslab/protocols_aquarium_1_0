@@ -40,7 +40,7 @@ step
 end
 
 x = 0
-r = 0
+r = [ ]
 
 while x < length(e_id)
 
@@ -49,7 +49,7 @@ while x < length(e_id)
     note: "Keep on bench"
     location: "Bench"
   end
-  r[x] = t[:id]
+  r = append(r, t[:id])
   x = x + 1
 end
 
