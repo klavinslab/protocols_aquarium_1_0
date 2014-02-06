@@ -1,5 +1,5 @@
 argument
- Transformed_E_coli_Strain_id: sample, "An overnight suspension of transformed E. Coli cells (in culture tube)"
+ Transformed_E_coli_Strain_tube: sample, "An overnight suspension of transformed E. Coli cells (in culture tube)"
 end
 
 step
@@ -7,7 +7,7 @@ step
 end
 
 take
-  cell_culture_tube = item Transformed_E_coli_Strain_id
+  cell_culture_tube = item Transformed_E_coli_Strain_tube
   glycerol = 1 "50 percent Glycerol (sterile)"
   sterile_tube = 1 "Cryo Tube"
   note: "Be sure to use STERILE technique when removing cryo tubes from their container. This means:
@@ -29,10 +29,10 @@ step
 end
 
 produce
- s = 1 "transformed E. Coli in 50% glycerol" from cell_culture_tube[0]
+ s = 1 "transformed E. Coli in 50%% glycerol" from cell_culture_tube[0]
  note: "Make sure to also add your initials and todays date (mm/dd/yyyy) in addition to the item ID number.
-        This glycerol/cell culture mixture will potentially be stored in the -80 C freezer for many months,
-        so be sure to label both the cap and the side of the tube for redundancy."
+       This glycerol/cell culture mixture will potentially be stored in the -80 C freezer for many months,
+       so be sure to label both the cap and the side of the tube for redundancy."
 end
 
 #release [cell_culture_tube[0], glycerol[0]]
