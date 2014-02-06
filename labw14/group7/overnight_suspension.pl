@@ -52,3 +52,10 @@ step
 end
 
 release concat(colony_plate, aliquot)
+
+log
+  return: { transformed_cells_id: s[:id]}
+end
+#log
+#  return: { transformed_cells_id: r[:id], tube_incubation_choice : tube_incubation_choice }
+#end
