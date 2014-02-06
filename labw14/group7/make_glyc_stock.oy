@@ -22,7 +22,7 @@ place glyStock
     #Transformed_E_coli_Strain_id: sample, "An overnight suspension of transformed E. Coli cells (in culture tube)"
  # end
   group: aquarium_user
-  start: minutes(1)
+  start: minutes(.1)
   window: minutes(1)
 end
 
