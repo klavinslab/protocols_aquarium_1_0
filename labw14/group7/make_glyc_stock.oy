@@ -15,8 +15,6 @@ place overnight
   window: minutes(1)     #start in the next minute
 end
 
-wire (overnight,"transformed_cells_id") => (glyStock,"Transformed_E_coli_Strain_id")
-
 place glyStock
   protocol: "labw14/group7/make_glycerol_stock.pl"
  # argument
@@ -28,6 +26,7 @@ place glyStock
   window: minutes(1)
 end
 
+wire (overnight,"transformed_cells_id") => (glyStock,"Transformed_E_coli_Strain_id")
 
 # forward transitions
 
