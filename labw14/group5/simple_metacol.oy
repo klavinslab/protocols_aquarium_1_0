@@ -1,3 +1,7 @@
+argument
+  Transformed_E_coli_Strain_id: sample
+end
+
 place p1
   protocol: "labw14/group5/overnight_suspension.pl"
   argument
