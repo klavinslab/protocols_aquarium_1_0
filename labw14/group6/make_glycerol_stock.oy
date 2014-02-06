@@ -31,10 +31,6 @@ place one
   window: minutes(1)
   
   
-  log
-    return: { output1: s }
-  end
-  
 end
 
 
