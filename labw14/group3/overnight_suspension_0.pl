@@ -3,7 +3,7 @@ argument
 end
 
 take
-  Transformed_E_coli_Strain_id = item cell_plate
+  cell_plate = item Transformed_E_coli_Strain_id
   aliquot = 1 "50 mL LB liquid aliquot (sterile)"
   test_tube = 1 "14 mL Test Tube"
 end
@@ -40,7 +40,7 @@ step
 end
 
 produce
-  s = 1 "Overnight suspension culture" from Transformed_E_coli_Strain_id[0]
+  s = 1 "Overnight suspension culture" from cell_plate[0]
   note: "Place in 37 degree incubator at B13.425 for 18-24 hours"
   location: "B13.425"
 end
@@ -51,7 +51,7 @@ step
   check: "Return test tube rack to Bench"
 end
 
-release concat(Transformed_E_coli_Strain_id, aliquot)
+release concat(cell_plate, aliquot)
 
 log
   return: { sus_id: s[:id]}
