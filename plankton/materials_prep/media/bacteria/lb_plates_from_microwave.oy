@@ -13,35 +13,23 @@ xgal = "No"
 
 # Arguments
 argument
-  n: number, "The number of batches to make (one batch makes about 35 plates)"
+  n: number, "The number of bottles to melt and pour. A 200 mL bottle makes about 8 plates, a 400 mL aout 16 plates."
+  volume: number, "The volume of the bottles being used - 200 or 400 (in mL)."
   antibiotic: string, "The type of antibiotic to add (Amp, Kan, Chlor, or None)"
 end
 
 
 # Places
-place lb_agar_unsterile
-  protocol: "plankton/materials_prep/media/bacteria/lb.pl"
+place melt_agar
+  protocol: "plankton/materials_prep/media/bacteria/warming_lb_agar.pl"
   argument
-    n_bottle: n
-    add_agar: "Yes"
-    volume: 800
+    volume: volume
+    n: n
   end
   group: "mediabay"
   marked: true
   start: now()
-  window: minutes(60)
-end
-
-place autoclave
-  protocol: "plankton/materials_prep/media/bacteria/autoclave_bacteria_media.pl"
-  argument
-    lb_agar_n: n
-    lb_liquid_n: 0
-    tb_liquid_n: 0
-  end
-  group: "mediabay"
-  start: now()
-  window: minutes(60)
+  window: hours(3)
 end
 
 # IDEA: make protocol to ask if source bottle is molten - return that value to metacol
@@ -51,7 +39,7 @@ place pour_plates
   protocol: "plankton/materials_prep/media/bacteria/pour_lb_plates.pl"
   argument
     n: n
-    volume: 800
+    volume: volume
     antibiotic: antibiotic
     iptg: iptg
     atc: atc
@@ -77,7 +65,6 @@ end
 
 
 # Transitions
-transition [lb_agar_unsterile] => [autoclave] when !error(0) && completed(0) end
-transition [autoclave]         => [pour_plates] when !error(0) && completed(0) end
-transition [pour_plates]       => [move_plates] when !error(0) && completed(0) end
+transition [melt_agar]         => [pour_plates] when !error(0) && completed(0) end
+#transition [pour_plates]       => [move_plates] when !error(0) && completed(0) end
 #transition [move_plates]       => [] when !error(0) && completed(0) end

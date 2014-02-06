@@ -175,7 +175,7 @@ end
 
 step
   description: "Pour 25 mL of media into each plate."
-  note: "Repeat this step for each bottle.\n\nUncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25 mL. Replace the petri dish lid."
+  note: "Repeat this step for each bottle.\n\nUncap the molten agar media bottle. Pour agar slowly into a plate (pour into the same location on the plate for the entire pour). It should take approximately 3 seconds for agar to cover the bottom of the plate. Continue pouring at the same rate for 1 more second and you will have poured approximately 25 mL. Replace the petri dish lid.\n\nIf bubbles form in the bottle while pouring, squirt a very small amount of ethanol into the bottle to break them up."
   getdata
     n_poured: number, "Enter the number of plates you actually poured."
   end

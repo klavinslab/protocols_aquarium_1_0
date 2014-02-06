@@ -1,19 +1,26 @@
 information "Warm up a bottle of solid agar in a microwave to a molten state so that it can be poured into plates."
 
 
-# Chose media type
-step
-  description: "What type of agar?"
-  note: "Choose the type of agar to warm up."
-  getdata
-    media_type: string, "Media Type", ["200 mL LB Agar (sterile)",
-                                       "400 mL LB Agar (sterile)"]
+argument
+  volume: number, "Volume of LB to melt (200 or 400), in mL"
+  n: number, "The number of bottles to melt"
+end
+
+
+if volume != 200 && volume != 400
+  step
+    description: "The LB volume was incorrectly entered as %{volume}."
+    getdata
+      volume: number, "Enter the volume of LB to make.", [200, 400]
+    end
   end
 end
+media_type = volume + " mL LB Agar (sterile")
+
 
 # Take media type
 take
-  media = 1 media_type
+  media = n media_type
   gloves = 1 "Autoclave Gloves"
 end
 
