@@ -50,11 +50,11 @@ sds=x*3
 h20=x*27
 
 step
-  description: "Grab a 1.5ml tube and pipet in %{sds}µl of 2%% sds solution into it, then pipet in %{h20} µl of molecular grade water. Mix the 1.5ml tube with the vortexter"
+  description: "Grab a 1.5 ml tube and pipet in %{sds}µl of 2%% sds solution into it, then pipet in %{h20} µl of molecular grade water. Mix the 1.5ml tube with the vortexter"
 end
 
 step
-  description: "Pipet 30µl of the SDS mix created in the last step into stripwells 1 through %{y}."
+  description: "Pipet 30µl of the SDS mix created in the last step into the stripwells"
 end
 
 z=0
@@ -96,16 +96,17 @@ step
   description: "pipet 10µl of the supernatant of the spundown strip-well tubes 1 through %{y} into the new corresponding strip-well tubes 1 through %{y}"
 end
 
-release(strains)
+
 
 count=0
   while count < y 
+    strain = strains[count]
     produce
-      q=1 "Lysate" from YeastStrain_id[count]
+      q=1 "Lysate" from strain
       location: "Benchtop"
     end
   count=count+1
 end
 
   
-
+release(strains)
