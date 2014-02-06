@@ -1,5 +1,5 @@
 argument
-  colony_plate: sample array, "Choose the plate you incubated yesterday"
+  colony_plate: sample array, "Choose the plate(s) you incubated yesterday"
 end
 
 n = length(colony_plate)
@@ -44,12 +44,12 @@ end
 
 i = 0
 
-produce
-  for i < n
-    s[i] = 1 "Overnight suspension culture" from cell_plate[i]
-    i = i+1
+while i < n
+  produce
+    y = 1 "Overnight suspension culture" from cell_plate[i]
   end
-  
+  s = append(s,y[:id])
+  i = i+1
   note: "Place in 37 degree incubator at B13.425 for 18-24 hours"
   location: "B13.425"
 end
@@ -63,5 +63,5 @@ end
 release concat(cell_plate, aliquot)
 
 log
-  return: { sus_id: s[:id] }
+  return: { sus_id: s }
 end
