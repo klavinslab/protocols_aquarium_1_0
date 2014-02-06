@@ -107,7 +107,8 @@ count=0
       produce
         q=1 "Lysate" from strain
         location: "Benchtop"
-        ColonyCount=ColonyCount+1
+      end
+      ColonyCount=ColonyCount+1
       end
     end
   count=count+1
