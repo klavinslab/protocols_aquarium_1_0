@@ -35,20 +35,21 @@ step
 end
 
 i=0
-
+while i<n
 step
   description: "Add a colony to each of %{n} suspensions"
   note: "Match each plate to its corresponding tube.  For each pair:"
   note: " "
-  while i<n
-    check: "add a colony from plate %{colony_plate_array(i) to tube %{i}"
-  end
+  
+  check: "add a colony from plate %{colony_plate_array(i)} to tube %{i}"
+  
   note: "Select the desired colony prior to opening plate. Mark desired colony with circle and intials and date"
   note: "Selection of your colony should be based on size (medium-big, not too big), isolated, and round in shape." 
   bullet: "Take a sterile pipette tip, pick up the desired colony by gently scraping the tip to the colony."
   bullet: "Tilt 14 mL tube such that you can reach the broth with your tip."
   bullet: "Scrape colony into broth, using a swirling motion"
   warning: "!DON'T SPILL THE BROTH!"
+end
 end
 
 i=0;
