@@ -6,7 +6,7 @@ n = length(colony_plate)
 n2 = 1
 # Counts out the minimum number of 50 mL aliqouts required for n 2mL suspensions
 while n2<(n/25)
-  n2+1
+  n2 = n2+1
 end
 
 
