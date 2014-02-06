@@ -19,7 +19,7 @@ end
 
 
 place one
-  protocol: "labw14/group3/overnight_suspension.pl"
+  protocol: "labw14/group3/overnight_suspension_0.pl"
   
   argument
     Transformed_E_coli_Strain_id: input1
@@ -44,7 +44,7 @@ place two
   window: minutes(1)
 end
 
-wire ( one, "output1" ) => ( two, "input2" )
+wire ( one, "sus_id" ) => ( two, "input2" )
 transition [ one ] => [ two ] when !error(0) && completed(0) end
 transition [ one ] => [one] when error(0) end
 
