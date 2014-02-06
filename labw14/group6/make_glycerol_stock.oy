@@ -1,25 +1,11 @@
 argument
-  input1: sample, "Choose the plate you incubated yesterday"
+  input1: sample array, "Choose the plate you incubated yesterday"
 end
 
 
 
-
-
-
-#step
-#  description: "Select your overnight suspension."
-#  
-#  getdata
-#    input1: item, "Overnight Suspension"
-#  end
-#  
-#end
-
-
-
 place one
-  protocol: "labw14/group3/overnight_suspension_0.pl"
+  protocol: "labw14/group6/overnight_suspension.pl"
   
   argument
     colony_plate: input1
