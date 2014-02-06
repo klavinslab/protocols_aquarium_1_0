@@ -1,5 +1,5 @@
 argument
-  plate_array: sample("E coli strain") array, "Choose the plates you incubated yesterday"
+  plate_array: sample array, "Choose the plates you incubated yesterday"
 end
 
 n = length(plate_array)
