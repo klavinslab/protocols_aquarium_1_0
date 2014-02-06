@@ -1,5 +1,5 @@
 argument
-  Transformed_E_coli_Strain_ext: sample, "Choose the plate you incubated yesterday"
+  Transformed_E_coli_Strain_plate: sample, "Choose the plate you incubated yesterday"
   # description = inventory match?
 end
 
@@ -7,7 +7,7 @@ end
 place overnight
   protocol: "labw14/group7/overnight_suspension.pl"
   argument
-    Transformed_E_coli_Strain_plate: Transformed_E_coli_Strain_ext
+    Transformed_E_coli_Strain_plate: Transformed_E_coli_Strain_plate
   end
   group: aquarium_user      #generic, general
   marked: true           #start here
