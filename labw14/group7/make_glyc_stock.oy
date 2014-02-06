@@ -7,7 +7,7 @@ end
 place overnight
   protocol: "labw14/group7/overnight_suspension.pl"
   argument
-    Transformed_E_coli_Strain_id: Transformed_E_coli_Strain_ext
+    Transformed_E_coli_Strain_plate: Transformed_E_coli_Strain_ext
   end
   group: aquarium_user      #generic, general
   marked: true           #start here
@@ -26,7 +26,7 @@ place glyStock
   window: minutes(1)
 end
 
-wire (overnight,"transformed_cells_id") => (glyStock,"Transformed_E_coli_Strain_id")
+wire (overnight,"transformed_cells_id") => (glyStock,"Transformed_E_coli_Strain_tube")
 
 # forward transitions
 
