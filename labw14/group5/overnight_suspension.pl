@@ -27,10 +27,14 @@ step
 end
 
 produce
- 1 "Overnight suspension culture" from plate[0]
+ r = 1 "Overnight suspension culture" from plate[0]
  release test_tube
  note: "Place your suspension culture test tube in the 37 C Shaker Incubator"
  location:"B13.425"
+end
+
+log
+  return: { overnight_suspension_id: r[:id]}
 end
 
 release concat(falcon_tube, plate)
