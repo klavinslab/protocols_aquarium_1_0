@@ -41,7 +41,7 @@ place two
   end
   group: aquarium_user
   start: minutes(1)
-  window: minutes(1)Transformed_E_coli_Strain_id
+  window: minutes(1)
 end
 
 wire ( one, "output1" ) => ( two, "input2" )
