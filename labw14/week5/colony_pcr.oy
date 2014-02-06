@@ -6,9 +6,8 @@ argument
   enzyme_id: sample, "The Phsion HF Master Mix stock"
   ladder: sample, "The ladder for your gel"
 end
-# ladder = 822
-# enzyme_id = 711
-
+ ladder = 822
+ enzyme_id = 711
 
 place boil_cell
   protocol: "labw14/week5/boil_cell.pl"
