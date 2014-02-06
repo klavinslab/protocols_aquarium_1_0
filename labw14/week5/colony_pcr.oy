@@ -45,6 +45,7 @@ place pour_gel
   argument
     percentage: 1
     comb_n: 1
+    well_n: 10
   end
   group: aquarium_user
   start: now()
