@@ -85,7 +85,7 @@ step
 end
 
 step
-  description: "Label 1-%{y} more strip-well tubes in the manner described earlier in the protocol"
+  description: "Label %{y} more strip-well tubes in the manner described earlier in the protocol"
 end
 
 step
@@ -101,8 +101,8 @@ release(strains)
 count=0
   while count < y 
     produce
-      q=1 "Lysate" of YeastStrain_id[count]
-      location "benchtop"
+      q=1 "Lysate" from YeastStrain_id[count]
+      location: "Benchtop"
     end
   count=count+1
 end
