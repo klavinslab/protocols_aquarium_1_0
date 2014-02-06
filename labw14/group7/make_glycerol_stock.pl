@@ -1,5 +1,5 @@
 argument
- Transformed_E_coli_Strain_id: sample, "An overnight suspension of transformed E. Coli cells (in culture tube)"
+ Transformed_E_coli_Strain_tube: sample, "An overnight suspension of transformed E. Coli cells (in culture tube)"
 end
 
 step
@@ -7,7 +7,7 @@ step
 end
 
 take
-  cell_culture_tube = item Transformed_E_coli_Strain_id
+  cell_culture_tube = item Transformed_E_coli_Strain_tube
   glycerol = 1 "50 percent Glycerol (sterile)"
   sterile_tube = 1 "Cryo Tube"
   note: "Be sure to use STERILE technique when removing cryo tubes from their container. This means:
