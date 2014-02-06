@@ -51,12 +51,14 @@ i= i+1
 end
 
 i=1;
+return_array = []
 while i<n+1
   produce
     s = 1 "Overnight suspension culture from the tube" from colony_plate_array[i-1]
     note: "Place all in 37 degree incubator at B13.425 for 18-24 hours."
     note: "This was tube %{i}"
-    location: "B13.425"
+    location: "Bench"
+    return_array = append(return_array,s[:id])
   end
 i= i+1
 end
@@ -70,7 +72,7 @@ end
 release concat(colony_plate_array, aliquot)
 
 log
-  return: { transformed_cells_id: s[:id]}
+  return: { overnight_suspension_array: return_array}
 end
 #log
 #  return: { transformed_cells_id: r[:id], tube_incubation_choice : tube_incubation_choice }
