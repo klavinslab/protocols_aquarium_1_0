@@ -37,7 +37,7 @@ end
 i = 0
 while i < n
  step
-  discription: "Add overnight suspension culture to the cryo tube"
+  description: "Add overnight suspension culture to the cryo tube"
   check: "Pipette 900uL of cell suspension number %{Transformed_E_coli_Strain_tube_array[i]} to a new 1.5mL sterile tube (containing glycerol)"
   check: "Vortex 1.5mL this sterile tube for 15s at speed 10 using the VWR analog vortex mixer."
  end
