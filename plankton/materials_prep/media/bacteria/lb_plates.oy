@@ -1,8 +1,14 @@
 # Chains lb plate protocols together:
-#   1) Unsterile agar media
+#   1) Unsterile agar media prep
 #   2) Autoclaving
 #   3) Pouring
 #   4) Moving
+
+
+# FIXME: these should be parameterized once pour_lb_plates does the right dilutions
+iptg = "No"
+atc = "No"
+xgal = "No"
 
 
 # Arguments
@@ -20,7 +26,7 @@ place lb_agar_unsterile
     add_agar: "Yes"
     volume: 800
   end
-  group: mediabay
+  group: "mediabay"
   marked: true
   start: now()
   window: minutes(60)
@@ -33,7 +39,7 @@ place autoclave
     lb_liquid_n: 0
     tb_liquid_n: 0
   end
-  group: mediabay
+  group: "mediabay"
   start: now()
   window: minutes(60)
 end
@@ -47,31 +53,31 @@ place pour_plates
     n: n
     volume: 800
     antibiotic: antibiotic
-    iptg: No
-    atc: No
-    xgal: No
+    iptg: iptg
+    atc: atc
+    xgal: xgal
   end
-  group: mediabay
-  marked: true
+  group: "mediabay"
+  marked: false
   start: now()
   window: minutes(20)
 end
 
-place move_plates
-  protocol: "plankton/materials_prep/media/bacteria/lb.pl"
-  argument
-    n_bottle: n
-    add_agar: "Yes"
-  end
-  group: mediabay
-  marked: true
-  start: hours(16)
-  window: hours(8)
-end
+#place move_plates
+#  protocol: "plankton/materials_prep/media/bacteria/lb.pl"
+#  argument
+#    n_bottle: n
+#    add_agar: "Yes"
+#  end
+#  group: "mediabay"
+#  marked: false
+#  start: hours(16)
+#  window: hours(8)
+#end
 
 
 # Transitions
-transition [lb_agar_unsterile]     => [autoclave] when !error(0) && completed(0) end
-transition [autoclave]     => [pour_plates] when !error(0) && completed(0) end
-transition [pour_plates]     => [move_plates] when !error(0) && completed(0) end
-transition [move_plates]     => [] when !error(0) && completed(0) end
+transition [lb_agar_unsterile] => [autoclave] when !error(0) && completed(0) end
+transition [autoclave]         => [pour_plates] when !error(0) && completed(0) end
+transition [pour_plates]       => [move_plates] when !error(0) && completed(0) end
+#transition [move_plates]       => [] when !error(0) && completed(0) end

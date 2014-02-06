@@ -125,6 +125,13 @@ if iptg == "Yes"
 end
 
 
+# FIXME: remove these debug lines after items taken are accurate
+#step
+#  description: "Plates that should've been taken, then plates taken, then antibiotics"
+#  note: "%{n_empty_plates}\n\n%{plates}\n\n%{antibiotic_aliquots}"
+#end
+
+
 if atc == "Yes"
   # FIXME: add this to inventory
   take
@@ -202,11 +209,10 @@ end
 
 # Make an array accounting for the plates that are now empty so they can be released at the end and put back in the inventory
 # Do the same for plates poured so they can be released when producing the new plates
-# FIXME: this is releasing 0 plates?
 ii = 0
 poured_plates = []
 empty_plates = []
-while ii < length(plates)
+while ii < n_empty_plates
   if ii < n_poured
     poured_plates = append(poured_plates, plates[ii])
   else
@@ -225,11 +231,10 @@ if antibiotic == "None"
 else
   produce
     n_poured product_name
-    # FIXME: these aliquots are spent and should be disposed? But releasing isn't right either.
     release poured_plates
-    release antibiotic_aliquots
     location: "A1.110"
   end
+  release antibiotic_aliquots
 end
 
 
