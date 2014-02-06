@@ -38,9 +38,8 @@ i=0
 while i<n
 currentPlate = plate_array[i]
 step
-  description: "Add a colony to each of %{n} suspensions"
-  note: "Match each plate to its corresponding tube.  For each pair:"
-  check: "add a colony from plate %{currentPlate} to tube %{i}"
+  description: "Add a colony to to tube %{n+1}"
+  check: "Add a colony from plate %{currentPlate} to tube %{i}"
   note: "Select the desired colony prior to opening plate. Mark desired colony with circle and intials and date"
   note: "Selection of your colony should be based on size (medium-big, not too big), isolated, and round in shape." 
   bullet: "Take a sterile pipette tip, pick up the desired colony by gently scraping the tip to the colony."
@@ -54,8 +53,9 @@ end
 i=0;
 while i<n
   produce
-    s = 1 "Overnight suspension culture from tube %{i}" from colony_plate_array[i]
-    note: "Place all in 37 degree incubator at B13.425 for 18-24 hours"
+    s = 1 "Overnight suspension culture from tube %{i+1}" from colony_plate_array[i]
+    note: "Place all in 37 degree incubator at B13.425 for 18-24 hours."
+    note: "This was tube %{i+1}"
     location: "B13.425"
   end
 i= i+1
