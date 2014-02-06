@@ -53,7 +53,7 @@ end
 i=1;
 while i<n+1
   produce
-    s = 1 "Overnight suspension culture from tube %{i}" from colony_plate_array[i-1]
+    s = 1 "Overnight suspension culture from the tube" from colony_plate_array[i-1]
     note: "Place all in 37 degree incubator at B13.425 for 18-24 hours."
     note: "This was tube %{i}"
     location: "B13.425"
