@@ -13,6 +13,8 @@ place p2
   window: minutes(1)
 end
 
+wire (p1,"overnight_suspension_id") => (p2,"Transformed_E_coli_Strain_id")
+
 #forward transitions
 transition [p1] => [p2] when !error(0) && completed(0) && hours_elapsed(0,2) end
 
