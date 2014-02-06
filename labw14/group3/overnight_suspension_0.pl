@@ -1,9 +1,9 @@
 argument
-  cell_plate: sample, "Choose the plate you incubated yesterday"
+  Transformed_E_coli_Strain_id: sample, "Choose the plate you incubated yesterday"
 end
 
 take
-  colony_plate = item cell_plate
+  Transformed_E_coli_Strain_id = item cell_plate
   aliquot = 1 "50 mL LB liquid aliquot (sterile)"
   test_tube = 1 "14 mL Test Tube"
 end
