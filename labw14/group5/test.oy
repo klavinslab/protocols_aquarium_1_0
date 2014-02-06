@@ -5,3 +5,5 @@ place p2
   start: hours(now)
   window: minutes(1)
 end
+
+transition [p2] => [] when !error(0) && completed(0) end
