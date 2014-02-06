@@ -3,7 +3,7 @@ argument
 end
 
 take
-  strains = item YeastStrain_id
+  strains = item unique(YeastStrain_id)
 end
 
 step
@@ -89,11 +89,11 @@ step
 end
 
 step
-  description: "pipet 40µl of Molecular grade water into the new tubes 1 through %{y}"
+  description: "pipet 40µl of Molecular grade water into the new tubes."
 end
 
 step
-  description: "pipet 10µl of the supernatant of the spundown strip-well tubes 1 through %{y} into the new corresponding strip-well tubes 1 through %{y}"
+  description: "pipet 10µl of the supernatant of the spundown strip-well tubes into the new corresponding strip-well tubes."
 end
 
 
