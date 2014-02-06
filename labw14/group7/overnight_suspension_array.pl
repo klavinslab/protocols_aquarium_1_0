@@ -34,11 +34,11 @@ step
   description: "Next, you will add a colony to each tube"
 end
 
-i=0
-while i<n
+i=1
+while i<n+1
 currentPlate = plate_array[i]
 step
-  description: "Add a colony to to tube %{n+1}"
+  description: "Add a colony to to tube %{i}"
   check: "Add a colony from plate %{currentPlate} to tube %{i}"
   note: "Select the desired colony prior to opening plate. Mark desired colony with circle and intials and date"
   note: "Selection of your colony should be based on size (medium-big, not too big), isolated, and round in shape." 
@@ -50,10 +50,10 @@ end
 i= i+1
 end
 
-i=0;
-while i<n
+i=1;
+while i<n+1
   produce
-    s = 1 "Overnight suspension culture from tube %{i+1}" from colony_plate_array[i]
+    s = 1 "Overnight suspension culture from tube %{i}" from colony_plate_array[i-1]
     note: "Place all in 37 degree incubator at B13.425 for 18-24 hours."
     note: "This was tube %{i+1}"
     location: "B13.425"
