@@ -3,10 +3,16 @@ argument
 end
 
 n = length(colony_plate)
+n2 = 1
+# Counts out the minimum number of 50 mL aliqouts required for n 2mL suspensions
+while n2<(n/25)
+  n2+1
+end
+
 
 take
   cell_plate = item colony_plate
-  aliquot = n "50 mL LB liquid aliquot (sterile)"
+  aliquot = n2 "50 mL LB liquid aliquot (sterile)"
   test_tube = n "14 mL Test Tube"
 end
 
