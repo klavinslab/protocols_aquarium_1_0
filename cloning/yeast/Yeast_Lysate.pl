@@ -109,7 +109,6 @@ count=0
         location: "Benchtop"
       end
       ColonyCount=ColonyCount+1
-      end
     end
   count=count+1
 end
