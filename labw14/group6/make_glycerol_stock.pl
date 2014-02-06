@@ -15,7 +15,7 @@ end
 
 
 take 
-  glycerol_sol = n "50 percent Glycerol (sterile)"  
+  glycerol_sol = 1 "50 percent Glycerol (sterile)"  
   cryo_tube = n "Cryo Tube"
   overnight_culture = item Transformed_E_coli_Strain_id
   # Tells the user what to gather for this protocol
@@ -31,8 +31,9 @@ step
 end
 
 step
-  description: "Pipette 900 µL of the suspended cell culture into each Cyro tube."
+  description: "Pipette 900 µL of a suspended cell culture into the desired Cyro tube, repeat for each culture with different Cyro tubes."
   note: "Hold the cell culture test tube at an angle so that you can pipette accurately."
+  note: "It will be helpful to label and keep track of each Cyro tube 1-5 before adding cell culture to keep track of their contents."
   
 end
 
