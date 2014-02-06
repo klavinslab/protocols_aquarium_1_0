@@ -45,6 +45,10 @@ produce
   location: "B13.425"
 end
 
+log
+  return { output1: s }
+end
+
 step
   description: "Return all equipment to specified areas"
   note: "Remember to wrap plate with parafilm"
