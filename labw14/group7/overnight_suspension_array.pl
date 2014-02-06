@@ -16,7 +16,7 @@ step
 end
 
 step
-  description: "Label %(n) 14 mL tubes with your initials and date.  Number them 1 to %(n)"
+  description: "Label %(n) 14 mL tubes with your initials and date.  Number them 1 to %{n}"
   note: "place the tubes in a test tube rack.\n
   These tubes will eventually hold the transformed cells"
 end
@@ -26,12 +26,12 @@ step
   note: "Use proper sterile technique. Use the 1000 μL pipetter."
   bullet: "Set pipetter to 1000μL"
   bullet: "Loosen cap on LB aliquot"
-  bullet: "Pipette 2 mL of LB into each of %(n) 14 mL tubes"
+  bullet: "Pipette 2 mL of LB into each of %{n} 14 mL tubes"
   bullet: "Recap test tube and LB"
 end
 
 step
-  description: "Add a colony to each of %(n) suspensions"
+  description: "Add a colony to each of %{n} suspensions"
   note: "Match each plate to its corresponding tube.  For each pair:"
   note: " "
   note: "Select the desired colony prior to opening plate. Mark desired colony with circle and intials and date"
