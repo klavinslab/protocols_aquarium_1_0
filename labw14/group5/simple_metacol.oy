@@ -1,5 +1,8 @@
 place p1
   protocol: "labw14/group5/overnight_suspension.pl"
+  argument
+    Transformed_E_coli_Strain_id: Transformed_E_coli_Strain_id
+  end
   group: aquarium_user
   marked: true
   start: now()
