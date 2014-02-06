@@ -30,19 +30,24 @@ place one
   start: now()
   window: minutes(1)
   
+  
+  log
+    return: { output1: s }
+  end
+  
 end
 
 
-
+wire ( one, output1 ) => ( two, input2 )
 
 place two
   protocol: "labw14/group6/make_glycerol_stock.pl"
   argument
-    Transformed_E_coli_Strain_id: s
+    Transformed_E_coli_Strain_id: input2
   end
   group: aquarium_user
-  start: minutes(0.33)
-  window: minutes(1)
+  start: minutes(1)
+  window: minutes(1)Transformed_E_coli_Strain_id
 end
 
 transition [ one ] => [ two ] when !error(0) && completed(0) end
