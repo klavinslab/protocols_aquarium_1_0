@@ -1,5 +1,5 @@
 place p1
-  protocol: "protocols/labw14/group5/overnight_suspension.pl"
+  protocol: "labw14/group5/overnight_suspension.pl"
   group: "group5"
   marked: true
   start: now()
@@ -7,7 +7,7 @@ place p1
 end
 
 place p2
-  protocol: "protocols/labw14/group5/make_glycerol_stock.pl"
+  protocol: "labw14/group5/make_glycerol_stock.pl"
   group: "group5"
   marked: true
   start: hours(2)
