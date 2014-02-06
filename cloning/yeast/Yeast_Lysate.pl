@@ -101,7 +101,7 @@ end
 
 count=0
   while count < y 
-    strain = item unique(strains[count])
+    strain =  unique(strains[count])
     produce
       q=1 "Lysate" from strain
       location: "Benchtop"
