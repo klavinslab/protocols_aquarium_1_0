@@ -54,5 +54,5 @@ end
 release concat(cell_plate, aliquot)
 
 log
-  return: { sus_id: s[:id]}
+  return: { sus_id: s[:id] }
 end
