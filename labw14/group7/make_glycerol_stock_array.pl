@@ -35,6 +35,7 @@ step
 end
 
 i = 0
+r = []
 while i < n
  step
   description: "Add overnight suspension culture to the cryo tube"
