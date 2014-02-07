@@ -27,6 +27,6 @@ end
 
 
 step
-  description: "Passed the test %{take_num_arr}."
+  description: "Passed the test %{take_num_arr} of %{fragments}."
 end
 
