@@ -22,7 +22,7 @@ step
  description: "Add gylcerol to each cryo tube"
  check: "Pipette 900uL of the 50%% glycerol stock to each 1.5mL sterile tube"
  note: "Be sure to use STERILE technique while handling the gylcerol stock.  If you contaminate this stock
-        it wil ruin everyone else's experients! This means:"
+        it wil ruin everyone else's experiments! This means:"
  bullet: "Loosen caps before loading the pipette tip"
  bullet: "Hold the cap in your gloved hand while extracting fluid with the micro-pipetter, rather than placing it on the lab bench."
  bullet: "Do not touch the inside of the tube with the micropipetter."
@@ -31,15 +31,16 @@ end
 
 step
  description: "Add cell culture to each cryo tube"
- note: "In the following steps, you will add cell culture to each cryo tube in turn, label it with its ID number, your initial, todays date" 
+ note: "In the following steps, you will add cell culture to each cryo tube in turn, label it with its ID number, your initial, and todays date, then store it in the -80C freezer" 
 end
 
 i = 0
 r = []
 while i < n
+ id = Transformed_E_coli_Strain_tube_array[i]
  step
   description: "Add overnight suspension culture to the cryo tube"
-  check: "Pipette 900uL of cell suspension number %{Transformed_E_coli_Strain_tube_array[i]} to a new 1.5mL sterile tube (containing glycerol)"
+  check: "Pipette 900uL of cell suspension number %{id} to a new 1.5mL sterile tube (containing glycerol)"
   check: "Vortex 1.5mL this sterile tube for 15s at speed 10 using the VWR analog vortex mixer."
  end
  
