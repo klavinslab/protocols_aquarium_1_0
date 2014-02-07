@@ -10,15 +10,15 @@ step
   description: "This protocol prepares Gibson reactions in a strip-well tube."
 end
 
-l=length(fragments)
+#l=length(fragments)
 
-x=0
-take_num_arr = []
+#x=0
+#take_num_arr = []
 
-while(x<l)
-  take_num_arr = append(take_num_arr,1)
-  x=x+1
-end
+#while(x<l)
+#  take_num_arr = append(take_num_arr,1)
+#  x=x+1
+#end
 
 take
   #my_frag_arr = item 23446
@@ -27,7 +27,7 @@ take
 end
 
 step
-  description: "Passed the test %{take_num_arr} of %{fragments}."
+  description: "Passed the test " #%{take_num_arr} of %{fragments}."
 end
 
 release my_frag_arr
