@@ -1,5 +1,5 @@
 argument
-  fragments: sample("Fragment") array, "Fragment Names"
+  fragments: sample("Fragment") array array, "Fragment Names"
 end
 
 step
