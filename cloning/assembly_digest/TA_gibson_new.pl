@@ -12,7 +12,12 @@ end
 l=length(fragments)
 
 x=0
-take_num_arr=Array.new(l,1)
+take_num_arr= []
+
+while(x<l)
+  take_num_arr.push(1)
+  x=x+1
+end
 
 #take
 #  frag_arr = 1 "Gibson Aliquot"
