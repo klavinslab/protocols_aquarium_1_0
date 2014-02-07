@@ -13,13 +13,15 @@ end
 
 #l=length(fragments)
 
+two_d_arr = [[1,1],[2,2]]
+
 take
   my_frag_arr = item fragments
   master_mix = 1 "Gibson Aliquot"
 end
 
 step
-  description: "Passed the test"
+  description: "Passed the test %{two_d_arr}"
 end
 
 release my_frag_arr
