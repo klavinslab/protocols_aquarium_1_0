@@ -21,7 +21,7 @@ end
 #end
 
 take
-  my_frag_arr = item 23446
+  my_frag_arr = item [ 23446, 23449 ]
   #my_frag_arr = item fragment1
   master_mix = 1 "Gibson Aliquot"
 end
