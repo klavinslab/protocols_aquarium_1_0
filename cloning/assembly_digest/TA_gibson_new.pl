@@ -1,5 +1,6 @@
 argument
-  fragments: sample("Fragment") array, "Fragment Names"
+  #fragments: sample("Fragment") array, "Fragment Names"
+  fragment1: sample, "Fragment you are using"
 end
 
 
@@ -20,7 +21,8 @@ while(x<l)
 end
 
 take
-  my_frag_arr = item 23446
+  #my_frag_arr = item 23446
+  my_frag_arr = item fragment1
   master_mix = 1 "Gibson Aliquot"
 end
 
