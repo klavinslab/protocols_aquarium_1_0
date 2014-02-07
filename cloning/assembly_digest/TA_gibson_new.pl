@@ -20,7 +20,7 @@ while(x<l)
 end
 
 take
-  my_frag_arr = take_num_arr fragments
+  my_frag_arr = take_num_arr item fragments
   master_mix = 1 "Gibson Aliquot"
 end
 
