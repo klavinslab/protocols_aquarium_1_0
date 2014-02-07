@@ -19,14 +19,15 @@ while(x<l)
   x=x+1
 end
 
-#take
-#  frag_arr = 1 "Gibson Aliquot"
-#end
-
-
-
+take
+  my_frag_arr = take_num_arr fragments
+  master_mix = 1 "Gibson Aliquot"
+end
 
 step
   description: "Passed the test %{take_num_arr} of %{fragments}."
 end
+
+release my_frag_arr
+release master_mix
 
