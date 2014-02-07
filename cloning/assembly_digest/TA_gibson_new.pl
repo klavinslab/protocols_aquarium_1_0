@@ -1,6 +1,6 @@
 argument
-  #fragments: sample("Fragment") array, "Fragment Names"
-  fragment1: sample, "Fragment you are using"
+  fragments: sample("Fragment") array, "Fragment Names"
+  #fragment1: sample, "Fragment you are using"
 end
 
 
@@ -20,7 +20,7 @@ end
 #  x=x+1
 #end
 
-fragments = [ 23446, 23449]
+#fragments = [ 23446, 23449]
 
 take
   my_frag_arr = item fragments
