@@ -14,7 +14,7 @@ end
 
 l=length(fragments)
 
-x= "step\n\tdescription: \"this is just a test\"\nend"
+x= %q(step\n\tdescription: "this is just a test"\nend)
 
 x
 
