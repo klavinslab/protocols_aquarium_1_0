@@ -20,7 +20,7 @@ while(x<l)
 end
 
 take
-  my_frag_arr = item [23446,23449,23450]
+  my_frag_arr = item 23446
   master_mix = 1 "Gibson Aliquot"
 end
 
