@@ -1,13 +1,12 @@
 argument
-  Transformed_E_coli_Strain_plate: sample, "Choose the plate you incubated yesterday"
-  # description = inventory match?
+  plate_array_input: sample array, "Choose the plates you incubated yesterday"
 end
 
 
 place overnight
-  protocol: "labw14/group7/overnight_suspension.pl"
+  protocol: "labw14/group7/overnight_suspension_array.pl"
   argument
-    Transformed_E_coli_Strain_plate: Transformed_E_coli_Strain_plate
+    plate_array: plate_array_input
   end
   group: aquarium_user      #generic, general
   marked: true           #start here
@@ -16,29 +15,21 @@ place overnight
 end
 
 place glyStockDelay
-  protocol: "labw14/group7/make_glycerol_stock.pl"
- # argument
-    #Transformed_E_coli_Strain_id: id
-    #Transformed_E_coli_Strain_id: sample, "An overnight suspension of transformed E. Coli cells (in culture tube)"
- # end
+  protocol: "labw14/group7/make_glycerol_stock_array.pl"
   group: aquarium_user
   start: minutes(0.1)
   window: minutes(1)
 end
 
 place glyStockNow
-  protocol: "labw14/group7/make_glycerol_stock.pl"
- # argument
-    #Transformed_E_coli_Strain_id: id
-    #Transformed_E_coli_Strain_id: sample, "An overnight suspension of transformed E. Coli cells (in culture tube)"
- # end
+  protocol: "labw14/group7/make_glycerol_stock_array.pl"
   group: aquarium_user
   start: now()
   window: minutes(1)
 end
 
-wire (overnight,"transformed_cells_id") => (glyStockDelay,"Transformed_E_coli_Strain_tube")
-wire (overnight,"transformed_cells_id") => (glyStockNow,"Transformed_E_coli_Strain_tube")
+wire (overnight,"overnight_suspension_array") => (glyStockDelay,"Transformed_E_coli_Strain_tube_array")
+wire (overnight,"overnight_suspension_array") => (glyStockNow,"Transformed_E_coli_Strain_tube_array")
 
 # forward transitions
 
