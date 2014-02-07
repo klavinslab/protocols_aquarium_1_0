@@ -1,5 +1,6 @@
 argument
-  fragments: sample("Fragment") array, "Fragment Names"
+  fragments: sample("Fragment") array, "Fragments in order of Gibsons"
+  gibson_pieces: number array, "The number of fragments (from the array above) going into each Gibson"
   #fragment1: sample, "Fragment you are using"
 end
 
@@ -12,24 +13,13 @@ end
 
 #l=length(fragments)
 
-#x=0
-#take_num_arr = []
-
-#while(x<l)
-#  take_num_arr = append(take_num_arr,1)
-#  x=x+1
-#end
-
-#fragments = [ 23446, 23449]
-
 take
   my_frag_arr = item fragments
-  #my_frag_arr = item fragment1
   master_mix = 1 "Gibson Aliquot"
 end
 
 step
-  description: "Passed the test " #%{take_num_arr} of %{fragments}."
+  description: "Passed the test"
 end
 
 release my_frag_arr
