@@ -2,7 +2,12 @@ argument
   fragments: sample("Fragment") array, "Fragment Names"
 end
 
-information "Scarlessly assemble DNA using fragments with terminal homologies."
+
+x= %q(information "this is just a test")
+
+x
+
+#information "Scarlessly assemble DNA using fragments with terminal homologies."
 
 step
   description: "This protocol prepares Gibson reactions in a strip-well tube."
@@ -14,9 +19,6 @@ end
 
 l=length(fragments)
 
-x= %q(step\n\tdescription: "this is just a test"\nend)
-
-x
 
 step
   description: "Passed the test."
