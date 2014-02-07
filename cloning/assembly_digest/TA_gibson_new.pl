@@ -12,10 +12,10 @@ end
 l=length(fragments)
 
 x=0
-take_num_arr= []
+take_num_arr = []
 
 while(x<l)
-  take_num_arr.push(1)
+  take_num_arr = append(take_num_arr,1)
   x=x+1
 end
 
