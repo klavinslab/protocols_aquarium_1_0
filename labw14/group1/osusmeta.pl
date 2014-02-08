@@ -13,7 +13,7 @@ end
 
 len = length(plate)
 take
-  test_tube = %{len} "14 mL Test Tube"
+  test_tube = len "14 mL Test Tube"
   
 end
 
