@@ -7,15 +7,16 @@ step
 end
 
 take
-  falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
-  test_tube = 1 "14 mL Test Tube"
   plate = item Transformed_E_coli_Strain_id
+  falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
+  test_tube = length(plate) "14 mL Test Tube"
+  
 end
 
 step
  description: "Media Preperation"
  check: "Lable a 14 mL Test Tube with your initials and the date"
- check: "Use the 1000uL pipetter to add 2mL from the LB liquid aliquot to the test tube"
+ check: "Use the 1000uL pipetter to add 2mL from the LB liquid aliquot to each of the test tube"
 end
 
 step
@@ -24,6 +25,7 @@ step
  check: "Place a clean tip on the 10uL pipetter"
  check: "Carefully use the tip of the pipetter to scrape up one of the colonies from the plate"
  check: "Eject the pipette tip into 14 mL test tube, swirl tube to mix"
+ check: "Do these steps for all the test tubes"
 end
 
 x = 0
@@ -31,7 +33,7 @@ r = []
 while x < length(plate)
  produce
   r1 = 1 "Overnight suspension culture" from plate[x]
-  note: "Place your suspension culture test tube in the 37 C Shaker Incubator"
+  note: "Place your suspension culture test tube %{x} in the 37 C Shaker Incubator"
   location:"B13.425"
  end
  r = append(r,r1[:id])
