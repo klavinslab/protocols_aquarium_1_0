@@ -19,7 +19,7 @@ end
 
 step
  description: "Media Preperation"
- check: "Lable a 14 mL Test Tube with your initials and the date"
+ check: "Lable 14 mL Test Tube with your initials and the date"
  check: "Use the 1000uL pipetter to add 2mL from the LB liquid aliquot to each of the test tube"
 end
 
@@ -45,7 +45,7 @@ while x < length(plate)
 end
 
 #release [concat(falcon_tube, plate), test_tube]
-release concat(falcon_tube, test_tube)
+release falcon_tube
 release plate
 
 log
