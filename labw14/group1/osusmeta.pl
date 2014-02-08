@@ -9,7 +9,11 @@ end
 take
   plate = item Transformed_E_coli_Strain_id
   falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
-  test_tube = length(plate) "14 mL Test Tube"
+end
+
+len = length(plate)
+take
+  test_tube = %{len} "14 mL Test Tube"
   
 end
 
