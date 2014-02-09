@@ -18,7 +18,7 @@ step
   note: "These wells will be refered to as 1 - 12"
 end
 
-if length(YeastStrain_id) > 12
+if length(YeastStrain_id)*ColonyNumber > 12
   step
     description: "Grab a second 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
     check: "Label the left most well with your initials"
@@ -27,7 +27,7 @@ if length(YeastStrain_id) > 12
   end
 end
 
-if length(YeastStrain_id) > 36
+if length(YeastStrain_id)*ColonyNumber > 36
   step
     description: "Grab a fourth 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
     check: "Label the left most well with your initials"
@@ -36,7 +36,7 @@ if length(YeastStrain_id) > 36
   end
 end
 
-if length(YeastStrain_id) > 48
+if length(YeastStrain_id)*ColonyNumber > 48
   step
     description: "Grab a fourth 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
     check: "Label the left most well with your initials"
@@ -46,7 +46,7 @@ if length(YeastStrain_id) > 48
 end
 
 y=length(YeastStrain_id)
-x=y+1
+x=(ColonyNumber*y)+1
 sds=x*3
 h20=x*27
 
