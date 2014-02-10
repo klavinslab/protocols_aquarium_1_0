@@ -51,7 +51,14 @@ end
 
 
 if add_agar == "Yes"
-  product_name = "800 mL LB Agar (unsterile)"
+  # TODO: make this a simple %{volume} substitution once that bug is fixed
+  if volume == 200
+    product_name = "200 mL LB Agar (unsterile)"
+  elsif volume == 400
+    product_name = "400 mL LB Agar (unsterile)"
+  else
+    product_name = "800 mL LB Agar (unsterile)"
+  end
   lb_grams = 29.6
   take
     bottles = n_bottle bottle_type
@@ -59,7 +66,13 @@ if add_agar == "Yes"
     stir_bars = n_bottle "Medium Magnetic Stir Bar"
   end
 else
-  product_name = "800 mL LB Liquid (unsterile)"
+  if volume == 200
+    product_name = "200 mL LB Liquid (unsterile)"
+  elsif volume == 400
+    product_name = "400 mL LB Liquid (unsterile)"
+  else
+    product_name = "800 mL LB Liquid (unsterile)"
+  end
   lb_grams = 20.0
   take
     bottles = n_bottle bottle_type
@@ -103,15 +116,21 @@ end
 
 step
   description: "Add deionized water"
-  note: "Fill each bottle to the 800 mL mark with deionized water."
+  note: "Fill each bottle to the %{volume} mL mark with deionized water."
 end
 
 
-step
-  description: "Cap and mix."
-  note: "Tightly close the caps on each bottle and shake until all contents are dissolved. To check for dissolution, let bottle rest for 10 seconds, and then pick up and look for sediment on the bottom. This should take approximately 20 seconds."
+if add_agar == "Yes"
+  step
+    description: "Cap and mix."
+    note: "Tightly close the caps on each bottle and shake until all contents are dissolved. To check for dissolution, let bottle rest for 10 seconds, and then pick up and look for sediment on the bottom. This should take approximately 60 seconds."
+  end
+else
+  step
+    description: "Cap and mix."
+    note: "Tightly close the caps on each bottle and shake until all contents are dissolved. To check for dissolution, let bottle rest for 10 seconds, and then pick up and look for sediment on the bottom. This should take approximately 20 seconds."
+  end
 end
-
 
 produce
   produced_bottles = n_bottle product_name
