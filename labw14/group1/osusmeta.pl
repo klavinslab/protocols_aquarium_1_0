@@ -19,17 +19,16 @@ end
 
 step
  description: "Media Preperation"
- check: "Lable 14 mL Test Tube with your initials and the date"
- check: "Use the 1000uL pipetter to add 2mL from the LB liquid aliquot to each of the test tube"
+ check: "Lable each 14 mL Test Tube with your initials and the date"
+ check: "Use the 1000uL pipetter to add 2mL from the LB liquid aliquot to each of the test tubes"
 end
 
 step
- description: "Add cells to previously prepared growth media."
- note: "Use a 10uL pipette tip to transfer one colony from the plate into your test tube"
- check: "Place a clean tip on the 10uL pipetter"
- check: "Carefully use the tip of the pipetter to scrape up one of the colonies from the plate"
- check: "Eject the pipette tip into 14 mL test tube, swirl tube to mix"
- check: "Do these steps for all the test tubes"
+ description: "Add cells to previously prepared growth media using the following procedure."
+ note: "Carefully use the tip of the 10 uL pipetter to scrape up one of the colonies from the plate"
+ note: "Transfer this colony into a test tube"
+ note: "Eject the pipette tip into 14 mL test tube, swirl tube to mix.  Repeat for each of the eight tubes."
+ warning: "Be sure to place a clean tip on the 10uL pipetter after transfering each colony"
 end
 
 x = 0
@@ -37,7 +36,7 @@ r = []
 while x < length(plate)
  produce
   r1 = 1 "Overnight suspension culture" from plate[x]
-  note: "Place your suspension culture test tube %{x} in the 37 C Shaker Incubator"
+  note: "Place each suspension culture test tube %{x} in the 37 C Shaker Incubator"
   location:"B13.425"
  end
  r = append(r,r1[:id])
