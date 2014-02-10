@@ -38,7 +38,7 @@ while x < length(tube)
  produce
   r3 = 1 "Transformed E coli Glycerol Stock" from tube[x]
   
-  note: "Place your Cryo tube in the -80 C refrigerator"
+  note: "Place your Cryo tubes in the -80 C refrigerator"
  end
  r2 = append(r2,r3[:id])
  x = x + 1
