@@ -1,6 +1,5 @@
 argument 
-    #Transformed_E_coli_Strain_id: sample, "The Plate to be used"
-    Transformed_E_coli_Strain_id: sample array, "The Plate to be used"
+    Transformed_E_coli_Strain_id: sample array, "The plate(s) to be used"
 end
 
 place p1
