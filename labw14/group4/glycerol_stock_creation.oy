@@ -1,10 +1,17 @@
-# metacol to do the colony suspension plus glycerol stock
+# 
+# glycerol_stock_creation.oy
+#
+# Created: 2/3/2014
+# Authors: Patrick Ma, Pramod Chavali
+#
+# Metacol covers the procedures required to take plated colonies and create a glycerol
+# suspension stock for storage.
 
 argument
   Transformed_E_coli_Strain_id: sample, "The sample you wish to use"
 end
 
-
+# select colonies from plates, isolate and multiply
 place suspension
   protocol: "labw14/group4/colony_transfer_pcpm.pl"
   group: aquarium_user
@@ -15,11 +22,15 @@ place suspension
   end
 end
 
+# Taking the colonies previously isolated, transfer and create the actual stock aliquots
+#
+# somewhat arbitrary window; according to paper used as procedure source, there is not a 
+# defined upper limit to incubation. However, too long and too many cells will grow.
 place glycerol_stock
   protocol: "labw14/group4/glycerol_stock.pl"
   group: aquarium_user
   start: hours(18)
-  window: hours(4)
+  window: hours(4) 
 end
 
 wire (suspension, "suspended_cells_id") => (glycerol_stock, "culture_tube")
@@ -27,12 +38,14 @@ wire (suspension, "suspended_cells_id") => (glycerol_stock, "culture_tube")
 # proceed forward
 transition [suspension] => [glycerol_stock] when !error(0) && completed(0) end
 
-# some error occured
+# Error occured in first procedure
 transition [suspension] => [suspension] when error(0) end
 
-# done with metacol
+# error occured in second procedure
+transition [glycerol_stock] => [glycerol_stock] when error(0) end
+
+# Metacol complete
 transition [glycerol_stock] => [] when !error(0) && completed(0) end
 
-# error occured
-transition [glycerol_stock] => [glycerol_stock] when error(0) end
+
 
