@@ -6,7 +6,7 @@ take
     plate = item Transformed_E_coli_Strain_id
 end
 
-num = 1
+num = length(Transformed_E_coli_Strain_id)
 
 step
  description: "This protocol describes the process of overnight suspension"
