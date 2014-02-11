@@ -2,13 +2,16 @@ argument
  Transformed_E_coli_Strain_id: sample array, "A tube with overnight suspension culture"
 end
 
+num = length(Transformed_E_coli_Strain_id)
+
 step
  description: "This protocol describes how to make glycerol stock"
+ warning: "You're making %{num} glycerol stocks"
 end
 
 take
   glycerol_bottle = 1 "50 percent Glycerol (sterile)"
-  glycerol_tube = 1 "Cryo tube"
+  glycerol_tube = num "Cryo tube"
   tube = item Transformed_E_coli_Strain_id
 end
 
