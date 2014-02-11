@@ -4,15 +4,17 @@ end
 
 step
  description: "This protocol describes the process of overnight suspension"
+ num = length(Transformed_E_coli_Strain_id)
+ warning: "You're going to make %{num} overnight suspension culture tubes"
 end
 
-step
- description: "How many overnight suspension cultures do you want to make?"
- note: "Please specify below the exact number"
- getdata
-     num: number, "Number of culture flasks"
- end
-end
+#step
+# description: "How many overnight suspension cultures do you want to make?"
+# note: "Please specify below the exact number"
+# getdata
+#     num: number, "Number of culture flasks"
+# end
+#end
 
 take
   falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
