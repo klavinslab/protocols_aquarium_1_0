@@ -9,14 +9,6 @@ step
  warning: "You're going to make %{num} overnight suspension culture tubes"
 end
 
-#step
-# description: "How many overnight suspension cultures do you want to make?"
-# note: "Please specify below the exact number"
-# getdata
-#     num: number, "Number of culture flasks"
-# end
-#end
-
 take
   falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
   test_tube = num "14 mL Test Tube"
@@ -25,8 +17,17 @@ end
 
 step
  description: "Media Preperation"
- check: "Lable a 14 mL Test Tube with your initials and the date"
- check: "Use the 1000uL pipetter to add 2mL from the LB liquid aliquot to the test tube"
+ check: "Lable %{num} 14 mL Falcon Test Tube with your initials and the date"
+end
+
+ii = 0
+r  = []
+
+while ii < length(Transformed_E_coli_Strain_id)
+
+step
+ description: "Pouring LB media to a test tube"
+ check: "Use the 1000uL pipetter to add 2mL from the LB liquid aliquot to the test tube %{ii}"
 end
 
 step
@@ -37,10 +38,10 @@ step
  check: "Eject the pipette tip into 14 mL test tube, swirl tube to mix"
 end
 
-ii = 0
-r  = []
+#ii = 0
+#r  = []
 
-while ii < length(Transformed_E_coli_Strain_id)
+#while ii < length(Transformed_E_coli_Strain_id)
  produce
   y = 1 "Overnight suspension culture" from plate[ii]
   release test_tube
