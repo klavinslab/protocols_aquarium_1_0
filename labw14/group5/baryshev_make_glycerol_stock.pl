@@ -30,7 +30,7 @@ while ii < length(Transformed_E_coli_Strain_id)
   ind = ii+1
 
   step
-      description: "Mixing glycerol with cell suspension"
+      description: "Mixing glycerol with cell suspension in the tube N%{ind}"
       note: "Pipette 900 uL of the glycerol stock into the Cryo tube. Then pipette 900 uL of the overnight
          suspension culture into the same Cryo tube N%{ind}"
       bullet: "Vortex the Cryo tube for 15-30 seconds"
@@ -41,9 +41,10 @@ while ii < length(Transformed_E_coli_Strain_id)
   produce
      1 "Transformed E coli Glycerol Stock" from tube[ii]
      release glycerol_tube[ii]
-     note: "Place your Cryo tube in the -80 C refrigerator"
+     note: "Write the above id number on the tube's cap. Place your Cryo tube in the -80 C refrigerator"
   end
   
+  ii = ii+1
 end
 
 release [glycerol_bottle[0], tube[0]]
