@@ -25,35 +25,34 @@ r  = []
 
 while ii < length(Transformed_E_coli_Strain_id)
 
-step
- description: "Pouring LB media to a test tube"
- check: "Use the 1000uL pipetter to add 2mL from the LB liquid aliquot to the test tube %{ii+1}"
-end
+ind = ii+1
 
-step
- description: "Add cells to previously prepared growth media."
- note: "Use a 10uL pipette tip to transfer one colony from the plate into your test tube"
- check: "Place a clean tip on the 10uL pipetter"
- check: "Carefully use the tip of the pipetter to scrape up one of the colonies from the plate"
- check: "Eject the pipette tip into 14 mL test tube, swirl tube to mix"
-end
-
-#ii = 0
-#r  = []
-
-#while ii < length(Transformed_E_coli_Strain_id)
- produce
-  y = 1 "Overnight suspension culture" from plate[ii]
-  release test_tube
-  note: "Place your suspension culture test tube in the 37 C Shaker Incubator"
-  location:"B13.425"
+ step
+     description: "Pouring LB media to a test tube"
+     check: "Use the 1000uL pipetter to add 2mL from the LB liquid aliquot to the test tube %{ind}"
  end
+
+ step
+     description: "Add cells to previously prepared growth media."
+     note: "Use a 10uL pipette tip to transfer one colony from the plate into your test tube"
+     check: "Place a clean tip on the 10uL pipetter"
+     check: "Carefully use the tip of the pipetter to scrape up one of the colonies from the plate"
+     check: "Eject the pipette tip into 14 mL test tube, swirl tube to mix"
+ end
+
+ produce
+     y = 1 "Overnight suspension culture" from plate[ii]
+     release test_tube
+     note: "Place your suspension culture test tube in the 37 C Shaker Incubator"
+     location:"B13.425"
+ end
+ 
  r = append(r,y[:id])
  ii=ii+1
 end
 
 log
-  return: { overnight_suspension_id: r}
+   return: { overnight_suspension_id: r}
 end
 
 release concat(falcon_tube, plate)
