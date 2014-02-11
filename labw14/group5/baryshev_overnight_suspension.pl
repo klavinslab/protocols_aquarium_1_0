@@ -2,9 +2,13 @@ argument
  Transformed_E_coli_Strain_id: sample array, "A plate"
 end
 
+take
+    plate = item Transformed_E_coli_Strain_id
+end
+
 step
  description: "This protocol describes the process of overnight suspension"
- num = length(Transformed_E_coli_Strain_id)
+ num = length(plate)
  warning: "You're going to make %{num} overnight suspension culture tubes"
 end
 
@@ -19,7 +23,7 @@ end
 take
   falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
   test_tube = 1 "14 mL Test Tube"
-  plate = item Transformed_E_coli_Strain_id
+#  plate = item Transformed_E_coli_Strain_id
 end
 
 step
