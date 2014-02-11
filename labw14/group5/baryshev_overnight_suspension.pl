@@ -34,7 +34,7 @@ ind = ii+1
 
  step
      description: "Add cells to previously prepared growth media."
-     note: "Use a 10uL pipette tip to transfer one colony from the plate %{plate[ii][:id]} into your test tube  N%{ind}"
+     note: "Use a 10uL pipette tip to transfer one colony from the plate %{Transformed_E_coli_Strain_id[ii][:id]} into your test tube  N%{ind}"
      check: "Place a clean tip on the 10uL pipetter"
      check: "Carefully use the tip of the pipetter to scrape up one of the colonies from the plate"
      check: "Eject the pipette tip into 14 mL test tube, swirl tube to mix"
