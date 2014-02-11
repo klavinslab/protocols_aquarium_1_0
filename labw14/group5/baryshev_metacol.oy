@@ -3,7 +3,7 @@ argument
 end
 
 place p1
-  protocol: "labw14/group5/overnight_suspension.pl"
+  protocol: "labw14/group5/baryshev_overnight_suspension.pl"
   argument
     Transformed_E_coli_Strain_id: Transformed_E_coli_Strain_id
   end
@@ -14,7 +14,7 @@ place p1
 end
 
 place p2
-  protocol: "labw14/group5/make_glycerol_stock.pl"
+  protocol: "labw14/group5/baryshev_make_glycerol_stock.pl"
   group: aquarium_user
   start: minutes(1)
   window: minutes(1)
