@@ -27,7 +27,7 @@ while ii < length(Transformed_E_coli_Strain_id)
 
 step
  description: "Pouring LB media to a test tube"
- check: "Use the 1000uL pipetter to add 2mL from the LB liquid aliquot to the test tube %{ii}"
+ check: "Use the 1000uL pipetter to add 2mL from the LB liquid aliquot to the test tube %{ii+1}"
 end
 
 step
