@@ -6,6 +6,14 @@ step
  description: "This protocol describes the process of overnight suspension"
 end
 
+step
+ description: "How many overnight suspension cultures do you want to make?"
+ note: "Please specify below the exact number"
+ getdata
+     num: number, "Number of culture flasks"
+ end
+end
+
 take
   falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
   test_tube = 1 "14 mL Test Tube"
