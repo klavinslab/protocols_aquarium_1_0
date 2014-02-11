@@ -16,23 +16,34 @@ take
 end
 
 step
- description: "Put the overnight suspension culture tube into a holder"
-end
-
-step
- description: "Mixing glycerol with cell suspension"
- note: "Pipette 900 uL of the glycerol stock into the Cryo tube. Then pipette 900 uL of the overnight
- suspension culture into the same Cryo tube"
- bullet: "Label the Cryo tube with your initials, date and year"
- bullet: "Vortex the Cryo tube for 15-30 seconds"
- warning: "Be as sterile as possible. Do not touch the inside of the glycerol bottle with either a tip or pipette."
+ description: "Perpform the following things before we proceed"
+ check: "Put the overnight suspension culture tube into a holder"
+ check: "Label %{num} Cryo tubes with your initials, date and year"
 end
 
 
-produce
- 1 "Transformed E coli Glycerol Stock" from tube[0]
- release glycerol_tube
- note: "Place your Cryo tube in the -80 C refrigerator"
+ii = 0
+
+
+while ii < length(Transformed_E_coli_Strain_id)
+
+  ind = ii+1
+
+  step
+      description: "Mixing glycerol with cell suspension"
+      note: "Pipette 900 uL of the glycerol stock into the Cryo tube. Then pipette 900 uL of the overnight
+         suspension culture into the same Cryo tube N%{ind}"
+      bullet: "Vortex the Cryo tube for 15-30 seconds"
+      warning: "Be as sterile as possible. Do not touch the inside of the glycerol bottle with either a tip or pipette."
+  end
+
+
+  produce
+     1 "Transformed E coli Glycerol Stock" from tube[ii]
+     release glycerol_tube[ii]
+     note: "Place your Cryo tube in the -80 C refrigerator"
+  end
+  
 end
 
 release [glycerol_bottle[0], tube[0]]
