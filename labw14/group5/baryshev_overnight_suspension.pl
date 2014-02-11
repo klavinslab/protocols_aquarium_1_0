@@ -28,8 +28,8 @@ while ii < length(Transformed_E_coli_Strain_id)
 ind = ii+1
 
  step
-     description: "Pouring LB media to a test tube"
-     check: "Use the 1000uL pipetter to add 2mL from the LB liquid aliquot to the test tube %{ind}"
+     description: "Pouring LB media to the test tube N%{ind}"
+     check: "Use the 1000uL pipetter to add 2mL from the LB liquid aliquot to the test tube N%{ind}"
  end
 
  step
@@ -43,7 +43,7 @@ ind = ii+1
  produce
      y = 1 "Overnight suspension culture" from plate[ii]
      release test_tube
-     note: "Place your suspension culture test tube in the 37 C Shaker Incubator"
+     note: "Write the above id number on the tube's side. Place your suspension culture test tube in the 37 C Shaker Incubator"
      location:"B13.425"
  end
  
