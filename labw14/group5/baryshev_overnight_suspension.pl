@@ -8,7 +8,7 @@ end
 
 step
  description: "This protocol describes the process of overnight suspension"
- num = length(plate)
+ num = 1
  warning: "You're going to make %{num} overnight suspension culture tubes"
 end
 
