@@ -6,9 +6,10 @@ take
     plate = item Transformed_E_coli_Strain_id
 end
 
+num = 1
+
 step
  description: "This protocol describes the process of overnight suspension"
- num = 1
  warning: "You're going to make %{num} overnight suspension culture tubes"
 end
 
