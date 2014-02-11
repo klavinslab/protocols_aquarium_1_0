@@ -49,4 +49,4 @@ while ii < length(Transformed_E_coli_Strain_id)
   ii = ii+1
 end
 
-release [glycerol_bottle[0], tube]
+release concat(glycerol_bottle, tube)
