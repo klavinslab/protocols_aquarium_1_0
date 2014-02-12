@@ -31,11 +31,14 @@ step
   bullet: "swirl the tip gently into the test tube, and dispose of the pipette tip"
 end
 
-step
-  description:
-      "Incubate test tube"
-  note:
-      "Put the test tube in the 37 degree shaker incubator located at B13.425"
+produce
+  r = 1 "Overnight suspension cultures" from glycerol[0]
+  location: "B13.425"
+  note: "Incubate this in the mixer incubator overnight"
 end
 
+log
+  return: {glycerol: r}
+end
+    
 release [falcon_tube[0], glycerol[0]]
