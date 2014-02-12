@@ -112,7 +112,6 @@ end
 
 produce
   r = "Extracted_DNA"
-  location: "Bench"
 end
 
 log
