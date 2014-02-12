@@ -1,41 +1,56 @@
+# Arguments
 argument
-  input1: sample fragments, "Choose the oligonucleotides you want to combine"
+  source_oligos1: sample array fragments, "Choose the oligonucleotides you want to combine"
+  source_oligos2: sample array fragments, "Choose the oligonucleotides you want to combine"
 end
 
-place one
+
+# Places
+place stock1
   protocol: "labw14/group6/make_master_stock.pl"
-  
   argument
-    oligonucleotides: input1
+    oligonucleotides: source_oligos1
   end
-  
   group: aquarium_user
   marked: true
   start: now()
-  window: minutes(1)
-end  
-  
-place two
+  window: minutes(30)
+end
+
+place stock2
+  protocol: "labw14/group6/make_master_stock.pl"
+  argument
+    oligonucleotides: source_oligos2
+  end
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+
+place assembly1
   protocol: "labw14/group6/gene_assembly_PCA.pl"
-  argument
-    oligo_stock: input2
-  end
   group: aquarium_user
   start: now()
-  window: minutes(1)
+  window: minutes(30)
 end
 
-place three
+place assembly2
+  protocol: "labw14/group6/gene_assembly_PCA.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(30)
+end
+
+place run_gel
   protocol: "labw14/group6/run_gel_test.pl"
-  argument
-    DNA_sample: input3
-  end
   group: aquarium_user
   start: now()
-  window: minutes(1)
+  window: minutes(30)
 end
 
-place four
+place image_gel
   protocol: "labw14/group6/run_gel_purification.pl"
   argument
     DNA_sample: input4
@@ -45,7 +60,7 @@ place four
   window: minutes(1)
 end
 
-place five
+place cut_gel
   protocol: "labw14/group6/gibbson_assembly.pl"
   argument
     DNA_sample: input5
@@ -54,8 +69,8 @@ place five
   start: now()
   window: minutes(1)
 end
-  
-place six
+
+place gel_purify
   protocol: "labw14/group6/transform_e_coli.pl"
   argument
     DNA_sample: input6
@@ -65,7 +80,7 @@ place six
   window: minutes(1)
 end
 
-place seven
+place gibson
   protocol: "labw14/group6/colony_PCR.pl"
   argument
     transformed_e_coli: input7
@@ -75,7 +90,7 @@ place seven
   window: minutes(1)
 end
 
-place eight
+place transformation
   protocol: "labw14/group6/run_gel_test.pl"
   argument
     DNA_sample: input8
@@ -85,16 +100,12 @@ place eight
   window: minutes(1)
 end
 
+place plate
+end
 
 #Wires are a place-holder for now, totally nonesense currently
 
-wire ( one, "sus_id" ) => ( two, "Transformed_E_coli_Strain_id" )    #1->2
-wire ( one, "sus_id" ) => ( two, "Transformed_E_coli_Strain_id" )    #2->3
-wire ( one, "sus_id" ) => ( two, "Transformed_E_coli_Strain_id" )    #3->4
-wire ( one, "sus_id" ) => ( two, "Transformed_E_coli_Strain_id" )    #4->5
-wire ( one, "sus_id" ) => ( two, "Transformed_E_coli_Strain_id" )    #5->6
-wire ( one, "sus_id" ) => ( two, "Transformed_E_coli_Strain_id" )    #6->7
-wire ( one, "sus_id" ) => ( two, "Transformed_E_coli_Strain_id" )    #7->8
+wire (stock, "working_fragments") => (assembly, "oligonucleotides")
 
 transition [ one ] => [ two ] when !error(0) && completed(0) end
 transition [ one ] => [one] when error(0) end
