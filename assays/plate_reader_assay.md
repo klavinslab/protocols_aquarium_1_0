@@ -9,8 +9,7 @@ Description: This assay examines growth dynamics of the SDAc system in the prese
 
     - Day 1: [15 minutes]
     - Day 2: [~2 hrs/ 45 mins]
-    - ...
-    
+
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 ####Required equipment and materials####
