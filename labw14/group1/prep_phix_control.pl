@@ -43,8 +43,7 @@ step
 
   check : "Vortex tube B briefly to mix the 2 nM PhiX library solution"
   check : "Centrifuge the solution (tube B) to 280 xg for 1 minute. Use the centrifuge B14.320 (use 300 xg)"
-  check : "Incubate for 5 minutes at room temperature to denature the PhiX library into single"
-strands"
+  check : "Incubate for 5 minutes at room temperature to denature the PhiX library into single strands"
   
 end
 
