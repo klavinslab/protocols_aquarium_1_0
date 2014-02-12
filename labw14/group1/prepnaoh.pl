@@ -12,7 +12,7 @@ step
   check: "Lable a 1.5mL microcentrifuge tube with the date and your initials"
   check: "Pipette 1000uL of molecular grade water into the tube"
   check: "Carefully weigh out and add to the tube 8g of NaOH."
-  check: "invert the tube several times to mix"
+  check: "Invert the tube several times to mix"
 end
 
 produce
