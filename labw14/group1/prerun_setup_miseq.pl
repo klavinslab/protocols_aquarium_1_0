@@ -1,6 +1,6 @@
 argument
   
-  cartridge = sample, "Reagent Cartridge"
+  cartridge : sample, "Reagent Cartridge"
 
 end
 
@@ -43,7 +43,7 @@ end
 
 take
   
-  cartridge1 = item cartridge
+  cartridge1 : item cartridge
   
 end
 
