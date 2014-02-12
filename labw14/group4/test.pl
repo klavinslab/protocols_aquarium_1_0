@@ -8,7 +8,7 @@ step
   note: "the has is : %{x}"
 end
   
-myhash[y] = "bye"
+#myhash[y] = "bye"
 
 step 
   description:" lets test a hash"
