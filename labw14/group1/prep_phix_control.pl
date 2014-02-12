@@ -2,7 +2,7 @@ argument
   
   phix_lib : sample, "10 nM PhiX library"
   tris_cl : sample, "10 mM Tris-Cl, pH 8.5 with 0.1% Tween 20 "
-  naoh : sample, "0.2 N NaOH"
+  #naoh : sample, "0.2 N NaOH"
   ht1 : sample, "Pre-chilled HT1"
   
 end
@@ -26,7 +26,7 @@ step
 end
 
 take
-  naoh1 = item naoh
+  naoh1 = 1 "NaOH"
   ht1_1 = item ht1
 end
 
