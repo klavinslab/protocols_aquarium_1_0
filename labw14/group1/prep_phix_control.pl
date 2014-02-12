@@ -21,7 +21,7 @@ step
   description: "Create 4nM PhiX Library"
   check: "Pick a 1.5 mL tube and label it A."
   check: "Add 2 uL of the 10 nM PhiX library (part of the kit) to tube A."
-  check: "Add 3 uL of 10 mM Tris-Cl, pH 8.5 with 0.1% Tween 20 (part of the kit) into tube A."
+  check: "Add 3 uL of 10 mM Tris-Cl, pH 8.5 with 0.1 %% Tween 20 (part of the kit) into tube A."
   note : "The tube now contains 4 nM PhiX Library"
 end
 
