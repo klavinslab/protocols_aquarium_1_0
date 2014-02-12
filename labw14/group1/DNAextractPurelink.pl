@@ -1,7 +1,7 @@
 #should set this up as an arg that takes the pellet, or at least premade suspension
 
 step
-  discription: "Extract DNA from clonal cells"
+  description: "Extract DNA from clonal cells"
   check: "Set a water bath  to 55 C"
 end
 
