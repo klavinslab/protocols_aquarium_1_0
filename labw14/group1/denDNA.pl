@@ -13,7 +13,7 @@ x = 0
 
 
 step
- discription: "Prepare the denatured library"
+ description: "Prepare the denatured library"
  
   if C == "4nM or greater"
     x = 2;
