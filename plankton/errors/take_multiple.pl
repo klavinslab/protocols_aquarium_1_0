@@ -8,5 +8,4 @@ step
   note: "%{bottles}"
 end
 
-
 release bottles
