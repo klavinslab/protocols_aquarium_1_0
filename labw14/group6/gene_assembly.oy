@@ -1,0 +1,121 @@
+argument
+  input1: sample fragments, "Choose the oligonucleotides you want to combine"
+end
+
+place one
+  protocol: "labw14/group6/make_master_stock.pl"
+  
+  argument
+    oligonucleotides: input1
+  end
+  
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(1)
+end  
+  
+place two
+  protocol: "labw14/group6/gene_assembly_PCA.pl"
+  argument
+    oligo_stock: input2
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place three
+  protocol: "labw14/group6/run_gel_test.pl"
+  argument
+    DNA_sample: input3
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place four
+  protocol: "labw14/group6/run_gel_purification.pl"
+  argument
+    DNA_sample: input4
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place five
+  protocol: "labw14/group6/gibbson_assembly.pl"
+  argument
+    DNA_sample: input5
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+  
+place six
+  protocol: "labw14/group6/transform_e_coli.pl"
+  argument
+    DNA_sample: input6
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place seven
+  protocol: "labw14/group6/colony_PCR.pl"
+  argument
+    transformed_e_coli: input7
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place eight
+  protocol: "labw14/group6/run_gel_test.pl"
+  argument
+    DNA_sample: input8
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+
+#Wires are a place-holder for now, totally nonesense currently
+
+wire ( one, "sus_id" ) => ( two, "Transformed_E_coli_Strain_id" )    #1->2
+wire ( one, "sus_id" ) => ( two, "Transformed_E_coli_Strain_id" )    #2->3
+wire ( one, "sus_id" ) => ( two, "Transformed_E_coli_Strain_id" )    #3->4
+wire ( one, "sus_id" ) => ( two, "Transformed_E_coli_Strain_id" )    #4->5
+wire ( one, "sus_id" ) => ( two, "Transformed_E_coli_Strain_id" )    #5->6
+wire ( one, "sus_id" ) => ( two, "Transformed_E_coli_Strain_id" )    #6->7
+wire ( one, "sus_id" ) => ( two, "Transformed_E_coli_Strain_id" )    #7->8
+
+transition [ one ] => [ two ] when !error(0) && completed(0) end
+transition [ one ] => [one] when error(0) end
+
+transition [ two ] => [ three ] when !error(0) && completed(0) end
+transition [ two ] => [ two ] when error(0) end
+
+transition [ three ] => [ four ] when !error(0) && completed(0) end
+transition [ three ] => [ three ] when error(0) end
+
+transition [ four ] => [ five ] when !error(0) && completed(0) end
+transition [ four ] => [ four ] when error(0) end
+
+transition [ five ] => [ six ] when !error(0) && completed(0) end
+transition [ five ] => [ five ] when error(0) end
+
+transition [ six ] => [ seven ] when !error(0) && completed(0) end
+transition [ six ] => [ six ] when error(0) end
+
+transition [ seven ] => [ eight ] when !error(0) && completed(0) end
+transition [ seven ] => [ seven ] when error(0) end
+
+transition [ eight ] => [] when !error(0) && completed(0) end
+transition [ eight ] => [eight ] when error(0) end
