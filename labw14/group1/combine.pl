@@ -37,4 +37,12 @@ step
   
 end
 
+
+produce
+
+   comb_sample = 1 "Combined Diluted and Denatured PhiX Control and Diluted and Denatured SAmple Library"
+   location: "Bench"
+end
+
+
 release concat(ddPhiX1,ddSample1)
