@@ -10,18 +10,40 @@ step
   
 end
 
-if length(C) == 14
-        conc = 0;
-elsif length(C) == 10
-        conc = 1;
-else
-     step
-       description: "Something mysterious has heppened.  You entered an unexpected library concentration"
-       note: "This protocol will assume a low (<<4nM) concentration"
-     end
+x = 0
+
+if C == "4nM or greater"
+  x = 2;
+elsif C == "approx 2nM"
+  x = 1;
+emd
+
+step
+ discription: "Prepare the denatured library"
+ check: "Lable a 1.5mL microcentrifuge tube with the date and your initials"
+ check: "Pipette 5uL of the DNA sample into the tube"
+ check: "Pipette 0.2ul 0.4 N NaOH into the tube"
+ check: "Vortex the tube breifly to mix"
+ warning: "Make sure your NaOH was prepared during the last 12 hours"
 end
 
 step
- description: "test"
-  
+  description: "Centrifuge your sample to 280 xg for 1 minute"
+  warning: "Do not proceed to the next step unless after centrifuging"
 end
+
+step
+  description: "After cenrifuging, let your sample incubate at room tempurature for 5 minutes"
+  timer: {hours: 0, minutes: 5, seconds: 0}
+end
+
+step
+  description: "Add 990uL pre-chilled HC1 to the sample tube"
+end
+
+produce
+ r = 1 "Denatured DNA library in 1mM NaOH"
+ note: "Place the tube on ice until you need it again"
+end
+
+
