@@ -38,4 +38,4 @@ step
       "Put the test tube in the 37 degree shaker incubator located at B13.425"
 end
 
-release [liquid_LB[0], glycerol[0]]
+release [falcon_tube[0], glycerol[0]]
