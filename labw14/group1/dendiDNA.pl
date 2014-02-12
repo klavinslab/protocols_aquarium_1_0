@@ -51,8 +51,11 @@ step
   check: "Lable a new 1.5mL microcentrifuge tube with the date and your initials"
   check: "Add quantities to the new tube as desired using the example image."
   check: "Place the denatured and diluted DNA on ice"
-  image: "40pm"
-  image: "20pm"
+  if t == 20
+    image: "40pm"
+  else
+    image: "20pm"
+  end
   #image: "http://bioturk.ee.washington.edu:3012/files/304"
   #image: "http://bioturk.ee.washington.edu:3012/files/305"
 end
