@@ -3,8 +3,8 @@ argument
 end
 
 take
-  rxn_mix: sample, "Select te 5x iScript reaction mix"
-  rev_enzyme: sample, "Select the iScript reverse transcriptase"
+  rxn_mix = sample, "Select te 5x iScript reaction mix"
+  rev_enzyme = sample, "Select the iScript reverse transcriptase"
   rna_yeast = rna_id, "This is the isolated RNA"
 end
 
