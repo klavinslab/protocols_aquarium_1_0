@@ -2,13 +2,13 @@
 
 step
   description: "Extract DNA from clonal cells"
-  check: "Set a water bath  to 55 C"
+  note: "Before beginning the process, set a water bath to 55 C"
 end
 
-take
-  1 "50mL 95% Ethanol Aliquot"
-  1 "PureLink Genomic DNA Mini Kit"
-end
+#take
+ # 1 "50mL 95% Ethanol Aliquot"
+ # 1 "PureLink Genomic DNA Mini Kit"
+#end
 
 step
   description: "Prepare the cell lysate"
