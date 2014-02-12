@@ -45,7 +45,10 @@ step
 end
 
 produce
- r = 1 "%{t} pM Denatured DNA library in 1mM NaOH"
+ r = 1 "pM concentration Denatured DNA library in 1mM NaOH"
+ data
+  concentration: t
+ end
  note: "Place the tube on ice until you need it again"
 end
 
