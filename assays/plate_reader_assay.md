@@ -71,6 +71,7 @@ Day 2
 ##Protocol##
 
 Day 1
+
 MEDIA BENCH
 1. Prepare 40 mL of 0.4% Glucose M9 Media with 200 uL of Kanamycin (1:200) and 80 uL of Ampicillin (1:500) in a 50 mL conical
 2. Label 12 14 mL glass culture tubes with DL046, DL108, and DL147 Reps 1-4
