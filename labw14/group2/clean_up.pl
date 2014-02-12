@@ -1,5 +1,5 @@
 argument
-  id: sample(""), "Agar plate to be disposed"
+  id: sample("Microscope Plates"), "Agar plate to be disposed"
 end
 
 step
