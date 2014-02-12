@@ -1,32 +1,41 @@
 argument
-  fragment: sample,"The sample that you want to spec its concentration"
+  fragment: sample,"The cDNA sample that you want to spec its concentration"
 end
 
 take
   y = item fragment
 end
 
-information "Measure DNA concentration using Nanodrop spectrophotometer."
+information "Measure cDNA concentration using Nanodrop spectrophotometer."
 
 step
-  description: "Go the location B3.405, find the Nanodrop"
+  description: "Go to location B3.405, and find the Nanodrop"
+end
+
+step
+  description: "Open Nanodrop Software and Initialize"
+  check: "Verify the Nucleic Acid program is selected"
+  note: "If initialization is necessary proceed with this step, if not skip ahead."
+  check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
+  check: "Add 1.5 μL of Molecular Grade Water on the lower pedestal."
+  check: "Close the pedestal."
+  check: "Click Initialize in the software."
 end
 
 step
   description: "Blank the Nanodrop"
+  note: "If Initialization was necessary, the same water sample can be used to blank."
   check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
-  check: "Add 2 μL of Buffer EB on the lower pedestal."
+  check: "Add 1.5 μL of Molecular Grade Water on the lower pedestal."
   check: "Close the pedestal."
   check: "Click Blank in the software."
 end
 
-
-
 step
-  description: "Measure your sample"
+  description: "Measure the cDNA Ssample"
   check: "Open the pedestal"
   check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
-  check: "Add 2 μL of your sample with id %{fragment} on the lower pedestal."
+  check: "Add 1.5 μL of your sample with id %{fragment} on the lower pedestal."
   check: "Close the pedestal."
   check: "Click Measure in the software."
 end
