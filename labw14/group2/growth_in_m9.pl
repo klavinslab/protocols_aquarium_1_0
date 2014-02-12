@@ -27,7 +27,7 @@ step
   check: "Dispose of 5 mL serological tip"
 end
 
-#release[M9]
+release[M9[0]]
 
 take
   amp = 1 "100X 1mL Ampicillin Aliquot"
