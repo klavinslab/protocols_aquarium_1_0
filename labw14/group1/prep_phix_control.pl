@@ -36,7 +36,7 @@ step
   check: "Add 5 uL of the 4 nM PhiX Library (created in the previous step, in tube A) to tube B."
   check: "Add 5 uL of 0.2 N NaOH to tube B."
   warning : "Make sure that 0.2 N NaOH is not more than 12 hrs old"
-  note : "We now have a 2nM PhiX Library Solution in the tube"
+  note : "We now have a 2 nM PhiX Library Solution in the tube"
 end
 
 step
