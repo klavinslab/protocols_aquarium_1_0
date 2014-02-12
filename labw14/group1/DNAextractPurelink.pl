@@ -25,9 +25,9 @@ end
 
 step
   description: "Complete the lysate"
-  check: "Pipette 20 uL RNase A into the tube.   Vortex briefly to mix."
+  check: "Pipette 20 uL RNase A into the tube. Vortex briefly to mix."
   check: "Incubate at room tempurature for two minutes."
-  check: "Pipette 200 uL PureLink Genomic Lysis/Binding Buffer. Vortex until solution is homogenous."
+  check: "Pipette 200 uL PureLink Genomic Lysis Binding Buffer. Vortex until solution is homogenous."
   check: "Pipette 200 uL 95% Ethanol into the tube.  Vortex the tube for 5 seconds"
 end
 
