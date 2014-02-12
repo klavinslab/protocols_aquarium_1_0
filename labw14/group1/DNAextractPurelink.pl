@@ -111,7 +111,7 @@ step
 end
 
 produce
-  r = "Extracted_DNA"
+  r = 1 "Extracted_DNA"
 end
 
 log
