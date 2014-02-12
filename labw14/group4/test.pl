@@ -6,6 +6,6 @@ myhash = {}
 
 step 
   description:" lets test a hash"
-  note: "the hash is :" #myhash
+  note: "the hash is : %{myhash}"
   end
   
