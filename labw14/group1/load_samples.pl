@@ -1,24 +1,25 @@
 argument
   
   comb_sample : sample, "The combined (Denatured and Diluted PhiX Control +  Denatured and Diluted sample library) sample library"
-
+  ready_cartridge : sample, "Cartridge ready for loading of the sample library"
 end
 
 step
   
-  description : "This protocol describes the process to load te sample library to MiSeq and run sequencing process"
+  description : "This protocol describes the process to load the sample library to MiSeq and run sequencing process"
   
 end
 
 take 
 
   comb_sample_1 = item comb_sample
+  ready_cartridge_1 = item ready_cartridge
   
 end
 
 step 
   
-  description : "Load the library"
+  description : "Load sample library to the cartridge"
   check : "Using a 1 mL pippet tube pierce the foil of the reservoir labled Load Sample"
   warning : "Do not pierce the foil of any other reservoirs. They will be pierced automatically durin run"
   check : "Load 600 uL of the combined sample libraries to the Load Reservoir"
@@ -140,7 +141,7 @@ tmp = concat(wash_bottle,wash_tray)
 release concat(tmp,flowcell_1)
 
 tmp1 = concat(pr2,waste)
-tmp3 = concat(milliq1,etanol_1)
+tmp3 = concat(milliq1,ethanol_1)
 
 release concat(tmp2,tmp3)
 
