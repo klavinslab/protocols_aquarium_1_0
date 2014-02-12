@@ -29,7 +29,6 @@ end
 release[M9[0]]
 
 take
-  description: "These are located in the fridge at B1.165"
   amp = 1 "100X 1mL Ampicillin Aliquot"
   kan = 1 "200X 1mL Kanamycin Aliquot"
 end
