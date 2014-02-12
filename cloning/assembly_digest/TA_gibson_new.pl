@@ -13,7 +13,7 @@ end
 
 num_gibs=length(gibson_pieces)
 
-two_d_arr = [[1,1],[2,2]]
+#two_d_arr = [[1,1],[2,2]]
 
 take
   my_frag_arr = item fragments
@@ -26,6 +26,7 @@ step
   check: "Label the left most well with the letter A"
   note: "These wells will be refered to as 1 - 12"
 end
+
 if num_gibs > 12
   step
     description: "Grab a second 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
@@ -64,14 +65,19 @@ end
 #end
 
 i = 0
+j = 0
 
 while i < num_gibs
 
-  step
-    description: "Prepare Gibson %{i}"
-    note: "Add 2 µL"
+  while j < num_gibs[i]
+    step
+      description: "Prepare Gibson %{i}"
+      note: "Add 2 µL"
+    end
+    j = j + 1
   end
   
+  i = i + 1  
 end
 
 release my_frag_arr
