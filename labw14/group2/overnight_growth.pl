@@ -3,8 +3,8 @@ argument
 end
 
 take
-  falcon_tube 1 "50 mL LB liquid aliquot (sterile)"
-  test_tube 1 "14 mL Test Tube"
+  falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
+  test_tube = 1 "14 mL Test Tube"
   glycerol = item id
 end
   
