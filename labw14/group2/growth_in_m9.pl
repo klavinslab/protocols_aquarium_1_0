@@ -23,10 +23,11 @@ step
 end
 
 step
+  description: "Dispose of items"
   check: "Dispose of 5 mL serological tip"
 end
 
-release[pipette[0]]
+#release[M9]
 
 take
   amp = 1 "100X 1mL Ampicillin Aliquot"
