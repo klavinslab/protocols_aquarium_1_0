@@ -47,7 +47,7 @@ end
 
 step
   description: "Dilute the DNA sample to the desired concentration"
-  note: "Your starting concentration is %{t}"
+  note: "Your starting concentration is %{t} pM"
   check: "Lable a new 1.5mL microcentrifuge tube with the date and your initials"
   check: "Add quantities to the new tube as desired using the example image."
   check: "Place the denatured and diluted DNA on ice"
