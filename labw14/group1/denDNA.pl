@@ -16,7 +16,7 @@ if C == "4nM or greater"
   x = 2;
 elsif C == "approx 2nM"
   x = 1;
-emd
+end
 
 step
  discription: "Prepare the denatured library"
