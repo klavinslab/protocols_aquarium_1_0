@@ -141,9 +141,9 @@ tmp = concat(wash_bottle,wash_tray)
 release concat(tmp,flowcell_1)
 
 tmp1 = concat(pr2,waste)
-tmp3 = concat(milliq1,ethanol_1)
+tmp2 = concat(milliq1,ethanol_1)
 
-release concat(tmp2,tmp3)
+release concat(tmp1,tmp2)
 
 
 
