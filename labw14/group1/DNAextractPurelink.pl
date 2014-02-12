@@ -111,8 +111,12 @@ step
 end
 
 produce
-  r = "Extracted DNA"
+  r = "Extracted_DNA"
   location: "Bench"
+end
+
+log
+ return: {Extracted_DNA: r}
 end
 
 
