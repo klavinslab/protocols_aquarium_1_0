@@ -42,14 +42,7 @@ end
 
 step
   description: "Add 990uL pre-chilled HC1 to the sample tube"
-end
-
-produce
- r = 1 "pM concentration Denatured DNA library in 1mM NaOH"
- data
-  concentration: t
- end
- note: "Place the tube on ice until you need it again"
+  note: "Place the tube on ice to keep cold"
 end
 
 step
@@ -57,4 +50,10 @@ step
   check: "Lable a new 1.5mL microcentrifuge tube with the date and your initials"
   check: "add a ratio of the denatured DNA you produced and pre-chilled NaOH to the tube, such that there are 600 uL total solution in the new tube"
   check: "Place the denatured and diluted DNA on ice"
+end
+
+produce
+ r = 1 "Diluted Denatured DNA library in 1mM NaOH"
+ 
+ note: "Place the tube on ice until you need it again"
 end
