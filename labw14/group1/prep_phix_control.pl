@@ -66,7 +66,7 @@ step
 end
   
 tmp1 = concat(phix1,tris1)
-tmp2 = concat(naoh1,t1_1)
+tmp2 = concat(naoh1,ht1_1)
 release concat(tmp1,tmp2)
 
 
