@@ -2,7 +2,7 @@ argument
   
   phix_lib : sample, "10 nM PhiX library"
   tris_cl : sample, "10 mM Tris-Cl, pH 8.5 with 0.1% Tween 20 "
-  NAOH : sample, "0.2 N NaOH"
+  naoh : sample, "0.2 N NaOH"
   ht1 : sample, "Pre-chilled HT1"
   
 end
@@ -26,7 +26,7 @@ step
 end
 
 take
-  naoh1 = item NAOH
+  naoh1 = item naoh
   ht1_1 = item ht1
 end
 
@@ -65,8 +65,9 @@ step
   
 end
   
-  
-
+tmp1 = concat(phix1,tris1)
+tmp2 = concat(naoh1,t1_1)
+release concat(tmp1,tmp2)
 
 
 
