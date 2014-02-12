@@ -40,3 +40,41 @@ step
   check : "Save it in D:>Illumina>MiSeq Control Software>SampleSheets"
   
 end
+
+take
+  
+  cartridge1 = item cartridge
+  
+end
+
+step
+
+  description : "Prepare Reagent Cartridge (Use Gloves)"
+  check : "Take the cartridge from the freezer (Box 1)"
+  check : "Place the cartridge in a RT Water Bath"
+  warning : "DO NOT fill over water line"
+  
+end
+
+step
+
+  description "Wait for 60 mins"
+  timer: { hours: 0, minutes: 1, seconds: 0 } #Update to 60 min for the actual run
+end
+
+step
+
+  check : "Invert the cartridge 10 times"
+  check : "Tap the cartridge on the table to reduce air bubbles"
+  check : "Place the cartidge on ice or in the fridge till you are ready to load it"
+end
+
+produce
+
+   ready_cartridge = 1 "Reagent Cartridge ready for loading"
+   location: "Bench"
+end
+
+log
+ return: {ready_cartridge : ready_cartridge}
+end
