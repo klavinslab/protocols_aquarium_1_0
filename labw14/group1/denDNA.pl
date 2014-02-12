@@ -1,5 +1,3 @@
-
-
 step
   description "This protocal provides the procedure to denature the extracted DNA library"
 end
