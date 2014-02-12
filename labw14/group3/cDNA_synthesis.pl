@@ -17,8 +17,8 @@ end
 
 step
   description: "Label a 0.2 mL PCR tube. Write your initials on it."
-  note: "Prior to moving forward check that your iScript reaction mix has \n generated any precipitation upon thawing." 
-  bullet: "If precipitation has occured, please mix througly to resuspend, \n before moving forward"
+  note: "Prior to moving forward check that your iScript reaction mix has generated any precipitation upon thawing." 
+  bullet: "If precipitation has occured, please mix througly to resuspend, before moving forward"
 end
 
 step 
@@ -53,7 +53,6 @@ step
   description: "When all samples are loaded, hit 'run' on the thermal cycler and select 20 µL setting."
   note: "Hit run. The incubation time in the thermal cycler will take approximately 40 minutes"
   warning: "Hit next, immediately following the placement into the thermal cycler."
-  timer: { hours: 0, minutes: 40, seconds: 0}
   image: "thermal_cycler_select"
 end
 
@@ -61,6 +60,7 @@ step
   description: "*Optional Hold Stage*"
   note: "This is an optimal point to hold your sample if you do not anticipate time to finish."
   note: "If this is the case, do not remove the tube from the 4°C hold."
+  timer: { hours: 0, minutes: 40, seconds: 0}
 end
 
 produce
