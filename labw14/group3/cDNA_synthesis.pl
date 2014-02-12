@@ -7,7 +7,7 @@ end
 
 take
   react_mix = rxn_mix
-  iScript_enz = rev_enzyme
+  iscript_enz = rev_enzyme
   iso_rna = rna_yeast
 end
 
@@ -72,4 +72,4 @@ log
   return: {Yeast_cDNA_id: r[:id]}
 end
 
-release [react_mix[0],iScript_enz[0],iso_rna[0]]
+release [react_mix[0],iscript_enz[0],iso_rna[0]]
