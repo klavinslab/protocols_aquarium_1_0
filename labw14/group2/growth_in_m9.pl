@@ -16,18 +16,6 @@ take
   pipette = "Serological Pipette"
 end
 
-step
-  description:
-      "Pipette 2 microL into the 14 mL test tube"
-  warning:
-      "Do not touch the pipette tip to the side of the 400 mL glucose flask!"
-  bullet: 
-      "Take the test tube rack from the bench to the media station"
-  bullet:
-      "Attach the 5 mL serological pipette tip to the serological pipetter"
-  bullet:
-      "Pipette 2mL of the M9 solution into the 14 mL test tube"
-end
 
 step
   check:
