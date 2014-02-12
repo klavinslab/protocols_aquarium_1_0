@@ -16,7 +16,11 @@ step
 end
 
 produce
-  1 "0.4 N NaOH dilution"
+  r = 1 "0.4 N NaOH dilution"
 end
 
 release concat(water, NaOH)
+
+log
+  return: {"0.4 N NaOH dilution":r}
+end
