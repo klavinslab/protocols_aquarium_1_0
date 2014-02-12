@@ -1,5 +1,5 @@
 argument
-  id: sample ("Transformed E coli Strain")"This is the glycerol stock we will use to prepare the cells"
+  id: sample ("Transformed E coli Strain"), "This is the glycerol stock we will use to prepare the cells"
 end
 
 take
