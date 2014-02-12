@@ -56,7 +56,7 @@ step
 end
 
 produce
-  r = "" from ons
+  r = "Microscope Plates" from ons
   location: "Bench"
   note: "You will be taking this with you to the microscope lab"
 end
