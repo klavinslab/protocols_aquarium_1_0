@@ -48,7 +48,7 @@ end
 step
   description: "Dilute the DNA sample to the desired concentration"
   check: "Lable a new 1.5mL microcentrifuge tube with the date and your initials"
-  check: "add a ratio of the denatured DNA you produced and pre-chilled NaOH to the tube, such that there are 600 uL total solution in the new tube"
+  check: "Add a ratio of the denatured DNA you produced and pre-chilled NaOH to the tube, such that there are 600 uL total solution in the new tube"
   check: "Place the denatured and diluted DNA on ice"
 end
 
