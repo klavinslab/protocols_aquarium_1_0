@@ -22,6 +22,6 @@ else
 end
 
 step
-  descirption: "test"
+ description: "test"
   
 emd
