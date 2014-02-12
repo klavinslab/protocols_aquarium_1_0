@@ -6,7 +6,7 @@ myhash = "hi"
 x = "the hash is : " + myhash
 step 
   description:" lets test a hash"
-  note: "%{x}"
+  note: "%{x+myhash}"
   end
   
 
