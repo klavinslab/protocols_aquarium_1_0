@@ -46,13 +46,15 @@ end
 step
   description: "Turn on the microscope"
   note: "This should be labeled number 4. The switch is a little difficult to find so you may need to feel around for it."
+end
+
 step
   description: "Turn on the X-Y controller"
-  note: "This is labeld 4 and helps us pan through the surface to find cells at a fixed focal point z"
+  note: "This is labeld 5 and helps us pan through the surface to find cells at a fixed focal point z"
 
 step
   descrition: "Turn on the fine Z tunning controller"
-  note: "This is labeled 5 and adjusts our focal points when searching for cells"
+  note: "This is labeled 6 and adjusts our focal points when searching for cells"
 end
 
 step
