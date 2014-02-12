@@ -135,7 +135,7 @@ step
   
 end
 
-tmp = concat(wash_bottle,wash_tray))
+tmp = concat(wash_bottle,wash_tray)
 
 release concat(tmp,flowcell_1)
 
