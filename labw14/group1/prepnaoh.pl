@@ -22,5 +22,5 @@ end
 release concat(water, NaOH)
 
 log
-  return: {"0.4 N NaOH dilution":r}
+  return: {NaOH: r}
 end
