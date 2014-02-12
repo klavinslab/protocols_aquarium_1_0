@@ -3,10 +3,8 @@ argument
 end
 
 step
-  description:
-      "Prepare 0.4% M9 glucose to mix with overnight suspension"
-  note:
-      "Click next to begin this procedure."
+  description: "Prepare 0.4% M9 glucose to mix with overnight suspension"
+  note: "Click next to begin this procedure."
 end
 
 take 
