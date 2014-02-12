@@ -1,12 +1,12 @@
 argument
   yeast_susp: sample, "Choose the Yeast Sample from which to Isolate RNA"
   iScript: sample, "iScript RT-qPCR sample preparation reagent at bench"
-  yeast_conc: number, "Enter the Starting Cell Concentration of Yeast Sample (i.e. cells/mL)
+  yeast_conc: number, "Enter the Starting Cell Concentration of Yeast Sample (i.e. cells/mL)"
 end
 
 take
   y = item yeast_susp
-  #z= item iScript
+  z= item iScript
 end
 
 step
@@ -58,12 +58,12 @@ produce
   rna_sus= 1 "Isolated RNA" from y[0]
   location: "Bench"
   note: "Place in Aluminum Tube Rack on Ice Block"
-
+end
 
 step
   description: "Discard the cell pellet tube"
   bullet: "Can go in the tip waste collector."
 end
 
-release [yeast_susp[0]]
-#release [iScript[0]]
+release [y[0]]
+release [z[0]]
