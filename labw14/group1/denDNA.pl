@@ -16,7 +16,7 @@ x = 0
   elsif C == "approx 2nM"
     x = 1;
   end
-  
+t = x*10
 
 step
  description: "Prepare the denatured library"
@@ -32,7 +32,7 @@ end
 
 step
   description: "Centrifuge your sample to 280 xg for 1 minute"
-  warning: "Do not proceed to the next step untill after centrifuging"
+  warning: "Do not proceed to the next step until after centrifuging"
 end
 
 step
@@ -45,7 +45,7 @@ step
 end
 
 produce
- r = 1 "%{10*x} pM Denatured DNA library in 1mM NaOH"
+ r = 1 "%{t} pM Denatured DNA library in 1mM NaOH"
  note: "Place the tube on ice until you need it again"
 end
 
