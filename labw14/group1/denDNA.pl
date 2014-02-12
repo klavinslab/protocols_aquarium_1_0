@@ -7,19 +7,20 @@ step
   getdata
     C: string, "", ["4nM or greater", "approx 2nM"]
   end
-  
 end
 
 x = 0
 
-if C == "4nM or greater"
-  x = 2;
-elsif C == "approx 2nM"
-  x = 1;
-end
 
 step
  discription: "Prepare the denatured library"
+ 
+  if C == "4nM or greater"
+    x = 2;
+  elsif C == "approx 2nM"
+    x = 1;
+  end
+ 
  check: "Lable a 1.5mL microcentrifuge tube with the date and your initials"
  check: "Pipette 5uL of the DNA sample into the tube"
  check: "Pipette 0.2ul 0.4 N NaOH into the tube"
