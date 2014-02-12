@@ -3,10 +3,10 @@
 # can dynamically extend hashs?
 myhash = "hi"
 
-
+x = "the hash is : " + "hi"
 step 
   description:" lets test a hash"
-  note: ("the hash is : " + "hi")
+  note: x
   end
   
 
