@@ -1,8 +1,6 @@
 argument
   
   comb_sample : sample, "The combined (Denatured and Diluted PhiX Control +  Denatured and Diluted sample library) sample library"
-  MilliQ_Water : sample, "2 mL MilliQ Water"
-  ethanol_70 : sample, "70%% Ethanol"
 
 end
 
