@@ -14,6 +14,7 @@ end
 step
   description: "Test time-lapse"
   bullet: "Click on '1 time loop'. This takes an image of all your cells only once."
+  bullet: "Once you have the images, you can click on the toolbar at the bottom of the image window to view them"
   bullet: "Find the LUTs window"
   bullet: "Adjust the Ph GFP and GFP bandwidth according to the brightness level needed to make the cells visible"
 end
