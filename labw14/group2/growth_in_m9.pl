@@ -3,7 +3,7 @@ argument
 end
 
 step
-  description: "Prepare 0.4% M9 glucose to mix with overnight suspension"
+  description: "Prepare 0.4 percent M9 glucose to mix with overnight suspension"
   note: "Click next to begin this procedure."
 end
 
@@ -29,6 +29,7 @@ end
 release[pipette[0], M9[0]]
 
 take
+  description: "These are located in the fridge at B1.165"
   amp = 1 "100X 1mL Ampicillin Aliquot"
   kan = 1 "200X 1mL Kanamycin Aliquot"
 end
