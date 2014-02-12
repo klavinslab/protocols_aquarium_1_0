@@ -1,11 +1,14 @@
 argument
-  rna_id: sample, "The lysed RNA"
+  #rna_id: sample, "The lysed RNA"
+  rxn_mix: sample, "Select te 5x iScript reaction mix"
+  rev_enzyme: sample, "Select the iScript reverse transcriptase"
+  rna_yeast: rna_id, "This is the isolated RNA"
 end
 
 take
-  rxn_mix = sample #, "Select te 5x iScript reaction mix"
-  rev_enzyme = sample #, "Select the iScript reverse transcriptase"
-  rna_yeast = rna_id #, "This is the isolated RNA"
+  react_mix = rxn_mix
+  iScript_enz = rev_enzyme
+  iso_rna = rna_yeast
 end
 
 step
@@ -69,4 +72,4 @@ log
   return: {Yeast_cDNA_id: r[:id]}
 end
 
-release [rxn_mix[0],rev_enzyme[0],rna_yeast[0]]
+release [react_mix[0],iScript_enz[0],iso_rna[0]]
