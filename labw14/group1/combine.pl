@@ -44,5 +44,8 @@ produce
    location: "Bench"
 end
 
+log
+ return: {comb_sample: comb_sample}
+end
 
 release concat(ddPhiX1,ddSample1)
