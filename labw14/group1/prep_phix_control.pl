@@ -64,7 +64,13 @@ step
   check : "Discard the remaining 0.2 N NaOH solution if it is not going to be used in the next 12 hrs".
   
 end
-  
+
+produce
+
+   ddPhiX = 1 "Diluted and Denatured PhiX Control"
+   location: "Bench"
+end
+
 tmp1 = concat(phix1,tris1)
 tmp2 = concat(naoh1,ht1_1)
 release concat(tmp1,tmp2)
