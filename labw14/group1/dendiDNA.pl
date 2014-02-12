@@ -1,4 +1,5 @@
 argument
+  #extracted DNA
   NaOH: sample, "0.4 N NaOH dilution"
 end
 
