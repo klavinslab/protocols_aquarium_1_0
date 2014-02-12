@@ -26,7 +26,7 @@ step
   check: "Dispose of 5 mL serological tip"
 end
 
-release[pipette[0], M9[0]]
+release[M9[0]]
 
 take
   description: "These are located in the fridge at B1.165"
