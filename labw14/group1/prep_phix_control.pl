@@ -72,7 +72,7 @@ produce
 end
 
 log
- return: {ddPhiX : ddPhix}
+ return: {ddPhiX : ddPhiX}
 end
 
 tmp1 = concat(phix1,tris1)
