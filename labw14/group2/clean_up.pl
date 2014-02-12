@@ -12,7 +12,7 @@ step
   bullet: "Turn the big knob on the bottom left of the microscope in a clockwise direction."
   bullet: "Open the micrscope incubator and loosen the screws." 
   bullet: "Carefully take out the agar plate along with the ring."
-  bullet: "Clean the lens of the microscope using a olympus lens cleaner and shut the incubator"
+  bullet: "Clean the lens of the microscope using an Olympus lens cleaner and shut the incubator"
   bullet: "Take the ring out and discard the agar plate" 
 end
 
