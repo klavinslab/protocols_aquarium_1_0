@@ -2,7 +2,7 @@
 
 # can dynamically extend hashs?
 myhash = {x: "hi"}
-x = myhash[x]
+x = myhash["x"]
 step 
   description:" lets test a hash"
   note: "the has is : %{x}"
