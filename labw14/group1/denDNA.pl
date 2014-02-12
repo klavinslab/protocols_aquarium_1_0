@@ -32,7 +32,7 @@ end
 
 step
   description: "Centrifuge your sample to 280 xg for 1 minute"
-  warning: "Do not proceed to the next step unless after centrifuging"
+  warning: "Do not proceed to the next step untill after centrifuging"
 end
 
 step
