@@ -1,5 +1,5 @@
 step
-  description: "This protocal provides the procedure to denature the extracted DNA library"
+  description: "This protocal provides the procedure to denature and dilute the extracted DNA library"
 end
 
 step
@@ -49,4 +49,9 @@ produce
  note: "Place the tube on ice until you need it again"
 end
 
-
+step
+  description: "Dilute the DNA sample to the desired concentration"
+  check: "Lable a new 1.5mL microcentrifuge tube with the date and your initials"
+  chcek: "add a ratio of the denatured DNA you produced and pre-chilled NaOH to the tube, such that there are 600 uL total solution in the new tube"
+  check: "Place the denatured and diluted DNA on ice"
+end
