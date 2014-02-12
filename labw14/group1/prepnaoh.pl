@@ -4,6 +4,7 @@ end
 
 take
   water = 1 "50 mL Molecular Grade Water aliquot"
+  #NaOH is at B.7535
   NaOH = 1 "Sodium Hydroxide (NaOH) Powder"
 end
 
