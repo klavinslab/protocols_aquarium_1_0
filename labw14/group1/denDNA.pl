@@ -5,6 +5,6 @@ end
 step
   description: "Select the approximate concentraton of your DNA library"
   getdata
-    C = string, ["4nM or greater", "approx 2nM"]
+    C: string, ["4nM or greater", "approx 2nM"]
   end
 end
