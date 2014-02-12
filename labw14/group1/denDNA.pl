@@ -26,7 +26,7 @@ step
  check: "Lable a 1.5mL microcentrifuge tube with the date and your initials"
  check: "Pipette 5uL of the DNA sample into the tube"
  check: "Pipette 0.2ul 0.4 N NaOH into the tube"
- check: "Vortex the tube breifly to mix"
+ check: "Vortex the tube briefly to mix"
  warning: "Make sure your NaOH was prepared during the last 12 hours"
 end
 
