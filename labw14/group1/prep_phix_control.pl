@@ -35,7 +35,7 @@ step
   check: "Pick a fresh 1.5 mL tube and label it B."
   check: "Add 5 uL of the 4 nM PhiX Library (created in the previous step, in tube A) to tube B."
   check: "Add 5 uL of 0.2 N NaOH to tube B."
-  warning : Make sure that 0.2 N NaOH is not more than 12 hrs old"
+  warning : "Make sure that 0.2 N NaOH is not more than 12 hrs old"
   note : "We now have a 2nM PhiX Library Solution in the tube"
 end
 
@@ -62,7 +62,7 @@ step
   check : "Add 375 uL of 20 pM denatured PhiX library (in tube B now) to the tube C."
   check : "Add 225 uL of Pre-chilled HT1 to tube C"
   check : "Invert multiple times to mix well"
-  check " "Discard the remaining 0.2 N NaOH solution if it is not going to be used in the next 12 hrs".
+  check : "Discard the remaining 0.2 N NaOH solution if it is not going to be used in the next 12 hrs".
   
 end
   
