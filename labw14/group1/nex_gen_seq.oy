@@ -1,0 +1,79 @@
+argument 
+  phix_lib : sample, "10 nM PhiX library"
+  tris_cl : sample, "10 mM Tris-Cl, pH 8.5 with 0.1% Tween 20 "
+  #naoh : sample, "0.2 N NaOH"
+  ht1 : sample, "Pre-chilled HT1"
+end
+
+place p1
+    protocol: "labw14/group1/prepnaoh.pl"
+    group: "group1"
+    marked: true
+    start: now()
+    window: minutes(30)
+end
+
+place p2
+    protocol: "labw14/group1/DNAextractPurelink.pl"
+    group: "group1"
+    start: now()
+    window: minutes(30)
+end
+
+place p3
+    protocol: "labw14/group1/dendiDNA.pl"
+    group: "group1"
+    start: now()
+    window: hours(8)
+end
+
+place p4
+    protocol: "labw14/group1/prep_phix_control.pl"
+    group: "group1"
+    argument
+      phix_lib : phix_lib
+      tris_cl : tris_cl
+      ht1 : ht1
+    end
+    start: now()
+    window: hours(8)
+end
+
+place p5
+    protocol: "labw14/group1/combine.pl"
+    group: "group1"
+    start: now()
+    window: hours(8)
+end
+
+place p6
+    protocol: "labw14/group1/prerun_setup_miseq.pl"
+    group: "group1"
+    start: now()
+    window: hours(8)
+end
+
+place p7
+    protocol: "labw14/group1/load_samples.pl"
+    group: "group1"
+    start: now()
+    window: hours(8)
+end
+
+#wires
+
+wire (p2,"r") => (p3,"eDNA")
+wire (p3,"r") => (p5,"ddSample")
+wire (p4,"ddPhiX") => (p5,"ddPhiX")
+wire (p5,"comb_sample") => (p7,"comb_sample")
+wire (p6,"ready_cartridge") => (p7,"ready_cartridge")
+
+
+#transitions
+transition [p1] => [p2] when !error(0) && completed(0) end
+transition [p2] => [p3] when !error(0) && completed(0) end
+transition [p3] => [p4] when !error(0) && completed(0) end
+transition [p4] => [p5] when !error(0) && completed(0) end
+transition [p5] => [p6] when !error(0) && completed(0) end
+transition [p6] => [p7] when !error(0) && completed(0) end
+transition [p71] => [] when !error(0) && completed(0) end
