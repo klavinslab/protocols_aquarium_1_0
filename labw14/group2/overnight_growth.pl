@@ -15,7 +15,7 @@ step
       "Click next to begin the incubation process"
 end
 
-step:
+step
   description:
       "Pour liquid LB"
   note:
