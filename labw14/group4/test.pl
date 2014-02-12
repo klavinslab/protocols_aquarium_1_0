@@ -9,7 +9,7 @@ step
   note: "the has is : %{myhash}"
   end
   
-  myhash = myhash + {1: "bye"}
+  myhash = myhash + { x: "bye"}
 
 step 
   description:" lets test a hash"
