@@ -36,3 +36,5 @@ step
   note : "MiSeq is the machine we will use for sequencing"
   
 end
+
+release concat(ddPhiX1,ddSample1)
