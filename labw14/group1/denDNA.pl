@@ -11,15 +11,17 @@ end
 
 x = 0
 
-
-step
- description: "Prepare the denatured library"
- 
   if C == "4nM or greater"
     x = 2;
   elsif C == "approx 2nM"
     x = 1;
   end
+  
+
+step
+ description: "Prepare the denatured library"
+ 
+
  
  check: "Lable a 1.5mL microcentrifuge tube with the date and your initials"
  check: "Pipette 5uL of the DNA sample into the tube"
