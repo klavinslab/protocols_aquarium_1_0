@@ -1,12 +1,12 @@
 argument
   yeast_susp: sample, "Choose the Yeast Sample from which to Isolate RNA"
   iScript: sample, "iScript RT-qPCR sample preparation reagent at bench"
-  yeast_conc: number, "Enter the Starting Cell Concentration of Yeast Sample (i.e. cells/mL)"
+  #yeast_conc: number, "Enter the Starting Cell Concentration of Yeast Sample (i.e. cells/mL)"
 end
 
 take
   y = item yeast_susp
-  z= item iScript
+  z = item iScript
 end
 
 step
@@ -67,3 +67,7 @@ end
 
 release [y[0]]
 release [z[0]]
+
+log
+  return: {rna_suspension: rns_sus}
+end
