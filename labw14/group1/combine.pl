@@ -32,7 +32,7 @@ step
   
   description : "Store the combined sample library"
   check : "Place the combined sample library (tube D) on ice in a styrofoam box (can be found at SF2 : B14.315)"
-  Warning : "The combined sample library should be kept on ice till you are ready to use the  MiSeq reagent cartridge"
+  warning : "The combined sample library should be kept on ice till you are ready to use the  MiSeq reagent cartridge"
   note : "MiSeq is the machine we will use for sequencing"
   
 end
