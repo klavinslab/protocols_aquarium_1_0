@@ -68,8 +68,7 @@ step
   check: "Add 25 uL PureLink Genomic Elution Buffer to the column."
   check: "Incubate the tube for 1 minute at room tempurature."
   check: "Cetrifuge the column at maximum speed for 1 minute at room tempurature."
-  
-
+end
 
 step
   description: "Binding DNA"
@@ -79,18 +78,21 @@ step
   check: "Centrifuge the column at 10,000g for 1 minute at room tempurature."
   check: "Discard the column's collection tube and replace it with a clean one."
 end
+
 step
   description: "Washing DNA"
   check: "Pipette 500 uL PureLink Genomic Wash Buffer 1 into the column."
   check: "Centrifuge the column at 10,000g for 1 minute at room tempurature."
   check: "Discard the column's collection tube and replace it with a clean one."
 end
+
 step
   description: "Washing DNA Part 2"
   check: "Pipette 500 uL PureLink Genomic Wash Buffer 2 into the column."
   check: "Centrifuge the column at maximum speed for 3 minutes at room tempurature."
   check: "Discard the column's collection tube."
 end
+
 step
   description: "Eluting DNA"
   check: "Place the spin column in a 1.5 ml tube."
@@ -109,7 +111,8 @@ step
 end
 
 produce
-  r = "ada"
+  r = "Extracted DNA"
+  location: "Bench"
 end
 
 
