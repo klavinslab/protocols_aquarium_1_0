@@ -6,9 +6,9 @@ argument
 end
 
 take
-  react_mix = rxn_mix
- # iscript_enz = rev_enzyme
-  iso_rna = rna_yeast
+  react_mix = item rxn_mix
+  iscript_enz = item rev_enzyme
+  iso_rna = item rna_yeast
 end
 
 step
