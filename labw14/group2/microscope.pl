@@ -1,3 +1,11 @@
+argument
+  id: sample (""), "Agar cell plate"
+end
+
+take
+  plate: item id
+end
+
 step
   description: "Go to the microscope room"
   note: "Go to the microscope room and resume the protocol from there. If already in the microscope room click next."
