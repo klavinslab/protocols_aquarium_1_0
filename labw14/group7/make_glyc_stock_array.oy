@@ -17,7 +17,7 @@ end
 place glyStockDelay
   protocol: "labw14/group7/make_glycerol_stock_array.pl"
   group: aquarium_user
-  start: minutes(0.1)
+  start: hours(8)
   window: minutes(1)
 end
 
