@@ -1,14 +1,14 @@
 # test bed for trying ideas
 
 # can dynamically extend hashs?
-myhash = {}
-
+myhash = {x: "hi"}
+x = myhash[x]
 step 
   description:" lets test a hash"
-  note: "the has is : %{myhash}"
-  end
+  note: "the has is : %{x}"
+end
   
-  myhash = myhash + { x: "bye"}
+myhash[y] = "bye"
 
 step 
   description:" lets test a hash"
