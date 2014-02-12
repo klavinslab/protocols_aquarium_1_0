@@ -72,12 +72,9 @@ Day 2
 
 Day 1
 
-MEDIA BENCH
 1. Prepare 40 mL of 0.4% Glucose M9 Media with 200 uL of Kanamycin (1:200) and 80 uL of Ampicillin (1:500) in a 50 mL conical
 2. Label 12 14 mL glass culture tubes with DL046, DL108, and DL147 Reps 1-4
 3. Use the electric pipette with a 5 mL tip to alliquot 3 mL of media into each tube
-
-CULTURE BENCH
 4. Pick 4 colonies of each DL1046, DL108, and DL147 from the streak out plate into the appropriately labelled tube
 5. Place the tubes in the 37C shaker incubator overnight
 
