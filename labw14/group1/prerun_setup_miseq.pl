@@ -43,7 +43,7 @@ end
 
 take
   
-  cartridge1 : item cartridge
+  cartridge1 = item cartridge
   
 end
 
