@@ -1,3 +1,7 @@
+argument
+  NaOH: sample, "0.4 N NaOH dilution"
+end
+
 step
   description: "This protocal provides the procedure to denature and dilute the extracted DNA library"
 end
