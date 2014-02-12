@@ -3,7 +3,7 @@
 # can dynamically extend hashs?
 myhash = "hi"
 
-x = "the hash is : " + "hi"
+x = "the hash is : " + myhash
 step 
   description:" lets test a hash"
   note: "%{x}"
