@@ -10,7 +10,7 @@ end
 take
   test_tube = 1 "14 mL Test Tube"
   dish = 1 "Small Petri Dish"
-  #plate = 1 "M9 agar plate"
+  plate = 1 "M9 Glucose Microscope Plate"
   ons = item id
 end
 
@@ -65,4 +65,4 @@ log
   return: {ons: r}
 end
 
-release [dish[0], test_tube[0]]
+release [dish[0], test_tube[0], plate[0]]
