@@ -7,7 +7,7 @@ end
 
 take
   react_mix = rxn_mix
-  iscript_enz = rev_enzyme
+ # iscript_enz = rev_enzyme
   iso_rna = rna_yeast
 end
 
