@@ -59,45 +59,6 @@ step
   check: "Place the spin column in a 1.5 ml tube."
   check: "Add 25 uL PureLink Genomic Elution Buffer to the column."
   check: "Incubate the tube for 1 minute at room tempurature."
-  check: "Cetrifuge the column at maximum speed for 1 minute at room tempurature."
-end
-
-step
-  description: "Eluting DNA Part 2"
-  check: "Replace the 1.5 ml tube on the collection tube. Discard the old tube."
-  check: "Add 25 uL PureLink Genomic Elution Buffer to the column."
-  check: "Incubate the tube for 1 minute at room tempurature."
-  check: "Cetrifuge the column at maximum speed for 1 minute at room tempurature."
-end
-
-step
-  description: "Binding DNA"
-  warning: "Check that the Genomic Wash Buffers 1 and 2 are labled as having ethanol added to them.  If they have not, do so now as instructed on the bottle."
-  check: "Lable a PureLink Spin Column with your initials and the date."
-  check: "Pipette the lysate (~640uL) into the column."
-  check: "Centrifuge the column at 10,000g for 1 minute at room tempurature."
-  check: "Discard the column's collection tube and replace it with a clean one."
-end
-
-step
-  description: "Washing DNA"
-  check: "Pipette 500 uL PureLink Genomic Wash Buffer 1 into the column."
-  check: "Centrifuge the column at 10,000g for 1 minute at room tempurature."
-  check: "Discard the column's collection tube and replace it with a clean one."
-end
-
-step
-  description: "Washing DNA Part 2"
-  check: "Pipette 500 uL PureLink Genomic Wash Buffer 2 into the column."
-  check: "Centrifuge the column at maximum speed for 3 minutes at room tempurature."
-  check: "Discard the column's collection tube."
-end
-
-step
-  description: "Eluting DNA"
-  check: "Place the spin column in a 1.5 ml tube."
-  check: "Add 25 uL PureLink Genomic Elution Buffer to the column."
-  check: "Incubate the tube for 1 minute at room tempurature."
   check: "Cetrifuge at maximum speed for 1 minute at room tempurature."
 end
 
