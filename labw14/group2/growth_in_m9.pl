@@ -11,7 +11,7 @@ take
   test_tube = 1 "14 mL Test Tube"
   tip = 1 "5 mL Serological Pipette Tips"
   M9 = 1 "400 mL M9 liquid Glucose"
-  pipette = "Serological Pipette"
+  pipette = 1 "Serological Pipette"
 end
 
 step
