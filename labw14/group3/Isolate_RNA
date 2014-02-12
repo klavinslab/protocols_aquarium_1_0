@@ -66,4 +66,4 @@ step
 end
 
 release [yeast_susp[0]]
-release [iScript[0]]
+#release [iScript[0]]
