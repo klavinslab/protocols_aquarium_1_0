@@ -16,14 +16,24 @@ end
 
 step
   description: "Prepare the petri dish for the agar film"
-  bullet: "Using a 10 microL pipetter, pipette 2 microL of our M9 diluted cells into the center of the petri dish"
+  bullet: "Using a 10 microL pipetter, pipette 1 microL of our M9 diluted cells into the center of the petri dish"
   note: "it should just look like a small bead of liquid at the center of the petri dish."
 end
+step
+  description: "Sterilize test tube"
+  note: "Using the 140 proof ethanol alcohol spray bottle, and a kimwipe, sterilize the test tube."
+end
+
 step
   description: "Cut the agar film"
   bullet: "Take the lid off of the 14 mL test tube"
   bullet: "Take the lid off of the M9 petri dish"
   bullet: "Stick the opening of the test tube into the center of the agar to punch a hole in the agar"
+end
+
+step
+  description: "STerilize the spatula"
+  note: "Again using the ethanol alcohol and a fresh kimwipe sterilize the spatula found on the bench."
 end
 
 step
