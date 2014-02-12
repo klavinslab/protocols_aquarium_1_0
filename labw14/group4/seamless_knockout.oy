@@ -1,27 +1,56 @@
 argument
-  e_coli_strain_logcells: sample, "the log phase cells" 
-  fragment_ldna: sample, "the keio cassette you wish to transform"
-  strain_name: string, "the name of the strain you are producing today (copy it from Week4 lab descrition in Google Drive"
-end 
-#log_cells = "BF001"
-plate_type_1 = "LB Kan Plate (sterile)"
+  e_coli_strain: sample, "the e. coli cells" 
+  knockout_fragment: sample, "the thyA cassette you wish to transform"
+  rescue_fragment: sample, "The cassette to knockout thyA"
+  #strain_name: string, "the name of the strain you are producing today (copy it from Week4 lab description in Google Drive"
+end
 
-num_trans = 1
+##
+## Qs: Seamless or not?
+## Qs: Can we have a null argument for argument
+## Qs: ...or can we have two metacols (one for dthyA loop, one for generating dthyA)	
+## Qs: How do you repeat OD test if not enough wait time
+##
 
-place heat_shock
-  protocol: "labw14/week4/heat_shock.pl"
+place make_log_phase
+  protocol: "labw14/group4/make_log_phase.pl"
   argument
-    cells_flask: e_coli_strain_logcells
+    cells: e_coli_strain
   end
   marked: true
   group: aquarium_user
   start: now()
-  window: minutes(10)
 end
 
 
+place finish_log_phase
+	protocol: "labw14/group4/finish_log_phase.pl"	
+	# log_cells: wire log phase cells from make_log_phase
+	start: ## ?? wait appropriate time
+	window: ## ??
+	group: aquarium_user
+end
+
+wire (make_log_phase, "log_cells") => (finish_log_phase, "log_cells") 
+
+### ??  
+#log_cells = "BF001"
+plate_type_1 = "LB Kan Plate (sterile)"
+###
+
+num_trans = 1
+
+place heat_shock
+  protocol: "labw14/group4/heat_shock.pl"
+  # cells_flask: wire log cells from here
+  group: aquarium_user
+  window: ## ??
+end
+
+wire (finish_log_phase, "log_cells") => (heat_shock, "cells_flask")
+
 place quick_comp
-  protocol: "labw14/week4/quick_comp.pl"
+  protocol: "labw14/group4/quick_comp.pl"
   group: aquarium_user
   start: now()
   window: minutes(1)
@@ -30,7 +59,7 @@ end
 wire (heat_shock,"cell_id") => (quick_comp,"shocked_cells")
 
 place transform
-  protocol: "labw14/week4/transform.pl"
+  protocol: "labw14/group4/transform.pl"
   argument
     plasmid_id: fragment_ldna
     dna_vol: 2
@@ -43,21 +72,8 @@ end
 
 wire (quick_comp,"comp_cell_id") => (transform,"e_coli_strain_type")
 
-place transform2
-  protocol: "labw14/week4/transform.pl"
-  argument
-    plasmid_id: fragment_ldna
-    dna_vol: 1
-  end
-  group: aquarium_user
-  start: now()
-  window: minutes(1)
-end
-
-wire (quick_comp,"comp_cell_id") => (transform2,"e_coli_strain_type")
-
-place incubate_tube_1
-  protocol: "labw14/week4/incubate_tube.pl"
+place incubate_tube
+  protocol: "labw14/group4/incubate_tube.pl"
   argument
     temp: 30
   end
@@ -66,47 +82,37 @@ place incubate_tube_1
   window: minutes(2)
 end
 
-wire (transform,"transformed_cells_id") => (incubate_tube_1,"e_coli_strain_id")
+wire (transform,"transformed_cells_id") => (incubate_tube,"e_coli_strain_id")
 
-
-place incubate_tube_2
-  protocol: "labw14/week4/incubate_tube.pl"
-  argument
-    temp: 30
-  end
+place plate_thymine_trimetaprin
+  protocol: "labw14/group4/plate.pl"
   group: aquarium_user
-  start: now()
-  window: minutes(2)
-end
-
-wire (transform2,"transformed_cells_id") => (incubate_tube_2,"e_coli_strain_id")
-
-place plate_1
-  protocol: "labw14/week4/plate.pl"
-  group: "admin"
   argument
     volume: 200
-    plate_type: plate_type_1
+    plate_type: thymine_trimetaprin
   end
   start: hours(3)
   window: hours(1)
 end
 
-place plate_2
-  protocol: "labw14/week4/plate.pl"
-  group: "admin"
+place plate_nthymane
+  protocol: "labw14/group4/plate.pl"
+  group: aquarium_user
   argument
     volume: 200
-    plate_type: plate_type_1
+    plate_type: plate_thymine_trimetaprin
   end
   start: hours(3)
   window: hours(1)
 end
 
-wire (transform,"transformed_cells_id") => (plate_1,"e_coli_strain_id")
-wire (transform2,"transformed_cells_id") => (plate_2,"e_coli_strain_id")
+wire (incubate_tube,"transformed_cells_id") => (plate,"e_coli_strain_id")
   
 # forward transitions
+
+transition [make_log_phase] => [finish_log_phase] when !error(0) && completed(0) end 
+transition [finish_log_phase] => [heat_shock] when !error(0) && completed(0) end
+
 transition [heat_shock] => [quick_comp] when !error(0) && completed(0) end 
 transition [quick_comp] => [transform] when !error(0) && completed(0) end 
 transition [incubate_tube_1] => [plate_1] when !error(0) && completed(0) end 
@@ -153,6 +159,9 @@ end
 
 
 # remaining reverse transitions
+transition [make_log_phase] => [make_log_phase] when error(0) end 
+transition [finish_log_phase] => [make_log_phase] when error(0) end 
+
 transition [heat_shock] => [heat_shock] when error(0) end 
 transition [quick_comp] => [quick_comp] when error(0) end 
 transition [transform] => [transform] when error(0) end 
