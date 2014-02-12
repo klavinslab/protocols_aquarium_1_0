@@ -1,6 +1,9 @@
 argument
-  #extracted DNA
-  NaOH: sample, "0.4 N NaOH dilution"
+  eDNA: sample, "Extracted DNA"
+end
+
+take
+  1 "0.4 N NaOH dilution"
 end
 
 step
