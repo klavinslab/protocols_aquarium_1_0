@@ -1,7 +1,7 @@
 argument
-  e_coli_strain: sample, "the e. coli cells" 
-  knockout_fragment: sample, "the thyA cassette you wish to transform"
-  rescue_fragment: sample, "The cassette to knockout thyA"
+  e_coli_strain: sample array, "the E. coli strains you wish to preform the knockouts in" 
+  knockout_fragment: sample array, "the cassettes you wish to transform into the strains, respectively"
+  note: "The nth E. coli strain will be knocked out with the nth cassette"
   #strain_name: string, "the name of the strain you are producing today (copy it from Week4 lab description in Google Drive"
 end
 
@@ -115,43 +115,14 @@ transition [finish_log_phase] => [heat_shock] when !error(0) && completed(0) end
 
 transition [heat_shock] => [quick_comp] when !error(0) && completed(0) end 
 transition [quick_comp] => [transform] when !error(0) && completed(0) end 
-transition [incubate_tube_1] => [plate_1] when !error(0) && completed(0) end 
-transition [plate_1] => [] when !error(0) && completed(0) end 
-transition [incubate_tube_2] => [plate_2] when !error(0) && completed(0) end 
-transition [plate_2] => [] when !error(0) && completed(0) end 
+transition [incubate_tube] => [plate_1] when !error(0) && completed(0) end 
+transition [plate] => [] when !error(0) && completed(0) end
 
 # T1 -> []
-transition [transform] => [incubate_tube_1] when !error(0) && completed(0) && (return_value(0,"time_constant") >= 3) end
+transition [transform] => [incubate_tube] when !error(0) && completed(0) && (return_value(0,"time_constant") >= 3) end
 
 # T1 -> T1
 transition [ transform ] => [ transform ] when !error(0) && completed(0) && (return_value(0,"time_constant") < 3) && (num_trans == 1)
-    do
-        num_trans = num_trans + 1
-    end
-end
-
-# T1 -> T2
-transition [ transform ] => [ transform2 ] when !error(0) && completed(0) && (return_value(0,"time_constant") < 3) && (num_trans == 2)
-    do
-        num_trans = num_trans + 1
-    end
-end
-
-#T2 -> T2
-transition [ transform2 ] => [ transform2 ] when !error(0) && completed(0) && (return_value(0,"time_constant") < 3) && (num_trans == 3)
-    do
-        num_trans = num_trans + 1
-    end
-end
-
-#T2 -> []
-transition [ transform2 ] => [incubate_tube_2] when !error(0) && completed(0) && (return_value(0,"time_constant") < 3) && (num_trans == 4)
-    do
-        num_trans = num_trans + 1
-    end
-end
-
-transition [ transform2 ] => [incubate_tube_2] when !error(0) && completed(0) && (return_value(0,"time_constant") >= 3)
     do
         num_trans = num_trans + 1
     end
@@ -165,9 +136,6 @@ transition [finish_log_phase] => [make_log_phase] when error(0) end
 transition [heat_shock] => [heat_shock] when error(0) end 
 transition [quick_comp] => [quick_comp] when error(0) end 
 transition [transform] => [transform] when error(0) end 
-transition [transform2] => [transform2] when error(0) end
-transition [incubate_tube_1] => [incubate_tube_1] when error(0) end
-transition [incubate_tube_2] => [incubate_tube_2] when error(0) end
-transition [plate_1] => [plate_1] when error(0) end
-transition [plate_2] => [plate_2] when error(0) end
+transition [incubate_tube] => [incubate_tube] when error(0) end
+transition [plate] => [plate] when error(0) end
 
