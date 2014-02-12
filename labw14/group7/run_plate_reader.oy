@@ -1,0 +1,97 @@
+argument
+  cell_array_input: sample array, "Choose the strains you would like to incubate"
+  induce_step_delay: int, "How long do you want to wait between induction steps?"
+  num_induce_steps: int, "How many induction steps do you want?"
+end
+
+place LB_grow
+  protocol: "labw14/group7/LB_grow.pl"
+  argument
+    cell_array: cell_array_input
+  end
+  group: aquarium_user
+  marked: true   #start here
+  start: now()
+  window: minutes(1)
+end
+
+place glucose_grow
+  protocol: "labw14/group7/glucose_grow.pl"
+  group: aquarium_user
+  start: hours(8)
+  windows: hours(12)
+end
+
+place glucose_grow_now
+  protocol: "labw14/group7/glucose_grow.pl"
+  group: aquarium_user
+  start: now()
+  windows: minutes(10)
+end
+
+place cell_wash
+  protocol: "labw14/group7/cell_wash.pl"
+  group: aquarium_user
+  start: hours(8)
+  window: hours(12)
+end
+
+place cell_wash_now
+  protocol: "labw14/group7/cell_wash.pl"
+  group: aquarium_user
+  start: now()
+  windows: minutes(10)
+end
+
+#Row = sample
+#Column = induction time
+place load_plate
+  protocol: "labw14/group7/load_plate.pl"
+  argument
+    num_columns = num_induce_steps
+  end
+  start: now()
+  windows: minutes(10)
+end
+
+wire (LB_grow, "cell_array") => (glucose_grow,"LB_cell_array")
+
+wire (glucose_grow, "LB_cell_array") => (glucose_grow_now,"LB_cell_array")
+wire (glucose_grow, "LB_cell_array") => (cell_wash,"gluc_cell_array")
+wire (glucose_grow_now, "LB_cell_array") => (cell_wash,"gluc_cell_array")
+
+wire (cell_wash,"gluc_cell_array") => (cell_wash_now,"gluc_cell_array")
+wire (cell_wash,"gluc_cell_array") => (load_plate, "washed_cell_array")
+wire (cell_wash_now,"gluc_cell_array") => (load_plate,"washed_cell_array")
+
+
+
+#LB_grow -> glucose_grow
+transition [LB_grow] => [glucose_grow] when !error(0) && completed(0) end
+#LB_grow rework
+transition [LB_grow] => [LB_grow] when error(0) end
+
+#glucose_grow -> cell_wash
+transition [glucose_grow] => [cell_wash] when !error(0) && completed(0) end
+#glucose_grow initial fail
+transition [glucose_grow] => [glucose_grow_now] when error(0) end
+#glucose_grow_NOW -> cell_wash
+transition [glucose_grow_now] => [cell_wash] when !error(0) && completed(0) end
+#glucose_grow_now fail: rework
+transition [glucose_grow_now] => [glucose_grow_now] when error(0) end
+
+#cell_wash => load_plate
+transition [cell_wash] => [load_plate]  when !error(0) && completed(0) end
+#cell_wash initial fail
+transition [cell_wash] => [cell_wash_now] when error(0) end
+#cell_wash_now => load_plate
+transition [cell_wash_now] => [load_plate]  when !error(0) && completed(0) end
+#cell_wash_now rework
+transition [cell_wash_now] => [cell_wash_now] when error(0) end
+
+#load_plate rework
+transition [load_plate] => [load_plate] if error(0) end
+#load_plate => run_plate
+transition [load_plate] => [run_plate]  when !error(0) && completed(0) end
+
+
