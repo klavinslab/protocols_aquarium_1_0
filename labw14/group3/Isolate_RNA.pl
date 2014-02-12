@@ -46,7 +46,7 @@ end
 step
   description: "Take the tube out of centrifuge and store supernatant"
   note: "Aspirate the supernatant and place in new 1.5mL Tube."
-  Warning: "The supernatant is your isolated RNA!!! Don't throw away."
+  warning: "The supernatant is your isolated RNA!!! Don't throw away."
 end
 
 take
