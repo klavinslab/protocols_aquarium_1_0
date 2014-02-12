@@ -26,10 +26,9 @@ step
   check: "Dispose of 5 mL serological tip"
 end
 
-release[M9[0]]
+release[pipette[0], M9[0]]
 
 take
-  description: "These are located in B1.165 in the antibotics box"
   amp = 1 "100X 1mL Ampicillin Aliquot"
   kan = 1 "200X 1mL Kanamycin Aliquot"
 end
