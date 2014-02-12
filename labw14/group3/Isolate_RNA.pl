@@ -69,5 +69,5 @@ release [y[0]]
 release [z[0]]
 
 log
-  return: {rna_suspension: rns_sus}
+  return: {rna_suspension: rna_sus}
 end
