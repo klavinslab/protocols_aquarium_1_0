@@ -55,7 +55,7 @@ end
 release[amp[0], kan[0]]
 
 take
-  ons = 1 "Overnight suspension culture"
+  ons = item id
 end
 
 step
