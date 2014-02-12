@@ -11,6 +11,10 @@ step
   note: "Go to the microscope room and resume the protocol from there. If already in the microscope room click next."
 end
 
+step
+  description: "Ensure incubation chamber is at 37 degrees"
+  note: "If the incubation chamber is not at 37 degrees abort protocol and wait till chamber reaches proper temperature."
+end
 step  
   description: "Setting up the microscope for use"
   note: "In the next few steps we will set up the microscope to track cells for our timelapse microscopy."
