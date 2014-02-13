@@ -116,6 +116,9 @@ end
 
 wire (stock1, "working_fragments") => (assembly1, "oligo_pool")
 wire (stock2, "working_fragments") => (assembly2, "oligo_pool")
+wire (assembly1, "gene") => (run_gel, "gene_sample")
+wire (assembly2, "gene") => (run_gel, "gene_sample")
+
 
 transition [ stock1 ] => [ assembly1 ] when !error(0) && completed(0) end
 transition [ stock1 ] => [ stock1 ] when error(0) end
