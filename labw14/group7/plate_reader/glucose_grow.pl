@@ -16,7 +16,7 @@ take
   plate_array = item Transformed_E_coli_Strain_plate_array
   media_tube = 1 "50 mL Falcon Tube" #I could not find "50mL conical", so I used this instead
   glucose = 1 "Minimal M9 Broth"
-  kan = 1 "200X 1 mL Kanamycin Aliquo"
+  kan = 1 "200X 1 mL Kanamycin Aliquot"
   amp = 1 "100X 1 mL Ampicillin Aliquot"
   pipette = 1 "Serological Pipette"
   tips = 2 "5 mL Serological Pipette Tips"
@@ -46,7 +46,7 @@ step
 end
 
 
-release concat(glucose, kan, amp, pipette)
+release [glucose[0], kan[0], amp[0], pipette[0]]
 
 step
  description: "Add cells to each culture tube"
