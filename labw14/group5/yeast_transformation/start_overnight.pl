@@ -3,7 +3,8 @@ argument
 end
 
 take
-  f
+  falcon_tube = 1 ""
+  plate = item Transformed_yeast_plate
 end
 
 ii = 0
