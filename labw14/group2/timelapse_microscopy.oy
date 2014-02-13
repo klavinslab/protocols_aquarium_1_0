@@ -1,1 +1,13 @@
-fkalsjf;adsf
+argument
+  glycerol: sample ("Transformed E coli Strain"), "Glycerol stock to be grown in LB media"
+end
+
+place overnight_LB_growth
+  protocol: "labw14/group2/overnight_LB_growth.pl"
+  argument:
+    id: glycerol
+  end
+  group: aquarium_user
+  marked: true
+  start: now()
+end
