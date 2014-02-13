@@ -12,6 +12,7 @@ source_oligos1 = [1, 2, 3, 4, 5, 6]
 source_oligos2 = [7, 8, 9, 10, 11, 12]
 source_oligos3 = [13, 14, 15, 16, 17, 18]
 source_oligos4 = [21, 22, 23, 24, 25, 26] 
+backbone_fragments = [31, 32]
 
 # Places
 place stock1
@@ -101,13 +102,19 @@ end
 place gel_purify
   protocol: "labw14/group6/gel_purify.pl"
   group: aquarium_user
+  argument
+    gel_slices: gel_slices
+  end
   start: now()
-  window: minutes(1)
+  window: minutes(30)
 end
 
 place gibson
   protocol: "labw14/group6/gibson_assembly.pl"
   group: aquarium_user
+  argument
+    fragments: append( purified_fragments, backbone_fragments )
+  end
   start: now()
   window: minutes(1)
 end
@@ -140,6 +147,7 @@ wire (stock4, "primer_pool") => (assembly2, "oligo_pool22")
 wire (assembly1, "gene") => (run_gel, "assembly1_product")
 wire (assembly2, "gene") => (run_gel, "assembly2_product")
 wire (run_gel_image, "fragment_gel_lanes") => (cut_gel, "fragment_gel_lanes")
+wire (cut_gel, "gel_slices") => (gel_purify, "gel_slices")
 
 
 transition [ stock1, stock2 ] => [ assembly1 ] when !error(0) && completed(0) && !error(1) && completed(1) end
