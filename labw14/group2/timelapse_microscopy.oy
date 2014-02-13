@@ -16,14 +16,14 @@ place GM9
   protocol: "labw14/group2/growth_in_m9.pl"
   group: aquarium_user
   marked: false
-  start: min(10)
+  start: minutes(10)
 end
 
 place MSI
   protocol: "labw14/group2/microscope_incubator.pl"
   group: aquarium_user
   marked: false
-  start: min(10)
+  start: minutes(10)
 
 wire (OLBG, "r") => (GM9, "id")
 
