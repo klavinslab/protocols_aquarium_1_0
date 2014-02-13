@@ -11,7 +11,7 @@ n = length(oligonucleotides)
 take
   oligonuc = item oligonucleotides
   molecular_g_h2o = "Molecular Grade Water"
-  tube = 1 "1.5 mL Eppendorf Tube"
+  test_tube = 1 "1.5 mL Eppendorf Tube"
 end
 
 step
