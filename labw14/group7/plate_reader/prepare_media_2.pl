@@ -10,9 +10,9 @@ end
 
 take
  media_tube = 1 "50 mL Falcon Tube"
- antibio1 = item antibio1
- antibio2 = item antibio2
- media = item media
+ antibio1 = 1 antibio1
+ antibio2 = 1 antibio2
+ media = 1 media
  #media[:id] == media_base
  
  pipette = 1 "Serological Pipette"
