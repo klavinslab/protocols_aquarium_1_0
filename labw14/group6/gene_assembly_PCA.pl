@@ -28,11 +28,11 @@ end
 
 step
   description: "Prepare Reaction"
-  check:"Pipet 15 µL molecular grade water into the labeled PCR tube."
-  check: "Pipet 5 µL of master stock with id %{oligo_pool} into the tube."
-  check: "Pipet 2.5 µL of primer with id %{primer1} into the tube."
-  check: "Pipet 2.5 µL of primer with id %{primer2} into the tube."
-  check: "Pipet 25 µL of Phusion Master Mix with id %{enzyme_id} into the tube."
+  check:"Pipet 15 µL molecular grade water into each labeled PCR tube."
+  check: "Pipet 5 µL of master stock with id %{oligo_pool} into each tube."
+  check: "Pipet 2.5 µL of primer with id %{primer1} into each tube."
+  check: "Pipet 2.5 µL of primer with id %{primer2} into each tube."
+  check: "Pipet 25 µL of Phusion Master Mix with id %{enzyme_id} into each tube."
   check: "Use the tip to gently mix."
   note: "Be careful to pipette into the liquid, not the side of the tube."
 end
@@ -46,7 +46,7 @@ step
 end
 
 step
-  description: "Place the tube into thermal cycler T2 at B3.335"
+  description: "Place the tubes into thermal cycler T2 at B3.335"
 end
 
 step
@@ -56,7 +56,7 @@ step
 end
 
 step
-  description: "When all group samples are loaded, hit 'run' on the thermal cycler and select 20 µL setting."
+  description: "When all group samples are loaded, hit 'run' on the thermal cycler and select 50 µL setting."
   note: "Coordinate with your fellow classmates to put all their samples before hit run."
   image: "thermal_cycler_select"
 end
