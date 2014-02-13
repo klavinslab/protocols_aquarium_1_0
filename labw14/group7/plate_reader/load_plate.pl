@@ -20,3 +20,22 @@ step
   #todo: include a picture of this
 end
 
+step
+  description: "Load the middle area of the plate with the glucose medium"
+  check: "pipette 200uL of glucose media into each open well"
+  #todo: generalize this step
+end
+
+step
+  description: "Load the cells into the wells"
+  check: "Load the cells according to the chart"
+  #todo: include chart
+  #todo: identify which cells correspond to which type.  Generalize.
+end
+
+produce
+ a = 1 "loaded plate" from cells[]
+ Location: "Bench"
+end
+
+#return statement
