@@ -1,5 +1,5 @@
 argument
-  Transformed_yeast_plate: sample array("Plate"), "A plate with yeast colonies"
+  Transformed_yeast_plate: sample array, "A plate with yeast colonies"
 end
 
 num = length(Transformed_yeast_plate)
