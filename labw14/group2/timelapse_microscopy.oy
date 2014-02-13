@@ -24,6 +24,7 @@ place MSI
   group: aquarium_user
   marked: false
   start: minutes(10)
+end
 
 wire (OLBG, "r") => (GM9, "id")
 
