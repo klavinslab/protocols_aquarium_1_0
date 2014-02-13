@@ -11,7 +11,6 @@ n = length(oligonucleotides)
 take
   oligonuc = item oligonucleotides
   molecular_g_h2o = "Molecular Grade Water"
-  test_tube = 1 "1.5 mL Eppendorf Tube"
 end
 
 step
@@ -19,8 +18,8 @@ step
 end
 
 step
-  description: "Label the 1.5 mL Eppendorf tube with your initials and date"
-  note: "place the tube in a test tube rack"
+  description: "Label q 1.5 mL Eppendorf tube with your initials and date"
+  note: "Place the tube in a test tube rack"
 end
 
 step
