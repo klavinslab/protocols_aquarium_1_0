@@ -7,6 +7,9 @@ end
 n = length(oligonucleotides)
 # The number of oligonucleotides to mix is recorded
 
+x: Volume_total = 600 μL
+y: Volume_per_oligo = 10 μL
+z: volume_water = x - n*y 
 
 take
   oligonuc = item oligonucleotides
@@ -18,6 +21,7 @@ step
   
 end
 
+
 step
   description: "Label a 1.5 mL Eppendorf tube with your initials and date"
   note: "Place the tube in a test tube rack"
@@ -25,19 +29,15 @@ step
 end
 
 step
-  description: "Pipette 480 μL of Molecular Grade Water into the tube"
+  description: "Pipette %{z} μL of Molecular Grade Water into the tube"
   
 end
 
 step
-  description: "Add 60 μL of oligonucleotides into the tube."
+  description: "Add 10 μL from each oligonucleotides into the tube."
   
 end
 
-step
-  description: "Transfer 10 μL to 190 μL Molecular Grade Water"
-  
-end
 
 produce
   master_stock = 1 "Primer Pool"
