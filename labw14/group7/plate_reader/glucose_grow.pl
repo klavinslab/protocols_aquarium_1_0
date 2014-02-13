@@ -13,15 +13,14 @@ n = strains * cycles
 #TODO: cycles = 4 should be replaced with an arbitrary number of induction cycles passed as an argument
 
 take
-  plate_array = item Transformed_E_coli_Strain_plate_array
-  media_tube = 1 "50 mL Falcon Tube" #I could not find "50mL conical", so I used this instead
-  glucose = 1 "Minimal M9 Broth"
-  kan = 1 "200X 1 mL Kanamycin Aliquot"
-  amp = 1 "100X 1 mL Ampicillin Aliquot"
-  pipette = 1 "Serological Pipette"
-  tips = 2 "5 mL Serological Pipette Tips"
-  culture_tubes = n "14 mL Test Tube"
-  note: "Be sure to grab a tube rack to hold all of the culture tubes"
+ media_tube = 1 "50 mL Falcon Tube" #I could not find "50mL conical", so I used this instead
+ glucose = 1 "Minimal M9 Broth"
+ kan = 1 "200X 1 mL Kanamycin Aliquot"
+ amp = 1 "100X 1 mL Ampicillin Aliquot"
+ pipette = 1 "Serological Pipette"
+ tips = 2 "5 mL Serological Pipette Tips"
+ culture_tubes = n "14 mL Test Tube"
+ note: "Be sure to grab a tube rack to hold all of the culture tubes"
  #TODO: Check all of these arguments with Leandra to confirm they are correct
 end
 
@@ -46,14 +45,17 @@ step
  check: "Use electric serological pipette to add 3ml of your M9 media (with amp and kan) into each culture tube."
 end
 
-
 release [glucose[0], kan[0], amp[0], pipette[0]]
+
+take
+ plate_array = item Transformed_E_coli_Strain_plate_array
+end
 
 step
  description: "Add cells to each culture tube"
  check: "Using a 100uL pipette tip, extract a single colony from plate DL046, and swish it around in one of the culture tubes marked DL046"
  check: "Using a new 100uL pipette tip extract another single colony from plate DL046, and swirl it around in another culture tube labeled DL046. Repeat this until you have DL046 cells in all %{cycles} of your tubes labeled DL046."
- check: "Repeat the above two steps for plates DL108 and DL147, so that you end up with %{strans} sets of %{cycles} culture tubes loaded with cells, for a total of %{n} tubes" 
+ check: "Repeat the above two steps for plates DL108 and DL147, so that you end up with %{strains} sets of %{cycles} culture tubes loaded with cells, for a total of %{n} tubes" 
 #TODO: Repace the above code with something more modular, based on an arbitrary number of cycles and strains
 end
 
