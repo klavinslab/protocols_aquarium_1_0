@@ -6,17 +6,22 @@
 # samples: every obj that is not a basic
 # see http://bioturk.ee.washington.edu:3011/sample_types
 
+# we'll ignore any logic around primers for now. TODO try multiple concentrations the first time
+
 argument
-  plate_array_input: sample array, "Old plates get rid of this"
-  primer_array_input: sample array, "Primers"
+  primer_array_input: sample array, "Primers to combine"
+  plasmid_input: sample, "Plasmid backbone"
 end
 
 # TODO fetch history to find parameter values; call to another system using REST?
 
-place overnight
-  protocol: "labw14/group7/overnight_suspension_array.pl"
+# error when check that it worked and it did not
+# try_gibson tries multiple concentrations according to a step
+#  alternatively, fill up the extra pcr tubes with other concentrations
+place try_until_successful
+  protocol: "labw14/group8/try_gibson.pl"
   argument
-    plate_array: plate_array_input
+    primer_array_input: primer_array_input
   end
   group: aquarium_user      #generic, general
   marked: true           #start here
@@ -24,31 +29,26 @@ place overnight
   window: minutes(1)     #start in the next minute
 end
 
-place glyStockDelay
-  protocol: "labw14/group7/make_glycerol_stock_array.pl"
-  group: aquarium_user
-  start: hours(8)
-  window: minutes(1)
+# check which ones worked, implicit dependency on try_gibson
+place verify_gibson
+  protocol: "labw14/group8/verify_gibson.pl"
 end
 
-place glyStockNow
-  protocol: "labw14/group7/make_glycerol_stock_array.pl"
-  group: aquarium_user
-  start: now()
-  window: minutes(1)
+place success
+  protocol: "labw14/group8/record_gibson.pl"
 end
 
-wire (overnight,"overnight_suspension_array") => (glyStockDelay,"Transformed_E_coli_Strain_tube_array")
-wire (overnight,"overnight_suspension_array") => (glyStockNow,"Transformed_E_coli_Strain_tube_array")
 
+wire (try_until_successful,"pcr_results") => (verify_gibson,"possibly_successful_gibsons")
+wire (verify_gibson,"successful_gibsons") => (success,"successful_gibsons")
+  # may need to have assistant enter concentration that was successful, want to store in inv info tho
+ 
 # forward transitions
 
-transition [overnight] => [glyStockDelay] when !error(0) && completed(0) end
-transition [glyStockDelay] => [] when !error(0) && completed(0) end
+transition [try_until_successful] => [verify_gibson] when !error(0) && completed(0) end
+transition [verify_gibson] => [success] when !error(0) && completed(0) end
 transition [glyStockNow] => [] when !error(0) && completed(0) end
-#where do error and completed come from?
+
 
 # rework transitions
-transition [overnight]     => [overnight]    when error(0) end
-transition [glyStockDelay]     => [glyStockNow]    when error(0) end
-transition [glyStockNow]     => [glyStockNow]    when error(0) end
+transition [verify_gibson]     => [try_until_successful]    when error(0) end
