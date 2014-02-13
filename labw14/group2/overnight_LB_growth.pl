@@ -19,8 +19,7 @@ step
 end
 
 step
-  description: 
-      "Mix in glycerol stock"
+  description: "Mix in glycerol stock"
   warning: "BE EXTREMELY CAREFUL NOT TO CONTAMINATE THE GLYCEROL STOCK!"
   bullet: "Using a fresh 1mL pipette tip scrape a small amount of glycerol stock onto the pipette tip"
   bullet: "Tilt test tube slightly so that the liquid LB is on the side of the 14 mL test tube"
