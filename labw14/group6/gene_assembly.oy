@@ -122,10 +122,8 @@ transition [ stock1 ] => [ stock1 ] when error(0) end
 transition [ stock2 ] => [ assembly2 ] when !error(0) && completed(0) end
 transition [ stock2 ] => [ stock2 ] when error(0) end
 
-transition [ assembly1 ] => [ run_gel ] when !error(0) && completed(0) end
+transition [ assembly1, assembly2 ] => [ run_gel ] when !error(0) && completed(0) end
 transition [ assembly1 ] => [ assembly1 ] when error(0) end
-
-transition [ assembly2 ] => [ run_gel ] when !error(0) && completed(0) end
 transition [ assembly2 ] => [ assembly2 ] when error(0) end
 
 transition [ run_gel ] => [ image_gel ] when !error(0) && completed(0) end
@@ -138,13 +136,22 @@ transition [ cut_gel ] => [ gel_purify ] when !error(0) && completed(0) end
 transition [ cut_gel ] => [ cut_gel ] when error(0) end
 
 transition [ gel_purify ] => [ gibson ] when !error(0) && completed(0) end
-transition [ gel_purify ] => [ gel_purify] when error(0) end
+transition [ gel_purify ] => [ gel_purify ] when error(0) end
 
 transition [ gibson ] => [ transformation ] when !error(0) && completed(0) end
 transition [ gibson ] => [ gibson ] when error(0) end
 
-transition [ tranfomation ] => [ plate ] when !rror(0) $$ completed(0) end
+transition [ tranfomation ] => [ plate ] when !error(0) $$ completed(0) end
+transition [ transfomation ] => [ transfomation ] when error(0) end
 
+transition [ plate ] => [ overnight ] when !error(0) && completed(0) end
+transition [ plate ] => [ plate ] when error(0) end
 
-transition [ eight ] => [] when !error(0) && completed(0) end
-transition [ eight ] => [eight ] when error(0) end
+transition [ overnight ] => [ miniprep ] when !error(0) && completed(0) end
+transition [ overnight ] => [ overnight ] when error(0) end
+
+transition [ miniprep ] => [ sequencing ] when !error(0) && completed(0) end
+transition [ miniprep ] => [ miniprep ] when error(0) end
+
+transition [ sequencing ] => [] when !error(0) && completed(0) end
+transition [ sequencing ] => [ sequencing ] when error(0) end
