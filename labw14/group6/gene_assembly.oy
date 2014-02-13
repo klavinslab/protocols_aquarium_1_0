@@ -44,14 +44,14 @@ place assembly2
 end
 
 place run_gel
-  protocol: "labw14/group6/run_gel_test.pl"
+  protocol: "labw14/group6/run_gel_gene_assembly.pl"
   group: aquarium_user
   start: now()
   window: minutes(30)
 end
 
 place image_gel
-  protocol: "labw14/group6/run_gel_purification.pl"
+  protocol: "labw14/group6/image_gel.pl"
   argument
     DNA_sample: input4
   end
@@ -61,7 +61,7 @@ place image_gel
 end
 
 place cut_gel
-  protocol: "labw14/group6/gibbson_assembly.pl"
+  protocol: "labw14/group6/cut_gel.pl"
   argument
     DNA_sample: input5
   end
@@ -71,7 +71,7 @@ place cut_gel
 end
 
 place gel_purify
-  protocol: "labw14/group6/transform_e_coli.pl"
+  protocol: "labw14/group6/gel_purify.pl"
   argument
     DNA_sample: input6
   end
@@ -81,7 +81,7 @@ place gel_purify
 end
 
 place gibson
-  protocol: "labw14/group6/colony_PCR.pl"
+  protocol: "labw14/group6/gibson_assembly.pl"
   argument
     transformed_e_coli: input7
   end
@@ -91,7 +91,7 @@ place gibson
 end
 
 place transformation
-  protocol: "labw14/group6/run_gel_test.pl"
+  protocol: "labw14/group6/e_coli_transformation.pl"
   argument
     DNA_sample: input8
   end
