@@ -1,7 +1,7 @@
 # Arguments
 argument
-  source_oligos1: sample array fragments, "Choose the oligonucleotides you want to combine"
-  source_oligos2: sample array fragments, "Choose the oligonucleotides you want to combine"
+  source_oligos1: sample array, "Choose the oligonucleotides you want to combine"
+  source_oligos2: sample array, "Choose the oligonucleotides you want to combine"
 end
 
 
