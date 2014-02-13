@@ -9,26 +9,22 @@ take
 end
   
 step
-  description: 
-      "Prepare 14 mL test tube for incubation"
-  note:
-      "Click next to begin the incubation process"
+  description: "Prepare 14 mL test tube for incubation"
+  note: "Click next to begin the incubation process"
 end
 
 step
-  description:
-      "Pour liquid LB"
-  note:
-      "Pipette 2mL of liquid LB into the 14 mL test tube. Make sure to use a fresh sterile pipette tip"
+  description: "Pour liquid LB"
+  note: "Pipette 2mL of liquid LB into the 14 mL test tube. Make sure to use a fresh sterile pipette tip"
 end
 
 step
   description: 
       "Mix in glycerol stock"
   warning: "BE EXTREMELY CAREFUL NOT TO CONTAMINATE THE GLYCEROL STOCK!"
-  bullet: "Tilt test tube slightly so that the liquid LB is on the side of the tube"
-  bullet: "Using a fresh 1mL pipette tip scrape a small amount of glycerol stock into the tube"
-  bullet: "swirl the tip gently into the test tube, and dispose of the pipette tip"
+  bullet: "Using a fresh 1mL pipette tip scrape a small amount of glycerol stock onto the pipette tip"
+  bullet: "Tilt test tube slightly so that the liquid LB is on the side of the 14 mL test tube"
+  bullet: "swirl the tip gently into the LB solution in the test tube, and dispose of the pipette tip"
 end
 
 produce
