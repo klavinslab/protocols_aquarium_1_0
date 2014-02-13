@@ -2,14 +2,16 @@ argument
   media: object, "The media to use"
   antibio1: object, "The first antiobiotic to add"
   dilution1: number, "The dilution factor for the first antibiotic, where the ratio of antibiotic:media is 1:x"
-  dilution: number array, "An array of dilution factors for each antibiotic, where the ratio of antibiotic:media is 1:x"
+  antibio2: object, "The second antiobiotic to add"
+  dilution2: number, "The dilution factor for the second antibiotic"
   volume: number, "The desired total volume in mL (<50mL)"
   #can we force the same lengths of array?  oherwise return error.
 end
 
 take
  media_tube = 1 "50 mL Falcon Tube"
- antibios = item array antibios  #check this!
+ antibio1= item antibio1
+ antibio1= item antibio1
  media = item media
  #media[:id] == media_base
  
@@ -17,30 +19,17 @@ take
  tips = 1 "25 mL Serological Pipette Tips"
 end
 
-i=0
-antibio_volume = []
-for i<length(antibios)
-  antibio_volume[i] = total_volume/dilution[i]*1000
-end
+ab_vol1 = volume/dilution1*1000
+ab_vol2 = volume/dilution2*1000
 
 step
   description: "Prepare %{volume} mL of %{media[:name]} media with the desired antibiotics"
   check: "Attach the 25mL tip to the serological pipetter"
   check: "Use the electric serological pipette to add  %{volume} mL of %{media[:name]} into the 50mL falcon tube"
   check: "Dispose of your 25mL serological pipette tip in tip waste"
-end
-
-i=0
-for i<length(antibios)
-  step
-    description: "Add the %{antibios[i][:name]} to the solution"
-    check: "Pipette %{antibio_volume[i]} uL of %{antibios[i][:name]} to the solution"
-  end
-end
-
-step
-  description: "Vortex the solution"
-  check: "Press the 50mL Falcon tube to the vortexer for 15 seconds"
+  check: "Pipette %{ab_vol1} uL of %{antibio1[:name]} to the solution"
+  check: "Pipette %{ab_vol2} uL of %{antibio2[:name]} to the solution"
+  check: "Vortex the solution for 15 seconds"
 end
 
 produce
