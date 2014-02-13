@@ -1,6 +1,6 @@
 argument
   media: object, "The media to use"
-  antibios: object array, "The antiobiotics to add"
+  antibios: object, "The antiobiotics to add"
   dilution: number array, "An array of dilution factors for each antibiotic, where the ratio of antibiotic:media is 1:x"
   volume: number, "The desired total volume in mL (<50mL)"
   #can we force the same lengths of array?  oherwise return error.
