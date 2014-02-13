@@ -42,7 +42,7 @@ end
 step
   description: "Merge the UI windows"
   note: "Click and drag the UI windows into each other to merge them as tabs"
-  note: "The program is a little finiky so when dragging the pop-ups drag them to align with the tabs of another window before dropping"
+  note: "The program is a little finiky so when dragging the pop-ups, drag them to align with the tabs of another window before dropping"
 end
 
 step
