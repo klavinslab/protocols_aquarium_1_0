@@ -66,7 +66,7 @@ step
 end
 
 
-release [primer1_stock[0],primer2_stock[0],masterstock[0]]
+release concat (primer1_stock, primer2_stock, masterstock)
 
 step
   description: "Go to the thermal cycler to pick up the PCR tube you put after it is done."
