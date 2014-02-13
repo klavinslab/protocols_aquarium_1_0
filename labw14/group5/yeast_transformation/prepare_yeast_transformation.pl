@@ -21,7 +21,9 @@ r = []
 while ii < length(Transformed_yeast_plate)
 
   produce
-      y = 1 "???????????????"
+      y = 1 "Yeast mixture" from yeast_tube[ii] #????? concat[yeast_tube, digested_plasmid]
+      release yeast_tube[ii]
+      release digested_plasmid[ii]
   end
   
   r = append(r,y[:id])
@@ -32,4 +34,5 @@ log
   return: { yeast_plasmid_mixture: r }
 end
 
-release concat(yeast_tube, digested_plasmid,)
+release yeast_tube
+release digested_plasmid
