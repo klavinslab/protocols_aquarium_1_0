@@ -31,8 +31,6 @@ while ii < length(transformed_yeast_plate)
     inuse:0
   end
   
-  release plate[ii]
-  
   r = append(r,test_tube[ii][:id])
   ii=ii+1
 end
@@ -41,4 +39,5 @@ log
   return: { yeast_overnight_suspension: r }
 end
 
+release plate
 release concat(falcon_tube, media_bottle)
