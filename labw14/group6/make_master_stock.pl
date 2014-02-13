@@ -18,7 +18,7 @@ step
 end
 
 step
-  description: "Label q 1.5 mL Eppendorf tube with your initials and date"
+  description: "Label a 1.5 mL Eppendorf tube with your initials and date"
   note: "Place the tube in a test tube rack"
 end
 
