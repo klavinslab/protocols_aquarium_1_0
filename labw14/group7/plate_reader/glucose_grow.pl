@@ -30,35 +30,38 @@ step
 end
 
 step
- description: "Add 3mL media to each culture tube"
- check: "Use the electric serological pipette to add 3ml of media (ID %{media[:id]}) into each culture tube."
- #I believe that %{media[:id]} should give the same thing as %{glucose_media}?
- check: "Dispose of your serological pipette tip in tip waste"
+  description: "Add 3mL media to each culture tube"
+  check: "Use the electric serological pipette to add 3ml of media (ID %{media[:id]}) into each culture tube."
+  #I believe that %{media[:id]} should give the same thing as %{glucose_media}?
+  check: "Dispose of your serological pipette tip in tip waste"
 end
 
 release [pipette[0]]
 
 take
- plate_array = item plated_cells
+  plate_array = item plated_cells
 end
+
 i = 0
 for i<strains
-step
- description: "Add cells to each culture tube"
- check: "Use a 100uL pipette tip (held in your hand) to extract a single colony from plate %{plated_cells[0][:id]}, and swish it around in the culture tube marked %{plated_cells[0][:id]} R1"
- check: "Use a new 100uL pipette tip extract another single colony from the same plate, and swirl it around in the culture tube labeled %{plated_cells[0][:id]} R2"
- check: "Repeat the above procedure for R3 and R4."
+  step
+    description: "Add cells from plate %{plated_cells[i][:id]} to four seperate culture tubes"
+    check: "Use a 100uL pipette tip (held in your hand) to extract a single colony from plate %{plated_cells[i][:id]}, and swish it around in the culture tube marked %{plated_cells[i][:id]} R1"
+    check: "Use a new 100uL pipette tip extract another single colony from the same plate, and swirl it around in the culture tube labeled %{plated_cells[i][:id]} R2"
+    check: "Repeat the above procedure for R3 and R4."
 #TODO: Repace the above code with something more modular, based on an arbitrary number of cycles and strains
+  end
+  i = i + 1
 end
-#until you have DL046 cells in all %{regions} of your tubes labeled DL046.Repeat the above two steps for plates DL108 and DL147, so that you end up with %{strains} sets of %{regions} culture tubes loaded with cells, for a total of %{n} tubes" 
 step
- description: "Place the tubes in the 37C shaker"
- check: "Load the tube rack containing your %{n} cell culture tubes into the 37C shaker."
- note: "This will incubate for 18hrs (overnight)"
+  description: "Place the tubes in the 37C shaker"
+  note: "You should now have a tube rack containing 4 repeats of each cell colony, in a total of %{n} culture tubes" 
+  check: "Load the tube rack containing your %{n} cell culture tubes into the 37C shaker."
+  note: "This will incubate for 18hrs (overnight)"
 end
 
 #release [cell_culture_tube_array[0], glycerol[0]]
-#release concat(plate_array)
+release plate_array
 
 #TODO: Figure out how to release an array of samples, and add log -> return to provide an array of culture tubes for the metacol
 end
