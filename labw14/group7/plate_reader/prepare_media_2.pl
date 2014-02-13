@@ -5,6 +5,7 @@ argument
   antibio2_in: object, "The second antiobiotic to add"
   dilution2_in: number, "The dilution factor for the second antibiotic"
   volume: number, "The desired total volume in mL (<50mL)"
+  label: string, "A label to put on this media"
   #can we force the same lengths of array?  oherwise return error.
 end
 
@@ -25,21 +26,18 @@ ab_vol2 = volume*1000/dilution2_in  #check for digits!
 
 step
   description: "Prepare %{volume} mL of %{media_in} media with the desired antibiotics"
+  check: "Write %{label} on the 50mL tube"
   check: "Attach the 25mL tip to the serological pipetter"
   check: "Use the electric serological pipette to add  %{volume} mL of %{media_in} into the 50mL falcon tube"
   check: "Dispose of your 25mL serological pipette tip in tip waste"
   check: "Pipette %{ab_vol1} uL of %{antibio1_in} to the solution"
   check: "Pipette %{ab_vol2} uL of %{antibio2_in} to the solution"
   check: "Vortex the solution for 15 seconds"
-end
-
-produce
-  m = 1 "Prepared Media" from media_tube[0]
-  location: "Bench"
+  check: "Keep this tube at your bench for the next protocol"
 end
 
 release concat(media,concat(antibio1,concat(antibio2,pipette)))
 
 log
-  return: {prepared_media: m}
+  return: {media_label: label}
 end
