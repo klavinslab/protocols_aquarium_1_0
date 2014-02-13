@@ -1,0 +1,76 @@
+argument
+  cell_array_input: sample array, "Choose the strains you would like to assay"
+  number_of_copies: int, "How many copies of each strain would you like? NOTE: max of 12 samples/assay"
+  induce_steps: int array, "input the desired induction times"
+end
+
+#todo: sort induce_steps array here
+#todo: check if first time is 0 (boolean zero_hour_induction)
+#todo: check for negative numbers
+
+#todo: check that there are at most 12 samples, and at most 8 induction steps. Quit or reboot if not true.
+
+place glucose_grow
+  protocol: "labw14/group7/plate_reader/glucose_grow.pl"
+  argument
+    <<input>> = cell_array_input
+    <<num_copies>> = number_of_copies
+  end
+  group: aquarium_user
+  marked: true
+  start: now()
+  windows: minutes(10)
+end
+
+place prepare_solutions
+  protocol: "labw14/group7/plate_reader/prepare_solutions.pl"
+  group: aquarium_user
+  start: hours(8)
+  windows: minutes(10)
+end
+#todo: add correction to avoid repeating 8 hour delay.
+
+place load_plate
+  protocol: "labw14/group7/plate_reader/load_plate.pl"
+  argument
+    <<number of rows>> = length(induce_steps)
+  end
+  group: aquarium_user
+  start: now()
+  windows: minutes(10)
+end
+
+place induce_zero
+  protocol: ""labw14/group7/plate_reader/induce_zero.pl"
+  group: aquarium_user
+  start: now()
+  windows: minutes(10)
+end
+
+place start_program
+  protocol: ""labw14/group7/plate_reader/start_program.pl"
+  group: aquarium_user
+  start: now()
+  windows: minutes(10)
+end
+
+place induce n
+  protocol: ""labw14/group7/plate_reader/induce_n.pl"
+  group: aquarium_user
+  start: now()
+  windows: minutes(10)
+end
+
+place finish
+  protocol: ""labw14/group7/plate_reader/finish.pl"
+  group: aquarium_user
+  start: now()
+  windows: minutes(10)
+end
+
+#wire (LB_grow, "cell_array") => (glucose_grow,"LB_cell_array")
+
+#LB_grow -> glucose_grow
+transition [LB_grow] => [glucose_grow] when !error(0) && completed(0) end
+#LB_grow rework
+transition [LB_grow] => [LB_grow] when error(0) end
