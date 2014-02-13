@@ -3,7 +3,7 @@ argument
 end
 
 step
-  description: "Prepare 0.4 percent M9 glucose to mix with overnight suspension"
+  description: "Prepare 0.4%% M9 glucose to mix with overnight suspension"
   note: "Click next to begin this procedure."
 end
 
@@ -15,19 +15,15 @@ take
 end
 
 step
-  description: "Pipette 2 mL into the 14 mL test tube"
+  description: "Pipette M9 into the 14 mL test tube"
   warning: "Do not touch the pipette tip to the side of the 200 mL glucose flask!"
   bullet: "Take the test tube rack from the bench to the media station"
   bullet: "Attach the 5 mL serological pipette tip to the serological pipetter"
   bullet: "Pipette 2mL of the M9 solution into the 14 mL test tube"
 end
 
-step
-  description: "Dispose of items"
-  check: "Dispose of 5 mL serological tip"
-end
 
-release[M9[0]]
+release[pipette[0], M9[0]]
 
 take
   amp = 1 "100X 1mL Ampicillin Aliquot"
