@@ -37,7 +37,7 @@ step
 end
 
 step
-  description: "Add 10 μL from each oligonucleotides into the 1.5 mL Eppendorf tube."
+  description: "Add 10 μL from each %{n} oligonucleotide(s) into the 1.5 mL Eppendorf tube."
   
 end
 
