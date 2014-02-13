@@ -24,11 +24,15 @@ step
 end
 
 step
-  description: "Pipette 480 μL of Molecular grade water into the tube"
+  description: "Pipette 480 μL of Molecular Grade Water into the tube"
 end
 
 step
-  description: "Add 10 μL of each primer stock into each tube"
+  description: "Add 60 μL of oligonucleotides into the tube"
+end
+
+step
+  description: "Transfer 10 μL to 190 μL Molecular Grade Water"
 end
 
 produce
@@ -36,9 +40,9 @@ produce
 
 end
 
-
-
-
 log
   return: { working_fragments: master_stock  }
 end
+
+release [oligonuc]
+release [molecular_g_h2o]
