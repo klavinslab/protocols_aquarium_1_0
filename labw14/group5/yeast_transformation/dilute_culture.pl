@@ -10,7 +10,7 @@ end
 
 take
   flask = num "250 mL Baffled Flask"
-  medium "800 mL YPAD liquid (sterile)"
+  media_bottle = "800 mL YPAD liquid (sterile)"
   yeast_suspension_tube = item  Yeast_overnight_suspension
 end
 
@@ -41,4 +41,4 @@ log
   return: { yeast_250ml_flask: r }
 end
 
-release concat(falcon_tube, plate, media_bottle)
+release concat(yeast_suspension_tube, media_bottle)
