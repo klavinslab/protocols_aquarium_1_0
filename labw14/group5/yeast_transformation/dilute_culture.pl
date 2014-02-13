@@ -42,4 +42,4 @@ log
   return: { yeast_250ml_flask: r }
 end
 
-release concat(yeast_suspension_tube, media_bottle)
+release concat(media_bottle)
