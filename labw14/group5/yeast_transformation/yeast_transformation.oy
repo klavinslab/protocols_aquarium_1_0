@@ -1,3 +1,33 @@
 argument
-
+  transformed_yeast_plate: sample array, "A plate with yeast colonies"
 end
+
+place p1
+  protocol: "labw14/group5/yeast_transformation/start_overnight.pl"
+  argument
+    transformed_yeast_plate: transformed_yeast_plate
+  end
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(1)
+end
+
+place p2
+  protocol: "labw14/group5/yeast_transformation/dilute_culture.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+wire (p1,"yeast_overnight_suspension") => (p2,"yeast_overnight_suspension")
+
+#forward transitions
+transition [p1] => [p2] when !error(0) && completed(0) end
+
+#rework transitions
+transition [p1] => [p1] when error(0) end
+transition [p2] => [p2] when error(0) end
+
+#transition [ p1 ] => [ p2 ] when minutes_elapsed(0,3) end
+transition [ p2 ] => [] when completed(0) end
