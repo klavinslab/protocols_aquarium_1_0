@@ -94,8 +94,7 @@ step
   bullet: "Look for white splotches which turn black when in focus"
   bullet: "We want to look for black pill shaped rods, these are our cells"
   bullet: "When a cell is found on a focal point we will look for cells on the same XY plane"
-  note: "This process takes approximately 30 minutes. If no cells are found in the region adjust the xy controller"
-  note: "and start focusing in another region. Most cells will be found in similar focal planes"
+  note: "This process takes approximately 30 minutes. If no cells are found in the region adjust the xy controller and start focusing in another region. Most cells will be found in similar focal planes"
   note: "Once any cell is found click next"
 end
 
@@ -104,9 +103,11 @@ step
   bullet: "Select the 'X-Y overview' tab; this will help you keep track of our selected cells"
   bullet: "We want to find elongated black rods, short rods are probably dead cells"
   bullet: "Click on the 'X-Y position' tab in the ND aquisition window"
-  bullet: "When a desirable cell is found center the black box probe around it"
+  bullet: "When a desireable cell is found center the probe around it using the X-Y controller"
+  note: "The controller may be too fast so press the 'X-y speed' button once to make the light blink on and off. This is the controllers slowest speed used for fine tuning"
   bullet: "Click the blank check box in the 'X-Y position' tab in th eND aquisition window"
   note: "This selects the current X-Y position and stores it. It will also been seen on your X-Y overview map"
+  note: "To reset the speed of the controller press the X-Y speed button twice to ensure the green light is fully on"
 end
 
 step
@@ -134,6 +135,6 @@ end
 
 step
   description: "Run Timelapse"
-  bullet: "Proceed to next protocol to run timelapse"
+  bullet: "Proceed to next protocol to run the timelapse"
 end
 
