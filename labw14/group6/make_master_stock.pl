@@ -25,7 +25,7 @@ end
 
 
 produce
-  master_stock = 1 "Plasmid Pool"
+  master_stock = 1 "Primer Pool"
 
 end
 
