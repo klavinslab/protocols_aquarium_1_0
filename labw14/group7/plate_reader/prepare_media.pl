@@ -1,7 +1,7 @@
 argument
   media: sample("liquidmedia"), "The media to use"
   antibios: sample("liquidchem") array, "The antiobiotics to add"
-  dilution: num array, "An array of dilution factors for each antibiotic, where the ratio of antibiotic:media is 1:x"
+  dilution: number array, "An array of dilution factors for each antibiotic, where the ratio of antibiotic:media is 1:x"
   volume: num, "The desired total volume in mL (<50mL)"
   #can we force the same lengths of array?  oherwise return error.
 end
