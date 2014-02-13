@@ -172,7 +172,7 @@ transition [ cut_gel ] => [ cut_gel ] when error(0) end
 transition [ gel_purify ] => [ gibson ] when !error(0) && completed(0) end
 transition [ gel_purify ] => [ gel_purify ] when error(0) end
 
-transition [ gibson ] => [ transformation ] when !error(0) && completed(0) end
+transition [ gibson ] => [] when !error(0) && completed(0) end
 transition [ gibson ] => [ gibson ] when error(0) end
 
 #transition [ transformation ] => [ plate ] when !error(0) && completed(0) end
