@@ -55,8 +55,9 @@ end
 
 place assembly1
   protocol: "labw14/group6/gene_assembly_PCA.pl"
+  a = []
   argument
-    oligo_pool: append(oligo_pool11, oligo_pool12)
+    oligo_pool: append(a, oligo_pool11, oligo_pool12)
   end
   group: aquarium_user
   start: now()
@@ -65,8 +66,9 @@ end
 
 place assembly2
   protocol: "labw14/group6/gene_assembly_PCA.pl"
+  b = []
   argument
-    oligo_pool: append(oligo_pool21, oligo_pool22)
+    oligo_pool: append(b, oligo_pool21, oligo_pool22)
   end
   group: aquarium_user
   start: now()
@@ -137,15 +139,15 @@ wire (assembly1, "gene") => (run_gel, "gene_sample")
 wire (assembly2, "gene") => (run_gel, "gene_sample")
 
 
-transition [ stock1, stock2 ] => [ assembly1 ] when !error(0) && completed(0) end
+transition [ stock1, stock2 ] => [ assembly1 ] when !error(0) && completed(0) && !error(1) && completed(1) end
 transition [ stock1 ] => [ stock1 ] when error(0) end
 transition [ stock2 ] => [ stock2 ] when error(0) end
 
-transition [ stock3, stock4 ] => [ assembly2 ] when !error(0) && completed(0) end
+transition [ stock3, stock4 ] => [ assembly2 ] when !error(0) && completed(0) && !error(1) && completed(1) end
 transition [ stock3 ] => [ stock3 ] when error(0) end
 transition [ stock4 ] => [ stock4 ] when error(0) end
 
-transition [ assembly1, assembly2 ] => [ run_gel ] when !error(0) && completed(0) end
+transition [ assembly1, assembly2 ] => [ run_gel ] when !error(0) && completed(0) && !error(1) && completed(1) end
 transition [ assembly1 ] => [ assembly1 ] when error(0) end
 transition [ assembly2 ] => [ assembly2 ] when error(0) end
 
