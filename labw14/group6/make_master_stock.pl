@@ -14,11 +14,6 @@ take
 end
 
 step
-  description: "This protocol describes how to create a master stock from desired."
-  
-end
-
-step
   description: "Label a 1.5 mL Eppendorf tube with your initials and date"
   note: "Place the tube in a test tube rack"
   
