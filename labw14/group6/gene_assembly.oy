@@ -53,9 +53,9 @@ place stock4
   window: minutes(30)
 end
 
+a = []
 place assembly1
   protocol: "labw14/group6/gene_assembly_PCA.pl"
-  a = []
   argument
     oligo_pool: append(a, oligo_pool11, oligo_pool12)
   end
@@ -64,9 +64,9 @@ place assembly1
   window: minutes(30)
 end
 
+b = []
 place assembly2
   protocol: "labw14/group6/gene_assembly_PCA.pl"
-  b = []
   argument
     oligo_pool: append(b, oligo_pool21, oligo_pool22)
   end
