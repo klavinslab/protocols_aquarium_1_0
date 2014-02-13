@@ -20,7 +20,7 @@ r = []
 while ii < length(Transformed_yeast_plate)
 
   produce
-      y = 1 "Yeast aliquot"
+      y = 1 "Yeast aliquot" from flask[ii]
   end
   
   r = append(r,y[:id])
@@ -31,4 +31,5 @@ log
   return: { yeast_aliquot: r }
 end
 
-release concat(falcon_tube, flask)
+release falcon_tube
+release flask
