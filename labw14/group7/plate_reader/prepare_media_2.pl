@@ -1,22 +1,22 @@
 argument
-  media: object, "The media to use"
-  antibio1: object, "The first antiobiotic to add"
-  dilution1: number, "The dilution factor for the first antibiotic, where the ratio of antibiotic:media is 1:x"
-  antibio2: object, "The second antiobiotic to add"
-  dilution2: number, "The dilution factor for the second antibiotic"
+  media_in: object, "The media to use"
+  antibio1_in: object, "The first antiobiotic to add"
+  dilution1_in: number, "The dilution factor for the first antibiotic, where the ratio of antibiotic:media is 1:x"
+  antibio2_in: object, "The second antiobiotic to add"
+  dilution2_in: number, "The dilution factor for the second antibiotic"
   volume: number, "The desired total volume in mL (<50mL)"
   #can we force the same lengths of array?  oherwise return error.
 end
 
-media_name = media
-ab1_name = antibio1
-ab2_name = antibio2
+media_name = media_in
+ab1_name = antibio1_in
+ab2_name = antibio2_in
 
 take
  media_tube = 1 "50 mL Falcon Tube"
- antibio1 = 1 antibio1
- antibio2 = 1 antibio2
- media = 1 media
+ antibio1 = 1 antibio1_in
+ antibio2 = 1 antibio2_in
+ media = 1 media_in
  #media[:id] == media_base
  
  pipette = 1 "Serological Pipette"
@@ -28,7 +28,7 @@ ab_vol2 = volume/dilution2*1000
 
 
 step
-  description: "Prepare %{volume} mL of %{media_name} media with the desired antibiotics"
+  description: "Prepare %{volume} mL of %{media_in} media with the desired antibiotics"
   check: "Attach the 25mL tip to the serological pipetter"
   check: "Use the electric serological pipette to add  %{volume} mL of %{media_name} into the 50mL falcon tube"
   check: "Dispose of your 25mL serological pipette tip in tip waste"
@@ -38,7 +38,7 @@ step
 end
 
 produce
-  m = 1 "Prepared Media" from media_tube
+  m = 1 "Prepared Media" from media_tube[0]
   location: "Bench"
 end
 
