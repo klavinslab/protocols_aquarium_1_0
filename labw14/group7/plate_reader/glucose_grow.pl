@@ -45,6 +45,9 @@ step
  check: "Use electric serological pipette to add 3ml of you prepared (M9 with amp and kan) into each culture tube."
 end
 
+
+release concat(glucose, kan, amp, pipette)
+
 step
  description: "Add cells to each culture tube"
  check: "Using a 100uL pipette tip, extract a single colony from plate DL046, and swish it around in one of the culture tubes marked DL046"
@@ -60,5 +63,5 @@ step
 end
 
 #release [cell_culture_tube_array[0], glycerol[0]]
-release concat(plate_array, glucose, kan, amp, pipette)
+release concat(plate_array)
 end
