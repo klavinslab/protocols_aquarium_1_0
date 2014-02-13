@@ -1,5 +1,5 @@
 argument
- x: sample, "Yeast_plate_from_day_1"
+ x: sample, "Yeast_overnight_suspension_culture"
 end
 
 step
@@ -7,29 +7,27 @@ step
 end
 
 take
-  glycerol_bottle = 1 "50 percent Glycerol (sterile)"
-  glycerol_tube = 1 "Cryo tube"
-  tube = item Transformed_E_coli_Strain_id
+  falcon_tube = 1 "50 mL Falcon Tube"
+  flask = 1 "???"
+  YPAD = 1 "???"
+  Yeast_culture = item : Yeast_overnight_suspension_culture
 end
 
 step
- description: "Put the overnight suspension culture tube into a holder"
+ description: "Put the Yeast overnight suspension culture tube into a holder"
 end
 
 step
- description: "Mixing glycerol with cell suspension"
- note: "Pipette 900 uL of the glycerol stock into the Cryo tube. Then pipette 900 uL of the overnight
- suspension culture into the same Cryo tube"
- bullet: "Label the Cryo tube with your initials, date and year"
- bullet: "Vortex the Cryo tube for 15-30 seconds"
- warning: "Be as sterile as possible. Do not touch the inside of the glycerol bottle with either a tip or pipette."
+ description: "Diluting cells in YPD"
+ note: "Pour 25 mil of YPAD into flask. Then, pipette 500 uL of the yeast overnight suspension cultrue into the flask."
+  bullet: "Label the flask with your initials and date"
 end
 
 
 produce
- 1 "Transformed E coli Glycerol Stock" from tube[0]
- release glycerol_tube
- note: "Place your Cryo tube in the -80 C refrigerator"
+ 1 "Diluted Yeast overnight culture" from flask[0]
+ release falcon_tube
+ note: "Place your flask"
 end
 
-release [glycerol_bottle[0], tube[0]]
+release [YPAD[0], tube[0]]
