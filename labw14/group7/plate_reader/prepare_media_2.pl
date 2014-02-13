@@ -8,10 +8,6 @@ argument
   #can we force the same lengths of array?  oherwise return error.
 end
 
-media_name = media_in
-ab1_name = antibio1_in
-ab2_name = antibio2_in
-
 take
  media_tube = 1 "50 mL Falcon Tube"
  antibio1 = 1 antibio1_in
@@ -23,17 +19,17 @@ take
  tips = 1 "25 mL Serological Pipette Tips"
 end
 
-ab_vol1 = volume/dilution1_in*1000
-ab_vol2 = volume/dilution2_in*1000
+ab_vol1 = volume*1000/dilution1_in
+ab_vol2 = volume*1000/dilution2_in  #check for digits!
 
 
 step
   description: "Prepare %{volume} mL of %{media_in} media with the desired antibiotics"
   check: "Attach the 25mL tip to the serological pipetter"
-  check: "Use the electric serological pipette to add  %{volume} mL of %{media_name} into the 50mL falcon tube"
+  check: "Use the electric serological pipette to add  %{volume} mL of %{media_in} into the 50mL falcon tube"
   check: "Dispose of your 25mL serological pipette tip in tip waste"
-  check: "Pipette %{ab_vol1} uL of %{ab1_name} to the solution"
-  check: "Pipette %{ab_vol2} uL of %{ab2_name} to the solution"
+  check: "Pipette %{ab_vol1} uL of %{ab1_in} to the solution"
+  check: "Pipette %{ab_vol2} uL of %{ab2_in} to the solution"
   check: "Vortex the solution for 15 seconds"
 end
 
@@ -42,7 +38,7 @@ produce
   location: "Bench"
 end
 
-release concat(media,antibios)
+release concat(media,concat(antibio1,concat(antibio2,pipette)))
 
 log
   return: {prepared_media: m}
