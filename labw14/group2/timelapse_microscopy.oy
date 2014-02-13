@@ -19,7 +19,13 @@ place GM9
   start: min(10)
 end
 
+place MSI
+  protocol: "labw14/group2/microscope_incubator.pl"
+  group: aquarium_user
+  marked: false
+  start: min(10)
+
 wire (OLBG, "r") => (GM9, "id")
 
-transition [OLBG] => [] when !error(0) && completed(0) end
-transition [OLBG] => [GM9] when error(0) end
+transition [OLBG] => [GM9, MSI] when !error(0) && completed(0) end
+transition [OLBG] => [OLBG] when error(0) end
