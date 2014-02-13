@@ -15,6 +15,7 @@ end
 
 step
   description: "This protocol describes how to make a primer pool from desired oligonucleotides"
+  
 end
 
 step
@@ -25,6 +26,7 @@ end
 
 step
   description: "Pipette 480 μL of Molecular Grade Water into the tube"
+  
 end
 
 step
