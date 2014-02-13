@@ -1,16 +1,16 @@
 argument
-  oligo_pool: sample array, "Select the oligonucleotide stocks you want to combine through gene assembly"
+  oligo_pools: sample array, "Select the oligonucleotide stocks you want to combine through gene assembly"
   primer1: sample, "The first primer"
   primer2: sample, "The second primer"
   enzyme_id: sample, "The Phsion HF Master Mix stock"
 end
 
-n = length(oligo_pool)
+n = length(oligo_pools)
 # The number of oligo pools to use in the assembly is recorded, just in case
 
 
 take
-  masterstock = item oligo_pool
+  masterstock = item oligo_pools
   primer1_stock = item primer1
   primer2_stock = item primer2
   phusion_stock = item enzyme_id
