@@ -7,9 +7,12 @@ end
 n = length(oligonucleotides)
 # The number of oligonucleotides to mix is recorded
 
-x = Volume_total = 600 μL
-y = Volume_per_oligo = 10 μL
-z = volume_water = x - n * y 
+x = 600 μL
+# volume total
+y = 10 μL
+# volume_per_oligo
+z =  x - n \* y 
+# volume water
 
 take
   oligonuc = item oligonucleotides
