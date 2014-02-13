@@ -114,7 +114,8 @@ end
 
 #Wires are a place-holder for now, totally nonesense currently
 
-wire (stock, "working_fragments") => (assembly, "oligonucleotides")
+wire (stock1, "working_fragments") => (assembly1, "oligonucleotides")
+wire (stock2, "working_fragments") => (assembly2, "oligonucleotides")
 
 transition [ stock1 ] => [ assembly1 ] when !error(0) && completed(0) end
 transition [ stock1 ] => [ stock1 ] when error(0) end
