@@ -9,7 +9,7 @@ n = length(oligonucleotides)
 
 x: Volume_total = 600 μL
 y: Volume_per_oligo = 10 μL
-z: volume_water = x - n*y 
+z: volume_water = x - n * y 
 
 take
   oligonuc = item oligonucleotides
