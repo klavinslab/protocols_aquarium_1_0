@@ -61,43 +61,41 @@ end
 place assembly1
   protocol: "labw14/group6/gene_assembly_PCA.pl"
   argument
-    oligo_pool: [oligo_pool11, oligo_pool12]
+    oligo_pools: [oligo_pool11, oligo_pool12]
   end
   group: aquarium_user
   start: now()
   window: minutes(30)
 end
 
-b = []
 place assembly2
   protocol: "labw14/group6/gene_assembly_PCA.pl"
   argument
-    oligo_pool: [oligo_pool21, oligo_pool22]
+    oligo_pools: [oligo_pool21, oligo_pool22]
   end
   group: aquarium_user
   start: now()
   window: minutes(30)
 end
 
-place run_gel
+place run_gel_image
   protocol: "labw14/group6/run_gel_gene_assembly.pl"
   group: aquarium_user
+  argument
+    assemblies: [assembly1_product, assembly2_product]
+  end
   start: now()
   window: minutes(30)
-end
-
-place image_gel
-  protocol: "labw14/group6/image_gel.pl"
-  group: aquarium_user
-  start: now()
-  window: minutes(1)
 end
 
 place cut_gel
   protocol: "labw14/group6/cut_gel.pl"
   group: aquarium_user
+  argument
+    fragment_gel_lanes: fragment_gel_lanes
+  end
   start: now()
-  window: minutes(1)
+  window: minutes(30)
 end
 
 place gel_purify
@@ -139,8 +137,9 @@ wire (stock1, "primer_pool") => (assembly1, "oligo_pool11")
 wire (stock2, "primer_pool") => (assembly1, "oligo_pool12")
 wire (stock3, "primer_pool") => (assembly2, "oligo_pool21")
 wire (stock4, "primer_pool") => (assembly2, "oligo_pool22")
-wire (assembly1, "gene") => (run_gel, "gene_sample")
-wire (assembly2, "gene") => (run_gel, "gene_sample")
+wire (assembly1, "gene") => (run_gel, "assembly1_product")
+wire (assembly2, "gene") => (run_gel, "assembly2_product")
+wire (run_gel_image, "fragment_gel_lanes") => (cut_gel, "fragment_gel_lanes")
 
 
 transition [ stock1, stock2 ] => [ assembly1 ] when !error(0) && completed(0) && !error(1) && completed(1) end
@@ -155,11 +154,8 @@ transition [ assembly1, assembly2 ] => [ run_gel ] when !error(0) && completed(0
 transition [ assembly1 ] => [ assembly1 ] when error(0) end
 transition [ assembly2 ] => [ assembly2 ] when error(0) end
 
-transition [ run_gel ] => [ image_gel ] when !error(0) && completed(0) end
-transition [ run_gel ] => [ run_gel ] when error(0) end
-
-transition [ image_gel ] => [ cut_gel ] when !error(0) && completed(0) end
-transition [ image_gel ] => [ image_gel ] when error(0) end
+transition [ run_gel_image ] => [ cut_gel ] when !error(0) && completed(0) end
+transition [ run_gel_image ] => [ run_gel_image ] when error(0) end
 
 transition [ cut_gel ] => [ gel_purify ] when !error(0) && completed(0) end
 transition [ cut_gel ] => [ cut_gel ] when error(0) end
