@@ -20,19 +20,19 @@ take
 end
 
 step
-  description: "This protocol describes how to make a primer pool from desired oligonucleotides"
+  description: "This protocol describes how to make a primer pool from desired oligonucleotides."
   
 end
 
 
 step
-  description: "Label a 1.5 mL Eppendorf tube with your initials and date"
-  note: "Place the tube in a test tube rack"
+  description: "Label a 1.5 mL Eppendorf tube with your initials and date."
+  note: "Place the tube in a test tube rack."
   
 end
 
 step
-  description: "Pipette %{z} μL of Molecular Grade Water into the tube"
+  description: "Pipette %{z} μL of Molecular Grade Water into the tube."
   
 end
 
