@@ -1,17 +1,17 @@
 argument
- Yeast_overnight_suspension: sample array , "Yeast overnight suspension culture tube"
+ yeast_overnight_suspension: sample array , "Yeast overnight suspension culture tube"
 end
 
-num = length(Yeast_overnight_suspension)
+num = length(yeast_overnight_suspension)
 
 step
  description: "This protocol describes how to dilute Yeast overnight suspension culture"
 end
 
 take
-  flask = num "250 mL Baffled Flask"
-  media_bottle = "800 mL YPAD liquid (sterile)"
-  yeast_suspension_tube = item  Yeast_overnight_suspension
+  flask                 = num "250 mL Baffled Flask"
+  media_bottle          = "800 mL YPAD liquid (sterile)"
+  yeast_suspension_tube = item  yeast_overnight_suspension
 end
 
 step
@@ -27,13 +27,19 @@ end
 ii = 0
 r  = []
 
-while ii < length(Yeast_overnight_suspension)
+while ii < length(yeast_overnight_suspension)
 
-  produce
-      y = 1 "Yeast overnight suspension"
+#  produce
+#      y = 1 "Yeast overnight suspension"
+#  end
+  
+  modify
+    flask[ii]
+      location:"B13.125"
+    inuse:0
   end
   
-  r = append(r,y[:id])
+  r = append(r,flask[ii][:id])
   ii=ii+1
 end
 
@@ -41,4 +47,5 @@ log
   return: { yeast_250ml_flask: r }
 end
 
-release concat(yeast_suspension_tube, media_bottle)
+release yeast_suspension_tube
+release media_bottle
