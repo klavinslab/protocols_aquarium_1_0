@@ -103,30 +103,48 @@ end
 place plate
 end
 
+place overnight
+end
+
+place miniprep
+end
+
+place sequencing
+end
+
 #Wires are a place-holder for now, totally nonesense currently
 
 wire (stock, "working_fragments") => (assembly, "oligonucleotides")
 
-transition [ one ] => [ two ] when !error(0) && completed(0) end
-transition [ one ] => [one] when error(0) end
+transition [ stock1 ] => [ assembly1 ] when !error(0) && completed(0) end
+transition [ stock1 ] => [ stock1 ] when error(0) end
 
-transition [ two ] => [ three ] when !error(0) && completed(0) end
-transition [ two ] => [ two ] when error(0) end
+transition [ stock2 ] => [ assembly2 ] when !error(0) && completed(0) end
+transition [ stock2 ] => [ stock2 ] when error(0) end
 
-transition [ three ] => [ four ] when !error(0) && completed(0) end
-transition [ three ] => [ three ] when error(0) end
+transition [ assembly1 ] => [ run_gel ] when !error(0) && completed(0) end
+transition [ assembly1 ] => [ assembly1 ] when error(0) end
 
-transition [ four ] => [ five ] when !error(0) && completed(0) end
-transition [ four ] => [ four ] when error(0) end
+transition [ assembly2 ] => [ run_gel ] when !error(0) && completed(0) end
+transition [ assembly2 ] => [ assembly2 ] when error(0) end
 
-transition [ five ] => [ six ] when !error(0) && completed(0) end
-transition [ five ] => [ five ] when error(0) end
+transition [ run_gel ] => [ image_gel ] when !error(0) && completed(0) end
+transition [ run_gel ] => [ run_gel ] when error(0) end
 
-transition [ six ] => [ seven ] when !error(0) && completed(0) end
-transition [ six ] => [ six ] when error(0) end
+transition [ image_gel ] => [ cut_gel ] when !error(0) && completed(0) end
+transition [ image_gel ] => [ image_gel ] when error(0) end
 
-transition [ seven ] => [ eight ] when !error(0) && completed(0) end
-transition [ seven ] => [ seven ] when error(0) end
+transition [ cut_gel ] => [ gel_purify ] when !error(0) && completed(0) end
+transition [ cut_gel ] => [ cut_gel ] when error(0) end
+
+transition [ gel_purify ] => [ gibson ] when !error(0) && completed(0) end
+transition [ gel_purify ] => [ gel_purify] when error(0) end
+
+transition [ gibson ] => [ transformation ] when !error(0) && completed(0) end
+transition [ gibson ] => [ gibson ] when error(0) end
+
+transition [ tranfomation ] => [ plate ] when !rror(0) $$ completed(0) end
+
 
 transition [ eight ] => [] when !error(0) && completed(0) end
 transition [ eight ] => [eight ] when error(0) end
