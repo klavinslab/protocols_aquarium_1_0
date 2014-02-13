@@ -42,5 +42,5 @@ log
   return: { yeast_250ml_flask: r }
 end
 
-release yeast_suspension tube
+release yeast_suspension_tube
 release media_bottle
