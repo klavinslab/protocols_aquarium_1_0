@@ -1,5 +1,5 @@
 argument
-  glycerol: sample("Transformed E coli Strain"), "Glycerol stock to be grown in LB media"
+  glycerol: sample, "Glycerol stock to be grown in LB media"
 end
 
 place OLBG
