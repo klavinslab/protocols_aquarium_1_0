@@ -41,7 +41,7 @@ take
 end
 
 i = 0
-for i<strains
+while i<strains
   step
     description: "Add cells from plate %{plated_cells[i][:id]} to four seperate culture tubes"
     check: "Use a 100uL pipette tip (held in your hand) to extract a single colony from plate %{plated_cells[i][:id]}, and swish it around in the culture tube marked %{plated_cells[i][:id]} R1"
