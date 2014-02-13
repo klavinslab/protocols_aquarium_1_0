@@ -29,12 +29,12 @@ r  = []
 
 while ii < length(yeast_overnight_suspension)
 
-  produce
-      y = 1 "Overnight suspension" from yeast_suspension_tube[ii]
-      release flask[ii]
-  end
+#  produce
+#      y = 1 "Overnight suspension" from yeast_suspension_tube[ii]
+#      release flask[ii]
+#  end
   
-  r = append(r,y[:id])
+#  r = append(r,y[:id])
   ii=ii+1
 end
 
