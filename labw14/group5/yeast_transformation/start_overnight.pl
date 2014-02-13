@@ -21,22 +21,17 @@ r = []
 
 while ii < length(transformed_yeast_plate)
 
-#  produce
-#      y = 1 "Overnight suspension culture" from plate[ii]
-#  end
-
-  modify
-    test_tube[ii]
-      location:"B13.125"
-    inuse:0
+  produce
+    y = 1 "Overnight suspension" from plate[ii]
+    release test_tube[ii]
   end
-  
-  r = append(r,test_tube[ii][:id])
+
+  r = append(r,y[:id])
   ii=ii+1
 end
 
 log
-  return: { yeast_overnight_suspension_tube: r }
+  return: { yeast_overnight_suspension: r }
 end
 
 release plate
