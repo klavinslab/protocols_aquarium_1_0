@@ -36,7 +36,7 @@ while ii < length(transformed_yeast_plate)
 end
 
 log
-  return: { yeast_overnight_suspension: r }
+  return: { yeast_overnight_suspension_tube: r }
 end
 
 release plate
