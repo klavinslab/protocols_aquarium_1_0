@@ -28,7 +28,8 @@ end
 
 step
   description: "Prepare Reaction"
-  check:"Pipet 15 µL molecular grade water into the labeled PCR tube."
+  check:"Pipet 10 µL molecular grade water into the labeled PCR tube."
+  check: "Pipet 5 µL of master stock with id %{oligo_pool} the each tube."
   check: "Pipet 5 µL of master stock with id %{oligo_pool} the each tube."
   check: "Pipet 2.5 µL of primer with id %{primer1} into the tube."
   check: "Pipet 2.5 µL of primer with id %{primer2} into the tube."
