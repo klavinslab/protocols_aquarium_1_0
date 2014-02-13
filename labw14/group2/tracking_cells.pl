@@ -20,7 +20,7 @@ step
   bullet: "Click on the 'Device' menu"
   bullet: "Click on the 'Manage device's' option"
   bullet: "Click on the 'Nikon Ti' option in the pop-up menu"
-  bullet: "Press the 'Connect' button in the pop-up menu:
+  bullet: "Press the 'Connect' button in the pop-up menu"
   bullet: "Close the pop-up menu"
   note: "If the device is already connected ignore this step"
 end
