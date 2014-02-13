@@ -29,7 +29,7 @@ end
 produce
   r = 1 "Overnight suspension cultures" from glycerol[0]
   location: "B13.425"
-  note: "Store this in the shaker incubator overnight"
+  note: "Label this with item id and initials and store in the shaker incubator overnight"
 end
 
 log
