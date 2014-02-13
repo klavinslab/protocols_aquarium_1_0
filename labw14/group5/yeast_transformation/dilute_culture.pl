@@ -1,5 +1,5 @@
 argument
- yeast_overnight_suspension: sample array , "Yeast overnight suspension culture tube"
+ yeast_overnight: sample array , "Yeast overnight suspension culture tube"
 end
 
 num = length(yeast_overnight_suspension)
@@ -11,7 +11,7 @@ end
 take
   flask                 = num "250 mL Baffled Flask"
   media_bottle          = "800 mL YPAD liquid (sterile)"
-  yeast_suspension_tube = item yeast_overnight_suspension
+  yeast_suspension_tube = item yeast_overnight
 end
 
 step
