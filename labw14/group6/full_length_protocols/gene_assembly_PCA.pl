@@ -26,11 +26,14 @@ step
   description: "Label a 0.2 mL PCR tube. Write your initials on it."
 end
 
+o1 = oligo_pool[0]
+o2 = oligo_pool[1]
+
 step
   description: "Prepare Reaction"
   check:"Pipette 10 µL molecular grade water into the labeled PCR tube."
-  check: "Pipette 5 µL of primer pool with id %{oligo_pools} into the tube."
-  check: "Pipette 5 µL of primer pool with id %{oligo_pools} into the tube."
+  check: "Pipette 5 µL of primer pool with id %{o1} into the tube."
+  check: "Pipette 5 µL of primer pool with id %{o2} into the tube."
   check: "Pipette 2.5 µL of primer with id %{primer1} into the tube."
   check: "Pipette 2.5 µL of primer with id %{primer2} into the tube."
   check: "Pipette 25 µL of Phusion Master Mix with id %{enzyme_id} into the tube."
