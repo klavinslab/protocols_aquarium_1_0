@@ -10,7 +10,7 @@ n = length(oligonucleotides)
 
 take
   oligonuc = item oligonucleotides
-  molecular_g_h2o = "Molecular Grade Water"
+  molecular_g_h2o = 1 "Molecular Grade Water"
 end
 
 step
