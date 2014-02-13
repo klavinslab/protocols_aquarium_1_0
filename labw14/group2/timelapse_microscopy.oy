@@ -2,7 +2,7 @@ argument
   glycerol: sample("Transformed E coli Strain"), "Glycerol stock to be grown in LB media"
 end
 
-place overnight_LB_growth
+place OLBG
   protocol: "labw14/group2/overnight_LB_growth.pl"
   argument:
     id: glycerol
@@ -11,3 +11,6 @@ place overnight_LB_growth
   marked: true
   start: now()
 end
+
+transition [OLBG] => [] when !error(0) && completed(0) end
+transition [OLBG] => [OLBG] whenn error(0) end
