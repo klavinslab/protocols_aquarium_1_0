@@ -23,8 +23,8 @@ take
  tips = 1 "25 mL Serological Pipette Tips"
 end
 
-ab_vol1 = volume/dilution1*1000
-ab_vol2 = volume/dilution2*1000
+ab_vol1 = volume/dilution1_in*1000
+ab_vol2 = volume/dilution2_in*1000
 
 
 step
