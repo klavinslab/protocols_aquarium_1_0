@@ -12,5 +12,14 @@ place OLBG
   start: now()
 end
 
+place GM9
+  protocol: "labw14/group2/growth_in_m9.pl"
+  group: aquarium_user
+  marked: false
+  start: min(10)
+end
+
+wire (OLBG, "r") => (GM9, "id")
+
 transition [OLBG] => [] when !error(0) && completed(0) end
-transition [OLBG] => [OLBG] when error(0) end
+transition [OLBG] => [GM9] when error(0) end
