@@ -48,3 +48,7 @@ produce
 end
 
 release concat(media,antibios)
+
+log
+  return: {prepared_media: m}
+end
