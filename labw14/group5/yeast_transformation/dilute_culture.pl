@@ -29,17 +29,12 @@ r  = []
 
 while ii < length(yeast_overnight_suspension)
 
-#  produce
-#      y = 1 "Yeast overnight suspension"
-#  end
-  
-  modify
-    flask[ii]
-      location:"B13.125"
-    inuse:0
+  produce
+      y = 1 "Overnight suspension" from yeast_suspension_tube[ii]
+      release flask[ii]
   end
   
-  r = append(r,flask[ii][:id])
+  r = append(r,y[:id])
   ii=ii+1
 end
 
@@ -47,5 +42,4 @@ log
   return: { yeast_250ml_flask: r }
 end
 
-release yeast_suspension_tube
-release media_bottle
+release concat(yeast_suspension_tube, media_bottle)
