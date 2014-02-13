@@ -144,8 +144,8 @@ wire (stock1, "primer_pool") => (assembly1, "oligo_pool11")
 wire (stock2, "primer_pool") => (assembly1, "oligo_pool12")
 wire (stock3, "primer_pool") => (assembly2, "oligo_pool21")
 wire (stock4, "primer_pool") => (assembly2, "oligo_pool22")
-wire (assembly1, "gene") => (run_gel, "assembly1_product")
-wire (assembly2, "gene") => (run_gel, "assembly2_product")
+wire (assembly1, "gene") => (run_gel_image, "assembly1_product")
+wire (assembly2, "gene") => (run_gel_image, "assembly2_product")
 wire (run_gel_image, "fragment_gel_lanes") => (cut_gel, "fragment_gel_lanes")
 wire (cut_gel, "gel_slices") => (gel_purify, "gel_slices")
 wire (gel_purify, "purified_fragments") => (gibson, "purified_fragments")
@@ -159,7 +159,7 @@ transition [ stock3, stock4 ] => [ assembly2 ] when !error(0) && completed(0) &&
 transition [ stock3 ] => [ stock3 ] when error(0) end
 transition [ stock4 ] => [ stock4 ] when error(0) end
 
-transition [ assembly1, assembly2 ] => [ run_gel ] when !error(0) && completed(0) && !error(1) && completed(1) end
+transition [ assembly1, assembly2 ] => [ run_gel_image ] when !error(0) && completed(0) && !error(1) && completed(1) end
 transition [ assembly1 ] => [ assembly1 ] when error(0) end
 transition [ assembly2 ] => [ assembly2 ] when error(0) end
 
