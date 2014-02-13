@@ -34,5 +34,5 @@ log
   return: { yeast_overnight_suspension: r }
 end
 
-
-release concat(falcon_tube, media_bottle,plate)
+release plate
+release concat(falcon_tube, media_bottle)
