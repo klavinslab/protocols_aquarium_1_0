@@ -1,8 +1,8 @@
 argument
   media_in: object, "The media to use"
-  antibio1_in: object, "The first antiobiotic to add"
+  antibio1_in: object, "The first antibiotic to add"
   dilution1_in: number, "The dilution factor for the first antibiotic, where the ratio of antibiotic:media is 1:x"
-  antibio2_in: object, "The second antiobiotic to add"
+  antibio2_in: object, "The second antibiotic to add"
   dilution2_in: number, "The dilution factor for the second antibiotic"
   volume: number, "The desired total volume in mL (<50mL)"
   label: string, "A label to put on this media"
