@@ -54,7 +54,7 @@ step
 end
 
 step
- desription: "place the tubes in the 37C shaker"
+ description: "place the tubes in the 37C shaker"
  check: "Place the %{n} culture tubes in a tube rack and load them into the 37C shaker."
  note: "This will incubate for 18hrs (overnight)"
 end
