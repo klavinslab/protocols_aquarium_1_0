@@ -95,7 +95,7 @@ step
   bullet: "We want to look for black pill shaped rods, these are our cells"
   bullet: "When a cell is found on a focal point we will look for cells on the same XY plane"
   note: "This process takes approximately 30 minutes. If no cells are found in the region adjust the xy controller"
-        "and start focusing in another region. Most cells will be found in similar focal planes"
+  note: "and start focusing in another region. Most cells will be found in similar focal planes"
   note: "Once any cell is found click next"
 end
 
