@@ -26,8 +26,8 @@ step
   description: "Label a 0.2 mL PCR tube. Write your initials on it."
 end
 
-o1 = oligo_pool[0]
-o2 = oligo_pool[1]
+o1 = oligo_pools[0]
+o2 = oligo_pools[1]
 
 step
   description: "Prepare Reaction"
