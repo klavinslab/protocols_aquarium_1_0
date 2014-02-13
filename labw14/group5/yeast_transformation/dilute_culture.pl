@@ -10,7 +10,7 @@ end
 
 take
   flask = num "250 mL Baffled Flask"
-  YPAD = num "800 mL YPAD liquid (sterile)"
+  medium "800 mL YPAD liquid (sterile)"
   yeast_suspension_tube = item  Yeast_overnight_suspension
 end
 
@@ -30,7 +30,7 @@ r  = []
 while ii < length(Yeast_overnight_suspension)
 
   produce
-      y = 1 "Yeast overnight suspension" yeast_suspension_tube[ii]
+      y = 1 "Yeast overnight suspension"
   end
   
   r = append(r,y[:id])
