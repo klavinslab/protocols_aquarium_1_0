@@ -126,6 +126,10 @@ transition [ stock1 ] => [ stock1 ] when error(0) end
 transition [ stock2 ] => [ assembly2 ] when !error(0) && completed(0) end
 transition [ stock2 ] => [ stock2 ] when error(0) end
 
+transition [ stock1, assembly2 ] => [ run_gel ] when !error(0) && completed(0) end
+transition [ assembly1 ] => [ assembly1 ] when error(0) end
+transition [ assembly2 ] => [ assembly2 ] when error(0) end
+
 transition [ assembly1, assembly2 ] => [ run_gel ] when !error(0) && completed(0) end
 transition [ assembly1 ] => [ assembly1 ] when error(0) end
 transition [ assembly2 ] => [ assembly2 ] when error(0) end
