@@ -1,6 +1,6 @@
 argument
   enzyme_id: sample("Enzyme"), "The Phsion HF Master Mix stock"
-  fragment_names: string array, "Fragment Names"
+  fragment_names: string array, "Result Fragment Names"
   forward_ids: sample("Primer") array, "Forward Primers"
   reverse_ids: sample("Primer") array, "Reverse Primers"
   template_ids: sample("Plasmid") array, "Plasmid Templates"  
@@ -63,15 +63,15 @@ if length(forward_ids) > 48
   end
 end
 
-y=length(forward_ids)
+num_forwards=length(forward_ids)
 
 step 
-  description: "Pipet 19 µL molecular grade water into wells 1 through %{y}."
+  description: "Pipet 19 µL molecular grade water into wells 1 through %{num_forwards}."
   note:"Be careful to pipette into the bottom of the tube, not onto the side of the tube."
 end
 
 x=0
-while x < y
+while x < num_forwards
   a=template_ids[x]
   z=x+1
   step 
@@ -81,7 +81,7 @@ while x < y
 end
 
 x=0
-while x < y
+while x < num_forwards
   a=forward_ids[x]
   b=reverse_ids[x]
   z=x+1
@@ -114,7 +114,7 @@ release reverse_primer_stock
 release plasmid_stock
 
 x=0
-while x < y
+while x < num_forwards
   produce
     q = 1 "PCR Result" of fragment_names[x]
     location: "Thermocycler"
