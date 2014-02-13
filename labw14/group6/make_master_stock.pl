@@ -14,7 +14,7 @@ take
 end
 
 step
-  description: "This protocol describes how to create a master stock from desired oligonucleotides"
+  description: "This protocol describes how to create a master stock from desired oligonucleotides."
 end
 
 step
