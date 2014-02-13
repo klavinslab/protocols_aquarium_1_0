@@ -26,23 +26,25 @@ end
 
 step
  description: "Prepare 40mL of M9 media with (1:200) ampicillin and (1:500) kanomyacin"
- check: "Pipette 40mL of 0.4%% Glucose M9 media into the 50mL falcon tube"
+ check: "Use the electric serological pipette to add 40mL of 0.4%% Glucose M9 media into the 50mL falcon tube"
  check: "Pipette 200uL of Kanomyacin into the 50mL falcon tube"
  check: "Pipette 80uL of Ampicillin into the 50mL falcon tube"
  check: "Swish the falcon tube around a few times to mix"
+ check: "Dispose of your 5mL serological pipette tip in tip waste"
 end
 
 step
- description: "Label the culture tubes"
+ description: "Label each of the culture tubes"
  check: "Label %{cycles} culture tubes with DL046"
  check: "Label %{cycles} culture tubes with DL104"
  check: "Label %{cycles} culture tubes with DL147"
- #TODO: replace DL064 etc with references from the sample array argument
+ #TODO: replace DL064 etc with references from the sample array argument... this may need a loop
 end
 
 step
  description: "Add 3mL media to each culture tube"
- check: "Use electric serological pipette to add 3ml of your M9 media (with amp and kan) into each culture tube."
+ check: "Use the electric serological pipette to add 3ml of your M9 media (with amp and kan) into each culture tube."
+ check: "Dispose of your serological pipette tip in tip waste"
 end
 
 release [glucose[0], kan[0], amp[0], pipette[0]]
@@ -66,5 +68,5 @@ step
 end
 
 #release [cell_culture_tube_array[0], glycerol[0]]
-release plate_array[0]
+release concat(plate_array)
 end
