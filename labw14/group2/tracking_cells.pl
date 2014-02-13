@@ -55,7 +55,7 @@ end
 
 step
   description: "Turn on the camera"
-  note: "Press the play button on the tool bar under the menu to turn on the camera"
+  note: "Press the play button, on the tool bar, under the menu bar to turn on the camera"
 end
 
 step
@@ -104,7 +104,7 @@ step
   bullet: "We want to find elongated black rods, short rods are probably dead cells"
   bullet: "Click on the 'X-Y position' tab in the ND aquisition window"
   bullet: "When a desireable cell is found center the probe around it using the X-Y controller"
-  note: "The controller may be too fast so press the 'X-y speed' button once to make the light blink on and off. This is the controllers slowest speed used for fine tuning"
+  note: "The controller may be too fast so press the 'X-Y speed' button once to make the light blink on and off. This is the controllers slowest speed used for fine tuning"
   bullet: "Click the blank check box in the 'X-Y position' tab in th eND aquisition window"
   note: "This selects the current X-Y position and stores it. It will also been seen on your X-Y overview map"
   note: "To reset the speed of the controller press the X-Y speed button twice to ensure the green light is fully on"
@@ -119,11 +119,11 @@ step
 end
 
 step
-  description: "Continue selection cells"
+  description: "Continue selecting cells"
   bullet: "Select 9 to 11 more ideal cells"
   bullet: "Do not offset the z-position anymore it is already done"
   note: "Cells in vertically aligned pairs are freshly divided and are great to select"
-  note: "The best cells will have plenty of space around them, too many cells will make the timelapse moot."
+  note: "The best cells will have plenty of space around them; too many cells will make the timelapse moot."
 end
 
 step
