@@ -10,7 +10,7 @@ end
 
 take
   flask                 = num "250 mL Baffled Flask"
-  media_bottle          = "800 mL YPAD liquid (sterile)"
+  media_bottle          = 1 "800 mL YPAD liquid (sterile)"
   yeast_suspension_tube = item yeast_overnight
 end
 
