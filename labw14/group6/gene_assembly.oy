@@ -28,6 +28,27 @@ place stock2
   window: minutes(30)
 end
 
+place stock3
+  protocol: "labw14/group6/make_master_stock.pl"
+  argument
+    oligonucleotides: source_oligos3
+  end
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+place stock4
+  protocol: "labw14/group6/make_master_stock.pl"
+  argument
+    oligonucleotides: source_oligos4
+  end
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
 
 place assembly1
   protocol: "labw14/group6/gene_assembly_PCA.pl"
@@ -52,9 +73,6 @@ end
 
 place image_gel
   protocol: "labw14/group6/image_gel.pl"
-  argument
-    DNA_sample: input4
-  end
   group: aquarium_user
   start: now()
   window: minutes(1)
@@ -62,9 +80,6 @@ end
 
 place cut_gel
   protocol: "labw14/group6/cut_gel.pl"
-  argument
-    DNA_sample: input5
-  end
   group: aquarium_user
   start: now()
   window: minutes(1)
@@ -72,9 +87,6 @@ end
 
 place gel_purify
   protocol: "labw14/group6/gel_purify.pl"
-  argument
-    DNA_sample: input6
-  end
   group: aquarium_user
   start: now()
   window: minutes(1)
@@ -82,9 +94,6 @@ end
 
 place gibson
   protocol: "labw14/group6/gibson_assembly.pl"
-  argument
-    transformed_e_coli: input7
-  end
   group: aquarium_user
   start: now()
   window: minutes(1)
@@ -92,9 +101,6 @@ end
 
 place transformation
   protocol: "labw14/group6/e_coli_transformation.pl"
-  argument
-    DNA_sample: input8
-  end
   group: aquarium_user
   start: now()
   window: minutes(1)
@@ -120,17 +126,11 @@ wire (assembly1, "gene") => (run_gel, "gene_sample")
 wire (assembly2, "gene") => (run_gel, "gene_sample")
 
 
-transition [ stock1 ] => [ assembly1 ] when !error(0) && completed(0) end
-transition [ stock1 ] => [ stock1 ] when error(0) end
-
-transition [ stock2 ] => [ assembly2 ] when !error(0) && completed(0) end
-transition [ stock2 ] => [ stock2 ] when error(0) end
-
-transition [ stock1, stock2 ] => [ run_gel ] when !error(0) && completed(0) end
+transition [ stock1, stock2 ] => [ assembly1 ] when !error(0) && completed(0) end
 transition [ stock1 ] => [ stock1 ] when error(0) end
 transition [ stock2 ] => [ stock2 ] when error(0) end
 
-transition [ stock3, stock4 ] => [ run_gel ] when !error(0) && completed(0) end
+transition [ stock3, stock4 ] => [ assembly2 ] when !error(0) && completed(0) end
 transition [ stock3 ] => [ stock3 ] when error(0) end
 transition [ stock4 ] => [ stock4 ] when error(0) end
 
