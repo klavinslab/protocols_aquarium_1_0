@@ -6,7 +6,7 @@ end
 step
   description: "Time adjustments"
   bullet: "Find the ND acquisition window and click on the Time tab"
-  bullet: "To set the phase make sure the box for #1 is checked"
+  bullet: "To set the phase make sure the box for number 1 is checked"
   bullet: "Set interval to 10 min"
   bullet: "Set duration to 8 hours"
 end
