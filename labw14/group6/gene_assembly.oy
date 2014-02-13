@@ -1,12 +1,17 @@
 # Arguments
-argument
-  source_oligos1: sample array, "Choose the oligonucleotides you want to combine"
-  source_oligos2: sample array, "Choose the oligonucleotides you want to combine"
-  source_oligos3: sample array, "Choose the oligonucleotides you want to combine"
-  source_oligos4: sample array, "Choose the oligonucleotides you want to combine"  
+#argument
+  #source_oligos1: sample array, "Choose the oligonucleotides you want to combine"
+  #source_oligos2: sample array, "Choose the oligonucleotides you want to combine"
+  #source_oligos3: sample array, "Choose the oligonucleotides you want to combine"
+  #source_oligos4: sample array, "Choose the oligonucleotides you want to combine"  
   
-end
+#end
 
+#Testing inputs - to save time (remove at end)
+source_oligos1 = [1, 2, 3, 4, 5, 6]
+source_oligos2 = [7, 8, 9, 10, 11, 12]
+source_oligos3 = [13, 14, 15, 16, 17, 18]
+source_oligos4 = [21, 22, 23, 24, 25, 26] 
 
 # Places
 place stock1
@@ -130,10 +135,10 @@ end
 
 #Wires are a place-holder for now, totally nonesense currently
 
-wire (stock1, "working_fragments") => (assembly1, "oligo_pool11")
-wire (stock2, "working_fragments") => (assembly1, "oligo_pool12")
-wire (stock3, "working_fragments") => (assembly2, "oligo_pool21")
-wire (stock4, "working_fragments") => (assembly2, "oligo_pool22")
+wire (stock1, "primer_pool") => (assembly1, "oligo_pool11")
+wire (stock2, "primer_pool") => (assembly1, "oligo_pool12")
+wire (stock3, "primer_pool") => (assembly2, "oligo_pool21")
+wire (stock4, "primer_pool") => (assembly2, "oligo_pool22")
 wire (assembly1, "gene") => (run_gel, "gene_sample")
 wire (assembly2, "gene") => (run_gel, "gene_sample")
 
