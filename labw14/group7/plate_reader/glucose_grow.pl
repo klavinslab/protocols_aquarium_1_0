@@ -22,10 +22,10 @@ end
 
 step
   description: "Label each of the culture tubes"
-  check: "Label 4 culture tubes with %{plated_cells[0][:id]} R1, %{plated_cells[0][:id]} R2... %{plated_cells[0][:id]} R4"
-  check: "Label 4 culture tubes with %{plated_cells[0][:id]} R1, %{plated_cells[0][:id]} R2... %{plated_cells[0][:id]} R4"
-  check: "Label 4 culture tubes with %{plated_cells[0][:id]} R1, %{plated_cells[0][:id]} R2... %{plated_cells[0][:id]} R4"
-  check: "Label 4 culture tubes with %{plated_cells[0][:id]} R1, %{plated_cells[0][:id]} R2... %{plated_cells[0][:id]} R4"
+  check: "Label 4 culture tubes with %{plated_cells[0]} R1, %{plated_cells[0]} R2... %{plated_cells[0]} R4"
+  check: "Label 4 culture tubes with %{plated_cells[1]} R1, %{plated_cells[1]} R2... %{plated_cells[1]} R4"
+  check: "Label 4 culture tubes with %{plated_cells[2]} R1, %{plated_cells[2]} R2... %{plated_cells[2]} R4"
+  check: "Label 4 culture tubes with %{plated_cells[3]} R1, %{plated_cells[3]} R2... %{plated_cells[3]} R4"
 end
 
 step
@@ -43,7 +43,7 @@ end
 i = 0
 while i<strains
   step
-    description: "Add cells from plate %{plated_cells[i][:id]} to four seperate culture tubes"
+    description: "Add cells from plate %{plated_cells[i]} to four seperate culture tubes"
     check: "Use a 100uL pipette tip (held in your hand) to extract a single colony from plate %{plated_cells[i][:id]}, and swish it around in the culture tube marked %{plated_cells[i][:id]} R1"
     check: "Use a new 100uL pipette tip extract another single colony from the same plate, and swirl it around in the culture tube labeled %{plated_cells[i][:id]} R2"
     check: "Repeat the above procedure for R3 and R4."
