@@ -13,4 +13,4 @@ place OLBG
 end
 
 transition [OLBG] => [] when !error(0) && completed(0) end
-transition [OLBG] => [OLBG] whenn error(0) end
+transition [OLBG] => [OLBG] when error(0) end
