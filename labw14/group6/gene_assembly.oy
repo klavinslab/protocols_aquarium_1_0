@@ -53,11 +53,10 @@ place stock4
   window: minutes(30)
 end
 
-a = []
 place assembly1
   protocol: "labw14/group6/gene_assembly_PCA.pl"
   argument
-    oligo_pool: append(a, oligo_pool11, oligo_pool12)
+    oligo_pool: [oligo_pool11, oligo_pool12]
   end
   group: aquarium_user
   start: now()
@@ -68,7 +67,7 @@ b = []
 place assembly2
   protocol: "labw14/group6/gene_assembly_PCA.pl"
   argument
-    oligo_pool: append(b, oligo_pool21, oligo_pool22)
+    oligo_pool: [oligo_pool21, oligo_pool22]
   end
   group: aquarium_user
   start: now()
