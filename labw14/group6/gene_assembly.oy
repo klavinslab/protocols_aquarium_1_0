@@ -52,6 +52,10 @@ end
 
 place assembly1
   protocol: "labw14/group6/gene_assembly_PCA.pl"
+  argument
+    oligo_pool1: oligo_pool11
+    oligo_pool2: oligo_pool12
+  end
   group: aquarium_user
   start: now()
   window: minutes(30)
@@ -59,6 +63,10 @@ end
 
 place assembly2
   protocol: "labw14/group6/gene_assembly_PCA.pl"
+  argument
+    oligo_pool1: oligo_pool21
+    oligo_pool2: oligo_pool22
+  end
   group: aquarium_user
   start: now()
   window: minutes(30)
@@ -120,8 +128,10 @@ end
 
 #Wires are a place-holder for now, totally nonesense currently
 
-wire (stock1, "working_fragments") => (assembly1, "oligo_pool")
-wire (stock2, "working_fragments") => (assembly2, "oligo_pool")
+wire (stock1, "working_fragments") => (assembly1, "oligo_pool11")
+wire (stock2, "working_fragments") => (assembly1, "oligo_pool12")
+wire (stock3, "working_fragments") => (assembly2, "oligo_pool21")
+wire (stock4, "working_fragments") => (assembly2, "oligo_pool22")
 wire (assembly1, "gene") => (run_gel, "gene_sample")
 wire (assembly2, "gene") => (run_gel, "gene_sample")
 
