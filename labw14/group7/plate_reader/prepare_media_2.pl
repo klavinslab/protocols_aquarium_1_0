@@ -28,8 +28,8 @@ step
   check: "Attach the 25mL tip to the serological pipetter"
   check: "Use the electric serological pipette to add  %{volume} mL of %{media_in} into the 50mL falcon tube"
   check: "Dispose of your 25mL serological pipette tip in tip waste"
-  check: "Pipette %{ab_vol1} uL of %{ab1_in} to the solution"
-  check: "Pipette %{ab_vol2} uL of %{ab2_in} to the solution"
+  check: "Pipette %{ab_vol1} uL of %{antibio1_in} to the solution"
+  check: "Pipette %{ab_vol2} uL of %{antibio2_in} to the solution"
   check: "Vortex the solution for 15 seconds"
 end
 
