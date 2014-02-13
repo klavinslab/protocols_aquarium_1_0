@@ -27,7 +27,7 @@ step
 end
 
 step
-  description: "Add 60 μL of oligonucleotides into the tube"
+  description: "Add 60 μL of oligonucleotides into the tube."
 end
 
 step
