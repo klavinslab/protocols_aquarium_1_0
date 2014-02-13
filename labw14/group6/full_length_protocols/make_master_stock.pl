@@ -47,9 +47,8 @@ produce
 
 end
 
+release concat (oligonuc, molecular_g_h2o)
+
 log
   return: { working_fragments: master_stock  }
 end
-
-release [oligonuc]
-release [molecular_g_h2o]
