@@ -5,7 +5,7 @@ end
 place OLBG
   protocol: "labw14/group2/overnight_LB_growth.pl"
   argument:
-    id: glycerol
+    glycerol: id
   end
   group: aquarium_user
   marked: true
