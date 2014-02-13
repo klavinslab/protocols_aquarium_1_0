@@ -65,9 +65,6 @@ step
   image: "thermal_cycler_select"
 end
 
-
-release concat (primer1_stock, primer2_stock, masterstock)
-
 step
   description: "Go to the thermal cycler to pick up the PCR tube you put after it is done."
   note: "Put it on you bench after you picked up the PCR tube"
@@ -77,6 +74,8 @@ produce
   new_gene = 1 "PCR Result"
 
 end
+
+release concat (primer1_stock, primer2_stock, masterstock)
 
 log
   return: { gene: new_gene  }
