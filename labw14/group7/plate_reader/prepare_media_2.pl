@@ -8,6 +8,9 @@ argument
   #can we force the same lengths of array?  oherwise return error.
 end
 
+media_name = media
+ab1_name = antibio1
+ab2_name = antibio2
 
 take
  media_tube = 1 "50 mL Falcon Tube"
@@ -22,9 +25,7 @@ end
 
 ab_vol1 = volume/dilution1*1000
 ab_vol2 = volume/dilution2*1000
-media_name = media[:name]
-ab1_name = antibio1[:name]
-ab2_name = antibio2[:name]
+
 
 step
   description: "Prepare %{volume} mL of %{media_name} media with the desired antibiotics"
