@@ -1,6 +1,6 @@
 argument
   plated_cells: sample("Transformed E coli Strains") array, "An array of THREE agarose-streaked colonies to grow in glucose media"
-  glucose_media: sample, "The (glucose) media to grow the cells in"
+  media_label: string, "The label on the tube of media prepared preciously, which will be used to grow the cells in"
   #repeats: num, "The number of repeats of each cell culture to grow"
   #We tried to make this a more generalized protocol, but the (lack of) capabilities in the language defeated us!
 end
@@ -14,7 +14,6 @@ n = strains * 4 #this could be "repeats"
 
 
 take
-  media = item glucose_media
   pipette = 1 "Serological Pipette"
   tip = 1 "5 mL Serological Pipette Tips"
   culture_tubes = n "14 mL Test Tube"
@@ -31,8 +30,7 @@ end
 
 step
   description: "Add 3mL media to each culture tube"
-  check: "Use the electric serological pipette to add 3ml of media (ID %{media[:id]}) into each culture tube."
-  #I believe that %{media[:id]} should give the same thing as %{glucose_media}?
+  check: "Use the electric serological pipette to add 3ml of %{media_label} into each culture tube."
   check: "Dispose of your serological pipette tip in tip waste"
 end
 
