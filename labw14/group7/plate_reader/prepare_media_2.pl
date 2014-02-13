@@ -10,8 +10,8 @@ end
 
 take
  media_tube = 1 "50 mL Falcon Tube"
- antibio1= item antibio1
- antibio1= item antibio1
+ antibio1 = item antibio1
+ antibio2 = item antibio2
  media = item media
  #media[:id] == media_base
  
