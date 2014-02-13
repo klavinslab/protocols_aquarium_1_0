@@ -1,4 +1,5 @@
 argument
+  antibiotic_array: sample array, "The antibiotics to add to the glucose solution"
 end
 
 step
@@ -8,11 +9,11 @@ end
 
 take
   #kan
-  kan = 1 "200X 1 mL Kanamycin Aliquot"
+  #kan = 1 "200X 1 mL Kanamycin Aliquot"
   #glucose
   gluc = 1 "400 mL M9 liquid Glucose"  #check that this is the right concentration
   #amp
-  amp = 1 "100X 1 mL Ampicillin Aliquot"
+  #amp = 1 "100X 1 mL Ampicillin Aliquot"
   #50mL tube
   media_tube = 1 "50 mL Falcon Tube"
   #aTc
