@@ -20,7 +20,7 @@ take
   amp = 1 "100X 1 mL Ampicillin Aliquot"
   pipette = 1 "Serological Pipette"
   tips = 2 "5 mL Serological Pipette Tips"
-  culture_tubes = m "14 mL Test Tube"
+  culture_tubes = n "14 mL Test Tube"
  #TODO: Check all of these arguments with Leandra to confirm they are correct
 end
 
