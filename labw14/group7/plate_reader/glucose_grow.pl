@@ -21,28 +21,29 @@ take
   pipette = 1 "Serological Pipette"
   tips = 2 "5 mL Serological Pipette Tips"
   culture_tubes = n "14 mL Test Tube"
+  note: "Be sure to grab a tube rack to hold all of the culture tubes"
  #TODO: Check all of these arguments with Leandra to confirm they are correct
 end
 
 step
  description: "Prepare 40mL of M9 media with (1:200) ampicillin and (1:500) kanomyacin"
- check: "Pipette 40mL of 0.4%% Glucose M9 media (%{glucose}) into the 50mL falcon tube (%{media_tube})"
- check: "Pipette 200uL of Kanomyacin (%{kan}) into the 50mL falcon tube"
- check: "Pipette 80uL of Ampicillin (%{amp}) into the 50mL falcon tube"
+ check: "Pipette 40mL of 0.4%% Glucose M9 media into the 50mL falcon tube"
+ check: "Pipette 200uL of Kanomyacin into the 50mL falcon tube"
+ check: "Pipette 80uL of Ampicillin into the 50mL falcon tube"
  check: "Swish the falcon tube around a few times to mix"
 end
 
 step
  description: "Label the culture tubes"
  check: "Label %{cycles} culture tubes with DL046"
- check: "Labe1 %{cycles} culture tubes with DL104"
+ check: "Label %{cycles} culture tubes with DL104"
  check: "Label %{cycles} culture tubes with DL147"
  #TODO: replace DL064 etc with references from the sample array argument
 end
 
 step
  description: "Add 3mL media to each culture tube"
- check: "Use electric serological pipette to add 3ml of you prepared (M9 with amp and kan) into each culture tube."
+ check: "Use electric serological pipette to add 3ml of your M9 media (with amp and kan) into each culture tube."
 end
 
 
@@ -51,14 +52,14 @@ release [glucose[0], kan[0], amp[0], pipette[0]]
 step
  description: "Add cells to each culture tube"
  check: "Using a 100uL pipette tip, extract a single colony from plate DL046, and swish it around in one of the culture tubes marked DL046"
- check: "Repeat this %{cycles - 1} more times with new pipette tips and new colonies, until you have 4 total culture tubes labeled DL046 each containing celss from the DL046 plate"
- check: "Repeat the above two steps for each plate DL108 and DL 147, so that you end up with %{cycles} culture tubes containing each strain for a total of %{n} tubes" 
+ check: "Using a new 100uL pipette tip extract another single colony from plate DL046, and swirl it around in another culture tube labeled DL046. Repeat this until you have DL046 cells in all %{cycles} of your tubes labeled DL046."
+ check: "Repeat the above two steps for plates DL108 and DL147, so that you end up with %{strans} sets of %{cycles} culture tubes loaded with cells, for a total of %{n} tubes" 
 #TODO: Repace the above code with something more modular, based on an arbitrary number of cycles and strains
 end
 
 step
- description: "place the tubes in the 37C shaker"
- check: "Place the %{n} culture tubes in a tube rack and load them into the 37C shaker."
+ description: "Place the tubes in the 37C shaker"
+ check: "Load the tube rack containing your %{n} cell culture tubes into the 37C shaker."
  note: "This will incubate for 18hrs (overnight)"
 end
 
