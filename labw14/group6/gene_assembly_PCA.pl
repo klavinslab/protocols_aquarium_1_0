@@ -1,5 +1,8 @@
 argument
   oligo_pool: sample array, "Select the oligonucleotide stocks you want to combine through gene assembly"
+  primer1: sample, "The first primer"
+  primer2: sample, "The second primer"
+  enzyme_id: sample, "The Phsion HF Master Mix stock"
 end
 
 n = length(oligo_pool)
@@ -8,35 +11,15 @@ n = length(oligo_pool)
 
 take
   masterstock = item oligo_pool
-  molecular_g_h2o = "Molecular Grade Water"
-  
+  primer1_stock = item primer1
+  primer2_stock = item primer2
+  phusion_stock = item enzyme_id
 end
+  
 
 step
   description: 
     "This protocol describes how to run gene assembly of two oligonuleotide stocks"
-end
-
-step
-  description: ""
-  note: ""
-end
-argument
-  primer1: sample, "The first primer"
-  primer2: sample, "The second primer"
-  plasmid_id: sample, "The plasmid stock"
-  enzyme_id: sample, "The Phsion HF Master Mix stock"
-end
-
-take
-  primer1_stock = item primer1
-  primer2_stock = item primer2
-  plasmid_stock = item plasmid_id
-  phusion_stock = item enzyme_id
-end
-
-step
-  description: "This protocol prepares the PCR mix in PCR tube and starts it in thermal cycler."
 end
 
 step
