@@ -63,5 +63,5 @@ step
 end
 
 #release [cell_culture_tube_array[0], glycerol[0]]
-release concat(plate_array)
+release plate_array[0]
 end
