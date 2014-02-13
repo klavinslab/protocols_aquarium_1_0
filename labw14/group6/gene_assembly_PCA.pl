@@ -29,7 +29,7 @@ end
 step
   description: "Prepare Reaction"
   check:"Pipet 7 µL molecular grade water into the labeled PCR tube."
-  check: "Pipet 1 µL of plasmid with id %{plasmid_id} into the tube."
+  check: "Pipet 1 µL of master stock with id %{oligo_pool} into the tube."
   check: "Pipet 1 µL of primer with id %{primer1} into the tube."
   check: "Pipet 1 µL of primer with id %{primer2} into the tube."
   check: "Pipet 10 µL of Phusion Master Mix with id %{enzyme_id} into the tube."
@@ -62,7 +62,7 @@ step
 end
 
 
-release [primer1_stock[0],primer2_stock[0],plasmid_stock[0]]
+release [primer1_stock[0],primer2_stock[0],masterstock[0]]
 
 step
   description: "Go to the thermal cycler to pick up the PCR tube you put in the previous protocol."
@@ -70,21 +70,9 @@ step
 end
 
 produce
-  r = 1 "Colony PCR product" of "pLAB3 in Z1"
-  note: "Keep the tube on the bench to use in the next protocol. (no need to edit the location below)"
-  location: "Bench"
-end
-
-log
-  return: {PCR_Result_id: r[:id]}
-end
-produce
   new_gene = 1 "PCR Result"
 
 end
-
-
-
 
 log
   return: { gene: new_gene  }
