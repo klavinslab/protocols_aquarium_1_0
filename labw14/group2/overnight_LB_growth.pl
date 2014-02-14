@@ -33,7 +33,7 @@ produce
 end
 
 log
-  return: { ons: r }
+  return: { ons: r[:id] }
 end
     
 release [falcon_tube[0], glycerol[0]]
