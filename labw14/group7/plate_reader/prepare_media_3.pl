@@ -22,15 +22,16 @@ i=0
 antibio_volumes = []#the volumes of antibiotic solutions in uL
 antibio_objects = []#the object references (an array of json tables) of each antibiotic
 while i<length(antibios)
-  antibio_volumes[i] = total_volume/dilutions[i]*1000
+  v = total_volume/dilutions[i]*1000
+  antibio_volumes = append(antibio_volumes, v)
   antibio_abr = antibios[i]
   if antibio_abr == "amp"
     take
-      antibio_objects[i] = 1 "100X 1 mL Ampicillin Aliquot"
+      a = 1 "100X 1 mL Ampicillin Aliquot"
     end
   elseif antibio_abr == "kan"
     take
-      antibio_objects[i] = 1 "200X 1 mL Kanamycin Aliquot"
+      a = 1 "200X 1 mL Kanamycin Aliquot"
     end
   elseif antibio_abr == "chlor"
     take
@@ -39,6 +40,7 @@ while i<length(antibios)
   else
     #someone entered the wrong choice
   end
+  antibio_objects = append(antibio_objects, a)
 end
 
 media_name=media[:name]
@@ -53,7 +55,7 @@ i=0
 while i<length(antibios)
   antibio_abr = antibios[i]
   antibio_name = antibio_objects[i][:name]
-  antibio_volume = antibio_volumes[i]
+  v = antibio_volumes[i]
   step
     description: "Add %{antibio_abr} to the solution"
     check: "Pipette %{antibio_volume} uL of '%{antibio_name}' to the 50mL falcon tube"
