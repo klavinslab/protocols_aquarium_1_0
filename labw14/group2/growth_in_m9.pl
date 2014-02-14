@@ -26,8 +26,8 @@ end
 release[pipette[0], M9[0]]
 
 take
-  amp = 1 "100X 1mL Ampicillin Aliquot"
-  kan = 1 "200X 1mL Kanamycin Aliquot"
+  amp = 1 "100X 1 mL Ampicillin Aliquot"
+  kan = 1 "200X 1 mL Kanamycin Aliquot"
 end
 
 step
