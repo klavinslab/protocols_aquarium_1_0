@@ -39,7 +39,7 @@ end
 release[amp[0], kan[0]]
 
 take
-  ons = item id[0]
+  ons = item id
 end
 
 step
