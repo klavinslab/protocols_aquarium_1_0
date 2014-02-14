@@ -9,8 +9,10 @@ step
 end
 
 take
-  flask                 = num "250 mL Baffled Flask"
   media_bottle          = 1 "800 mL YPAD liquid (sterile)"
+  serological_pipette   = 1 "Serological Pipette"
+  pipette               = num "25 mL Serological Pipette Tips"
+  flask                 = num "250 mL Baffled Flask"
   yeast_suspension_tube = item yeast_overnight_suspension
 end
 
@@ -45,4 +47,4 @@ log
 end
 
 release yeast_suspension_tube
-release media_bottle
+release (media_bottle, serological_pipette, pipette)
