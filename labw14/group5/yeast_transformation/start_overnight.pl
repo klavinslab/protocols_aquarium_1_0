@@ -58,5 +58,5 @@ log
   return: { yeast_overnight_suspension: r }
 end
 
-release plate
-release falcon_tube
+#release plate
+release (falcon_tube, plate)
