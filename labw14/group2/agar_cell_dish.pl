@@ -56,13 +56,13 @@ step
 end
 
 produce
-  r = "Microscope Plates" from ons
+  r = 1 "Microscope Plates" from ons[0]
   location: "Bench"
   note: "You will be taking this with you to the microscope lab"
 end
 
 log
-  return: {ons: r}
+  return: {ons: r[:id]}
 end
 
 release [dish[0], test_tube[0], plate[0]]
