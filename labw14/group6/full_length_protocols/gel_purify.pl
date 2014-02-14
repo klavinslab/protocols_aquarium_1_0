@@ -27,7 +27,7 @@ while gel_weight1 > 200
     description: "Weigh the gel slice with id %{T1} on a scale at A5.300"
     note: "Use an empty 1.5 mL tube to zero the scale first, then put the gel slice tube on the scale."
     getdata
-      gel_weight: number, "Enter the gel slice weight shown on the scale in mg. If it shows 0.134 on scale, you enter 134 below."
+      gel_weight1: number, "Enter the gel slice weight shown on the scale in mg. If it shows 0.134 on scale, you enter 134 below."
     end
 end
 end
@@ -49,7 +49,7 @@ while gel_weight2 > 200
     description: "Weigh the gel slice with id %{T2} on a scale at A5.300"
     note: "Use an empty 1.5 mL tube to zero the scale first, then put the gel slice tube on the scale."
     getdata
-      gel_weight: number, "Enter the gel slice weight shown on the scale in mg. If it shows 0.134 on scale, you enter 134 below."
+      gel_weight2: number, "Enter the gel slice weight shown on the scale in mg. If it shows 0.134 on scale, you enter 134 below."
     end
 end
 end
