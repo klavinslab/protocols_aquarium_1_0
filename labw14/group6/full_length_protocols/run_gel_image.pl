@@ -2,8 +2,8 @@ information "Load and run an agarose gel."
 
 
 argument
-  colony: sample
-  ladder_one: sample
+  colony: PCR Result
+  ladder_one: ladder
   fragment_volume: number, "The volume of PCR fragment to load in µL."
 end
 
