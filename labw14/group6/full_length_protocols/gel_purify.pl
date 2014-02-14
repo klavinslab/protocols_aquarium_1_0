@@ -150,7 +150,7 @@ end
 produce
   r = 1 "Fragment Stock" 
   location: "Bench"
-  release gel_slice
+  release gel_slices
 end
 
 log
