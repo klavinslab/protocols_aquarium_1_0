@@ -65,7 +65,7 @@ end
 
 step
   description: "Load the PCR"
-  note: "Using a 100 µL pipetter, pipet %{fragment_volume} µL of the PCR results (containing loading dye) into the second well of the gel."
+  note: "Using a 100 µL pipetter, pipet %{fragment_volume} µL of PCR results (containing loading dye) into the second and third well of the gel."
   image: "gel_begin_loading"
 end
 
