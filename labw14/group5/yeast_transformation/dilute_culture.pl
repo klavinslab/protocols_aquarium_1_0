@@ -15,12 +15,14 @@ take
 end
 
 step
- description: "Put the Yeast overnight suspension culture tube into a holder"
+ description: "Collect yeast overnight suspension tubes"
+ note: "Take %{num} yeast overnight suspension tube(s) out of the 30C shaker (location: B13.125)
+     and put the tube(s) into a tube holder on your bench"
 end
 
 step
  description: "Diluting cells in YPD"
- note: "Pour 25 mil of YPAD into flask. Then, pipette 500 uL of the yeast overnight suspension cultrue into the flask."
+ note: "Pour 25 mil of YPAD into flask. Then, pipette 500 μL of the yeast overnight suspension cultrue into the flask."
  bullet: "Label the flask with your initials and date"
 end
 
@@ -30,7 +32,7 @@ r  = []
 while ii < length(yeast_overnight_suspension)
 
   produce
-      y = 1 "Overnight suspension" from yeast_suspension_tube[ii]
+      y = 1 "Yeast Overnight Suspension" from yeast_suspension_tube[ii]
       release flask[ii]
   end
   
