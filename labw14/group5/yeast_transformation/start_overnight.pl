@@ -15,10 +15,23 @@ take
   plate        = item transformed_yeast_plate
 end
 
-ii = 0
-r = []
+step
+  description: "Preparing yeast overnight culture tubes"
+  note: "Label  %{num}  14ml falcon tubes with your name and today's date"
+end
+
+ii  = 0
+ind = 0
+r   = []
 
 while ii < length(transformed_yeast_plate)
+
+  ind = ind + 1
+
+  step
+    description: "Making yeast overnight culture tube #%{ind}"
+    note: "Pour 2 ml of YPAD media into the tube #%{ind}"
+  end
 
   produce
     y = 1 "Overnight suspension" from plate[ii]
