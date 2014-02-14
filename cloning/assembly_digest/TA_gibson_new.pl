@@ -15,9 +15,15 @@ num_gibs=length(gibson_pieces)
 
 #two_d_arr = [[1,1],[2,2]]
 
+test_input = [{:F1=>2}, {:F2=>2}, {:F3=>2}, {:F4=>2}]
+
 take
   my_frag_arr = item fragments
   master_mix = 1 "Gibson Aliquot"
+end
+
+step
+  description: "The first element in the array of hashes is %{two_d_arr[0]}"
 end
 
 step
@@ -67,18 +73,18 @@ end
 i = 0
 j = 0
 
-while i < num_gibs
+#while i < num_gibs
 
-  while j < num_gibs[i]
-    step
-      description: "Prepare Gibson %{i}"
-      note: "Add 2 µL"
-    end
-    j = j + 1
-  end
+#  while j < num_gibs[i]
+#    step
+#      description: "Prepare Gibson %{i}"
+#      note: "Add 2 µL"
+#    end
+#    j = j + 1
+#  end
   
-  i = i + 1  
-end
+#  i = i + 1  
+#end
 
 release my_frag_arr
 release master_mix
