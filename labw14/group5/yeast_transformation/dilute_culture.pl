@@ -46,9 +46,7 @@ log
   return: { yeast_250ml_flask: r }
 end
 
-step
-description: "Reselease/Dispose"
+
 release yeast_suspension_tube
 release pipette
-end
 release concat(media_bottle, serological_pipette)
