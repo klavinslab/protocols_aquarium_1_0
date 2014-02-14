@@ -19,6 +19,16 @@ take
  tip = 1 "25 mL Serological Pipette Tips"
 end
 
+#media_name == media[0][:name]
+step
+  description: "Add media to the falcon tube"
+  check: "Attach the 25mL tip to the serological pipetter"
+  check: "Use the electric serological pipette to add %{total_volume} mL of '%{media_name}' into the 50mL falcon tube"
+  check: "Dispose of your 25mL serological pipette tip in tip waste"
+end
+
+release concat(media, pipette)
+
 i=0
 antibio_volumes = []#the volumes of antibiotic solutions in uL
 antibio_objects = []#the object references (an array of json tables) of each antibiotic
@@ -47,20 +57,12 @@ while i<length(antibios)
   i=i+1
 end
 
-#media_name == media[0][:name]
-step
-  description: "Add media to the falcon tube"
-  check: "Attach the 25mL tip to the serological pipetter"
-  check: "Use the electric serological pipette to add %{total_volume} mL of '%{media_name}' into the 50mL falcon tube"
-  check: "Dispose of your 25mL serological pipette tip in tip waste"
-end
-
-release concat(media, pipette)
 
 j=0
 while j<length(antibios)
   antibio_abr = antibios[i]
-  antibio_name = antibio_objects[j][:name]
+  antibio_hash = antibio_objects[j]
+  antibio_name = antibio_hash[:name]
   v = antibio_volumes[j]
   step
     description: "Add %{antibio_abr} to the solution"
