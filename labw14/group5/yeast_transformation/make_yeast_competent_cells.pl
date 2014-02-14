@@ -5,8 +5,14 @@ end
 num = length(yeast_250ml_flask)
 
 step
- description: "This protocol describes how to make competent yeast cells"
- warning: "You're going to make %{num} overnight suspension tubes"
+  description: "This protocol describes how to make yeast competent cell aliquot"
+end
+
+step
+  description: "You can make up to 6 aliquot tubes out of one 25ml yeast flask"
+  getdata
+    aliquot_number: number, "Desired number of aliquot tubes to make out of one 25ml flask"
+  end
 end
 
 take
