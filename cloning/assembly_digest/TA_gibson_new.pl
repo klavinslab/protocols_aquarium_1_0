@@ -16,6 +16,7 @@ num_gibs=length(gibson_pieces)
 #two_d_arr = [[1,1],[2,2]]
 
 test_input = [["F1","F2"],["F3","F4"]]
+test_conc = [[2,2],[2,2]]
 
 take
   my_frag_arr = item fragments
