@@ -3,7 +3,7 @@ argument
 end
 
 take
-  plate: item id
+  plate = item id
 end
 
 step
