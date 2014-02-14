@@ -32,8 +32,8 @@ while ii < length(yeast_overnight_suspension)
 
   step
     description: "Diluting cells in YPD"
-    bullet: "Using %{serological_pipette} serological pipette pour 25 mil of YPAD into the flask N%{ind}."
-    bullet: "Then, using 1000 μL pipette pour 500 μL of the yeast overnight suspension cultrue into the flask."
+    bullet: "Using serological pipette %{serological_pipette[:id]} pour 25 mil of YPAD media into the flask N%{ind}."
+    bullet: "Then, using 1000 μL pipette pour 500 μL of the yeast overnight suspension culture into the flask."
     bullet: "Label the flask with your initials and date."
   end
 
