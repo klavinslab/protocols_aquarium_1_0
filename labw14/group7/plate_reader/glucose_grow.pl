@@ -6,7 +6,7 @@ argument
 end
 
 step
-  description: "This protocol will grow multiple cell colonies in glucose."
+  description: "This protocol will grow multiple cell cultures in glucose."
 end
 
 strains = length(plated_cells)
@@ -24,15 +24,15 @@ i = 0
 while i<strains
   id = plated_cells[i]
   step
-    description: "Label the culture tubes"
-    check: "Label 4 culture tubes with %{id} R1, %{id} R2... %{id} R4"
+    description: "Label culture tubes"
+    check: "Label a set of 4 culture tubes with '%{id} R1, %{id} R2, %{id} R3, %{id} R4%'"
   end
   i = i + 1
 end
 
 step
   description: "Add 3mL media to each culture tube"
-  check: "Use the electric serological pipette to add 3ml of %{media_label} into each culture tube."
+  check: "Use the electric serological pipette to add 3ml of '%{media_label}' into each culture tube."
   check: "Dispose of your serological pipette tip in tip waste"
 end
 
@@ -44,10 +44,11 @@ end
 
 i = 0
 while i<strains
+  id = plated_cells[i]
   step
-    description: "Add cells from plate %{plated_cells[i]} to four seperate culture tubes"
-    check: "Use a 100uL pipette tip (held in your hand) to extract a single colony from plate %{plated_cells[i][:id]}, and swish it around in the culture tube marked %{plated_cells[i][:id]} R1"
-    check: "Use a new 100uL pipette tip extract another single colony from the same plate, and swirl it around in the culture tube labeled %{plated_cells[i][:id]} R2"
+    description: "Add cells from plate %{id} to four seperate culture tubes"
+    check: "Use a 100uL pipette tip (held in your hand) to extract a single colony from plate %{id}, and swish it around in the culture tube marked '%{id} R1'"
+    check: "Use a new 100uL pipette tip extract another single colony from the same plate, and swirl it around in the culture tube labeled '%{id} R2'"
     check: "Repeat the above procedure for R3 and R4."
 #TODO: Repace the above code with something more modular, based on an arbitrary number of cycles and strains
   end
