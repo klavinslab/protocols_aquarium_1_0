@@ -35,7 +35,7 @@ step
 end
 
 y = test_input[0][0]
-z = conc_input[0][0]
+z = test_conc[0][0]
 
 step
   description: "BTW test_input[0][0] = %{z} uL of %{y} Grab a 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
