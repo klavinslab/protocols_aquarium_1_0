@@ -68,7 +68,7 @@ end
 
 step
   description: "Incubate the tubes in a 50 C heat block at B3.340 for 10 minutes."
-  note: "Vortex after 5 minutes of incubation and put back in the 50 C until 10 minutes totoal time reached"
+  note: "Vortex after 5 minutes of incubation and put back in the 50 C until 10 minutes total time reached"
 end
 
 step
