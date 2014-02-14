@@ -1,5 +1,5 @@
 argument
-  glucose_media: object, "Please selct the glucose media which you would add antibiotics to"
+  media_id: object, "Please selct the glucose media which you would add antibiotics to"
   antibios: string array, "Please choose the antiobiotics you would like to add. Enter 'amp' for '100X 1 mL Ampicillin Aliquot', 'kan' for '200X 1 mL Kanamycin Aliquot', or 'chlor' for '1000X 1 mL Chloramphenicol Aliquot'"
   dilutions: number array, "Please choose the dilution factors for each antibiotic selected above, where the ratio of antibiotic:media is 1:x"
   volume: number, "The desired total volume in mL (<50mL)"
@@ -12,7 +12,7 @@ end
 
 take
  media_tube = 1 "50 mL Falcon Tube"
- media = item glucose_media
+ media = item media_id
  #media[:id] == media_base
  pipette = 1 "Serological Pipette"
  tips = 1 "25 mL Serological Pipette Tips"
@@ -65,13 +65,15 @@ step
   check: "Press the 50mL Falcon tube to the vortexer for 15 seconds"
 end
 
+
 #produce
 #  m = 1 "Prepared Media" from media_tube
 #  location: "Bench"
 #end
 
-release concat(media,antibios)
+release concat(media, antibio_objects)
 
-log
-  return: {prepared_media: m}
-end
+#I am not sure what to put in here yet... come back to this later.  It would be great to be able to generate a label bu concatenating the antibio_abr[i] and media strings together
+#log
+#  return: {prepared_media: m}
+#end
