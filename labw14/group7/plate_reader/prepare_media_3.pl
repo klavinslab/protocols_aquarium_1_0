@@ -19,10 +19,10 @@ take
 end
 
 i=0
-antibio_volume = []#the volumes of antibiotic solutions in uL
+antibio_volumes = []#the volumes of antibiotic solutions in uL
 antibio_objects = []#the object references (an array of json tables) of each antibiotic
 while i<length(antibios)
-  antibio_volume[i] = total_volume/dilution[i]*1000
+  antibio_volumes[i] = total_volume/dilution[i]*1000
   antibio_abr = antibios[i]
   if antibio_abr == "amp"
     take
@@ -51,10 +51,12 @@ end
 
 i=0
 while i<length(antibios)
-  
+  antibio_abr = antibios[i]
+  antibio_name = antibio_objects[i][:name]
+  antibio_volume = antibio_volumes[i]
   step
-    description: "Add the %{antibios[i][:name]} to the solution"
-    check: "Pipette %{antibio_volume[i]} uL of %{antibios[i][:name]} to the solution"
+    description: "Add %{antibio_abr} to the solution"
+    check: "Pipette %{antibio_volume} uL of '%{antibio_name}' to the 50mL falcon tube"
   end
 end
 
@@ -63,10 +65,10 @@ step
   check: "Press the 50mL Falcon tube to the vortexer for 15 seconds"
 end
 
-produce
-  m = 1 "Prepared Media" from media_tube
-  location: "Bench"
-end
+#produce
+#  m = 1 "Prepared Media" from media_tube
+#  location: "Bench"
+#end
 
 release concat(media,antibios)
 
