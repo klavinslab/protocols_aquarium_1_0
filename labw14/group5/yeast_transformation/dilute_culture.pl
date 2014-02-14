@@ -46,5 +46,8 @@ log
   return: { yeast_250ml_flask: r }
 end
 
-release concat(yeast_suspension_tube, pipette)
+step
+release yeast_suspension_tube
+release pipette
+end
 release concat(media_bottle, serological_pipette)
