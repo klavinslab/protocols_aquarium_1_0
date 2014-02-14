@@ -25,11 +25,13 @@ end
 x = length(test_input)
 
 step
-  description: "The first element in the array of hashes is %{test_input[0][0]} the length of the thing is %x"
+  description: "The first element in the array of hashes is %{test_input} the length of the thing is %{x}"
 end
 
+y = test_input[0][0]
+
 step
-  description: "Grab a 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
+  description: "BTW test_input[0][0] = %{y} Grab a 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
   check: "Label the right most well with the letters DY"
   check: "Label the left most well with the letter A"
   note: "These wells will be refered to as 1 - 12"
