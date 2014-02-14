@@ -39,7 +39,10 @@ agarose_mass = (percentage / 100.0) * gel_volume
 error = agarose_mass * 0.05
 step
   description: "Add %{agarose_mass} g agarose to flask"
-  note: "Go to the station at A5.300. Obtain a flask from on top of the microwave M2. Using a digital scale, measure out %{agarose_mass} g (+/- %{error} g) of agarose powder and add it to the flask. Add agarose by tipping and shaking the bag and remove excess to the waste container by folding the weigh paper."
+  bullet: "Go to the station at A5.300."
+  bullet: "Obtain a flask from on top of the microwave M2."
+  bullet: "Using a digital scale, measure out %{agarose_mass} g (+/- %{error} g) of agarose powder and add it to the flask." 
+  note: "Add agarose by tipping and shaking the bag and remove excess to the waste container by folding the weigh paper."
   image: "gel_measure_agarose"
 end
 
