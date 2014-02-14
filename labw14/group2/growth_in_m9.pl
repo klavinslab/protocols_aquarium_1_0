@@ -50,6 +50,7 @@ end
 produce
   r = 1 "Overnight suspension cultures" from ons[0]
   location: "B13.425"
+  note: "Label this with your initials and date and write the item ID number on it"
 end
 
 log
