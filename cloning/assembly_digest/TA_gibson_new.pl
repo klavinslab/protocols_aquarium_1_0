@@ -1,7 +1,6 @@
 argument
-  fragments: sample("Fragment") array, "Fragments in order of Gibsons"
-  gibson_pieces: number array, "The number of fragments (from the array above) going into each Gibson"
-  #fragment1: sample, "Fragment you are using"
+  #fragments: sample("Fragment") array, "Fragments in order of Gibsons"
+  #gibson_pieces: number array, "The number of fragments (from the array above) going into each Gibson"
 end
 
 
