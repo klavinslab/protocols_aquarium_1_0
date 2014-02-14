@@ -1,11 +1,21 @@
+argument
+  gel: sample, "The gel lane you got after run the gel"
+end
+
+take
+  y = item gel
+end
+
 step
   description: "Wipe down transilluminator"
   note: "Spray with ethanol and wipe down with a kimwipe"
 end
 
 step
-  description: "Take the cut gel and put it on transilluminator"
-  note: "Be careful. The gel is slippery and may fall out unexpectedly.
+  description: "Take the gel out of gel box and put it on transilluminator"
+  note: "Carefully remove the holder from the gel box. The gel is slippery and may fall out unexpectedly.
+  Slide the gel off of the holder and onto the surface of the transilluminator"
+  image: "slide_gel"
 end
 
 step
@@ -18,8 +28,31 @@ step
 end
 
 step
-  description: "Turn on the transilluminator"
+  description: "Turn on the transilluminator, put on the camera hood"
   note: "The on switch for the transilluminator is located on the side."
+end
+
+step
+  description: "Turn on the camera"
+  note: "The camera is turned on by pressing the power button once."
+end
+
+step
+  description: "Adjust camera settings"
+  note: "The camera settings must be properly adjusted for gel photography if they are not already."
+  bullet: "Turn the large dial to manual (M)"
+  bullet: "Switch the camera to macro mode by pressing the button with a flower and
+  rotating the menu wheel to the flower icon."
+  bullet: "Set the ISO to 100 by turning the larger dial"
+  bullet: "Set the white balance to tungsten by pressing the center button and navigating to tungsten."
+  bullet: "Set the shutter speed to 4 seconds by turning the menu wheel."
+end
+
+step
+  description: "Take a picture of the gel."
+  note: "Zoom in such that the gel takes up the entire field of view."
+  note: "Press the trigger half way to focus and all the way down to take the photo. Leave the camera on
+  as it takes time to transmit the photo to the computer wirelessly"
 end
 
 step
@@ -30,8 +63,8 @@ step
 end
 
 step
-  description: "Cut out the gel slice with length 1799bp" 
-  note: "It may help to turn the room lights off during this step. Use the ladder to locate where
+  description: "Remove the camera hood, cut out the gel slice with length 1799bp" 
+  note: "It may help to turn the romm lights off during this step. Use the ladder to locate where
   1799bp is. Use the razor blade to cut around the band."
   image: "cut_gel"
 end
@@ -75,3 +108,4 @@ end
 log
   return: {Gel_Slice_id: r[:id]}
 end
+
