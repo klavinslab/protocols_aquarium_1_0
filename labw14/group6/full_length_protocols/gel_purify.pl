@@ -10,7 +10,7 @@ T1 = gel[0]
 T2= gel[1]
 
 step
-  description: "Weigh the gel sliec with id %{T1} on a scale at A5.300"
+  description: "Weigh the gel slice with id %{T1} on a scale at A5.300"
   note: "Use an empty 1.5 mL tube to zero the scale first, then put the gel slice tube on the scale."
   getdata
     gel_weight1: number, "Enter the gel slice weight shown on the scale in mg. If it shows 0.134 on scale, you enter 134 below."
@@ -24,7 +24,7 @@ while gel_weight1 > 200
     note: "Wait for the gel slice to thaw, put on the transiluminator, trim the non DNA part of your gel."
   end
   step
-    description: "Weigh the gel slice on a scale at A5.300"
+    description: "Weigh the gel slice with id %{T1} on a scale at A5.300"
     note: "Use an empty 1.5 mL tube to zero the scale first, then put the gel slice tube on the scale."
     getdata
       gel_weight: number, "Enter the gel slice weight shown on the scale in mg. If it shows 0.134 on scale, you enter 134 below."
@@ -33,7 +33,7 @@ end
 end
 
 step
-  description: "Weigh the gel sliec with id %{T2} on a scale at A5.300"
+  description: "Weigh the gel slice with id %{T2} on a scale at A5.300"
   note: "Use an empty 1.5 mL tube to zero the scale first, then put the gel slice tube on the scale."
   getdata
     gel_weight2: number, "Enter the gel slice weight shown on the scale in mg. If it shows 0.134 on scale, you enter 134 below."
@@ -46,7 +46,7 @@ while gel_weight2 > 200
     note: "Wait for the gel slice to thaw, put on the transiluminator, trim the non DNA part of your gel."
   end
   step
-    description: "Weigh the gel slice on a scale at A5.300"
+    description: "Weigh the gel slice with id %{T2} on a scale at A5.300"
     note: "Use an empty 1.5 mL tube to zero the scale first, then put the gel slice tube on the scale."
     getdata
       gel_weight: number, "Enter the gel slice weight shown on the scale in mg. If it shows 0.134 on scale, you enter 134 below."
