@@ -54,12 +54,7 @@ produce
 end
 
 log
-  return: {ons: r}
-end
-
-step
-  description: "Store solution in incubator"
-  note: "Place the solution in the 37 deg shaker incubator located at B13.425"
+  return: {ons: r[:id]}
 end
 
 release[ons[0]]
