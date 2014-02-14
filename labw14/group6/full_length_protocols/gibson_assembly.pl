@@ -1,12 +1,13 @@
 argument
-  fragment1: sample, "Fragment 1 for Gibson reaction"
-  fragment2: sample, "Fragment 2 for Gibson reaction"
+  fragment1: sample, "Fragment stock 1 for Gibson reaction"
+  fragment2: sample, "Fragment stock 2 for Gibson reaction"
 end
 
 take
   x = 1 "Gibson Aliquot"
   y1 = item fragment1
   y2 = item fragment2
+  molecular_g_h2o = 1 "Molecular Biology Grade Water"
 end
 
 information "Scarlessly assemble DNA using fragments with terminal homologies."
@@ -18,8 +19,8 @@ end
 step
   description: "Prepare the Gibson reaction"
   check: "Add 2 µL of molecular grade water to the labeled tube."
-  check: "Add 1.5 µL of fragment 1 with id %{fragment1} to the tube."
-  check: "Add 1.5 µL of fragment 2 with id %{fragment2} to the tube."
+  check: "Add 1.5 µL of fragment stock 1 with id %{fragment1} to the tube."
+  check: "Add 1.5 µL of fragment stock 2 with id %{fragment2} to the tube."
   note: "Gently mix with pipette tip."
 end
 
@@ -38,9 +39,9 @@ step
 end
 
 produce
-  r = 1 "Gibson Reaction Result" of "pLAB3"
+  r = 1 "Gibson Reaction Result"
   release x
 end
 
-release [y1[0],y2[0]]
+release [y1[0],y2[0],molecular_g_h2o]
 
