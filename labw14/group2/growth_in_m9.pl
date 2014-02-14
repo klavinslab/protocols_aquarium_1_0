@@ -23,7 +23,7 @@ step
 end
 
 
-release[pipette[0], M9[0]]
+release[pipette[0], M9[0], tip[0]]
 
 take
   amp = 1 "100X 1 mL Ampicillin Aliquot"
@@ -39,7 +39,7 @@ end
 release[amp[0], kan[0]]
 
 take
-  ons = item id
+  ons = item id[0]
 end
 
 step
