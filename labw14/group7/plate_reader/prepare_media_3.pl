@@ -29,17 +29,19 @@ while i<length(antibios)
     take
       a = 1 "100X 1 mL Ampicillin Aliquot"
     end
-  elseif antibio_abr == "kan"
+  end #I wanted to use elseif here but I got a parsing error: "Expected '=' at 'antibio_abr'"
+  if antibio_abr == "kan"
     take
       a = 1 "200X 1 mL Kanamycin Aliquot"
     end
-  elseif antibio_abr == "chlor"
+  end
+  if antibio_abr == "chlor"
     take
       antibio_objects[i] = 1 "1000X 1 mL Chloramphenicol Aliquot"
     end
-  else
+  #else #I cannot use the else here, because all of the elseifs did not work.  As is, this would only give an error if it was not 'chlor'
     #someone entered the wrong choice
-  end
+  #end
   antibio_objects = append(antibio_objects, a)
 end
 
