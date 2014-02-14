@@ -11,8 +11,7 @@ end
 
 take
   test_tube    = num "14 mL Test Tube"
-  media_bottle = 1 "800 mL YPAD liquid (sterile)"
-  falcon_tube  = 1 "50 mL Falcon Tube"
+  falcon_tube  = 1 "50 mL YPAD liquid aliquot (sterile)"
   plate        = item transformed_yeast_plate
 end
 
@@ -35,4 +34,4 @@ log
 end
 
 release plate
-release concat(falcon_tube, media_bottle)
+release falcon_tube
