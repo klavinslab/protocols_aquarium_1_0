@@ -2,8 +2,8 @@ argument
   gel: sample array, "Choose the Gel Slices you need to purify."
 end
 
-take
-  gel_slices = item gel
+step
+    description: "Testing step"
 end
 
 produce
