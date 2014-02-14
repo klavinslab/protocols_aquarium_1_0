@@ -25,7 +25,7 @@ while i<strains
   id = plated_cells[i]
   step
     description: "Label culture tubes"
-    check: "Label a set of 4 culture tubes with '%{id} R1, %{id} R2, %{id} R3, %{id} R4%'"
+    check: "Label a set of 4 culture tubes with '%{id} R1, %{id} R2, %{id} R3, %{id} R4'"
   end
   i = i + 1
 end
