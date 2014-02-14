@@ -26,7 +26,7 @@ r = []
 while ii < length(yeast_250ml_flask)
 
   produce
-      y = 1 "Yeast aliquot" from flask[ii]
+      y = 1 "Yeast Competent Aliquot" from flask[ii]
   end
   
   r = append(r,y[:id])
