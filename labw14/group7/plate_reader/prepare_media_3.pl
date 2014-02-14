@@ -1,5 +1,5 @@
 argument
-  media_id: object, "Please selct the glucose media which you would add antibiotics to"
+  media_name: object, "Please selct the glucose media which you would add antibiotics to"
   antibios: string array, "Please choose the antiobiotics you would like to add. Enter 'amp' for '100X 1 mL Ampicillin Aliquot', 'kan' for '200X 1 mL Kanamycin Aliquot', or 'chlor' for '1000X 1 mL Chloramphenicol Aliquot'"
   dilutions: number array, "Please choose the dilution factors for each antibiotic selected above, where the ratio of antibiotic:media is 1:x"
   total_volume: number, "The desired total volume in mL (<50mL)"
@@ -12,7 +12,7 @@ end
 
 take
  media_tube = 1 "50 mL Falcon Tube"
- media = 1 media_id
+ media = 1 media_name
  #media[:id] == media_base
  pipette = 1 "Serological Pipette"
  tips = 1 "25 mL Serological Pipette Tips"
@@ -46,7 +46,7 @@ while i<length(antibios)
   i=i+1
 end
 
-media_name=media[:name]
+#media_name == media[0][:name]
 step
   description: "Prepare %{total_volume} mL of media with the desired antibiotics"
   check: "Attach the 25mL tip to the serological pipetter"
