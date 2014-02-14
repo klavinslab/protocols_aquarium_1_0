@@ -1,36 +1,57 @@
 argument
-  media: object, "The media to use"
-  antibios: object, "The antiobiotics to add"
-  dilution: number array, "An array of dilution factors for each antibiotic, where the ratio of antibiotic:media is 1:x"
+  glucose_media: object, "Please selct the glucose media which you would add antibiotics to"
+  antibios: string array, "Please choose the antiobiotics you would like to add. Enter 'amp' for '100X 1 mL Ampicillin Aliquot', 'kan' for '200X 1 mL Kanamycin Aliquot', or 'chlor' for '1000X 1 mL Chloramphenicol Aliquot'"
+  dilutions: number array, "Please choose the dilution factors for each antibiotic selected above, where the ratio of antibiotic:media is 1:x"
   volume: number, "The desired total volume in mL (<50mL)"
   #can we force the same lengths of array? oherwise return error.
 end
 
+#if length(antibios) != length(dilutions)
+  #make some error and abort
+#end
+
 take
  media_tube = 1 "50 mL Falcon Tube"
- antibios = item array antibios #check this!
- media = item media
+ media = item glucose_media
  #media[:id] == media_base
- 
  pipette = 1 "Serological Pipette"
  tips = 1 "25 mL Serological Pipette Tips"
 end
 
 i=0
-antibio_volume = []
-for i<length(antibios)
+antibio_volume = []#the volumes of antibiotic solutions in uL
+antibio_objects = []#the object references (an array of json tables) of each antibiotic
+while i<length(antibios)
   antibio_volume[i] = total_volume/dilution[i]*1000
+  antibio_abr = antibios[i]
+  if antibio_abr == "amp"
+    take
+      antibio_objects[i] = 1 "100X 1 mL Ampicillin Aliquot"
+    end
+  elseif antibio_abr == "kan"
+    take
+      antibio_objects[i] = 1 "200X 1 mL Kanamycin Aliquot"
+    end
+  elseif antibio_abr == "chlor"
+    take
+      antibio_objects[i] = 1 "1000X 1 mL Chloramphenicol Aliquot"
+    end
+  else
+    #someone entered the wrong choice
+  end
 end
 
+media_name=media[:name]
 step
-  description: "Prepare %{volume} mL of %{media[:name]} media with the desired antibiotics"
+  description: "Prepare %{volume} mL of media with the desired antibiotics"
   check: "Attach the 25mL tip to the serological pipetter"
-  check: "Use the electric serological pipette to add %{volume} mL of %{media[:name]} into the 50mL falcon tube"
+  check: "Use the electric serological pipette to add %{volume} mL of '%{media_name}' into the 50mL falcon tube"
   check: "Dispose of your 25mL serological pipette tip in tip waste"
 end
 
 i=0
-for i<length(antibios)
+while i<length(antibios)
+  
   step
     description: "Add the %{antibios[i][:name]} to the solution"
     check: "Pipette %{antibio_volume[i]} uL of %{antibios[i][:name]} to the solution"
