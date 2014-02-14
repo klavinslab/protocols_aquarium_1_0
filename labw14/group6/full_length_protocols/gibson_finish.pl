@@ -4,5 +4,5 @@ step
 end
 
 produce
-  r = 1 "Gibson Reaction Result" of "pLAB3"
+  r = 1 "Gibson Reaction Result"
 end
