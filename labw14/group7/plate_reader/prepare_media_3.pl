@@ -41,7 +41,7 @@ while i<length(antibios)
     end
   #else #I cannot use the else here, because all of the elseifs did not work.  As is, this would only give an error if it was not 'chlor'
     #someone entered the wrong choice
-  #end
+  end
   antibio_objects = append(antibio_objects, a)
 end
 
