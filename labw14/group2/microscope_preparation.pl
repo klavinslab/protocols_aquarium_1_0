@@ -1,5 +1,5 @@
 argument
-  id: sample ("Microscope Plates"), "Agar cell plate"
+  id: sample ("Transformed E coli Strain"), "Agar cell plate"
 end
 
 take
