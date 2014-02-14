@@ -71,13 +71,15 @@ step
   check: "Press the 50mL Falcon tube to the vortexer for 15 seconds"
 end
 
+#for some reason this release is giving me a bug...
+#release antibio_objects
+
 
 #produce
 # m = 1 "Prepared Media" from media_tube
 # location: "Bench"
 #end
 
-release antibio_objects
 
 #I am not sure what to put in here yet... come back to this later. It would be great to be able to generate a label bu concatenating the antibio_abr[i] and media strings together
 #log
