@@ -18,7 +18,7 @@ end
   
 
 step
-  description: 
+  description:
     "This protocol describes how to run gene assembly of two oligonuleotide stocks."
 end
 
@@ -55,13 +55,12 @@ end
 
 step
   description: "Choose program on the thermal cycler"
-  note: "Click Home then click Saved Protocol, choose Nick folder, choose assembly. Wait for all other groups to load in their samples."
+  note: "Click Home then click Saved Protocol, choose Nick folder, choose assembly."
   image: "thermal_cycler_home"
 end
 
 step
-  description: "When all group samples are loaded, hit 'run' on the thermal cycler and select 50 µL setting."
-  note: "Coordinate with your fellow classmates to put all their samples before hit run."
+  description: "When all the samples are loaded, hit 'run' on the thermal cycler and select 50 µL setting."
   image: "thermal_cycler_select"
 end
 
