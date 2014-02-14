@@ -3,7 +3,7 @@ argument
 end
 
 step
-  desciption: "Prepare the agar film to use on the microscope"
+  description: "Prepare the agar film to use on the microscope"
   note: "Click next to begin this procedure"
 end
 
@@ -19,6 +19,7 @@ step
   bullet: "Using a 10 microL pipetter, pipette 1 microL of our M9 diluted cells into the center of the petri dish"
   note: "it should just look like a small bead of liquid at the center of the petri dish."
 end
+
 step
   description: "Sterilize test tube"
   note: "Using the 140 proof ethanol alcohol spray bottle, and a kimwipe, sterilize the test tube."
