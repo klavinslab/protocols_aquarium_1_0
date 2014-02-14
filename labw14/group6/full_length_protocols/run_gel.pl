@@ -3,7 +3,7 @@ information "Load and run an agarose gel."
 
 argument
   assemblies: sample array, " Select the PCR Results."
-  ladder_one: ladder
+  ladder_one: sample
   fragment_volume: number, "The volume of PCR fragment to load in µL."
 end
 
