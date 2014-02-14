@@ -27,16 +27,20 @@ r   = []
 while ii < length(transformed_yeast_plate)
 
   ind = ind + 1
-  culture_id_num = plate[ii][:id]
+#  culture_id_num = plate[ii][:id]
+  
+#  if ()
+#    take another tube
+#  end
 
   step
-    description: "Making yeast overnight culture tube N%{ind}"
-    bullet: "Using 1000 μl pippete pour 2 ml of YPAD media into the tube N%{ind}."
+    description: "Making yeast overnight culture tube"
+    bullet: "Using 1000 μl pippete pour 2 ml of YPAD media into the tube."
   end
 
   step
-    description: "Inoculating yeast overnight culture %{culture_id_num}"
-    bullet: "Take the %{culture_id_num} yeast plate."
+    description: "Inoculating yeast overnight culture %{plate[ii][:id]}"
+    bullet: "Take the %{plate[ii][:id]} yeast plate."
     bullet: "Find a colony that is not touching any other colony."
     bullet: "Take a 200 μL tip (the one used by the 10-100 μL or 20-200 μL pipettor) by hand."
     bullet: "With the pipette tip, scrape up the colony and then mix it into one of the tube N%{ind}.
