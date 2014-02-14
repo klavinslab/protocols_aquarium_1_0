@@ -7,6 +7,11 @@ end
 
 information "Scarlessly assemble DNA using fragments with terminal homologies."
 
+include "TA_gibson_input.pl"
+  fragment_input=test_input
+  conc_input=test_conc
+end
+
 step
   description: "This protocol prepares Gibson reactions in a strip-well tube."
 end
@@ -15,8 +20,8 @@ num_gibs=length(gibson_pieces)
 
 #two_d_arr = [[1,1],[2,2]]
 
-test_input = [["F1","F2"],["F3","F4"]]
-test_conc = [[2,2],[2,2]]
+#test_input = [["F1","F2"],["F3","F4"]]
+#test_conc = [[2,2],[2,2]]
 
 take
   my_frag_arr = item fragments
@@ -30,9 +35,10 @@ step
 end
 
 y = test_input[0][0]
+z = conc_input[0][0]
 
 step
-  description: "BTW test_input[0][0] = %{y} Grab a 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
+  description: "BTW test_input[0][0] = %{z} uL of %{y} Grab a 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
   check: "Label the right most well with the letters DY"
   check: "Label the left most well with the letter A"
   note: "These wells will be refered to as 1 - 12"
