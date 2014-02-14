@@ -20,12 +20,14 @@ take
   note: "Be sure to grab a tube rack to hold all of the culture tubes"
 end
 
-step
-  description: "Label each of the culture tubes"
-  check: "Label 4 culture tubes with %{plated_cells[0]} R1, %{plated_cells[0]} R2... %{plated_cells[0]} R4"
-  check: "Label 4 culture tubes with %{plated_cells[1]} R1, %{plated_cells[1]} R2... %{plated_cells[1]} R4"
-  check: "Label 4 culture tubes with %{plated_cells[2]} R1, %{plated_cells[2]} R2... %{plated_cells[2]} R4"
-  check: "Label 4 culture tubes with %{plated_cells[3]} R1, %{plated_cells[3]} R2... %{plated_cells[3]} R4"
+i = 0
+while i<strains
+  id = %{plated_cells[i]}
+  step
+    description: "Label the culture tubes"
+    check: "Label 4 culture tubes with %{id} R1, %{id} R2... %{id} R4"
+  end
+  i = i + 1
 end
 
 step
