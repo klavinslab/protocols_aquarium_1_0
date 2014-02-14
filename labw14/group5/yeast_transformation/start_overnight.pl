@@ -29,8 +29,8 @@ while ii < length(transformed_yeast_plate)
   ind = ind + 1
 
   step
-    description: "Making yeast overnight culture tube #%{ind}"
-    note: "Using 1000 μl pippete pour 2 ml of YPAD media into the tube #%{ind}."
+    description: "Making yeast overnight culture tube N%{ind}"
+    note: "Using 1000 μl pippete pour 2 ml of YPAD media into the tube N%{ind}."
   end
 
   step
@@ -38,13 +38,15 @@ while ii < length(transformed_yeast_plate)
     bullet: "Take the %{plate[ii]} yeast plate."
     bullet: "Find a colony that is not touching any other colony."
     bullet: "Take a 200 μL tip (the one used by the 10-100 μL or 20-200 μL pipettor) by hand."
-    bullet: "With the pipette tip, scrape up the colony and then mix it into one of the tube #%{ind}.
+    bullet: "With the pipette tip, scrape up the colony and then mix it into one of the tube N%{ind}.
       Scrape the end of the tip against the wall of the tube below the liquid level to ensure the colony has been deposited."
   end
 
   produce
     y = 1 "Overnight suspension" from plate[ii]
     release test_tube[ii]
+    note: "Write the above id number on the tube's side. Place the tube in the 30 C Shaker Incubator"
+    location:"B13.125"
   end
 
   r = append(r,y[:id])
