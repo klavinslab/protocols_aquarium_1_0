@@ -12,7 +12,7 @@ end
 
 take
  media_tube = 1 "50 mL Falcon Tube"
- media = item media_id
+ media = 1 media_id
  #media[:id] == media_base
  pipette = 1 "Serological Pipette"
  tips = 1 "25 mL Serological Pipette Tips"
