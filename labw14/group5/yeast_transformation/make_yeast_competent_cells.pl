@@ -23,7 +23,7 @@ end
 ii = 0
 r = []
 
-while ii < length(Transformed_yeast_plate)
+while ii < length(yeast_250ml_flask)
 
   produce
       y = 1 "Yeast aliquot" from flask[ii]
