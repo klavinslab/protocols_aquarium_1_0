@@ -21,6 +21,7 @@ while ii < length(yeast_250ml_flask)
   end
 
   take
+    description: "Get the following items"
     falcon_tube = num "50 mL Falcon Tube"
     flask = item yeast_250ml_flask
   end
