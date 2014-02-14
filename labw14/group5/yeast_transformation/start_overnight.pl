@@ -59,4 +59,4 @@ log
 end
 
 #release plate
-release (falcon_tube, plate)
+release concat(falcon_tube, plate)
