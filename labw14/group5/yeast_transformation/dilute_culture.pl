@@ -47,6 +47,7 @@ log
 end
 
 step
+description: "Reselease/Dispose"
 release yeast_suspension_tube
 release pipette
 end
