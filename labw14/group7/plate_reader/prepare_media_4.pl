@@ -37,38 +37,33 @@ while i<length(antibios)
   antibio_volumes = append(antibio_volumes, v)
   antibio_abr = antibios[i]
   if antibio_abr == "amp"
+    antibio_name = "100X 1 mL Ampicillin Aliquot"
     take
-      a = 1 "100X 1 mL Ampicillin Aliquot"
+      a = 1 antibio_name
     end
   end #I wanted to use elseif here but I got a parsing error: "Expected '=' at 'antibio_abr'"
   if antibio_abr == "kan"
+    antibio_name = "200X 1 mL Kanamycin Aliquot"
     take
-      a = 1 "200X 1 mL Kanamycin Aliquot"
+      a = 1 antibio_name
     end
   end
   if antibio_abr == "chlor"
+    antibio_name = "1000X 1 mL Chloramphenicol Aliquot"
     take
-      a = 1 "1000X 1 mL Chloramphenicol Aliquot"
+      a = 1 antibio_name
     end
   #else #I cannot use the else here, because all of the elseifs did not work. As is, this would only give an error if it was not 'chlor'
     #someone entered the wrong choice
   end
-  antibio_objects = append(antibio_objects, a)
-  i=i+1
-end
-
-
-j=0
-while j<length(antibios)
-  antibio_abr = antibios[i]
-  antibio_hash = antibio_objects[j]
-  antibio_name = antibio_hash[:name]
-  v = antibio_volumes[j]
+  
   step
     description: "Add %{antibio_abr} to the solution"
-    check: "Pipette %{antibio_volume} uL of '%{antibio_name}' to the 50mL falcon tube"
+    check: "Pipette %{v} uL of '%{antibio_name}' to the 50mL falcon tube"
   end
-  j=j+1
+  
+  antibio_objects = append(antibio_objects, a)
+  i=i+1
 end
 
 step
