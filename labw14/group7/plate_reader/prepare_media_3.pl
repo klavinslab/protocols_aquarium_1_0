@@ -1,3 +1,4 @@
+#By David Starkebaum and Erik Josberger, 2014/02/13
 argument
   media_name: object, "Please selct the glucose media which you would add antibiotics to"
   antibios: string array, "Please choose the antiobiotics you would like to add. Enter 'amp' for '100X 1 mL Ampicillin Aliquot', 'kan' for '200X 1 mL Kanamycin Aliquot', or 'chlor' for '1000X 1 mL Chloramphenicol Aliquot'"
@@ -15,14 +16,14 @@ take
  media = 1 media_name
  #media[:id] == media_base
  pipette = 1 "Serological Pipette"
- tips = 1 "25 mL Serological Pipette Tips"
+ tip = 1 "25 mL Serological Pipette Tips"
 end
 
 i=0
 antibio_volumes = []#the volumes of antibiotic solutions in uL
 antibio_objects = []#the object references (an array of json tables) of each antibiotic
 while i<length(antibios)
-  v = total_volume/dilutions[i]*1000
+  v = total_volume*1000/dilutions[i]
   antibio_volumes = append(antibio_volumes, v)
   antibio_abr = antibios[i]
   if antibio_abr == "amp"
@@ -48,22 +49,24 @@ end
 
 #media_name == media[0][:name]
 step
-  description: "Prepare %{total_volume} mL of media with the desired antibiotics"
+  description: "Add media to the falcon tube"
   check: "Attach the 25mL tip to the serological pipetter"
   check: "Use the electric serological pipette to add %{total_volume} mL of '%{media_name}' into the 50mL falcon tube"
   check: "Dispose of your 25mL serological pipette tip in tip waste"
 end
 
-i=0
-while i<length(antibios)
+release concat(media, pipette)
+
+j=0
+while j<length(antibios)
   antibio_abr = antibios[i]
-  antibio_name = antibio_objects[i][:name]
-  v = antibio_volumes[i]
+  antibio_name = antibio_objects[j][:name]
+  v = antibio_volumes[j]
   step
     description: "Add %{antibio_abr} to the solution"
     check: "Pipette %{antibio_volume} uL of '%{antibio_name}' to the 50mL falcon tube"
   end
-  i=i+1
+  j=j+1
 end
 
 step
@@ -77,7 +80,7 @@ end
 #  location: "Bench"
 #end
 
-release concat(media, antibio_objects)
+release antibio_objects
 
 #I am not sure what to put in here yet... come back to this later.  It would be great to be able to generate a label bu concatenating the antibio_abr[i] and media strings together
 #log
