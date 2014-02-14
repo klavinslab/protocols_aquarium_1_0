@@ -68,7 +68,7 @@ place CLEAN
   window: hours(1)
 end
 
-wire (OLBG, "glycerol") => (GM9, "id")
+wire (OLBG, "ons") => (GM9, "id")
 
 transition [OLBG] => [MSI, GM9] when !error(0) && completed(0) end
 transition [OLBG] => [OLBG] when error(0) end
