@@ -50,11 +50,11 @@ step
 end
 
 step
-  description: "Place the tube into thermal cycler T2 at B3.335"
+  description: "Place the tube into thermal cycler T2 at B3.335."
 end
 
 step
-  description: "Choose program on the thermal cycler"
+  description: "Choose program on the thermal cycler."
   note: "Click Home then click Saved Protocol, choose Nick folder, choose assembly."
   image: "thermal_cycler_home"
 end
