@@ -22,7 +22,7 @@ end
 
 i = 0
 while i<strains
-  id = %{plated_cells[i]}
+  id = plated_cells[i]
   step
     description: "Label the culture tubes"
     check: "Label 4 culture tubes with %{id} R1, %{id} R2... %{id} R4"
