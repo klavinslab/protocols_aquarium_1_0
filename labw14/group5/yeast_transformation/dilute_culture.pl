@@ -47,4 +47,4 @@ log
 end
 
 release yeast_suspension_tube
-release (media_bottle, serological_pipette, pipette)
+release concat(media_bottle, serological_pipette, pipette)
