@@ -7,7 +7,7 @@ end
 
 information "Scarlessly assemble DNA using fragments with terminal homologies."
 
-include "TA_gibson_input.pl"
+include "cloning/assembly_digest/TA_gibson_input.pl"
   fragment_input=test_input
   conc_input=test_conc
 end
