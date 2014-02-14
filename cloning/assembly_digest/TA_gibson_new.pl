@@ -15,15 +15,17 @@ num_gibs=length(gibson_pieces)
 
 #two_d_arr = [[1,1],[2,2]]
 
-test_input = [{:F1=>2}, {:F2=>2}, {:F3=>2}, {:F4=>2}]
+test_input = [["F1","F2"],["F3","F4"]]
 
 take
   my_frag_arr = item fragments
   master_mix = 1 "Gibson Aliquot"
 end
 
+x = length(test_input)
+
 step
-  description: "The first element in the array of hashes is %{two_d_arr[0]}"
+  description: "The first element in the array of hashes is %{test_input[0][0]} the length of the thing is %x"
 end
 
 step
