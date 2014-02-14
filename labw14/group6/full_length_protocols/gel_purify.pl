@@ -58,7 +58,7 @@ QG_volume1 = 3 * gel_weight1
 QG_volume2 = 3 * gel_weight2
 
 QG_volume_plus = QG_volume1 + 100
-QG_volume_plus = QG_volume2 + 100
+
 
 step
   description: "Purification"
@@ -83,7 +83,7 @@ end
 
 step
   description: "Add each tube content to seperate labeled QIAquick Spin columns"
-  note: "Tube content volume shoud be around %{QG_volume_plus1} µL."
+  note: "Tube content volume shoud be around %{QG_volume_plus} µL."
 end
 
 step
