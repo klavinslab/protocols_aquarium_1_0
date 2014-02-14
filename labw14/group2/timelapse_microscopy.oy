@@ -72,7 +72,8 @@ wire (OLBG, "ons") => (GM9, "id")
 
 transition [OLBG] => [MSI, GM9] when !error(0) && completed(0) end
 transition [OLBG] => [OLBG] when error(0) end
-transition [MSI, GM9] => [AGAR] when !error(0) && completed(0) end
+transition [GM9] => [AGAR] when !error(0) && completed(0) end
+transition [MSI] => [] when error(0) end
 transition [MSI] => [MSI] when error(0) end
 transition [GM9] => [GM9] when error(0) end
 transition [AGAR] => [MSPR] when !error(0) && completed(0) end
