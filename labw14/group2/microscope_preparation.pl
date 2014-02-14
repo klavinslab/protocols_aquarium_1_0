@@ -62,3 +62,6 @@ step
   note: "Click next to procede to the next protocol"
 end
 
+log
+  return: {plate: id[:id]}
+end
