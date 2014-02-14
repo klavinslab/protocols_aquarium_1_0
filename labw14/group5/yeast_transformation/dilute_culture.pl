@@ -19,13 +19,13 @@ end
 step
  description: "Collect yeast overnight suspension tubes"
  note: "Take %{num} yeast overnight suspension tube(s) out of the 30C shaker (location: B13.125)
-     and put the tube(s) into a tube holder on your bench"
+     and put the tube(s) into a tube holder on your bench."
 end
 
 step
  description: "Diluting cells in YPD"
  note: "Pour 25 mil of YPAD into flask. Then, pipette 500 μL of the yeast overnight suspension cultrue into the flask."
- bullet: "Label the flask with your initials and date"
+ bullet: "Label the flask with your initials and date."
 end
 
 ii = 0
@@ -46,6 +46,5 @@ log
   return: { yeast_250ml_flask: r }
 end
 
-release yeast_suspension_tube
-release pipette
+release (yeast_suspension_tube, pipette)
 release concat(media_bottle, serological_pipette)
