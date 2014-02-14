@@ -43,7 +43,7 @@ while ii < length(transformed_yeast_plate)
   end
 
   produce
-    y = 1 "Overnight suspension" from plate[ii]
+    y = 1 "Yeast Overnight Suspension" from plate[ii]
     release test_tube[ii]
     note: "Write the above id number on the tube's side. Place the tube in the 30 C Shaker Incubator"
     location:"B13.125"
