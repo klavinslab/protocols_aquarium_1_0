@@ -75,7 +75,9 @@ produce
 
 end
 
-release concat (primer1_stock,primer2_stock,masterstock)
+release primer1_stock
+release primer2_stock
+release masterstock
 
 log
   return: { gene: new_gene  }
