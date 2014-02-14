@@ -37,7 +37,7 @@ while i<length(antibios)
   end
   if antibio_abr == "chlor"
     take
-      antibio_objects[i] = 1 "1000X 1 mL Chloramphenicol Aliquot"
+      a = 1 "1000X 1 mL Chloramphenicol Aliquot"
     end
   #else #I cannot use the else here, because all of the elseifs did not work.  As is, this would only give an error if it was not 'chlor'
     #someone entered the wrong choice
