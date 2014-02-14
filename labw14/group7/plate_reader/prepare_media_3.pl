@@ -43,6 +43,7 @@ while i<length(antibios)
     #someone entered the wrong choice
   end
   antibio_objects = append(antibio_objects, a)
+  i=i+1
 end
 
 media_name=media[:name]
@@ -62,6 +63,7 @@ while i<length(antibios)
     description: "Add %{antibio_abr} to the solution"
     check: "Pipette %{antibio_volume} uL of '%{antibio_name}' to the 50mL falcon tube"
   end
+  i=i+1
 end
 
 step
