@@ -1,3 +1,3 @@
-fragment_input = [["F1","F2"],["F3","F4"]]
-conc_input = [[2,2],[2,2]]
+fragment_input = [23631,23632,23633,23634]
+conc_input = [[2,3],[3,2]]
 
