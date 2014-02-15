@@ -17,7 +17,7 @@ end
 
 step
   description: "Preparing yeast overnight culture tubes"
-  note: "Label  %{num}  14ml falcon tubes with your name and today's date"
+  note: "Label  %{num}  14ml falcon tubes with your name and today's date %{transformed_yeast_plate[ii]}"
 end
 
 ii  = 0
@@ -39,7 +39,7 @@ while ii < length(transformed_yeast_plate)
 
   step
     description: "Inoculating yeast overnight culture" # %{transformed_yeast_plate[ii]}"
-    bullet: "Take the %{transformed_yeast_plate[ii]} yeast plate."
+    bullet: "Take the yeast plate."
     bullet: "Find a colony that is not touching any other colony."
     bullet: "Take a 200 μL tip (the one used by the 10-100 μL or 20-200 μL pipettor) by hand."
     bullet: "With the pipette tip, scrape up the colony and then mix it into one of the tube N%{ind}.
