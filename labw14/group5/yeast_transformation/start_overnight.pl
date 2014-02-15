@@ -38,7 +38,7 @@ while ii < length(transformed_yeast_plate)
   end
 
   step
-    description: "Inoculating yeast overnight culture %{transformed_yeast_plate[ii]}"
+    description: "Inoculating yeast overnight culture" # %{transformed_yeast_plate[ii]}"
     bullet: "Take the %{transformed_yeast_plate[ii]} yeast plate."
     bullet: "Find a colony that is not touching any other colony."
     bullet: "Take a 200 μL tip (the one used by the 10-100 μL or 20-200 μL pipettor) by hand."
