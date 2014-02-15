@@ -17,7 +17,7 @@ end
 
 step
   description: "Preparing yeast overnight culture tubes"
-  note: "Label  %{num}  14ml falcon tubes with your name and today's date %{transformed_yeast_plate[ii]}"
+  note: "Label  %{num}  14ml falcon tubes with your name and today's date %{transformed_yeast_plate[0]}"
 end
 
 ii  = 0
