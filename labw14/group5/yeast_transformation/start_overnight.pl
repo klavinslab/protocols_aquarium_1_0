@@ -4,8 +4,6 @@ end
 
 num = length(transformed_yeast_plate)
 
-id_num = transformed_yeast_plate[:id]
-
 step
  description: "This protocol describes how to make an overnight yeast suspension"
  warning: "You're going to make %{num} overnight suspension tubes."
@@ -28,7 +26,7 @@ r   = []
 
 while ii < length(transformed_yeast_plate)
 
-  #id_num = transformed_yeast_plate[ii][:id]
+  id_num = plate[ii][:id]
   
   ind = ii + 1
 
@@ -42,7 +40,7 @@ while ii < length(transformed_yeast_plate)
   end
 
   step
-    description: "Inoculating yeast overnight culture form a plate with id"
+    description: "Inoculating yeast overnight culture form a plate with id %{id_num}"
     bullet: "Take a yeast plate with id  %{transformed_yeast_plate}."
     bullet: "Find a colony that is not touching any other colony."
     bullet: "Take a 200 μL tip (the one used by the 10-100 μL or 20-200 μL pipettor) by hand."
