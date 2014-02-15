@@ -1,5 +1,5 @@
 argument
-  transformed_yeast_plate: sample array, "A plate with yeast colonies"
+  transformed_yeast_plate: sample, "A plate with yeast colonies"
 end
 
 num = length(transformed_yeast_plate)
@@ -26,7 +26,7 @@ r   = []
 
 while ii < length(transformed_yeast_plate)
 
-  id_num = transformed_yeast_plate[ii][:id]
+  #id_num = transformed_yeast_plate[ii][:id]
 
 #  if ()
 #    take another tube
@@ -39,7 +39,7 @@ while ii < length(transformed_yeast_plate)
 
   step
     description: "Inoculating yeast overnight culture form a plate with id"
-    bullet: "Take a yeast plate with id  %{id_num}."
+    bullet: "Take a yeast plate with id  %{transformed_yeast_plate}."
     bullet: "Find a colony that is not touching any other colony."
     bullet: "Take a 200 μL tip (the one used by the 10-100 μL or 20-200 μL pipettor) by hand."
     bullet: "With the pipette tip, scrape up the colony and then mix it into one of the tube N%{ind}.
