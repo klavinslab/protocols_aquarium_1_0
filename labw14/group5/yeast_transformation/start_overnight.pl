@@ -6,7 +6,8 @@ num = length(transformed_yeast_plate)
 
 step
  description: "This protocol describes how to make an overnight yeast suspension"
- warning: "You're going to make %{num} overnight suspension tubes"
+ warming: "%{transformed_yeast_plate}"
+ #warning: "You're going to make %{num} overnight suspension tubes"
 end
 
 take
@@ -17,7 +18,7 @@ end
 
 step
   description: "Preparing yeast overnight culture tubes"
-  note: "Label  %{num}  14ml falcon tubes with your name and today's date %{transformed_yeast_plate[0]}"
+  note: "Label  %{num}  14ml falcon tubes with your name and today's date"
 end
 
 ii  = 0
