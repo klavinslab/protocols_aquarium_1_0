@@ -2,7 +2,7 @@ argument
   transformed_yeast_plate: sample, "A plate with yeast colonies"
 end
 
-#num = length(transformed_yeast_plate)
+num = 1 # length(transformed_yeast_plate)
 
 step
  description: "This protocol describes how to make an overnight yeast suspension"
