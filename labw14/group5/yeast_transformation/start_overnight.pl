@@ -6,7 +6,7 @@ num = length(transformed_yeast_plate)
 
 step
  description: "This protocol describes how to make an overnight yeast suspension"
- check: "%{transformed_yeast_plate}"
+ check: "%{transformed_yeast_plate[0]}"
  #warning: "You're going to make %{num} overnight suspension tubes"
 end
 
