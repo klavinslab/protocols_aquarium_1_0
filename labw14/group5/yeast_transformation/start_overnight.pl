@@ -2,7 +2,7 @@ argument
   transformed_yeast_plate: sample, "A plate with yeast colonies"
 end
 
-num = length(transformed_yeast_plate)
+#num = length(transformed_yeast_plate)
 
 step
  description: "This protocol describes how to make an overnight yeast suspension"
@@ -24,7 +24,7 @@ ii  = 0
 ind = 0
 r   = []
 
-while ii < length(transformed_yeast_plate)
+while ii < 1 #length(transformed_yeast_plate)
 
   #id_num = transformed_yeast_plate[ii][:id]
 
