@@ -12,5 +12,5 @@ produce
 end
 
 log
-  return: { working_fragments: master_stock  }
+  return: { primer_pool: master_stock  }
 end
