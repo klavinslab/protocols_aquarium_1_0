@@ -12,5 +12,5 @@ produce
 end
 
 log
-  return: { primer_pool: master_stock  }
+  return: { master_stock: master_stock  }
 end
