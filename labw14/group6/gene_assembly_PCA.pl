@@ -12,5 +12,5 @@ produce
 end
 
 log
-  return: { gene: master_stock  }
+  return: { PCR_Result_id: master_stock[:id]}
 end
