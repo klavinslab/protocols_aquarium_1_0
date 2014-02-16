@@ -142,7 +142,7 @@ end
 
 #Wires are a place-holder for now, totally nonesense currently
 
-wire (stock1, "primer_pool") => (assembly1, "oligo_pool11")
+
 wire (stock2, "primer_pool") => (assembly1, "oligo_pool12")
 wire (stock3, "primer_pool") => (assembly2, "oligo_pool21")
 wire (stock4, "primer_pool") => (assembly2, "oligo_pool22")
