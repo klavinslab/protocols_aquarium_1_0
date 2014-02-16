@@ -70,8 +70,6 @@ place assembly1
   window: minutes(30)
 end
 
-
-
 place assembly2
   protocol: "labw14/group6/gene_assembly_PCA.pl"
   argument
@@ -87,8 +85,8 @@ wire (stock2, "Primer_Pool_id") => (assembly1, "oligo_pools")
 wire (stock3, "Primer_Pool_id") => (assembly2, "oligo_pools")
 wire (stock4, "Primer_Pool_id") => (assembly2, "oligo_pools")
 
-place run_gel_image
-  protocol: "labw14/group6/run_gel_gene_assembly.pl"
+place run_gel
+  protocol: "labw14/group6/run_gel.pl"
   group: aquarium_user
   argument
     assemblies: [assembly1_product, assembly2_product]
@@ -97,8 +95,11 @@ place run_gel_image
   window: minutes(30)
 end
 
-place cut_gel
-  protocol: "labw14/group6/cut_gel.pl"
+wire (assembly1, "PCR_Result_id") => (run_gel, "assemblies")
+wire (assembly2, "PCR_Result_id") => (run_gel, "assemblies")
+
+place image_cut_gel
+  protocol: "labw14/group6/image_cut_gel.pl"
   group: aquarium_user
   argument
     fragment_gel_lanes: fragment_gel_lanes
@@ -106,6 +107,8 @@ place cut_gel
   start: now()
   window: minutes(30)
 end
+
+wire (run_gel, "Fragment_Gel_Lanes_id") => (image_cut_gel, "fragment_gel_lanes")
 
 place gel_purify
   protocol: "labw14/group6/gel_purify.pl"
@@ -117,6 +120,9 @@ place gel_purify
   window: minutes(30)
 end
 
+
+wire (image_cut_gel, "Gel_Slices_id") => (gel_purify, "gel_slices")
+
 place gibson
   protocol: "labw14/group6/gibson_assembly.pl"
   group: aquarium_user
@@ -126,6 +132,8 @@ place gibson
   start: now()
   window: minutes(1)
 end
+
+wire (gel_purify, "Purified_Fragments_id") => (gibson, "purified_fragments")
 
 #place transformation
   #protocol: "labw14/group6/e_coli_transformation.pl"
@@ -150,12 +158,6 @@ end
 
 
 
-wire (assembly1, "gene") => (run_gel_image, "assembly1_product")
-wire (assembly2, "gene") => (run_gel_image, "assembly2_product")
-wire (run_gel_image, "fragment_gel_lanes") => (cut_gel, "fragment_gel_lanes")
-wire (cut_gel, "gel_slices") => (gel_purify, "gel_slices")
-wire (gel_purify, "purified_fragments") => (gibson, "purified_fragments")
-
 
 transition [ stock1, stock2 ] => [ assembly1 ] when !error(0) && completed(0) && !error(1) && completed(1) end
 transition [ stock1 ] => [ stock1 ] when error(0) end
@@ -165,21 +167,22 @@ transition [ stock3, stock4 ] => [ assembly2 ] when !error(0) && completed(0) &&
 transition [ stock3 ] => [ stock3 ] when error(0) end
 transition [ stock4 ] => [ stock4 ] when error(0) end
 
-transition [ assembly1, assembly2 ] => [ run_gel_image ] when !error(0) && completed(0) && !error(1) && completed(1) end
+transition [ assembly1, assembly2 ] => [ run_gel ] when !error(0) && completed(0) && !error(1) && completed(1) end
 transition [ assembly1 ] => [ assembly1 ] when error(0) end
 transition [ assembly2 ] => [ assembly2 ] when error(0) end
 
-transition [ run_gel_image ] => [ cut_gel ] when !error(0) && completed(0) end
-transition [ run_gel_image ] => [ run_gel_image ] when error(0) end
+transition [ run_gel ] => [ image_cut_gel ] when !error(0) && completed(0) end
+transition [ run_gel ] => [ run_gel ] when error(0) end
 
-transition [ cut_gel ] => [ gel_purify ] when !error(0) && completed(0) end
-transition [ cut_gel ] => [ cut_gel ] when error(0) end
+transition [ image_cut_gel ] => [ gel_purify ] when !error(0) && completed(0) end
+transition [ image_cut_gel ] => [ image_cut_gel ] when error(0) end
 
 transition [ gel_purify ] => [ gibson ] when !error(0) && completed(0) end
 transition [ gel_purify ] => [ gel_purify ] when error(0) end
 
 transition [ gibson ] => [] when !error(0) && completed(0) end
 transition [ gibson ] => [ gibson ] when error(0) end
+
 
 #transition [ transformation ] => [ plate ] when !error(0) && completed(0) end
 #transition [ transformation ] => [ transformation ] when error(0) end
