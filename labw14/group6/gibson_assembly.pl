@@ -8,5 +8,4 @@ end
 
 produce
   r = 1 "Gibson Reaction Result"
-  release x
 end
