@@ -9,9 +9,8 @@ end
 produce
   r = 2 "Purified Fragments" 
   location: "Bench"
-  release gel_slices
 end
 
 log
-  return: {Purified_Fragments_id: r[:id]}
+  return: { Purified_Fragments_id: r[:id]}
 end
