@@ -1,5 +1,5 @@
 argument
-  gel: sample, "The gel lane you got after run the gel"
+  fragment_gel_lanes: sample, "The gel lane you got after run the gel"
 end
 
 step
@@ -7,10 +7,10 @@ step
 end
 
 produce
-  r = 1 "Gel Slice"
+  r = 1 "Gel Slices"
   release y
 end
 
 log
-  return: {Gel_Slice_id: r[:id]}
+  return: {Gel_Slices_id: r[:id]}
 end
