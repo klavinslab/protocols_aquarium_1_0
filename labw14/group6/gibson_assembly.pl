@@ -1,6 +1,5 @@
 argument
-  fragment1: sample, "Fragment stock 1 for Gibson reaction"
-  fragment2: sample, "Fragment stock 2 for Gibson reaction"
+  purified_fragments: sample array, "Select the two purified fragments for Gibson reaction"
 end
 
 step
