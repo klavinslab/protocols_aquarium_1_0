@@ -71,6 +71,9 @@ place assembly1
 end
 
 wire (stock1, "primer_pool") => (assembly1, "oligo_pools")
+wire (stock2, "primer_pool") => (assembly1, "oligo_pools")
+wire (stock3, "primer_pool") => (assembly2, "oligo_pools")
+wire (stock4, "primer_pool") => (assembly2, "oligo_pools")
 
 place assembly2
   protocol: "labw14/group6/gene_assembly_PCA.pl"
@@ -81,6 +84,8 @@ place assembly2
   start: now()
   window: minutes(30)
 end
+
+wire (stock1, "primer_pool") => (assembly1, "oligo_pools")
 
 place run_gel_image
   protocol: "labw14/group6/run_gel_gene_assembly.pl"
@@ -144,9 +149,7 @@ end
 #Wires are a place-holder for now, totally nonesense currently
 
 
-wire (stock2, "primer_pool") => (assembly1, "oligo_pool12")
-wire (stock3, "primer_pool") => (assembly2, "oligo_pool21")
-wire (stock4, "primer_pool") => (assembly2, "oligo_pool22")
+
 wire (assembly1, "gene") => (run_gel_image, "assembly1_product")
 wire (assembly2, "gene") => (run_gel_image, "assembly2_product")
 wire (run_gel_image, "fragment_gel_lanes") => (cut_gel, "fragment_gel_lanes")
