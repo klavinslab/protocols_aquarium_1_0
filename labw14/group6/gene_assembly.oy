@@ -127,7 +127,7 @@ place gibson
   protocol: "labw14/group6/gibson_assembly.pl"
   group: aquarium_user
   argument
-    fragments: purified_fragments + backbone_fragments
+    purified_fragments: purified_fragments + backbone_fragments
   end
   start: now()
   window: minutes(1)
