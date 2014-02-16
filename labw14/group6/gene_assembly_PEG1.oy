@@ -1,0 +1,200 @@
+# Arguments
+#argument
+  #source_oligos1: sample array, "Choose the oligonucleotides you want to combine"
+  #source_oligos2: sample array, "Choose the oligonucleotides you want to combine"
+  #source_oligos3: sample array, "Choose the oligonucleotides you want to combine"
+  #source_oligos4: sample array, "Choose the oligonucleotides you want to combine"  
+  
+#end
+
+#Testing inputs - to save time (remove at end)
+source_oligos1 = [1079, 1080]
+source_oligos2 = [1079, 1080]
+source_oligos3 = [1079, 1080]
+source_oligos4 = [1079, 1080] 
+backbone_fragments = [1141, 1144]
+
+# Places
+place stock1
+  protocol: "labw14/group6/make_master_stock.pl"
+  argument
+    oligonucleotides: source_oligos1
+  end
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+
+place stock2
+  protocol: "labw14/group6/make_master_stock.pl"
+  argument
+    oligonucleotides: source_oligos2
+  end
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+place stock3
+  protocol: "labw14/group6/make_master_stock.pl"
+  argument
+    oligonucleotides: source_oligos3
+  end
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+place stock4
+  protocol: "labw14/group6/make_master_stock.pl"
+  argument
+    oligonucleotides: source_oligos4
+  end
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+place assembly1
+  protocol: "labw14/group6/gene_assembly_PCA.pl"
+  argument
+    oligo_pools: concat(oligo_pool11, oligo_pool12)
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(30)
+end
+
+place assembly2
+  protocol: "labw14/group6/gene_assembly_PCA.pl"
+  argument
+    oligo_pools: concat(oligo_pool21, oligo_pool22)
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(30)
+end
+
+wire (stock1, "Primer_Pool_id") => (assembly1, "oligo_pool11")
+wire (stock2, "Primer_Pool_id") => (assembly1, "oligo_pool12")
+wire (stock3, "Primer_Pool_id") => (assembly2, "oligo_pool21")
+wire (stock4, "Primer_Pool_id") => (assembly2, "oligo_pool22")
+
+place run_gel
+  protocol: "labw14/group6/run_gel.pl"
+  group: aquarium_user
+  argument
+    assemblies: [assembly1_product, assembly2_product]
+  end
+  start: now()
+  window: minutes(30)
+end
+
+wire (assembly1, "PCR_Result_id") => (run_gel, "assemblies")
+wire (assembly2, "PCR_Result_id") => (run_gel, "assemblies")
+
+place image_cut_gel
+  protocol: "labw14/group6/image_cut_gel.pl"
+  group: aquarium_user
+  argument
+    fragment_gel_lanes: fragment_gel_lanes
+  end
+  start: now()
+  window: minutes(30)
+end
+
+wire (run_gel, "Fragment_Gel_Lanes_id") => (image_cut_gel, "fragment_gel_lanes")
+
+place gel_purify
+  protocol: "labw14/group6/gel_purify.pl"
+  group: aquarium_user
+  argument
+    gel_slices: gel_slices
+  end
+  start: now()
+  window: minutes(30)
+end
+
+
+wire (image_cut_gel, "Gel_Slices_id") => (gel_purify, "gel_slices")
+
+place gibson
+  protocol: "labw14/group6/gibson_assembly.pl"
+  group: aquarium_user
+  argument
+    purified_fragments: purified_fragments + backbone_fragments
+  end
+  start: now()
+  window: minutes(1)
+end
+
+wire (gel_purify, "Purified_Fragments_id") => (gibson, "purified_fragments")
+
+#place transformation
+  #protocol: "labw14/group6/e_coli_transformation.pl"
+  #group: aquarium_user
+  #start: now()
+  #window: minutes(1)
+#end
+
+#place plate
+#end
+
+#place overnight
+#end
+
+#place miniprep
+#end
+
+#place sequencing
+#end
+
+#Wires are a place-holder for now, totally nonesense currently
+
+
+
+
+transition [ stock1, stock2 ] => [ assembly1 ] when !error(0) && completed(0) && !error(1) && completed(1) end
+transition [ stock1 ] => [ stock1 ] when error(0) end
+transition [ stock2 ] => [ stock2 ] when error(0) end
+
+transition [ stock3, stock4 ] => [ assembly2 ] when !error(0) && completed(0) && !error(1) && completed(1) end
+transition [ stock3 ] => [ stock3 ] when error(0) end
+transition [ stock4 ] => [ stock4 ] when error(0) end
+
+transition [ assembly1, assembly2 ] => [ run_gel ] when !error(0) && completed(0) && !error(1) && completed(1) end
+transition [ assembly1 ] => [ assembly1 ] when error(0) end
+transition [ assembly2 ] => [ assembly2 ] when error(0) end
+
+transition [ run_gel ] => [ image_cut_gel ] when !error(0) && completed(0) end
+transition [ run_gel ] => [ run_gel ] when error(0) end
+
+transition [ image_cut_gel ] => [ gel_purify ] when !error(0) && completed(0) end
+transition [ image_cut_gel ] => [ image_cut_gel ] when error(0) end
+
+transition [ gel_purify ] => [ gibson ] when !error(0) && completed(0) end
+transition [ gel_purify ] => [ gel_purify ] when error(0) end
+
+transition [ gibson ] => [] when !error(0) && completed(0) end
+transition [ gibson ] => [ gibson ] when error(0) end
+
+
+#transition [ transformation ] => [ plate ] when !error(0) && completed(0) end
+#transition [ transformation ] => [ transformation ] when error(0) end
+
+#transition [ plate ] => [ overnight ] when !error(0) && completed(0) end
+#transition [ plate ] => [ plate ] when error(0) end
+
+#transition [ overnight ] => [ miniprep ] when !error(0) && completed(0) end
+#transition [ overnight ] => [ overnight ] when error(0) end
+
+#transition [ miniprep ] => [ sequencing ] when !error(0) && completed(0) end
+#transition [ miniprep ] => [ miniprep ] when error(0) end
+
+#transition [ sequencing ] => [] when !error(0) && completed(0) end
+#transition [ sequencing ] => [ sequencing ] when error(0) end
