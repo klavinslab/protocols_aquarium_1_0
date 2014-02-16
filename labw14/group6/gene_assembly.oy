@@ -26,7 +26,7 @@ place stock1
   window: minutes(30)
 end
 
-wire (stock1, "primer_pool") => (assembly1, "oligo_pool11")
+wire (stock1, "primer_pool") => (assembly1, "oligo_pools")
 
 place stock2
   protocol: "labw14/group6/make_master_stock.pl"
