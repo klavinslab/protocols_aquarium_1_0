@@ -70,10 +70,7 @@ place assembly1
   window: minutes(30)
 end
 
-wire (stock1, "primer_pool") => (assembly1, "oligo_pools")
-wire (stock2, "primer_pool") => (assembly1, "oligo_pools")
-wire (stock3, "primer_pool") => (assembly2, "oligo_pools")
-wire (stock4, "primer_pool") => (assembly2, "oligo_pools")
+
 
 place assembly2
   protocol: "labw14/group6/gene_assembly_PCA.pl"
@@ -85,7 +82,10 @@ place assembly2
   window: minutes(30)
 end
 
-wire (stock1, "primer_pool") => (assembly1, "oligo_pools")
+wire (stock1, "Primer_Pool_id") => (assembly1, "oligo_pools")
+wire (stock2, "Primer_Pool_id") => (assembly1, "oligo_pools")
+wire (stock3, "Primer_Pool_id") => (assembly2, "oligo_pools")
+wire (stock4, "Primer_Pool_id") => (assembly2, "oligo_pools")
 
 place run_gel_image
   protocol: "labw14/group6/run_gel_gene_assembly.pl"
