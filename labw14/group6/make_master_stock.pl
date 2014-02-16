@@ -12,5 +12,5 @@ produce
 end
 
 log
-  return: { master_stock: master_stock  }
+  return: { Primer_Pool_id: master_stock [:id] }
 end
