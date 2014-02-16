@@ -36,7 +36,8 @@ while ii < length(transformed_yeast_plate)
 
   step
     description: "Making yeast overnight culture tube"
-    bullet: "Using 1000 μl pippete pour 2 ml of YPAD media into the tube."
+    bullet: "Take a 14mL falcon tube."
+    bullet: "Using 1000 μl pippete pour 2 mL of YPAD media into the tube."
   end
 
   step
@@ -51,7 +52,7 @@ while ii < length(transformed_yeast_plate)
   produce
     y = 1 "Yeast Overnight Suspension" from plate[ii]
     release test_tube[ii]
-    note: "Write the above id number on the tube's side. Place the tube in the 30 C Shaker Incubator"
+    note: "Write the above id number on the tube's side. Place the tube in the 30 C Shaker Incubator located at B13.125"
     location:"B13.125"
   end
 
