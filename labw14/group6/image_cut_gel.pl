@@ -7,10 +7,9 @@ step
 end
 
 produce
-  r = 1 "Gel Slices"
-  release y
+  r = 2 "Gel Slices"
 end
 
 log
-  return: {Gel_Slices_id: r[:id]}
+  return: { Gel_Slices_id: r[:id]}
 end
