@@ -26,7 +26,6 @@ place stock1
   window: minutes(30)
 end
 
-x = item master_sock
 
 place stock2
   protocol: "labw14/group6/make_master_stock.pl"
@@ -39,8 +38,6 @@ place stock2
   window: minutes(30)
 end
 
-
-y = item master_stock
 
 place stock3
   protocol: "labw14/group6/make_master_stock.pl"
@@ -84,8 +81,8 @@ place assembly2
   window: minutes(30)
 end
 
-wire (stock1, x) => (assembly1, "oligo_pools")
-wire (stock2, y) => (assembly1, "oligo_pools")
+wire (stock1, "Primer_Pool_id") => (assembly1, "oligo_pools")
+wire (stock2, "Primer_pool_id") => (assembly1, "oligo_pools")
 wire (stock3, "Primer_Pool_id") => (assembly2, "oligo_pools")
 wire (stock4, "Primer_Pool_id") => (assembly2, "oligo_pools")
 
