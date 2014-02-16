@@ -80,7 +80,7 @@ place assembly2
   window: minutes(30)
 end
 
-wire (stock1, stock2, "Primer_Pool_id") => (assembly1, "oligo_pools")
+wire (stock1, stock2, "Primer_Pool_id") => (assembly1, assembly1, "oligo_pools")
 wire (stock3, "Primer_Pool_id") => (assembly2, "oligo_pools")
 wire (stock4, "Primer_Pool_id") => (assembly2, "oligo_pools")
 
