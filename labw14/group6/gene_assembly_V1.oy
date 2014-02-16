@@ -80,10 +80,10 @@ place assembly2
   window: minutes(30)
 end
 
-wire (stock1, "Primer_Pool_id") => (assembly1, "oligo_pool11")
-wire (stock2, "Primer_Pool_id") => (assembly1, "oligo_pool12")
-wire (stock3, "Primer_Pool_id") => (assembly2, "oligo_pool21")
-wire (stock4, "Primer_Pool_id") => (assembly2, "oligo_pool22")
+wire (stock1, "Primer_Pool_id") => (assembly1, "oligo_pools")
+wire (stock2, "Primer_Pool_id") => (assembly1, "oligo_pools")
+wire (stock3, "Primer_Pool_id") => (assembly2, "oligo_pools")
+wire (stock4, "Primer_Pool_id") => (assembly2, "oligo_pools")
 
 place run_gel
   protocol: "labw14/group6/run_gel.pl"
