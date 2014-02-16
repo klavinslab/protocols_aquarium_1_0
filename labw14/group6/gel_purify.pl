@@ -1,5 +1,5 @@
 argument
-  gel: sample array, "Choose the Gel Slices you need to purify."
+  gel_slices: sample array, "Choose the Gel Slices you need to purify."
 end
 
 step
@@ -7,11 +7,11 @@ step
 end
 
 produce
-  r = 2 "Fragment Stock" 
+  r = 2 "Purified Fragments" 
   location: "Bench"
   release gel_slices
 end
 
 log
-  return: {Fragment_Stock_id: r[:id]}
+  return: {Purified_Fragments_id: r[:id]}
 end
