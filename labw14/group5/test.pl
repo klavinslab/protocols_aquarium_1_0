@@ -1,4 +1,4 @@
-vol_data: number array
+vol_data = []
 
 n  = 2
 ii = 0
@@ -11,9 +11,9 @@ while ii < n
     end
   end
   
-  vol_data[ii] = num
+  vol_data = append(vol_data,num)
   
   step
-    description: "Number: %{vol_data[ii]}"
+    description: "Number: %{num}"
   end
 end
