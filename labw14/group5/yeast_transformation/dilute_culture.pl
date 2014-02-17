@@ -42,7 +42,7 @@ while ii < length(yeast_overnight_suspension)
     bullet: "Take a 250mL flask. Label the flask with your initials and date."
     bullet: "Using serological pipette pour 25 mL of YPAD media from the 800 mL YPAD liquid media bottle into the flask."
     bullet: "Then, using 1000 μL pipette pour 500 μL of the yeast overnight suspension culture
-           from the 14mL falcon tube with id %{yeast_suspension_tube} into the flask."
+           from the 14mL falcon tube with id %{id_num} into the flask."
   end
 
   produce
