@@ -52,10 +52,8 @@ while ii < length(yeast_overnight_suspension)
       location:"B13.125"
   end
   
-  step
-    release yeast_suspension_tube
-  end
-  
+  release yeast_suspension_tube
+
   r = append(r,y[:id])
   ii=ii+1
 end
