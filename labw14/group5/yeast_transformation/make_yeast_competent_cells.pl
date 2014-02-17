@@ -58,6 +58,7 @@ end
 ii = 0
 r = []
 
+vol_data = []
 
 while ii < length(yeast_250ml_flask)
 
