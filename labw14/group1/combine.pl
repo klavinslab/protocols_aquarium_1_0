@@ -42,7 +42,7 @@ end
 
 produce
 
-   comb_sample = 1 "Combined Diluted and Denatured PhiX Control and Diluted and Denatured SAmple Library"
+   comb_sample = 1 "Combined Diluted and Denatured PhiX Control and Diluted and Denatured Sample Library"
    location: "Bench"
 end
 
