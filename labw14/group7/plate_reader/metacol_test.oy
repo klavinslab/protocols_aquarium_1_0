@@ -21,7 +21,7 @@ place initial_media
   end
   group: aquarium_user
   start: now()
-  windows: minutes(10)
+  window: minutes(10)
   marked: true
 end
 
@@ -33,7 +33,7 @@ end
 #  end
 #  group: aquarium_user
 #  start: now()
-#  windows: minutes(10)
+#  window: minutes(10)
 #end
 
 
