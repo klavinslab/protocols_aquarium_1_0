@@ -59,7 +59,7 @@ end
 step
 
   description : "Wait for 60 mins"
-  timer: { hours: 0, minutes: 1, seconds: 0 } #Update to 60 min for the actual run
+  timer: { hours: 0, minutes: 60, seconds: 0 }
 end
 
 step
