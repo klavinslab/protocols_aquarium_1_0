@@ -45,10 +45,36 @@ step
           with the corresponding id numbers."
 end
 
+step
+  description: "Wash the cells. Continue"
+  check: "Centrifuge all the 1.5mL tubes for 1 min in a mini-centrifuge located on your bench."
+  check: "Pour out the supernatant."
+  check: "Add 1mL of the 100mM LiOAc liquid to each 1.5mL tube and resuspend the cells by vortexing."
+  check: "Centrifuge all the 1.5mL tubes for 1 min in a mini-centrifuge located on your bench."
+  check: "Pour out the supernatant."
+end
 
 
 ii = 0
 r = []
+
+
+while ii < length(yeast_250ml_flask)
+
+  id_num = yeast_250ml_flask[ii]  
+  step
+    description: "Resuspending the cells in the tube %{id_num}"
+    note: "Estimate the approximate volume of the pellet in the tube %{id_num}."
+    getdata
+      n: number, "Estimated volume of the pellet"
+    end
+    check: "Add 4 pellet volumes of 100mM LiOAc liquid to the tube and resuspend the cells by vortxing."
+  end
+
+end
+
+
+ii = 0
 
 
 while ii < length(yeast_250ml_flask)
