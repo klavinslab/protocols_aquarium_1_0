@@ -2,7 +2,9 @@ m = 51
 
 n = 50
 
+res = m*4/n
+
 step
-  description: "%{57*4}"
+  description: "%{res}"
 end
 
