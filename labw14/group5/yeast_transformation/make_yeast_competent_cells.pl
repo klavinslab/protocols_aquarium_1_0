@@ -71,7 +71,7 @@ while ii < length(yeast_250ml_flask)
     end
     check: "Add 4 pellet volumes of 100mM LiOAc liquid to the tube and resuspend the cells by vortxing."
   end
-
+  vol_data = append(vol_data,n)
 end
 
 
