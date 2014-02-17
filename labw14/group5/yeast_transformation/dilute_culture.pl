@@ -43,6 +43,7 @@ while ii < length(yeast_overnight_suspension)
     bullet: "Using serological pipette pour 25 mL of YPAD media from the 800 mL YPAD liquid media bottle into the flask."
     bullet: "Then, using 1000 μL pipette pour 500 μL of the yeast overnight suspension culture
            from the 14mL falcon tube with id %{id_num} into the flask."
+    warning: "Be sterile as far as possible. YPAD media gets easily contaminated."
   end
 
   produce
