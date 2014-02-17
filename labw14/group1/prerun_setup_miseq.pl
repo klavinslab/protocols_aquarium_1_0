@@ -43,7 +43,7 @@ end
 
 take
   
-  cartridge1 = 1 "Reagent Cartridge"
+  cartridge1 = 1 "MiSeq Reagent Cartridge"
   
 end
 
