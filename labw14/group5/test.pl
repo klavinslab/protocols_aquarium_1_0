@@ -7,9 +7,11 @@ while ii < n
   step
     description: "Type number"
     getdata
-      vol_data[ii]: number, "Number"
+      num: number, "Number"
     end
   end
+  
+  vol_data[ii] = num
   
   step
     description: "Number: %{vol_data[ii]}"
