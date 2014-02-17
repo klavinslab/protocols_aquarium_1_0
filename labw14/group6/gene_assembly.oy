@@ -133,32 +133,71 @@ place gibson
     fragment2: backbone_fragments
   end
   start: now()
-  window: minutes(1)
+  window: minutes(30)
 end
 
 wire (gel_purify, "Fragment_Stock_id") => (gibson, "purified_fragments")
 
 place transformation
   protocol: "labw14/group6/full_length_protocols/e_coli_transformation.pl"
+  argument
+    plasmid_id: gibson_result
+  end
   group: aquarium_user
   start: now()
-  window: minutes(1)
+  window: minutes(30)
 end
 
-wire (gibson, "
+wire (gibson, "Gibson_Result") => (transformation, "gibson_result")
 
-#place plate
-#end
+place plate
+  protocol: "labw14/group6/full_length_protocols/plate.pl"
+  argument
+    e_coli_strain_id: strain_id
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(30)
+end
 
-#place overnight
-#end
+wire (transformation, "transformed_cells_id") => (plate, "strain_id")
 
-#place miniprep
-#end
+place overnight
+  protocol: "labw14/group6/full_length_protocols/overnight_suspension.pl"
+  argument
+    colony_plate: plate
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(30)
+end
 
-#place sequencing
-#end
+wire (plate, "plate_id") => (overnight, "plate")
 
+place miniprep
+  protocol: "labw14/group6/full_length_protocols/miniprep.pl"
+  argument
+  
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(30)
+end
+
+# Wire here
+
+
+place sequencing
+  protocol: "labw14/group6/full_length_protocols/sequencing.pl"
+  argument
+
+  end
+  start: now()
+  window: minutes(30)
+end
+
+
+# Wire here
 #Wires are a place-holder for now, totally nonesense currently
 
 
@@ -189,17 +228,17 @@ transition [ gibson ] => [] when !error(0) && completed(0) end
 transition [ gibson ] => [ gibson ] when error(0) end
 
 
-#transition [ transformation ] => [ plate ] when !error(0) && completed(0) end
-#transition [ transformation ] => [ transformation ] when error(0) end
+transition [ transformation ] => [ plate ] when !error(0) && completed(0) end
+transition [ transformation ] => [ transformation ] when error(0) end
 
-#transition [ plate ] => [ overnight ] when !error(0) && completed(0) end
-#transition [ plate ] => [ plate ] when error(0) end
+transition [ plate ] => [ overnight ] when !error(0) && completed(0) end
+transition [ plate ] => [ plate ] when error(0) end
 
-#transition [ overnight ] => [ miniprep ] when !error(0) && completed(0) end
-#transition [ overnight ] => [ overnight ] when error(0) end
+transition [ overnight ] => [ miniprep ] when !error(0) && completed(0) end
+transition [ overnight ] => [ overnight ] when error(0) end
 
-#transition [ miniprep ] => [ sequencing ] when !error(0) && completed(0) end
-#transition [ miniprep ] => [ miniprep ] when error(0) end
+transition [ miniprep ] => [ sequencing ] when !error(0) && completed(0) end
+transition [ miniprep ] => [ miniprep ] when error(0) end
 
-#transition [ sequencing ] => [] when !error(0) && completed(0) end
-#transition [ sequencing ] => [ sequencing ] when error(0) end
+transition [ sequencing ] => [] when !error(0) && completed(0) end
+transition [ sequencing ] => [ sequencing ] when error(0) end
