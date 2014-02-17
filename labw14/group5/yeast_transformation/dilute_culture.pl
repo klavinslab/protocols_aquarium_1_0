@@ -6,6 +6,10 @@ take
  item yeast_overnight_suspension[0]
 end
 
+take
+ item yeast_overnight_suspension[1]
+end
+
 
 num = length(yeast_overnight_suspension)
 
