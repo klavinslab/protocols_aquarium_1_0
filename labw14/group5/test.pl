@@ -14,7 +14,7 @@ while ii < n
   vol_data = append(vol_data,num)
   
   step
-    description: "Number: %{vol_data[0][:id]}"
+    description: "Number: vol_data[0][:id]"
   end
   
   ii = ii + 1
