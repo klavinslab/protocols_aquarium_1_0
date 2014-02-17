@@ -11,19 +11,47 @@ step
 end
 
 take
-  description: "Get the following items:"
   falcon_tube = num "50 mL Falcon Tube"
   flask = item yeast_250ml_flask
 end
 
+
+step
+  description: "Harvest the cells by centrifugation"
+  check: "Label 50mL falcon tubes with the id number of the 250mL flasks, so that each tube has
+          the same number as one the flasks."
+  check: "Transfer 25mL of the diluted yeast culture from each flask to the 50mL falcon tube with the same id number."
+end
+
+step
+  description: "Centfifuge the tubes"
+  check: "Centfifuge all the 50mL tubes with yeast liquid culture for 5 min at 3000 x g
+          in the table top centrifuge located at B3.355 (or B1.340???)."
+  warning: "Be sure you balanced the centrifuge."
+end
+
+step
+  description: "Wash the cells"
+  check: "Collect all the 50mL tubes from the centrifuge and place them on a tube rack on your bench."
+  check: "Pour out the liquid from the tubes into the liquid waste bottle placed on your bench."
+  warning: "Be careful. Don't destroy the pellet."
+end
+
+step
+  description: "Wash the cells. Continue"
+  check: "Take %{num} 1.5mL centrifuge tubes. Label them with the id numbers of the 50mL falcon tubes."
+  check: "Add 1mL of the molecular grade water into each 50mL falcon tube and resuspend the cells by pipetting
+          up and down. Transfer the resuspended cells (~1mL) from the 50mL tubes to the 1.5mL centrifuge tubes
+          with the corresponding id numbers."
+end
+
+
+
 ii = 0
 r = []
 
-while ii < length(yeast_250ml_flask)
 
-  step
-    description: "Harvest cells by centrifugation"
-  end
+while ii < length(yeast_250ml_flask)
 
   produce
       y = 1 "Yeast Competent Aliquot" from flask[ii]
