@@ -29,7 +29,7 @@ while ii < length(yeast_overnight_suspension)
   id_num = 1 # yeast_suspension_tube[ii][:id]
 
   take
-    yeast_suspension_tube = item yeast_overnight_suspension[ii][:id]
+    yeast_suspension_tube = item %{yeast_overnight_suspension[ii][:id]}
 #   description: "Collect a yeast overnight suspension tube"
 #   note: "Take a yeast overnight suspension tube with id %{id_num} out of the 30C shaker (location: B13.125)
 #       and put the tube into a tube holder on your bench."
