@@ -4,7 +4,7 @@ argument
   #induce_steps: int array, "input the desired induction times"
 end
 
-induce_steps = [0 1 1.5 2 24]
+#induce_steps = [0 1 1.5 2 24]
 #todo: sort induce_steps array here
 #todo: check if first time is 0 (boolean zero_hour_induction)
 #todo: check for negative numbers
