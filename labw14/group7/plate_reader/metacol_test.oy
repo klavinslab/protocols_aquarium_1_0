@@ -12,7 +12,7 @@ end
 #todo: check that there are at most 12 samples, and at most 8 induction steps. Quit or reboot if not true.
 
 place initial_media
-  protocol: "labw14/group7/plate_reader/prepare_media_2.pl"
+  protocol: "labw14/group7/plate_reader/prepare_media_4.pl"
   argument
     media_name: 1 "400 mL M9 liquid Glucose"
     antibios: ["kan", "amp"]
