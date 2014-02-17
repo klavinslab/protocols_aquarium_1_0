@@ -20,8 +20,10 @@ while ii < n
   ii = ii + 1
 end
 
+nu = vol_data[0]
+
 step
   description: "Final values"
   note: "%{vol_data}"
-  note: "%{vol_data[0][:id]}"
+  note: "%{nu}"
 end
