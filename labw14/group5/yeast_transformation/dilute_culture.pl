@@ -2,6 +2,11 @@ argument
  yeast_overnight_suspension: sample array , "Yeast overnight suspension culture tube"
 end
 
+take
+ item yeast_overnight_suspension[0]
+end
+
+
 num = length(yeast_overnight_suspension)
 
 if num > 1
@@ -23,12 +28,12 @@ ii  = 0
 r   = []
 
 
-yeast_suspension_tube = yeast_overnight_suspension
+#yeast_suspension_tube = yeast_overnight_suspension
 
 
 while ii < length(yeast_overnight_suspension)
 
-  id_num = yeast_suspension_tube[ii][:id]
+  id_num = 1 #yeast_suspension_tube[ii][:id]
 
   step
    description: "Collect a yeast overnight suspension tube"
