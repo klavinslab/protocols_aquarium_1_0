@@ -4,15 +4,14 @@ end
 
 num = length(yeast_overnight_suspension)
 
-  step
-   description: "This protocol describes how to dilute yeast overnight suspension culture"
-   note: "You will be asked to dilute %{num} yeast overnight suspension culture."
-  end
-
-  step
-   description: "This protocol describes how to dilute yeast overnight suspension culture"
-   note: "You will be asked to dilute %{num} yeast overnight suspension cultures."
-  end
+step
+ description: "This protocol describes how to dilute yeast overnight suspension culture"
+ if num > 1
+  note: "You will be asked to dilute %{num} yeast overnight suspension culture."
+ else
+  note: "You will be asked to dilute %{num} yeast overnight suspension culture."
+ end
+end
 
 take
   media_bottle          = 1 "800 mL YPAD liquid (sterile)"
