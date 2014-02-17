@@ -2,20 +2,15 @@ argument
  yeast_overnight_suspension: sample array , "Yeast overnight suspension culture tube"
 end
 
-n = yeast_overnight_suspension[0]
-step
- description: "NUMBER"
- note: "%{n}"
-end
-
 num = length(yeast_overnight_suspension)
 
-if num > 1
 step
  description: "This protocol describes how to dilute yeast overnight suspension culture"
+if num > 1
+  note: "You will be asked to dilute %{num} yeast overnight suspension culture."
+else  
   note: "You will be asked to dilute %{num} yeast overnight suspension culture."
 end
-else
 end
 
 take
