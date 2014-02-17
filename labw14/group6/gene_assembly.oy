@@ -63,7 +63,8 @@ end
 place assembly1
   protocol: "labw14/group6/gene_assembly_PCA.pl"
   argument
-    oligo_pools: concat(oligo_pool11, oligo_pool12)
+    oligo_pools1: oligo_pool11
+    oligo_pools2: oligo_pool12
   end
   group: aquarium_user
   start: now()
@@ -73,7 +74,8 @@ end
 place assembly2
   protocol: "labw14/group6/gene_assembly_PCA.pl"
   argument
-    oligo_pools: concat(oligo_pool21, oligo_pool22)
+    oligo_pools1: oligo_pool21
+    oligo_pools2: oligo_pool22
   end
   group: aquarium_user
   start: now()
