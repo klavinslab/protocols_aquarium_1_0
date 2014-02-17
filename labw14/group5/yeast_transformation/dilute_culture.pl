@@ -4,12 +4,12 @@ end
 
 num = length(yeast_overnight_suspension)
 
+if num > 1
 step
  description: "This protocol describes how to dilute yeast overnight suspension culture"
   note: "You will be asked to dilute %{num} yeast overnight suspension culture."
- if num > 1
- else
- end
+end
+else
 end
 
 take
