@@ -32,7 +32,7 @@ end
 
 step
   description: "Wash the cells"
-  check: "Collect all the 50mL tubes from the centrifuge and place them on a tube rack on your bench."
+  check: "Collect all the 50mL tubes from the centrifuge and place them in a tube rack on your bench."
   check: "Pour out the liquid from the tubes into the liquid waste bottle placed on your bench."
   warning: "Be careful. Don't destroy the pellet."
 end
@@ -55,7 +55,6 @@ while ii < length(yeast_250ml_flask)
 
   produce
       y = 1 "Yeast Competent Aliquot" from flask[ii]
-      release flask[ii]
       note: "Write the above id number on the aliquot tube's side. Place on the bench."
       location:"Bench"      
   end
