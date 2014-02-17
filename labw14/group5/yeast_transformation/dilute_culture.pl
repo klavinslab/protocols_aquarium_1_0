@@ -17,11 +17,14 @@ take
   serological_pipette   = 1 "Serological Pipette"
   pipette               = num "25 mL Serological Pipette Tips"
   flask                 = num "250 mL Baffled Flask"
-  yeast_suspension_tube = item yeast_overnight_suspension
 end
 
 ii  = 0
 r   = []
+
+
+yeast_suspension_tube = item yeast_overnight_suspension
+
 
 while ii < length(yeast_overnight_suspension)
 
