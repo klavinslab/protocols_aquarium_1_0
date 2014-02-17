@@ -1,6 +1,6 @@
 vol_data = []
 
-n  = 2
+n  = 1
 ii = 0
 
 while ii < n
@@ -14,7 +14,7 @@ while ii < n
   vol_data = append(vol_data,num)
   
   step
-    description: "Number: vol_data[0][:id]"
+    description: "Number: "
   end
   
   ii = ii + 1
@@ -23,4 +23,5 @@ end
 step
   description: "Final values"
   note: "%{vol_data}"
+  note: "%{vol_data[0]}"
 end
