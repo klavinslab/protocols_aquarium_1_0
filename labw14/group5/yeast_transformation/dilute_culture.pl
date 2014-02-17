@@ -16,12 +16,12 @@ else
  end
 end
 
-take
-  media_bottle          = 1 "800 mL YPAD liquid (sterile)"
-  serological_pipette   = 1 "Serological Pipette"
-  pipette               = num "25 mL Serological Pipette Tips"
-  flask                 = num "250 mL Baffled Flask"
-end
+#take
+#  media_bottle          = 1 "800 mL YPAD liquid (sterile)"
+#  serological_pipette   = 1 "Serological Pipette"
+#  pipette               = num "25 mL Serological Pipette Tips"
+#  flask                 = num "250 mL Baffled Flask"
+#end
 
 ii  = 0
 r   = []
@@ -33,8 +33,8 @@ while ii < length(yeast_overnight_suspension)
 
   take
     yeast_suspension_tube = item yeast_overnight_suspension[ii]
-    note: "Take a yeast overnight suspension tube with id %{yeast_suspension_tube} out of the 30C shaker (location: B13.125)
-       and put the tube into a tube holder on your bench."
+#    note: "Take a yeast overnight suspension tube with id %{yeast_suspension_tube} out of the 30C shaker (location: B13.125)
+#       and put the tube into a tube holder on your bench."
   end
 
   step
@@ -47,7 +47,7 @@ while ii < length(yeast_overnight_suspension)
 
   produce
       y = 1 "Yeast Overnight Suspension" from yeast_suspension_tube[0]
-      release flask[ii]
+#      release flask[ii]
       note: "Write the above id number on the flask's side. Place the flask in the 30 C Shaker Incubator located at B13.125."
       location:"B13.125"
   end
@@ -62,8 +62,8 @@ end
 
 
 #release yeast_suspension_tube
-release pipette
-release concat(media_bottle, serological_pipette)
+#release pipette
+#release concat(media_bottle, serological_pipette)
 
 
 step
