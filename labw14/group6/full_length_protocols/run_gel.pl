@@ -2,7 +2,8 @@ information "Load and run an agarose gel."
 
 
 argument
-  assemblies: sample array, " Select the PCR Results."
+  assemblies1: sample array, " Select the first PCR Results."
+  assemblies2: sample array, " Select the second PCR Results."
   ladder_one: sample
   fragment_volume: number, "The volume of PCR fragment to load in µL."
 end
@@ -20,7 +21,8 @@ end
 
 take
   gel = 1 "50 mL 1 Percent Agarose Gel in Gel Box"
-  fragment = item assemblies
+  fragment1 = item assemblies1
+  fragment2 = item assemblies2
   ladder = item ladder_one
   loading_dye = 1 "Gel Loading Dye Blue (6X)"
 end
@@ -80,7 +82,8 @@ end
 
 release ladder
 
-release fragment  # Throw away the tube / save extra
+release fragment1  # Throw away the tube / save extra
+release fragment2
 
 
 release glasses
