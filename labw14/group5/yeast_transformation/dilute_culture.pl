@@ -4,13 +4,16 @@ end
 
 num = length(yeast_overnight_suspension)
 
-step
- description: "This protocol describes how to dilute yeast overnight suspension culture"
 if num > 1
-  note: "You will be asked to dilute %{num} yeast overnight suspension culture."
-else  
-  note: "You will be asked to dilute %{num} yeast overnight suspension cultures."
-end
+ step
+  description: "This protocol describes how to dilute yeast overnight suspension culture"
+   note: "You will be asked to dilute %{num} yeast overnight suspension culture."
+ end
+else
+ step
+  description: "This protocol describes how to dilute yeast overnight suspension culture"
+   note: "You will be asked to dilute %{num} yeast overnight suspension cultures."
+ end
 end
 
 take
@@ -30,9 +33,9 @@ while ii < length(yeast_overnight_suspension)
 
   take
     yeast_suspension_tube = item yeast_overnight_suspension[ii]
-#   description: "Collect a yeast overnight suspension tube"
-#   note: "Take a yeast overnight suspension tube with id %{id_num} out of the 30C shaker (location: B13.125)
-#       and put the tube into a tube holder on your bench."
+    description: "Collect a yeast overnight suspension tube"
+    note: "Take a yeast overnight suspension tube with id %{yeast_suspension_tube} out of the 30C shaker (location: B13.125)
+       and put the tube into a tube holder on your bench."
   end
 
   step
