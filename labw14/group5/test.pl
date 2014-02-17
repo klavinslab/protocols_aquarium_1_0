@@ -16,4 +16,11 @@ while ii < n
   step
     description: "Number: %{num}"
   end
+  
+  ii = ii + 1
+end
+
+step
+  description: "Final values"
+  note: "%{vol_data}"
 end
