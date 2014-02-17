@@ -21,7 +21,7 @@ step
   
   description : "Load sample library to the cartridge"
   check : "Using a 1 mL pippet tube pierce the foil of the reservoir labled Load Sample"
-  warning : "Do not pierce the foil of any other reservoirs. They will be pierced automatically durin run"
+  warning : "Do not pierce the foil of any other reservoirs. They will be pierced automatically during the run"
   check : "Load 600 uL of the combined sample libraries to the Load Reservoir"
   warning : "Do not touch the foil seal while loading the sample"
   
