@@ -1,8 +1,8 @@
-argument
+#argument
   
-  cartridge : sample, "Reagent Cartridge"
+  #cartridge : sample, "Reagent Cartridge"
 
-end
+#end
 
 step
 
@@ -43,7 +43,7 @@ end
 
 take
   
-  cartridge1 = item cartridge
+  cartridge1 = 1 "Reagent Cartridge"
   
 end
 
