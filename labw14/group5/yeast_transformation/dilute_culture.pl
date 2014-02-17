@@ -22,14 +22,14 @@ end
 ii  = 0
 r   = []
 
-yeast_suspension_tube = []
+#yeast_suspension_tube = []
 
 while ii < length(yeast_overnight_suspension)
 
   id_num = 1 # yeast_suspension_tube[ii][:id]
 
   take
-    yeast_suspension_tube[ii] = item yeast_overnight_suspension[ii]
+    item yeast_overnight_suspension[ii]
 #   description: "Collect a yeast overnight suspension tube"
 #   note: "Take a yeast overnight suspension tube with id %{id_num} out of the 30C shaker (location: B13.125)
 #       and put the tube into a tube holder on your bench."
@@ -44,7 +44,7 @@ while ii < length(yeast_overnight_suspension)
   end
 
   produce
-      y = 1 "Yeast Overnight Suspension" from yeast_suspension_tube[ii]
+      y = 1 "Yeast Overnight Suspension" from yeast_overnight_suspension[ii]
       release flask[ii]
       note: "Write the above id number on the flask's side. Place the flask in the 30 C Shaker Incubator located at B13.125."
       location:"B13.125"
@@ -59,7 +59,7 @@ log
 end
 
 
-release yeast_suspension_tube
+#release yeast_suspension_tube
 release pipette
 release concat(media_bottle, serological_pipette)
 
