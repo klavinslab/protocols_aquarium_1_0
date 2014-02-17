@@ -1,9 +1,9 @@
-argument
+#argument
   
-  ddPhiX : sample, "Denatured and Diluted PhiX Control"
-  ddSample : sample, "Denatured and Diluted Sample Library"
+  #ddPhiX : sample, "Denatured and Diluted PhiX Control"
+  #ddSample : sample, "Denatured and Diluted Sample Library"
 
-end
+#end
 
 step
   
@@ -14,8 +14,10 @@ end
 
 take
 
-  ddPhiX1 = item ddPhiX
-  ddSample1 = item ddSample
+  ddPhiX1 = 1 "Denatured and Diluted PhiX Control"
+  ddSample1 = 1 "Denatured and Diluted Sample Library"
+  #ddPhiX1 = item ddPhiX
+  #ddSample1 = item ddSample
 
 end
 
