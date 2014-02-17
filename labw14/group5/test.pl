@@ -12,9 +12,11 @@ while ii < n
   end
   
   vol_data = append(vol_data,num)
-  
+
+  nu = vol_data[0]
+
   step
-    description: "Number: "
+    description: "Number: %{nu}"
   end
   
   ii = ii + 1
