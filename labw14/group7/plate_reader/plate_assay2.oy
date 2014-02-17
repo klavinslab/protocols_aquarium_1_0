@@ -35,6 +35,8 @@ place glucose_grow
   windows: minutes(10)
 end
 
+#We may as well replace this with "dilute_inducer.pl" (aTc, 200ng/ml, 1ml)
+#and "prepare_media_2.pl" (15mL, kan amp, 200 500) 
 place prepare_solutions
   protocol: "labw14/group7/plate_reader/prepare_solutions.pl"
   group: aquarium_user
