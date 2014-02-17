@@ -1,4 +1,4 @@
-vol_data = []
+vol_data: number array
 
 n  = 2
 ii = 0
