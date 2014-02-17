@@ -2,6 +2,12 @@ argument
  yeast_overnight_suspension: sample array , "Yeast overnight suspension culture tube"
 end
 
+n = yeast_overnight_suspension[0][:id]
+step
+ description: "NUMBER"
+ note: "%{n}"
+end
+
 num = length(yeast_overnight_suspension)
 
 if num > 1
