@@ -36,7 +36,7 @@ while ii < length(yeast_overnight_suspension)
   step
     description: "Diluting cells in YPD"
     bullet: "Take a 250mL flask. Label the flask with your initials and date."
-    bullet: "Using serological pipette pour 25 mL of YPAD media with id %{media_bottle} into the flask."
+    bullet: "Using serological pipette pour 25 mL of YPAD media from the 800 mL YPAD liquid media bottle into the flask."
     bullet: "Then, using 1000 μL pipette pour 500 μL of the yeast overnight suspension culture
            from the 14mL falcon tube with id %{id_num} into the flask."
   end
@@ -52,10 +52,6 @@ while ii < length(yeast_overnight_suspension)
   ii=ii+1
 end
 
-  step
-    description: "Now you have to wait 5 hours till the next protocol (Harvesting the cells)."
-  end
-
 log
   return: { yeast_250ml_flask: r }
 end
@@ -64,3 +60,8 @@ end
 release yeast_suspension_tube
 release pipette
 release concat(media_bottle, serological_pipette)
+
+
+step
+  description: "Now you have to wait 5 hours till the next protocol (Harvesting the cells)."
+end
