@@ -10,12 +10,12 @@ step
   
 end
 
-take 
+#take 
 
-  comb_sample_1 = item comb_sample
-  ready_cartridge_1 = item ready_cartridge
-  
-end
+ # comb_sample_1 = item comb_sample
+ # ready_cartridge_1 = item ready_cartridge
+ # 
+#end
 
 step 
   
