@@ -1,6 +1,6 @@
 argument
-  cell_array_input: sample array, "Choose the strains you would like to assay"
-  number_of_copies: int, "How many copies of each strain would you like? NOTE: max of 12 samples/assay"
+  cell_array_input: sample array, "Choose the 4 strains you would like to assay"
+  #number_of_copies: int, "How many copies of each strain would you like? NOTE: max of 12 samples/assay"
   #induce_steps: int array, "input the desired induction times"
 end
 
@@ -14,9 +14,10 @@ induce_steps = [0 1 1.5 2 24]
 place initial_media
   protocol: "labw14/group7/plate_reader/prepare_media_2.pl"
   argument
-    <<glucose>> = 1 "400mL Glucose"
-    <<antibios>> = "kan amp"
-    <<ratios>> = [200 500]
+    media_name= 1 "400 mL M9 liquid Glucose"
+    antibios = ["kan" "amp"]
+    dilutions = [200 500]
+    total_volume = 40
   end
   group: aquarium_user
   start: now()
@@ -24,66 +25,21 @@ place initial_media
   marked: true
 end
 
-place glucose_grow
-  protocol: "labw14/group7/plate_reader/glucose_grow.pl"
-  argument
-    <<input>> = cell_array_input
-    <<num_copies>> = number_of_copies
-  end
-  group: aquarium_user
-  start: now()
-  windows: minutes(10)
-end
+#place glucose_grow
+#  protocol: "labw14/group7/plate_reader/glucose_grow.pl"
+#  argument
+#    <<input>> = cell_array_input
+#    <<num_copies>> = number_of_copies
+#  end
+#  group: aquarium_user
+#  start: now()
+#  windows: minutes(10)
+#end
 
-place prepare_solutions
-  protocol: "labw14/group7/plate_reader/prepare_solutions.pl"
-  group: aquarium_user
-  start: hours(8)
-  windows: minutes(10)
-end
-#todo: add correction to avoid repeating 8 hour delay.
-
-place load_plate
-  protocol: "labw14/group7/plate_reader/load_plate.pl"
-  argument
-    <<number of rows>> = length(induce_steps)
-  end
-  group: aquarium_user
-  start: now()
-  windows: minutes(10)
-end
-
-place induce_zero
-  protocol: ""labw14/group7/plate_reader/induce_zero.pl"
-  group: aquarium_user
-  start: now()
-  windows: minutes(10)
-end
-
-place start_program
-  protocol: ""labw14/group7/plate_reader/start_program.pl"
-  group: aquarium_user
-  start: now()
-  windows: minutes(10)
-end
-
-place induce n
-  protocol: ""labw14/group7/plate_reader/induce_n.pl"
-  group: aquarium_user
-  start: now()
-  windows: minutes(10)
-end
-
-place finish
-  protocol: ""labw14/group7/plate_reader/finish.pl"
-  group: aquarium_user
-  start: now()
-  windows: minutes(10)
-end
 
 #wire (LB_grow, "cell_array") => (glucose_grow,"LB_cell_array")
 
 #LB_grow -> glucose_grow
-transition [LB_grow] => [glucose_grow] when !error(0) && completed(0) end
+#transition [LB_grow] => [glucose_grow] when !error(0) && completed(0) end
 #LB_grow rework
-transition [LB_grow] => [LB_grow] when error(0) end
+#transition [LB_grow] => [LB_grow] when error(0) end
