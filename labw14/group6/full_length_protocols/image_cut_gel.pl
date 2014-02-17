@@ -1,10 +1,15 @@
-argument
-  gel: sample, "The gel lane you got after run the gel"
+step
+  description: "Take the gel lane you got after running electropheresis and place it at the transilluminator bench"
+  note: "Take care not to damage the gel such that it cannot be imaged"
 end
 
-take
-  y = item gel
-end
+#argument
+  #gel: sample, "The gel lane you got after run the gel"
+#end
+
+#take
+  #y = item gel
+#end
 
 step
   description: "Wipe down transilluminator"
