@@ -64,5 +64,10 @@ log
   return: { yeast_overnight_suspension: r }
 end
 
-#release plate
+
 release concat(falcon_tube, plate)
+
+step
+  description: "Now you have to wait 5 hours till the next protocol (Diluting an overnight yeast suspesnesion culture)."
+end
+
