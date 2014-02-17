@@ -55,7 +55,7 @@ while ii < length(yeast_overnight_suspension)
 end
 
   step
-    description: "Now you have to wait 5 hours till the next protocol ("Harvesting the cells")."
+    description: "Now you have to wait 5 hours till the next protocol (Harvesting the cells)."
   end
 
 log
