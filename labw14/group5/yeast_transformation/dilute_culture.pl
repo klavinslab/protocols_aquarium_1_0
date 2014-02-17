@@ -9,7 +9,7 @@ step
 if num > 1
   note: "You will be asked to dilute %{num} yeast overnight suspension culture."
 else  
-  note: "You will be asked to dilute %{num} yeast overnight suspension culture."
+  note: "You will be asked to dilute %{num} yeast overnight suspension cultures."
 end
 end
 
@@ -23,11 +23,10 @@ end
 ii  = 0
 r   = []
 
-#yeast_suspension_tube = []
 
 while ii < length(yeast_overnight_suspension)
 
-  id_num = 1 # yeast_suspension_tube[ii][:id]
+#  id_num = 1 # yeast_suspension_tube[ii][:id]
 
   take
     yeast_suspension_tube = item yeast_overnight_suspension[ii]
@@ -41,7 +40,7 @@ while ii < length(yeast_overnight_suspension)
     bullet: "Take a 250mL flask. Label the flask with your initials and date."
     bullet: "Using serological pipette pour 25 mL of YPAD media from the 800 mL YPAD liquid media bottle into the flask."
     bullet: "Then, using 1000 μL pipette pour 500 μL of the yeast overnight suspension culture
-           from the 14mL falcon tube with id %{id_num} into the flask."
+           from the 14mL falcon tube with id %{yeast_suspension_tube} into the flask."
   end
 
   produce
@@ -49,6 +48,10 @@ while ii < length(yeast_overnight_suspension)
       release flask[ii]
       note: "Write the above id number on the flask's side. Place the flask in the 30 C Shaker Incubator located at B13.125."
       location:"B13.125"
+  end
+  
+  step
+    release yeast_suspension_tube[0]
   end
   
   r = append(r,y[:id])
@@ -60,7 +63,7 @@ log
 end
 
 
-release yeast_suspension_tube
+#release yeast_suspension_tube
 release pipette
 release concat(media_bottle, serological_pipette)
 
