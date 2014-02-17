@@ -54,8 +54,8 @@ while ii < length(yeast_overnight_suspension)
 
 
     release yeast_suspension_tube
-#    warning: "Bear the falcon with id to the washing station located at A.100. Add 20%% bleach to the tube and place it
-#           into a tube holder beside the sink."
+    warning: "Bear the falcon with id to the washing station located at A.100. Add 20%% bleach to the tube and place it
+           into a tube holder beside the sink."
 
   r = append(r,y[:id])
   ii=ii+1
