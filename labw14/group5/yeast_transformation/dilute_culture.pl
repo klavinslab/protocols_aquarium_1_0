@@ -50,7 +50,7 @@ while ii < length(yeast_overnight_suspension)
   end
 
   produce
-      y = 1 "Yeast Overnight Suspension" from yeast_suspension_tube
+      y = 1 "Yeast Overnight Suspension" from yeast_suspension_tube[0]
       release flask[ii]
       note: "Write the above id number on the flask's side. Place the flask in the 30 C Shaker Incubator located at B13.125."
       location:"B13.125"
