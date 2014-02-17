@@ -22,7 +22,7 @@ end
 ii  = 0
 r   = []
 
-yeast_suspension_tube = []
+#yeast_suspension_tube = []
 
 while ii < length(yeast_overnight_suspension)
 
