@@ -16,12 +16,12 @@ else
  end
 end
 
-#take
-#  media_bottle          = 1 "800 mL YPAD liquid (sterile)"
-#  serological_pipette   = 1 "Serological Pipette"
-#  pipette               = num "25 mL Serological Pipette Tips"
-#  flask                 = num "250 mL Baffled Flask"
-#end
+take
+  media_bottle          = 1 "800 mL YPAD liquid (sterile)"
+  serological_pipette   = 1 "Serological Pipette"
+  pipette               = num "25 mL Serological Pipette Tips"
+  flask                 = num "250 mL Baffled Flask"
+end
 
 ii  = 0
 r   = []
@@ -47,14 +47,14 @@ while ii < length(yeast_overnight_suspension)
 
   produce
       y = 1 "Yeast Overnight Suspension" from yeast_suspension_tube[0]
-#      release flask[ii]
+      release flask[ii]
       note: "Write the above id number on the flask's side. Place the flask in the 30 C Shaker Incubator located at B13.125."
       location:"B13.125"
   end
 
   step
     description: "Release the following item:"
-    note: "Bear the falcon with id %{id_num} to the washing station located at A.100. Add 20%% bleach to the tube and place it
+    note: "Bear the falcon tube with id %{id_num} to the washing station located at A.100. Add 20%% bleach to the tube and place it
            into a tube holder beside the sink."
     warning: "When done, click Next and check the box on the next page."
   end
@@ -70,9 +70,8 @@ log
 end
 
 
-#release yeast_suspension_tube
-#release pipette
-#release concat(media_bottle, serological_pipette)
+release pipette
+release concat(media_bottle, serological_pipette)
 
 
 step
