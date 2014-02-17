@@ -23,5 +23,5 @@ end
 step
   description: "Final values"
   note: "%{vol_data}"
-  note: "%{vol_data[0]}"
+  note: "%{vol_data[0][:id]}"
 end
