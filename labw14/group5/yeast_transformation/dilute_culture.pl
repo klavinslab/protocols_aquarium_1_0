@@ -6,10 +6,9 @@ num = length(yeast_overnight_suspension)
 
 step
  description: "This protocol describes how to dilute yeast overnight suspension culture"
+  note: "You will be asked to dilute %{num} yeast overnight suspension culture."
  if num > 1
-  note: "You will be asked to dilute %{num} yeast overnight suspension culture."
  else
-  note: "You will be asked to dilute %{num} yeast overnight suspension culture."
  end
 end
 
