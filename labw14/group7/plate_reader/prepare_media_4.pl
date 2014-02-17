@@ -36,6 +36,7 @@ while i<length(antibios)
   v = total_volume*1000/dilutions[i]
   antibio_volumes = append(antibio_volumes, v)
   antibio_abr = antibios[i]
+  antibio_name = ""
   if antibio_abr == "amp"
     antibio_name = "100X 1 mL Ampicillin Aliquot"
     take
