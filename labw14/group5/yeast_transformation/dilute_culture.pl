@@ -2,7 +2,7 @@ argument
  yeast_overnight_suspension: sample array , "Yeast overnight suspension culture tube"
 end
 
-n = yeast_overnight_suspension[0][:id]
+n = yeast_overnight_suspension[0]
 step
  description: "NUMBER"
  note: "%{n}"
