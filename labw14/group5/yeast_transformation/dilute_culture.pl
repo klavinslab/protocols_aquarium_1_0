@@ -23,12 +23,12 @@ ii  = 0
 r   = []
 
 
-#yeast_suspension_tube = item yeast_overnight_suspension
+yeast_suspension_tube = yeast_overnight_suspension
 
 
 while ii < length(yeast_overnight_suspension)
 
-  id_num = yeast_overnight_suspension[ii][:id]
+  id_num = yeast_suspension_tube[ii][:id]
 
   step
    description: "Collect a yeast overnight suspension tube"
