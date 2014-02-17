@@ -29,7 +29,7 @@ r   = []
 
 while ii < length(yeast_overnight_suspension)
 
-  id_num = yeast_overnight_suspension[ii][:id]
+  id_num = yeast_overnight_suspension[ii]
 
   take
     yeast_suspension_tube = item yeast_overnight_suspension[ii]
