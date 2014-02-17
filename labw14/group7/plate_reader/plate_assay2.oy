@@ -1,14 +1,28 @@
 argument
   cell_array_input: sample array, "Choose the strains you would like to assay"
   number_of_copies: int, "How many copies of each strain would you like? NOTE: max of 12 samples/assay"
-  induce_steps: int array, "input the desired induction times"
+  #induce_steps: int array, "input the desired induction times"
 end
 
+induce_steps = [0 1 1.5 2 24]
 #todo: sort induce_steps array here
 #todo: check if first time is 0 (boolean zero_hour_induction)
 #todo: check for negative numbers
 
 #todo: check that there are at most 12 samples, and at most 8 induction steps. Quit or reboot if not true.
+
+place initial_media
+  protocol: "labw14/group7/plate_reader/prepare_media_2.pl"
+  argument
+    <<glucose>> = 1 "400mL Glucose"
+    <<antibios>> = "kan amp"
+    <<ratios>> = [200 500]
+  end
+  group: aquarium_user
+  start: now()
+  windows: minutes(10)
+  marked: true
+end
 
 place glucose_grow
   protocol: "labw14/group7/plate_reader/glucose_grow.pl"
@@ -17,7 +31,6 @@ place glucose_grow
     <<num_copies>> = number_of_copies
   end
   group: aquarium_user
-  marked: true
   start: now()
   windows: minutes(10)
 end
