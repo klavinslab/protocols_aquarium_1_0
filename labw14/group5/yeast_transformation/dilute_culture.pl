@@ -47,7 +47,7 @@ while ii < length(yeast_overnight_suspension)
 
   produce
       y = 1 "Yeast Overnight Suspension" from yeast_suspension_tube[0]
-      release flask[ii]
+#      release flask[ii]
       note: "Write the above id number on the flask's side. Place the flask in the 30 C Shaker Incubator located at B13.125."
       location:"B13.125"
   end
@@ -56,7 +56,7 @@ while ii < length(yeast_overnight_suspension)
     description: "Release the following items"
 #    warning: "Bear the falcon with id to the washing station located at A.100. Add 20%% bleach to the tube and place it
 #           into a tube holder beside the sink."
-#    release yeast_suspension_tube
+    release yeast_suspension_tube
   end
 
   r = append(r,y[:id])
