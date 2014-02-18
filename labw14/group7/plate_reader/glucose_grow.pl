@@ -74,7 +74,7 @@ step
 end
 
 i=0
-while i<3
+while i<length(incubated_cells)
   modify
     incubated_cells[i]
     location: "37C Shaker" #TODO: get address
@@ -86,7 +86,8 @@ release plate_array
 
 #TODO: Figure out how to release an array of samples
 #add log -> return to provide an array of culture tubes for the metacol
-
-  
+log
+  return: { incubated_cells_id: incubated_cells[:id]}
+end
 
 
