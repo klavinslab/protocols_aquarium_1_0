@@ -38,29 +38,6 @@ place stock2
   window: minutes(30)
 end
 
-
-#place stock3
-  #protocol: "labw14/group6/make_master_stock.pl"
-  #argument
-    #oligonucleotides: source_oligos3
-  #end
-  #group: aquarium_user
-  #marked: true
-  #start: now()
-  #window: minutes(30)
-#end
-
-#place stock4
-  #protocol: "labw14/group6/make_master_stock.pl"
-  #argument
-    #oligonucleotides: source_oligos4
-  #end
-  #group: aquarium_user
-  #marked: true
-  #start: now()
-  #window: minutes(30)
-#end
-
 place assembly1
   protocol: "labw14/group6/gene_assembly_PCA.pl"
   argument
@@ -75,34 +52,56 @@ end
 wire (stock1, "Primer_Pool_id") => (assembly1, "oligo_pool1")
 wire (stock2, "Primer_pool_id") => (assembly1, "oligo_pool2") 
 
-#place assembly2
-  #protocol: "labw14/group6/gene_assembly_PCA.pl"
-  #argument
-    #oligo_pool3: [oligo_pool21]
-    #oligo_pool4: [oligo_pool22]
-  #end
-  #group: aquarium_user
-  #start: now()
-  #window: minutes(30)
-#end
+place stock3
+  protocol: "labw14/group6/make_master_stock.pl"
+  argument
+    oligonucleotides: source_oligos3
+  end
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+place stock4
+  protocol: "labw14/group6/make_master_stock.pl"
+  argument
+    oligonucleotides: source_oligos4
+  end
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+place assembly2
+  protocol: "labw14/group6/gene_assembly_PCA.pl"
+  argument
+    oligo_pool3: [oligo_pool21]
+    oligo_pool4: [oligo_pool22]
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(30)
+end
 
 
-#wire (stock3, "Primer_Pool_id") => (assembly2, "oligo_pool3")
-#wire (stock4, "Primer_Pool_id") => (assembly2, "oligo_pool4")
+wire (stock3, "Primer_Pool_id") => (assembly2, "oligo_pool3")
+wire (stock4, "Primer_Pool_id") => (assembly2, "oligo_pool4")
 
 place run_gel
   protocol: "labw14/group6/run_gel.pl"
   group: aquarium_user
   argument
     assembly1: [assembly1_product]
-    #assembly2: [assembly2_product]
+    assembly2: [assembly2_product]
   end
   start: now()
   window: minutes(30)
 end
 
 wire (assembly1, "PCR_Result_id") => (run_gel, "assembly1")
-#wire (assembly2, "PCR_Result_id") => (run_gel, "assembly2")
+wire (assembly2, "PCR_Result_id") => (run_gel, "assembly2")
 
 place image_cut_gel
   protocol: "labw14/group6/image_cut_gel.pl"
@@ -169,13 +168,13 @@ transition [ stock1, stock2 ] => [ assembly1 ] when !error(0) && completed(0) &&
 transition [ stock1 ] => [ stock1 ] when error(0) end
 transition [ stock2 ] => [ stock2 ] when error(0) end
 
-#transition [ stock3, stock4 ] => [ assembly2 ] when !error(0) && completed(0) && !error(1) && completed(1) end
-#transition [ stock3 ] => [ stock3 ] when error(0) end
-#transition [ stock4 ] => [ stock4 ] when error(0) end
+transition [ stock3, stock4 ] => [ assembly2 ] when !error(0) && completed(0) && !error(1) && completed(1) end
+transition [ stock3 ] => [ stock3 ] when error(0) end
+transition [ stock4 ] => [ stock4 ] when error(0) end
 
-transition [ assembly1 ] => [ run_gel ] when !error(0) && completed(0) && !error(1) && completed(1) end
+transition [ assembly1, assembly2 ] => [ run_gel ] when !error(0) && completed(0) && !error(1) && completed(1) end
 transition [ assembly1 ] => [ assembly1 ] when error(0) end
-
+transition [ assembly2 ] => [ assembly2 ] when error(0) end
 
 transition [ run_gel ] => [ image_cut_gel ] when !error(0) && completed(0) end
 transition [ run_gel ] => [ run_gel ] when error(0) end
