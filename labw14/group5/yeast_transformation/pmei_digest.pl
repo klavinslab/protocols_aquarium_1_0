@@ -1,14 +1,17 @@
-argument
-  fragment: sample, "The purified fragment that needs to be digested"
-  neb: sample, "Choose NEB4 buffer"
-  bsa: sample, "Choose BSA buffer"
-  dpn: sample, "Choose DpnI enzyme"
-end
+#argument
+#   fragment: sample, "The purified fragment that needs to be digested"
+#  neb: sample, "Choose NEB4 buffer"
+#  bsa: sample, "Choose BSA buffer"
+#  dpn: sample, "Choose DpnI enzyme"
+#end
 
 take
-  y = item fragment
-  neb4 = item neb
-  bsa_buffer = item bsa
+#  y = item fragment
+#  neb4 = item neb
+#  bsa_buffer = item bsa
+   neb  = 1 "Enzyme Buffer: NEB Buffer 4"
+   bsa  = 1 "Enzyme Buffer: BSA"
+   pmei = 1 "Enzyme: PmeI"
 end
 
 step
@@ -16,9 +19,9 @@ step
   note: "The enzyme are temperature sensitive."
 end
 
-take
-  dpn_enzyme = item dpn
-end
+#take
+#  dpn_enzyme = item dpn
+#end
 
 step 
   description: "Prepare DpnI digestion reaction"
