@@ -18,7 +18,7 @@ step
         #image: "put_green_tube_holder_to_incubator"
 end
 
-foreach y_i = y
+foreach y_i in y
 	modify
 	  y_i
 	  location:"A1.110"
