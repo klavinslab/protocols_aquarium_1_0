@@ -5,7 +5,7 @@ end
 
 take
   #DI_water = 1 "DI Water, Sterile"
-  cells = 1 cells_to_assay_in
+  cells = cells_to_assay_in
   #glucose media
 end
 
