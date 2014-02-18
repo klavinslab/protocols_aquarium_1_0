@@ -109,7 +109,7 @@ while ii < length(yeast_250ml_flask)
   while jj < total_number
     if jj == 0
       step
-        desctiption:"Control aliquot from the tube %{id_num}"
+        description:"Control aliquot from the tube %{id_num}"
         note: "Take a 1.5mL tube and write your name on its side. Write CONTROL word on its side as well."
       end
     
@@ -120,7 +120,7 @@ while ii < length(yeast_250ml_flask)
       end
     else
       step
-        desctiption:"Aliquots from the tube %{id_num}"
+        description:"Aliquots from the tube %{id_num}"
         note: "Take a 1.5mL tube and write your name on its side."
       end
     
