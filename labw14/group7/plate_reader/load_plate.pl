@@ -2,10 +2,10 @@ argument
   #glucose_media?
   cells_to_assay_in: sample("Transformed E coli Strain") array, "The strains to assay.  4 copies of each strain"
 end
-
+q = [1,1,1]
 take
   #DI_water = 1 "DI Water, Sterile"
-  cells = cells_to_assay_in
+  cells = q cells_to_assay_in
   #glucose media
 end
 
