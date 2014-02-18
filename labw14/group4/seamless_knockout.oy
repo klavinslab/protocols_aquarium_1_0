@@ -1,6 +1,7 @@
 argument
   e_coli_strain: sample array, "the E. coli strains you wish to preform the knockouts in" 
   knockout_fragment: sample array, "the cassettes you wish to transform into the strains, respectively"
+  plate_type: sample array, "The appropriate selection plates (thyamine+trimethoprim or minimal-media)"
   note: "The nth E. coli strain will be knocked out with the nth cassette"
   #strain_name: string, "the name of the strain you are producing today (copy it from Week4 lab description in Google Drive"
 end
@@ -84,23 +85,12 @@ end
 
 wire (transform,"transformed_cells_id") => (incubate_tube,"e_coli_strain_id")
 
-place plate_thymine_trimetaprin
+place plate
   protocol: "labw14/group4/plate.pl"
   group: aquarium_user
   argument
     volume: 200
-    plate_type: thymine_trimetaprin
-  end
-  start: hours(3)
-  window: hours(1)
-end
-
-place plate_nthymane
-  protocol: "labw14/group4/plate.pl"
-  group: aquarium_user
-  argument
-    volume: 200
-    plate_type: plate_thymine_trimetaprin
+    plate_type: plate_type
   end
   start: hours(3)
   window: hours(1)
