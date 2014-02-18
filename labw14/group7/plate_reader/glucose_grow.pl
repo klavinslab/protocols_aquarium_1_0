@@ -64,6 +64,11 @@ step
   note: "This will incubate for 18hrs (overnight)"
 end
 
+
+produce
+  a = 1 "Overnight suspension culture"
+  note: "Put this label on the rack containing all 12 of your samples"
+end
 #release [cell_culture_tube_array[0], glycerol[0]]
 release plate_array
 
