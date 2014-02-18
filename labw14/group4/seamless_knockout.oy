@@ -41,7 +41,7 @@ plate_type_1 = "LB Kan Plate (sterile)"
 num_trans = 1
 
 place heat_shock
-  protocol: "labw14/group4/heat_shock.pl"
+  protocol: "labw14/group4/heat_shock_parallel.pl"
   # cells_flask: wire log cells from here
   group: aquarium_user
   window: ## ??
@@ -56,7 +56,7 @@ place quick_comp
   window: minutes(1)
 end
 
-wire (heat_shock,"cell_id") => (quick_comp,"shocked_cells")
+wire (heat_shock,"shocked_cells") => (quick_comp,"shocked_cells")
 
 place transform
   protocol: "labw14/group4/transform.pl"
