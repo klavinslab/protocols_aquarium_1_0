@@ -4,7 +4,7 @@ argument
 end
 
 take
-  DI_water: 1 "DI Water, Sterile"
+  #DI_water: 1 "DI Water, Sterile"
   cells: cells_to_assay_in
   #glucose media
 end
