@@ -75,10 +75,21 @@ while ii < length(yeast_250ml_flask)
 end
 
 
+step
+  description: "Now you will start to obtain cells aliquots"
+end
+
 ii = 0
 
 
 while ii < length(yeast_250ml_flask)
+
+  num = yeast_250ml_flask[ii]
+  
+  step
+    description: "Obtaining cells aliquots from a tube %{num}"
+    note: "Take a tube with id %{num}."
+  end
 
   produce
       y = 1 "Yeast Competent Aliquot" from flask[ii]
