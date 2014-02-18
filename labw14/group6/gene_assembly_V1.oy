@@ -95,14 +95,14 @@ place run_gel
   group: aquarium_user
   argument
     assembly1: [assembly1_product]
-    assembly2: [assembly2_product]
+    #assembly2: [assembly2_product]
   end
   start: now()
   window: minutes(30)
 end
 
 wire (assembly1, "PCR_Result_id") => (run_gel, "assembly1")
-wire (assembly2, "PCR_Result_id") => (run_gel, "assembly2")
+#wire (assembly2, "PCR_Result_id") => (run_gel, "assembly2")
 
 place image_cut_gel
   protocol: "labw14/group6/image_cut_gel.pl"
