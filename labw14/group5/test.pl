@@ -15,7 +15,7 @@ while ii < 2
   vol = append (vol,n)
 end
 
-num = vol[0]
+num = vol[0][:id]
 
 step
   description: "%{num}"
