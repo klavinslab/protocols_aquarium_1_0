@@ -26,7 +26,6 @@ place stock1
   window: minutes(30)
 end
 
-master_stock = 
 
 place stock2
   protocol: "labw14/group6/make_master_stock.pl"
