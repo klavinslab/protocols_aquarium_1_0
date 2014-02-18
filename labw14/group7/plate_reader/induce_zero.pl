@@ -1,24 +1,14 @@
 argument
-  loaded_plate:
-  aTc inducer:
+  aTc_inducer_in: object, "The aTc inducer to add"
 end
 
 take
-  loaded_plate:
-  aTc inducer:
+  aTc_inducer: 1 aTc_inducer_in
 end
 
 step
   description: "Add the inducer to the zero-delay wells"
   check: "Pipette 1uL of aTc solution into each of the indicated wells"
   note: "Use a new tip each time to avoid contamination"
-  #todo: include chart
-  #todo: generalize
+  #TODO: include chart: induce_0
 end
-
-produce
-  b = 1 "zero_induced_plate" from loaded_plate
-  Location: "Bench"
-end
-
-#return
