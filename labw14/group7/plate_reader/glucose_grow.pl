@@ -74,7 +74,7 @@ step
 end
 
 i=0
-while i<2
+while i<3
   modify
     incubated_cells[i]
     location: "37C Shaker" #TODO: get address
