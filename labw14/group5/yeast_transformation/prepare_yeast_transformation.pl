@@ -17,6 +17,12 @@ take
   digested_plasmid    = item fragment_id
 end
 
+take
+  peg         = 1 ""
+  liac        = 1 ""
+  carrier_dna = 1 ""
+end
+
 ii = 0
 r = []
 
@@ -24,13 +30,33 @@ number_we_can_make = length(fragment_id) + 1
 
 while ii < number_we_can_make
 
+  id_num = yeast_aliquot_id[ii]
+  
   if ii == 1 # CONTROL TUBE
+    step
+      description: "Making CONTROL yeast transformation mixture"
+      note: "Take a 1.5mL tube with id %{id_num}"
+      warning: "Pipette the following reagents into the tube %{id_num}. The order of the reagents is super important for cells' health."
+      check: "Pipette 240μL  50%% PEG 3350 reagent to the tube."
+      check: "Pipette 36μL  1.0M LiOAc reagent to the tube."
+      check: "Pipette 25μL  Carrier DNA to the tube."
+      check: "Pipette 50μL  Molecular grade water to the tube."
+    end
     produce
         y = 1 "Yeast Transformation Mixture" from yeast_aliquot_tubes[ii]
         release yeast_aliquot_tubes[ii]
     end
   else
-  # NOT CONTROL
+  # NON-CONTROL TUBES
+    step
+      description: "Making CONTROL yeast transformation mixture"
+      note: "Take a 1.5mL tube with id %{id_num}"
+      warning: "Pipette the following reagents into the tube %{id_num}. The order of the reagents is super important for cells' health."
+      check: "Pipette 240μL  50%% PEG 3350 reagent to the tube."
+      check: "Pipette 36μL  1.0M LiOAc reagent to the tube."
+      check: "Pipette 25μL  Carrier DNA to the tube."
+      check: "Pipette 50μL  Transformation DNA plasmid to the tube."
+    end
   end
   
   r = append(r,y[:id])
