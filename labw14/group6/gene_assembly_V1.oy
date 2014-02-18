@@ -119,14 +119,16 @@ place gel_purify
   protocol: "labw14/group6/gel_purify.pl"
   group: aquarium_user
   argument
-    gel_slices: gel_slices
+    gel_slice1: gel_slices
+    gel_slice1: gel_slices
   end
   start: now()
   window: minutes(30)
 end
 
 
-wire (image_cut_gel, "Gel_Slices_id") => (gel_purify, "gel_slices")
+wire (image_cut_gel, "Gel_Slices_id") => (gel_purify, "gel_slice1")
+wire (image_cut_gel, "Gel_Slices_id") => (gel_purify, "gel_slice2")
 
 place gibson
   protocol: "labw14/group6/gibson_assembly.pl"
