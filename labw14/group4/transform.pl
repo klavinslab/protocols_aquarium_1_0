@@ -39,7 +39,7 @@ step
 	check: "Transfer 50 ul of each e coli strain sample into a corresponding 1.5 ml tube"
 end
 	
-foreach s = strain
+foreach s in strain
 	step
 	  description:"Setup Electrocompetent Cells"
 	  bullet: "Put electrocompetent cells on the aluminum tube rack."
