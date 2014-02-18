@@ -46,6 +46,6 @@ produce
 	release t_tubes
 end
 log
-	return {log_cells: y}
+	return: {log_cells: y}
 end
 release concat(e_items, LB)
