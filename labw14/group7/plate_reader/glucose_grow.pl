@@ -68,4 +68,4 @@ end
 release plate_array
 
 #TODO: Figure out how to release an array of samples, and add log -> return to provide an array of culture tubes for the metacol
-end
+
