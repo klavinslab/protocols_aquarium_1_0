@@ -1,6 +1,6 @@
 argument
   #glucose_media?
-  cells_to_assay_in: sample("Overnight suspension culture") array, "The strains to assay.  4 copies of each strain"
+  cells_to_assay_in: sample array, "The strains to assay.  4 copies of each strain"
 end
 
 take
