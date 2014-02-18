@@ -1,6 +1,6 @@
 argument
   plated_cells: sample("Transformed E coli Strain") array, "An array of THREE agarose-streaked colonies to grow in glucose media"
-  media_label: string, "The label on the tube of media prepared previously, which will be used to grow the cells in"
+  #media_label: string, "The label on the tube of media prepared previously, which will be used to grow the cells in"
   #repeats: num, "The number of repeats of each cell culture to grow"
   #We tried to make this a more generalized protocol, but the (lack of) capabilities in the language defeated us!
 end
@@ -35,7 +35,7 @@ end
 
 step
   description: "Add 3mL media to each culture tube"
-  check: "Use the electric serological pipette to add 3ml of '%{media_label}' into each culture tube."
+  check: "Use the electric serological pipette to add 3ml of the previously prepared antibiotic media to each culture tube."
   check: "Dispose of your serological pipette tip in tip waste"
 end
 
