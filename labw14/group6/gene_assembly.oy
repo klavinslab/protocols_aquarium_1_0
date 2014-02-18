@@ -13,6 +13,10 @@ source_oligos2 = [1079, 1080]
 source_oligos3 = [1079, 1080]
 source_oligos4 = [1079, 1080] 
 backbone_fragments = [1141, 1144]
+primers11 = [1075, 1076]
+primers12 = [1075, 1076]
+primers21 = [1075, 1076]
+primers22 = [1075, 1076]
 
 # Places
 place stock1
@@ -65,6 +69,8 @@ place assembly1
   argument
     oligo_pools1: oligo_pool11
     oligo_pools2: oligo_pool12
+    primers1: primers11
+    primers2: primers12
   end
   group: aquarium_user
   start: now()
@@ -76,6 +82,8 @@ place assembly2
   argument
     oligo_pools1: oligo_pool21
     oligo_pools2: oligo_pool22
+    primers1: primers21
+    primers2: primers22
   end
   group: aquarium_user
   start: now()
