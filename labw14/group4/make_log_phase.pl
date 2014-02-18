@@ -26,7 +26,7 @@ step
 end
 
 i = 0
-foreach  e = e_coli_strains
+foreach  e in e_coli_strains
 	i = i + 1
 	step
 		description: "Dilute E. coli cells from sample %{e}"
