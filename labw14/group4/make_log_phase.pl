@@ -41,11 +41,17 @@ step
 	description: "Incubate 50 ml falcon tubes for 2 hours in 37°C incubator (B14.310)"
 end
 
-produce
-	y = sample_count "log cells"
-	release t_tubes
+i=0
+log_cell_tubes = []
+while i < sample_count
+	i = i+1
+	produce
+		y = sample_count "log cells tube %{i}"
+		release t_tubes[i-1]
+	end
+	log_cell_tubes = concat(log_cell_tubes, y)
 end
 log
-	return: {log_cells: y}
+	return: {log_cells: log_cell_tubes}
 end
 release concat(e_items, LB)
