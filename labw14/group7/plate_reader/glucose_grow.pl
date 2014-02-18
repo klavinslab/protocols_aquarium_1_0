@@ -55,6 +55,12 @@ while i<strains
     check: "Repeat the above procedure for R3 and R4."
 #TODO: Repace the above code with something more modular, based on an arbitrary number of cycles and strains
   end
+  
+  produce
+    a = 1 "Overnight suspension culture" from plate_array[i]
+    note: "This item refers to all 4 copies of the cells. Label them all with this number"
+    location: "Bench"
+  end
   i = i + 1
 end
 step
@@ -64,13 +70,7 @@ step
   note: "This will incubate for 18hrs (overnight)"
 end
 
-
-produce
-  a = 1 "Overnight suspension culture"
-  note: "Put this label on the rack containing all 12 of your samples"
-end
-#release [cell_culture_tube_array[0], glycerol[0]]
-release plate_array
+#release plate_array
 
 #TODO: Figure out how to release an array of samples, and add log -> return to provide an array of culture tubes for the metacol
 
