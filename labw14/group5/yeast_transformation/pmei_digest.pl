@@ -47,4 +47,4 @@ end
 #  inuse:0
 #end
 
-release [neb4[0],bsa[0],pmei[0], ice_block[0], alum_rack[0]]
+release [neb4[0],bsa[0],pmei[0], ice_block[0], alum_rack[0], fragment[0]]
