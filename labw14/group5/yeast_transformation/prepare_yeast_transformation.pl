@@ -1,29 +1,36 @@
 argument
-  yeast_aliquot: sample array, "Diluted yeast culture"
-  fragment: sample, "Digested plasmid"
+  yeast_aliquot_id: sample array, "Diluted yeast culture"
+  numbers_set_id: number array, "Number of aliquot tubes of each yeast strain that were made."
+  fragment_id: sample, "Digested plasmid"
 end
+
+numbers_set = numbers_set_id
 
 num = length(yeast_aliquot)
 
 step
  description: "This protocol describes how to prepare yeast trasformation mix"
- warning: "You're going to make %{num} overnight suspension tubes"
 end
 
 take
-  yeast_tube = item yeast_aliquot
-  digested_plasmid = item fragment
+  yeast_aliquot_tubes = item yeast_aliquot_id
+  digested_plasmid    = item fragment_id
 end
 
 ii = 0
 r = []
 
-while ii < length(Transformed_yeast_plate)
+number_we_can_make = length(fragment_id) + 1
 
-  produce
-      y = 1 "Yeast mixture" from yeast_tube[ii] #????? concat[yeast_tube, digested_plasmid]
-      release yeast_tube[ii]
-      release digested_plasmid[ii]
+while ii < number_we_can_make
+
+  if ii == 1 # CONTROL TUBE
+    produce
+        y = 1 "Yeast Transformation Mixture" from yeast_aliquot_tubes[ii]
+        release yeast_aliquot_tubes[ii]
+    end
+  else
+  # NOT CONTROL
   end
   
   r = append(r,y[:id])
@@ -34,5 +41,4 @@ log
   return: { yeast_plasmid_mixture: r }
 end
 
-release yeast_tube
 release digested_plasmid
