@@ -48,7 +48,14 @@ place plate_reader_media_delay
   windows: minutes(10)
 end
 
-#wire (LB_grow, "cell_array") => (glucose_grow,"LB_cell_array")
+place load_plate
+  protocol: "labw14/group7/plate_reader/load_plate.pl"
+  group: aquarium_user
+  start: now()
+  windows: minutes(5)
+end
+
+#wire (glucose_grow, "<<output>>") => (load_plate,"cells_to_assay_in")
 
 #initial_media => glucose_grow
 transition [initial_media] => [glucose_grow] when !error(0) && completed(0) end
