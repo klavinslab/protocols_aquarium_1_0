@@ -24,11 +24,11 @@ end
 #end
 
 step 
-  description: "Prepare DpnI digestion reaction"
-  check: "Pipet 18.2 µL molecular grade water into fragment tube with id %{fragment}."
+  description: "Prepare PmeI digestion reaction"
+  check: "Pipet 42.3 µL molecular grade water into fragment tube with id %{fragment}."
   check: "Pipet 5 µL NEB4 buffer with id %{neb} into the tube."
   check: "Pipet 0.5 µL BSA buffer with id %{bsa} into the tube."
-  check: "Pipet 0.3 µL DpnI enzyme with id %{dpn} into the tube."
+  check: "Pipet 0.3 µL PmeI enzyme with id %{pmei} into the tube."
   note: "Be careful to pipet into the liquid, not the side of the tube."
 end
 
@@ -42,10 +42,10 @@ step
   image: "put_green_tube_holder_to_incubator"
 end
 
-modify
-  y[0]
-  location:"B14.310"
-  inuse:0
-end
+#modify
+#  y[0]
+#  location:"B14.310"
+#  inuse:0
+#end
 
-release [neb4[0],bsa_buffer[0],dpn_enzyme[0]]
+release [neb4[0],bsa[0],dpn_enzyme[0]]
