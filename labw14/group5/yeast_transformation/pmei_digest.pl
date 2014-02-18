@@ -38,7 +38,7 @@ step
 end
 
 step
-  description: "Place in the 37°C incubator, location is B14.310."
+  description: "Place in the 37°C incubator for 40 minutes, location is B14.310."
   image: "put_green_tube_holder_to_incubator"
 end
 
