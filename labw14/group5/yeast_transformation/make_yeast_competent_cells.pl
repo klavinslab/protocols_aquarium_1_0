@@ -56,13 +56,13 @@ end
 
 
 ii = 0
-r = []
 
 vol_data = []
 
 while ii < length(yeast_250ml_flask)
 
-  id_num = yeast_250ml_flask[ii]  
+  id_num = yeast_250ml_flask[ii]
+
   step
     description: "Resuspending the cells in the tube %{id_num}"
     note: "Estimate the approximate volume of the pellet in the tube %{id_num}."
@@ -76,33 +76,50 @@ end
 
 
 step
-  description: "Now you will start to obtain cells aliquots"
+  description: "Now you will start to obtain cell aliquots"
 end
 
+
 ii = 0
+r = []
+numbers = []
 
 
 while ii < length(yeast_250ml_flask)
 
-  num = yeast_250ml_flask[ii]
+  id_num = yeast_250ml_flask[ii]
+  vol_val = vol_data[ii]
+  max = 4 * vol_val / 50
+  max_des = max - 1
   
   step
-    description: "Obtaining cells aliquots from a tube %{num}"
-    note: "Take a tube with id %{num}."
-  end
-
-  produce
-      y = 1 "Yeast Competent Aliquot" from flask[ii]
-      note: "Write the above id number on the aliquot tube's side. Place on the bench."
-      location:"Bench"      
+    description: "Obtaining cell aliquots from a tube %{id_num}"
+    note: "You can obtain %{max} cell aliquots from a tube %{id_num}, 50μL each."
+    warning: "But one of these aliquots will be used as a control aliquot. So you can make maximum %{max_des} aliquots."
+    getdata
+      num_to_make: number, "Number of aliquots you want to make (max %{max_des}), excluding control one."
+    end
   end
   
-  r = append(r,y[:id])
+  numbers = append(numbers,num_to_make)
+  jj = 0
+  
+  while jj < num_to_make
+    produce
+        y = 1 "Yeast Competent Aliquot" from flask[ii]
+        note: "Write the above id number on the aliquot tube's side. Place on the bench."
+        location:"Bench"      
+    end
+  
+    r = append(r,y[:id])
+    jj = jj + 1
+  end
+  
   ii=ii+1
 end
 
 log
-  return: { yeast_aliquot: r }
+  return: { yeast_aliquot: r, numbers_set: numbers }
 end
 
 release falcon_tube
