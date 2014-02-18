@@ -26,9 +26,9 @@ step
   #TODO: include a picture
 end
 
-cell0 = cells[0]
-cell1 = cells[1]
-cell2 = cells[2]
+cell0 = cells[0][:id]
+cell1 = cells[1][:id]
+cell2 = cells[2][:id]
 step
   description: "Load the cells into the wells"
   check: "Load the cells according to the chart"
