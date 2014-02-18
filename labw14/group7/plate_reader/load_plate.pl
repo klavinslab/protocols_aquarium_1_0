@@ -1,6 +1,6 @@
 argument
   #glucose_media?
-  cells_to_assay_in: sample array, "The strains to assay.  4 copies of each strain"
+  cells_to_assay_in: sample("Transformed E coli Strain") array, "The strains to assay.  4 copies of each strain"
 end
 
 take
@@ -9,9 +9,9 @@ take
   #glucose media
 end
 
-#step
-#  description: "This protocol loads the plate reader with the samples to be assayed"
-#end
+step
+  description: "This protocol loads the plate reader with the samples to be assayed"
+end
 
 step
   description: "Load the outermost edges of the plate with water"
