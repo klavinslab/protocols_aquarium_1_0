@@ -54,4 +54,4 @@ foreach c in log_cells
 	end
 end
 release y
-log { return {ODs: ODs} }
+log { return: {ODs: ODs} }
