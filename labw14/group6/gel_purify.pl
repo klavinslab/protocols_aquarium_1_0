@@ -1,5 +1,6 @@
 argument
-  gel_slices: sample array, "Choose the Gel Slices you need to purify."
+  gel_slice1: sample, "Choose the first gel slice you need to purify."
+  gel_slice2: sample, "Choose the second gel slice you need to purify."
 end
 
 step
