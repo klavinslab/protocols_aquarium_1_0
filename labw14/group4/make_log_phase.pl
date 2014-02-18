@@ -4,11 +4,11 @@ end
 
 information "Dilute cells and bring them to log phase"
 
-dilution = 1/1000
-total_V = 10 # ml
+dilution = 1.0/1000
+total_V = 10.0 # ml
 
-e_V = total_V*dilution*1000 # ul;
-LB_V = (total_V-e_V/1000)  # ml
+e_V = total_V*dilution*1000.0 # ul;
+LB_V = (total_V-e_V/1000.0)  # ml
 
 sample_count = length(e_coli_strains)
 net_volume = sample_count *  total_V
