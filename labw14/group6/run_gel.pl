@@ -1,6 +1,5 @@
 argument
   assembly1: sample, " Select the first PCR Result."
-  assembly2: sample, " Select the second PCR Result."
   ladder_one: sample
   fragment_volume: number, "The volume of PCR fragment to load in µL."
 end
