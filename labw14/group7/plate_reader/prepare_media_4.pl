@@ -63,7 +63,7 @@ while i<length(antibios)
     check: "Pipette %{v} uL of '%{antibio_name}' to the 50mL falcon tube"
   end
   
-  antibio_objects = append(antibio_objects, a)
+  antibio_objects = append(antibio_objects, a) # a is always an empty variable here b/c of scope
   i=i+1
 end
 
@@ -73,6 +73,7 @@ step
 end
 
 #for some reason this release is giving me a bug...
+#BUG FIGURED: a is scoped out, so antibio_objects ends up empty
 #release antibio_objects
 
 
