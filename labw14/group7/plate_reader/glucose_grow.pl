@@ -46,6 +46,7 @@ take
 end
 
 incubated_cells = []
+return_array = []
 i = 0
 while i<strains
   id = plated_cells[i]
@@ -65,7 +66,9 @@ while i<strains
   end
   i = i + 1
   incubated_cells = append(incubated_cells, a)
+  return_array = append(return_array, a[:id])
 end
+
 step
   description: "Place the tubes in the 37C shaker"
   note: "You should now have a tube rack containing 4 repeats of each cell colony, in a total of %{n} culture tubes" 
@@ -87,7 +90,7 @@ release plate_array
 #TODO: Figure out how to release an array of samples
 #add log -> return to provide an array of culture tubes for the metacol
 log
-  return: { incubated_cells_id: incubated_cells[:id]}
+  return: { incubated_cells_id: return_array}
 end
 
 
