@@ -77,7 +77,7 @@ end
 
 
 step
-  description: "Now you will start to obtain cell aliquots"
+  description: "Now you will start obtaining cell aliquots"
 end
 
 
@@ -96,20 +96,39 @@ while ii < length(yeast_250ml_flask)
   step
     description: "Obtaining cell aliquots from a tube %{id_num}"
     note: "You can obtain %{max} cell aliquots from a tube %{id_num}, 50μL each."
-    warning: "But one of these aliquots will be used as a control aliquot. So you can make maximum %{max_des} aliquots."
+    warning: "But one of these aliquots will be used as a control aliquot. So you can plate maximum %{max_des} aliquots."
     getdata
-      num_to_make: number, "Number of aliquots you want to make (max %{max_des}), excluding control one."
+      num_to_make: number, "Number of aliquots you want to plate (max %{max_des}), excluding control one."
     end
   end
   
   numbers = append(numbers,num_to_make)
   jj = 0
+  total_number = num_to_make + 1
   
-  while jj < num_to_make
-    produce
-        y = 1 "Yeast Competent Aliquot" from flask[ii]
-        note: "Write the above id number on the aliquot tube's side. Place on the bench."
-        location:"Bench"      
+  while jj < total_number
+    if jj == 0
+      step
+        desctiption:"Control aliquot from the tube %{id_num}"
+        note: "Take a 1.5mL tube and write your name on its side. Write CONTROL word on its side as well."
+      end
+    
+      produce
+          y = 1 "Yeast Competent Aliquot" from flask[ii]
+          note: "Write the above id number on the aliquot tube's cap. Place the tube in a tube holder on the bench."
+          location:"Bench"      
+      end
+    else
+      step
+        desctiption:"Aliquots from the tube %{id_num}"
+        note: "Take a 1.5mL tube and write your name on its side."
+      end
+    
+      produce
+          y = 1 "Yeast Competent Aliquot" from flask[ii]
+          note: "Write the above id number on the aliquot tube's cap. Place the tube in a tube holder on the bench."
+          location:"Bench"      
+      end
     end
   
     r = append(r,y[:id])
