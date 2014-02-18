@@ -102,15 +102,16 @@ while ii < length(yeast_250ml_flask)
     end
   end
   
-  numbers = append(numbers,num_to_make)
   jj = 0
   total_number = num_to_make + 1
+  numbers = append(numbers,total_number)
   
   while jj < total_number
     if jj == 0
       step
         description:"Control aliquot from the tube %{id_num}"
         note: "Take a 1.5mL tube and write your name on its side. Write CONTROL word on its side as well."
+        check: "Pipette 50μL of aliquot from a tube %{id_num} into the CONTROL 1.5mL tube."
       end
     
       produce
@@ -122,6 +123,7 @@ while ii < length(yeast_250ml_flask)
       step
         description:"Aliquots from the tube %{id_num}"
         note: "Take a 1.5mL tube and write your name on its side."
+        check: "Pipette 50μL of aliquot from a tube %{id_num} into the new 1.5mL tube."
       end
     
       produce
