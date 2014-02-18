@@ -55,7 +55,7 @@ place load_plate
   windows: minutes(5)
 end
 
-#wire (glucose_grow, "<<output>>") => (load_plate,"cells_to_assay_in")
+wire (glucose_grow, "incubated_cells_id") => (load_plate,"cells_to_assay_in")
 
 #initial_media => glucose_grow
 transition [initial_media] => [glucose_grow] when !error(0) && completed(0) end
