@@ -72,6 +72,9 @@ place assembly1
   window: minutes(30)
 end
 
+wire (stock1, "Primer_Pool_id") => (assembly1, "oligo_pool1")
+wire (stock2, "Primer_pool_id") => (assembly1, "oligo_pool2") 
+
 place assembly2
   protocol: "labw14/group6/gene_assembly_PCA.pl"
   argument
@@ -83,8 +86,7 @@ place assembly2
   window: minutes(30)
 end
 
-wire (stock1, "Primer_Pool_id") => (assembly1, "oligo_pool1")
-wire (stock2, "Primer_pool_id") => (assembly1, "oligo_pool2")
+
 wire (stock3, "Primer_Pool_id") => (assembly2, "oligo_pool3")
 wire (stock4, "Primer_Pool_id") => (assembly2, "oligo_pool4")
 
