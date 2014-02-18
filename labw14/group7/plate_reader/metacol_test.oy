@@ -25,21 +25,19 @@ place initial_media
   marked: true
 end
 
-#place glucose_grow
-#  protocol: "labw14/group7/plate_reader/glucose_grow.pl"
-#  argument
-#    <<input>>: cell_array_input
-#    <<num_copies>>: number_of_copies
-#  end
-#  group: aquarium_user
-#  start: now()
-#  window: minutes(10)
-#end
-
+place glucose_grow
+  protocol: "labw14/group7/plate_reader/glucose_grow.pl"
+  argument
+    plated_cells: cell_array_input
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(10)
+end
 
 #wire (LB_grow, "cell_array") => (glucose_grow,"LB_cell_array")
 
-#LB_grow -> glucose_grow
-#transition [LB_grow] => [glucose_grow] when !error(0) && completed(0) end
-#LB_grow rework
-#transition [LB_grow] => [LB_grow] when error(0) end
+#initial_media => glucose_grow
+transition [initial_media] => [glucose_grow] when !error(0) && completed(0) end
+#initial_media rework
+transition [initial_media] => [initial_media] when error(0) end
