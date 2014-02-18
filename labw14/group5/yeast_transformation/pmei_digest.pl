@@ -9,8 +9,8 @@ take
 #  y = item fragment
 #  neb4 = item neb
 #  bsa_buffer = item bsa
-   neb4 = 1 "Enzyme Buffer: NEB Buffer 4"
-   bsa  = 1 "Enzyme Buffer: BSA"
+   neb4 = 1 "NEB Buffer 4"
+   bsa  = 1 "BSA"
 #   pmei =  "Enzyme: PmeI"
 end
 
@@ -22,7 +22,7 @@ end
 take
    ice_block = 1 "Styrofoam Ice Block"
    alum_rack = 1 "Aluminum Tube Rack"
-   pmei      = 1 "Enzyme: PmeI"
+   pmei      = 1 "PmeI"
 end
 
 step 
