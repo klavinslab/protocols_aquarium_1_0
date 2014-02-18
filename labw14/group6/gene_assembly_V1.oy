@@ -75,7 +75,8 @@ end
 place assembly2
   protocol: "labw14/group6/gene_assembly_PCA.pl"
   argument
-    oligo_pools: [oligo_pool21, oligo_pool22]
+    oligo_pool3: [oligo_pool21]
+    oligo_pool4: [oligo_pool22]
   end
   group: aquarium_user
   start: now()
@@ -84,21 +85,22 @@ end
 
 wire (stock1, "Primer_Pool_id") => (assembly1, "oligo_pool1")
 wire (stock2, "Primer_pool_id") => (assembly1, "oligo_pool2")
-wire (stock3, "Primer_Pool_id") => (assembly2, "oligo_pools")
-wire (stock4, "Primer_Pool_id") => (assembly2, "oligo_pools")
+wire (stock3, "Primer_Pool_id") => (assembly2, "oligo_pool3")
+wire (stock4, "Primer_Pool_id") => (assembly2, "oligo_pool4")
 
 place run_gel
   protocol: "labw14/group6/run_gel.pl"
   group: aquarium_user
   argument
-    assemblies: [assembly1_product, assembly2_product]
+    assembly1: [assembly1_product]
+    assembly2: [assembly2_product]
   end
   start: now()
   window: minutes(30)
 end
 
-wire (assembly1, "PCR_Result_id") => (run_gel, "assemblies")
-wire (assembly2, "PCR_Result_id") => (run_gel, "assemblies")
+wire (assembly1, "PCR_Result_id") => (run_gel, "assembly1")
+wire (assembly2, "PCR_Result_id") => (run_gel, "assembly2")
 
 place image_cut_gel
   protocol: "labw14/group6/image_cut_gel.pl"
