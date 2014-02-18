@@ -1,10 +1,20 @@
-m = 51
+vol = []
 
-n = 50
+while ii < 2
 
-res = m*4/n
-
-step
-  description: "%{res}"
+  step
+  description: "number?"
+    getdata
+      n: number
+    end
+  end
+  
+  ii = ii + 1
+  vol = append (vol,n)
 end
 
+num = vol[0]
+
+step
+  description: "%{num}"
+end
