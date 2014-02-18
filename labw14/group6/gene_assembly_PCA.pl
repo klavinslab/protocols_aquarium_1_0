@@ -1,6 +1,6 @@
 argument
-    oligo_pool1: sample array, "Choose the first oligonucleotide master stocks"
-    oligo_pool2: sample array, "Choose the second oligonucleotide master stocks"
+    oligo_pool1: sample, "Choose the first oligonucleotide master stocks"
+    oligo_pool2: sample, "Choose the second oligonucleotide master stocks"
 end
 
 step
