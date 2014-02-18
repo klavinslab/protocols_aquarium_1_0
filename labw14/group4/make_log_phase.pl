@@ -12,7 +12,7 @@ LB_V = (total_V-e_V/1000)  # ml
 
 sample_count = length(e_coli_strains)
 net_volume = sample_count *  total_V
-lb_count = 1+(net_volume-(net_volume%50))/50
+lb_count = 1 # How to implement multiple aliquot count? 1+(net_volume-(net_volume%50))/50
 
 take
 	e_items = item e_coli_strains
@@ -26,7 +26,7 @@ step
 end
 
 i = 0
-foreach  e in e_coli_strains
+foreach  e = e_coli_strains
 	i = i + 1
 	step
 		description: "Dilute E. coli cells from sample %{e}"
