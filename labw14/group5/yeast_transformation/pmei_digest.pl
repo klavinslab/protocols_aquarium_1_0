@@ -48,4 +48,4 @@ end
 #  inuse:0
 #end
 
-release [neb4[0],bsa[0],dpn_enzyme[0]]
+release [neb4[0],bsa[0],pmei[0]]
