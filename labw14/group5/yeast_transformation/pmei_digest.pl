@@ -9,7 +9,7 @@ take
 #  y = item fragment
 #  neb4 = item neb
 #  bsa_buffer = item bsa
-   neb4 = 1 "NEB Buffer 4"
+   neb4 = item 668  #"NEB Buffer 4"
    bsa  = 1 "BSA"
 #   pmei =  "Enzyme: PmeI"
 end
