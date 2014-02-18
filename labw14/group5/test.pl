@@ -1,22 +1,13 @@
-vol = []
-
-ii = 0
-
-while ii < 2
-
-  step
-  description: "number?"
-    getdata
-      n: number
-    end
-  end
-  
-  ii = ii + 1
-  vol = append (vol,n)
+argument
+  fragment_id: sample array
 end
 
-num = vol[0][:id]
+take
+  fragment = item fragment_id
+end
 
 step
-  description: "%{num}"
+  description: " %{fragment_id} "
 end
+
+release fragment
