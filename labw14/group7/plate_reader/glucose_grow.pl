@@ -45,6 +45,7 @@ take
   plate_array = item plated_cells
 end
 
+incubated_cells = []
 i = 0
 while i<strains
   id = plated_cells[i]
@@ -56,12 +57,14 @@ while i<strains
 #TODO: Repace the above code with something more modular, based on an arbitrary number of cycles and strains
   end
   
+  a = []
   produce
     a = 1 "Overnight suspension culture" from plate_array[i]
     note: "This item refers to all 4 copies of the cells. Label them all with this number"
     location: "Bench"
   end
   i = i + 1
+  incubated_cells = append(incubated_cells, a)
 end
 step
   description: "Place the tubes in the 37C shaker"
@@ -70,7 +73,7 @@ step
   note: "This will incubate for 18hrs (overnight)"
 end
 
-#release plate_array
+release plate_array
 
 #TODO: Figure out how to release an array of samples, and add log -> return to provide an array of culture tubes for the metacol
 
