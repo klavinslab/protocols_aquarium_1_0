@@ -9,9 +9,9 @@ take
 #  y = item fragment
 #  neb4 = item neb
 #  bsa_buffer = item bsa
-   neb  = 1 "Enzyme Buffer: NEB Buffer 4"
+   neb4 = 1 "Enzyme Buffer: NEB Buffer 4"
    bsa  = 1 "Enzyme Buffer: BSA"
-   pmei = 1 "Enzyme: PmeI"
+#   pmei =  "Enzyme: PmeI"
 end
 
 step
@@ -19,14 +19,16 @@ step
   note: "The enzyme are temperature sensitive."
 end
 
-#take
-#  dpn_enzyme = item dpn
-#end
+take
+   ice_block = 1 "Styrofoam Ice Block"
+   alum_rack = 1 "Aluminum Tube Rack"
+   pmei      = 1 "Enzyme: PmeI"
+end
 
 step 
   description: "Prepare PmeI digestion reaction"
-  check: "Pipet 42.3 µL molecular grade water into fragment tube with id %{fragment}."
-  check: "Pipet 5 µL NEB4 buffer with id %{neb} into the tube."
+#  check: "Pipet 42.3 µL molecular grade water into fragment tube with id %{fragment}."
+  check: "Pipet 5 µL NEB4 buffer with id %{neb4} into the tube."
   check: "Pipet 0.5 µL BSA buffer with id %{bsa} into the tube."
   check: "Pipet 0.3 µL PmeI enzyme with id %{pmei} into the tube."
   note: "Be careful to pipet into the liquid, not the side of the tube."
@@ -48,4 +50,4 @@ end
 #  inuse:0
 #end
 
-release [neb4[0],bsa[0],pmei[0]]
+release [neb4[0],bsa[0],pmei[0], ice_block[0], alum_rack[0]]
