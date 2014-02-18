@@ -32,9 +32,9 @@ cell2 = cells[2][:id]
 step
   description: "Load the cells into the wells"
   note: "Load the cells according to the chart"
-  check: "%{cell0}: R1 => A; R2 => B; R3 => C; R4 => D"
-  check: "%{cell1}: R1 => E; R2 => F; R3 => G; R4 => H"
-  check: "%{cell2}: R1 => I; R2 => J; R3 => K; R4 => L"
+  check: "%{cell0}:   R1 => A;  R2 => B;  R3 => C;  R4 => D"
+  check: "%{cell1}:   R1 => E;  R2 => F;  R3 => G;  R4 => H"
+  check: "%{cell2}:   R1 => I;  R2 => J;  R3 => K;  R4 => L"
   #todo: include chart
   #todo: identify which cells correspond to which type.  Generalize.
 end
