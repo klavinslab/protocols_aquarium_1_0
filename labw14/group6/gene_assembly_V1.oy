@@ -77,8 +77,8 @@ end
 place assembly2
   protocol: "labw14/group6/gene_assembly_PCA.pl"
   argument
-    oligo_pool3: [oligo_pool21]
-    oligo_pool4: [oligo_pool22]
+    oligo_pool1: [oligo_pool21]
+    oligo_pool2: [oligo_pool22]
   end
   group: aquarium_user
   start: now()
@@ -86,8 +86,8 @@ place assembly2
 end
 
 
-wire (stock3, "Primer_Pool_id") => (assembly2, "oligo_pool3")
-wire (stock4, "Primer_Pool_id") => (assembly2, "oligo_pool4")
+wire (stock3, "Primer_Pool_id") => (assembly2, "oligo_pool1")
+wire (stock4, "Primer_Pool_id") => (assembly2, "oligo_pool2")
 
 place run_gel
   protocol: "labw14/group6/run_gel.pl"
