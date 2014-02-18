@@ -1,5 +1,7 @@
 vol = []
 
+ii = 0
+
 while ii < 2
 
   step
