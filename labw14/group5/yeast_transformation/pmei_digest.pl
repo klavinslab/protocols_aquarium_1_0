@@ -4,7 +4,7 @@
 
 take
 #  y = item fragment
-   neb4     = item 668 # NEB Buffer 4 
+   neb4     = item 668 # 1 "NEB Buffer 4"
    bsa      = item 798 # BSA Buffer
    fragment = item 1543 # DNA plasmid to digest
 end
