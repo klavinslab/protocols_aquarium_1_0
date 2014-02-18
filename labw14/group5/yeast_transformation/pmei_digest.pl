@@ -22,13 +22,13 @@ end
 
 step 
   description: "Prepare PmeI digestion reaction"
-  note "Take a 1.5mL tube. Write your name and today's date on the tube's side."
+  check: "Take a 1.5mL tube. Write your name and today's date on the tube's side."
   check: "Pipet 42.3 µL molecular grade water into the 1.5mL tube."
   check: "Pipet 5 µL NEB4 buffer with id %{neb4} into the tube."
   check: "Pipet 0.5 µL BSA buffer with id %{bsa} into the tube."
   check: "Pipet 1.0 µL DNA plasmid stock with id %{fragment} into the tube."
   check: "Pipet 0.3 µL PmeI enzyme with id %{pmei} into the tube."
-  warning: "Be careful to pipet into the liquid, not the side of the tube."
+  note: "Be careful to pipet into the liquid, not the side of the tube."
 end
 
 step
