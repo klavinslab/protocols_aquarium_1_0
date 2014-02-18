@@ -73,12 +73,13 @@ step
   note: "This will incubate for 18hrs (overnight)"
 end
 
-
-foreach cell in incubated_cells
+i=0
+for i<2
   modify
-    cell
+    incubated_cells[i]
     location: "37C Shaker" #TODO: get address
   end
+  i=i+1
 end
 
 release plate_array
