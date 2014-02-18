@@ -73,7 +73,19 @@ step
   note: "This will incubate for 18hrs (overnight)"
 end
 
+
+foreach cell in incubated_cells
+  modify
+    cell
+    location: "37C Shaker" #TODO: get address
+  end
+end
+
 release plate_array
 
-#TODO: Figure out how to release an array of samples, and add log -> return to provide an array of culture tubes for the metacol
+#TODO: Figure out how to release an array of samples
+#add log -> return to provide an array of culture tubes for the metacol
+log
+  
+
 
