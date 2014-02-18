@@ -41,8 +41,8 @@ end
 place assembly1
   protocol: "labw14/group6/gene_assembly_PCA.pl"
   argument
-    oligo_pool1: oligo_pool1
-    oligo_pool2: oligo_pool2
+    oligo_pool1: [oligo_pool11]
+    oligo_pool2: [oligo_pool12]
   end
   group: aquarium_user
   start: now()
