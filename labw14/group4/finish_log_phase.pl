@@ -20,7 +20,7 @@ step
 end
 
 ODs = []
-foreach c = log_cells
+foreach c in log_cells
 	step
 	  description: "Blank the Nanodrop"
 	  check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
