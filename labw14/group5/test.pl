@@ -8,6 +8,7 @@ end
 
 step
   description: " %{fragment_id} "
+  note: "%{fragment_id[0]}"
 end
 
 release fragment
