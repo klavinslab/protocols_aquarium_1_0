@@ -17,6 +17,7 @@ primers11 = [1075, 1076]
 primers12 = [1075, 1076]
 primers21 = [1075, 1076]
 primers22 = [1075, 1076]
+phusionHF = 702
 
 # Places
 place stock1
@@ -71,6 +72,7 @@ place assembly1
     oligo_pools2: oligo_pool12
     primers1: primers11
     primers2: primers12
+    enzyme_id: phusionHF
   end
   group: aquarium_user
   start: now()
@@ -84,6 +86,7 @@ place assembly2
     oligo_pools2: oligo_pool22
     primers1: primers21
     primers2: primers22
+    enzyme_id: phusionHF
   end
   group: aquarium_user
   start: now()
@@ -211,11 +214,11 @@ end
 
 
 
-transition [ stock1, stock2 ] => [ assembly1 ] when !error(0) && completed(0) && !error(1) && completed(1) end
+transition [ stock1, stock2 ] => [ assembly1 ] when !error(1) && completed(1) end
 transition [ stock1 ] => [ stock1 ] when error(0) end
 transition [ stock2 ] => [ stock2 ] when error(0) end
 
-transition [ stock3, stock4 ] => [ assembly2 ] when !error(0) && completed(0) && !error(1) && completed(1) end
+transition [ stock4 ] => [ assembly2 ] when !error(0) && completed(0) end
 transition [ stock3 ] => [ stock3 ] when error(0) end
 transition [ stock4 ] => [ stock4 ] when error(0) end
 
