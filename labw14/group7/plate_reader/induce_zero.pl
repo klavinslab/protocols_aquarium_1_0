@@ -12,3 +12,5 @@ step
   note: "Use a new tip each time to avoid contamination"
   #TODO: include chart: induce_0
 end
+
+release aTc_inducer
