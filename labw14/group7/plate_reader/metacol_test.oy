@@ -56,7 +56,11 @@ place load_plate
 end
 
 place induce_zero
-  protocol: "labw14/group7/plate_reader/induce_zero.pl"
+  protocol: "labw14/group7/plate_reader/induce_aTc_zero.pl"
+  argument
+    aTc_inducer_in: "atc Aliquot"
+    plate_chart: "induce_0.png"
+  end
   group: aquarium_user
   start: now()
   window: minutes(5)
@@ -67,6 +71,54 @@ place start_reader
   group: aquarium_user
   start: now()
   window: minutes(5)
+end
+
+place induce_1
+  protocol: "labw14/group7/plate_reader/induce_aTc.pl"
+  argument
+    aTc_inducer_in: "atc Aliquot"
+    plate_chart: "induce_1.png"
+  end
+  group: aquarium_user
+  start: minutes(60)
+  window: minutes(1)
+end
+
+place induce_15
+  protocol: "labw14/group7/plate_reader/induce_aTc.pl"
+  argument
+    aTc_inducer_in: "atc Aliquot"
+    plate_chart: "induce_15.png"
+  end
+  group: aquarium_user
+  start: minutes(30)
+  window: minutes(1)
+end
+
+place induce_2
+  protocol: "labw14/group7/plate_reader/induce_aTc.pl"
+  argument
+    aTc_inducer_in: "atc Aliquot"
+    plate_chart: "induce_2.png"
+  end
+  group: aquarium_user
+  start: minutes(30)
+  window: minutes(1)
+end
+
+place induce_24
+  protocol: "labw14/group7/plate_reader/induce_aTc.pl"
+  argument
+    aTc_inducer_in: "atc Aliquot"
+    plate_chart: "induce_24.png"
+  end
+  group: aquarium_user
+  start: hours(22)
+  window: minutes(10)
+end
+
+place finish
+  #close the program and save the data
 end
 
 wire (glucose_grow, "incubated_cells_id") => (load_plate,"cells_to_assay_in")
@@ -89,3 +141,14 @@ transition [load_plate] => [induce_zero] when !error(0) && completed(0) end
 transition [induce_zero] => [induce_zero] when error(0) end
 transition [induce_zero] => [start_reader] when !error(0) && completed(0) end
 transition [start_reader] => [start_reader] when error(0) end
+transition [start_reader] => [induce_1] when !error(0) && completed(0) end
+transition [induce_1] => [induce_15] when !error(0) && completed(0) end
+transition [induce_15] => [induce_2] when !error(0) && completed(0) end
+transition [induce_2] => [induce_24] when !error(0) && completed(0) end
+transition [induce_24] => [finish] when !error(0) && completed(0) end
+
+transition [induce_1] => [induce_1] when error(0) end
+transition [induce_15] => [induce_15] when error(0) end
+transition [induce_2] => [induce_2] when error(0) end
+transition [induce_24] => [induce_24] when error(0) end
+#TODO: avoid repeating delays
