@@ -78,7 +78,13 @@ end
 
 i = 0
 j = 0
+k = 0
 
+while i < num_gibs
+
+  if concentrations
+
+end
 #while i < num_gibs
 
 #  while j < num_gibs[i]
