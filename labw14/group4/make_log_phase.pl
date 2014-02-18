@@ -26,7 +26,8 @@ step
 end
 
 i = 0
-foreach  e in e_coli_strains
+while i < sample_count
+	e = e_coli_strains[i]
 	i = i + 1
 	step
 		description: "Dilute E. coli cells from sample %{e}"
