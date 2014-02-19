@@ -54,7 +54,7 @@ place pcr_prepare
  protocol: "labw14/group1/pcr_prepare.pl"
    argument
     pfwd: primer_f
-    prev: primer_rev
+    prev: primer_r
     enzyme_id: enzyme_id
   end
  start: now()
