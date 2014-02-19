@@ -50,7 +50,7 @@ while ii < length(yeast_strain_id)
    step
      description: "Transfer the sample to the center of the plate"
      note: "Invert the plate so the beads are on the agar surface. Lift the lid and 
-            pipette %{200} µL of the transformed yeast mixture on the agar surface
+            pipette 200 µL of the transformed yeast mixture on the agar surface
             and put the lid back on the plate."
      warning: "Do not place the place the lid on lab bench while you do this."
      image: "pipette_culture_on_plate"
