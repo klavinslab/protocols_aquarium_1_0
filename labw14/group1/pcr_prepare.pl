@@ -35,7 +35,7 @@ step
     PCR tube and starts it in thermal cycler."
 end
 
-nFragments = 5
+nFragments = nPrimers
 First = 1
 Last = nFragments
 
