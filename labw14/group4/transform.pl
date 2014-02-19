@@ -4,15 +4,18 @@ argument
   plasmid_id: sample array, "The plasmid to be used"
   e_coli_strain_type: sample array, "One electrocompetent aliquot (of the 4 made in the previous protocol) to be transformed"
   dna_vol: number
+  e_coli_map: sample array, "The e coli strains in order of mapping with knockout plasmid"
  # strain_name: string, "Enter the name of the strain you are producing"
 end
+
+require "lab14/group4/lib.pl"
 
 sample_count = length(e_coli_strain_type)
 take
   falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
   plasmids = item unique(plasmid_id)
   electroporator = 1 "Electroporator"
-  strain = item unique(e_coli_strain_type)
+  strain = item e_coli_strain_type
   iceblock = 1 "Styrofoam Ice Block"
   alrack = 1 "Aluminum Tube Rack"
   cuvette = sample_count "Clean Electrocuvette"
@@ -32,19 +35,10 @@ step
 	  warning: "The cuvette metal sides should be touching the ice block to keep it cool."
 end
 
-
 step
-	description:"Transfer Electrocompetent Cells into 1.5 ml Tubes"
-	check: "Take %{sample_count} 1.5 ml tubes and label 1-%{sample_count}"
-	check: "Transfer 50 ul of each e coli strain sample into a corresponding 1.5 ml tube"
-end
-	
-foreach s in strain
-	step
-	  description:"Setup Electrocompetent Cells"
-	  bullet: "Put electrocompetent cells on the aluminum tube rack."
-	  image: "handle_electrocompetent_cells"
-	end
+  description:"Setup Electrocompetent Cells"
+  bullet: "Place electrocompetent cells on the aluminum tube rack to cool."
+  image: "handle_electrocompetent_cells"
 end
 
 	
@@ -61,9 +55,8 @@ trans_cell_tm_consts = []
 
 i = 0
 while i <  sample_count
-	tube_label = i+1
-	e_cells = strain[i]
-	plasmid = plasmid_is[i]
+	plasmid = plasmid_id[i]
+	e_coli = find_original(e_coli_map[i], strain)[:id]
 	step
 	  description: "Label a 1.5 mL tube (transformed cell tube)"
 	  note: "Label as tube %{tube_label}, with initials.\n
@@ -74,7 +67,7 @@ while i <  sample_count
 	
 	
 	step
-	  description: "Pipette %{dna_vol} µL Fragment (sample id: %{plasmid}) into the 1.5 ml electrocompetent cell tube %{tube_label}"
+	  description: "Pipette %{dna_vol} µL Fragment (sample id: %{plasmid}) into the 1.5 ml electrocompetent cell tube %{sample id: %{e_coli}"
 	  check: "Pipette into the culture, not on the side of the tube."
 	  check: "Swirl the tip gently in the culture to mix after pipetting."
 	  check: "Put back on the aluminum rack (not the -20 C blue tube incubator) after mixing."
@@ -117,6 +110,10 @@ while i <  sample_count
 		r = 1 "1.5 mL tube transformation" #of strain_name 
 		note: "Keep on the bench"
 		location: "Bench"
+		data
+			from: e_coli
+			original_id: e_coli_map[i]
+		end
 	  end
 	  
 	  trans_cell_ids = append(trans_cell_ids, r[:id])
