@@ -8,12 +8,12 @@ take
   ecoli_stock = item e_coli_glycerol_stock
 end
 
-step
-  description: "Divide the plate into four even sectors."
-  check: "Turn your plate over, agar side up."
-  check: "Using fine tipped felt pen and a straight edge, draw a line bisecting the plate, rotate the plate 90 degrees and draw a second line.  You shoμLd now have a plate with four even sectors."
+#step
+ # description: "Divide the plate into four even sectors."
+  #check: "Turn your plate over, agar side up."
+  #check: "Using fine tipped felt pen and a straight edge, draw a line bisecting the plate, rotate the plate 90 degrees and draw a second line.  You shoμLd now have a plate with four even sectors."
   #TODO: Image woμLd be a great idea
-end
+#end
 
 #step
 #  description: "Take four 1.5 mL tubes and pipette 100 μL LB into each one"
@@ -30,17 +30,27 @@ end
 #  warning: "Be gentle.  The agar is soft."
 #end
 
+#step
+  #description: "Deposit Glycerol stock containing the cells to a sector and streak"
+  #bullet: "Pipette 5 μL from one of the 1.5 mL tubes on to the outer edge of the plate in the center of one of the sectors"
+  #bullet: "Take a fresh 200 μL tip by hand"
+  #bullet: "At a low angle streak the tip starting from the liquid gently drag the tip back and fourth from sector edge to sector edge in non-overlapping lines eventually reaching near the center."
+  #bullet: "Discard the 1.5 mL tube you just used"
+  #check: "Repeat until you have run out of empty sectors"
+  #warning: "Do not cross the sector lines with a streak"
+  #warning: "Streak lines should not cross"
+  #warning: "You are not trying to spead the liquid."
+ # image: "sector_streak"
+#end
+
 step
   description: "Deposit Glycerol stock containing the cells to a sector and streak"
-  bullet: "Pipette 5 μL from one of the 1.5 mL tubes on to the outer edge of the plate in the center of one of the sectors"
+  bullet: "Pipette 5 μL from one of the 1.5 mL tubes on to the outer edge of the plate"
   bullet: "Take a fresh 200 μL tip by hand"
-  bullet: "At a low angle streak the tip starting from the liquid gently drag the tip back and fourth from sector edge to sector edge in non-overlapping lines eventually reaching near the center."
+  bullet: "At a low angle streak the tip starting from the liquid gently drag the tip back and fourth from edge to edge in non-overlapping lines eventually reaching the other side."
   bullet: "Discard the 1.5 mL tube you just used"
-  check: "Repeat until you have run out of empty sectors"
-  warning: "Do not cross the sector lines with a streak"
   warning: "Streak lines should not cross"
   warning: "You are not trying to spead the liquid."
-  image: "sector_streak"
 end
 
 produce
