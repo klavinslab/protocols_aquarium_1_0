@@ -28,6 +28,21 @@ end
   wire (start_overnight,"yeast_overnight_suspension") => (dilute_culture,"yeast_overnight_suspension")
 
 
+
+
+
+place make_yeast_competent_cells
+  protocol: "labw14/group5/yeast_transformation/make_yeast_competent_cells.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+  wire (dilute_culture,"yeast_250ml_flask") => (make_yeast_competent_cells,"yeast_250ml_flask")
+
+
+
+
 neb  = 668
 bsa  = 798
 pmei = 687
@@ -47,22 +62,11 @@ end
 
 
 
-place make_yeast_competent_cells
-  protocol: "labw14/group5/yeast_transformation/make_yeast_competent_cells.pl"
-  group: aquarium_user
-  start: now()
-  window: minutes(1)
-end
-
-  wire (dilute_culture,"yeast_250ml_flask") => (make_yeast_competent_cells,"yeast_250ml_flask")
-
-
-
 
 place prepare_yeast_transformation
   protocol: "labw14/group5/yeast_transformation/prepare_yeast_transformation.pl"
   group: aquarium_user
-  start: now()
+  start: minutes(1) #40
   window: minutes(1)
 end
 
@@ -111,8 +115,8 @@ end
 #forward transitions
 transition [start_overnight] => [dilute_culture] when !error(0) && completed(0) end
 transition [dilute_culture] => [pmei_digest] when !error(0) && completed(0) end
-transition [pmei_digest] => [make_yeast_competent_cells] when !error(0) && completed(0) end
-transition [make_yeast_competent_cells] => [prepare_yeast_transformation] when !error(0) && completed(0) && minutes_elapsed(3,1) end
+transition [make_yeast_competent_cells] => [pmei_digest]  when !error(0) && completed(0) end
+transition [pmei_digest] => [prepare_yeast_transformation] when !error(0) && completed(0) end
 transition [prepare_yeast_transformation] => [heat_shock] when !error(0) && completed(0) end
 transition [heat_shock] => [plate_incubate] when !error(0) && completed(0) end
 transition [plate_incubate] => [image_plate] when !error(0) && completed(0) end
