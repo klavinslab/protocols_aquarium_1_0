@@ -7,7 +7,7 @@ step
 end
 
 take
-  1 "Zymo Genomic DNA Clean & Concentrator"
+  1 "Zymo Genomic DNA Clean & Concentrator Kit"
 end
 
 step
