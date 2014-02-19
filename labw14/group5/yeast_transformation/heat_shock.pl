@@ -9,7 +9,7 @@ step
 end
 
 take
-  y = yeast_transformation_mixtures
+  y = item yeast_transformation_mixtures
 end
 
 step
