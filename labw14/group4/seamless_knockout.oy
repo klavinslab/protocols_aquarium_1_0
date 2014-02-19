@@ -1,6 +1,6 @@
 argument
   e_coli_strain: sample array, "the E. coli strains you wish to preform the knockouts in" 
-  knockout_fragment: sample array, "the cassettes you wish to transform into the strains, respectively"
+  knockout_fragments: sample array, "the cassettes you wish to transform into the strains, respectively"
   plate_type: sample array, "The appropriate selection plates (thyamine+trimethoprim or minimal-media)"
   note: "The nth E. coli strain will be knocked out with the nth cassette"
   #strain_name: string, "the name of the strain you are producing today (copy it from Week4 lab description in Google Drive"
@@ -13,10 +13,13 @@ end
 ## Qs: How do you repeat OD test if not enough wait time
 ##
 
+#filter for unique sample ids
+unqiue_e_coli_strains = unique(e_coli_strain)
+
 place make_log_phase
   protocol: "labw14/group4/make_log_phase.pl"
   argument
-    cells: e_coli_strain
+    cells: unique_e_coli_strains
   end
   marked: true
   group: aquarium_user
@@ -27,8 +30,8 @@ end
 place finish_log_phase
 	protocol: "labw14/group4/finish_log_phase.pl"	
 	# log_cells: wire log phase cells from make_log_phase
-	start: ## ?? wait appropriate time
-	window: ## ??
+	start: hours(2)
+	window: hours(1)
 	group: aquarium_user
 end
 
@@ -43,15 +46,15 @@ num_trans = 1
 
 place heat_shock
   protocol: "labw14/group4/heat_shock_parallel.pl"
-  # cells_flask: wire log cells from here
+  # cells_flask_array: wire log cells from here
   group: aquarium_user
   window: ## ??
 end
 
-wire (finish_log_phase, "log_cells") => (heat_shock, "cells_flask")
+wire (finish_log_phase, "log_cells") => (heat_shock, "cells_flask_array")
 
 place quick_comp
-  protocol: "labw14/group4/quick_comp.pl"
+  protocol: "labw14/group4/quick_comp_parallel.pl"
   group: aquarium_user
   start: now()
   window: minutes(1)
@@ -62,16 +65,16 @@ wire (heat_shock,"shocked_cells") => (quick_comp,"shocked_cells")
 place transform
   protocol: "labw14/group4/transform.pl"
   argument
-    plasmid_id: fragment_ldna
+    plasmid_id: knockout_fragments
     dna_vol: 2
-    strain_name: strain_name
+    e_coli_map: e_coli_strain
   end
   group: aquarium_user
   start: now()
   window: minutes(1)
 end
 
-wire (quick_comp,"comp_cell_id") => (transform,"e_coli_strain_type")
+wire (quick_comp,"electrocompetent_cells") => (transform,"e_coli_strain_type")
 
 place incubate_tube
   protocol: "labw14/group4/incubate_tube.pl"
@@ -83,7 +86,7 @@ place incubate_tube
   window: minutes(2)
 end
 
-wire (transform,"transformed_cells_id") => (incubate_tube,"e_coli_strain_id")
+wire (transform,"transformed_cells_ids") => (incubate_tube,"e_coli_strain_id")
 
 place plate
   protocol: "labw14/group4/plate.pl"
