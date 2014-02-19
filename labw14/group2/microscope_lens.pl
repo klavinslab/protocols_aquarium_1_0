@@ -57,6 +57,7 @@ end
 step
   description: "Adjust the objective lens"
   warning: "THIS IS IMPORTANT IF THIS ISN'T DONE YOU MAY GET NO RESULTS"
+  bullet: "Center the dish using the X-Y controller so the agar center is at the center of the lens focal point"
   bullet: "Locate the stage knob near the bottom right side of the eye piece"
   bullet: "This is the LARGER of the two knobs"
   bullet: "Adjust the objective lens toward the agar dish, just until the oil begins to spread on the bottom of the dish"
