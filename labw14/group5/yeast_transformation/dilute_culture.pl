@@ -39,10 +39,10 @@ while ii < length(yeast_overnight_suspension)
 
   step
     description: "Diluting cells in YPD"
-    bullet: "Take a 250mL glass flask. Label the flask with your initials and date."
+    bullet: "Take a 250 mL glass flask. Label the flask with your initials and date."
     bullet: "Using serological pipettor transfer 25 mL of YPAD media from the 800 mL YPAD liquid media bottle into the flask."
     bullet: "Then, using 1000 μL pipettor pipet 500 μL of the yeast overnight suspension culture
-           from a 14mL glass tube with id %{id_num} into the flask."
+           from a 14 mL glass tube with id %{id_num} into the flask."
     warning: "Be sterile as far as possible. YPAD media gets easily contaminated."
   end
 
@@ -55,7 +55,7 @@ while ii < length(yeast_overnight_suspension)
 
   step
     description: "Release the following item:"
-    note: "Take a 14mL glass tube with id %{id_num} to the washing station located at A.100. Add 20%% bleach to the tube and place it
+    note: "Take a 14 mL glass tube with id %{id_num} to the washing station located at A.100. Add 20%% bleach to the tube and place it
            in a tube holder beside the sink."
     warning: "When done, click Next. Then choose 'Dispose' option on the next page."
   end
