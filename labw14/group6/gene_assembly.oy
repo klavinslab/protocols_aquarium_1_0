@@ -68,8 +68,6 @@ end
 place assembly1
   protocol: "labw14/group6/full_length_protocols/gene_assembly_PCA.pl"
   argument
-    #oligo_pools1: oligo_pool11
-    #oligo_pools2: oligo_pool12
     primers1: primers11
     primers2: primers12
     enzyme_id: phusionHF
@@ -82,8 +80,6 @@ end
 place assembly2
   protocol: "labw14/group6/full_length_protocols/gene_assembly_PCA.pl"
   argument
-    #oligo_pools1: oligo_pool21
-    #oligo_pools2: oligo_pool22
     primers1: primers21
     primers2: primers22
     enzyme_id: phusionHF
@@ -101,10 +97,6 @@ wire (stock4, "Primer_Pool_id") => (assembly2, "oligo_pools2")
 place run_gel
   protocol: "labw14/group6/full_length_protocols/run_gel.pl"
   group: aquarium_user
-  argument
-    #assemblies1: assembly1_product
-    #assemblies2: assembly2_product
-  end
   start: now()
   window: minutes(30)
 end
@@ -115,9 +107,6 @@ wire (assembly2, "gene") => (run_gel, "assemblies2")
 place image_cut_gel
   protocol: "labw14/group6/full_length_protocols/image_cut_gel.pl"
   group: aquarium_user
-  #argument
-    #fragment_gel_lanes: fragment_gel_lanes
-  #end
   start: now()
   window: minutes(30)
 end
@@ -127,63 +116,50 @@ end
 place gel_purify
   protocol: "labw14/group6/full_length_protocols/gel_purify.pl"
   group: aquarium_user
-  argument
-    gel: gel_slices
-  end
   start: now()
   window: minutes(30)
 end
 
-wire (image_cut_gel, "Gel_Slice_id") => (gel_purify, "gel_slices")
+wire (image_cut_gel, "Gel_Slice_id") => (gel_purify, "gel")
 
 place gibson
   protocol: "labw14/group6/full_length_protocols/gibson_assembly.pl"
   group: aquarium_user
   argument
-    fragment1: purified_fragments
     fragment2: backbone_fragments
   end
   start: now()
   window: minutes(30)
 end
 
-wire (gel_purify, "Fragment_Stock_id") => (gibson, "purified_fragments")
+wire (gel_purify, "Fragment_Stock_id") => (gibson, "fragment1")
 
 place transformation
   protocol: "labw14/group6/full_length_protocols/e_coli_transformation.pl"
-  argument
-    plasmid_id: gibson_result
-  end
   group: aquarium_user
   start: now()
   window: minutes(30)
 end
 
-wire (gibson, "Gibson_Result") => (transformation, "gibson_result")
+wire (gibson, "Gibson_Result") => (transformation, "plasmid_id")
 
 place plate
   protocol: "labw14/group6/full_length_protocols/plate.pl"
-  argument
-    e_coli_strain_id: strain_id
-  end
   group: aquarium_user
   start: now()
   window: minutes(30)
 end
 
-wire (transformation, "transformed_cells_id") => (plate, "strain_id")
+wire (transformation, "transformed_cells_id") => (plate, "e_coli_strain_id")
 
 place overnight
   protocol: "labw14/group6/full_length_protocols/overnight_suspension.pl"
-  argument
-    colony_plate: plate
-  end
   group: aquarium_user
   start: now()
   window: minutes(30)
 end
 
-wire (plate, "plate_id") => (overnight, "plate")
+wire (plate, "plate_id") => (overnight, "colony_plate")
 
 place miniprep
   protocol: "labw14/group6/full_length_protocols/miniprep.pl"
