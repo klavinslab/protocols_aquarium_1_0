@@ -50,7 +50,7 @@ step
   description: "Place the agar film in the petri dish"
   warning: "The film is delicate, high precision is necessary."
   bullet: "CAREFULLY place the agar film on top of our cells in the center of the dish"
-  bullet: "Use the spatula to flatten out any air bubbles"
+  bullet: "Use the spatula to GENTLY flatten out any air bubbles"
   note: "The agar will most likely stick to the spatula. You may use a FRESH 1 mL pipette tip to assist in placing the agar."
 end
 
