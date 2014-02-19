@@ -50,6 +50,7 @@ while ii < number_we_can_make
         y = 1 "Yeast Transformation Mixture" from yeast_aliquot_tubes[ii]
         release yeast_aliquot_tubes[ii]
     end
+    r = append(r,y[:id])
   else
   # NON-CONTROL TUBES
     step
@@ -66,12 +67,13 @@ while ii < number_we_can_make
       warning: "Vortex strongly (setting 8 or 9 on the vortexer) for 1 min or until mixed."
     end
     produce
-        y = 1 "Yeast Transformation Mixture" from yeast_aliquot_tubes[ii]
+        z = 1 "Yeast Transformation Mixture" from yeast_aliquot_tubes[ii]
         release yeast_aliquot_tubes[ii]
     end
+    r = append(r,z[:id])
   end
   
-  r = append(r,y[:id])
+  #r = append(r,y[:id])
   ii=ii+1
 end
 
