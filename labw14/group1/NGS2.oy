@@ -66,7 +66,7 @@ place finish_pcr
   protocol: "labw14/group1/pcr_finish.pl"
   group: aquarium_user
   start: minutes(1) #change to 60
-  window: minutes(1)
+  window: hours(1)
 end
 
 place pour_gel
@@ -89,21 +89,22 @@ place run_gel
   end
   group: aquarium_user
   start: now()
-  window: minutes(1)
+  window: minutes(50)
 end
 
 place image_gel
   protocol: "labw14/group1/image_gel.pl"
   group: aquarium_user
-  start: minutes(20)
-  window: minutes(1)
+  #start: minutes(20)
+  start: now()
+  window: minutes(100)
 end
 
 place clean_gel_box
   protocol: "labw14/group1/clean_gel_box.pl"
   group: aquarium_user
   start: now()
-  window: minutes(1)
+  window: minutes(90)
 end
 
 wire (streak, "r") => (overnight, "id")
