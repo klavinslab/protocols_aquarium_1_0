@@ -1,12 +1,12 @@
 argument
-  fragment: sample,"The cDNA sample that you want to spec its concentration"
+  fragment: sample,"The nucleic acid sample that you want to spec its concentration"
 end
 
 take
   y = item fragment
 end
 
-information "Measure cDNA concentration using Nanodrop spectrophotometer."
+information "Measure Nucleic Acid Concentration using Nanodrop Spectrophotometer."
 
 step
   description: "Go to location B3.405, and find the Nanodrop"
@@ -32,7 +32,7 @@ step
 end
 
 step
-  description: "Measure the cDNA Ssample"
+  description: "Measure the Ssample"
   check: "Open the pedestal"
   check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
   check: "Add 1.5 μL of your sample with id %{fragment} on the lower pedestal."
