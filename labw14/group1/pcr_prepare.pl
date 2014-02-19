@@ -2,14 +2,15 @@ argument
   primer_f: sample array, "forward primer list"
   primer_r: sample array, "reverse primer list"
   #plasmid_id: sample, "The plasmid stock"
-  #enzyme_id: sample, "The Phsion HF Master Mix stock"
+  enzyme_id: sample, "The Phsion HF Master Mix stock"
 end
 
 num_samples = length(primer_f)
 
 take
   #plasmid_stock = item plasmid_id
-  phusion_stock = 1 "Phusion HF Master Mix"
+  #phusion_stock = 1 "Phusion HF Master Mix"
+  phusion_stock = item enzyme_id
 end
 
 
@@ -60,8 +61,8 @@ jj = 0
 t = 1
 tube_number = 0
   while jj < nPrimers
-    fwd = primer_f_items[jj]
-    rev = primer_r_items[jj]
+    fwd = primer_f[jj]
+    rev = primer_r[jj]
     #t = t%bLast
     #tube_number = tube_number + 1
     step 
