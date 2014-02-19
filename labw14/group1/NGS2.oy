@@ -15,14 +15,16 @@ end
 
 place overnight
   protocol: "labw14/group1/overnight_suspension.pl"
-  start: hours(20)
+  #start: hours(20)
+  start: now()
   group: "group1"
   window: hours(8)
 end
 
 place extract
   protocol: "labw14/group1/DNAextractPurelink.pl"
-  start: hours(20)
+  #start: hours(20)
+  start: now()
   group: "group1"
   window: hours(8)
 end
