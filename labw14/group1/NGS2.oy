@@ -1,5 +1,6 @@
 argument
  e_coli_glycerol_stock: sample, "Glycerol Stock of Frozen Cells"
+ Transformed_E_coli_Strain_id: sample, "A plate"
 end
 
 place streak
@@ -17,7 +18,7 @@ place overnight
   protocol: "labw14/group1/overnight_suspension.pl"
   #start: hours(20)
   argument
-    e_coli_glycerol_stock: e_coli_glycerol_stock
+     Transformed_E_coli_Strain_id: Transformed_E_coli_Strain_id
   end
   start: now()
   marked: true
