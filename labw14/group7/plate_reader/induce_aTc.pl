@@ -1,6 +1,6 @@
 argument
   aTc_inducer_in: object, "The aTc inducer to add"
-  #plate_chart: string, "The filename of the chart to use"
+  plate_chart: string, "The filename of the chart to use"
 end
 
 take
@@ -25,8 +25,8 @@ step
   description: "Add the inducer to the wells indicated in the chart"
   check: "Pipette 1uL of aTc solution into each well indicated in the plate chart"
   note: "Use a new tip each time to avoid contamination"
-  #image: plate_chart
-  image: "induce_2"
+  image: plate_chart
+  #image: "induce_2"
 end
 
 step
