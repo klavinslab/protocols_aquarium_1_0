@@ -90,7 +90,7 @@ end
 
 place plate_incubate
   protocol: "labw14/group5/yeast_transformation/plate_incubate.pl"
-  argumet
+  argument
     plate_type: plate_type_id
   end
   group: aquarium_user
