@@ -78,6 +78,10 @@ step
   image: "thermal_cycler_home"
 end
 
+step
+  discription: "When pcr finishes, return pcr tubes to bench"
+end
+
 release fwd
 release revs
 
