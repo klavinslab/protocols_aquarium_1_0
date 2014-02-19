@@ -71,6 +71,7 @@ end
 step
   description: "Turn on the fine Z tunning controller"
   note: "This is labeled 7 and adjusts our focal points when searching for cells"
+  note: "The switch is on the left side of the controller"
   image: "z_focus_label 7"
 end
 
