@@ -57,6 +57,10 @@ while ii < number_we_can_make
       check: "Pipette 25μL  Carrier DNA to the tube."
       check: "Pipette 50μL  Transformation DNA plasmid to the tube."
     end
+    produce
+        y = 1 "Yeast Transformation Mixture" from yeast_aliquot_tubes[ii]
+        release yeast_aliquot_tubes[ii]
+    end
   end
   
   r = append(r,y[:id])
@@ -68,3 +72,4 @@ log
 end
 
 release digested_plasmid
+release [ peg[0,] liac[0], carrier_dna[0] ]
