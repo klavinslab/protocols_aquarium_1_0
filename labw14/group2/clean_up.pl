@@ -8,7 +8,7 @@ step
 end
 
 step
-  descrption: "Take out agar plate"
+  description: "Take out agar plate"
   bullet: "Turn the big knob on the bottom left of the microscope in a clockwise direction."
   bullet: "Open the micrscope incubator and loosen the screws." 
   bullet: "Carefully take out the agar plate along with the ring."
