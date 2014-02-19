@@ -4,7 +4,7 @@
 function find_original( o_id, sample_array)
   foreach elem in sample_array
     local orig_id = elem[:original_id]
-    if o_id == orig_id
+    if o_id == elem[:original_id]
       return elem
     end
   end
