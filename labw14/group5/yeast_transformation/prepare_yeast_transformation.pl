@@ -26,7 +26,7 @@ end
 ii = 0
 r = []
 
-number_we_can_make = length(fragment_id) + 1
+number_we_can_make = 1 + 1 # should be more complicated construction
 
 while ii < number_we_can_make
 
