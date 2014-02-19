@@ -7,9 +7,14 @@ argument
   tanneal: number, "The anneal temperature in degrees C"
 end
 
+# idea TODO
+# build up a data structure using loops etc that define experiment
+# then iterate through that data structure, showing it
+
 take
   phusion_stock = item enzyme_id
 end
+
 take
     forward_primer_stock = item unique(forward_ids)
 end
@@ -117,6 +122,11 @@ x=0
 while x < num_forwards
   produce
     q = 1 "PCR Result" of fragment_names[x]
+    data # put the actual numbers describing what concentrations were used here
+        # can I put a for loop here to put concentrations in ?
+        # if not, another reason to build up list of the tubes and ops to apply
+        concentration: 123
+    end
     location: "Thermocycler"
   end
   x = x+1
