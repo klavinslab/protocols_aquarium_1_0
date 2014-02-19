@@ -27,7 +27,7 @@ if num == 1
   step
     description: "Centfifuging the tube"
     check: "Centfifuge the labeled 50mL tube with a yeast liquid culture for 5 min at 3000 x g
-            in the table top centrifuge located at B3.355 (or B1.340???)."
+            in the table top centrifuge located at B14.335."
     warning: "Be sure you balanced the centrifuge. To balance the labeled tube you have to take
               another 50 mL falcon tube and fill it with 25 mL of water."
   end
@@ -65,7 +65,7 @@ else
   step
     description: "Centfifuging the tubes"
     check: "Centfifuge all the 50 mL tubes with a yeast liquid culture for 5 min at 3000 x g
-            in the table top centrifuge located at B3.355 (or B1.340???)."
+            in the table top centrifuge located at B14.335."
     warning: "Be sure you balanced the centrifuge."
   end
 
