@@ -111,7 +111,7 @@ place image_plate
   window: minutes(1)
 end
 
-  wire (plate_incubate,"yeast_strain_id") => (image_plate,"plate_id")
+  wire (plate_incubate,"plate_id") => (image_plate,"transformed_yeast_plate_id")
 
 
 
