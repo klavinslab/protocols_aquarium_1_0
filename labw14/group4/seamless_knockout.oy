@@ -4,6 +4,10 @@ argument
   plate_type: sample array, "The appropriate selection plates (thyamine+trimethoprim or minimal-media)"
   note: "The nth E. coli strain will be knocked out with the nth cassette"
   #strain_name: string, "the name of the strain you are producing today (copy it from Week4 lab description in Google Drive"
+  pfwd: sample("Primer"), "The forward primer"
+  prev1s: sample array, "Reverse primers for knockout test group"
+  prev2s: sample array, "Reverse primers for control group"
+  phusion_enzyme: sample, "The Phsion HF Master Mix stock"
 end
 
 ##
@@ -100,7 +104,55 @@ place plate
 end
 
 wire (incubate_tube,"transformed_cells_id") => (plate,"e_coli_strain_id")
-  
+
+place boil_cells
+  protocol: "labw14/group4/boil_cells.pl"
+  group: aquarium_user
+  start: now()
+end
+
+wire (plate, "plate_id") => (boil_cells, "template_plate")
+
+place pcr_prepare
+  protocol: "labw14/group4/pcr_prepare.pl"
+  group: aquarium_user
+  argument
+	pfwd: pfwd
+	prev1s: prev1s
+	prev2s: prev2s
+  	enzyme_id: phusion_enzyme
+  end
+  start: now()
+end
+
+wire (boil_cells, "sample_count") => (pcr_prepare, "sample_count")
+
+place pour_gels
+  protocol: "labw14/group4/pour_gels_parallel.pl"
+  group: aquarium_user
+  argument
+  	percentage: 1
+  end
+  start: now()
+end
+
+place run_gels
+  protocol: "labw14/group4/run_gel_parallel.pl"
+  argument
+	  fragment_volume: 20
+	  num_gels: number, "the number of gels to run"
+	  pcr_count: number, "The number of PCR tubes to run"
+  end
+  start: minutes(20)
+end
+wire (pour_gels, "gel_n") => (run_gels, "num_gels")
+wire (pcr_prepare, "pcr_count") => (run_gels, "pcr_count")
+
+place image_gels
+  protocol: "labw14/group4/image_gel.pl"
+  start: now()
+end
+wire (pour_gels, "gel_n") => (image_gels, "gel_count")
 # forward transitions
 
 transition [make_log_phase] => [finish_log_phase] when !error(0) && completed(0) end 
@@ -109,7 +161,11 @@ transition [finish_log_phase] => [heat_shock] when !error(0) && completed(0) end
 transition [heat_shock] => [quick_comp] when !error(0) && completed(0) end 
 transition [quick_comp] => [transform] when !error(0) && completed(0) end 
 transition [incubate_tube] => [plate_1] when !error(0) && completed(0) end 
-transition [plate] => [] when !error(0) && completed(0) end
+transition [plate] => [pcr_prepare] when !error(0) && completed(0) end
+transition [pcr_prepare] => [pour_gels] when !error(0) && completed(0) end
+transition [pour_gels] => [run_gels] when !error(0) && completed(0) end
+transition [run_gels] => [image_gels] when !error(0) && completed(0) end
+transition [image_gels] => [] when !error(0) && completed(0) end
 
 # T1 -> []
 transition [transform] => [incubate_tube] when !error(0) && completed(0) && (return_value(0,"time_constant") >= 3) end
@@ -131,4 +187,8 @@ transition [quick_comp] => [quick_comp] when error(0) end
 transition [transform] => [transform] when error(0) end 
 transition [incubate_tube] => [incubate_tube] when error(0) end
 transition [plate] => [plate] when error(0) end
+transition [pcr_prepare] => [pcr_prepare] when error(0) end
+transition [pour_gels] => [pour_gels] when error(0) end
+transition [run_gels] => [run_gels] when error(0) end
+transition [image_gels] => [image_gels] when error(0) end
 
