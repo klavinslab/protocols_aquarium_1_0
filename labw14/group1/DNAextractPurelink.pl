@@ -86,7 +86,7 @@ produce
 end
 
 log
- return: {Extracted_DNA: r}
+ return: {r: r}
 end
 
 
