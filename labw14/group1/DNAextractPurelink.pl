@@ -1,13 +1,23 @@
 #should set this up as an arg that takes the pellet, or at least premade suspension
+argument
+  susp: sample, "Overnight Suspension of your cells"
+end
+
 
 step
   description: "Extract DNA from clonal cells"
   note: "Before beginning the process, set a water bath to 55 C"
 end
 
-#take
+take
+ susp = item susp[:id]
  # 1 "50mL 95% Ethanol Aliquot"
- # 1 "PureLink Genomic DNA Mini Kit"
+ 1 "PureLink Genomic DNA Mini Kit"
+end
+
+#step
+ # description: "Desuspend the cells"
+  #check: "Centrifuge the test tube containing the overnight suspension 
 #end
 
 step
@@ -72,7 +82,7 @@ step
 end
 
 produce
-  r = 1 "Extracted_DNA"
+  r = 1 "Transformed E coli 1.5 mL tube" of susp[:name]
 end
 
 log
