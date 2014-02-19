@@ -4,8 +4,8 @@ end
 
 information "Dilute cells and bring them to log phase"
 
-dilution = 1.0/1000
-total_V = 10 # ml
+dilution = 1.0/8
+total_V = 20 # ml
 
 e_V = total_V*dilution*1000.0 # ul;
 LB_V = (total_V-e_V/1000.0)  # ml
