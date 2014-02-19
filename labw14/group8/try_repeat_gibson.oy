@@ -1,5 +1,3 @@
-# start with an old protocol for syntax
-
 # args: primer, next_primer_amount_to_try (history) -> (number, history)
 
 # objs : everything, incl basics
@@ -15,9 +13,9 @@ end
 
 # TODO fetch history to find parameter values; call to another system using REST?
 
-# error when check that it worked and it did not
 # try_gibson tries multiple concentrations according to a step
-#  alternatively, fill up the extra pcr tubes with other concentrations
+#  lily: alternatively, fill up the extra pcr tubes with other concentrations from the beginning?
+
 place try_until_successful
   protocol: "labw14/group8/try_gibson.pl"
   argument
@@ -47,8 +45,9 @@ wire (verify_gibson,"successful_gibsons") => (success,"successful_gibsons")
 
 transition [try_until_successful] => [verify_gibson] when !error(0) && completed(0) end
 transition [verify_gibson] => [success] when !error(0) && completed(0) end
-transition [glyStockNow] => [] when !error(0) && completed(0) end
 
 
 # rework transitions
+# can I check a logged variable for success or failure here instead?
+# i.e. error should be an exception state instead of used normally
 transition [verify_gibson]     => [try_until_successful]    when error(0) end
