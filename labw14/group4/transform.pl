@@ -55,12 +55,13 @@ trans_cell_tm_consts = []
 
 i = 0
 while i <  sample_count
+	t_tube_label = i+1
 	plasmid = plasmid_id[i]
 	e_coli_s = find_original(e_coli_map[i], strain)
 	e_coli = e_coli[:id]
 	step
 	  description: "Label a 1.5 mL tube (transformed cell tube)"
-	  note: "Label as tube %{tube_label}, with initials.\n
+	  note: "Label as T tube %{t_tube_label}, with initials.\n
 			 Place the tube in the tube rack.\n
 			 This tube will eventually hold the transformed cells."
 	  image: "label_1_5mL_tube"
@@ -97,7 +98,7 @@ while i <  sample_count
 	  bullet: "Put the cuvette in the cuvette holder, slide into electroporator and press the PULSE button twice quickly."
 	  bullet: "Remove the cuvette from the electroporator and QUICKLY add 1 mL of LB."
 	  bullet: "Pipette up and down 3 times to extract the cells from the gap in the cuvette."
-	  bullet: "Transfer to tube T."
+	  bullet: "Transfer to T tube."
 	  warning: "If you hear a pop, throw away the cuvette,
 				click ABORT."
 	  image: "electroporation_rescue"
