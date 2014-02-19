@@ -82,7 +82,7 @@ step
 end
 
 produce
-  r = 1 "Transformed E coli 1.5 mL tube" of susp[:name]
+  r = 1 "Transformed E coli 1.5 mL tube" from susp[0]
 end
 
 log
