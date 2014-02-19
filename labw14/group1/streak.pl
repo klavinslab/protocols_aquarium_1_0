@@ -51,6 +51,7 @@ produce
 end
 
 release lb
+release ecoli_stock
 
 log
   return: {r: t[:id]}
