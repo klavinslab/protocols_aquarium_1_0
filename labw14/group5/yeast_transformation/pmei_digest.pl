@@ -40,7 +40,7 @@ step
 end
 
 produce
-   y = 1 "Plasmid Stock" from fragment[0]
+   y = 1 "Digested Plasmid" from fragment[0]
    note: "Write the above id number on the tube's cap and then place in the 37°C incubator for 40 minutes,
             location is B14.310."
    location: "B14.310"
