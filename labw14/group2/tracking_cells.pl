@@ -8,6 +8,7 @@ step
   bullet: "Turn on the computer (if not already on)"
   bullet: "Move the X-Y stage controller to the computer station"
   bullet: "Press the black button on the remote focus controller to zero your position"
+  image: "computer_station"
 end
 
 step
@@ -51,21 +52,22 @@ step
   bullet: "Hover over the 'Acquisition Controls' sub menu"
   bullet: "Click on the 'ND Aquisition' option"
   note: "Don't merge this window with the others. It will make your task more difficult."
+  image: "NIS_setup_UI"
 end
 
 step
   description: "Load optical settings"
-  bullet: "Click on the __ menu"
-  bullet: "Click on 'Optical Settings' option"
+  bullet: "Click on the Calibration menu"
+  bullet: "Click on 'Optical Configuration' option"
   bullet: "Click on the 'Restore' button"
-  bullet: "Navigate to 2TB drive/Rob/Settings/phasegfp.xml"
+  bullet: "Navigate to D:/LABW14/Phase GRCY .xml"
   bullet: "Open the file to apply settings"
 step
   description: "Manage ND Aquisition settings"
   bullet: "Click on the 'Time' tab and ensure it is checked"
   bullet: "Ensure interval is set to 10 minutes and duration to 8 hours"
   bullet: "Click on the 'XY Position' tab and ensure it is checked"
-  bullet: "Click on the Z-___ tab and ensure it is UNCHECKED"
+  bullet: "Click on the Z-series tab and ensure it is UNCHECKED"
   bullet: "Click on the Lambda tab and ensure it is checked"
   bullet: "Ensure PhaseGFP is the first setting and GFP is the second setting"
   bullet: "Ignore the lab tab"
