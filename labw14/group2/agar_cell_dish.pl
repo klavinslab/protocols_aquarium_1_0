@@ -30,8 +30,9 @@ end
 step
   description: "Cut the agar film"
   bullet: "Take the cap off of the 5 mL culture tube"
-  bullet: "Take the lid off of the M9 petri dish"
-  bullet: "Stick the opening of the test tube into the center of the agar to punch a hole in the agar"
+  bullet: "Take the lid off of the M9 agar petri dish"
+  bullet: "Stick the opening of the test tube into agar to punch a hole in the agar"
+  bullet: "Rotate the tube gently to ensure a properly cut circle"
 end
 
 step
