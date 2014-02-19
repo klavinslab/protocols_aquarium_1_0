@@ -32,18 +32,6 @@ end
 
 
 
-place make_yeast_competent_cells
-  protocol: "labw14/group5/yeast_transformation/make_yeast_competent_cells.pl"
-  group: aquarium_user
-  start: now()
-  window: minutes(1)
-end
-
-  wire (dilute_culture,"yeast_250ml_flask") => (make_yeast_competent_cells,"yeast_250ml_flask")
-
-
-
-
 neb  = 668
 bsa  = 798
 pmei = 687
@@ -60,6 +48,22 @@ place pmei_digest
   start: now()
   window: minutes(1)
 end
+
+
+
+
+
+
+place make_yeast_competent_cells
+  protocol: "labw14/group5/yeast_transformation/make_yeast_competent_cells.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+  wire (dilute_culture,"yeast_250ml_flask") => (make_yeast_competent_cells,"yeast_250ml_flask")
+
+
 
 
 
@@ -85,6 +89,7 @@ place heat_shock
   window: minutes(1)
 end
 
+  wire (prepare_yeast_transformation,"yeast_plasmid_mixture") => (heat_shock,"yeast_transformation_mixtures")
 
 
 
