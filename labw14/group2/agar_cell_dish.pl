@@ -66,4 +66,4 @@ log
   return: {ons: r[:id]}
 end
 
-release [test_tube[0], plate[0]]
+release [test_tube[0], plate[0], ons[0]]
