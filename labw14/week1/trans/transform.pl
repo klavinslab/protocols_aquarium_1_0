@@ -113,7 +113,7 @@ produce
 end
 
 log
-  return: { transformed_cells_id: r[:id], tube_incubation_choice : tube_incubation_choice }
+  return: { transformed_cells_id: r[:id], tube_incubation_choice: tube_incubation_choice }
 end
 
 release [electroporator[0]]
