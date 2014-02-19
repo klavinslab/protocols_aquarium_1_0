@@ -20,7 +20,7 @@ end
 if num == 1
   step
     description: "Harvesting the cells by centrifugation"
-    check: "Label a 50 mL falcon tube with the id number of the 250mL flasks."
+    check: "Label a 50 mL falcon tube with the id number of the 250mL flask."
     check: "Pour 25 mL of the diluted yeast culture from the flask to the labeled 50mL falcon tube."
   end
 
@@ -160,7 +160,7 @@ while ii < length(yeast_250ml_flask)
     end
   else
     step
-      description: "So you will make %{num_to_make} aliquotsfrom a tube with id %{id_num}"
+      description: "So you will make %{num_to_make} aliquots from a tube with id %{id_num}"
     end
   end
   
@@ -173,7 +173,7 @@ while ii < length(yeast_250ml_flask)
       step
         description:"Making CONTROL aliquot from a tube with id %{id_num}"
         note: "Take a 1.5 mL tube and write your name on its side. Write 'CONTROL' word on its side as well."
-        check: "Pipet 50 μL of aliquot from a tube %{id_num} into the CONTROL 1.5 mL tube."
+        check: "Pipet 50 μL of aliquot from a tube with id %{id_num} into the CONTROL 1.5 mL tube."
       end
     
       produce
