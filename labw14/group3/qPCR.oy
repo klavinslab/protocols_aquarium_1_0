@@ -1,0 +1,35 @@
+argument
+  yeast_susp: sample, "Choose the Yeast Sample from which to Isolate RNA"
+end
+
+place isolate_rna
+  protocol: "labw14/group3/isolate_rna.pl"
+  marked: true
+  group: aquarium_user
+  start: now()
+  window: minutes(10)
+end
+  
+place rna_conc_measure
+  protocol: "labw14/group3/nucl_conc_measure.pl"
+  marked: true
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+wire (isolate_rna, "rna_suspension") => (rna_conc_measure, "fragment")
+
+place cdna_synth
+  protocol: "labw14/group3/cdna_synthesis.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(5)
+  argument
+    rna_conc: return_value(0, "conc")
+  end
+end
+
+
+
+#$%wire (rna_conc_measure, "conc") => (cdna_synth, "
