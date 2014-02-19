@@ -27,11 +27,13 @@ step
   description: "Turn on the fluorescent light bulb"
   note: "This is labeled with a 1 on it must be turned on first for it draws an extremely high current."
   warning: "FAILURE TO DO THIS FIRST MAY RESULT IN A BROKEN SYSTEM."
+  image: "fluorescent lamp label 1"
 end
 
 step
   description: "Turn on the shutter controller"
   note: "This is labeled with a 2 must be turned on second"
+  image: "shutter controller label 2"
 end
 
 step
@@ -48,21 +50,25 @@ end
 step
   description: "Turn on the microscope"
   note: "This is labeled number 4. The switch is a little difficult to find so you may need to feel around for it."
+  image: "micrscope label 4"
 end
 
 step
   description: "Turn on the microscope light" 
   note: "This is labeled 5 and produces the light from the mechanism above the incubator"
+  image: "micrcope light label 5"
 end
 
 step
   description: "Turn on the X-Y controller"
   note: "This is labeled 6 and helps us pan through the surface to find cells at a fixed focal point z"
+  image: "xy_controller_label 6"
 end
 
 step
   description: "Turn on the fine Z tunning controller"
   note: "This is labeled 7 and adjusts our focal points when searching for cells"
+  image: "z_focus_label 7"
 end
 
 step
