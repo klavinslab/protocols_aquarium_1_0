@@ -202,9 +202,28 @@ while ii < length(yeast_250ml_flask)
   ii=ii+1
 end
 
+
 log
   return: { yeast_aliquot: r, numbers_set: numbers }
 end
 
+
 release falcon_tube
+
+if num == 1
+  step
+    description: "Release the following item:"
+    note: "Take a 250 mL flask with id %{id_num} to the washing station located at A.100. Add 20%% bleach to the flask
+          and leave it beside the sink."
+    warning: "When done, click Next. Then choose 'Dispose' option on the next page."
+  end
+else
+  step
+    description: "Release the following item:"
+    note: "Take all the 250 mL flaskы to the washing station located at A.100. Add 20%% bleach to the flasks and
+          leave them beside the sink."
+    warning: "When done, click Next. Then choose 'Dispose' option on the next page."
+  end
+end
+
 release flask
