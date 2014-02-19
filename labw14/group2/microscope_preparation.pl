@@ -36,6 +36,7 @@ end
 step
   description: "Center the shutter controller"
   bullet: "Flip the tuner switch up and down twice, and end it aligned in the center to reset the controller fully"
+  bullet: "The switch should be aligned to the 'Auto' position"
 end
 
 step
@@ -49,13 +50,18 @@ step
 end
 
 step
+  description: "Turn on the microscope light" 
+  note: "This is labeled 5 and produces the light from the mechanism above the incubator"
+end
+
+step
   description: "Turn on the X-Y controller"
-  note: "This is labeld 5 and helps us pan through the surface to find cells at a fixed focal point z"
+  note: "This is labeld 6 and helps us pan through the surface to find cells at a fixed focal point z"
 end
 
 step
   description: "Turn on the fine Z tunning controller"
-  note: "This is labeled 6 and adjusts our focal points when searching for cells"
+  note: "This is labeled 7 and adjusts our focal points when searching for cells"
 end
 
 step
