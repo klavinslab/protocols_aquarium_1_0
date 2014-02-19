@@ -16,6 +16,9 @@ end
 place overnight
   protocol: "labw14/group1/overnight_suspension.pl"
   #start: hours(20)
+  argument
+    e_coli_glycerol_stock: e_coli_glycerol_stock
+  end
   start: now()
   marked: true
   group: "group1"
@@ -37,7 +40,7 @@ place purify
   window: hours(1)
 end
 
-wire (streak, "r") => (overnight, "Transformed_E_coli_Strain_id")
+#wire (streak, "r") => (overnight, "Transformed_E_coli_Strain_id")
 wire (extract, "r") => (purify, "eDNA")
 
 transition [streak] => [overnight] when !error(0) && completed(0) end
