@@ -2,10 +2,6 @@ argument
   id: sample ("Transformed E coli Strain"), "This is where our cells will come from"
 end
 
-take
-  plate = item id
-end
-
 step
   description: "Prepare the agar film to use on the microscope"
   note: "Click next to begin this procedure"
@@ -69,7 +65,7 @@ produce
 end
 
 log
-  return: {ons: r[:id]}
+  return: {dish: r[:id]}
 end
 
 release [test_tube[0], plate[0], ons[0]]
