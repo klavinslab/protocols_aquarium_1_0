@@ -43,7 +43,7 @@ step
 end
 
 produce
-  r = 1 "Agar plate" from sector_plate[0]
+  t = 1 "Agar plate" from sector_plate[0]
   note: "Place the streaked plate upside-down (lid on the bottom) in 30 C incubator at A1.110 overnight."
   release sector_plate
   location: "A1.110"
@@ -52,7 +52,7 @@ end
 release lb
 
 log
-  return: {r: r}
+  return: {r: t[:id]}
 end
 
 
