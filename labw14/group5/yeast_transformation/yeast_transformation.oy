@@ -1,6 +1,7 @@
 argument
   transformed_yeast_plate_id: sample array, "A plate with yeast colonies"
   fragment_id: sample, "DNA to be digested and inserted"
+  plate_type_id: object ("solidmedia"), "Yeast plates that will be plated"
 end
 
 
@@ -89,6 +90,9 @@ end
 
 place plate_incubate
   protocol: "labw14/group5/yeast_transformation/plate_incubate.pl"
+  argumet
+    plate_type: plate_type_id
+  end
   group: aquarium_user
   start: now()
   window: minutes(1)
