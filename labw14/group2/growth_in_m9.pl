@@ -15,9 +15,10 @@ take
 end
 
 step
-  description: "Pipette M9 into the 14 mL test tube"
+  description: "Pipette M9 media into the 14 mL test tube"
   warning: "Do not touch the pipette tip to the side of the 200 mL glucose flask!"
   bullet: "Take the test tube rack from the bench to the media station"
+  bullet: "Place the test tube inside the rack to prevent accidents while pipetting"
   bullet: "Attach the 5 mL serological pipette tip to the serological pipetter"
   bullet: "Pipette 2mL of the M9 solution into the 14 mL test tube"
 end
@@ -28,6 +29,7 @@ release[pipette[0], M9[0], tip[0]]
 take
   amp = 1 "100X 1 mL Ampicillin Aliquot"
   kan = 1 "200X 1 mL Kanamycin Aliquot"
+  note: "These are in a box labeled antibotics in the specified fridge"
 end
 
 step
@@ -44,7 +46,7 @@ end
 
 step
   description: "Mix the overnight suspension culture into the M9 glucose solution"
-  note: "Pipette 13 microL of the overnight suspension culture into the M9 solution"
+  note: "Pipette 13 microL of the overnight suspension culture into the test tube with M9 glucose mixture"
 end
 
 produce
