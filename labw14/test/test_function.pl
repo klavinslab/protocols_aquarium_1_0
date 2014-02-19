@@ -15,6 +15,7 @@ end
 function incubate_small_tube(tube_sample_array, temp)
   foreach tube in tube_sample_array
     tube_id = info(tube)[:id]
+    tube_id = tube[0][:id]
     step
       description: "tube is %{tube}. Put the tube with id %{tube_id} in a small green tube holder."
       image: "green_tube_holder"
