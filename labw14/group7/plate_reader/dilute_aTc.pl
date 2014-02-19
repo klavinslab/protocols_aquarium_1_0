@@ -29,6 +29,11 @@ end
 step #This should REALLY be a "take", but this item is not in the Aquarium inventory yet...
   description: "Retrieve the aTc stock"
   check: "Retrive the '100ug/ml aTc stock solution' from location B1.165"
+  check: "Also, locate the box of '1.5mL tubes' near you station"
+end
+
+take
+  water = 1 "Molecular Biology Grade Water" #1000mL STERILE
 end
 
 initial_conc = 100 #ug/ml
@@ -41,10 +46,6 @@ while d > 10
   d = d / 10
 end
 
-take
-  water = 1 "Molecular Biology Grade Water" #1000mL STERILE
-  tubes = dilution_steps "1.5ml tubes" #3 steps
-end
 
 conc = 1000 * initial_conc / d # ng per ml of aTc in first dilution
 inducer_vol = vol * 1000 / d #uL of aTc stock in first dilution
