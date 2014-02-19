@@ -6,7 +6,7 @@ end
 
 numbers_set = numbers_set_id
 
-num = length(yeast_aliquot)
+num = length(yeast_aliquot_id)
 
 step
  description: "This protocol describes how to prepare yeast trasformation mix"
