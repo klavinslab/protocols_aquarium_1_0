@@ -8,7 +8,7 @@ place streak
     e_coli_glycerol_stock: e_coli_glycerol_stock
   end
   marked: true
-  group: "group 1"
+  group: "group1"
   start: now()
   window: minutes(30)
 end
@@ -16,21 +16,21 @@ end
 place overnight
   protocol: "labw14/group1/overnight_suspension.pl"
   start: hours(20)
-  group: "group 1"
+  group: "group1"
   window: hours(8)
 end
 
 place extract
   protocol: "labw14/group1/DNAextractPurelink.pl"
   start: hours(20)
-  group: "group 1"
+  group: "group1"
   window: hours(8)
 end
 
 place purify
   protocol: "labw14/group1/genomepurification.pl"
   start: now()
-  group: "group 1"
+  group: "group1"
   window: hours(1)
 end
 
