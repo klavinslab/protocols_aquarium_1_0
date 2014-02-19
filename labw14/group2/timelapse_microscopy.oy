@@ -71,6 +71,8 @@ end
 wire (OLBG, "ons") => (GM9, "id")
 wire (GM9, "ons") => (AGAR, "id")
 wire (AGAR, "ons") => (MSPR, "id")
+wire (MSPR, "plate") => (MSLS, "id")
+wire (MSPR, "plate") => (CLEAN, "id")
 
 transition [OLBG] => [MSI] when !error(0) && completed(0) end
 transition [OLBG] => [OLBG] when error(0) end
