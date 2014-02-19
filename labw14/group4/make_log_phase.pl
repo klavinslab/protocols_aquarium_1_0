@@ -42,7 +42,7 @@ log_cell_tubes = []
 while i < sample_count
 	i = i+1
 	produce
-		y = 1 "log cells"
+		y = 1 "log cells" from e_items[i]
 		release t_tubes[i-1]
 		location: "B14.310"
 		data
