@@ -35,7 +35,7 @@ if num == 1
   step
     description: "Washing the cells"
     check: "Collect the labeled 50 mL tube from the centrifuge and place it in a tube rack on your bench."
-    check: "Pour out the liquid from the tube into the sink at the washing station."
+    check: "Pour out the liquid from the tube into the sink at the washing station, location: A8.310."
     warning: "Be careful. Don't destroy the pellet."
   end
 
@@ -72,7 +72,7 @@ else
   step
     description: "Washing the cells"
     check: "Collect all the 50 mL tubes from the centrifuge and place them in a tube rack on your bench."
-    check: "Pour out the liquid from the tubes into the sink at the washing station."
+    check: "Pour out the liquid from the tubes into the sink at the washing station, location: A8.310."
     warning: "Be careful. Don't destroy the pellet."
   end
 
@@ -215,14 +215,14 @@ release falcon_tube
 if num == 1
   step
     description: "Release the following item:"
-    note: "Take the 250 mL flask to the washing station located at A.100. Add 20%% bleach to the flask
+    note: "Take the 250 mL flask to the washing station located at A8.310. Add 20%% bleach to the flask
           and leave it beside the sink."
     warning: "When done, click Next. Then choose 'Dispose' option on the next page."
   end
 else
   step
     description: "Release the following item:"
-    note: "Take all the 250 mL flaskы to the washing station located at A.100. Add 20%% bleach to the flasks and
+    note: "Take all the 250 mL flaskы to the washing station located at A8.310. Add 20%% bleach to the flasks and
           leave them beside the sink."
     warning: "When done, click Next. Then choose 'Dispose' option on the next page."
   end
