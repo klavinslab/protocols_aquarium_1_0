@@ -10,9 +10,9 @@ end
 sample_count = length(e_coli_strain_type)
 take
   falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
-  plasmid = item plasmid_id
+  plasmids = item unique(plasmid_id)
   electroporator = 1 "Electroporator"
-  strain = item e_coli_strain_type
+  strain = item unique(e_coli_strain_type)
   iceblock = 1 "Styrofoam Ice Block"
   alrack = 1 "Aluminum Tube Rack"
   cuvette = sample_count "Clean Electrocuvette"
@@ -63,6 +63,7 @@ i = 0
 while i <  sample_count
 	tube_label = i+1
 	e_cells = strain[i]
+	plasmid = plasmid_is[i]
 	step
 	  description: "Label a 1.5 mL tube (transformed cell tube)"
 	  note: "Label as tube %{tube_label}, with initials.\n
@@ -73,7 +74,7 @@ while i <  sample_count
 	
 	
 	step
-	  description: "Pipette %{dna_vol} µL Fragment (sample id: %{plasmid_id}) into the 1.5 ml electrocompetent cell tube %{tube_label}"
+	  description: "Pipette %{dna_vol} µL Fragment (sample id: %{plasmid}) into the 1.5 ml electrocompetent cell tube %{tube_label}"
 	  check: "Pipette into the culture, not on the side of the tube."
 	  check: "Swirl the tip gently in the culture to mix after pipetting."
 	  check: "Put back on the aluminum rack (not the -20 C blue tube incubator) after mixing."
