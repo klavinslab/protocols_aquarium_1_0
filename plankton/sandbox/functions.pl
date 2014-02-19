@@ -1,10 +1,14 @@
 function g(n)
 
+  local a = 0
+
   if n > 0
-    return n*g(n-1)
+    a = n*g(n-1)
   else
-    return 1
+    a = 1
   end
+
+  return a
 
 end
 

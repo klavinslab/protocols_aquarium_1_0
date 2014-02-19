@@ -1,4 +1,4 @@
-include "plankton/sandbox/lib.pl"
+require "plankton/sandbox/lib.pl"
 
 argument
   ids: sample("Transformed E coli Strain") array, "Stocks"
