@@ -45,6 +45,7 @@ end
 step
   description: "Turn on the microscope bright-light controller"
   note: "This is labeled 3 and turned on third"
+  image: "lamp controller label 3"
 end
 
 step
