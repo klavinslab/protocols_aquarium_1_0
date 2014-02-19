@@ -141,7 +141,7 @@ while ii < num_samples
 end
 
 log
-  competent_cells: electrocompent_cells
+  electrocompetent_cells: electrocompetent_cells
 end
 
 release cells	# DEBUG
