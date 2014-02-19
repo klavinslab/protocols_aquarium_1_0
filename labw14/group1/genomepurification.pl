@@ -38,5 +38,5 @@ produce
 end
 
 log
-  return: {r: r}
+  return: {r: r[:id]}
 end
