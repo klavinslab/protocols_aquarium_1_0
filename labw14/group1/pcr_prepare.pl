@@ -9,7 +9,7 @@ num_samples = length(primer_f)
 
 take
   #plasmid_stock = item plasmid_id
-  phusion_stock = 1 "The Phsion HF Master Mix stock"
+  phusion_stock = 1 "Phusion HF Master Mix"
 end
 
 
