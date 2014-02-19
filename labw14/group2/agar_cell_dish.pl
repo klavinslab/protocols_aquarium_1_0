@@ -2,6 +2,10 @@ argument
   id: sample ("Transformed E coli Strain"), "This is where our cells will come from"
 end
 
+take
+  plate = item id
+end
+
 step
   description: "Prepare the agar film to use on the microscope"
   note: "Click next to begin this procedure"
