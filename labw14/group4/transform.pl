@@ -138,7 +138,7 @@ while i <  sample_count
 end
 
 log
-	return: { transformed_cells_ids: trans_cell_ids, time_constants: trans_cell_tm_consts }
+	transformed: { transformed_cells_ids: trans_cell_ids, time_constants: trans_cell_tm_consts }
 end
 
 release [electroporator[0]]
