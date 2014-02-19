@@ -55,7 +55,7 @@ while ii < length(yeast_overnight_suspension)
 
   step
     description: "Release the following item:"
-    note: "Take a 14 mL glass tube with id %{id_num} to the washing station located at A.100. Add 20%% bleach to the tube and place it
+    note: "Take a 14 mL glass tube with id %{id_num} to the washing station located at A8.310. Add 20%% bleach to the tube and place it
            in a tube holder beside the sink."
     warning: "When done, click Next. Then choose 'Dispose' option on the next page."
   end
