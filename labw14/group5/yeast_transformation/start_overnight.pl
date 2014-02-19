@@ -17,7 +17,8 @@ end
 
 step
   description: "Preparing yeast overnight culture tubes"
-  note: "Label  %{num}  14ml glass tubes with your name and today's date."
+  note: "Label  %{num}  14 ml glass tubes with your name and today's date."
+  warning: "Write only on transparent part of the tube. Don't write on the white label."
 end
 
 ii  = 0
@@ -36,7 +37,7 @@ while ii < length(transformed_yeast_plate)
 
   step
     description: "Making yeast overnight culture tube"
-    bullet: "Take a 14mL glass tube."
+    bullet: "Take a 14 mL glass tube."
     bullet: "Using P1000 pipettor pipet 2 mL of YPAD media into the tube."
   end
 
