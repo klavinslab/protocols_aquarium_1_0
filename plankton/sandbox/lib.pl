@@ -1,6 +1,7 @@
 function produce_minipreps(strains)
 
-  result = []
+  local result = []
+  local p
 
   foreach s in strains
 
