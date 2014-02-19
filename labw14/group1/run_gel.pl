@@ -2,30 +2,33 @@ information "Load and run an agarose gel."
 
 
 argument
-  fragments: sample array
+#  colony: sample
   ladder_one: sample
-  fragment_volume: number, "The volume of PCR fragment to load in µL."
+  fragment_volume: number, "The volume of each PCR fragment to load in µL."
 end
+
+
+take
+  glasses = 1 "Clear Protective Glasses"
+end
+
+
+step
+  description: "Wear clear protective glasses"
+end
+
 
 take
   gel = 1 "50 mL 1 Percent Agarose Gel in Gel Box"
+#  fragment = item colony
   ladder = item ladder_one
   loading_dye = 1 "Gel Loading Dye Blue (6X)"
 end
 
-ii = 0
-frag = []
-while ii<length(fragments)
-  take
-    f = item fragments[ii]
-  end
-  frag = append(frag,f[0])
-  ii = ii+1
-end
 
 step
   description: "Set up the power supply."
-  note: "In the gel room, obtain a power supply and set it to 100 V and with a 40 minute timer.\n\nAttach the electrodes of an appropriate gel box lid from A7.525 to the power supply."
+  note: "In the gel room, obtain a power supply and set it to 120 V and with a 30 minutes timer.\n\nAttach the electrodes of an appropriate gel box lid from A7.525 to the power supply."
   image: "gel_power_settings"
 end
 
@@ -45,7 +48,7 @@ end
 dye_volume = fragment_volume / 5.0
 step
   description: "Add loading dye to the PCR fragment"
-  note: "Using a 10 µL or 100 µL pipetter, add %{dye_volume} µL of loading dye to the PCR results with id %{fragments}."
+  note: "Using a 10 µL or 100 µL pipetter, add %{dye_volume} µL of loading dye to each of the PCR tubes."
   image: "gel_add_loading_dye"
 end
 
@@ -62,14 +65,16 @@ end
 
 step
   description: "Load the PCR"
-  note: "Using a 100 µL pipetter, pipet %{fragment_volume} µL of the PCR results (containing loading dye) into the second well of the gel."
+  check: "Using a 100 µL pipetter, pipet %{fragment_volume} µL from each PCR tube (containing loading dye) into the well remaining wells of gel."
   image: "gel_begin_loading"
 end
 
 
 step
   description: "Start electrophoresis"
-  note: "Carefully attach the gel box lid to the gel box, being careful not to bump the samples out of the wells. Attach the red electrode to the red terminal of the power supply, and the black electrode to the neighboring black terminal. Hit the start button on the gel boxes - usually a small running person icon."
+  check: "Carefully attach the gel box lid to the gel box, being careful not to bump the samples out of the wells. "
+  check: "Attach the red electrode to the red terminal of the power supply, and the black electrode to the neighboring black terminal. "
+  check: "Hit the start button on the gel boxes - usually a small running person icon."
   warning: "Make sure the power supply is not erroring (no E* messages) and that there are bubbles emerging from the platinum wires in the bottom corners of the gel box."
   image: "gel_check_for_bubbles"
 end
@@ -77,21 +82,5 @@ end
 
 release ladder
 
-ii=0
-lane_ids = []
-while ii<length(frag)
-  produce
-    gel_lane = 1 "Gel Lane" from frag[ii]
-    location: "Bench"
-    release gel
-  end
-  lane_ids = append(lane_ids,gel_lane[:id])
-  ii = ii+1
-end
-
-release frag  # Throw away the tube / save extra
-
-
-log
-  return: { Gel_lane_ids: lane_ids}
-end
+#release fragment  # Throw away the tube / save extra
+release glasses
