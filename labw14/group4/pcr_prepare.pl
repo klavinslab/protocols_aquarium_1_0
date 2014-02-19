@@ -9,8 +9,8 @@ end
 
 take
   fwd = item pfwd
-  rev1s = item prev1s
-  rev2s = item prev2s
+  rev1s = item unique(prev1s)
+  rev2s = item unique(prev2s)
   #genomicdna = item templates
   phusion_stock = item enzyme_id
 end
