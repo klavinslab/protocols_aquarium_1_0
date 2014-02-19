@@ -6,11 +6,6 @@ argument
   enzyme_id: sample, "The Phsion HF Master Mix stock"
 end
 
-n1 = length(oligo_pools1)
-n2 = length(oligo_pools2)
-n = n1 + n2
-# The number of oligo pools to use in the assembly is recorded, just in case
-
 
 take
   masterstock1 = item oligo_pools1
