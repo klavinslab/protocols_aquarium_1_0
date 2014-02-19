@@ -54,7 +54,7 @@ end
 
 
 produce
-  1 "Agar plate" from stock[0]
+  r = 1 "Agar plate" from stock[0]
   note: "Place the streaked plate upside-down (lid on the bottom) in 30 C incubator at A1.110"
   release sector_plate
   location: "A1.110"
