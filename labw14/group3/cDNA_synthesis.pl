@@ -9,6 +9,7 @@ take
   react_mix = item rxn_mix
   iscript_enz = item rev_enzyme
   iso_rna = item rna_yeast
+  nucwater = 1 "Nuclease Free Water"
 end
 
 step
@@ -18,7 +19,7 @@ end
 step
   description: "Label a 0.2 mL PCR tube. Write your initials on it."
   note: "Prior to moving forward check that your iScript reaction mix has generated any precipitation upon thawing." 
-  bullet: "If precipitation has occured, please mix througly to resuspend, before moving forward"
+  bullet: "If precipitation has occured, please mix thoroughly to resuspend, before moving forward"
 end
 
 step 
