@@ -9,6 +9,8 @@ step
   bullet: "To set the phase make sure the box for number 1 is checked"
   bullet: "Set interval to 10 min"
   bullet: "Set duration to 8 hours"
+  bullet: "Make sure Z-series is unchecked"
+  bullet: "Under the Lambda tab, set the first drop down menu to Ph-GFP, and the second one to GFP"
 end
 
 step
