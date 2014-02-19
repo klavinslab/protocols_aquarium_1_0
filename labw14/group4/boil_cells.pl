@@ -61,5 +61,5 @@ end
 
 
 release platetemplate
-
+log {return: {sample_count: sample_count}}
 
