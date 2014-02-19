@@ -2,8 +2,10 @@ argument
   id: sample("Transformed E coli Strain"), "Agar plate to be disposed"
 end
 
-plate = item id
-
+take
+  plate = item id
+  note: "The dish is already inside of the microscope, just leave it there"
+end
 step
   description: "Go to the microscope room"
   note: "Open the protocol in the microscope room and click next"
