@@ -32,7 +32,7 @@ while ii < number_we_can_make
 
   id_num = yeast_aliquot_id[ii]
   
-  if ii == 1 # CONTROL TUBE
+  if ii == 0 # CONTROL TUBE
     step
       description: "Making CONTROL yeast transformation mixture"
       note: "Take a 1.5mL tube with id %{id_num}"
