@@ -48,7 +48,13 @@ place plate_reader_media_delay
   window: minutes(10)
 end
 
-#add "dilute_inducer.pl"
+
+place dilute_aTc
+  protocol: "labw14/group7/plate_reader/dilute_aTc.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(5)
+end
 
 place load_plate
   protocol: "labw14/group7/plate_reader/load_plate.pl"
@@ -60,7 +66,7 @@ end
 place induce_zero
   protocol: "labw14/group7/plate_reader/induce_aTc_zero.pl"
   argument
-    aTc_inducer_in: "atc Aliquot"
+#    aTc_inducer_in: "atc Aliquot"
     plate_chart: "induce_0.png"
   end
   group: aquarium_user
@@ -78,7 +84,7 @@ end
 place induce_1
   protocol: "labw14/group7/plate_reader/induce_aTc.pl"
   argument
-    aTc_inducer_in: "atc Aliquot"
+#    aTc_inducer_in: "atc Aliquot"
     plate_chart: "induce_1.png"
   end
   group: aquarium_user
@@ -89,7 +95,7 @@ end
 place induce_15
   protocol: "labw14/group7/plate_reader/induce_aTc.pl"
   argument
-    aTc_inducer_in: "atc Aliquot"
+#    aTc_inducer_in: "atc Aliquot"
     plate_chart: "induce_15.png"
   end
   group: aquarium_user
@@ -100,7 +106,7 @@ end
 place induce_2
   protocol: "labw14/group7/plate_reader/induce_aTc.pl"
   argument
-    aTc_inducer_in: "atc Aliquot"
+#    aTc_inducer_in: "atc Aliquot"
     plate_chart: "induce_2.png"
   end
   group: aquarium_user
@@ -111,7 +117,7 @@ end
 place induce_24
   protocol: "labw14/group7/plate_reader/induce_aTc.pl"
   argument
-    aTc_inducer_in: "atc Aliquot"
+#    aTc_inducer_in: "atc Aliquot"
     plate_chart: "induce_24.png"
   end
   group: aquarium_user
@@ -137,7 +143,9 @@ transition [glucose_grow] => [glucose_grow] when error(0) end
 
 #plate_reader_media_delay rework  #TODO: avoid repeating delay
 transition [plate_reader_media_delay] => [plate_reader_media_delay] when error(0) end
-transition [plate_reader_media_delay] => [load_plate] when !error(0) && completed(0) end
+transition [plate_reader_media_delay] => [dilute_aTc] when !error(0) && completed(0) end
+transition [dilute_aTc] => [dilute_aTc] when error(0) end
+transition [dilute_aTc] => [load_plate] when !error(0) && completed(0) end
 transition [load_plate] => [load_plate] when error(0) end
 transition [load_plate] => [induce_zero] when !error(0) && completed(0) end
 transition [induce_zero] => [induce_zero] when error(0) end
