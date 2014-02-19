@@ -50,5 +50,5 @@ end
 release concat (oligonuc, molecular_g_h2o)
 
 log
-  return: { Primer_Pool_id: master_stock  }
+  return: { Primer_Pool_id: master_stock[:id]  }
 end
