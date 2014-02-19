@@ -1,7 +1,7 @@
 argument
   transformed_yeast_plate_id: sample array, "A plate with yeast colonies"
   fragment_id: sample, "DNA to be digested and inserted"
-  plate_type_id: object, "Yeast plates that will be plated"
+  plate_type_id: object ("solidmedia"), "Yeast plates that will be plated"
 end
 
 
