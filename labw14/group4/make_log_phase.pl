@@ -47,7 +47,7 @@ while i < sample_count
 		location: "B14.310"
 		data
 			from: e_coli_strains[i][:id]
-			original_sample: e_coli_strains[i][:id]
+			original_id: e_coli_strains[i][:id]
 		end
 		note: "Incubate tube %{i} for 2 hours in 37°C incubator (B14.310)"
 	end
