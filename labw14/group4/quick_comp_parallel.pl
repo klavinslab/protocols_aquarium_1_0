@@ -77,7 +77,7 @@ end
 jj = 0
 while jj < 3
 	 step
-	    description: "Centrifuge at 10,000 g for 1 min at 4 C"
+	    description: "Centrifuge all samples at 10,000 g for 1 min at 4 C"
 	    note: "Place as many tubes as possible in the centrifuge. Depending on the number of samples, you may need to run the centrifuge multiple times."
 			bullet: " Use the refrigerated microcentrifuge located at B14.320"
 	  end
@@ -92,22 +92,23 @@ while jj < 3
 		end
 
 	  step
-	    description: "Remove supernatant"
+	    description: "Remove the supernatant form each sample"
 	    note: "Using your Pipettor P1000, carefully aspirate the supernatant from each centrifuged sample."
 	    warning: "The pellet will be very fragile! Try not to disturb it."
 	  end
 	
 	  if jj<2
 	    step
-	      description: "Add 1 mL ice cold sterile molecular grade water"
-	      note: "Use your Pipettor P1000 add 1 mL ice cold molecular grade water to each tube and resuspend the pellet by gently pipetting up and down."
-				warning: "remember to use a clean pipette tip for each tube"
+	      	description: "Add 1 mL ice cold sterile molecular grade water"
+		note: "Use your Pipettor P1000 add 1 mL ice cold molecular grade water to each tube and resuspend the pellet by gently pipetting up and down."
+		warning: "Remember to use a clean pipette tip for each tube"
 	    end
 	end
+	jj = jj + 1
 end
 
 	step
-	  description: "Suspend each cell pellet in 200 µL of sterile cold molecular grade water and keep it cool."
+	  description: "Resuspend each cell pellet in 200 µL of sterile cold molecular grade water and keep it cool."
 	end
 
 
