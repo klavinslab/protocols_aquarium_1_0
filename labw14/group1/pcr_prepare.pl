@@ -1,7 +1,7 @@
 argument
   primer_f: sample array, "forward primer list"
   primer_r: sample array, "reverse primer list"
-  plasmid_id: sample, "The plasmid stock"
+  #plasmid_id: sample, "The plasmid stock"
   enzyme_id: sample, "The Phsion HF Master Mix stock"
 end
 
@@ -9,7 +9,7 @@ num_samples = length(primer_f)
 
 
 take
-  plasmid_stock = item plasmid_id
+  #plasmid_stock = item plasmid_id
   phusion_stock = item enzyme_id
 end
 
@@ -28,31 +28,75 @@ while ii<length(primer_f)
   ii = ii+1
 end
 
+nPrimers = ii
 
 step
   description: "This protocol prepares the PCR mix in
     PCR tube and starts it in thermal cycler."
 end
 
+nFragments = 8
+First = 1
+Last = nFragments
+
+bFirst = 1
+bLast = 4
+
 step
-  description: "Put everything in each tube. "
-  check: "Pipet 7.5 µL molecular grade water into the labeled PCR tube."
-  check: "Pipet 0.5 µL of plasmid into the tube."
-  check: "Pipet 1 µL of primer fwd into the tube."
-  check: "Pipet 1 µL of primer rev into the tube."
-  check: "Pipet 10 µL of Phusion Master Mix with id %{enzyme_id} into the tube."
+  description: "Spin down the boiled cell tubes %{bFirst} - %{bLast} in the microcentrifuge on your bench for 1 minute"
+  note: "The boiled cell %{bFirst} - %{bLast} are the PCR tubes you took from thermal cylcler from your previous protocol."
+  warning: "Be extremely careful not to distrube the spun tubes.  They won't look any different but even the slightest tap can be detrimental."
 end
 
 step
-  description: "Place the tube into thermal cycler T2 at B3.335"
+  description: "Take %{nFragments} 0.2 mL PCR tubes from PCR strip. Write your initials on it. Label from left to right as %{First} to %{Last}."
 end
 
 step
-  description: "Choose program on the thermal cycler and run Tm=63"
-  note: ""
+  description: "Put Reaction. "
+  check: "Pipet 7.5 µL molecular grade water into each of the new labeled PCR tube(%{First} to %{Last})."
+end
+
+ii = 0
+tube_number = 0
+  while jj < nPrimers
+    fwd = primer_f_items[jj]
+    rev = primer_r_items[jj]
+    t = t%bLast
+    tube_number = tube_number + 1
+    step 
+      description: "Prepare reaction for tube %{tube_number}"
+      check: "Pipet 0.5 uL of boiled cell %{t} into tube %{tube_number}."
+      check: "Pipet 1 µL of primer with id %{fwd} into tube %{tube_number}."
+      check: "Pipet 1 µL of primer with id %{rev} into tube %{tube_number}."
+      check: "Use the tip to gently mix."
+      note: "Be careful to pipette into the liquid, not the side of the tube. Always use a new tip."
+      warning: "Be extremely careful not to distrube the boiled cell tubes. They won't look any different but even the slightest tap can be detrimental."
+    end
+    t = t + 1
+    jj = jj + 1
+  end
+
+step
+  description: "Prepare reaction"
+  check: "Pipet 10 µL of Phusion HF Master Mix with id %{enzyme_id} into each PCR tube (%{First} to %{Last})."
+  note: "Use the tip to gently mix after each pipette."
+end
+step
+  description: "Place the tubes into thermal cycler T2 at B3.335"
+end
+
+step
+  description: "Choose program on the thermal cycler"
+  note: "Click Home then click Saved Protocol, choose LABW14 folder, choose CLONEPCR."
   image: "thermal_cycler_home"
+end
+
+step
+  description: "Hit 'run' on the thermal cycler and select 20 uL setting."
+  image: "thermal_cycler_select"
 end
 
 release primer_f_items
 release primer_r_items
-release [plasmid_stock[0],phusion_stock[0]]
+release phusion_stock[0]
