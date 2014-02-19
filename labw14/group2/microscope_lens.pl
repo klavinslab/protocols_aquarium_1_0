@@ -47,6 +47,7 @@ end
 
 step
   description: "Place dish on the lens stage"
+  warning: "Becareful not to touch the dish to the objective lens, it may ruin the experiment"
   bullet: "Adjust the screws to slide the dish ring side down into the stage on top of the objective lens"
   bullet: "Once placed adjust the screws on each side of the stage to center the dish and fimrly hold in place"
   note: "If the dish move finding cells may be impossible, and may also damage the lens."
