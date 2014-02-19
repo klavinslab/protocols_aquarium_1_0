@@ -56,7 +56,7 @@ step
   check: "Pipet 7.5 µL molecular grade water into each of the new labeled PCR tube(%{First} to %{Last})."
 end
 
-ii = 0
+jj = 0
 t = 1
 tube_number = 0
   while jj < nPrimers
