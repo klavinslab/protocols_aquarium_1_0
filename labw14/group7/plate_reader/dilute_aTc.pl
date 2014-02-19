@@ -89,7 +89,7 @@ step
   description: "Store your diluted aTc solution"
   note: "Just keep your %{vol} mL of %{target_conc} aTc solution on the Bench for now"
   note: "You can hang onto the intermediate dilutions for now (in case of mistakes), but you will dispose of them at the end of the day"
-  note: "insert %{bug} here"
+#  note: "insert %{bug} here"
 end
 
 release water #todo: I think this is the wrong syntax. Fix if borken.
