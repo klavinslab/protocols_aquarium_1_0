@@ -5,7 +5,7 @@ argument
 end
 
 take
-  tube_array_sample = item tube_array
+  tube_sample_array = item tube_array
 end
 
 function incubate_small_tube(tube_sample_array, temp)
@@ -22,7 +22,7 @@ function incubate_small_tube(tube_sample_array, temp)
   end
 end
 
-incubate_small_tube(tube_id, temp)
+incubate_small_tube(tube_sample_array, temp)
 
 
 
