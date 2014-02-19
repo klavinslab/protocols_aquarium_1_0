@@ -8,18 +8,21 @@ end
 
 num = length(yeast_strain_id)
 
-step
-   description: "Preparing for plating"
+take
+   strain = item yeast_strain_id
    note: "Collect tubes %{yeast_strain_id} with transformed yeast cells from the heat block, location: B3.355.
           Place them in a small tube rack."
-   check: "Spin the tube down for 30 seconds on a small tabletop centrifuge."
-   check: "Carefully remove the supernatant with a pipettor (~400μL setting total)."
+end
+
+step
+   description: "Preparing for plating"
+   check: "Spin all the tubes down for 30 seconds on a small tabletop centrifuge."
+   check: "Carefully remove the supernatant from each tube with a pipettor (~400μL setting total)."
    check: "Add 600μL of molecular grade water to each tube."
    check: "Vortex the tubes for 15-30 sec."
 end
 
 take
-  strain = item yeast_strain_id
   plate  = num plate_type
   note: "Do not take plate from top of the stack if there is a date stick on it, take from the middle of the stack."
 end
