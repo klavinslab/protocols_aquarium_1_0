@@ -1,11 +1,11 @@
 # Modified from existing protocol
 argument
-  e_coli_strain_id: sample, "The tube to be incubated."
+  e_coli_strain_id: sample array, "The tube to be incubated."
   temp: number, "The temperature (in °C) at which to incubate the tube."
 end
 
 take
-  y = item e_coli_strain_id
+  y = item unique(e_coli_strain_id)
 end
 
 step
