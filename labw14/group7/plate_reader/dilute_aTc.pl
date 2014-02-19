@@ -9,7 +9,7 @@ vol = 1 #"The desired volume of dilute solution in mL"
 
 step
   description:
-    "This protocol describes how to prepare 1mL of 200ng/ml aTc inducer in glucose media through serial dilution."
+    "This protocol describes how to prepare 1mL of '200ng/ml aTc' inducer in MG water through serial dilution."
 end
 
 #if inducer_abr == "aTc"
@@ -28,11 +28,11 @@ end
 
 step #This should REALLY be a "take", but this item is not in the Aquarium inventory yet...
   description: "Retrieve the aTc stock"
-  check: "Retrive the 100ug/ml aTc stock solution from location B1.165"
+  check: "Retrive the '100ug/ml aTc stock solution' from location B1.165"
 end
 
 initial_conc = 100 #ug/ml
-dilution = 1000 * intitial_conc / target_conc #500x
+dilution = 1000 * initial_conc / target_conc #500x
 
 dilution_steps = 1 #count how many dilutions steps we need
 d = dilution #find the "modulus 10" of the diltion (in thi case, d = 5 at the end of the loop, with 3 steps
