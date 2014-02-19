@@ -107,14 +107,16 @@ place clean_gel_box
 end
 
 wire (streak, "r") => (overnight, "id")
+wire (overnight, "r") => (extract, "susp")
 wire (extract, "r") => (purify, "eDNA")
-wire (purify, "r[:id]") => (boil, "pGenome")
+wire (extract, "r") => (boil, "pGenome")
+
 
 transition [streak] => [overnight] when !error(0) && completed(0) end
 transition [overnight] => [extract] when !error(0) && completed(0) end
 transition [extract] => [purify] when !error(0) && completed(0) end
 transition [purify] => [boil] when !error(0) && completed(0) end
-transition [boil_cell] => [pcr_prepare] when !error(0) && completed(0) end
+transition [boil] => [pcr_prepare] when !error(0) && completed(0) end
 transition [pcr_prepare] => [pour_gel] when !error(0) && completed(0) end
 transition [pour_gel] => [finish_pcr] when !error(0) && completed(0) end
 transition [finish_pcr] => [run_gel] when !error(0) && completed(0) end
