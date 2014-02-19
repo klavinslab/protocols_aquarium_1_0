@@ -116,29 +116,28 @@ end
 
 	# make the aliquots
 electrocompetent_cells = []
-kk = 0
-while kk < num_samples
-	
+ii = 0
+while ii < num_samples
+	sample_id = cells[ii][:id]
+	cur_tube = ii + 1
 		step
-		  description: "Make four aliquots"
-		  note: "Taking the first /or next sample, transfer 50 µL of the resuspended pellet into four pre-chilled 1.5 mL centrifuge tubes. Discard the source tube along with any remaining cells."
-			getdata
-				sample_id: number, "What is the sample id number?"
-			end
+		  description: "Make four aliquots from Tube %{cur_tube}"
+			bullet: "Set your pipette to 50 µL"
+			bullet: "Transfer 50 µL of liquid from Tube %{cur_tube} into four pre-chilled 1.5 mL centrifuge tubes"
+			bullet: "Discard the source tube along with any remaining cells"
 		end
 		
-		# IMPORTANT NOTE: this produces aliquots starting from the begginging of the sample array originally provided; Don't mix up the order of samples!
-		produce
-		  competent_cells = 4 "Electrocompetent aliquot" from cells[kk]
+	produce
+		  competent_cells = 4 "Electrocompetent aliquot" from cells[ii]
 		  note: "Write the same item number on all four aliquots"
 		  location: "Bench"
 			data
 				from: sample_id
 			end
-#			  release cells[kk]
+#			  release cells[ii]
 		end
 		electrocompetent_cells = append(electrocompetent_cells, competent_cells[:id])
-		kk = kk + 1
+		ii = ii + 1
 end
 
 log
