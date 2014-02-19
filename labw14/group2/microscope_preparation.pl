@@ -24,7 +24,7 @@ end
 
 step
   description: "Turn on the fluorescent light bulb"
-  note: "Thsi is labeled with a 1 on it must be turned on first for it draws an extremely high current."
+  note: "This is labeled with a 1 on it must be turned on first for it draws an extremely high current."
   warning: "FAILURE TO DO THIS FIRST MAY RESULT IN A BROKEN SYSTEM."
 end
 
@@ -40,13 +40,13 @@ step
 end
 
 step
-  description: "Turn on the microscope bright-light"
+  description: "Turn on the microscope bright-light controller"
   note: "This is labeled 3 and turned on third"
 end
 
 step
   description: "Turn on the microscope"
-  note: "This should be labeled number 4. The switch is a little difficult to find so you may need to feel around for it."
+  note: "This is labeled number 4. The switch is a little difficult to find so you may need to feel around for it."
 end
 
 step
@@ -56,7 +56,7 @@ end
 
 step
   description: "Turn on the X-Y controller"
-  note: "This is labeld 6 and helps us pan through the surface to find cells at a fixed focal point z"
+  note: "This is labeled 6 and helps us pan through the surface to find cells at a fixed focal point z"
 end
 
 step
