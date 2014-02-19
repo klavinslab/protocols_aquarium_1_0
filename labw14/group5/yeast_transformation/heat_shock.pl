@@ -20,7 +20,7 @@ end
 
 ii = 0
 
-while ii < length()
+while ii < length(yeast_transformation_mixtures)
   modify
     y[ii]
     location:"B14.310"
