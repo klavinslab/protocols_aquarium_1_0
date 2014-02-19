@@ -43,7 +43,7 @@ step
 end
 
 produce
-  t = 1 "Agar plate" from sector_plate[0]
+  t = 1 "Agar plate" 
   note: "Place the streaked plate upside-down (lid on the bottom) in 30 C incubator at A1.110 overnight."
   release sector_plate
   location: "A1.110"
