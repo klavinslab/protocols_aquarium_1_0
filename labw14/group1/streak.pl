@@ -51,6 +51,11 @@ end
 
 release lb
 
+log
+  return {r: r}
+end
+
+
 #modify
 #  plate[0]
 #	location: "DFP.0"
