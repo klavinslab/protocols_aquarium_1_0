@@ -3,7 +3,7 @@ argument
 end
 
 place streak
-  protocol: "protocols/labw14/group1/streak.pl"
+  protocol: "labw14/group1/streak.pl"
   argument
     e_coli_glycerol_stock: e_coli_glycerol_stock
   end
@@ -14,21 +14,21 @@ place streak
 end
 
 place overnight
-  protocol: "protocols/labw14/group1/overnight_suspension.pl"
+  protocol: "labw14/group1/overnight_suspension.pl"
   start: hours(20)
   group: "group 1"
   window: hours(8)
 end
 
 place extract
-  protocol: "protocols/labw14/group1/DNAextractPurelink.pl"
+  protocol: "labw14/group1/DNAextractPurelink.pl"
   start: hours(20)
   group: "group 1"
   window: hours(8)
 end
 
 place purify
-  protocol: "protocols/labw14/group1/genomepurification.pl"
+  protocol: "labw14/group1/genomepurification.pl"
   start: now()
   group: "group 1"
   window: hours(1)
