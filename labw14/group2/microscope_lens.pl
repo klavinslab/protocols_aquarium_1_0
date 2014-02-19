@@ -51,7 +51,7 @@ step
   bullet: "Lower stage if necessary using the large knob on the right hand side of the microscope"
   bullet: "Adjust the screws to slide the dish ring side down into the stage on top of the objective lens"
   bullet: "Once placed adjust the screws on each side of the stage to center the dish and fimrly hold in place"
-  note: "If the dish move finding cells may be impossible, and may also damage the lens."
+  note: "If the dish moves finding cells may be impossible, and may also damage the lens."
 end
 
 step
@@ -66,8 +66,9 @@ end
 
 step
   description: "Finalize the bright-light fixture"
+  bullet: "Locate the brightlight fixture above the incubation chamber"
   bullet: "Set fixture to phase 3"
-  bullet: "lower the light fixture"
+  bullet: "lower the light fixture so that the light shines on the objective lens"
 end
 
 step
