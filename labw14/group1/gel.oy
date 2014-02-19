@@ -32,14 +32,14 @@ place run_gel
   window: minutes(90)
 end
 
-place image_cut_gel
-  protocol: "labw14/week4/image_cut_gel.pl"
+place image_gel
+  protocol: "labw14/week4/image_gel.pl"
   group: aquarium_user
   start: now()
   window: minutes(200)
 end
 
-wire (run_gel,"Gel_lane_ids") => (image_cut_gel,"gels")
+wire (run_gel,"Gel_lane_ids") => (image_gel,"gels")
 
 place clean_gel_box
   protocol: "labw14/week4/clean_gel_box.pl"
@@ -53,6 +53,6 @@ end
 
 # forward transitions
 transition [pour_gel] => [run_gel] when !error(0) && completed(0) end
-transition [run_gel] => [image_cut_gel] when !error(0) && completed(0) end
-transition [image_cut_gel] => [clean_gel_box] when !error(0) && completed(0) end
+transition [run_gel] => [image_gel] when !error(0) && completed(0) end
+transition [image_gel] => [clean_gel_box] when !error(0) && completed(0) end
 transition [clean_gel_box] => [] when !error(0) && completed(0) end
