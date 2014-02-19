@@ -1,0 +1,42 @@
+argument
+ e_coli_glycerol_stock: sample, "Glycerol Stock of Frozen Cells"
+end
+
+place streak
+  protocol: "protocols/labw14/group1/streak.pl"
+  arguement
+    e_coli_glycerol_stock: e_coli_glycerol_stock
+  end
+  marked: true
+  group: "group 1"
+  start: now()
+end
+
+place overnight
+  protocol: "protocols/labw14/group1/overnight_suspension.pl"
+  start: hours(20)
+  group: "group 1"
+  window: hours(8)
+end
+
+place extract
+  protocol: "protocols/labw14/group1/DNAextractPurelink.pl"
+  start: hours(20)
+  group: "group 1"
+  window: hours(8)
+end
+
+place purify
+  protocol: "protocols/labw14/group1/genomepurification.pl"
+  start: now()
+  group: "group 1"
+  window: hours(1)
+end
+
+wire (streak, "r") => (overnight, "Transformed_E_coli_Strain_id")
+wire (extract, "r") => (purify, "eDNA")
+
+transition [streak] => [overnight] when !error(0) && completed(0) end
+transition [overnight] => [extract] when !error(0) && completed(0) end
+transition [extract] => [purify] when !error(0) && completed(0) end
+transition [purify] => [] when !error(0) && completed(0) end
