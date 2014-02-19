@@ -44,7 +44,7 @@ step
 end
 
 produce
-  t = 1 "Agar plate" of ecoli_stock
+  t = 1 "Agar plate" from ecoli_stock[0]
   note: "Place the streaked plate upside-down (lid on the bottom) in 30 C incubator at A1.110 overnight."
   release sector_plate
   location: "A1.110"
