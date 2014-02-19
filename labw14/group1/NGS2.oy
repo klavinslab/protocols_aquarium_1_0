@@ -44,7 +44,7 @@ place purify
 end
 
 place boil
- protocol: "labw14/group1/boil.pl"
+ protocol: "labw14/group1/boil.pl" 
  start: now()
  group: aquarium_user
  window: hours(1)
@@ -53,8 +53,8 @@ end
 place pcr_prepare
  protocol: "labw14/group1/pcr_prepare.pl"
    argument
-    pfwd: primer_f
-    prev: primer_r
+    primer_f: pfwd
+    primer_r: prev 
     enzyme_id: enzyme_id
   end
  start: now()
