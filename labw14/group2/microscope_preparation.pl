@@ -2,9 +2,6 @@ argument
   id: sample ("Transformed E coli Strain"), "Agar cell plate"
 end
 
-take
-  plate = item id
-end
 
 step
   description: "Go to the microscope room"
@@ -70,5 +67,5 @@ step
 end
 
 log
-  return: {item : plate[0][:id]}
+  return: {item : id[0][:id]}
 end
