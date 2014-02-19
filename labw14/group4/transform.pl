@@ -142,4 +142,4 @@ log
 end
 
 release [electroporator[0]]
-release concat(concat([falcon_tube[0],plasmid[0],alrack[0],iceblock[0]], strain), cuvette[0]])
+release concat(concat([falcon_tube[0],plasmid[0],alrack[0],iceblock[0]], strain), cuvette)
