@@ -1,5 +1,5 @@
 argument
-  transformed_yeast_plate: sample array, "Choose the plate you incubated two days ago"
+  transformed_yeast_plate_id: sample array, "Choose the plate you incubated two days ago"
 end
 
 step
@@ -11,8 +11,13 @@ step
 end
 
 take
-  y = item transformed_yeast_plate
+  y = item transformed_yeast_plate_id
 end
+
+
+ii = 0
+
+while ii < length(transformed_yeast_plate_id)
 
 step
   description: 
@@ -74,8 +79,11 @@ step
 end
 
 modify
-  y[0]
+  y[ii]
   location: "DFP.0"
   inuse: 0
 end
 
+ii = ii + 1
+
+end
