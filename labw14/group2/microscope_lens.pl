@@ -1,5 +1,5 @@
 argument
-  id: sample ("Microscope Plates"), "Agar cell petri dish"
+  id: sample ("Microscope Plate"), "Agar cell petri dish"
 end
 
 step
