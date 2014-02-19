@@ -43,7 +43,7 @@ place boil
  window: hours(1)
 end
 
-wire (streak, "r") => (overnight, "Transformed_E_coli_Strain_id")
+wire (streak, "r") => (overnight, "id")
 wire (extract, "r") => (purify, "eDNA")
 wire (purify, "r[:id]") => (boil, "pGenome")
 
