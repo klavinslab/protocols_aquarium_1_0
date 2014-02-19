@@ -4,7 +4,7 @@ argument
   plasmid_id: sample array, "The plasmid to be used"
   e_coli_strain_type: sample array, "One electrocompetent aliquot (of the 4 made in the previous protocol) to be transformed"
   dna_vol: number
-  strain_name: string, "Enter the name of the strain you are producing"
+ # strain_name: string, "Enter the name of the strain you are producing"
 end
 
 sample_count = length(e_coli_strain_type)
@@ -114,7 +114,7 @@ while i <  sample_count
 
 	if time_constant >= 3
 	  produce
-		r = 1 "1.5 mL tube transformation" of strain_name 
+		r = 1 "1.5 mL tube transformation" #of strain_name 
 		note: "Keep on the bench"
 		location: "Bench"
 	  end
