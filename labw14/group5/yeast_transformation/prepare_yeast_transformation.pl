@@ -35,12 +35,12 @@ while ii < number_we_can_make
   if ii == 0 # CONTROL TUBE
     step
       description: "Making CONTROL yeast transformation mixture"
-      note: "Take a 1.5mL tube with id %{id_num}"
+      note: "Take a 1.5 mL tube with id %{id_num}"
       warning: "Pipette the following reagents into the tube %{id_num}. The order of the reagents is super important for cells' health."
-      check: "Pipette 240μL  50%% PEG 3350 reagent to the tube."
-      check: "Pipette 36μL  1.0M LiOAc reagent to the tube."
-      check: "Pipette 25μL  Carrier DNA to the tube."
-      check: "Pipette 50μL  Molecular grade water to the tube."
+      check: "Pipette 240 μL  50%% PEG 3350 reagent to the tube."
+      check: "Pipette 36 μL  1.0M LiOAc reagent to the tube."
+      check: "Pipette 25 μL  Carrier DNA to the tube."
+      check: "Pipette 50 μL  Molecular grade water to the tube."
     end
     step
       description: "Resuspend the cells by vortexing"
@@ -53,13 +53,13 @@ while ii < number_we_can_make
   else
   # NON-CONTROL TUBES
     step
-      description: "Making CONTROL yeast transformation mixture"
-      note: "Take a 1.5mL tube with id %{id_num}"
+      description: "Making DNA - yeast transformation mixture"
+      note: "Take a 1.5 mL tube with id %{id_num}"
       warning: "Pipette the following reagents into the tube %{id_num}. The order of the reagents is super important for cells' health."
-      check: "Pipette 240μL  50%% PEG 3350 reagent to the tube."
-      check: "Pipette 36μL  1.0M LiOAc reagent to the tube."
-      check: "Pipette 25μL  Carrier DNA to the tube."
-      check: "Pipette 50μL  Transformation DNA plasmid to the tube."
+      check: "Pipette 240 μL  50%% PEG 3350 reagent to the tube."
+      check: "Pipette 36 μL  1.0M LiOAc reagent to the tube."
+      check: "Pipette 25 μL  Carrier DNA to the tube."
+      check: "Pipette 50 μL  Transformation DNA plasmid to the tube."
     end
     step
       description: "Resuspend the cells by vortexing"
