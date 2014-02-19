@@ -50,8 +50,7 @@ produce
   location: "A1.110"
 end
 
-release lb
-release ecoli_stock
+release concat(lb, ecoli_stock)
 
 log
   return: {r: t[:id]}
