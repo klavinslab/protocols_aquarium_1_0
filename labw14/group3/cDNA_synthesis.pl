@@ -57,6 +57,8 @@ step
   image: "thermal_cycler_select"
 end
 
+release [react_mix[0],iscript_enz[0]]
+
 step
   description: "*Optional Hold Stage*"
   note: "This is an optimal point to hold your sample if you do not anticipate time to finish."
@@ -66,11 +68,11 @@ end
 
 produce
   r = 1 "Yeast cDNA" of "target_strain"
-  note: "Keep the tube on the bench to use in the next protool"
+  note: "Keep the tube on the bench to use in the next protocol"
 end
 
 log
   return: {Yeast_cDNA_id: r[:id]}
 end
 
-release [react_mix[0],iscript_enz[0],iso_rna[0]]
+release [iso_rna[0]]
