@@ -20,6 +20,7 @@ step
   note: "In the next few steps we will set up the microscope to track cells for our timelapse microscopy."
   warning: "THIS EQUIPMENT IS EXTREMELY EXPENSIVE! THE UTMOST CARE MUST BE USED WHEN HANDING THE MICROSCOPE"
   warning: "THE STEPS SHOULD BE FOLLOWED TO THE LETTER, ELSE YOU MAY BE FINED WITH HEAVY REPLACEMENT COSTS"
+  image: "microscope"
 end
 
 step
