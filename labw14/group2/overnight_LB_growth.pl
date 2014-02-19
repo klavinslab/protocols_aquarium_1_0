@@ -14,7 +14,7 @@ step
 end
 
 step
-  description: "Pour liquid LB"
+  description: "Pipette liquid LB into test tube"
   note: "Pipette 2mL of liquid LB into the 14 mL test tube. Make sure to use a fresh sterile pipette tip"
 end
 
