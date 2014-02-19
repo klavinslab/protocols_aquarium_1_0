@@ -76,5 +76,5 @@ release concat(media_bottle, serological_pipette)
 
 
 step
-  description: "Now you have to wait 5 hours till the next protocol (Harvesting the cells)."
+  description: "Now you have to wait 5 hours till the next protocol (PmeI Digest)."
 end
