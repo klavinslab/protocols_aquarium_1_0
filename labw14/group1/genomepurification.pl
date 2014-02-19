@@ -8,6 +8,7 @@ end
 
 take
   1 "Zymo Genomic DNA Clean & Concentrator Kit"
+  extracted_DNA = item eDNA[:id]
 end
 
 step
@@ -31,12 +32,14 @@ step
   check: "Place the column in a 1.5mL tube.  Centrifuge for 30 seconds to elute the DNA.  The tube contains purified DNA.  The column can be discarded."
 end
 
-produce
-  r = 1 "Purified DNA" from eDNA[0]
+#produce
+ # r = 1 "Purified DNA" from eDNA[0]
   #release eDNA
-  note: "Store the tube containing purified DNA at the bench for the next step."
-end
+  #note: "Store the tube containing purified DNA at the bench for the next step."
+#end
 
-log
-  return: {r: r[:id]}
+modify
+  extracted_DNA[0]
+  location: "Bench"
+  inuse: 0
 end
