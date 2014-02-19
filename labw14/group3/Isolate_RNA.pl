@@ -46,15 +46,15 @@ step
   note: "Centrifuge is in x1000 rpm. Set to 12.5"
 end
 
+take
+  iceblock = 1 "Styrofoam Ice Block"
+  alrack = 1 "Aluminum Tube Rack"
+end
+
 step
   description: "Take the tube out of centrifuge and store supernatant"
   note: "Aspirate the supernatant and place in new 1.5mL Tube."
   warning: "The supernatant is your isolated RNA!!! Don't throw away."
-end
-
-take
-  iceblock = 1 "Styrofoam Ice Block"
-  alrack = 1 "Aluminum Tube Rack"
 end
 
 produce
