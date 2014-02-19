@@ -56,7 +56,7 @@ step
   check: "Add %{water_vol} uL of MG water to a 1.5mL tube"
   check: "Add %{inducer_vol} uL of '100ug/ml aTc stock solution' to the 1.5mL tube"
   check: "Vortex to mix"
-  check: "Label this tube '%{inducer_abr), %{conc} ng/ml'"
+  check: "Label this tube '%{inducer_abr}, %{conc} ng/ml'"
 end
 
 #release inducer
