@@ -1,7 +1,7 @@
 argument
   pfwd: sample("Primer"), "The forward primer"
-  prev1: sample, "Flanking reverse primer for knockout test group"
-  prev2: sample, "thyA reverse primer for control group"
+  prev1s: sample array, "Reverse primers for knockout test group"
+  prev2s: sample array, "Reverse primers for control group"
   #templates: sample array, "The templates you just made" #just assume you have it
   enzyme_id: sample, "The Phsion HF Master Mix stock"
   sample_count: number, "Number of boiled cell samples"
@@ -9,8 +9,8 @@ end
 
 take
   fwd = item pfwd
-  rev1 = item prev1
-  rev2 = item prev2
+  rev1s = item prev1s
+  rev2s = item prev2s
   #genomicdna = item templates
   phusion_stock = item enzyme_id
 end
@@ -34,6 +34,8 @@ end
 boiled_tube = 0
 pcr_tube = 0
 while boiled_tube < sample_count
+  prev1 = prev1s[boiled_tube]
+  prev2 = prev2s[boiled_tube]
   boiled_tube = boiled_tube + 1
   pcr_tube = pcr_tube+1
   
