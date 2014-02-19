@@ -8,6 +8,10 @@ take
   tube_sample_array = item tube_array
 end
 
+step
+  description: "tube_sample_array is %{tube_sample_array}"
+end
+
 function incubate_small_tube(tube_sample_array, temp)
   foreach tube in tube_sample_array
     tube_id = info(tube)[:id]
