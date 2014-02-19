@@ -52,7 +52,7 @@ end
 release lb
 
 log
-  return {r: r}
+  return: {r: r}
 end
 
 
