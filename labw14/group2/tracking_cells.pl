@@ -101,20 +101,22 @@ end
 step
   description: "Selecting ideal cells"
   bullet: "Select the 'X-Y overview' tab; this will help you keep track of our selected cells"
+  bullet: "Click on the 'adjust to points' button on the 'X-Y overview' window"
   bullet: "We want to find elongated black rods, short rods are probably dead cells"
   bullet: "Click on the 'X-Y position' tab in the ND aquisition window"
   bullet: "When a desireable cell is found center the probe around it using the X-Y controller"
   note: "The controller may be too fast so press the 'X-Y speed' button once to make the light blink on and off. This is the controllers slowest speed used for fine tuning"
-  bullet: "Click the blank check box in the 'X-Y position' tab in th eND aquisition window"
+  bullet: "Click the blank check box in the 'X-Y position' tab in the ND aquisition window"
   note: "This selects the current X-Y position and stores it. It will also been seen on your X-Y overview map"
   note: "To reset the speed of the controller press the X-Y speed button twice to ensure the green light is fully on"
 end
 
 step
   description: "Set the Z-offset"
+  bullet: "In the X-Y position tab, ensure include z box is checked under the points table"
   bullet: "Click the z-position of our cell in the 'X-Y position' tab"
-  bullet: "Click on the 'Offset z-position' button"
   bullet: "Press the black button on the remote focus controller to zero the z-axis"
+  bullet: "Click on the 'Offset z-position' button"
   note: "Offsetting the z-position will set the value to the current controller value"
 end
 
