@@ -47,7 +47,7 @@ produce
 end
 
 log
-  return: { digested_plasmid: y }
+  return: { digested_plasmid: y[:id] }
 end
 
 #step
