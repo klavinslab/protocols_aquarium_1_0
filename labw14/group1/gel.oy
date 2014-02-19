@@ -1,0 +1,58 @@
+#each team gets their own primers and plasmids
+
+argument
+  ldna: sample array, "The pcr fragments" 
+#  ladder: sample, "The ladder for your gel"
+end
+ladder = 823 #1kb ladder aliquot
+
+#stagger
+place pour_gel
+  protocol: "labw14/week4/pour_gel.pl"
+  argument
+    percentage: 1
+    comb_n: 1
+  end
+  marked: true
+  group: aquarium_user
+  start: now()
+  window: minutes(120)
+end
+
+#first step is make sure gel has solidified 
+place run_gel
+  protocol: "labw14/week4/run_gel.pl"
+  argument
+    fragments: ldna
+    ladder_one: ladder
+    fragment_volume: 50
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(90)
+end
+
+place image_cut_gel
+  protocol: "labw14/week4/image_cut_gel.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(200)
+end
+
+wire (run_gel,"Gel_lane_ids") => (image_cut_gel,"gels")
+
+place clean_gel_box
+  protocol: "labw14/week4/clean_gel_box.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+
+
+
+# forward transitions
+transition [pour_gel] => [run_gel] when !error(0) && completed(0) end
+transition [run_gel] => [image_cut_gel] when !error(0) && completed(0) end
+transition [image_cut_gel] => [clean_gel_box] when !error(0) && completed(0) end
+transition [clean_gel_box] => [] when !error(0) && completed(0) end
