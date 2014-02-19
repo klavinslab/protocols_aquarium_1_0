@@ -215,7 +215,7 @@ release falcon_tube
 if num == 1
   step
     description: "Release the following item:"
-    note: "Take a 250 mL flask with id %{id_num} to the washing station located at A.100. Add 20%% bleach to the flask
+    note: "Take the 250 mL flask to the washing station located at A.100. Add 20%% bleach to the flask
           and leave it beside the sink."
     warning: "When done, click Next. Then choose 'Dispose' option on the next page."
   end
