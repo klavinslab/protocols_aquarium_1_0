@@ -1,15 +1,16 @@
 information "Spread cells onto a petri dish containing ~25mL agar media."
 
 argument
-   e_coli_strain_id: sample, "A sample"
-   volume: number, "The volume (µL) to plate"
+   yeast_strain_id: sample array, "Transformed yeast mixtures"
+#   volume: number, "The volume (µL) to plate"
    plate_type: object, "Type of plate (from the solidmedia category)"
-#   plate_type_2: object, "Type of inducer plate (from the solidmedia category)"
 end
 
+num = length(yeast_strain_id)
+
 take
-  strain = item e_coli_strain_id
-  plate = 1 plate_type
+  strain = item yeast_strain_id
+  plate  = num plate_type
 #  plate_2 = 1 plate_type_2
 #  beads = 1 "Glass Bead Aliquot (sterile)"
 #  collector = 1 "Glass Bead Waste Collector"
@@ -21,41 +22,57 @@ step
   image: "write_on_the_plate"
 end
 
-step
-  description: "Add sterile glass beads to the plate"
-  note: "Invert the plate so that the lid is on the bench. 
-         Add 5-10 beads to the inside of the lid (lift the plate up). 
-         Place the plate back on the lid afterwards."
-  image: "pour_beads_on_plate"
-end
+#
+#
+#
+#  REMOVING SUPERNATANT
+#
+#
+ii = 0
+r  = []
 
-step
-  description: "Vortex the sample"
-  note: "Vortex the sample on vortexor."
-  image: "vortex_tube"
-end
+while ii < length(yeast_strain_id)
 
-step
-  description: "Transfer the sample to the center of the plate"
-  note: "Invert the plate so the beads are on the agar surface. Lift the lid and 
-         pipette %{volume} µL of sample on the agar surface
-         and put the lid back on the plate."
-  warning: "Do not place the plate lid on lab bench while you do this."
-  image: "pipette_culture_on_plate"
-end
+   step
+     description: "Add sterile glass beads to the plate"
+     note: "Invert the plate so that the lid is on the bench. 
+            Add 5-10 beads to the inside of the lid (lift the plate up). 
+            Place the plate back on the lid afterwards."
+     image: "pour_beads_on_plate"
+   end
 
-step
-  description: "Shake the plate to spread the sample over the surface."
-  note: "Use 4 sharp shakes, turn 90 degrees between two shakes (keep the plate level while turning), then pour the beads out into the waste bead container. 
-         When done, place the plate lid down on the bench in preparation for incubation."
-  image: "spread_beads_on_plate"
-end
+   step
+     description: "Vortex the sample"
+     note: "Vortex the sample on vortexor."
+     image: "vortex_tube"
+   end
 
-produce
-  r1 = 1 "Agar plate" from strain[0]
-  note: "Plate upside down in 30 C incubator at A1.110."
-  location: "A1.110"
-  release plate
+   step
+     description: "Transfer the sample to the center of the plate"
+     note: "Invert the plate so the beads are on the agar surface. Lift the lid and 
+            pipette %{200} µL of the transformed yeast mixture on the agar surface
+            and put the lid back on the plate."
+     warning: "Do not place the place the lid on lab bench while you do this."
+     image: "pipette_culture_on_plate"
+   end
+
+   step
+     description: "Shake the plate to spread the sample over the surface."
+     note: "Use 4 sharp shakes, turn 90 degrees between two shakes (keep the plate level while turning), then pour the beads out into the waste bead container. 
+            When done, place the plate lid down on the bench in preparation for incubation."
+     image: "spread_beads_on_plate"
+   end
+
+   produce
+     y = 1 "Yeast Plate" from strain[0]
+     note: "Plate upside down in 30 C incubator at A1.110."
+     location: "A1.110"
+     release plate
+   end
+   
+   r = append(r,y[:id])
+
+   ii = ii + 1
 end
 
 #produce
@@ -66,54 +83,8 @@ end
 #end
 
 log
-  return: { plate_id: r1[:id]}
+  return: { plate_id: r}
 end
   
 release strain
-
-
-
-
-#=============================================================================
-
-
-
-argument
- transformed_yeast: sample array , "Yeast overnight suspension culture tube"
- yeast_plate_sterile: sample array
-end
-
-num = length(yeast_overnight_suspension)
-
-step
- description: "This protocol describes how to incubate"
-end
-
-take
-  transformed_yeast_tube = item transformed_yeast
-  yeast_plate = yeast_plate_sterile
-end
-
-step
- description: "Put the Yeast out of the heat bath"
-end
-
-ii = 0
-r  = []
-
-while ii < length(yeast_overnight_suspension)
-
-  produce
-      y = 1 "Transformed Yeast Plate" from transformed_yeast_tube[ii]
-      release transformed_yeast_tube[ii]
-      release yeast_plate[ii]
-  end
-  
-  r = append(r,y[:id])
-  ii=ii+1
-end
-
-log
-  return: { incubated_yeast_plate: r }
-end
 
