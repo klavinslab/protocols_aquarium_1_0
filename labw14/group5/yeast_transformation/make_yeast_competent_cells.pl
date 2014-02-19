@@ -107,21 +107,28 @@ while ii < length(yeast_250ml_flask)
   id_num = yeast_250ml_flask[ii]
 
   step
-    description: "Resuspending the cells in the tube %{id_num}"
-    note: "Estimate the approximate volume of the pellet in the tube %{id_num}."
+    description: "Take 1.5 mL tube with id %{id_num}"
+    note: "Estimate the approximate volume of the pellet in a tube with id %{id_num} ( in μL )."
     getdata
-      n: number, "Estimated volume of the pellet"
+      n: number, "Estimated volume of the pellet in μL:"
     end
-    check: "Add 4 pellet volumes of 100mM LiOAc liquid to the tube and resuspend the cells by vortxing."
+  end
+  amount_to_add = 4 * n
+  total_vol     = 5 * n
+  step
+    description: "Resuspending the cells in a tube with id %{id_num}"
+    check: "Add %{amount_to_add} μL of 100 mM LiOAc liquid to the tube and resuspend the cells by vortxing."
   end
   vol_data = append(vol_data,n)
   ii = ii + 1
 end
 
 
+
 step
   description: "Now you will start obtaining cell aliquots"
 end
+
 
 
 ii = 0
@@ -133,28 +140,40 @@ while ii < length(yeast_250ml_flask)
 
   id_num = yeast_250ml_flask[ii]
   vol_val = vol_data[ii]
-  max = 4 * vol_val / 50
-  max_des = max - 1
-  
+  max = vol_val / 10
+
   step
-    description: "Obtaining cell aliquots from a tube %{id_num}"
-    note: "You can obtain %{max} cell aliquots from a tube %{id_num}, 50μL each."
-    warning: "But one of these aliquots will be used as a control aliquot. So you can plate maximum %{max_des} aliquots."
+    description: "Obtaining cell aliquots from a 1.5 mL tube with id %{id_num}"
+    note: "You can obtain up to %{max} cell aliquots from a tube %{id_num}, 50μL each."
+    warning: "Note that one of these aliquots will be used as a control aliquot."
     getdata
-      num_to_make: number, "Number of aliquots you want to plate (max %{max_des}), excluding control one."
+      num_to_make: number, "Number of aliquots you want to plate (max %{max}), INCLUDING the CONTROL aliquot."
+    end
+  end
+  
+  if num_to_make == 1
+    step
+      description: "You typed '1' as a number of aliquots you would like to make. 
+                    But you need at least 2 aliquots, because one will be used to transform digested DNA and
+                    the other one to transform CONTROL aliquot. So we think you made a mistake and thefore
+                    we made a correction for you and change the number to 2 aliquots."
+    end
+  else
+    step
+      description: "So you will make %{num_to_make} aliquotsfrom a tube with id %{id_num}"
     end
   end
   
   jj = 0
-  total_number = num_to_make + 1
+  total_number = num_to_make
   numbers = append(numbers,total_number)
   
   while jj < total_number
     if jj == 0
       step
-        description:"Control aliquot from the tube %{id_num}"
-        note: "Take a 1.5mL tube and write your name on its side. Write CONTROL word on its side as well."
-        check: "Pipette 50μL of aliquot from a tube %{id_num} into the CONTROL 1.5mL tube."
+        description:"Making CONTROL aliquot from a tube with id %{id_num}"
+        note: "Take a 1.5 mL tube and write your name on its side. Write 'CONTROL' word on its side as well."
+        check: "Pipet 50 μL of aliquot from a tube %{id_num} into the CONTROL 1.5 mL tube."
       end
     
       produce
@@ -164,9 +183,9 @@ while ii < length(yeast_250ml_flask)
       end
     else
       step
-        description:"Aliquots from the tube %{id_num}"
-        note: "Take a 1.5mL tube and write your name on its side."
-        check: "Pipette 50μL of aliquot from a tube %{id_num} into the new 1.5mL tube."
+        description:"Making another aliquot from a tube with %{id_num}"
+        note: "Take a 1.5 mL tube and write your name on its side."
+        check: "Pipet 50 μL of aliquot from a tube %{id_num} into the labeled 1.5 mL tube."
       end
     
       produce
