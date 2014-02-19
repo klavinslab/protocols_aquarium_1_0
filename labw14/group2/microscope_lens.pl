@@ -44,7 +44,7 @@ step
   description: "Attach the lens ring to the dish"
   bullet: "Carefully attach the lens ring to the bottom of our agar dish"
   bullet: "This should fit snuggly and hold the plastic wrap and dish firmly in place"
-  bullet: "Indented side of the ring should be facing away from the opening of the dish"
+  bullet: "Indented side of the ring should be facing toward the opening of the dish"
   bullet: "Once in place tear away excess plastic wrap from the bottom of the dish."
   image: "petri dish with ring"
 end
