@@ -65,6 +65,12 @@ step
 end
 
 step
+  description: "Finalize the bright-light fixture"
+  bullet: "Set fixture to phase 3"
+  bullet: "lower the light fixture"
+end
+
+step
   description: "Setup complete!"
   note: "We are now ready to search for cells on the computer, click next to procede to the next protocol"
 end
