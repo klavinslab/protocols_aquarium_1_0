@@ -19,6 +19,8 @@ function incubate_small_tube(tube_id, temp)
   end
 end
 
+incubate_small_tube(tube_id, temp)
+
 
 
 function cleanup(msg1, msg2)
