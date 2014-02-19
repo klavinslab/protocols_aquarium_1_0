@@ -3,7 +3,7 @@ argument
 end
 
 step
-  description: "Pureify the extracted genome."
+  description: "Purify the extracted genome."
 end
 
 take
