@@ -81,5 +81,5 @@ step
 end
 
 log
-  return: {dish : plate[:id]}
+  return: {dish : plate}
 end
