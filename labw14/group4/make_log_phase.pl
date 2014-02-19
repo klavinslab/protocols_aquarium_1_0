@@ -1,5 +1,5 @@
 argument
-	e_coli_strains: sample array, "E coli samples you wish to do dilute"
+	e_coli_strains: sample array, "E coli samples you wish to do dilute" # unique list
 end
 
 information "Dilute cells and bring them to log phase"
@@ -15,7 +15,7 @@ net_volume = sample_count *  total_V
 lb_count = 1+net_volume/50 # Bug: will ask for extra lb aliquot if net_volume is a multiple of 50 ml
 
 take
-	e_items = item unique(e_coli_strains)
+	e_items = e_coli_strains
 	t_tubes = sample_count "50 ml Falcon Tube"
 	LB     = lb_count "50 mL LB liquid aliquot (sterile)"
 end
@@ -42,9 +42,13 @@ log_cell_tubes = []
 while i < sample_count
 	i = i+1
 	produce
-		y = sample_count "log cells"
+		y = 1 "log cells"
 		release t_tubes[i-1]
 		location: "B14.310"
+		data
+			from: e_coli_strains[i][:id]
+			original_sample: e_coli_strains[i][:id]
+		end
 		note: "Incubate tube %{i} for 2 hours in 37°C incubator (B14.310)"
 	end
 	log_cell_tubes = concat(log_cell_tubes, y)
