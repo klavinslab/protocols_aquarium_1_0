@@ -70,5 +70,5 @@ step
 end
 
 log
-  return: {item : plate[:id]}
+  return: {item : plate}
 end
