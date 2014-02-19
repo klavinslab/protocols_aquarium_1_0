@@ -1,7 +1,7 @@
 function cleanup(msg1, msg2)
   step
     description: "Clean up your workstation"
-    note: "%{msg}"
+    note: "%{msg1}"
   end
   step
     description: "Replace empty tip boxes with new tip boxes."
