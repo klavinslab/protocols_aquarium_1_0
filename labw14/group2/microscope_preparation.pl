@@ -33,6 +33,7 @@ end
 step
   description: "Turn on the shutter controller"
   note: "This is labeled with a 2 must be turned on second"
+  note: "The switch is in the back"
   image: "shutter controller label 2"
 end
 
