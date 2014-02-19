@@ -68,7 +68,7 @@ cur_tube = ii + 1
 
 	step
 	  description: "Transfer sample into a prechilled 1.5 mL centrifuge tube."
-		note: "Transfer sample number %{cur_sample} into the 1.5 mL tube labelled %{cur_tube} using your Pipettor P1000 (100-1000 µL pipettor).
+		note: "Transfer sample number %{cur_sample} into the 1.5 mL tube labelled %{cur_tube} using your Pipettor P1000 (100-1000 µL pipettor)."
 	end
 	ii = ii + 1
 end
