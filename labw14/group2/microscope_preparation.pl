@@ -53,7 +53,7 @@ step
   note: "This is labeld 5 and helps us pan through the surface to find cells at a fixed focal point z"
 
 step
-  descrition: "Turn on the fine Z tunning controller"
+  description: "Turn on the fine Z tunning controller"
   note: "This is labeled 6 and adjusts our focal points when searching for cells"
 end
 
