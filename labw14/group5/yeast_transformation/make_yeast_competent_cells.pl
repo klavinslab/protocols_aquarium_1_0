@@ -181,6 +181,7 @@ while ii < length(yeast_250ml_flask)
           note: "Write the above id number on the aliquot tube's cap. Place the tube in a tube holder on the bench."
           location:"Bench"      
       end
+      r = append(r,y[:id])
     else
       step
         description:"Making another aliquot from a tube with %{id_num}"
@@ -189,13 +190,14 @@ while ii < length(yeast_250ml_flask)
       end
     
       produce
-          y = 1 "Yeast Competent Aliquot" from flask[ii]
+          z = 1 "Yeast Competent Aliquot" from flask[ii]
           note: "Write the above id number on the aliquot tube's cap. Place the tube in a tube holder on the bench."
           location:"Bench"      
       end
+      r = append(r,z[:id])
     end
   
-    r = append(r,y[:id])
+    #r = append(r,y[:id])
     jj = jj + 1
   end
   
