@@ -30,3 +30,13 @@ step
   check: "Pipette 15 uL DNA Elution Buffer directly into the base of the collection tube.  Allow to incubate for 1 minute at room tempurature."
   check: "Place the column in a 1.5mL tube.  Centrifuge for 30 seconds to elute the DNA.  The tube contains purified DNA.  The column can be discarded."
 end
+
+produce
+  r = "Purified DNA" from eDNA[0]
+  release eDNA
+  note: "Store the tube containing purified DNA at the bench for the next step."
+end
+
+log
+  return: {r: r}
+end
