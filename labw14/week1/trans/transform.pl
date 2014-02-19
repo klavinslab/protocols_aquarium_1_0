@@ -6,10 +6,9 @@ argument
   plate_type: object, "The plate on which the transformed cells to be plated"
 end
 
+tube_incubation_choice = 1
 if plate_type == "LB Amp Plate (sterile)"
   tube_incubation_choice = 0
-else
-  tube_incubation_choice = 1
 end
 
 take
