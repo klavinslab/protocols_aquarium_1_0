@@ -27,16 +27,6 @@ end
 ########## SETUP #########################
 
 num_samples = length(shocked_cells)
-extra_run = false
-
-t = 5 * num_samples	# total number of tubes to set out
-
-# calculate how many batches to run for 50mL tubes
-num_repeats = num_samples / BIG_CENTRIFUGE_SIZE
-
-if 0 != (num_samples /% BIG_CENTRIFUGE_SIZE) 
-	extra_run = true
-end
 
 ##################### Begin PROTOCOL ##################3
 
@@ -114,7 +104,7 @@ end
 	  description: "Resuspend each cell pellet in 200 µL of sterile cold molecular grade water and keep it cool."
 	end
 
-	# make the aliquots
+######### make the aliquots ############
 electrocompetent_cells = []
 ii = 0
 while ii < num_samples
@@ -134,7 +124,7 @@ while ii < num_samples
 			data
 				from: sample_id
 			end
-#			  release cells[ii]
+			  release cells[ii]
 		end
 		electrocompetent_cells = append(electrocompetent_cells, competent_cells[:id])
 		ii = ii + 1
@@ -144,4 +134,4 @@ log
   electrocompetent_cells: electrocompetent_cells
 end
 
-release cells	# DEBUG
+#release cells	# DEBUG
