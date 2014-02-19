@@ -17,7 +17,7 @@ end
 
 step
   description: "Preparing yeast overnight culture tubes"
-  note: "Label  %{num}  14ml falcon tubes with your name and today's date."
+  note: "Label  %{num}  14ml glass tubes with your name and today's date."
 end
 
 ii  = 0
@@ -36,15 +36,15 @@ while ii < length(transformed_yeast_plate)
 
   step
     description: "Making yeast overnight culture tube"
-    bullet: "Take a 14mL falcon tube."
-    bullet: "Using 1000 μl pippete pour 2 mL of YPAD media into the tube."
+    bullet: "Take a 14mL glass tube."
+    bullet: "Using P1000 pipettor pipet 2 mL of YPAD media into the tube."
   end
 
   step
-    description: "Inoculating yeast overnight culture form a plate with id %{id_num}"
+    description: "Inoculating yeast overnight culture from a plate with id %{id_num}"
     bullet: "Take a yeast plate with id  %{id_num}."
     bullet: "Find a colony that is not touching any other colony."
-    bullet: "Take a 200 μL tip (the one used by the 10-100 μL or 20-200 μL pipettor) by hand."
+    bullet: "Take a 200 μL tip (the one used by the 10-100 μL or 20-200 μL pipettor) by pipettor."
     bullet: "With the pipette tip, scrape up the colony and then mix it into one of the tube.
       Scrape the end of the tip against the wall of the tube below the liquid level to ensure the colony has been deposited."
   end
@@ -68,6 +68,5 @@ end
 release concat(falcon_tube, plate)
 
 step
-  description: "Now you have to wait 5 hours till the next protocol (Diluting an overnight yeast suspesnesion culture)."
+  description: "Now you have to wait 12-18 hours till the next protocol (Diluting an overnight yeast suspesnesion culture)."
 end
-
