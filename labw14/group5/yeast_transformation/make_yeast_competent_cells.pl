@@ -12,6 +12,7 @@ end
 
 take
   falcon_tube = num "50 mL Falcon Tube"
+  lioac_tube  = 1 "100 mM LiOAc"
   flask = item yeast_250ml_flask
 end
 
@@ -211,6 +212,7 @@ end
 
 
 release falcon_tube
+release lioac_tube
 
 if num == 1
   step
