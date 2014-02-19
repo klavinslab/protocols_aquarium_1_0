@@ -76,9 +76,9 @@ while i<dilution_steps
   step
     description: "Further dilute the aTc inducer in MG water"
     check: "Add %{water_vol} uL of MG water to a new 1.5mL tube"
-    check: "Add %{inducer_vol} uL of the '%{inducer_abr), %{conc} ng/ml' made in the previous step to the new 1.5mL tube"
+    check: "Add %{inducer_vol} uL of the '%{inducer_abr}, %{conc} ng/ml' made in the previous step to the new 1.5mL tube"
     check: "Vortex to mix"
-    check: "Label this tube '%{inducer_abr), %{next_conc} ng/ml'"
+    check: "Label this tube '%{inducer_abr}, %{next_conc} ng/ml'"
   end
   conc = conc/df
   next_conc = next_conc/df #itereate the concentrations down by a factor of 10 each round
