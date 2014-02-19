@@ -1,7 +1,7 @@
 # Modified from existing protocol
 
 argument
-  plasmid_id: sample, "The plasmid to be used"
+  plasmid_id: sample array, "The plasmid to be used"
   e_coli_strain_type: sample array, "One electrocompetent aliquot (of the 4 made in the previous protocol) to be transformed"
   dna_vol: number
   strain_name: string, "Enter the name of the strain you are producing"
