@@ -14,16 +14,25 @@ take
   y = item transformed_yeast_plate_id
 end
 
+step
+  description: "Go the the Gel room and log in there."
+end
 
 ii = 0
 
 while ii < length(transformed_yeast_plate_id)
 
+id_num = transformed_yeast_plate_id[ii]
+
+step
+  description: "Making a picture of a plate %{id_num}" 
+end
+
 step
   description: 
     "Put the camera hood on transilluminator"
   note: 
-    "Go the the Gel room, place the agar part of the plate inverted on the transilluminator.
+    "Place the agar part of a plate %{id_num} inverted on the transilluminator.
      Place the camera hood on the transilluminator. Turn on transilluminator by sliding you hand into the hood.\n"
 end
 
