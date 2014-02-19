@@ -7,6 +7,7 @@ end
 take
   y = item yeast_susp
   z = item iScript
+  note: "Allow the RT-qPCR Sample Prep Reagent to thaw"
 end
 
 step
@@ -22,7 +23,8 @@ end
 step
   description: "Centrifuge at 2,000 rcf (Make sure to balance the centrifuge!)"
   bullet: "Place the tube into centrifuge at B14.320, balance with another column."
-  bullet: "Select 4560 rpm and 4°C for 1 minute, press start."
+  bullet: "Select 4,600 rpm and 4°C for 1 minute, press start."
+  note: "Centrifuge is in x1000 rpm. Set to 4.6"
 end
 
 step
@@ -41,6 +43,7 @@ step
   description: "Centrifuge lysate at 15,000 rcf"
   bullet: "Place the tube into centrifuge at B14.320, balance with another column."
   bullet: "Select 12,500 rpm and 2 minutes, press start."
+  note: "Centrifuge is in x1000 rpm. Set to 12.5"
 end
 
 step
