@@ -18,9 +18,9 @@ take
 end
 
 take
-  peg         = 1 ""
-  liac        = 1 ""
-  carrier_dna = 1 ""
+  peg         = 1 "50 percent PEG 3350"
+  liac        = 1 "1.0 M LiOAc"
+  carrier_dna = 1 "Salmon Sperm DNA (boiled)"
 end
 
 ii = 0
