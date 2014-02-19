@@ -4,7 +4,7 @@ end
 
 place streak
   protocol: "protocols/labw14/group1/streak.pl"
-  arguement
+  argument
     e_coli_glycerol_stock: e_coli_glycerol_stock
   end
   marked: true
