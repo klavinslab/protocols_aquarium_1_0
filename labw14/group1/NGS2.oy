@@ -10,6 +10,7 @@ place streak
   marked: true
   group: "group 1"
   start: now()
+  window: minutes(30)
 end
 
 place overnight
