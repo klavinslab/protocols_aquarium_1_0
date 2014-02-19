@@ -49,7 +49,7 @@ produce
   location: "A1.110"
 end
 
-release concat(lb, stock)
+release lb
 
 #modify
 #  plate[0]
