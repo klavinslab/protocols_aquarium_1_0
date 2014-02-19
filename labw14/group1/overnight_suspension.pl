@@ -36,7 +36,7 @@ end
 release concat(falcon_tube, plate)
 
 log
- return {r : r}
+ return: {r: r}
 end
  
 
