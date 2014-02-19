@@ -59,9 +59,13 @@ while i < sample_count
 	end
 
 	produce
-	  r1 = 1 "Agar plate" from strain[0]
+	  r1 = 1 "Agar plate" from strain[i]
 	  note: "Plate upside down in 30 C incubator at A1.110."
 	  location: "A1.110"
+	  data
+	  	from: strain[i][:id]
+	  	original_id: strain[i][:original_id]
+	  end
 	  release [plate[i]]
 	end
 	transformed_plates = append(transformed_plates, r1[:id])
