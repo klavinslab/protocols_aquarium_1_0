@@ -50,7 +50,7 @@ end
 
 #wire (streak, "r") => (overnight, "Transformed_E_coli_Strain_id")
 wire (extract, "r") => (purify, "eDNA")
-wire (purify, "r") => (boil, "pGenome")
+wire (purify, "r[:id]") => (boil, "pGenome")
 
 transition [streak] => [overnight] when !error(0) && completed(0) end
 transition [overnight] => [extract] when !error(0) && completed(0) end
