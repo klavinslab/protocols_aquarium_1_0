@@ -5,6 +5,7 @@ end
 take
   sector_plate = 1 "LB Kan Plate (sterile)"
   lb = 1 "50 mL LB liquid aliquot (sterile)"
+  ecoli_stock = item e_coli_glycerol_stock
 end
 
 step
@@ -43,7 +44,7 @@ step
 end
 
 produce
-  t = 1 "Agar plate" 
+  t = 1 "Agar plate" of ecoli_stock
   note: "Place the streaked plate upside-down (lid on the bottom) in 30 C incubator at A1.110 overnight."
   release sector_plate
   location: "A1.110"
