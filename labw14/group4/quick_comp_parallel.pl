@@ -43,7 +43,7 @@ end
 step
 	description: "Centrifuge at 4,600 g for 7 minutes at 4C"
 	note: "Centrifuge all of the 50 mL Falcon tubes. This may require running multiple batches depending on the number of samples."
-	bullet: "While waiting for all of the samples to run, place %{num_samples} 1.5mL tubes on ice."
+	bullet: "While waiting for all of the samples to run, place (%{num_samples}) 1.5mL tubes on ice."
 	check: "Label the tubes 1 through %{num_samples}"
 	image: "put image of blue ice box here"
 end
@@ -72,6 +72,43 @@ cur_tube = ii + 1
 	end
 	ii = ii + 1
 end
+
+###### SECOND CENTRIFUGE SEQUENCE#### 
+jj = 0
+while jj < 3
+	 step
+	    description: "Centrifuge at 10,000 g for 1 min at 4 C"
+	    note: "Place as many tubes as possible in the centrifuge. Depending on the number of samples, you may need to run the centrifuge multiple times."
+			bullet: " Use the refrigerated microcentrifuge located at B14.320"
+	  end
+
+		if 0 == jj
+			tubes = 4 * num_samples
+		
+			step
+				description: "Pre-chill 1.5 ml tubes"
+				note: "For each sample in the centrifuge, put (4) 1.5 mL tubes on ice. There should be a total of %{tubes} tubes."
+			end
+		end
+
+	  step
+	    description: "Remove supernatant"
+	    note: "Using your Pipettor P1000, carefully aspirate the supernatant from each centrifuged sample."
+	    warning: "The pellet will be very fragile! Try not to disturb it."
+	  end
+	
+	  if jj<2
+	    step
+	      description: "Add 1 mL ice cold sterile molecular grade water"
+	      note: "Use your Pipettor P1000 add 1 mL ice cold molecular grade water to each tube and resuspend the pellet by gently pipetting up and down."
+				warning: "remember to use a clean pipette tip for each tube"
+	    end
+	end
+end
+
+	step
+	  description: "Suspend each cell pellet in 200 µL of sterile cold molecular grade water and keep it cool."
+	end
 
 
 #========================================
