@@ -22,13 +22,13 @@ end
 
 step
   description: "Prepare reaction"
-  check: "Pipet 5 µL molecular grade water into each newly labeled PCR tube."
+  check: "Pipette 5 µL molecular grade water into each newly labeled PCR tube."
 end
 
 step
   description: "Spin down the boiled cell 1-%{sample_count} in the microcentrifuge on your bench for 1 minute"
-  note: "The boiled cell 1-%{sample_count} are the PCR tubes you took from thermal cylcler from your previous protocol."
-  warning: "Be extremely careful not to distrube the spun tubes.  They won't look any different but even the slightest tap can be detrimental."
+  note: "The boiled cell 1-%{sample_count} are the PCR tubes you took from thermal cycler from your previous protocol."
+  warning: "Be extremely careful not to disturbe the spun tubes.  They won't look any different but even the slightest tap can be detrimental."
 end
 
 boiled_tube = 0
