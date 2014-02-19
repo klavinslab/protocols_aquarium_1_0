@@ -62,6 +62,8 @@ step
   bullet: "Click on the 'Restore' button"
   bullet: "Navigate to D:/LABW14/Phase GRCY .xml"
   bullet: "Open the file to apply settings"
+end
+
 step
   description: "Manage ND Aquisition settings"
   bullet: "Click on the 'Time' tab and ensure it is checked"
