@@ -142,5 +142,6 @@ step
   check: "Place the flask back on top of microwave M2."
 end
 
+log { return: {gel_n: gel_n}}
 
 release {glasses[0], glove[0]}
