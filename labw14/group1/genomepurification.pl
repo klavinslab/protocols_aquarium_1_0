@@ -1,4 +1,4 @@
-arguement
+argument
   eDNA: sample, "Extracted DNA"
 end
 
