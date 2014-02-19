@@ -65,7 +65,7 @@ step
 end
 
 step
-  description: "Microscope setup complete %{plate}"
+  description: "Microscope setup complete"
   note: "Click next to procede to the next protocol"
 end
 
