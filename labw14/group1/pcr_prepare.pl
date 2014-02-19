@@ -64,12 +64,12 @@ tube_number = 0
     fwd = primer_f[jj]
     rev = primer_r[jj]
     #t = t%bLast
-    #tube_number = tube_number + 1
+    tube_number = tube_number + 1
     step 
       description: "Prepare reaction for tube %{tube_number}"
       check: "Pipet 0.5 uL of boiled cell %{t} into tube %{tube_number}."
-      check: "Pipet 1 µL of primer with id %{fwd} into tube %{tube_number}."
-      check: "Pipet 1 µL of primer with id %{rev} into tube %{tube_number}."
+      check: "Pipet 1 uL of primer with id %{fwd} into tube %{tube_number}."
+      check: "Pipet 1 uL of primer with id %{rev} into tube %{tube_number}."
       check: "Use the tip to gently mix."
       note: "Be careful to pipette into the liquid, not the side of the tube. Always use a new tip."
       warning: "Be extremely careful not to distrube the boiled cell tubes. They won't look any different but even the slightest tap can be detrimental."
@@ -103,4 +103,4 @@ end
 
 release primer_f_items
 release primer_r_items
-release phusion_stock[0]
+release phusion_stock
