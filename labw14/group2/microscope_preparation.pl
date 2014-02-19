@@ -65,10 +65,10 @@ step
 end
 
 step
-  description: "Microscope setup complete"
+  description: "Microscope setup complete %{plate}"
   note: "Click next to procede to the next protocol"
 end
 
 log
-  return: {item : plate}
+  return: {item : plate[0][:id]}
 end
