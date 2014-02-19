@@ -13,6 +13,7 @@ step
   bullet: "The lens is located within the center of the incubation chamber"
   bullet: "Using an Olympus lens cleaner located near the microscope clean the objective lens"
   note: "Rub gently in a circle on the lens to ensure proper cleaning"
+  image: "lens_cleaner_wipe"
 end
 
 step
@@ -22,6 +23,7 @@ step
   bullet: "Use the opening of the bottle to remove excess oil from the dropper"
   bullet: "Place one drop of oil directly in the center of the objective lens"
   bullet: "Recap the oil bottle and put it back inside the incubation chamber"
+  image: "oil"
 end
 
 step
@@ -35,6 +37,7 @@ step
   bullet: "Tear an ample section of plastic wrap to cover the agar dish"
   bullet: "The film should be placed smoothly on the opening such that no wrinkles show"
   note: "There should be enough plastic wrap to completely cover the sides"
+  image: "dish_with_plastic_wrap"
 end
 
 step
@@ -43,6 +46,7 @@ step
   bullet: "This should fit snuggly and hold the plastic wrap and dish firmly in place"
   bullet: "Indented side of the ring should be facing away from the opening of the dish"
   bullet: "Once in place tear away excess plastic wrap from the bottom of the dish."
+  image: "petri dish with ring"
 end
 
 step
@@ -52,6 +56,8 @@ step
   bullet: "Adjust the screws to slide the dish ring side down into the stage on top of the objective lens"
   bullet: "Once placed adjust the screws on each side of the stage to center the dish and fimrly hold in place"
   note: "If the dish moves finding cells may be impossible, and may also damage the lens."
+  image: "placing dish inside incubator"
+  image: "dish with screws"
 end
 
 step
@@ -62,6 +68,7 @@ step
   bullet: "This is the LARGER of the two knobs"
   bullet: "Adjust the objective lens toward the agar dish, just until the oil begins to spread on the bottom of the dish"
   note: "If the oil spreads too much this protocol must be restarted. If the oil doesn't spread at all you may not see any cells."
+  image: "Big knob"
 end
 
 step
@@ -69,6 +76,7 @@ step
   bullet: "Locate the brightlight fixture above the incubation chamber"
   bullet: "Set fixture to phase 3"
   bullet: "lower the light fixture so that the light shines on the objective lens"
+  image: "dish setup"
 end
 
 step
