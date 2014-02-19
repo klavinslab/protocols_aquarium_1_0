@@ -56,7 +56,8 @@ trans_cell_tm_consts = []
 i = 0
 while i <  sample_count
 	plasmid = plasmid_id[i]
-	e_coli = find_original(e_coli_map[i], strain)[:id]
+	e_coli_s = find_original(e_coli_map[i], strain)
+	e_coli = e_coli[:id]
 	step
 	  description: "Label a 1.5 mL tube (transformed cell tube)"
 	  note: "Label as tube %{tube_label}, with initials.\n
@@ -107,7 +108,7 @@ while i <  sample_count
 
 	if time_constant >= 3
 	  produce
-		r = 1 "1.5 mL tube transformation" #of strain_name 
+		r = 1 "1.5 mL tube transformation" from e_coli_s#of strain_name 
 		note: "Keep on the bench"
 		location: "Bench"
 		data
