@@ -2,15 +2,14 @@ argument
   primer_f: sample array, "forward primer list"
   primer_r: sample array, "reverse primer list"
   #plasmid_id: sample, "The plasmid stock"
-  enzyme_id: sample, "The Phsion HF Master Mix stock"
+  #enzyme_id: sample, "The Phsion HF Master Mix stock"
 end
 
 num_samples = length(primer_f)
 
-
 take
   #plasmid_stock = item plasmid_id
-  phusion_stock = item enzyme_id
+  phusion_stock = 1 "The Phsion HF Master Mix stock"
 end
 
 
@@ -35,7 +34,7 @@ step
     PCR tube and starts it in thermal cycler."
 end
 
-nFragments = 8
+nFragments = 4
 First = 1
 Last = nFragments
 
@@ -58,12 +57,13 @@ step
 end
 
 ii = 0
+t = 1
 tube_number = 0
   while jj < nPrimers
     fwd = primer_f_items[jj]
     rev = primer_r_items[jj]
-    t = t%bLast
-    tube_number = tube_number + 1
+    #t = t%bLast
+    #tube_number = tube_number + 1
     step 
       description: "Prepare reaction for tube %{tube_number}"
       check: "Pipet 0.5 uL of boiled cell %{t} into tube %{tube_number}."
@@ -74,6 +74,9 @@ tube_number = 0
       warning: "Be extremely careful not to distrube the boiled cell tubes. They won't look any different but even the slightest tap can be detrimental."
     end
     t = t + 1
+    if t > bLast 
+      t = 1
+    end
     jj = jj + 1
   end
 
