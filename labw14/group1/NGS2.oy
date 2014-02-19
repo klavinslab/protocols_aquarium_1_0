@@ -1,6 +1,5 @@
 argument
  e_coli_glycerol_stock: sample, "Glycerol Stock of Frozen Cells"
- Transformed_E_coli_Strain_id: sample, "A plate"
 end
 
 place streak
@@ -8,7 +7,7 @@ place streak
   argument
     e_coli_glycerol_stock: e_coli_glycerol_stock
   end
-  marked: false
+  marked: true
   group: "group1"
   start: now()
   window: minutes(30)
@@ -17,11 +16,7 @@ end
 place overnight
   protocol: "labw14/group1/overnight_suspension.pl"
   #start: hours(20)
-  argument
-     Transformed_E_coli_Strain_id: Transformed_E_coli_Strain_id
-  end
   start: now()
-  marked: true
   group: "group1"
   window: hours(8)
 end
@@ -48,7 +43,7 @@ place boil
  window: hours(1)
 end
 
-#wire (streak, "r") => (overnight, "Transformed_E_coli_Strain_id")
+wire (streak, "r") => (overnight, "Transformed_E_coli_Strain_id")
 wire (extract, "r") => (purify, "eDNA")
 wire (purify, "r[:id]") => (boil, "pGenome")
 
