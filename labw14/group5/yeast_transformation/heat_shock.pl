@@ -4,15 +4,13 @@ end
 
 num = length(yeast_transformation_mixtures)
 
-y = yeast_transformation_mixtures
-
 step
  description: "This protocol describes how to heat shock yeast transformation mixtures"
 end
 
-#take
-#  mixture_tube = item yeast_plasmid_mixture
-#end
+take
+  y = yeast_transformation_mixtures
+end
 
 step
   description: "Heat shock yeast - plasmid mixture"
