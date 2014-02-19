@@ -8,12 +8,9 @@ take
 end
 
 step
-  description: "Turn your plate over, agar side up."
-end
-
-step
   description: "Divde the plate into four even sectors."
-  note: "Using fine tipped felt pen and a straight edge, draw a line bisecting the plate, rotate the plate 90 degrees and draw a second line.  You shoμLd now have a plate with four even sectors."
+  check: "Turn your plate over, agar side up."
+  check: "Using fine tipped felt pen and a straight edge, draw a line bisecting the plate, rotate the plate 90 degrees and draw a second line.  You shoμLd now have a plate with four even sectors."
   #TODO: Image woμLd be a great idea
 end
 
@@ -21,9 +18,6 @@ end
 #  description: "Take four 1.5 mL tubes and pipette 100 μL LB into each one"
 #end
 
-take
-  stock = item e_coli_glycerol_stock
-end
 #plate = plate[0]
 
 #step
@@ -48,14 +42,9 @@ step
   image: "sector_streak"
 end
 
-step
-  description: "We will now incubate the cells overnight."
-end
-
-
 produce
   r = 1 "Agar plate" from stock[0]
-  note: "Place the streaked plate upside-down (lid on the bottom) in 30 C incubator at A1.110"
+  note: "Place the streaked plate upside-down (lid on the bottom) in 30 C incubator at A1.110 overnight."
   release sector_plate
   location: "A1.110"
 end
