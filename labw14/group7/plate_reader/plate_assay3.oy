@@ -48,6 +48,8 @@ place plate_reader_media_delay
   window: minutes(10)
 end
 
+#add "dilute_inducer.pl"
+
 place load_plate
   protocol: "labw14/group7/plate_reader/load_plate.pl"
   group: aquarium_user
