@@ -42,10 +42,10 @@ log_cell_tubes = []
 while i < sample_count
 	i = i+1
 	produce
-		y = sample_count "log cells tube %{i}"
+		y = sample_count "log cells"
 		release t_tubes[i-1]
 		location: "B14.310"
-		note: "Incubate 50 ml falcon tubes for 2 hours in 37°C incubator (B14.310)"
+		note: "Incubate tube %{i} for 2 hours in 37°C incubator (B14.310)"
 	end
 	log_cell_tubes = concat(log_cell_tubes, y)
 end
