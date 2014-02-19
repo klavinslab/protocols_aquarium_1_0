@@ -1,50 +1,44 @@
+# Modified from exisiting protocol
+# WARNING: Protocol assumes that all samples can be run in single pcr machine"
+
 argument
-  template: sample array, "prepicked liquied cultures from colonies"
-  template_plate: sample, "your plate from last week"
+  template_plate: sample array, "your plate from last week"
 end
 
 take
-  liquidtemplate = item template #an array
   platetemplate = item template_plate
 end
 
+sample_count = length(platetemplate)
 step
-  description: "Take 4 tubes from a PCR tube strip and label them 1 through 4 on the side, also write your initials on it." 
+  description: "Take %{sample_count} tubes from a PCR tube strip, label them 1-%{sample_count}, and write your initials on it." 
 end
 
 step
-  description: "Add 20 μL molecular grade water to each tube 1-4"
+  description: "Add 20 μL molecular grade water to each tube"
 end
 
-t1= template[0]
-t2= template[1]
-step
-  description: "Take 1 μL from tube with id %{t1} and transfer it to tube 1"
-end
-step
-  description: "Take 1 μL from tube with id %{t2} and transfer it to tube 2"
+i=0
+while i<sample_count
+	current_plate = template_plate[i]
+	current_tube=i+1
+	
+	step
+	  description: "Pick a colony from plate %{current_plate} and put it into tube %{current_tube}"
+	  check: "Find a colony in plate %{current_plate} that is medium sized, round, and isolated"
+	  check: "Pick up the entire colony with a 200 μL (green box) pipette tip and transfer it to tube %{current_tube}."
+	end
+	
+	step
+	  description: "Save some cells for later"
+	  check: "Label a 1.5 mL tubes with your initials, date. Write save%{current_tube} on it."
+	  check: "Add 1 mL of LB+Kan into the each tube."
+	  check: "Take 1 μL from tube %{current_tube} and put it into tube save%{current_tube}."
+	end
 end
 
 step
-  description: "Pick a colony from the plate sector 3 and put it into tube 3"
-  note: "Find a colony in your plate sector 3 and pick up the entire colony with a 200 μL (green box) pipette tip.  Then transfer it to tube 3."
-end
-step
-  description: "Pick a colony from the plate sector 4 and put it into tube 4"
-  note: "Find a colony in your plate sector 4 and pick up the entire colony with a 200 μL (green box) pipette tip.  Then transfer it to tube 4."
-end
-
-step
-  description: "Save some cells for later"
-  check: "Labe two 1.5 mL tubes with your initials, date. Write save3 the first tube and save4 on second tube."
-  check: "Add 1 mL of LB+Kan into the each tube."
-  check: "Take 1 μL from tube 3 and put it into tube save3."
-  check: "Take 1 μL from tube 4 and put it into tube save4."
-end
-#TODO: fix up the above
-
-step
-  description: "Place the tube 1-4 into thermal cycler T2 at B3.335"
+  description: "Place the tubes into thermal cycler T2 at B3.335"
 end
 
 step
@@ -60,21 +54,12 @@ step
 end
 
 step
-  description: "Open the lid and take the four PCR tubes you placed."
-  note: "Place tubes on your bench, these four tubes will be used as your boiled cell 1-4 for the following reaction setup."
+  description: "Open the lid and take the PCR tubes you placed."
+  note: "Place tubes on your bench, these tubes will be used as your boiled cell 1-%{sample_count} for the following reaction setup."
 end
 #produces 4 templates.  each template has 3 primers and 2 reactions (f+r1,f+r2)
 
-modify
-  liquidtemplate[0]
-  location: "Bench"
-end
-modify
-  liquidtemplate[1]
-  location: "Bench"
-end
 
-release liquidtemplate
 release platetemplate
 
 
