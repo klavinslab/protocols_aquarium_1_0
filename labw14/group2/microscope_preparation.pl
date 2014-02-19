@@ -68,3 +68,7 @@ step
   description: "Microscope setup complete"
   note: "Click next to procede to the next protocol"
 end
+
+log
+  return: {item : plate[:id]}
+end
