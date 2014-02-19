@@ -8,7 +8,7 @@ take
 end
 
 step
-  description: "Divde the plate into four even sectors."
+  description: "Divide the plate into four even sectors."
   check: "Turn your plate over, agar side up."
   check: "Using fine tipped felt pen and a straight edge, draw a line bisecting the plate, rotate the plate 90 degrees and draw a second line.  You shoμLd now have a plate with four even sectors."
   #TODO: Image woμLd be a great idea
