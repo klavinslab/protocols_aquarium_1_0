@@ -9,6 +9,7 @@ step
   bullet: "Head to the biohazard level 2 room, and turn on the incubator for the microscope"
   bullet: "The room is adjacent to the back door of Prof. Klavins lab"
   note: "The incubator will be labeled with '0' and should be set to 37 degrees"
+  image: "incubator_controller"
 end
 
 step
