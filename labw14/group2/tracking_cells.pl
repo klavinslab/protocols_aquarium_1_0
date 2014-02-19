@@ -54,6 +54,24 @@ step
 end
 
 step
+  description: "Load optical settings"
+  bullet: "Click on the __ menu"
+  bullet: "Click on 'Optical Settings' option"
+  bullet: "Click on the 'Restore' button"
+  bullet: "Navigate to 2TB drive/Rob/Settings/phasegfp.xml"
+  bullet: "Open the file to apply settings"
+step
+  description: "Manage ND Aquisition settings"
+  bullet: "Click on the 'Time' tab and ensure it is checked"
+  bullet: "Ensure interval is set to 10 minutes and duration to 8 hours"
+  bullet: "Click on the 'XY Position' tab and ensure it is checked"
+  bullet: "Click on the Z-___ tab and ensure it is UNCHECKED"
+  bullet: "Click on the Lambda tab and ensure it is checked"
+  bullet: "Ensure PhaseGFP is the first setting and GFP is the second setting"
+  bullet: "Ignore the lab tab"
+end
+
+step
   description: "Turn on the camera"
   note: "Press the play button, on the tool bar, under the menu bar to turn on the camera"
 end
@@ -69,15 +87,17 @@ end
 step
   description: "Adjust the LUTs"
   bullet: "Select the 'LUTs' tab"
+  bullet: "Click on the small box with arrows in four directions, in the bottom right corner, to center the LUT range" 
   bullet: "Adjust the left and right cursors on the LUTs tab to encompass the peaks"
   note: "This must be played by ear, sometimes encompassing the peaks makes it too bright so add some dark regions into the range to improve contrast"
 end
 
 step
   description: "Turn on the probe"
-  bullet: "Navigate to the right side of the screen and locate the tool bar"
+  bullet: "Navigate to the right side of the camera viewer and locate the tool bar"
   bullet: "Click on the top most option of the tool bar to open the probe box"
   bullet: "Click and drag on the black edges of the box to create a 2x2 inch box at the center of the screen"
+  bullet: "Right click on the probe and click on the 'Center to screen' option"
 end
 
 step
@@ -99,9 +119,13 @@ step
 end
 
 step
-  description: "Selecting ideal cells"
+  description: "Navigating the cells"
   bullet: "Select the 'X-Y overview' tab; this will help you keep track of our selected cells"
   bullet: "Click on the 'adjust to points' button on the 'X-Y overview' window"
+end
+
+step
+  description: "Selecting ideal cells"
   bullet: "We want to find elongated black rods, short rods are probably dead cells"
   bullet: "Click on the 'X-Y position' tab in the ND aquisition window"
   bullet: "When a desireable cell is found center the probe around it using the X-Y controller"
