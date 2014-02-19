@@ -33,7 +33,7 @@ end
 
 produce
   r = 1 "Purified DNA"
-  release eDNA
+  #release eDNA
   note: "Store the tube containing purified DNA at the bench for the next step."
 end
 
