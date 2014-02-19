@@ -68,8 +68,8 @@ end
 place assembly1
   protocol: "labw14/group6/full_length_protocols/gene_assembly_PCA.pl"
   argument
-    oligo_pools1: oligo_pool11
-    oligo_pools2: oligo_pool12
+    #oligo_pools1: oligo_pool11
+    #oligo_pools2: oligo_pool12
     primers1: primers11
     primers2: primers12
     enzyme_id: phusionHF
@@ -82,8 +82,8 @@ end
 place assembly2
   protocol: "labw14/group6/full_length_protocols/gene_assembly_PCA.pl"
   argument
-    oligo_pools1: oligo_pool21
-    oligo_pools2: oligo_pool22
+    #oligo_pools1: oligo_pool21
+    #oligo_pools2: oligo_pool22
     primers1: primers21
     primers2: primers22
     enzyme_id: phusionHF
@@ -93,24 +93,24 @@ place assembly2
   window: minutes(30)
 end
 
-wire (stock1, "Primer_Pool_id") => (assembly1, "oligo_pool11")
-wire (stock2, "Primer_Pool_id") => (assembly1, "oligo_pool12")
-wire (stock3, "Primer_Pool_id") => (assembly2, "oligo_pool21")
-wire (stock4, "Primer_Pool_id") => (assembly2, "oligo_pool22")
+wire (stock1, "Primer_Pool_id") => (assembly1, "oligo_pools1")
+wire (stock2, "Primer_Pool_id") => (assembly1, "oligo_pools2")
+wire (stock3, "Primer_Pool_id") => (assembly2, "oligo_pools1")
+wire (stock4, "Primer_Pool_id") => (assembly2, "oligo_pools2")
 
 place run_gel
   protocol: "labw14/group6/full_length_protocols/run_gel.pl"
   group: aquarium_user
   argument
-    assemblies1: assembly1_product
-    assemblies2: assembly2_product
+    #assemblies1: assembly1_product
+    #assemblies2: assembly2_product
   end
   start: now()
   window: minutes(30)
 end
 
-wire (assembly1, "gene") => (run_gel, "assembly1_product")
-wire (assembly2, "gene") => (run_gel, "assembly2_product")
+wire (assembly1, "gene") => (run_gel, "assemblies1")
+wire (assembly2, "gene") => (run_gel, "assemblies2")
 
 place image_cut_gel
   protocol: "labw14/group6/full_length_protocols/image_cut_gel.pl"
