@@ -32,7 +32,7 @@ step
 end
 
 step
-  description: "Measure the Ssample"
+  description: "Measure the Sample"
   check: "Open the pedestal"
   check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
   check: "Add 1.5 μL of your sample with id %{fragment} on the lower pedestal."
@@ -51,6 +51,10 @@ step
   description: "Clean the Nanodrop"
   check: "Open the pedestal"
   check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
+end
+
+log
+  return:{conc: conc}
 end
 
 release y
