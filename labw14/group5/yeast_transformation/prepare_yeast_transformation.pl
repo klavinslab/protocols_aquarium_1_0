@@ -72,4 +72,4 @@ log
 end
 
 release digested_plasmid
-release [ peg[0,] liac[0], carrier_dna[0] ]
+release [ peg[0], liac[0], carrier_dna[0] ]
