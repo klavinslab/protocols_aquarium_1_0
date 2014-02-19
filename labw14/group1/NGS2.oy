@@ -1,14 +1,21 @@
 argument
  e_coli_glycerol_stock: sample, "Glycerol Stock of Frozen Cells"
+ pfwd: sample array, "The forward primers"
+ prev: sample array, "two reverse primers"
+ enzyme_id: sample, "The Phsion HF Master Mix stock"
+ ladder: sample, "The ladder for your gel"
 end
 
+ladder = 822
+enzyme_id = 711
+ 
 place streak
   protocol: "labw14/group1/streak.pl"
   argument
     e_coli_glycerol_stock: e_coli_glycerol_stock
   end
   marked: true
-  group: "group1"
+  group: aquarium_user
   start: now()
   window: minutes(30)
 end
@@ -17,7 +24,7 @@ place overnight
   protocol: "labw14/group1/overnight_suspension.pl"
   #start: hours(20)
   start: now()
-  group: "group1"
+  group: aquarium_user
   window: hours(8)
 end
 
@@ -25,22 +32,78 @@ place extract
   protocol: "labw14/group1/DNAextractPurelink.pl"
   #start: hours(20)
   start: now()
-  group: "group1"
+  group: aquarium_user
   window: hours(8)
 end
 
 place purify
   protocol: "labw14/group1/genomepurification.pl"
   start: now()
-  group: "group1"
+  group: aquarium_user
   window: hours(1)
 end
 
 place boil
  protocol: "labw14/group1/boil.pl"
  start: now()
- group: "group1"
+ group: aquarium_user
  window: hours(1)
+end
+
+place pcr_prepare
+ protocol: "labw14/group1/pcr_prepare.pl"
+   argument
+    pfwd: primer_f
+    prev: primer_rev
+    enzyme_id: enzyme_id
+  end
+ start: now()
+ group: aquarium_user
+ window: hours(1)
+end
+
+place finish_pcr
+  protocol: "labw14/group1/pcr_finish.pl"
+  group: aquarium_user
+  start: minutes(1) #change to 60
+  window: minutes(1)
+end
+
+place pour_gel
+  protocol: "labw14/group1/pour_gel.pl"
+  argument
+    percentage: 1
+    comb_n: 1
+    well_n: 10
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(120)
+end
+
+place run_gel
+  protocol: "labw14/group1/run_gel.pl"
+  argument
+    ladder_one: ladder
+    fragment_volume: 20
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place image_gel
+  protocol: "labw14/group1/image_gel.pl"
+  group: aquarium_user
+  start: minutes(20)
+  window: minutes(1)
+end
+
+place clean_gel_box
+  protocol: "labw14/group1/clean_gel_box.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
 end
 
 wire (streak, "r") => (overnight, "id")
@@ -51,4 +114,10 @@ transition [streak] => [overnight] when !error(0) && completed(0) end
 transition [overnight] => [extract] when !error(0) && completed(0) end
 transition [extract] => [purify] when !error(0) && completed(0) end
 transition [purify] => [boil] when !error(0) && completed(0) end
-transition [boil] => [] when !error(0) && completed(0) end
+transition [boil_cell] => [pcr_prepare] when !error(0) && completed(0) end
+transition [pcr_prepare] => [pour_gel] when !error(0) && completed(0) end
+transition [pour_gel] => [finish_pcr] when !error(0) && completed(0) end
+transition [finish_pcr] => [run_gel] when !error(0) && completed(0) end
+transition [run_gel] => [image_gel] when !error(0) && completed(0) end
+transition [image_gel] => [clean_gel_box] when !error(0) && completed(0) end
+transition [clean_gel_box] => [] when !error(0) && completed(0) end
