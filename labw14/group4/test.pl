@@ -11,5 +11,5 @@ end
 s = find_original("a", a)
 
 step
-  description: "sample %{s} came from the original sample "a""
+  description: "sample %{s} came from the original sample 'a'"
 end
