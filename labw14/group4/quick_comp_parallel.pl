@@ -43,8 +43,8 @@ end
 step
 	description: "Centrifuge at 4,600 g for 7 minutes at 4C"
 	note: "Centrifuge all of the 50 mL Falcon tubes. This may require running multiple batches depending on the number of samples."
-	bullet: "While waiting for all of the samples to run, place (%{num_samples}) 1.5mL tubes on ice."
-	check: "Label the tubes 1 through %{num_samples}"
+	bullet: "Use the large centrifuge located at B14.330"
+	check: "While waiting for all of the samples to run, place (%{num_samples}) 1.5mL tubes on ice. Label the tubes 1 through %{num_samples}"
 	image: "put image of blue ice box here"
 end
 
@@ -52,13 +52,14 @@ end
 step
   description: "Pour off supernatant"
   note: "Use your Pipettor P1000 (100-1000 µL pipettor) to remove any remaining supernatant from each 50 mL tube. Be careful not to desturb the pellet."
-  warning: "Try not to leave any more supernatant than you have to (but don't disturb the pellet)"
+  bullet: "Try not to leave any more supernatant than you have to (but don't disturb the pellet)"
+  warning: "Use a clean tip for each tube"
 end
 
 step
   description: "Add 1 mL ice cold sterile molecular grade water"
   note: "Use your Pipettor P1000 (100-1000 µL pipettor) to add 1 mL ice cold molecular grade water to each 50 mL tube. Resuspend each pellet by gently pipetting up and down."
-	warning: "remember to use a new pipette tip with each tube!"
+	warning: "Remember to use a new pipette tip with each tube!"
 end
 	
 ii = 0
@@ -67,8 +68,8 @@ cur_sample = cells[ii][:id]
 cur_tube = ii + 1
 
 	step
-	  description: "Transfer sample into a prechilled 1.5 mL centrifuge tube."
-		note: "Transfer sample number %{cur_sample} into the 1.5 mL tube labelled %{cur_tube} using your Pipettor P1000 (100-1000 µL pipettor)."
+	  description: "Transfer sample %{cur_sample} into a prechilled 1.5 mL centrifuge tube."
+		note: "Put the sample into the 1.5 mL tube labelled %{cur_tube} using your Pipettor P1000 (100-1000 µL pipettor)."
 	end
 	ii = ii + 1
 end
@@ -87,7 +88,8 @@ while jj < 3
 		
 			step
 				description: "Pre-chill 1.5 ml tubes"
-				note: "For each sample in the centrifuge, put (4) 1.5 mL tubes on ice. There should be a total of %{tubes} tubes."
+				check: "For each sample in the centrifuge, put (4) 1.5 mL tubes on ice. There should be a total of %{tubes} tubes."
+				image: "image of blue box here"
 			end
 		end
 
@@ -100,7 +102,8 @@ while jj < 3
 	  if jj<2
 	    step
 	      	description: "Add 1 mL ice cold sterile molecular grade water"
-		note: "Use your Pipettor P1000 add 1 mL ice cold molecular grade water to each tube and resuspend the pellet by gently pipetting up and down."
+		bullet: "Use your Pipettor P1000 add 1 mL ice cold molecular grade water to each tube"
+		bullet: "Resuspend the pellet by gently pipetting up and down."
 		warning: "Remember to use a clean pipette tip for each tube"
 	    end
 	end
@@ -111,103 +114,11 @@ end
 	  description: "Resuspend each cell pellet in 200 µL of sterile cold molecular grade water and keep it cool."
 	end
 
-
-#========================================
-#
-#step
-#  description: "Centrifuge at 4,600 g  for 7 minutes at 4C"
-#	note:"place the first %{BIG_CENTRIFUGE_SIZE} tubes into the centrifuge and run them. While waiting, put an equal number of 1.5 mL tubes on ice."
-#end
-#
-#if ( num_repeats != 0 )	# have to do multiple repetitions
-#	ii = 1
-#
-#	while ii < num_repeats	# do reps until an incomplete load left
-#		step
-#		  description: "Centrifuge the next %{BIG_CENTRIFUGE_SIZE} tubes at 4,600 g  for 7 minutes at 4C"
-#		  note: "While waiting for the centrifuge, put one 1.5 mL tube on ice for each sample."
-#		end
-#				ii = ii + 1
-#	end
-#	
-#	if (extra_run)	# There are just a couple more tubes to run
-#		step
-#		  description: "Centrifuge the remaining tubes at 4,600 g  for 7 minutes at 4C"
-#		  note: "While waiting for the centrifuge, put one 1.5 mL tube on ice for each sample."
-#		end
-#	end
-#end
-#		
-####### first transfer ######
-#
-#step
-#  description: "Pour off supernatant"
-#  note: "Use your Pipettor P1000 (100-1000 µL pipettor) to remove any remaining supernatant from each 50 mL tube. Be careful not to desturb the pellet."
-#  warning: "Try not to leave any more supernatant than you have to (but don't disturb the pellet)"
-#end
-#
-#step
-#  description: "Add 1 mL ice cold sterile molecular grade water"
-#  note: "Use your Pipettor P1000 (100-1000 µL pipettor) to add 1 mL ice cold molecular grade water to each 50 mL tube. Resuspend each pellet by gently pipetting up and down."
-#end
-#
-#step
-#  description: "Transfer into one of the prechilled 1.5 mL centrifuge tubes."
-#  note: "Using your Pipettor P1000 (100-1000 µL pipettor), transfer the culture from each 50 mL Falcon tube to one of the 1.5 mL centrifuge tubes on ice."
-#end
-#
-###### second set of centrifuging ######
-#
-#samples_remaining = num_samples
-#
-#while samples_remaining != 0
-#	jj = 0
-#	while jj<3
-#	  step
-#	    description: "Centrifuge at 10,000 g for 1 min at 4 C"
-#	    note: "Place as many tubes as possible in the centrifuge. Centrifuge at 10,000 g in refrigerated microcentrifuge for 1 min at 4 C. "
-#	  end
-#
-#		if 0 == jj
-#			step
-#				description: "How many samples were put into the centrifuge?"
-#				samples_run: number
-#				end
-#			end
-#		
-#			samples_remaining = samples_remaining - samples_run # update our count
-#			tubes = 4 * samples_run
-#		
-#			step
-#				description: "Pre-chill 1.5 ml tubes"
-#				note: "For each sample in the centrifuge, put (4) 1.5 mL tubes on ice. There should be a total of %{tubes} tubes."
-#			end
-#		end
-#
-#	  step
-#	    description: "Remove supernatant"
-#	    note: "Using your Pipettor P1000, carefully aspirate the supernatant from each centrifuged sample."
-#	    warning: "The pellet will be very fragile! Try not to disturb it."
-#	  end
-#	
-#	  if jj<2
-#	    step
-#	      description: "Add 1 mL ice cold sterile molecular grade water"
-#	      note: "Use your Pipettor P1000 add 1 mL ice cold molecular grade water to each tube and resuspend the pellet by gently pipetting up and down."
-#	    end
-#	  end
-#	  jj = jj+1
-#	end
-#	
-#	step
-#	  description: "Suspend each cell pellet in 200 µL of sterile cold molecular grade water and keep it cool."
-#	end
-#end	
-#
 	# make the aliquots
 electrocompetent_cells = []
 kk = 0
 while kk < num_samples
+	
 		step
 		  description: "Make four aliquots"
 		  note: "Taking the first /or next sample, transfer 50 µL of the resuspended pellet into four pre-chilled 1.5 mL centrifuge tubes. Discard the source tube along with any remaining cells."
