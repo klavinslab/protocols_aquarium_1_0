@@ -3,7 +3,7 @@ argument
 end
 
 take
-  pGenome_1 = item pGenome
+  pGenome_1 = item pGenome[:id]
 end
 
 first = 1
