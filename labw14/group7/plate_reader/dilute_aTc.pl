@@ -42,7 +42,7 @@ dilution = 1000 * initial_conc / target_conc #500x
 dilution_steps = 1 #count how many dilutions steps we need
 d = dilution #find the "modulus 10" of the diltion (in thi case, d = 5 at the end of the loop, with 3 steps
 while d > 10
-  dilutions_steps = dilution_steps + 1
+  dilution_steps = dilution_steps + 1
   d = d / 10
 end
 
