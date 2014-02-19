@@ -22,6 +22,14 @@ end
 
 wire (p1,"yeast_overnight_suspension") => (p2,"yeast_overnight_suspension")
 
+
+place pmei_digest
+  protocol: "labw14/group5/yeast_transformation/pmei_digest.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
 place make_yeast_competent_cells
   protocol: "labw14/group5/yeast_transformation/make_yeast_competent_cells.pl"
   group: aquarium_user
@@ -29,13 +37,59 @@ place make_yeast_competent_cells
   window: minutes(1)
 end
 
+place prepare_yeast_transformation
+  protocol: "labw14/group5/yeast_transformation/prepare_yeast_transformation.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place heat_shock
+  protocol: "labw14/group5/yeast_transformation/heat_shock.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place plate_incubate
+  protocol: "labw14/group5/yeast_transformation/plate_incubate.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place image_plate
+  protocol: "labw14/group5/yeast_transformation/image_plate.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+
 
 #forward transitions
-transition [p1] => [p2] when !error(0) && completed(0) end
+transition [start_overnight] => [dilute_culture] when !error(0) && completed(0) end
+transition [dilute_culture] => [pmei_digest] when !error(0) && completed(0) end
+transition [pmei_digest] => [make_yeast_competent_cells] when !error(0) && completed(0) end
+transition [make_yeast_competent_cells] => [prepare_yeast_transformation] when !error(0) && completed(0) && minutes_elapsed(3,40) end
+transition [prepare_yeast_transformation] => [heat_shock] when !error(0) && completed(0) end
+transition [heat_shock] => [plate_incubate] when !error(0) && completed(0) end
+transition [plate_incubate] => [image_plate] when !error(0) && completed(0) end
+transition [image_plate] => [] when !error(0) && completed(0) end
+
+
 
 #rework transitions
-transition [p1] => [p1] when error(0) end
-transition [p2] => [p2] when error(0) end
+transition [start_overnight] => [start_overnight] when error(0) end
+transition [dilute_culture] => [dilute_culture] when error(0) end
+transition [pmei_digest] => [pmei_digest] when error(0) end
+transition [make_yeast_competent_cells] => [make_yeast_competent_cells] when error(0) end
+transition [prepare_yeast_transformation] => [prepare_yeast_transformation] when error(0) end
+transition [heat_shock] => [heat_shock] when error(0) end
+transition [plate_incubate] => [plate_incubate] when error(0) end
+transition [image_plate] => [image_plate] when error(0) end
+
+
 
 #transition [ p1 ] => [ p2 ] when minutes_elapsed(0,3) end
-transition [ p2 ] => [] when completed(0) end
+#transition [ p2 ] => [] when completed(0) end
