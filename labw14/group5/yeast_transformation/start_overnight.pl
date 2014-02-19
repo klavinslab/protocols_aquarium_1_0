@@ -15,10 +15,18 @@ take
   plate        = item transformed_yeast_plate
 end
 
-step
-  description: "Preparing yeast overnight culture tubes"
-  note: "Label  %{num}  14 ml glass tubes with your name and today's date."
-  warning: "Write only on transparent part of the tube. Don't write on the white label."
+if num == 1
+  step
+    description: "Preparing yeast overnight culture tubes"
+    note: "Label a 14 ml glass tube with your name and today's date."
+    warning: "Write only on transparent part of the tube. Don't write on the white label."
+  end
+else
+  step
+    description: "Preparing yeast overnight culture tubes"
+    note: "Label  %{num}  14 ml glass tubes with your name and today's date."
+    warning: "Write only on transparent part of the tubes. Don't write on the white label."
+  end
 end
 
 ii  = 0
@@ -37,7 +45,7 @@ while ii < length(transformed_yeast_plate)
 
   step
     description: "Making yeast overnight culture tube"
-    bullet: "Take a 14 mL glass tube."
+    bullet: "Take the labeled 14 mL glass tube."
     bullet: "Using P1000 pipettor pipet 2 mL of YPAD media into the tube."
   end
 
@@ -45,7 +53,7 @@ while ii < length(transformed_yeast_plate)
     description: "Inoculating yeast overnight culture from a plate with id %{id_num}"
     bullet: "Take a yeast plate with id  %{id_num}."
     bullet: "Find a colony that is not touching any other colony."
-    bullet: "Take a 200 μL tip (the one used by the 10-100 μL or 20-200 μL pipettor) by pipettor."
+    bullet: "Take a 200 μL tip (the one used by the 10-100 μL or 20-200 μL pipettor) by hand."
     bullet: "With the pipette tip, scrape up the colony and then mix it into one of the tube.
       Scrape the end of the tip against the wall of the tube below the liquid level to ensure the colony has been deposited."
   end
