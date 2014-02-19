@@ -20,6 +20,7 @@ step
   description: "Dismantle the ring"
   bullet: "Take apart the dish from the ring"
   bullet: "Return ring to microscope base"
+end
 
 step
   description: "Turn off micrscope"
