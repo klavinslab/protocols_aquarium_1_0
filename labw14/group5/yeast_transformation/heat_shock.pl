@@ -14,7 +14,7 @@ end
 
 step
   description: "Heat shock yeast - plasmid mixture"
-  note: "Place all the 1.5mL tubes with yeast-plasmid mixtures into the heat block located at B3.355 for 15 min."
+  note: "Place all the 1.5mL tubes with yeast-plasmid mixtures into the heat block 42C for 15 min, location: B3.355."
 end
 
 step
