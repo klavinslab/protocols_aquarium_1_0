@@ -4,7 +4,7 @@ argument
   prev2: sample, "thyA reverse primer for control group"
   #templates: sample array, "The templates you just made" #just assume you have it
   enzyme_id: sample, "The Phsion HF Master Mix stock"
-  sample_count: int, "Number of boiled cell samples"
+  sample_count: number, "Number of boiled cell samples"
 end
 
 take
