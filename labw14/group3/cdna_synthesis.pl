@@ -23,12 +23,15 @@ step
   bullet: "If precipitation has occured, please mix thoroughly to resuspend, before moving forward"
 end
 
+desvolrna= 500/rna_conc
+nucwat=15-desvolrna
+
 step 
   description: "Prepare Reaction"
   check:"Pipet 4 µL of 5x iScript reaction mix into the labeled PCR tube."
   check: "Pipet 1 µL of iScript reverse transcriptase into the labeled PCR tube"
-  check: "Pipet (some amount) of Nuclease-free water into the labeled PCR tube"
-  check: "Pipet (some amount) of RNA template into the labeled PCR tube"
+  check: "Pipet %{nucwat}µL of Nuclease-free water into the labeled PCR tube"
+  check: "Pipet %{desvolrna}µL of RNA template into the labeled PCR tube"
   check: "Use the tip to gently mix."
   note: "Be careful to pipette into the liquid, not the side of the tube."
 end
