@@ -32,7 +32,7 @@ step
 end
 
 produce
-  r = "Purified DNA" from eDNA[0]
+  r = 1 "Purified DNA" from eDNA[0]
   release eDNA
   note: "Store the tube containing purified DNA at the bench for the next step."
 end
