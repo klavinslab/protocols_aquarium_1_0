@@ -9,7 +9,7 @@ end
 take
   falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
   test_tube = 1 "14 mL Test Tube"
-  plate = 1 Transformed_E_coli_Strain_id
+  plate = sample Transformed_E_coli_Strain_id
 end
 
 step
