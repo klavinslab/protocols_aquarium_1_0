@@ -6,7 +6,7 @@
 
 target_conc = 200 #"The desired concentration, in ng/ml"
 vol = 1 #"The desired volume of dilute solution in mL"
-
+inducer_abr = "aTc"
 step
   description:
     "This protocol describes how to prepare 1mL of '200ng/ml aTc' inducer in MG water through serial dilution."
@@ -53,7 +53,7 @@ water_vol = vol * 1000 - inducer_vol #uL of MG water in first dilution
 step
   description: "Dilute the aTc inducer in MG water"
   check: "Add %{water_vol} uL of MG water to a 1.5mL tube"
-  check: "Add %{inducer_vol} uL of %{inducer_abr) stock to the 1.5mL tube"
+  check: "Add %{inducer_vol} uL of '100ug/ml aTc stock solution' to the 1.5mL tube"
   check: "Vortex to mix"
   check: "Label this tube '%{inducer_abr), %{conc} ng/ml'"
 end
@@ -61,7 +61,7 @@ end
 #release inducer
 step #This should REALLY be a "release", but this item is not in the Aquarium inventory yet...
   description: "Return the aTc stock"
-  check: "Return the 100ug/ml aTc stock solution to location B1.165"
+  check: "Return the '100ug/ml aTc stock solution' to location B1.165"
 end
 
 #construct a while loop for serial dilution, so that no single dilution is more than 10x
