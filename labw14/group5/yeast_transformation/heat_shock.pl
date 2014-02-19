@@ -4,6 +4,8 @@ end
 
 num = length(yeast_transformation_mixtures)
 
+#y = yeast_transformation_mixtures
+
 step
  description: "This protocol describes how to heat shock the yeast mixture"
 end
@@ -22,7 +24,7 @@ ii = 0
 
 while ii < length(yeast_transformation_mixtures)
   modify
-    y[ii]
+    yeast_transformation_mixtures[ii]
     location:"B14.310"
     inuse:0
   end
