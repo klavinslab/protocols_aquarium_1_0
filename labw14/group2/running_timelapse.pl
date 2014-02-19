@@ -15,8 +15,8 @@ end
 
 step
   description: "Save File"
-  bullet: "Click on save under the ND Acquisition tab"
-  bullet: "Save the file the LABW14 folder in the 2 TB drive witb your date(YMD) and initials"
+  bullet: "Make sure save to file is checked under the ND Acquisition tab"
+  bullet: "Click on browse and save the file in D:/LABW14/date(YMD),initials"
 end
 
 step
