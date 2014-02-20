@@ -39,7 +39,7 @@ pmei = 687
 place pmei_digest
   protocol: "labw14/group5/yeast_transformation/pmei_digest.pl"
   argument
-    plasmid_id: plasmid_id
+    fragment_id: plasmid_id
     neb_id: neb
     bsa_id: bsa
     pmei_id: pmei
@@ -77,7 +77,7 @@ end
 
   wire (make_yeast_competent_cells,"yeast_aliquot") => (prepare_yeast_transformation,"yeast_aliquot_id")
   wire (make_yeast_competent_cells,"numbers_set")   => (prepare_yeast_transformation,"numbers_set_id")
-  wire (pmei_digest,"digested_plasmid")             => (prepare_yeast_transformation,"plasmid_id")
+  wire (pmei_digest,"digested_plasmid")             => (prepare_yeast_transformation,"fragment_id")
 
 
 
