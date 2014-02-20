@@ -3,5 +3,6 @@ argument
 end
 
 step
-  description: "placeholder"
+  description: "print out the gibson array"
+  note: "%{sample_concentrations}"
 end
