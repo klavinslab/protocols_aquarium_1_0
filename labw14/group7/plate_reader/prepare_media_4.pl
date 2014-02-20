@@ -37,6 +37,7 @@ while i<length(antibios)
   antibio_volumes = append(antibio_volumes, v)
   antibio_abr = antibios[i]
   antibio_name = ""
+  a = []
   if antibio_abr == "amp"
     antibio_name = "100X 1 mL Ampicillin Aliquot"
     take
