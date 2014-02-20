@@ -11,5 +11,5 @@ step
 end
 
 log
-  result: sample_concentrations # put resulting samples from produce here
+  return: {sample_concentrations: sample_concentrations} # put resulting samples from produce here
 end
