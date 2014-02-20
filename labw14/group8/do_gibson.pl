@@ -9,10 +9,12 @@ argument
 end
 
 step
-  description: "print out the gibson array"
+  description: "print out the input gibson array"
   note: "%{sample_concentrations}"
 end
 
+aborted_samples = [ ]
+
 log
-  return: {sample_concentrations: sample_concentrations} # put resulting samples from produce here
+  return: {completed_samples: sample_concentrations, aborted_samples: aborted_samples} # put resulting samples from produce here
 end
