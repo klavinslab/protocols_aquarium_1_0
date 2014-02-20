@@ -43,7 +43,15 @@ i=0
 while i < num_rows
   result_row = [ ]
   j = 0
+  log
+    i: i
+    j: j
+  end
   foreach s in samples
+    log
+      i_inner: i
+      j_inner: j
+    end
     result_row = append(result_row, {input: s, amount: input_rows[i][j]})
     j=j+1
   end
