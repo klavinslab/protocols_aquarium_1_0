@@ -13,10 +13,10 @@ source_oligos2 = [1079, 1080]
 source_oligos3 = [1079, 1080]
 source_oligos4 = [1079, 1080] 
 backbone_fragments = [1141, 1144]
-primers11 = [1075, 1076]
-primers12 = [1075, 1076]
-primers21 = [1075, 1076]
-primers22 = [1075, 1076]
+primer11 = [1075, 1076]
+primer12 = [1075, 1076]
+primer21 = [1075, 1076]
+primer22 = [1075, 1076]
 phusionHF = 702
 
 # Places
@@ -68,8 +68,8 @@ end
 place assembly1
   protocol: "labw14/group6/full_length_protocols/gene_assembly_PCA.pl"
   argument
-    primers1: primers11
-    primers2: primers12
+    primer1: primers11
+    primer2: primers12
     enzyme_id: phusionHF
   end
   group: aquarium_user
@@ -80,8 +80,8 @@ end
 place assembly2
   protocol: "labw14/group6/full_length_protocols/gene_assembly_PCA.pl"
   argument
-    primers1: primers21
-    primers2: primers22
+    primer1: primers21
+    primer2: primers22
     enzyme_id: phusionHF
   end
   group: aquarium_user
