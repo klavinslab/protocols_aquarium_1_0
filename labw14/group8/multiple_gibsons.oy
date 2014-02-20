@@ -44,23 +44,20 @@ end
 # last step incubated colonies
 # this starts 18 hours later
 # count the number of colonies and record in the log
-place verify_gibson
+place redo
   protocol: "labw14/group8/add_colony_counts_to_samples.pl" # placeholder for imaging and getting colony counts
   group: aquarium_user      #generic, general
   marked: true           #start here
-  start: hours(18)
-  window: hours(4)
-end
-
-
-# at redo, I want to reschedule the metacol for a different set of concentrations
-# instead, just log the failed ones
-place redo
-  protocol: "labw14/group8/verify_gibson.pl" #placeholder
+  start: now()
+  window: minutes(1)
 end
 
 place success
   protocol: "labw14/group8/gibson_results_summary.pl"
+  group: aquarium_user      #generic, general
+  marked: true           #start here
+  start: now()
+  window: minutes(1)     #start in the next minute
 end
 
 wire(get_concentrations, "result") => (do_gibson, "sample_concentrations")
