@@ -6,7 +6,6 @@
 # since cannot pass complex arrays otherwise
 
 function ask_filename_then_get_gibsons()
-  local f = "labw14/group8/example_gibson_data.pl"
   step
     description: "Enter the filename with concentrations to use."
     note: "The path should look like labw14/group8/try_gibson.pl , ie, 
@@ -14,13 +13,14 @@ function ask_filename_then_get_gibsons()
       The file format is fragment_name1, fragment_name2, ... 
       for columns, then concentrations in microliters. Use blanks to indicate 
       not to use that fragment. A sample file is at labw14/group8/example_gibson_data.pl"
+    warning: "This is currently ignored and the example file is used"
     getdata
       f: string, "The path to the file"
     end
   end
   
   #require "labw14/group8/example_gibson_data.pl" # placeholder for variable gibson input
-  require f.to_s() # bug doesn't insert string or might not have val for f
+  require "labw14/group8/example_gibson_data.pl" # bug doesn't insert string or might not have val for f
   
   local r = gibson_data()
     # gibsons would look like gibsons = [
