@@ -1,6 +1,6 @@
 require "labw14/group8/lib_read_gibson.pl"
 
-g = get_gibson_csv_path_return_gibsons()
+g = ask_filename_then_get_gibsons()
 
 # idea TODO
 # build up a data structure using loops etc that define experiment
