@@ -2,7 +2,7 @@
 # note: ignores error in one gibson (an abort) ; can't recover in place
 
 place get_concentrations
-  protocol: "labw14/group8/get_matrix_sample_cols_upto_16_rows.pl"
+  protocol: "labw14/group8/get_matrix_sample_cols_upto_16_rows.pl" 
   group: aquarium_user      #generic, general
   marked: true           #start here
   start: now()
@@ -23,12 +23,16 @@ place verify_gibson
   protocol: "labw14/group8/verify_gibson.pl"
 end
 
+place redo
+  protocol: "labw14/group8/verify_gibson.pl" #placeholder
+end
+
 place success
   protocol: "labw14/group8/gibson_results_summary.pl"
 end
 
 wire(get_concentrations, "result") => (do_gibson, "sample_concentrations")
-
+wire(do_gibson, "result") => (verify_gibson, "gibsons")
 # only ask for concentrations from samples you need
 # wire(verify_gibson, "failed_gibsons") => (redo, "failed_gibsons") 
  
