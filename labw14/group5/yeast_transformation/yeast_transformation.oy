@@ -57,7 +57,7 @@ end
 place make_yeast_competent_cells
   protocol: "labw14/group5/yeast_transformation/make_yeast_competent_cells.pl"
   group: aquarium_user
-  start: now()
+  start: minutes(1) #hours(5)
   window: minutes(1)
 end
 
