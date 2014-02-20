@@ -165,3 +165,5 @@ transition [induce_15] => [induce_15] when error(0) end
 transition [induce_2] => [induce_2] when error(0) end
 transition [induce_24] => [induce_24] when error(0) end
 #TODO: avoid repeating delays
+transition [finish] => [finish] when error(0) end
+transition [finish] => [] when !error(0) && completed(0) end
