@@ -6,6 +6,7 @@
 # since cannot pass complex arrays otherwise
 
 function ask_filename_then_get_gibsons()
+  local f = "labw14/group8/example_gibson_data.pl"
   step
     description: "Enter the filename with concentrations to use."
     note: "The path should look like labw14/group8/try_gibson.pl , ie, 
@@ -17,7 +18,10 @@ function ask_filename_then_get_gibsons()
       f: string, "The path to the file"
     end
   end
-  require "%{f}"
+  
+  #require "labw14/group8/example_gibson_data.pl" # placeholder for variable gibson input
+  require "%{f}" # bug doesn't insert string or might not have val for f
+  
   local r = gibson_data()
     # gibsons would look like gibsons = [
     #        ["frag1", "frag2", "frag3", "frag4",...],
