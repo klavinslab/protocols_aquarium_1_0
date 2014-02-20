@@ -1,10 +1,13 @@
 # Arguments
 argument
   source_oligos1: sample array, "Choose the oligonucleotides you want to combine"
+  Concentrated_Stock: string, "Unique sample name of the concentrated stock."
   source_oligos2: sample array, "Choose the oligonucleotides you want to combine"
+  Concentrated_Stock: string, "Unique sample name of the concentrated stock."
   source_oligos3: sample array, "Choose the oligonucleotides you want to combine"
+  Concentrated_Stock: string, "Unique sample name of the concentrated stock."
   source_oligos4: sample array, "Choose the oligonucleotides you want to combine"  
-  
+  Concentrated_Stock: string, "Unique sample name of the concentrated stock."
 end
 
 #Testing inputs - to save time (remove at end)
