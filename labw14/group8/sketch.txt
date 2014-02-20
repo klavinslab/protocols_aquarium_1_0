@@ -1,0 +1,14 @@
+import gibson types and concentrations into inventory system
+  take screenshot
+  guide user
+  show link to sample file with conventions
+    name: a unique name with what it contains (frag + frag + frag sorted by ?) # this should be sample.to_s
+    field1 is the name of the fragment, value is the amount to put in in microliters
+    
+    
+    write a simple steps.reduce(human_execute, inventory_taken) #take should happen on the page with select boxes...
+    
+    
+TODO
+
+mockups based off current screens, writing onto them
