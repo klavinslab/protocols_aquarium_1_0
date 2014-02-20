@@ -58,7 +58,7 @@ place success
 end
 
 wire(get_concentrations, "result") => (do_gibson, "sample_concentrations")
-wire(do_gibson, "result") => (verify_gibson, "gibsons")
+wire(do_gibson, "completed_samples") => (verify_gibson, "gibsons")
 # only ask for concentrations from samples you need
 # wire(verify_gibson, "failed_gibsons") => (redo, "failed_gibsons") 
  
