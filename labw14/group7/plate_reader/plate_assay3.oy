@@ -67,7 +67,7 @@ place induce_zero
   protocol: "labw14/group7/plate_reader/induce_aTc_zero.pl"
   argument
     aTc_inducer_in: "aTc (5 ug/mL)"
-    plate_chart: "induce_0.png"
+    plate_chart: "induce_0"
   end
   group: aquarium_user
   start: now()
@@ -85,7 +85,7 @@ place induce_1
   protocol: "labw14/group7/plate_reader/induce_aTc.pl"
   argument
     aTc_inducer_in: "aTc (5 ug/mL)"
-    plate_chart: "induce_1.png"
+    plate_chart: "induce_1"
   end
   group: aquarium_user
   start: minutes(0.1)
@@ -96,7 +96,7 @@ place induce_15
   protocol: "labw14/group7/plate_reader/induce_aTc.pl"
   argument
     aTc_inducer_in: "aTc (5 ug/mL)"
-    plate_chart: "induce_15.png"
+    plate_chart: "induce_15"
   end
   group: aquarium_user
   start: minutes(0.1)
@@ -107,7 +107,7 @@ place induce_2
   protocol: "labw14/group7/plate_reader/induce_aTc.pl"
   argument
     aTc_inducer_in: "aTc (5 ug/mL)"
-    plate_chart: "induce_2.png"
+    plate_chart: "induce_2"
   end
   group: aquarium_user
   start: minutes(0.1)
@@ -118,7 +118,7 @@ place induce_24
   protocol: "labw14/group7/plate_reader/induce_aTc.pl"
   argument
     aTc_inducer_in: "aTc (5 ug/mL)"
-    plate_chart: "induce_24.png"
+    plate_chart: "induce_24"
   end
   group: aquarium_user
   start: minutes(0.1) #hours(22)
