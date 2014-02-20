@@ -1,0 +1,146 @@
+argument
+  cell_array_input: sample array, "Choose the 3 strains you would like to assay"
+  #number_of_copies: int, "How many copies of each strain would you like? NOTE: max of 12 samples/assay"
+  #induce_steps: int array, "input the desired induction times"
+end
+
+#induce_steps = [0, 1, 1.5, 2, 24]
+#todo: sort induce_steps array here
+#todo: check if first time is 0 (boolean zero_hour_induction)
+#todo: check for negative numbers
+
+#todo: check that there are at most 12 samples, and at most 8 induction steps. Quit or reboot if not true.
+
+place initial_media
+  protocol: "labw14/group7/plate_reader/prepare_media.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(10)
+  marked: true
+end
+
+place glucose_grow
+  protocol: "labw14/group7/plate_reader/glucose_grow.pl"
+  argument
+    plated_cells: cell_array_input
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(10)
+end
+
+place start_reader
+  protocol: "labw14/group7/plate_reader/start_reader_2.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(5)
+end
+
+place load_plate
+  protocol: "labw14/group7/plate_reader/load_plate.pl"
+  group: aquarium_user
+  start: now()#replace 0.1min with 18hrs
+  window: minutes(5)
+end
+
+place induce_zero
+  protocol: "labw14/group7/plate_reader/induce_aTc_zero.pl"
+  argument
+    aTc_inducer_in: "aTc (5 ug/mL)"
+    plate_chart: "induce_0"
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(5)
+end
+
+place begin_run
+  protocol: "labw14/group7/plate_reader/begin_run.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(5)
+end
+
+place induce_1
+  protocol: "labw14/group7/plate_reader/induce_aTc.pl"
+  argument
+    aTc_inducer_in: "aTc (5 ug/mL)"
+    plate_chart: "induce_1"
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place induce_15
+  protocol: "labw14/group7/plate_reader/induce_aTc.pl"
+  argument
+    aTc_inducer_in: "aTc (5 ug/mL)"
+    plate_chart: "induce_15"
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place induce_2
+  protocol: "labw14/group7/plate_reader/induce_aTc.pl"
+  argument
+    aTc_inducer_in: "aTc (5 ug/mL)"
+    plate_chart: "induce_2"
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place induce_24
+  protocol: "labw14/group7/plate_reader/induce_aTc.pl"
+  argument
+    aTc_inducer_in: "aTc (5 ug/mL)"
+    plate_chart: "induce_24"
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(10)
+end
+
+place finish
+  protocol: "labw14/group7/plate_reader/finish.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(10)
+end
+
+wire (glucose_grow, "incubated_cells_id") => (load_plate,"cells_to_assay_in")
+
+#Day 1
+transition [initial_media] => [glucose_grow] when !error(0) && completed(0) end
+transition [glucose_grow] => [start_reader] when !error(0) && completed(0) && hours_elapsed(0,18) end
+
+#Day 2
+transition [start_reader] => [load_plate] when !error(0) && completed(0) end
+transition [load_plate] => [induce_zero] when !error(0) && completed(0) end
+transition [induce_zero] => [begin_run] when !error(0) && completed(0) end
+transition [begin_run] => [induce_1] when !error(0) && completed(0) && hours_elapsed(0,1) end
+transition [induce_1] => [induce_15] when !error(0) && completed(0) && minutes_elapsed(0,30) end
+transition [induce_15] => [induce_2] when !error(0) && completed(0) && minutes_elapsed(0,30) end
+transition [induce_2] => [induce_24] when !error(0) && completed(0) && hours_elapsed(0,22) end
+
+#Day 3
+transition [induce_24] => [finish] when !error(0) && completed(0) end
+transition [finish] => [] when !error(0) && completed(0) end
+
+
+#Error trapping
+transition [initial_media] => [initial_media] when error(0) end
+transition [glucose_grow] => [glucose_grow] when error(0) end
+transition [start_reader] => [start_reader] when error(0) end
+transition [load_plate] => [load_plate] when error(0) end
+transition [induce_zero] => [induce_zero] when error(0) end
+transition [begin_run] => [begin_run] when error(0) end
+transition [induce_1] => [induce_1] when error(0) end
+transition [induce_15] => [induce_15] when error(0) end
+transition [induce_2] => [induce_2] when error(0) end
+transition [induce_24] => [induce_24] when error(0) end
+transition [finish] => [finish] when error(0) end
