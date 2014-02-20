@@ -56,10 +56,10 @@ while i<strains
   id = plated_cells[i]
   step
     description: "Add cells from plate %{id} to four seperate culture tubes"
-    check: "Use a 100uL pipette tip (held in your hand) to extract a single colony from plate %{id}, and swish it around in the culture tube marked 'R1'"
-    check: "Use a new 100uL pipette tip extract another single colony from the same plate, and swirl it around in the culture tube labeled 'R2'"
+    check: "Clean your gloves with ethanol to avoid contamination"
+    check: "Use a 100uL pipette tip (held in your hand) to extract a single colony from plate %{id}.  Drop the whole tip into the culture tube marked 'R1'"
+    check: "Use a new 100uL pipette tip extract another single colony from the same plate, and drop the whole tip into the culture tube labeled 'R2'"
     check: "Repeat the above procedure for R3 and R4."
-#TODO: Repace the above code with something more modular, based on an arbitrary number of cycles and strains
   end
   
   a = []
@@ -84,15 +84,13 @@ i=0
 while i<length(incubated_cells)
   modify
     incubated_cells[i]
-    location: "B13.425 37C Shaker" #TODO: get address
+    location: "B13.425 37C Shaker" 
   end
   i=i+1
 end
 
 release plate_array
 
-#TODO: Figure out how to release an array of samples
-#add log -> return to provide an array of culture tubes for the metacol
 log
   return: { incubated_cells_id: return_array}
 end
