@@ -68,8 +68,8 @@ end
 place assembly1
   protocol: "labw14/group6/full_length_protocols/gene_assembly_PCA.pl"
   argument
-    primer1: primers11
-    primer2: primers12
+    primer1: primer11
+    primer2: primer12
     enzyme_id: phusionHF
   end
   group: aquarium_user
@@ -80,8 +80,8 @@ end
 place assembly2
   protocol: "labw14/group6/full_length_protocols/gene_assembly_PCA.pl"
   argument
-    primer1: primers21
-    primer2: primers22
+    primer1: primer21
+    primer2: primer22
     enzyme_id: phusionHF
   end
   group: aquarium_user
