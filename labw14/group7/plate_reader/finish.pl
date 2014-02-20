@@ -10,7 +10,7 @@ step
   check: "Save the data to 'My Documents\yyyymmdd MyExperimentName.txt'"
 end
 
-step:
+step
   description: "Clean up your station"
   check: "Clean up your 96 well assay plate" #not sure of procedure for this yet...
   check: "Shut down the 'Biotech Synergy HT' plate reader"
