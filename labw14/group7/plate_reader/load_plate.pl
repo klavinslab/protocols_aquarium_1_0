@@ -17,13 +17,13 @@ step
   description: "Load the outermost edges of the plate with water"
   note: "This helps prevent evaporation of the samples, which will be in the middle of the plate"
   check: "Pipette 200uL of DI water into the outer edges"
-  #todo: include a picture of this
+  image: "plate_water"
 end
 
 step
   description: "Load the middle area of the plate with the glucose medium"
   check: "Pipette 200uL of glucose media (prepared earlier) into each open well"
-  #TODO: include a picture
+  image: "plate_media"
 end
 
 cell0 = cells[0][:id]
@@ -35,8 +35,7 @@ step
   check: "%{cell0}:   R1 => A;  R2 => B;  R3 => C;  R4 => D"
   check: "%{cell1}:   R1 => E;  R2 => F;  R3 => G;  R4 => H"
   check: "%{cell2}:   R1 => I;  R2 => J;  R3 => K;  R4 => L"
-  #todo: include chart
-  #todo: identify which cells correspond to which type.  Generalize.
+  image: "sample_locations"
 end
 
 
