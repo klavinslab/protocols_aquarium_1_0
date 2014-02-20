@@ -29,6 +29,9 @@ place verify_gibson
   protocol: "labw14/group8/verify_gibson.pl"
 end
 
+
+# at redo, I want to reschedule the metacol for a different set of concentrations
+# instead, just log the failed ones
 place redo
   protocol: "labw14/group8/verify_gibson.pl" #placeholder
 end
@@ -53,4 +56,4 @@ transition [verify_gibson] => [success] when !error(0) && completed(0) end
 # can I check a logged variable for success or failure here instead?
 # i.e. error should be an exception state instead of used normally
 # TODO pass only the failed gibsons
-# transition [verify_gibson]     => [redo]    when error(0) end
+transition [verify_gibson]     => [redo]    when error(0) end
