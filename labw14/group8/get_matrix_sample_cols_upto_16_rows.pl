@@ -27,7 +27,7 @@ end
 # depending on total amount used
 
 # process the array and return
-if length(row2) > 0
+if row2[0]
   log
     gt0: 1
   end
@@ -41,3 +41,4 @@ result = [
 log
   return: { output: result}
 end
+
