@@ -12,10 +12,10 @@ end
 #source_oligos3 = [1079, 1080]
 #source_oligos4 = [1079, 1080] 
 backbone_fragments = [1141, 1144]
-primer11 = [1075, 1076]
-primer12 = [1077, 1078]
-primer21 = [1075, 1076]
-primer22 = [1077, 1078]
+primer11 = [1631]
+primer12 = [1627]
+primer21 = [1629]
+primer22 = [1633]
 phusionHF = 702
 Concentrated_Stock1 = "OsGH3.1-1_1-6"
 Concentrated_Stock2 = "OsGH3.1-1_7-12"
