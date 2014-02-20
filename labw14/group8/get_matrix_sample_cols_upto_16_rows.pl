@@ -28,12 +28,8 @@ end
 # depending on total amount used
 
 # process the array and return
-if row2[0] != nil
-  log
-    gt0: 1
-  end
-end
 
+# check that foreach iterates in order
 foreach s in samples
   log
     sample_ordering_preserved: s
