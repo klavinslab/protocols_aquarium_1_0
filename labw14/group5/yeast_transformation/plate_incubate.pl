@@ -108,3 +108,7 @@ end
   
 release strain
 
+step
+   description: "Pending jobs"
+   warning: "Now you have to wait 48 hours up to the next protocol (Imaging the plates)."
+end
