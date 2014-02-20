@@ -1,7 +1,6 @@
-
   # ? : may want to take the samples here automatically
   local ingredients =
-       ["frag1", "frag2", "frag3", "frag4", "frag5", "frag6", "frag7", "frag8", "frag9"],
+       ["frag1", "frag2", "frag3", "frag4", "frag5", "frag6", "frag7", "frag8", "frag9"]
 
   local outputs =
     [
