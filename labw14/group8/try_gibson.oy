@@ -1,4 +1,3 @@
-
 argument
   gibson_specification: string, "File name specifying fragments and gibson concentrations"
 end
@@ -18,15 +17,18 @@ end
 
      # TODO fetch history to find parameter values; call to another system using HTTP Get?
 
-place try_until_successful
-  protocol: "labw14/group8/try_gibson.pl"
-  argument
-    filename: gibson_specification
-  end
+place get_concentrations
+  protocol: "labw14/group8/get_matrix_sample_cols_upto_16_rows.pl"
   group: aquarium_user      #generic, general
   marked: true           #start here
   start: now()
   window: minutes(1)     #start in the next minute
+end
+
+# I went to wire this up but can't declare an argument to go from getting the matrix
+# to receive the matrix at the next step
+place do_gibson
+  protocol: "labw14/group8/do_gibson.pl"
 end
 
 # check which ones worked, implicit dependency on try_gibson
@@ -38,18 +40,20 @@ place success
   protocol: "labw14/group8/record_gibson.pl"
 end
 
+wire(get_concentrations, "result") => (do_gibson, "sample_concentrations")
 
-wire (try_until_successful,"pcr_results") => (verify_gibson,"possibly_successful_gibsons")
-wire (verify_gibson,"successful_gibsons") => (success,"successful_gibsons")
-  # may need to have assistant enter concentration that was successful, want to store in inv info tho
+# only ask for concentrations from samples you need
+# wire(verify_gibson, "failed_gibsons") => (redo, "failed_gibsons") 
  
 # forward transitions
 
-transition [try_until_successful] => [verify_gibson] when !error(0) && completed(0) end
+transition [get_concentrations] => [do_gibson] when !error(0) && completed(0) end
+transition [do_gibson] => [verify_gibson] when !error(0) && completed(0) end
 transition [verify_gibson] => [success] when !error(0) && completed(0) end
 
 
 # rework transitions
 # can I check a logged variable for success or failure here instead?
 # i.e. error should be an exception state instead of used normally
-transition [verify_gibson]     => [try_until_successful]    when error(0) end
+# TODO pass only the failed gibsons
+# transition [verify_gibson]     => [redo]    when error(0) end
