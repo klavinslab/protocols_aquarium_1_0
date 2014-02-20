@@ -44,12 +44,12 @@ end
 
 
 produce
-  master_stock = 1 "Concentrated Stock" of Concentrated_Stock
+  master_stock = 1 "Working Stocks" of Concentrated_Stock
 
 end
 
 release concat (oligonuc, molecular_g_h2o)
 
 log
-  return: { Primer_Pool_id: master_stock[:id]  }
+  return: { Working_Stocks_id: master_stock[:id]  }
 end
