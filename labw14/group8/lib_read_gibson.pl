@@ -6,7 +6,7 @@
 # since cannot pass complex arrays otherwise
 
 function ask_filename_then_get_gibsons()
-  local f = "" #"labw14/group8/example_gibson_data.pl"
+  local f = "labw14/group8/example_gibson_data.pl"
   step
     description: "Enter the filename with concentrations to use."
     note: "The path should look like labw14/group8/try_gibson.pl , ie, 
