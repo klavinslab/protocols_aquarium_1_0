@@ -43,3 +43,5 @@ function gibson_data()
   return gibsons
   
 end
+
+r = gibson_data()
