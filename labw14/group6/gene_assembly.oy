@@ -18,12 +18,17 @@ primer12 = [1077, 1078]
 primer21 = [1071, 1072]
 primer22 = [1073, 1074]
 phusionHF = 702
+Concentrated_Stock1 = "OsGH3.1-1_1-6"
+Concentrated_Stock2 = "OsGH3.1-1_7-12"
+Concentrated_Stock3 = "OsGH3.1-2_1-6"
+Concentrated_Stock4 = "OsGH3.1-2_7-12"
 
 # Places
 place stock1
   protocol: "labw14/group6/full_length_protocols/make_master_stock.pl"
   argument
     oligonucleotides: source_oligos1
+    Concentrated_Stock: Concentrated_Stock1
   end
   group: aquarium_user
   marked: true
@@ -36,6 +41,7 @@ place stock2
   protocol: "labw14/group6/full_length_protocols/make_master_stock.pl"
   argument
     oligonucleotides: source_oligos2
+    Concentrated_Stock: Concentrated_Stock2
   end
   group: aquarium_user
   marked: true
@@ -47,6 +53,7 @@ place stock3
   protocol: "labw14/group6/full_length_protocols/make_master_stock.pl"
   argument
     oligonucleotides: source_oligos3
+    Concentrated_Stock: Concentrated_Stock3
   end
   group: aquarium_user
   marked: true
@@ -58,6 +65,7 @@ place stock4
   protocol: "labw14/group6/full_length_protocols/make_master_stock.pl"
   argument
     oligonucleotides: source_oligos4
+    Concentrated_Stock: Concentrated_Stock4
   end
   group: aquarium_user
   marked: true
