@@ -124,7 +124,7 @@ end
 #forward transitions
 transition [start_overnight] => [dilute_culture] when !error(0) && completed(0) end
 transition [dilute_culture] => [pmei_digest, make_yeast_competent_cells] when !error(0) && completed(0) end
-transition [pmei_digest, make_yeast_competent_cells] => [prepare_yeast_transformation] when !error(0) && completed(0) && minutes_elapsed(0,40) end
+transition [pmei_digest, make_yeast_competent_cells] => [prepare_yeast_transformation] when !error(0) && completed(0) && !error(1) && completed(1) && minutes_elapsed(0,40) end
 transition [prepare_yeast_transformation] => [heat_shock] when !error(0) && completed(0) end
 transition [heat_shock] => [plate_incubate] when !error(0) && completed(0) end
 transition [plate_incubate] => [image_plate] when !error(0) && completed(0) end
