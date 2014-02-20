@@ -13,7 +13,7 @@ end
 place get_concentrations
   protocol: "labw14/group8/read_concentrations_and_take.pl"
   argument
-    number_of_fragments: how_many_gibsons
+    how_many_gibsons: how_many_gibsons
   end
   group: aquarium_user      #generic, general
   marked: true           #start here
