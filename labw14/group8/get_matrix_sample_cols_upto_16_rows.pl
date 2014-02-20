@@ -33,6 +33,13 @@ if row2[0] != nil
   end
 end
 
+foreach e in row2
+  log
+    gt0: 2
+  end
+end
+
+
 result = [ 
            [ {input: 1, microliters: 0.1}, {input: 2, amount: 2}],
            [ {input: 3, microliters: 0.3}, {input: 4, amount: 4}]
