@@ -33,7 +33,7 @@
   # sidenote: I think too much in metaprogramming
   # ideas like steps.reduce(human_execute, ingredients)
   
-  gibsons = [ ]
+  gibsons = [ ] # wanted to do hash with ingredients and gibsons keys; hard to pass hashes in oyster
   gibsons = append ( gibsons, ingredients )
   foreach o in outputs
     gibsons = append ( gibsons, o )
