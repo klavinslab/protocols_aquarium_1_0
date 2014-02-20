@@ -18,7 +18,7 @@ function ask_filename_then_get_gibsons()
     end
   end
   require "%{f}"
-  r = gibson_data()
+  local r = gibson_data()
     # gibsons would look like gibsons = [
     #        ["frag1", "frag2", "frag3", "frag4",...],
     #        [      1,       2,       0,      0, ...],
@@ -28,7 +28,7 @@ function ask_filename_then_get_gibsons()
   # transform array to nicer format for use by other programs
   
   # for now we just fake some data for testing
-  result = [ [{input: 1, concentration: 0.1}, {input: 2, concentration: 0.2}],
+  local result = [ [{input: 1, concentration: 0.1}, {input: 2, concentration: 0.2}],
              [{input: 3, concentration: 0.3}, {input: 4, concentration: 0.4}] ]
   return result
 end
