@@ -103,6 +103,10 @@ wire (stock4, "Working_Stock_id") => (assembly2, "oligo_pools2")
 
 place run_gel
   protocol: "labw14/group6/full_length_protocols/run_gel.pl"
+  argument
+    ladder_one: ladder
+    fragment_volume: 50
+  end
   group: aquarium_user
   start: now()
   window: minutes(30)
