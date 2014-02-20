@@ -5,15 +5,15 @@ take
  media = 1 "400 mL M9 liquid Glucose"
  pipette = 1 "Serological Pipette"
  tip = 1 "25 mL Serological Pipette Tips"
- amp = "100X 1 mL Ampicillin Aliquot"
- kan = "200X 1 mL Kanamycin Aliquot"
+ amp = 1 "100X 1 mL Ampicillin Aliquot"
+ kan = 1 "200X 1 mL Kanamycin Aliquot"
 end
 
 step
   description: "Add 'M9 liquid Glucose' to the 50mL falcon tubes"
   note: "Note that the pipette tip has two sets of numbers:"
   bullet: "The larger numbers on the pipette tip count down from 25mL ('0mL' is 'full 25ml')"
-  bullet: "The smaller numbers count up from 0 ('0mL' is empty, '25ml' is full)
+  bullet: "The smaller numbers count up from 0 ('0mL' is empty, '25ml' is full)"
   bullet: "Use whichever scale is convenint for you, but just be aware which you are using"
   note: "The pipetter has two 'triggers'"
   bullet: "The top trigger pulls liquid into the pipette tip"
