@@ -4,7 +4,7 @@ argument
 end
 
 take
-  aTc_inducer: 1 aTc_inducer_in
+  aTc_inducer = 1 aTc_inducer_in
 end
 
 step
