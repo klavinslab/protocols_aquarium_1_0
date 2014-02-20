@@ -80,7 +80,7 @@ i=0
 while i<length(incubated_cells)
   modify
     incubated_cells[i]
-    location: "37C Shaker" #TODO: get address
+    location: "B13.425 37C Shaker" #TODO: get address
   end
   i=i+1
 end
