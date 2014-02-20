@@ -14,9 +14,9 @@ source_oligos3 = [1079, 1080]
 source_oligos4 = [1079, 1080] 
 backbone_fragments = [1141, 1144]
 primer11 = [1075, 1076]
-primer12 = [1075, 1076]
-primer21 = [1075, 1076]
-primer22 = [1075, 1076]
+primer12 = [1077, 1078]
+primer21 = [1071, 1072]
+primer22 = [1073, 1074]
 phusionHF = 702
 
 # Places
