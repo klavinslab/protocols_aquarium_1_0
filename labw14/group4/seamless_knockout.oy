@@ -52,7 +52,7 @@ place heat_shock
   protocol: "labw14/group4/heat_shock_parallel.pl"
   # cells_flask_array: wire log cells from here
   group: aquarium_user
-  window: ## ??
+  window: hours(1)
 end
 
 wire (finish_log_phase, "log_cells") => (heat_shock, "cells_flask_array")
