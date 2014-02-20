@@ -9,3 +9,7 @@ step
   description: "print out the gibson array"
   note: "%{g}"
 end
+
+log
+  return: {gibsons: g, hash: {egkey: "egvalue"}}
+end
