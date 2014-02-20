@@ -2,7 +2,7 @@
 
 argument
   oligonucleotides: sample array, "Select the oligonucleotides you want to make into a master stock"
-  Primer_Pools: string, "Unique sample name of the concentrated stock."
+  Primer_Pool: string, "Unique sample name of the concentrated stock."
 end
 
 n = length(oligonucleotides)
@@ -44,7 +44,7 @@ end
 
 
 produce
-  master_stock = 1 "Working Stocks" of Primer_Pools
+  master_stock = 1 "Working Stock" of Primer_Pool
 
 end
 
