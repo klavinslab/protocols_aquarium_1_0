@@ -17,14 +17,13 @@ function ask_filename_then_get_gibsons()
       f: string, "The path to the file"
     end
   end
-  include "%{f}"
-    r = gibson_data()
+  require "%{f}"
+  r = gibson_data()
     # gibsons would look like gibsons = [
     #        ["frag1", "frag2", "frag3", "frag4",...],
     #        [      1,       2,       0,      0, ...],
     #        [ .... ],
     #        ]
-  end
   
   # transform array to nicer format for use by other programs
   
