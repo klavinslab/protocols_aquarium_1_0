@@ -1,4 +1,4 @@
-function gibson_data()
+
   # ? : may want to take the samples here automatically
   local ingredients =
        ["frag1", "frag2", "frag3", "frag4", "frag5", "frag6", "frag7", "frag8", "frag9"],
@@ -34,14 +34,14 @@ function gibson_data()
   # sidenote: I think too much in metaprogramming
   # ideas like steps.reduce(human_execute, ingredients)
   
-  local gibsons = [ ]
+  gibsons = [ ]
   gibsons = append ( gibsons, ingredients )
   foreach o in outputs
     gibsons = append ( gibsons, o )
   end
   
-  return gibsons
-  
+log
+  output: gibsons
 end
+  
 
-r = gibson_data()
