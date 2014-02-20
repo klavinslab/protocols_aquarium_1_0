@@ -2,13 +2,15 @@ argument
   e_coli_strain: sample array, "the E. coli strains you wish to preform the knockouts in. NOTE: the nth E. coli strain will be knocked out by the nth cassette" 
   knockout_fragments: sample array, "the cassettes you wish to transform into the strains, respectively"
   plate_type: sample array, "The appropriate selection plates (thyamine+trimethoprim or minimal-media)"
-  #note: "The nth E. coli strain will be knocked out with the nth cassette"
-  #strain_name: string, "the name of the strain you are producing today (copy it from Week4 lab description in Google Drive"
   pfwd: sample("Primer"), "The forward primer"
   prev1s: sample array, "Reverse primers for knockout test group"
   prev2s: sample array, "Reverse primers for control group"
   phusion_enzyme: sample, "The Phsion HF Master Mix stock"
 end
+
+  #note: "The nth E. coli strain will be knocked out with the nth cassette"
+  #strain_name: string, "the name of the strain you are producing today (copy it from Week4 lab description in Google Drive"
+
 
 ##
 ## Qs: Seamless or not?
