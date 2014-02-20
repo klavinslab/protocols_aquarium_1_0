@@ -84,5 +84,5 @@ release masterstock1
 release masterstock2
 
 log
-  return: { gene: new_gene  }
+  return: { PCR_Result_id: new_gene[:id] }
 end
