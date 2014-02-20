@@ -1,4 +1,3 @@
-
 step #The flllowing two steps should be a "take" instead, but the antifog solution and assay plates are not in the Aquarium inventory
   description: "Fetch your loaded assay plate"
   note: "You should try to move quickly through these steps, as your cells will continue to grow as they are sitting there!"
