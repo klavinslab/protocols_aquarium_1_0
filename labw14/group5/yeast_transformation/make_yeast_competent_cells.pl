@@ -231,3 +231,8 @@ else
 end
 
 release flask
+
+step
+  description: "Important note"
+  warning: "The next protocol will fire only if 40 minutes have passed since the completion of the 'PmeI Digest' protocol."
+end
