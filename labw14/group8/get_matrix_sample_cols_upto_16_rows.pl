@@ -2,6 +2,7 @@ argument
   
   samples: sample array, "Ingredients"
   # could have a key argument here to set key, for now just say amount
+  num_rows: number, "The number of rows you will enter"
   row1: number array , "Amount in microliters for each ingredient, enter 0 for none"
   row2: number array , "Amount in microliters for each ingredient, enter 0 for none"
   row3: number array , "Amount in microliters for each ingredient, enter 0 for none"
@@ -39,11 +40,25 @@ foreach e in row2
   end
 end
 
+input_rows = [row1, row2, row3, row4, row5, row6, row7, row8, row9, row10, row11, row12, row13, row14, row15, row16]
+result = [ ]
 
-result = [ 
-           [ {input: 1, microliters: 0.1}, {input: 2, amount: 2}],
-           [ {input: 3, microliters: 0.3}, {input: 4, amount: 4}]
-         ]
+i=0
+while i < num_rows
+  row = [ ]
+  j = 0
+  foreach s in samples
+    result_row = append(row, {input: s, amount: input_rows[i][j]})
+    j=j+1
+  end
+  append(result, result_row)
+  i=i+1
+end
+
+#result = [ 
+ #          [ {input: 1, microliters: 0.1}, {input: 2, amount: 2}],
+  #         [ {input: 3, microliters: 0.3}, {input: 4, amount: 4}]
+   #      ]
 
 log
   return: { output: result}
