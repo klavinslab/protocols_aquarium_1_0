@@ -44,7 +44,7 @@ end
 
 
 produce
-  master_stock = 1 "Working Stocks" of "OsGH3.1-1_1-6"
+  master_stock = 1 "OsGH3.1-1_1-6" of "Working Stocks"
 
 end
 
