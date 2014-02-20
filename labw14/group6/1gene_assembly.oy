@@ -1,9 +1,9 @@
 # Arguments
-#argument
-  #source_oligos1: sample array, "Choose the oligonucleotides you want to combine"
-  #source_oligos2: sample array, "Choose the oligonucleotides you want to combine"
-  #source_oligos3: sample array, "Choose the oligonucleotides you want to combine"
-  #source_oligos4: sample array, "Choose the oligonucleotides you want to combine"  
+argument
+  source_oligos1: sample array, "Choose the oligonucleotides you want to combine"
+  source_oligos2: sample array, "Choose the oligonucleotides you want to combine"
+  source_oligos3: sample array, "Choose the oligonucleotides you want to combine"
+  source_oligos4: sample array, "Choose the oligonucleotides you want to combine"  
   
 #end
 
@@ -101,8 +101,8 @@ place run_gel
   window: minutes(30)
 end
 
-wire (assembly1, "gene") => (run_gel, "assemblies1")
-wire (assembly2, "gene") => (run_gel, "assemblies2")
+wire (assembly1, "PCR_Result_id") => (run_gel, "assemblies1")
+wire (assembly2, "PCR_Result_id") => (run_gel, "assemblies2")
 
 place image_cut_gel
   protocol: "labw14/group6/full_length_protocols/image_cut_gel.pl"
