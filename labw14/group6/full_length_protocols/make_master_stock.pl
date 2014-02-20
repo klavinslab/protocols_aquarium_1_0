@@ -44,7 +44,7 @@ end
 
 
 produce
-  master_stock = 1 "Working Stock" of Primer_Pool
+  master_stock = 1 "Working Stocks" of Primer_Pool
 
 end
 
