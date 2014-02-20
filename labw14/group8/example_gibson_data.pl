@@ -1,7 +1,11 @@
   # ? : may want to take the samples here automatically
+  
+  # types of the gibsons you want to do
+  # create these via spreadsheet import if they don't already exist
   local ingredients =
        ["frag1", "frag2", "frag3", "frag4", "frag5", "frag6", "frag7", "frag8", "frag9"]
 
+  # amounts of each fragment to add per 
   local outputs =
     [
        [      0,       0,       0,       0,       0,       0,       0,       0,       0],
