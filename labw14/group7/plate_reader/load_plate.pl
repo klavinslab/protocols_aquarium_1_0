@@ -6,7 +6,7 @@ end
 take
   #DI_water = 1 "DI Water, Sterile"
   cells = item cells_to_assay_in
-  #glucose media
+  media = 1 "30 mL M9 liquid Glucose + amp + kan"
 end
 
 step
