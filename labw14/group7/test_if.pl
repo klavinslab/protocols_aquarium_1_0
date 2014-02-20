@@ -4,14 +4,14 @@ end
 
 if word == "yes"
   step
-    description: "'%{string}' is yes!"
+    description: "'%{word}' is yes!"
   end
 elseif word == "no"
   step
-    description: "'%{string}' is no!"
+    description: "'%{word}' is no!"
   end
 else
   step
-    description: "'%{string}' is something else!"
+    description: "'%{word}' is something else!"
   end
 end
