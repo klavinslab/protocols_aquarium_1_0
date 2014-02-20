@@ -1,3 +1,9 @@
+argument:
+  number_of_fragments: number, "The number of fragments"
+    # lang should aggregate unbound variables and have user give values
+    # when schedule metacol
+end
+
 require "labw14/group8/lib_read_gibson.pl"
 
 g = ask_filename_then_get_gibsons()
