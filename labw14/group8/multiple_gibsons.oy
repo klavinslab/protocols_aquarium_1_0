@@ -19,14 +19,33 @@ end
 # to receive the matrix at the next step
 place do_gibson
   protocol: "labw14/group8/do_gibson.pl"
+  group: aquarium_user      #generic, general
+  marked: true           #start here
+  start: now()
+  window: minutes(1)     #start in the next minute
 end
 
 
-# check which ones worked, implicit dependency on try_gibson
+
 # transform to test the gibson results
 # count the number of colonies and record in the log
 place verify_gibson
   protocol: "labw14/group8/verify_gibson.pl"
+  group: aquarium_user      #generic, general
+  marked: true           #start here
+  start: now()
+  window: minutes(1)     #start in the next minute
+end
+
+# last step incubated colonies
+# this starts 18 hours later
+# count the number of colonies and record in the log
+place verify_gibson
+  protocol: "labw14/group8/add_colony_counts_to_samples.pl" # placeholder for imaging and getting colony counts
+  group: aquarium_user      #generic, general
+  marked: true           #start here
+  start: hours(18)
+  window: hours(4)
 end
 
 
