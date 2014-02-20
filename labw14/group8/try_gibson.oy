@@ -1,25 +1,27 @@
-# args: primer, next_primer_amount_to_try (history) -> (number, history)
-
-# objs : everything, incl basics
-# samples: every obj that is not a basic
-# see http://bioturk.ee.washington.edu:3011/sample_types
-
-# we'll ignore any logic around primers for now. TODO try multiple concentrations the first time
 
 argument
-  primer_array_input: sample array, "Primers to combine"
-  plasmid_input: sample, "Plasmid backbone"
+  gibson_specification: string, "File name specifying fragments and gibson concentrations"
 end
 
-# TODO fetch history to find parameter values; call to another system using REST?
+# summary
+# use a function to get data entry by reading in a file that is a nested matrix?
+# use a string to select the file 
+# have placeholders in file for colony count
 
-# try_gibson tries multiple concentrations according to a step
-#  lily: alternatively, fill up the extra pcr tubes with other concentrations from the beginning?
+# returns [[fragment: sample, concentration: in_uL], ...]
+
+# run gibsons 
+# ignores error in one gibson (an abort) ; can't recover in place
+
+# transform to test the gibson results
+# count the number of colonies and record in the log
+
+     # TODO fetch history to find parameter values; call to another system using HTTP Get?
 
 place try_until_successful
   protocol: "labw14/group8/try_gibson.pl"
   argument
-    primer_array_input: primer_array_input
+    filename: gibson_specification
   end
   group: aquarium_user      #generic, general
   marked: true           #start here
