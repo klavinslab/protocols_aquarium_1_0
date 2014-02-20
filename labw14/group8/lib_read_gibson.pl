@@ -1,6 +1,10 @@
 # use a function to get data entry by reading in a file that is a nested matrix?
 # use a string to select the file 
 
+# call this function in each prootocol
+# to get the gibson array
+# since cannot pass complex arrays otherwise
+
 function get_gibson_csv_path_return_gibsons()
   step
     description: "Enter the filename with concentrations to use."
@@ -13,7 +17,7 @@ function get_gibson_csv_path_return_gibsons()
       f: string, "The path to the file"
     end
   end
-  include f
+  include "%{f}"
     r = gibsons
     # gibsons would look like gibsons = [
     #        ["frag1", "frag2", "frag3", "frag4",...],
