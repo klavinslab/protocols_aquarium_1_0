@@ -44,7 +44,7 @@ end
 
 
 produce
-  master_stock = 1 "Working Stocks" of Concentrated_Stock1
+  master_stock = 1 "Working Stocks" of "Concentrated_Stock1"
 
 end
 
