@@ -57,7 +57,7 @@ while i < num_rows
     result_row = append(result_row, x)
     j=j+1
   end
-  append(result, result_row)
+  result = append(result, result_row)
   i=i+1
 end
 
