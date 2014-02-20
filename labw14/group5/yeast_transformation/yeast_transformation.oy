@@ -22,8 +22,8 @@ end
 place dilute_culture
   protocol: "labw14/group5/yeast_transformation/dilute_culture.pl"
   group: aquarium_user
-  start: now()
-  window: minutes(1)
+  start: minutes(1) #hours(12)
+  window: minutes(1) #hours(6)
 end
 
   wire (start_overnight,"yeast_overnight_suspension") => (dilute_culture,"yeast_overnight_suspension")
@@ -45,8 +45,8 @@ place pmei_digest
     pmei_id: pmei
   end
   group: aquarium_user
-  start: now()
-  window: minutes(1)
+  start: minutes(1) #hours(5)
+  window: minutes(1) #hours(1)
 end
 
 
@@ -71,7 +71,7 @@ end
 place prepare_yeast_transformation
   protocol: "labw14/group5/yeast_transformation/prepare_yeast_transformation.pl"
   group: aquarium_user
-  start: minutes(1) #40
+  start: now()
   window: minutes(1)
 end
 
@@ -99,7 +99,7 @@ place plate_incubate
     plate_type: plate_type_id
   end
   group: aquarium_user
-  start: now()
+  start: now()  #minutes(15)
   window: minutes(1)
 end
 
@@ -112,8 +112,8 @@ end
 place image_plate
   protocol: "labw14/group5/yeast_transformation/image_plate.pl"
   group: aquarium_user
-  start: now()
-  window: minutes(1)
+  start: minutes(1) #hours(48)
+  window: minutes(1) #hours(2)
 end
 
   wire (plate_incubate,"plate_id") => (image_plate,"transformed_yeast_plate_id")
