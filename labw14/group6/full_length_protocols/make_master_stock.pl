@@ -2,7 +2,7 @@
 
 argument
   oligonucleotides: sample array, "Select the oligonucleotides you want to make into a master stock"
-  Concentrated_Stock: string, "Unique sample name of the concentrated stock."
+  Primer_Pools: string, "Unique sample name of the concentrated stock."
 end
 
 n = length(oligonucleotides)
@@ -44,12 +44,12 @@ end
 
 
 produce
-  master_stock = 1 "Working Stocks" of Concentrated_Stock
+  master_stock = 1 "Working Stocks" of Primer_Pools
 
 end
 
 release concat (oligonuc, molecular_g_h2o)
 
 log
-  return: { Working_Stock_id: master_stock[:id]  }
+  return: { Working_Stocks_id: master_stock[:id]  }
 end
