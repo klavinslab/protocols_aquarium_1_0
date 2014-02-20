@@ -18,15 +18,19 @@ take
   note: "Be sure to grab a tube rack to hold all of the culture tubes"
 end
 
-i = 0
-while i<strains
-  id = plated_cells[i]
+#i = 0
+#while i<strains
+  #id = plated_cells[i]
   step
     description: "Label culture tubes"
-    check: "Label a set of 4 culture tubes with '%{id} R1', '%{id} R2', '%{id} R3', '%{id} R4'"
+    note: "You will need 12 tubes in total: 4 repetitions for each of 3 strains"
+    check: "Label a set of 4 culture tubes with 'R1', 'R2', 'R3', 'R4'"
+    check: "Label another set of 4 culture tubes with 'R1', 'R2', 'R3', 'R4'"
+    check: "Label a final set of 4 culture tubes with 'R1', 'R2', 'R3', 'R4'"
+    note: "Keep the sets separate"
   end
-  i = i + 1
-end
+ # i = i + 1
+#end
 
 take
   pipette = 1 "Serological Pipette"
@@ -52,8 +56,8 @@ while i<strains
   id = plated_cells[i]
   step
     description: "Add cells from plate %{id} to four seperate culture tubes"
-    check: "Use a 100uL pipette tip (held in your hand) to extract a single colony from plate %{id}, and swish it around in the culture tube marked '%{id} R1'"
-    check: "Use a new 100uL pipette tip extract another single colony from the same plate, and swirl it around in the culture tube labeled '%{id} R2'"
+    check: "Use a 100uL pipette tip (held in your hand) to extract a single colony from plate %{id}, and swish it around in the culture tube marked 'R1'"
+    check: "Use a new 100uL pipette tip extract another single colony from the same plate, and swirl it around in the culture tube labeled 'R2'"
     check: "Repeat the above procedure for R3 and R4."
 #TODO: Repace the above code with something more modular, based on an arbitrary number of cycles and strains
   end
@@ -61,7 +65,7 @@ while i<strains
   a = []
   produce
     a = 1 "Overnight suspension culture" from plate_array[i]
-    note: "This item refers to all 4 copies of the cells. Label them all with this number"
+    note: "This item refers to all 4 copies of the cells from %{id}. Label them all with this number"
     location: "Bench"
   end
   i = i + 1
@@ -72,7 +76,7 @@ end
 step
   description: "Place the tubes in the 37C shaker"
   note: "You should now have a tube rack containing 4 repeats of each cell colony, in a total of %{n} culture tubes" 
-  check: "Load the tube rack containing your %{n} cell culture tubes into the 37C shaker."
+  check: "Load the %{n} cell culture tubes into the 37C shaker."
   note: "This will incubate for 18hrs (overnight)"
 end
 
