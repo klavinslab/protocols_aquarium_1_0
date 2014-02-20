@@ -20,7 +20,7 @@ function ask_filename_then_get_gibsons()
   end
   
   #require "labw14/group8/example_gibson_data.pl" # placeholder for variable gibson input
-  require "%{f}" # bug doesn't insert string or might not have val for f
+  require f.to_s() # bug doesn't insert string or might not have val for f
   
   local r = gibson_data()
     # gibsons would look like gibsons = [
