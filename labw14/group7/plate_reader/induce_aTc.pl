@@ -35,4 +35,4 @@ step
   check: "Click the 'Run' button in the 'Biotech Gen5 1.11 program' to resume collecting data"
 end
 
-#release aTc_inducer
+release aTc_inducer
