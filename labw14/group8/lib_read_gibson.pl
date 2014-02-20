@@ -6,7 +6,7 @@ function get_gibson_csv_path_return_gibsons()
     description: "Enter the filename with concentrations to use."
     note: "The path should look like labw14/group8/try_gibson.pl , ie, 
       it will automatically look in the protocols github repository.
-      The file format is \"fragment_name1\", \"fragment_name2\", ... 
+      The file format is fragment_name1, fragment_name2, ... 
       for columns, then concentrations in microliters. Use blanks to indicate 
       not to use that fragment. A sample file is at  labw14/group8/sample_gibson_spec.csv"
     getdata
