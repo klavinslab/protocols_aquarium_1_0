@@ -32,9 +32,9 @@ function ask_filename_then_get_gibsons()
   # transform array to nicer format for use by other programs
   
   # for now we just fake some data for testing
-  local result = [ [{input: 1, concentration: 0.1}, {input: 2, concentration: 0.2}],
+  local example_result = [ [{input: 1, concentration: 0.1}, {input: 2, concentration: 0.2}],
              [{input: 3, concentration: 0.3}, {input: 4, concentration: 0.4}] ]
-  return result
+  return r
 end
 
 # returns 
