@@ -27,7 +27,7 @@ end
 # depending on total amount used
 
 # process the array and return
-if row2[0]
+if row2[0] != nil
   log
     gt0: 1
   end
