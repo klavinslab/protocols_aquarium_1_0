@@ -3,11 +3,10 @@ argument
 end
 
 step
-  description: "print out the gibson array"
+  description: "print out the gibsons to verify"
   note: "%{gibsons}"
 end
 
 log
-  result: gibsons # put resulting samples from produce here
-  failed_gibsons: gibsons # put failed gibsons here
+  return: {successful: gibsons, failed: gibsons} # put new resulting samples from produce here
 end
