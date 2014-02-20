@@ -51,5 +51,5 @@ end
 release concat (oligonuc, molecular_g_h2o)
 
 log
-  return: { Working_Stocks_id: master_stock[:id]  }
+  return: { Working_Stock_id: master_stock[:id]  }
 end
