@@ -73,9 +73,7 @@ step
   check: "Press the 50mL Falcon tube to the vortexer for 15 seconds"
 end
 
-#for some reason this release is giving me a bug...
-#BUG FIGURED: a is scoped out, so antibio_objects ends up empty
-#release antibio_objects
+release antibio_objects
 
 
 #produce
