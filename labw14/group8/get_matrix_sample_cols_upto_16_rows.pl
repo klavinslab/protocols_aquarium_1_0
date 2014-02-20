@@ -44,7 +44,7 @@ while i < num_rows
   result_row = [ ]
   j = 0
   foreach s in samples
-    result_row = append(row, {input: s, amount: input_rows[i][j]})
+    result_row = append(result_row, {input: s, amount: input_rows[i][j]})
     j=j+1
   end
   append(result, result_row)
