@@ -6,7 +6,7 @@ if word == "yes"
   step
     description: "'%{word}' is yes!"
   end
-elseif word == "no"
+else if word == "no"
   step
     description: "'%{word}' is no!"
   end
