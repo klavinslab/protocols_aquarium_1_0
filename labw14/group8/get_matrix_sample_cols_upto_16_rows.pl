@@ -34,9 +34,9 @@ if row2[0] != nil
   end
 end
 
-foreach e in row2
+foreach s in samples
   log
-    gt0: 2
+    sample_ordering_preserved: s
   end
 end
 
