@@ -16,7 +16,7 @@ function gibson_data()
   
   # TODO look into inventory and check that enough of each fragment exists for the gibsons
   i = 0
-  foreach frag in frags
+  foreach ing in ingredients
     total_amount_in_microliters = 0
     foreach o in outputs
       total_amount_in_microliters = total_amount_in_microliters + o[i]
