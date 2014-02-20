@@ -8,10 +8,10 @@ argument
 #end
 
 #Testing inputs - to save time (remove at end)
-source_oligos1 = [1079, 1080]
-source_oligos2 = [1079, 1080]
-source_oligos3 = [1079, 1080]
-source_oligos4 = [1079, 1080] 
+#source_oligos1 = [1079, 1080]
+#source_oligos2 = [1079, 1080]
+#source_oligos3 = [1079, 1080]
+#source_oligos4 = [1079, 1080] 
 backbone_fragments = [1141, 1144]
 primer11 = [1075, 1076]
 primer12 = [1075, 1076]
