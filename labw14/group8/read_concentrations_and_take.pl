@@ -1,5 +1,5 @@
 argument
-  number_of_fragments: number, "The number of fragments"
+  number_of_fragments: number array, "The number of fragments for each type"
     # lang should aggregate unbound variables and have user give values
     # when schedule metacol
 end
