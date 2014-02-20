@@ -26,6 +26,14 @@ function gibson_data()
     i=i+1
   end
   
+  # idea
+  # require std_lib.pl
+  # have_enough(ingredients, totals_per_ingredient) # probably should use hashes instead?
+  # I may be thinking too obj oriented about this. TODO ask Eric about error and inv handling
+  
+  # sidenote: I think too much in metaprogramming
+  # ideas like steps.reduce(human_execute, ingredients)
+  
   local gibsons = [ ]
   gibsons = append ( gibsons, ingredients )
   foreach o in outputs
