@@ -12,12 +12,12 @@ argument
 #source_oligos2 = [1079, 1080]
 #source_oligos3 = [1079, 1080]
 #source_oligos4 = [1079, 1080] 
-backbone_fragments = [1141, 1144]
-primer11 = [1075, 1076]
-primer12 = [1075, 1076]
-primer21 = [1075, 1076]
-primer22 = [1075, 1076]
-phusionHF = 702
+#backbone_fragments = [1141, 1144]
+#primer11 = [1075, 1076]
+#primer12 = [1075, 1076]
+#primer21 = [1075, 1076]
+#primer22 = [1075, 1076]
+#phusionHF = 702
 
 # Places
 place stock1
