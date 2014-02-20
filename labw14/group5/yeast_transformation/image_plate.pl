@@ -84,7 +84,7 @@ step
     "Store the plate in 4C fridge."
   note:
     "Turn off the transillumniator and camera, remove the camera hood, take the plate from transilluminator, wrap up
-     the plate with parafilm and put it the in the Box 0 in deli fridge located at D2.100."
+     the plate with parafilm and put it the in the Box 4 in deli fridge located at D2.100."
 end
 
 modify
