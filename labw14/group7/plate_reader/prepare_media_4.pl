@@ -64,7 +64,7 @@ while i<length(antibios)
     check: "Pipette %{v} uL of '%{antibio_name}' to the 50mL falcon tube"
   end
   
-  antibio_objects = append(antibio_objects, a) # a is always an empty variable here b/c of scope
+  antibio_objects = append(antibio_objects, a[0]) # a is always an empty variable here b/c of scope
   i=i+1
 end
 
