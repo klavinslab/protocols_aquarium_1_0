@@ -114,7 +114,7 @@ step
 end
 
 produce
-  r = 2 "Gel Slice" of "fLAB1"
+  r = 2 "Gel Slice" of "fGA"
   release y
 end
 
