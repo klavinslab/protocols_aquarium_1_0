@@ -1,8 +1,8 @@
 produce
-  s = 1 "Gel Lanes" of "fGA"
+  s = 1 "Gel Lane" of "fGA"
 
 end
 
 log
-  return: { Gel_Lanes_id: s[:id]}
+  return: { Gel_Lane_id: s[:id]}
 end
