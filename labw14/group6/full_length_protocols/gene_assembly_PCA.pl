@@ -74,7 +74,7 @@ step
 end
 
 produce
-  new_gene = 1 "PCR Result"
+  new_gene = 1 "PCR Result" of "fLAB1"
 
 end
 
