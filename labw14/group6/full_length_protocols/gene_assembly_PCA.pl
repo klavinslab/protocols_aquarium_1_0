@@ -74,7 +74,7 @@ step
 end
 
 produce
-  new_gene = 1 "Fragment"
+  new_gene = 1 "PCR Result"
 
 end
 
