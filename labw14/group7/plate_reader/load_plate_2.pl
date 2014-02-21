@@ -5,6 +5,7 @@ end
 
 take
   #DI_water = 1 "DI Water, Sterile"
+  
   cells = item cells_to_assay_in
   media = 1 "30 mL M9 liquid Glucose + amp + kan"
 end
@@ -58,5 +59,7 @@ step
   check: "Insert the small foil shim into the corner of the assay plate, and close the lid (This shim will keep the lid from rattling during the run)"
   #TODO: include picture
 end
+
+
 #return statement
 
