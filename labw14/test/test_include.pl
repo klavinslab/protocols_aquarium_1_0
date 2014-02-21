@@ -1,4 +1,4 @@
-require "labw14/test/test_function.pl"
+require "labw14/test/test_function_module.pl"
 
 argument
   tube_array: sample array, "The small tube to be incubated."
