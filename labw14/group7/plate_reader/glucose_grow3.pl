@@ -27,7 +27,7 @@ while i<strains
   id = plated_cells[i]
   a = []
   produce silently
-    a = 1 "Overnight suspension cultures" from plate_array[i]
+    a = 1 "Overnight suspension culture" from plate_array[i]
     location: "Bench"
   end
   i = i + 1
@@ -42,15 +42,18 @@ tube2 = return_array[2]
 step
   description: "Label culture tubes"
   note: "You will need 12 tubes in total: 4 repetitions for each of 3 strains"
-  check: "Label a set of 4 culture tubes with '%{tube0} R1', '%{tube0} R2', '%{tube0} R3', and '%{tube0} R4'"
-  check: "Label another set of 4 culture tubes with '%{tube1} R1', '%{tube1} R2', '%{tube1} R3', and '%{tube1} R4'"
-  check: "Label a final set of 4 culture tubes with '%{tube2} R1', '%{tube2} R2', '%{tube2} R3', and '%{tube2} R4'"
+  check: "Label a set of 4 culture tubes with:"
+  bullet: "'%{tube0} R1', '%{tube0} R2', '%{tube0} R3', and '%{tube0} R4'"
+  check: "Label another set of 4 culture tubes with:"
+  bullet: "'%{tube1} R1', '%{tube1} R2', '%{tube1} R3', and '%{tube1} R4'"
+  check: "Label a final set of 4 culture tubes with:"
+  bullet: "'%{tube2} R1', '%{tube2} R2', '%{tube2} R3', and '%{tube2} R4'"
   note: "Keep the sets separate"
 end
 
 step
   description: "Add 3mL media to each culture tube"
-  check: "Use the electric serological pipette to add 3ml of the previously prepared antibiotic media to each culture tube."
+  check: "Use the electric serological pipette to add 3ml of 'M9 liquid Glucose + amp + kan' to each culture tube."
   check: "Dispose of your serological pipette tip in tip waste"
 end
 
@@ -68,6 +71,7 @@ while i<strains
     check: "Use a new 100uL pipette tip extract cells from a different single colony from the same plate, and drop the whole tip into the culture tube labeled '%{new_id} R2'"
     check: "Repeat the above procedure for '%{new_id} R3' and '%{new_id} R4'."
   end
+  i = i+1
 end
 
 step
