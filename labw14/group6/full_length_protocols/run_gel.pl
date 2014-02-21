@@ -84,12 +84,15 @@ release ladder
 
 release fragment1  # Throw away the tube / save extra
 release fragment2
-
-
 release glasses
 
-step
-  description: "Wipe down transilluminator"
-  note: "Spray with ethanol and wipe down with a kimwipe"
+
+produce
+  s = 1 "Fragment Gel Lanes"
+
+end
+
+log
+  return: { Fragment_Gel_Lanes_id: s[:id]}
 end
 
