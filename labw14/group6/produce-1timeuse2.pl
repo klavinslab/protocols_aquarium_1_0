@@ -1,5 +1,5 @@
 produce
-  s = 1 "Gel Lane" from fragment[0]
+  s = 1 "Gel Lanes" of "fLAB2"
 
 end
 
