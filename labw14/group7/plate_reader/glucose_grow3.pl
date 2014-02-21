@@ -74,6 +74,7 @@ while i<strains
   i = i+1
 end
 
+
 step
   description: "Place the tubes in the 37C shaker"
   note: "You should now have a tube rack containing 4 repeats of each cell colony, in a total of %{n} culture tubes" 
