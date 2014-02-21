@@ -1,3 +1,12 @@
+
+argument
+  fragment_gel_lane: sample, "The gel lane you got after run the gel"
+end
+
+take
+  y = item fragment_gel_lane
+end
+
 step
   description: "Take the gel lane you got after running electropheresis and place it at the transilluminator bench"
   note: "Take care not to damage the gel such that it cannot be imaged"
@@ -106,11 +115,11 @@ step
 end
 
 produce
-  r = 1 "Gel Slice"
+  r = 1 "Gel Slices"
   release y
 end
 
 log
-  return: {Gel_Slice_id: r[:id]}
+  return: {Gel_Slices_id: r[:id]}
 end
 
