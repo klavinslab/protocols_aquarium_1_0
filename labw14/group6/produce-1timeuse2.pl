@@ -1,5 +1,5 @@
 produce
-  s = 1 "Gel Lanes" of "fLAB2"
+  s = 1 "Gel Lanes" of "fLAB1"
 
 end
 
