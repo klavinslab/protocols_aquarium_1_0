@@ -1,13 +1,9 @@
-#argument
-#  filename: string, "Name of the parameter file to use"
-#end
-
 input
   p = "plankton/sandbox/parameters.json"
 end
 
 take
-  primers = item p[:primers]
+  primers  = item p[:primers]
   plasmids = item p[:plasmids]
 end
 
