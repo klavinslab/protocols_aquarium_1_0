@@ -61,6 +61,8 @@ place begin_run
   window: minutes(5)
 end
 
+#place dispose_culture_tubes
+
 place induce_1
   protocol: "labw14/group7/plate_reader/induce_aTc.pl"
   argument
@@ -122,6 +124,7 @@ transition [glucose_grow] => [start_reader] when !error(0) && completed(0) && ho
 transition [start_reader] => [load_plate] when !error(0) && completed(0) end
 transition [load_plate] => [induce_zero] when !error(0) && completed(0) end
 transition [induce_zero] => [begin_run] when !error(0) && completed(0) end
+#transition [begin_run] => [dispose_culture_tubes] when !error(0) && completed(0) end
 transition [begin_run] => [induce_1] when !error(0) && completed(0) && hours_elapsed(0,1) end
 transition [induce_1] => [induce_15] when !error(0) && completed(0) && minutes_elapsed(0,30) end
 transition [induce_15] => [induce_2] when !error(0) && completed(0) && minutes_elapsed(0,30) end
@@ -139,6 +142,7 @@ transition [start_reader] => [start_reader] when error(0) end
 transition [load_plate] => [load_plate] when error(0) end
 transition [induce_zero] => [induce_zero] when error(0) end
 transition [begin_run] => [begin_run] when error(0) end
+#transition [dispose_culture_tubes] => [dispose_culture_tubes] when error(0) end
 transition [induce_1] => [induce_1] when error(0) end
 transition [induce_15] => [induce_15] when error(0) end
 transition [induce_2] => [induce_2] when error(0) end
