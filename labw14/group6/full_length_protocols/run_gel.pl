@@ -89,7 +89,7 @@ release glasses
 
 
 produce
-  s = 1 "Fragment Gel Lane"
+  s = 1 "Fragment Gel Lane" of "fLAB1"
 
 end
 
