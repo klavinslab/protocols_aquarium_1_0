@@ -88,11 +88,11 @@ release glasses
 
 
 produce
-  s = 1 "Fragment Gel Lanes"
+  s = 1 "Fragment Gel Lane"
 
 end
 
 log
-  return: { Fragment_Gel_Lanes_id: s[:id]}
+  return: { Fragment_Gel_Lane_id: s[:id]}
 end
 
