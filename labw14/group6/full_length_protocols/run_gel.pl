@@ -50,7 +50,8 @@ end
 dye_volume = fragment_volume / 5.0
 step
   description: "Add loading dye to the PCR fragment"
-  note: "Using a 10 µL or 100 µL pipetter, add %{dye_volume} µL of loading dye to the PCR results with id %{assemblies}."
+  note: "Using a 10 µL or 100 µL pipetter, add %{dye_volume} µL of loading dye to the PCR results with id %{assemblies1}."
+  note: "Using a 10 µL or 100 µL pipetter, add %{dye_volume} µL of loading dye to the PCR results with id %{assemblies2}."
   image: "gel_add_loading_dye"
 end
 
