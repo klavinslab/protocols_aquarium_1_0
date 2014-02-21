@@ -1,14 +1,14 @@
-argument
-  filename: string, "Name of the parameter file to use"
+#argument
+#  filename: string, "Name of the parameter file to use"
+#end
+
+input
+  p = "plankton/sandbox/parameters.json"
 end
 
-require filename
-
-p = parameters()
-
 take
-  primers = item p.primers
-  plasmids = item p.plasmids
+  primers = item p[:primers]
+  plasmids = item p[:plasmids]
 end
 
 release concat(primers,plasmids)
