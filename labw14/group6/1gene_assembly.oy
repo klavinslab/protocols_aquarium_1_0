@@ -123,7 +123,7 @@ place image_cut_gel
   window: minutes(30)
 end
 
-#wire (run_gel, "Fragment_Gel_Lane_id") => (image_cut_gel, "fragment_gel_lane")
+#wire (run_gel, "Gel_Lanes_id") => (image_cut_gel, "fragment_gel_lane")
 
 place gel_purify
   protocol: "labw14/group6/full_length_protocols/gel_purify.pl"
