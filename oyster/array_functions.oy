@@ -1,0 +1,30 @@
+###########################################################
+# Places
+#
+
+a = [ 1, 2 ]
+b = [ 2, 3, 4 ]
+c = append(a,3)
+d = unique(concat(a,b))
+
+x = length(a)
+y = d[3]
+
+place p
+  protocol: "plankton/sandbox/two.pl"
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: hours(1)
+  argument
+    x: x
+    y: y
+  end
+end
+
+###########################################################
+# Transitions
+#
+
+transition [ p ] => [ ] when completed(0) end
+
