@@ -64,13 +64,13 @@ step
 end
 
 step
-  description: "wait about 2 hours"
+  description: "Wait about 2 hours"
   note: "Meanwhile, you may run the pour_gel protocol inside the gel room to have your gel ready before the next step."
 end
 
 step
-  description: "Go to the thermal cycler to pick up the PCR tube you put after it is done."
-  note: "Put it on you bench after you picked up the PCR tube"
+  description: "Go to the thermal cycler and pick up the product of the PCA."
+  note: "And place the tube at your bench"
 end
 
 produce
