@@ -19,21 +19,33 @@ take
   tip = 1 "5 mL Serological Pipette Tips"
 end
 
+#A loop to produce all of the culture tubes silently, so I can get their newly assigned ID numbers
 incubated_cells = []#a sample reference array of culture tubes to be incubated 
 return_array = []#an array of id numbers for each culture tube sample
 i = 0
 while i<strains
   id = plated_cells[i]
   a = []
-  produce
-    a = 1 "Overnight suspension culture" of plate_array[i]
-    new_id = a[0]
-    note: "Label a set of 4 culture tubes with '%{new_id} R1', '%{new_id} R2', '%{new_id} R3', and '%{new_id} R4'. This set of tubes will contain cells from %{id}."
+  produce silently
+    a = 1 "Overnight suspension cultures" from plate_array[i]
     location: "Bench"
   end
   i = i + 1
   incubated_cells = append(incubated_cells, a)
   return_array = append(return_array, a[:id])
+end
+
+#now we want to write the ID numbers onto the tubes"
+tube0 = return_array[0]
+tube1 = return_array[1]
+tube2 = return_array[2]
+step
+  description: "Label culture tubes"
+  note: "You will need 12 tubes in total: 4 repetitions for each of 3 strains"
+  check: "Label a set of 4 culture tubes with '%{tube0} R1', '%{tube0} R2', '%{tube0} R3', and '%{tube0} R4'"
+  check: "Label another set of 4 culture tubes with '%{tube1} R1', '%{tube1} R2', '%{tube1} R3', and '%{tube1} R4'"
+  check: "Label a final set of 4 culture tubes with '%{tube2} R1', '%{tube2} R2', '%{tube2} R3', and '%{tube2} R4'"
+  note: "Keep the sets separate"
 end
 
 step
@@ -44,6 +56,7 @@ end
 
 release [pipette[0]]
 
+#Loop through the three strains and add cells from each strain to a set of four culture tubes"
 i = 0
 while i<strains
   id = plated_cells[i]
