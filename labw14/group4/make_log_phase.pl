@@ -16,13 +16,13 @@ lb_count = 1+net_volume/50 # Bug: will ask for extra lb aliquot if net_volume is
 
 take
 	e_items = item e_coli_strains
-	t_tubes = sample_count "50 ml Falcon Tube"
+	t_tubes = sample_count "20 ml Test Tube"
 	LB     = lb_count "50 mL LB liquid aliquot (sterile)"
 end
 
 step
-	description: "Label falcon tubes"
-	note: "Label each 50 ml falcon tube from 1-%{sample_count}"
+	description: "Label test tubes"
+	note: "Label each 20 ml test tube from 1-%{sample_count}"
 end
 
 i = 0
@@ -31,8 +31,8 @@ while i < sample_count
 	i = i + 1
 	step
 		description: "Dilute E. coli cells from sample %{e}"
-		check: "Add %{LB_V} ml of LB media to falcon tube %{i} (round to the nearest .1 ml)"
-		check: "Add %{e_V} ul of e. coli sample %{e} to falcon tube %{i}."
+		check: "Add %{LB_V} ml of LB media to test tube %{i} (round to the nearest .1 ml)"
+		check: "Add %{e_V} ul of e. coli sample %{e} to test tube %{i}."
 		bullet: "You should end up with %{total_V} ml of liquid in the falcon tube"
 	end
 end
