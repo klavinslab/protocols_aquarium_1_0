@@ -18,17 +18,18 @@ take
   note: "Do not take plate from top of the stack if there is a date stick on it, take from the middle of the stack."
 end
 
-step
-  description: "Write down your initials and date on the plates and label 1-%{sample_count}"
-  image: "write_on_the_plate"
-end
-
 transformed_plates = []
 
 i = 0
 while i < sample_count
-	current_sample = i+1
+	current_sample = i + 1
+	plate_sample_id = plate_type[i]
 	coli_sample_id = e_coli_strain_id[i]
+	step
+  		description: "Write down your initials and date on plate %{plate_sample_id} and label %{current_sample}"
+  		image: "write_on_the_plate"
+	end
+	
 	step
 	  description: "Add sterile glass beads to plate %{current_sample}"
 	  note: "Invert the plate so that the lid is on the bench. 
