@@ -2,6 +2,11 @@ argument
   id: sample ("Transformed E coli Strain"), "Agar cell petri dish"
 end
 
+take
+  plate = item id
+  note: "This is already with you"
+end
+
 step
   description: "Setup the microscope lens"
   note: "Click next to begin this sub procedure"
@@ -83,3 +88,9 @@ step
   description: "Setup complete!"
   note: "We are now ready to search for cells on the computer, click next to procede to the next protocol"
 end
+
+log
+  [return: {item : plate[0][:id]}
+end
+
+release [plate[0]]
