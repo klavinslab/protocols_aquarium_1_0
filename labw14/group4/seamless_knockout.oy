@@ -104,7 +104,7 @@ place plate
     volume: 200
     plate_type: "LB Kan plate (sterile)" #plate_type
   end
-  start: hours(3)
+  start: minutes(30)
   window: hours(1)
 end
 
