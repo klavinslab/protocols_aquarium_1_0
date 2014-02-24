@@ -23,6 +23,7 @@ end
 place overnight
   protocol: "labw14/group1/overnight_suspension.pl"
   #start: hours(20)
+  start: now(20)
   marked: true
   start: now()
   group: aquarium_user
