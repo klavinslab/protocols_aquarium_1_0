@@ -7,8 +7,8 @@ information "Dilute cells and bring them to log phase"
 dilution = 1.0/8
 total_V = 20 # ml
 
-e_V = total_V*dilution*1000.0 # ul;
-LB_V = (total_V-e_V/1000.0)  # ml
+e_V = total_V*dilution # ml;
+LB_V = (total_V-e_V)  # ml
 
 sample_count = length(e_coli_strains)
 net_volume = sample_count *  total_V
@@ -32,7 +32,7 @@ while i < sample_count
 	step
 		description: "Dilute E. coli cells from sample %{e}"
 		check: "Add %{LB_V} ml of LB media to test tube %{i} (round to the nearest .1 ml)"
-		check: "Add %{e_V} ul of e. coli sample %{e} to test tube %{i}."
+		check: "Add %{e_V} ml of e. coli sample %{e} to test tube %{i}."
 		bullet: "You should end up with %{total_V} ml of liquid in the falcon tube"
 	end
 end
