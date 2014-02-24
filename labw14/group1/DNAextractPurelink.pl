@@ -11,30 +11,16 @@ end
 
 take
  susp = item susp[:id]
- # 1 "50mL 95% Ethanol Aliquot"
  1 "PureLink Genomic DNA Mini Kit"
 end
 
 step
  description: "Desuspend the cells"
- check: "Pipette 1.5mL of from the overnight suspension into a new 1.5 mL tube."
- check: "Centrifuge the tube at 4000g for 1 minute."
- check: "Carefully use pipette to remove and discard the supernatant."
-end
-
-step
- description: "Desuspend the cells 2"
- check: "Pipette  an additional 1mL of from the overnight suspension into the 1.5 mL tube."
- check: "Centrifuge the tube at 4000g for 1 minute."
- check: "Carefully use pipette to remove and discard the supernatant."
-end
-
-step
- description: "Desuspend the cells 3"
- check: "Pipette  an additional 500uL of from the overnight suspension into the 1.5 mL tube."
- check: "Centrifuge the tube at 4000g for 1 minute."
- check: "Carefully use pipette to remove and discard the supernatant."
- check: "Centrifuge and seperate the sample in the tube 3-4 more times."
+ check: "Lable two 1.5ml tubes with your initials and the date."
+ check: "Pipette 1.5mL of from the overnight suspension into each tube."
+ check: "Centrifuge the tubes at 4000g for 1 minute."
+ check: "Carefully use pipette to remove and discard the supernatant from each tube."
+ check: "Repeat the centrifuge and seperation step 3-4 more times with each tube."
 end
 
 step
