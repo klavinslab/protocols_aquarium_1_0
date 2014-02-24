@@ -6,15 +6,15 @@ argument
  ladder: sample, "The ladder for your gel"
 end
 
-ladder = 822
-enzyme_id = 711
+#ladder = 822
+#enzyme_id = 711
  
 place streak
   protocol: "labw14/group1/streak.pl"
   argument
     e_coli_glycerol_stock: e_coli_glycerol_stock
   end
-  marked: true
+  #marked: true
   group: aquarium_user
   start: now()
   window: minutes(30)
@@ -23,6 +23,7 @@ end
 place overnight
   protocol: "labw14/group1/overnight_suspension.pl"
   #start: hours(20)
+  marked: true
   start: now()
   group: aquarium_user
   window: hours(8)
@@ -30,8 +31,8 @@ end
 
 place extract
   protocol: "labw14/group1/DNAextractPurelink.pl"
-  #start: hours(20)
-  start: now()
+  start: hours(20)
+  #start: now()
   group: aquarium_user
   window: hours(8)
 end
@@ -65,7 +66,7 @@ end
 place finish_pcr
   protocol: "labw14/group1/pcr_finish.pl"
   group: aquarium_user
-  start: minutes(1) #change to 60
+  start: minutes(1) 
   window: hours(1)
 end
 
