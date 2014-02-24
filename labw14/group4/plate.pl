@@ -74,7 +74,7 @@ while i < sample_count
 	end
 	transformed_plates = append(transformed_plates, r1[:id])
 	
-	id = id + 1
+	i = i + 1
 end
 #produce
  # r2 = 1 "Transformed E coli plate" of "pLAB1 in Z1"
