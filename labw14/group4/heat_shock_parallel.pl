@@ -24,7 +24,7 @@ end
 
 step
   description: "Transfer each sample of log phase cells into a 50 mL Falcon Tube"
-  note: "Pour the entire volume of the shaker flask into the 50 mL tube. The volume should be approximately 18 mL."
+  note: "Pour the entire volume of the shaker tube into the 50 mL falcon tube. The volume should be approximately 18 mL."
 end
 
 # NOTE: must break up the cells into batches that will fit inside the heat bath
