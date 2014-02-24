@@ -3,7 +3,7 @@
 argument
   plasmid_id: sample array, "The plasmid to be used"
   e_coli_strain_type: sample array, "One electrocompetent aliquot (of the 4 made in the previous protocol) to be transformed"
-  dna_vol: number
+  dna_vol: number, "Volume of DNA to trnsform (ul)"
   e_coli_map: sample array, "The e coli strains in order of mapping with knockout plasmid"
  # strain_name: string, "Enter the name of the strain you are producing"
 end
