@@ -10,7 +10,7 @@ take
   react_mix = item rxn_mix
   iscript_enz = item rev_enzyme
   iso_rna = item rna_yeast
-  nucwater = 1 "Nuclease Free Water"
+  nuc_water = 1 "Nuclease Free Water"
 end
 
 step
