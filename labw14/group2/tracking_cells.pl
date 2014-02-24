@@ -57,7 +57,7 @@ end
 
 step
   description: "Load optical settings"
-  bullet: "Click on the Calibration menu"
+  bullet: "Click on the 'Calibration' menu"
   bullet: "Click on 'Optical Configuration' option"
   bullet: "Click on the 'Restore' button"
   bullet: "Navigate to D:/LABW14/Phase GRCY .xml"
@@ -69,10 +69,9 @@ step
   bullet: "Click on the 'Time' tab and ensure it is checked"
   bullet: "Ensure interval is set to 10 minutes and duration to 8 hours"
   bullet: "Click on the 'XY Position' tab and ensure it is checked"
-  bullet: "Click on the Z-series tab and ensure it is UNCHECKED"
-  bullet: "Click on the Lambda tab and ensure it is checked"
-  bullet: "Ensure PhaseGFP is the first setting and GFP is the second setting"
-  bullet: "Ignore the lab tab"
+  bullet: "Click on the 'Z-series' tab and ensure it is UNCHECKED"
+  bullet: "Click on the 'Lambda' tab and ensure it is checked"
+  bullet: "Ensure 'PhaseGFP' is the first setting and 'GFP' is the second setting"
 end
 
 step
@@ -123,12 +122,6 @@ step
 end
 
 step
-  description: "Navigating the cells"
-  bullet: "Select the 'X-Y overview' tab; this will help you keep track of our selected cells"
-  bullet: "Click on the 'adjust to points' button on the 'X-Y overview' window"
-end
-
-step
   description: "Selecting ideal cells"
   bullet: "We want to find elongated black rods, short rods are probably dead cells"
   bullet: "Click on the 'X-Y position' tab in the ND aquisition window"
@@ -137,6 +130,12 @@ step
   bullet: "Click the blank check box in the 'X-Y position' tab in the ND aquisition window"
   note: "This selects the current X-Y position and stores it. It will also been seen on your X-Y overview map"
   note: "To reset the speed of the controller press the X-Y speed button twice to ensure the green light is fully on"
+end
+
+step
+  description: "Navigating the cells"
+  bullet: "Select the 'X-Y overview' tab; this will help you keep track of our selected cells"
+  bullet: "Click on the 'adjust to points' button on the 'X-Y overview' window"
 end
 
 step
