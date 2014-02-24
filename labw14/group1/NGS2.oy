@@ -1,5 +1,6 @@
 argument
- e_coli_glycerol_stock: sample, "Glycerol Stock of Frozen Cells"
+ #e_coli_glycerol_stock: sample, "Glycerol Stock of Frozen Cells"
+ e_coli_plate: sample, "Agar Plate"
  pfwd: sample array, "The forward primers"
  prev: sample array, "two reverse primers"
  enzyme_id: sample, "The Phsion HF Master Mix stock"
@@ -11,9 +12,9 @@ end
  
 place streak
   protocol: "labw14/group1/streak.pl"
-  argument
-    e_coli_glycerol_stock: e_coli_glycerol_stock
-  end
+  #argument
+  #  e_coli_glycerol_stock: e_coli_glycerol_stock
+  #end
   #marked: true
   group: aquarium_user
   start: now()
@@ -22,6 +23,9 @@ end
 
 place overnight
   protocol: "labw14/group1/overnight_suspension.pl"
+  argument
+    id: e_coli_plate[:id]
+  end
   #start: hours(20)
   start: now(20)
   marked: true
@@ -109,7 +113,7 @@ place clean_gel_box
   window: minutes(90)
 end
 
-wire (streak, "r") => (overnight, "id")
+#wire (streak, "r") => (overnight, "id")
 wire (overnight, "r") => (extract, "susp")
 wire (extract, "r") => (purify, "eDNA")
 #wire (extract, "r") => (boil, "pGenome")
