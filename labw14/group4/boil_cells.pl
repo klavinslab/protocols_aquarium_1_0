@@ -28,13 +28,6 @@ while i<sample_count
 	  check: "Find a colony in plate %{current_plate} that is medium sized, round, and isolated"
 	  check: "Pick up the entire colony with a 200 μL (green box) pipette tip and transfer it to tube %{current_tube}."
 	end
-	
-	step
-	  description: "Save some cells for later"
-	  check: "Label a 1.5 mL tubes with your initials, date. Write save%{current_tube} on it."
-	  check: "Add 1 mL of LB+Kan into the each tube."
-	  check: "Take 1 μL from tube %{current_tube} and put it into tube save%{current_tube}."
-	end
 end
 
 step
