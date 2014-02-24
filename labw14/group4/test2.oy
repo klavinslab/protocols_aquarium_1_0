@@ -10,7 +10,7 @@ num_trans = 1
 
 
 place heat_shock
-  protocol: "labw14/group4/test.pl"
+  protocol: labw14/week4/heat_shock.pl
   argument
     cells_flask: e_coli_strain_logcells
   end
