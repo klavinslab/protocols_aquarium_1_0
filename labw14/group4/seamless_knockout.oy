@@ -22,12 +22,12 @@ end
 ##
 
 #filter for unique sample ids
-unique_e_coli_strains = unique(e_coli_strain)
+#unique_e_coli_strains = unique(e_coli_strain)
 
 place make_log_phase
   protocol: "labw14/group4/make_log_phase.pl"
   argument
-    cells: unique_e_coli_strains
+    e_coli_strains: e_coli_strain 
   end
   marked: true
   group: aquarium_user

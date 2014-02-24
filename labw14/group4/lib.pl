@@ -8,3 +8,8 @@ function find_original( o_id, sample_array)
     end
   end
 end
+
+# wrapper function so unique works in oyster language
+function unique(a)
+	return unique(a)
+end

@@ -16,7 +16,7 @@ lb_count = 1+net_volume/50 # Bug: will ask for extra lb aliquot if net_volume is
 
 take
 	e_items = e_coli_strains
-	t_tubes = sample_count "50 ml Falcon Tube"
+	t_tubes = %{sample_count} "50 ml Falcon Tube"
 	LB     = lb_count "50 mL LB liquid aliquot (sterile)"
 end
 
