@@ -28,6 +28,7 @@ while i<sample_count
 	  check: "Find a colony in plate %{current_plate} that is medium sized, round, and isolated"
 	  check: "Pick up the entire colony with a 200 μL (green box) pipette tip and transfer it to tube %{current_tube}."
 	end
+	i = i+1
 end
 
 step
