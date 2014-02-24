@@ -135,6 +135,7 @@ while i <  sample_count
 	  
 
 	end
+	i = i + 1
 end
 
 log
