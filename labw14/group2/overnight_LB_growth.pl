@@ -11,6 +11,7 @@ end
 step
   description: "Prepare 14 mL test tube for incubation"
   note: "Click next to begin the incubation process"
+  warning: "This procedure must be done before the glycerol stock thaws!"
 end
 
 step
@@ -26,6 +27,8 @@ step
   bullet: "swirl the tip gently into the LB solution in the test tube, and dispose of the pipette tip"
 end
 
+release [glycerol[0]]
+
 produce
   r = 1 "Overnight suspension cultures" from glycerol[0]
   location: "B13.425"
@@ -36,4 +39,4 @@ log
   return: { ons: r[:id] }
 end
     
-release [falcon_tube[0], glycerol[0]]
+release [falcon_tube[0]]
