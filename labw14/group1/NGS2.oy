@@ -27,7 +27,7 @@ place overnight
     id: e_coli_plate[:id]
   end
   #start: hours(20)
-  start: now(20)
+  start: now()
   marked: true
   start: now()
   group: aquarium_user
