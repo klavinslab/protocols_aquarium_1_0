@@ -2,10 +2,13 @@ argument
   id: sample("Transformed E coli Strain"), "Agar plate to be disposed"
 end
 
-plate = [id[0][:id]]
+take
+  plate = item id
+  note: "This is already in the microscope"
+end
 
 step
-  description: "Go to the microscope room {%plate}"
+  description: "Go to the microscope room"
   note: "Open the protocol in the microscope room and click next"
 end
 
