@@ -8,7 +8,8 @@ argument
  # strain_name: string, "Enter the name of the strain you are producing"
 end
 
-require "lab14/group4/lib.pl"
+include "labw14/group4/lib.pl"
+end
 
 sample_count = length(e_coli_strain_type)
 take
