@@ -70,7 +70,7 @@ while i <  sample_count
 	
 	
 	step
-	  description: "Pipette %{dna_vol} µL Fragment (sample id: %{plasmid}) into the 1.5 ml electrocompetent cell tube %{sample id: %{e_coli}"
+	  description: "Pipette %{dna_vol} µL Fragment (sample id: %{plasmid}) into the 1.5 ml electrocompetent cell tube (sample id: %{e_coli})"
 	  check: "Pipette into the culture, not on the side of the tube."
 	  check: "Swirl the tip gently in the culture to mix after pipetting."
 	  check: "Put back on the aluminum rack (not the -20 C blue tube incubator) after mixing."
