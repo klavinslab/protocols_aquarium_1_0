@@ -36,8 +36,8 @@ end
 
 place extract
   protocol: "labw14/group1/DNAextractPurelink.pl"
-  start: hours(20)
-  #start: now()
+  #start: hours(20)
+  start: now()
   group: aquarium_user
   window: hours(8)
 end
