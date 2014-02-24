@@ -6,7 +6,7 @@ argument
   log_cells: sample array, "The sample that you want to spec its concentration"
 end
 
-OD_tol = ##
+# OD_tol = ##
 
 take
   y = item log_cells
