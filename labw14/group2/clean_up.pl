@@ -2,7 +2,7 @@ argument
   id: sample("Transformed E coli Strain"), "Agar plate to be disposed"
 end
 
-plate == id
+plate = id
 
 step
   description: "Go to the microscope room"
@@ -42,5 +42,5 @@ step
   warning: "Make sure the cell you want saved is selected on the M bar"
 end
 
-release [plate[0]]
+release [plate[0][:id]]
 
