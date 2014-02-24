@@ -1,0 +1,51 @@
+e_coli_strain = []
+argument
+  e_coli_strain: sample("E coli strain") array, "the E. coli strains you wish to preform the knockouts in. NOTE: the nth E. coli strain will be knocked out by the nth cassette" 
+  knockout_fragments: sample("Fragment") array, "the cassettes you wish to transform into the strains, respectively"
+  #note: "The nth E. coli strain will be knocked out with the nth cassette"
+  #strain_name: string, "the name of the strain you are producing today (copy it from Week4 lab description in Google Drive"
+#  plate_type: sample array, "The appropriate selection plates (thyamine+trimethoprim or minimal-media)"
+  pfwd: sample("Primer"), "The forward primer"
+  prev1s: sample("Primer") array, "Reverse primers for knockout test group"
+  prev2s: sample("Primer") array, "Reverse primers for control group"
+  phusion_enzyme: sample("Enzyme"), "The Phusion HF Master Mix stock"
+  ladder_one: sample("Ladder"), "the reference ladder for Gel electrophoresis"
+end
+
+ 
+
+##
+## Qs: Seamless or not?
+## Qs: Can we have a null argument for argument
+## Qs: ...or can we have two metacols (one for dthyA loop, one for generating dthyA)	
+## Qs: How do you repeat OD test if not enough wait time
+##
+
+#filter for unique sample ids
+#unique_e_coli_strains = unique(e_coli_strain)
+
+place make_log_phase
+  protocol: "labw14/group4/make_log_phase.pl"
+  argument
+    e_coli_strains: e_coli_strain 
+  end
+  marked: true
+  group: aquarium_user
+  start: now()
+end
+
+
+place finish_log_phase
+	protocol: "labw14/group4/finish_log_phase.pl"	
+	# log_cells: wire log phase cells from make_log_phase
+	start: hours(2)
+	window: hours(1)
+	group: aquarium_user
+	marked: false
+end
+
+wire (make_log_phase, "log_cells") => (finish_log_phase, "log_cells") 
+
+
+transition [make_log_phase] => [finish_log_phase] when !error(0) && completed(0) end 
+transition [finish_log_phase] => [] when !error(0) && completed(0) end
