@@ -81,7 +81,7 @@ step
 end
 
 step
-  discription: "When pcr finishes, return pcr tubes to bench"
+  description: "When pcr finishes, return pcr tubes to bench"
 end
 
 log { return: {pcr_count: pcr_tube}}
