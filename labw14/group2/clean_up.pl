@@ -5,7 +5,7 @@ end
 plate = id
 
 step
-  description: "Go to the microscope room"
+  description: "Go to the microscope room {%plate}"
   note: "Open the protocol in the microscope room and click next"
 end
 
