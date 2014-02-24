@@ -24,7 +24,7 @@ end
 place overnight
   protocol: "labw14/group1/overnight_suspension.pl"
   argument
-    id: e_coli_plate[:id]
+    id: e_coli_plate
   end
   #start: hours(20)
   start: now()
