@@ -40,10 +40,9 @@ end
 i=0
 log_cell_tubes = []
 while i < sample_count
-	i = i+1
 	produce
 		y = 1 "log cells" from e_items[i]
-		release t_tubes[i-1]
+		release t_tubes[i]
 		location: "B14.310"
 		data
 			from: e_coli_strains[i][:id]
@@ -52,6 +51,7 @@ while i < sample_count
 		note: "Incubate tube %{i} for 2 hours in 37°C incubator (B14.310)"
 	end
 	log_cell_tubes = concat(log_cell_tubes, y)
+	i = i+1
 end
 log
 	return: {log_cells: log_cell_tubes}
