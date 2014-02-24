@@ -2,7 +2,7 @@ argument
   id: sample("Transformed E coli Strain"), "Agar plate to be disposed"
 end
 
-plate = id[:id]
+plate == id[:id]
 
 step
   description: "Go to the microscope room"
