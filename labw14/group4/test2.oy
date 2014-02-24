@@ -8,7 +8,6 @@ plate_type_1 = "LB Kan Plate (sterile)"
 
 num_trans = 1
 
-
 place heat_shock
   protocol: "labw14/week4/heat_shock.pl"
   argument
