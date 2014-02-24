@@ -160,7 +160,7 @@ end
 wire (pour_gels, "gel_n") => (image_gels, "gel_count")
 # forward transitions
 
-transition [make_log_phases] => [finish_log_phase] when !error(0) && completed(0) end 
+transition [make_log_phase] => [finish_log_phase] when !error(0) && completed(0) end 
 transition [finish_log_phase] => [heat_shock] when !error(0) && completed(0) end
 
 transition [heat_shock] => [quick_comp] when !error(0) && completed(0) end 
