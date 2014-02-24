@@ -29,6 +29,20 @@ end
 
 release [glycerol[0]]
 
+take
+  amp = 1 "100X 1 mL Ampicillin Aliquot"
+  kan = 1 "200X 1 mL Kanamycin Aliquot"
+  note: "These are in a box labeled antibotics in the specified fridge"
+end
+
+step
+  description: "Pipette antibotics"
+  bullet: "Pipette 20 microL of Ampicillin into the test tube"
+  bullet: "Pipette 10 microL of Kanamycin into the test tube"
+end
+
+release [amp[0],kan[0]]
+
 produce
   r = 1 "Overnight suspension cultures" from glycerol[0]
   location: "B13.425"
