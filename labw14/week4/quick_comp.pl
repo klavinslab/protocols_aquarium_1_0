@@ -1,7 +1,7 @@
 information "Make competent cells for immediate use."
 
 argument
-  shocked_cells: sample , "heat shocked cells"
+  shocked_cells: sample array, "array of heat shocked cells"
 end
 
 take

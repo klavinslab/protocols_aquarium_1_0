@@ -1,13 +1,15 @@
+e_coli_strain = []
 argument
   e_coli_strain: sample array, "the E. coli strains you wish to preform the knockouts in. NOTE: the nth E. coli strain will be knocked out by the nth cassette" 
   knockout_fragments: sample array, "the cassettes you wish to transform into the strains, respectively"
   #note: "The nth E. coli strain will be knocked out with the nth cassette"
   #strain_name: string, "the name of the strain you are producing today (copy it from Week4 lab description in Google Drive"
-  plate_type: sample array, "The appropriate selection plates (thyamine+trimethoprim or minimal-media)"
+#  plate_type: sample array, "The appropriate selection plates (thyamine+trimethoprim or minimal-media)"
   pfwd: sample("Primer"), "The forward primer"
   prev1s: sample array, "Reverse primers for knockout test group"
   prev2s: sample array, "Reverse primers for control group"
-  phusion_enzyme: sample, "The Phsion HF Master Mix stock"
+  phusion_enzyme: sample, "The Phusion HF Master Mix stock"
+	ladder_one: sample, "the reference ladder for Gel electrophoresis"
 end
 
  
@@ -20,7 +22,7 @@ end
 ##
 
 #filter for unique sample ids
-unqiue_e_coli_strains = unique(e_coli_strain)
+unique_e_coli_strains = unique(e_coli_strain)
 
 place make_log_phase
   protocol: "labw14/group4/make_log_phase.pl"
@@ -99,7 +101,7 @@ place plate
   group: aquarium_user
   argument
     volume: 200
-    plate_type: plate_type
+    plate_type: "LB Kan plate (sterile)" #plate_type
   end
   start: hours(3)
   window: hours(1)
@@ -119,9 +121,9 @@ place pcr_prepare
   protocol: "labw14/group4/pcr_prepare.pl"
   group: aquarium_user
   argument
-	pfwd: pfwd
-	prev1s: prev1s
-	prev2s: prev2s
+		pfwd: pfwd
+		prev1s: prev1s
+		prev2s: prev2s
   	enzyme_id: phusion_enzyme
   end
   start: now()
@@ -142,8 +144,8 @@ place run_gels
   protocol: "labw14/group4/run_gel_parallel.pl"
   argument
 	  fragment_volume: 20
-	  num_gels: number, "the number of gels to run"
-	  pcr_count: number, "The number of PCR tubes to run"
+#	  num_gels: number, "the number of gels to run"
+#	  pcr_count: number, "The number of PCR tubes to run"
   end
   start: minutes(20)
 end
@@ -162,7 +164,7 @@ transition [finish_log_phase] => [heat_shock] when !error(0) && completed(0) end
 
 transition [heat_shock] => [quick_comp] when !error(0) && completed(0) end 
 transition [quick_comp] => [transform] when !error(0) && completed(0) end 
-transition [incubate_tube] => [plate_1] when !error(0) && completed(0) end 
+transition [incubate_tube] => [plate] when !error(0) && completed(0) end 
 transition [plate] => [pcr_prepare] when !error(0) && completed(0) end
 transition [pcr_prepare] => [pour_gels] when !error(0) && completed(0) end
 transition [pour_gels] => [run_gels] when !error(0) && completed(0) end
