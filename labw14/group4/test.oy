@@ -40,7 +40,6 @@ place finish_log_phase
 	start: now()# minutes(2)
 	window: hours(1)
 	group: aquarium_user
-	marked: false
 end
 
 #wire (make_log_phase, "log_cells") => (finish_log_phase, "log_cells") 
