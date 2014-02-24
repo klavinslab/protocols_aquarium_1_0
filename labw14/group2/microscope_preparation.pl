@@ -83,5 +83,3 @@ end
 log
   return: {item : plate[0][:id]}
 end
-
-release[plate[0]]
