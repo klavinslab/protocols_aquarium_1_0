@@ -4,14 +4,14 @@ information "Spread cells onto a petri dish containing ~25mL agar media."
 argument
    e_coli_strain_id: sample array, "A sample"
    volume: number, "The volume (µL) to plate"
-   plate_type: object, "Type of plate (from the solidmedia category)"
+   plate_type: object array, "Type of plates you will use to select for transformed cells.\nList in order of corresponding transformed E. coli strains (from the solidmedia category)"
 #   plate_type_2: object, "Type of inducer plate (from the solidmedia category)"
 end
 
 sample_count = length(e_coli_strain_id)
 take
   strain = item e_coli_strain_id
-  plate = sample_count plate_type
+  plate = plate_type
 #  plate_2 = 1 plate_type_2
 #  beads = 1 "Glass Bead Aliquot (sterile)"
 #  collector = 1 "Glass Bead Waste Collector"
@@ -28,6 +28,7 @@ transformed_plates = []
 i = 0
 while i < sample_count
 	current_sample = i+1
+	coli_sample_id = e_coli_strain_id[i]
 	step
 	  description: "Add sterile glass beads to plate %{current_sample}"
 	  note: "Invert the plate so that the lid is on the bench. 
@@ -37,13 +38,13 @@ while i < sample_count
 	end
 
 	step
-	  description: "Vortex sample %{current_sample}"
-	  note: "Vortex sample %{current_sample} on vortexor."
+	  description: "Vortex sample %{coli_sample_id}"
+	  note: "Vortex sample %{coli_sample_id} on vortexor."
 	  image: "vortex_tube"
 	end
 
 	step
-	  description: "Transfer sample %{current_sample} to the center of the plate"
+	  description: "Transfer sample %{coli_sample_id} to the center of the plate"
 	  note: "Invert plate %{current_sample} so the beads are on the agar surface. Lift the lid and 
 			 pipette %{volume} µL of sample on the agar surface
 			 and put the lid back on the plate."
@@ -69,6 +70,8 @@ while i < sample_count
 	  release [plate[i]]
 	end
 	transformed_plates = append(transformed_plates, r1[:id])
+	
+	id = id + 1
 end
 #produce
  # r2 = 1 "Transformed E coli plate" of "pLAB1 in Z1"
