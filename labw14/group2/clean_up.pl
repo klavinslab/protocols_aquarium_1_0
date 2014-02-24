@@ -2,6 +2,11 @@ argument
   id: sample("Transformed E coli Strain"), "Agar plate to be disposed"
 end
 
+take
+  plate = item id
+  note: "This is already in the microscope"
+end
+
 step
   description: "Go to the microscope room"
   note: "Open the protocol in the microscope room and click next"
@@ -40,5 +45,5 @@ step
   warning: "Make sure the cell you want saved is selected on the M bar"
 end
 
-release [id[0]]
+release [plate[0]]
 
