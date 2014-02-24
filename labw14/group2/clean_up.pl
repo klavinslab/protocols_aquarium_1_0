@@ -42,5 +42,5 @@ step
   warning: "Make sure the cell you want saved is selected on the M bar"
 end
 
-release plate
+release plate[0]
 
