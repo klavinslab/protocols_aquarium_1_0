@@ -39,7 +39,6 @@ end
 
 step
   description: "Prepare the cell lysate"
-  check: "DO SUSPENSION/CENTERFUGATION/POUROFF"
   check: "Pipette 180uL PureLink Genomic Digestion Buffer into the tube"
   check: "Pipette 20uL Proteinase K into the tube"
   check: "Vortex the tube breifly to mix"
