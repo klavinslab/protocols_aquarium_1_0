@@ -59,7 +59,7 @@ while i <  sample_count
 	t_tube_label = i+1
 	plasmid = plasmid_id[i]
 	e_coli_s = find_original(e_coli_map[i], strain)
-	e_coli = e_coli[:id]
+	e_coli = e_coli_s[:id]
 	step
 	  description: "Label a 1.5 mL tube (transformed cell tube)"
 	  note: "Label as T tube %{t_tube_label}, with initials.\n
