@@ -43,12 +43,6 @@ bFirst = 1
 bLast = 4
 
 step
-  description: "Spin down the boiled cell tubes %{bFirst} - %{bLast} in the microcentrifuge on your bench for 1 minute"
-  note: "The boiled cell %{bFirst} - %{bLast} are the PCR tubes you took from thermal cylcler from your previous protocol."
-  warning: "Be extremely careful not to distrube the spun tubes.  They won't look any different but even the slightest tap can be detrimental."
-end
-
-step
   description: "Take %{nFragments} 0.2 mL PCR tubes from PCR strip. Write your initials on it. Label from left to right as %{First} to %{Last}."
 end
 
@@ -67,12 +61,12 @@ tube_number = 0
     tube_number = tube_number + 1
     step 
       description: "Prepare reaction for tube %{tube_number}"
-      check: "Pipet 0.5 uL of boiled cell %{t} into tube %{tube_number}."
+      check: "Pipet 0.5 uL of extracted DNA into tube %{tube_number}."
       check: "Pipet 1 uL of primer with id %{fwd} into tube %{tube_number}."
       check: "Pipet 1 uL of primer with id %{rev} into tube %{tube_number}."
       check: "Use the tip to gently mix."
       note: "Be careful to pipette into the liquid, not the side of the tube. Always use a new tip."
-      warning: "Be extremely careful not to distrube the boiled cell tubes. They won't look any different but even the slightest tap can be detrimental."
+      
     end
     t = t + 1
     if t > bLast 
