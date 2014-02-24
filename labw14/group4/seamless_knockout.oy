@@ -6,10 +6,10 @@ argument
   #strain_name: string, "the name of the strain you are producing today (copy it from Week4 lab description in Google Drive"
 #  plate_type: sample array, "The appropriate selection plates (thyamine+trimethoprim or minimal-media)"
   pfwd: sample("Primer"), "The forward primer"
-  prev1s: sample array, "Reverse primers for knockout test group"
-  prev2s: sample array, "Reverse primers for control group"
+  prev1s: sample("Primer") array, "Reverse primers for knockout test group"
+  prev2s: sample("Primer") array, "Reverse primers for control group"
   phusion_enzyme: sample, "The Phusion HF Master Mix stock"
-	ladder_one: sample, "the reference ladder for Gel electrophoresis"
+  ladder_one: sample, "the reference ladder for Gel electrophoresis"
 end
 
  
