@@ -30,6 +30,37 @@ place cdna_synth
   end
 end
 
+place measure_cdna_conc
+  protocol: "lab14/group3/nucl_conc_measure.pl"
+  marked: true
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+#place machine_loading
+# protocol:
+# marked: true
+# group: aquarium_user
+# start: now()
+# window: minutes(1)
+#end
+
+#clean up?
+
+#forward transistions
+transition [isolate_rna] => [rna_conc_measure] when !error(0) && completed(0) end 
+transition [rna_conc_measure] => [cdna_synth] when !error(0) && completed(0) end #add concentration dependence
+transition [cdna_synth] => [measure_cdna_conc] when !error(0) && completed(0) end #add concentration dependence
+transition [measure_cdna_conc] => [machine_loading] when !error(0) && completed(0) end 
+transition [machine_loading] => [] when !error(0) && completed(0) end 
+
+#reverse transitions
+transition [isolate_rna] => [isolate_rna] when error(0) end 
+transition [rna_conc_measure] => [rna_conc_measure] when !error(0) end 
+transition [cdna_synth] => [cdna_synth] when error(0) end
+transition [measure_cdna_conc] => [measure_cdna_conc] when error(0) end
+transition [machine_loading] => [machine_loading] when error(0) end
 
 
 #$%wire (rna_conc_measure, "conc") => (cdna_synth, "
