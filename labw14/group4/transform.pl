@@ -89,7 +89,7 @@ while i <  sample_count
 	step
 	  description: "Transfer the cells-plasmid mixture to electrocuvette."
 	  note: "Take lid off the cuvette.\n
-			Pipette 50 µL of the mixture from the electrocompetent cell tube %{tube_label} into the center of the gap of the electrocuvette."
+			Pipette 50 µL of the mixture from the electrocompetent cell tube %{t_tube_label} into the center of the gap of the electrocuvette."
 	  warning: "Hold the plastic sides of cuvette during pipetting."
 	  image: "pipette_transformation_mix_to_cuvette"
 	end
