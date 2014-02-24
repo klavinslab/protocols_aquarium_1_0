@@ -1,6 +1,6 @@
 argument
  #e_coli_glycerol_stock: sample, "Glycerol Stock of Frozen Cells"
- e_coli_plate: sample, "Agar Plate"
+ e_coli_plate: sample, "E.Coli Agar Plate"
  pfwd: sample array, "The forward primers"
  prev: sample array, "two reverse primers"
  enzyme_id: sample, "The Phsion HF Master Mix stock"
