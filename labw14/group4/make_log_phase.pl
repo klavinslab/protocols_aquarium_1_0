@@ -45,8 +45,8 @@ while i < sample_count
 		release t_tubes[i]
 		location: "B14.310"
 		data
-			from: e_coli_strains[i][:id]
-			original_id: e_coli_strains[i][:id]
+			from: e_items[i][:id]
+			original_id: e_items[i][:id]
 		end
 		note: "Incubate tube %{i} for 2 hours in 37°C incubator (B14.310)"
 	end
