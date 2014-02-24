@@ -35,7 +35,7 @@ end
 step
   description: "Pipette antibotics"
   bullet: "Pipette 20 microL of Ampicillin into the test tube"
-  bullet: "Pipette 4 microL of Kanamycin into the test tube"
+  bullet: "Pipette 10 microL of Kanamycin into the test tube"
 end
 
 release[amp[0], kan[0]]
