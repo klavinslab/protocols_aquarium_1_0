@@ -38,7 +38,7 @@ end
 place finish_log_phase
 	protocol: "labw14/group4/finish_log_phase.pl"	
 	# log_cells: wire log phase cells from make_log_phase
-	start: hours(2)
+	start: now()# minutes(2)
 	window: hours(1)
 	group: aquarium_user
 	marked: false
