@@ -16,7 +16,7 @@ end
 information "Measure DNA concentration using Nanodrop spectrophotometer."
 
 step
-  description: "Take the cells and lb tothe Nanodrop at location B3.405"
+  description: "Take the cells and LB to the Nanodrop at location B3.405"
 end
 
 ODs = []
