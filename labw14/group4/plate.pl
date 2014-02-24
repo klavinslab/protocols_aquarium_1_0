@@ -4,20 +4,25 @@ information "Spread cells onto a petri dish containing ~25mL agar media."
 argument
    e_coli_strain_id: sample array, "A sample"
    volume: number, "The volume (µL) to plate"
-   plate_type: object array, "Type of plates you will use to select for transformed cells.\nList in order of corresponding transformed E. coli strains (from the solidmedia category)"
+   plate_type: object, "Type of plates you will use to select for transformed cells.\nList in order of corresponding transformed E. coli strains (from the solidmedia category)"
 #   plate_type_2: object, "Type of inducer plate (from the solidmedia category)"
 end
 
 sample_count = length(e_coli_strain_id)
 take
   strain = item e_coli_strain_id
-  plate = plate_type
+  plate = sample_count plate_type
 #  plate_2 = 1 plate_type_2
 #  beads = 1 "Glass Bead Aliquot (sterile)"
 #  collector = 1 "Glass Bead Waste Collector"
   note: "Do not take plate from top of the stack if there is a date stick on it, take from the middle of the stack."
 end
 
+step
+  	description: "Write down your initials and date on plates and label 1-%{sample_count}"
+  	image: "write_on_the_plate"
+end
+	
 transformed_plates = []
 
 i = 0
@@ -25,10 +30,7 @@ while i < sample_count
 	current_sample = i + 1
 	plate_sample_id = plate_type[i]
 	coli_sample_id = e_coli_strain_id[i]
-	step
-  		description: "Write down your initials and date on plate %{plate_sample_id} and label %{current_sample}"
-  		image: "write_on_the_plate"
-	end
+	
 	
 	step
 	  description: "Add sterile glass beads to plate %{current_sample}"
