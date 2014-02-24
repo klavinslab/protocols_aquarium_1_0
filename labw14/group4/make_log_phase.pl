@@ -56,4 +56,4 @@ end
 log
 	return: {log_cells: log_cell_tubes}
 end
-release concat(e_items, LB)
+release append(e_items, LB)
