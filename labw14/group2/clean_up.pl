@@ -2,7 +2,7 @@ argument
   id: sample("Transformed E coli Strain"), "Agar plate to be disposed"
 end
 
-plate = { stuff : id[0][:id]}
+plate = id[:id]
 
 step
   description: "Go to the microscope room {%plate}"
