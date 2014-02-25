@@ -68,7 +68,7 @@ while i < sample_count
 	  location: "A1.110"
 	  data
 	  	from: strain[i][:id]
-	  	original_id: strain[i][:original_id]
+	  	original_id: strain[i][:data][:original_id]
 	  end
 	  release [plate[i]]
 	end
