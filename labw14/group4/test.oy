@@ -2,18 +2,6 @@ argument
   e_coli_strain: sample("E coli strain") array, "the E. coli strains you wish to preform the knockouts in. NOTE: the nth E. coli strain will be knocked out by the nth cassette" 
 end
 
- 
-
-##
-## Qs: Seamless or not?
-## Qs: Can we have a null argument for argument
-## Qs: ...or can we have two metacols (one for dthyA loop, one for generating dthyA)	
-## Qs: How do you repeat OD test if not enough wait time
-##
-
-#filter for unique sample ids
-#unique_e_coli_strains = unique(e_coli_strain)
-
 place make_log_phase
   protocol: "labw14/group4/make_log_phase.pl"
   argument
