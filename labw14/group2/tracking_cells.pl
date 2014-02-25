@@ -56,25 +56,6 @@ step
 end
 
 step
-  description: "Load optical settings"
-  bullet: "Click on the 'Calibration' menu"
-  bullet: "Click on 'Optical Configuration' option"
-  bullet: "Click on the 'Restore' button"
-  bullet: "Navigate to D:/LABW14/Phase GRCY .xml"
-  bullet: "Open the file to apply settings"
-end
-
-step
-  description: "Manage ND Aquisition settings"
-  bullet: "Click on the 'Time' tab and ensure it is checked"
-  bullet: "Ensure interval is set to 10 minutes and duration to 8 hours"
-  bullet: "Click on the 'XY Position' tab and ensure it is checked"
-  bullet: "Click on the 'Z-series' tab and ensure it is UNCHECKED"
-  bullet: "Click on the 'Lambda' tab and ensure it is checked"
-  bullet: "Ensure 'PhaseGFP' is the first setting and 'GFP' is the second setting"
-end
-
-step
   description: "Turn on the camera"
   note: "Press the play button, on the tool bar, under the menu bar to turn on the camera"
 end
