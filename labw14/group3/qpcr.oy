@@ -10,8 +10,6 @@ place isolate_rna
   window: minutes(10)
 end
 
-wire (isolate_rna, "rna_suspension") => (rna_conc_measure, "fragment")
-
 place rna_conc_measure
   protocol: "labw14/group3/nucl_conc_measure.pl"
   marked: true
@@ -20,7 +18,7 @@ place rna_conc_measure
   window: minutes(1)
 end
 
-wire (isolate_rna,"rna_suspension") => (cdna_synth,"rna_yeast")
+wire (isolate_rna, "rna_suspension") => (rna_conc_measure, "fragment")
 
 place cdna_synth
   protocol: "labw14/group3/cdna_synthesis.pl"
@@ -32,8 +30,7 @@ place cdna_synth
   end
 end
 
-wire (cdna_synth,"yeast_cdna_id") => (measure_cdna_conc,"fragment")
-wire (cdna_synth,"yeast_cdna_id") => (machine_loading, "fragment")
+wire (isolate_rna,"rna_suspension") => (cdna_synth,"rna_yeast")
 
 place measure_cdna_conc
   protocol: "lab14/group3/nucl_conc_measure.pl"
@@ -43,6 +40,9 @@ place measure_cdna_conc
   window: minutes(1)
 end
 
+wire (cdna_synth,"yeast_cdna_id") => (measure_cdna_conc,"fragment")
+
+
 place machine_loading
  protocol: "qpcr_of_cdna.pl"
  marked: true
@@ -50,6 +50,8 @@ place machine_loading
  start: now()
  window: minutes(1)
 end
+
+wire (cdna_synth,"yeast_cdna_id") => (machine_loading, "fragment")
 
 #clean up?
 
