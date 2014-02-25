@@ -21,7 +21,7 @@ Concentrated_Stock1 = "OsGH3.1-1_1-6"
 Concentrated_Stock2 = "OsGH3.1-1_7-12"
 Concentrated_Stock3 = "OsGH3.1-2_1-6"
 Concentrated_Stock4 = "OsGH3.1-2_7-12"
-ladder = 1356
+ladder = 1357
 
 # Places
 place stock1
