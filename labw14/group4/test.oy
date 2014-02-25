@@ -22,7 +22,7 @@ end
 
 
 place quick_comp
-  protocol: "labw14/week4/test.pl"
+  protocol: "labw14/group4/test.pl"
   group: aquarium_user
   start: now()
   window: minutes(1)
