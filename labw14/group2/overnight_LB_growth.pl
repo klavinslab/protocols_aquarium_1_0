@@ -29,6 +29,7 @@ step
   bullet: "Using a fresh 1mL pipette tip scrape a small amount of glycerol stock onto the pipette tip"
   bullet: "Tilt test tube slightly so that the liquid LB is on the side of the 14 mL test tube"
   bullet: "swirl the tip gently into the LB solution in the test tube, and dispose of the pipette tip"
+  image: "glycerol_stock"
 end
 
 release [glycerol[0]]
