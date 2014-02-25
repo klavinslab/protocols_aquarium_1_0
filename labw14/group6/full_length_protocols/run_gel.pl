@@ -20,7 +20,6 @@ end
 
 
 take
-  gel = 1 "50 mL 1 Percent Agarose Gel in Gel Box"
   fragment1 = item assemblies1
   fragment2 = item assemblies2
   ladder = item ladder_one
@@ -37,7 +36,7 @@ end
 
 step
   description: "Set up the gel box."
-  check: "Carefully remove the casting tray (with gel) and place it on the bench."
+  check: "Carefully remove the casting tray (with gel) from the gel box you prepared in the pour_gel protocol and place it on the bench."
   check: "Using the graduated cylinder at A5.305, fill the gel box with 200 mL of 1X TAE from J2 at A5.500. TAE should just cover the center of the gel box."
   check: "With the gel box electrodes facing away from you, place the casting tray (with gel) back in the gel box. The top lane should be on your left, as the DNA will move to the right."
   check: "Using the graduated cylinder, add 50 mL of 1X TAE from J2 at A5.500 so that the surface of the gel is covered."
