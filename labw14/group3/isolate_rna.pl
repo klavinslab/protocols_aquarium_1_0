@@ -1,12 +1,12 @@
 argument
   yeast_susp: sample, "Choose the Yeast Sample from which to Isolate RNA"
-  iScript: sample, "iScript RT-qPCR sample preparation reagent at bench"
+  iscript: sample, "iScript RT-qPCR sample preparation reagent at bench"
   #yeast_conc: number, "Enter the Starting Cell Concentration of Yeast Sample (i.e. cells/mL)"
 end
 
 take
-  y = sample yeast_susp
-  z = sample iScript
+  y = item yeast_susp
+  z = item iscript
   note: "Allow the RT-qPCR Sample Prep Reagent to thaw"
 end
 
