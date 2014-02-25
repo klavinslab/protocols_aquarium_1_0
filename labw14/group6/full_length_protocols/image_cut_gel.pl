@@ -1,9 +1,9 @@
 argument
-  gel_lanes: sample, "The gel lane you got after run the gel"
+  gel_lane: sample, "The gel lane you got after run the gel"
 end
 
 take
-  y = item gel_lanes
+  y = item gel_lane
 end
 
 step
