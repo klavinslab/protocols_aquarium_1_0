@@ -76,7 +76,7 @@ produce
 end
 
 log
-  return: {Yeast_cDNA_id: r[:id]}
+  return: {yeast_cdna_id: r[:id]}
 end
 
 release [iso_rna[0]]
