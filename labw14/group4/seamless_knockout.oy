@@ -173,14 +173,14 @@ transition [run_gels] => [image_gels] when !error(0) && completed(0) end
 transition [image_gels] => [] when !error(0) && completed(0) end
 
 # T1 -> []
-transition [transform] => [incubate_tube] when !error(0) && completed(0) && (return_value(0,"time_constant") >= 3) end
+transition [transform] => [incubate_tube] when !error(0) && completed(0) end #&& (return_value(0,"time_constant") >= 3) end
 
 # T1 -> T1
-transition [ transform ] => [ transform ] when !error(0) && completed(0) && (return_value(0,"time_constant") < 3) && (num_trans == 1)
-    do
-        num_trans = num_trans + 1
-    end
-end
+#transition [ transform ] => [ transform ] when !error(0) && completed(0) && (return_value(0,"time_constant") < 3) && (num_trans == 1)
+#    do
+#        num_trans = num_trans + 1
+#    end
+#end
 
 
 # remaining reverse transitions
