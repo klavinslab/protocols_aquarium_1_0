@@ -1,6 +1,20 @@
 argument
+  #Isolate Lysed RNA
   yeast_suspen: sample, "Choose the Yeast Sample from which to Isolate RNA"
-  iscript: sample, "choose blah blah blah"
+  iscript: sample, "iScript RT-qPCR sample preparation reagent at bench"
+  #cDNA Synthesis arguements
+  iscript_rxn_mix: sample, "Select te 5x iScript reaction mix"
+  rev_trans: sample, "Select the iScript reverse transcriptase"
+  #Loading qPCR Machine arguments
+  enzyme_sybr: sample, "The iTaq Universal SYBR Green Supermix"
+  primer_f1: sample, "The forward primer"
+  primer_r1: sample, " The reverse primer"
+  primer_f2: sample, "The forward primer"
+  primer_r2: sample, " The reverse primer"
+  primer_f3: sample, "The forward primer"
+  primer_r3: sample, " The reverse primer"
+  primer_f4: sample, "The forward primer"
+  primer_r4: sample, " The reverse primer"
 end
 
 place isolate_rna
@@ -25,14 +39,17 @@ end
 
 wire (isolate_rna, "rna_suspension") => (rna_conc_measure, "fragment")
 
+
 place cdna_synth
   protocol: "labw14/group3/cdna_synthesis.pl"
+  arguement
+    rxn_mix: iscript_rxn_mix
+    rev_enzyme: rev_trans
+    rna_conc: return_value(0,"conc")
+  end
   group: aquarium_user
   start: now()
   window: minutes(5)
-  argument
-    rna_conc: return_value(0, "conc")
-  end
 end
 
 wire (isolate_rna,"rna_suspension") => (cdna_synth,"rna_yeast")
@@ -49,14 +66,26 @@ wire (cdna_synth,"yeast_cdna_id") => (measure_cdna_conc,"fragment")
 
 
 place machine_loading
- protocol: "qpcr_of_cdna.pl"
- marked: true
- group: aquarium_user
- start: now()
- window: minutes(1)
+  protocol: "qpcr_of_cdna.pl"
+#add concentration of cDNA into protocol to calculations
+  arguement
+    enzyme: enzyme_sybr
+    primer_forward1: primer_f1
+    primer_reverse1: primer_r1
+    primer_forward2: primer_f2
+    primer_reverse2: primer_r2
+    primer_forward3: primer_f3
+    primer_reverse3: primer_r3
+    primer_forward4: primer_f4
+    primer_reverse4: primer_r4
+  end
+  marked: true
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
 end
 
-wire (cdna_synth,"yeast_cdna_id") => (machine_loading, "fragment")
+wire (cdna_synth,"yeast_cdna_id") => (machine_loading, "fragment1")
 
 #clean up?
 
