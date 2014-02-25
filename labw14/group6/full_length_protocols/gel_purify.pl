@@ -148,7 +148,7 @@ step
 end
     
 produce
-  r = 2 "Fragment Stock" 
+  r = 1 "Fragment Stock" of "fGA"
   location: "Bench"
   release gel_slices
 end
