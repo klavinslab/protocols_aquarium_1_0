@@ -1,5 +1,5 @@
 argument
-  pfwds: sample("Primer"), "The forward primer"
+  pfwds: sample, "The forward primer"
   prev1s: sample array, "Reverse primers for knockout test group"
   prev2s: sample array, "Reverse primers for control group"
   #templates: sample array, "The templates you just made" #just assume you have it
