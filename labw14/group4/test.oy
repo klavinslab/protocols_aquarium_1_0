@@ -23,6 +23,7 @@ place transform
   group: aquarium_user
   start: now()
   window: minutes(1)
+  marked: true
 end
 
 place incubate_tube
