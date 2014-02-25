@@ -1,7 +1,7 @@
 argument
   fragment1: sample,"The cDNA sample to run in qPCR"
   fragment2: sample,"The cDNA sample to run in qPCR"
-  enzyme: object, "The iTaq Universal SYBR Green Supermix"
+  enzyme: sample, "The iTaq Universal SYBR Green Supermix"
   primer_forward1: sample, "The forward primer"
   primer_reverse1: sample, " The reverse primer"
   primer_forward2: sample, "The forward primer"
