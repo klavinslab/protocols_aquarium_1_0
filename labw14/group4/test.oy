@@ -1,5 +1,5 @@
 argument
-#  e_coli_strain: sample("E coli strain") array, "the E. coli strains you wish to preform the knockouts in. NOTE: the nth E. coli strain will be knocked out by the nth cassette" 
+  e_coli_strain: sample array, "the E. coli strains you wish to preform the knockouts in. NOTE: the nth E. coli strain will be knocked out by the nth cassette" 
 #  knockout_fragments: sample("Fragment") array, "the cassettes you wish to transform into the strains, respectively"
   #note: "The nth E. coli strain will be knocked out with the nth cassette"
   #strain_name: string, "the name of the strain you are producing today (copy it from Week4 lab description in Google Drive"
