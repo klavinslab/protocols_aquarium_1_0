@@ -37,6 +37,7 @@ step
   bullet: "Pipette 20 microL of Ampicillin into the test tube"
   bullet: "Pipette 10 microL of Kanamycin into the test tube"
   note: "Ensure these are fully thawed before pipetting"
+  image: "kan_amp"
 end
 
 release[amp[0], kan[0]]
@@ -54,6 +55,7 @@ produce
   r = 1 "Overnight suspension culture" from ons[0]
   location: "B13.425"
   note: "Label this with your initials and date and write the item ID number on it"
+  note: "Store in 37 degree shaker incubator"
 end
 
 log
