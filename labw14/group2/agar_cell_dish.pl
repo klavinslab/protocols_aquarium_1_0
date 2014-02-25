@@ -20,6 +20,7 @@ step
   bullet: "There should be a grove in the dish where the liquid should go"
   bullet: "Replace the cap on the dish to reduce contamination of the sample"
   note: "it should just look like a small bead of liquid at the center of the petri dish."
+  image: "dish_with_m9"
 end
 
 step
