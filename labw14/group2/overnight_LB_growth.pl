@@ -42,6 +42,7 @@ step
   description: "Pipette antibotics"
   bullet: "Pipette 20 microL of Ampicillin into the test tube"
   bullet: "Pipette 10 microL of Kanamycin into the test tube"
+  note: "Make sure the antibotics are fully thawed before pipetting"
 end
 
 release [amp[0],kan[0]]
