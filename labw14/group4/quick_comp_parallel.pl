@@ -123,7 +123,7 @@ while ii < num_samples
 		  location: "Bench"
 			data
 				from: sample_id
-				original_id: cells[ii][:original_id]
+				original_id: cells[ii][:data][:original_id]
 			end
 			  release cells[ii]
 		end
