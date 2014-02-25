@@ -37,7 +37,6 @@ take
   amp = 1 "100X 1 mL Ampicillin Aliquot"
   kan = 1 "200X 1 mL Kanamycin Aliquot"
   note: "These are in a box labeled antibotics in the specified fridge"
-  image: "Antibiotics"
 end
 
 step
