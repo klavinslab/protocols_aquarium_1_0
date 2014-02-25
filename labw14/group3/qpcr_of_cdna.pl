@@ -50,26 +50,30 @@ step
 end
 
 step
-  bullet: "Add 4.5 μL of the Forward Primer (sample id: %{primer_forward1}"
-  bullet: "Add 4.5 μL of the Reverse Primer (sample id: %{primer_reverse1}"
+  description: "Addition of Primers"
+  bullet: "Add 4.5 μL of the Forward Primer (sample id: %{primer_forward1})"
+  bullet: "Add 4.5 μL of the Reverse Primer (sample id: %{primer_reverse1})"
   note: "Be sure to use proper sterile technique to guarantee accuracy of results."
 end
 
 step
-  bullet: "Add 4.5 μL of the Forward Primer (sample id: %{primer_forward2}"
-  bullet: "Add 4.5 μL of the Reverse Primer (sample id: %{primer_reverse2}"
+  description: "Addition of Primers"
+  bullet: "Add 4.5 μL of the Forward Primer (sample id: %{primer_forward2})"
+  bullet: "Add 4.5 μL of the Reverse Primer (sample id: %{primer_reverse2})"
   note: "Be sure to use proper sterile technique to guarantee accuracy of results."
 end
 
 step
-  bullet: "Add 4.5 μL of the Forward Primer (sample id: %{primer_forward3}"
-  bullet: "Add 4.5 μL of the Reverse Primer (sample id: %{primer_reverse3}"
+  description: "Addition of Primers"
+  bullet: "Add 4.5 μL of the Forward Primer (sample id: %{primer_forward3})"
+  bullet: "Add 4.5 μL of the Reverse Primer (sample id: %{primer_reverse3})"
   note: "Be sure to use proper sterile technique to guarantee accuracy of results."
 end
 
 step
-  bullet: "Add 4.5 μL of the Forward Primer (sample id: %{primer_forward4}"
-  bullet: "Add 4.5 μL of the Reverse Primer (sample id: %{primer_reverse4}"
+  description: "Addition of Primers"
+  bullet: "Add 4.5 μL of the Forward Primer (sample id: %{primer_forward4})"
+  bullet: "Add 4.5 μL of the Reverse Primer (sample id: %{primer_reverse4})"
   note: "Be sure to use proper sterile technique to guarantee accuracy of results."
 end
 
