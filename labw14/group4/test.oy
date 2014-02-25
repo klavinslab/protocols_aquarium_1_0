@@ -10,7 +10,7 @@ num_trans = 1
 
 
 place heat_shock
-  protocol: "labw14/group4/heat_shock.pl"
+  protocol: "labw14/group4/test.pl"
   argument
     cells_flask: e_coli_strain_logcells
   end
@@ -22,7 +22,7 @@ end
 
 
 place quick_comp
-  protocol: "labw14/week4/quick_comp.pl"
+  protocol: "labw14/week4/test.pl"
   group: aquarium_user
   start: now()
   window: minutes(1)
