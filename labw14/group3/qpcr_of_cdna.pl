@@ -79,21 +79,21 @@ end
 
 step
   description: "Addition of Diluted cDNA Samples"
-  check: "Add 1 μL of diluted cDNA (sample id: %{fragment1} to well A1"
+  check: "Add 1 μL of diluted cDNA (sample id: %{fragment1}) to well A1"
   check: "Stir mixture with pipette tip"
-  check: "Add 1 μL of diluted cDNA (sample id: %{fragment1} to well B1"
+  check: "Add 1 μL of diluted cDNA (sample id: %{fragment1}) to well B1"
   check: "Stir mixture with pipette tip"
-  check: "Add 1 μL of diluted cDNA (sample id: %{fragment1} to well C1"
+  check: "Add 1 μL of diluted cDNA (sample id: %{fragment1}) to well C1"
   check: "Stir mixture with pipette tip"
 end
 
 step
   description: "Addition of Diluted cDNA Samples (continued)"
-  check: "Add 1 μL of diluted cDNA (sample id: %{fragment2} to well D1"
+  check: "Add 1 μL of diluted cDNA (sample id: %{fragment2}) to well D1"
   check: "Stir mixture with pipette tip"
-  check: "Add 1 μL of diluted cDNA (sample id: %{fragment2} to well E1"
+  check: "Add 1 μL of diluted cDNA (sample id: %{fragment2}) to well E1"
   check: "Stir mixture with pipette tip"
-  check: "Add 1 μL of diluted cDNA (sample id: %{fragment2} to well F1"
+  check: "Add 1 μL of diluted cDNA (sample id: %{fragment2}) to well F1"
   check: "Stir mixture with pipette tip"
 end
 
