@@ -1,14 +1,7 @@
-argument
-  id: sample ("Transformed E coli Strain"), "Agar cell plate"
-end
-
-take
-  plate = item id
-end
-
 step
   description: "Go to the microscope room"
   note: "Go to the microscope room and resume the protocol from there. If already in the microscope room click next."
+  note: "Remember to bring your microscope plate"
 end
 
 step
@@ -79,9 +72,3 @@ step
   description: "Microscope setup complete"
   note: "Click next to procede to the next protocol"
 end
-
-log
-  return: {item : plate[0][:id]}
-end
-
-release [plate[0]]
