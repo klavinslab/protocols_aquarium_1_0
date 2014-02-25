@@ -153,6 +153,16 @@ produce
   release gel_slices
 end
 
+produce
+  t = 1 "Fragment Stock" of "fGA"
+  location: "Bench"
+  release gel_slices
+end
+
 log
   return: {Fragment_Stock_id: r[:id]}
+end
+
+log
+  return: {Fragment_Stock_id: t[:id]}
 end
