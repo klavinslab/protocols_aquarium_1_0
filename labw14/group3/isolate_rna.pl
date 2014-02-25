@@ -1,24 +1,29 @@
 argument
-  yeast_susp: sample, "Choose the Yeast Sample from which to Isolate RNA"
+  yeast_susp1: sample, "Choose the Yeast Sample from which to Isolate RNA"
+  yeast_susp2: sample, "Choose the Yeast Sample from which to Isolate RNA"
   iscript: sample, "iScript RT-qPCR sample preparation reagent at bench"
   #yeast_conc: number, "Enter the Starting Cell Concentration of Yeast Sample (i.e. cells/mL)"
 end
 
 take
-  y = item yeast_susp
+  x = item yeast_susp1
+  y = item yeast_susp2
   z = item iscript
   note: "Allow the RT-qPCR Sample Prep Reagent to thaw"
 end
 
 step
-  description: "Label a 1.5mL Tube"
-  note: "Write your initials and date on it."
+  description: "Label two 1.5mL Tubes"
+  note: "Write your initials and date on them."
 end
 
 step
-  description: "Transfer 100µL of the Yeast Sample to the 1.5mL Tube"
+  description: "Transfer 100µL of the Yeast Sample %{x[:id]} to one 1.5mL Tube"
   note: "Tube content volume is 100 µL."
 end
+
+step
+  description: "Transfer 100µL of the Yeast Sample %{y[:id]} to the other 1.5mL Tube"
 
 step
   description: "Centrifuge at 2,000 rcf (Make sure to balance the centrifuge!)"
@@ -28,20 +33,20 @@ step
 end
 
 step
-  description: "Take the column out of the centrifuge and remove supernatant"
+  description: "Take the tubes out of the centrifuge and remove supernatant"
   note: "Remove/aspirate the supernatant, not leaving more than 5µL of PBS" 
   warning: "Do NOT disturb the cell pellet"
 end
 
 step
   description: "Add iScript RT-qPCR sample prep reagent and vortex "
-  check: "Add 100 µL of iScript to cell pellet"
+  check: "Add 100 µL of iScript to cell pellets"
   check: "Vortex on medium (6/10) for 30 seconds"
 end
 
 step
   description: "Centrifuge lysate at 15,000 rcf"
-  bullet: "Place the tube into centrifuge at B14.320, balance with another column."
+  bullet: "Place the tubes into centrifuge at B14.320, balance centrifuge."
   bullet: "Select 12,500 rpm and 2 minutes, press start."
   note: "Centrifuge is in x1000 rpm. Set to 12.5"
 end
@@ -52,25 +57,26 @@ take
 end
 
 step
-  description: "Take the tube out of centrifuge and store supernatant"
+  description: "Take the tubes out of centrifuge and store supernatant"
   note: "Aspirate the supernatant and place in new 1.5mL Tube."
   warning: "The supernatant is your isolated RNA!!! Don't throw away."
 end
 
 produce
-  rna_sus= 1 "Isolated RNA" from y[0]
+  rna_sus1= 1 "Isolated RNA" from x[0]
+  rna_sus2= 1 "Isolated RNA" from y[0]
   location: "Bench"
   note: "Place in Aluminum Tube Rack on Ice Block"
 end
 
 step
-  description: "Discard the cell pellet tube"
+  description: "Discard the cell pellet tubes"
   bullet: "Can go in the tip waste collector."
 end
 
-release [y[0]]
-release [z[0]]
+release [y[0], x[0], z[0]]
+
 
 log
-  return: {rna_suspension: rna_sus}
+  return: {rna_suspension1: rna_sus1, rna_suspension2: rna_sus2}
 end
