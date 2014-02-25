@@ -98,6 +98,7 @@ step
 end
 
 step
+  description: "Final Prep of qPCR Plate"
   bullet: "Seal the qPCR plate wells with optically transparent film"
   bullet: "Vortex/Spin to ensure thorough mixing and remove any air bubbles"
 end
@@ -112,6 +113,7 @@ step
 end
 
 step 
+  description: "Program Software and Run"
   check: "Label the wells in the software to correspond with Reaction Mixtures in the plate"
   check: "Select the ____ program in the software."
   check: "Click the Start Run button to begin program."
