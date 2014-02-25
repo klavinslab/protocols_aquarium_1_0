@@ -120,7 +120,6 @@ end
 
 produce
   t = 1 "Gel Slice" of "fGA"
-  release y
 end
 
 log
