@@ -89,6 +89,6 @@ end
 
 # output the id numbers of the treated cells for the next protocol
 log
-  shocked_cells : heat_treated_cells 
+  return: {shocked_cells : heat_treated_cells}
 end
 
