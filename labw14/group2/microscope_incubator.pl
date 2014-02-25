@@ -14,5 +14,5 @@ end
 
 step
   description: "Finished!"
-  note: "Click next to end the protocol"
+  note: "Come back in three hours to start the next protocol"
 end
