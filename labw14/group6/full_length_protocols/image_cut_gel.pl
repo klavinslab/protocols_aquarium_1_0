@@ -114,18 +114,18 @@ step
 end
 
 produce
-  r = 1 "Gel Slice" of "fGA"
+  r = 1 "Gel Slice1" of "fGA"
   release y
 end
 
 produce
-  t = 1 "Gel Slice" of "fGA"
+  t = 1 "Gel Slice2" of "fGA"
 end
 
 log
-  return: {Gel_Slice_id: r[:id]}
+  return: {Gel_Slice1_id: r[:id]}
 end
 
 log
-  return: {Gel_Slice_id: t[:id]}
+  return: {Gel_Slice2_id: t[:id]}
 end
