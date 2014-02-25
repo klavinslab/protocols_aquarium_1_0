@@ -1,9 +1,14 @@
 argument
-  yeast_susp: sample, "Choose the Yeast Sample from which to Isolate RNA"
+  yeast_suspen: sample, "Choose the Yeast Sample from which to Isolate RNA"
+  iscript: sample, "choose blah blah blah"
 end
 
 place isolate_rna
   protocol: "labw14/group3/isolate_rna.pl"
+  argument
+    yeast_susp: yeast_suspen
+    iscript: iscript
+  end
   marked: true
   group: aquarium_user
   start: now()
