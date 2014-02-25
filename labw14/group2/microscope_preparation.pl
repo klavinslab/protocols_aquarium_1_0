@@ -52,7 +52,7 @@ step
   description: "Turn on the microscope light" 
   note: "This is labeled 5 and produces the light from the mechanism above the incubator"
   note: "The button is on the left side"
-  image: "micrcope light label 5"
+  image: "microscope light label 5"
 end
 
 step
