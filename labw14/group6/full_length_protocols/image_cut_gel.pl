@@ -115,11 +115,12 @@ end
 
 produce
   r = 1 "Gel Slice" of "fGA"
-  r = 1 "Gel Slice" of "fGA"
+  t = 1 "Gel Slice" of "fGA"
   release y
 end
 
 log
   return: {Gel_Slice_id: r[:id]}
+  return: {Gel_Slice_id: t[:id]}
 end
 
