@@ -43,13 +43,13 @@ place measure_cdna_conc
   window: minutes(1)
 end
 
-#place machine_loading
-# protocol: "qpcr_of_cdna.pl"
-# marked: true
-# group: aquarium_user
-# start: now()
-# window: minutes(1)
-#end
+place machine_loading
+ protocol: "qpcr_of_cdna.pl"
+ marked: true
+ group: aquarium_user
+ start: now()
+ window: minutes(1)
+end
 
 #clean up?
 
@@ -67,6 +67,4 @@ transition [cdna_synth] => [cdna_synth] when error(0) end
 transition [measure_cdna_conc] => [measure_cdna_conc] when error(0) end
 transition [machine_loading] => [machine_loading] when error(0) end
 
-
-#$%wire (rna_conc_measure, "conc") => (cdna_synth, "
 
