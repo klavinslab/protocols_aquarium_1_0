@@ -1,5 +1,5 @@
 argument
-  pfwd: sample("Primer"), "The forward primer"
+  pfwds: sample("Primer"), "The forward primer"
   prev1s: sample array, "Reverse primers for knockout test group"
   prev2s: sample array, "Reverse primers for control group"
   #templates: sample array, "The templates you just made" #just assume you have it
@@ -8,7 +8,7 @@ argument
 end
 
 take
-  fwd = item pfwd
+  fwds = item pfwds
   rev1s = item unique(prev1s)
   rev2s = item unique(prev2s)
   #genomicdna = item templates
@@ -34,6 +34,7 @@ end
 boiled_tube = 0
 pcr_tube = 0
 while boiled_tube < sample_count
+  fwd = fwds[boiled_tube]
   prev1 = prev1s[boiled_tube]
   prev2 = prev2s[boiled_tube]
   boiled_tube = boiled_tube + 1
