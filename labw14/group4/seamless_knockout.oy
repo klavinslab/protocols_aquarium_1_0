@@ -107,7 +107,7 @@ place plate
   window: hours(1)
 end
 
-wire (incubate_tube,"transformed_cells_id") => (plate,"e_coli_strain_id")
+wire (transform,"transformed_cells_id") => (plate,"e_coli_strain_id")
 
 place boil_cells
   protocol: "labw14/group4/boil_cells.pl"
