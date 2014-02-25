@@ -29,8 +29,8 @@ place make_log_phase
     e_coli_strains: e_coli_strain 
   end
   marked: true
-  group: aquarium_user
-  start: now()
+#  group: aquarium_user
+#  start: now()
 end
 
 
