@@ -15,6 +15,7 @@ end
 step
   description: "Pipette liquid LB into test tube"
   note: "Pipette 2mL of liquid LB into the 14 mL test tube. Make sure to use a fresh sterile pipette tip"
+  image: "Liquid_LB"
 end
 
 take
@@ -36,6 +37,7 @@ take
   amp = 1 "100X 1 mL Ampicillin Aliquot"
   kan = 1 "200X 1 mL Kanamycin Aliquot"
   note: "These are in a box labeled antibotics in the specified fridge"
+  image: "Antibiotics"
 end
 
 step
@@ -43,6 +45,7 @@ step
   bullet: "Pipette 20 microL of Ampicillin into the test tube"
   bullet: "Pipette 10 microL of Kanamycin into the test tube"
   note: "Make sure the antibotics are fully thawed before pipetting"
+  image: "kan_amp"
 end
 
 release [amp[0],kan[0]]
