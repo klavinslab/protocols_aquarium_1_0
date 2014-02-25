@@ -5,8 +5,8 @@ argument
 end
 
 take
-  y = item yeast_susp
-  z = item iScript
+  y = sample yeast_susp
+  z = sample iScript
   note: "Allow the RT-qPCR Sample Prep Reagent to thaw"
 end
 
