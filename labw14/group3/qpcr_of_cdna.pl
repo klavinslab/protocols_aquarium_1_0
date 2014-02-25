@@ -93,7 +93,7 @@ step
   check: "Stir mixture with pipette tip"
 
 step
-  note: "you suck"
+  description: "you suck"
   bullet: "Seal the qPCR plate wells with optically transparent film"
   bullet: "Vortex/Spin to ensure thorough mixing and remove any air bubbles"
 end
