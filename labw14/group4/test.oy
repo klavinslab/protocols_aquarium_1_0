@@ -1,6 +1,3 @@
-argument
-  e_coli_strain: sample("E coli strain") array, "the E. coli strains you wish to preform the knockouts in. NOTE: the nth E. coli strain will be knocked out by the nth cassette" 
-end
 
 place make_log_phase
   protocol: "labw14/group4/test.pl"
