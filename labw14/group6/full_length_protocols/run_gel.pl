@@ -88,7 +88,7 @@ release glasses
 
 
 produce
-  s = 1 "Gel Lanes" of "fLAB1"
+  s = 1 "Gel Lanes" of "fGA"
 
 end
 
