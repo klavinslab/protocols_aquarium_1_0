@@ -1,6 +1,6 @@
 argument
-  gel1: sample, "Choose the Gel Slices you need to purify."
-  gel2: sample, "Choose the Gel Slices you need to purify."
+  gel1: sample, "Choose the first Gel Slice you need to purify."
+  gel2: sample, "Choose the second Gel Slice you need to purify."
 end
 
 take
