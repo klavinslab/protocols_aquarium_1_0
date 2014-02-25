@@ -13,13 +13,13 @@ end
 
 
 place transform
-  protocol: "labw14/group4/transform.pl"
-  argument
-    plasmid_id: knockout_fragments
-    dna_vol: 2
-    e_coli_map: e_coli_strain
-    e_coli_strain_type: e_coli_strain
-  end
+  protocol: "labw14/group4/test.pl"
+  #argument
+  #  plasmid_id: knockout_fragments
+  #  dna_vol: 2
+  #  e_coli_map: e_coli_strain
+  #  e_coli_strain_type: e_coli_strain
+  #end
   group: aquarium_user
   start: now()
   window: minutes(1)
@@ -30,13 +30,14 @@ place incubate_tube
   protocol: "labw14/group4/incubate_tube.pl"
   argument
     temp: 30
+    e_coli_strain_id: e_coli_strain
   end
   group: aquarium_user
   start: now()
   window: minutes(2)
 end
 
-wire (transform,"transformed_cells_ids") => (incubate_tube,"e_coli_strain_id")
+#wire (transform,"transformed_cells_ids") => (incubate_tube,"e_coli_strain_id")
 
 place plate
   protocol: "labw14/group4/plate.pl"
