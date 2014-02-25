@@ -132,8 +132,8 @@ place gel_purify
   window: minutes(30)
 end
 
-wire (image_cut_gel, "Gel_Slice_id") => (gel_purify, "gel1")
-wire (image_cut_gel, "Gel_Slice_id") => (gel_purify, "gel2")
+wire (image_cut_gel, "Gel_Slice1_id") => (gel_purify, "gel1")
+wire (image_cut_gel, "Gel_Slice2_id") => (gel_purify, "gel2")
 
 
 
