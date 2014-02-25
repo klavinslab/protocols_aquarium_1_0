@@ -59,7 +59,7 @@ place heat_shock
   window: hours(1)
 end
 
-wire (finish_log_phase, "log_cells") => (heat_shock, "cells_flask_array")
+wire (make_log_phase, "log_cells") => (heat_shock, "cells_flask_array")
 
 place quick_comp
   protocol: "labw14/group4/quick_comp_parallel.pl"
