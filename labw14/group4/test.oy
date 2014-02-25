@@ -24,7 +24,7 @@ end
 #unique_e_coli_strains = unique(e_coli_strain)
 
 place make_log_phase
-  protocol: "labw14/group4/make_log_phase.pl"
+  protocol: "labw14/group4/test.pl"
   argument
     e_coli_strains: e_coli_strain 
   end
