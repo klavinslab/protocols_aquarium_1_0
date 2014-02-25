@@ -33,4 +33,3 @@ wire (heat_shock,"cell_id") => (quick_comp,"shocked_cells")
 # forward transitions
 transition [heat_shock] => [quick_comp] when !error(0) && completed(0) end 
 transition [quick_comp] => [] when !error(0) && completed(0) end 
-
