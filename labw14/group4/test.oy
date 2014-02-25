@@ -1,4 +1,3 @@
-
 place make_log_phase
   protocol: "labw14/group4/test.pl"
   marked: true
@@ -11,5 +10,5 @@ place finish_log_phase
 	group: aquarium_user
 end
 
-transition [make_log_phase] => [finish_log_phase] when !error(0) && completed(0) end
+transition [make_log_phase] => [finish_log_phase] when !error(0) end
 
