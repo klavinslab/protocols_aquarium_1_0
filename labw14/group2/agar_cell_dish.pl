@@ -34,17 +34,20 @@ step
   bullet: "Take the lid off of the M9 agar petri dish"
   bullet: "Stick the opening of the test tube into agar to punch a hole in the agar"
   bullet: "Rotate the tube gently to ensure a properly cut circle"
+  image: "agar_punch"
 end
 
 step
   description: "Sterilize the spatula"
   note: "Again using the ethanol alcohol and a fresh kimwipe sterilize the spatula found on the bench."
+  image: "spatula"
 end
 
 step
   description: "Remove the agar film"
   warning: "The film is delicate, high precision is necessary."
   bullet: "Using a spatula carefully remove the punched out agar film from the dish."
+  image: "agar_pickup"
 end
 
 step
@@ -53,6 +56,7 @@ step
   bullet: "CAREFULLY place the agar film on top of our cells in the center of the dish"
   bullet: "Use the spatula to GENTLY flatten out any air bubbles"
   note: "The agar will most likely stick to the spatula. You may use a FRESH 1 mL pipette tip to assist in placing the agar."
+  image: "agar_film"
 end
 
 step
