@@ -60,7 +60,7 @@ step
 end
 
 produce
-  r = 1 "Microscope Plates" from ons[0]
+  r = 1 "Microscope Plate" from ons[0]
   location: "Bench"
   note: "You will be taking this with you to the microscope lab."
   note: "Be sure to label the side of the dish with your initials and item ID number."
