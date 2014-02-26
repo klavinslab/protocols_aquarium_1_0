@@ -118,17 +118,24 @@ wire (glucose_grow, "incubated_cells_id") => (load_plate,"cells_to_assay_in")
 
 #Day 1
 transition [initial_media] => [glucose_grow] when !error(0) && completed(0) end
-transition [glucose_grow] => [start_reader] when !error(0) && completed(0) && hours_elapsed(0,18) end
+
+#transition [glucose_grow] => [start_reader] when !error(0) && completed(0) && hours_elapsed(0,18) end
+transition [glucose_grow] => [start_reader] when !error(0) && completed(0) && minutes_elapsed(0,0.1) end
 
 #Day 2
 transition [start_reader] => [load_plate] when !error(0) && completed(0) end
 transition [load_plate] => [induce_zero] when !error(0) && completed(0) end
 transition [induce_zero] => [begin_run] when !error(0) && completed(0) end
 #transition [begin_run] => [dispose_culture_tubes] when !error(0) && completed(0) end
-transition [begin_run] => [induce_1] when !error(0) && completed(0) && hours_elapsed(0,1) end
-transition [induce_1] => [induce_15] when !error(0) && completed(0) && minutes_elapsed(0,30) end
-transition [induce_15] => [induce_2] when !error(0) && completed(0) && minutes_elapsed(0,30) end
-transition [induce_2] => [induce_24] when !error(0) && completed(0) && hours_elapsed(0,22) end
+
+#transition [begin_run] => [induce_1] when !error(0) && completed(0) && hours_elapsed(0,1) end
+#transition [induce_1] => [induce_15] when !error(0) && completed(0) && minutes_elapsed(0,30) end
+#transition [induce_15] => [induce_2] when !error(0) && completed(0) && minutes_elapsed(0,30) end
+#transition [induce_2] => [induce_24] when !error(0) && completed(0) && hours_elapsed(0,22) end
+transition [begin_run] => [induce_1] when !error(0) && completed(0) && minutes_elapsed(0,0.1) end
+transition [induce_1] => [induce_15] when !error(0) && completed(0) && minutes_elapsed(0,0.1) end
+transition [induce_15] => [induce_2] when !error(0) && completed(0) && minutes_elapsed(0,0.1) end
+transition [induce_2] => [induce_24] when !error(0) && completed(0) && minutes_elapsed(0,0.1) end
 
 #Day 3
 transition [induce_24] => [finish] when !error(0) && completed(0) end
