@@ -1,5 +1,6 @@
 step
   description: "Start the plate reader software"
+  note: "The reader takes some time to warm up, so it is started before you prepare your samples"
   check: "Move to the 'Biotech Synergy HT' plate reader at location B9.355"
   check: "On the accompanying computer, click the start menu, type in 'Gen5 1.11'"
   check: "Confirm that you see 'Gen5 1.11' as an option, and enter to run the 'Biotech Gen5' software"
