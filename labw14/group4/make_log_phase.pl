@@ -5,7 +5,7 @@ end
 information "Dilute cells and bring them to log phase"
 
 dilution = 1.0/71
-total_V = 20 # ml -- too high?
+total_V = 18 # ml -- too high?
 
 e_V = total_V*dilution # ml;
 LB_V = (total_V-e_V)  # ml
