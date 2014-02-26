@@ -10,7 +10,7 @@ step
 end
 
 take
- susp = item susp
+ susp = item susp[:id]
  kit = 1 "PureLink Genomic DNA Mini Kit"
 end
 
