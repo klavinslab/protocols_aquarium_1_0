@@ -31,6 +31,3 @@ end
 
 transition [make_log_phase] => [finish_log_phase] when !error(0) && completed(0) end 
 transition [finish_log_phase] => [] when !error(0) && completed(0) end
-
-
-
