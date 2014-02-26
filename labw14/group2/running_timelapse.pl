@@ -9,10 +9,20 @@ step
   bullet: "To set the phase make sure the box for number 1 is checked"
   bullet: "Set interval to 10 min"
   bullet: "Set duration to 8 hours"
-  bullet: "Make sure Z-series is unchecked"
-  bullet: "Under the Lambda tab, set the first drop down menu to Ph-GFP, and the second one to GFP"
+  image: "time"
 end
 
+step
+  description: "Z-series"
+  bullet: "Make sure Z-series is unchecked"
+end
+
+step
+  description: "Lambda settings"
+  bullet: "Under the Lambda tab, set the first drop down menu to Ph-GFP, and the second one to GFP"
+  bullet: "Ensure Ph GFP comp. color is set to 'Brightfield' and GFP comp. color is set to 'Green'"
+  image: "ND_settings1"
+end
 step
   description: "Save File"
   bullet: "Make sure save to file is checked under the ND Acquisition tab"
