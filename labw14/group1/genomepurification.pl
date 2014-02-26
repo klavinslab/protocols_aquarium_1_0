@@ -8,7 +8,7 @@ end
 
 take
   extracted_DNA = item eDNA[:id]
-  1 "Zymo Genomic DNA Clean & Concentrator Kit"
+  kit = 1 "Zymo Genomic DNA Clean & Concentrator Kit"
 end
 
 step
@@ -42,4 +42,7 @@ modify
   extracted_DNA[0]
   location: "Bench"
   inuse: 0
+end
+
+release kit
 end
