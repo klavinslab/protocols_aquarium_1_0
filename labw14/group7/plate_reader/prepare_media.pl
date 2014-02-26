@@ -50,5 +50,9 @@ release concat(media, concat(pipette, concat(amp, kan)))
 
 produce
   m = 2 "30 mL M9 liquid Glucose + amp + kan"
-  location: "Bench"
+  location: "B0.110.R1.100"
+end
+
+log
+ return {prepared_media: m[:id]}
 end
