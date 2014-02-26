@@ -16,7 +16,7 @@ end
 
 step
   description: "Prepare the petri dish for the agar film"
-  bullet: "Using a 10 microL pipetter, pipette 1 microL of our M9 diluted cells into the center of the petri dish"
+  bullet: "Using a 10 microL pipetter, pipette 1 microL of our M9 diluted cells into the center of the glass bottom dish"
   bullet: "There should be a grove in the dish where the liquid should go"
   bullet: "Replace the cap on the dish to reduce contamination of the sample"
   note: "it should just look like a small bead of liquid at the center of the petri dish."
@@ -32,8 +32,7 @@ step
   description: "Cut the agar film"
   bullet: "Take the cap off of the 5 mL culture tube"
   bullet: "Take the lid off of the M9 agar petri dish"
-  bullet: "Stick the opening of the test tube into agar to punch a hole in the agar"
-  bullet: "Rotate the tube gently to ensure a properly cut circle"
+  bullet: "Punch a hole in the agar plate using the opening of the 5 mL culture tube"
   image: "agar_punch"
 end
 
