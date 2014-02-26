@@ -1,5 +1,6 @@
 argument
   plated_cells: sample("Transformed E coli Strain") array, "An array of THREE agarose-streaked colonies to grow in glucose media"
+  media_in: object, "The media to grow the cells in"
   #media_label: string, "The label on the tube of media prepared previously, which will be used to grow the cells in"
   #repeats: num, "The number of repeats of each cell culture to grow"
   #We tried to make this a more generalized protocol, but the (lack of) capabilities in the language defeated us!
@@ -15,6 +16,7 @@ n = strains * 4 #this could be "repeats"
 
 take
   culture_tubes = n "14 mL Test Tube"
+  media = 1 media_in
   note: "Be sure to grab a tube rack to hold all of the culture tubes"
 end
 
@@ -43,7 +45,7 @@ step
   check: "Dispose of your serological pipette tip in tip waste"
 end
 
-release [pipette[0]]
+release [pipette[0],media]
 
 take
   plate_array = item plated_cells
