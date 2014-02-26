@@ -23,7 +23,7 @@ end
 
 
 step
-  desciption: "Add 3 times the weight in volume of buffer QG from the quiagen gel purify kit into each weighed gel slice tube"
+  description: "Add 3 times the weight in volume of buffer QG from the quiagen gel purify kit into each weighed gel slice tube"
 end
 
 step
