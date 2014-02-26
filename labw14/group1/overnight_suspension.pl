@@ -15,7 +15,7 @@ end
 step
  description: "Media Preperation"
  check: "Lable a 14 mL Test Tube with your initials and the date"
- check: "Use the 1000uL pipetter to add 2mL from the LB liquid aliquot to the test tube"
+ check: "Use the 1000uL pipetter to add 3mL from the LB liquid aliquot to the test tube"
 end
 
 step
