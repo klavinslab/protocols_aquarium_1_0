@@ -12,9 +12,9 @@ end
 step
   description: "Information about the serological pipetter"
   note: "Note that the pipette tip has two sets of numbers:"
-  bullet: "The larger numbers on the pipette tip count down from 25mL ('0mL' is 'full 25ml')"
+  bullet: "The larger set of numbers on the pipette tip count down from 25mL ('0mL' is full, '25ml' is empty)"
   bullet: "The smaller numbers count up from 0 ('0mL' is empty, '25ml' is full)"
-  bullet: "Use whichever scale is convenint for you, but just be aware which you are using"
+  bullet: "Use whichever scale is convenient for you, but just be aware which you are using"
   note: "The pipetter has two 'triggers'"
   bullet: "The top trigger pulls liquid into the pipette tip"
   bullet: "The bottom trigger ejects liquid out"
