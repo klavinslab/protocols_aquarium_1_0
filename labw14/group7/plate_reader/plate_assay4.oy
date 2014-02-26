@@ -114,9 +114,7 @@ place finish
   window: minutes(10)
 end
 
-wire (initial_media, "prepared_media") => (glucose_grow, "media_in")
 wire (glucose_grow, "incubated_cells_id") => (load_plate,"cells_to_assay_in")
-
 
 #Day 1
 transition [initial_media] => [glucose_grow] when !error(0) && completed(0) end
