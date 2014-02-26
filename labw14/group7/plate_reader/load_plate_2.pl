@@ -79,3 +79,7 @@ end
 release cells
 #return statement
 
+step
+  description: "Next steps..."
+  note: "You should see two jobs in your queue after completing this protocol.  Be sure to proceed with 'induce_atc_zero.pl' (the first inuction step), then 'begin_run.pl' before you dispose of your culure tubes.  You will have plenty of time to do thisafter you have started you run"
+end
