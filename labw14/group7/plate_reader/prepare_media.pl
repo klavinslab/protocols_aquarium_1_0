@@ -50,7 +50,7 @@ release concat(media, concat(pipette, concat(amp, kan)))
 
 produce
   m = 2 "30 mL M9 liquid Glucose + amp + kan"
-  location: "B0.110.R1.100"
+  location: "Bench"
 end
 
 log
