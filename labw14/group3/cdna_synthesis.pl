@@ -3,7 +3,7 @@ argument
   rxn_mix: sample, "Select the 5x iScript reaction mix"
   rev_enzyme: sample, "Select the iScript reverse transcriptase"
   rna_yeast1: sample, "This is the isolated RNA"
- # rna_yeast2: sample, "This is the isolated RNA"
+  rna_yeast2: sample, "This is the isolated RNA"
   rna_conc1: number
   rna_conc2: number
 end
@@ -12,7 +12,7 @@ take
   react_mix = item rxn_mix
   iscript_enz = item rev_enzyme
   iso_rna1 = item rna_yeast1
-  #iso_rna2 = item rna_yeast2
+  iso_rna2 = item rna_yeast2
   nuc_water = 1 "Nuclease Free Water"
 end
 
@@ -28,8 +28,8 @@ end
 
 desvolrna1= 500/rna_conc1
 nucwat1=15-desvolrna1
-#desvolrna2= 500/rna_conc2
-#nucwat2=15-desvolrna2
+desvolrna2= 500/rna_conc2
+nucwat2=15-desvolrna2
 
 step 
   description: "Prepare Reaction 1"
