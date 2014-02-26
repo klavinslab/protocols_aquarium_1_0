@@ -99,7 +99,7 @@ step
   check: "Store the second (parially filled) 30mL tube of 'M9 liquid Glucose + amp + kan' in location xxx"
 end
 
-release concat(plate_array, media_tubes[0])
+release append(plate_array, media_tubes[0])
 
 #modify
 #  media_tubes[1]
