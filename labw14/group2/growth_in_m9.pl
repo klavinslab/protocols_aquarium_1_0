@@ -15,14 +15,17 @@ take
 end
 
 step
+  description: "Head to the media bay"
+  note: "Loggin to aquarium at the media bay in the B0 row of the lab"
+end
+
+step
   description: "Pipette M9 media into the 14 mL test tube"
   warning: "Do not touch the pipette tip to the side of the 200 mL glucose flask!"
-  bullet: "Take the test tube rack from the bench to the media station"
-  bullet: "Place the test tube inside the rack to prevent accidents while pipetting"
+  bullet: "Place the test tube inside a tube rack to prevent accidents while pipetting"
   bullet: "Attach the 5 mL serological pipette tip to the serological pipetter"
   bullet: "Pipette 2mL of the M9 solution into the 14 mL test tube"
 end
-
 
 release[pipette[0], M9[0], tip[0]]
 
