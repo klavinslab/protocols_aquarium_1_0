@@ -6,7 +6,8 @@ argument
   log_cells: sample array, "The sample that you want to spec its concentration"
 end
 
-# OD_tol = ##
+# OD_min = ##
+# OD_max = ##
 
 take
   y = item log_cells
@@ -47,6 +48,20 @@ foreach c in log_cells
 	  end
 	end
 	ODs = append(ODs, OD)
+	
+	if OD < OD_min
+		step
+			description: "The OD is too low; the cells haven't grown enough!"
+			note: "Reincubation is suggested"
+		end
+	end
+	if OD < OD_max
+		step
+			description: "The OD is too high, cell growth has saturated!"
+			note: "Results may be negatively affected"
+		end
+	
+	end
 	step
 	  description: "Clean the Nanodrop"
 	  check: "Open the pedestal"
