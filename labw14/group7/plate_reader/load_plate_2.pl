@@ -18,6 +18,7 @@ step
   description: "Load the outermost edges of the plate with water"
   note: "This helps prevent evaporation of the samples, which will be in the middle of the plate"
   check: "Pipette 200uL of DI water into the outer edges"
+  note: "It can be helpful to have someone hold onto the media tube during this process to warm it up to room temperature"
   image: "plate_water"
 end
 
