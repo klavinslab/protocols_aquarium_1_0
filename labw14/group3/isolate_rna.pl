@@ -24,6 +24,7 @@ end
 
 step
   description: "Transfer 100µL of the Yeast Sample %{y[:id]} to the other 1.5mL Tube"
+end
 
 step
   description: "Centrifuge at 2,000 rcf (Make sure to balance the centrifuge!)"
