@@ -13,34 +13,18 @@ end
 
  
 
-##
-## Qs: Seamless or not?
-## Qs: Can we have a null argument for argument
-## Qs: ...or can we have two metacols (one for dthyA loop, one for generating dthyA)	
-## Qs: How do you repeat OD test if not enough wait time
-##
-
-#filter for unique sample ids
-#unique_e_coli_strains = unique(e_coli_strain)
 
 place make_log_phase
   protocol: "labw14/group4/test.pl"
-  argument
-    e_coli_strains: e_coli_strain 
-  end
   marked: true
   group: aquarium_user
-  start: now()
 end
 
 
 place finish_log_phase
-	protocol: "labw14/group4/finish_log_phase.pl"	
+	protocol: "labw14/group4/test.pl"	
 	# log_cells: wire log phase cells from make_log_phase
-	start: now() #hours(2)
-	window: hours(1)
 	group: aquarium_user
-	marked: false
 end
 
 
