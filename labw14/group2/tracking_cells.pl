@@ -136,6 +136,7 @@ step
   bullet: "Click the blank check box in the 'X-Y position' tab in the ND aquisition window"
   note: "This selects the current X-Y position and stores it. It will also been seen on your X-Y overview map"
   note: "To reset the speed of the controller press the X-Y speed button twice to ensure the green light is fully on"
+  image: "NIS_cell_image2"
 end
 
 step
@@ -147,7 +148,7 @@ end
 
 step
   description: "Set the Z-offset"
-  bullet: "In the X-Y position tab, ensure include z box is checked under the points table"
+  bullet: "In the X-Y position tab, ensure 'include z' check-box is checked under the points table"
   bullet: "Click the z-position of our cell in the 'X-Y position' tab"
   bullet: "Press the black button on the remote focus controller to zero the z-axis"
   bullet: "Click on the 'Offset z-position' button"
