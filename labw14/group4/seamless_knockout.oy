@@ -47,7 +47,7 @@ wire (make_log_phase, "log_cells") => (finish_log_phase, "log_cells")
 
 ### ??  
 #log_cells = "BF001"
-plate_type_1 = "LB Kan Plate (sterile)"
+#plate_type_1 = "LB Kan Plate (sterile)"
 ###
 
 num_trans = 1
@@ -102,7 +102,7 @@ place plate
   group: aquarium_user
   argument
     volume: 200
-    plate_type: "LB Kan plate (sterile)" #plate_type
+    plate_type: plate_type
   end
   start: minutes(30)
   window: hours(1)
@@ -113,7 +113,7 @@ wire (transform,"transformed_cells_ids") => (plate,"e_coli_strain_id")
 place boil_cells
   protocol: "labw14/group4/boil_cells.pl"
   group: aquarium_user
-  start: now()
+  start: days(1)
 end
 
 wire (plate, "plate_id") => (boil_cells, "template_plate")
