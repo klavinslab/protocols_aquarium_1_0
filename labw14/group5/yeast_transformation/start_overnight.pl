@@ -15,8 +15,8 @@ step
             Those cells that have incorporated HIS gene into the genome will grow on the plate.
             You will also make 'CONTROL' plate. In this case you will transform molecular grade water into yeast cells
             and then inoculate them on another clean his- agar plate deficient of histidine.
-            In this case cells will not grow because they still lack HIS gene.
-            Finally you will have one plate containing yeast cells and one plate without them."
+            In this case cells will not grow because they still lack HIS gene."
+  note: "Finally you will have one plate containing yeast cells and one plate without them."
 end
 
 step
