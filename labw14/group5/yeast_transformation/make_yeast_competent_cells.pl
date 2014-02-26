@@ -23,6 +23,7 @@ if num == 1
     description: "Harvesting the cells by centrifugation"
     check: "Label a 50 mL falcon tube with the id number of the 250mL flask."
     check: "Pour 25 mL of the diluted yeast culture from the flask to the labeled 50mL falcon tube."
+    #image: "Pour_diluted_yeast_culture"
   end
 
   step
@@ -31,6 +32,7 @@ if num == 1
             in the table top centrifuge located at B14.335."
     warning: "Be sure you balanced the centrifuge. To balance the labeled tube you have to take
               another 50 mL falcon tube and fill it with 25 mL of water."
+    #image: "Centfifuge_a_yeast_liquid_culture_group5"
   end
 
   step
@@ -38,6 +40,7 @@ if num == 1
     check: "Collect the labeled 50 mL tube from the centrifuge and place it in a tube rack on your bench."
     check: "Pour out the liquid from the tube into the sink at the washing station, location: A8.310."
     warning: "Be careful. Don't destroy the pellet."
+    #image: "cell_pellet_group5"
   end
 
   step
