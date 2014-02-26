@@ -5,6 +5,21 @@ end
 num = length(transformed_yeast_plate)
 
 step
+  description: "About this project"
+  note: "The goal is to transform a digested plasmid into yeast cells.
+            You will be given a yeast strain deficient of HIS gene which codes for histidine amino acid.
+            These yeast cells can only grow in media containing histidine, and will not grow in media lacking histidine.
+            You will also be given a plasmid containing HIS gene. First you have to digest the plasmid.
+            Then you will transform the digested plasmid into yeast cells.
+            Then you will inoculate the digested cells on a clean his- agar plate deficient of histidine.
+            Those cells that have incorporated HIS gene into the genome will grow on the plate.
+            You will also make 'CONTROL' plate. In this case you will transform molecular grade water into yeast cells
+            and then inoculate them on another clean his- agar plate deficient of histidine.
+            In this case cells will not grow because they still lack HIS gene.
+            Finally you will have one plate containing yeast cells and one plate without them."
+end
+
+step
  description: "This protocol describes how to make an overnight yeast suspension"
  warning: "You're going to make %{num} overnight suspension tubes."
 end
