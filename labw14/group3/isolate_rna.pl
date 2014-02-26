@@ -65,6 +65,11 @@ end
 
 produce
   rna_sus1= 1 "Isolated RNA" from x[0]
+  location: "Bench"
+  note: "Place in Aluminum Tube Rack on Ice Block"
+end
+
+produce
   rna_sus2= 1 "Isolated RNA" from y[0]
   location: "Bench"
   note: "Place in Aluminum Tube Rack on Ice Block"
