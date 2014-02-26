@@ -55,6 +55,9 @@ num_trans = 1
 place heat_shock
   protocol: "labw14/group4/heat_shock_parallel.pl"
   # cells_flask_array: wire log cells from here
+  argument
+  	cells_flask_array: e_coli_strain
+  end
   group: aquarium_user
   window: hours(1)
   marked: true
