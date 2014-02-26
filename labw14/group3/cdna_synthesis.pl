@@ -3,7 +3,7 @@ argument
   rxn_mix: sample, "Select the 5x iScript reaction mix"
   rev_enzyme: sample, "Select the iScript reverse transcriptase"
   rna_yeast1: sample, "This is the isolated RNA"
-  rna_yeast2: sample, "This is the isolated RNA"
+ # rna_yeast2: sample, "This is the isolated RNA"
   rna_conc1: number
   rna_conc2: number
 end
@@ -12,7 +12,7 @@ take
   react_mix = item rxn_mix
   iscript_enz = item rev_enzyme
   iso_rna1 = item rna_yeast1
-  iso_rna2 = item rna_yeast2
+  #iso_rna2 = item rna_yeast2
   nuc_water = 1 "Nuclease Free Water"
 end
 
@@ -28,8 +28,8 @@ end
 
 desvolrna1= 500/rna_conc1
 nucwat1=15-desvolrna1
-desvolrna2= 500/rna_conc2
-nucwat2=15-desvolrna2
+#desvolrna2= 500/rna_conc2
+#nucwat2=15-desvolrna2
 
 step 
   description: "Prepare Reaction 1"
@@ -41,15 +41,15 @@ step
   note: "Be careful to pipette into the liquid, not the side of the tube."
 end
 
-step 
-  description: "Prepare Reaction 2"
-  check:"Pipet 4 µL of 5x iScript reaction mix into the labeled PCR tube."
-  check: "Pipet 1 µL of iScript reverse transcriptase into the labeled PCR tube"
-  check: "Pipet %{nucwat2}µL of Nuclease-free water into the labeled PCR tube"
-  check: "Pipet %{desvolrna2}µL of RNA template %{rna_yeast2}into the labeled PCR tube"
-  check: "Use the tip to gently mix."
-  note: "Be careful to pipette into the liquid, not the side of the tube."
-end
+#step 
+#  description: "Prepare Reaction 2"
+#  check:"Pipet 4 µL of 5x iScript reaction mix into the labeled PCR tube."
+#  check: "Pipet 1 µL of iScript reverse transcriptase into the labeled PCR tube"
+#  check: "Pipet %{nucwat2}µL of Nuclease-free water into the labeled PCR tube"
+#  check: "Pipet %{desvolrna2}µL of RNA template %{rna_yeast2}into the labeled PCR tube"
+#  check: "Use the tip to gently mix."
+#  note: "Be careful to pipette into the liquid, not the side of the tube."
+#end
 
 step
   description: "You will now be asked to use the lab thermal cycler"
@@ -86,12 +86,12 @@ end
 
 produce
   r = 1 "Yeast cDNA" of "rna_yeast1"
-  s = 1 "Yeast cDNA" of "rna_yeast2"
+ # s = 1 "Yeast cDNA" of "rna_yeast2"
   note: "Keep the tubes on the bench to use in the next protocol"
 end
 
 log
-  return: {yeast1_cdna_id: r[:id], yeast2_cdna_id: s[:id]}
+  return: {yeast1_cdna_id: r[:id]}
 end
 
-release [iso_rna1[0], iso_rna2[0]]
+release [iso_rna1[0]]
