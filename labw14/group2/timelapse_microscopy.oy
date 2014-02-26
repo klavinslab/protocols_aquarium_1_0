@@ -15,7 +15,7 @@ end
 place GM9
   protocol: "labw14/group2/growth_in_m9.pl"
   group: aquarium_user
-  start: hours(2)
+  start: now()
   window: hours(1)
 end
 
