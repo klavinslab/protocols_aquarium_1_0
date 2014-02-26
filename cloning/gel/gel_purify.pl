@@ -2,7 +2,7 @@
 
 
 argument
-  GelSlice_id: sample("Gel Slice") array, "Gel Slice"
+  GelSlice_id: sample("Gel Slice") array, "Fragment"
 end
 
 take
