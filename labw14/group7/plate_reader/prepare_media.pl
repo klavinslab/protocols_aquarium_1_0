@@ -54,5 +54,5 @@ produce
 end
 
 log
- return {prepared_media: m[:id]}
+ return: {prepared_media: m[:id]}
 end
