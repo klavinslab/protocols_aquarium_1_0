@@ -60,6 +60,6 @@ step
   #TODO: include picture
 end
 
-
+release cells
 #return statement
 
