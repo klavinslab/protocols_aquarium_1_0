@@ -8,7 +8,7 @@ argument
   prev1s: sample array, "Reverse primers for knockout test group"
   prev2s: sample array, "Reverse primers for control group"
   phusion_enzyme: sample, "The Phusion HF Master Mix stock"
-  ladder_one: sample("Ladder"), "the reference ladder for Gel electrophoresis"
+  ladder_one: sample, "the reference ladder for Gel electrophoresis"
 end
 
  
