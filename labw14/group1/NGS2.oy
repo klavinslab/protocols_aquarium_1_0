@@ -28,7 +28,7 @@ place overnight
   end
   #start: hours(20)
   start: now()
-  marked: true
+  #marked: true
   start: now()
   group: aquarium_user
   window: hours(8)
@@ -37,6 +37,10 @@ end
 place extract
   protocol: "labw14/group1/DNAextractPurelink.pl"
   #start: hours(20)
+  marked: true
+  argument
+   susp: e_coli_plate
+  end
   start: now()
   group: aquarium_user
   window: hours(8)
