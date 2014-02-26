@@ -107,7 +107,7 @@ place plate
     volume: 200
     plate_type: plate_type
   end
-  start: minutes(30)
+  start: hours(1) #minutes(30)
   window: hours(1)
 end
 
