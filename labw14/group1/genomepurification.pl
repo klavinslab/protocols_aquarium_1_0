@@ -7,7 +7,7 @@ step
 end
 
 take
-  extracted_DNA = item eDNA[:id]
+  extracted_DNA = item eDNA
   kit = 1 "Zymo Genomic DNA Clean & Concentrator Kit"
 end
 
