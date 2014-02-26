@@ -4,15 +4,6 @@ step
 end 
 
 step
-  description: "Load optical settings"
-  bullet: "Click on the 'Calibration' menu"
-  bullet: "Click on 'Optical Configuration' option"
-  bullet: "Click on the 'Restore' button"
-  bullet: "Navigate to D:/LABW14/Phase GRCY .xml"
-  bullet: "Open the file to apply settings"
-end
-
-step
   description: "Time adjustments"
   bullet: "Find the ND acquisition window and click on the Time tab"
   bullet: "To set the phase make sure the box for number 1 is checked"
