@@ -47,7 +47,7 @@ step
   description: "Binding DNA"
   warning: "Check that the Genomic Wash Buffers 1 and 2 are labled as having ethanol added to them.  If they have not, do so now as instructed on the bottle."
   check: "Lable a PureLink Spin Column with your initials and the date."
-  check: "Pipette the lysate (~640uL) into the column."
+  check: "Pipette the lysate (around 640uL) into the column."
   check: "Centrifuge the column at 10,000g for 1 minute at room tempurature."
   check: "Discard the column's collection tube and replace it with a clean one."
 end
