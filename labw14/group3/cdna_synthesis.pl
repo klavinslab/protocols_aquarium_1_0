@@ -1,5 +1,4 @@
 argument
-  #rna_id: sample, "The lysed RNA"
   rxn_mix: sample, "Select the 5x iScript reaction mix"
   rev_enzyme: sample, "Select the iScript reverse transcriptase"
   rna_yeast1: sample, "This is the isolated RNA"
@@ -41,15 +40,15 @@ step
   note: "Be careful to pipette into the liquid, not the side of the tube."
 end
 
-#step 
-#  description: "Prepare Reaction 2"
-#  check:"Pipet 4 µL of 5x iScript reaction mix into the labeled PCR tube."
-#  check: "Pipet 1 µL of iScript reverse transcriptase into the labeled PCR tube"
-#  check: "Pipet %{nucwat2}µL of Nuclease-free water into the labeled PCR tube"
-#  check: "Pipet %{desvolrna2}µL of RNA template %{rna_yeast2}into the labeled PCR tube"
-#  check: "Use the tip to gently mix."
-#  note: "Be careful to pipette into the liquid, not the side of the tube."
-#end
+step 
+  description: "Prepare Reaction 2"
+  check:"Pipet 4 µL of 5x iScript reaction mix into the labeled PCR tube."
+  check: "Pipet 1 µL of iScript reverse transcriptase into the labeled PCR tube"
+  check: "Pipet %{nucwat2}µL of Nuclease-free water into the labeled PCR tube"
+  check: "Pipet %{desvolrna2}µL of RNA template %{rna_yeast2}into the labeled PCR tube"
+  check: "Use the tip to gently mix."
+  note: "Be careful to pipette into the liquid, not the side of the tube."
+end
 
 step
   description: "You will now be asked to use the lab thermal cycler"
@@ -86,12 +85,16 @@ end
 
 produce
   r = 1 "Yeast cDNA" of "rna_yeast1"
- # s = 1 "Yeast cDNA" of "rna_yeast2"
+  note: "Keep the tubes on the bench to use in the next protocol"
+end
+
+produce
+  s = 1 "Yeast cDNA" of "rna_yeast2"
   note: "Keep the tubes on the bench to use in the next protocol"
 end
 
 log
-  return: {yeast1_cdna_id: r[:id]}
+  return: {yeast1_cdna_id: r[:id], yeast2_cdna_id: s[:id]}
 end
 
-release [iso_rna1[0]]
+release [iso_rna1[0], iso_rna2[0]]
