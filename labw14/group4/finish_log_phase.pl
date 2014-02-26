@@ -55,7 +55,7 @@ foreach c in log_cells
 			note: "Reincubation is suggested"
 		end
 	end
-	if OD < OD_max
+	if OD > OD_max
 		step
 			description: "The OD is too high, cell growth has saturated!"
 			note: "Results may be negatively affected"
