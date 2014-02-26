@@ -43,6 +43,7 @@ while ii < number_we_can_make
       check: "Pipette 36 μL  1.0M LiOAc reagent to the tube."
       check: "Pipette 25 μL  Carrier DNA to the tube."
       check: "Pipette 50 μL  Molecular grade water to the tube."
+      #image: "yeast_transformation_mixture_group5"
     end
     step
       description: "Resuspend the cells by vortexing"
@@ -65,10 +66,13 @@ while ii < number_we_can_make
       check: "Pipette 36 μL  1.0M LiOAc reagent to the tube."
       check: "Pipette 25 μL  Carrier DNA to the tube."
       check: "Pipette 50 μL  Transformation DNA plasmid to the tube."
+      #image: "yeast_transformation_mixture_group5"
+
     end
     step
       description: "Resuspend the cells by vortexing"
       warning: "Vortex strongly (setting 8 or 9 on the vortexer) for 1 min or until mixed."
+      #image: "voltexing_strongly_group5"
     end
     produce
         z = 1 "Yeast Transformation Mixture" from yeast_aliquot_tubes[ii]
