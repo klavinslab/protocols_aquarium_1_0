@@ -4,7 +4,7 @@ end
 
 information "Dilute cells and bring them to log phase"
 
-dilution = 1.0/8
+dilution = 1.0/71
 total_V = 20 # ml -- too high?
 
 e_V = total_V*dilution # ml;
