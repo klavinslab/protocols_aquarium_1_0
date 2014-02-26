@@ -43,12 +43,12 @@ while i < sample_count
 	produce
 		y = 1 "20 mL Test Tubes" from e_items[i]
 		release t_tubes[i]
-		location: "B13.425"
+		location: "B13.125"
 		data
 			from: e_items[i][:id]
 			original_id: e_items[i][:id]
 		end
-		note: "Incubate tube %{i} for 2 hours in 37°C incubator (B13.425)"
+		note: "Incubate tube %{i} for 2 hours in 30°C incubator (B13.125)"
 	end
 	log_cell_tubes = append(log_cell_tubes, y[:id])
 	i = i+1
