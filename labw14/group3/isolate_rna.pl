@@ -18,12 +18,12 @@ step
 end
 
 step
-  description: "Transfer 100µL of the Yeast Sample %{x[:id]} to one 1.5mL Tube"
+  description: "Transfer 100µL of the Yeast Sample 1 to one 1.5mL Tube"
   note: "Tube content volume is 100 µL."
 end
 
 step
-  description: "Transfer 100µL of the Yeast Sample %{y[:id]} to the other 1.5mL Tube"
+  description: "Transfer 100µL of the Yeast Sample 2 to the other 1.5mL Tube"
 end
 
 step
