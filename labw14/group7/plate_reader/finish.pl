@@ -2,6 +2,7 @@ step
   description: "Finishing up with the plate reader"
   check: "You should be working near the 'Biotech Synergy HT' plate reader at location B9.355"
   check: "You should be completing an assay run with the 'Biotech Gen5 1.11 program' on the accompanying computer"
+  image: "plate_reader_closed"
 end
 
 step
