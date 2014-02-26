@@ -24,7 +24,7 @@ while x < y
   a=strain_id[x]
   z=x+1
   step 
-    description: "Pipet 1000 uL of plasmid with id %{a} into tube %{z}."
+    description: "Pipet 1000 uL of culture with id %{a} into tube %{z}."
   end
   x = x+1
 end
@@ -58,8 +58,9 @@ end
 
 step
   description: "Spin tubes and set up columns and final tubes"
-  note: "Spin at 17,000Xg for 10 minutes"
+  check: "Spin tubes at 17,000Xg for 10 minutes"
   warning: "Make sure to balance the centrifuge. If you have an odd number of samples, use a balance tube with water"
+  note: "Meanwhile, prep and label all of the columns and tubes you will need for the rest of the protocol"
   check: "Grab %{y} purple miniprep spin columns"
   check: "Label the side of the columns 1, 2, 3, ... , %{y}"
   check: "Grab %{y} new eppendorf tubes"
@@ -74,6 +75,7 @@ end
 step 
   description: "Spin the columns"
   note:"Spin at 17,000Xg for 1 minute"
+  warning: "Again, make sure the the centrifuge is balanced. Use an extra column with 500 ul of water if necessary"
 end
 
 step 
@@ -111,7 +113,7 @@ end
 x=0
 while x < y
   produce
-    q = 1 "Plasmid Stock" of strain_id[x][:name]
+    q = 1 "Plasmid Stock" from overnight[x]
   end
   x = x+1
 end
