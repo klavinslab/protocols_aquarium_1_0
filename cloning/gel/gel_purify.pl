@@ -20,7 +20,7 @@ count1=0
 
 while count1 < y
   label=count1+1
-  slice = slices[count1]
+  slice = slices[count1][:id]
     step
       description: "label the %{slice} tube with a %{label}"
       note: "these labels are very important as you will use them to label different tubes in the protocol and they will define the order in which the fragment stocks are produced at the end of the protocol"
