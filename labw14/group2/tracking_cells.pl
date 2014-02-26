@@ -36,6 +36,11 @@ step
 end
 
 step
+  description: "Finalizing optical settings"
+  bullet: "On the toolbar click on 'Phase GFP'"
+end
+
+step
   description: "Setup Nikon NIS-Elements UI"
   bullet: "Click on the 'View' menu"
   bullet: "Hover over the 'Aquisition Controls' sub menu"
