@@ -11,12 +11,21 @@ step
             These yeast cells can only grow in media containing histidine, and will not grow in media lacking histidine.
             You will also be given a plasmid containing HIS gene. First you have to digest the plasmid.
             Then you will transform the digested plasmid into yeast cells.
-            Then you will inoculate the digested cells on a clean his- agar plate deficient of histidine.
+            Then you will inoculate the transformed cells on a clean his- agar plate deficient of histidine.
             Those cells that have incorporated HIS gene into the genome will grow on the plate.
             You will also make 'CONTROL' plate. In this case you will transform molecular grade water into yeast cells
             and then inoculate them on another clean his- agar plate deficient of histidine.
             In this case cells will not grow because they still lack HIS gene.
             Finally you will have one plate containing yeast cells and one plate without them."
+end
+
+step
+  description: "Bacis steps of the project"
+  note: "1.	Making overnight suspension culture (12-18 hours to wait till the next step)"
+  note: "2.	Diluting overnight suspension culture (5 hours to wait till the next step)"
+  note : "3.	Digesting plasmid. Making yeast cells aliquots. Transforming digested plasmid to yeast strain
+          by heat shock. Plating cells. Incubating plates. All these procedures will take approximately 2 hours."
+  note: "4.	Making pictures of the plates after 48 hours of incubation."
 end
 
 step
