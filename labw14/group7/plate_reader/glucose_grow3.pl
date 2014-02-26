@@ -91,8 +91,20 @@ while i<length(incubated_cells)
   i=i+1
 end
 
-release concat(plate_array, media_tubes)
+step
+  description: "Store one tube of 'M9 liquid Glucose + amp + kan'"
+  note: "You should now have two 30ml tubes of 'M9 liquid Glucose + amp + kan' on your bench"
+  note: "One of them should be empty, and one of them partially remaining"
+  check: "Dispose of the empty 30ml tube in tip waste"
+  check: "Store the second (parially filled) 30mL tube of 'M9 liquid Glucose + amp + kan' in location xxx"
+end
 
+release concat(plate_array, media_tubes[0])
+
+#modify
+#  media_tubes[1]
+#  location: "B13.425 37C Shaker" 
+#end
 log
   return: { incubated_cells_id: return_array}
 end
