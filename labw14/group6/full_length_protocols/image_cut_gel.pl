@@ -123,9 +123,9 @@ produce
 end
 
 log
-  return: {Gel_Slice_id: r[:id]}
+  return: {Gel_Slice_id1: r[:id]}
 end
 
 log
-  return: {Gel_Slice_id: t[:id]}
+  return: {Gel_Slice_id2: t[:id]}
 end
