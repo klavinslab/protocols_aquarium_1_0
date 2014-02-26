@@ -14,9 +14,9 @@ take
   note: "Be sure to grab a tube rack to hold all of the culture tubes"
   plate_array = item plated_cells
   culture_tubes = n "14 mL Test Tube"
-  media_tubes = 2 "30 mL M9 liquid Glucose + amp + kan"
   pipette = 1 "Serological Pipette"
   tip = 1 "5 mL Serological Pipette Tips"
+  media_tubes = 2 "30 mL M9 liquid Glucose + amp + kan"
 end
 
 #A loop to produce all of the culture tubes silently, so I can get their newly assigned ID numbers
