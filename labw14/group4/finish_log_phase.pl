@@ -6,8 +6,8 @@ argument
   log_cells: sample array, "The sample that you want to spec its concentration"
 end
 
-OD_min = .4
-OD_max = .6
+OD_min = 0.4
+OD_max = 0.6
 
 take
   y = item log_cells
