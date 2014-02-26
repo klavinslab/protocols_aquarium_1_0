@@ -27,6 +27,15 @@ step
 end
 
 step
+  description: "Load optical settings"
+  bullet: "Click on the 'Calibration' menu"
+  bullet: "Click on 'Optical Configuration' option"
+  bullet: "Click on the 'Restore' button"
+  bullet: "Navigate to D:/LABW14/Phase GRCY .xml"
+  bullet: "Open the file to apply settings"
+end
+
+step
   description: "Setup Nikon NIS-Elements UI"
   bullet: "Click on the 'View' menu"
   bullet: "Hover over the 'Aquisition Controls' sub menu"
