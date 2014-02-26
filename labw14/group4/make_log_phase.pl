@@ -41,7 +41,7 @@ i=0
 log_cell_tubes = []
 while i < sample_count
 	produce
-		y = 1 "log cells" from e_items[i]
+		y = 1 "E coli strain" from e_items[i]
 		release t_tubes[i]
 		location: "B14.310"
 		data
