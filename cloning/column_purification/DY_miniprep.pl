@@ -1,6 +1,6 @@
 argument
   volume: number, "The elution volume in ul"
-  strain_id: sample("Plasmid"), "An E. coli overnight of the plasmid to be purified"
+  strain_id: sample("Plasmid") array, "An E. coli overnight of the plasmid to be purified"
 end
 
 step
