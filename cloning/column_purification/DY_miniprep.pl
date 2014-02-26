@@ -111,7 +111,7 @@ end
 x=0
 while x < y
   produce
-    q = 1 "PCR Result" of strain_id[x](____NAME____)
+    q = 1 "Plasmid Stock" of strain_id[x][:name]
   end
   x = x+1
 end
