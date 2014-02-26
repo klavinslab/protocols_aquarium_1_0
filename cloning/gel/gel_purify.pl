@@ -50,7 +50,7 @@ step
 end
 
 step
-  desciption: "Label 1.5 ml Eppendorf tubes. Transfer pink columns to empty Eppendorf tubes"
+  description: "Label 1.5 ml Eppendorf tubes. Transfer pink columns to empty Eppendorf tubes"
 end
 
 step
