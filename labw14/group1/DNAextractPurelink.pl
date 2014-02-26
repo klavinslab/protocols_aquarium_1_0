@@ -87,10 +87,12 @@ produce
   r = 1 "Transformed E coli 1.5 mL tube" from susp[0]
 end
 
-end
+#release kit
+
+#end
 
 log
  return: {r: r}
 end
 
-release kit
+
