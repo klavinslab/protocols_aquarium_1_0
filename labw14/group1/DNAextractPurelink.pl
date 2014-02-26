@@ -11,7 +11,7 @@ end
 
 take
  susp = item susp[:id]
- 1 "PureLink Genomic DNA Mini Kit"
+ kit = 1 "PureLink Genomic DNA Mini Kit"
 end
 
 step
@@ -85,6 +85,10 @@ end
 
 produce
   r = 1 "Transformed E coli 1.5 mL tube" from susp[0]
+end
+
+release kit
+
 end
 
 log
