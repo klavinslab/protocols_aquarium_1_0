@@ -127,7 +127,7 @@ while ii < length(yeast_250ml_flask)
   step
     description: "Resuspending the cells in a tube with id %{id_num}"
     check: "Add %{amount_to_add} μL of 100 mM LiOAc liquid to the tube and resuspend the cells by vortxing."
-  end
+   end
   vol_data = append(vol_data,n)
   ii = ii + 1
 end
