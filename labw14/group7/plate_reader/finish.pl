@@ -5,14 +5,21 @@ step
 end
 
 step
+  description: "Confrm the run is complete"
+  note: "You should be finished with the whole 36hour run a this point.  If you still have a little time left, wait until the run is compplete before proceeding"
+end
+
+step
   description: "Export your data"
   check: "Run the 'File Export Builder' wizard to export your plate reader data"
   check: "Save the data to 'My Documents\yyyymmdd MyExperimentName.txt'"
 end
 
 step
-  description: "Clean up your station"
-  check: "Clean up your 96 well assay plate" #not sure of procedure for this yet...
+  description: "Tidy up"
+  check: "Dispose of your 96 well assay plate into a red biological waste bin"
   check: "Shut down the 'Biotech Synergy HT' plate reader"
+  check "Close out the 'Gen5' software (quit to desktop)"
+  check: "Clean up any mess in your station"
   #anything else here?
 end
