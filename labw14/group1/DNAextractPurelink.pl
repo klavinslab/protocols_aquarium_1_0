@@ -76,11 +76,10 @@ end
 
 step
   description: "Eluting DNA Part 2"
-  check: "Replace the 1.5 ml tube on the collection tube. Discard the old tube."
-  check: "Add 25 uL PureLink Genomic Elution Buffer to the column."
+  check: "Add an additional 25 uL PureLink Genomic Elution Buffer to the column."
   check: "Incubate the tube for 1 minute at room tempurature."
   check: "Cetrifuge the column at maximum speed for 1.5 minutes at room tempurature."
-  check: "Remove and discard the 1.5 mL tube.  The collection tube contains purified DNA."
+  check: "Remove and discard the column.  The 1.5mL tube contains purified DNA."
 end
 
 produce
