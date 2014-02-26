@@ -14,7 +14,6 @@ end
 step
   description: "Prepare the purification Column"
   warning: "Check that the DNA Wash Buffer is labled as having ethanol added.  If not, do so now as instructed on the bottle."
-  check: "Pipette the extracted DNA into a new 1.5 mL tube."
   check: "Pipette a volume of ChIP DNA Binding Buffer equal to twice the volume of DNA extracted into the tube.  Mix thoroughly"
   check: "Transfer the mixture into a new Zymo-Spin IC-XL Column.  Place the Column in a Collection Tube."
 end
