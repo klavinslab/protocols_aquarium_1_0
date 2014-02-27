@@ -3,12 +3,30 @@
 argument
   gibson_types: sample array, "The gibsons you want to run."
   how_many_gibsons: number array, "The number of gibsons to make of each type, in order."
-  reminder: string, "Remember to create your sample types from a spreadsheet."
+  reminder: string, "Remember to first create placeholders for samples you want to make using a spreadsheet,
+                     one of each gibson you want to run."
 end
+
+# datastructure
+# plasmid, along with links to fragments (like the oligo assembly type)
+# then, in the :data field, do fragment1_amount_mircoliters: number
+
+# create sample type, gibson reaction specification
+#     instead of having fake objects in the inventory
+# import samples of this type with fields having numbers for each fragment and a link to a plasmid that will result
+
 
 # implicit step, add later
 # job scheduler creates sample types ahead of time by importing from spreadsheet
 # specifying the concentrations
+
+# have user create new plasmid using the UI, then schedule next protocol and ask them for the
+# name of the plasmid, rather, a string array of them
+# but then, how to read in the concentration data? just do it manually I guess
+
+# TODO
+# make json file format
+# minimal feature set
 
 place get_concentrations
   protocol: "labw14/group8/read_concentrations_and_take.pl"
