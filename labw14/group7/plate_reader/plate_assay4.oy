@@ -115,7 +115,7 @@ place finish
 end
 
 wire (glucose_grow, "incubated_cells_id") => (load_plate,"cells_to_assay_in")
-wire (initial_media, "pipette_out") => (glucose_grow, "pipette_transfer")
+#wire (initial_media, "pipette_out") => (glucose_grow, "pipette_transfer")
 
 #Day 1
 transition [initial_media] => [glucose_grow] when !error(0) && completed(0) end
