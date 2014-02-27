@@ -12,7 +12,7 @@ step
 end
 
 step
-  descrption: "Start the run"
+  description: "Start the run"
   note: "You should have the program running from the previous step, with the lamp warmed up to 37 degrees"
   note: "If the heating step is not complete, please wait until it is finished before proceeding"
   check: "Click the 'read plate' button to start the program"
