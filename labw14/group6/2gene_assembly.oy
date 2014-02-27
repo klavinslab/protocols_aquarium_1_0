@@ -1,3 +1,9 @@
+backbone_fragments = [1141, 1144]
+
+argument
+  fragments: sample array, "Choose the fragments you want to combine"
+end
+
 place gibson
   protocol: "labw14/group6/full_length_protocols/gibson_assembly.pl"
   group: aquarium_user
@@ -8,7 +14,6 @@ place gibson
   window: minutes(30)
 end
 
-wire (gel_purify, "Fragment_Stock_id") => (gibson, "fragment1")
 
 place transformation
   protocol: "labw14/group6/full_length_protocols/e_coli_transformation.pl"
@@ -17,7 +22,7 @@ place transformation
   window: minutes(30)
 end
 
-wire (gibson, "Gibson_Result") => (transformation, "plasmid_id")
+wire (gibson, "Gibson_Reaction_Result_id") => (transformation, "plasmid")
 
 place plate
   protocol: "labw14/group6/full_length_protocols/plate.pl"
@@ -37,27 +42,27 @@ end
 
 wire (plate, "plate_id") => (overnight, "colony_plate")
 
-place miniprep
-  protocol: "labw14/group6/full_length_protocols/miniprep.pl"
-  argument
+#place miniprep
+  #protocol: "labw14/group6/full_length_protocols/miniprep.pl"
+  #argument
   
-  end
-  group: aquarium_user
-  start: now()
-  window: minutes(30)
-end
+  #end
+  #group: aquarium_user
+  #start: now()
+  #window: minutes(30)
+#end
 
 # Wire here
 
 
-place sequencing
-  protocol: "labw14/group6/full_length_protocols/sequencing.pl"
-  argument
+#place sequencing
+  #protocol: "labw14/group6/full_length_protocols/sequencing.pl"
+  #argument
 
-  end
-  start: now()
-  window: minutes(30)
-end
+  #end
+  #start: now()
+  #window: minutes(30)
+#end
 
 
 transition [ gibson ] => [ transformation ] when !error(0) && completed(0) end
@@ -70,11 +75,11 @@ transition [ transformation ] => [ transformation ] when error(0) end
 transition [ plate ] => [ overnight ] when !error(0) && completed(0) end
 transition [ plate ] => [ plate ] when error(0) end
 
-transition [ overnight ] => [ miniprep ] when !error(0) && completed(0) end
+transition [ overnight ] => [] when !error(0) && completed(0) end
 transition [ overnight ] => [ overnight ] when error(0) end
 
-transition [ miniprep ] => [ sequencing ] when !error(0) && completed(0) end
-transition [ miniprep ] => [ miniprep ] when error(0) end
+#transition [ miniprep ] => [ sequencing ] when !error(0) && completed(0) end
+#transition [ miniprep ] => [ miniprep ] when error(0) end
 
-transition [ sequencing ] => [] when !error(0) && completed(0) end
-transition [ sequencing ] => [ sequencing ] when error(0) end
+#transition [ sequencing ] => [] when !error(0) && completed(0) end
+#transition [ sequencing ] => [ sequencing ] when error(0) end
