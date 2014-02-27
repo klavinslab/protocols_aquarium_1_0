@@ -38,8 +38,6 @@ foreach name in fragments_to_take
     foreach f in p[:fragment_amounts_in_ul]
       if  f[:fragment_name] == name
         total = total + p[:quantity_to_make]*f[:amount]
-      else
-        total = total # noop trying to fix syntax error
       end
     end
   end
