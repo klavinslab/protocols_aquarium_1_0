@@ -96,6 +96,6 @@ produce silently
   location: "Bench"
 end
 
-log
-  return: {pipette_out: pipette}
-end
+#log
+#  return: {pipette_out: pipette}
+#end
