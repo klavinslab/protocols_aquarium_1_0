@@ -9,6 +9,7 @@ end
 take
  media_tube = 2 "50 mL Falcon Tube"
  media = 1 "400 mL M9 liquid Glucose"
+ note: "Use the 0.4 percent solution"
  pipette = 1 "Serological Pipette"
  tip = 1 "25 mL Serological Pipette Tips"
  amp = 1 "100X 1 mL Ampicillin Aliquot"
