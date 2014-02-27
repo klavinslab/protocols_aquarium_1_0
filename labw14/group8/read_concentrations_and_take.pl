@@ -38,6 +38,8 @@ foreach name in fragments_to_take
     foreach f in p[:fragment_amounts_in_ul]
       if  f[:fragment_name] == name
         total = total + p[:quantity_to_make]*f[:amount]
+      else
+        total = total # noop trying to fix syntax error
       end
   end
   total_amounts = append(total_amounts, { fragment_name: name, total_amount: total_amount})
