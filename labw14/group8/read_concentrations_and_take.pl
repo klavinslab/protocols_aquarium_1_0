@@ -28,11 +28,6 @@ end
 
 fragments_to_take = unique(fragments_to_take)
 
-step
-  description: "debug frag array"
-  note: "%{fragments_to_take}"
-end
-
 total_amounts = [ ]
 # todo extract these into hash and other libraries
 # NOTE this doesn't work like a hash in other languages
@@ -70,9 +65,14 @@ end
 
 # silently produce the future samples
 # and label them, laying them out in a grid
+# put the concentrations into the data element
+
+# todo a function that makes a pipetting plan 
 
 samples_to_make = [ ]
 
+# foreach fragment
+# pipette fragment into samples %[[{sample: id, amount: number} sorted by number increasing]
 
 log
   return: {gibsons: samples_to_make, hash: {egkey: "egvalue"}}
