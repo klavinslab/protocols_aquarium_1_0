@@ -28,6 +28,11 @@ end
 
 fragments_to_take = unique(fragments_to_take)
 
+step
+  description: "debug frag array"
+  note: "%{fragments_to_take}"
+end
+
 total_amounts = [ ]
 # todo extract these into hash and other libraries
 # NOTE this doesn't work like a hash in other languages
