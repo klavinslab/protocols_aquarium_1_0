@@ -76,7 +76,7 @@ step
   note: "Make sure the antibiotics are fully melted"
   note: "If the kan and amp solutions are not completely melted yet, you can hold them in your hand to warm
         them up until they are fully liquid"
-  check: "Vortex the kan and amp solutions or 5 seconds before proceeding"
+  check: "Vortex the kan and amp solutions for 5 seconds before proceeding"
   check: "Pipette 60 uL from your '100X 1 mL Ampicillin Aliquot' to the first 50mL falcon tube"
   check: "Pipette 60 uL from your '100X 1 mL Ampicillin Aliquot' to the second 50mL falcon tube"
   check: "Pipette 150 uL from your '200X 1 mL Kanamycin Aliquot' to the first 50mL falcon tube"
