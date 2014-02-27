@@ -100,6 +100,10 @@ release concat(media, concat(pipette,concat(amp, kan)))
 
 produce silently
   m1 = 1 "30 mL M9 liquid Glucose + amp + kan"
+  location: "Bench"
+end
+
+produce silently
   m2 = 1 "30 mL M9 liquid Glucose + amp + kan"
   location: "Bench"
 end
