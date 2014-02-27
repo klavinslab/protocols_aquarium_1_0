@@ -1,7 +1,7 @@
 argument
   plated_cells: sample("Transformed E coli Strain") array, "An array of THREE agarose-streaked
                                                             colonies to grow in glucose media"
-  pipette_transfer: object, "The name of the serological pipette to use"
+  #pipette_transfer: object, "The name of the serological pipette to use"
 end #note that 'plated_cells' is an array of integers, representing sample ID numbers
 
 #step
