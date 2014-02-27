@@ -43,7 +43,8 @@ produce
   release x
 end
 
-release [y, molecular_g_h2o]
+release y
+release [molecular_g_h2o]
 
 
 log
