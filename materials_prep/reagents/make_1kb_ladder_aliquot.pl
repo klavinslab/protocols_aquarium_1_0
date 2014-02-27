@@ -2,7 +2,7 @@ argument
   ladder: sample, "Choose 1kb ladder stock"
 end
 take
-  ladder_stock: ladder
+  ladder_stock = item ladder
 end
 
 step
