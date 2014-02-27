@@ -1,5 +1,9 @@
 #By David Starkebaum and Erik Josberger, 2014/02/13
 step
+  description: "note: "This protocol must be performed in the Media Bay. Go there and use that computer before continuing"
+end
+
+step
   description: "This protocol will prepare two 30mL aliquots of 0.4 percent glucose with amp and kan."
   note: "This is a serological pipette (you will fech this in the next step)"
   image: "serological_pipette"
@@ -89,13 +93,9 @@ step
   check: "Vortex the second 50mL Falcon for 15 seconds"
 end
 
-release concat(media, concat(amp, kan))  #concat(pipette,
+release concat(media, concat(pipette,concat(amp, kan)))
 
 produce silently
   m = 2 "30 mL M9 liquid Glucose + amp + kan"
   location: "Bench"
 end
-
-#log
-#  return: {pipette_out: pipette}
-#end
