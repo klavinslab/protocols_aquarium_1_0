@@ -1,6 +1,8 @@
 #By David Starkebaum and Erik Josberger, 2014/02/13
 step
-  description: "note: "This protocol must be performed in the Media Bay. Go there and use that computer before continuing"
+  description: "note: "This protocol must be performed in the Media Bay. Go there and use that computer
+                before continuing. Once all media is prepared, you will move to the plate reader bay
+                (The program will instruct you when it is time to transfer)"
 end
 
 step
