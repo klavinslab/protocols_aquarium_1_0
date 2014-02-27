@@ -39,13 +39,33 @@ step
   check: "Dispose of your 25mL serological pipette tip in tip waste"
 end
 
+more = "none"
 step
  description: "Make sure the antibiotics are fully melted"
  note: "If the kan and amp solutions are not completely melted yet, you should hold them in your hand to warm them up until they are fully liquid"
  check: "Vortex the kan and amp solutions or 5 seconds before proceeding"
  note: "You will need at least 0.12 mL of amp, and 0.30 mL of kan for the next step, so check the level of the liquid in your aliquots to be sure they are sufficient."
  check: "Grab another aliquot of kan or amp if you do not have enough"
+ getdata
+  more: string, "Choose 'amp' if you need more amp, 'kan' if you need more kan, 'both' if you need both, or 'none' if you have enough already", ["amp", "kan", "both", "none"] 
+ end
 end
+
+if more == "amp"
+  take
+    more_amp = 1 "100X 1 mL Ampicillin Aliquot"
+  end
+elsif more == "kan"
+  take
+    more_kan = 1 "200X 1 mL Kanamycin Aliquot"
+  end
+elsif more == "both"
+  take
+    more_amp = 1 "100X 1 mL Ampicillin Aliquot"
+    more_kan = 1 "200X 1 mL Kanamycin Aliquot"
+  end
+end
+
 
 step
   description: "Add antibiotics to the 50mL falcon tubes"
