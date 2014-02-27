@@ -54,7 +54,7 @@ foreach f in total_amounts
   amount = f[:total_amount]
   name = f
   step
-    description: "Claim fragment %{f[:fragment_name]}"
+    description: "Claim fragment %{name}"
     note: "Go into the Inventory and put enough stock of fragment %{name}.
           You will use a total of %{amount} microliters.
           You will go physically take them formally in the next step,
