@@ -1,9 +1,3 @@
-argument
-  how_many_gibsons: number array, "The number of fragments for each type"
-    # lang should aggregate unbound variables and have user give values
-    # when schedule metacol
-end
-
 require "labw14/group8/lib_read_gibson.pl"
 
 g = ask_filename_then_get_gibsons()
