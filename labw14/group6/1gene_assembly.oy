@@ -123,7 +123,7 @@ end
 place pour_gel
   protocol: "labw14/group6/full_length_protocols/pour_gel.pl"
   argument
-    percenrage: percentage
+    percentage: percentage
     comb_n: comb_n
   end
   group: aquarium_user
