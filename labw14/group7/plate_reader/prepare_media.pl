@@ -3,7 +3,8 @@ step
   description: "This protocol will prepare two 30mL aliquots of 0.4 percent glucose with amp and kan."
   note: "This is a serological pipette (you will fech this in the next step)"
   image: "serological pipette"
-  note: "The 'M9 liquid Glucose' listed in the next step should be 0.4 percent glucose (you may want to write this down this down)"
+  note: "The 'M9 liquid Glucose' listed in the next step should be 0.4 percent glucose
+         (you may want to write this down this down)"
 end
 
 take
@@ -14,6 +15,8 @@ take
  tip = 1 "25 mL Serological Pipette Tips"
  amp = 1 "100X 1 mL Ampicillin Aliquot"
  kan = 1 "200X 1 mL Kanamycin Aliquot"
+ note: "You will need at least 0.12 mL of amp, and 0.30 mL of kan
+        for the next step, so check the level of the liquid in your aliquots to be sure they are sufficient."
 end
 
 step
@@ -32,44 +35,48 @@ step
   description: "Add 30mL of 'M9 liquid Glucose' to each of the two 50mL falcon tubes"
   check: "Unscrew the caps of the glucose solution, as well as your two empty falcon tubes"
   check: "Attach the 25mL tip to the serological pipetter"
-  note: "You will add a total of 30mL glucose media to each falcon tube (in two steps, since the max volue is 25mL for the pipetter"
+  note: "You will add a total of 30mL glucose media to each falcon tube (in two steps, since the max volume
+         is 25mL for the pipetter"
   check: "Use the electric serological pipette to add 15 mL of 'M9 liquid Glucose' into a 50mL falcon tube"
   check: "Add another 15 mL of 'M9 liquid Glucose' into the 50mL falcon tube"
   check: "Add 15mL of 'M9 liquid Glucose' into the second 50mL falcon tube"
   check: "Add another 15mL 'M9 liquid Glucose' to the second 50mL falcon tube"
-  check: "Dispose of your 25mL serological pipette tip in tip waste"
+  check: "Dispose of your 25mL serological pipette tip in biohazard bin"
 end
 
-more = "none"
-step
- description: "Make sure the antibiotics are fully melted"
- note: "If the kan and amp solutions are not completely melted yet, you should hold them in your hand to warm them up until they are fully liquid"
- check: "Vortex the kan and amp solutions or 5 seconds before proceeding"
- note: "You will need at least 0.12 mL of amp, and 0.30 mL of kan for the next step, so check the level of the liquid in your aliquots to be sure they are sufficient."
- check: "Grab another aliquot of kan or amp if you do not have enough"
- getdata
-  more: string, "Choose 'amp' if you need more amp, 'kan' if you need more kan, 'both' if you need both, or 'none' if you have enough already", ["amp", "kan", "both", "none"] 
- end
-end
-
-if more == "amp"
-  take
-    more_amp = 1 "100X 1 mL Ampicillin Aliquot"
-  end
-elsif more == "kan"
-  take
-    more_kan = 1 "200X 1 mL Kanamycin Aliquot"
-  end
-elsif more == "both"
-  take
-    more_amp = 1 "100X 1 mL Ampicillin Aliquot"
-    more_kan = 1 "200X 1 mL Kanamycin Aliquot"
-  end
-end
-
+#query = "none"
+#step
+# description: "Add antibiotics "
+# check: "Vortex the kan and amp solutions or 5 seconds before proceeding"
+# note: "You will need at least 0.12 mL of amp, and 0.30 mL of kan for the next step,
+#        so check the level of the liquid in your aliquots to be sure they are sufficient."
+# check: "Grab another aliquot of kan or amp if you do not have enough"
+# getdata
+#  query: string, "Choose 'amp' if you need more amp, 'kan' if you need more kan, 'both' if you need both, or 'none' if you have enough already", ["amp", "kan", "both", "none"] 
+# end
+#end
+#
+#if query == "amp"
+#  take
+#    more_amp = 1 "100X 1 mL Ampicillin Aliquot"
+#  end
+#elsif query == "kan"
+#  take
+#    more_kan = 1 "200X 1 mL Kanamycin Aliquot"
+#  end
+#elsif query == "both"
+#  take
+#    more_amp = 1 "100X 1 mL Ampicillin Aliquot"
+#    more_kan = 1 "200X 1 mL Kanamycin Aliquot"
+#  end
+#end
 
 step
   description: "Add antibiotics to the 50mL falcon tubes"
+  note: "Make sure the antibiotics are fully melted"
+  note: "If the kan and amp solutions are not completely melted yet, you can hold them in your hand to warm
+        them up until they are fully liquid"
+  check: "Vortex the kan and amp solutions or 5 seconds before proceeding"
   check: "Pipette 60 uL from your '100X 1 mL Ampicillin Aliquot' to the first 50mL falcon tube"
   check: "Pipette 60 uL from your '100X 1 mL Ampicillin Aliquot' to the second 50mL falcon tube"
   check: "Pipette 150 uL from your '200X 1 mL Kanamycin Aliquot' to the first 50mL falcon tube"
