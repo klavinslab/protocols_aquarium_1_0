@@ -23,7 +23,7 @@ if num == 1
     description: "Harvesting the cells by centrifugation"
     check: "Label a 50 mL falcon tube with the id number of the 250mL flask."
     check: "Pour 25 mL of the diluted yeast culture from the flask to the labeled 50mL falcon tube."
-    #image: "Pour_diluted_yeast_culture"
+    image: "Pour_diluted_yeast_culture"
   end
 
   step
@@ -32,7 +32,7 @@ if num == 1
             in the table top centrifuge located at B14.335."
     warning: "Be sure you balanced the centrifuge. To balance the labeled tube you have to take
               another 50 mL falcon tube and fill it with 25 mL of water."
-    #image: "Centfifuge_a_yeast_liquid_culture_group5"
+    image: "Centfifuge_a_yeast_liquid_culture_group5"
   end
 
   step
@@ -40,7 +40,7 @@ if num == 1
     check: "Collect the labeled 50 mL tube from the centrifuge and place it in a tube rack on your bench."
     check: "Pour out the liquid from the tube into the sink at the washing station, location: A8.310."
     warning: "Be careful. Don't destroy the pellet."
-    #image: "cell_pellet_group5"
+    image: "cell_pellet_group5"
   end
 
   step
@@ -48,7 +48,7 @@ if num == 1
     check: "Take a 1.5 mL tube. Label it with the id number of the labeled 50mL falcon tube."
     check: "Add 1 mL of molecular grade water into the labeled 50 mL falcon tube and resuspend the cells by vortexing.
             Transfer the resuspended cells (~1mL) from the 50 mL tube to the labeled 1.5 mL tube."
-    #image: "50 mL_falcon tube_and_resuspend_the _cells_by_vortexing"
+    image: "50 mL_falcon tube_and_resuspend_the _cells_by_vortexing"
   end
 
   step
@@ -58,7 +58,7 @@ if num == 1
     check: "Add 1 mL of the 100 mM LiOAc liquid to the 1.5 mL tube and resuspend the cells by vortexing."
     check: "Centrifuge the 1.5 mL tube for 1 min in a mini-centrifuge located on your bench."
     check: "Using P1000 pipettor carefully remove the supernatant from the tube. Do not destroy the pellet."
-    #image: "washing_the_cells_group5"
+    image: "washing_the_cells_group5"
   end
 else
   step
@@ -89,7 +89,7 @@ else
     check: "Add 1 mL of molecular grade water into each 50 mL falcon tube and resuspend the cells by vortexing.
             Transfer the resuspended cells (~1 mL) from the 50 mL tubes to the 1.5 mL tubes
             with the corresponding id numbers."
-    #image: "50 mL_falcon tube_and_resuspend_the _cells_by_vortexing"
+    image: "50 mL_falcon tube_and_resuspend_the _cells_by_vortexing"
   end
 
   step
@@ -99,7 +99,7 @@ else
     check: "Add 1 mL of the 100 mM LiOAc liquid to each 1.5 mL tube and resuspend the cells by vortexing."
     check: "Centrifuge all the 1.5 mL tubes for 1 min in a mini-centrifuge located on your bench."
     check: "Using P1000 pipettor carefully remove the supernatant from each tube. Do not destroy the pellet."
-    #image: "washing_the_cells_group5"
+    image: "washing_the_cells_group5"
   end
 end
 
