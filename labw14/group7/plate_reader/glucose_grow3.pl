@@ -4,11 +4,11 @@ argument
   pipette_transfer: object, "The name of the serological pipette to use"
 end #note that 'plated_cells' is an array of integers, representing sample ID numbers
 
-step
-  description: "This protocol will grow multiple cell cultures in glucose."
-  note: "This is a serological pipette (you will fech this in the next step)"
-  image: "serological pipette"
-end
+#step
+#  description: "This protocol will grow multiple cell cultures in glucose."
+#  note: "This is a serological pipette (you will fech this in the next step)"
+#  image: "serological_pipette"
+#end
 step
   description: "A 14ml culture tube"
   note: "This is a 14ml culture tube (you will fetch 12 of these in the next step)"
@@ -24,7 +24,7 @@ take
          at your desk from the last protocol"
   plate_array = item plated_cells
   culture_tubes = n "14 mL Test Tube"
-  pipette = 1 pipette_transfer
+  pipette = 1 "Serological Pipette"
   tip = 1 "5 mL Serological Pipette Tips"
   media_tube1 = 1 "30 mL M9 liquid Glucose + amp + kan"
   media_tube2 = 1 "30 mL M9 liquid Glucose + amp + kan"
