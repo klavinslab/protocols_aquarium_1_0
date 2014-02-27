@@ -46,5 +46,5 @@ release [y1[0],y2[0],molecular_g_h2o]
 
 
 log
-  return: {Gibson_Result: r[:id]}
+  return: {Gibson_Reaction_Result_id: r[:id]}
 end
