@@ -22,7 +22,7 @@ foreach p in plasmids_to_make
           exists and the name matches the name in your specification file."
  end
  foreach f in p[:fragment_amounts_in_ul]
-   fragments_to_take = append(fragments_to_take, f[:fragment_name])
+   fragments_to_take = append(fragments_to_take, f[:name])
  end
 end
 
