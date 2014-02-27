@@ -35,8 +35,9 @@ foreach name in fragments_to_take
 end
 
 foreach p in plasmids_to_make
+  total = 0
   foreach f in p[:fragment_amounts_in_ul]
-    total_amounts[f[:fragment_name]] = total_amounts[f[:fragment_name]] + f[:amount]
+    total_amounts[f[:fragment_name]] = total_amounts[f[:fragment_name]] + p[:quantity_to_make]*f[:amount]
   end
 end
 
