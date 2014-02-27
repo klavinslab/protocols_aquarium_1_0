@@ -22,6 +22,6 @@ step
   description: "Warm up the plate reader to 37C"
   check: "Click on the 'Read Plate' button (at the top) to start the program."
   image: "Read_plate"
-  check: "Click the 'Start Run' button in the dialog that opens. This should produce a pop-up asking your to wait for the bulb to heat up to 37C"
+  check: "Click the 'Read' button in the dialog that opens. This should produce a pop-up asking your to wait for the bulb to heat up to 37C"
   note: "You will now start loading your 96 well plate while the plate reader warms up"
 end
