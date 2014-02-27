@@ -55,7 +55,7 @@ while ii < number_we_can_make
 #    end
 #    r = append(r,y[:id])
     modify
-      release yeast_aliquot_tubes[ii]
+      yeast_aliquot_tubes[ii]
       location:"Bench"
       inuse:0
     end
@@ -85,7 +85,7 @@ while ii < number_we_can_make
 #    end
 #    r = append(r,z[:id])
     modify
-      release yeast_aliquot_tubes[ii]
+      yeast_aliquot_tubes[ii]
       location:"Bench"
       inuse:0
     end
