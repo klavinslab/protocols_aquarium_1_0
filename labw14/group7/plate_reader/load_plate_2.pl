@@ -83,7 +83,7 @@ step
   check: "Return the aluminium foil to location A8.400"
 end
 
-release concat(cells, antifog, foil)
+release concat(cells, concat(antifog, foil))
 #return statement
 
 step
