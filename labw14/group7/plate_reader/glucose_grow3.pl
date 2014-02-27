@@ -20,8 +20,7 @@ n = strains * 4 #this could be "repeats"
 
 
 take
-  note: "Be sure to grab a tube rack to hold all of the culture tubes.  You should still have the serological pipette
-         at your desk from the last protocol"
+  note: "Be sure to grab a tube rack to hold all of the culture tubes."
   plate_array = item plated_cells
   culture_tubes = n "14 mL Test Tube"
   pipette = 1 "Serological Pipette"
@@ -77,6 +76,11 @@ step
 end
 
 release [pipette[0]]
+
+step
+  description: "You are now done in the media bay.  Take your prepared culture tubes and move to the plate reader bay"
+  note: "Do not remain in the media bay.  You will be using cells next, and you don't want to contaminate this area"
+end
 
 #Loop through the three strains and add cells from each strain to a set of four culture tubes"
 i = 0
