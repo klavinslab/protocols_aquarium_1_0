@@ -2,7 +2,7 @@
 step
   description: "This protocol will prepare two 30mL aliquots of 0.4 percent glucose with amp and kan."
   note: "This is a serological pipette (you will fech this in the next step)"
-  image: "serological pipette"
+  image: "serological_pipette"
   note: "The 'M9 liquid Glucose' listed in the next step should be 0.4 percent glucose
          (you may want to write this down this down)"
 end
