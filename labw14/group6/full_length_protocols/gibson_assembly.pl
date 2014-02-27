@@ -4,8 +4,7 @@ end
 
 take
   x = 1 "Gibson Aliquot"
-  y1 = item fragments[0]
-  y2 = item fragments[1]
+  y = item fragments
   molecular_g_h2o = 1 "Molecular Biology Grade Water"
 end
 
@@ -15,6 +14,8 @@ step
   description: "Label the Gibson aliquot tube, write you initials and date on it."
 end
 
+y1 = fragments[0]
+y2 = fragments[1]
 step
   description: "Prepare the Gibson reaction"
   check: "Add 2 µL of molecular grade water to the labeled tube."
@@ -42,7 +43,7 @@ produce
   release x
 end
 
-release [y1[0],y2[0],molecular_g_h2o]
+release [y, molecular_g_h2o]
 
 
 log
