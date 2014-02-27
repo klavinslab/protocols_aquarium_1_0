@@ -17,7 +17,7 @@ fragments_to_take = [ ]
 foreach p in plasmids_to_make
  step
    description: "Check plasmid exists"
-   note: "Go into the Inventory and check that a plasmid named '%{p[:plasmid_name_to_make]}'
+   note: "Go into the Inventory and check that a plasmid named '%{p[plasmid_name_to_make]}'
           exists for each
           plasmid you want to make and the name matches your specification
           file."
