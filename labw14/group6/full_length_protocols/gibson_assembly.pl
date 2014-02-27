@@ -38,7 +38,7 @@ step
 end
 
 produce
-  r = 1 "Gibson Reaction Result"
+  r = 1 "Gibson Reaction Result" of "pGA"
   release x
 end
 
