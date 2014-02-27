@@ -34,7 +34,7 @@ step
   check: "Pipet 1.0 µL of DNA plasmid stock with id %{fragment_id} into the tube."
   check: "Pipet 0.3 µL of PmeI enzyme with id %{pmei_id} into the tube."
   note: "Be careful to pipet into the liquid, not the side of the tube."
-  #image: "Prepare_PmeI_digestion_reaction_group5"
+  image: "Prepare_PmeI_digestion_reaction_group5"
 end
 
 step
