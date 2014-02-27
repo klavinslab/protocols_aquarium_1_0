@@ -4,9 +4,12 @@ end #note that 'plated_cells' is an array of integers, representing sample ID nu
 
 step
   description: "This protocol will grow multiple cell cultures in glucose."
-  note: "This is a serological pipette (you will fech this in the next step"
+  note: "This is a serological pipette (you will fech this in the next step)"
   image: "serological pipette"
-  note: "This is a 14ml culture tube (you will fetch 12 of these in the next step"
+end
+step
+  description: "A 14ml culture tube"
+  note: "This is a 14ml culture tube (you will fetch 12 of these in the next step)"
   image: "14ml_culture_tube"
 end
 
