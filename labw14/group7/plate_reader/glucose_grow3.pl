@@ -28,6 +28,29 @@ take
   media_tube2 = 1 "30 mL M9 liquid Glucose + amp + kan"
 end
 
+step
+  description: "Add 3mL media to each culture tube"
+  note: "If you have a lab partner, they can help you by holding the cap of each culture tube,
+         and the cap of the media aliquot while you do the pipetting"
+  note: "If you do not have a lab parner, use your best sterile technique to remove the lid of the media tube
+         with one hand while pipetting out the liquid with the other hand"
+  note: "Then replace the cap on te media tube before opening the cap of a cultre tube (with one hand), 
+         and using your other hand to pipette the media solution inso the culture tube"
+  check: "Use the electric serological pipette to add 3ml of 'M9 liquid Glucose + amp + kan' to each culture tube."
+  check: "Dispose of your serological pipette tip in the large red biological waste bin."
+end
+
+release [pipette[0]]
+
+step
+  description: "Return to your own Bench"
+  note: "You are now done in the media bay.  Take your prepared culture tubes and move to the plate reader bay
+         Do not remain in the media bay.  You will be using cells next, and you don't want to contaminate the media bay"
+end
+
+take
+  plate_array = item plated_cells
+end
 #A loop to produce all of the culture tubes silently, so I can get their newly assigned ID numbers
 incubated_cells = []#a sample reference array of culture tubes to be incubated 
 return_array = []#an array of id numbers for each culture tube sample
@@ -61,30 +84,6 @@ step
   bullet: "'%{tube2} R1', '%{tube2} R2', '%{tube2} R3', and '%{tube2} R4'"
   note: "Keep the sets separate"
 end
-
-step
-  description: "Add 3mL media to each culture tube"
-  note: "If you have a lab partner, they can help you by holding the cap of each culture tube,
-         and the cap of the media aliquot while you do the pipetting"
-  note: "If you do not have a lab parner, use your best sterile technique to remove the lid of the media tube
-         with one hand while pipetting out the liquid with the other hand"
-  note: "Then replace the cap on te media tube before opening the cap of a cultre tube (with one hand), 
-         and using your other hand to pipette the media solution inso the culture tube"
-  check: "Use the electric serological pipette to add 3ml of 'M9 liquid Glucose + amp + kan' to each culture tube."
-  check: "Dispose of your serological pipette tip in the large red biological waste bin."
-end
-
-release [pipette[0]]
-
-step
-  description: "You are now done in the media bay.  Take your prepared culture tubes and move to the plate reader bay"
-  note: "Do not remain in the media bay.  You will be using cells next, and you don't want to contaminate the media bay"
-end
-
-take
-  plate_array = item plated_cells
-end
-
 #Loop through the three strains and add cells from each strain to a set of four culture tubes"
 i = 0
 while i<strains
