@@ -41,6 +41,7 @@ while ii < length(yeast_overnight_suspension)
     description: "Diluting cells in YPD"
     check: "Take a 250 mL glass flask. Label the flask with your initials and date."
     check: "Using serological pipettor transfer 25 mL of YPAD media from the 800 mL YPAD liquid media bottle into the flask."
+    warning: "Be sterile as far as possible. YPAD media gets easily contaminated."
     image: "glass_flask_YPAD"
   end
   
@@ -48,7 +49,6 @@ while ii < length(yeast_overnight_suspension)
     description: "Diluting cells in YPD"
     check: "Then, using 1000 µL pipettor, pipet 500 µL of the yeast overnight suspension culture
            from a 14 mL glass tube with id %{id_num} into the flask."
-    warning: "Be sterile as far as possible. YPAD media gets easily contaminated."
     image: "14ml_tube_overnight_suspension_culture"
   end
 
