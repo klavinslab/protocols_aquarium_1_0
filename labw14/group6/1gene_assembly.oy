@@ -112,42 +112,6 @@ wire (stock2, "Working_Stock_id") => (assembly1, "oligo_pools2")
 wire (stock3, "Working_Stock_id") => (assembly2, "oligo_pools1")
 wire (stock4, "Working_Stock_id") => (assembly2, "oligo_pools2")
 
-place thermal_cycler
-  protocol: "labw14/group6/full_length_protocols/thermal_cycler.pl"
-  group: aquarium_user
-  marked: true
-  start: now()
-  window: minutes(30)
-end
-
-place pour_gel
-  protocol: "labw14/group6/full_length_protocols/pour_gel.pl"
-  argument
-    percentage: percentage
-    comb_n: comb_n
-  end
-  group: aquarium_user
-  marked: true
-  start: now()
-  window: minutes(30)
-end
-
-place PCR_finish1
-  protocol: "labw14/group6/full_length_protocols/PCR_finish1.pl"
-  group: aquarium_user
-  marked: true
-  start: now()
-  window: minutes(30)
-end
-
-place PCR_finish2
-  protocol: "labw14/group6/full_length_protocols/PCR_finish2.pl"
-  group: aquarium_user
-  marked: true
-  start: now()
-  window: minutes(30)
-end
-
 place run_gel
   protocol: "labw14/group6/full_length_protocols/run_gel.pl"
   argument
@@ -159,8 +123,8 @@ place run_gel
   window: minutes(30)
 end
 
-wire (PCR_finish1, "PCR_Result_id") => (run_gel, "assemblies1")
-wire (PCR_finish2, "PCR_Result_id") => (run_gel, "assemblies2")
+wire (assembly1, "PCR_Result_id") => (run_gel, "assemblies1")
+wire (assembly2, "PCR_Result_id") => (run_gel, "assemblies2")
 
 place image_cut_gel
   protocol: "labw14/group6/full_length_protocols/image_cut_gel.pl"
@@ -178,8 +142,8 @@ place gel_purify
   window: minutes(30)
 end
 
-wire (image_cut_gel, "Gel_Slice_id1") => (gel_purify, "gel1")
-wire (image_cut_gel, "Gel_Slice_id2") => (gel_purify, "gel2")
+wire (image_cut_gel, "Gel_Slice_id") => (gel_purify, "gel1")
+wire (image_cut_gel, "Gel_Slice_id") => (gel_purify, "gel2")
 
 
 transition [ stock1, stock2 ] => [ assembly1 ] when !error(0) && completed(0) && !error(1) && completed(1) end
@@ -190,18 +154,9 @@ transition [ stock3, stock4 ] => [ assembly2 ] when !error(0) && completed(0) &&
 transition [ stock3 ] => [ stock3 ] when error(0) end
 transition [ stock4 ] => [ stock4 ] when error(0) end
 
-transition [ assembly2 ] => [ thermal_cycler ] when !error(0) && completed(0) && !error(1) && completed(1) end
+transition [ assembly1, assembly2 ] => [ run_gel ] when !error(0) && completed(0) && !error(1) && completed(1) end
 transition [ assembly2 ] => [ assembly2 ] when error(0) end
-
-transition [ thermal_cycler ] => [ pour_gel ] when !error(0) && completed(0) end
-transition [ thermal_cycler ] => [ thermal_cycler ] when error(0) end
-
-transition [ pour_gel ] => [ PCR_finish1 ] when !error(0) && completed(0) end
-transition [ pour_gel ] => [ pour_gel ] when error(0) end
-
-transition [ PCR_finish1, PCR_finish2 ] => [ run_gel ] when !error(0) && completed(0) end
-transition [ PCR_finish1 ] => [ PCR_finish1 ] when error(0) end
-transition [ PCR_finish2 ] => [ PCR_finish2 ] when error(0) end
+transition [ assembly2 ] => [ assembly2 ] when error(0) end
 
 transition [ run_gel ] => [ image_cut_gel ] when !error(0) && completed(0) end
 transition [ run_gel ] => [ run_gel ] when error(0) end
