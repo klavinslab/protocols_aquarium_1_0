@@ -41,6 +41,7 @@ foreach name in fragments_to_take
       else
         total = total # noop trying to fix syntax error
       end
+    end
   end
   total_amounts = append(total_amounts, { fragment_name: name, total_amount: total_amount})
 end
