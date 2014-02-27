@@ -49,6 +49,7 @@ tube2 = return_array[2]
 step
   description: "Label culture tubes"
   note: "You will need 12 tubes in total: 4 repetitions for each of 3 strains"
+  note: "You should write your labels vertically on the clear glass part of the tubes, NOT on the white part (if you draw here, it is very dificult to wash off!)"
   check: "Label a set of 4 culture tubes with:"
   bullet: "'%{tube0} R1', '%{tube0} R2', '%{tube0} R3', and '%{tube0} R4'"
   check: "Label another set of 4 culture tubes with:"
@@ -60,8 +61,11 @@ end
 
 step
   description: "Add 3mL media to each culture tube"
+  note: "If you have a lab partner, they can help you by holding the cap of each culture tube, and the cap of the media aliquot while you do the pipetting"
+  note: "If you do not have a lab parner, use your best sterile technique to remove the lid of the media tube with one hand while pipetting out the liquid with the other hand"
+  note: "Then replace the cap on te media tube before opening the cap of a cultre tube (with one hand), and using your other hand to pipette the media solution inso the culture tube"
   check: "Use the electric serological pipette to add 3ml of 'M9 liquid Glucose + amp + kan' to each culture tube."
-  check: "Dispose of your serological pipette tip in tip waste"
+  check: "Dispose of your serological pipette tip in the large red biological waste bin."
 end
 
 release [pipette[0]]
@@ -73,7 +77,7 @@ while i<strains
   new_id = return_array[i]
   step
     description: "Add cells from plate %{id} to four seperate culture tubes"
-    check: "Clean your gloves with ethanol to avoid contamination"
+    check: "Clean your gloves with ethanol to avoid contamination (be sure to let it evaporate again before handling the pipette tip)"
     check: "Use a 100uL pipette tip (held in your hand) to extract cells from a single colony from plate %{id}.  Drop the whole tip into the culture tube marked '%{new_id} R1'"
     check: "Use a new 100uL pipette tip extract cells from a different single colony from the same plate, and drop the whole tip into the culture tube labeled '%{new_id} R2'"
     check: "Repeat the above procedure for '%{new_id} R3' and '%{new_id} R4'."
@@ -103,10 +107,14 @@ step
   note: "You should now have two 30ml tubes of 'M9 liquid Glucose + amp + kan' on your bench"
   note: "One of them should be empty, and one of them partially remaining"
   check: "Dispose of the empty 30ml tube in tip waste"
-  check: "Store the second (parially filled) 30mL tube of 'M9 liquid Glucose + amp + kan' in location xxx"
+  check: "Store the second (parially filled) 30mL tube of 'M9 liquid Glucose + amp + kan' at location B0.110 (inducer fridge)"
 end
 
+#TODO: Re-paraffin the agar plates before releasing them
+#TODO: Reconfigure the prduce/release of the '30ml glucose+amp+kan' so that it makes more sense
+
 release append(plate_array, media_tubes[0])
+
 
 #modify
 #  media_tubes[1]
