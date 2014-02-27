@@ -20,7 +20,7 @@ end
 
 step
   description: "Pipette the glycerol and cell suspension into the sterile tube, then vortex it"
-  note: "Be careful not to contaminate the glycerol bottle.  Use the 1000 μL pipetter."
+  note: "Be careful not to contaminate the glycerol bottle.  Use the 1000 µL pipetter."
   check: "Pipette 900ul of glycerol into the sterile tube"
   check: "Pipette 900ul of cell suspension into the sterile tube"
   check: "Next: Vortex the sample for 15s on high power. Use the more powerful VWR analog vortex mixer at speed 10"

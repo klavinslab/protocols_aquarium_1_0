@@ -39,10 +39,10 @@ while ii < number_we_can_make
       warning: "Pipette the following reagents into the tube %{id_num}.
                 The order of the reagents is super important for cells' health.
                 Also be as clean as possible when pipetting 50%% PEG 3350. It gets easily contaminated."
-      check: "Pipette 240 μL  50%% PEG 3350 reagent to the tube."
-      check: "Pipette 36 μL  1.0M LiOAc reagent to the tube."
-      check: "Pipette 25 μL  Carrier DNA to the tube."
-      check: "Pipette 50 μL  Molecular grade water to the tube."
+      check: "Pipette 240 µL  50%% PEG 3350 reagent to the tube."
+      check: "Pipette 36 µL  1.0M LiOAc reagent to the tube."
+      check: "Pipette 25 µL  Carrier DNA to the tube."
+      check: "Pipette 50 µL  Molecular grade water to the tube."
       #image: "yeast_transformation_mixture_group5"
     end
     step
@@ -62,10 +62,10 @@ while ii < number_we_can_make
       warning: "Pipette the following reagents into the tube %{id_num}.
                 The order of the reagents is super important for cells' health.
                 Also be as clean as possible when pipetting 50%% PEG 3350. It gets easily contaminated."
-      check: "Pipette 240 μL  50%% PEG 3350 reagent to the tube."
-      check: "Pipette 36 μL  1.0M LiOAc reagent to the tube."
-      check: "Pipette 25 μL  Carrier DNA to the tube."
-      check: "Pipette 50 μL  Transformation DNA plasmid to the tube."
+      check: "Pipette 240 µL  50%% PEG 3350 reagent to the tube."
+      check: "Pipette 36 µL  1.0M LiOAc reagent to the tube."
+      check: "Pipette 25 µL  Carrier DNA to the tube."
+      check: "Pipette 50 µL  Transformation DNA plasmid to the tube."
       #image: "yeast_transformation_mixture_group5"
 
     end

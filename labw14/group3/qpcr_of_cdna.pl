@@ -37,77 +37,77 @@ end
 step
   description: "Dilution of cDNA (if necessary)"
   bullet: "Label a 1.5 mL tube to contain diluted cDNA sample"
-  #bullet: "Transfer 1 μL of cDNA to new tube"
-  #bullet: "Add __ μL of Molecular Grade Water to new tube"
-  bullet: "Dilute the cDNA to a concentration of about 50 ng/μL"
+  #bullet: "Transfer 1 µL of cDNA to new tube"
+  #bullet: "Add __ µL of Molecular Grade Water to new tube"
+  bullet: "Dilute the cDNA to a concentration of about 50 ng/µL"
   bullet: "Stir dilution with pipette tip or vortex"
 end
 
 step 
   description: "Prepare Enough Master Mix for All Reactions"
   check: "Obtain a 96 well qPCR Plate and Optically Transparent Film"
-  bullet: "Add 10 μL of iTaq SYBR Green Supermix to 6 qPCR plate wells."
+  bullet: "Add 10 µL of iTaq SYBR Green Supermix to 6 qPCR plate wells."
 end
 
 step
   description: "Addition of Primers"
-  bullet: "Add 4.5 μL of the Forward Primer (sample id: %{primer_forward1}) to well A1"
-  bullet: "Add 4.5 μL of the Reverse Primer (sample id: %{primer_reverse1}) to well A1"
+  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward1}) to well A1"
+  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse1}) to well A1"
   note: "Be sure to use proper sterile technique to guarantee accuracy of results."
 end
 
 step
   description: "Addition of Primers"
-  bullet: "Add 4.5 μL of the Forward Primer (sample id: %{primer_forward2}) to well A2"
-  bullet: "Add 4.5 μL of the Reverse Primer (sample id: %{primer_reverse2}) to well A2"
+  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward2}) to well A2"
+  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse2}) to well A2"
   note: "Be sure to use proper sterile technique to guarantee accuracy of results."
 end
 
 step
   description: "Addition of Primers"
-  bullet: "Add 4.5 μL of the Forward Primer (sample id: %{primer_forward3}) to well A3"
-  bullet: "Add 4.5 μL of the Reverse Primer (sample id: %{primer_reverse3}) to well A3"
+  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward3}) to well A3"
+  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse3}) to well A3"
   note: "Be sure to use proper sterile technique to guarantee accuracy of results."
 end
 
 step
   description: "Addition of Primers"
-  bullet: "Add 4.5 μL of the Forward Primer (sample id: %{primer_forward1}) to well A4"
-  bullet: "Add 4.5 μL of the Reverse Primer (sample id: %{primer_reverse1}) to well A4"
+  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward1}) to well A4"
+  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse1}) to well A4"
   note: "Be sure to use proper sterile technique to guarantee accuracy of results."
 end
 
 step
   description: "Addition of Primers"
-  bullet: "Add 4.5 μL of the Forward Primer (sample id: %{primer_forward2}) to well A5"
-  bullet: "Add 4.5 μL of the Reverse Primer (sample id: %{primer_reverse2}) to well A5"
+  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward2}) to well A5"
+  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse2}) to well A5"
   note: "Be sure to use proper sterile technique to guarantee accuracy of results."
 end
 
 step
   description: "Addition of Primers"
-  bullet: "Add 4.5 μL of the Forward Primer (sample id: %{primer_forward4}) to well A6"
-  bullet: "Add 4.5 μL of the Reverse Primer (sample id: %{primer_reverse4}) to well A6"
+  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward4}) to well A6"
+  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse4}) to well A6"
   note: "Be sure to use proper sterile technique to guarantee accuracy of results."
 end
 
 step
   description: "Addition of Diluted cDNA Samples"
-  check: "Add 1 μL of diluted cDNA (sample id: %{fragment1}) to well A1"
+  check: "Add 1 µL of diluted cDNA (sample id: %{fragment1}) to well A1"
   check: "Stir mixture with pipette tip"
-  check: "Add 1 μL of diluted cDNA (sample id: %{fragment1}) to well A2"
+  check: "Add 1 µL of diluted cDNA (sample id: %{fragment1}) to well A2"
   check: "Stir mixture with pipette tip"
-  check: "Add 1 μL of diluted cDNA (sample id: %{fragment1}) to well A3"
+  check: "Add 1 µL of diluted cDNA (sample id: %{fragment1}) to well A3"
   check: "Stir mixture with pipette tip"
 end
 
 step
   description: "Addition of Diluted cDNA Samples (continued)"
-  check: "Add 1 μL of diluted cDNA (sample id: %{fragment2}) to well A4"
+  check: "Add 1 µL of diluted cDNA (sample id: %{fragment2}) to well A4"
   check: "Stir mixture with pipette tip"
-  check: "Add 1 μL of diluted cDNA (sample id: %{fragment2}) to well A5"
+  check: "Add 1 µL of diluted cDNA (sample id: %{fragment2}) to well A5"
   check: "Stir mixture with pipette tip"
-  check: "Add 1 μL of diluted cDNA (sample id: %{fragment2}) to well A6"
+  check: "Add 1 µL of diluted cDNA (sample id: %{fragment2}) to well A6"
   check: "Stir mixture with pipette tip"
 end
 

@@ -25,7 +25,7 @@ foreach c in log_cells
 	step
 	  description: "Blank the Nanodrop"
 	  check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
-	  check: "Add 2 μL of LB Buffer." # Should we blank with LB or EB?
+	  check: "Add 2 µL of LB Buffer." # Should we blank with LB or EB?
 	  check: "Close the pedestal."
 	  check: "Click Blank in the software."
 	end
@@ -36,7 +36,7 @@ foreach c in log_cells
 	  description: "Measure your sample"
 	  check: "Open the pedestal"
 	  check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
-	  check: "Add 2 μL of your sample with id %{c} on the lower pedestal."
+	  check: "Add 2 µL of your sample with id %{c} on the lower pedestal."
 	  check: "Close the pedestal."
 	  check: "Click Measure in the software."
 	end

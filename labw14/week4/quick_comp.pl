@@ -22,18 +22,18 @@ end
 
 step
   description: "Pour off supernatant"
-  note: "Use your Pipettor P1000 (100-1000 μL pipettor) to remove any remaining supernatant but be careful not to desturb the pellet."
+  note: "Use your Pipettor P1000 (100-1000 µL pipettor) to remove any remaining supernatant but be careful not to desturb the pellet."
   warning: "Try not to leave any more supernatant than you have to (but don't disturb the pellet)"
 end
 
 step
   description: "Add 1 mL ice cold sterile molecular grade water"
-  note: "Use your Pipettor P1000 (100-1000 μL pipettor) add 1 mL ice cold molecular grade water and resuspend the pellet by gently pipetting up and down."
+  note: "Use your Pipettor P1000 (100-1000 µL pipettor) add 1 mL ice cold molecular grade water and resuspend the pellet by gently pipetting up and down."
 end
 
 step
   description: "Transfer into one of the prechilled 1.5 mL centrifuge tube."
-  note: "Using your Pipettor P1000 (100-1000 μL pipettor), transfer the culture form the 50 mL falcon tube to the 1.5 mL centrifuge tube on ice."
+  note: "Using your Pipettor P1000 (100-1000 µL pipettor), transfer the culture form the 50 mL falcon tube to the 1.5 mL centrifuge tube on ice."
 end
 
 ii = 0

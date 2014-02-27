@@ -21,8 +21,8 @@ end
 
 step
   description: "Pipette 2 mL of LB into 14 mL tube"
-  note: "Use proper sterile technique. Use the 1000 μL pipetter."
-  bullet: "Set pipetter to 1000μL"
+  note: "Use proper sterile technique. Use the 1000 µL pipetter."
+  bullet: "Set pipetter to 1000µL"
   bullet: "Loosen cap on LB aliquot"
   bullet: "Pipette 2 mL of LB into 14 mL tube"
   bullet: "Recap test tube and LB"

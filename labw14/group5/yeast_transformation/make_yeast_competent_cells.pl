@@ -117,16 +117,16 @@ while ii < length(yeast_250ml_flask)
 
   step
     description: "Take 1.5 mL tube with id %{id_num}"
-    note: "Estimate the approximate volume of the pellet in a tube with id %{id_num} ( in μL )."
+    note: "Estimate the approximate volume of the pellet in a tube with id %{id_num} ( in µL )."
     getdata
-      n: number, "Estimated volume of the pellet in μL:"
+      n: number, "Estimated volume of the pellet in µL:"
     end
   end
   amount_to_add = 4 * n
   total_vol     = 5 * n
   step
     description: "Resuspending the cells in a tube with id %{id_num}"
-    check: "Add %{amount_to_add} μL of 100 mM LiOAc liquid to the tube and resuspend the cells by vortxing."
+    check: "Add %{amount_to_add} µL of 100 mM LiOAc liquid to the tube and resuspend the cells by vortxing."
    end
   vol_data = append(vol_data,n)
   ii = ii + 1
@@ -153,7 +153,7 @@ while ii < length(yeast_250ml_flask)
 
   step
     description: "Obtaining cell aliquots from a 1.5 mL tube with id %{id_num}"
-    note: "You can obtain up to %{max} cell aliquots from a tube %{id_num}, 50μL each."
+    note: "You can obtain up to %{max} cell aliquots from a tube %{id_num}, 50µL each."
     warning: "Note that one of these aliquots will be used as a control aliquot."
     getdata
       num_to_make: number, "Number of aliquots you want to plate (max %{max}), INCLUDING the CONTROL aliquot."
@@ -182,7 +182,7 @@ while ii < length(yeast_250ml_flask)
       step
         description:"Making CONTROL aliquot from a tube with id %{id_num}"
         note: "Take a 1.5 mL tube and write your name on its side. Write 'CONTROL' word on its side as well."
-        check: "Pipet 50 μL of aliquot from a tube with id %{id_num} into the CONTROL 1.5 mL tube."
+        check: "Pipet 50 µL of aliquot from a tube with id %{id_num} into the CONTROL 1.5 mL tube."
       end
     
       produce
@@ -195,7 +195,7 @@ while ii < length(yeast_250ml_flask)
       step
         description:"Making another aliquot from a tube with %{id_num}"
         note: "Take a 1.5 mL tube and write your name on its side."
-        check: "Pipet 50 μL of aliquot from a tube %{id_num} into the labeled 1.5 mL tube."
+        check: "Pipet 50 µL of aliquot from a tube %{id_num} into the labeled 1.5 mL tube."
       end
     
       produce

@@ -14,20 +14,20 @@ step
 end
 
 step
-  description: "Add 20 μL molecular grade water to each tube %{first} - %{last}"
+  description: "Add 20 µL molecular grade water to each tube %{first} - %{last}"
 end
 
 
 step
-  description: "Take 1 μL from purified Genome tube and transfer it to all PCR tubes labeled %{first} - %{last}"
+  description: "Take 1 µL from purified Genome tube and transfer it to all PCR tubes labeled %{first} - %{last}"
 end
 
 step
   description: "Save some cells for later"
   check: "Labe two 1.5 mL tubes with your initials, date. Write save1 the first tube and save2 on second tube."
   check: "Add 1 mL of LB+Kan into the each tube."
-  check: "Take 1 μL from purified Genome tube and put it into tube save1."
-  check: "Take 1 μL from  purified Genome tube and put it into tube save2."
+  check: "Take 1 µL from purified Genome tube and put it into tube save1."
+  check: "Take 1 µL from  purified Genome tube and put it into tube save2."
 end
 
 

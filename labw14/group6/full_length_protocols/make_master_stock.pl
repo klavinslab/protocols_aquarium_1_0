@@ -33,12 +33,12 @@ step
 end
 
 step
-  description: "Pipette %{z} μL of Molecular Grade Water into the tube."
+  description: "Pipette %{z} µL of Molecular Grade Water into the tube."
   
 end
 
 step
-  description: "Add 10 μL from each %{n} oligonucleotide(s) into the 1.5 mL Eppendorf tube."
+  description: "Add 10 µL from each %{n} oligonucleotide(s) into the 1.5 mL Eppendorf tube."
   
 end
 

@@ -15,7 +15,7 @@ end
 step
   description: "Blank the Nanodrop"
   check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
-  check: "Add 2 μL of Buffer EB on the lower pedestal."
+  check: "Add 2 µL of Buffer EB on the lower pedestal."
   check: "Close the pedestal."
   check: "Click Blank in the software."
 end
@@ -26,7 +26,7 @@ step
   description: "Measure your sample"
   check: "Open the pedestal"
   check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
-  check: "Add 2 μL of your sample with id %{fragment} on the lower pedestal."
+  check: "Add 2 µL of your sample with id %{fragment} on the lower pedestal."
   check: "Close the pedestal."
   check: "Click Measure in the software."
 end
@@ -34,7 +34,7 @@ end
 step
   description: "Record the concentration shown on the nanodrop computer"
   getdata
-    conc: number,"Write down the number shown on the computer after ng/μL"
+    conc: number,"Write down the number shown on the computer after ng/µL"
   end
 end
 

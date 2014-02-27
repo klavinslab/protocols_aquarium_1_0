@@ -46,7 +46,7 @@ while ii < length(yeast_overnight_suspension)
   
   step
     description: "Diluting cells in YPD"
-    check: "Then, using 1000 μL pipettor, pipet 500 μL of the yeast overnight suspension culture
+    check: "Then, using 1000 µL pipettor, pipet 500 µL of the yeast overnight suspension culture
            from a 14 mL glass tube with id %{id_num} into the flask."
     warning: "Be sterile as far as possible. YPAD media gets easily contaminated."
     image: "14ml_tube_overnight_suspension_culture"

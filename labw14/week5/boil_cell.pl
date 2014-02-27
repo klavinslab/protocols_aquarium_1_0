@@ -13,33 +13,33 @@ step
 end
 
 step
-  description: "Add 20 μL molecular grade water to each tube 1-4"
+  description: "Add 20 µL molecular grade water to each tube 1-4"
 end
 
 t1= template[0]
 t2= template[1]
 step
-  description: "Take 1 μL from tube with id %{t1} and transfer it to tube 1"
+  description: "Take 1 µL from tube with id %{t1} and transfer it to tube 1"
 end
 step
-  description: "Take 1 μL from tube with id %{t2} and transfer it to tube 2"
+  description: "Take 1 µL from tube with id %{t2} and transfer it to tube 2"
 end
 
 step
   description: "Pick a colony from the plate sector 3 and put it into tube 3"
-  note: "Find a colony in your plate sector 3 and pick up the entire colony with a 200 μL (green box) pipette tip.  Then transfer it to tube 3."
+  note: "Find a colony in your plate sector 3 and pick up the entire colony with a 200 µL (green box) pipette tip.  Then transfer it to tube 3."
 end
 step
   description: "Pick a colony from the plate sector 4 and put it into tube 4"
-  note: "Find a colony in your plate sector 4 and pick up the entire colony with a 200 μL (green box) pipette tip.  Then transfer it to tube 4."
+  note: "Find a colony in your plate sector 4 and pick up the entire colony with a 200 µL (green box) pipette tip.  Then transfer it to tube 4."
 end
 
 step
   description: "Save some cells for later"
   check: "Labe two 1.5 mL tubes with your initials, date. Write save3 the first tube and save4 on second tube."
   check: "Add 1 mL of LB+Kan into the each tube."
-  check: "Take 1 μL from tube 3 and put it into tube save3."
-  check: "Take 1 μL from tube 4 and put it into tube save4."
+  check: "Take 1 µL from tube 3 and put it into tube save3."
+  check: "Take 1 µL from tube 4 and put it into tube save4."
 end
 #TODO: fix up the above
 

@@ -17,8 +17,8 @@ end
 step
    description: "Preparing for plating"
    check: "Spin all the tubes down for 30 seconds on a small tabletop centrifuge."
-   check: "Carefully remove the supernatant from each tube with a pipettor (~400μL setting total)."
-   check: "Add 600μL of molecular grade water to each tube."
+   check: "Carefully remove the supernatant from each tube with a pipettor (~400µL setting total)."
+   check: "Add 600µL of molecular grade water to each tube."
    check: "Vortex the tubes for 15-30 sec."
 end
 

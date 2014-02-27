@@ -15,7 +15,7 @@ step
 end
 
 step
-  description: "Add 20 μL molecular grade water to each tube"
+  description: "Add 20 µL molecular grade water to each tube"
 end
 
 i=0
@@ -26,7 +26,7 @@ while i<sample_count
 	step
 	  description: "Pick a colony from plate %{current_plate} and put it into tube %{current_tube}"
 	  check: "Find a colony in plate %{current_plate} that is medium sized, round, and isolated"
-	  check: "Pick up the entire colony with a 200 μL (green box) pipette tip and transfer it to tube %{current_tube}."
+	  check: "Pick up the entire colony with a 200 µL (green box) pipette tip and transfer it to tube %{current_tube}."
 	end
 	i = i+1
 end
