@@ -51,11 +51,15 @@ step
 end
 
 
-step 
-  description: "Fetch defogger solution and aluminium foil"
-  check: "Retrieve the 'Fog Tech anti-fog solution' from location B5.530"
-  image: "anti_fog"
-  check: "Fetch the aluminium foil from location A8.400"
+#step 
+#  description: "Fetch defogger solution and aluminium foil"
+#  check: "Retrieve the 'Fog Tech anti-fog solution' from location B5.530"
+#  image: "anti_fog"
+#  check: "Fetch the aluminium foil from location A8.400"
+#end
+take
+  antifog = 1 "Antifog Solution"
+  foil = 1 "Aluminum Foil"
 end
 
 step
@@ -79,7 +83,7 @@ step
   check: "Return the aluminium foil to location A8.400"
 end
 
-release cells
+release concat(cells, antifog, foil)
 #return statement
 
 step
