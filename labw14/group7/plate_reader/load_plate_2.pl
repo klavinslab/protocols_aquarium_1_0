@@ -8,6 +8,9 @@ step
   description: "This protocol loads the plate reader with the samples to be assayed"
   note: "This is the box of 96 well plates"
   image: "96_well_plate_box"
+end
+step
+  description: "A 96 well plate"
   note: "This is an individual 96 well plate from the box (you will take one of these in the next step)"
   image: "96_well_plate"
 end
