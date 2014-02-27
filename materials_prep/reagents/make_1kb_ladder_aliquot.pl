@@ -1,9 +1,12 @@
 argument
   ladder: sample, "Choose 1kb ladder stock"
 end
+take
+  ladder_stock: ladder
+end
 
 step
-  description: "Label a 1.5 mL tube"
+  description: "Label a 1.5 mL tube with you initials and date"
 end
 
 step
@@ -15,7 +18,7 @@ step
 end
 
 step
-  description: "Add 220 µL of gel loading dye into the tube"
+  description: "Add 220 µL of molecular grade water into the tube"
 end
 
 produce
@@ -23,4 +26,6 @@ produce
 # note: "Keep the tube on the bench to use in the next protocol. (no need to edit the location below)"
 # location: "Bench"
 end
+
+release ladder_stock[0]
   
