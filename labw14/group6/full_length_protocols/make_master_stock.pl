@@ -21,7 +21,7 @@ take
 end
 
 step
-  description: "This protocol describes how to make a primer pool from desired oligonucleotides."
+  description: "This protocol describes how to make a stock mixtures from desired oligonucleotides."
   
 end
 
@@ -38,7 +38,7 @@ step
 end
 
 step
-  description: "Add 10 µL from each %{n} oligonucleotide(s) into the 1.5 mL Eppendorf tube."
+  description: "Add 10 µL from each %{n} oligonucleotides into the 1.5 mL Eppendorf tube."
   
 end
 
