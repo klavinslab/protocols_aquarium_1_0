@@ -9,7 +9,7 @@ end
 take
  media_tube = 2 "50 mL Falcon Tube"
  media = 1 "400 mL M9 liquid Glucose"
- note: "Use the 0.4 percent solution"
+ note: "Use the 0.4 percent glucose solution"
  pipette = 1 "Serological Pipette"
  tip = 1 "25 mL Serological Pipette Tips"
  amp = 1 "100X 1 mL Ampicillin Aliquot"
@@ -29,7 +29,7 @@ step
 end
 
 step
-  description: "Add 30mL of 'M9 liquid Glucose' to two 50mL falcon tubes"
+  description: "Add 30mL of 'M9 liquid Glucose' to each of the two 50mL falcon tubes"
   check: "Unscrew the caps of the glucose solution, as well as your two empty falcon tubes"
   check: "Attach the 25mL tip to the serological pipetter"
   note: "You will add a total of 30mL glucose media to each falcon tube (in two steps, since the max volue is 25mL for the pipetter"
