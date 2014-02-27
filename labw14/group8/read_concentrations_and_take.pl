@@ -40,7 +40,7 @@ foreach name in fragments_to_take
   total = 0
   foreach p in plasmids_to_make
     foreach f in p[:fragment_amounts_in_ul]
-      if  f[:fragment_name] == name
+      if  f[:name] == name
         total = total + p[:quantity_to_make]*f[:amount]
       end
     end
