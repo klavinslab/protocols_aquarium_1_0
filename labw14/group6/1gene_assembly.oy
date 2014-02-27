@@ -130,7 +130,7 @@ place PCR_finish
   protocol: "labw14/group6/full_length_protocols/PCR_finish.pl"
   group: aquarium_user
   marked: true
-  start: minutes(60)
+  start: now()
   window: minutes(30)
 end
 
