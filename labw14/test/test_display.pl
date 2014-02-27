@@ -3,6 +3,6 @@ step
 end
 
 step
-  description: "Pipette μL of Molecular Grade Water into the tube."
+  description: "Pipette µL of Molecular Grade Water into the tube."
   
 end
