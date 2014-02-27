@@ -1,7 +1,7 @@
 # run gibsons 
 # note: ignores error in one gibson (an abort) ; can't recover in place
 argument
-  gibson_types: sample array, "The gibsons you want to run."
+  fragments: sample array, "The fragments you will need for your gibsons."
 end
 
 # datastructure
