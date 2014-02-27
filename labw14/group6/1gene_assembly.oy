@@ -169,8 +169,10 @@ transition [ assembly2 ] => [ assembly2 ] when error(0) end
 transition [ run_gel ] => [ image_cut_gel ] when !error(0) && completed(0) end
 transition [ run_gel ] => [ run_gel ] when error(0) end
 
-transition [ image_cut_gel, image_cut_gel2  ] => [ gel_purify ] when !error(0) && completed(0) end
+transition [ image_cut_gel ] => [ image_cut_gel2 ] when !error(0) && completed(0) end
 transition [ image_cut_gel ] => [ image_cut_gel ] when error(0) end
+
+transition [ image_cut_gel2  ] => [ gel_purify ] when !error(0) && completed(0) end
 transition [ image_cut_gel2 ] => [ image_cut_gel2 ] when error(0) end
 
 transition [ gel_purify ] => [ ] when !error(0) && completed(0) end
