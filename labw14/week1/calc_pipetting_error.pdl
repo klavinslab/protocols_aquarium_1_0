@@ -7,14 +7,14 @@
   <description>Know the total volume.</description>
   <note>
   The total volume is the volume that the liquid SHOULD be after pipetting. If you just executed the large volume pipetting exercise,
-  the total volume is 1000 μL. If you just executed the small volume pipetting exercise, the total volume is 10 μL.
+  the total volume is 1000 µL. If you just executed the small volume pipetting exercise, the total volume is 10 µL.
   </note>
 </step>
 
 <step>
   <description>Draw up the liquid.</description>
   <note>
-  If the total volume is 10 μL, make sure you have centrifuged all the the liquid to the bottom of the tube. Using the correct pipette that is set to the total volume, draw up as much liquid from the tube as 
+  If the total volume is 10 µL, make sure you have centrifuged all the the liquid to the bottom of the tube. Using the correct pipette that is set to the total volume, draw up as much liquid from the tube as 
   possible. There are three possible outcomes after this step. Pick which outcome best applies.
   </note>
     <select>
