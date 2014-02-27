@@ -1,14 +1,13 @@
+e_coli_strain_type = "MG1655Z1 Electrocompetent Aliquot"
+plate_type = "LB Kan Plate (sterile)"
+
+
 argument
   backbone_fragments: sample array, "Choose the fragment samples you have prepared"
 end
 
 
 #backbone_fragments = [1141, 1144] 
-
-e_coli_strain_type = "MG1655Z1 Electrocompetent Aliquot"
-plate_type_1 = "LB Kan Plate (sterile)"
-plate_type_2 = "LB Kan Plate (sterile) 0.25 mM IPTG"
-plate_type_3 = "LB Kan Plate (sterile) aTc 42ng/mL"
 
 place gibson
   protocol: "labw14/group6/full_length_protocols/gibson_assembly.pl"
