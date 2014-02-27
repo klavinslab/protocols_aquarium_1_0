@@ -27,5 +27,5 @@ produce
 # location: "Bench"
 end
 
-release ladder_stock[0]
+release ladder_stock
   
