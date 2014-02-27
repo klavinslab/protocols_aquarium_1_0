@@ -89,7 +89,7 @@ place assembly1
     enzyme_id: phusionHF
   end
   group: aquarium_user
-  start: now(5)
+  start: minutes(5)
   window: minutes(30)
 end
 
@@ -101,7 +101,7 @@ place assembly2
     enzyme_id: phusionHF
   end
   group: aquarium_user
-  start: now(5)
+  start: minutes(5)
   window: minutes(30)
 end
 
@@ -130,7 +130,7 @@ place PCR_finish
   protocol: "labw14/group6/full_length_protocols/PCR_finish.pl"
   group: aquarium_user
   marked: true
-  start: now(60)
+  start: minutes(60)
   window: minutes(30)
 end
 
