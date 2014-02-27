@@ -23,7 +23,8 @@ take
   culture_tubes = n "14 mL Test Tube"
   pipette = 1 "Serological Pipette"
   tip = 1 "5 mL Serological Pipette Tips"
-  media_tubes = 2 "30 mL M9 liquid Glucose + amp + kan"
+  media_tube1 = 1 "30 mL M9 liquid Glucose + amp + kan"
+  media_tube2 = 1 "30 mL M9 liquid Glucose + amp + kan"
 end
 
 #A loop to produce all of the culture tubes silently, so I can get their newly assigned ID numbers
@@ -106,14 +107,25 @@ step
   description: "Store one tube of 'M9 liquid Glucose + amp + kan'"
   note: "You should now have two 30ml tubes of 'M9 liquid Glucose + amp + kan' on your bench"
   note: "One of them should be empty, and one of them partially remaining"
-  check: "Dispose of the empty 30ml tube in tip waste"
-  check: "Store the second (parially filled) 30mL tube of 'M9 liquid Glucose + amp + kan' at location B0.110 (inducer fridge)"
+  check: "You will dispose of the empty 30ml tube in tip waste (in the next step)"
+  check: "The second (parially filled) 30mL tube of 'M9 liquid Glucose + amp + kan' should be stored at location B0.110 (inducer fridge)"
 end
 
+release media_tube1
+
+modify
+  media_tube2
+  location: "B0.110"
+end
 #TODO: Re-paraffin the agar plates before releasing them
 #TODO: Reconfigure the prduce/release of the '30ml glucose+amp+kan' so that it makes more sense
+step
+  description: "Re-paraffin the agar plates"
+  check: "Cut off a 0.5 inch strip of paraffin, hold one end of the strip to the side of an agar plate, and stretch the other end out around the whole plate"
+  check: "Repeat this proces for each of your three agar plates"
+end
 
-release append(plate_array, media_tubes[0])
+release plate_array
 
 
 #modify
