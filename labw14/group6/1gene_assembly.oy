@@ -110,6 +110,30 @@ wire (stock2, "Working_Stock_id") => (assembly1, "oligo_pools2")
 wire (stock3, "Working_Stock_id") => (assembly2, "oligo_pools1")
 wire (stock4, "Working_Stock_id") => (assembly2, "oligo_pools2")
 
+place thermal_cycler
+  protocol: "labw14/group6/full_length_protocols/thermal_cycler.pl"
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+place pour_gel
+  protocol: "labw14/group6/full_length_protocols/pour_gel.pl"
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+place PCR_finish
+  protocol: "labw14/group6/full_length_protocols/PCR_finish.pl"
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
 place run_gel
   protocol: "labw14/group6/full_length_protocols/run_gel.pl"
   argument
@@ -121,8 +145,8 @@ place run_gel
   window: minutes(30)
 end
 
-wire (assembly1, "PCR_Result_id") => (run_gel, "assemblies1")
-wire (assembly2, "PCR_Result_id") => (run_gel, "assemblies2")
+wire (PCR_finish, "PCR_Result_id1") => (run_gel, "assemblies1")
+wire (PCR_finish, "PCR_Result_id2") => (run_gel, "assemblies2")
 
 place image_cut_gel
   protocol: "labw14/group6/full_length_protocols/image_cut_gel.pl"
@@ -154,9 +178,18 @@ transition [ stock3, stock4 ] => [ assembly2 ] when !error(0) && completed(0) &&
 transition [ stock3 ] => [ stock3 ] when error(0) end
 transition [ stock4 ] => [ stock4 ] when error(0) end
 
-transition [ assembly1, assembly2 ] => [ run_gel ] when !error(0) && completed(0) && !error(1) && completed(1) end
+transition [ assembly1, assembly2 ] => [ thermal_cycler ] when !error(0) && completed(0) && !error(1) && completed(1) end
 transition [ assembly1 ] => [ assembly1 ] when error(0) end
 transition [ assembly2 ] => [ assembly2 ] when error(0) end
+
+transition [ thermal_cycler ] => [ pour_gel ] when !error(0) && completed(0) end
+transition [ thermal_cycler ] => [ thermal_cycler ] when error(0) end
+
+transition [ pour_gel ] => [ PCR_finish ] when !error(0) && completed(0) end
+transition [ pour_gel ] => [ pour_gel ] when error(0) end
+
+transition [ PCR_finish ] => [ run_gel ] when !error(0) && completed(0) end
+transition [ PCR_finish ] => [ PCR_finish ] when error(0) end
 
 transition [ run_gel ] => [ image_cut_gel ] when !error(0) && completed(0) end
 transition [ run_gel ] => [ run_gel ] when error(0) end
