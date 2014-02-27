@@ -60,29 +60,20 @@ step
     note: "You will claim %{total_amounts}"
 end
   
-fragments_taken = [ ]
+
 foreach f in total_amounts
   amount = f[:total_amount]
   name = f[:fragment_name]
   step
     description: "Claim fragment %{name}"
     note: "Go into the Inventory and put enough stock of fragment %{name}.
-          You will use a total of %{amount} microliters.
-          You will go physically take them formally in the next step,
-          but feel free to go take them now and check that there will be
-          enough."
+          (you will use a total of %{amount} microliters) into your cart.
+          You will go physically take them formally in the next protocol.
+          You will be reminded of how much you will need in the next step
+          to again check by eye that you should have enough."
   end
-  take
-    x = 1 name
-  end
-  fragments_taken = append(fragments_taken, x)
 end
 
-step
-  description: "Review taken fragments"
-  note: "You should have the following fragments at your bench.
-         %{fragments_taken}"
-end
 
 # silently produce the future samples
 # and label them, laying them out in a grid
