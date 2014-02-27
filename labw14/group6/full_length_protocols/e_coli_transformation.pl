@@ -3,6 +3,7 @@
 argument
   plasmid: sample, "The plasmid to be used"
   e_coli_strain_type: object, "The electrocompetent aliquot to be transformed"
+  plate_type: object, "The plate on which the transformed cells to be plated"
 end
 
 if plate_type == "LB Amp Plate (sterile)"
@@ -13,7 +14,7 @@ end
 
 take
   falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
-  plasmid = item plasmid_id
+  plasmid = item plasmid
   electroporator = 1 "Electroporator"
 end
 
