@@ -40,7 +40,7 @@ foreach name in fragments_to_take
       end
     end
   end
-  total_amounts = append(total_amounts, { fragment_name: name, total_amount: total_amount})
+  total_amounts = append(total_amounts, { fragment_name: name, total_amount: total})
 end
 
 #foreach p in plasmids_to_make
