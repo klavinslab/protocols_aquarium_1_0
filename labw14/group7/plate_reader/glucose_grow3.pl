@@ -131,7 +131,7 @@ end
 release media_tube1
 
 modify
-  media_tube2
+  media_tube2[0]
   location: "B0.110"
 end
 #TODO: Re-paraffin the agar plates before releasing them
