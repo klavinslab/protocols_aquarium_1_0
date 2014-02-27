@@ -211,7 +211,7 @@ end
 x=0
 while x < num
   produce
-    gel_lane = 1 "Gel Lane" of fragment_names[x]
+    gel_lane = 1 "Gel Lane" from fragment_names[x]
   end
   x=x+1
 end
