@@ -31,7 +31,7 @@ fragments_to_take = unique(fragments_to_take)
 
 # todo extract these into hash and other libraries
 foreach name in fragments_to_take
-  total_amounts[name]=0
+  total_amounts[name] = 0
 end
 
 foreach p in plasmids_to_make
