@@ -1,16 +1,11 @@
 
-
-argument
-  fragments: sample array, "Choose the fragments you want to combine"
-end
-
 backbone_fragments = [1141, 1144] 
 
 place gibson
   protocol: "labw14/group6/full_length_protocols/gibson_assembly.pl"
   group: aquarium_user
   argument
-    fragment2: backbone_fragments
+    fragments: backbone_fragments
   end
   start: now()
   window: minutes(30)
