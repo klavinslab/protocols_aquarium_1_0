@@ -70,17 +70,11 @@ end
 
 step
   description: "Seal the plate"
-  check: "Retrieve a box of aluminum foil from location A8.400"
-  check: "Cut out a small (3x3cm) square of aluminum, and fold it over 3~4 times to construct a small (3mm thick) shim"
-  check: "Return the aluminium foil to location A8.400"
-  check: "Insert the small foil shim into the corner of the assay plate, and close the lid (This shim will keep the lid from rattling during the run)"
+  check: "Cut out a small (3x3cm) square of aluminum, and fold it over 3~4 times
+          to construct a small (3mm thick) shim"
+  check: "Insert the small foil shim into the corner of the assay plate,
+          and close the lid (This shim will keep the lid from rattling during the run)"
   #TODO: include picture
-end
-
-step
-  description: "Return the antifog solution and aluminium foil"
-  check: "Return the 'Fog Tech anti-fog solution' to location B5.530"
-  check: "Return the aluminium foil to location A8.400"
 end
 
 release concat(cells, concat(antifog, foil))
@@ -88,5 +82,8 @@ release concat(cells, concat(antifog, foil))
 
 step
   description: "Next steps..."
-  note: "You should see two jobs in your queue after completing this protocol.  Be sure to proceed with 'induce_atc_zero.pl' (the first inuction step), then 'begin_run.pl' before you dispose of your culure tubes.  You will have plenty of time to do thisafter you have started you run"
+  note: "You should see two jobs in your queue after completing this protocol.
+         Be sure to proceed with 'induce_atc_zero.pl' (the first inuction step),
+         then 'begin_run.pl' before you dispose of your culure tubes.
+         You will have plenty of time to do thisafter you have started you run"
 end
