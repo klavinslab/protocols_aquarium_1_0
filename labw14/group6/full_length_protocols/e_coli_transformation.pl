@@ -1,7 +1,7 @@
 #information "E.coli Transformation protocol"
 
 argument
-  plasmid_id: sample, "The plasmid to be used"
+  plasmid: sample, "The plasmid to be used"
   e_coli_strain_type: object, "The electrocompetent aliquot to be transformed"
 end
 
