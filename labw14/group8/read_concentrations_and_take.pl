@@ -19,9 +19,7 @@ foreach p in plasmids_to_make
  step
    description: "Check plasmid exists"
    note: "Go into the Inventory and check that a plasmid named '%{name}'
-          exists for each
-          plasmid you want to make and the name matches your specification
-          file."
+          exists and the name matches the name in your specification file."
  end
  foreach f in p[:fragment_amounts_in_ul]
    fragments_to_take = append(fragments_to_take, f[:fragment_name])
@@ -53,10 +51,12 @@ end
 #end
 
 foreach f in total_amounts
+  amount = f[:total_amount]
+  name = f
   step
     description: "Claim fragment %{f[:fragment_name]}"
-    note: "Go into the Inventory and put enough stock of fragment %{f}.
-          You will use a total of %{f[:total_amount]} microliters.
+    note: "Go into the Inventory and put enough stock of fragment %{name}.
+          You will use a total of %{amount} microliters.
           You will go physically take them formally in the next step,
           but feel free to go take them now and check that there will be
           enough."
