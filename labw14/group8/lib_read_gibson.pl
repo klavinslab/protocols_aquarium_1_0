@@ -12,7 +12,7 @@ function ask_filename_then_get_gibsons()
       it will automatically look in the protocols github repository.
       The file format is fragment_name1, fragment_name2, ... 
       for columns, then concentrations in microliters. Use blanks to indicate 
-      not to use that fragment. A sample file is at labw14/group8/example_gibson_data.pl"
+      not to use that fragment. A sample file is at labw14/group8/example_json_gibsons.json"
     warning: "This is currently ignored and the example file is used"
     getdata
       f: string, "The path to the file"
@@ -21,8 +21,11 @@ function ask_filename_then_get_gibsons()
   
   #require "labw14/group8/example_gibson_data.pl" # placeholder for variable gibson input
   local r = 0
-  include "labw14/group8/example_gibson_data.pl" # bug doesn't insert string or might not have val for f
-    r = gibsons
+  #include "labw14/group8/example_gibson_data.pl" # bug doesn't insert string or might not have val for f
+  #  r = gibsons
+  #end
+  input
+    p = "labw14/group8/example_json_gibsons.json"
   end
   
     # gibsons would look like gibsons = [
@@ -34,11 +37,8 @@ function ask_filename_then_get_gibsons()
   # transform array to nicer format for use by other programs
   
   # for now we just fake some data for testing
-  local example_result = [
-             [{input: 1, concentration: 0.1}, {input: 2, concentration: 0.2}], 
-             [{input: 3, concentration: 0.3}, {input: 4, concentration: 0.4}] 
-                         ]
-  return r
+
+  return p
 end
 
 # returns 
