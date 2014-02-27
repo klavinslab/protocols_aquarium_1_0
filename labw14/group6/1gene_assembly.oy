@@ -133,7 +133,7 @@ place pour_gel
 end
 
 place PCR_finish1
-  protocol: "labw14/group6/full_length_protocols/PCR_finish.pl"
+  protocol: "labw14/group6/full_length_protocols/PCR_finish1.pl"
   group: aquarium_user
   marked: true
   start: now()
@@ -141,7 +141,7 @@ place PCR_finish1
 end
 
 place PCR_finish2
-  protocol: "labw14/group6/full_length_protocols/PCR_finish.pl"
+  protocol: "labw14/group6/full_length_protocols/PCR_finish2.pl"
   group: aquarium_user
   marked: true
   start: now()
@@ -190,8 +190,7 @@ transition [ stock3, stock4 ] => [ assembly2 ] when !error(0) && completed(0) &&
 transition [ stock3 ] => [ stock3 ] when error(0) end
 transition [ stock4 ] => [ stock4 ] when error(0) end
 
-transition [ assembly1, assembly2 ] => [ thermal_cycler ] when !error(0) && completed(0) && !error(1) && completed(1) end
-transition [ assembly1 ] => [ assembly1 ] when error(0) end
+transition [ assembly2 ] => [ thermal_cycler ] when !error(0) && completed(0) && !error(1) && completed(1) end
 transition [ assembly2 ] => [ assembly2 ] when error(0) end
 
 transition [ thermal_cycler ] => [ pour_gel ] when !error(0) && completed(0) end
