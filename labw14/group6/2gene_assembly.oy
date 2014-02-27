@@ -1,5 +1,5 @@
-e_coli_strain_type = "MG1655Z1 Electrocompetent Aliquot"
-plate_type = "LB Kan Plate (sterile)"
+e_coli_strain_type = MG1655Z1 Electrocompetent Aliquot
+plate_type = LB Kan Plate (sterile)
 
 
 argument
