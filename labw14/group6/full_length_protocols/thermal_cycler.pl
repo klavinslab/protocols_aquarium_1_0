@@ -23,4 +23,5 @@ end
 step
   description: "The heat treatment takes about 2 hours"
   note: "Meanwhile, you may pour the gel inside the gel room to have your gel ready before the next step."
+  warning: "Use percentage as 1 and number of combs as 1."
 end
