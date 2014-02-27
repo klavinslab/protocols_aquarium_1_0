@@ -43,7 +43,8 @@ produce
   release x
 end
 
-release y
+release y1
+release y2
 release [molecular_g_h2o]
 
 
