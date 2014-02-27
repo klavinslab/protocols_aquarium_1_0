@@ -16,7 +16,7 @@ take
  kan = 1 "200X 1 mL Kanamycin Aliquot"
  note: "You will need at least 0.12 mL of amp, and 0.30 mL of kan
         for the next step, so check the level of the liquid in your aliquots to be sure they are sufficient.
-        Also, Use the 0.4 percent glucose solution"
+        Also, use the 0.4 percent glucose solution"
 end
 
 step
@@ -97,5 +97,5 @@ produce silently
 end
 
 log
-  return: {pipette_out: pipette[:id]}
+  return: {pipette_out: pipette}
 end
