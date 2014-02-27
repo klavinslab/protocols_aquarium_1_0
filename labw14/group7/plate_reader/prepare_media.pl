@@ -89,7 +89,7 @@ step
   check: "Vortex the second 50mL Falcon for 15 seconds"
 end
 
-release concat(media, concat(amp, kan)))  #concat(pipette,
+release concat(media, concat(amp, kan))  #concat(pipette,
 
 produce silently
   m = 2 "30 mL M9 liquid Glucose + amp + kan"
