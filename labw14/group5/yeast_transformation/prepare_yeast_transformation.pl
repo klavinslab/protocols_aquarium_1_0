@@ -49,11 +49,16 @@ while ii < number_we_can_make
       description: "Resuspend the cells by vortexing"
       warning: "Vortex strongly (setting 8 or 9 on the vortexer) for 1 min or until mixed."
     end
-    produce
-        y = 1 "Yeast Transformation Mixture" from yeast_aliquot_tubes[ii]
-        release yeast_aliquot_tubes[ii]
+#    produce
+#        y = 1 "Yeast Transformation Mixture" from yeast_aliquot_tubes[ii]
+#        release yeast_aliquot_tubes[ii]
+#    end
+#    r = append(r,y[:id])
+    modify
+      release yeast_aliquot_tubes[ii]
+      location:"Bench"
+      inuse:0
     end
-    r = append(r,y[:id])
   else
   # NON-CONTROL TUBES
     step
@@ -74,20 +79,25 @@ while ii < number_we_can_make
       warning: "Vortex strongly (setting 8 or 9 on the vortexer) for 1 min or until mixed."
       #image: "voltexing_strongly_group5"
     end
-    produce
-        z = 1 "Yeast Transformation Mixture" from yeast_aliquot_tubes[ii]
-        release yeast_aliquot_tubes[ii]
+#    produce
+#        z = 1 "Yeast Transformation Mixture" from yeast_aliquot_tubes[ii]
+#        release yeast_aliquot_tubes[ii]
+#    end
+#    r = append(r,z[:id])
+    modify
+      release yeast_aliquot_tubes[ii]
+      location:"Bench"
+      inuse:0
     end
-    r = append(r,z[:id])
   end
   
   #r = append(r,y[:id])
   ii=ii+1
 end
 
-log
-  return: { yeast_plasmid_mixture: r }
-end
+#log
+#  return: { yeast_plasmid_mixture: r }
+#end
 
 release digested_plasmid
 release [ peg[0], liac[0], carrier_dna[0] ]
