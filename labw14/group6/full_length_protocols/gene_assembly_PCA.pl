@@ -40,42 +40,8 @@ step
   note: "Be careful to pipette into the liquid, not the side of the tube."
 end
 
-release phusion_stock
-
 step
-  description: "You will now be asked to use the lab thermal cycler"
-  note: "The thermal cycler will be shared by all groups."
-  image: "thermal_cycler_off"
-end
-
-step
-  description: "Place the tube into thermal cycler T2 at B3.335."
-end
-
-step
-  description: "Choose program on the thermal cycler."
-  note: "Click Home then click Saved Protocol, choose Nick folder, choose assembly."
-  image: "thermal_cycler_home"
-end
-
-step
-  description: "When all the samples are loaded, hit 'run' on the thermal cycler and select 50 µL setting."
-  image: "thermal_cycler_select"
-end
-
-step
-  description: "Wait about 2 hours"
-  note: "Meanwhile, you may run the pour_gel protocol inside the gel room to have your gel ready before the next step."
-end
-
-step
-  description: "Go to the thermal cycler and pick up the product of the PCA."
-  note: "And place the tube at your bench"
-end
-
-produce
-  new_gene = 1 "PCR Result" of "fGA"
-
+  description: "Put the prepared PCR tube on the bench."
 end
 
 release primer1_stock
@@ -83,6 +49,3 @@ release primer2_stock
 release masterstock1
 release masterstock2
 
-log
-  return: { PCR_Result_id: new_gene[:id] }
-end
