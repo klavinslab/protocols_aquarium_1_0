@@ -1,5 +1,3 @@
-
-
 step
   description: "You will now be asked to use the lab thermal cycler"
   note: "The thermal cycler will be shared by all groups."
@@ -20,4 +18,9 @@ end
 step
   description: "When both samples are loaded, hit 'run' on the thermal cycler and select 50 µL setting."
   image: "thermal_cycler_select"
+end
+
+step
+  description: "The heat treatment takes about 2 hours"
+  note: "Meanwhile, you may run the pour_gel protocol (group6/full_length_protocols/pour_gel.pl) inside the gel room to have your gel ready before the next step."
 end
