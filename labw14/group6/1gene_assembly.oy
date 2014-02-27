@@ -24,6 +24,14 @@ Concentrated_Stock4 = "OsGH3.1-2_7-12"
 ladder = 1357
 
 # Places
+Place Introduction
+  protocol: "labw14/group6/full_length_protocols/introduction.pl"
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
 place stock1
   protocol: "labw14/group6/full_length_protocols/make_master_stock.pl"
   argument
@@ -135,8 +143,8 @@ end
 wire (image_cut_gel, "Gel_Slice_id1") => (gel_purify, "gel1")
 wire (image_cut_gel, "Gel_Slice_id2") => (gel_purify, "gel2")
 
-
-
+transition [ introduction] => [ stock1] when !error(0) && completed(0) end
+transition [ introduction ] => [ introduction] when error(0) end
 
 transition [ stock1, stock2 ] => [ assembly1 ] when !error(0) && completed(0) && !error(1) && completed(1) end
 transition [ stock1 ] => [ stock1 ] when error(0) end
