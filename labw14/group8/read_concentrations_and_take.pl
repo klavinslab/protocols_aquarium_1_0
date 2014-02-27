@@ -63,7 +63,7 @@ end
 fragments_taken = [ ]
 foreach f in total_amounts
   amount = f[:total_amount]
-  name = f
+  name = f[:fragment_name]
   step
     description: "Claim fragment %{name}"
     note: "Go into the Inventory and put enough stock of fragment %{name}.
