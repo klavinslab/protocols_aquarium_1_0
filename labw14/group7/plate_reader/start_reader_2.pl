@@ -6,7 +6,7 @@ step
 end
 
 step
-  desciption: "Start the plate reader software"
+  description: "Start the plate reader software"
   check: "On the accompanying computer, click the start menu, type in 'Gen5 1.11'"
   check: "Confirm that you see 'Gen5 1.11' as an option, and enter to run the 'Biotech Gen5' software"
 end
