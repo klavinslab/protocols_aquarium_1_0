@@ -89,7 +89,7 @@ place heat_shock
   window: minutes(1)
 end
 
-  wire (prepare_yeast_transformation,"yeast_plasmid_mixture") => (heat_shock,"yeast_transformation_mixtures")
+  wire (make_yeast_competent_cells,"yeast_aliquot") => (heat_shock,"yeast_transformation_mixtures")
 
 
 
@@ -103,7 +103,7 @@ place plate_incubate
   window: minutes(1)
 end
 
-  wire (prepare_yeast_transformation,"yeast_plasmid_mixture") => (plate_incubate,"yeast_strain_id")
+  wire (make_yeast_competent_cells,"yeast_aliquot") => (plate_incubate,"yeast_strain_id")
 
 
 
@@ -112,8 +112,8 @@ end
 place image_plate
   protocol: "labw14/group5/yeast_transformation/image_plate.pl"
   group: aquarium_user
-  start: hours(48)
-  window: hours(2)
+  start: now() #hours(48)
+  window: minutes(1) #hours(2)
 end
 
   wire (plate_incubate,"plate_id") => (image_plate,"transformed_yeast_plate_id")
