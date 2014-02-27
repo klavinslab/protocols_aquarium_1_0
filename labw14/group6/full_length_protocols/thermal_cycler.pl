@@ -22,5 +22,5 @@ end
 
 step
   description: "The heat treatment takes about 2 hours"
-  note: "Meanwhile, you may run the pour_gel protocol (group6/full_length_protocols/pour_gel.pl) inside the gel room to have your gel ready before the next step."
+  note: "Meanwhile, you may pour the gel inside the gel room to have your gel ready before the next step."
 end
