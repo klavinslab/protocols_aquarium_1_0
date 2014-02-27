@@ -118,14 +118,7 @@ produce
   release y
 end
 
-produce
-  t = 1 "Gel Slice" of "fGA"
-end
-
 log
   return: {Gel_Slice_id: r[:id]}
 end
 
-log
-  return: {Gel_Slice_id: t[:id]}
-end
