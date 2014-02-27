@@ -1,0 +1,13 @@
+{
+  "plasmids_to_make": [
+    {"plasmid_name_to_make": "name",
+     "quantity_to_make": 2,
+     "fragment_amounts_in_ul": [{"fragment_name": "name", "amount": 2},
+                                {"fragment_name": "name", "amount": 10}],
+     "add_to_data": "put a hash here to add to data for samples produced"},
+    {"plasmid_name_to_make": "name",
+     "quantity_to_make": 2,
+     "fragment_amounts_in_ul": [{"fragment_name": "name", "amount": 2},
+                                {"fragment_name": "name", "amount": 10}],
+     "add_to_data": "put a hash here to add to data for samples produced"}]
+}
