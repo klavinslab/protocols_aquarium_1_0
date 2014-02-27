@@ -167,7 +167,7 @@ end
 wire (image_cut_gel, "Gel_Slice_id1") => (gel_purify, "gel1")
 wire (image_cut_gel, "Gel_Slice_id2") => (gel_purify, "gel2")
 
-transition [ introduction] => [ stock1] when !error(0) && completed(0) end
+transition [ introduction] => [ stock1, stock2 ] when !error(0) && completed(0) end
 transition [ introduction ] => [ introduction] when error(0) end
 
 transition [ stock1, stock2 ] => [ assembly1 ] when !error(0) && completed(0) && !error(1) && completed(1) end
