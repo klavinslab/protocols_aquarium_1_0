@@ -1,4 +1,9 @@
-backbone_fragments = [1141, 1144] 
+argument
+  backbone_fragments: sample array, "Choose the fragment samples you have prepared"
+end
+
+
+#backbone_fragments = [1141, 1144] 
 
 place gibson
   protocol: "labw14/group6/full_length_protocols/gibson_assembly.pl"
