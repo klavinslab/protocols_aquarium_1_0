@@ -4,5 +4,5 @@ step
 end
 
 step
-  description: "Add 20 μL molecular grade water to each tube 1-4"
+  description: "Add 20 µL molecular grade water to each tube 1-4"
 end
