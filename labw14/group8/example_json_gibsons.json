@@ -1,13 +1,14 @@
 {
   "plasmids_to_make": [
-    {"plasmid_name_to_make": "name",
-     "quantity_to_make": 2,
-     "fragment_amounts_in_ul": [{"fragment_name": "name", "amount": 2},
-                                {"fragment_name": "name", "amount": 10}],
+    {"plasmid_name_to_make": "pLABGreg1",
+     "quantity_to_make": 3,
+     "fragment_amounts_in_ul": [{"fLABGreg1-1": "name", "amount": 10},
+                                {"fLABGreg1-2": "name", "amount": 20}],
      "add_to_data": "put a hash here to add to data for samples produced"},
-    {"plasmid_name_to_make": "name",
-     "quantity_to_make": 2,
-     "fragment_amounts_in_ul": [{"fragment_name": "name", "amount": 2},
-                                {"fragment_name": "name", "amount": 10}],
+    {"plasmid_name_to_make": "pLABGreg2",
+     "quantity_to_make": 1,
+     "fragment_amounts_in_ul": [{"fLABGreg2-1": "name", "amount": 20},
+                                {"fLABGreg1-2": "name", "amount": 40},
+                                {"fLABGreg2-3": "name", "amount": 10}],
      "add_to_data": "put a hash here to add to data for samples produced"}]
 }
