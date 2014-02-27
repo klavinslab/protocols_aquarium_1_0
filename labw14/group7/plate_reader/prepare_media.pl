@@ -99,6 +99,7 @@ end
 release concat(media, concat(pipette,concat(amp, kan)))
 
 produce silently
-  m = 2 "30 mL M9 liquid Glucose + amp + kan"
+  m1 = 1 "30 mL M9 liquid Glucose + amp + kan"
+  m2 = 1 "30 mL M9 liquid Glucose + amp + kan"
   location: "Bench"
 end
