@@ -37,7 +37,7 @@ step
   check: "Pipette 2.5 µL of primer with id %{primer2} into the tube."
   check: "Pipette 25 µL of Phusion Master Mix with id %{enzyme_id} into the tube."
   check: "Use the tip to gently mix."
-  note: "Be careful to pipette into the liquid, not the side of the tube."
+  warning: "Be careful to pipette into the liquid, not the side of the tube."
 end
 
 step
