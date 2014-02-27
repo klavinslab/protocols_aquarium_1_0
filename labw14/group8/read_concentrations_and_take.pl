@@ -28,6 +28,11 @@ end
 
 fragments_to_take = unique(fragments_to_take)
 
+# silently produce all the samples here
+# associate their ids
+# with the correct fragments so we get
+# fragment => [{id, amount}]
+
 total_amounts = [ ]
 # todo extract these into hash and other libraries
 # NOTE this doesn't work like a hash in other languages
@@ -40,7 +45,7 @@ foreach name in fragments_to_take
       end
     end
   end
-  total_amounts = append(total_amounts, { fragment_name: name, total_amount: total})
+  total_amounts = append(total_amounts, { fragment_name: name, total_amount: total, fragment_taken: 0})
 end
 
 #foreach p in plasmids_to_make
@@ -50,6 +55,12 @@ end
 #  end
 #end
 
+step
+    description: "Claim fragments"
+    note: "You will claim %{total_amounts}"
+end
+  
+fragments_taken = [ ]
 foreach f in total_amounts
   amount = f[:total_amount]
   name = f
@@ -61,11 +72,22 @@ foreach f in total_amounts
           but feel free to go take them now and check that there will be
           enough."
   end
+  take
+    x = 1 name
+  end
+  fragments_taken = append(fragments_taken, x)
+end
+
+step
+  description: "Review taken fragments"
+  note: "You should have the following fragments at your bench.
+         %{fragments_taken}"
 end
 
 # silently produce the future samples
 # and label them, laying them out in a grid
 # put the concentrations into the data element
+# todo show as picture, make a manual one for now, single pic
 
 # todo a function that makes a pipetting plan 
 
