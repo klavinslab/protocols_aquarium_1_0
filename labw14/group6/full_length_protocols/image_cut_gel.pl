@@ -78,7 +78,7 @@ end
 step
   description: "Remove the camera hood, cut out the gel slices with length 900bp" 
   note: "It may help to turn the room lights off during this step. Use the ladder to locate where
-  1799bp is. Use the razor blade to cut around the band."
+  900bp is. Use the razor blade to cut around the band."
   image: "cut_gel"
 end
 
