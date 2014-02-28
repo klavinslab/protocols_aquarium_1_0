@@ -6,7 +6,7 @@
   #ladder: sample("Ladder"), "The ladder for your gel"
 #end
 input
-  p= "sandbox/chris/inputs.json"
+  p = "sandbox/chris/inputs.json"
 end
 template = p[:template]
 pfwd = p[:pfwd]
