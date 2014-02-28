@@ -6,6 +6,7 @@ take
   gel_slice = item gel
 end
 
+size = length(gel)
 i = 0
 foreach i in gel
 step
@@ -42,34 +43,32 @@ i = i + 1
 end
 
 step
-  description: "Incubate the tube in a 50 C heat block at B3.340 for 10 minutes."
+  description: "Incubate all %{size} tubes in a 50 C heat block at B3.340 for 10 minutes."
   note: "Vortex after 5 minutes of incubation and put back in the 50 C until 10 minutes totoal time reached"
 end
 
 step
-  description: "Take out the tube from 50 C heat block"
-  note: "Place it on bench in a tube rack."
-end
-
-size = length(gel)
-
-step
-  description: "Label a pink QIAquick Spin column from 1 to %{size}"
-  note: "Write you initials on it."
+  description: "Take out all tubes from 50 C heat block"
+  note: "Place on bench in a tube rack."
 end
 
 step
-  description: "Add the tube content to the labeled QIAquick Spin column"
+  description: "Label %{size} pink QIAquick Spin columns from 1 to %{size}"
+  note: "Write you initials on each."
+end
+
+step
+  description: "Add the tube content in tubes with id %{gel} to each labeled QIAquick Spin column"
 end
 
 step
   description: "Centrifuge at top speed (Make sure to balance in the centrifuge!)"
-  bullet: "Place the tube into centrifuge at B14.320, balance with another team's column."
+  bullet: "Place tubes into centrifuge at B14.320, make sure to balance."
   bullet: "Select 17,000 g and 1 minutes, press start."
 end
 
 step
-  description: "Take the column out of centrifuge and empty collection tube"
+  description: "Take the columns out of centrifuge and empty collection tube"
   note: "Empty the waste in collection tube into a liquid waster collector on bench, put the collection tube back on afterwards."
 end
 
@@ -87,7 +86,6 @@ step
   description: "Take the column out of centrifuge and empty collection tube"
   note: "Empty the waste in collection tube into a liquid waster collector on bench, put the collection tube back on afterwards."
 end
-
 
 step
   description: "Remove the residual PE buffer by centrifuge"
