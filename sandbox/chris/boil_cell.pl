@@ -44,7 +44,7 @@ step
 end
 #produces 4 templates.  each template has 3 primers and 2 reactions (f+r1,f+r2)
 
-foreach t in template
+foreach liquidtemplate in template
   modify
     t
     location: "DFS0"
