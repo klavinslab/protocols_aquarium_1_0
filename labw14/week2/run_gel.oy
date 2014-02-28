@@ -1,0 +1,15 @@
+place run_gel
+  protocol: "cloning/gel/DY_load_gel.pl"
+  argument
+    fragment_names: [1803,1804,1805,1806]
+    ladder_one: 1747
+    fragment_volume: 50
+  end
+  group: "liuqua"
+  start: now()
+  marked: true
+  window: minutes(1)
+end
+
+transition [run_gel] => [] when !error(0) && completed(0) end
+transition [run_gel] => [run_gel]    when error(0) end

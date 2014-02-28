@@ -1,0 +1,13 @@
+place image_cut_gel
+  protocol: "guppytraining/image_cut_gel.pl"
+  argument
+    gel: [1767,1768,1769,1770]
+  end
+  group: aquarium_user
+  start: now()
+  marked: true
+  window: minutes(1)
+end
+
+transition [image_cut_gel] => [] when !error(0) && completed(0) end
+transition [image_cut_gel] => [image_cut_gel]    when error(0) end
