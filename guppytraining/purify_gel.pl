@@ -36,7 +36,7 @@ QG_volume = 3 * gel_weight
 QG_volume_plus = QG_volume + 100
 
 step
-  description: "Add %{QG_volume} µL buffer QG into the gel slice tube with id %{gel}"
+  description: "Add %{QG_volume} µL buffer QG into the gel slice tube with id %{i}"
 end
 i = i + 1
 end
@@ -60,7 +60,6 @@ end
 
 step
   description: "Add the tube content to the labeled QIAquick Spin column"
-  note: "Tube content volume shoud be around %{QG_volume_plus} µL."
 end
 
 step
