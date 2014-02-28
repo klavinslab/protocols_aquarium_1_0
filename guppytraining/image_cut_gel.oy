@@ -17,7 +17,8 @@ place purify_gel
   window: minutes(1)
 end
  
-
+wire (image_cut_gel,"Gel_Slice_id") => (purify_gel,"gel")
 transition [image_cut_gel] => [purify_gel] when !error(0) && completed(0) end
 transition [image_cut_gel] => [image_cut_gel]    when error(0) end
 transition [purify_gel] => [] when !error(0) && completed(0) end
+transition [purify_gel] => [purify_gel]    when error(0) end
