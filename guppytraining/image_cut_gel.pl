@@ -104,8 +104,9 @@ ii = 0
 r = []
 while ii < length(gel)
   produce
-	  product = 1 "Gel Slice" from y[ii]
-	end
+    product = 1 "Gel Slice" from y[ii]
+    location: "Bench"
+  end
   r = append(r,product[:id])
   ii = ii + 1
 end
