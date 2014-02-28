@@ -1,10 +1,18 @@
-argument
-  template: sample("E coli strain") array, "liquid cultures from colonies"
-  pfwd: sample("Primer") array, "forward primers"
-  prev: sample("Primer") array, "associated reverse primers"
-  enzyme_id: sample("Enzyme"), "The Phsion HF Master Mix stock"
-  ladder: sample("Ladder"), "The ladder for your gel"
+#argument
+  #template: sample("E coli strain") array, "liquid cultures from colonies"
+  #pfwd: sample("Primer") array, "forward primers"
+  #prev: sample("Primer") array, "associated reverse primers"
+  #enzyme_id: sample("Enzyme"), "The Phsion HF Master Mix stock"
+  #ladder: sample("Ladder"), "The ladder for your gel"
+#end
+input
+  p= "sandbok/chris/inputs.json"
 end
+template = p[:template]
+pfwd = p[:pfwd]
+prev = p[:prev]
+enzyme_id = p[:enzyme_id]
+ladder = p[:ladder] 
 
 place boil_cell
   protocol: "sandbox/chris/boil_cell.pl"
