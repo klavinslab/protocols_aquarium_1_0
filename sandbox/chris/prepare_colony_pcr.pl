@@ -1,19 +1,21 @@
 argument
-  pfwd: sample("Primer"), "The forward primer"
-  prev: sample array, "two reverse primers"
-  #templates: sample array, "The templates you just made" #just assume you have it
+  pfwd: sample array, "forward primers"
+  prev: sample array, "reverse primers"
   enzyme_id: sample, "The Phsion HF Master Mix stock"
 end
+
+#unhardcode this later by passing results of boil.
+samples = [1,1,2,2,3,3,4,4]
+n_samp = length(pfwd)
 
 take
   fwd = item pfwd
   revs = item prev
-  #genomicdna = item templates
   phusion_stock = item enzyme_id
 end
 
 step
-  description: "Take eight 0.2 mL PCR tubes from PCR strip. Write your initials on it. Label from left to right as 1 to 8."
+  description: "Take %{n_samp} 0.2 mL PCR tubes from PCR strip. Write your initials on it. Label from left to right as 1 to %{n_samp}."
 end
 
 step
@@ -22,46 +24,36 @@ step
 end
 
 step
-  description: "Spin down the boiled cell 1-4 in the microcentrifuge on your bench for 1 minute"
-  note: "The boiled cell 1-4 are four PCR tubes you took from thermal cylcler from your previous protocol."
+  description: "Spin down the boiled cells 1-3 in the microcentrifuge on your bench for 1 minute"
+  note: "The boiled cell 1-3 are three PCR tubes you took from thermal cylcler from your previous protocol."
   warning: "Be extremely careful not to distrube the spun tubes.  They won't look any different but even the slightest tap can be detrimental."
 end
 
-ii = 0
 tube_number = 0
-while ii < 4
-  t = ii + 1
-  ii = ii + 1
-  jj = 0
-  while jj < length(prev)
-    r = prev[jj]
-    jj= jj + 1
-    tube_number = tube_number + 1
-    step 
-      description: "Prepare reaction for tube %{tube_number}"
-      check: "Pipet 3 µL of boiled cell %{t} into tube %{tube_number}."
-      check: "Pipet 1 µL of primer with id %{pfwd} into tube %{tube_number}."
-      check: "Pipet 1 µL of primer with id %{r} into tube %{tube_number}."
-      check: "Use the tip to gently mix."
-      note: "Be careful to pipette into the liquid, not the side of the tube. Always use a new tip."
-      warning: "Be extremely careful not to distrube the boiled cell tubes. They won't look any different but even the slightest tap can be detrimental."
-    end
+while tube_number<n_samp
+  t = samples[tube_number]
+  f = pfwd[tube_number]
+  r = prev[tube_number]
+  step 
+    description: "Prepare reaction for tube %{tube_number}"
+    check: "Pipet 3 uL of boiled cell %{t} into tube %{tube_number}."
+    check: "Pipet 1 uL of primer with id %{f} into tube %{tube_number}."
+    check: "Pipet 1 uL of primer with id %{r} into tube %{tube_number}."
+    check: "Use the tip to gently mix."
+    note: "Be careful to pipette into the liquid, not the side of the tube. Always use a new tip."
+    warning: "Be extremely careful not to distrube the boiled cell tubes. They won't look any different but even the slightest tap can be detrimental."
   end
+  tube_number = tube_number+1
 end
 
 step
   description: "Prepare reaction"
-  check: "Pipet 10 µL of Phusion HF Master Mix with id %{enzyme_id} into each PCR tube 1-8."
+  check: "Pipet 10 µL of Phusion HF Master Mix with id %{enzyme_id} into each PCR tube 1-%{n_samp}."
   note: "Use the tip to gently mix after each pipette."
 end
 
 release phusion_stock
 
-step
-  description: "You will now be asked to use the lab thermal cycler"
-  note: "The thermal cycler will be shared by all groups."
-  image: "thermal_cycler_off"
-end
 
 step
   description: "Place the tube strip into thermal cycler T2 at B3.335"
@@ -74,7 +66,7 @@ step
 end
 
 step
-  description: "When all group samples are loaded, hit 'run' on the thermal cycler and select 20 µL setting."
+  description: "hit 'run' on the thermal cycler and select 20 uL setting."
   note: "Coordinate with your fellow classmates to put all their samples before hit run."
   image: "thermal_cycler_select"
 end

@@ -48,7 +48,7 @@ end
 dye_volume = fragment_volume / 5.0
 step
   description: "Add loading dye to the PCR fragment"
-  note: "Using a 10 µL or 100 µL pipetter, add %{dye_volume} µL of loading dye to each of the 8 PCR tubes."
+  note: "Using a 10 uL or 100 uL pipetter, add %{dye_volume} uL of loading dye to each of the PCR tubes."
   image: "gel_add_loading_dye"
 end
 
@@ -58,15 +58,15 @@ release loading_dye
 
 step
   description: "Load the ladder"
-  note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into the first (top-left) well of the gel."
+  note: "Using a 100 uL pipetter, pipet 10 uL of ladder (containing loading dye) with id %{ladder_one} into the first (top-left) well of the gel."
   image: "gel_begin_loading"
 end
 
 
 step
   description: "Load the PCR"
-  note: "Using a 100 µL pipetter, pipet %{fragment_volume} µL of the PCR tube 1-8 (containing loading dye) into the well 2-9 of the gel."
-  check: "Check this after you finish pipetting all 8 PCR samples into gel wells"
+  note: "Using a 100 µL pipetter, pipet %{fragment_volume} uL of the PCR tube 1-6 (containing loading dye) into the well 2-7 of the gel."
+  check: "Check this after you finish pipetting all 7 PCR samples into gel wells"
   image: "gel_begin_loading"
 end
 
