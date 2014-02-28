@@ -1,5 +1,5 @@
 argument
-  gel: sample, "Choose the Gel Slice you need to purify."
+  gel: sample array, "Choose the Gel Slice you need to purify."
 end
 
 take
@@ -25,7 +25,7 @@ while gel_weight > 200
     getdata
       gel_weight: number, "Enter the gel slice weight shown on the scale in mg. If it shows 0.134 on scale, you enter 134 below."
     end
-end
+  end
 end
 
 
@@ -47,8 +47,10 @@ step
   note: "Place it on bench in a tube rack."
 end
 
+size = length(gel)
+
 step
-  description: "Label a pink QIAquick Spin column"
+  description: "Label a pink QIAquick Spin column from 1 to %{size}"
   note: "Write you initials on it."
 end
 
@@ -97,13 +99,13 @@ step
 end
 
 step
-  description: "Label a 1.5 mL tube and place column into it"
+  description: "Label %{size} 1.5 mL tube with number 1 to %{size} and place column into it"
   bullet: "Write you date and initials on the side of the tube."
   bullet: "Place the column into the labeled 1.5 mL tube."
 end
 
 step
-  description: "Add 30 µL of EB buffer to the center of column membrane and wait for 1 minutes."
+  description: "Add 30 µL of EB buffer to the center of each column membrane and wait for 1 minutes."
   warning: "Be very careful to not pipette on the wall of the tube."
 end
 
@@ -118,12 +120,17 @@ step
   bullet: "Column can go to the tip waster collector."
 end
     
-produce
-  r = 1 "Fragment Stock" of "fLAB1"
-  location: "Bench"
-  release gel_slice
+ii = 0
+r = []
+while ii < length(gel)
+  produce
+	  product = 1 "Fragment Stock" from y[ii]
+	end
+  r = append(r,product[:id])
+  ii = ii + 1
 end
 
+
 log
-  return: {Fragment_Stock_id: r[:id]}
+  return: {Fragment_Stock_id: r}
 end
