@@ -33,10 +33,19 @@ step
   check: "weigh each gel slice tube on the scale and record it's weight on the side of the tube"
 end
 
-
-step
-  description: "Add 3 times the weight in volume of buffer QG from the quiagen gel purify kit into each weighed gel slice tube"
+while count2 < y
+  label=count2+1
+  argument
+    weight: number, "enter weight in grams of tube %{label}"
+  end
+  qg=weight*30
+  step
+    description: "Add %{weight} µl of QG buffer into tube %{label}"
+  end
+  count2=count2+1
 end
+  
+
 
 step
   description: "Place tubes in 50 degree heat block for 10 minutes. Vortex every few minutes to speed up the process"
