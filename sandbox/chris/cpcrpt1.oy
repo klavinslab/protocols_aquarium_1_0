@@ -1,0 +1,57 @@
+argument
+  template: sample("E coli strain") array, "liquid cultures from colonies"
+  pfwd: sample("Primer") array, "forward primers"
+  prev: sample("Primer") array, "associated reverse primers"
+  enzyme_id: sample("Enzyme"), "The Phsion HF Master Mix stock"
+  ladder: sample("Ladder"), "The ladder for your gel"
+end
+
+place boil_cell
+  protocol: "sandbox/chris/boil_cell.pl"
+  argument
+    template: template
+  end
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(1)
+end
+
+place prep_pcr
+  protocol: "sandbox/chris/prepare_colony_pcr.pl"
+  argument
+    pfwd: pfwd
+    prev: prev
+    enzyme_id: enzyme_id
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(1)
+end
+
+place pour_gel
+  protocol: "sandbox/chris/pour_gel.pl"
+  argument
+    percentage: 1
+    comb_n: 1
+    well_n: 10
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(120)
+end
+
+
+# forward transitions
+
+transition [boil_cell]     => [prep_pcr] when !error(0) && completed(0) end
+transition [prep_pcr]     => [pour_gel] when !error(0) && completed(0) end
+transition [pour_gel] => [] when !error(0) && completed(0) end
+
+
+
+# rework transitions
+transition [boil_cell]     => [boil_cell]    when error(0) end
+transition [prep_pcr]     => [prep_pcr]    when error(0) end
+transition [pour_gel]     => [pour_gel]    when error(0) end
+
