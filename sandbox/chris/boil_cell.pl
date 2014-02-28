@@ -6,7 +6,7 @@ take
   liquidtemplate = item template #an array
 end
 
-n_samp = length(a)
+n_samp = length(template)
 step
   description: "Take %{n_samp} tubes from a PCR tube strip and label them 1 through %{n_samp} on the side, also write your initials on it." 
 end
