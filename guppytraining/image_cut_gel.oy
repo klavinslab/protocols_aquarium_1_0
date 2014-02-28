@@ -13,7 +13,6 @@ place purify_gel
   protocol: "guppytraining/purify_gel.pl"
   group: aquarium_user
   start: now()
-  marked: true
   window: minutes(1)
 end
  
