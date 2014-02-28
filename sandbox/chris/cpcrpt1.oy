@@ -5,14 +5,12 @@
   #enzyme_id: sample("Enzyme"), "The Phsion HF Master Mix stock"
   #ladder: sample("Ladder"), "The ladder for your gel"
 #end
-input
-  p = "sandbox/chris/inputs.json"
-end
-template = p[:template]
-pfwd = p[:pfwd]
-prev = p[:prev]
-enzyme_id = p[:enzyme_id]
-ladder = p[:ladder] 
+
+template = [1720,1721,1722]
+pfwd = [1331,1331,1339,1339,1351,1351]
+prev = [1333,1335,1341,1343,1353,1355]
+enzyme_id = 702
+ladder = 1747
 
 place boil_cell
   protocol: "sandbox/chris/boil_cell.pl"

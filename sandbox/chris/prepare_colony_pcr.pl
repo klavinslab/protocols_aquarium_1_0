@@ -21,7 +21,7 @@ end
 
 step
   description: "Prepare reaction"
-  check: "Pipet 5 µL molecular grade water into each newly labeled PCR tube 1-8."
+  check: "Pipet 5 µL molecular grade water into each newly labeled PCR tube 1-%{n_samp}."
 end
 
 step
@@ -32,6 +32,7 @@ end
 
 tube_number = 0
 while tube_number<n_samp
+  tube_number = tube_number+1
   t = samples[tube_number]
   f = pfwd[tube_number]
   r = prev[tube_number]
@@ -44,12 +45,11 @@ while tube_number<n_samp
     note: "Be careful to pipette into the liquid, not the side of the tube. Always use a new tip."
     warning: "Be extremely careful not to distrube the boiled cell tubes. They won't look any different but even the slightest tap can be detrimental."
   end
-  tube_number = tube_number+1
 end
 
 step
   description: "Prepare reaction"
-  check: "Pipet 10 µL of Phusion HF Master Mix with id %{enzyme_id} into each PCR tube 1-%{n_samp}."
+  check: "Pipet 10 uL of Phusion HF Master Mix with id %{enzyme_id} into each PCR tube 1-%{n_samp}."
   note: "Use the tip to gently mix after each pipette."
 end
 
