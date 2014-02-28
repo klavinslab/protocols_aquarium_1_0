@@ -78,7 +78,7 @@ end
 
 step
   description: "Centrifuge at top speed (Make sure to balance in the centrifuge!)"
-  bullet: "Place the tube into centrifuge, balance with another team's column."
+  bullet: "Place the tube into centrifuge, make sure to balance."
   bullet: "Select 17,000 g and 1 minutes, press start."
 end
 
@@ -89,7 +89,7 @@ end
 
 step
   description: "Remove the residual PE buffer by centrifuge"
-  bullet: "Place the tube into centrifuge, balance with another team's column."
+  bullet: "Place the tube into centrifuge, make sure to balance."
   bullet: "Select 17,000 g and 1 minutes, press start."
   warning: "Make sure to balance in the centrifuge!"
 end
@@ -112,7 +112,7 @@ end
 
 step
   description: "Centrifuge at top speed"
-  bullet: "Place labeled tube with the column into centrifuge, balance with another team's column."
+  bullet: "Place labeled tube with the column into centrifuge, make sure to balance."
   bullet: "Select 17,000 g and 1 minutes, press start."
 end
 
