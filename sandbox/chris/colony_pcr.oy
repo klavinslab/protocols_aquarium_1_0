@@ -1,9 +1,9 @@
 argument
-  template: sample array, "liquid cultures from colonies"
-  pfwd: sample array, "forward primers"
-  prev: sample array, "associated reverse primers"
-  enzyme_id: sample, "The Phsion HF Master Mix stock"
-  ladder: sample, "The ladder for your gel"
+  template: sample("E coli strain") array, "liquid cultures from colonies"
+  pfwd: sample("Primer") array, "forward primers"
+  prev: sample("Primer") array, "associated reverse primers"
+  enzyme_id: sample("Enzyme"), "The Phsion HF Master Mix stock"
+  ladder: sample("Ladder"), "The ladder for your gel"
 end
 
 place boil_cell
