@@ -97,7 +97,7 @@ end
 release [agarose[0], gel_green[0]]
 
 i = 0
-while i < gel_n #pcr_count 
+#while i < gel_n #pcr_count 
   i = i+1
   take
     gel_box = 1 "49 mL Gel Box With Casting Tray (clean)"
@@ -134,7 +134,7 @@ while i < gel_n #pcr_count
     release gel_box
   end
 
-end
+#end
 
 step
   description: "Clean up!"
@@ -146,4 +146,4 @@ log
   return: {gel_n: gel_n}
 end
 
-release [glasses[0], glove[0]
+release [glasses[0], glove[0]]
