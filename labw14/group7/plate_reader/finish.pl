@@ -20,7 +20,7 @@ step
   description: "Tidy up"
   check: "Dispose of your 96 well assay plate into a red biological waste bin"
   check: "Shut down the 'Biotech Synergy HT' plate reader"
-  check "Close out the 'Gen5' software (quit to desktop)"
+  check: "Close out the 'Gen5' software (quit to desktop)"
   check: "Clean up any mess in your station"
   #anything else here?
 end
