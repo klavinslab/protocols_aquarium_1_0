@@ -85,7 +85,10 @@ step
   description: "When pcr finishes, return pcr tubes to bench"
 end
 
-log { return: {pcr_count: pcr_tube}}
+log 
+  return: {pcr_count: pcr_tube}
+end
+
 release fwd
 release revs
 
