@@ -26,9 +26,9 @@ step
 end
 
 step
-  description: "Spin down the boiled cell 1-%{sample_count} in the microcentrifuge on your bench for 1 minute"
-  note: "The boiled cell 1-%{sample_count} are the PCR tubes you took from thermal cycler from your previous protocol."
-  warning: "Be extremely careful not to disturbe the spun tubes.  They won't look any different but even the slightest tap can be detrimental."
+  description: "Spin down boiled cell tubes 1-%{sample_count} in the microcentrifuge on your bench for 1 minute"
+  note: "The boiled cell tubes 1-%{sample_count} are the PCR tubes you took from thermal cycler from your previous protocol."
+  warning: "Be extremely careful not to disturb the spun tubes.  They won't look any different but even the slightest tap can be detrimental."
 end
 
 boiled_tube = 0
@@ -47,7 +47,7 @@ while boiled_tube < sample_count
     check: "Pipet 1 µL of primer with id %{prev1} into tube %{pcr_tube}."
     check: "Use the tip to gently mix."
     note: "Be careful to pipette into the liquid, not the side of the tube. Always use a new tip."
-    warning: "Be extremely careful not to distrube the boiled cell tubes. They won't look any different but even the slightest tap can be detrimental."
+  warning: "Be extremely careful not to disturb the boiled cell tubes. They won't look any different but even the slightest tap can be detrimental."
   end
   
   pcr_tube = pcr_tube+1
@@ -58,7 +58,7 @@ while boiled_tube < sample_count
     check: "Pipet 1 µL of primer with id %{prev2} into tube %{pcr_tube}."
     check: "Use the tip to gently mix."
     note: "Be careful to pipette into the liquid, not the side of the tube. Always use a new tip."
-    warning: "Be extremely careful not to distrube the boiled cell tubes. They won't look any different but even the slightest tap can be detrimental."
+    warning: "Be extremely careful not to disturb the boiled cell tubes. They won't look any different but even the slightest tap can be detrimental."
   end
   
 end
@@ -71,8 +71,12 @@ end
 
 release phusion_stock
 
+release fwd
+release revs
+
 step
   description: "Place the tube strip into thermal cycler T2 at B3.335"
+  note: "Remember to place caps on the PCR tubes"
 end
 
 step
@@ -89,7 +93,5 @@ log
   return: {pcr_count: pcr_tube}
 end
 
-release fwd
-release revs
 
 
