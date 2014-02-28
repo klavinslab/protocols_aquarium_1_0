@@ -34,7 +34,7 @@ end
 boiled_tube = 0
 pcr_tube = 0
 while boiled_tube < sample_count
-  fwd = fwds[boiled_tube]
+  pfwd = pfwds[boiled_tube]
   prev1 = prev1s[boiled_tube]
   prev2 = prev2s[boiled_tube]
   boiled_tube = boiled_tube + 1
