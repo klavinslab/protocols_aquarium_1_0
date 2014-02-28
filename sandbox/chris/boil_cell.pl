@@ -22,7 +22,7 @@ foreach t1 in template
 end
 
 step
-  description: "Place the tube 1-4 into thermal cycler T2 at B3.335"
+  description: "Place the tube 1-%{n_samp} into thermal cycler T2 at B3.335"
 end
 
 step
@@ -44,7 +44,7 @@ step
 end
 #produces 4 templates.  each template has 3 primers and 2 reactions (f+r1,f+r2)
 
-foreach liquidtemplate in template
+foreach t in liquidtemplate 
   modify
     t
     location: "DFS0"
