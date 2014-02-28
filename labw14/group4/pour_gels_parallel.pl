@@ -146,4 +146,4 @@ log
   return: {gel_n: gel_n}
 end
 
-release {glasses[0], glove[0]}
+release [glasses[0], glove[0]
