@@ -6,8 +6,10 @@ take
   gel_slice = item gel
 end
 
+i = 0
+foreach i in gel
 step
-  description: "Weigh the gel slice on a scale at A5.300"
+  description: "Weigh the gel slice tube with id %{i} on a scale at A5.300"
   note: "Use an empty 1.5 mL tube to zero the scale first, then put the gel slice tube on the scale."
   getdata
     gel_weight: number, "Enter the gel slice weight shown on the scale in mg. If it shows 0.134 on scale, you enter 134 below."
@@ -35,6 +37,8 @@ QG_volume_plus = QG_volume + 100
 
 step
   description: "Add %{QG_volume} µL buffer QG into the gel slice tube with id %{gel}"
+end
+i = i + 1
 end
 
 step
