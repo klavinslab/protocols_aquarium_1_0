@@ -10,7 +10,6 @@ place boil_cell
   protocol: "sandbox/chris/boil_cell.pl"
   argument
     template: template
-    template_plate: template_plate
   end
   group: aquarium_user
   marked: true
