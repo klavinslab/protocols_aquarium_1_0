@@ -124,7 +124,7 @@ ii = 0
 r = []
 while ii < length(gel)
   produce
-	  product = 1 "Fragment Stock" from y[ii]
+	  product = 1 "Fragment Stock" from gel_slice[ii]
 	end
   r = append(r,product[:id])
   ii = ii + 1
