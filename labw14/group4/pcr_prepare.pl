@@ -34,7 +34,7 @@ end
 boiled_tube = 0
 pcr_tube = 0
 while boiled_tube < sample_count
-  pfwd = pfwds[boiled_tube]
+  fwd = fwds[boiled_tube]
   prev1 = prev1s[boiled_tube]
   prev2 = prev2s[boiled_tube]
   boiled_tube = boiled_tube + 1
@@ -43,7 +43,7 @@ while boiled_tube < sample_count
   step 
     description: "Prepare reaction for tube %{pcr_tube} -- boiled cell %{boiled_tube} knockout test group"
     check: "Pipet 3 µL of boiled cell %{boiled_tube} into tube %{pcr_tube}."
-    check: "Pipet 1 µL of primer with id %{pfwd} into tube %{pcr_tube}."
+    check: "Pipet 1 µL of primer with id %{fwd} into tube %{pcr_tube}."
     check: "Pipet 1 µL of primer with id %{prev1} into tube %{pcr_tube}."
     check: "Use the tip to gently mix."
     note: "Be careful to pipette into the liquid, not the side of the tube. Always use a new tip."
@@ -54,7 +54,7 @@ while boiled_tube < sample_count
   step 
     description: "Prepare reaction for tube %{pcr_tube} -- boiled cell %{boiled_tube} control group"
     check: "Pipet 3 µL of boiled cell %{boiled_tube} into tube %{pcr_tube}."
-    check: "Pipet 1 µL of primer with id %{pfwd} into tube %{pcr_tube}."
+    check: "Pipet 1 µL of primer with id %{fwd} into tube %{pcr_tube}."
     check: "Pipet 1 µL of primer with id %{prev2} into tube %{pcr_tube}."
     check: "Use the tip to gently mix."
     note: "Be careful to pipette into the liquid, not the side of the tube. Always use a new tip."
@@ -72,7 +72,8 @@ end
 release phusion_stock
 
 release fwd
-release revs
+release concat(rev1s, rev2s)
+#release rev2s
 
 step
   description: "Place the tube strip into thermal cycler T2 at B3.335"
