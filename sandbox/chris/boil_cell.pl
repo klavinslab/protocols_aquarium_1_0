@@ -15,7 +15,7 @@ step
   description: "Add 20 uL molecular grade water to each tube 1-%{n_samp}"
 end
 
-for t1 in template
+foreach t1 in template
   step
     description: "Take 1 uL from tube with id %{t1} and transfer it to tube 1"
   end
@@ -44,7 +44,7 @@ step
 end
 #produces 4 templates.  each template has 3 primers and 2 reactions (f+r1,f+r2)
 
-for t in template
+foreach t in template
   modify
     t
     location: "DFS0"
