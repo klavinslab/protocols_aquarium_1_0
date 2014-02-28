@@ -3,23 +3,23 @@ argument
   cells_to_assay_in: sample array, "The strains to assay.  4 copies of each strain"
 end
 
-
-step
-  description: "This protocol loads the plate reader with the samples to be assayed"
-  note: "This is the box of 96 well plates"
-  image: "96_well_plate_box"
-end
 step
   description: "A 96 well plate"
   note: "This is an individual 96 well plate from the box (you will take one of these in the next step)"
+  note: "Be sure to have a clean set of gloves before getting a 96 well plate from the box"
   image: "96_well_plate"
+end
+
+take
+  note: "'3904' - Assay Plate, With Lid -
+         Flat Bottom, Tissue Culture Treated - Black with Clear Bottom - Sterile, Polystyrene"
+  plate = 1 "96 Well Flat Clear Bottom Plate"
 end
 
 take
   #DI_water = 1 "DI Water, Sterile"
   cells = item cells_to_assay_in
   media = 1 "30 mL M9 liquid Glucose + amp + kan"
-  plate = 1 "96 Well Flat Clear Bottom Plate"
 #  antifog = 1 "Antifog Solution"
 end
 
