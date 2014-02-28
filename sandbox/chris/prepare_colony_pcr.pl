@@ -8,9 +8,10 @@ end
 samples = [1,1,2,2,3,3,4,4]
 n_samp = length(pfwd)
 
+
 take
-  fwd = item pfwd
-  revs = item prev
+  fwd = item unique(pfwd)
+  revs = item unique(prev)
   phusion_stock = item enzyme_id
 end
 
