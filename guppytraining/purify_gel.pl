@@ -31,14 +31,12 @@ while gel_weight > 200
   end
 end
 
-
 QG_volume = 3 * gel_weight
-
-QG_volume_plus = QG_volume + 100
 
 step
   description: "Add %{QG_volume} µL buffer QG into the gel slice tube with id %{i}"
 end
+
 i = i + 1
 end
 
