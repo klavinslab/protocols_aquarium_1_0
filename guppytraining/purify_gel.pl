@@ -100,8 +100,8 @@ step
 end
 
 step
-  description: "Label %{size} 1.5 mL tube with number 1 to %{size} and place column into it"
-  bullet: "Write you date and initials on the side of the tube."
+  description: "Label %{size} 1.5 mL tubes with number 1 to %{size} and place column into each"
+  bullet: "Write you date and initials on the side of each tube."
   bullet: "Place the column into the labeled 1.5 mL tube."
 end
 
@@ -125,8 +125,8 @@ ii = 0
 r = []
 while ii < length(gel)
   produce
-	  product = 1 "Fragment Stock" from gel_slice[ii]
-	end
+    product = 1 "Fragment Stock" from gel_slice[ii]
+  end
   r = append(r,product[:id])
   ii = ii + 1
 end
