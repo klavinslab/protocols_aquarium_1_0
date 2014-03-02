@@ -58,10 +58,10 @@ while (ii < 5)
       description: "proced to make pcr"
     end
   end
+ii = ii + 1 
   step
-    description: "proced to make %{ii+1} stock"
+    description: "proced to make %{ii} stock"
   end
- ii = ii + 1; 
 end
 
 release concat (oligonuc, molecular_g_h2o)
