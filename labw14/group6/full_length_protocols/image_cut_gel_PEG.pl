@@ -10,8 +10,8 @@ produce
   q = 1 "Gel Slice" of "fGA"
 end
 
-result = append (r[:id],q[:id])
+q = append (q,r[:id])
 
 log
-  return: {Gel_Slice_id: result}
+  return: {Gel_Slice_id: q}
 end
