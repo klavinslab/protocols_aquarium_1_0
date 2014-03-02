@@ -5,7 +5,7 @@ end
 ii = 0
 r = []
 
-while ii < 3
+while ii < 2
   produce
     y = 1 "Gel Slice" of "fGA"
 end
