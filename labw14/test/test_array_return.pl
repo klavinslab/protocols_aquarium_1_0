@@ -6,9 +6,9 @@ take
   plate = item input_id
 end
 
-#step
-  #description: "input_id is %{input_id}, plate is %{plate},first input is %{input_id[0]}"
-#end
+step
+  description: "input_id is %{input_id}, plate is %{plate},first input is %{input_id[0]}"
+end
 
 ii = 0
 r = []
