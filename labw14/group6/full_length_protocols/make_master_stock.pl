@@ -29,11 +29,13 @@ end
 step
   description: "Label a 1.5 mL Eppendorf tube with your initials and date."
   note: "Place the tube in a test tube rack."
+  image: "Group6_label"
   
 end
 
 step
   description: "Pipette %{z} µL of Molecular Grade Water into the tube."
+  image: "Group6_water_tube"
   
 end
 
