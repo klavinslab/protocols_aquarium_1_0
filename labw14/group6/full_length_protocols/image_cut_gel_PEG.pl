@@ -13,5 +13,5 @@ end
 result = append (r[:id],q[:id])
 
 log
-  return result
+  return: {Gel_Slice_id: result}
 end
