@@ -75,6 +75,7 @@ end
 # todo show as picture, make a manual one for now, single pic
 
 # todo a function that makes a pipetting plan 
+# todo sort the fragments in the order of most used
 
 samples_to_make = [ ]
 fragments = [ ]
