@@ -1,8 +1,8 @@
 argument
   rxn_mix: sample, "Select the 5x iScript reaction mix"
   rev_enzyme: sample, "Select the iScript reverse transcriptase"
-  rna_yeast1: sample, "This is the isolated RNA"
-  rna_yeast2: sample, "This is the isolated RNA"
+  rna_yeast1: sample, "This is the isolated RNA from strain 1"
+  rna_yeast2: sample, "This is the isolated RNA from strain 2"
   rna_conc1: number
   rna_conc2: number
 end
@@ -17,11 +17,12 @@ end
 
 step
   description: "This protocol prepares cDNA to be used in qPCR"
+  note: "Using template RNA you will synthesize complementary DNA to be used later"
 end
 
 step
   description: "Label two 0.2 mL PCR tubes. Write your initials on them."
-  note: "Prior to moving forward check that your iScript reaction mix has generated any precipitation upon thawing." 
+  note: "Prior to moving forward check that your iScript reaction mix has not generated any precipitation upon thawing." 
   bullet: "If precipitation has occured, please mix thoroughly to resuspend, before moving forward"
 end
 
@@ -31,11 +32,11 @@ desvolrna2= 500/rna_conc2
 nucwat2=15-desvolrna2
 
 step 
-  description: "Prepare Reaction 1"
+  description: "Prepare Reaction 1 (from Strain 1)"
   check:"Pipet 4 µL of 5x iScript reaction mix into the labeled PCR tube."
   check: "Pipet 1 µL of iScript reverse transcriptase into the labeled PCR tube"
-  check: "Pipet %{nucwat1}µL of Nuclease-free water into the labeled PCR tube"
-  check: "Pipet %{desvolrna1}µL of RNA template %{rna_yeast1}into the labeled PCR tube"
+  check: "Pipet %{nucwat1} µL of Nuclease-free water into the labeled PCR tube"
+  check: "Pipet %{desvolrna1} µL of RNA template %{rna_yeast1} into the labeled PCR tube"
   check: "Use the tip to gently mix."
   note: "Be careful to pipette into the liquid, not the side of the tube."
 end
@@ -44,8 +45,8 @@ step
   description: "Prepare Reaction 2"
   check:"Pipet 4 µL of 5x iScript reaction mix into the labeled PCR tube."
   check: "Pipet 1 µL of iScript reverse transcriptase into the labeled PCR tube"
-  check: "Pipet %{nucwat2}µL of Nuclease-free water into the labeled PCR tube"
-  check: "Pipet %{desvolrna2}µL of RNA template %{rna_yeast2}into the labeled PCR tube"
+  check: "Pipet %{nucwat2} µL of Nuclease-free water into the labeled PCR tube"
+  check: "Pipet %{desvolrna2} µL of RNA template %{rna_yeast2} into the labeled PCR tube"
   check: "Use the tip to gently mix."
   note: "Be careful to pipette into the liquid, not the side of the tube."
 end
