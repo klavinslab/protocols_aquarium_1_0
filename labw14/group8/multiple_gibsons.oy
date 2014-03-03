@@ -1,8 +1,5 @@
 # run gibsons 
 # note: ignores error in one gibson (an abort) ; can't recover in place
-argument
-  fragments: sample array, "The fragments you will need for your gibsons."
-end
 
 # datastructure
 # plasmid, along with links to fragments (like the oligo assembly type)
@@ -69,7 +66,10 @@ place success
 end
 
 wire(get_concentrations, "gibsons") => (do_gibson, "sample_concentrations")
+wire(get_concentrations, "fragments") => (do_gibson, "fragments")
+
 wire(do_gibson, "completed_samples") => (verify_gibson, "gibsons")
+
 # only ask for concentrations from samples you need
 # wire(verify_gibson, "failed") => (redo, "failed_gibsons") 
  
