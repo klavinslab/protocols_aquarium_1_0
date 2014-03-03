@@ -78,14 +78,19 @@ samples_to_make = [ ]
 foreach p in plasmids_to_make
   name = p[:plasmid_name_to_make]
   quantity = p[:quantity_to_make]
-  produce silently
-     r = quantity "Gibson Reaction Result" of name
-     location: "Bench"
-     data
-         concentration: 123
-     end
+  i = 1
+  while i <= quantity
+    produce silently
+       r = 1 "Gibson Reaction Result" of name
+       location: "Bench"
+       data
+           concentration: 123
+           location: "Bench"
+       end
+    end
+    i = i + 1
+    samples_to_make = concat(samples_to_make, [r])
   end
-  samples_to_make = concat(samples_to_make, r)
 end
 
 # foreach fragment
