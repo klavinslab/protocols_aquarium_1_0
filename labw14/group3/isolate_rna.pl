@@ -19,11 +19,14 @@ end
 
 step
   description: "Transfer 100µL of the Yeast Sample 1 to one 1.5mL Tube"
+  bullet: "Yeast cell concentration should be approximately 10^6 cells/µL"
   note: "Tube content volume is 100 µL."
 end
 
 step
   description: "Transfer 100µL of the Yeast Sample 2 to the other 1.5mL Tube"
+  bullet: "Yeast cell concentration should be approximately 10^6 cells/µL"
+  note: "Tube content volume is 100 µL."
 end
 
 step
@@ -41,7 +44,8 @@ end
 
 step
   description: "Add iScript RT-qPCR sample prep reagent and vortex "
-  check: "Add 100 µL of iScript to cell pellets"
+  check: "Add 100 µL of iScript RT-qPCR prep reagent to cell pellets"
+  warning: "Be sure you are using the correct reagent!"
   check: "Vortex on medium (6/10) for 30 seconds"
 end
 
@@ -77,7 +81,7 @@ end
 
 step
   description: "Discard the cell pellet tubes"
-  bullet: "Can go in the tip waste collector."
+  bullet: "These tubes can go in the tip waste collector."
 end
 
 release [y[0], x[0], z[0]]
