@@ -51,6 +51,7 @@ end
 
 lb_powder = 1 "Difco LB Broth, Miller"
 lb_grams = 29.6
+product_name = "200 mL LB Agar (unsterile)"
 if add_agar == "Yes"
   # TODO: make this a simple %{volume} substitution once that bug is fixed
   if volume == 200
@@ -133,7 +134,6 @@ else
   end
 end
 
-produced_bottles = n_bottle product_name
 produce
   produced_bottles = n_bottle product_name
   release bottles
