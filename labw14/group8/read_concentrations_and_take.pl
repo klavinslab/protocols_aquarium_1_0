@@ -54,11 +54,6 @@ end
 #    total_amounts[f[:fragment_name]] = total_amounts[f[:fragment_name]] + p[:quantity_to_make]*f[:amount]
 #  end
 #end
-
-step
-    description: "Claim fragments"
-    note: "You will claim %{total_amounts}"
-end
   
 
 foreach f in total_amounts
@@ -74,7 +69,6 @@ foreach f in total_amounts
   end
 end
 
-
 # silently produce the future samples
 # and label them, laying them out in a grid
 # put the concentrations into the data element
@@ -83,10 +77,11 @@ end
 # todo a function that makes a pipetting plan 
 
 samples_to_make = [ ]
+fragments = [ ]
 
 # foreach fragment
 # pipette fragment into samples %[[{sample: id, amount: number} sorted by number increasing]
 
 log
-  return: {gibsons: samples_to_make, hash: {egkey: "egvalue"}}
+  return: {gibsons: samples_to_make, fragments: fragments}
 end
