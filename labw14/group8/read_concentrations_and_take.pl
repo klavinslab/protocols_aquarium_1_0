@@ -74,14 +74,26 @@ end
 # put the concentrations into the data element
 # todo show as picture, make a manual one for now, single pic
 
-# todo a function that makes a pipetting plan 
-# todo sort the fragments in the order of most used
-
 samples_to_make = [ ]
-fragments = [ ]
+foreach p in plasmids_to_make
+  name = p[:plasmid_name_to_make]
+  quantity = p[:quantity_to_make]
+  produce silently
+     r = quantity "Gibson Reaction Result" of name
+     location: "Bench"
+     data
+         concentration: 123
+     end
+  end
+  samples_to_make = concat(samples_to_make, r)
+end
 
 # foreach fragment
 # pipette fragment into samples %[[{sample: id, amount: number} sorted by number increasing]
+# todo a function that makes a pipetting plan 
+# todo sort the fragments in the order of most used
+
+fragments = fragments_to_take
 
 log
   return: {gibsons: samples_to_make, fragments: fragments}
