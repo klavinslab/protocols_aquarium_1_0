@@ -1,4 +1,3 @@
-#should set this up as an arg that takes the pellet, or at least premade suspension
 argument
   susp: sample, "Overnight Suspension of your cells"
 end
