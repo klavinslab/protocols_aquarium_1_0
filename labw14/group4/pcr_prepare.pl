@@ -82,7 +82,7 @@ end
 
 step
   description: "Choose program on the thermal cycler"
-  note: "Click Home then click Saved Protocol, choose LABW14 folder, choose COLONYPCR. Hit 'run' to start"
+  note: "Click Home then click Saved Protocol, choose LABW14 folder, choose COLONYPCR. Hit 'run' to start and select a PCR volume of 20uL."
   image: "thermal_cycler_home"
 end
 

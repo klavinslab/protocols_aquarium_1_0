@@ -38,6 +38,10 @@ step
 	image: "put image of blue ice box here"
 end
 
+take
+	alrack = 1 "Aluminum Tube Rack"
+	iceblock = 1 "Styrofoam Ice Block"
+end
 
 step
   description: "Pour off supernatant"
@@ -135,4 +139,10 @@ log
   return: {electrocompetent_cells: electrocompetent_cells}
 end
 
+step
+	note: "The next step instructs you to release the aluminum rack and ice block. Release but DO NOT PHYSICALLY RETURN the items since you will use them in the next step."
+end
+
+
+release [iceblock[0], alrack[0]]
 #release cells	# DEBUG
