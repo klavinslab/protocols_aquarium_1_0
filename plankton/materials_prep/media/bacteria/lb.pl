@@ -133,6 +133,7 @@ else
   end
 end
 
+produced_bottles = n_bottle product_name
 produce
   produced_bottles = n_bottle product_name
   release bottles
