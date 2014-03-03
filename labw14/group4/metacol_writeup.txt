@@ -37,3 +37,8 @@ gene of interest, arbitrary DNA code can be added to a cell. Furthermore, if
 care is taken when designing the DNA oligo and DNA fragments, the bases of the
 thyA gene (or any arbitrary gene) can be completely removed without any trace.
 
+
+Primary source:
+Efficient and seamless DNA recombineering using a thymidylate synthase A selection system in Escherichia coli
+Nucleic Acids Res. 2005; 33(6): e59.
+Published online Mar 30, 2005. doi:  10.1093/nar/gni059
