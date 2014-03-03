@@ -5,7 +5,7 @@ end
 
 step
   description: "Extract DNA from clonal cells"
-  note: "Before beginning the process, set a water bath to 55 C"
+  note: "Before beginning the process, set a hot water bath to 55 C"
 end
 
 take
@@ -31,7 +31,8 @@ end
 
 step
   description: "Incubate the tube in the 55 C heat bath until lysis is complete (usually 40 - 50 minutes)"
-  note: "Vortex occasionally"
+  note: "Place the tube in a green tube rack to hold it steady."
+  note: "Vortex occasionally."
 end
 
 step
