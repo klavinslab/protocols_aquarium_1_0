@@ -40,7 +40,7 @@ if add_agar != "Yes" && add_agar != "No"
   end
 end
 
-
+bottle_type = "250 mL Bottle"
 if volume == 200
   bottle_type = "250 mL Bottle"
 elsif volume == 400
