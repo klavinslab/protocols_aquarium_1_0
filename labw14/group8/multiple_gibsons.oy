@@ -64,7 +64,8 @@ place success
 end
 
 wire(get_concentrations, "gibsons") => (do_gibson, "sample_concentrations")
-wire(get_concentrations, "fragments") => (do_gibson, "fragments")
+
+#wire(get_concentrations, "fragments") => (do_gibson, "fragments") # workaround - these are put in cart then selected from inventory
 
 wire(do_gibson, "completed_samples") => (verify_gibson, "gibsons")
 
