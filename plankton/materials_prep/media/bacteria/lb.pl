@@ -76,7 +76,7 @@ else
   lb_grams = 20.0
   take
     bottles = n_bottle bottle_type
-    lb_powder 
+    lb_powder = 1 "Difco LB Broth, Miller"
     stir_bars = n_bottle "Medium Magnetic Stir Bar"
   end
 end
