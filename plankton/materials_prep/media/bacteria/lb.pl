@@ -50,6 +50,7 @@ elsif volume == 800
 end
 
 lb_powder = 1 "Difco LB Broth, Miller"
+lb_grams = 29.6
 if add_agar == "Yes"
   # TODO: make this a simple %{volume} substitution once that bug is fixed
   if volume == 200
