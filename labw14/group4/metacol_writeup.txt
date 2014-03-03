@@ -1,0 +1,39 @@
+In the fourth week of this class, we performed the first half of a common
+synthetic biology technique known as a genetic knockout. With this process,
+scientists can selectively add or remove a gene sequence from an organism. The
+drawback of the current technique is that despite having a fairly simple
+initial first half (merely a transformation of the desired DAN with a
+Kanamyacin-resistant gene), the second half, removal of the Kan resistance, is
+complicated and lengthy. Several steps are required, each involving multiple
+controls for screening and no guarantee that the target DNA remains unmodified
+throughout. Because of the time consuming, potentially inaccurate nature of
+the method,  a new method has been devised that consists of only two
+transformation steps and a simple selection scheme. The advantage of this
+"seamless knockout" technique are several fold. One, the procedure leaves no
+residual DNA or byproduct in the cells. Two, the techniques involves only two
+transformations, which are essentially repeats of the process with different
+DNA fragments. Three, the lack of any residual DNA from previous procedures
+means the process is theoretically continuously repeatable.
+
+In our project we decided to produce a series of protocols that instruct the
+user through one-half of the whole process. To carry out the whole procedure,
+the metacol is repeated twice. This choice allows for grater ranges of
+procedure configurations only because the inputs and outputs of the system are
+similar in type. The inputs are: a desired DNA knockout (or knock-in) oligo,
+(3) three DNA primer sequences (used for PCR screening) and a set of plates
+used to screen correctly transformed cells. The output is a strain of bacteria
+with the properties of the DNA oligo.
+
+The biology behind the seamless knockout technique is based on two key facts.
+First, the thymidylate synthase A (thyA) gene plays a critical part of the DNA
+synthesis chain. Without thyA, cells cannot produce the thyamine DNA base.
+Second, thyA activity requires tetrahydrofolate (THF). The replenishing of THF
+from difolatehydrofolate (DHF) is inhibited by the presence of trimethoprim.
+From these facts, a thyA deficient organism can survive on a plate with
+thyamine and trimethoprim while a thyA-containing organism cannot. Likewise, a
+thyA-containing organism can survive on a minimal media while a thyA deficent
+cell will not. By including and removing the thyA gene along with a desired
+gene of interest, arbitrary DNA code can be added to a cell. Furthermore, if
+care is taken when designing the DNA oligo and DNA fragments, the bases of the
+thyA gene (or any arbitrary gene) can be completely removed without any trace.
+
