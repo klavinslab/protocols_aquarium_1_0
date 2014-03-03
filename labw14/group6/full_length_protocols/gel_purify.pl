@@ -4,8 +4,8 @@ argument
 end
 
 take
-  gel_slices = item gel1
-  gel_slices = item gel2
+  gel_slices1 = item gel1
+  gel_slices2 = item gel2
 end
 
 T1 = gel1
@@ -80,7 +80,7 @@ end
 
 step
   description: "Label two pink QIAquick Spin columns"
-  note: "Write you initials on it."
+  note: "Write your initials on it."
 end
 
 step
@@ -152,19 +152,19 @@ end
 produce
   r = 1 "Fragment Stock" of "fGA"
   location: "Bench"
-  release gel_slices
+  release gel_slices1
 end
 
 produce
   t = 1 "Fragment Stock" of "fGA"
   location: "Bench"
-  release gel_slices
+  release gel_slices2
 end
 
 log
-  return: {Fragment_Stock_id: r[:id]}
+  return: {Fragment_Stock_id1: r[:id]}
 end
 
 log
-  return: {Fragment_Stock_id: t[:id]}
+  return: {Fragment_Stock_id2: t[:id]}
 end
