@@ -30,7 +30,7 @@ step
 end
 
 step
-  description: "Incubate the tube in the 55 C heat bath until lysis is complete (30 - 40 minutes)"
+  description: "Incubate the tube in the 55 C heat bath until lysis is complete (usually 40 - 50 minutes)"
   note: "Vortex occasionally"
 end
 
