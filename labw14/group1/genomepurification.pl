@@ -27,7 +27,7 @@ end
 step
   description: "DNA Purification 2"
   check: "Add 200uL DNA Wash Buffer to the column.  Centerfuge for 1 minute.  Discard and replace the collection tube."
-  check: "Pipette 15 uL DNA Elution Buffer directly into the base of the collection tube.  Allow to incubate for 1 minute at room tempurature."
+  check: "Pipette 15 uL DNA Elution Buffer directly into the filter of the column.  Allow to incubate for 1 minute at room tempurature."
   check: "Place the column in a 1.5mL tube.  Centrifuge for 30 seconds to elute the DNA.  The tube contains purified DNA.  The column can be discarded."
 end
 
