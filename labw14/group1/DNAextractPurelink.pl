@@ -43,7 +43,7 @@ step
   description: "Incubate the tube in the 55 C heat bath until lysis is complete (usually 40 - 50 minutes)"
   note: "Place the tube in a green tube rack to hold it steady."
   note: "Vortex occasionally."
-  image: "NSG_LoadingHeatBath"
+  image: "NSG_HeatBath"
 end
 
 step
