@@ -20,6 +20,7 @@ step
  check: "Centrifuge the tubes at 4000g for 1 minute."
  check: "Carefully use pipette to remove and discard the supernatant from each tube."
  check: "Repeat the centrifuge and seperation step 3-4 more times with each tube."
+ image: "NSG_Centrifuge_4Kg"
 end
 
 step
@@ -28,12 +29,14 @@ step
   check: "Pipette 20uL Proteinase K into the tube"
   check: "Vortex the tube breifly to mix"
   check: "Let your tube incubate at the bench for 10 minutes."
+  image: "NSG_PureLink_GenomeExtractionKit"
 end
 
 step
   description: "Incubate the tube in the 55 C heat bath until lysis is complete (usually 40 - 50 minutes)"
   note: "Place the tube in a green tube rack to hold it steady."
   note: "Vortex occasionally."
+  image: "NSG_LoadingHeatBath"
 end
 
 step
@@ -42,6 +45,7 @@ step
   check: "Incubate at room tempurature for two minutes."
   check: "Pipette 200 uL PureLink Genomic Lysis Binding Buffer. Vortex until solution is homogenous."
   check: "Pipette 200 uL 95%% Ethanol into the tube.  Vortex the tube for 5 seconds"
+  image: "NSG_GenomeExtractionKit_Interior"
 end
 
 step
@@ -51,6 +55,7 @@ step
   check: "Pipette the lysate (around 640uL) into the column."
   check: "Centrifuge the column at 10,000g for 1 minute at room tempurature."
   check: "Discard the column's collection tube and replace it with a clean one."
+  image: "NSG_Centrifugation_Column_Purification"
 end
 
 step
@@ -65,6 +70,7 @@ step
   check: "Pipette 500 uL PureLink Genomic Wash Buffer 2 into the column."
   check: "Centrifuge the column at maximum speed for 3 minutes at room tempurature."
   check: "Discard the column's collection tube."
+  image: "NSG_Centrifuge_Maxg"
 end
 
 step
@@ -73,6 +79,7 @@ step
   check: "Add 25 uL PureLink Genomic Elution Buffer to the column."
   check: "Incubate the tube for 1 minute at room tempurature."
   check: "Cetrifuge at maximum speed for 1 minute at room tempurature."
+  
 end
 
 step
