@@ -4,6 +4,7 @@ end
 
 step
   description: "Prepare the agar film to use on the microscope"
+  note: "In this protocol we will create an agar cell dish which we will use to find cells using the microscope."
   note: "Click next to begin this procedure"
 end
 
