@@ -2,6 +2,12 @@ argument
   id: sample("Transformed E coli Strain"), "Agar plate to be disposed"
 end
 
+step
+  description: "Clean up and verify results"
+  note: "In this protocol we will verify the results of our timelapse and save the file for future viewing. In addition we will clean up the microscope area and finalize anything else related to our current project."
+  note: "Click next to begin this protocol."
+end
+
 take
   plate = item id
   note: "This is already in the microscope"
