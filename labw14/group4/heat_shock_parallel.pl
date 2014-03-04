@@ -77,7 +77,7 @@ while ii < num_samples
 		note: "This new sample is produced from Sample %{id}. Keep these cells on ice for the next step"
 		data
 			from: id	# for sample tracking purposes
-			original_id: cells_flask_array
+			original_id: taken_cells[ii][:data][:original_id]
 		end
   	location: "Bench"
 		release taken_cells[ii]
