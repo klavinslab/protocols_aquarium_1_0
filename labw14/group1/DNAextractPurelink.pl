@@ -9,7 +9,7 @@ end
 
 step
   description: "Prepare a heat bath"
-  check: "Locate and plug in the hot water bath. At time of writing, it is located by the fire extinguisher."
+  check: "Locate and plug in the hot water bath."
   check: "Press the button on the left labled 'I/O' to turn on the controller."
   check: "After powering on, press the refresh button until a flashing tempurature appears."
   check: "Use the up and down arrows to set the tempurature of the heat bath to 55 C."
