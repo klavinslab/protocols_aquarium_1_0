@@ -95,7 +95,7 @@ place run_gel
   protocol: "labw14/group1/run_gel.pl"
   argument
     ladder_one: ladder
-    fragment_volume: 20
+    fragment_volume: 50
   end
   group: aquarium_user
   start: now()
