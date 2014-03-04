@@ -26,6 +26,7 @@ step
   bullet: "Place the test tube inside a tube rack to prevent accidents while pipetting"
   bullet: "Attach the 5 mL serological pipette tip to the serological pipetter"
   bullet: "Pipette 2mL of the M9 solution into the 14 mL test tube"
+  image: "m9_glucose"
 end
 
 release[pipette[0], M9[0], tip[0]]
