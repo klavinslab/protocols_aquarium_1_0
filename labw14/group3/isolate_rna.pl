@@ -85,7 +85,7 @@ step
 end
 
 release [y[0], x[0], z[0]]
-
+release [iceblock[0], alrack[0]]
 
 log
   return: {rna_suspension1: rna_sus1, rna_suspension2: rna_sus2}
