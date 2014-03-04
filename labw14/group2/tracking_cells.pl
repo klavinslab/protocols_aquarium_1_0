@@ -1,5 +1,7 @@
 step
   description: "Track cells using the NIS-Elements software"
+  note: "In this protocol we will track and store cells to run the timelapse microscopy. This is a very long a frustrating process which has much room for error. Follow the directions carefully to minimize such error and successfully complete the protocol"
+  note: "The tools we setup will be used to track cells across a 3D axis."
   note: "Click next to begin this protocol"
 end
 
