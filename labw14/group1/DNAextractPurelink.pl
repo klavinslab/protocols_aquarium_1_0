@@ -27,6 +27,7 @@ step
   check: "Pipette 180uL PureLink Genomic Digestion Buffer into the tube"
   check: "Pipette 20uL Proteinase K into the tube"
   check: "Vortex the tube breifly to mix"
+  check: "Let your tube incubate at the bench for 10 minutes."
 end
 
 step
