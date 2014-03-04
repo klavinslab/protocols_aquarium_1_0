@@ -8,16 +8,16 @@ step
   note: "Click next to begin this procedure."
 end
 
+step
+  description: "Head to the media bay"
+  note: "Loggin to aquarium at the media bay in the B0 row of the lab"
+end
+
 take 
   test_tube = 1 "14 mL Test Tube"
   tip = 1 "5 mL Serological Pipette Tips"
   M9 = 1 "200 mL M9 liquid Glucose"
   pipette = 1 "Serological Pipette"
-end
-
-step
-  description: "Head to the media bay"
-  note: "Loggin to aquarium at the media bay in the B0 row of the lab"
 end
 
 step
