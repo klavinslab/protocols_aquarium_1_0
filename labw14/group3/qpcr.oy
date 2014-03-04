@@ -1,6 +1,7 @@
 argument
   #Isolate Lysed RNA
-  yeast_suspen: sample, "Choose the Yeast Sample from which to Isolate RNA"
+  yeast_suspen_one: sample, "Choose the Yeast Sample from which to Isolate RNA"
+  yeast_suspen_two: sample, "Choose the Other Sample from which to Isolate RNA"
   iscript: sample, "iScript RT-qPCR sample preparation reagent at bench"
   #cDNA Synthesis arguements
   iscript_rxn_mix: sample, "Select te 5x iScript reaction mix"
@@ -20,7 +21,8 @@ end
 place isolate_rna
   protocol: "labw14/group3/isolate_rna.pl"
   argument
-    yeast_susp: yeast_suspen
+    yeast_susp1: yeast_suspen_one
+    yeast_susp2: yeast_suspen_two
     iscript: iscript
   end
   marked: true
