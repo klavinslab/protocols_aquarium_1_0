@@ -10,7 +10,7 @@ end
 
 step
   description: "Head to the media bay"
-  note: "Loggin to aquarium at the media bay in the B0 row of the lab"
+  note: "Log-in to aquarium at the media bay in the B0 row of the lab"
 end
 
 take 
