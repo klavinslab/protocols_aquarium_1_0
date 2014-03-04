@@ -91,7 +91,7 @@ step
 end
 
 step
-  description: "Hit 'run' on the thermal cycler and select 20 uL setting."
+  description: "Hit 'run' on the thermal cycler and select 50 uL setting."
   image: "thermal_cycler_select"
 end
 
