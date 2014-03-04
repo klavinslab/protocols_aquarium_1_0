@@ -2,6 +2,12 @@ argument
   id: sample ("Transformed E coli Strain"), "This is the glycerol stock we will use to prepare the cells"
 end
 
+step
+  description: "Prepare an overnight suspension"
+  note: "The purpose of this protocol is to prepare an overnight suspension"
+  note: "Biologoically we are simply taking cells from a glycerol stock and incubating them overnight in LB media."
+end
+
 take
   falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
   test_tube = 1 "14 mL Test Tube"
