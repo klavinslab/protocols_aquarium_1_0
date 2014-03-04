@@ -2,7 +2,7 @@ argument
   glycerol: sample, "Glycerol stock to be grown in LB media"
 end
 
-place OLBG
+place overnight_LB
   protocol: "labw14/group2/overnight_LB_growth.pl"
   argument
     id: glycerol
@@ -12,81 +12,81 @@ place OLBG
   start: now()
 end
 
-place GM9
+place growth_M9
   protocol: "labw14/group2/growth_in_m9.pl"
   group: aquarium_user
   start: now()
   window: hours(1)
 end
 
-place MSI
+place micro_incubate
   protocol: "labw14/group2/microscope_incubator.pl"
   group: aquarium_user
   start: now()
   window: hours(1)
 end
 
-place AGAR
+place agar_dish
   protocol: "labw14/group2/agar_cell_dish.pl"
   group: aquarium_user
   start: now()
   window: hours(1)
 end
 
-place MSPR
+place micro_prep
   protocol: "labw14/group2/microscope_preparation.pl"
   group: aquarium_user
   start: now()
   window: hours(1)
 end
 
-place MSLS
+place micro_lens
   protocol: "labw14/group2/microscope_lens.pl"
   group: aquarium_user
   start: now()
   window: hours(1)
 end
 
-place TRAK
+place track_cells
   protocol: "labw14/group2/tracking_cells.pl"
   group: aquarium_user
   start: now()
   window: hours(1)
 end
 
-place TIME
+place timelapse
   protocol: "labw14/group2/running_timelapse.pl"
   group: aquarium_user
   start: now()
   window: hours(1)
 end
 
-place CLEAN
+place clean_up
   protocol: "labw14/group2/clean_up.pl"
   group: aquarium_user
   start: now()
   window: hours(1)
 end
 
-wire (OLBG, "ons") => (GM9, "id")
-wire (GM9, "ons") => (AGAR, "id")
-wire (AGAR, "dish") => (CLEAN, "id")
+wire (overnight_LB, "ons") => (growth_M9, "id")
+wire (growth_M9, "ons") => (agar_dish, "id")
+wire (agar_dish, "dish") => (clean_up, "id")
 
-transition [OLBG] => [MSI] when !error(0) && completed(0) end
-transition [OLBG] => [OLBG] when error(0) end
-transition [GM9] => [AGAR] when !error(0) && completed(0) end
-transition [MSI] => [GM9] when !error(0) && completed(0) end
-transition [MSI] => [MSI] when error(0) end
-transition [GM9] => [GM9] when error(0) end
-transition [AGAR] => [MSPR] when !error(0) && completed(0) end
-transition [AGAR] => [AGAR] when error(0) end
-transition [MSPR] => [MSLS] when !error(0) && completed(0) end
-transition [MSPR] => [MSPR] when error(0) end
-transition [MSLS] => [TRAK] when !error(0) && completed(0) end
-transition [MSLS] => [MSLS] when error(0) end
-transition [TRAK] => [TIME] when !error(0) && completed(0) end
-transition [TRAK] => [TRAK] when error(0) end
-transition [TIME] => [CLEAN] when !error(0) && completed(0) end
-transition [TIME] => [TIME] when error (0) end
-transition [CLEAN] => [] when !error(0) && completed(0) end
-transition [CLEAN] => [CLEAN] when error(0) end
+transition [overnight_LB] => [micro_incubate] when !error(0) && completed(0) end
+transition [overnight_LB] => [overnight_LB] when error(0) end
+transition [growth_M9] => [agar_dish] when !error(0) && completed(0) end
+transition [micro_incubate] => [growth_M9] when !error(0) && completed(0) end
+transition [micro_incubate] => [micro_incubate] when error(0) end
+transition [growth_M9] => [growth_M9] when error(0) end
+transition [agar_dish] => [micro_prep] when !error(0) && completed(0) end
+transition [agar_dish] => [agar_dish] when error(0) end
+transition [micro_prep] => [micro_lens] when !error(0) && completed(0) end
+transition [micro_prep] => [micro_prep] when error(0) end
+transition [micro_lens] => [track_cells] when !error(0) && completed(0) end
+transition [micro_lens] => [micro_lens] when error(0) end
+transition [track_cells] => [timelapse] when !error(0) && completed(0) end
+transition [track_cells] => [track_cells] when error(0) end
+transition [timelapse] => [clean_up] when !error(0) && completed(0) end
+transition [timelapse] => [timelapse] when error (0) end
+transition [clean_up] => [] when !error(0) && completed(0) end
+transition [clean_up] => [clean_up] when error(0) end
