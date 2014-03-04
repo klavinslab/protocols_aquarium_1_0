@@ -1,5 +1,6 @@
 step
   description: "Prepare the microscope for use"
+  note: "In this protocol we will turn on the incubator so that the cells will not die while using the microscope."
   note: "Click next to begin this protocol"
 end
 
