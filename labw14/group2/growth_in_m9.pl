@@ -3,7 +3,8 @@ argument
 end
 
 step
-  description: "Prepare 0.4%% M9 glucose to mix with overnight suspension"
+  description: "Prepare 0.4%% M9 glucose to dilute the overnight suspension"
+  note: "The purpose of this protocol is to dilute the concentration of cells in M9 glucose. This helps slow the growth of the cells allowing them to be more sparse."
   note: "Click next to begin this procedure."
 end
 
