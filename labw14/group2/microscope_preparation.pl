@@ -1,4 +1,10 @@
 step
+  description: "Prepare the microscope for use"
+  note: "This protocol outlines the procedures for safe setup of the microscope. Adhereing to this protocol may save you thousands in damage costs."
+  note: "Click next to begin this protocol."
+end
+
+step
   description: "Go to the microscope room"
   note: "Go to the microscope room and resume the protocol from there. If already in the microscope room click next."
   note: "Remember to bring your microscope plate"
@@ -8,6 +14,7 @@ step
   description: "Ensure incubation chamber is at 37 degrees"
   note: "If the incubation chamber is not at 37 degrees abort protocol and wait till chamber reaches proper temperature."
 end
+
 step  
   description: "Setting up the microscope for use"
   note: "In the next few steps we will set up the microscope to track cells for our timelapse microscopy."
