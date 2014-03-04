@@ -24,6 +24,7 @@ step
  check: "Place a clean tip on the 10uL pipetter"
  check: "Carefully use the tip of the pipetter to scrape up one of the colonies from the plate"
  check: "Eject the pipette tip into 14 mL test tube, swirl tube to mix"
+ image: "group1_overnight_tube_image"
 end
 
 produce
