@@ -42,7 +42,9 @@ end
  step
     description: "Put the prepared PCR tube on the bench."
  end
-x = "id %{primer1}"
+ 
+x = primer1
+
 release masterstock1
 release masterstock2
 release phusion_stock
