@@ -83,14 +83,14 @@ end
 
 while DNA_band_length1 < 700 
   step
-    description: "Abort this protocol and start from the begining."
-    note: "You may change some parameters such as PCR setting. Also, look for sources of error."
+    description: "Abort this protocol and start from the beginning."
+    note: "You may change some parameters such as PCR setting. Also, look for sources of possible errors."
   end
 end
 
 while DNA_band_length2 < 700 
   step
-    description: "Abort this protocol and start from the begining."
+    description: "Abort this protocol and start from the beginning."
     note: "You may change some parameters such as PCR setting and repeat. Also, look for sources of possible errors."
   end
 end
