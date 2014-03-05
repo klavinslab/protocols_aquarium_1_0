@@ -39,11 +39,13 @@ step
   warning: "Be careful to pipette into the liquid, not the side of the tube."
 end
 
- step
-    description: "Put the prepared PCR tube on the bench."
- end
- 
+step
+  description: "Put the prepared PCR tube on the bench."
+end
 
+produce
+  r = 1 "PCR Result" of "fGA"
+end
 
 release primer1_stock
 release primer2_stock
@@ -51,7 +53,7 @@ release masterstock1
 release masterstock2
 release phusion_stock
 
-Step
+step
   description: "You will now be asked to use the lab thermal cycler."
   note: "The thermal cycler will be shared by all groups."
   warning: "Make sure it is not in use. Never open the lid of the running thermal cycler."
@@ -87,10 +89,7 @@ step
   warning: "You can keep them in -4C fridge (SF) in case you are not using them right away."
 end
 
-produce
-  r = 1 "PCR Result" of "fGA"
 
-end
 
 log
   return: { PCR_Result_id: r[:id] }
