@@ -1,6 +1,6 @@
 argument
-  oligo_pools1: sample array, "Select the first oligonucleotide stocks you want to combine through gene assembly"
-  oligo_pools2: sample array, "Select the second oligonucleotide stocks you want to combine through gene assembly"
+  oligo_pools1: sample, "Select the first oligonucleotide stocks you want to combine through gene assembly"
+  #oligo_pools2: sample array, "Select the second oligonucleotide stocks you want to combine through gene assembly"
   primer1: sample, "The first primer"
   primer2: sample, "The second primer"
   enzyme_id: sample, "The Phsion HF Master Mix stock"
@@ -9,7 +9,7 @@ end
 
 take
   masterstock1 = item oligo_pools1
-  masterstock2 = item oligo_pools2
+  #masterstock2 = item oligo_pools2
   primer1_stock = item primer1
   primer2_stock = item primer2
   phusion_stock = item enzyme_id
