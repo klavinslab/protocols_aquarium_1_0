@@ -37,8 +37,9 @@ while count2 < y
   label=count2+1
   step
     description: "enter weight in grams of tube %{label}"
-    getdata
+    getdata:
       weight: number "enter weight in grams of tube %{label}"
+    end
   end
   qg=weight*30
   step
