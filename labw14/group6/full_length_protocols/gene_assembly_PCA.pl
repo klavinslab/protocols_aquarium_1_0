@@ -60,16 +60,16 @@ if x == 1631
   release primer1_stock
   release primer2_stock
 else
-Step
-  description: "You will now be asked to use the lab thermal cycler"
-  note: "The thermal cycler will be shared by all groups."
-  warning: "Make sure it is not in use. Never open the lid of the running thermal cycler."
-  image: "thermal_cycler_off"
-end
+  Step
+    description: "You will now be asked to use the lab thermal cycler"
+    note: "The thermal cycler will be shared by all groups."
+    warning: "Make sure it is not in use. Never open the lid of the running thermal cycler."
+    image: "thermal_cycler_off"
+  end
 
-step
-  description: "Place the tubes into the thermal cycler T2 at B3.335."
-end
+  step
+   description: "Place the tubes into the thermal cycler T2 at B3.335."
+  end
 
 step
   description: "Choose program on the thermal cycler."
