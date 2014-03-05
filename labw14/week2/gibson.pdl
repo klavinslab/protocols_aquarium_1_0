@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<protocol>
+<information>Scarlessly assemble DNA using fragments with terminal homologies.</information>
+  <!-- Initial arguments -->
+  <argument>
+    <name>fragment_num</name>
+    <type>number</type>
+    <description>Enter the number of fragments being assembled.</description>
+  </argument>
+  
+  <assign>
+    <lhs>i</lhs>
+    <rhs>%{fragment_num}</rhs>
+  </assign>
+  
+  <assign>
+    <lhs>fragment_id_array</lhs>
+    <rhs>[]</rhs>
+  </assign>
+  
+  <assign>
+    <lhs>fragment_vol_array</lhs>
+    <rhs>[]</rhs>
+  </assign>
+  
+  <assign>
+    <lhs>fragment_vol_total</lhs>
+    <rhs>0</rhs>
+  </assign>
+  
+  <while>
+    <condition>%{i} &gt; 0</condition>
+    <do>
+      <step>
+        <description>Enter fragment id and volume</description>
+        <getdata>
+          <type>string</type>
+          <description>fragment id</description>
+          <var>temp_id</var>
+        </getdata>
+        
+        <getdata>
+          <type>number</type>
+          <description>fragment volume</description>
+          <var>temp_vol</var>
+        </getdata>
+      </step>    
+      
+        <assign>
+          <lhs>fragment_vol_total</lhs>
+          <rhs>%{fragment_vol_total} + %{temp_vol}</rhs>
+        </assign>
+      
+      <take>
+        <item>
+        <type>fragment_%{temp_id}</type>
+        <quantity>1</quantity>
+        <var>my_fragment_%{temp_id}</var>
+        </item>
+      </take>
+      
+      <assign>
+        <lhs>fragment_id_array</lhs>
+        <rhs>%{fragment_id_array} + [%{temp_id}]</rhs>
+      </assign>   
+      
+      
+      <assign>
+        <lhs>fragment_vol_array</lhs>
+        <rhs>%{fragment_vol_array} + [%{temp_vol}]</rhs>
+      </assign>   
+      
+      <assign>
+        <lhs>i</lhs>
+        <rhs>%{i} - 1</rhs>
+      </assign>
+    </do>
+  </while>
+
+      <assign>
+        <lhs>water_vol</lhs>
+        <rhs>5 - %{fragment_vol_total}</rhs>
+      </assign>
+    
+    <if>
+    <condition>%{fragment_vol_total} &gt; 5</condition>
+    <then>
+    <step>
+    <description>Please ABORT this protocol! The totol volume of your fragments to be added is %{fragment_vol_total}µL, 
+    which is greater than 5µL. Reschedule the protocol and make sure your totol volume of your fragments is less or equal than 5µL.
+    </description>
+    </step>
+    </then>
+    </if>
+  
+  <take>
+    <item>
+    <type>50C Heat Block</type>
+    <quantity>1</quantity>
+    <var>my_heatblock</var>
+    </item>
+    
+    <item>
+    <type>Gibson aliquot</type>
+    <quantity>1</quantity>
+    <var>aliquot</var>
+    </item>
+  </take>
+  
+    <if>
+    <condition>%{fragment_vol_total} &lt; 5</condition>
+    <then>
+    
+    <take>
+    <item>
+    <type>50 mL Falcon Tube MG Water</type>
+    <quantity>1</quantity>
+    <var>my_water</var>
+    </item>
+    </take>
+    
+      <assign>
+        <lhs>water_vol</lhs>
+        <rhs>5 - %{fragment_vol_total}</rhs>
+      </assign>
+    </then>
+    </if>
+    
+
+
+
+  
+  <!-- Begin steps -->
+  <step>
+    <description>Thaw Gibson aliquot by holding in your hands for several seconds, then put on ice block to keep it cool.</description>
+  </step>
+  <step>
+    <description>Spin down Gibson aliquot for 2 seconds on a tabletop mini centrifuge.</description>
+    <note>Put back on ice block afterwards.</note>
+  </step>
+  <step>
+    <description>Label the Gibson aliquot tube.</description>
+    <note>Write down fragment IDs on the tube.</note>
+  </step>
+
+  <assign>
+    <lhs>j</lhs>
+    <rhs>0</rhs>
+  </assign>  
+  <while>
+    <condition>%{j} &lt; %{fragment_num}</condition>
+    <do>
+    <assign>
+      <lhs>id</lhs>
+      <rhs>%{fragment_id_array}[%{j}]</rhs>
+    </assign>
+    <assign>
+      <lhs>vol</lhs>
+      <rhs>%{fragment_vol_array}[%{j}]</rhs>
+    </assign>
+    <step>
+      <description>Add %{vol} µL of fragment_%{id} into the gibson aliquot.</description>
+    </step>
+    <assign>
+      <lhs>j</lhs>
+      <rhs>%{j} + 1</rhs>
+    </assign>
+    </do>
+  </while>
+  
+  <if>
+    <condition>%{water_vol} &gt; 0</condition>
+    <then>
+    <step>
+      <description>Add %{water_vol} µL of MG water into the gibson aliquot.</description>
+    </step>
+    <release>[%{my_water}[0]]</release>
+    </then>
+  </if>
+  
+
+  <step>
+    <description>Transfer the tube in a heat block set to 50°C.</description>
+    <note>Be prepared to take the tube out after 15-60 minutes.</note>
+  </step>
+
+  <release>[%{my_heatblock}[0]]</release>
+
+</protocol>

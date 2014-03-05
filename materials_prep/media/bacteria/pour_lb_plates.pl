@@ -54,6 +54,8 @@ if antibiotic != "Amp" && antibiotic != "Kan" && antibiotic != "Chlor" && antibi
 end
 
 
+bottle_type = ""  # Initialize global variable
+n_empty_plates = ""  # Initialize global variable
 if volume == 200
   bottle_type = "200 mL LB Agar (sterile)"
   n_empty_plates = 10 * n
@@ -66,6 +68,10 @@ else
 end
 
 
+antibiotic_name = ""  # Initialize global variable
+antibiotic_volume = ""  # Initialize global variable
+antibiotic_number = ""  # Initialize global variable
+product_name = ""  # Initialize global variable
 if antibiotic == "Amp"
   antibiotic_name = "100X 1 mL Ampicillin Aliquot"
   antibiotic_volume = volume / 100.0
@@ -93,6 +99,7 @@ take
 end
 
 
+antibiotic_aliquots = ""  # Initialize global variable
 if antibiotic != "None"
   take
     antibiotic_aliquots = antibiotic_number antibiotic_name
@@ -246,6 +253,7 @@ if n_poured < 40
 end
 
 
+empty_bottle_type = ""  # Initialize global variable
 if volume == 800
   empty_bottle_type = "1 L Bottle (dirty)"
 elsif volume == 400
