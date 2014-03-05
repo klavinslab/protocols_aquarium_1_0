@@ -44,7 +44,7 @@ while count2 < y
   end
   qg=weight*30
   step
-    description: "Add %{weight} µl of QG buffer into tube %{label}"
+    description: "Add %{qp} µl of QG buffer into tube %{label}"
   end
   count2=count2+1
 end
