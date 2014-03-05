@@ -82,6 +82,9 @@ step
   image: "gel_check_for_bubbles"
 end
 
+step
+  description: "The nex step is taking image from the gel and cutting it after electrophoresis is done in about 40 minutes."
+end
 
 release ladder
 
