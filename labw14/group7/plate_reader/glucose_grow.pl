@@ -43,7 +43,7 @@ end
 release [pipette[0]]
 
 step
-  description: "Return to your own Bench"
+  description: "Return to your own bench"
   note: "You are now done in the media bay.  Take your prepared culture tubes and return to your station.
          You will be using cells next, and you don't want to contaminate the media bay"
 end
@@ -126,7 +126,7 @@ step
          One of them should be empty, and one of them partially remaining"
   check: "Store parially filled 30mL tube of 'M9 liquid Glucose + amp + kan' at location B0.110
          (media refridgerator)"
-  bullet: "Make sure this tube is labelled properly '30mL M9 liquid Glucose + amp + kan',
+  bullet: "Make sure this tube is labelled properly with '30mL M9 liquid Glucose + amp + kan',
            in addition to YOUR NAME AND DATE. The antibiotics will go bad after a couple of days,
            so you will have to use the remaining media tomorrow."
   check: "In the next step, please select 'dispose' to remove the empty 30ml tube from the inventory.
