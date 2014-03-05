@@ -96,7 +96,7 @@ while i<strains
             again before handling the pipette tip)"
     check: "Use a 100uL pipette tip (held in your hand) to extract cells from a single colony from plate %{id}.
             Drop the whole tip into the culture tube marked '%{new_id} R1'"
-    check: "Repeat the above procedure for '%{new_id} R2', '%{new_id} R3', and '%{new_id} R4'.
+    check: "Repeat the above procedure for '%{new_id} R2', '%{new_id} R3', and '%{new_id} R4'."
     bullet: "Be sure to use a new 100uL pipette tip to extract cells from a different colony from plate %{id},
             for each repetition R1~R4"
     image: "colony_in_tube"
