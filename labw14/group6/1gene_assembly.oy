@@ -141,6 +141,7 @@ end
 
 
 wire (image_cut_gel, "Gel_Slice_id") => (gel_purify, "gel")
+wire (image_cut_gel, "Gel_Slice_id") => (gel_purify, "gel")
 
 
 
