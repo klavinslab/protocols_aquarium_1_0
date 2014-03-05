@@ -4,10 +4,21 @@ argument
 end
 
 step
-  description: "A 96 well plate"
-  note: "This is an individual 96 well plate from the box (you will take one of these in the next step)"
-  note: "Be sure to have a clean set of gloves before getting a 96 well plate from the box"
+  description: "Loading the plate reader"
+  note: "In this protocol you will load glucose media and cell sultures into a 96 well plate reader"
+  note: "Be prepared for a lot of pipetting! You will need to pipette around 150 times during this process"
+  note: "Be sure to keep your 96 well plate sterile, and bump it too much.
+         You do not want the liquid in the wells to touch the lid."
   image: "96_well_plate"
+end
+
+step
+  description: "A 96 well plate"
+  note: "This is the box of 96 well plates you will use.  It should have the following label:"
+  bullet: "'3904' - Assay Plate, With Lid -
+         Flat Bottom, Tissue Culture Treated - Black with Clear Bottom - Sterile, Polystyrene"
+  note: "Be sure to put on a clean pair of gloves before taking a 96 well plate from the box"
+  image: "96_well_plate_box"
 end
 
 take
@@ -20,22 +31,28 @@ take
   #DI_water = 1 "DI Water, Sterile"
   cells = item cells_to_assay_in
   media = 1 "30 mL M9 liquid Glucose + amp + kan"
+  note: "The media should be in the fridge where you stored it yesterday"
 #  antifog = 1 "Antifog Solution"
 end
 
 
 step
   description: "Load the outermost edges of the plate with water"
-  note: "This helps prevent evaporation of the samples, which will be in the middle of the plate"
-  check: "Pipette 200uL of DI water into the outer edges"
-  note: "It can be helpful to have someone hold onto the media tube during this process to warm it up to room temperature"
-  image: "plate_water"
+  check: "Grab a clean falcon tube from your station, and fill it up with DI water
+          (NOT 'double-refined'!) from location xx"
+  #TODO location of DI water
+  note: "Loading water into the outer edge of the plate reader
+         helps prevent evaporation of the samples, which will be in the middle of the plate"
+  check: "Pipette 200uL of DI water into the outer edge of the 96 well plate, in the wells indicated by 'H20' in blue"
+  note: "It can be helpful to have your partner hold onto the media tube during this process
+         to warm it up to room temperature"
+  image: "plate_reader_water"
 end
 
 step
   description: "Load the middle area of the plate with the glucose medium"
   check: "Pipette 200uL of glucose media (prepared earlier) into each open well"
-  image: "plate_media"
+  image: "plate_reader_media"
 end
 
 cell0 = cells[0][:id]
@@ -47,7 +64,7 @@ step
   check: "S1 = Cell culture tube ID %{cell0}"
   check: "S2 = Cell culture tube ID %{cell1}"
   check: "S3 = Cell culture tube ID %{cell2}"
-  image: "sample_locations"
+  image: "plate_reader_sample_locations"
 end
 
 
@@ -55,23 +72,22 @@ end
 #  description: "Fetch defogger solution and aluminium foil"
 #  check: "Retrieve the 'Fog Tech anti-fog solution' from location B5.530"
 #  image: "anti_fog"
-#  check: "Fetch the aluminium foil from location A8.400"
 #end
 take
   antifog = 1 "Antifog Solution"
-  foil = 1 "Aluminum Foil"
 end
 
 step
   description: "Wipe down the plate lid with defogger solution"
   note: "This prevents condensation from disrupting the measurements"
-  check: "Squirt a small amount of anti-fog solution onto a Kimwipe, and use it to wipe the inside of the lid"
+  check: "Squirt a small amount of anti-fog solution onto a Kimwipe,
+          and use it to wipe the inside of the lid"
 end
 
 step
   description: "Seal the plate"
-  check: "Cut out a small (3x3cm) square of aluminum, and fold it over 3~4 times
-          to construct a small (3mm thick) shim"
+  check: "Cut out a small (3x5cm) piece of aluminum foil from location A8.400"
+  check: "Fold aluminum foil over 3~4 times to construct a small (3mm thick) shim"
   check: "Insert the small foil shim into the corner of the assay plate,
           and close the lid (This shim will keep the lid from rattling during the run)"
   #TODO: include picture
