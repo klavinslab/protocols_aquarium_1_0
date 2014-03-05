@@ -10,8 +10,10 @@ end #note that 'plated_cells' is an array of integers, representing sample ID nu
 #  image: "serological_pipette"
 #end
 step
-  description: "A 14ml culture tube"
-  note: "This is a 14ml culture tube (you will fetch 12 of these in the next step)"
+  description: "In the media bay"
+  check: "You should still be in the media bay when you start this procedure.
+         If you are not in the media bay, move there now."
+  note: "This is a 14mL culture tube (you will fetch 12 of these in the next step)"
   image: "14ml_culture_tube"
 end
 
@@ -31,11 +33,9 @@ end
 step
   description: "Add 3mL media to each culture tube"
   note: "If you have a lab partner, they can help you by holding the cap of each culture tube,
-         and the cap of the media aliquot while you do the pipetting"
-  note: "If you do not have a lab parner, use your best sterile technique to remove the lid of the media tube
-         with one hand while pipetting out the liquid with the other hand"
-  note: "Then replace the cap on te media tube before opening the cap of a cultre tube (with one hand), 
-         and using your other hand to pipette the media solution inso the culture tube"
+         and the cap of the media tube while you do the pipetting"
+  note: "If you do not have a lab parner, use your best sterile technique to remove the lid of each container
+         with one hand while pipetting the liquid with the other hand (this will take much longer)."
   check: "Use the electric serological pipette to add 3ml of 'M9 liquid Glucose + amp + kan' to each culture tube."
   check: "Dispose of your serological pipette tip in the large red biological waste bin."
 end
@@ -44,8 +44,8 @@ release [pipette[0]]
 
 step
   description: "Return to your own Bench"
-  note: "You are now done in the media bay.  Take your prepared culture tubes and move to the plate reader bay
-         Do not remain in the media bay.  You will be using cells next, and you don't want to contaminate the media bay"
+  note: "You are now done in the media bay.  Take your prepared culture tubes and return to your station.
+         You will be using cells next, and you don't want to contaminate the media bay"
 end
 
 take
@@ -75,14 +75,14 @@ step
   description: "Label culture tubes"
   note: "You will need 12 tubes in total: 4 repetitions for each of 3 strains"
   note: "You should write your labels vertically on the clear glass part of the tubes, NOT on the white part 
-         (if you draw here, it is very dificult to wash off!)"
+         (if you draw on the white part, it is very difficult to wash off!)"
   check: "Label a set of 4 culture tubes with:"
   bullet: "'%{tube0} R1', '%{tube0} R2', '%{tube0} R3', and '%{tube0} R4'"
   check: "Label another set of 4 culture tubes with:"
   bullet: "'%{tube1} R1', '%{tube1} R2', '%{tube1} R3', and '%{tube1} R4'"
   check: "Label a final set of 4 culture tubes with:"
   bullet: "'%{tube2} R1', '%{tube2} R2', '%{tube2} R3', and '%{tube2} R4'"
-  note: "Keep the sets separate"
+#  note: "Keep the sets separate"
 end
 #Loop through the three strains and add cells from each strain to a set of four culture tubes"
 i = 0
@@ -95,9 +95,10 @@ while i<strains
             again before handling the pipette tip)"
     check: "Use a 100uL pipette tip (held in your hand) to extract cells from a single colony from plate %{id}.
             Drop the whole tip into the culture tube marked '%{new_id} R1'"
-    check: "Use a new 100uL pipette tip extract cells from a different single colony from the same plate,
-            and drop the whole tip into the culture tube labeled '%{new_id} R2'"
-    check: "Repeat the above procedure for '%{new_id} R3' and '%{new_id} R4'."
+    check: "Repeat the above procedure for '%{new_id} R2', '%{new_id} R3', and '%{new_id} R4'.
+    bullet: "Be sure to use a new 100uL pipette tip to extract cells from a different colony from plate %{id},
+            for each repetition R1~R4"
+    image: "colony_in_tube"
   end
   i = i+1
 end
@@ -121,11 +122,15 @@ end
 
 step
   description: "Store one tube of 'M9 liquid Glucose + amp + kan'"
-  note: "You should now have two 30ml tubes of 'M9 liquid Glucose + amp + kan' on your bench"
-  note: "One of them should be empty, and one of them partially remaining"
-  check: "You will dispose of the empty 30ml tube in tip waste (in the next step)"
-  check: "The second (parially filled) 30mL tube of 'M9 liquid Glucose + amp + kan' should be stored
-          at location B0.110 (refridgerator)"
+  note: "You should now have two 30ml tubes of 'M9 liquid Glucose + amp + kan' on your bench. 
+         One of them should be empty, and one of them partially remaining"
+  check: "Store parially filled 30mL tube of 'M9 liquid Glucose + amp + kan' at location B0.110
+         (media refridgerator)"
+  bullet: "Make sure this tube is labelled properly '30mL M9 liquid Glucose + amp + kan',
+           in addition to YOUR NAME AND DATE. The antibiotics will go bad after a couple of days,
+           so you will have to use the remaining media tomorrow."
+  check: "In the next step, please select 'dispose' to remove the empty 30ml tube from the inventory.
+          You may toss this empty falcon tube into the large red 'biohazard' bin"
 end
 
 release media_tube1
@@ -134,8 +139,7 @@ modify
   media_tube2[0]
   location: "B0.110"
 end
-#TODO: Re-paraffin the agar plates before releasing them
-#TODO: Reconfigure the prduce/release of the '30ml glucose+amp+kan' so that it makes more sense
+
 step
   description: "Re-paraffin the agar plates"
   check: "Cut off a 0.5 inch strip of paraffin, hold one end of the strip to the side of an agar plate,
