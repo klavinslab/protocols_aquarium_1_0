@@ -10,6 +10,10 @@ argument
     # then destroy / replace the fake items
 end
 
+#  pattern - edit tags / values in hashes on datastructures
+# like [:this_protocol][:completed] = true
+# instead of holding values in memory / putting them in arrays
+
 # show one screen in which all fragments are taken
 step
   description: "Show complex_datastructure"
