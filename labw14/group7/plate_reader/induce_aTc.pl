@@ -30,6 +30,7 @@ end
 
 step
   description: "Add the inducer to the wells indicated in the chart"
+  note: "Be sure the solution is fully melted.  You can hold it to warm it up."
   check: "Pipette 1uL of aTc solution into each well shown in orange in the chart"
   bullet: "The already induced wells are shown in yellow, the un-induced wells are shown in green"
   note: "Use a new tip each time to avoid contamination"
