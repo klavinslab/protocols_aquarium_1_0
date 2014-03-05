@@ -97,9 +97,9 @@ end
 # pipette fragment into samples %[[{sample: id, amount: number} sorted by number increasing]
 # todo a function that makes a pipetting plan 
 # todo sort the fragments in the order of most used
-
+complex_datastructure = g
 fragments = fragments_to_take
 
 log
-  return: {gibsons: samples_to_make, fragments: fragments}
+  return: {gibsons: samples_to_make, fragments: fragments, complex_datastructure: complex_datastructure}
 end
