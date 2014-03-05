@@ -42,12 +42,12 @@ end
  step
     description: "Put the prepared PCR tube on the bench."
  end
-x = id %{primer1}
+x = "id %{primer1}"
 release masterstock1
 release masterstock2
 release phusion_stock
 
-if "id %{primer1}" == 1631
+if x == 1631
   step
     description: "Keep the prepared PCR tube on the bench while proceeding to the second assembly protocol."
   end
