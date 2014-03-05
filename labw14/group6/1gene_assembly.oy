@@ -80,7 +80,7 @@ place stock4
 end
 
 place assembly1
-  protocol: "labw14/group6/full_length_protocols/gene_assembly_PCA.pl"
+  protocol: "labw14/group6/full_length_protocols/gene_assembly_PCA1.pl"
   argument
     primer1: primer11
     primer2: primer12
@@ -92,7 +92,7 @@ place assembly1
 end
 
 place assembly2
-  protocol: "labw14/group6/full_length_protocols/gene_assembly_PCA.pl"
+  protocol: "labw14/group6/full_length_protocols/gene_assembly_PCA2.pl"
   argument
     primer1: primer21
     primer2: primer22
