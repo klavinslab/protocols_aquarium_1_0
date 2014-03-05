@@ -89,7 +89,7 @@ foreach p in plasmids_to_make
        end
     end
     i = i + 1
-    samples_to_make = concat(samples_to_make, [r])
+    samples_to_make = append (samples_to_make, r)
   end
 end
 
