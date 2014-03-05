@@ -1,5 +1,5 @@
 argument
-  gel: sample array, "Choose the Gel Slices you need to purify."
+  gel: sample, "Choose the Gel Slices you need to purify."
 end
 
 step
