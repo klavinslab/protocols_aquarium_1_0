@@ -26,6 +26,8 @@ end
 ii = 0
 r = []
 
+plasmid_id_num = digested_plasmid
+
 number_we_can_make = 1 + 1 # should be more complicated construction
 
 while ii < number_we_can_make
@@ -70,9 +72,9 @@ while ii < number_we_can_make
       check: "Pipette 240 µL  50%% PEG 3350 reagent to the tube."
       check: "Pipette 36 µL  1.0M LiOAc reagent to the tube."
       check: "Pipette 25 µL  Carrier DNA to the tube."
-      check: "Pipette 50 µL  Transformation DNA plasmid to the tube."
+      warning: "Please attend! Now you have to pipet Transformation DNA pladmid! NOT water!"
+      check: "Pipette 50 µL  Transformation DNA plasmid with id %{fragment_id} to the tube."
       image: "yeast_transformation_mixture_group5"
-
     end
     step
       description: "Resuspend the cells by vortexing"
