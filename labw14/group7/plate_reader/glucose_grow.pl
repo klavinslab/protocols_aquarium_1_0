@@ -145,7 +145,7 @@ release media_tube1
 modify
   media_tube2[0]
   location: "B0.110"
-  dinuse
+  inuse: 0
 end
 
 step
