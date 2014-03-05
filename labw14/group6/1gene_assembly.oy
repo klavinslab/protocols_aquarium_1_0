@@ -140,8 +140,8 @@ place gel_purify
 end
 
 
-wire (image_cut_gel, "Gel_Slice_id") => (gel_purify, "gel1")
-wire (image_cut_gel, "Gel_Slice_id") => (gel_purify, "gel2")
+wire (image_cut_gel, "Gel_Slice_id") => (gel_purify, "gel")
+
 
 
 transition [ introduction ] => [ stock1, stock2, stock3, stock4 ] when !error(0) && completed(0) end

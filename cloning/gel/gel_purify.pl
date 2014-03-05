@@ -72,8 +72,8 @@ step
   check: "Spin at top speed (> 17,900 g) for 30 seconds to wash columns."
   check: "Empty collection tubes."
   check: "Add 500 uL PE buffer to columns and wait five minutes"
-  check: "Empty collection tubes."
   check: "Spin at top speed (> 17,900 g) for 30 seconds to remove all PE buffer from columns"
+  check: "Empty collection tubes."
 end
 
 step
