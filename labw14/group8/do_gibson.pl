@@ -46,21 +46,22 @@ step
   note: "Take enough PCR tubes and label tubes %{ids}"
 end
   
-foreach f in pipetting_plan
+foreach f in fragments
   sample_amount_to_pipette = [ ]
   foreach g in gibsons
     #add this frag if has an amount for it
     foreach a in g[:data][:fragment_amounts]
-      if a[:name] == f[:fragment_name]
+      if a[:name] == f[:name]
         sample_amount_to_pipette = append ( sample_amount_to_pipette, {id: g[:id], amount: a[:amount]} )
       end
     end
   end
+  
   num_samples = length(sample_amount_to_pipette)
   fragment_name = f[:fragment_name]
   step
     description: "Pipette %{fragment_name} into %{num_samples} sample(s)"
-    note: "Pipette the following amounts into the following samples:
+    note: "Pipette the following amounts from %{f[:id]} into the following samples:
            %{sample_amount_to_pipette}"
   end
 end
