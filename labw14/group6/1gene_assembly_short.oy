@@ -20,6 +20,7 @@ place assembly1
   argument
     primer1: primer11
     primer2: primer12
+    oligo_pools1: oligo_pools1
     enzyme_id: phusionHF
   end
   group: aquarium_user
@@ -32,6 +33,7 @@ place assembly2
   argument
     primer1: primer21
     primer2: primer22
+    oligo_pools2: oligo_pools2
     enzyme_id: phusionHF
   end
   group: aquarium_user
