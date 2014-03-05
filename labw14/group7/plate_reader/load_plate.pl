@@ -103,9 +103,12 @@ end
 
 step
   description: "Next steps..."
-  note: "It is best to proceed with 'induce_atc_zero.pl' (the first inuction step),
-         then 'begin_run.pl' before you dispose of your culure tubes.
-         You will have plenty of time to soak your culture tubes in bleach after you have started your run"
+  note: "The sample must be induced at t = 0Hr, 1Hr, 1.5Hr, 2Hr, and 24Hr.  You will be done for today
+         after the 2Hr induction; you'll need to come back tomorrow for the 24Hr induction and the day after that
+         to finish the run."
+  note: "Don't dispose of your culure tubes until afer you've completed 'induce_atc_zero.pl' (the first inuction step)
+         and 'begin_run.pl'. You will have plenty of time to soak your culture tubes in bleach 
+         after you have started your run"
   image: "soak_bleach"
 end
 
