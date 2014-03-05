@@ -1,6 +1,5 @@
 argument
-  gel1: sample, "Choose the first Gel Slice you need to purify."
-  gel2: sample, "Choose the second Gel Slice you need to purify."
+  gel1: sample array, "Choose the Gel Slices you need to purify."
 end
 
 step
@@ -8,12 +7,11 @@ step
 end
 
 take
-  gel_slices1 = item gel1
-  gel_slices2 = item gel2
+  gel_slices = item gel1
 end
 
-T1 = gel1
-T2 = gel2
+T1 = gel1[0]
+T2 = gel2[1]
 
 step
   description: "Weigh the gel slice with id %{T1} on a scale at A5.300"
