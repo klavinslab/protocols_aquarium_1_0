@@ -1,6 +1,6 @@
 step
   description: "Adjust the Nikon software settings for running timelapse"
-  note: "In this protocol we will run the timelapse microscopy. This will set the microscope to take snapshots of our current X,y,Z positions over a set period of time. The result is that we will get to see our cells divide, and the GFP fluoresce over time."
+  note: "In this protocol we will run the timelapse microscopy. This will set the microscope to take snapshots of our current (X,Y,Z) positions over a set period of time. The result is that we will get to see our cells divide, and the GFP fluoresce over time."
   note: "Click next to begin this protocol"
 end 
 
