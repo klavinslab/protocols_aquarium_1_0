@@ -20,7 +20,7 @@ end
 
 # Places
 place lb_agar_unsterile
-  protocol: "plankton/materials_prep/media/bacteria/lb.pl"
+  protocol: "materials_prep/media/bacteria/lb.pl"
   argument
     n_bottle: n
     add_agar: "Yes"
@@ -33,7 +33,7 @@ place lb_agar_unsterile
 end
 
 place autoclave
-  protocol: "plankton/materials_prep/media/bacteria/autoclave_bacteria_media.pl"
+  protocol: "materials_prep/media/bacteria/autoclave_bacteria_media.pl"
   argument
     lb_agar_n: n
     lb_liquid_n: 0
@@ -48,7 +48,7 @@ end
 # At metacol level, pseudocode is: if not all molten: go to place that launches melt protocol and return to state that
 # launches the 'is it molten?' question, else: go to pour plates place
 place pour_plates
-  protocol: "plankton/materials_prep/media/bacteria/pour_lb_plates.pl"
+  protocol: "materials_prep/media/bacteria/pour_lb_plates.pl"
   argument
     n: n
     volume: 800
@@ -64,7 +64,7 @@ place pour_plates
 end
 
 #place move_plates
-#  protocol: "plankton/materials_prep/media/bacteria/lb.pl"
+#  protocol: "materials_prep/media/bacteria/lb.pl"
 #  argument
 #    n_bottle: n
 #    add_agar: "Yes"

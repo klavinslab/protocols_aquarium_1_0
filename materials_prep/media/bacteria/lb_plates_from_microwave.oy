@@ -21,7 +21,7 @@ end
 
 # Places
 place melt_agar
-  protocol: "plankton/materials_prep/media/bacteria/warming_lb_agar.pl"
+  protocol: "materials_prep/media/bacteria/warming_lb_agar.pl"
   argument
     volume: volume
     n: n
@@ -36,7 +36,7 @@ end
 # At metacol level, pseudocode is: if not all molten: go to place that launches melt protocol and return to state that
 # launches the 'is it molten?' question, else: go to pour plates place
 place pour_plates
-  protocol: "plankton/materials_prep/media/bacteria/pour_lb_plates.pl"
+  protocol: "materials_prep/media/bacteria/pour_lb_plates.pl"
   argument
     n: n
     volume: volume
@@ -52,7 +52,7 @@ place pour_plates
 end
 
 #place move_plates
-#  protocol: "plankton/materials_prep/media/bacteria/lb.pl"
+#  protocol: "materials_prep/media/bacteria/lb.pl"
 #  argument
 #    n_bottle: n
 #    add_agar: "Yes"
