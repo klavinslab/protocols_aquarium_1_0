@@ -47,7 +47,7 @@ foreach name in fragments_to_take
     end
   end
   pipetting_plan = append(pipetting_plan, { fragment_name: name, fragment_ids: [ ], 
-                                            total_amount: total, add_to_sample_ids: [ ]}) # {id: x, amount: in_ul}
+                                            total_amount: total})
 end
 
 #foreach p in plasmids_to_make
@@ -93,15 +93,6 @@ foreach p in plasmids_to_make
     i = i + 1
     samples_to_make = append (samples_to_make, r)
     sample_id = r[:id]
-    # add to pipetting plan
-      foreach f in pipetting_plan
-        foreach sample_fragment in p[:fragment_amounts_in_ul]
-          if f[:fragment_name] == sample_fragment[:name]
-            f[:add_to_sample_ids] = append (f[:add_to_sample_ids] , 
-                                            { id: sample_id, amount: sample_fragment[:amount]})
-          end
-        end
-      end
   end
 end
 
