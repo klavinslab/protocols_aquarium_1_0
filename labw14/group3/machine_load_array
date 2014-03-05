@@ -38,49 +38,49 @@ end
 
 step
   description: "Addition of Primers"
-  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward1}) to well A1"
-  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse1}) to well A1"
+  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primers_forward_array[0]}) to well A1"
+  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[0]}) to well A1"
   note: "Be sure to use proper sterile technique to guarantee accuracy of results."
 end
 
 step
   description: "Addition of Primers"
-  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward2}) to well A2"
-  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse2}) to well A2"
+  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward_array[1]}) to well A2"
+  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[1]}) to well A2"
   note: "Be sure to use proper sterile technique to guarantee accuracy of results."
 end
 
 step
   description: "Addition of Primers"
-  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward3}) to well A3"
-  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse3}) to well A3"
+  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward_array[2]}) to well A3"
+  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[2]}) to well A3"
   note: "Be sure to use proper sterile technique to guarantee accuracy of results."
 end
 
 step
   description: "Addition of Primers"
-  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward1}) to well A4"
-  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse1}) to well A4"
+  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward_array[0]}) to well A4"
+  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[0]}) to well A4"
   note: "Be sure to use proper sterile technique to guarantee accuracy of results."
 end
 
 step
   description: "Addition of Primers"
-  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward2}) to well A5"
-  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse2}) to well A5"
+  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward_array[1]}) to well A5"
+  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[1]}) to well A5"
   note: "Be sure to use proper sterile technique to guarantee accuracy of results."
 end
 
 step
   description: "Addition of Primers"
-  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward4}) to well A6"
-  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse4}) to well A6"
+  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward_array[3]}) to well A6"
+  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[3]}) to well A6"
   note: "Be sure to use proper sterile technique to guarantee accuracy of results."
 end
 
 step
   description: "Addition of Diluted cDNA Samples"
-  check: "Add 1 µL of diluted cDNA (sample id: %{fragment1}) to well A1"
+  check: "Add 1 µL of diluted cDNA (sample id: %{fragments_array[0]}) to well A1"
   check: "Stir mixture with pipette tip"
   check: "Add 1 µL of diluted cDNA (sample id: %{fragment1}) to well A2"
   check: "Stir mixture with pipette tip"
@@ -90,11 +90,11 @@ end
 
 step
   description: "Addition of Diluted cDNA Samples (continued)"
-  check: "Add 1 µL of diluted cDNA (sample id: %{fragment2}) to well A4"
+  check: "Add 1 µL of diluted cDNA (sample id: %{fragment_array[1]}) to well A4"
   check: "Stir mixture with pipette tip"
-  check: "Add 1 µL of diluted cDNA (sample id: %{fragment2}) to well A5"
+  check: "Add 1 µL of diluted cDNA (sample id: %{fragment_array[1]}) to well A5"
   check: "Stir mixture with pipette tip"
-  check: "Add 1 µL of diluted cDNA (sample id: %{fragment2}) to well A6"
+  check: "Add 1 µL of diluted cDNA (sample id: %{fragment_array[1]}) to well A6"
   check: "Stir mixture with pipette tip"
 end
 
@@ -126,4 +126,4 @@ step
   check: "Save the data to the folder on the desktop on the computer"
 end
 
-release [x[0], y[0], sybr[0], pf1[0], pr1[0], pf2[0], pr2[0], pf3[0], pr3[0], pf4[0], pr4[0]]
+release concat(cdna_array, forward_primers, sybr, reverse_primers)
