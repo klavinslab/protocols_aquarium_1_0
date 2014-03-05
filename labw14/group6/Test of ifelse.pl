@@ -1,5 +1,6 @@
 argument
   primer1: "Choose the first primer."
+end
   
 take
   primer_stock1 = item primer1
