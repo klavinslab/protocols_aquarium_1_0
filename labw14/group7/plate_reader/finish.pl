@@ -7,13 +7,15 @@ end
 
 step
   description: "Confrm the run is complete"
-  note: "You should be finished with the whole 36hour run a this point.  If you still have a little time left, wait until the run is compplete before proceeding"
+  note: "You should be finished with the whole 36hour run a this point. 
+         If you still have a little time left, wait until the run is complete before proceeding"
 end
 
 step
   description: "Export your data"
   check: "Run the 'File Export Builder' wizard to export your plate reader data"
   check: "Save the data to 'My Documents\yyyymmdd MyExperimentName.txt'"
+  image: "plate_reader_file_export_builder"
 end
 
 step
