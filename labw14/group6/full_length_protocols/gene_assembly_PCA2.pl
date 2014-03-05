@@ -77,7 +77,7 @@ end
 
 step
   description: "The heat treatment takes about 1.5 hours"
-  note: "Meanwhile, you may pour the gel inside the gel room to have your gel ready before the next step (run gel)."
+  note: "Meanwhile, you may pour the gel inside the gel room to have it ready before the next step (run gel)."
   note: "In Aquarium, go to protocols, Github, LABW14, Group6, Full length protocols, pour_gel."
   timer: { hours: 1, minutes: 30 }
 end
@@ -85,7 +85,7 @@ end
 step
   description: "Go to the thermal cycler and pick up the products of the PCA."
   note: "And place the tubes at your bench"
-  note: "Write down the id generated in the next slide on the second tube"
+  note: "The nex step is running gel to verify the band length of assembled fragment."
   warning: "You can keep them in -4C fridge (SF) in case you are not using them right away."
 end
 
