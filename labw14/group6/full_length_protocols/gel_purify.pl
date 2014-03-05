@@ -1,5 +1,5 @@
 argument
-  gel: sample, "Choose the Gel Slices you need to purify."
+  gel: sample array, "Choose the Gel Slices you need to purify."
 end
 
 step
@@ -7,7 +7,8 @@ step
 end
 
 take
-  gel_slices = item gel
+  gel_slices1 = item gel[0]
+  gel_slices2 = item gel[1]
 end
 
 T1 = gel[0]
@@ -171,5 +172,6 @@ log
   return: {Fragment_Stock_id: r}
 end
     
-release gel_slices
+release gel_slices1
+release gel_slices2
 
