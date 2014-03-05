@@ -42,7 +42,7 @@ while count2 < y
       weight: number, "enter weight in grams of tube %{label}"
     end
   end
-  qg=weight*300
+  qg=weight*3000
   step
     description: "Add %{qg} µl of QG buffer into tube %{label}"
   end
