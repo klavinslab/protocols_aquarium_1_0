@@ -1,8 +1,10 @@
-argument
-  cell_array_input: sample array, "Choose the 3 strains you would like to assay"
+#argument
+  #cell_array_input: sample array, "Choose the 3 strains you would like to assay"
   #number_of_copies: int, "How many copies of each strain would you like? NOTE: max of 12 samples/assay"
   #induce_steps: int array, "input the desired induction times"
-end
+#end
+
+cell_array_input = ["1571", "1573", "1574"]
 
 #induce_steps = [0, 1, 1.5, 2, 24]
 #todo: sort induce_steps array here
