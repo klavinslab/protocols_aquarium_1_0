@@ -1,7 +1,7 @@
 require "labw14/group8/lib_read_gibson.pl"
 
 g = ask_filename_then_get_gibsons()
-
+complex_datastructure = g
 # idea TODO
 # build up a data structure using loops etc that define experiment
 # then iterate through that data structure, showing it
@@ -97,7 +97,6 @@ end
 # pipette fragment into samples %[[{sample: id, amount: number} sorted by number increasing]
 # todo a function that makes a pipetting plan 
 # todo sort the fragments in the order of most used
-complex_datastructure = g
 fragments = fragments_to_take
 
 log
