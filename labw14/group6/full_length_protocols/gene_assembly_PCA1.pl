@@ -25,7 +25,7 @@ step
 end
 
 o1 = oligo_pools1
-o2 = oligo_pools2
+#o2 = oligo_pools2
 
 step
   description: "Prepare Reaction"
