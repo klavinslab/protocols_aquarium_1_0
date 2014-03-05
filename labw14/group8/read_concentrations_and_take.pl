@@ -92,6 +92,16 @@ foreach p in plasmids_to_make
     end
     i = i + 1
     samples_to_make = append (samples_to_make, r)
+    sample_id = r[:id]
+    # add to pipetting plan
+      foreach f in pipetting_plan
+        foreach sample_fragment in p[:fragment_amounts_in_ul]
+          if f[:fragment_name] == sample_fragment[:name]
+            f[:add_to_sample_ids] = append (f[:add_to_sample_ids] , 
+                                            { id: sample_id, amount: sample_fragment[:amount]})
+          end
+        end
+      end
   end
 end
 
@@ -99,9 +109,7 @@ end
 # pipette fragment into samples %[[{sample: id, amount: number} sorted by number increasing]
 # todo a function that makes a pipetting plan 
 # todo sort the fragments in the order of most used
-fragments = fragments_to_take
 
 log
-  return: {gibsons: samples_to_make,  pipetting_plan: pipetting_plan, 
-           complex_datastructure: complex_datastructure}
+  return: {gibsons: samples_to_make,  pipetting_plan: pipetting_plan}
 end
