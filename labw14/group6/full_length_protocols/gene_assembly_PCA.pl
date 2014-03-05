@@ -45,7 +45,7 @@ release masterstock1
 release masterstock2
 release phusion_stock
 
-if primer1_stock == 1631
+if id %{primer1} == 1631
   step
     description: "Put the prepared PCR tube on the bench."
   end
