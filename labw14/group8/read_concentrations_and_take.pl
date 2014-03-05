@@ -2,7 +2,6 @@ require "labw14/group8/lib_read_gibson.pl"
 
 g = ask_filename_then_get_gibsons()
 complex_datastructure = g
-complex_datastructure[:new_key] = "can i add a new key"
 
 # idea TODO
 # build up a data structure using loops etc that define experiment
@@ -35,7 +34,7 @@ fragments_to_take = unique(fragments_to_take)
 # with the correct fragments so we get
 # fragment => [{id, amount}]
 
-total_amounts = [ ]
+pipetting_plan = [ ]
 # todo extract these into hash and other libraries
 # NOTE this doesn't work like a hash in other languages
 foreach name in fragments_to_take
@@ -47,7 +46,8 @@ foreach name in fragments_to_take
       end
     end
   end
-  total_amounts = append(total_amounts, { fragment_name: name, total_amount: total, fragment_taken: 0})
+  pipetting_plan = append(pipetting_plan, { fragment_name: name, fragment_ids: [ ], 
+                                            total_amount: total, add_to_sample_ids: [ ]}) # {id: x, amount: in_ul}
 end
 
 #foreach p in plasmids_to_make
@@ -58,7 +58,7 @@ end
 #end
   
 
-foreach f in total_amounts
+foreach f in pipetting_plan
   amount = f[:total_amount]
   name = f[:fragment_name]
   step
@@ -86,7 +86,7 @@ foreach p in plasmids_to_make
        r = 1 "Gibson Reaction Result" of name
        location: "Bench"
        data
-           concentration: 123
+           fragment_amounts: p[:fragment_amounts_in_ul]
            location: "Bench"
        end
     end
@@ -102,5 +102,6 @@ end
 fragments = fragments_to_take
 
 log
-  return: {gibsons: samples_to_make, fragments: fragments, complex_datastructure: complex_datastructure}
+  return: {gibsons: samples_to_make,  pipetting_plan: pipetting_plan, 
+           complex_datastructure: complex_datastructure}
 end
