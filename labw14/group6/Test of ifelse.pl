@@ -6,7 +6,8 @@ take
   primer_stock1 = item primer1
 end
 
-x = "id %{primer1}
+x = "id %{primer1}"
+
 if x == 1631
   step
     description: "do this."
