@@ -148,7 +148,7 @@ r = []
 while ii < 2
   produce
     y = 1 "Gel Slice" of "fGA"
-end
+  end
   r = append(r,y[:id])
   ii = ii + 1
 end
