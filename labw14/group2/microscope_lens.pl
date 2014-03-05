@@ -2,7 +2,7 @@ step
   description: "Setup the microscope lens"
   note: "In this protocol we will set up the microscope lens."
   note: "Click next to begin this sub procedure"
-  warning "Please read the instructions VERY carefully before actually performing them. The microscope is expensive!!"
+  warning: "Please read the instructions VERY carefully before actually performing them. The microscope is expensive!!"
 end
 
 step
