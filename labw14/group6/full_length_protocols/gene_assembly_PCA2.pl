@@ -43,10 +43,7 @@ end
     description: "Put the prepared PCR tube on the bench."
  end
  
-produce
-  r = 1 "PCR Result" of "fGA"
 
-end
 
 release primer1_stock
 release primer2_stock
@@ -55,7 +52,7 @@ release masterstock2
 release phusion_stock
 
 Step
-  #description: "You will now be asked to use the lab thermal cycler."
+  description: "You will now be asked to use the lab thermal cycler."
   note: "The thermal cycler will be shared by all groups."
   warning: "Make sure it is not in use. Never open the lid of the running thermal cycler."
   image: "thermal_cycler_off"
@@ -86,10 +83,14 @@ end
 step
   description: "Go to the thermal cycler and pick up the products of the PCA."
   note: "And place the tubes at your bench"
+  note: "Write down the id generated in the next slide on the second tube"
   warning: "You can keep them in -4C fridge (SF) in case you are not using them right away."
 end
 
+produce
+  r = 1 "PCR Result" of "fGA"
 
+end
 
 log
   return: { PCR_Result_id: r[:id] }
