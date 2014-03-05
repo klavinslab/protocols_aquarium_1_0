@@ -54,8 +54,7 @@ step
   bullet: "Adjust the screws to slide the dish ring side down into the stage on top of the objective lens"
   bullet: "Once placed adjust the screws on each side of the stage to center the dish and fimrly hold in place"
   note: "If the dish moves finding cells may be impossible, and may also damage the lens."
-  image: "placing dish inside incubator"
-  image: "dish with screws"
+  image: "combined_image2"
 end
 
 step
