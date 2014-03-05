@@ -129,12 +129,6 @@ place image_cut_gel
   window: minutes(30)
 end
 
-place image_cut_gel2
-  protocol: "labw14/group6/full_length_protocols/image_cut_gel2.pl"
-  group: aquarium_user
-  start: now()
-  window: minutes(30)
-end
 
 wire (run_gel, "Gel_Lane_id") => (image_cut_gel, "gel_lane")
 
@@ -168,11 +162,8 @@ transition [ assembly2 ] => [ assembly2 ] when error(0) end
 transition [ run_gel ] => [ image_cut_gel ] when !error(0) && completed(0) end
 transition [ run_gel ] => [ run_gel ] when error(0) end
 
-transition [ image_cut_gel ] => [ image_cut_gel2 ] when !error(0) && completed(0) end
+transition [ image_cut_gel ] => [ gel_purify ] when !error(0) && completed(0) end
 transition [ image_cut_gel ] => [ image_cut_gel ] when error(0) end
-
-transition [ image_cut_gel2  ] => [ gel_purify ] when !error(0) && completed(0) end
-transition [ image_cut_gel2 ] => [ image_cut_gel2 ] when error(0) end
 
 transition [ gel_purify ] => [ ] when !error(0) && completed(0) end
 transition [ gel_purify ] => [ gel_purify ] when error(0) end
