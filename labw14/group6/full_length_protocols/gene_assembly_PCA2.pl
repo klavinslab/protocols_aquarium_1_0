@@ -1,6 +1,6 @@
 argument
-  oligo_pools1: sample array, "Select the first oligonucleotide stocks you want to combine through gene assembly"
-  oligo_pools2: sample array, "Select the second oligonucleotide stocks you want to combine through gene assembly"
+  #oligo_pools1: sample array, "Select the first oligonucleotide stocks you want to combine through gene assembly"
+  oligo_pools2: sample, "Select the second oligonucleotide stocks you want to combine through gene assembly"
   primer1: sample, "The first primer"
   primer2: sample, "The second primer"
   enzyme_id: sample, "The Phsion HF Master Mix stock"
@@ -8,7 +8,7 @@ end
 
 
 take
-  masterstock1 = item oligo_pools1
+  #masterstock1 = item oligo_pools1
   masterstock2 = item oligo_pools2
   primer1_stock = item primer1
   primer2_stock = item primer2
@@ -24,7 +24,7 @@ step
   description: "Label another 0.2 mL PCR tube. Write your initials on it."
 end
 
-o1 = oligo_pools1
+#o1 = oligo_pools1
 o2 = oligo_pools2
 
 step
