@@ -13,6 +13,7 @@ step
   description: "In the media bay"
   check: "You should still be in the media bay when you start this procedure.
          If you are not in the media bay, move there now."
+  note: "This protocol will grow multiple cell cultures in glucose."
   note: "This is a 14mL culture tube (you will fetch 12 of these in the next step)"
   image: "14ml_culture_tube"
 end
