@@ -40,7 +40,7 @@ end
 
 # Add LB Powder
 tb_name = tb_powder[0][:name]
-include "plankton/includes/materials_prep/add_dry_reagent.pl"
+include "includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
   reagent: tb_name
   grams: 38.08
@@ -48,7 +48,7 @@ end
 
 
 # Clean the spatula before returning it
-include "plankton/includes/materials_prep/clean_spatula.pl"
+include "includes/materials_prep/clean_spatula.pl"
 end
 
 

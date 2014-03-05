@@ -20,7 +20,7 @@ end
 
 
 # Clean the spatula
-include "plankton/includes/materials_prep/clean_spatula.pl"
+include "includes/materials_prep/clean_spatula.pl"
 end
 
 

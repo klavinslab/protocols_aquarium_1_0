@@ -36,12 +36,12 @@ end
 # Melt agar
 # BUG: supplying 'media' here overwrites global media variable, i.e. outside of scope
 if media_type == "400 mL LB Agar (sterile)"
-  include "plankton/includes/materials_prep/melt_agar.pl"
+  include "includes/materials_prep/melt_agar.pl"
     media: media_type
     power: 6
   end
 else
-  include "plankton/includes/materials_prep/melt_agar.pl"
+  include "includes/materials_prep/melt_agar.pl"
     media: media_type
     power: 3
   end
