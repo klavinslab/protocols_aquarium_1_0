@@ -13,6 +13,9 @@ take
   glasses = 1 "Clear Protective Glasses"
 end
 
+step
+  description: "This protocol describes how ro run gel electrophoresis for PCR assembly results."
+end
 
 step
   description: "Wear clear protective glasses"
@@ -79,6 +82,9 @@ step
   image: "gel_check_for_bubbles"
 end
 
+step
+  description: "The nex step is taking image from the gel and cutting it after electrophoresis is done in about 40 minutes."
+end
 
 release ladder
 

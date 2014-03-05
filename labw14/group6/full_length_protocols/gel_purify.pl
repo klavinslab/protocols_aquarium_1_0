@@ -3,6 +3,10 @@ argument
   gel2: sample, "Choose the second Gel Slice you need to purify."
 end
 
+step
+  description: "This protocol describes how to purify the gel slices to make them ready for Gibson assembly."
+end
+
 take
   gel_slices1 = item gel1
   gel_slices2 = item gel2
@@ -148,23 +152,26 @@ step
   description: "Dicard the columns and place the tubes on the bench"
   bullet: "Columns can go to the tip waster collector."
 end
+
+step
+  description: "Next step is Gibson Assembly."
+end
+
+ii = 0
+r = []
+
+while ii < 2
+  produce
+    y = 1 "Fragment Stock" of "fGA"
+    location: "Bench"
+end
+  r = append(r,y[:id])
+  ii = ii + 1
+end
+
+log
+  return: {Fragment_Stock_id: r}
+end
     
-produce
-  r = 1 "Fragment Stock" of "fGA"
-  location: "Bench"
-  release gel_slices1
-end
-
-produce
-  t = 1 "Fragment Stock" of "fGA"
-  location: "Bench"
-  release gel_slices2
-end
-
-log
-  return: {Fragment_Stock_id1: r[:id]}
-end
-
-log
-  return: {Fragment_Stock_id2: t[:id]}
-end
+release gel_slices1
+release gel_slices2

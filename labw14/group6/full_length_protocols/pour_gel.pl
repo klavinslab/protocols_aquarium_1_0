@@ -9,7 +9,6 @@ end
 
 step
   description: "Transfer this protocol to the gel room"
-  note: "Log out, go to the gel room (A5, A6, A7), and log in there to run this protocol - it will be under 'Protocols > Pending Jobs'."
 end
 
 

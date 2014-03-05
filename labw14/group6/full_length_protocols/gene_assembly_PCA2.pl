@@ -17,11 +17,11 @@ end
   
 
 step
-  description: "This protocol describes how to run gene assembly of two oligonuleotide stocks."
+  description: "This protocol again describes how to run gene assembly of two oligonuleotide stocks."
 end
 
 step
-  description: "Label a 0.2 mL PCR tube. Write your initials on it."
+  description: "Label another 0.2 mL PCR tube. Write your initials on it."
 end
 
 o1 = oligo_pools1
@@ -39,39 +39,30 @@ step
   warning: "Be careful to pipette into the liquid, not the side of the tube."
 end
 
- step
-    description: "Put the prepared PCR tube on the bench."
- end
- 
-x = primer1
+step
+  description: "Put the prepared PCR tube on the bench."
+end
 
+produce
+  r = 1 "PCR Result" of "fGA"
+end
+
+release primer1_stock
+release primer2_stock
 release masterstock1
 release masterstock2
 release phusion_stock
 
-if x == 1631
-  step
-    description: "Keep the prepared PCR tube on the bench while proceeding to the second assembly protocol."
-  end
-  produce
-    r = 1 "PCR Result" of "fGA"
-  end
-  log
-    return: { PCR_Result_id: r[:id] }
-  end
-  release primer1_stock
-  release primer2_stock
-else
-  Step
-    description: "You will now be asked to use the lab thermal cycler"
-    note: "The thermal cycler will be shared by all groups."
-    warning: "Make sure it is not in use. Never open the lid of the running thermal cycler."
-    image: "thermal_cycler_off"
-  end
+step
+  description: "You will now be asked to use the lab thermal cycler."
+  note: "The thermal cycler will be shared by all groups."
+  warning: "Make sure it is not in use. Never open the lid of the running thermal cycler."
+  image: "thermal_cycler_off"
+end
 
-  step
-   description: "Place the tubes into the thermal cycler T2 at B3.335."
-  end
+step
+  description: "Place both tubes (one from this protocol and onother from the previous assembly protocol) into the thermal cycler T2 at B3.335."
+end
 
 step
   description: "Choose program on the thermal cycler."
@@ -86,26 +77,22 @@ end
 
 step
   description: "The heat treatment takes about 1.5 hours"
-  note: "Meanwhile, you may pour the gel inside the gel room to have your gel ready before the next step."
-  Timer: { hours: 1, minutes: 30 }
+  note: "Meanwhile, you may pour the gel inside the gel room to have it ready before the next step (run gel)."
+  note: "In Aquarium, go to protocols, Github, LABW14, Group6, Full length protocols, pour_gel."
+  timer: { hours: 1, minutes: 30, seconds: 0 }
 end
 
 step
-  description: "Go to the thermal cycler and pick up the product of the PCA."
-  note: "And place the tube at your bench"
+  description: "Go to the thermal cycler and pick up the products of the PCA."
+  note: "And place the tubes at your bench"
+  note: "The nex step is running gel to verify the band length of assembled fragment."
   warning: "You can keep them in -4C fridge (SF) in case you are not using them right away."
 end
 
-produce
-  r = 1 "PCR Result" of "fGA"
 
-end
 
 log
   return: { PCR_Result_id: r[:id] }
-end
-release primer1_stock
-release primer2_stock
 end
 
 
