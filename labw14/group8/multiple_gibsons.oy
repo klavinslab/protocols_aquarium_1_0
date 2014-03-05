@@ -63,11 +63,10 @@ place success
   window: minutes(1)     #start in the next minute
 end
 
-wire(get_concentrations, "gibsons") => (do_gibson, "sample_concentrations")
-
+wire(get_concentrations, "gibsons") => (do_gibson, "gibsons")
+wire(get_concentrations, "fragments") => (do_gibson, "fragments")
 wire(get_concentrations, "complex_datastructure") => (do_gibson, "complex_datastructure")
 
-#wire(get_concentrations, "fragments") => (do_gibson, "fragments") # workaround - these are put in cart then selected from inventory
 
 wire(do_gibson, "completed_samples") => (verify_gibson, "gibsons")
 
