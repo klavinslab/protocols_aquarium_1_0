@@ -2,13 +2,12 @@
 # transformed samples and test whether the samples were successfully
 # transformed.
 
-#require "lab14/group4/lib.pl" # bring in wrapper functions
+
 
 argument
-	plates: sample array, "The plates you wish to screen"
+  plates: sample array, "The plates you wish to screen"
   pfwd: sample array, "The forward primer"
   prev1s: sample array, "Reverse primers for knockout test group"
-#	note: "The reverse knockout test primers must be in the same order as the plates"
   prev2s: sample array, "Reverse primers for control group"
   phusion_enzyme: sample, "The Phusion HF Master Mix stock"
   ladder_one: sample, "the reference ladder for Gel electrophoresis"
@@ -30,9 +29,9 @@ place pcr_prepare
   protocol: "labw14/group4/pcr_prepare.pl"
   group: aquarium_user
   argument
-		pfwds: pfwd
-		prev1s: prev1s
-		prev2s: prev2s
+	pfwds: pfwd
+	prev1s: prev1s
+	prev2s: prev2s
   	enzyme_id: phusion_enzyme
   end
   start: now()
@@ -40,17 +39,15 @@ end
 
 wire (boil_cells, "sample_count") => (pcr_prepare, "sample_count")
 
-#pcr_tube: 2 * length(plates)
-#gels = (2 * length(plates)) / wells
 gels = 1
 place pour_gels
   protocol: "labw14/group4/pour_gels_parallel.pl"
   group: aquarium_user
   argument
   	percentage: 1
-		comb_n: 1
-		well_n: wells
-		gel_n: gels
+	comb_n: 1
+	well_n: wells
+	gel_n: gels
   end
   start: now()
 end
@@ -60,7 +57,6 @@ place run_gels
   argument
 	  fragment_volume: 20
 	  num_gels: gels, "the number of gels to run"
-	  #pcr_count: pcr_tube, "The number of PCR tubes to run"
   end
   start: minutes(20)
 end
