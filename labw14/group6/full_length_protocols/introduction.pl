@@ -15,5 +15,5 @@ step
 end
 
 step
-  description: "You may now start the Gene Assembly. Have fun!"
+  description: "You may now start the Gene Assembly by making four master stocks of oligonucleotides first. Have fun!"
 end
