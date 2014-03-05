@@ -1,10 +1,10 @@
 argument
   yeast_aliquot_id: sample array, "Diluted yeast culture"
-  numbers_set_id: number array, "Number of aliquot tubes of each yeast strain that were made."
   fragment_id: sample, "Digested plasmid"
+#  numbers_set_id: number array, "Number of aliquot tubes of each yeast strain that were made."
 end
 
-numbers_set = numbers_set_id
+#numbers_set = numbers_set_id
 
 num = length(yeast_aliquot_id)
 
