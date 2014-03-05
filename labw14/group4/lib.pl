@@ -13,3 +13,8 @@ end
 function unique(a)
 	return unique(a)
 end
+
+# wrapper function so length() works in oyster language
+function length(a)
+	return length(a)
+end

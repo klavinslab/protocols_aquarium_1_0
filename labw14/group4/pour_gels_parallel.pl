@@ -1,4 +1,4 @@
-#Modified from exisitng protocol
+#Modified from exisitng protocolgels
 
 information "Pour a 50 mL agarose gel."
 
@@ -109,7 +109,6 @@ while i < gel_n #pcr_count
       description: "Add %{well_n}-well comb"
       note: "Retrieve a %{well_n}-well purple comb from A7.325. Position the gel box With the electrodes facing away from you. Add a purple comb to the side of the casting tray nearest the side of the gel box, thicker side down. Make sure it is well-situated in the groove of the casting tray."
       image: "gel_comb_placement"
-      warning: "Do not use the 6-well purple comb this time since we have 8 samples to load!"
     end
   else
     step

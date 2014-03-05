@@ -30,7 +30,7 @@ end
 
 step
   description: "Set up the power supply."
-  note: "In the gel room, obtain a power supply and set it to 120 V and with a 30 minutes timer.\n\nAttach the electrodes of an appropriate gel box lid from A7.525 to the power supply."
+  note: "In the gel room, obtain a power supply and set it to 120 V and with a 45 minutes timer.\n\nAttach the electrodes of an appropriate gel box lid from A7.525 to the power supply."
   image: "gel_power_settings"
 end
 
@@ -68,7 +68,7 @@ end
 
 step
   description: "Load the PCR DNA"
-  note: "Using a 100 µL pipetter, pipet %{fragment_volume} µL of the PCR tube 1-%{pcr_count} (containing loading dye) into the unfilled wells of the gels."
+  note: "Using a 100 µL pipetter, pipet %{fragment_volume} µL of the PCR tube 1 - %{pcr_count} (containing loading dye) into the unfilled wells of the gels."
   check: "Check this after you finish pipetting all %{pcr_count} PCR samples into gel wells"
   image: "gel_begin_loading"
 end
@@ -84,7 +84,7 @@ step
 end
 
 
-release ladder
+release concat(ladder, glasses)
 
 #release fragment  # Throw away the tube / save extra
-release glasses
+#release glasses

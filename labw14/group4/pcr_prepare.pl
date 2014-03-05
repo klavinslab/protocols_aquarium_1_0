@@ -17,17 +17,17 @@ end
 
 pcr_count = sample_count*2
 step
-  description: "Take %{pcr_count} 0.2 mL PCR tubes from PCR strip. Write your initials on it. Label 1-%{pcr_count} from left to right."
+  description: "Take (%{pcr_count}) 0.2 mL PCR tubes from a PCR strip. Write your initials on it. Label them 1 - %{pcr_count} from left to right."
 end
 
 step
   description: "Prepare reaction"
-  check: "Pipette 5 µL molecular grade water into each newly labeled PCR tube."
+  check: "Pipette 5 µL of molecular grade water into each newly labeled PCR tube."
 end
 
 step
-  description: "Spin down boiled cell tubes 1-%{sample_count} in the microcentrifuge on your bench for 1 minute"
-  note: "The boiled cell tubes 1-%{sample_count} are the PCR tubes you took from thermal cycler from your previous protocol."
+  description: "Spin down boiled cell tubes 1 - %{sample_count} in the microcentrifuge on your bench for 1 minute"
+  note: "The boiled cell tubes 1 - %{sample_count} are the PCR tubes you took from thermal cycler from your previous protocol."
   warning: "Be extremely careful not to disturb the spun tubes.  They won't look any different but even the slightest tap can be detrimental."
 end
 
@@ -41,7 +41,7 @@ while boiled_tube < sample_count
   pcr_tube = pcr_tube+1
   
   step 
-    description: "Prepare reaction for tube %{pcr_tube} -- boiled cell %{boiled_tube} knockout test group"
+    description: "Prepare reaction for PCR tube %{pcr_tube} -- boiled cell %{boiled_tube} knockout test group"
     check: "Pipet 3 µL of boiled cell %{boiled_tube} into tube %{pcr_tube}."
     check: "Pipet 1 µL of primer with id %{fwd} into tube %{pcr_tube}."
     check: "Pipet 1 µL of primer with id %{prev1} into tube %{pcr_tube}."
@@ -52,7 +52,7 @@ while boiled_tube < sample_count
   
   pcr_tube = pcr_tube+1
   step 
-    description: "Prepare reaction for tube %{pcr_tube} -- boiled cell %{boiled_tube} control group"
+    description: "Prepare reaction for PCR tube %{pcr_tube} -- boiled cell %{boiled_tube} control group"
     check: "Pipet 3 µL of boiled cell %{boiled_tube} into tube %{pcr_tube}."
     check: "Pipet 1 µL of primer with id %{fwd} into tube %{pcr_tube}."
     check: "Pipet 1 µL of primer with id %{prev2} into tube %{pcr_tube}."
@@ -67,12 +67,12 @@ step
   description: "Prepare reaction"
   check: "Pipet 10 µL of Phusion HF Master Mix with id %{enzyme_id} into each PCR tube."
   note: "Use the tip to gently mix after each pipette."
+ 	warning: "Remember to use a new tip with each tube!"
 end
 
 release phusion_stock
 
-release fwds
-release concat(rev1s, rev2s)
+release concat(fwds, concat(rev1s, rev2s)) # release all the primers at once)
 #release rev2s
 
 step
@@ -82,7 +82,7 @@ end
 
 step
   description: "Choose program on the thermal cycler"
-  note: "Click Home then click Saved Protocol, choose LABW14 folder, choose COLONYPCR. Hit 'run' to start and select a PCR volume of 20uL."
+  note: "Click Home then click Saved Protocol, choose LABW14 folder, choose COLONYPCR. Hit 'run' to start and select a PCR volume of 20µL."
   image: "thermal_cycler_home"
 end
 

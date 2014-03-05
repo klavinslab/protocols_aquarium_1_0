@@ -11,7 +11,7 @@ end
 
 sample_count = length(platetemplate)
 step
-  description: "Take %{sample_count} tubes from a PCR tube strip, label them 1-%{sample_count}, and write your initials on it." 
+  description: "Take %{sample_count} tubes from a PCR tube strip, label them 1 - %{sample_count}, and write your initials on it." 
 end
 
 step
@@ -26,7 +26,7 @@ while i<sample_count
 	step
 	  description: "Pick a colony from plate %{current_plate} and put it into tube %{current_tube}"
 	  check: "Find a colony in plate %{current_plate} that is medium sized, round, and isolated"
-	  check: "Pick up the entire colony with a 200 µL (green box) pipette tip and transfer it to tube %{current_tube}."
+	  check: "Pick up the entire colony with a pipette tip and transfer it to tube %{current_tube}."
 	end
 	i = i+1
 end
@@ -49,7 +49,7 @@ end
 
 step
   description: "Open the lid and take the PCR tubes you placed."
-  note: "Place tubes on your bench, these tubes will be used as your boiled cell 1-%{sample_count} for the following reaction setup."
+  note: "Place tubes on your bench, these tubes will be used as your boiled cell 1 - %{sample_count} for the following reaction setup."
 end
 #produces 4 templates.  each template has 3 primers and 2 reactions (f+r1,f+r2)
 

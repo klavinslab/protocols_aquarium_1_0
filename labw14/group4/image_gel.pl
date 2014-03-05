@@ -68,6 +68,6 @@ while i < gel_count
       "Rename the picture in Dropbox"
     note: 
       "In gel room touch screen computer, open Dropbox/GelImages, under today's date folder and find the picture you just took.\n
-       Rename the picture as the labw14_week5_gel_[group-id]_%{i}, where group-id is replaced with a group number"
+       Rename the picture according to the nameing conventionof your project and place it in an appropriate location."
   end
 end
