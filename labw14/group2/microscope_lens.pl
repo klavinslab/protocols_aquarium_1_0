@@ -26,7 +26,7 @@ end
 
 step
   description: "Setup cells"
-  note: "In this section we will set up the cells for viewing on the microscope"
+  note: "In this section we will set up the cells for viewing on the microscope. Click next to begin."
 end
 
 step
