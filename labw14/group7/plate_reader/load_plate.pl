@@ -53,8 +53,11 @@ end
 step
   description: "Load the middle area of the plate with the glucose medium"
   check: "Pipette 200uL of 'M9 liquid Glucose + amp + kan' into the wells marked 'media' in green"
+  note: "You are now done with the media.  Please dispose of it in the next step (into the red 'biohazard' box)"
   image: "plate_reader_media"
 end
+
+release media
 
 cell0 = cells[0][:id]
 cell1 = cells[1][:id]
@@ -70,8 +73,6 @@ step
          (though they will grow much faster when heated up to 37C)."
   image: "plate_reader_sample_locations"
 end
-
-release media
 
 #step 
 #  description: "Fetch defogger solution and aluminium foil"
