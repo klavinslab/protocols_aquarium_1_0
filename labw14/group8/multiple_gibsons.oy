@@ -23,8 +23,7 @@
 # minimal feature set
 
 argument
-  fragments: sample array, "Read your input file and select all the fragment stock
-                            needed for the gibsons"
+  fragments: sample array, "Read your input file and select all the fragment stock needed for the gibsons"
   file: string, "Path to the file with the gibsons"
 end
 
