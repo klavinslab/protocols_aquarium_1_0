@@ -1,5 +1,5 @@
 argument
-  primer1: "Choose the first primer."
+  primer1: sample, "Choose the first primer."
 end
   
 take
