@@ -153,7 +153,7 @@ step
   bullet: "Columns can go to the tip waster collector."
 end
 
-Step
+step
   description: "Next step is Gibson Assembly."
 end
 
