@@ -17,8 +17,7 @@ end
   
 
 step
-  description:
-    "This protocol describes how to run gene assembly of two oligonuleotide stocks."
+  description: "This protocol describes how to run gene assembly of two oligonuleotide stocks."
 end
 
 step
@@ -40,6 +39,9 @@ step
   warning: "Be careful to pipette into the liquid, not the side of the tube."
 end
 
+ step
+    description: "Put the prepared PCR tube on the bench."
+ end
 
 release masterstock1
 release masterstock2
@@ -47,7 +49,7 @@ release phusion_stock
 
 if id %{primer1} == 1631
   step
-    description: "Put the prepared PCR tube on the bench."
+    description: "Keep the prepared PCR tube on the bench while proceeding to the second assembly protocol."
   end
   produce
     r = 1 "PCR Result" of "fGA"
