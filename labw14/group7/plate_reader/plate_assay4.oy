@@ -37,9 +37,9 @@ place start_reader
 end
 
 place load_plate
-  protocol: "labw14/group7/plate_reader/load_plate_2.pl"
+  protocol: "labw14/group7/plate_reader/load_plate.pl"
   group: aquarium_user
-  start: now()#replace 0.1min with 18hrs
+  start: now()
   window: minutes(5)
 end
 
