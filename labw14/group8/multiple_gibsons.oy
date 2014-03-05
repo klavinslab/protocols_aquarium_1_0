@@ -65,7 +65,6 @@ end
 
 wire(get_concentrations, "gibsons") => (do_gibson, "gibsons")
 wire(get_concentrations, "pipetting_plan") => (do_gibson, "pipetting_plan")
-wire(get_concentrations, "complex_datastructure") => (do_gibson, "complex_datastructure")
 
 
 wire(do_gibson, "completed_samples") => (verify_gibson, "gibsons")
