@@ -71,7 +71,6 @@ end
 
 
 wire (image_cut_gel, "Gel_Slice_id") => (gel_purify, "gel")
-wire (image_cut_gel, "Gel_Slice_id") => (gel_purify, "gel")
 
 transition [ introduction ] => [ assembly1, assembly2 ] when !error(0) && completed(0) end
 transition [ introduction ] => [ introduction ] when error(0) end
