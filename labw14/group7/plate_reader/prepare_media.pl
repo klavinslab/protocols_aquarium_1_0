@@ -2,16 +2,14 @@
 step
   description: "Move to Media Bay"
   check: "This protocol must be performed in the Media Bay. Go there and use that computer
-                before continuing. Once all media is prepared, you will move to the plate reader bay
-                (The program will instruct you when it is time to transfer)"
+                before continuing. Once all media is prepared, you will return to your bench
+                (The program will instruct you when it is time to transfer)."
 end
 
 step
-  description: "This protocol will prepare two 30mL aliquots of 0.4 percent glucose with amp and kan."
-  note: "This is a serological pipette (you will fech this in the next step)"
+  description: "You will prepare two 30mL aliquots of M9 media, 0.4 percent glucose with amp and kan."
+  note: "This is a serological pipette (you will fetch this in the next step)"
   image: "serological_pipette"
-  note: "The 'M9 liquid Glucose' listed in the next step should be 0.4 percent glucose
-         (you may want to write this down this down)"
 end
 
 take
@@ -21,9 +19,9 @@ take
  tip = 1 "25 mL Serological Pipette Tips"
  amp = 1 "100X 1 mL Ampicillin Aliquot"
  kan = 1 "200X 1 mL Kanamycin Aliquot"
- note: "You will need at least 0.12 mL of amp, and 0.30 mL of kan for the next step,
+ note: "You will need at least 0.12 mL of amp, and 0.30 mL of kan,
         so check the level of the liquid in your aliquots to be sure they are sufficient.
-        Also, use the 0.4 percent glucose solution"
+        The 'M9 liquid Glucose' should be in a bottle labeled '0.4 percent glucose'"
 end
 
 step
@@ -44,11 +42,11 @@ step
   check: "Attach the 25mL tip to the serological pipetter"
   note: "You will add a total of 30mL glucose media to each falcon tube (in two steps, since the max volume
          is 25mL for the pipetter)"
-  check: "Use the electric serological pipette to add 15 mL of 'M9 liquid Glucose' into a 50mL falcon tube"
-  check: "Add another 15 mL of 'M9 liquid Glucose' into the 50mL falcon tube"
-  check: "Add 15mL of 'M9 liquid Glucose' into the second 50mL falcon tube"
+  check: "Use the electric serological pipette to add 15 mL of 'M9 liquid Glucose' into the first 50mL falcon tube"
+  check: "Add another 15 mL of 'M9 liquid Glucose' into the first 50mL falcon tube"
+  check: "Next add 15mL of 'M9 liquid Glucose' into the second 50mL falcon tube"
   check: "Add another 15mL 'M9 liquid Glucose' to the second 50mL falcon tube"
-  check: "Dispose of your 25mL serological pipette tip in biohazard bin"
+  check: "Dispose of your 25mL serological pipette tip in the large red 'biohazard' bin"
 end
 
 #query = "none"
