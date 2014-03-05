@@ -10,6 +10,7 @@ num = length(yeast_aliquot_id)
 
 step
  description: "This protocol describes how to prepare yeast trasformation mix"
+ note: "You will pipet several chemical reagents to the yeast aliquot tibes with id %{yeast_aliquot_id} you previously made."
 end
 
 take
@@ -39,7 +40,8 @@ while ii < number_we_can_make
       warning: "Pipette the following reagents into the tube %{id_num}.
                 The order of the reagents is super important for cells' health.
                 Also be as clean as possible when pipetting 50%% PEG 3350. It gets easily contaminated."
-      check: "Pipette 240 µL  50%% PEG 3350 reagent to the tube."
+      check: "Pipette 240 µL  50%% PEG 3350 reagent to the tube. When pipetting PEG it's recommended to tilt a bottle
+              and pipet slowly (PEG is viscous). Don't touch the bottle's walls with a pipettor."
       check: "Pipette 36 µL  1.0M LiOAc reagent to the tube."
       check: "Pipette 25 µL  Carrier DNA (Salmon Sperm DNA) to the tube."
       check: "Pipette 50 µL  Molecular grade water to the tube."
