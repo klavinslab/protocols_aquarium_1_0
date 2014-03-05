@@ -20,7 +20,7 @@ place initial_media
 end
 
 place glucose_grow
-  protocol: "labw14/group7/plate_reader/glucose_grow3.pl"
+  protocol: "labw14/group7/plate_reader/glucose_grow.pl"
   argument
     plated_cells: cell_array_input
   end
@@ -30,7 +30,7 @@ place glucose_grow
 end
 
 place start_reader
-  protocol: "labw14/group7/plate_reader/start_reader_2.pl"
+  protocol: "labw14/group7/plate_reader/start_reader.pl"
   group: aquarium_user
   start: now()
   window: minutes(5)
