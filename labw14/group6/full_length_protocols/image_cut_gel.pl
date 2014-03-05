@@ -74,10 +74,10 @@ end
 step
   description: "It is very important to get the right band length in this step, otherwise the further processes toward gel assembly may fail."
   getdata
-    DNA_band_length1: number, "Enter the band length of the first assembled oligonucleotides located on the second lane from left in the gel (use the ladder lane to read the number)."
+    DNA_band_length1: number, "Enter the band length of the first assembled oligonucleotides located on the second lane from left in the gel (use the ladder lane to read)."
   end
   getdata
-    DNA_band_length2: number, "Enter the band length of the second assembled oligonucleotides located on the third lane from left in the gel (use the ladder lane to read the number)."
+    DNA_band_length2: number, "Enter the band length of the second assembled oligonucleotides located on the third lane from left in the gel (use the ladder lane to read)."
   end
 end
 
