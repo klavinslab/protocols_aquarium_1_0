@@ -2,6 +2,7 @@ step
   description: "Setup the microscope lens"
   note: "In this protocol we will set up the microscope lens."
   note: "Click next to begin this sub procedure"
+  warning "Please read the instructions VERY carefully before actually performing them. The microscope is expensive!!"
 end
 
 step
@@ -41,14 +42,14 @@ step
   description: "Attach the lens ring to the dish"
   bullet: "Carefully attach the lens ring to the bottom of our agar dish"
   bullet: "This should fit snuggly and hold the plastic wrap and dish firmly in place"
-  bullet: "Indented side of the ring should be facing toward the opening of the dish"
+  bullet: "Indented side of the ring should be facing TOWARD the opening of the dish"
   bullet: "Once in place tear away excess plastic wrap from the bottom of the dish."
   image: "petri dish with ring"
 end
 
 step
   description: "Place dish on the lens stage"
-  warning: "Becareful not to touch the dish to the objective lens, it may ruin the experiment"
+  warning: "Be careful not to touch the dish to the objective lens, it may ruin the experiment"
   bullet: "Lower stage if necessary using the large knob on the right hand side of the microscope"
   bullet: "Adjust the screws to slide the dish ring side down into the stage on top of the objective lens"
   bullet: "Once placed adjust the screws on each side of the stage to center the dish and fimrly hold in place"
