@@ -1,6 +1,6 @@
 x = "Original Value"
 
-include include_scope_included.pl
+include "plankton/errors/include_scope_included.pl"
   x: "New Value"
 end
 
