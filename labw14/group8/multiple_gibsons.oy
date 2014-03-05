@@ -22,6 +22,12 @@
 # make json file format
 # minimal feature set
 
+argument
+  fragments: sample array, "Read your input file and select all the fragment stock
+                            needed for the gibsons"
+  file: string, "Path to the file with the gibsons"
+end
+
 place get_concentrations
   protocol: "labw14/group8/read_concentrations_and_take.pl"
   group: aquarium_user      #generic, general
@@ -32,6 +38,9 @@ end
 
 place do_gibson
   protocol: "labw14/group8/do_gibson.pl"
+  argument
+    fragments: fragments
+  end
   group: aquarium_user      #generic, general
   start: now()
   window: minutes(1)     #start in the next minute
