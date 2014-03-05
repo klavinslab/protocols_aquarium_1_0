@@ -40,7 +40,7 @@ step
   description: "Add 30mL of 'M9 liquid Glucose' to each of the two 50mL falcon tubes"
   check: "Unscrew the caps of the glucose solution, as well as your two empty falcon tubes"
   check: "Attach the 25mL tip to the serological pipetter"
-  note: "You will add a total of 30mL glucose media to each falcon tube (in two steps, since the max volume
+  bullet: "You will add a total of 30mL glucose media to each falcon tube (in two steps, since the max volume
          is 25mL for the pipetter)"
   check: "Use the electric serological pipette to add 15 mL of 'M9 liquid Glucose' into the first 50mL falcon tube"
   check: "Add another 15 mL of 'M9 liquid Glucose' into the first 50mL falcon tube"
@@ -79,7 +79,7 @@ end
 step
   description: "Add antibiotics to the 50mL falcon tubes"
   note: "Make sure the antibiotics are fully melted"
-  note: "If the kan and amp solutions are not completely melted yet, you can hold them in your hand to warm
+  bullet: "If the kan and amp solutions are not completely melted yet, you can hold them in your hand to warm
         them up until they are fully liquid"
   check: "Vortex the kan and amp solutions for 5 seconds before proceeding"
   check: "Pipette 60 uL from your '100X 1 mL Ampicillin Aliquot' to the first 50mL falcon tube"
@@ -90,8 +90,8 @@ end
 
 step
   description: "Vortex the solutions"
-  check: "Vortex the first 50mL Falcon for 15 seconds"
-  check: "Vortex the second 50mL Falcon for 15 seconds"
+  check: "Vortex the first 50mL Falcon tube for 15 seconds"
+  check: "Vortex the second 50mL Falcon tube for 15 seconds"
 end
 
 release concat(media, concat(pipette,concat(amp, kan)))
