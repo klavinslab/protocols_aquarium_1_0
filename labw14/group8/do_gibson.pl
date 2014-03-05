@@ -18,6 +18,7 @@ argument
     # then destroy / replace the fake items
 end
 
+to_release = [ ]
 #  pattern - edit tags / values in hashes on datastructures
 # like [:this_protocol][:completed] = true
 # instead of holding values in memory / putting them in arrays
@@ -36,10 +37,11 @@ step
          %{fragments}"
 end
 
-foreach f in pipetting_plan
+foreach f in fragments
   take
-    x = 1 f[:fragment_name]
+    x = item f[:id]
   end
+  to_release = append (to_release, x)
 end
 
 step
