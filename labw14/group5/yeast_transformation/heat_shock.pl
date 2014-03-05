@@ -24,7 +24,7 @@ ii = 0
 while ii < length(yeast_transformation_mixtures)
   modify
     y[ii]
-    location:"B14.310"
+    location:"B5.330"
     inuse:0
   end
   ii = ii + 1
