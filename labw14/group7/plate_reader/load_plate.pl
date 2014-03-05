@@ -43,7 +43,7 @@ step
   #TODO location of DI water
   note: "Loading water into the outer edge of the plate reader
          helps prevent evaporation of the samples, which will be in the middle of the plate"
-  check: "Pipette 200uL of DI water into the outer edge of the 96 well plate, in the wells indicated by 'H20' in blue"
+  check: "Pipette 200uL of DI water into the outer edge of the 96 well plate, in the wells indicated by 'H20' in blue."
   note: "It can be helpful to have your partner hold onto the media tube during this process
          to warm it up to room temperature"
   image: "plate_reader_water"
@@ -51,7 +51,7 @@ end
 
 step
   description: "Load the middle area of the plate with the glucose medium"
-  check: "Pipette 200uL of glucose media (prepared earlier) into each open well"
+  check: "Pipette 200uL of 'M9 liquid Glucose + amp + kan' into the wells marked 'media' in green"
   image: "plate_reader_media"
 end
 
@@ -59,11 +59,14 @@ cell0 = cells[0][:id]
 cell1 = cells[1][:id]
 cell2 = cells[2][:id]
 step
-  description: "Load the cells into the wells"
+  description: "Load the cell cultures into the wells"
   note: "Load the cells according to the chart"
   check: "S1 = Cell culture tube ID %{cell0}"
   check: "S2 = Cell culture tube ID %{cell1}"
   check: "S3 = Cell culture tube ID %{cell2}"
+  note: "You shoul pay attention to the time once you load the cells into the plate reader,
+         as they may start to grow once they are diluted in fresh media
+         (though they will grow much faster when heated up to 37C)"
   image: "plate_reader_sample_locations"
 end
 
@@ -89,17 +92,18 @@ step
   check: "Cut out a small (3x5cm) piece of aluminum foil from location A8.400"
   check: "Fold aluminum foil over 3~4 times to construct a small (3mm thick) shim"
   check: "Insert the small foil shim into the corner of the assay plate,
-          and close the lid (This shim will keep the lid from rattling during the run)"
-  #TODO: include picture
+          and close the lid.  There should be a tight fit.
+          (This shim will keep the lid from rattling during the run)"
+  #TODO: include picture of shim
 end
-
-release concat(cells, concat(antifog, foil))
-#return statement
 
 step
   description: "Next steps..."
-  note: "You should see two jobs in your queue after completing this protocol.
-         Be sure to proceed with 'induce_atc_zero.pl' (the first inuction step),
+  note: "It is best to proceed with 'induce_atc_zero.pl' (the first inuction step),
          then 'begin_run.pl' before you dispose of your culure tubes.
-         You will have plenty of time to do thisafter you have started you run"
+         You will have plenty of time to soak your culture tubes in bleach after you have started your run"
+  image: "soak_bleach"
 end
+
+release concat(cells, antifog)
+#return statement
