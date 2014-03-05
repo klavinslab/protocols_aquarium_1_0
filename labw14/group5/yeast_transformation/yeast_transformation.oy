@@ -76,8 +76,8 @@ place prepare_yeast_transformation
 end
 
   wire (make_yeast_competent_cells,"yeast_aliquot") => (prepare_yeast_transformation,"yeast_aliquot_id")
-  wire (make_yeast_competent_cells,"numbers_set")   => (prepare_yeast_transformation,"numbers_set_id")
   wire (pmei_digest,"digested_plasmid")             => (prepare_yeast_transformation,"fragment_id")
+#  wire (make_yeast_competent_cells,"numbers_set")   => (prepare_yeast_transformation,"numbers_set_id")
 
 
 
