@@ -79,7 +79,7 @@ step
   description: "The heat treatment takes about 1.5 hours"
   note: "Meanwhile, you may pour the gel inside the gel room to have it ready before the next step (run gel)."
   note: "In Aquarium, go to protocols, Github, LABW14, Group6, Full length protocols, pour_gel."
-  timer: { hours: 1, minutes: 30 }
+  timer: { hours: 1, minutes: 30, seconds: 0 }
 end
 
 step
