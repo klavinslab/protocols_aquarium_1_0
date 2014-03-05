@@ -26,7 +26,7 @@ end
 
 step
   description: "Sterilize the culture tube"
-  note: "Using the 140 proof ethanol alcohol spray bottle, and a kimwipe, sterilize the culture tube."
+  note: "Using the 140 proof ethanol alcohol spray bottle, and a kimwipe, wipe the culture tube."
 end
 
 step
@@ -44,19 +44,13 @@ step
 end
 
 step
-  description: "Remove the agar film"
-  warning: "The film is delicate, high precision is necessary."
-  bullet: "Using a spatula carefully remove the punched out agar film from the dish."
-  image: "agar_pickup"
-end
-
-step
   description: "Place the agar film in the petri dish"
-  warning: "The film is delicate, high precision is necessary."
+  warning: "The film is delicate, HIGH precision is necessary."
+  bullet: "Using a spatula carefully remove the punched out agar film from the dish."
   bullet: "CAREFULLY place the agar film on top of our cells in the center of the dish"
   bullet: "Use the spatula to GENTLY flatten out any air bubbles"
   note: "The agar will most likely stick to the spatula. You may use a FRESH 1 mL pipette tip to assist in placing the agar."
-  image: "agar_film"
+  image: "combined_image"
 end
 
 step
