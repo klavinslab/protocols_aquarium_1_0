@@ -28,6 +28,12 @@ take
   pipette = 1 "Serological Pipette"
   tip = 1 "5 mL Serological Pipette Tips"
   media_tube1 = 1 "30 mL M9 liquid Glucose + amp + kan"
+end
+
+take
+  note: "You should have a total of two 30mL media aliquots.
+         This is broken down into two steps as a workaround to avoid programming bugs.
+         Thank you for your understanding."
   media_tube2 = 1 "30 mL M9 liquid Glucose + amp + kan"
 end
 
