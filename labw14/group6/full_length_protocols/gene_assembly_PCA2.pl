@@ -17,11 +17,11 @@ end
   
 
 step
-  description: "This protocol describes how to run gene assembly of two oligonuleotide stocks."
+  description: "This protocol again describes how to run gene assembly of two oligonuleotide stocks."
 end
 
 step
-  description: "Label a 0.2 mL PCR tube. Write your initials on it."
+  description: "Label another 0.2 mL PCR tube. Write your initials on it."
 end
 
 o1 = oligo_pools1
@@ -55,7 +55,7 @@ release masterstock2
 release phusion_stock
 
 Step
-  description: "You will now be asked to use the lab thermal cycler."
+  #description: "You will now be asked to use the lab thermal cycler."
   note: "The thermal cycler will be shared by all groups."
   warning: "Make sure it is not in use. Never open the lid of the running thermal cycler."
   image: "thermal_cycler_off"
