@@ -55,8 +55,8 @@ end
 place run_gels
   protocol: "labw14/group4/run_gel_parallel.pl"
   argument
-	  fragment_volume: 20
-	  num_gels: gels, "the number of gels to run"
+  	ladder_one: ladder_one
+	fragment_volume: 20
   end
   start: minutes(20)
 end
