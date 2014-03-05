@@ -5,9 +5,9 @@ end
 
 step
   description: "Loading the plate reader"
-  note: "In this protocol you will load glucose media and cell sultures into a 96 well plate reader"
+  note: "In this protocol you will load glucose media and cell cultures into a 96 well plate reader"
   note: "Be prepared for a lot of pipetting! You will need to pipette around 150 times during this process"
-  note: "Be sure to keep your 96 well plate sterile, and bump it too much.
+  note: "Be sure to keep your 96 well plate sterile, and do not bump it too much.
          You do not want the liquid in the wells to touch the lid."
   image: "96_well_plate"
 end
@@ -31,21 +31,22 @@ take
   #DI_water = 1 "DI Water, Sterile"
   cells = item cells_to_assay_in
   media = 1 "30 mL M9 liquid Glucose + amp + kan"
-  note: "The media should be in the fridge where you stored it yesterday"
+  note: "Now gather your cells from the shaker.
+         The leftover media should be in the fridge where you stored it yesterday"
 #  antifog = 1 "Antifog Solution"
 end
 
 
 step
   description: "Load the outermost edges of the plate with water"
-  check: "Grab a clean falcon tube from your station, and fill it up with DI water
-          (NOT 'double-refined'!) from location xx"
-  #TODO location of DI water
-  note: "Loading water into the outer edge of the plate reader
-         helps prevent evaporation of the samples, which will be in the middle of the plate"
-  check: "Pipette 200uL of DI water into the outer edge of the 96 well plate, in the wells indicated by 'H20' in blue."
   note: "It can be helpful to have your partner hold onto the media tube during this process
          to warm it up to room temperature"
+  check: "Grab a clean falcon tube from your station, and fill it up with 10~15mL DI water
+          (NOT 'double-refined'!) from location xx"
+  #TODO location of DI water
+  bullet: "Loading water into the outer edge of the plate reader
+         helps prevent evaporation of the samples, which will be in the middle of the plate"
+  check: "Pipette 200uL of DI water into the outer edge of the 96 well plate, in the wells marked 'H20' in blue."
   image: "plate_reader_water"
 end
 
@@ -64,9 +65,9 @@ step
   check: "S1 = Cell culture tube ID %{cell0}"
   check: "S2 = Cell culture tube ID %{cell1}"
   check: "S3 = Cell culture tube ID %{cell2}"
-  note: "You shoul pay attention to the time once you load the cells into the plate reader,
+  note: "You should pay attention to the time once you load the cells into the plate reader,
          as they may start to grow once they are diluted in fresh media
-         (though they will grow much faster when heated up to 37C)"
+         (though they will grow much faster when heated up to 37C)."
   image: "plate_reader_sample_locations"
 end
 
@@ -85,12 +86,13 @@ step
   note: "This prevents condensation from disrupting the measurements"
   check: "Squirt a small amount of anti-fog solution onto a Kimwipe,
           and use it to wipe the inside of the lid"
+  image: "anti_fog"
 end
 
 step
   description: "Seal the plate"
   check: "Cut out a small (3x5cm) piece of aluminum foil from location A8.400"
-  check: "Fold aluminum foil over 3~4 times to construct a small (3mm thick) shim"
+  check: "Fold the piece of aluminum foil over 3~4 times to construct a small (3mm thick) shim"
   check: "Insert the small foil shim into the corner of the assay plate,
           and close the lid.  There should be a tight fit.
           (This shim will keep the lid from rattling during the run)"
