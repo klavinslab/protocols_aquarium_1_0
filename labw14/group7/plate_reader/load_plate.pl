@@ -71,6 +71,7 @@ step
   image: "plate_reader_sample_locations"
 end
 
+release media
 
 #step 
 #  description: "Fetch defogger solution and aluminium foil"
