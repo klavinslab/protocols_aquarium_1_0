@@ -12,10 +12,6 @@ argument
   pipetting_plan: sample, "a hash with fragment names and amounts"
   fragments: sample array, "the fragments for the gibsons (added to cart in last step)"
   gibsons: sample array, "the gibsons to do"
-  complex_datastructure: sample, "does it ignore type"
-    # can i silently produce gibsons with data for the concentrations
-    # then use that data to display to user what to do to make them?
-    # then destroy / replace the fake items
 end
 
 to_release = [ ]
@@ -24,11 +20,6 @@ to_release = [ ]
 # instead of holding values in memory / putting them in arrays
 
 # show one screen in which all fragments are taken
-
-step
-  description: "Show complex_datastructure"
-  note: "%{complex_datastructure}"
-end
 
 step
   description: "Take fragments for Gibsons"
