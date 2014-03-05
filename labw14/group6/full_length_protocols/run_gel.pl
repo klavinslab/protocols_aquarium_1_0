@@ -13,6 +13,9 @@ take
   glasses = 1 "Clear Protective Glasses"
 end
 
+step
+  description: "This protocol describes how ro run gel electrophoresis for PCR assembly results."
+end
 
 step
   description: "Wear clear protective glasses"
