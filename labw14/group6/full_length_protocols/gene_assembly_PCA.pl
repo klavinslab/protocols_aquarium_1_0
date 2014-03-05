@@ -40,8 +40,7 @@ step
   warning: "Be careful to pipette into the liquid, not the side of the tube."
 end
 
-release primer1_stock
-release primer2_stock
+
 release masterstock1
 release masterstock2
 release phusion_stock
@@ -56,6 +55,8 @@ if primer1_stock == 1631
   log
     return: { PCR_Result_id: r[:id] }
   end
+  release primer1_stock
+  release primer2_stock
 else
 Step
   description: "You will now be asked to use the lab thermal cycler"
@@ -99,7 +100,8 @@ end
 log
   return: { PCR_Result_id: r[:id] }
 end
-
+release primer1_stock
+release primer2_stock
 end
 
 
