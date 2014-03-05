@@ -55,7 +55,7 @@ release masterstock2
 release phusion_stock
 
 Step
-  description: "You will now be asked to use the lab thermal cycler"
+  description: "You will now be asked to use the lab thermal cycler."
   note: "The thermal cycler will be shared by all groups."
   warning: "Make sure it is not in use. Never open the lid of the running thermal cycler."
   image: "thermal_cycler_off"
