@@ -9,7 +9,7 @@ end
 
 step
   description: "Add the inducer to the wells indicated in the chart"
-  check: "Pipette 1uL of aTc solution into each well"
+  check: "Pipette 1uL of aTc solution into each well labelled '0hr' in orange"
   note: "Use a new tip each time to avoid contamination"
   image: "%{plate_chart}"
 end
