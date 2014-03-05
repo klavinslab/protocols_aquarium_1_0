@@ -33,6 +33,7 @@ step
   check: "weigh each gel slice tube on the scale and record it's weight on the side of the tube"
 end
 
+count2=0
 while count2 < y
   label=count2+1
   step
