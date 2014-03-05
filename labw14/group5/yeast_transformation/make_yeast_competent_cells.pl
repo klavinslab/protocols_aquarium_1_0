@@ -6,8 +6,10 @@ num = length(yeast_250ml_flask)
 
 step
   description: "This protocol describes how to make yeast competent cell aliquots"
-  warning: "It is possible to make up to 6 aliquots out of one yeast suspension culture flask. 
-        You will be asked on your desired number of aliquots later."
+  note: "You will make  2  aliquots from the yeast overnight suspension culture. 
+          One of these aliquots will be used as a control aliquot."
+#  warning: "It is possible to make up to 6 aliquots out of one yeast suspension culture flask. 
+#        You will be asked on your desired number of aliquots later."
 end
 
 take
