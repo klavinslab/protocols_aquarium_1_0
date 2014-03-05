@@ -15,13 +15,18 @@ step
   description: "Clear the previous data"
   check: "In the intro pop-up menu, open the file 'Lab B Sample Run' (Look in recent files)"
   check: "Immediately go to 'File->Save As...', and save this into a new file name"
-  check: "Click on 'Procedure->Change run time' to clear all previous data"
-  image: "read_plate_prompt"
+  note: "A filename such as 'yyyymmdd MyExperimentName' should be appropriate"
+  check: "Click on 'Protocol->Procedure' to edit the procedure"
+  check: "Double-click on 'Start Kinetic [Run hh:mm:ss, Interval h:mm:ss]'
+          and change the run time to 36 hours (10min interval is fine).
+          This will clear all previous data"
+  image: "set_run_time"
 end
 step
   description: "Warm up the plate reader to 37C"
-  check: "Click on the 'Read Plate' button (at the top) to start the program."
+  check: "Click the 'Read' button in the 'Procedure' dialog window,
+          or the 'Read' icon at the top of the window, to start the program (see screenshot)."
   image: "Read_plate"
-  check: "Click the 'Read' button in the dialog that opens. This should produce a pop-up asking your to wait for the bulb to heat up to 37C"
+  note: "This should produce a pop-up asking your to wait for the bulb to heat up to 37C"
   note: "You will now start loading your 96 well plate while the plate reader warms up"
 end
