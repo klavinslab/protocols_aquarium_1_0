@@ -7,6 +7,10 @@ take
 end
 
 step
+  description: "This protocol describes how to take image of your gel and then cut it for further processes."
+end
+
+step
   description: "Take the gel lane you got after running electropheresis and place it at the transilluminator bench"
   note: "Take care not to damage the gel such that it cannot be imaged"
 end
@@ -54,8 +58,7 @@ step
   description: "Adjust camera settings"
   note: "The camera settings must be properly adjusted for gel photography if they are not already."
   bullet: "Turn the large dial to manual (M)"
-  bullet: "Switch the camera to macro mode by pressing the button with a flower and
-  rotating the menu wheel to the flower icon."
+  bullet: "Switch the camera to macro mode by pressing the button with a flower and rotating the menu wheel to the flower icon."
   bullet: "Set the ISO to 100 by turning the larger dial"
   bullet: "Set the white balance to tungsten by pressing the center button and navigating to tungsten."
   bullet: "Set the shutter speed to 4 seconds by turning the menu wheel."
@@ -64,61 +67,89 @@ end
 step
   description: "Take a picture of the gel."
   note: "Zoom in such that the gel takes up the entire field of view."
-  note: "Press the trigger half way to focus and all the way down to take the photo. Leave the camera on
-  as it takes time to transmit the photo to the computer wirelessly"
+  note: "Press the trigger half way to focus and all the way down to take the photo. Leave the camera on as it takes time to transmit the photo to the computer wirelessly."
+  note: "Remove the camera hood."
 end
 
 step
-  description: "Take razor blade from shelf above station" 
-  note: "Razor blades are located in a petri dish next to the goggles. Take one out and carefully
-  clean the blade using ethanol and a kimwipe"
+  description: "It is very important to get the right band length in this step, otherwise the further processes toward gel assembly may fail."
+  getdata
+    DNA_band_length1: number, "Enter the band length of the first assembled oligonucleotides located on the second lane from left in the gel (use the ladder lane to read the number)."
+  end
+  getdata
+    DNA_band_length2: number, "Enter the band length of the second assembled oligonucleotides located on the third lane from left in the gel (use the ladder lane to read the number)."
+  end
+end
+
+while DNA_band_length1 < 700 
+  step
+    description: "Abort this protocol and start from the begining."
+    note: "You may change some parameters such as PCR setting. Also, look for sources of error."
+  end
+end
+
+while DNA_band_length2 < 700 
+  step
+    description: "Abort this protocol and start from the begining."
+    note: "You may change some parameters such as PCR setting and repeat. Also, look for sources of possible errors."
+  end
+end
+
+step
+  description: "Good job! The band length for both assemblies is right."
+  note: "In order to cut the gel, take razor blade from shelf above station" 
+  note: "Razor blades are located in a petri dish next to the goggles. Take one out and carefully clean the blade using ethanol and a kimwipe"
   image: "spray_blade"
 end
 
 step
-  description: "Remove the camera hood, cut out the gel slices with length 900bp" 
-  note: "It may help to turn the room lights off during this step. Use the ladder to locate where
-  900bp is. Use the razor blade to cut around the band."
+  description: "Cut out both gel slices with length 900bp" 
+  note: "It may help to turn the room lights off during this step."
+  note: "Use the ladder to locate where 900bp is."
+  note: "Use the razor blade to cut around the band."
   image: "cut_gel"
 end
 
 step
   description: "Trim the gel slices"
-  note: "Try to remove as much excess gel as possible. Do not remove any gel that contains the band 
-  as this will limit the amount of DNA that can be extracted. In essence, try to cut away everything
-  that is not glowing. It is important to trim the gel as excess gel will complicate the next protocol."
+  bullet: "Try to remove as much excess gel as possible."
+  bullet: "Do not remove any gel that contains the band as this will limit the amount of DNA that can be extracted."
+  bullet: "In essence, try to cut away everything that is not glowing. It is important to trim the gel as excess gel will complicate the next protocol."
 end
 
 step
   description: "Put the gel slices into two 1.5 mL tubes"
-  note: "Slide the gel sliced onto the razor blade, open the tubes and push the slices in. If the
-  slices are too big, trim down excess gel. Again, do not trim gel that contains the band, only
-  excess gel around the band."
+  note: "Slide the gel sliced onto the razor blade, open the tubes and push the slices in. If the slices are too big, trim down excess gel." 
+  warning: "Again, do not trim gel that contains the band, only excess gel around the band."
   image: "slice_tube"
 end
 
 step
   description: "Clean up the transilluminator and gel station"
-  note: "Turn off the transilluminator. Dispose of the gel and any gel fragments by placing it in the waste container. 
-  Spray the surface of the transilluminator with ethanol and wipe until dry using kimwipes or paper towel. If the
-  lights in the room are turned off, turn the lights back on. Remove the UV goggles and put them back where you
-  found them."
+  note: "Turn off the transilluminator. Dispose of the gel and any gel fragments by placing it in the waste container." 
+  bullet: "Spray the surface of the transilluminator with ethanol and wipe until dry using kimwipes or paper towel."
+  bullet: "If the lights in the room are turned off, turn the lights back on."
+  bullet: "Remove the UV goggles and put them back where you found them."
 end
 
 step
-  description: 
-    "Rename the picture in Dropbox"
-  note: 
-    "In gel room touch screen computer, open Dropbox/GelImages, under today's date folder and find the picture you just took.\n
-     Rename the picture as the labw14_gel_group_id."
+  description: "Rename the picture in Dropbox"
+  note: "In gel room touch screen computer, open Dropbox/GelImages, under today's date folder and find the picture you just took."
+  note: "Rename the picture as the labw14_gel_group_id."
 end
 
-produce
-  r = 1 "Gel Slice" of "fGA"
-  release y
+ii = 0
+r = []
+
+while ii < 2
+  produce
+    y = 1 "Gel Slice" of "fGA"
+end
+  r = append(r,y[:id])
+  ii = ii + 1
 end
 
 log
-  return: {Gel_Slice_id: r[:id]}
+  return: {Gel_Slice_id: r}
 end
 
