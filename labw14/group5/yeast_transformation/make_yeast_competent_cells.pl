@@ -153,29 +153,35 @@ while ii < length(yeast_250ml_flask)
 
   step
     description: "Obtaining cell aliquots from a 1.5 mL tube with id %{id_num}"
-    note: "You can obtain up to %{max} cell aliquots from a tube %{id_num}, 50µL each."
-    warning: "Note that one of these aliquots will be used as a control aliquot."
-    getdata
-      num_to_make: number, "Number of aliquots you want to plate (max %{max}), INCLUDING the CONTROL aliquot."
-    end
+    note: "Now you will make  2  aliquots from a tube with id %{id_num}, 50µL each."
+    warning: "Notice that one of these aliquots will be used as a control aliquot."
   end
+
+#  step
+#    description: "Obtaining cell aliquots from a 1.5 mL tube with id %{id_num}"
+#    note: "You can obtain up to %{max} cell aliquots from a tube %{id_num}, 50µL each."
+#    warning: "Note that one of these aliquots will be used as a control aliquot."
+#    getdata
+#      num_to_make: number, "Number of aliquots you want to plate (max %{max}), INCLUDING the CONTROL aliquot."
+#    end
+#  end
   
-  if num_to_make == 1
-    step
-      description: "You typed '1' as a number of aliquots you would like to make. 
-                    But you need at least 2 aliquots, because one will be used to transform digested DNA and
-                    the other one to transform CONTROL aliquot. So we think you made a mistake and thefore
-                    we made a correction for you and change the number to 2 aliquots."
-    end
-  else
-    step
-      description: "So you will make %{num_to_make} aliquots from a tube with id %{id_num}"
-    end
-  end
+#  if num_to_make == 1
+#    step
+#      description: "You typed '1' as a number of aliquots you would like to make. 
+#                    But you need at least 2 aliquots, because one will be used to transform digested DNA and
+#                    the other one to transform CONTROL aliquot. So we think you made a mistake and thefore
+#                    we made a correction for you and change the number to 2 aliquots."
+#    end
+#  else
+#    step
+#      description: "So you will make %{num_to_make} aliquots from a tube with id %{id_num}"
+#    end
+#  end
   
   jj = 0
-  total_number = num_to_make
-  numbers = append(numbers,total_number)
+  total_number = 2 #num_to_make
+#  numbers = append(numbers,total_number)
   
   while jj < total_number
     if jj == 0
@@ -215,7 +221,8 @@ end
 
 
 log
-  return: { yeast_aliquot: r, numbers_set: numbers }
+  #return: { yeast_aliquot: r, numbers_set: numbers }
+  return: { yeast_aliquot: r }
 end
 
 
