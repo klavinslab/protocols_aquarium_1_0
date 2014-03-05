@@ -4,7 +4,7 @@
   #induce_steps: int array, "input the desired induction times"
 #end
 
-cell_array_input = ["1571", "1573", "1574"]
+cell_array_input = [1571, 1573, 1574]
 
 #induce_steps = [0, 1, 1.5, 2, 24]
 #todo: sort induce_steps array here
