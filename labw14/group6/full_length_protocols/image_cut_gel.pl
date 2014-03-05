@@ -138,6 +138,10 @@ step
   note: "Rename the picture as the labw14_gel_group_id."
 end
 
+step
+  description: "Next step is fragment purification."
+end
+
 ii = 0
 r = []
 
