@@ -40,17 +40,24 @@ step
   warning: "Be careful to pipette into the liquid, not the side of the tube."
 end
 
-step
-  description: "Put the prepared PCR tube on the bench."
-end
-
 release primer1_stock
 release primer2_stock
 release masterstock1
 release masterstock2
 release phusion_stock
 
-step
+if primer1_stock == 1631
+  step
+    description: "Put the prepared PCR tube on the bench."
+  end
+  produce
+    r = 1 "PCR Result" of "fGA"
+  end
+  log
+    return: { PCR_Result_id: r[:id] }
+  end
+else
+Step
   description: "You will now be asked to use the lab thermal cycler"
   note: "The thermal cycler will be shared by all groups."
   warning: "Make sure it is not in use. Never open the lid of the running thermal cycler."
@@ -58,7 +65,7 @@ step
 end
 
 step
-  description: "Place both tubes into thermal cycler T2 at B3.335."
+  description: "Place the tubes into the thermal cycler T2 at B3.335."
 end
 
 step
@@ -73,8 +80,9 @@ step
 end
 
 step
-  description: "The heat treatment takes about 2 hours"
+  description: "The heat treatment takes about 1.5 hours"
   note: "Meanwhile, you may pour the gel inside the gel room to have your gel ready before the next step."
+  Timer: { hours: 1, minutes: 30 }
 end
 
 step
@@ -90,6 +98,8 @@ end
 
 log
   return: { PCR_Result_id: r[:id] }
+end
+
 end
 
 
