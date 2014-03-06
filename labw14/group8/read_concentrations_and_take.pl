@@ -46,7 +46,14 @@ foreach name in fragments_to_take
       end
     end
   end
-  pipetting_plan = append(pipetting_plan, { fragment_name: name, fragment_ids: [ ], 
+  # get ids from the data file for the fragments to use
+  f_ids = [ ]
+  foreach f_to_ids in g[:debug][:fragment_name_to_sample_ids]
+    if f_to_ids[:name] == name
+      f_ids = f_to_ids[:ids]
+    end
+  end
+  pipetting_plan = append(pipetting_plan, { fragment_name: name, fragment_ids: f_ids, 
                                             total_amount: total})
 end
 
