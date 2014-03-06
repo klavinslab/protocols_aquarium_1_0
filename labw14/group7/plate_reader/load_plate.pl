@@ -42,7 +42,7 @@ step
   note: "It can be helpful to have your partner hold onto the media tube during this process
          to warm it up to room temperature"
   check: "Grab a clean falcon tube from your station, and fill it up with 10~15mL DI water
-          (NOT 'double-refined'!) from location xx"
+          (NOT 'double-refined'!) from location B15.320.J1"
   #TODO location of DI water
   bullet: "Loading water into the outer edge of the plate reader
          helps prevent evaporation of the samples, which will be in the middle of the plate"
