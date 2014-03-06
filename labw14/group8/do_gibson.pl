@@ -30,7 +30,7 @@ end
 
 foreach f in fragments
   take
-    x = item f[:id]
+    x = item f
   end
   to_release = append (to_release, x)
 end
