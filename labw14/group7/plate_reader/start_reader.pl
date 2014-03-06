@@ -13,6 +13,11 @@ step
 end
 
 step
+  description: "Turn on the Plate Reader"
+  check: "The power switch is on the lower left corner of the front face"
+end
+
+step
   description: "Initialize the program"
   check: "In the intro pop-up menu, open the file 'Lab B Sample Run' (Look in recent files)"
   check: "Immediately go to 'File->Save As...', and save this into a new file name"
