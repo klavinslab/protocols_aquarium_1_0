@@ -37,6 +37,15 @@ end
 
 fragments = to_release
 
+test = info(fragments[0])
+
+step
+  description: "Test if can get name of fragment from sample"
+  note: "Go to the locations listed to take fragments for all the gibsons.
+         Check old gibson protocols to see if they need to be kept on ice, etc.
+         %{test}"
+end
+
 ids = [ ]
 foreach g in gibsons
   ids = append (ids, g[:id])
