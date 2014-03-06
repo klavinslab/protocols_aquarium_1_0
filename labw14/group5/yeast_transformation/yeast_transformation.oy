@@ -112,8 +112,8 @@ end
 place image_plate
   protocol: "labw14/group5/yeast_transformation/image_plate.pl"
   group: aquarium_user
-  start: now() #hours(48)
-  window: minutes(1) #hours(2)
+  start: hours(48)
+  window: hours(12)
 end
 
   wire (plate_incubate,"plate_id") => (image_plate,"transformed_yeast_plate_id")
