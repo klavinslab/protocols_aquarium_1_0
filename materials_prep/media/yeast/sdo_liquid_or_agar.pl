@@ -134,7 +134,7 @@ adenine_name = adenine[0][:name]
 #Agar
 if add_agar == "Yes"
   agar_name = agar[0][:name]
-  include "plankton/includes/materials_prep/add_dry_reagent.pl"
+  include "includes/materials_prep/add_dry_reagent.pl"
     container: "each bottle"
     reagent: agar_name
     grams: 16
@@ -142,28 +142,28 @@ if add_agar == "Yes"
 end
 
 
-include "plankton/includes/materials_prep/add_dry_reagent.pl"
+include "includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
   reagent: dextrose_name
   grams: 16
 end
 
 
-include "plankton/includes/materials_prep/add_dry_reagent.pl"
+include "includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
   reagent: nitrogen_base_name
   grams: 5.36
 end
 
 
-include "plankton/includes/materials_prep/add_dry_reagent.pl"
+include "includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
   reagent: dropout_name
   grams: 1.12
 end
 
 
-include "plankton/includes/materials_prep/add_dry_reagent.pl"
+include "includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
   reagent: adenine_name
   grams: 0.064
@@ -171,7 +171,7 @@ end
 
 
 # Clean the spatula before returning it
-include "plankton/includes/materials_prep/clean_spatula.pl"
+include "includes/materials_prep/clean_spatula.pl"
 end
 
 
