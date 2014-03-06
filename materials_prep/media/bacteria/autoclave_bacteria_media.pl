@@ -1,17 +1,23 @@
 information "Autoclave bacterial media"
 
-# FIXME: in this and yeast autoclaving protocol, should produce sterile versions of items!
-# FIXME:
 argument
-  lb_liquid_n: number, "Enter the number of LB liquid media bottles to autoclave."
+  lb_liquid_n: number, "Enter the number of 800 mL LB liquid media bottles to autoclave."
 end
 
 argument
-  lb_agar_n: number, "Enter the number of LB agar media bottles to autoclave."
+  lb_agar_800_n: number, "Enter the number of 800 mL LB agar media bottles to autoclave."
 end
 
 argument
-  tb_liquid_n: number, "Enter the number of TB liquid media bottles to autoclave."
+  lb_agar_400_n: number, "Enter the number of 800 mL LB agar media bottles to autoclave."
+end
+
+argument
+  lb_agar_200_n: number, "Enter the number of 800 mL LB agar media bottles to autoclave."
+end
+
+argument
+  tb_liquid_n: number, "Enter the number of 800 mL TB liquid media bottles to autoclave."
 end
 
 
@@ -21,9 +27,19 @@ if lb_liquid_n > 0
     lb_liquid = lb_liquid_n "800 mL LB Liquid (unsterile)"
   end
 end
-if lb_agar_n > 0
+if lb_agar_800_n > 0
   take
-    lb_agar = lb_agar_n "800 mL LB Agar (unsterile)"
+    lb_agar_800 = lb_agar_800_n "800 mL LB Agar (unsterile)"
+  end
+end
+if lb_agar_400_n > 0
+  take
+    lb_agar_400 = lb_agar_400_n "400 mL LB Agar (unsterile)"
+  end
+end
+if lb_agar_200_n > 0
+  take
+    lb_agar_200 = lb_agar_200_n "200 mL LB Agar (unsterile)"
   end
 end
 if tb_liquid_n > 0
@@ -40,7 +56,7 @@ end
 
 
 # Take solid media bottles
-if lb_agar_n > 0
+if lb_agar_800_n > 0 || lb_agar_400_n > 0 || lb_agar_200_n > 0
   # Autoclave A1 can't handle agar, so don't use it
   autoclave = "A2"
 else
@@ -86,11 +102,9 @@ step
   note: "This will take between 45 minutes and two hours. You can leave this job running and do other tasks while the autoclave is running - when the autoclave is done, resume by finding the job and resuming it. %{finished_indicator}. When the autoclave finishes, click next."
 end
 
-
 take
   gloves = 1 "Autoclave Gloves"
 end
-
 
 step
   description: "Remove items from the autoclave to a cooling area (the media station)."
@@ -110,10 +124,24 @@ if lb_liquid_n > 0
     location: items_location
   end
 end
-if lb_agar_n > 0
+if lb_agar_800_n > 0
   produce
-    sterile_lb_agar = lb_agar_n "800 mL LB Agar (sterile)"
-    release lb_agar
+    sterile_lb_agar_800 = lb_agar_n "800 mL LB Agar (sterile)"
+    release lb_agar_800
+    location: items_location
+  end
+end
+if lb_agar_400_n > 0
+  produce
+    sterile_lb_agar_400 = lb_agar_n "400 mL LB Agar (sterile)"
+    release lb_agar_400
+    location: items_location
+  end
+end
+if lb_agar_200_n > 0
+  produce
+    sterile_lb_agar_200 = lb_agar_n "200 mL LB Agar (sterile)"
+    release lb_agar_200
     location: items_location
   end
 end
@@ -124,6 +152,5 @@ if tb_liquid_n > 0
     location: items_location
   end
 end
-
 
 release gloves
