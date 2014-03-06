@@ -25,7 +25,7 @@ step
   description: "Take fragments for Gibsons"
   note: "Go to the locations listed to take fragments for all the gibsons.
          Check old gibson protocols to see if they need to be kept on ice, etc.
-         %{fragments}"
+         %{fragments}" # this is an array of ids
 end
 
 foreach f in fragments
@@ -35,7 +35,7 @@ foreach f in fragments
   to_release = append (to_release, x)
 end
 
-fragments = to_release
+fragments = to_release # this is an array of { id: #, name: "sdfsdf", data: {...}}
 
 step
   description: "What are taken fragments?"
@@ -43,7 +43,7 @@ step
 end
 
 s = fragments[0]
-test = info(s)
+test = info(s) # this fails
 
 step
   description: "Test if can get name of fragment from sample"
