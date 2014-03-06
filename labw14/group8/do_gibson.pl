@@ -37,7 +37,8 @@ end
 
 fragments = to_release
 
-test = info(fragments[0])
+s = fragments[0]
+test = info(s)
 
 step
   description: "Test if can get name of fragment from sample"
