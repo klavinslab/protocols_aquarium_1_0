@@ -38,7 +38,8 @@ end
 fragments = to_release
 
 s = fragments[0]
-test = info(s[:id])
+n = s[:id]
+test = info(n)
 
 step
   description: "Test if can get name of fragment from sample"
