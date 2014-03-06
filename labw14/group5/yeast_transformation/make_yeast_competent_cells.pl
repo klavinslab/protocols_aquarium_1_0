@@ -154,8 +154,8 @@ while ii < length(yeast_250ml_flask)
   max = vol_val / 10
 
   step
-    description: "Obtaining cell aliquots from a 1.5 mL tube with id %{id_num}"
-    note: "Now you will make  2  aliquots from a tube with id %{id_num}, 50µL each."
+    description: "Make cell aliquots from a 1.5 mL tube with id %{id_num}"
+    note: "Now you will make 2 aliquots from a tube with id %{id_num}, 50 µL each."
     warning: "Notice that one of these aliquots will be used as a control aliquot."
   end
 
@@ -188,7 +188,7 @@ while ii < length(yeast_250ml_flask)
   while jj < total_number
     if jj == 0
       step
-        description:"Making CONTROL aliquot from a tube with id %{id_num}"
+        description:"Making CONTROL aliquot from the tube with id %{id_num}"
         note: "Take a 1.5 mL tube and write your name on its side. Write 'CONTROL' word on its side as well."
         check: "Pipet 50 µL of aliquot from a tube with id %{id_num} into the CONTROL 1.5 mL tube."
       end
@@ -201,7 +201,7 @@ while ii < length(yeast_250ml_flask)
       r = append(r,y[:id])
     else
       step
-        description:"Making another aliquot from a tube with %{id_num}"
+        description:"Making another aliquot from the tube with %{id_num}"
         note: "Take a 1.5 mL tube and write your name on its side."
         check: "Pipet 50 µL of aliquot from a tube %{id_num} into the labeled 1.5 mL tube."
       end
