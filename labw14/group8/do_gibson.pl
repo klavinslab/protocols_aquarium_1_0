@@ -35,6 +35,8 @@ foreach f in fragments
   to_release = append (to_release, x)
 end
 
+fragments = to_release
+
 ids = [ ]
 foreach g in gibsons
   ids = append (ids, g[:id])
@@ -45,7 +47,8 @@ step
   description: "Label PCR tubes to hold the gibsons"
   note: "Take enough PCR tubes and label tubes %{ids}"
 end
-  
+
+
 foreach f in fragments
   sample_amount_to_pipette = [ ]
   foreach g in gibsons
