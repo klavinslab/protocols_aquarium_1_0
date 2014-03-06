@@ -33,7 +33,7 @@ while i < sample_count
 		description: "Dilute E. coli cells from sample %{e}"
 		check: "Add %{LB_V} ml of LB media to test tube %{i} (round to the nearest .1 ml)" # -- large pipetter?
 		check: "Add %{e_V} ml of e. coli sample %{e} to test tube %{i}."
-		bullet: "You should end up with %{total_V} ml of liquid in the falcon tube"
+		bullet: "You should end up with %{total_V} ml of liquid in the test tube"
 	end
 end
 
