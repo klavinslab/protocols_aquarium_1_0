@@ -18,6 +18,12 @@ information "Measure DNA concentration using Nanodrop spectrophotometer."
 
 step
   description: "Take the cells and LB to the Nanodrop at location B3.405"
+	note: "Log into Aquarium at a computer in the B3 aisle."
+end
+
+step
+	description: "If the software (which software?) is not set to XXXX mode, select the XXXX button"
+	note: "If the software is preset, continue to the next step."
 end
 
 ODs = []
@@ -25,8 +31,9 @@ foreach c in log_cells
 	step
 	  description: "Blank the Nanodrop"
 	  check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
-	  check: "Add 2 µL of LB Buffer." # Should we blank with LB or EB?
+	  check: "Using a pipette, carefully add 2 µL of LB Buffer to the lower pedestal." 
 	  check: "Close the pedestal."
+		bullet: "Visually check for a column of liquid between the two pedestals when closed."
 	  check: "Click Blank in the software."
 	end
 
@@ -38,6 +45,7 @@ foreach c in log_cells
 	  check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
 	  check: "Add 2 µL of your sample with id %{c} on the lower pedestal."
 	  check: "Close the pedestal."
+		bullet: "Visually check for a column of liquid between the two pedestals when closed."
 	  check: "Click Measure in the software."
 	end
 
@@ -52,9 +60,17 @@ foreach c in log_cells
 	if OD < OD_min
 		step
 			description: "The OD is too low; the cells haven't grown enough!"
-			note: "Reincubation is suggested"
+			note: "Reincubation is suggested. Click next."
 		end
+
+		step
+			description: "Re-incubate the suspension."
+			note: "let your instructor know the suspension needs more time to incubate."
+		end
+
+#		release c
 	end
+
 	if OD > OD_max
 		step
 			description: "The OD is too high, cell growth has saturated!"
@@ -62,6 +78,7 @@ foreach c in log_cells
 		end
 	
 	end
+	
 	step
 	  description: "Clean the Nanodrop"
 	  check: "Open the pedestal"
