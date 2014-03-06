@@ -32,8 +32,8 @@ step
   check: "Double-click on 'Start Kinetic [Run hh:mm:ss, Interval h:mm:ss]' (marked '3')."
   check: "Change the run time to 36 hours (marked '4'). A 10min interval is fine."
   bullet: "Note: This will clear all previous data (there should not be any previous data anyway)"
-  check: "Start the program by clicking the 'Read' button in the 'Procedure' dialog window (marked '2'),
-          or the 'Read' icon at the top of the window (marked '5')."
+  check: "Press OK to close this window, then click the 'Read' icon at the top of the window (marked '5')."
+  check: "Press 'Next Read'"
   bullet: "This should produce a pop-up asking your to wait for the bulb to heat up to 37C"
   image: "plate_reader_set_run_time"
 # TODO: check the accuracy of this explanation
