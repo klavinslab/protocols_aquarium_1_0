@@ -45,7 +45,7 @@ place pmei_digest
     pmei_id: pmei
   end
   group: aquarium_user
-  start: now #hours(5)
+  start: now() #hours(5)
   window: minutes(1) #hours(1)
 end
 
