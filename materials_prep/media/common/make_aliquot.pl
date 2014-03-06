@@ -1,6 +1,5 @@
 information "Make media aliquots using 14 mL culture tubes, 50 mL falcon tubes, 125 mL flasks, or 250 mL flasks."
 
-
 step
   description: "What type of media do you need?"
   note: "Choose the source of media you want to aliquot."
@@ -22,12 +21,11 @@ step
   end
 end
 
-
 take
   media = 1 media_type
 end
 
-
+containers = []  # Initialize empty variable
 if container == "14 mL Test Tube" || container == "125 mL Baffled Flask" || container == "250 mL Baffled Flask"
   take
     containers = n_aliquots container
@@ -39,24 +37,26 @@ else
   end
 end
 
-
 step
   description: "Pipet aliquots"
   note: "Using the serological pipettor and 25 mL serological pipettes, transfer %{volume} mL of %{media_type} into each %{container}.\n\nUse a fresh 25 mL pipette every time you return to the media source. Conserve pipettes by drawing enough media into the pipettor to aspirate into multiple aliquots."
 end
 
-
 release media
 
-
-# Containers disappear into the ether. FIXME?
-# FIXME: item is not an 'item hash'. Probably need to modify one at a time
 if container == "14 mL Test Tube" || container == "125 mL Baffled Flask" || container == "250 mL Baffled Flask"
-  modify
-    containers
-    quantity: 0
+  n = length(containers)
+  ii = 0
+  while ii < n
+    modify
+      containers[ii]
+      quantity: 0
+    end
+
+    ii = ii + 1
   end
 end
+
 step
   description: "Enjoy your aliquots!"
   note: "The aliquot(s) produced are for your personal use and are not tracked by the Aquarium system."
