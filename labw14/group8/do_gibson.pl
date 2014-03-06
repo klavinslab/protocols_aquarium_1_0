@@ -37,15 +37,17 @@ end
 
 fragments = to_release
 
+step
+  description: "What are taken fragments?"
+  note: "%{fragments}"
+end
+
 s = fragments[0]
-n = s[:id]
-test = info(n)
+test = info(s)
 
 step
   description: "Test if can get name of fragment from sample"
-  note: "Go to the locations listed to take fragments for all the gibsons.
-         Check old gibson protocols to see if they need to be kept on ice, etc.
-         %{test}"
+  note: "%{test}"
 end
 
 ids = [ ]
