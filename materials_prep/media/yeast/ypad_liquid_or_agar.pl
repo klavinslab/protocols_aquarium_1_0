@@ -1,7 +1,4 @@
 information "Prepare unsterile bottle(s) of YPAD (rich yeast media), ready to be autoclaved."
-# FIXME: add black stripe to plates
-# Add stir bar
-
 
 argument
   n_bottle: number, "Enter the number of bottles you want to make (maximum of 4)."
@@ -25,6 +22,15 @@ if add_agar != "Yes" && add_agar != "No"
     description: "The agar preference was incorrectly entered as %{add_agar}"
     getdata
       add_agar: string, "Should agar be added to the media?", ["Yes", "No"]
+    end
+  end
+end
+
+if volume != 200 && volume != 400 && volume != 800
+  step
+    description: "The LB volume was incorrectly entered as %{volume}."
+    getdata
+      volume: number, "Enter the volume of LB to make.", [200, 400, 800]
     end
   end
 end
@@ -85,12 +91,10 @@ else
   end
 end
 
-
 step
   description: "Add temporary labels"
   note: "Using lab tape, number each bottle (from 1 up to 4)."
 end
-
 
 step
   description: "Remove autoclave tape"
@@ -123,13 +127,11 @@ if add_agar == "Yes"
   end
 end
 
-
 include "includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
   reagent: tryptone_name
   grams: grams_tryptone
 end
-
 
 include "includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
@@ -137,13 +139,11 @@ include "includes/materials_prep/add_dry_reagent.pl"
   grams: grams_dextrose
 end
 
-
 include "includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
   reagent: yeast_extract_name
   grams: grams_yeast_extract
 end
-
 
 include "includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
@@ -151,23 +151,19 @@ include "includes/materials_prep/add_dry_reagent.pl"
   grams: grams_adenine
 end
 
-
 # Clean the spatula before returning it
 include "includes/materials_prep/clean_spatula.pl"
 end
-
 
 step
   description: "Add deionized water"
   note: "Fill each bottle to the %{volume} mL mark with deionized water."
 end
 
-
 step
   description: "Cap and mix."
   note: "Tightly close the caps on each bottle and shake until all contents are dissolved. To check for dissolution, let bottle rest for 10 seconds, and then pick up and look for sediment on the bottom. This should take approximately 60 seconds."
 end
-
 
 if add_agar == "Yes"
   produce
@@ -185,7 +181,6 @@ else
     location: "B1.320"
   end
 end
-
 
 release [yeast_extract[0], tryptone[0], dextrose[0], adenine[0]]
 if add_agar == "Yes"
