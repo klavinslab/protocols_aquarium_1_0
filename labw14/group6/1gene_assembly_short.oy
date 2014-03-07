@@ -1,9 +1,9 @@
 oligo_pools1 = [1938]
 oligo_pools2 = [1939]
-primer11 = [1631]
+primer11 = [2026]
 primer12 = [1627]
 primer21 = [1629]
-primer22 = [1633]
+primer22 = [2028]
 phusionHF = 704
 ladder = 1357
 
