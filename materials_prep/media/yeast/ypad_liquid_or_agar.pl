@@ -1,4 +1,4 @@
-information "Prepare unsterile bottle(s) of 800 mL YPAD (rich yeast media), ready to be autoclaved."
+information "Prepare unsterile bottle(s) of YPAD (rich yeast media), ready to be autoclaved."
 # FIXME: add black stripe to plates
 # Add stir bar
 
@@ -6,6 +6,7 @@ information "Prepare unsterile bottle(s) of 800 mL YPAD (rich yeast media), read
 argument
   n_bottle: number, "Enter the number of bottles you want to make (maximum of 4)."
   add_agar: string, "Add agar to the media? Enter Yes or No."
+  volume: number, "The volume to make: 800, 400, or 200 (in mL)"
 end
 
 
@@ -19,7 +20,6 @@ if n_bottle < 1 || n_bottle > 4
   end
 end
 
-
 if add_agar != "Yes" && add_agar != "No"
   step
     description: "The agar preference was incorrectly entered as %{add_agar}"
@@ -29,15 +29,38 @@ if add_agar != "Yes" && add_agar != "No"
   end
 end
 
-
-# 3 takes per page max
 take
-  bottles = n_bottle "1 L Bottle"
   yeast_extract = 1 "Bacto Yeast Extract"
   tryptone = 1 "Bacto Tryptone"
 end
+
+if volume == 800
+  take
+    bottles = n_bottle "1 L Bottle"
+  end
+elsif volume == 400
+  take
+    bottles = n_bottle "500 mL Bottle"
+  end
+elsif volume == 200
+  take
+    bottles = n_bottle "250 mL Bottle"
+  end
+end
+
+product_name = ""  # Initialize global variable
+dextrose = []  # Initialize global variable (why is this one required?)
+adenine = []  # Initialize global variable (why is this one required?)
+agar = []  # Initialize global variable (why is this one required?)
+stir_bars = []  # Initialize global variable (why is this one required?)
 if add_agar == "Yes"
-  product_name = "800 mL YPAD agar (unsterile)"
+  if volume == 800
+    product_name = "800 mL YPAD agar (unsterile)"
+  elsif volume == 400
+    product_name = "400 mL YPAD agar (unsterile)"
+  elsif volume == 200
+    product_name = "200 mL YPAD agar (unsterile)"
+  end
   take
     dextrose = 1 "Dextrose"
     adenine = 1 "Adenine (Adenine hemisulfate)"
@@ -49,7 +72,13 @@ if add_agar == "Yes"
     note: "Add one stir bar to each bottle."
   end
 else
-  product_name = "800 mL YPAD liquid (unsterile)"
+  if volume == 800
+    product_name = "800 mL YPAD liquid (unsterile)"
+  elsif volume == 400
+    product_name = "400 mL YPAD liquid (unsterile)"
+  elsif volume == 200
+    product_name = "200 mL YPAD liquid (unsterile)"
+  end
   take
     dextrose = 1 "Dextrose"
     adenine = 1 "Adenine (Adenine hemisulfate)"
@@ -68,12 +97,21 @@ step
   note: "Remove any autoclave tape from each bottle."
 end
 
+step
+  description: "Dextrose item hash"
+  note: "%{dextrose}"
+end
 
 yeast_extract_name = yeast_extract[0][:name]
 tryptone_name = tryptone[0][:name]
 dextrose_name = dextrose[0][:name]
 adenine_name = adenine[0][:name]
 
+grams_agar = volume / 50.0
+grams_tryptone = volume / 50.0
+grams_dextrose = volume / 50.0
+grams_yeast_extract = volume / 100.0
+grams_adenine = volume / 12500.0
 
 # Agar
 if add_agar == "Yes"
@@ -81,7 +119,7 @@ if add_agar == "Yes"
   include "includes/materials_prep/add_dry_reagent.pl"
     container: "each bottle"
     reagent: agar_name
-    grams: 16
+    grams: grams_agar
   end
 end
 
@@ -89,28 +127,28 @@ end
 include "includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
   reagent: tryptone_name
-  grams: 16
+  grams: grams_tryptone
 end
 
 
 include "includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
   reagent: dextrose_name
-  grams: 16
+  grams: grams_dextrose
 end
 
 
 include "includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
   reagent: yeast_extract_name
-  grams: 8
+  grams: grams_yeast_extract
 end
 
 
 include "includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
   reagent: adenine_name
-  grams: 0.064
+  grams: grams_adenine
 end
 
 
@@ -121,7 +159,7 @@ end
 
 step
   description: "Add deionized water"
-  note: "Fill each bottle to the 800 mL mark with deionized water."
+  note: "Fill each bottle to the %{volume} mL mark with deionized water."
 end
 
 
