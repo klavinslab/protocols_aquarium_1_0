@@ -35,7 +35,7 @@ end
 
 step
   description: "Label bottles."
-  note: "Lable one bottle as 'nonsterile mixed solution of %{supplement_type}' and the other as 'sterile %{supplement_type}'."
+  note: "Label one bottle as 'nonsterile mixed solution of %{supplement_type}' and the other as 'sterile %{supplement_type}'."
 end
 
 take
@@ -44,19 +44,23 @@ take
   supplement_item = 1 supplement_type
 end
 
-include "includes/media/clean_spatula.pdl"
+include "includes/materials_prep/clean_spatula.pl"
   vessel_string: nonsterile_bottle
   reagent: supplement_type
   mass: supplement_mass
   boat_type: "Large Weigh Boat"
 end
 
-release [boat[0], scale[0]]
+release concat(boat, scale)
 
-include "includes/media/add_di_water_and_shake.pdl"
-  vessel_string: nonsterile_bottle
-  volume: 500
-  shake_duration: 120
+step
+  description: "Add deionized water"
+  note: "Fill the bottle to the 500 mL mark with deionized water."
+end
+
+step
+  description: "Cap and mix."
+  note: "Tightly close the caps on the bottle and shake until all contents are dissolved. To check for dissolution, let bottle rest for 10 seconds, and then pick up and look for sediment on the bottom. This should take approximately 20 seconds."
 end
 
 if supplement_name == "Ura"
