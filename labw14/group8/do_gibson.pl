@@ -32,7 +32,7 @@ foreach f in fragments
   take
     x = item f
   end
-  to_release = append (to_release, x)
+  to_release = concat (to_release, x)
 end
 
 fragments = to_release # this is an array of { id: #, name: "sdfsdf", data: {...}}
