@@ -77,9 +77,10 @@ foreach f in fragments
   end
   
   num_samples = length(sample_amount_to_pipette)
+  f_id = f[:id]
   step
     description: "Pipette %{f_name} into %{num_samples} sample(s)"
-    note: "Pipette the following amounts from %{f[:id]} into the following samples:
+    note: "Pipette the following amounts from %{f_id} into the following samples:
            %{sample_amount_to_pipette}"
   end
 end
