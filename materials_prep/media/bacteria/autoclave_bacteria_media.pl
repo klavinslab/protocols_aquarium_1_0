@@ -9,11 +9,11 @@ argument
 end
 
 argument
-  lb_agar_400_n: number, "Enter the number of 800 mL LB agar media bottles to autoclave."
+  lb_agar_400_n: number, "Enter the number of 400 mL LB agar media bottles to autoclave."
 end
 
 argument
-  lb_agar_200_n: number, "Enter the number of 800 mL LB agar media bottles to autoclave."
+  lb_agar_200_n: number, "Enter the number of 200 mL LB agar media bottles to autoclave."
 end
 
 argument
@@ -22,6 +22,11 @@ end
 
 
 # Take media bottles
+lb_liquid = []  # Initialize global parameter
+lb_agar_800 = []  # Initialize global parameter
+lb_agar_400 = []  # Initialize global parameter
+lb_agar_200 = []  # Initialize global parameter
+tb_liquid = []  # Initialize global parameter
 if lb_liquid_n > 0
   take
     lb_liquid = lb_liquid_n "800 mL LB Liquid (unsterile)"
@@ -56,6 +61,7 @@ end
 
 
 # Take solid media bottles
+autoclave = ""  # Initialize global parameter
 if lb_agar_800_n > 0 || lb_agar_400_n > 0 || lb_agar_200_n > 0
   # Autoclave A1 can't handle agar, so don't use it
   autoclave = "A2"
@@ -70,6 +76,10 @@ end
 
 
 # Usage differences between the autoclaves
+check_autoclave = ""  # Initialize global parameter
+open_autoclave = ""  # Initialize global parameter
+set_autoclave = ""  # Initialize global parameter
+finished_indicator = ""  # Initialize global parameter
 if autoclave == "A1"
   check_autoclave = "Check that the low water indicator is not flashing. Refill the reservoir if the water is low."
   open_autoclave = "Close the autoclave door until it latches, pull the screw handle over to the front of the autoclave (unscrew if necessary), and rotate it clockwise until it is tight."
@@ -81,7 +91,6 @@ else
   set_autoclave = "Set the temperature to 121°C and time at pressure to 15 minutes. Then, hit start."
   finished_indicator = "The autoclave will beeps 5 times in a row *just once* when it is done."
 end
-
 
 # Use the autoclave
 step
@@ -126,21 +135,21 @@ if lb_liquid_n > 0
 end
 if lb_agar_800_n > 0
   produce
-    sterile_lb_agar_800 = lb_agar_n "800 mL LB Agar (sterile)"
+    sterile_lb_agar_800 = lb_agar_800_n "800 mL LB Agar (sterile)"
     release lb_agar_800
     location: items_location
   end
 end
 if lb_agar_400_n > 0
   produce
-    sterile_lb_agar_400 = lb_agar_n "400 mL LB Agar (sterile)"
+    sterile_lb_agar_400 = lb_agar_400_n "400 mL LB Agar (sterile)"
     release lb_agar_400
     location: items_location
   end
 end
 if lb_agar_200_n > 0
   produce
-    sterile_lb_agar_200 = lb_agar_n "200 mL LB Agar (sterile)"
+    sterile_lb_agar_200 = lb_agar_200_n "200 mL LB Agar (sterile)"
     release lb_agar_200
     location: items_location
   end
