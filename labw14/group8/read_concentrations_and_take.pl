@@ -109,41 +109,6 @@ end
 # todo a function that makes a pipetting plan 
 # todo sort the fragments in the order of most used
 
-pipetting_plan = [ ]
-# todo extract these into hash and other libraries
-# NOTE this doesn't work like a hash in other languages
-foreach name in fragments_to_take
-  total = 0
-  foreach p in plasmids_to_make
-    foreach f in p[:fragment_amounts_in_ul]
-      if  f[:name] == name
-        total = total + p[:quantity_to_make]*f[:amount]
-      end
-    end
-  end
-  # get ids from the data file for the fragments to use
-  f_ids = [ ]
-  foreach f_to_ids in g[:debug][:fragment_name_to_sample_ids]
-    if f_to_ids[:name] == name
-      f_ids = f_to_ids[:ids]
-    end
-  end
-  
-  sample_amount_to_pipette = [ ]
-  foreach g in samples_to_make
-    #add this frag if has an amount for it
-    foreach a in g[:data][:fragment_amounts]
-      if a[:name] == name
-        sample_amount_to_pipette = append ( sample_amount_to_pipette, {id: g[:id], amount: a[:amount]} )
-      end
-    end
-  end
-  
-  pipetting_plan = append(pipetting_plan, { fragment_name: name, fragment_ids: f_ids,
-                                            sample_amount_to_pipette: sample_amount_to_pipette
-                                            total_amount: total})
-end
-
 
 log
   return: {gibsons: samples_to_make,  pipetting_plan: pipetting_plan}
