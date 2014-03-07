@@ -64,19 +64,21 @@ end
 
 foreach f in fragments
   sample_amount_to_pipette = [ ]
+  f_info = info(f)
+  f_name = f_info[:name]
   foreach g in gibsons
     #add this frag if has an amount for it
     foreach a in g[:data][:fragment_amounts]
-      if a[:name] == f[:name]
+      f_info = info(f)
+      if a[:name] == f_name
         sample_amount_to_pipette = append ( sample_amount_to_pipette, {id: g[:id], amount: a[:amount]} )
       end
     end
   end
   
   num_samples = length(sample_amount_to_pipette)
-  fragment_name = f[:fragment_name]
   step
-    description: "Pipette %{fragment_name} into %{num_samples} sample(s)"
+    description: "Pipette %{f_name} into %{num_samples} sample(s)"
     note: "Pipette the following amounts from %{f[:id]} into the following samples:
            %{sample_amount_to_pipette}"
   end
