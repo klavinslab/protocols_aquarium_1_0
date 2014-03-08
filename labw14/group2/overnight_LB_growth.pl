@@ -5,7 +5,7 @@ end
 step
   description: "Prepare an overnight suspension"
   note: "The purpose of this protocol is to prepare an overnight suspension"
-  note: "Biologoically we are simply taking cells from a glycerol stock and incubating them overnight in LB media."
+  note: "Biologically we are simply taking cells from a glycerol stock and incubating them overnight in LB media."
 end
 
 take
@@ -47,7 +47,7 @@ take
 end
 
 step
-  description: "Pipette antibotics"
+  description: "Pipette antibiotics"
   bullet: "Pipette 20 microL of Ampicillin into the test tube"
   bullet: "Pipette 10 microL of Kanamycin into the test tube"
   note: "Make sure the antibotics are fully thawed before pipetting"
