@@ -18,9 +18,9 @@ step
 end
 
 
-take
-  glasses = 1 "Clear Protective Glasses"
-end
+#take
+#  glasses = 1 "Clear Protective Glasses"
+#end
 
 
 step
