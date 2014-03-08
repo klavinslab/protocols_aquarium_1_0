@@ -1,10 +1,16 @@
-argument
-  template: sample("E coli strain") array, "liquid cultures from colonies"
-  pfwd: sample("Primer") array, "forward primers"
-  prev: sample("Primer") array, "associated reverse primers"
-  enzyme_id: sample("Enzyme"), "The Phsion HF Master Mix stock"
-  ladder: sample("Ladder"), "The ladder for your gel"
-end
+#argument
+  #template: sample("E coli strain") array, "liquid cultures from colonies"
+  #pfwd: sample("Primer") array, "forward primers"
+  #prev: sample("Primer") array, "associated reverse primers"
+  #enzyme_id: sample("Enzyme"), "The Phsion HF Master Mix stock"
+  #ladder: sample("Ladder"), "The ladder for your gel"
+#end
+
+template = [1720,1721,1722]
+pfwd = [1331,1331,1339,1339,1351,1351]
+prev = [1333,1335,1341,1343,1353,1355]
+enzyme_id = 702
+ladder = 1747
 
 place boil_cell
   protocol: "sandbox/chris/boil_cell.pl"
