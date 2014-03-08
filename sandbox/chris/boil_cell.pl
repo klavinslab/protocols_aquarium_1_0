@@ -15,10 +15,13 @@ step
   description: "Add 20 uL molecular grade water to each tube 1-%{n_samp}"
 end
 
+t = 1
 foreach t1 in template
   step
-    description: "Take 1 uL from tube with id %{t1} and transfer it to tube 1"
+    description: "Take 1 uL from tube with id %{t1} and transfer it to tube %{t}"
+    note: "vortex tube with id %{t1} for 5 seconds then transfer 1uL into the tube marked %{t}"
   end
+t = t +1
 end
 
 step
