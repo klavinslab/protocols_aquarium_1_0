@@ -46,11 +46,11 @@ end
  end
  
 
-release primer1_stock
-release primer2_stock
-release masterstock1
+release (primer1_stock, primer2_stock, masterstock1, phusion_stock)
+#release primer2_stock
+#release masterstock1
 #release masterstock2
-release phusion_stock
+#release phusion_stock
 
 produce
     r = 1 "PCR Result" of "fGA"
