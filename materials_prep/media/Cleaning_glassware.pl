@@ -2,7 +2,7 @@ information "Clean general glassware"
 
  step
        description: "How many bottles do you want to clean?"
-        n_bottle: number, "Enter the number of bottles you want to clean.", [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        n_bottle: number, "Enter the number of bottles you want to clean (maximum 9)."
         volume: number, "Enter the media volume (100, 200, 400, or 800 mL)."
     end
     
