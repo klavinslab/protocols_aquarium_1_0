@@ -68,7 +68,7 @@ step
 end
 
 step
-  description: "Pipette 2 µL Plasmid Stock (sample id: %{plasmid}) into the electrocompetent cells tube"
+  description: "Pipette 2 µL Plasmid Stock with sample id %{plasmid} into the electrocompetent cells tube"
   check: "Pieptte into the culture, not on the side of the tube."
   check: "Swirl the tip gently in the culture to mix after pieptting."
   check: "Put back on the aluminum rack after mixing."
