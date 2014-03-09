@@ -65,8 +65,3 @@ end
        note: "Use a small amount of soap, use the same brush as for the glassware, and rinse 2-3 times.
        Place caps upright on drying mesh (located under hooks) to dry after sufficient rinsing."
       end
-      
-  produce
-  produced_bottles = n_bottle bottle_type
-  location: "A8.410"
-end
