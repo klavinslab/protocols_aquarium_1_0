@@ -2,9 +2,19 @@ information "Clean general glassware"
 
  step
        description: "How many bottles do you want to clean?"
-        n_bottles: number, "Enter the number of bottles you want to clean.", [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        n_bottle: number, "Enter the number of bottles you want to clean.", [1, 2, 3, 4, 5, 6, 7, 8, 9]
         volume: number, "Enter the media volume (100, 200, 400, or 800 mL)."
     end
+    
+    if n_bottle < 1 || n_bottle > 9
+  step
+    description: "The number of bottles was incorrectly entered as %{n_bottle}."
+    note: "You can only specify 1-9 bottles!"
+    getdata
+      n_bottle: number, "Enter the number of bottles you want to clean.", [1, 2, 3, 4, 5, 6, 7, 8, 9,]
+    end
+  end
+end
     
     if volume != 100 && != 200 && volume != 400 && volume != 800
   step
@@ -13,6 +23,17 @@ information "Clean general glassware"
       volume: number, "Enter the volume of the bottle to be cleaned.", [100, 200, 400, 800]
     end
   end
+end
+
+bottle_type = "150 mL Bottle"
+if volume == 100
+bottle_type = "250 mL Bottle"
+if volume == 200
+  bottle_type = "250 mL Bottle"
+elsif volume == 400
+  bottle_type = "500 mL Bottle"
+elsif volume == 800
+  bottle_type = "1 L Bottle"
 end
 
     take
