@@ -115,7 +115,7 @@ produce
 end
 
 log
-  return: { 1.5mL_tube_transformations_id: r[:id] }
+  return: { tube_transformations_id: r[:id] }
 end
 
 release [electroporator[0]]
