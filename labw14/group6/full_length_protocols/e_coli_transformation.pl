@@ -35,7 +35,7 @@ step
 end
 
 step
-  description: "Arange Ice Block"
+  description: "Arrange Ice Block"
   note: "You will next retrieve a styrofoam ice block and an aluminum tube rack.\n
          Put the aluminum tube rack on top of the ice block."
   image: "arrange_cold_block"
@@ -68,7 +68,7 @@ step
 end
 
 step
-  description: "Pipette 2 µL Plasmid Stock (sample id: %{plasmid_id}) into the electrocompetent cells tube"
+  description: "Pipette 2 µL Plasmid Stock (sample id: %{plasmid}) into the electrocompetent cells tube"
   check: "Pieptte into the culture, not on the side of the tube."
   check: "Swirl the tip gently in the culture to mix after pieptting."
   check: "Put back on the aluminum rack after mixing."
