@@ -65,3 +65,4 @@ end
        note: "Use a small amount of soap, use the same brush as for the glassware, and rinse 2-3 times.
        Place caps upright on drying mesh (located under hooks) to dry after sufficient rinsing."
       end
+      end
