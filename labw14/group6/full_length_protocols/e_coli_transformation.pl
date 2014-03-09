@@ -109,13 +109,13 @@ step
 end
 
 produce
-  r = 1 "Transformed E coli 1.5 mL tube" of "pGAA"
+  r = 1 "1.5 mL tube transformations" of "pGAA"
   note: "Keep the tube on the bench to use in the next protocol. (no need to edit the location below)"
   location: "Bench"
 end
 
 log
-  return: { transformed_cells_id: r[:id], tube_incubation_choice : tube_incubation_choice }
+  return: { 1.5_mL_tube_transformations_id: r[:id] }
 end
 
 release [electroporator[0]]
