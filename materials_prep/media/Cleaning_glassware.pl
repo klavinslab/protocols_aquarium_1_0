@@ -47,7 +47,6 @@ end
   take
     bottles = n_bottle bottle_type
   end
-end
 
  step
       description: "Remove Caps, lids, any autoclave tape, and any labelling tape."
