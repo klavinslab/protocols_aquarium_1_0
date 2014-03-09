@@ -1,5 +1,5 @@
-e_coli_strain_type = DH5alpha Electrocompetent Aliquot
-plate_type = LB Amp Plate (sterile)
+e_coli_strain_type = "DH5alpha Electrocompetent Aliquot"
+plate_type = "LB Amp Plate (sterile)"
 volume = 20
 
 
