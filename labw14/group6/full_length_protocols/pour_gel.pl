@@ -15,6 +15,7 @@ end
 step
   description: "Work in the gel weigh area"
   note: "Work in the gel weigh area (A5.300-A5.305) until otherwise indicated."
+  image: "Gelroom1"
 end
 
 
@@ -72,6 +73,7 @@ end
 step
   description: "Work in the gel pouring area"
   note: "For the remainder of this protocol, work in the gel pouring area (A7.320-A7.325). Carefully transfer the flask containing molten agar to A7.320 using a paper towel."
+  image: "Gelroom2"
 end
 
 
