@@ -86,11 +86,11 @@ step
   description: "The next step is taking image from the gel and cutting it after electrophoresis is done in about 40 minutes."
 end
 
-release ladder
+release [ladder[0],fragment1[0],fragment2[0]]
 
-release fragment1  # Throw away the tube / save extra
-release fragment2
-release glasses
+#release fragment1  # Throw away the tube / save extra
+#release fragment2
+#release glasses
 
 
 produce
