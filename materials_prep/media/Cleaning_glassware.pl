@@ -34,9 +34,21 @@ elsif volume == 400
 elsif volume == 800
   bottle_type = "1 L Bottle"
 end
-
-    take
+    if volume == 100
+    product_name == "100 mL Bottle (unsterile)"
+  elsif volume == 200
+    product_name = "200 mL Bottle (unsterile)"
+  elsif volume == 400
+    product_name = "400 mL Bottle (unsterile)"
+  else
+    product_name = "800 mL Bottle (unsterile)"
+  end
+ 
+  take
     bottles = n_bottle bottle_type
+  end
+end
+
  step
       description: "Remove Caps, lids, any autoclave tape, and any labelling tape."
     end
