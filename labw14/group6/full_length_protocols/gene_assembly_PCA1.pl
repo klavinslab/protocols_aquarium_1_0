@@ -46,7 +46,7 @@ end
  end
  
 
-release [primer1_stock[0],primer2_stock[0],phusion_stock[0],masterstock1[0]]
+release [primer1_stock[0],primer2_stock[0],masterstock1[0],phusion_stock[0]]
 #release primer2_stock
 #release masterstock1
 #release masterstock2
