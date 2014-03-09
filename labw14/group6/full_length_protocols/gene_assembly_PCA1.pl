@@ -46,7 +46,7 @@ end
  end
  
 
-release [primer1_stock, primer2_stock, masterstock1, phusion_stock]
+release concat (primer1_stock, primer2_stock, masterstock1, phusion_stock)
 #release primer2_stock
 #release masterstock1
 #release masterstock2
