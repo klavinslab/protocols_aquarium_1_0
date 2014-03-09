@@ -49,11 +49,11 @@ produce
   r = 1 "PCR Result" of "fGA"
 end
 
-release primer1_stock
-release primer2_stock
+release [primer1_stock[0],primer2_stock[0],masterstock2[0],phusion_stock[0]] 
+#release primer2_stock
 #release masterstock1
-release masterstock2
-release phusion_stock
+#release masterstock2
+#release phusion_stock
 
 step
   description: "You will now be asked to use the lab thermal cycler."
