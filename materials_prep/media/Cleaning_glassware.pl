@@ -36,7 +36,7 @@ elsif volume == 800
 end
 
     take
-    n_bottles
+    bottles = n_bottle bottle_type
  step
       description: "Remove Caps, lids, any autoclave tape, and any labelling tape."
     end
@@ -67,6 +67,5 @@ end
       end
   produce
   produced_bottles = n_bottle
-  release bottle
   location: "A8.410"
 end
