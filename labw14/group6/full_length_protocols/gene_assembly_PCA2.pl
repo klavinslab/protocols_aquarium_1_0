@@ -89,7 +89,7 @@ end
 step
   description: "Go to the thermal cycler and pick up the products of the PCA."
   note: "And place the tubes at your bench"
-  note: "The nex step is running gel to verify the band length of assembled fragment."
+  note: "The next step is running gel to verify the band length of assembled fragment."
   warning: "You can keep them in -4C deli fridge in the case you are not using them right away."
 end
 
