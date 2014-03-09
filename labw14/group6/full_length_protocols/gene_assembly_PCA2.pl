@@ -22,6 +22,7 @@ end
 
 step
   description: "Label another 0.2 mL PCR tube. Write your initials on it."
+  mage: "Group6_pcr_label"
 end
 
 #o1 = oligo_pools1
@@ -36,10 +37,12 @@ step
   check: "Pipette 25 µL of Phusion Master Mix with id %{enzyme_id} into the tube."
   check: "Use the tip to gently mix."
   warning: "Be careful to pipette into the liquid, not the side of the tube."
+  image: "Group6_pcr_reaction"
 end
 
 step
   description: "Put the prepared PCR tube on the bench."
+  image: "Group6_pcr_bench"
 end
 
 produce
@@ -61,6 +64,7 @@ end
 
 step
   description: "Place both tubes (one from this protocol and onother from the previous assembly protocol) into the thermal cycler T2 at B3.335."
+  image: "Group6_TC_pcr"
 end
 
 step
@@ -86,7 +90,7 @@ step
   description: "Go to the thermal cycler and pick up the products of the PCA."
   note: "And place the tubes at your bench"
   note: "The nex step is running gel to verify the band length of assembled fragment."
-  warning: "You can keep them in -4C fridge (SF) in case you are not using them right away."
+  warning: "You can keep them in -4C deli fridge in the case you are not using them right away."
 end
 
 
