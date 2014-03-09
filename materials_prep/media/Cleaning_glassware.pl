@@ -67,6 +67,6 @@ end
       end
   produce
   produced_bottles = n_bottle
-  release bottles
+  release bottle
   location: "A8.410"
 end
