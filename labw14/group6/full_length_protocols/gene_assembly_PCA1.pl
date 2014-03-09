@@ -22,6 +22,7 @@ end
 
 step
   description: "Label a 0.2 mL PCR tube. Write your initials on it."
+  image: "Group6_pcr_label"
 end
 
 o1 = oligo_pools1
@@ -36,10 +37,12 @@ step
   check: "Pipette 25 µL of Phusion Master Mix with id %{enzyme_id} into the tube."
   check: "Use the tip to gently mix."
   warning: "Be careful to pipette into the liquid, not the side of the tube."
+  image: "Group6_pcr_reaction"
 end
 
  step
     description: "Keep the prepared PCR tube on the bench while proceeding to the second assembly protocol."
+    image: "Group6_pcr_bench"
  end
  
 
