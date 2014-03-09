@@ -22,7 +22,7 @@ end
 
 step
   description: "Label another 0.2 mL PCR tube. Write your initials on it."
-  mage: "Group6_pcr_label"
+  image: "Group6_pcr_label"
 end
 
 #o1 = oligo_pools1
