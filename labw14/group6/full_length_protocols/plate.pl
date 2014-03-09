@@ -52,7 +52,7 @@ step
 end
 
 produce
-  r1 = 1 "Agar plate" from strain[0]
+  r1 = 1 "Transformed E coli plate" of "pGA2"
   note: "Plate upside down in 30 C incubator at A1.110."
   location: "A1.110"
   release plate
