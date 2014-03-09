@@ -15,7 +15,7 @@ information "Clean general glassware"
   end
 end
     
-    if volume != 100 && != 200 && volume != 400 && volume != 800
+    if volume != 100 && volume != 200 && volume != 400 && volume != 800
   step
     description: "The bottle volume was incorrectly entered as %{volume}."
     getdata
