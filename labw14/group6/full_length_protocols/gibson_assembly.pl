@@ -11,14 +11,14 @@ end
 information "Scarlessly assemble DNA using fragments with terminal homologies."
 
 step
-  description: "Label the Gibson aliquot tube with id {%x}, write you initials and date on it."
+  description: "Label the Gibson aliquot tube with id %{x}, write you initials and date on it."
 end
 
 y1 = fragments[0]
 y2 = fragments[1]
 step
   description: "Prepare the Gibson reaction"
-  check: "Add 2 µL of molecular grade water to the labeled tube (id {%x})."
+  check: "Add 2 µL of molecular grade water to the labeled tube (id %{x})."
   check: "Add 1.5 µL of fragment stock 1 with id %{y1} to the tube."
   check: "Add 1.5 µL of fragment stock 2 with id %{y2} to the tube."
   note: "Gently mix with pipette tip."
