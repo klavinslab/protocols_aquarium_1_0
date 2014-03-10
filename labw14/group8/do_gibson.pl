@@ -57,39 +57,62 @@ foreach g in gibsons
   ids = append (ids, g[:id])
 end
 
+sum = 0
+foreach p in plasmids_to_make
+  sum = sum + p[:quantity]
+end
+
 #probably do this in groups instead
 step
-  description: "Label PCR tubes to hold the gibsons"
-  note: "Take enough PCR tubes and label tubes %{ids}.
+  description: "Take %{sum} PCR tubes"
+  note: "Take enough PCR tubes for the next labeling steps.
          Keep them separate by letter since you will
          pipette by letter groups."
 end
 
-foreach p in pipetting_plan
-
+foreach p in plasmids_to_make
+  num = p[:quantity]
+  l = p[:letter]
+  step
+    description: "Label %{num} PCR tubes, %{letter}1 to %{letter}%{num}"
+    note: "Label %{num} PCR tubes, %{letter}1 to %{letter}%{num}
+           by writing on the sides of the tubes near the top
+           (otherwise they will be smudged off, see second picture)."
+  end
 end
 
-foreach f in fragments
-  sample_amount_to_pipette = [ ]
-  f_info = info(f)
-  f_name = f_info[:name]
-  foreach g in gibsons
-    #add this frag if has an amount for it
-    foreach a in g[:data][:fragment_amounts]
-      f_info = info(f)
-      if a[:name] == f_name
-        sample_amount_to_pipette = append ( sample_amount_to_pipette, {id: g[:id], amount: a[:amount]} )
-      end
-    end
-  end
-  
-  num_samples = length(sample_amount_to_pipette)
-  f_id = f[:id]
+#   pipetting_plan = [
+#         [{ fragment_name: name, 
+#           fragment_ids: [ ], # fragments to take from
+#           total_amount: total,
+#           plasmid_letter_start_end_amounts: [ 
+#            { plasmid_name: p_name,
+#              letter: A, # pipette into tubes A1 through A3 inclusive
+#              start: 1, 
+#              end: 3,
+#              amount: f[:amount]}, ... ]
+#                     , ... ]
+foreach p in pipetting_plan
+  f_name = p[:fragment_name]
+  f_ids = p[:fragment_ids]
+  targets = p[:plasmid_letter_start_end_amounts]
   step
-    description: "Pipette %{f_name} into %{num_samples} sample(s)"
-    note: "Pipette the following amounts from %{f_id} into the following samples:
-           %{sample_amount_to_pipette}"
+      description: "Pipette %{f_name}"
+      note: "Pipette the following amounts from %{f_ids} into the following tubes,
+             putting the amount into each tube from letter start to end.
+             There will be a separate screen for each, and they are summarized
+             below:
+             %{targets}"
   end
+    
+  foreach plsea in p[:plasmid_letter_start_end_amounts]
+    amt = plsea[:amount]
+    step
+      description: "Pipette %{f_name} into sample(s)"
+      note: "Pipette a total of %{amt} microliters from %{f_ids} into each of tube(s)
+             %{letter}{%start} to %{letter}%{end}, inclusive."
+    end
+  end # todo put all on one screen nicely once can concat strings
 end
 
 step
