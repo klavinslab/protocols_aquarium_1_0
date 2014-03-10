@@ -28,7 +28,7 @@ function ask_filename_then_get_gibsons()
   return p
 end
 
-function short_labels(ids, change_letter_id)
+function add_short_labels_to_samples(samples, change_letter_ids)
   local test_ids = [1,2,3,4,5]
   local test_change_letter_id = [3,5]
   
