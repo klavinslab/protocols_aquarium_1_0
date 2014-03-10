@@ -65,7 +65,8 @@ foreach name in fragments_to_take
         { plasmid_name: p_name,
           letter: letters[j],
           start: 1,
-          end: quantity})
+          end: quantity,
+          quantity: quantity})
     
     foreach f in p[:fragment_amounts_in_ul]
       if  f[:name] == name
