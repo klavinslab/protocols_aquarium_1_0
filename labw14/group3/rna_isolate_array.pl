@@ -12,14 +12,14 @@ take
 end
 
 step
-  description: "Label two 1.5mL Tubes"
+  description: "Label %{n} 1.5mL Tubes"
   note: "Write your initials and date on them."
 end
 
 i = 0
 while i<n
   step
-    description: "Transfer 100µL of the Yeast Sample %{i} to one 1.5mL Tube"
+    description: "Transfer 100µL of the Yeast Sample %{yeast_susp[i]} to one 1.5mL Tube"
     bullet: "Yeast cell concentration should be approximately 10^6 cells/µL"
     note: "Tube content volume is 100 µL."
   end
@@ -65,13 +65,17 @@ step
 end
 
 return_array = []
-produce
-    s = 1 "Isolated RNA" from yeast_susp[i]]
-    note: "Place in Aluminum Tube Rack on Ice Block"
-    note: "You may wish to keep this at your bench."
-    location: "B13.425"
+
+i = 0
+while i<n
+  produce
+      s = 1 "Isolated RNA" from yeast_susp[i]]
+      note: "Place in Aluminum Tube Rack on Ice Block"
+      note: "You may wish to keep this at your bench."
+      location: "B13.425"
+      return_array = append(return_array,s[:id])
   end
-  return_array = append(return_array,s[:id])
+  i = i+1
 end
 
 step
@@ -79,9 +83,9 @@ step
   bullet: "These tubes can go in the tip waste collector."
 end
 
-release [y[0], x[0], z[0]]
-release [iceblock[0], alrack[0]]
+release concat(yeast_susp, x, iceblock, alrack)
+#release concat(iceblock, alrack)
 
 log
-  return: {rna_suspension1: rna_sus1, rna_suspension2: rna_sus2}
+  return: {rna_suspension_array: return_array}
 end
