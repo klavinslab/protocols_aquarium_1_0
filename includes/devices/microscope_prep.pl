@@ -17,4 +17,10 @@ step
   bullet: "Recap the oil bottle and put it back inside the incubation chamber"
   image: "oil"
 end
+
+step
+  description: "Lower the objective lens"
+  bullet: "Use the coarse focus knob to lower down the objective lens to the bottom"
+end
+
 end
