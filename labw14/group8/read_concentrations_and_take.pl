@@ -99,14 +99,14 @@ foreach p in plasmids_to_make
   while i <= quantity
     temp_id = to_string(i)
     letter = letters[j]
-    temp_id = to_string("%{letter}%{temp_id}")
+    b = to_string("%{letter}%{temp_id}")
     produce silently
        r = 1 "Gibson Reaction Result" of name
        location: "Bench"
        data
            fragment_amounts: p[:fragment_amounts_in_ul]
            location: "Bench"
-           temp_label: "%{temp_id}"
+           temp_label: b
        end
     end
     i = i + 1
