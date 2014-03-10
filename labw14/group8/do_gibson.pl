@@ -4,14 +4,18 @@
 #   pipetting_plan = [
 #         { fragment_name: name, 
 #           fragment_ids: [ ], # fragments to take from
-#           total_amount: total, 
-#           add_to_sample_ids: [ {id: x, amount: in_ul}, ...]
-#         }, ... ] 
+#           total_amount: total,
+#           plasmid_letter_start_end_amounts: [ 
+#            { plasmid_name: p_name,
+#              letter: A, # pipette into tubes A1 through A3 inclusive
+#              start: 1, 
+#              end: 3,
+#              amount: f[:amount]}, ... ] 
                                             
 argument
   pipetting_plan: sample, "a hash with fragment names and amounts"
-  fragments: sample array, "the fragments for the gibsons (added to cart in last step)"
-  gibsons: sample array, "the gibsons to do"
+  fragments: sample array, "the fragments for the gibsons"
+  gibsons: sample array, "the gibsons to do (deprecated)"
 end
 
 to_release = [ ]
