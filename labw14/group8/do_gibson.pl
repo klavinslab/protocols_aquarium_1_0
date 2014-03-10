@@ -86,14 +86,20 @@ foreach f in fragments
 end
 
 step
-  description: "print out the input gibson array"
+  description: "In the next steps you will put the gibsons into the thermocycler."
+  note: "Take the tubes to the thermocycler and log into the station there,
+         or, if you have done this before, you can click through the steps here."
   note: "%{gibsons}"
 end
 
-aborted_samples = [ ]
+# call step from a library here
+
+# nice to have enter the gibsons that you put in the thermocycler, ids of ones that you didn't
+# plus time to check back, since if making many, may not have enough thermocycler space
+aborted_samples = [ ] # route these to another protocol to just put them in the thermocycler
 
 log
   return: {completed_samples: gibsons, aborted_samples: aborted_samples} # put resulting samples from produce here
 end
 
-# release fragments
+release fragments

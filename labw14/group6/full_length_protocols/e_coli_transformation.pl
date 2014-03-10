@@ -35,7 +35,7 @@ step
 end
 
 step
-  description: "Arange Ice Block"
+  description: "Arrange Ice Block"
   note: "You will next retrieve a styrofoam ice block and an aluminum tube rack.\n
          Put the aluminum tube rack on top of the ice block."
   image: "arrange_cold_block"
@@ -67,8 +67,9 @@ step
   image: "thawed_electrocompotent_cells"
 end
 
+x = plasmid
 step
-  description: "Pipette 2 µL Plasmid Stock (sample id: %{plasmid_id}) into the electrocompetent cells tube"
+  description: "Pipette 2 µL Plasmid Stock with sample id %{x} into the electrocompetent cells tube"
   check: "Pieptte into the culture, not on the side of the tube."
   check: "Swirl the tip gently in the culture to mix after pieptting."
   check: "Put back on the aluminum rack after mixing."
@@ -108,13 +109,13 @@ step
 end
 
 produce
-  r = 1 "Transformed E coli 1.5 mL tube" of "pGAA"
+  r = 1 "Transformed E coli 1.5 mL tube" of "pGA2"
   note: "Keep the tube on the bench to use in the next protocol. (no need to edit the location below)"
   location: "Bench"
 end
 
 log
-  return: { transformed_cells_id: r[:id], tube_incubation_choice : tube_incubation_choice }
+  return: { transformed_cells_id: r[:id] }
 end
 
 release [electroporator[0]]

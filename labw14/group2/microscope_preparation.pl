@@ -1,6 +1,6 @@
 step
   description: "Prepare the microscope for use"
-  note: "This protocol outlines the procedures for safe setup of the microscope. Adhereing to this protocol may save you thousands in damage costs."
+  note: "This protocol outlines the procedures for safe setup of the microscope. Adhering to this protocol may save you thousands in damage costs!"
   note: "Click next to begin this protocol."
 end
 
@@ -18,59 +18,58 @@ end
 step  
   description: "Setting up the microscope for use"
   note: "In the next few steps we will set up the microscope to track cells for our timelapse microscopy."
-  warning: "THIS EQUIPMENT IS EXTREMELY EXPENSIVE! THE UTMOST CARE MUST BE USED WHEN HANDING THE MICROSCOPE"
+  warning: "THIS EQUIPMENT IS EXTREMELY EXPENSIVE! UTMOST CARE MUST BE USED WHEN HANDING THE MICROSCOPE"
   warning: "THE STEPS SHOULD BE FOLLOWED TO THE LETTER, ELSE YOU MAY BE FINED WITH HEAVY REPLACEMENT COSTS"
   image: "microscope"
 end
 
 step
   description: "Turn on the fluorescent light bulb"
-  note: "This is labeled with a 1 on it must be turned on first for it draws an extremely high current."
+  note: "Labeled "1" and must be turned on first because it draws an extremely high current."
   warning: "FAILURE TO DO THIS FIRST MAY RESULT IN A BROKEN SYSTEM."
   image: "fluorescent lamp label 1"
 end
 
 step
   description: "Turn on the shutter controller"
-  note: "This is labeled with a 2 must be turned on second"
-  note: "The switch is in the back"
+  note: "Labeled 2, must be turned on second. The switch is in the back"
   image: "shutter controller label 2"
 end
 
 step
   description: "Center the shutter controller"
-  bullet: "Flip the tuner switch up and down twice, and end it aligned in the center to reset the controller fully"
+  bullet: "Flip the tuner switch up and down TWICE, and end it aligned in the center to reset the controller fully"
   bullet: "The switch should be aligned to the 'Auto' position"
 end
 
 step
   description: "Turn on the microscope bright-light controller"
-  note: "This is labeled 3 and turned on third"
+  note: "Labeled 3 and must be turned on third"
   image: "lamp controller label 3"
 end
 
 step
   description: "Turn on the microscope"
-  note: "This is labeled number 4. The switch is a little difficult to find so you may need to feel around for it."
+  note: "Labeled number 4. The switch is a little difficult to find so you may need to feel around for it."
   image: "micrscope label 4"
 end
 
 step
   description: "Turn on the microscope light" 
-  note: "This is labeled 5 and produces the light from the mechanism above the incubator"
+  note: "Labeled 5 and produces the light from the mechanism above the incubator"
   note: "The button is on the left side"
   image: "microscope light label 5"
 end
 
 step
   description: "Turn on the X-Y controller"
-  note: "This is labeled 6 and helps us pan through the surface to find cells at a fixed focal point z"
+  note: "Labeled 6 and helps us pan through the surface to find cells at a fixed focal point z"
   image: "xy_controller_label 6"
 end
 
 step
   description: "Turn on the fine Z tunning controller"
-  note: "This is labeled 7 and adjusts our focal points when searching for cells"
+  note: "Labeled 7 and adjusts our focal points when searching for cells"
   note: "The switch is on the left side of the controller"
   image: "z_focus_label 7"
 end

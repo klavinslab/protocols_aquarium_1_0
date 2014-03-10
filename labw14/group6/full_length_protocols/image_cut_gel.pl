@@ -11,8 +11,8 @@ step
 end
 
 step
-  description: "Take the gel lane you got after running electropheresis and place it at the transilluminator bench"
-  note: "Take care not to damage the gel such that it cannot be imaged"
+  description: "Wipe down transilluminator."
+  note: "Spray with ethanol and wipe down with a kimwipe"
 end
 
 #argument
@@ -23,15 +23,16 @@ end
   #y = item gel
 #end
 
-step
-  description: "Wipe down transilluminator"
-  note: "Spray with ethanol and wipe down with a kimwipe"
-end
+#step
+  #note: "Wipe down transilluminator"
+  #note: "Spray with ethanol and wipe down with a kimwipe"
+#end
 
 step
   description: "Take the gel out of gel box and put it on transilluminator"
   note: "Carefully remove the holder from the gel box. The gel is slippery and may fall out unexpectedly.
   Slide the gel off of the holder and onto the surface of the transilluminator"
+  warning: "Take care not to damage the gel such that it cannot be imaged"
   image: "slide_gel"
 end
 

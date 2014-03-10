@@ -26,7 +26,7 @@ step
 end
 step
   description: "Save File"
-  bullet: "Make sure save to file is checked under the ND Acquisition tab"
+  bullet: "Make sure 'save to file' is checked under the ND Acquisition tab"
   bullet: "Click on browse and save the file in D:/LABW14/date(YMD),initials"
 end
 

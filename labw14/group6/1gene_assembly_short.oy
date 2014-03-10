@@ -5,7 +5,7 @@ primer12 = [1627]
 primer21 = [1629]
 primer22 = [2028]
 phusionHF = 704
-ladder = 1357
+ladder = 822
 
 place introduction
   protocol: "labw14/group6/full_length_protocols/introduction.pl"

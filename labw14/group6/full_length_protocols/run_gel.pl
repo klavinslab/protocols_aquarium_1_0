@@ -9,9 +9,9 @@ argument
 end
 
 
-take
-  glasses = 1 "Clear Protective Glasses"
-end
+#take
+#  glasses = 1 "Clear Protective Glasses"
+#end
 
 step
   description: "This protocol describes how ro run gel electrophoresis for PCR assembly results."
@@ -45,7 +45,7 @@ step
   check: "Using the graduated cylinder, add 50 mL of 1X TAE from J2 at A5.500 so that the surface of the gel is covered."
   check: "Carefully remove the comb(s) and place them in the appropriate box in A7.325."
   check: "Put the graduated cylinder back at A5.305."
-  image: "gel_fill_TAE_to_line"
+  image: "Group6_Run_Gel"
 end
 
 
@@ -63,15 +63,15 @@ release loading_dye
 
 step
   description: "Load the ladder"
-  note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into the first (top-left) well of the gel."
-  image: "gel_begin_loading"
+  note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into the first and the closest well to you (top-left) of the gel."
+  image: "Group6_ladder_loading"
 end
 
 
 step
   description: "Load the PCR"
-  note: "Using a 100 µL pipetter, pipet %{fragment_volume} µL of PCR results (containing loading dye) with id %{assemblies1} into the second and with id %{assemblies2} into the third well of the gel."
-  image: "gel_begin_loading"
+  note: "Using a 100 µL pipetter, pipet %{fragment_volume} µL of PCR results (containing loading dye) with id %{assemblies1} into the second and with id %{assemblies2} into the third well of the gel from left."
+  image: "Group6_pcr_loading"
 end
 
 
@@ -86,11 +86,11 @@ step
   description: "The next step is taking image from the gel and cutting it after electrophoresis is done in about 40 minutes."
 end
 
-release ladder
+release [ladder[0],fragment1[0],fragment2[0]]
 
-release fragment1  # Throw away the tube / save extra
-release fragment2
-release glasses
+#release fragment1  # Throw away the tube / save extra
+#release fragment2
+#release glasses
 
 
 produce

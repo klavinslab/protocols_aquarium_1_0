@@ -18,7 +18,7 @@ y1 = fragments[0]
 y2 = fragments[1]
 step
   description: "Prepare the Gibson reaction"
-  check: "Add 2 µL of molecular grade water to the labeled tube."
+  check: "Add 2 µL of molecular grade water to the labeled Gibson aliquot tube."
   check: "Add 1.5 µL of fragment stock 1 with id %{y1} to the tube."
   check: "Add 1.5 µL of fragment stock 2 with id %{y2} to the tube."
   note: "Gently mix with pipette tip."

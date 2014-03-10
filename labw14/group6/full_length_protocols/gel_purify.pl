@@ -172,6 +172,6 @@ log
   return: {Fragment_Stock_id: r}
 end
     
-release gel_slices1
-release gel_slices2
+release [gel_slices1[0],gel_slices2[0]]
+#release gel_slices2
 

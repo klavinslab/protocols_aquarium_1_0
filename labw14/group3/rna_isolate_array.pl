@@ -12,14 +12,16 @@ take
 end
 
 step
-  description: "Label two 1.5mL Tubes"
-  note: "Write your initials and date on them."
+  description: "Label %{n}, 1.5mL Tubes"
+  note: "Write your initials and date on them as well as numbering them 1 - %{n}."
 end
 
 i = 0
 while i<n
+  thisSusp = yeast_susp[i]
+  susp_id = thisSusp[:id]
   step
-    description: "Transfer 100µL of the Yeast Sample %{i} to one 1.5mL Tube"
+    description: "Transfer 100µL of the Yeast Sample %{susp_id} to tube %{i+1} 1.5mL Tube"
     bullet: "Yeast cell concentration should be approximately 10^6 cells/µL"
     note: "Tube content volume is 100 µL."
   end
@@ -28,14 +30,14 @@ end
 
 step
   description: "Centrifuge at 2,000 rcf (Make sure to balance the centrifuge!)"
-  bullet: "Place the tube sinto centrifuge at B14.320, balance with blanks if needed."
+  bullet: "Place the tubes into centrifuge at B14.320, balance with blanks if needed."
   bullet: "Select 4,600 rpm and 4°C for 1 minute, press start."
   note: "Centrifuge is in x1000 rpm. Set to 4.6"
 end
 
 step
-  description: "Take the tubes out of the centrifuge and remove supernatant"
-  note: "Remove/aspirate the supernatant, not leaving more than 5µL of PBS" 
+  description: "Take the tubes out of the centrifuge and remove supernatant in each tube"
+  note: "Remove/aspirate the supernatant, not leaving more than 5µL of PBS in any tube" 
   warning: "Do NOT disturb the cell pellet"
 end
 
@@ -65,13 +67,17 @@ step
 end
 
 return_array = []
-produce
-    s = 1 "Isolated RNA" from yeast_susp[i]]
-    note: "Place in Aluminum Tube Rack on Ice Block"
-    note: "You may wish to keep this at your bench."
-    location: "B13.425"
+
+i = 0
+while i<n
+  produce
+      s = 1 "Isolated RNA" from yeast_susp[i]
+      note: "Place in Aluminum Tube Rack on Ice Block"
+      note: "You may wish to keep this at your bench."
+      location: "B13.425"
   end
   return_array = append(return_array,s[:id])
+  i = i+1
 end
 
 step
@@ -79,9 +85,9 @@ step
   bullet: "These tubes can go in the tip waste collector."
 end
 
-release [y[0], x[0], z[0]]
-release [iceblock[0], alrack[0]]
+release concat(yeast_susp, z)
+release concat(iceblock, alrack)
 
 log
-  return: {rna_suspension1: rna_sus1, rna_suspension2: rna_sus2}
+  return: {rna_suspension_array: return_array}
 end

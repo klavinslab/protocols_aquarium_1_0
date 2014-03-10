@@ -1,7 +1,8 @@
 step
   description: "Track cells using the NIS-Elements software"
-  note: "In this protocol we will track and store cells to run the timelapse microscopy. This is a very long a frustrating process which has much room for error. Follow the directions carefully to minimize such error and successfully complete the protocol"
+  note: "In this protocol we will track and store cells to run the timelapse microscopy. This is a long process and has much room for error. Follow the directions carefully to minimize such error and successfully complete the protocol"
   note: "The tools we setup will be used to track cells across a 3D axis."
+  note: "The images on each page will guide you through the process, so follow them carefully"
   note: "Click next to begin this protocol"
 end
 
@@ -9,7 +10,7 @@ step
   description: "Setup your work station"
   bullet: "Turn on the computer (if not already on)"
   bullet: "Move the X-Y stage controller to the computer station"
-  bullet: "Press the black button on the remote focus controller to zero your position"
+  bullet: "Press the black button on the z - controller to zero your position"
   image: "computer_station"
 end
 
@@ -162,7 +163,7 @@ end
 step
   description: "Continue selecting cells"
   bullet: "Select 9 to 11 more ideal cells"
-  bullet: "Do not offset the z-position anymore it is already done"
+  bullet: "Do not offset the z-position anymore. It is already done"
   note: "Cells in vertically aligned pairs are freshly divided and are great to select"
   note: "The best cells will have plenty of space around them; too many cells will make the timelapse moot."
   image: "NIS_single_cell"
