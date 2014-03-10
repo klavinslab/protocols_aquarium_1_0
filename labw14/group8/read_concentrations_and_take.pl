@@ -8,7 +8,7 @@ complex_datastructure = g
 # build up a data structure using loops etc that define experiment
 # then iterate through that data structure, showing it
 step
-  description: "print out the gibson array"
+  description: "debug: print out the input json"
   note: "%{g}"
 end
 
@@ -21,7 +21,9 @@ foreach p in plasmids_to_make
  step
    description: "Check plasmid exists"
    note: "Go into the Inventory and check that a plasmid named '%{name}'
-          exists and the name matches the name in your specification file."
+          exists and the name matches the name in your specification file.
+          You will be creating this plasmid so it must exist as a type
+          in the database already."
  end
  foreach f in p[:fragment_amounts_in_ul]
    fragments_to_take = append(fragments_to_take, f[:name])
@@ -105,13 +107,14 @@ letters = [["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", 
 
 
 samples_to_make = [ ]
+planned_gibsons = [ ]
 j = 0
 foreach p in plasmids_to_make
   name = p[:plasmid_name_to_make]
   quantity = p[:quantity_to_make]
   i = 0
   while i < quantity
-    #b = letters[j][i]
+    
     produce silently
        r = 1 "Gibson Reaction Result" of name
        location: "Bench"
@@ -123,7 +126,10 @@ foreach p in plasmids_to_make
     end
     i = i + 1
     samples_to_make = append (samples_to_make, r)
-    sample_id = r[:id]
+    
+    # todo refactor to not produce silently here
+    planned_gibsons = append(planned_gibsons, 
+                      {temp_label: letters[j][i], fragment_amounts:  p[:fragment_amounts_in_ul]})
   end
   j = j + 1
 end
@@ -135,5 +141,5 @@ end
 
 
 log
-  return: {gibsons: samples_to_make,  pipetting_plan: pipetting_plan}
+  return: {gibsons: samples_to_make,  pipetting_plan: pipetting_plan, planned_gibsons: planned_gibsons}
 end
