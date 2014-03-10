@@ -83,8 +83,8 @@ step
   bullet: "These tubes can go in the tip waste collector."
 end
 
-release concat(yeast_susp, z, iceblock, alrack)
-#release concat(iceblock, alrack)
+release concat(yeast_susp, z)
+release concat(iceblock, alrack)
 
 log
   return: {rna_suspension_array: return_array}
