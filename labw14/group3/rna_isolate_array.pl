@@ -69,7 +69,7 @@ return_array = []
 i = 0
 while i<n
   produce
-      s = 1 "Isolated RNA" from yeast_susp[i]]
+      s = 1 "Isolated RNA" from yeast_susp[i]
       note: "Place in Aluminum Tube Rack on Ice Block"
       note: "You may wish to keep this at your bench."
       location: "B13.425"
