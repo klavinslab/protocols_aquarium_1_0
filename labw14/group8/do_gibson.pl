@@ -1,5 +1,4 @@
-#  last step
-# return: {gibsons: g, hash: {egkey: "egvalue"}}
+
 
 #   plasmids_to_make: [
 #        { plasmid_name: p_name,
@@ -22,7 +21,6 @@ argument
   plasmids_to_make: sample, "a hash with plasmids"
   pipetting_plan: sample, "a hash with fragment names and amounts"
   fragments: sample array, "the fragments for the gibsons"
-  gibsons: sample array, "the gibsons to do (deprecated)"
 end
 
 to_release = [ ]
@@ -49,12 +47,6 @@ fragments = to_release # this is an array of { id: #, name: "sdfsdf", data: {...
 step
   description: "What are taken fragments?"
   note: "%{fragments}"
-end
-
-
-ids = [ ]
-foreach g in gibsons
-  ids = append (ids, g[:id])
 end
 
 sum = 0
@@ -115,12 +107,15 @@ foreach p in pipetting_plan
   end # todo put all on one screen nicely once can concat strings
 end
 
+#silently produce gibsons
+gibsons = [ ]
 step
   description: "In the next steps you will put the gibsons into the thermocycler."
   note: "Take the tubes to the thermocycler and log into the station there,
          or, if you have done this before, you can click through the steps here."
-  note: "%{gibsons}"
 end
+
+
 
 # call step from a library here
 
