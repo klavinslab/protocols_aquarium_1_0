@@ -19,8 +19,9 @@ end
 i = 0
 while i<n
   thisSusp = yeast_susp[i]
+  susp_id = thisSusp[:id]
   step
-    description: "Transfer 100µL of the Yeast Sample %{thisSusp} to one 1.5mL Tube"
+    description: "Transfer 100µL of the Yeast Sample %{susp_id} to one 1.5mL Tube"
     bullet: "Yeast cell concentration should be approximately 10^6 cells/µL"
     note: "Tube content volume is 100 µL."
   end
@@ -29,14 +30,14 @@ end
 
 step
   description: "Centrifuge at 2,000 rcf (Make sure to balance the centrifuge!)"
-  bullet: "Place the tube sinto centrifuge at B14.320, balance with blanks if needed."
+  bullet: "Place the tubes into centrifuge at B14.320, balance with blanks if needed."
   bullet: "Select 4,600 rpm and 4°C for 1 minute, press start."
   note: "Centrifuge is in x1000 rpm. Set to 4.6"
 end
 
 step
-  description: "Take the tubes out of the centrifuge and remove supernatant"
-  note: "Remove/aspirate the supernatant, not leaving more than 5µL of PBS" 
+  description: "Take the tubes out of the centrifuge and remove supernatant in each tube"
+  note: "Remove/aspirate the supernatant, not leaving more than 5µL of PBS in any tube" 
   warning: "Do NOT disturb the cell pellet"
 end
 
