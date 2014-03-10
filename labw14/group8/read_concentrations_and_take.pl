@@ -152,5 +152,5 @@ end
 
 
 log
-  return: {gibsons: samples_to_make,  pipetting_plan: pipetting_plan}
+  return: {gibsons: samples_to_make,  pipetting_plan: pipetting_plan, plasmids_to_make: plasmids_to_make}
 end
