@@ -12,7 +12,7 @@ take
 end
 
 step
-  description: "Label %{n} 1.5mL Tubes"
+  description: "Label %{n}, 1.5mL Tubes"
   note: "Write your initials and date on them."
 end
 
@@ -20,7 +20,7 @@ i = 0
 while i<n
   thisSusp = yeast_susp[i]
   step
-    description: "Transfer 100µL of the Yeast Sample %{thisSusp} to one 1.5mL Tube"
+    description: "Transfer 100µL of the Yeast Sample %{thisSusp[:id]} to one 1.5mL Tube"
     bullet: "Yeast cell concentration should be approximately 10^6 cells/µL"
     note: "Tube content volume is 100 µL."
   end
