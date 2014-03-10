@@ -48,8 +48,8 @@ end
 
 step
   description: "Put Reaction. "
-  #check: "Pipet 19 µL molecular grade water into each of the new labeled PCR tube(%{First} to %{Last})."
-  check: "Pipet 7.5 µL molecular grade water into each of the new labeled PCR tube(%{First} to %{Last})."
+  check: "Pipet 19 µL molecular grade water into each of the new labeled PCR tube(%{First} to %{Last})."
+  #check: "Pipet 7.5 µL molecular grade water into each of the new labeled PCR tube(%{First} to %{Last})."
 end
 
 jj = 0
@@ -60,24 +60,24 @@ tube_number = 0
     rev = primer_r[jj]
     #t = t%bLast
     tube_number = tube_number + 1
-    #step 
-     # description: "Prepare reaction for tube %{tube_number}"
-     #  check: "Pipet 1 uL of extracted DNA into tube %{tube_number}."
-     # check: "Pipet 2.5 uL of primer with id %{fwd} into tube %{tube_number}."
-     # check: "Pipet 2.5 uL of primer with id %{rev} into tube %{tube_number}."
-     # check: "Use the tip to gently mix."
-     #  note: "Be careful to pipette into the liquid, not the side of the tube. Always use a new tip."
-      
-    #end
     step 
       description: "Prepare reaction for tube %{tube_number}"
-      check: "Pipet 0.5 uL of extracted DNA into tube %{tube_number}."
-      check: "Pipet 1 uL of primer with id %{fwd} into tube %{tube_number}."
-      check: "Pipet 1 uL of primer with id %{rev} into tube %{tube_number}."
+      check: "Pipet 1 uL of extracted DNA into tube %{tube_number}."
+      check: "Pipet 2.5 uL of primer with id %{fwd} into tube %{tube_number}."
+      check: "Pipet 2.5 uL of primer with id %{rev} into tube %{tube_number}."
       check: "Use the tip to gently mix."
       note: "Be careful to pipette into the liquid, not the side of the tube. Always use a new tip."
       
     end
+    #step 
+    #  description: "Prepare reaction for tube %{tube_number}"
+    #  check: "Pipet 0.5 uL of extracted DNA into tube %{tube_number}."
+    #  check: "Pipet 1 uL of primer with id %{fwd} into tube %{tube_number}."
+    #  check: "Pipet 1 uL of primer with id %{rev} into tube %{tube_number}."
+    #  check: "Use the tip to gently mix."
+    #  note: "Be careful to pipette into the liquid, not the side of the tube. Always use a new tip."
+      
+    #end
     t = t + 1
     if t > bLast 
       t = 1
@@ -85,16 +85,16 @@ tube_number = 0
     jj = jj + 1
   end
 
-#step
-#  description: "Prepare reaction"
-#  check: "Pipet 25 µL of Phusion HF Master Mix with id %{enzyme_id} into each PCR tube (%{First} to %{Last})."
-#  note: "Use the tip to gently mix after each pipette."
-#end
-
 step
   description: "Prepare reaction"
-  check: "Pipet 10 µL of Phusion HF Master Mix with id %{enzyme_id} into each PCR tube (%{First} to %{Last})."
+  check: "Pipet 25 µL of Phusion HF Master Mix with id %{enzyme_id} into each PCR tube (%{First} to %{Last})."
   note: "Use the tip to gently mix after each pipette."
+end
+
+#step
+#  description: "Prepare reaction"
+#  check: "Pipet 10 µL of Phusion HF Master Mix with id %{enzyme_id} into each PCR tube (%{First} to %{Last})."
+#  note: "Use the tip to gently mix after each pipette."
 end
 
 step
