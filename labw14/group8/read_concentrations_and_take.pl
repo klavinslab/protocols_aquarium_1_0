@@ -58,14 +58,14 @@ foreach name in fragments_to_take
   j=0
   plasmid_letter_from_to_amounts = [ ]
   foreach p in plasmids_to_make
-    name = p[:plasmid_name_to_make]
+    p_name = p[:plasmid_name_to_make]
     quantity = p[:quantity_to_make] 
     
     foreach f in p[:fragment_amounts_in_ul]
       if  f[:name] == name
         total = total + p[:quantity_to_make]*f[:amount]
         plfta = {
-          plasmid_name: name,
+          plasmid_name: p_name,
           letter: letters[j],
           from: 1,
           to: quantity,
