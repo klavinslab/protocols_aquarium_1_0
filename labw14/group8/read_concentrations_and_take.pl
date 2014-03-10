@@ -56,7 +56,7 @@ pipetting_plan = [ ]
 foreach name in fragments_to_take
   total = 0
   j=0
-  plasmid_letter_from_to_amounts = [ ]
+  plasmid_letter_start_end_amounts = [ ]
   foreach p in plasmids_to_make
     p_name = p[:plasmid_name_to_make]
     quantity = p[:quantity_to_make] 
@@ -64,13 +64,13 @@ foreach name in fragments_to_take
     foreach f in p[:fragment_amounts_in_ul]
       if  f[:name] == name
         total = total + p[:quantity_to_make]*f[:amount]
-        plfta = {
+        plsea = {
           plasmid_name: p_name,
           letter: letters[j],
-          from: 1,
-          to: quantity,
+          start: 1,
+          end: quantity,
           amount: f[:amount]}
-        plasmid_letter_from_to_amounts = append( plasmid_letter_from_to_amounts, plfta)
+        plasmid_letter_start_end_amounts = append( plasmid_letter_start_end_amounts, plsea)
       end
     end
     j = j+1
@@ -85,7 +85,7 @@ foreach name in fragments_to_take
   end
   pipetting_plan = append(pipetting_plan, { fragment_name: name, fragment_ids: f_ids, 
                                             total_amount: total,
-                                            plasmid_letter_from_to_amounts: plasmid_letter_from_to_amounts})
+                                            plasmid_letter_start_end_amounts: plasmid_letter_start_end_amounts})
 end
 
 #foreach p in plasmids_to_make
@@ -121,7 +121,6 @@ end
 
 
 samples_to_make = [ ]
-planned_gibsons = [ ]
 j = 0
 foreach p in plasmids_to_make
   name = p[:plasmid_name_to_make]
@@ -141,9 +140,6 @@ foreach p in plasmids_to_make
     
     samples_to_make = append (samples_to_make, r)
     
-    # todo refactor to not produce silently here
-    planned_gibsons = append(planned_gibsons, 
-                      {plasmid_name: name, temp_label: temp_labels[j][i], fragment_amounts:  p[:fragment_amounts_in_ul]})
     i = i + 1
   end
   j = j + 1
@@ -156,5 +152,5 @@ end
 
 
 log
-  return: {gibsons: samples_to_make,  pipetting_plan: pipetting_plan, planned_gibsons: planned_gibsons}
+  return: {gibsons: samples_to_make,  pipetting_plan: pipetting_plan}
 end
