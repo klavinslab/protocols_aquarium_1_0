@@ -73,7 +73,7 @@ while i<n
       note: "Place in Aluminum Tube Rack on Ice Block"
       note: "You may wish to keep this at your bench."
       location: "B13.425"
-      return_array = append(return_array,s[:id])
+      return_array = append(return_array,s)
   end
   i = i+1
 end
