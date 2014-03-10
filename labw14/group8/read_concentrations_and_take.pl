@@ -106,7 +106,7 @@ foreach p in plasmids_to_make
        data
            fragment_amounts: p[:fragment_amounts_in_ul]
            location: "Bench"
-           temp_id: "%{temp_id}"
+           temp_label: "%{temp_id}"
        end
     end
     i = i + 1
