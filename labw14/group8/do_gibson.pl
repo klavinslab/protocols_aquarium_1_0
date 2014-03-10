@@ -86,7 +86,7 @@ foreach f in fragments
 end
 
 step
-  description: "print out the input gibson array"
+  description: "In the next protocol we will put the gibsons into the thermocycler."
   note: "%{gibsons}"
 end
 
@@ -96,4 +96,4 @@ log
   return: {completed_samples: gibsons, aborted_samples: aborted_samples} # put resulting samples from produce here
 end
 
-# release fragments
+release fragments
