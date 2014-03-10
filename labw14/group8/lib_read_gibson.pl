@@ -19,35 +19,19 @@ function ask_filename_then_get_gibsons()
     end
   end
   
-  #require "labw14/group8/example_gibson_data.pl" # placeholder for variable gibson input
-  local r = 0
-  #include "labw14/group8/example_gibson_data.pl" # bug doesn't insert string or might not have val for f
-  #  r = gibsons
-  #end
+  # TODO get filename here working / retest with new version "%{f}"
   input
     p = "labw14/group8/example_json_gibsons.json"
   end
-  
-    # gibsons would look like gibsons = [
-    #        ["frag1", "frag2", "frag3", "frag4",...],
-    #        [      1,       2,       0,      0, ...],
-    #        [ .... ],
-    #        ]
-  
-  # transform array to nicer format for use by other programs
-  
-  # for now we just fake some data for testing
+
 
   return p
 end
 
-# returns 
-# [
-#  [
-#   {input: sample1, concentration: in_uL}, ...
-#  ],
-#  [ # second gibson
-#   {input: sample2, concentration: in_uL}, ...
-#  ],
-#  
-# ]
+function short_labels(ids, change_letter_id)
+  local test_ids = [1,2,3,4,5]
+  local test_change_letter_id = [3,5]
+  
+  return "A1"
+end
+
