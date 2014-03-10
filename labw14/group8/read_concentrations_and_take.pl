@@ -65,43 +65,55 @@ end
 #  end
 #end
   
-
-foreach f in pipetting_plan
-  amount = f[:total_amount]
-  name = f[:fragment_name]
-  step
-    description: "Claim fragment %{name}"
-    note: "Go into the Inventory and put enough stock of fragment %{name}
-          (total of %{amount} microliters) into your cart.
-          You will go physically take them formally in the next protocol.
-          You will be reminded of how much you will need so you can
-          check by eye that you should have enough."
-  end
-end
+# TODO put take for fragments here then check that will have enough?
+# no, wait for later once full protocol is running
+#foreach f in pipetting_plan
+#  amount = f[:total_amount]
+#  name = f[:fragment_name]
+#  step
+#    description: "Claim fragment %{name}"
+#    note: "Go into the Inventory and put enough stock of fragment %{name}
+#          (total of %{amount} microliters) into your cart.
+#          You will go physically take them formally in the next protocol.
+#          You will be reminded of how much you will need so you can
+#          check by eye that you should have enough."
+#  end
+#end
 
 # silently produce the future samples
 # and label them, laying them out in a grid
 # put the concentrations into the data element
 # todo show as picture, make a manual one for now, single pic
 
+# todo give temporary names here such as A1,2,3...
+# B1,2,3.. for another set of gibsons, etc
+# so easier to write on small tube
+letters = ["A", "B", "C", "E", "F", "G", "H", "I", "J", "K", "M"]
+
 samples_to_make = [ ]
+j = 0
 foreach p in plasmids_to_make
   name = p[:plasmid_name_to_make]
   quantity = p[:quantity_to_make]
   i = 1
   while i <= quantity
+    temp_id = to_string(i)
+    letter = letters[j]
+    temp_id = "%{letter}%{temp_id}"
     produce silently
        r = 1 "Gibson Reaction Result" of name
        location: "Bench"
        data
            fragment_amounts: p[:fragment_amounts_in_ul]
            location: "Bench"
+           temp_id: temp_id
        end
     end
     i = i + 1
     samples_to_make = append (samples_to_make, r)
     sample_id = r[:id]
   end
+  j = j + 1
 end
 
 # foreach fragment
