@@ -51,6 +51,7 @@ temp_labels = [["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A1
 
 
 pipetting_plan = [ ]
+plasmid_summary = [ ]
 # todo extract these into hash and other libraries
 # NOTE this doesn't work like a hash in other languages
 foreach name in fragments_to_take
@@ -60,6 +61,11 @@ foreach name in fragments_to_take
   foreach p in plasmids_to_make
     p_name = p[:plasmid_name_to_make]
     quantity = p[:quantity_to_make] 
+    plasmid_summary = append ( plasmid_summary, 
+        { plasmid_name: p_name,
+          letter: letters[j],
+          start: 1,
+          end: quantity})
     
     foreach f in p[:fragment_amounts_in_ul]
       if  f[:name] == name
@@ -152,5 +158,5 @@ end
 
 
 log
-  return: {gibsons: samples_to_make,  pipetting_plan: pipetting_plan, plasmids_to_make: plasmids_to_make}
+  return: {gibsons: samples_to_make,  pipetting_plan: pipetting_plan, plasmids_to_make: plasmid_summary}
 end
