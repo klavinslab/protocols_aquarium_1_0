@@ -20,5 +20,5 @@ end
 prep_lens()
 
 step
-  descriotion: "Place the assembled microfluidic plate with manifold on the rectangle plate holder"
+  description: "Place the assembled microfluidic plate with manifold on the rectangle plate holder"
 end
