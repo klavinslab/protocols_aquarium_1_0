@@ -1,8 +1,13 @@
 #  last step
 # return: {gibsons: g, hash: {egkey: "egvalue"}}
 
+#   plasmids_to_make: [
+#        { plasmid_name: p_name,
+#          letter: letters[j],
+#          start: 1,
+#          end: quantity}, ...],
 #   pipetting_plan = [
-#         { fragment_name: name, 
+#         [{ fragment_name: name, 
 #           fragment_ids: [ ], # fragments to take from
 #           total_amount: total,
 #           plasmid_letter_start_end_amounts: [ 
@@ -10,9 +15,11 @@
 #              letter: A, # pipette into tubes A1 through A3 inclusive
 #              start: 1, 
 #              end: 3,
-#              amount: f[:amount]}, ... ] 
+#              amount: f[:amount]}, ... ]
+#                     , ... ]
                                             
 argument
+  plasmids_to_make: sample, "a hash with plasmids"
   pipetting_plan: sample, "a hash with fragment names and amounts"
   fragments: sample array, "the fragments for the gibsons"
   gibsons: sample array, "the gibsons to do (deprecated)"
@@ -27,17 +34,15 @@ to_release = [ ]
 
 step
   description: "Take fragments for Gibsons"
-  note: "Go to the locations listed to take fragments for all the gibsons.
-         Check old gibson protocols to see if they need to be kept on ice, etc.
+  note: "Go to the locations listed on the next page to take fragments for all the gibsons.
          %{fragments}" # this is an array of ids
 end
 
-foreach f in fragments
-  take
-    x = item f
-  end
-  to_release = concat (to_release, x)
+take
+    x = item fragments
 end
+
+to_release = x
 
 fragments = to_release # this is an array of { id: #, name: "sdfsdf", data: {...}}
 
@@ -46,13 +51,6 @@ step
   note: "%{fragments}"
 end
 
-s = fragments[0]
-test = info(s) # this fails
-
-step
-  description: "Test if can get name of fragment from sample"
-  note: "%{test}"
-end
 
 ids = [ ]
 foreach g in gibsons
@@ -62,9 +60,14 @@ end
 #probably do this in groups instead
 step
   description: "Label PCR tubes to hold the gibsons"
-  note: "Take enough PCR tubes and label tubes %{ids}"
+  note: "Take enough PCR tubes and label tubes %{ids}.
+         Keep them separate by letter since you will
+         pipette by letter groups."
 end
 
+foreach p in pipetting_plan
+
+end
 
 foreach f in fragments
   sample_amount_to_pipette = [ ]
