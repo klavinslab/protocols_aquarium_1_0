@@ -1,3 +1,4 @@
+require "includes/devices/microscope_prep.pl"
 information "Using CellASIC and fluorscence microscopy to get time-series data on cells"
 
 step
@@ -16,8 +17,8 @@ step
   note: "Only perform this step if it is not rectangle plate holder currently placed on the microscope."
 end
 
+prep_lens()
 
 step
   descriotion: "Place the assembled microfluidic plate with manifold on the rectangle plate holder"
-  note: "Lower the objective lens
 end
