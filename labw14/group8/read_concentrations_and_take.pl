@@ -99,7 +99,7 @@ foreach p in plasmids_to_make
   while i <= quantity
     temp_id = to_string(i)
     letter = letters[j]
-    b = to_string("%{letter}%{temp_id}")
+    b = concat(letter, temp_id)
     produce silently
        r = 1 "Gibson Reaction Result" of name
        location: "Bench"
