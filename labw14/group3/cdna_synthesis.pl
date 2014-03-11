@@ -33,8 +33,8 @@ while i<n
 
   step
     description: "Dilute your isolated RNA"
-    bullet: "In a separate 1.5 mL tube, add 1 µL of %{thisRNA}.
-    bullet: "In the same 1.5 mL tube, add %{molec_wat} of Nuclease free water.
+    bullet: "In a separate 1.5 mL tube, add 1 µL of %{thisRNA}."
+    bullet: "In the same 1.5 mL tube, add %{molec_wat} of Nuclease free water."
   end
   
   step 
