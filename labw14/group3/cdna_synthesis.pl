@@ -1,19 +1,18 @@
 argument
   rxn_mix: sample, "Select the 5x iScript reaction mix"
   rev_enzyme: sample, "Select the iScript reverse transcriptase"
-  rna_yeast1: sample, "This is the isolated RNA from strain 1"
-  rna_yeast2: sample, "This is the isolated RNA from strain 2"
-  rna_conc1: number
-  rna_conc2: number
+  rna_iso_array: sample array, "This is the isolated RNA from before"
+  rna_conc_array: number array
 end
 
 take
   react_mix = item rxn_mix
   iscript_enz = item rev_enzyme
-  iso_rna1 = item rna_yeast1
-  iso_rna2 = item rna_yeast2
+  rna_iso = item rna_iso_array
   nuc_water = 1 "Nuclease Free Water"
 end
+
+n=length(rna_iso_array)
 
 step
   description: "This protocol prepares cDNA to be used in qPCR"
@@ -21,34 +20,33 @@ step
 end
 
 step
-  description: "Label two 0.2 mL PCR tubes. Write your initials on them."
+  description: "Label %{n} 0.2 mL PCR tubes. Write your initials and id's on them."
   note: "Prior to moving forward check that your iScript reaction mix has not generated any precipitation upon thawing." 
   bullet: "If precipitation has occured, please mix thoroughly to resuspend, before moving forward"
 end
 
-desvolrna1= 500/rna_conc1
-nucwat1=15-desvolrna1
-desvolrna2= 500/rna_conc2
-nucwat2=15-desvolrna2
+i = 0
+while i<n
+  thisConc = rna_conc_array[i]
+  molec_wat= (thisConc/0.2)-1
+  thisRNA = rna_iso_array[i]
 
-step 
-  description: "Prepare Reaction 1 (from Strain 1)"
-  check:"Pipet 4 µL of 5x iScript reaction mix into the labeled PCR tube."
-  check: "Pipet 1 µL of iScript reverse transcriptase into the labeled PCR tube"
-  check: "Pipet %{nucwat1} µL of Nuclease-free water into the labeled PCR tube"
-  check: "Pipet %{desvolrna1} µL of RNA template %{rna_yeast1} into the labeled PCR tube"
-  check: "Use the tip to gently mix."
-  note: "Be careful to pipette into the liquid, not the side of the tube."
-end
-
-step 
-  description: "Prepare Reaction 2"
-  check:"Pipet 4 µL of 5x iScript reaction mix into the labeled PCR tube."
-  check: "Pipet 1 µL of iScript reverse transcriptase into the labeled PCR tube"
-  check: "Pipet %{nucwat2} µL of Nuclease-free water into the labeled PCR tube"
-  check: "Pipet %{desvolrna2} µL of RNA template %{rna_yeast2} into the labeled PCR tube"
-  check: "Use the tip to gently mix."
-  note: "Be careful to pipette into the liquid, not the side of the tube."
+  step
+    description: "Dilute your isolated RNA"
+    bullet: "In a separate 1.5 mL tube, add 1 µL of %{thisRNA}.
+    bullet: "In the same 1.5 mL tube, add %{molec_wat} of Nuclease free water.
+  end
+  
+  step 
+    description: "Prepare Reaction"
+    check:"Pipet 4 µL of 5x iScript reaction mix into the labeled PCR tube."
+    check: "Pipet 1 µL of iScript reverse transcriptase into the labeled PCR tube"
+    check: "Pipet 10 µL of Nuclease-free water into the labeled PCR tube"
+    check: "Pipet 5 µL of RNA template %{thisRNA} into the labeled PCR tube"
+    check: "Use the tip to gently mix."
+    note: "Be careful to pipette into the liquid, not the side of the tube."
+  end
+  i = i+1
 end
 
 step
@@ -75,7 +73,7 @@ step
   image: "thermal_cycler_select"
 end
 
-release [react_mix[0],iscript_enz[0]]
+release concat(react_mix,iscript_enz)
 
 step
   description: "*Optional Hold Stage*"
@@ -84,18 +82,19 @@ step
   timer: { hours: 0, minutes: 40, seconds: 0}
 end
 
-produce
-  r = 1 "Yeast cDNA" of "rna_yeast1"
-  note: "Keep the tubes on the bench to use in the next protocol"
-end
-
-produce
-  s = 1 "Yeast cDNA" of "rna_yeast2"
-  note: "Keep the tubes on the bench to use in the next protocol"
+return_array = []
+i = 0
+while i < n
+  produce
+    r = 1 "Yeast cDNA" of rna_iso[i]
+    note: "Keep the tubes on the bench to use in the next protocol"
+  end
+  return_array = append(return_array, r[:id])
+  i = i+1
 end
 
 log
-  return: {yeast1_cdna_id: r[:id], yeast2_cdna_id: s[:id]}
+  return: {cdna_array: return_array}
 end
 
-release [iso_rna1[0], iso_rna2[0]]
+release concat(rna_iso, nuc_water)
