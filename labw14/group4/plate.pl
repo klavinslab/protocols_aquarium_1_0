@@ -37,7 +37,7 @@ while i < sample_count
 		check: "Centrifuge all of the samples. This may require running multiple batches depending on the number of samples."
 		check: "Pippette out the supernatant with a 1000ul pippettor and discard the tip with the liquid in it.\nRepeat for eah sample"
 		check: "Pippette %{volume} ul LB into the sample tube(s) and resuspend the pellet(s) by pipetting up and down"
-		wrning: "Check the LB for contamination before using. Make sure to use a new pipette tip after each pipetting operation."
+		warning: "Check the LB for contamination before using. Make sure to use a new pipette tip after each pipetting operation."
 	step
 	  description: "Add sterile glass beads to plate %{current_sample}"
 	  note: "Invert the plate so that the lid is on the bench. 
