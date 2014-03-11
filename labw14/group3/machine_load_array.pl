@@ -25,7 +25,7 @@ step
 end
 
 i = 0
-while i<n
+while i<n1
   thisFragment = fragment_array[i]
   water = (concentrations[i] / 50)-1
   step
@@ -46,7 +46,7 @@ step
 end
 
 i = 0
-while i<n
+while i<n2
   step
     description: "Addition of Primers step %{i+1}"
     bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primers_forward_array[i]}) to well A%{i}"
