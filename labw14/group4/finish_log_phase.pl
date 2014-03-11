@@ -23,9 +23,9 @@ end
 
 step
 	description: "Initialize nanodrop"
-	step: "Close nanodrop software and reopen"
-	step: "Select 'cell culture' mode"
-	step: "The software will ask you to initialize the spectrophotometer. 
+	bullet: "Close nanodrop software and reopen"
+	bullet: "Select 'cell culture' mode"
+	bullet: "The software will ask you to initialize the spectrophotometer. 
 	       Follow the on screen instructions. Initialize with 2ul H2O and make 
 	       sure to pipette a clean, bubble free drop or you may have to repeat
 	       the initialization."
