@@ -84,10 +84,10 @@ step
 end
 
 return_array = []
-i = 0
-while i < n
+i = 1
+while i < n+1
   produce
-    r = 1 "Yeast cDNA" of parent_yeast[i]
+    r = 1 "Yeast cDNA" of parent_yeast[i-1]
     note: "Keep the tubes on the bench to use in the next protocol"
   end
   return_array = append(return_array, r[:id])
