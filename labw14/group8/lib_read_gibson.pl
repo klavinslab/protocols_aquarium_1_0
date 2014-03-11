@@ -21,11 +21,10 @@ function ask_filename_then_get_gibsons()
   
   # TODO get filename here working / retest with new version "%{f}"
   input
-    p = "labw14/group8/example_json_gibsons.json"
+    io = "labw14/group8/example_json_gibsons.json"
   end
-
-
-  return p
+  
+  return io
 end
 
 function add_short_labels_to_samples(samples, change_letter_ids)

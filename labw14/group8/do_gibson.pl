@@ -1,17 +1,26 @@
-#  last step
-# return: {gibsons: g, hash: {egkey: "egvalue"}}
 
+
+#   plasmids_to_make: [
+#        { plasmid_name: p_name,
+#          letter: letters[j],
+#          start: 1,
+#          end: quantity}, ...],
 #   pipetting_plan = [
-#         { fragment_name: name, 
+#         [{ fragment_name: name, 
 #           fragment_ids: [ ], # fragments to take from
-#           total_amount: total, 
-#           add_to_sample_ids: [ {id: x, amount: in_ul}, ...]
-#         }, ... ] 
+#           total_amount: total,
+#           plasmid_letter_start_end_amounts: [ 
+#            { plasmid_name: p_name,
+#              letter: A, # pipette into tubes A1 through A3 inclusive
+#              start: 1, 
+#              end: 3,
+#              amount: f[:amount]}, ... ]
+#                     , ... ]
                                             
 argument
+  plasmids_to_make: sample, "a hash with plasmids"
   pipetting_plan: sample, "a hash with fragment names and amounts"
-  fragments: sample array, "the fragments for the gibsons (added to cart in last step)"
-  gibsons: sample array, "the gibsons to do"
+  fragments: sample array, "the fragments for the gibsons"
 end
 
 to_release = [ ]
@@ -23,17 +32,15 @@ to_release = [ ]
 
 step
   description: "Take fragments for Gibsons"
-  note: "Go to the locations listed to take fragments for all the gibsons.
-         Check old gibson protocols to see if they need to be kept on ice, etc.
+  note: "Go to the locations listed on the next page to take fragments for all the gibsons.
          %{fragments}" # this is an array of ids
 end
 
-foreach f in fragments
-  take
-    x = item f
-  end
-  to_release = concat (to_release, x)
+take
+    x = item fragments
 end
+
+to_release = x
 
 fragments = to_release # this is an array of { id: #, name: "sdfsdf", data: {...}}
 
@@ -42,55 +49,73 @@ step
   note: "%{fragments}"
 end
 
-s = fragments[0]
-test = info(s) # this fails
-
-step
-  description: "Test if can get name of fragment from sample"
-  note: "%{test}"
-end
-
-ids = [ ]
-foreach g in gibsons
-  ids = append (ids, g[:id])
+sum = 0
+foreach p in plasmids_to_make
+  sum = sum + p[:quantity]
 end
 
 #probably do this in groups instead
 step
-  description: "Label PCR tubes to hold the gibsons"
-  note: "Take enough PCR tubes and label tubes %{ids}"
+  description: "Take %{sum} PCR tubes"
+  note: "Take enough PCR tubes for the next labeling steps.
+         Keep them separate by letter since you will
+         pipette by letter groups."
 end
 
-
-foreach f in fragments
-  sample_amount_to_pipette = [ ]
-  f_info = info(f)
-  f_name = f_info[:name]
-  foreach g in gibsons
-    #add this frag if has an amount for it
-    foreach a in g[:data][:fragment_amounts]
-      f_info = info(f)
-      if a[:name] == f_name
-        sample_amount_to_pipette = append ( sample_amount_to_pipette, {id: g[:id], amount: a[:amount]} )
-      end
-    end
-  end
-  
-  num_samples = length(sample_amount_to_pipette)
-  f_id = f[:id]
+foreach p in plasmids_to_make
+  num = p[:quantity]
+  l = p[:letter]
   step
-    description: "Pipette %{f_name} into %{num_samples} sample(s)"
-    note: "Pipette the following amounts from %{f_id} into the following samples:
-           %{sample_amount_to_pipette}"
+    description: "Label %{num} PCR tubes, %{letter}1 to %{letter}%{num}"
+    note: "Label %{num} PCR tubes, %{letter}1 to %{letter}%{num}
+           by writing on the sides of the tubes near the top
+           (otherwise they will be smudged off, see second picture)."
   end
 end
 
+#   pipetting_plan = [
+#         [{ fragment_name: name, 
+#           fragment_ids: [ ], # fragments to take from
+#           total_amount: total,
+#           plasmid_letter_start_end_amounts: [ 
+#            { plasmid_name: p_name,
+#              letter: A, # pipette into tubes A1 through A3 inclusive
+#              start: 1, 
+#              end: 3,
+#              amount: f[:amount]}, ... ]
+#                     , ... ]
+foreach p in pipetting_plan
+  f_name = p[:fragment_name]
+  f_ids = p[:fragment_ids]
+  targets = p[:plasmid_letter_start_end_amounts]
+  step
+      description: "Pipette %{f_name}"
+      note: "Pipette the following amounts from %{f_ids} into the following tubes,
+             putting the amount into each tube from letter start to end.
+             There will be a separate screen for each, and they are summarized
+             below:
+             %{targets}"
+  end
+    
+  foreach plsea in p[:plasmid_letter_start_end_amounts]
+    amt = plsea[:amount]
+    step
+      description: "Pipette %{f_name} into sample(s)"
+      note: "Pipette a total of %{amt} microliters from %{f_ids} into each of tube(s)
+             %{letter}{%start} to %{letter}%{end}, inclusive."
+    end
+  end # todo put all on one screen nicely once can concat strings
+end
+
+#silently produce gibsons
+gibsons = [ ]
 step
   description: "In the next steps you will put the gibsons into the thermocycler."
   note: "Take the tubes to the thermocycler and log into the station there,
          or, if you have done this before, you can click through the steps here."
-  note: "%{gibsons}"
 end
+
+
 
 # call step from a library here
 
