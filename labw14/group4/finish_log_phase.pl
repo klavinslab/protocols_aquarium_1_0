@@ -22,6 +22,15 @@ step
 end
 
 step
+	description: "Initialize nanodrop"
+	step: "Close nanodrop software and reopen"
+	step: "Select 'cell culture' mode"
+	step: "The software will ask you to initialize the spectrophotometer. 
+	       Follow the on screen instructions. Initialize with 2ul H2O and make 
+	       sure to pipette a clean, bubble free drop or you may have to repeat
+	       the initialization."
+end
+step
 	description: "If the software (which software?) is not set to XXXX mode, select the XXXX button"
 	note: "If the software is preset, continue to the next step."
 end
@@ -30,6 +39,7 @@ ODs = []
 foreach c in log_cells
 	step
 	  description: "Blank the Nanodrop"
+	  check: "Set the wavelength to 250 nm"
 	  check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
 	  check: "Using a pipette, carefully add 2 µL of LB Buffer to the lower pedestal." 
 	  check: "Close the pedestal."
@@ -50,11 +60,12 @@ foreach c in log_cells
 	end
 
 	step
-	  description: "Record the optical density measurement (OD) shown on the nanodrop computer"
+	  description: "Record the absorbance shown on the nanodrop computer"
 	  getdata
-		OD: number,"Write down the OD as shown on the computer" #Better disc. of where to find it?
+		absorbance: number,"Write down the absorbance as shown on the computer" #Better disc. of where to find it?
 	  end
 	end
+	OD = 10*absorbance
 	ODs = append(ODs, OD)
 	
 	if OD < OD_min
