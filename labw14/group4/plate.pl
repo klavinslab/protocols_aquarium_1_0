@@ -32,7 +32,7 @@ while i < sample_count
 	plate_sample_id = plate_type[i]
 	coli_sample_id = e_coli_strain_id[i]
 	step
-		description: description: "Concentrate cells"
+		description: "Concentrate cells"
 		check: "Microcentrifuge the sample(s) for 1 minute (or longer if a the supernatant is still not clear)"
 		check: "Centrifuge all of the samples. This may require running multiple batches depending on the number of samples."
 		check: "Pippette out the supernatant with a 1000ul pippettor and discard the tip with the liquid in it.\nRepeat for eah sample"
