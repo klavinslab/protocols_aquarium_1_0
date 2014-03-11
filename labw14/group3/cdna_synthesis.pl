@@ -1,4 +1,5 @@
 argument
+  parent_yeast: sample array "Select the two strains of yeast"
   rxn_mix: sample, "Select the 5x iScript reaction mix"
   rev_enzyme: sample, "Select the iScript reverse transcriptase"
   rna_iso_array: sample array, "This is the isolated RNA from before"
@@ -33,8 +34,8 @@ while i<n
 
   step
     description: "Dilute your isolated RNA"
-    bullet: "In a separate 1.5 mL tube, add 1 µL of %{thisRNA}."
-    bullet: "In the same 1.5 mL tube, add %{molec_wat} of Nuclease free water."
+    bullet: "In a 14 mL tube, add 1 µL of %{thisRNA}."
+    bullet: "In the same 1.5 mL tube, add %{molec_wat} µL of Nuclease free water."
   end
   
   step 
@@ -86,7 +87,7 @@ return_array = []
 i = 0
 while i < n
   produce
-    r = 1 "Yeast cDNA" of rna_iso[i]
+    r = 1 "Yeast cDNA" of parent_yeast[i]
     note: "Keep the tubes on the bench to use in the next protocol"
   end
   return_array = append(return_array, r[:id])
