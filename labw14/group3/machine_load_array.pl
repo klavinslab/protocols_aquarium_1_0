@@ -3,8 +3,11 @@ argument
   enzyme: sample, "The iTaq Universal SYBR Green Supermix"
   primers_forward_array: sample array, "The forward primers"
   primers_reverse_array: sample array, "The reverse primers"
-#  concentrations: number array, "The concentrations of cDNA"
+  concentrations: number array, "The concentrations of cDNA"
 end
+
+n1 = length(fragments_array)
+n2 = length(primers_forward)
 
 take
   cdna_array = item fragments_array
@@ -21,65 +24,76 @@ step
   bullet: "Allow the primers and the SYBR Green to thaw"
 end
 
-step
-  description: "Dilution of cDNA"
-  bullet: "Label a 1.5 mL tube to contain diluted cDNA sample"
-  #bullet: "Transfer 1 µL of cDNA to new tube"
-  #bullet: "Add __ µL of Molecular Grade Water to new tube"
-  bullet: "Dilute the cDNA to a concentration of about 50 ng/µL"
-  bullet: "Stir dilution with pipette tip or vortex"
+i = 0
+while i<n
+  thisFragment = fragment_array[i]
+  water = (concentrations[i] / 50)-1
+  step
+    description: "Dilution cDNA "
+    bullet: "Label a 1.5 mL tube with your intials, date, and the number %{i+1}"
+    bullet: "Transfer 1 µL of cDNA with id {thisFragment[:id]} to new tube"
+    bullet: "Add %{water} µL of Molecular Grade Water to the new tube"
+    bullet: "The cDNA should be at a concentration of about 50 ng/µL"
+    bullet: "Stir dilution with pipette tip or vortex briefly"
+  end
+  i=i+1
 end
 
 step 
   description: "Prepare Enough Master Mix for All Reactions"
   check: "Obtain a 96 well qPCR Plate and Optically Transparent Film"
-  bullet: "Add 10 µL of iTaq SYBR Green Supermix to 6 qPCR plate wells."
+  bullet: "Add 10 µL of iTaq SYBR Green Supermix to 6 qPCR plate wells (A1-A6)."
 end
 
-step
-  description: "Addition of Primers"
-  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primers_forward_array[0]}) to well A1"
-  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[0]}) to well A1"
-  note: "Be sure to use proper sterile technique to guarantee accuracy of results."
+i = 0
+while i<n
+  step
+    description: "Addition of Primers step %{i+1}"
+    bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primers_forward_array[i]}) to well A%{i}"
+    bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[i]}) to well A%{i}"
+    note: "Be sure to use proper sterile technique to guarantee accuracy of results."
+  end
+  i=i+1
 end
 
-step
-  description: "Addition of Primers"
-  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward_array[1]}) to well A2"
-  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[1]}) to well A2"
-  note: "Be sure to use proper sterile technique to guarantee accuracy of results."
-end
+#step
+#  description: "Addition of Primers"
+#  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward_array[1]}) to well A2"
+#  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[1]}) to well A2"
+#  note: "Be sure to use proper sterile technique to guarantee accuracy of results."
+#end
 
-step
-  description: "Addition of Primers"
-  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward_array[2]}) to well A3"
-  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[2]}) to well A3"
-  note: "Be sure to use proper sterile technique to guarantee accuracy of results."
-end
+#step
+#  description: "Addition of Primers"
+#  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward_array[2]}) to well A3"
+#  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[2]}) to well A3"
+#  note: "Be sure to use proper sterile technique to guarantee accuracy of results."
+#end
 
-step
-  description: "Addition of Primers"
-  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward_array[0]}) to well A4"
-  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[0]}) to well A4"
-  note: "Be sure to use proper sterile technique to guarantee accuracy of results."
-end
+#step
+#  description: "Addition of Primers"
+#  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward_array[0]}) to well A4"
+#  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[0]}) to well A4"
+#  note: "Be sure to use proper sterile technique to guarantee accuracy of results."
+#end
 
-step
-  description: "Addition of Primers"
-  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward_array[1]}) to well A5"
-  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[1]}) to well A5"
-  note: "Be sure to use proper sterile technique to guarantee accuracy of results."
-end
+#step
+#  description: "Addition of Primers"
+#  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward_array[1]}) to well A5"
+#  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[1]}) to well A5"
+#  note: "Be sure to use proper sterile technique to guarantee accuracy of results."
+#end
 
-step
-  description: "Addition of Primers"
-  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward_array[3]}) to well A6"
-  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[3]}) to well A6"
-  note: "Be sure to use proper sterile technique to guarantee accuracy of results."
-end
+#step
+#  description: "Addition of Primers"
+#  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward_array[3]}) to well A6"
+#  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[3]}) to well A6"
+#  note: "Be sure to use proper sterile technique to guarantee accuracy of results."
+#end
 
 step
   description: "Addition of Diluted cDNA Samples"
+  bullet: "This is your gRNA strain (no. 1893)"
   check: "Add 1 µL of diluted cDNA (sample id: %{fragments_array[0]}) to well A1"
   check: "Stir mixture with pipette tip"
   check: "Add 1 µL of diluted cDNA (sample id: %{fragment1}) to well A2"
@@ -90,6 +104,7 @@ end
 
 step
   description: "Addition of Diluted cDNA Samples (continued)"
+  bullet: "This is your eYFP strain (no. 965)"
   check: "Add 1 µL of diluted cDNA (sample id: %{fragment_array[1]}) to well A4"
   check: "Stir mixture with pipette tip"
   check: "Add 1 µL of diluted cDNA (sample id: %{fragment_array[1]}) to well A5"
@@ -126,4 +141,5 @@ step
   check: "Save the data to the folder on the desktop on the computer"
 end
 
-release concat(cdna_array, forward_primers, sybr, reverse_primers)
+release concat(cdna_array, sybr)
+release concast(forward_primers, reverse_primers)
