@@ -25,14 +25,8 @@ step
 	description: "Initialize nanodrop"
 	bullet: "Close nanodrop software and reopen"
 	bullet: "Select 'cell culture' mode"
-	bullet: "The software will ask you to initialize the spectrophotometer. 
-	       Follow the on screen instructions. Initialize with 2ul H2O and make 
-	       sure to pipette a clean, bubble free drop or you may have to repeat
-	       the initialization."
-end
-step
-	description: "If the software (which software?) is not set to XXXX mode, select the XXXX button"
-	note: "If the software is preset, continue to the next step."
+	bullet: "The software will ask you to initialize the spectrophotometer. Follow the on screen instructions."
+	bullet: "Initialize with 2ul H2O and make sure to pipette a clean, bubble free drop or you may have to repeat the initialization."
 end
 
 ODs = []
