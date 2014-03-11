@@ -18,10 +18,9 @@ end
 
 i = 1
 while i<n+1
-  thisSusp = yeast_susp[i]
-  susp_id = thisSusp[:id]
+  thisSusp = yeast_susp[(i-1)]
   step
-    description: "Transfer 100µL of the Yeast Sample %{susp_id} to tube %{i} 1.5mL Tube"
+    description: "Transfer 100µL of the yeast suspension (no. %{thisSusp}) to tube %{i} 1.5mL Tube"
     bullet: "Yeast cell concentration should be approximately 10^6 cells/µL"
     note: "Tube content volume is 100 µL."
   end
