@@ -12,6 +12,7 @@ sample_count = length(e_coli_strain_id)
 take
   strain = item e_coli_strain_id
   plate = sample_count plate_type
+  LB     = 1 "50 mL LB liquid aliquot (sterile)"
 #  plate_2 = 1 plate_type_2
 #  beads = 1 "Glass Bead Aliquot (sterile)"
 #  collector = 1 "Glass Bead Waste Collector"
@@ -30,8 +31,13 @@ while i < sample_count
 	current_sample = i + 1
 	plate_sample_id = plate_type[i]
 	coli_sample_id = e_coli_strain_id[i]
-	
-	
+	step
+		description: description: "Concentrate cells"
+		check: "Microcentrifuge the sample(s) for 1 minute (or longer if a the supernatant is still not clear)"
+		check: "Centrifuge all of the samples. This may require running multiple batches depending on the number of samples."
+		check: "Pippette out the supernatant with a 1000ul pippettor and discard the tip with the liquid in it.\nRepeat for eah sample"
+		check: "Pippette %{volume} ul LB into the sample tube(s) and resuspend the pellet(s) by pipetting up and down"
+		wrning: "Check the LB for contamination before using. Make sure to use a new pipette tip after each pipetting operation."
 	step
 	  description: "Add sterile glass beads to plate %{current_sample}"
 	  note: "Invert the plate so that the lid is on the bench. 
@@ -45,7 +51,7 @@ while i < sample_count
 	  note: "Vortex sample %{coli_sample_id} on vortexor."
 	  image: "vortex_tube"
 	end
-
+	
 	step
 	  description: "Transfer sample %{coli_sample_id} to the center of the plate"
 	  note: "Invert plate %{current_sample} so the beads are on the agar surface. Lift the lid and 
