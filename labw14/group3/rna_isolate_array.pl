@@ -16,12 +16,12 @@ step
   note: "Write your initials and date on them as well as numbering them 1 - %{n}."
 end
 
-i = 0
-while i<n
+i = 1
+while i<n+1
   thisSusp = yeast_susp[i]
   susp_id = thisSusp[:id]
   step
-    description: "Transfer 100µL of the Yeast Sample %{susp_id} to tube %{(i+1)} 1.5mL Tube"
+    description: "Transfer 100µL of the Yeast Sample %{susp_id} to tube %{i)} 1.5mL Tube"
     bullet: "Yeast cell concentration should be approximately 10^6 cells/µL"
     note: "Tube content volume is 100 µL."
   end
