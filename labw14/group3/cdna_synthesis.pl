@@ -88,7 +88,7 @@ i = 0
 while i < n
   thisStrain = parent_yeast[i]
   produce
-    r = 1 "Yeast cDNA" of thisStrain
+    r = 1 "Yeast cDNA" from thisStrain
     note: "Keep the tubes on the bench to use in the next protocol"
   end
   return_array = append(return_array, r[:id])
