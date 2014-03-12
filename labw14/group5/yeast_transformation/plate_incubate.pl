@@ -84,7 +84,7 @@ while ii < length(yeast_strain_id)
    end
 
    produce
-     y = 1 "Yeast Plate" of "pGP8GAL-GAVNY in W303alpha" from strain[0]
+     y = 1 "Yeast Plate" of "pGP8GAL-GAVNY in W303alpha" #from strain[0]
      note: "Plate upside down in 30 C incubator at A1.110."
      location: "A1.110"
      release plate
