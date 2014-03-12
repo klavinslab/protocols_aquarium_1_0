@@ -1,0 +1,12 @@
+argument
+  ladder_one: sample array, "the reference ladder for Gel electrophoresis"
+end
+
+unique_ladders = unique(ladder_one)
+
+place make_log_phase
+  protocol: "labw14/group4/test.pl"
+  marked: true
+  group: aquarium_user
+end
+
