@@ -95,7 +95,7 @@ end
 #  description: "Prepare reaction"
 #  check: "Pipet 10 µL of Phusion HF Master Mix with id %{enzyme_id} into each PCR tube (%{First} to %{Last})."
 #  note: "Use the tip to gently mix after each pipette."
-end
+#end
 
 step
   description: "Place the tubes into thermal cycler T2 at B3.335"
