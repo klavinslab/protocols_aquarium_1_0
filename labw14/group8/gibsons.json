@@ -29,13 +29,13 @@
      "add_to_data": "put a hash here to add to data for samples produced"}],
   "debug": {"fragment_name_to_sample_ids": 
              [{"name": "fYG7", "ids": []},
-              {"name": "fYG8", "ids": [1675]},
+              {"name": "fYG8", "ids": []},
               {"name": "fYG14", "ids": [1820},
               {"name": "DY206", "ids": [1822]},
               {"name": "DY178", "ids": [1821]},
               {"name": "DY211", "ids": []},
               {"name": "DY117", "ids": [1823]},
-              {"name": "DY101", "ids": []},
-              {"name": "DY84", "ids": []}             
+              {"name": "DY101", "ids": []}, 
+              {"name": "DY84", "ids": [1]}      
              ]}
 }
