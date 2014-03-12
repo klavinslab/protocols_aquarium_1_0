@@ -40,6 +40,7 @@ take
   tryptone = 1 "Bacto Tryptone"
 end
 
+bottle_size = "1 L Bottle"
 if volume == 800
     bottle_size =  "1 L Bottle"
 elsif volume == 400
@@ -48,7 +49,9 @@ elsif volume == 200
     bottle_size = "250 mL Bottle"
 end
 
-take bottles = n_bottle bottle_size
+take 
+  bottles = n_bottle bottle_size
+end
 
 product_name = ""  # Initialize global variable
 dextrose = []  # Initialize global variable (why is this one required?)
