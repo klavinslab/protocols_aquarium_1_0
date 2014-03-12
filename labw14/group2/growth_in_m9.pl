@@ -24,7 +24,7 @@ step
   description: "Pipette M9 media into the 14 mL test tube"
   warning: "Do not touch the pipette tip to the side of the glucose flask!"
   bullet: "Place the test tube inside a tube rack to prevent accidents while pipetting"
-  bullet: "Find the 250 ml flask labeled 0.4% M9 Glucose"
+  bullet: "Find the 250 ml flask labeled 0.4%% M9 Glucose"
   bullet: "Attach the 5 mL serological pipette tip to the serological pipetter"
   bullet: "Pipette 2mL of the M9 solution into the 14 mL test tube"
   image: "m9_glucose"
