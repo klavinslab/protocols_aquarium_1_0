@@ -41,18 +41,14 @@ take
 end
 
 if volume == 800
-  take
-    bottles = n_bottle "1 L Bottle"
-  end
+    bottle_size =  "1 L Bottle"
 elsif volume == 400
-  take
-    bottles = n_bottle "500 mL Bottle"
-  end
+    bottle_size =  "500 mL Bottle"
 elsif volume == 200
-  take
-    bottles = n_bottle "250 mL Bottle"
-  end
+    bottle_size = "250 mL Bottle"
 end
+
+take bottles = n_bottle bottle_size
 
 product_name = ""  # Initialize global variable
 dextrose = []  # Initialize global variable (why is this one required?)
