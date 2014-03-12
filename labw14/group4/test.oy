@@ -1,9 +1,8 @@
 argument
-  ladder_one: sample, "the reference ladder for Gel electrophoresis"
+  ladder_one: sample array, "the reference ladder for Gel electrophoresis"
 end
 
- 
-
+unique(ladder_one)
 
 place make_log_phase
   protocol: "labw14/group4/test.pl"
