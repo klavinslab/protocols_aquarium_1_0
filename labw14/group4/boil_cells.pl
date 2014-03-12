@@ -1,5 +1,5 @@
-# Modified from exisiting protocol
-# WARNING: Protocol assumes that all samples can be run in single pcr machine"
+# Modified from existing protocol
+# WARNING: Protocol assumes that all samples can be run in single PCR machine"
 
 argument
   template_plate: sample array, "your plate from last week"
@@ -51,7 +51,7 @@ step
   description: "Open the lid and take the PCR tubes you placed."
   note: "Place tubes on your bench, these tubes will be used as your boiled cell 1 - %{sample_count} for the following reaction setup."
 end
-#produces 4 templates.  each template has 3 primers and 2 reactions (f+r1,f+r2)
+#produces 4 templates.  Each template has 3 primers and 2 reactions (f+r1,f+r2)
 
 
 release platetemplate

@@ -38,10 +38,10 @@ wire (suspension, "suspended_cells_id") => (glycerol_stock, "culture_tube")
 # proceed forward
 transition [suspension] => [glycerol_stock] when !error(0) && completed(0) end
 
-# Error occured in first procedure
+# Error occurred in first procedure
 transition [suspension] => [suspension] when error(0) end
 
-# error occured in second procedure
+# error occurred in second procedure
 transition [glycerol_stock] => [glycerol_stock] when error(0) end
 
 # Metacol complete

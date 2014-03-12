@@ -31,7 +31,7 @@ Second, thyA activity requires tetrahydrofolate (THF). The replenishing of THF
 from difolatehydrofolate (DHF) is inhibited by the presence of trimethoprim.
 From these facts, a thyA deficient organism can survive on a plate with
 thyamine and trimethoprim while a thyA-containing organism cannot. Likewise, a
-thyA-containing organism can survive on a minimal media while a thyA deficent
+thyA-containing organism can survive on a minimal media while a thyA deficient
 cell will not. By including and removing the thyA gene along with a desired
 gene of interest, arbitrary DNA code can be added to a cell. Furthermore, if
 care is taken when designing the DNA oligo and DNA fragments, the bases of the

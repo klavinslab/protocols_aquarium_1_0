@@ -5,7 +5,7 @@
 # A parallel version of the quick_comp protocol
 
 BIG_CENTRIFUGE_SIZE = 8	# The max number of 50mL tubes the centrifuge can hold safely
-SMALL__CENTRIFUGE_SIZE = 20	# max number of 1.5mL tubes the centrifuge can hold saely
+SMALL__CENTRIFUGE_SIZE = 20	# max number of 1.5mL tubes the centrifuge can hold safely
 
 information "Make competent cells for immediate use."
 
@@ -16,7 +16,7 @@ end
 take
   cells = item shocked_cells
 end
-#cells = cells[0]	# i ddon't know what this is for...
+#cells = cells[0]	# I don't know what this is for...
 
 step
   description: "Important notes before starting"

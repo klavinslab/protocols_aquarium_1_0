@@ -1,4 +1,4 @@
-#Modified from exisitng protocolgels
+#Modified from existing protocolgels
 
 information "Pour a 50 mL agarose gel."
 

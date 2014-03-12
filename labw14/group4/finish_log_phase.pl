@@ -56,7 +56,7 @@ foreach c in log_cells
 	step
 	  description: "Record the absorbance shown on the nanodrop computer"
 	  getdata
-		absorbance: number,"Write down the absorbance as shown on the computer" #Better disc. of where to find it?
+		absorbance: number,"Write down the absorbance as shown on the computer" #Better description of where to find it?
 	  end
 	end
 	OD = 10*absorbance
