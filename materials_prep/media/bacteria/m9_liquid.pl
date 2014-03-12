@@ -16,7 +16,7 @@ end
 
 take
   bottle = 1 "500 mL Bottle"
-  salts = 1 "5X Difco M9 Salts Solution"
+  salts = 1 "800 mL Difco M9 Minimal Salts Solution, 5X (unsterile)"
   saltsol = 1 "100X MgSO4 CaCl2"  # TODO: When preparing this, add CaCl2 first
   water = 1 "DI Water, Sterile"
 end
