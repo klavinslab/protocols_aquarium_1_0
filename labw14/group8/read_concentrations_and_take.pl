@@ -50,6 +50,7 @@ temp_labels = [["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A1
 ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12", "R13", "R14", "R15"]]
 
 
+fragment_ids = [ ]
 pipetting_plan = [ ]
 plasmid_summary = [ ]
 # todo extract these into hash and other libraries
@@ -93,6 +94,7 @@ foreach name in fragments_to_take
   pipetting_plan = append(pipetting_plan, { fragment_name: name, fragment_ids: f_ids, 
                                             total_amount: total,
                                             plasmid_letter_start_end_amounts: plasmid_letter_start_end_amounts})
+  
 end
 
 #foreach p in plasmids_to_make
