@@ -21,7 +21,7 @@ function ask_filename_then_get_gibsons()
   
   # TODO get filename here working / retest with new version "%{f}"
   input
-    io = "labw14/group8/example_json_gibsons.json"
+    io = "labw14/group8/gibsons.json"
   end
   
   return io
