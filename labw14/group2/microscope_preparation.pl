@@ -25,7 +25,7 @@ end
 
 step
   description: "Turn on the fluorescent light bulb"
-  note: "Labeled "1" and must be turned on first because it draws an extremely high current."
+  note: "Labeled '1' and must be turned on first because it draws an extremely high current."
   warning: "FAILURE TO DO THIS FIRST MAY RESULT IN A BROKEN SYSTEM."
   image: "fluorescent lamp label 1"
 end
