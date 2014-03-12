@@ -1,7 +1,7 @@
 argument
-  ladder_one: sample array, "the reference ladder for Gel electrophoresis"
+  ladderone: sample array, "the reference ladder for Gel electrophoresis"
 end
 
-unique_ladders = unique(ladder_one)
+unique_ladders = unique(ladderone)
 
 
