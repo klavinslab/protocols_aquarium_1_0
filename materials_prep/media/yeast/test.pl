@@ -1,5 +1,6 @@
 volume = 400
 n_bottle = 1
+bottle_size = "1 L Bottle"
 if volume == 800
     bottle_size =  "1 L Bottle"
 elsif volume == 400
