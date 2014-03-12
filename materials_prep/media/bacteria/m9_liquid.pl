@@ -102,7 +102,7 @@ if biotin == "Yes"
 end
 
 
-product_label = product_label_prefix + product_labe_suffix + additions
+product_label = product_label_prefix + product_label_suffix + additions
 
 
 produce
