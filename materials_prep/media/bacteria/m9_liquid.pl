@@ -86,6 +86,7 @@ release [salts[0], saltsol[0], water[0]]
 
 
 product_label_prefix = "400 mL M9 liquid"
+product_label_suffix = ""
 if cellobiose_percent != 0 && glucose_percent == 0
   product_label_suffix = " Cellobiose"
 elsif glucose_percent != 0 && cellobiose_percent == 0
