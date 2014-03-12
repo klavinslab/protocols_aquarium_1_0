@@ -4,9 +4,4 @@ end
 
 unique_ladders = unique(ladder_one)
 
-place make_log_phase
-  protocol: "labw14/group4/test.pl"
-  marked: true
-  group: aquarium_user
-end
 
