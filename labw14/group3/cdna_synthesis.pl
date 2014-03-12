@@ -86,7 +86,7 @@ end
 return_array = []
 i = 0
 while i < n
-  thisStrain = parent_yeast[i]
+  thisStrain = rna_iso_array[i]
   produce
     r = 1 "Yeast cDNA" from thisStrain
     note: "Keep the tubes on the bench to use in the next protocol"
