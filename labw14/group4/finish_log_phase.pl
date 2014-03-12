@@ -22,11 +22,13 @@ step
 end
 
 step
-	description: "Initialize nanodrop"
-	bullet: "Close nanodrop software and reopen"
+	description: "Navigate to \'cell culture\' page"
+	bullet: "If you are at the \"cell culture\" page, proceed to the next step"
+	note: "Otherwise, press the exit button, and confirm with \'esc\'"
 	bullet: "Select 'cell culture' mode"
 	bullet: "The software will ask you to initialize the spectrophotometer. Follow the on screen instructions."
 	bullet: "Initialize with 2ul H2O and make sure to pipette a clean, bubble free drop or you may have to repeat the initialization."
+	image: "cell cultures page"
 end
 
 ODs = []
@@ -58,6 +60,7 @@ foreach c in log_cells
 	  getdata
 		absorbance: number,"Write down the absorbance as shown on the computer" #Better description of where to find it?
 	  end
+	  image: "measurement"
 	end
 	OD = 10*absorbance
 	ODs = append(ODs, OD)
