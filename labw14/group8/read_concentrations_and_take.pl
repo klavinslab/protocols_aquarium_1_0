@@ -44,15 +44,20 @@ foreach p in plasmids_to_make
  
  p_name = name
  quantity = p[:quantity_to_make] 
+ 
+ total_fragments_vol = 0
+ foreach f in p[:fragment_amounts_in_ul]
+   fragments_to_take = append(fragments_to_take, f[:name])
+   total_fragments_vol = total_fragments_vol + f[:amount]
+ end
+ 
  plasmid_summary = append ( plasmid_summary, 
         { plasmid_name: p_name,
           letter: letters[j],
           start: 1,
           end: quantity,
-          quantity: quantity})
- foreach f in p[:fragment_amounts_in_ul]
-   fragments_to_take = append(fragments_to_take, f[:name])
- end
+          quantity: quantity,
+          total_fragments_vol: total_fragments_vol})
  j = j + 1
 end
 
