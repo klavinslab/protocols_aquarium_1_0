@@ -14,25 +14,7 @@ end
 
 plasmids_to_make = g[:plasmids_to_make]
 fragments_to_take = [ ]
-
-
-foreach p in plasmids_to_make
- name = p[:plasmid_name_to_make]
- step
-   description: "Check plasmid exists"
-   note: "Go into the Inventory and check that a plasmid named '%{name}'
-          exists and the name matches the name in your specification file.
-          You will be creating this plasmid so it must exist as a type
-          in the database already."
- end
- foreach f in p[:fragment_amounts_in_ul]
-   fragments_to_take = append(fragments_to_take, f[:name])
- end
-end
-
-fragments_to_take = unique(fragments_to_take)
-
-#used to give tempids to the gibsons
+plasmid_summary = [ ]
 letters = ["A", "B", "C", "E", "F", "G", "H", "I", "J", "K", "M", "L", "Q", "R"]
 temp_labels = [["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15"],
 ["B1", "B2", "B3", "B4", "B5", "B6", "B7", "B8", "B9", "B10", "B11", "B12", "B13", "B14", "B15"],
@@ -49,10 +31,39 @@ temp_labels = [["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A1
 ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10", "Q11", "Q12", "Q13", "Q14", "Q15"],
 ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12", "R13", "R14", "R15"]]
 
+j = 0
+foreach p in plasmids_to_make
+ name = p[:plasmid_name_to_make]
+ step
+   description: "Check plasmid exists"
+   note: "Go into the Inventory and check that a plasmid named '%{name}'
+          exists and the name matches the name in your specification file.
+          You will be creating this plasmid so it must exist as a type
+          in the database already."
+ end
+ 
+ p_name = name
+ quantity = p[:quantity_to_make] 
+ plasmid_summary = append ( plasmid_summary, 
+        { plasmid_name: p_name,
+          letter: letters[j],
+          start: 1,
+          end: quantity,
+          quantity: quantity})
+ foreach f in p[:fragment_amounts_in_ul]
+   fragments_to_take = append(fragments_to_take, f[:name])
+ end
+ j = j + 1
+end
+
+fragments_to_take = unique(fragments_to_take)
+
+#used to give tempids to the gibsons
+
+
 
 fragment_ids = [ ]
 pipetting_plan = [ ]
-plasmid_summary = [ ]
 # todo extract these into hash and other libraries
 # NOTE this doesn't work like a hash in other languages
 foreach name in fragments_to_take
@@ -62,12 +73,6 @@ foreach name in fragments_to_take
   foreach p in plasmids_to_make
     p_name = p[:plasmid_name_to_make]
     quantity = p[:quantity_to_make] 
-    plasmid_summary = append ( plasmid_summary, 
-        { plasmid_name: p_name,
-          letter: letters[j],
-          start: 1,
-          end: quantity,
-          quantity: quantity})
     
     foreach f in p[:fragment_amounts_in_ul]
       if  f[:name] == name
