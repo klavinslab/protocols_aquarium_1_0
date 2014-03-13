@@ -1,5 +1,4 @@
 
-
 #   plasmids_to_make: [
 #        { plasmid_name: p_name,
 #          letter: letters[j],
@@ -16,6 +15,10 @@
 #              end: 3,
 #              amount: f[:amount]}, ... ]
 #                     , ... ]
+# rename fragment to ingredient
+# first fragment should be water
+# last fragment  should be 15ul gibson master mix
+
                                             
 argument
   plasmids_to_make: sample, "a hash with plasmids"
@@ -73,6 +76,16 @@ foreach p in plasmids_to_make
   end
 end
 
+# pcr tube is 50ul total i think
+step
+  description: "Prepare the Gibson reaction"
+  check: "Add 15µL of gibson aliquot to each tube as last step"
+end
+
+step
+  description: "Prepare the Gibson reaction"
+  check: "Add 15µL of gibson aliquot to each tube as last step"
+end
 #   pipetting_plan = [
 #         [{ fragment_name: name, 
 #           fragment_ids: [ ], # fragments to take from
@@ -112,7 +125,8 @@ gibsons = [ ]
 step
   description: "In the next steps you will put the gibsons into the thermocycler."
   note: "Take the tubes to the thermocycler and log into the station there,
-         or, if you have done this before, you can click through the steps here."
+         or, if you have done this before, you can click through the steps here.
+         You'll put them in for 30 minutes"
 end
 
 
