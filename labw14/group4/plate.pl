@@ -71,7 +71,7 @@ while i < sample_count
 
 	produce
 	  r1 = 1 "Agar plate" from strain[i]
-	  note: "Plate upside down in 30 C incubator at A1.110."
+	  note: "Place upside down in 30 C incubator at A1.110."
 	  location: "A1.110"
 	  data
 	  	from: strain[i][:id]
