@@ -28,5 +28,8 @@ step
   note: "Put in location SF2.0.2.8"
 end
 
+produce
+  r = 1 "Ladder Aliquot" of "1 kb Ladder"
+
 release [ladder_stock[0],dye_stock[0]]
   
