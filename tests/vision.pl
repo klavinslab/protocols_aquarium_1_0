@@ -5,7 +5,7 @@ take
 end
 
 take
-    lb_liquid = 1 "800 mL LB Agar (sterile)"
+    lb_liquid = 1 "800 mL LB liquid (sterile)"
 end
 
 step
