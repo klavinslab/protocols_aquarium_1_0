@@ -88,6 +88,8 @@ place transform
 end
 
 wire (quick_comp,"electrocompetent_cells") => (transform,"e_coli_strain_type")
+wire (quick_comp,"iceblock") => (transform, "iceblock") # carry the iceblock over protocols
+wire (quick_comp,"alrack") => (transform, "alrack") # carry the alrack over protocols
 
 place incubate_tube
   protocol: "labw14/group4/incubate_tube.pl"

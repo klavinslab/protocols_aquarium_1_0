@@ -6,6 +6,8 @@ argument
   dna_vol: number, "Volume of DNA to trnsform (ul)"
   e_coli_map: sample array, "The e coli strains in order of mapping with knockout plasmid"
  # strain_name: string, "Enter the name of the strain you are producing"
+ 	iceblock: sample, "You shold not see this"
+	alrack: sample, "you shuld not see this prompt"
 end
 
 include "labw14/group4/lib.pl"
@@ -17,8 +19,8 @@ take
   plasmids = item unique(plasmid_id)
   electroporator = 1 "Electroporator"
   strain = item e_coli_strain_type
-  iceblock = 1 "Styrofoam Ice Block"
-  alrack = 1 "Aluminum Tube Rack"
+#  iceblock = 1 "Styrofoam Ice Block"
+#  alrack = 1 "Aluminum Tube Rack"
   cuvette = sample_count "Clean Electrocuvette"
 end
 
@@ -142,5 +144,16 @@ log
 	return: {transformed_cells_ids: trans_cell_ids, time_constants: trans_cell_tm_consts }
 end
 
+step
+	description: "Return the aluminum rack and ice block to where you found them"
+	end
+modify
+	iceblock[0]
+	inuse: dinuse
+end
+modify
+	alrack[0]
+	inuse: dinuse
+end
 release [electroporator[0]]
-release concat(concat([falcon_tube[0],plasmids[0],alrack[0],iceblock[0]], strain), cuvette)
+release concat(concat([falcon_tube[0],plasmids[0]], strain), cuvette)

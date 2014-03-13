@@ -11,7 +11,7 @@ end
 
 num_samples = length(cells_flask_array)
 
-information "Heat shock temperature sensitive cells. You will perform this protocol on %{num_samples} samples"
+information "Heat shock temperature-sensitive cells. You will perform this protocol on %{num_samples} samples"
 
 take
 	taken_cells = item cells_flask_array

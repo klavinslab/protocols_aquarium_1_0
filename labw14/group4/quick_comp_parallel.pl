@@ -88,7 +88,7 @@ while jj < 3
 		end
 
 	  step
-	    description: "Remove the supernatant form each sample"
+	    description: "Remove the supernatant from each sample"
 	    note: "Using your Pipettor P1000, carefully aspirate the supernatant from each centrifuged sample."
 	    warning: "The pellet will be very fragile! Try not to disturb it."
 	  end
@@ -137,12 +137,14 @@ end
 
 log
   return: {electrocompetent_cells: electrocompetent_cells}
+	ice: iceblock[0]
+	alrack: alrack[0]
 end
 
-step
-	note: "The next step instructs you to release the aluminum rack and ice block. Release but DO NOT PHYSICALLY RETURN the items since you will use them in the next step."
-end
+#step
+#	note: "The next step instructs you to release the aluminum rack and ice block. Release but DO NOT PHYSICALLY RETURN the items since you will use them in the next step."
+#end
+#
 
-
-release [iceblock[0], alrack[0]]
+#release [iceblock[0], alrack[0]]
 #release cells	# DEBUG
