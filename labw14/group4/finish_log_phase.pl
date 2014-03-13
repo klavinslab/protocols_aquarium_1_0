@@ -22,13 +22,13 @@ step
 end
 
 step
-	description: "Navigate to 'cell culture' page"
-	bullet: "If you are at the 'cell culture' page, proceed to the next step"
-	note: "Otherwise, press the exit button, and confirm with \'esc\'"
+	description: "Navigate to 'Cell Culture' page"
+	bullet: "If you are at the 'Cell Culture' page, proceed to the next step"
+	note: "\nOtherwise, press the exit button and confirm that you wish to leave\n"
 	bullet: "Select 'cell culture' mode"
 	bullet: "The software will ask you to initialize the spectrophotometer. Follow the on screen instructions."
 	bullet: "Initialize with 2ul H2O and make sure to pipette a clean, bubble free drop or you may have to repeat the initialization."
-	image: "cell cultures page"
+	image: "cell_cultures_page"
 end
 
 ODs = []
