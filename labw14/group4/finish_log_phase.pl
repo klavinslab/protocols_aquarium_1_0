@@ -24,10 +24,11 @@ end
 step
 	description: "Navigate to 'Cell Culture' page"
 	bullet: "If you are at the 'Cell Culture' page, proceed to the next step"
-	note: "\nOtherwise, press the exit button and confirm that you wish to leave\n"
+	note: "\nOtherwise:"
+	bullet: "press the exit button and confirm that you wish to leave"
 	bullet: "Select 'cell culture' mode"
 	bullet: "The software will ask you to initialize the spectrophotometer. Follow the on screen instructions."
-	bullet: "Initialize with 2ul H2O and make sure to pipette a clean, bubble free drop or you may have to repeat the initialization."
+	bullet: "Initialize with 2ul molecular grade water and make sure to pipette a clean, bubble free drop or you may have to repeat the initialization."
 	image: "cell_cultures_page"
 end
 
