@@ -13,7 +13,7 @@ take
 end
 
 take
-    falcon = "50 mL Falcon Tube"
+    falcon = 1 "50 mL Falcon Tube"
 end
 
 step
