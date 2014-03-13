@@ -17,9 +17,19 @@ take
 end
 
 step
-  description: "Add lb_liquid to empty bottle"
-  note: "Pour some of the lb_liquid into the empty bottle"
-  warning: "Do this quickly, do not leave the cap off of the sterile media bottle for too long"
+  description: "Identify the empty bottle"
+end
+
+step
+  description: "Identify the LB sterile"
+end
+
+step
+  description: "Identify the Petri Dish"
+end
+
+step
+  description: "Identify the Falcon Tube"
 end
 
 release bottles
