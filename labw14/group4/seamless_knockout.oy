@@ -21,6 +21,7 @@ end
 ##
 
 #filter for unique sample ids
+# (currently done in the first protocol)
 #unique_e_coli_strains = unique(e_coli_strain)
 
 place make_log_phase

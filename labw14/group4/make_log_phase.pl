@@ -1,6 +1,7 @@
 argument
 	e_coli_strains: sample array, "E coli samples you wish to do dilute" # unique list
 end
+unique_e_coli_strains = unique(e_coli_strains)
 
 information "Dilute cells and bring them to log phase"
 
@@ -10,12 +11,12 @@ total_V = 18 # ml -- too high?
 e_V = total_V*dilution # ml;
 LB_V = (total_V-e_V)  # ml
 
-sample_count = length(e_coli_strains)
+sample_count = length(unique_e_coli_strains)
 net_volume = sample_count *  total_V
 lb_count = 1+net_volume/50 # Bug: will ask for extra lb aliquot if net_volume is a multiple of 50 ml
 
 take
-	e_items = item e_coli_strains
+	e_items = item unique_e_coli_strains
 	t_tubes = sample_count "20 ml Test Tubes" # -- glass flask?
 	LB     = lb_count "50 mL LB liquid aliquot (sterile)"
 end
@@ -27,7 +28,7 @@ end
 
 i = 0
 while i < sample_count
-	e = e_coli_strains[i]
+	e = unique_e_coli_strains[i]
 	i = i + 1
 	step
 		description: "Dilute E. coli cells from sample %{e}"

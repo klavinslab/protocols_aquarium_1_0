@@ -2,7 +2,7 @@
 # WARNING: Protocol assumes that all samples can be run in single PCR machine"
 
 argument
-  template_plate: sample array, "your plate from last week"
+  template_plate: sample array, "your plate(s) from last week"
 end
 
 take
