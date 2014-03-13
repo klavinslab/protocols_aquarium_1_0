@@ -23,13 +23,9 @@ step
   description: "Add 220 µL of molecular grade water into the tube"
 end
 
-step
-  description: "Write 822 on top of the tube as the id number"
-  note: "Put in location SF2.0.2.8"
-end
-
 produce
   r = 1 "Ladder Aliquot" of "1 kb Ladder"
+  note: "Write 1kb ladder aliquot on side of the tube"
 end
 
 release [ladder_stock[0],dye_stock[0]]
