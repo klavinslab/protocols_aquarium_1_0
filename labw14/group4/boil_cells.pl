@@ -3,13 +3,14 @@
 
 argument
   template_plate: sample array, "your plate(s) from last week"
+	num_dups: number, "number of colonies to take from each plate"
 end
 
 take
   platetemplate = item template_plate
 end
 
-sample_count = length(platetemplate)
+sample_count = length(platetemplate) * num_dups
 step
   description: "Take %{sample_count} tubes from a PCR tube strip, label them 1 - %{sample_count}, and write your initials on it." 
 end
@@ -19,14 +20,19 @@ step
 end
 
 i=0
-while i<sample_count
+while i< (sample_count / num_dups)
 	current_plate = template_plate[i]
-	current_tube=i+1
+
+	j=0 
+	while j < num_dups
+		current_tube=(i * num_dups) + j + 1
 	
-	step
-	  description: "Pick a colony from plate %{current_plate} and put it into tube %{current_tube}"
-	  check: "Find a colony in plate %{current_plate} that is medium sized, round, and isolated"
-	  check: "Pick up the entire colony with a pipette tip and transfer it to tube %{current_tube}."
+		step
+	  	description: "Pick a colony from plate %{current_plate} and put it into tube %{current_tube}"
+	  	check: "Find a colony in plate %{current_plate} that is medium sized, round, and isolated"
+	  	check: "Pick up the entire colony with a pipette tip and transfer it to tube %{current_tube}."
+		end
+		j = j+1
 	end
 	i = i+1
 end

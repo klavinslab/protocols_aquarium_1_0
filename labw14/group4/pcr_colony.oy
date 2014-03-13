@@ -19,6 +19,7 @@ place boil_cells
   protocol: "labw14/group4/boil_cells.pl"
 	argument
 		template_plate: plates
+		num_dups: 3 # take 3 colonies per plate
 	end
   group: aquarium_user
   start: now()
