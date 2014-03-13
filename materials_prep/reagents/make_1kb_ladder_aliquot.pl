@@ -30,6 +30,7 @@ end
 
 produce
   r = 1 "Ladder Aliquot" of "1 kb Ladder"
+end
 
 release [ladder_stock[0],dye_stock[0]]
   
