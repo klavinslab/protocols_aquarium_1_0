@@ -22,8 +22,8 @@ step
 end
 
 step
-	description: "Navigate to \'cell culture\' page"
-	bullet: "If you are at the \"cell culture\" page, proceed to the next step"
+	description: "Navigate to 'cell culture' page"
+	bullet: "If you are at the 'cell culture' page, proceed to the next step"
 	note: "Otherwise, press the exit button, and confirm with \'esc\'"
 	bullet: "Select 'cell culture' mode"
 	bullet: "The software will ask you to initialize the spectrophotometer. Follow the on screen instructions."
