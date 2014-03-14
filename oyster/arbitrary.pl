@@ -9,5 +9,5 @@ print("x",x)
 print("y",y)
 
 log
-  return: x
+  return: { output: { a: x, b: y } }
 end
