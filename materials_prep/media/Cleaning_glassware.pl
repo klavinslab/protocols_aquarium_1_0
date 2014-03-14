@@ -82,7 +82,6 @@ end
       
       produce
   produced_bottles = product_name
-  release bottles
   location: "A8.410"
   end
   end
