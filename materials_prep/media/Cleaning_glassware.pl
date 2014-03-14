@@ -80,8 +80,5 @@ end
        Place caps upright on drying mesh (located under hooks) to dry after sufficient rinsing."
       end
       
-produce
-  produced_bottles = n_bottle
-  location: "B1.320"
   end
   end
