@@ -27,13 +27,14 @@ end
 bottle_type = "150 mL Bottle"
 if volume == 100
 bottle_type = "250 mL Bottle"
-if volume == 200
+elsif volume == 200
   bottle_type = "250 mL Bottle"
 elsif volume == 400
   bottle_type = "500 mL Bottle"
 elsif volume == 800
   bottle_type = "1 L Bottle"
 end
+
     if volume == 100
     product_name == "100 mL Bottle (unsterile)"
   elsif volume == 200
