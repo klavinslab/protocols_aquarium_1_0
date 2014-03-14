@@ -76,12 +76,12 @@ end
        
   step
        description: "Scrub inside of bottle caps/lids"
-       note: "Use a small amount of soap, use the same brush as for the glassware, and rinse 2-3 times.
+       note: "Use a small amount of soap, scrub inside with the same brush as for the glassware, and rinse 2-3 times.
        Place caps upright on drying mesh (located under hooks) to dry after sufficient rinsing."
       end
       
       produce
-  produced_bottles = n_bottle product_name
+  produced_bottles = product_name
   release bottles
   location: "A8.410"
   end
