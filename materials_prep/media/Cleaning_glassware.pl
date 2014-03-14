@@ -80,8 +80,8 @@ end
        Place caps upright on drying mesh (located under hooks) to dry after sufficient rinsing."
       end
       
-      produce
-  produced_bottles = product_name
+produce
+  produced_bottles = n_bottle product_name
   location: "A8.410"
   end
   end
