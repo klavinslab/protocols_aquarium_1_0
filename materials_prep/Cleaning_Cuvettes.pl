@@ -10,6 +10,7 @@ step
 step
     description: "discard broken cuvettes"
     note: "Look through the clear side of the cuvettes. If any cracks are visible dispose of in the biohazard waste"
+    end
     
 step
     description: "rinse cuvettes with DI water"
@@ -39,6 +40,7 @@ step
 step
     description: "discard broken cuvettes"
     note: "Look through the clear side of the cuvettes. If any cracks are visible dispose of in the biohazard waste"
+    end
     
 step
     description: "rinse cuvettes with DI water"
