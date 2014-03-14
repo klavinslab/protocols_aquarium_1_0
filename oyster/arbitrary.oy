@@ -17,7 +17,7 @@ end
 place p2
   protocol: "oyster/arbitrary.pl"
   group: aquarium_user
-  marked: true
+  marked: false
   argument
     x: x
  end
