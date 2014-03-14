@@ -1,0 +1,12 @@
+place p1
+  protocol: "oyster/arbitrary.pl"
+  group: aquarium_user
+  marked: true
+  argument
+    x: { a: [[1,2,3],[2,3],[3]] }
+  end
+  start: now()
+  window: hours(1)
+end
+
+transition [ p1 ] => [ ] when !error(0) && completed(0) end

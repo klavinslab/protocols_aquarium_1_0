@@ -4,7 +4,7 @@ argument
   x: number array
 end
 
-print("x",x)
+print("x[:a][0]",x[:a][0])
 
 log
   return: x
