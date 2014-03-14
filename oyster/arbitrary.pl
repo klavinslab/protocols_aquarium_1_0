@@ -1,10 +1,12 @@
 require "plankton/standard.pl"
 
 argument
-  x: number array
+  x: generic
+  y: generic
 end
 
-print("x[:a][0]",x[:a][0])
+print("x",x)
+print("y",y)
 
 log
   return: x

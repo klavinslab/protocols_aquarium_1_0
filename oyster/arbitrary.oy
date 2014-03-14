@@ -1,9 +1,13 @@
+argument
+  x: generic
+end
+
 place p1
   protocol: "oyster/arbitrary.pl"
   group: aquarium_user
   marked: true
   argument
-    x: { a: [[1,2,3],[2,3],[3]] }
+    x: x
   end
   start: now()
   window: hours(1)
