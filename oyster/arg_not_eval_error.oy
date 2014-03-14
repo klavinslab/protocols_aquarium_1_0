@@ -1,0 +1,20 @@
+argument
+  x: number
+end
+
+y = [ x, x+1, x+2 ]
+q = length(y)
+
+place p1
+  protocol: "plankton/sandbox/two.pl"
+  group: aquarium_user
+  marked: true
+  argument
+    y: q
+  end
+  start: now()
+  window: hours(1)
+end
+
+transition [ p1 ] => [ ] when !error(0) && completed(0) end
+
