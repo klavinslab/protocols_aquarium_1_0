@@ -82,6 +82,6 @@ end
       
 produce
   produced_bottles = n_bottle
-  location: "A8.410"
+  location: "B1.320"
   end
   end
