@@ -1,6 +1,7 @@
 information "Clean Cuvettes"
 # FIXME: NEED TO ADD "PRODUCE"
 # Add pictures of broken cuvettes
+# Add step 24 hours afterwards to move dried cuvettes into their respective containers
 
 step
     description: "obtain dirty 1st use cuvettes"
@@ -54,7 +55,7 @@ step
     
 step
     description: "Leave cuvettes to dry"
-    note: "place cuvettes upside down in the testube rack at A8.325 (the leftmost rack)"
+    note: "place cuvettes upside down in the testube rack at A8.325 (the rightmost rack)"
     end
     
 step
