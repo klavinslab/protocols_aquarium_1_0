@@ -70,7 +70,7 @@ place machine_loading
 end
 
 wire (cdna_synth,"cdna_array") => (machine_loading,"fragment_array")
-wire (measure_cdna_conc, "conc_array") => (machine_loading, "concentrations"
+wire (measure_cdna_conc, "conc_array") => (machine_loading, "concentrations")
 
 # forward transistions
 transition [isolate_rna] => [rna_conc_measure] when !error(0) && completed(0) end 
