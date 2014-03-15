@@ -78,7 +78,7 @@ transition [machine_loading] => [] when !error(0) && completed(0) end
 
 # reverse transitions
 transition [isolate_rna] => [isolate_rna] when error(0) end 
-transition [rna_conc_measure] => [rna_conc_measure] when !error(0) end 
+transition [rna_conc_measure] => [rna_conc_measure] when error(0) end 
 transition [cdna_synth] => [cdna_synth] when error(0) end
 transition [measure_cdna_conc] => [measure_cdna_conc] when error(0) end
 transition [machine_loading] => [machine_loading] when error(0) end
