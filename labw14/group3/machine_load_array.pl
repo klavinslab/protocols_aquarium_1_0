@@ -47,10 +47,13 @@ end
 
 i = 1
 while i < n2+1
+  j = i-1
+  thisForward = primers_forward_array[j]
+  thisReverse = primers_reverse_array[j]
   step
     description: "Addition of Primers step %{i}"
-    bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primers_forward_array[i-1]}) to well A%{i}"
-    bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[i-1]}) to well A%{i}"
+    bullet: "Add 4.5 µL of the Forward Primer (sample id: %{thisForward}) to well A%{i}"
+    bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{thisReverse}) to well A%{i}"
     note: "Be sure to use proper sterile technique to guarantee accuracy of results."
   end
   i = i+1
@@ -90,26 +93,27 @@ end
 #  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[3]}) to well A6"
 #  note: "Be sure to use proper sterile technique to guarantee accuracy of results."
 #end
-
+fragment0 = fragments_array[0]
 step
   description: "Addition of Diluted cDNA Samples"
   bullet: "This is your gRNA strain (no. 1893)"
-  check: "Add 1 µL of diluted cDNA (sample id: %{fragments_array[0]}) to well A1"
+  check: "Add 1 µL of diluted cDNA (sample id: %{fragment0}) to well A1"
   check: "Stir mixture with pipette tip"
-  check: "Add 1 µL of diluted cDNA (sample id: %{fragment[0]}) to well A2"
+  check: "Add 1 µL of diluted cDNA (sample id: %{fragment0}) to well A2"
   check: "Stir mixture with pipette tip"
-  check: "Add 1 µL of diluted cDNA (sample id: %{fragment[0]}) to well A3"
+  check: "Add 1 µL of diluted cDNA (sample id: %{fragment0}) to well A3"
   check: "Stir mixture with pipette tip"
 end
 
+fragment1 = fragment_array[1]
 step
   description: "Addition of Diluted cDNA Samples (continued)"
   bullet: "This is your eYFP strain (no. 965)"
-  check: "Add 1 µL of diluted cDNA (sample id: %{fragment_array[1]}) to well A4"
+  check: "Add 1 µL of diluted cDNA (sample id: %{fragment1}) to well A4"
   check: "Stir mixture with pipette tip"
-  check: "Add 1 µL of diluted cDNA (sample id: %{fragment_array[1]}) to well A5"
+  check: "Add 1 µL of diluted cDNA (sample id: %{fragment1}) to well A5"
   check: "Stir mixture with pipette tip"
-  check: "Add 1 µL of diluted cDNA (sample id: %{fragment_array[1]}) to well A6"
+  check: "Add 1 µL of diluted cDNA (sample id: %{fragment1}) to well A6"
   check: "Stir mixture with pipette tip"
 end
 
