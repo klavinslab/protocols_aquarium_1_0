@@ -9,7 +9,7 @@ argument
 end
 
 place isolate_rna
-  protocol: "labw14/group3/isolate_rna_array.pl"
+  protocol: "labw14/group3/rna_isolate_array.pl"
   argument
     yeast_susp_array: yeast_suspen_array
     iscript: iscript
