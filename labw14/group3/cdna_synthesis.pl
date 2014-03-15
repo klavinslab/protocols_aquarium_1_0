@@ -1,5 +1,4 @@
 argument
-  parent_yeast: sample array, "Select the two strains of yeast"
   rxn_mix: sample, "Select the 5x iScript reaction mix"
   rev_enzyme: sample, "Select the iScript reverse transcriptase"
   rna_iso_array: sample array, "This is the isolated RNA from before"
