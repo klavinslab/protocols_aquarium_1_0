@@ -59,7 +59,7 @@ wire (cdna_synth,"cdna_array") => (measure_cdna_conc,"fragment_array")
 place machine_loading
   protocol: "machine_load_array.pl"
 #add concentration of cDNA into protocol to calculations
-  arguement
+  argument
     enzyme: enzyme_sybr
     primers_forward_array: primer_for
     primers_reverse_array: primer_rev
