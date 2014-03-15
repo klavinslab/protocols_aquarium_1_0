@@ -29,8 +29,12 @@ while i<n1
   thisFragment = fragments_array[i]
   water = (concentrations[i] / 50)-1
   step
-    description: "Dilution cDNA "
-    bullet: "Label a 1.5 mL tube with your intials, date, and the number %{i+1}"
+    if i == 0
+      description: "Dilution of cDNA"
+    else
+      description: "Dilution of cDNA continued..."
+    end
+    bullet: "Label a 1.5 mL tube with your intials, date, and the number %{i}"
     bullet: "Transfer 1 µL of cDNA with id {thisFragment[:id]} to new tube"
     bullet: "Add %{water} µL of Molecular Grade Water to the new tube"
     bullet: "The cDNA should be at a concentration of about 50 ng/µL"
@@ -45,15 +49,15 @@ step
   bullet: "Add 10 µL of iTaq SYBR Green Supermix to 6 qPCR plate wells (A1-A6)."
 end
 
-i = 0
-while i<n2
+i = 1
+while i < n2+1
   step
-    description: "Addition of Primers step %{i+1}"
-    bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primers_forward_array[i]}) to well A%{i}"
-    bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[i]}) to well A%{i}"
+    description: "Addition of Primers step %{i}"
+    bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primers_forward_array[i-1]}) to well A%{i}"
+    bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[i-1]}) to well A%{i}"
     note: "Be sure to use proper sterile technique to guarantee accuracy of results."
   end
-  i=i+1
+  i = i+1
 end
 
 #step
@@ -96,9 +100,9 @@ step
   bullet: "This is your gRNA strain (no. 1893)"
   check: "Add 1 µL of diluted cDNA (sample id: %{fragments_array[0]}) to well A1"
   check: "Stir mixture with pipette tip"
-  check: "Add 1 µL of diluted cDNA (sample id: %{fragment1}) to well A2"
+  check: "Add 1 µL of diluted cDNA (sample id: %{fragment[0]}) to well A2"
   check: "Stir mixture with pipette tip"
-  check: "Add 1 µL of diluted cDNA (sample id: %{fragment1}) to well A3"
+  check: "Add 1 µL of diluted cDNA (sample id: %{fragment[0]}) to well A3"
   check: "Stir mixture with pipette tip"
 end
 
