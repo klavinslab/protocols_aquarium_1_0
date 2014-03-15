@@ -24,7 +24,7 @@ place rna_conc_measure
   protocol: "labw14/group3/nano_drop_array.pl"
   group: aquarium_user
   start: now()
-  window: minutes(1)
+  window: hours(1)
 end
 
 wire (isolate_rna, "rna_suspension_array") => (rna_conc_measure, "fragment_array")
