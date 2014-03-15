@@ -1,8 +1,8 @@
 argument
-  fragments_array: sample("Yeast cDNA") array,"The cDNA samples to run in qPCR"
+  fragments_array: sample array,"The cDNA samples to run in qPCR"
   enzyme: sample("Enzyme Stock"), "The iTaq Universal SYBR Green Supermix"
-  primers_forward_array: sample("Primer Aliquot") array, "The forward primers"
-  primers_reverse_array: sample("Primer Aliquot") array, "The reverse primers"
+  primers_forward_array: sample array, "The forward primers"
+  primers_reverse_array: sample array, "The reverse primers"
   concentrations: number array, "The concentrations of cDNA"
 end
 
