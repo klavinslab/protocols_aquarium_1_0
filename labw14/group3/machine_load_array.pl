@@ -31,7 +31,7 @@ while i<n1
   step
     description: "Dilution of cDNA"
     bullet: "Label a 1.5 mL tube with your intials, date, and the number %{i}"
-    bullet: "Transfer 1 µL of cDNA with id {thisFragment[:id]} to new tube"
+    bullet: "Transfer 1 µL of cDNA with id %{thisFragment} to new tube"
     bullet: "Add %{water} µL of Molecular Grade Water to the new tube"
     bullet: "The cDNA should be at a concentration of about 50 ng/µL"
     bullet: "Stir dilution with pipette tip or vortex briefly"
@@ -59,40 +59,6 @@ while i < n2+1
   i = i+1
 end
 
-#step
-#  description: "Addition of Primers"
-#  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward_array[1]}) to well A2"
-#  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[1]}) to well A2"
-#  note: "Be sure to use proper sterile technique to guarantee accuracy of results."
-#end
-
-#step
-#  description: "Addition of Primers"
-#  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward_array[2]}) to well A3"
-#  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[2]}) to well A3"
-#  note: "Be sure to use proper sterile technique to guarantee accuracy of results."
-#end
-
-#step
-#  description: "Addition of Primers"
-#  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward_array[0]}) to well A4"
-#  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[0]}) to well A4"
-#  note: "Be sure to use proper sterile technique to guarantee accuracy of results."
-#end
-
-#step
-#  description: "Addition of Primers"
-#  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward_array[1]}) to well A5"
-#  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[1]}) to well A5"
-#  note: "Be sure to use proper sterile technique to guarantee accuracy of results."
-#end
-
-#step
-#  description: "Addition of Primers"
-#  bullet: "Add 4.5 µL of the Forward Primer (sample id: %{primer_forward_array[3]}) to well A6"
-#  bullet: "Add 4.5 µL of the Reverse Primer (sample id: %{primer_reverse_array[3]}) to well A6"
-#  note: "Be sure to use proper sterile technique to guarantee accuracy of results."
-#end
 fragment0 = fragments_array[0]
 step
   description: "Addition of Diluted cDNA Samples"
@@ -105,7 +71,7 @@ step
   check: "Stir mixture with pipette tip"
 end
 
-fragment1 = fragment_array[1]
+fragment1 = fragments_array[1]
 step
   description: "Addition of Diluted cDNA Samples (continued)"
   bullet: "This is your eYFP strain (no. 965)"
