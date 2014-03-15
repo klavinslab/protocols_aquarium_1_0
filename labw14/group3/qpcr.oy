@@ -58,7 +58,6 @@ wire (cdna_synth,"cdna_array") => (measure_cdna_conc,"fragment_array")
 
 place machine_loading
   protocol: "machine_load_array.pl"
-#add concentration of cDNA into protocol to calculations
   argument
     enzyme: enzyme_sybr
     primers_forward_array: primer_for
@@ -72,16 +71,15 @@ end
 
 wire (cdna_synth,"cdna_array") => (machine_loading,"fragment_array")
 wire (measure_cdna_conc, "conc_array") => (machine_loading, "concentrations"
-#clean up?
 
-#forward transistions
+# forward transistions
 transition [isolate_rna] => [rna_conc_measure] when !error(0) && completed(0) end 
 transition [rna_conc_measure] => [cdna_synth] when !error(0) && completed(0) end 
 transition [cdna_synth] => [measure_cdna_conc] when !error(0) && completed(0) end
 transition [measure_cdna_conc] => [machine_loading] when !error(0) && completed(0) end 
 transition [machine_loading] => [] when !error(0) && completed(0) end 
 
-#reverse transitions
+# reverse transitions
 transition [isolate_rna] => [isolate_rna] when error(0) end 
 transition [rna_conc_measure] => [rna_conc_measure] when !error(0) end 
 transition [cdna_synth] => [cdna_synth] when error(0) end
