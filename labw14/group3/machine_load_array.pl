@@ -26,7 +26,7 @@ end
 
 i = 0
 while i<n1
-  thisFragment = fragment_array[i]
+  thisFragment = fragments_array[i]
   water = (concentrations[i] / 50)-1
   step
     description: "Dilution cDNA "
