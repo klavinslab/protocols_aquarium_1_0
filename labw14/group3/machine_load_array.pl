@@ -29,11 +29,7 @@ while i<n1
   thisFragment = fragments_array[i]
   water = (concentrations[i] / 50)-1
   step
-    if i == 0
-      description: "Dilution of cDNA"
-    else
-      description: "Dilution of cDNA continued..."
-    end
+    description: "Dilution of cDNA"
     bullet: "Label a 1.5 mL tube with your intials, date, and the number %{i}"
     bullet: "Transfer 1 µL of cDNA with id {thisFragment[:id]} to new tube"
     bullet: "Add %{water} µL of Molecular Grade Water to the new tube"
