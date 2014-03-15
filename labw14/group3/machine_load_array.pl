@@ -142,4 +142,4 @@ step
 end
 
 release concat(cdna_array, sybr)
-release concast(forward_primers, reverse_primers)
+release concat(forward_primers, reverse_primers)
