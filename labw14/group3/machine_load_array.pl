@@ -7,7 +7,7 @@ argument
 end
 
 n1 = length(fragments_array)
-n2 = length(primers_forward)
+n2 = length(primers_forward_array)
 
 take
   cdna_array = item fragments_array
