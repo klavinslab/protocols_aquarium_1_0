@@ -1,11 +1,8 @@
 argument
-#Isolate Lysed RNA
   yeast_suspen_array: sample array, "Choose the Yeast Samples from which to Isolate RNA"
   iscript: sample, "iScript RT-qPCR sample preparation reagent at bench"
-#cDNA Synthesis arguements
   iscript_rxn_mix: sample, "Select te 5x iScript reaction mix"
   rev_trans: sample, "Select the iScript reverse transcriptase"
-#Loading qPCR Machine arguments
   enzyme_sybr: sample, "The iTaq Universal SYBR Green Supermix"
   primer_for: sample array, "The forward primers"
   primer_rev: sample array, "The reverse primers"
