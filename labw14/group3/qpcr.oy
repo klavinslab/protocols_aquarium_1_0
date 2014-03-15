@@ -14,7 +14,7 @@ place isolate_rna
     yeast_susp_array: yeast_suspen_array
     iscript: iscript
   end
-# marked: true
+  marked: true
   group: aquarium_user
   start: now()
   window: minutes(10)
