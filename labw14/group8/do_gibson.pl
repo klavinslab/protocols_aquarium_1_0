@@ -1,4 +1,3 @@
-
 #   plasmids_to_make: [
 #        { plasmid_name: p_name,
 #          letter: letters[j],
@@ -23,7 +22,6 @@
 argument
   plasmids_to_make: sample, "a hash with plasmids"
   pipetting_plan: sample, "a hash with fragment names and amounts"
-  fragments: sample array, "the fragments for the gibsons"
 end
 
 to_release = [ ]
@@ -31,13 +29,19 @@ to_release = [ ]
 # like [:this_protocol][:completed] = true
 # instead of holding values in memory / putting them in arrays
 
-# show one screen in which all fragments are taken
-
 step
   description: "Take fragments for Gibsons"
   note: "Go to the locations listed on the next page to take fragments for all the gibsons.
-         %{fragments}" # this is an array of ids
+         You don't need to keep them on ice."
 end
+
+# iterate over pipetting plan and collect fragment ids
+fragments = [ ]
+foreach f in pipetting_plan
+  fragments = concat(fragments, f.fragment_ids)
+end
+
+fragments = unique(fragments)
 
 take
     x = item fragments
@@ -141,4 +145,4 @@ log
   return: {completed_samples: gibsons, aborted_samples: aborted_samples} # put resulting samples from produce here
 end
 
-release fragments
+release to_release
