@@ -6,18 +6,11 @@ step
 end
 
 ha[a] = "assigning to a string variable works this way"
-x = ha[:testkey]
-y = ha[a]
+from_symbol = ha[:testkey]
+from_var = ha[a]
+from_string = ha["testkey"]
 
 step
   description: "Maybe says assigning to a string variable works this way twice"
-  note: "%{x} %{y}"
-end
-
-ha[:testkey] = "reading from a string variable works"
-x = ha[a]
-
-step
-  description: "Maybe reading from a string variable works this way"
-  note: "%{x}"
+  note: "%{from_symbol} %{from_var} %{from_string}"
 end
