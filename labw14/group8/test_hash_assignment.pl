@@ -22,7 +22,8 @@ step
          from_string %{from_string}
          and from hash
          %{result}"
-         
+end
+
 ha[a] = "ha[a]"
 symbols_and_strings_overlap = ha[:testkey]
 from_var = ha[a]
@@ -40,4 +41,3 @@ step
          from_string %{from_string}
          and from hash
          %{result}"
-end
