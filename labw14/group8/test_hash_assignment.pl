@@ -64,7 +64,7 @@ result = { from_symbol: ha[:testkey],
            from_string:  ha["testkey"]}
 
 step
-  description: "Assigning to the symbol doesn't overwrite the string"
+  description: "See if ha[:testkey] overwrites ha['testkey'] (it doesn't)"
     note: "ha[a] = 'ha[a]'
          ha['testkey'] = 'ha['testkey']'
          ha[:testkey] = 'ha[:testkey]'
