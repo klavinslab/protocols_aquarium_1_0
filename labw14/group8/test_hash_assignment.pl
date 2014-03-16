@@ -17,7 +17,7 @@ result = { symbols_and_strings_overlap: ha[:testkey],
 
 step
   description: "Maybe says assigning to a string variable works this way"
-  note: "symbols_and_strings_overlap %{from_symbol} 
+  note: "symbols_and_strings_overlap %{symbols_and_strings_overlap} 
          from_var %{from_var} 
          from_string %{from_string}
          and from hash
