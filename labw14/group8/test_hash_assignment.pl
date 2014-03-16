@@ -25,10 +25,10 @@ step
 end
 
 ha[a] = "ha[a]"
-from_var = ha[a]
 ha["testkey"] = "ha['testkey']"
 from_string = ha["testkey"]
 from_symbol = ha[:testkey]
+from_var = ha[a]
 
 result = { from_symbol: ha[:testkey],
            from_var   : ha[a],
