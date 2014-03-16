@@ -53,7 +53,7 @@ end
 
 wire (cdna_synth,"cdna_array") => (cdna_conc_measure,"fragment_array")
 
-place machine_loading
+place machine_load
   protocol: "machine_load_array.pl"
   argument
     enzyme: enzyme_sybr
@@ -65,21 +65,21 @@ place machine_loading
   window: hours(1)
 end
 
-wire (cdna_synth,"cdna_array") => (machine_loading,"fragments_array")
-wire (cdna_conc_measure, "conc_array") => (machine_loading, "concentrations")
+wire (cdna_synth,"cdna_array") => (machine_load,"fragments_array")
+wire (cdna_conc_measure, "conc_array") => (machine_load, "concentrations")
 
 # forward transistions
 transition [isolate_rna] => [rna_conc_measure] when !error(0) && completed(0) end 
 transition [rna_conc_measure] => [cdna_synth] when !error(0) && completed(0) end 
 transition [cdna_synth] => [cdna_conc_measure] when !error(0) && completed(0) end
-transition [cdna_conc_measure] => [machine_loading] when !error(0) && completed(0) end
-transition [machine_loading] => [] when !error(0) && completed(0) end 
+transition [cdna_conc_measure] => [machine_load] when !error(0) && completed(0) end
+transition [machine_load] => [] when !error(0) && completed(0) end 
 
 # reverse transitions
 transition [isolate_rna] => [isolate_rna] when error(0) end 
 transition [rna_conc_measure] => [rna_conc_measure] when error(0) end 
 transition [cdna_synth] => [cdna_synth] when error(0) end
 transition [cdna_conc_measure] => [cdna_conc_measure] when error(0) end
-transition [machine_loading] => [machine_loading] when error(0) end
+transition [machine_load] => [machine_load] when error(0) end
 
 
