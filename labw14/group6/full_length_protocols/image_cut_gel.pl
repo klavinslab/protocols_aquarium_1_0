@@ -140,6 +140,11 @@ step
 end
 
 step
+  description: "Clean and wash the Gel box"
+  note: "Take the gel box to the sink, pour the liquid into the waste, rinse it with tap water and put it on the rack to dry."
+end
+
+step
   description: "Next step is fragment purification."
 end
 
@@ -148,9 +153,10 @@ r = []
 
 while ii < 2
   produce
-    y = 1 "Gel Slice" of "fGA"
+    z = 1 "Gel Slice" of "fGA"
+    release y
   end
-  r = append(r,y[:id])
+  r = append(r,z[:id])
   ii = ii + 1
 end
 
