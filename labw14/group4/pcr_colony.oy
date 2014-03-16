@@ -55,6 +55,7 @@ end
 
 place run_gels
   protocol: "labw14/group4/run_gel_parallel.pl"
+  group: aquarium_user
   argument
   	ladder_one: ladder_one
 	fragment_volume: 20
@@ -66,6 +67,7 @@ wire (pcr_prepare, "pcr_count") => (run_gels, "pcr_count")
 
 place image_gels
   protocol: "labw14/group4/image_gel.pl"
+  group: aquarium_user
   start: now()
 end
 wire (pour_gels, "gel_n") => (image_gels, "gel_count")
