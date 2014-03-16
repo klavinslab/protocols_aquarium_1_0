@@ -1,4 +1,4 @@
-require "labw14/group8/final/lib_read_gibson.pl"
+
 
 # all of the work for the protocol is basically done here
 # create a pipetting plan data structure that is iterated over
@@ -13,8 +13,9 @@ argument
     gibson_master_mix_amt: number, "Amount of Gibson master mix to add to PCR tube, in uL"
 end
 
-g = ask_filename_then_get_gibsons()
-complex_datastructure = g
+input
+    g = "labw14/group8/gibsons.json"
+end
 
 step
   description: "debug: print out the input json"
