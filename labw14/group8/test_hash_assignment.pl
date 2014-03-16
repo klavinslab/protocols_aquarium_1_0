@@ -41,3 +41,4 @@ step
          from_string %{from_string}
          and from hash
          %{result}"
+end
