@@ -42,6 +42,7 @@ end
 
  step
     description: "Keep the prepared PCR tube on the bench while proceeding to the second assembly protocol."
+    note: "You can also keep the Phusion Mater Mix enzyme on your bench for next protocol, but choose return at the end of this protocol."
     image: "Group6_pcr_bench"
  end
  
