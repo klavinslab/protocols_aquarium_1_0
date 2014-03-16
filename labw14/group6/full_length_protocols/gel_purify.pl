@@ -15,10 +15,15 @@ T1 = gel[0]
 T2 = gel[1]
 
 step
-  description: "Weigh the gel slice with id %{T1} on a scale at A5.300"
-  note: "Use an empty 1.5 mL tube to zero the scale first, then put the gel slice tube on the scale."
+  description: "Weigh the gel slices with id %{T1} and id %{T2} on a scale at A5.300"
+  note: "Use an empty 1.5 mL tube to zero the scale first, then put each gel slice tube on the scale."
+  warning: "The weight of each gel slice should not be more than 200 mg, otherwise; the purification process will not be efficient."
+  note: "Trim the gel slices until the desirable weight for each one is achieved."
   getdata
-    gel_weight1: number, "Enter the gel slice weight shown on the scale in mg. If it shows 0.134 on scale, you enter 134 below."
+    gel_weight1: number, "Enter the final gel slice weight for the one with id %{T1} shown on the scale in mg. If it shows 0.134 on scale, you enter 134 below."
+  end
+  getdata
+    gel_weight2: number, "Enter the final gel slice weight for the one with id %{T2} shown on the scale in mg. If it shows 0.134 on scale, you enter 134 below."
   end
 end
 
@@ -34,14 +39,6 @@ while gel_weight1 > 200
     getdata
       gel_weight1: number, "Enter the gel slice weight shown on the scale in mg. If it shows 0.134 on scale, you enter 134 below."
     end
-end
-end
-
-step
-  description: "Weigh the gel slice with id %{T2} on a scale at A5.300"
-  note: "Use an empty 1.5 mL tube to zero the scale first, then put the gel slice tube on the scale."
-  getdata
-    gel_weight2: number, "Enter the gel slice weight shown on the scale in mg. If it shows 0.134 on scale, you enter 134 below."
   end
 end
 
@@ -67,13 +64,15 @@ QG_volume_plus = QG_volume1 + 100
 
 step
   description: "Purification"
-  note: "Add %{QG_volume1} µL buffer QG into the gel slice tube with id %{T1}"
-  note: "Add %{QG_volume2} µL buffer QG into the gel slice tube with id %{T2}"
+  note: "Add %{QG_volume1} µL buffer QG (located on the top shelf of the bench) into the gel slice tube with id %{T1}"
+  note: "Add %{QG_volume2} µL buffer QG (located on the top shelf of the bench) into the gel slice tube with id %{T2}"
+  image: "Group6_QGBuffer"
 end
 
 step
   description: "Incubate the tubes in a 50 C heat block at B3.340 for 10 minutes."
   note: "Vortex after 5 minutes of incubation and put back in the 50 C until 10 minutes total time reached"
+  image: "Group6_heat_block"
 end
 
 step
@@ -82,19 +81,22 @@ step
 end
 
 step
-  description: "Label two pink QIAquick Spin columns"
+  description: "Label two pink QIAquick Spin columns (located on the top shelf of the bench)."
   note: "Write your initials on it."
+  image: "Group6_QIAquick"
 end
 
 step
   description: "Add each tube content to seperate labeled QIAquick Spin columns"
   note: "Tube content volume shoud be around %{QG_volume_plus} µL."
+  image: "Group6_addtocolumn"
 end
 
 step
   description: "Centrifuge at top speed (Make sure to balance in the centrifuge!)"
   bullet: "Place the tubes into centrifuge at B14.320."
   bullet: "Select 17,000 g and 1 minutes, press start."
+  image: "Group6_centrifuge"
 end
 
 step
@@ -104,17 +106,20 @@ end
 
 step
   description: "Add 750 µL PE buffer to columns and wait 3 minutes"
+  image: "Group6_PEBuffer"
 end
 
 step
   description: "Centrifuge at top speed (Make sure to balance in the centrifuge!)"
   bullet: "Place the tubes into centrifuge."
   bullet: "Select 17,000 g and 1 minutes, press start."
+  image: "Group6_centrifuge"
 end
 
 step
   description: "Take the columns out of centrifuge and empty collection tubes"
   note: "Empty the waste in collection tubes into a liquid waster collector on bench, put the collection tubes back on afterwards."
+  image: "Group6_empty_column"
 end
 
 
@@ -123,6 +128,7 @@ step
   bullet: "Place the tubes into centrifuge."
   bullet: "Select 17,000 g and 1 minutes, press start."
   warning: "Make sure to balance in the centrifuge!"
+  image: "Group6_centrifuge"
 end
 
 step
@@ -145,6 +151,7 @@ step
   description: "Centrifuge at top speed"
   bullet: "Place labeled tubes with the columns into centrifuge."
   bullet: "Select 17,000 g and 1 minutes, press start."
+  image: "Group6_centrifuge"
 end
 
 step
