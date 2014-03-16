@@ -38,21 +38,20 @@ place cdna_synth
   end
   group: aquarium_user
   start: now()
-  window: minutes(5)
+  window: hours(2)
 end
 
 wire (isolate_rna,"rna_suspension_array") => (cdna_synth,"rna_iso_array")
 wire (rna_conc_measure, "conc_array") => (cdna_synth, "rna_conc_array")
 
-place measure_cdna_conc
-  protocol: "lab14/group3/nano_drop_array.pl"
+place cdna_conc_measure
+  protocol: "labw14/group3/nano_drop_array.pl"
   group: aquarium_user
   start: now()
-  window: minutes(1)
+  window: hours(1)
 end
 
-wire (cdna_synth,"cdna_array") => (measure_cdna_conc,"fragment_array")
-
+wire (cdna_synth,"cdna_array") => (cdna_conc_measure,"fragment_array")
 
 place machine_loading
   protocol: "machine_load_array.pl"
@@ -63,7 +62,7 @@ place machine_loading
   end
   group: aquarium_user
   start: now()
-  window: minutes(1)
+  window: hours(1)
 end
 
 wire (cdna_synth,"cdna_array") => (machine_loading,"fragment_array")
@@ -72,15 +71,15 @@ wire (measure_cdna_conc, "conc_array") => (machine_loading, "concentrations")
 # forward transistions
 transition [isolate_rna] => [rna_conc_measure] when !error(0) && completed(0) end 
 transition [rna_conc_measure] => [cdna_synth] when !error(0) && completed(0) end 
-transition [cdna_synth] => [measure_cdna_conc] when !error(0) && completed(0) end
-transition [measure_cdna_conc] => [machine_loading] when !error(0) && completed(0) end 
+transition [cdna_synth] => [cdna_conc_measure] when !error(0) && completed(0) end
+transition [measure_cdna_conc] => [machine_loading] when !error(0) && completed(0) end
 transition [machine_loading] => [] when !error(0) && completed(0) end 
 
 # reverse transitions
 transition [isolate_rna] => [isolate_rna] when error(0) end 
 transition [rna_conc_measure] => [rna_conc_measure] when error(0) end 
 transition [cdna_synth] => [cdna_synth] when error(0) end
-transition [measure_cdna_conc] => [measure_cdna_conc] when error(0) end
+transition [measure_cdna_conc] => [cdna_conc_measure] when error(0) end
 transition [machine_loading] => [machine_loading] when error(0) end
 
 
