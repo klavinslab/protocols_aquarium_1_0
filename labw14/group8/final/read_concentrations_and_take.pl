@@ -1,22 +1,37 @@
 require "labw14/group8/final/lib_read_gibson.pl"
 
+# all of the work for the protocol is basically done here
+# create a pipetting plan data structure that is iterated over
+# for the rest of the protocol
+#   possible bug - if refactor as a function, file might change
+#                  as we go along; not sure if Aquarium ref's the
+#                  git repo at time job scheduled or when protocol
+#                  is executed
+#   filename is currently hardcoded; dynamic didn't work b4
+#    might now, so TODO check that
+argument
+    gibson_master_mix_amt: number, "Amount of Gibson master mix to add to PCR tube, in uL"
+end
 
 g = ask_filename_then_get_gibsons()
 complex_datastructure = g
 
-# idea TODO
-# build up a data structure using loops etc that define experiment
-# then iterate through that data structure, showing it
 step
   description: "debug: print out the input json"
   note: "%{g}"
 end
 
+
+
 plasmids_to_make = g[:plasmids_to_make]
-fragments_to_take = [ ]
-plasmid_summary = [ ]
+fragments_to_take = [ ] # will be unique list of fragment names
+plasmid_summary = [ ]   # used to list # of each plasmid and
+                        # calculate amount of water to add
+
+#used to give short tempids to the gibson pcr tubes
 letters = ["A", "B", "C", "E", "F", "G", "H", "I", "J", "K", "M", "L", "Q", "R"]
-temp_labels = [["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15"],
+temp_labels = [
+["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15"],
 ["B1", "B2", "B3", "B4", "B5", "B6", "B7", "B8", "B9", "B10", "B11", "B12", "B13", "B14", "B15"],
 ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12", "C13", "C14", "C15"],
 ["E1", "E2", "E3", "E4", "E5", "E6", "E7", "E8", "E9", "E10", "E11", "E12", "E13", "E14", "E15"],
@@ -34,6 +49,9 @@ temp_labels = [["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A1
 j = 0
 foreach p in plasmids_to_make
  name = p[:plasmid_name_to_make]
+ quantity = p[:quantity_to_make]
+ 
+ #implicit exception checking
  step
    description: "Check plasmid exists"
    note: "Go into the Inventory and check that a plasmid named '%{name}'
@@ -42,8 +60,6 @@ foreach p in plasmids_to_make
           in the database already."
  end
  
- p_name = name
- quantity = p[:quantity_to_make] 
  
  total_fragments_vol = 0
  foreach f in p[:fragment_amounts_in_ul]
@@ -51,19 +67,23 @@ foreach p in plasmids_to_make
    total_fragments_vol = total_fragments_vol + f[:amount]
  end
  
+ vol_with_master_mix = total_fragments_vol + gibson_master_mix_amt
+ pcr_tube_desired_full_volume_in_ul = 200 # TODO measure this in lab
+ vol_mg_water_to_add = pcr_tube_desired_full_volume_in_ul - vol_with_master_mix
+ 
  plasmid_summary = append ( plasmid_summary, 
-        { plasmid_name: p_name,
+        { plasmid_name: name,
           letter: letters[j],
           start: 1,
           end: quantity,
           quantity: quantity,
-          total_fragments_vol: total_fragments_vol})
+          total_fragments_vol: total_fragments_vol,
+          vol_with_master_mix: vol_with_master_mix,
+          vol_mg_water_to_add: vol_mg_water_to_add  })
  j = j + 1
 end
 
 fragments_to_take = unique(fragments_to_take)
-
-#used to give tempids to the gibsons
 
 
 
@@ -139,31 +159,6 @@ end
 # so easier to write on small tube
 
 
-samples_to_make = [ ]
-j = 0
-foreach p in plasmids_to_make
-  name = p[:plasmid_name_to_make]
-  quantity = p[:quantity_to_make]
-  i = 0
-  while i < quantity
-    
-    produce silently
-       r = 1 "Gibson Reaction Result" of name
-       location: "Bench"
-       data
-           fragment_amounts: p[:fragment_amounts_in_ul]
-           location: "Bench"
-           temp_label: temp_labels[j][i]
-       end
-    end
-    
-    samples_to_make = append (samples_to_make, r)
-    
-    i = i + 1
-  end
-  j = j + 1
-end
-
 # foreach fragment
 # pipette fragment into samples %[[{sample: id, amount: number} sorted by number increasing]
 # todo a function that makes a pipetting plan 
@@ -171,5 +166,5 @@ end
 
 
 log
-  return: {gibsons: samples_to_make,  pipetting_plan: pipetting_plan, plasmids_to_make: plasmid_summary}
+  return: {pipetting_plan: pipetting_plan, plasmids_to_make: plasmid_summary}
 end
