@@ -14,14 +14,19 @@
 #              end: 3,
 #              amount: f[:amount]}, ... ]
 #                     , ... ]
-# rename fragment to ingredient
-# first fragment should be water
-# last fragment  should be 15ul gibson master mix
 
-                                            
+function collect_from_hash(hash, nested_key_array)
+  # each level should give back an array
+  # or allow placeholders like * to denote
+  # when get a hash back or an array back, etc
+  vals = hash
+      
+end
+
 argument
   plasmids_to_make: sample, "a hash with plasmids"
   pipetting_plan: sample, "a hash with fragment names and amounts"
+  gibson_master_mix_amt: number, "Amount of Gibson master mix to add to PCR tube, in uL"
 end
 
 to_release = [ ]
@@ -72,35 +77,17 @@ end
 foreach p in plasmids_to_make
   num = p[:quantity]
   l = p[:letter]
+  vol_mg_water_to_add = p[:vol_mg_water_to_add]
   step
-    description: "Label %{num} PCR tubes, %{letter}1 to %{letter}%{num}"
+    description: "Label %{num} PCR tubes and pipette MG water"
     note: "Label %{num} PCR tubes, %{letter}1 to %{letter}%{num}
            by writing on the sides of the tubes near the top
-           (otherwise they will be smudged off, see second picture)."
+           (otherwise they will be smudged off, see second picture).
+           Pipette %{vol_mg_water_to_add}uL of MG water into each tube."
   end
 end
 
-# pcr tube is 50ul total i think
-step
-  description: "Prepare the Gibson reaction"
-  check: "Add 15µL of gibson aliquot to each tube as last step"
-end
-
-step
-  description: "Prepare the Gibson reaction"
-  check: "Add 15µL of gibson aliquot to each tube as last step"
-end
-#   pipetting_plan = [
-#         [{ fragment_name: name, 
-#           fragment_ids: [ ], # fragments to take from
-#           total_amount: total,
-#           plasmid_letter_start_end_amounts: [ 
-#            { plasmid_name: p_name,
-#              letter: A, # pipette into tubes A1 through A3 inclusive
-#              start: 1, 
-#              end: 3,
-#              amount: f[:amount]}, ... ]
-#                     , ... ]
+#for each pipetting step, do that step
 foreach p in pipetting_plan
   f_name = p[:fragment_name]
   f_ids = p[:fragment_ids]
@@ -124,21 +111,42 @@ foreach p in pipetting_plan
   end # todo put all on one screen nicely once can concat strings
 end
 
-#silently produce gibsons
-gibsons = [ ]
+
 step
-  description: "In the next steps you will put the gibsons into the thermocycler."
-  note: "Take the tubes to the thermocycler and log into the station there,
-         or, if you have done this before, you can click through the steps here.
-         You'll put them in for 30 minutes"
+  description: "Check there is an open thermocycler"
+  note: "In the next step you'll add Gibson master mix.
+         The exonuclease in gibson master mix begins eating fragments immediately
+         after you put it in. Check there is an available thermocycler with
+         enough space before adding the gibson master mix. If not, wait until
+         there is an open thermocycler and continue then."
 end
 
+step
+  description: "Put the gibsons into the thermocycler."
+  note: "Take the tubes to the thermocycler and log into the station there,
+         or, if you have done this before, you can click through the steps here.
+         You'll put them in for XX minutes"
+end
+
+step
+  description: "Start the Gibson reaction"
+  check: "Add %{gibson_master_mix_amt}µL of gibson aliquot to each tube. Do this expediently."
+end
+
+#silently produce gibsons
 
 
 # call step from a library here
 
 # nice to have enter the gibsons that you put in the thermocycler, ids of ones that you didn't
 # plus time to check back, since if making many, may not have enough thermocycler space
+
+
+#Nice to have - if ran out of fragment stock or no stock for that fragment
+# let people specify the tubes here, then reschedule them
+# might be better to implement a generic exeption step for that, anything produce in the protocol
+# let the user manipulate the inventory / reschedule them
+# need a generic way to reconstruct the datastructure used to produce them to do that
 aborted_samples = [ ] # route these to another protocol to just put them in the thermocycler
 
 log
