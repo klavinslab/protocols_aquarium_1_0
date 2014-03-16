@@ -65,7 +65,7 @@ place machine_loading
   window: hours(1)
 end
 
-wire (cdna_synth,"cdna_array") => (machine_loading,"fragment_array")
+wire (cdna_synth,"cdna_array") => (machine_loading,"fragments_array")
 wire (cdna_conc_measure, "conc_array") => (machine_loading, "concentrations")
 
 # forward transistions
