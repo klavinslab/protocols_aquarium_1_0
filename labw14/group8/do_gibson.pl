@@ -1,3 +1,12 @@
+function collect_from_hash(hash, nested_key_array)
+  # each level should give back an array
+  # or allow placeholders like * to denote
+  # when get a hash back or an array back, etc
+  local vals = hash
+      
+end
+
+
 #   plasmids_to_make: [
 #        { plasmid_name: p_name,
 #          letter: letters[j],
@@ -14,15 +23,6 @@
 #              end: 3,
 #              amount: f[:amount]}, ... ]
 #                     , ... ]
-
-function collect_from_hash(hash, nested_key_array)
-  # each level should give back an array
-  # or allow placeholders like * to denote
-  # when get a hash back or an array back, etc
-  vals = hash
-      
-end
-
 argument
   plasmids_to_make: sample, "a hash with plasmids"
   pipetting_plan: sample, "a hash with fragment names and amounts"
