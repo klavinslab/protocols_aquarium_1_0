@@ -84,7 +84,6 @@ place success
   window: minutes(1)     #start in the next minute
 end
 
-wire(get_concentrations, "gibsons") => (do_gibson, "gibsons")
 wire(get_concentrations, "pipetting_plan") => (do_gibson, "pipetting_plan")
 wire(get_concentrations, "plasmids_to_make") => (do_gibson, "plasmids_to_make")
 
