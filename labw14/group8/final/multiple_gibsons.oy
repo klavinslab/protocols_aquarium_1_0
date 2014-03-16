@@ -92,7 +92,6 @@ wire(do_gibson, "completed_samples") => (verify_gibson, "gibsons")
 # wire(verify_gibson, "failed") => (redo, "failed_gibsons") 
  
 # forward transitions
-introduction
 transition [introduction] => [get_concentrations] when !error(0) && completed(0) end
 transition [get_concentrations] => [do_gibson] when !error(0) && completed(0) end
 transition [do_gibson] => [verify_gibson] when !error(0) && completed(0) end
