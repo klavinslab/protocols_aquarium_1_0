@@ -72,6 +72,7 @@ end
 step
   description: "Incubate the tubes in a 50 C heat block at B3.340 for 10 minutes."
   note: "Vortex after 5 minutes of incubation and put back in the 50 C until 10 minutes total time reached"
+  timer: { hours: 0, minutes: 10, seconds: 0 }
   image: "Group6_heat_block"
 end
 
@@ -107,6 +108,7 @@ end
 step
   description: "Add 750 µL PE buffer to columns and wait 3 minutes"
   image: "Group6_PEBuffer"
+  timer: { hours: 0, minutes: 3, seconds: 0 }
 end
 
 step
@@ -145,6 +147,7 @@ end
 step
   description: "Add 30 µL of EB buffer to the center of column membrane and wait for 1 minutes."
   warning: "Be very careful to not pipette on the wall of the tube."
+  timer: { hours: 0, minutes: 1, seconds: 0 }
 end
 
 step
