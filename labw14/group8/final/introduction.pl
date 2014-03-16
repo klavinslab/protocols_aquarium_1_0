@@ -15,7 +15,7 @@ step
   bullet: "Label and fill PCR tubes with water, then fragements"
   warning: "You must check that the thermocycler is available first, since exonuclease in master mix 
             begins eating fragments immediately"
-  bullet: "Add the master mix, then put them in the thermocycler for X minutes 
+  bullet: "Add the master mix, then put them in the thermocycler for X minutes"
   
   bullet: "Transform a bit of the resulting plasmid into E. Coli (to magnify it to make stock and test the transform successful)"
   bullet: "Plate the transformed cells overnight"
