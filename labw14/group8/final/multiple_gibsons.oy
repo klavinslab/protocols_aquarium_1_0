@@ -25,12 +25,25 @@
 argument
   fragments: sample array, "Read your input file and select all the fragment stock needed for the gibsons"
   file: string, "Path to the file with the gibsons"
+  gibson_master_mix: sample array, "Gibson master mix (have to cancel the protocol if this runs out). Won't be asked to take them all at once."
+  gibson_master_mix_amt: number, "Amount of Gibson master mix to add to PCR tube, in uL"
+end
+
+# inspired by "labw14/group6/full_length_protocols/introduction.pl"
+place introduction
+  protocol: "labw14/group8/final/introduction.pl"
+  group: aquarium_user  #generic, general
+  marked: true          #start here
+  start: now()          # they can start as soon as they want
+  window: minutes(30)   # modify this to coincide with weekly scheduling
 end
 
 place get_concentrations
-  protocol: "labw14/group8/read_concentrations_and_take.pl"
-  group: aquarium_user      #generic, general
-  marked: true           #start here
+  protocol: "labw14/group8/final/read_concentrations_and_take.pl"
+  argument
+    gibson_master_mix_amt: gibson_master_mix_amt
+  end
+  group: aquarium_user      
   start: now()
   window: minutes(1)     #start in the next minute
 end
@@ -38,7 +51,7 @@ end
 place do_gibson
   protocol: "labw14/group8/do_gibson.pl"
   argument
-    fragments: fragments
+    fragments: fragments    #  TODO refactor out, will get from input file
   end
   group: aquarium_user      #generic, general
   start: now()
@@ -51,7 +64,7 @@ place verify_gibson
   protocol: "labw14/group8/verify_gibson.pl"
   group: aquarium_user      #generic, general
   start: now()
-  window: minutes(1)     #start in the next minute
+  window: days(1)     #have a limit so any stock you selected args for doesn't go out
 end
 
 # last step incubated colonies
