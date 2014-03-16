@@ -16,7 +16,7 @@ result = { symbols_and_strings_overlap: ha[:testkey],
            from_string:  ha["testkey"]}
 
 step
-  description: "How Hashes Work"
+  description: "Hash example with output"
   note: "ha[a] = 'ha[a]'
          symbols_and_strings_overlap = ha[:testkey]
          from_var = ha[a]
@@ -64,7 +64,7 @@ result = { from_symbol: ha[:testkey],
            from_string:  ha["testkey"]}
 
 step
-  description: "Maybe says assigning to a string variable works this way"
+  description: "Assigning to the symbol doesn't overwrite the string"
     note: "ha[a] = 'ha[a]'
          ha['testkey'] = 'ha['testkey']'
          ha[:testkey] = 'ha[:testkey]'
