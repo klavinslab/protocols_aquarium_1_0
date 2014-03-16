@@ -89,8 +89,8 @@ fragments_to_take = unique(fragments_to_take)
 
 fragment_ids = [ ]
 pipetting_plan = [ ]
+
 # todo extract these into hash and other libraries
-# NOTE this doesn't work like a hash in other languages
 foreach name in fragments_to_take
   total = 0
   j=0
