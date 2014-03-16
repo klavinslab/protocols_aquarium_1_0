@@ -1,22 +1,23 @@
-a = "hello"
+a = "testkey"
 ha = { hi: "there", foo: 2}
 
 step
   description: "Demonstrate hash assignment"
 end
 
-ha[a] = "assigning to a string variable works"
-x = ha[:hello]
+ha[a] = "assigning to a string variable works this way"
+x = ha[:testkey]
+y = ha[a]
 
 step
-  description: "What values does x have?"
-  note: "%{x}"
+  description: "Maybe says assigning to a string variable works this way twice"
+  note: "%{x} %{y}"
 end
 
-ha[:hello] = "reading from a string variable works"
+ha[:testkey] = "reading from a string variable works"
 x = ha[a]
 
 step
-  description: "What values does x have?"
+  description: "Maybe reading from a string variable works this way"
   note: "%{x}"
 end
