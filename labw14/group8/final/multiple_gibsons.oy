@@ -23,8 +23,7 @@
 # minimal feature set
 
 argument
-  fragments: sample array, "Read your input file and select all the fragment stock needed for the gibsons"
-  file: string, "Path to the file with the gibsons"
+  file: string, "Path to the file with the gibsons, currently hardcoded so this is ignored"
   gibson_master_mix: sample array, "Gibson master mix (have to cancel the protocol if this runs out). Won't be asked to take them all at once."
   gibson_master_mix_amt: number, "Amount of Gibson master mix to add to PCR tube, in uL"
 end
@@ -49,9 +48,9 @@ place get_concentrations
 end
 
 place do_gibson
-  protocol: "labw14/group8/do_gibson.pl"
+  protocol: "labw14/group8/final/do_gibson.pl"
   argument
-    fragments: fragments    #  TODO refactor out, will get from input file
+    gibson_master_mix_amt: gibson_master_mix_amt
   end
   group: aquarium_user      #generic, general
   start: now()
@@ -87,14 +86,14 @@ end
 wire(get_concentrations, "pipetting_plan") => (do_gibson, "pipetting_plan")
 wire(get_concentrations, "plasmids_to_make") => (do_gibson, "plasmids_to_make")
 
-
 wire(do_gibson, "completed_samples") => (verify_gibson, "gibsons")
 
 # only ask for concentrations from samples you need
 # wire(verify_gibson, "failed") => (redo, "failed_gibsons") 
  
 # forward transitions
-
+introduction
+transition [introduction] => [get_concentrations] when !error(0) && completed(0) end
 transition [get_concentrations] => [do_gibson] when !error(0) && completed(0) end
 transition [do_gibson] => [verify_gibson] when !error(0) && completed(0) end
 transition [verify_gibson] => [success] when !error(0) && completed(0) end
