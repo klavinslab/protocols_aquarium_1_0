@@ -105,10 +105,10 @@ foreach p in pipetting_plan
   end
     
   foreach plsea in p[:plasmid_letter_start_end_amounts]
-    amt = plsea[:amount]
+      amt = plsea[:amount]
     start = plsea[:start]
-    end = plsea[:end]
-    l = p[:letter]
+      end = plsea[:end]
+        l = plsea[:letter]
     step
       description: "Pipette %{f_name} into sample(s)"
       note: "Pipette a total of %{amt} microliters from %{f_ids} into each of tube(s)
