@@ -71,7 +71,8 @@ step
   description: "Take %{sum} PCR tubes"
   note: "Take enough PCR tubes for the next labeling steps.
          Keep them separate by letter since you will
-         pipette by letter groups."
+         pipette by letter groups. Take enough small green tube racks, 
+         to hold the PCR tubes, and flip the green tube racks upside down."
 end
 
 foreach p in plasmids_to_make
@@ -83,7 +84,10 @@ foreach p in plasmids_to_make
     note: "Label %{num} PCR tubes, %{l}1 to %{l}%{num}
            by writing on the sides of the tubes near the top
            (otherwise they will be smudged off, see second picture).
-           Pipette %{vol_mg_water_to_add}uL of MG water into each tube."
+           Pipette %{vol_mg_water_to_add}uL of MG water into each tube.
+           Place the tubes open in separate rows by letter.
+           Leaving the tubes open in the tube rack will help you go faster
+           in the next pipetting steps."
   end
 end
 
@@ -110,7 +114,7 @@ foreach p in pipetting_plan
     l = t[:letter]
     step
      description: "Pipette %{f_name} into sample(s)"
-     note: "Pipette a total of %{amt} microliters from %{f_ids} into each of tube(s)
+     note: "Pipette %{amt} microliters of fragment (drawing any of %{f_ids}) into each of tube(s)
              %{l}%{start} to %{l}%{stop}, inclusive."
     end
   end # todo put all on one screen nicely once can concat strings
@@ -138,7 +142,8 @@ gmix_id = gmix[0][:id]
 
 step
   description: "Start the Gibson reaction"
-  check: "Add %{gibson_master_mix_amt}µL of gibson aliquot (id = %{gmix_id}to each tube. Do this expediently."
+  note: "Add %{gibson_master_mix_amt}µL of gibson aliquot (id = %{gmix_id}) to each tube. Do this expediently,
+         starting with A tubes, then B tubes, etc."
 end
 
 step
