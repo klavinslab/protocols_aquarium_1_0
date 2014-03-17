@@ -80,11 +80,21 @@ foreach p in plasmids_to_make
   vol_mg_water_to_add = p[:vol_mg_water_to_add]
   if vol_mg_water_to_add > 0
     step
-      description: "Label %{num} PCR tubes and pipette MG water"
+      description: "Label %{num} PCR tube(s) and pipette MG water"
       note: "Label %{num} PCR tubes, %{l}1 to %{l}%{num}
            by writing on the sides of the tubes near the top
            (otherwise they will be smudged off, see second picture).
            Pipette %{vol_mg_water_to_add}uL of MG water into each tube.
+           Place the tubes open in separate rows by letter.
+           Leaving the tubes open in the tube rack will help you go faster
+           in the next pipetting steps."
+    end
+  else
+    step
+      description: "Label %{num} PCR tube(s)"
+      note: "Label %{num} PCR tubes, %{l}1 to %{l}%{num}
+           by writing on the sides of the tubes near the top
+           (otherwise they will be smudged off, see second picture).
            Place the tubes open in separate rows by letter.
            Leaving the tubes open in the tube rack will help you go faster
            in the next pipetting steps."
