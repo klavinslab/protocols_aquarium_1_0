@@ -43,7 +43,7 @@ end
 # iterate over pipetting plan and collect fragment ids
 fragments = [ ]
 foreach f in pipetting_plan
-  fragments = concat(fragments, f.fragment_ids)
+  fragments = concat(fragments, f[:fragment_ids])
 end
 
 fragments = unique(fragments)
