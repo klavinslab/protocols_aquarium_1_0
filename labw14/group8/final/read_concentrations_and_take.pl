@@ -1,5 +1,4 @@
 
-
 # all of the work for the protocol is basically done here
 # create a pipetting plan data structure that is iterated over
 # for the rest of the protocol
@@ -69,7 +68,7 @@ foreach p in plasmids_to_make
  end
  
  vol_with_master_mix = total_fragments_vol + gibson_master_mix_amt
- pcr_tube_desired_full_volume_in_ul = 200 # TODO measure this in lab
+ pcr_tube_desired_full_volume_in_ul = 6 # TODO calculate this so equal amount of water / avg of other vols
  vol_mg_water_to_add = pcr_tube_desired_full_volume_in_ul - vol_with_master_mix
  
  plasmid_summary = append ( plasmid_summary, 
