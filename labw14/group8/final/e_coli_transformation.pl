@@ -6,51 +6,13 @@ argument
   plate_type: object, "The plate on which the transformed cells to be plated"
 end
 
-#if plate_type == "LB Amp Plate (sterile)"
- # tube_incubation_choice = 0
-#else
-  #tube_incubation_choice = 1
-#end
-
-take
-  falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
-  plasmid = item plasmid
-  electroporator = 1 "Electroporator"
-end
-
-step
-  description: 
-    "Intialize the Electroporator"
-  note: 
-    "Turn on the electroporator if it is off and set the voltage to 1250V by clicking up and down button.\n
-     Click the time constant button."
-end
-
-step
-  description: "Label a 1.5 mL tube"
-  note: "Write 'T' on top of the tube.\n
-         Place the tube in the tube rack.\n
-         This tube will eventually hold the transformed cells."
-  image: "label_1_5mL_tube"
-end
-
-step
-  description: "Arange Ice Block"
-  note: "You will next retrieve a styrofoam ice block and an aluminum tube rack.\n
-         Put the aluminum tube rack on top of the ice block."
-  image: "arrange_cold_block"
-
-end
-
-take
-  iceblock = 1 "Styrofoam Ice Block"
-  alrack = 1 "Aluminum Tube Rack"
-end 
+temp_label = plasmid[:data][:temp_label]
 
 step
   description:"Retrieve Cuvette and Electrocompetent Cells"
   note: "You will next retrieve a Clean Electrocuvette, put it inside the styrofoam touching ice block.\n
-        Then grab a tube of electrocompetent cells and put it on the aluminum tube rack."
+        Then grab a tube of electrocompetent cells and put it on the aluminum tube rack. \n
+        You can take 2-3 electrocuvettes at a time as long as keep them cold."
   image: "handle_electrocompetent_cells"
   warning: "The cuvette metal sides should be touching the ice block to keep it cool."
 end
@@ -68,7 +30,7 @@ step
 end
 
 step
-  description: "Pipette 2 µL Plasmid Stock (sample id: %{plasmid_id}) into the electrocompetent cells tube"
+  description: "Pipette 2 µL of the gibson (sample id: %{plasmid_id}) into the electrocompetent cells tube"
   check: "Pieptte into the culture, not on the side of the tube."
   check: "Swirl the tip gently in the culture to mix after pieptting."
   check: "Put back on the aluminum rack after mixing."
@@ -100,22 +62,27 @@ step
   bullet: "Pipette up and down 3 times to extract the cells from the gap in the cuvette."
   bullet: "Transfer to tube T."
   warning: "If you hear a pop, throw away the cuvette, 
-            click ABORT."
+            and enter -1 in the time consant box"
   image: "electroporation_rescue"
   getdata
     time_constant: number, "Enter the time constant shown on the electroporator."
   end
 end
 
+if time_constant == -1
+  #handle error by recalling the above inside of a function TODO
+end
+
 produce
-  r = 1 "Transformed E coli 1.5 mL tube" of "pGAA"
+  r = 1 "Transformed E coli 1.5 mL tube" of plasmid
   note: "Keep the tube on the bench to use in the next protocol. (no need to edit the location below)"
   location: "Bench"
 end
 
+transformed_cells = r
+
 log
-  return: { transformed_cells_id: r[:id], tube_incubation_choice : tube_incubation_choice }
+  return: { transformed_cells_id: r[:id]}
 end
 
-release [electroporator[0]]
-release [falcon_tube[0],plasmid[0],alrack[0],iceblock[0],strain[0],cuvette[0]]
+release [strain[0],cuvette[0]]
