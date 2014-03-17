@@ -27,7 +27,7 @@ argument
   gibson_master_mix: sample array, "Gibson master mix (have to cancel the protocol if this runs out). Extra are backup (not yet implemented)."
   gibson_master_mix_amt: number, "Amount of Gibson master mix to add to PCR tube, in uL"
   e_coli_strain_type: object, "The electrocompetent aliquot to be transformed"
-  volume: number, "The volume (µL) to plate"
+  volume: number, "The volume (µL) to plate, put 200 if you don't know what to put"
   plate_type: object, "Type of plate (from the solidmedia category)"
 end
 
