@@ -11,6 +11,7 @@ end
 
 step
   description: "The steps are as follows:"
+  bullet: "Day 1"
   bullet: "Take the fragments and plasmid backbones"
   bullet: "Label and fill PCR tubes with water, then fragements"
   warning: "You must check that the thermocycler is available first, since exonuclease in master mix 
@@ -19,9 +20,10 @@ step
   
   bullet: "Transform a bit of the resulting plasmid into E. Coli (to magnify it to make stock and test the transform successful)"
   bullet: "Plate the transformed cells overnight"
+  bullet: "Day 2"
   bullet: "Image the plates to check the colony counts (measure of success) and retry failed Gibsons"
   bullet: "Calculate equimolar amounts to make a more likely succesful Gibson for failed ones"
-  bullet: "Do another Gibson with the amounts you calculated. Transform and plate overnight"
+  bullet: "Do another Gibson with the amounts you calculated. Transform and plate overnight (Day 2, Day3), then image"
   bullet: "For Gibsons that still didn't work, the person who wanted them done will try to troubleshoot what went wrong.
            Sometimes they don't work without any fault on your part, especially with more fragments."
 end
