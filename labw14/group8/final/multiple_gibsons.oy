@@ -24,7 +24,7 @@
 
 argument
   file: string, "Path to the file with the gibsons, currently hardcoded so this is ignored"
-  gibson_master_mix: sample array, "Gibson master mix (have to cancel the protocol if this runs out). Won't be asked to take them all at once."
+  gibson_master_mix: sample array, "Gibson master mix (have to cancel the protocol if this runs out). Extra are backup (not yet implemented)."
   gibson_master_mix_amt: number, "Amount of Gibson master mix to add to PCR tube, in uL"
 end
 
@@ -51,6 +51,7 @@ place do_gibson
   protocol: "labw14/group8/final/do_gibson.pl"
   argument
     gibson_master_mix_amt: gibson_master_mix_amt
+    gibson_master_mix: gibson_master_mix
   end
   group: aquarium_user      #generic, general
   start: now()
