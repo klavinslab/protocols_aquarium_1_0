@@ -93,12 +93,11 @@ foreach p in pipetting_plan
   f_ids = p[:fragment_ids]
   targets = p[:plasmid_letter_start_end_amounts]
   step
-      description: "Pipette %{f_name}"
-      note: "The samples with ids %{f_ids} you took have the fragment in them.
-             You may have multiple ids in case the fragment stock in one
-             might run out.
-             Pipette the amount shown into each tube using the letters and numbers
-             to identify which tube.
+      description: "Pipette %{f_name} in the next screen(s)"
+      note: "Fragment %{f_name} is in tubes with ids %{f_ids}.
+             You may have multiple tubes to avoid running out of fragment stock as you go.
+             On the next few screens, you will pipette the amount shown into the PCR tubes
+             you labeled.
              There will be a separate screen for each set, which are summarized
              below:
              %{targets}"
