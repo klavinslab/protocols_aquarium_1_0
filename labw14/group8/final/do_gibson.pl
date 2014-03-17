@@ -183,7 +183,7 @@ foreach p in plasmids_to_make
        end
     end
     
-    completed_samples = concat (samples_to_make, r)
+    completed_samples = concat (completed_samples, r)
     
     i = i + 1
   end
@@ -203,7 +203,7 @@ end
 aborted_samples = [ ] # route these to another protocol to just put them in the thermocycler
 
 log
-  return: {completed_samples: gibsons, aborted_samples: aborted_samples} # put resulting samples from produce here
+  return: {completed_samples: completed_samples, aborted_samples: aborted_samples} # put resulting samples from produce here
 end
 
 release to_release
