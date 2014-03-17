@@ -1,8 +1,12 @@
-#   plasmids_to_make: [
-#        { plasmid_name: p_name,
+# plasmids_to_make = append ( plasmid_summary, 
+#        { plasmid_name: name,
 #          letter: letters[j],
 #          start: 1,
-#          end: quantity}, ...],
+#          end: quantity,
+#          quantity: quantity,
+#          total_fragments_vol: total_fragments_vol,
+#          vol_with_master_mix: vol_with_master_mix,
+#          vol_mg_water_to_add: vol_mg_water_to_add  })
 #   pipetting_plan = [
 #         [{ fragment_name: name, 
 #           fragment_ids: [ ], # fragments to take from
@@ -50,16 +54,11 @@ fragments = unique(fragments)
 
 take
     x = item fragments
+    molecular_g_h2o = 1 "Molecular Biology Grade Water"
 end
 
 to_release = x
-
-fragments = to_release # this is an array of { id: #, name: "sdfsdf", data: {...}}
-
-step
-  description: "What are taken fragments?"
-  note: "%{fragments}"
-end
+to_release = concat(to_release, molecular_g_h2o)
 
 sum = 0
 foreach p in plasmids_to_make
@@ -150,11 +149,33 @@ step
   description: "Put the gibsons into the thermocycler."
   note: "Take the tubes to the thermocycler and log into the station there,
          or you can click through the steps here.
-         You'll put them in for XX minutes with program Y"
+         You'll put them in for 60 minutes with at 50C hold"
 end
 
 #silently produce gibsons
-
+completed_samples = [ ]
+foreach p in plasmids_to_make
+  name = p[:plasmid_name]
+  num = p[:quantity]
+  letter = p[:letter]
+  
+  i = 1
+  while i <= quantity
+    temp_label = letter + to_string(i)
+    produce silently
+       r = 1 "Gibson Reaction Result" of name
+       location: "Thermocycler"
+       data
+           fragment_amounts: p[:fragment_amounts_in_ul]
+           temp_label: temp_label
+       end
+    end
+    
+    completed_samples = concat (samples_to_make, r)
+    
+    i = i + 1
+  end
+end
 
 # call step from a library here
 
