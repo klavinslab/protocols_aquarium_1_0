@@ -183,7 +183,7 @@ foreach p in plasmids_to_make
        end
     end
     
-    completed_samples = concat (completed_samples, r)
+    completed_samples = append (completed_samples, r)
     
     i = i + 1
   end
