@@ -80,7 +80,7 @@ foreach p in plasmids_to_make
   vol_mg_water_to_add = p[:vol_mg_water_to_add]
   step
     description: "Label %{num} PCR tubes and pipette MG water"
-    note: "Label %{num} PCR tubes, %{letter}1 to %{letter}%{num}
+    note: "Label %{num} PCR tubes, %{l}1 to %{l}%{num}
            by writing on the sides of the tubes near the top
            (otherwise they will be smudged off, see second picture).
            Pipette %{vol_mg_water_to_add}uL of MG water into each tube."
@@ -94,19 +94,25 @@ foreach p in pipetting_plan
   targets = p[:plasmid_letter_start_end_amounts]
   step
       description: "Pipette %{f_name}"
-      note: "Pipette the following amounts from %{f_ids} into the following tubes,
-             putting the amount into each tube from letter start to end.
-             There will be a separate screen for each, and they are summarized
+      note: "The samples with ids %{f_ids} you took have the fragment in them.
+             You may have multiple ids in case the fragment stock in one
+             might run out.
+             Pipette the amount shown into each tube using the letters and numbers
+             to identify which tube.
+             There will be a separate screen for each set, which are summarized
              below:
              %{targets}"
   end
     
   foreach plsea in p[:plasmid_letter_start_end_amounts]
     amt = plsea[:amount]
+    start = plsea[:start]
+    end = plsea[:end]
+    l = p[:letter]
     step
       description: "Pipette %{f_name} into sample(s)"
       note: "Pipette a total of %{amt} microliters from %{f_ids} into each of tube(s)
-             %{letter}{%start} to %{letter}%{end}, inclusive."
+             %{l}%{start} to %{l}%{end}, inclusive."
     end
   end # todo put all on one screen nicely once can concat strings
 end
@@ -128,10 +134,11 @@ take
 end
 
 to_release = concat(to_release, gmix)
+gmix_id = gmix[0][:id]
 
 step
   description: "Start the Gibson reaction"
-  check: "Add %{gibson_master_mix_amt}µL of gibson aliquot to each tube. Do this expediently."
+  check: "Add %{gibson_master_mix_amt}µL of gibson aliquot (id = %{gmix_id}to each tube. Do this expediently."
 end
 
 step
