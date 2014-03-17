@@ -172,7 +172,7 @@ foreach p in plasmids_to_make
   letter = p[:letter]
   
   i = 1
-  while i <= quantity
+  while i <= num
     temp_label = letter + to_string(i)
     produce silently
        r = 1 "Gibson Reaction Result" of name
