@@ -26,6 +26,9 @@ argument
   file: string, "Path to the file with the gibsons, currently hardcoded so this is ignored"
   gibson_master_mix: sample array, "Gibson master mix (have to cancel the protocol if this runs out). Extra are backup (not yet implemented)."
   gibson_master_mix_amt: number, "Amount of Gibson master mix to add to PCR tube, in uL"
+  e_coli_strain_type: object, "The electrocompetent aliquot to be transformed"
+  volume: number, "The volume (µL) to plate"
+  plate_type: object, "Type of plate (from the solidmedia category)"
 end
 
 # inspired by "labw14/group6/full_length_protocols/introduction.pl"
@@ -62,6 +65,11 @@ end
 # count the number of colonies and record in the log
 place verify_gibson
   protocol: "labw14/group8/verify_gibson.pl"
+  argument
+    e_coli_strain_type: e_coli_strain_type
+    volume: volume
+    plate_type: plate_type
+  end
   group: aquarium_user      #generic, general
   start: now()
   window: days(1)     #have a limit so any stock you selected args for doesn't go out
