@@ -54,7 +54,7 @@ end
 wire (cdna_synth,"cdna_array") => (cdna_conc_measure,"fragment_array")
 
 place machine_load
-  protocol: "machine_load_array.pl"
+  protocol: "labw14/group3/machine_load_array.pl"
   argument
     enzyme: enzyme_sybr
     primers_forward_array: primer_for
