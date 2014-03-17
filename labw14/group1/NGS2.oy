@@ -29,7 +29,6 @@ place overnight
   #start: hours(20)
   start: now()
   marked: true
-  start: now()
   group: aquarium_user
   window: hours(8)
 end
