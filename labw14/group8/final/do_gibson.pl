@@ -104,17 +104,18 @@ foreach p in pipetting_plan
              %{targets}"
   end
     
-  foreach plsea in p[:plasmid_letter_start_end_amounts]
-      amt = plsea[:amount]
-    start = plsea[:start]
-      end = plsea[:end]
-        l = plsea[:letter]
-    step
-      description: "Pipette %{f_name} into sample(s)"
-      note: "Pipette a total of %{amt} microliters from %{f_ids} into each of tube(s)
-             %{l}%{start} to %{l}%{end}, inclusive."
-    end
-  end # todo put all on one screen nicely once can concat strings
+#  foreach plsea in p[:plasmid_letter_start_end_amounts]
+#      amt = plsea[:amount]
+#    start = plsea[:start]
+#      end = plsea[:end]
+#        l = plsea[:letter]
+#    step
+#      description: "Pipette %{f_name} into sample(s)"
+#      note: "Pipette a total of %{amt} microliters from %{f_ids} into each of tube(s)
+#             %{l}%{start} to %{l}%{end}, inclusive."
+#    end
+#  end # todo put all on one screen nicely once can concat strings
+
 end
 
 
