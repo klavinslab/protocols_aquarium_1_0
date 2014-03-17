@@ -18,6 +18,7 @@ argument
   plasmids_to_make: sample, "a hash with plasmids"
   pipetting_plan: sample, "a hash with fragment names and amounts"
   gibson_master_mix_amt: number, "Amount of Gibson master mix to add to PCR tube, in uL"
+  gibson_master_mix: sample array, "Gibson master mix (plus backup ids, not yet used)"
 end
 
 function collect_from_hash(hash, nested_key_array)
@@ -120,16 +121,24 @@ step
          there is an open thermocycler and continue then."
 end
 
-step
-  description: "Put the gibsons into the thermocycler."
-  note: "Take the tubes to the thermocycler and log into the station there,
-         or, if you have done this before, you can click through the steps here.
-         You'll put them in for XX minutes"
+first = gibson_master_mix[0]
+
+take
+  gmix = item first
 end
+
+to_release = concat(to_release, gmix)
 
 step
   description: "Start the Gibson reaction"
   check: "Add %{gibson_master_mix_amt}µL of gibson aliquot to each tube. Do this expediently."
+end
+
+step
+  description: "Put the gibsons into the thermocycler."
+  note: "Take the tubes to the thermocycler and log into the station there,
+         or you can click through the steps here.
+         You'll put them in for XX minutes with program Y"
 end
 
 #silently produce gibsons
