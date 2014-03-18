@@ -52,8 +52,8 @@ end
 
 produce
   r1 = 1 "Agar plate" from strain[0]
-  note: "Plate upside down in 30 C incubator at A1.110."
-  location: "A1.110"
+  note: "Plate upside down in 37 C incubator at B14.310"
+  location: "B14.310"
   release plate
 end
 
