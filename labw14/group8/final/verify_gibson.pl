@@ -44,6 +44,8 @@ end
 
 to_release = [lb, electroporator, iceblock, alrack]
 
+transformed_cells_array = [ ]
+plates_array = [ ]
 foreach g in gibsons
 
   include "labw14/group8/final/e_coli_transformation.pl"
@@ -53,12 +55,15 @@ foreach g in gibsons
     r = transformed_cells
   end
 
+  transformed_cells_array = append (transformed_cells_array, r)
+  
   include "labw14/group8/final/plate.pl"
     plate_type: plate_type
     volume: volume
     e_coli_strain: r
     rp = r1
   end
+  plates_array = append(plates_array, rp)
 
 end
 
@@ -67,8 +72,13 @@ step
   note: "Put them in the locations shown on the next page"
 end
 
-
 release gibsons # lets hope it asks them to put in fridge, not thermocycler
+
+step
+  description: "Dispose of the leftover transformed cells"
+end
+
+release transformed_cells_array
 
 step
   description: "That's its for today - awesome!"
@@ -76,5 +86,5 @@ step
 end
 
 log
-  return: {successful: gibsons, failed: gibsons} # put new resulting samples from produce here
+  return: {successful: plates_array, failed: [ ]} # put new resulting samples from produce here
 end
