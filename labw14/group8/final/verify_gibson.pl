@@ -24,7 +24,7 @@ end
 
 step
   description: "Label 1.5 mL tube(s)"
-  note: "Label one tube for each of the gibson tubes with the same letter-number on top of the tube.\n
+  note: "Label one tube for each of the gibson tubes with the same letter-number.\n
          Place the tube(s) in the tube rack.\n
          These tube(s) will eventually hold the transformed cells."
   image: "label_1_5mL_tube"
