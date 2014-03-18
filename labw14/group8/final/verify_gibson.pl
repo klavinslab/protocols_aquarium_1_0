@@ -5,6 +5,8 @@ argument
   plate_type: object, "Type of plate (from the solidmedia category)"
 end
 
+e_coli_strain_type ="DH5alpha Electrocompetent Aliquot"
+
 # based off / reused from group 6
 take
   lb = 1 "50 mL LB liquid aliquot (sterile)"
