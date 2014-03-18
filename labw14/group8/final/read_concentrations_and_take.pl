@@ -78,7 +78,8 @@ foreach p in plasmids_to_make
           quantity: quantity,
           total_fragments_vol: total_fragments_vol,
           vol_with_master_mix: vol_with_master_mix,
-          vol_mg_water_to_add: vol_mg_water_to_add  })
+          vol_mg_water_to_add: vol_mg_water_to_add,
+          fragment_amounts_in_ul: p[:fragment_amounts_in_ul]})
  j = j + 1
 end
 
