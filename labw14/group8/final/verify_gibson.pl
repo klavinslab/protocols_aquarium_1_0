@@ -1,6 +1,6 @@
 argument
   gibsons: sample array, "the gibsons to verify"
-  e_coli_strain_type: object, "The electrocompetent aliquot to be transformed"
+  e_coli_strain_type: string, "The electrocompetent aliquot to be transformed"
   volume: number, "The volume (µL) to plate"
   plate_type: object, "Type of plate (from the solidmedia category)"
 end
