@@ -29,6 +29,7 @@ step
   image: "thawed_electrocompotent_cells"
 end
 
+plasmid_id = plasmid[:id]
 step
   description: "Pipette 2 µL of the gibson (sample id: %{plasmid_id}) into the electrocompetent cells tube"
   check: "Pieptte into the culture, not on the side of the tube."
