@@ -76,8 +76,11 @@ if time_constant == -1
   #handle error by recalling the above inside of a function TODO
 end
 
+plasmid_name = info(plasmid)
+plasmid_name = plasmid_name[:name]
+
 produce
-  r = 1 "Transformed E coli 1.5 mL tube" of plasmid
+  r = 1 "Transformed E coli 1.5 mL tube" of plasmid_name
   note: "Keep the tube on the bench to use in the next protocol. (no need to edit the location below)"
   location: "Bench"
 end
