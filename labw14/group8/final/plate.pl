@@ -1,7 +1,7 @@
 information "Spread cells onto a petri dish containing ~25mL agar media."
 
 argument
-   e_coli_strain_id: sample, "A sample"
+   e_coli_strain: sample, "A sample"
    volume: number, "The volume (µL) to plate"
    plate_type: object, "Type of plate (from the solidmedia category)"
 end
@@ -51,9 +51,13 @@ step
 end
 
 produce
-  r1 = 1 "Agar plate" from strain[0]
-  note: "Plate upside down in 37 C incubator at B14.310"
+  r1 = 1 "Agar plate" from e_coli_strain
+  note: "Label and plate upside down in 37 C incubator at B14.310"
   location: "B14.310"
+  data
+           fragment_amounts: e_coli_strain[:data][:fragment_amounts_in_ul]
+           temp_label: e_coli_strain[:data][:temp_label]
+  end
   release plate
 end
 
