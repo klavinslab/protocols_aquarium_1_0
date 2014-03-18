@@ -99,8 +99,7 @@ wire(get_concentrations, "plasmids_to_make") => (do_gibson, "plasmids_to_make")
 
 wire(do_gibson, "completed_samples") => (verify_gibson, "gibsons")
 
-# only ask for concentrations from samples you need
-# wire(verify_gibson, "failed") => (redo, "failed_gibsons") 
+wire(verify_gibson, "plates") => (success, "gibson_results") 
  
 # forward transitions
 transition [introduction] => [get_concentrations] when !error(0) && completed(0) end
