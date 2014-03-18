@@ -46,6 +46,7 @@ step
   check: "Loosen cap on the 50 mL LB liquid aliquot (sterile)."
   check: "Take the black plastic cuvette holder out of electroporator."
   warning: "When you prepare the pieptte tips, do not let the tip touch anything (such as the bench)."
+  warning: "The next steps, until after you pipette up and down LB into the electrocuvette, should be done as quickly as possible."
 end
     
 step
@@ -59,14 +60,15 @@ end
 step
   description: "Electroporation, Rescue and Transfer"
   bullet: "Put the cuvette in the cuvette holder, slide into electroporator and press the PULSE button twice quickly."
-  bullet: "Remove the cuvette from the electroporator and QUICKLY add 1 mL of LB."
+  bullet: "Remove the cuvette from the electroporator after it shows the time constant."
+  bullet: "QUICKLY add 1 mL of LB."
   bullet: "Pipette up and down 3 times to extract the cells from the gap in the cuvette."
   bullet: "Transfer to tube T."
   warning: "If you hear a pop, throw away the cuvette, 
             and enter -1 in the time consant box"
   image: "electroporation_rescue"
   getdata
-    time_constant: number, "Enter the time constant shown on the electroporator."
+    time_constant: number, "Enter the time constant shown on the electroporator. Remove after the electroporator shows the time constant"
   end
 end
 
