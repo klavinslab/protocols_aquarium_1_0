@@ -60,6 +60,14 @@ foreach g in gibsons
 end
 
 step
+  description: "Store the leftover gibson results"
+  note: "Put them in the locations shown on the next page"
+end
+
+
+release gibsons # lets hope it asks them to put in fridge, not thermocycler
+
+step
   description: "That's its for today - awesome!"
   note: "Tomorrow you'll image the plates to get colony counts"
 end
