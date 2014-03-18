@@ -9,4 +9,4 @@ place pour_yeast_plates
   window: minutes(30)
 end
 
-transition [pour_yeast_plates] => [pour_yeast_plates] when error(0) || quantity('SDO Plate (sterile)') < 10 end
+transition [pour_yeast_plates] => [pour_yeast_plates] when error(0) || quantity("SDO Plate (sterile)") < 10 end
