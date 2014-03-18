@@ -1,6 +1,6 @@
 place pour_yeast_plates
   protocol: "materials_prep/reagents/make_1kb_ladder_aliquot.pl"
-  argument: 
+  argument
     ladder: 701
   end
   group: aquarium_user
