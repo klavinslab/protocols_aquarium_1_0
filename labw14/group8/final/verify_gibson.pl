@@ -57,6 +57,7 @@ foreach g in gibsons
     plate_type: plate_type
     volume: volume
     e_coli_strain: r
+    rp = r1
   end
 
 end
