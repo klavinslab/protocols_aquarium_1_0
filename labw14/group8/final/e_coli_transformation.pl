@@ -30,7 +30,7 @@ step
 end
 
 step
-  description: "Pipette 2 µL of the gibson (sample id: %{temp_label}) into the electrocompetent cells tube"
+  description: "Pipette 2 µL of the gibson (sample id: %{temp_label}) into the electrocompetent cells tube with the same label"
   check: "Pieptte into the culture, not on the side of the tube."
   check: "Swirl the tip gently in the culture to mix after pieptting."
   check: "Put back on the aluminum rack after mixing."
@@ -78,9 +78,9 @@ end
 plasmid_name = info(plasmid)
 plasmid_name = plasmid_name[:name]
 
-produce
+produce silently
   r = 1 "Transformed E coli 1.5 mL tube" of plasmid_name
-  note: "Keep the tube on the bench to use in the next protocol. (no need to edit the location below)"
+  #note: "Label it %{temp_label}. Keep the tube on the bench to use in the next protocol. (no need to edit the location below)"
   location: "Bench"
   data
            fragment_amounts: plasmid[:data][:fragment_amounts_in_ul]
