@@ -82,6 +82,10 @@ produce
   r = 1 "Transformed E coli 1.5 mL tube" of plasmid_name
   note: "Keep the tube on the bench to use in the next protocol. (no need to edit the location below)"
   location: "Bench"
+  data
+           fragment_amounts: plasmid[:data][:fragment_amounts_in_ul]
+           temp_label: plasmid[:data][:temp_label]
+  end
 end
 
 transformed_cells = r
