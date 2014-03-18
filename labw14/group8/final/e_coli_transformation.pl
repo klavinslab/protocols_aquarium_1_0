@@ -6,7 +6,7 @@ argument
   plate_type: object, "The plate on which the transformed cells to be plated"
 end
 
-temp_label = "temp_label_placeholder"#plasmid[:data][:temp_label]
+temp_label = plasmid[:data][:temp_label]
 
 step
   description:"Retrieve Cuvette and Electrocompetent Cells"
