@@ -3,8 +3,8 @@ information "Pour a 50 mL agarose gel."
 
 argument
   percentage: number, "Enter the percentage gel to make (e.g. 1 = 1%)"
-  comb_1: number, "Enter '1' for 6 thin lanes. Enter '2' for 6 thick lanes. Enter '3' for 6 thin lanes. Enter '4' for 6 thick lanes"
-  comb_2: number, "Enter '0' for no second comb. Enter '1' for 6 thin lanes. Enter '2' for 6 thick lanes. Enter '3' for 6 thin lanes. Enter '4' for 6 thick lanes"
+  comb_1: number, "Enter '1' for 6 thin lanes. Enter '2' for 6 thick lanes. Enter '3' for 10 thin lanes. Enter '4' for 10 thick lanes"
+  comb_2: number, "Enter '0' for no second comb. Enter '1' for 6 thin lanes. Enter '2' for 6 thick lanes. Enter '3' for 10 thin lanes. Enter '4' for 10 thick lanes"
 end
 
 
