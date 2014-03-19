@@ -86,13 +86,6 @@ place image_plates
 end
 # last step incubated colonies
 
-# count the number of colonies and record in the log
-place redo
-  protocol: "labw14/group8/add_colony_counts_to_samples.pl" # placeholder for imaging and getting colony counts
-  group: aquarium_user      #generic, general
-  start: now() # this starts 18 hours later, add after testing done
-  window: minutes(1)
-end
 
 place success
   protocol: "labw14/group8/gibson_results_summary.pl"
@@ -101,22 +94,32 @@ place success
   window: minutes(1)     #start in the next minute
 end
 
+# count the number of colonies and record in the log
+place redo
+  protocol: "labw14/group8/add_colony_counts_to_samples.pl" # placeholder for imaging and getting colony counts
+  group: aquarium_user      #generic, general
+  start: now() # this starts 18 hours later, add after testing done
+  window: minutes(1)
+end
+
+
 wire(get_concentrations, "pipetting_plan") => (do_gibson, "pipetting_plan")
 wire(get_concentrations, "plasmids_to_make") => (do_gibson, "plasmids_to_make")
 
 wire(do_gibson, "completed_samples") => (verify_gibson, "gibsons")
 
 wire(verify_gibson, "plate_ids") => (image_plates, "plate_ids") 
+wire(image_plates, "plates") => (success, "plates") 
  
 # forward transitions
 transition [introduction] => [get_concentrations] when !error(0) && completed(0) end
 transition [get_concentrations] => [do_gibson] when !error(0) && completed(0) end
 transition [do_gibson] => [verify_gibson] when !error(0) && completed(0) end
-transition [verify_gibson] => [success] when !error(0) && completed(0) end
-
+transition [verify_gibson] => [image_plates] when !error(0) && completed(0) end
+transition [image_plates] => [success] when !error(0) && completed(0) end
 
 # rework transitions
 # can I check a logged variable for success or failure here instead?
 # i.e. error should be an exception state instead of used normally
 # TODO pass only the failed gibsons
-transition [verify_gibson]     => [redo]    when error(0) end
+# transition [verify_gibson]     => [redo]    when error(0) end
