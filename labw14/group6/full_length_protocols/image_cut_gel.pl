@@ -141,7 +141,8 @@ end
 
 step
   description: "Clean and wash the Gel box"
-  note: "Take the gel box to the sink, pour the liquid into the waste, rinse it with tap water and put it on the rack to dry."
+  note: "Take the gel box to the sink B2.415, pour the liquid into the waste, rinse it with tap water and put it on the rack to dry."
+  image: "Group6_GelBoxArea"
 end
 
 step
