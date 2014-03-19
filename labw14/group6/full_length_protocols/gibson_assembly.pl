@@ -1,36 +1,45 @@
 argument
   fragments: sample array, "Choose the fragments you want to combine"
+  backbone fragments: sample array, "Choose the backbone fragments you want to combine with your main fragments."
 end
 
 take
   x = 1 "Gibson Aliquot"
   y = item fragments
-  molecular_g_h2o = 1 "Molecular Biology Grade Water"
+  z = item backbone fragments
 end
 
 information "Scarlessly assemble DNA using fragments with terminal homologies."
 
 step
   description: "Label the Gibson aliquot tube, write you initials and date on it."
+  image: "Group6_GibsonAliquot"
 end
 
 y1 = fragments[0]
 y2 = fragments[1]
+z1 = backbone fragments[0]
+z2 = backbone fragments[1]
+z3 = backbone fragemnts[3]
 step
   description: "Prepare the Gibson reaction"
-  check: "Add 2 µL of molecular grade water to the labeled Gibson aliquot tube."
-  check: "Add 1.5 µL of fragment stock 1 with id %{y1} to the tube."
-  check: "Add 1.5 µL of fragment stock 2 with id %{y2} to the tube."
+  check: "Add 1 µL of backbone fragment 1 with id %{z1} to the labeled Gibson aliquot tube."
+  check: "Add 1 µL of backbone fragment 2 with id %{z2} to the labeled Gibson aliquot tube."
+  check: "Add 1 µL of backbone fragment 3 with id %{z3} to the labeled Gibson aliquot tube."
+  check: "Add 1 µL of fragment stock 1 with id %{y1} to the labeled Gibson aliquot tube."
+  check: "Add 1 µL of fragment stock 2 with id %{y2} to the labeled Gibson aliquot tube."
   note: "Gently mix with pipette tip."
 end
 
 step
   description: "Incubate the tube in a 50 C heat block at B3.340"
   note: "Wait 25 minutes for your the Gibson to complete."
+  image: "Group6_heat_block"
 end
 
 step
   description: "WAIT HERE for 25 MINUTES. Hit Next after 25 minutes."
+  timer: { hours: 0, minutes: 25, seconds: 0 }
 end
 
 step
@@ -44,7 +53,7 @@ produce
 end
 
 release y
-release molecular_g_h2o
+release z
 
 
 log
