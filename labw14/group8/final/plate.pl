@@ -62,6 +62,8 @@ produce
   release plate
 end
 
+produced_plate = r1
+
 log
   return: { plate_id: r1[:id]}
 end
