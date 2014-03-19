@@ -161,7 +161,7 @@ step
   description: "Put the gibsons into the thermocycler."
   note: "Take the tubes to the thermocycler and log into the station there,
          or you can click through the steps here.
-         You'll put them in for 60 minutes with at 50C hold"
+         You'll put them in for 60 minutes at a 50C hold"
 end
 
 #silently produce gibsons
