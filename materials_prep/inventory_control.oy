@@ -32,6 +32,6 @@ place pour_LB_Kan
 end
 
 transition [pour_yeast_plates] => [pour_yeast_plates] when error(0) || quantity("SDO Plate (sterile)") < 10 end
-transition [pour_LB_Amp] = > [pour_LB_Amp] when error(0) || quantity("SDO Plate (sterile)") < 10 end
-transition [pour_LB_Kan] = > [pour_LB_Kan] when error(0) || quantity("SDO Plate (sterile)") < 10 end
+transition [pour_LB_Amp] => [pour_LB_Amp] when error(0) || quantity("SDO Plate (sterile)") < 10 end
+transition [pour_LB_Kan] => [pour_LB_Kan] when error(0) || quantity("SDO Plate (sterile)") < 10 end
 
