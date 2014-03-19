@@ -80,11 +80,18 @@ end
 
 release transformed_cells_array
 
+plate_ids = [ ]
+foreach p in plates_array
+  plate_ids = append(plate_ids, p[:id])
+end
+
+release plates_array
+
 step
   description: "That's its for today - awesome!"
   note: "Tomorrow you'll image the plates to get colony counts"
 end
 
 log
-  return: {successful: plates_array, failed: [ ]} # put new resulting samples from produce here
+  return: {successful: plates_array, plate_ids: plate_ids, failed: [ ]} # put new resulting samples from produce here
 end
