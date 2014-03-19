@@ -11,7 +11,7 @@ e_coli_strain_type ="DH5alpha Electrocompetent Aliquot"
 take
   lb = 1 "50 mL LB liquid aliquot (sterile)"
   electroporator = 1 "Electroporator"
-  gibsons = item gibsons # comment this out after testing
+  #gibsons = item gibsons # comment this out after testing
 end
 
 step
