@@ -61,7 +61,7 @@ step
   check: "Spin tubes at 17,000Xg for 10 minutes"
   warning: "Make sure to balance the centrifuge. If you have an odd number of samples, use a balance tube with water"
   note: "Meanwhile, prep and label all of the columns and tubes you will need for the rest of the protocol"
-  check: "Grab %{y} purple miniprep spin columns"
+  check: "Grab %{y} blue miniprep spin columns"
   check: "Label the side of the columns 1, 2, 3, ... , %{y}"
   check: "Grab %{y} new eppendorf tubes"
   check: "Label the top of the tubes 1, 2, 3, ... , %{y}"
