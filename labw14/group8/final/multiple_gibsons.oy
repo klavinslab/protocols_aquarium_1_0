@@ -77,6 +77,18 @@ place verify_gibson
   window: days(1)     #have a limit so any stock you selected args for doesn't go out
 end
 
+# based off of  protocols / labw14 / week1 / trans / image.pl
+place image_plates
+  protocol: "labw14/group8/verify_gibson.pl"
+  argument
+    e_coli_strain_type: e_coli_strain_type
+    volume: volume
+    plate_type: plate_type
+  end
+  group: aquarium_user      #generic, general
+  start: hours(12)
+  window: days(1)     #have a limit so any stock you selected args for doesn't go out
+end
 # last step incubated colonies
 
 # count the number of colonies and record in the log
