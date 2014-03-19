@@ -104,7 +104,7 @@ step
   check: "Put the cap on the PCR strip tubes and press each one very hard to make sure they are sealed."
   check: "Place the tube into an available thermal cycler and close the lid"
   check: "Click Home then click Saved Protocol, choose DAVID, choose CLONEPCR."
-  check: "Set the anneal temperature to %{tanneal}"
+  check: "Set the anneal temperature to %{tanneal}, this is the 3rd temperature (default 70). Don't change the extension temperature of 72."
   check: "hit 'run' and select 50ul"
   image: "thermal_cycler_home"
 end
