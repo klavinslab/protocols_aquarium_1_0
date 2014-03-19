@@ -95,3 +95,9 @@ modify
   location: "DFP.6"
   inuse: 0
 end
+
+# todo redo failed colonies here
+
+log
+  return: {plates: plates} # put new resulting samples from produce here
+end
