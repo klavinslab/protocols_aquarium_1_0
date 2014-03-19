@@ -27,7 +27,7 @@ end
 
 step
   description: 
-    "Take a picture using the camera"
+    "Take a picture of each plate using the camera"
   note: 
     "Turn on the camera.\n
      Set the camera at manual shooting mode by turning the dial until the 
@@ -36,12 +36,12 @@ step
      click the button with box on it, move the focus box to the edge of the plate and take
      the picture by holding the button half way down until you hear two beeps, then press
      it all the way down to take the picture."
+  warning: "Keep the plates in order as you do this. It helps to go from smallest id to biggest id"
 end
-
 
 step
   description: 
-    "Rename the picture in Dropbox if it is working"
+    "Rename the picture(s) in Dropbox folder (if it is working)"
   note: 
     "Wait several seconds for the picture uploading to Dropbox. In gel room touch screen computer, open Dropbox/GelImages,
      under today's date folder and find the picture you just took.\n
@@ -59,24 +59,31 @@ step
     "Open the OpenCFU software, drag the picture into the software and wait for the software to count the colonies."
 end
 
-step
-  description: 
-    "Record the count."
-  note:
-    "If the software recognizes the coloines correctly and give a reasonbale count, record
-     that number below. If not, count the number of colonies by dividing up the plate in
-     four regions, get the count in each region and sum up as the final count." 
-  getdata
-    count: number, "Enter the count."
+foreach p in plates
+
+  id = p[:id]
+  step
+    description: 
+      "Record the count for plate %{id}."
+    note:
+      "If the software recognizes the coloines correctly and give a reasonbale count, record
+       that number below. If not, count the number of colonies by dividing up the plate in
+       four regions, get the count in each region and sum up as the final count." 
+    getdata
+      count: number, "Enter the count."
+    end
   end
+
+  p[:data][:colony_count] = count
+
 end
 
 step
   description: 
-    "Store the plate in 4C fridge."
+    "Store the plates in the 4C fridge."
   note:
     "Turn off the transillumniator and camera, remove the camera hood, take the plate from transilluminator, wrap up
-     the plate with parafilm and put it the in the Box 0 in deli fridge located at D2.100."
+     the plate with parafilm and put it the in the Box 6 in deli fridge located at D2.100."
 end
 
 #can i add data here
@@ -85,6 +92,6 @@ end
 # end
 modify
   y[0]
-  location: "DFP.0"
+  location: "DFP.6"
   inuse: 0
 end
