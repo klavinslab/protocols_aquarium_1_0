@@ -40,10 +40,10 @@ end
 
 step
   description: "Electroporation and Rescue Preparation"
-  note: "Set your pipettors to be 42 µL and 1000 µL."
-  note: "Prepare 100 µL and 1000 µL pipette tips."
-  note: "Loosen cap on the 50 mL LB liquid aliquot (sterile)."
-  note: "Take the black plastic cuvette holder out of electroporator."
+  bullet: "Set your pipettors to be 42 µL and 1000 µL."
+  bullet: "Prepare 100 µL and 1000 µL pipette tips."
+  bullet: "Loosen cap on the 50 mL LB liquid aliquot (sterile)."
+  bullet: "Take the black plastic cuvette holder out of electroporator."
   warning: "When you prepare the pieptte tips, do not let the tip touch anything (such as the bench)."
   warning: "The next steps, until after you pipette up and down LB into the electrocuvette, should be done as quickly as possible."
 end
