@@ -79,12 +79,7 @@ end
 
 # based off of  protocols / labw14 / week1 / trans / image.pl
 place image_plates
-  protocol: "labw14/group8/verify_gibson.pl"
-  argument
-    e_coli_strain_type: e_coli_strain_type
-    volume: volume
-    plate_type: plate_type
-  end
+  protocol: "labw14/group8/final/image_plates.pl"
   group: aquarium_user      #generic, general
   start: hours(12)
   window: days(1)     #have a limit so any stock you selected args for doesn't go out
@@ -111,7 +106,7 @@ wire(get_concentrations, "plasmids_to_make") => (do_gibson, "plasmids_to_make")
 
 wire(do_gibson, "completed_samples") => (verify_gibson, "gibsons")
 
-wire(verify_gibson, "plates") => (success, "gibson_results") 
+wire(verify_gibson, "plate_ids") => (image_plates, "plate_ids") 
  
 # forward transitions
 transition [introduction] => [get_concentrations] when !error(0) && completed(0) end
