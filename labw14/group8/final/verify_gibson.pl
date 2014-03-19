@@ -85,6 +85,10 @@ foreach p in plates_array
   plate_ids = append(plate_ids, p[:id])
 end
 
+step
+  description: "Put the plates in the 37c fridge if you have not already"
+end
+
 release plates_array
 
 step
