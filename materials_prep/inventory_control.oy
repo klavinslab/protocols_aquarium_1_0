@@ -9,4 +9,29 @@ place pour_yeast_plates
   window: minutes(30)
 end
 
+place pour_LB_Amp
+  protocol: "materials_prep/reagents/make_1kb_ladder_aliquot.pl"
+  argument
+    ladder: 701
+  end
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+place pour_LB_Kan
+  protocol: "materials_prep/reagents/make_1kb_ladder_aliquot.pl"
+  argument
+    ladder: 701
+  end
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
 transition [pour_yeast_plates] => [pour_yeast_plates] when error(0) || quantity("SDO Plate (sterile)") < 10 end
+transition [pour_LB_Amp] = > [pour_LB_Amp] when error(0) || quantity("SDO Plate (sterile)") < 10 end
+transition [pour_LB_Kan] = > [pour_LB_Kan] when error(0) || quantity("SDO Plate (sterile)") < 10 end
+
