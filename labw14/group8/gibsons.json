@@ -29,7 +29,7 @@
      "add_to_data": "put a hash here to add to data for samples produced"}],
   "debug": {"fragment_name_to_sample_ids": 
              [{"name": "fYG7",  "ids": [2263]},
-              {"name": "fYG8",  "ids": []},
+              {"name": "fYG8",  "ids": [2268]},
               {"name": "fYG14", "ids": [2265]},
               {"name": "DY206", "ids": [2261]},
               {"name": "DY178", "ids": [2260]},
