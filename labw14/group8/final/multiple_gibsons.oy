@@ -66,9 +66,8 @@ end
 # transform to test the gibson results
 # count the number of colonies and record in the log
 place verify_gibson
-  protocol: "labw14/group8/verify_gibson.pl"
+  protocol: "labw14/group8/final/verify_gibson.pl"
   argument
-    e_coli_strain_type: e_coli_strain_type
     volume: volume
     plate_type: plate_type
   end
@@ -84,7 +83,6 @@ place image_plates
   start: hours(12)
   window: days(1)     #have a limit so any stock you selected args for doesn't go out
 end
-# last step incubated colonies
 
 
 place success
@@ -95,12 +93,8 @@ place success
 end
 
 # count the number of colonies and record in the log
-place redo
-  protocol: "labw14/group8/add_colony_counts_to_samples.pl" # placeholder for imaging and getting colony counts
-  group: aquarium_user      #generic, general
-  start: now() # this starts 18 hours later, add after testing done
-  window: minutes(1)
-end
+#place redo
+#end
 
 
 wire(get_concentrations, "pipetting_plan") => (do_gibson, "pipetting_plan")
