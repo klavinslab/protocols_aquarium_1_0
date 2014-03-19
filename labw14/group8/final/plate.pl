@@ -6,6 +6,7 @@ argument
    plate_type: object, "Type of plate (from the solidmedia category)"
 end
 
+temp_label = e_coli_strain[:data][:temp_label]
 take
   plate = 1 plate_type
 #  plate_2 = 1 plate_type_2
@@ -35,7 +36,7 @@ step
 end
 
 step
-  description: "Transfer the sample to the center of the plate"
+  description: "Transfer sample %{temp_label} to the center of the plate"
   note: "Invert the plate so the beads are on the agar surface. Lift the lid and 
          pipette %{volume} µL of sample on the agar surface
          and put the lid back on the plate."
