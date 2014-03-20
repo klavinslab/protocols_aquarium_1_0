@@ -18,6 +18,16 @@ take
 end
 
 step
+  description: "Prepare a heat bath"
+  check: "Locate and plug in the hot water bath."
+  check: "Press the button on the left labled 'I/O' to turn on the controller."
+  check: "Set the middle temperature to 42 C"
+  note: "Press the refresh button until a flashing tempurature appears and the leftmost thermometer is illumminated."
+  note: "Use the up and down arrows to set the tempurature of the heat bath to 42 C."
+  image: "heat_bath"
+end
+
+step
   description: "Label (%{num_samples}) 50 mL Falcon tube(s)"
   note: "Write your initials, date, and sample number on the cap of each tube."
 end
@@ -31,8 +41,8 @@ end
 
 bath_size = 4	# the number of falcon tubes that will fit in the bath
 step
-  description: "Locate the 42 C heat bath at B13.105"
-  note: "The next steps are time sensitive so you must know beforehand where the bath is."
+  description: "Wait until the heat bath has reached 42C"
+  note: "The next steps are time sensitive so you must make sure the bath is ready."
   image: "heat_bath"
 end
 
@@ -44,7 +54,7 @@ end
 
 step
   description: "Wait 15 minutes."
-  note: "While you wait you can prep an ice bath"
+  note: "While you wait, prep an ice bath"
   check: "Find a styrofoam box."
   check: "Put a 50 mL tube rack inside with some ice or ice packs."
   check: "Fill with water half way up the tube rack"
