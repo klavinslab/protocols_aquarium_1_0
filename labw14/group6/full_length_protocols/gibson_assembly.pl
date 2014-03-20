@@ -20,7 +20,7 @@ y1 = fragments[0]
 y2 = fragments[1]
 z1 = backbone_fragments[0]
 z2 = backbone_fragments[1]
-z3 = backbone_fragemnts[2]
+z3 = backbone_fragments[2]
 
 step
   description: "Prepare the Gibson reaction"
