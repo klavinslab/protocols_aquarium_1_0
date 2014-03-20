@@ -60,4 +60,6 @@ if arrived=="Yes"
   end
   release ids
 end
+else
+end
 
