@@ -33,11 +33,12 @@ if arrived=="Yes"
     step
       description: "Grab any primer that has not yet been labeled for information entry and rehydration"
       getdata
-        id[x]: number, "Enter the primer ID number, which is listed before the primer's name on the side of the tube"
+        id: number, "Enter the primer ID number, which is listed before the primer's name on the side of the tube"
         moles: number, "Enter the number of moles of primer in the tube, in nm. This is written toward the bottom of the tube, below the MW."
       end
       check: "Write the primer ID number on the sticker attached to the top of the tube"
     end
+    ids[x]=id
     vol=moles*10
     step
       description: "rehydrate the primer"
@@ -50,11 +51,11 @@ if arrived=="Yes"
     description: "Ignore the following 'take'"
   end
   take
-    item id
+    item ids
   end
   step
     description: "Do NOT ignore the following 'release'"
   end
-  release id
+  release ids
 end
 
