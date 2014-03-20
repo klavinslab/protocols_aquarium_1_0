@@ -1,16 +1,13 @@
 dilution = 1.0/71
 total_V = 18 # ml -- too high?
 
-e_V = total_V*dilution # ml;
-LB_V = (total_V-e_V) # ml
-lb_round = floor((LB_V * 10)) / 10.0
-
-e_V_micro = ceil(e_V * 1000)  # in uL
+e_V_ml = (total_V*dilution)  # ml;
+e_V_ul = ceil(e_v_ml * 1000) # uL
+LB_V = floor( (total_V-e_V) * 10) / 10.0 # ml
 
 step
-  description: "Hello"
-  note: "dilution = %{dilution}"
-  note: "e_V = %{e_V}"
-  note: "e_V_micro = %{e_V_micro}"
-  note: "LB_v = %{lb_round}"
-end
+		description: "Dilute E. coli cells from sample %{e}"
+		check: "Add %{LB_V} ml of LB media to test tube %{i} (round to the nearest .1 ml)" # -- large pipette?
+		check: "Add %{e_V_ul} μl of e. coli sample %{e} to test tube %{i}."
+		bullet: "You should end up with %{total_V} ml of liquid in the test tube"
+	end
