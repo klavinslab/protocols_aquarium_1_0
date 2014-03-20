@@ -60,5 +60,8 @@ if arrived=="Yes"
   end
   release ids
 else
+  step
+    description: "There are no primers to pick up"
+  end
 end
 
