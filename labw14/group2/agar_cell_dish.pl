@@ -11,7 +11,7 @@ end
 take
   test_tube = 1 "5 mL Culture Tube"
   dish = 1 "Sterile Glass Bottom Dish"
-  plate = 1 "M9 Glucose Microscope Plate"
+  plate = 1 "M9 Glucose Agar"
   ons = item id
 end
 
