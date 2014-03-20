@@ -43,19 +43,19 @@ if arrived=="Yes"
       end
       check: "Write the primer ID number on the sticker attached to the top of the tube"
     end
-#    ids[x]=id
+    append(ids,id)
     vol=moles*10
     
     
     step
-      description: "Moles: %{moles}. vol: %{vol}"
+      description: "Moles: %{moles}. vol: %{vol}. id: %{id}. ids: %{ids}."
     end
     
     
     
     step
       description: "rehydrate the primer"
-      check: "Add %{vol}ul of TAE to the primer tube"
+      check: "Add %{vol}ul of TE to the primer tube"
       check: "Put the cap back on, and flick the tube many times to mix"
     end
     x=x+1
