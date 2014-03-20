@@ -3,13 +3,14 @@ total_V = 18 # ml -- too high?
 
 e_V = total_V*dilution # ml;
 LB_V = (total_V-e_V) # ml
+lb_round = (LB_V * 10).floor /10
 
-e_V_micro = (e_V * 1000).round # in uL
+e_V_micro = (e_V * 1000).floor /1000 # in uL
 
 step
   description: "Hello"
   note: "dilution = %{dilution}"
   note: "e_V = %{e_V}"
   note: "e_V_micro = %{e_V_micro}"
-  note: "LB_v = %{LB_V}"
+  note: "LB_v = %{lb_round}"
 end
