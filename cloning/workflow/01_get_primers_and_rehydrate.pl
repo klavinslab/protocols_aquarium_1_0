@@ -46,7 +46,7 @@ if arrived=="Yes"
     ids[x]=id
     vol=moles*10
     step
-      description: "rehydrate the primer"
+      description: "Rehydrate the primer"
       check: "Add %{vol}ul of TE to the primer tube"
       check: "Put the cap back on, and flick the tube many times to mix"
     end
