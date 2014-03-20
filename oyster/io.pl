@@ -1,5 +1,5 @@
 argument
-  u: sample array
+  plate_ids: sample array
 end
 
 step
@@ -9,5 +9,5 @@ end
 z = [ 1, 2, 3 ]
 
 log
-  return: { x: "dummy", y: z }
+  return: { x: "dummy", plate_ids: z }
 end
