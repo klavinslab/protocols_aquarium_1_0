@@ -20,6 +20,11 @@ while answer=="No"
   end
 end
 
+step
+  description: "answer is %{answer}. arrived is %{arrived}"
+end
+
+
 if arrived=="Yes"
   step
     description: "Go to the biochem store and pick up all of the Klavins Lab primers"
