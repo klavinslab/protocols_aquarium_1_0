@@ -1,6 +1,6 @@
 argument
   fragments: sample array, "Choose the fragments you want to combine"
-  backbone fragments: sample array, "Choose the backbone fragments you want to combine with your main fragments."
+  backbone_fragments: sample array, "Choose the backbone fragments you want to combine with your main fragments."
 end
 
 take
@@ -18,9 +18,9 @@ end
 
 y1 = fragments[0]
 y2 = fragments[1]
-z1 = backbone fragments[0]
-z2 = backbone fragments[1]
-z3 = backbone fragemnts[3]
+z1 = backbone_fragments[0]
+z2 = backbone_fragments[1]
+z3 = backbone_fragemnts[3]
 step
   description: "Prepare the Gibson reaction"
   check: "Add 1 µL of backbone fragment 1 with id %{z1} to the labeled Gibson aliquot tube."
