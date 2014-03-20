@@ -21,11 +21,6 @@ while answer=="No"
   end
 end
 
-step
-  description: "answer is %{answer}. arrived is %{arrived}"
-end
-
-
 if arrived=="Yes"
   step
     description: "Go to the biochem store and pick up all of the Klavins Lab primers"
@@ -48,6 +43,14 @@ if arrived=="Yes"
     end
     ids[x]=id
     vol=moles*10
+    
+    
+    step
+      description: "Moles: %{moles}. vol: %{vol}"
+    end
+    
+    
+    
     step
       description: "rehydrate the primer"
       check: "Add %{vol}ul of TAE to the primer tube"
