@@ -6,7 +6,7 @@ primer21 = [1629]
 primer22 = [2028]
 phusionHF = 705
 ladder = 822
-backbone_fragments = [2123, 2124, 1820]
+
 
 place introduction
   protocol: "labw14/group6/full_length_protocols/introduction.pl"
@@ -75,18 +75,6 @@ end
 
 wire (image_cut_gel, "Gel_Slice_id") => (gel_purify, "gel")
 
-place gibson
-  protocol: "labw14/group6/full_length_protocols/gibson_assembly.pl"
-  group: aquarium_user
-  argument
-    backbone_fragments: backbone_fragments
-  end
-  marked: true
-  start: now()
-  window: minutes(30)
-end
-
-wire (gel_purify, "Fragment_Stock_id") => (gibson, "fragments")
 
 transition [ introduction ] => [ assembly1, assembly2 ] when !error(0) && completed(0) end
 transition [ introduction ] => [ introduction ] when error(0) end
@@ -101,8 +89,7 @@ transition [ run_gel ] => [ run_gel ] when error(0) end
 transition [ image_cut_gel ] => [ gel_purify ] when !error(0) && completed(0) end
 transition [ image_cut_gel ] => [ image_cut_gel ] when error(0) end
 
-transition [ gel_purify ] => [gibson] when !error(0) && completed(0) end
+transition [ gel_purify ] => [] when !error(0) && completed(0) end
 transition [ gel_purify ] => [ gel_purify ] when error(0) 
 
-transition [ gibson ] => [ ] when !error(0) && completed(0) end
-transition [ gibson ] => [ gibson ] when error(0) end
+
