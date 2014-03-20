@@ -43,7 +43,7 @@ if arrived=="Yes"
       end
       check: "Write the primer ID number on the sticker attached to the top of the tube"
     end
-    ids[x]=id
+#    ids[x]=id
     vol=moles*10
     
     
