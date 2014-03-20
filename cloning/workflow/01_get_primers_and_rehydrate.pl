@@ -59,7 +59,6 @@ if arrived=="Yes"
     description: "Do NOT ignore the following 'release'"
   end
   release ids
-end
 else
 end
 
