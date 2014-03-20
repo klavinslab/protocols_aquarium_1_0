@@ -34,7 +34,6 @@ if arrived=="Yes"
   x=0
   id=0
   ids=[0]
-  idss=[0]
   while x<num
     step
       description: "Grab any primer that has not yet been labeled for information entry and rehydration"
@@ -44,19 +43,8 @@ if arrived=="Yes"
       end
       check: "Write the primer ID number on the sticker attached to the top of the tube"
     end
-    
-    
-    ids=append(ids,id)
-    idss[x]=id
+    ids[x]=id
     vol=moles*10
-    
-    
-    step
-      description: "Moles: %{moles}. vol: %{vol}. id: %{id}. ids: %{ids}. idss: %{idss}"
-    end
-    
-    
-    
     step
       description: "rehydrate the primer"
       check: "Add %{vol}ul of TE to the primer tube"
