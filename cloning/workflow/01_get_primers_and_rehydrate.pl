@@ -32,6 +32,8 @@ if arrived=="Yes"
     description: "Put a small circular sticker on the lid of each primer tube"
   end
   x=0
+  id=0
+  ids=0
   while x<num
     step
       description: "Grab any primer that has not yet been labeled for information entry and rehydration"
