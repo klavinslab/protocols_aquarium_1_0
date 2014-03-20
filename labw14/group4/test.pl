@@ -6,8 +6,8 @@ e_V_ul = ceil(e_V_ml * 1000) # uL
 LB_V = floor( (total_V-e_V_ml) * 10) / 10.0 # ml
 
 step
-		description: "Dilute E. coli cells from sample %{e}"
-		check: "Add %{LB_V} ml of LB media to test tube %{i} (round to the nearest .1 ml)" # -- large pipette?
-		check: "Add %{e_V_ul} μl of e. coli sample %{e} to test tube %{i}."
+		description: "Dilute E. coli cells from sample "
+		check: "Add %{LB_V} ml of LB media to test tube  (round to the nearest .1 ml)" # -- large pipette?
+		check: "Add %{e_V_ul} μl of e. coli sample to test tube ."
 		bullet: "You should end up with %{total_V} ml of liquid in the test tube"
 	end
