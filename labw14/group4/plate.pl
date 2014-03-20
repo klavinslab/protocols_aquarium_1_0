@@ -17,6 +17,7 @@ take
 #  beads = 1 "Glass Bead Aliquot (sterile)"
 #  collector = 1 "Glass Bead Waste Collector"
   note: "Do not take plate from top of the stack if there is a date stick on it, take from the middle of the stack."
+  warning: "Make certain you are grabbing the correct type of plate. Using the wrong plate will kill your cells!"
 end
 
 step
