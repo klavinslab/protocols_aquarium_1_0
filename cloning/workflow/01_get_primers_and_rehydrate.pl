@@ -3,7 +3,7 @@ argument
 end
 
 answer="No"
-while answer="No"
+while answer=="No"
   step
     description: "Call the biochem store to see if primers have arrived."
     check: "On the lab phone, dial 31728"
@@ -13,12 +13,12 @@ while answer="No"
       arrived: string, "Did any primers arrive?", [ "Yes", "No", "They did not answer..." ]
     end
   end
-  if answer="No"
+  if answer=="No"
     description: "Wait 15 minutes"
   end
 end
 
-if arrived="Yes"
+if arrived=="Yes"
   step
     description: "Go to the biochem store and pick up all of the Klavins Lab primers"
     getdata
