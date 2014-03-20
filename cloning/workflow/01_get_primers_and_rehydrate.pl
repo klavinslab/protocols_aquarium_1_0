@@ -14,7 +14,9 @@ while answer=="No"
     end
   end
   if answer=="No"
-    description: "Wait 15 minutes"
+    step
+      description: "Wait 15 minutes"
+    end
   end
 end
 
