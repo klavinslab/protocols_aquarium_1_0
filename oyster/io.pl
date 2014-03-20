@@ -7,5 +7,5 @@ step
 end
 
 log
-  return: { y: [ 1, 2, 3 ] }
+  return: { x: "dummy", y: [ 1, 2, 3 ] }
 end

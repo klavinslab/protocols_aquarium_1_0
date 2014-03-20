@@ -1,0 +1,23 @@
+place p1
+  protocol: "oyster/io.pl"
+  group: aquarium_user
+  marked: true
+  argument
+    u: [ 0, 0, 0 ]
+  end
+  start: now()
+  window: hours(1)
+end
+
+place p2
+  protocol: "oyster/io.pl"
+  group: aquarium_user
+  start: now()
+  window: hours(1)
+end
+
+wire (p1,"y") => (p2,"u")
+
+transition [ p1 ] => [ p2 ] when !error(0) && completed(0) end
+
+
