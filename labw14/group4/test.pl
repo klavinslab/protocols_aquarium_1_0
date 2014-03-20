@@ -3,7 +3,7 @@ total_V = 18 # ml -- too high?
 
 e_V = total_V*dilution # ml;
 LB_V = (total_V-e_V) # ml
-lb_round = floor((LB_V * 10)) /10
+lb_round = floor((LB_V * 100)) /100
 
 e_V_micro = floor(e_V * 1000) /1000 # in uL
 
