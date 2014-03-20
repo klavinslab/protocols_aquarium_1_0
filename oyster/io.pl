@@ -3,7 +3,7 @@ argument
 end
 
 step
-  description: "Got %{u}"
+  description: "Got %{plate_ids}"
 end
 
 z = [ 1, 2, 3 ]
