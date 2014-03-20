@@ -33,7 +33,7 @@ if arrived=="Yes"
   end
   x=0
   id=0
-  ids=0
+  ids=[0]
   while x<num
     step
       description: "Grab any primer that has not yet been labeled for information entry and rehydration"
