@@ -43,7 +43,7 @@ end
 step
   description: "Finalizing optical settings"
   bullet: "On the toolbar click on 'Phase GFP'"
-  image: "tool_bar1"
+  image: "tool_bar1a"
 end
 
 step
@@ -81,7 +81,7 @@ end
 step
   description: "Turn on the camera"
   note: "Press the play button, on the tool bar, under the menu bar to turn on the camera"
-  image: "tool_bar2"
+  image: "tool_bar2a"
 end
 
 step
