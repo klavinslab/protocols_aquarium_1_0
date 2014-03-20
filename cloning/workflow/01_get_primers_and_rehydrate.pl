@@ -3,6 +3,7 @@ argument
 end
 
 answer="No"
+arrived="blank"
 while answer=="No"
   step
     description: "Call the biochem store to see if primers have arrived."
