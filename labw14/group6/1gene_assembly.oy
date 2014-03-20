@@ -11,7 +11,7 @@ source_oligos1 = [1582, 1583, 1584, 1585, 1586, 1587]
 source_oligos2 = [1588, 1589, 1590, 1591, 1592, 1593]
 source_oligos3 = [1594, 1595, 1596, 1597, 1598, 1599]
 source_oligos4 = [1600, 1601, 1602, 1603, 1604, 1605] 
-#backbone_fragments = [1141, 1144]
+backbone_fragments = [2123, 2124, 1820]
 Concentrated_Stock1 = "OsGH3.1-1_1-6"
 Concentrated_Stock2 = "OsGH3.1-1_7-12"
 Concentrated_Stock3 = "OsGH3.1-2_1-6"
@@ -144,8 +144,21 @@ end
 
 
 wire (image_cut_gel, "Gel_Slice_id") => (gel_purify, "gel")
-wire (image_cut_gel, "Gel_Slice_id") => (gel_purify, "gel")
 
+
+place gibson
+  protocol: "labw14/group6/full_length_protocols/gibson_assembly.pl"
+  group: aquarium_user
+  argument
+    fragments: fragments
+    backbone_fragments: backbone_fragments
+  end
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+wire (gel_purify, "Fragment_Stock_id") => (gibson, "fragments")
 
 
 transition [ introduction ] => [ stock1, stock2, stock3, stock4 ] when !error(0) && completed(0) end
@@ -172,6 +185,9 @@ transition [ run_gel ] => [ run_gel ] when error(0) end
 transition [ image_cut_gel ] => [ gel_purify ] when !error(0) && completed(0) end
 transition [ image_cut_gel ] => [ image_cut_gel ] when error(0) end
 
-transition [ gel_purify ] => [ ] when !error(0) && completed(0) end
+transition [ gel_purify ] => [ gibson ] when !error(0) && completed(0) end
 transition [ gel_purify ] => [ gel_purify ] when error(0) end
-# Continues to gibson
+
+transition [ gibson ] => [ ] when !error(0) && completed(0) end
+transition [ gibson ] => [ gibson ] when error(0) end
+
