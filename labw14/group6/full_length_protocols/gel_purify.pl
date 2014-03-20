@@ -3,7 +3,7 @@ argument
 end
 
 step
-  description: "This protocol describes how to purify the gel slices to make them ready for Gibson assembly. This procedure include incubation for 10 minutes and 4 subsequent centirfuge steps."
+  description: "This protocol describes how to purify the gel slices to make them ready for Gibson assembly. This procedure includes incubation for 10 minutes and 4 subsequent centirfuge steps."
 end
 
 take
