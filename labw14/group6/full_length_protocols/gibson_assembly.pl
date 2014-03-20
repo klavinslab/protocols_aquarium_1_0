@@ -21,6 +21,7 @@ y2 = fragments[1]
 z1 = backbone_fragments[0]
 z2 = backbone_fragments[1]
 z3 = backbone_fragemnts[2]
+
 step
   description: "Prepare the Gibson reaction"
   check: "Add 1 µL of backbone fragment 1 with id %{z1} to the labeled Gibson aliquot tube."
