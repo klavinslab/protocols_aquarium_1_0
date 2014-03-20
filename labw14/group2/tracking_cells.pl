@@ -156,7 +156,7 @@ step
   bullet: "Press the black button on the remote focus controller to zero the z-axis"
   bullet: "Click on the 'Offset z-position' button as shown in the picture. This button is just an arrow next to the Z coordinate"
   note: "Offsetting the z-position will set the value to the current controller value"
-  warning: "DO NOT CLICK THE 'Offset all X, Y' BUTTON. THIS WILL FORCE YOU TO RESTART FINDING ALL THE POINTS AND MAKE YOU VERY MAD."
+  warning: "DO NOT CLICK THE 'Offset All X, Y' BUTTON. THIS WILL FORCE YOU TO RESTART FINDING ALL THE POINTS AND MAKE YOU VERY MAD."
   image: "xy_pos1"
 end
 
