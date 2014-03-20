@@ -2,7 +2,7 @@ dilution = 1.0/71
 total_V = 18 # ml -- too high?
 
 e_V_ml = (total_V*dilution)  # ml;
-e_V_ul = ceil(e_v_ml * 1000) # uL
+e_V_ul = ceil(e_V_ml * 1000) # uL
 LB_V = floor( (total_V-e_V) * 10) / 10.0 # ml
 
 step
