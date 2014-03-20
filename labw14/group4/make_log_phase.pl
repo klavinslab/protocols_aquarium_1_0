@@ -8,7 +8,7 @@ information "Dilute cells and bring them to log phase"
 dilution = 1.0/71
 total_V = 18 # ml -- too high?
 
-e_V = total_V*dilution # ml;
+e_V = (total_V*dilution) * 1000 # ul;
 LB_V = (total_V-e_V)  # ml
 
 sample_count = length(unique_e_coli_strains)
@@ -33,7 +33,7 @@ while i < sample_count
 	step
 		description: "Dilute E. coli cells from sample %{e}"
 		check: "Add %{LB_V} ml of LB media to test tube %{i} (round to the nearest .1 ml)" # -- large pipette?
-		check: "Add %{e_V} ml of e. coli sample %{e} to test tube %{i}."
+		check: "Add %{e_V} μl of e. coli sample %{e} to test tube %{i}."
 		bullet: "You should end up with %{total_V} ml of liquid in the test tube"
 	end
 end
