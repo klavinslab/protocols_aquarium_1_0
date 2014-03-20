@@ -6,7 +6,7 @@ end
 take
   x = 1 "Gibson Aliquot"
   y = item fragments
-  z = item backbone fragments
+  z = item backbone_fragments
 end
 
 information "Scarlessly assemble DNA using fragments with terminal homologies."
