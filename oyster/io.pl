@@ -1,13 +1,11 @@
 argument
-  plate_ids: sample array
+  u: sample array
 end
 
 step
-  description: "Got %{plate_ids}"
+  description: "Got %{u}"
 end
 
-z = [ 1, 2, 3 ]
-
 log
-  return: { x: "dummy", plate_ids: z }
+  return: { y: [1,2,3] }
 end

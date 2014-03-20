@@ -3,7 +3,7 @@ place p1
   group: aquarium_user
   marked: true
   argument
-    plate_ids: [ 0, 0, 0 ]
+    u: [ 0, 0, 0 ]
   end
   start: now()
   window: hours(1)
@@ -16,7 +16,7 @@ place p2
   window: hours(1)
 end
 
-wire (p1,"plate_ids") => (p2,"plate_ids")
+wire (p1,"y") => (p2,"u")
 
 transition [ p1 ] => [ p2 ] when !error(0) && completed(0) end
 
