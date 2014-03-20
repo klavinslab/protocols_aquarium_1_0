@@ -4,6 +4,7 @@ volume = 20
 
 
 argument
+  DNA_fragments: sample array, "Choose the assembled DNA fragments"
   backbone_fragments: sample array, "Choose the fragment samples you have prepared"
 end
 
@@ -14,6 +15,7 @@ place gibson
   protocol: "labw14/group6/full_length_protocols/gibson_assembly.pl"
   group: aquarium_user
   argument
+    fragments: DNA_fragments
     backbone_fragments: backbone_fragments
   end
   marked: true
