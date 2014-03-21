@@ -47,8 +47,8 @@ wire (rna_conc_measure, "conc_array") => (cdna_synth, "rna_conc_array")
 place cdna_conc_measure
   protocol: "labw14/group3/nano_drop_array.pl"
   group: aquarium_user
-  start: now()
-  window: hours(1)
+  start: hours(1)
+  window: hours(2)
 end
 
 wire (cdna_synth,"cdna_array") => (cdna_conc_measure,"fragment_array")
