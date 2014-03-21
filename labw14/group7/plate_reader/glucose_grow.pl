@@ -23,6 +23,14 @@ n = strains * 4 #this could be "repeats"
 
 
 take
+  note: "You will need both of the two 30mL media aliquots (which you just prepared).
+         This is broken down into two steps as a workaround to avoid programming bugs.
+         You may go ahead and grab both tubes now
+         (then ignore the second '30 mL M9 liquid Glucose + amp + kan' on the next step)."
+  media_tube2 = 1 "30 mL M9 liquid Glucose + amp + kan"
+end
+
+take
   note: "Be sure to grab a tube rack to hold all of the culture tubes."
   culture_tubes = n "14 mL Test Tube"
   pipette = 1 "Serological Pipette"
@@ -30,12 +38,6 @@ take
   media_tube1 = 1 "30 mL M9 liquid Glucose + amp + kan"
 end
 
-take
-  note: "You should have a total of two 30mL media aliquots.
-         This is broken down into two steps as a workaround to avoid programming bugs.
-         Thank you for your understanding."
-  media_tube2 = 1 "30 mL M9 liquid Glucose + amp + kan"
-end
 
 step
   description: "Add 3mL media to each culture tube"
