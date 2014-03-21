@@ -43,7 +43,7 @@ step
   description: "Ignore the following take"
 end
 take
-  newitem
+  item newitem
 end
 step
   description: "Do NOT ignore the following release"
@@ -51,4 +51,3 @@ end
 
 release newitem
 release primer_stock
-end
