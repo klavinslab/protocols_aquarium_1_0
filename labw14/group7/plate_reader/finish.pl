@@ -16,6 +16,7 @@ step
   check: "Run the 'File Export Builder' wizard to export your plate reader data"
   check: "Save the data to 'My Documents\yyyymmdd MyExperimentName.txt'"
   image: "plate_reader_file_export_builder"
+  #TODO: This part seems to be innacurate... find out from Leandra the proper way to export data...
 end
 
 step
