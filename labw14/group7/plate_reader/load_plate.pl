@@ -65,6 +65,10 @@ cell2 = cells[2][:id]
 step
   description: "Load the cell cultures into the wells"
   note: "Load the cells according to the chart"
+  bullet: "Avoid touching the pipetter to the insides of the culture tube!
+           This can cause cross-contamination!"
+  bullet: "Best practice is to tilt the culture tube way over to the side,
+           and allow the luid to flow up to (near) the rim before pipetting it out."
   check: "S1 = Cell culture tube ID %{cell0}"
   check: "S2 = Cell culture tube ID %{cell1}"
   check: "S3 = Cell culture tube ID %{cell2}"
@@ -95,9 +99,9 @@ step
   description: "Seal the plate"
   check: "Cut out a small (3x5cm) piece of aluminum foil from location A8.400"
   check: "Fold the piece of aluminum foil over 3~4 times to construct a small (3mm thick) shim"
-  check: "Insert the small foil shim into the corner of the assay plate,
+  check: "Insert the small foil shim into the (bent) corner of the assay plate,
           and close the lid.  There should be a tight fit.
-          (This shim will keep the lid from rattling during the run)"
+          (This shim will keep the lid from rattling while it is shaken during the run)"
   #TODO: include picture of shim
 end
 
@@ -106,7 +110,7 @@ step
   note: "The sample must be induced at t = 0Hr, 1Hr, 1.5Hr, 2Hr, and 24Hr.  You will be done for today
          after the 2Hr induction; you'll need to come back tomorrow for the 24Hr induction and the day after that
          to finish the run."
-  note: "Don't dispose of your culure tubes until afer you've completed 'induce_atc_zero.pl' (the first inuction step)
+  note: "Wait to dispose of your culure tubes until afer you've completed 'induce_atc_zero.pl' (the first inuction step)
          and 'begin_run.pl'. You will have plenty of time to soak your culture tubes in bleach 
          after you have started your run"
   image: "soak_bleach"
