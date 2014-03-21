@@ -1,0 +1,109 @@
+# Arguments
+argument
+  ladder: sample, "Choose a 1kb ladder"
+  phusionHF: sample, "Choose a Phusion Master Mix enzyme"
+end
+
+
+#ladder = 822
+#percentage = 1
+#comb_n = 1
+
+oligo_pools1 = [1938]
+oligo_pools2 = [1939]
+primer11 = [2026]
+primer12 = [1627]
+primer21 = [1629]
+primer22 = [2028]
+#phusionHF = 705
+
+# Places
+place introduction
+  protocol: "labw14/group6/full_length_protocols/introduction.pl"
+  group: aquarium_user
+  marked: true
+  start: now()
+  window: minutes(30)
+end
+
+
+place assembly1
+  protocol: "labw14/group6/full_length_protocols/gene_assembly_PCA1_short.pl"
+  argument
+    primer1: primer11
+    primer2: primer12
+    enzyme_id: phusionHF
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(30)
+end
+
+place assembly2
+  protocol: "labw14/group6/full_length_protocols/gene_assembly_PCA2_short.pl"
+  argument
+    primer1: primer21
+    primer2: primer22
+    enzyme_id: phusionHF
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(30)
+end
+
+
+place run_gel
+  protocol: "labw14/group6/full_length_protocols/run_gel.pl"
+  argument
+    ladder_one: ladder
+    fragment_volume: 50
+  end
+  group: aquarium_user
+  start: now()
+  window: minutes(30)
+end
+
+wire (assembly1, "PCR_Result_id") => (run_gel, "assemblies1")
+wire (assembly2, "PCR_Result_id") => (run_gel, "assemblies2")
+
+place image_cut_gel
+  protocol: "labw14/group6/full_length_protocols/image_cut_gel.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(30)
+end
+
+
+wire (run_gel, "Gel_Lane_id") => (image_cut_gel, "gel_lane")
+
+place gel_purify
+  protocol: "labw14/group6/full_length_protocols/gel_purify.pl"
+  group: aquarium_user
+  start: now()
+  window: minutes(30)
+end
+
+
+wire (image_cut_gel, "Gel_Slice_id") => (gel_purify, "gel")
+
+
+
+
+transition [ introduction ] => [ assembly1, assembly2 ] when !error(0) && completed(0) end
+transition [ introduction ] => [ introduction ] when error(0) end
+
+
+transition [ assembly1, assembly2 ] => [ run_gel ] when !error(0) && completed(0) && !error(1) && completed(1) end
+transition [ assembly1 ] => [ assembly1 ] when error(0) end
+transition [ assembly2 ] => [ assembly2 ] when error(0) end
+
+transition [ run_gel ] => [ image_cut_gel ] when !error(0) && completed(0) end
+transition [ run_gel ] => [ run_gel ] when error(0) end
+
+transition [ image_cut_gel ] => [ gel_purify ] when !error(0) && completed(0) end
+transition [ image_cut_gel ] => [ image_cut_gel ] when error(0) end
+
+transition [ gel_purify ] => [] when !error(0) && completed(0) end
+transition [ gel_purify ] => [ gel_purify ] when error(0) end
+
+
