@@ -155,6 +155,7 @@ step
   check: "Cut off a 0.5 inch strip of paraffin, hold one end of the strip to the side of an agar plate,
           and stretch the other end out around the whole plate"
   check: "Repeat this proces for each of your three agar plates"
+  #TODO: include image of paraffin on agar plate
 end
 
 release plate_array
