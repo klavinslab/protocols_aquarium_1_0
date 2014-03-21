@@ -5,6 +5,7 @@ end
 
 take
   aTc_inducer = 1 aTc_inducer_in
+  note: "The aTc should be in a box marked 'INDUCERS'."
 end
 
 step
