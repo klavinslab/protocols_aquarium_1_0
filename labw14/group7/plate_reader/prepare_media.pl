@@ -19,7 +19,8 @@ take
  tip = 1 "25 mL Serological Pipette Tips"
  amp = 1 "100X 1 mL Ampicillin Aliquot"
  kan = 1 "200X 1 mL Kanamycin Aliquot"
- note: "You will need at least 0.12 mL of amp, and 0.30 mL of kan,
+ note: "The ampicillin and kanamycin are in a box marked 'ANTIBIOTICS'.  You can take any one there.
+        You will need at least 0.12 mL of amp, and 0.30 mL of kan,
         so check the level of the liquid in your aliquots to be sure they are sufficient.
         Grab a second aliquot of antibiotics if there is not enough
         (you should finish off one before starting the next).
