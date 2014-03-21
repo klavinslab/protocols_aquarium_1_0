@@ -1,8 +1,8 @@
 #By David Starkebaum and Erik Josberger, 2014/02/13
 step
   description: "Move to Media Bay"
-  check: "This protocol must be performed in the Media Bay. Go there and use that computer
-                before continuing. Once all media is prepared, you will return to your bench
+  check: "This protocol must be performed in the Media Bay (Bench B1). Go there and use that computer
+                before continuing. Once all media is prepared, you will return to your own bench
                 (The program will instruct you when it is time to transfer)."
 end
 
@@ -21,6 +21,8 @@ take
  kan = 1 "200X 1 mL Kanamycin Aliquot"
  note: "You will need at least 0.12 mL of amp, and 0.30 mL of kan,
         so check the level of the liquid in your aliquots to be sure they are sufficient.
+        Grab a second aliquot of antibiotics if there is not enough
+        (you should finish off one before starting the next).
         The 'M9 liquid Glucose' should be in a bottle labeled '0.4 percent glucose'"
 end
 
