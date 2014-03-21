@@ -39,9 +39,18 @@ while x < len
   x=x+1
 end
 
+
+
+
 step
   description: "Ignore the following take"
+  check: "primer_stock: %{primer_stock}, newid: %{newid}, newitem: %{newitem}"
 end
+
+
+
+
+
 take
   item newid
 end
