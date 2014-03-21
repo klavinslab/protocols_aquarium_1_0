@@ -14,9 +14,6 @@ end
  
 
 ##
-## Qs: Seamless or not?
-## Qs: Can we have a null argument for argument
-## Qs: ...or can we have two metacols (one for dthyA loop, one for generating dthyA)	
 ## Qs: How do you repeat OD test if not enough wait time
 ##
 
@@ -117,54 +114,7 @@ end
 
 wire (transform,"transformed_cells_ids") => (plate,"e_coli_strain_id")
 
-place boil_cells
-  protocol: "labw14/group4/boil_cells.pl"
-  group: aquarium_user
-  start: days(1)
-end
 
-wire (plate, "plate_id") => (boil_cells, "template_plate")
-
-place pcr_prepare
-  protocol: "labw14/group4/pcr_prepare.pl"
-  group: aquarium_user
-  argument
-		pfwds: pfwd
-		prev1s: prev1s
-		prev2s: prev2s
-  	enzyme_id: phusion_enzyme
-  end
-  start: now()
-end
-
-wire (boil_cells, "sample_count") => (pcr_prepare, "sample_count")
-
-place pour_gels
-  protocol: "labw14/group4/pour_gels_parallel.pl"
-  group: aquarium_user
-  argument
-  	percentage: 1
-  end
-  start: now()
-end
-
-place run_gels
-  protocol: "labw14/group4/run_gel_parallel.pl"
-  argument
-	  fragment_volume: 20
-#	  num_gels: number, "the number of gels to run"
-#	  pcr_count: number, "The number of PCR tubes to run"
-  end
-  start: minutes(20)
-end
-wire (pour_gels, "gel_n") => (run_gels, "num_gels")
-wire (pcr_prepare, "pcr_count") => (run_gels, "pcr_count")
-
-place image_gels
-  protocol: "labw14/group4/image_gel.pl"
-  start: now()
-end
-wire (pour_gels, "gel_n") => (image_gels, "gel_count")
 # forward transitions
 
 transition [make_log_phase] => [finish_log_phase] when !error(0) && completed(0) end 
@@ -174,11 +124,7 @@ transition [heat_shock] => [quick_comp] when !error(0) && completed(0) end
 transition [quick_comp] => [transform] when !error(0) && completed(0) end 
 transition [incubate_tube] => [plate] when !error(0) && completed(0) end 
 transition [plate] => [] when !error(0) && completed(0) end
-#transition [boil_cells] => [pcr_prepare] when !error(0) && completed(0) end
-#transition [pcr_prepare] => [pour_gels] when !error(0) && completed(0) end
-#transition [pour_gels] => [run_gels] when !error(0) && completed(0) end
-#transition [run_gels] => [image_gels] when !error(0) && completed(0) end
-#transition [image_gels] => [] when !error(0) && completed(0) end
+
 
 # T1 -> []
 transition [transform] => [incubate_tube] when !error(0) && completed(0) end #&& (return_value(0,"time_constant") >= 3) end
