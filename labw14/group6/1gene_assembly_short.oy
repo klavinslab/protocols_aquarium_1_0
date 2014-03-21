@@ -1,11 +1,17 @@
+
+argument
+  ladder: sample, "Choose a 1kb ladder"
+  phusionHF: sample, "Choose a Phusion Master Mix enzyme"
+end
+
 oligo_pools1 = [1938]
 oligo_pools2 = [1939]
 primer11 = [2026]
 primer12 = [1627]
 primer21 = [1629]
 primer22 = [2028]
-phusionHF = 705
-ladder = 822
+#phusionHF = 705
+#ladder = 822
 
 
 place introduction
@@ -41,6 +47,7 @@ place assembly2
   start: now()
   window: minutes(30)
 end
+
 place run_gel
   protocol: "labw14/group6/full_length_protocols/run_gel.pl"
   argument
