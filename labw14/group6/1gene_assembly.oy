@@ -1,24 +1,24 @@
 # Arguments
-argument
-  source_oligos1: sample array, "Choose the oligonucleotides you want to combine"
-  source_oligos2: sample array, "Choose the oligonucleotides you want to combine"
-  source_oligos3: sample array, "Choose the oligonucleotides you want to combine"
-  source_oligos4: sample array, "Choose the oligonucleotides you want to combine" 
-  ladder: sample, "Choose a 1kb ladder"
-  phusionHF: sample, "Choose a Phusion Master Mix enzyme"
-end
+#argument
+  #source_oligos1: sample array, "Choose the oligonucleotides you want to combine"
+  #source_oligos2: sample array, "Choose the oligonucleotides you want to combine"
+  #source_oligos3: sample array, "Choose the oligonucleotides you want to combine"
+  #source_oligos4: sample array, "Choose the oligonucleotides you want to combine" 
+  #ladder: sample, "Choose a 1kb ladder"
+  #phusionHF: sample, "Choose a Phusion Master Mix enzyme"
+#end
 
 #Testing inputs - to save time (remove at end)
-#source_oligos1 = [1582, 1583, 1584, 1585, 1586, 1587]
-#source_oligos2 = [1588, 1589, 1590, 1591, 1592, 1593]
-#source_oligos3 = [1594, 1595, 1596, 1597, 1598, 1599]
-#source_oligos4 = [1600, 1601, 1602, 1603, 1604, 1605] 
+source_oligos1 = [1582, 1583, 1584, 1585, 1586, 1587]
+source_oligos2 = [1588, 1589, 1590, 1591, 1592, 1593]
+source_oligos3 = [1594, 1595, 1596, 1597, 1598, 1599]
+source_oligos4 = [1600, 1601, 1602, 1603, 1604, 1605] 
 #backbone_fragments = [2123, 2124, 1820]
 Concentrated_Stock1 = "OsGH3.1-1_1-6"
 Concentrated_Stock2 = "OsGH3.1-1_7-12"
 Concentrated_Stock3 = "OsGH3.1-2_1-6"
 Concentrated_Stock4 = "OsGH3.1-2_7-12"
-#ladder = 822
+ladder = 822
 #percentage = 1
 #comb_n = 1
 
@@ -28,7 +28,7 @@ primer11 = [1631]
 primer12 = [1627]
 primer21 = [1629]
 primer22 = [1633]
-#phusionHF = 705
+phusionHF = 705
 
 # Places
 place introduction
