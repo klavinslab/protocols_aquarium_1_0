@@ -30,6 +30,7 @@ end
 place assembly1
   protocol: "labw14/group6/full_length_protocols/gene_assembly_PCA1_short.pl"
   argument
+    oligo_pools1: oligo_pools1
     primer1: primer11
     primer2: primer12
     enzyme_id: phusionHF
@@ -42,6 +43,7 @@ end
 place assembly2
   protocol: "labw14/group6/full_length_protocols/gene_assembly_PCA2_short.pl"
   argument
+    oligo_pools2: oligo_pools2
     primer1: primer21
     primer2: primer22
     enzyme_id: phusionHF
