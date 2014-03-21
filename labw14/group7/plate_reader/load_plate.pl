@@ -64,7 +64,7 @@ cell1 = cells[1][:id]
 cell2 = cells[2][:id]
 step
   description: "Load the cell cultures into the wells"
-  note: "Load the cells according to the chart"
+  note: "Load 10uL of cell culture into each well, according to the chart"
   bullet: "Avoid touching the pipetter to the insides of the culture tube!
            This can cause cross-contamination!"
   bullet: "Best practice is to tilt the culture tube way over to the side,
