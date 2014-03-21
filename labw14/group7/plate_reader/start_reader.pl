@@ -14,7 +14,9 @@ end
 
 step
   description: "Turn on the Plate Reader"
-  check: "The power switch is on the lower left corner of the front face"
+  check: "The power switch is on the lower left corner of the front face.
+          It is the 'I/O' switch below the black button marked '1'"
+  image: "plate_reader_open_button"
 end
 
 step
