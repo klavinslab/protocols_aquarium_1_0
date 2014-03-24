@@ -49,13 +49,14 @@ while count2 < y
   count2=count2+1
 end
   
-  
-  #qg=weight*3000
-  #step
-    #description: "Add %{qg} µl of QG buffer into tube %{label}"
-  #end
- 
-#end
+count3=0
+while count3 < y
+  label=count3+1
+  qg=weights[count3]*3000
+  step
+    description: "Add %{qg} µl of QG buffer into tube %{label}"
+  end
+end
   
 
 
