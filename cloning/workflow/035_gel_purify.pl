@@ -5,6 +5,11 @@ argument
   GelSlice_id: sample("Fragment") array, "Fragment"
 end
 
+argument
+  isop: string, "Would you like to wash your fragments with Isopropanol? Enter yes or no."
+end
+
+
 take
   slices = item unique(GelSlice_id)
 end
@@ -12,6 +17,7 @@ end
 step
   description: "This protocol purifies DNA fragments from gel slices"
 end
+
 
 y=length(GelSlice_id)
 
@@ -33,29 +39,42 @@ step
   check: "weigh each gel slice tube on the scale and record it's weight on the side of the tube"
 end
 
+weights=[0]
+
+
 count2=0
 while count2 < y
   label=count2+1
-  step
-    description: "enter weight in grams of tube %{label}"
-    getdata
-      weight: number, "enter weight in grams of tube %{label}"
-    end
+    step
+      description: "enter weight in grams of tube %{label}"
+        getdata
+          weight: number, "enter weight in grams of tube %{label}"
+        end
   end
-  qg=weight*3000
-  step
-    description: "Add %{qg} µl of QG buffer into tube %{label}"
-  end
+  weights[count2]=weight
   count2=count2+1
 end
   
-
+count3=0
+while count3 < y
+  label=count3+1
+  qg=weights[count3]*3000
+  step
+    description: "Add %{qg} µl of QG buffer into tube %{label}"
+  end
+  count3=count3+1
+end
+  
 
 step
   description: "Place tubes in 50 degree heat block for 10 minutes. Vortex every few minutes to speed up the process"
 end
 
-
+if isop=="yes"
+  step
+    description: "Add 1x volume (1 uL to 1 mg of gel slice) isopropanol. Pipette up and down to mix"
+  end
+end
 
 step
   description: "Add tube contents to LABELED pink Qiagen columns"
@@ -87,7 +106,7 @@ end
 step
   check: "Add 30 uL molecular grade water or EB elution buffer to center of column."
   note: "Be very careful to not pipette on the wall of the tube"
-  check: "Wait two minutes"
+  check: "Wait five minutes"
   check: "Elute DNA into Eppendorf tubes by spinning at top speed (> 17,900 xg) for one minute"
 end
 
