@@ -63,6 +63,7 @@ while count3 < y
   step
     description: "Add %{qg} µl of QG buffer into tube %{label}"
   end
+  count3=count3+1
 end
   
 if isop=="yes"
