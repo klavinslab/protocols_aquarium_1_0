@@ -33,21 +33,29 @@ step
   check: "weigh each gel slice tube on the scale and record it's weight on the side of the tube"
 end
 
+weights=[0]
+
 count2=0
 while count2 < y
   label=count2+1
-  step
-    description: "enter weight in grams of tube %{label}"
-    getdata
-      weight: number, "enter weight in grams of tube %{label}"
-    end
-  end
-  qg=weight*3000
-  step
-    description: "Add %{qg} µl of QG buffer into tube %{label}"
-  end
-  count2=count2+1
+    step
+      description: "enter weight in grams of tube %{label}"
+        getdata
+          weight: number, "enter weight in grams of tube %{label}"
+        end
+    weights[count2]=weight
+   count2=count2+1
 end
+  
+  
+  
+  
+  #qg=weight*3000
+  #step
+    #description: "Add %{qg} µl of QG buffer into tube %{label}"
+  #end
+ 
+#end
   
 
 
