@@ -9,8 +9,6 @@ argument
   isop: string, "Would you like to wash your fragments with Isopropanol? Enter yes or no."
 end
 
-argument
-end
 
 take
   slices = item unique(GelSlice_id)
@@ -18,6 +16,12 @@ end
 
 step
   description: "This protocol purifies DNA fragments from gel slices"
+end
+
+if isop=="yes"
+  step
+    description: "Add 1x volume (1 uL to 1 mg of gel slice) isopropanol. Pipette up and down to mix"
+  end
 end
 
 y=length(GelSlice_id)
@@ -66,11 +70,7 @@ while count3 < y
   count3=count3+1
 end
   
-if isop=="yes"
-  step
-    description: "Add 1x volume (1 uL to 1 mg of gel slice) isopropanol. Pipette up and down to mix"
-  end
-end
+
 
 step
   description: "Place tubes in 50 degree heat block for 10 minutes. Vortex every few minutes to speed up the process"
