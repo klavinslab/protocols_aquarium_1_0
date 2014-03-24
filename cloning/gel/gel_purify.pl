@@ -35,6 +35,8 @@ end
 
 weights=[0]
 
+weights[:y]=0
+
 count2=0
 while count2 < y
   label=count2+1
@@ -43,7 +45,8 @@ while count2 < y
         getdata
           weight: number, "enter weight in grams of tube %{label}"
         end
-    weights[count2]=weight
+        weights[count2]=weight
+    w=append(z, w)
    count2=count2+1
 end
   
