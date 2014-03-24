@@ -1,12 +1,11 @@
 step
   description: "This metacol guides you through performing multiple Gibsons"
-  note: "You will combine several fragments with a larger plasmid (serving as a backbone). 
-    You will then add Gibson master mix, which has x y z enzymes, which work in concert to 
+  note: "You combine  several fragments with overlapping regions into
+    a larger plasmid (serving as a backbone). 
+    You will then add Gibson master mix, which has multiple enzymes that work in concert to 
     trim back, allow the fragments to join over overlapping regions (homologies), and then
     be stiched back together (add an image here from original paper). 
-    This technique was discoverd in 20xx? and allows you to do in an hour what used to take
-    x days.
-    The original paper is at http..."
+    This technique was published in 2009."
 end
 
 step
@@ -18,7 +17,7 @@ step
             begins eating fragments immediately"
   bullet: "Add the master mix, then put them in the thermocycler for X minutes"
   
-  bullet: "Transform a bit of the resulting plasmid into E. Coli (to magnify it to make stock and test the transform successful)"
+  bullet: "Transform a bit of the resulting plasmid into E. Coli"
   bullet: "Plate the transformed cells overnight"
   bullet: "Day 2"
   bullet: "Image the plates to check the colony counts (measure of success) and retry failed Gibsons"
