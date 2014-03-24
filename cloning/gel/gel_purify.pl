@@ -45,12 +45,10 @@ while count2 < y
         getdata
           weight: number, "enter weight in grams of tube %{label}"
         end
-        weights[count2]=weight
-    w=append(z, w)
-   count2=count2+1
+  end
+  weights[count2]=weight
+  count2=count2+1
 end
-  
-  
   
   
   #qg=weight*3000
