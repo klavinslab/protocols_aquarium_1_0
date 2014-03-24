@@ -18,11 +18,6 @@ step
   description: "This protocol purifies DNA fragments from gel slices"
 end
 
-if isop=="yes"
-  step
-    description: "Add 1x volume (1 uL to 1 mg of gel slice) isopropanol. Pipette up and down to mix"
-  end
-end
 
 y=length(GelSlice_id)
 
@@ -71,12 +66,15 @@ while count3 < y
 end
   
 
-
 step
   description: "Place tubes in 50 degree heat block for 10 minutes. Vortex every few minutes to speed up the process"
 end
 
-
+if isop=="yes"
+  step
+    description: "Add 1x volume (1 uL to 1 mg of gel slice) isopropanol. Pipette up and down to mix"
+  end
+end
 
 step
   description: "Add tube contents to LABELED pink Qiagen columns"
