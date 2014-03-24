@@ -35,7 +35,6 @@ end
 
 weights=[0]
 
-weights[:y]=0
 
 count2=0
 while count2 < y
