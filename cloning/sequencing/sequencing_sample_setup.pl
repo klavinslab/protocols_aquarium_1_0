@@ -85,7 +85,7 @@ while count2<y
     step  
       description: "Add %{water}µl of MGH20 to tube %{label}."
     end
-  count2=count2+1
+  count2=count2+1 
 end
 
 count3=0
