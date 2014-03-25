@@ -93,7 +93,7 @@ count3=0
 
 while count3<y
   label=count3+1
-  p=primers_entered[count3][:id]
+  p=primers_entered[count3]
     step  
       description: "Add 2.5µl of %{p} to tube %{label}."
     end
