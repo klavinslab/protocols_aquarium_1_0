@@ -2,7 +2,7 @@
 
 
 argument 
-  plasmids: sample("Plasmid Aliquot") array, "Enter the template plasmids you wish to create a sequencing reaction with"
+  plasmids: sample("Plasmid") array, "Enter the template plasmids you wish to create a sequencing reaction with"
   plasmids_lengths: number array, "Enter the length in basepairs of the above plasmids" 
   concentrations: number array, "Enter the concentration of the above plasmid samples in ng/µl"
   primers: sample("Primer") array, "Enter the primers you wish to use to set up a sequencing reaction"
@@ -11,6 +11,7 @@ argument
 end
 
 y=length(plasmids)
+x=length(primers)
 
 take
   plasmids_ids=item unique(plasmids)
@@ -90,7 +91,7 @@ end
 
 count3=0
 
-while count3<y
+while count3<x
   label=count3+1
   primer=primers[count3][:id]
     step  
