@@ -59,6 +59,7 @@ count3=0
 while count3 < y
   label=count3+1
   qg=weights[count3]*3000
+  qg=floor(qg)
   step
     description: "Add %{qg} µl of QG buffer into tube %{label}"
   end
