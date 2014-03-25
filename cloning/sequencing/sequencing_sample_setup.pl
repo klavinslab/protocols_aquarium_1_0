@@ -5,20 +5,20 @@ argument
   plasmids: sample("Plasmid") array, "Enter the template plasmids you wish to create a sequencing reaction with"
   plasmids_lengths: number array, "Enter the length in basepairs of the above plasmids" 
   concentrations: number array, "Enter the concentration of the above plasmid samples in ng/µl"
-  primers: sample("Primer") array, "Enter the primers you wish to use to set up a sequencing reaction"
+  primers_entered: sample("Primer") array, "Enter the primers you wish to use to set up a sequencing reaction"
   initials: string, "Your initials"
   tracking_no: string, "Enter the tracking number of your Genewiz order"
 end
 
 y=length(plasmids)
-x=length(primers)
+
 
 take
   plasmids_ids=item unique(plasmids)
 end
 
 take
-  primers_ids=item unique(primers)
+  primers_ids=item unique(primers_entered)
 end
 
 step
@@ -73,7 +73,7 @@ plasmid_vol=[0]
 
 while count1<y
   DNA_req[count1]=plasmids_lengths[count1]/10
-  plasmid_vol[count1]=ceil(DNA_req[count1]/concentrations[count1])
+  plasmid_vol[count1]=ceil(DNA_req[count1]/concentrations[count1])+1
   H20_req[count1]=12.5-plasmid_vol[count1]
   count1=count1+1
 end
@@ -91,11 +91,11 @@ end
 
 count3=0
 
-while count3<x
+while count3<y
   label=count3+1
-  primer=primers[count3][:id]
+  p=primers_entered[count3][:id]
     step  
-      description: "Add 2.5µl of %{primer} to tube %{label}."
+      description: "Add 2.5µl of %{p} to tube %{label}."
     end
   count3=count3+1
 end
