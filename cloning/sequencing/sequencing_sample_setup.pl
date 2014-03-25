@@ -80,7 +80,7 @@ end
 count2=0
 
 while count2<y
-  lable=count2+1
+  label=count2+1
   water=H20_req[count2]
     step  
       description: "Add %{water}µl of MGH20 to tube %{label}."
@@ -90,7 +90,7 @@ end
 
 count3=0
 
-while count2<y
+while count3<y
   lable=count3+1
   primer=primers_ids[count3][:id]
     step  
