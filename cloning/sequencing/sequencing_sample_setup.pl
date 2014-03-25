@@ -123,4 +123,7 @@ end
 step
   description: "Place all of the strip well tubes and the small strip of paper in a small plastic bag above B14.310 and place the bag into the Genewiz collection box"
 end
+
+release plasmids_ids
+release primers_ids
  
