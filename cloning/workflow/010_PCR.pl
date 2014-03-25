@@ -4,7 +4,7 @@ argument
   fragment_names: string array, "Fragment Names"
   forward_ids: sample("Primer") array, "Forward Primers"
   reverse_ids: sample("Primer") array, "Reverse Primers"
-  template_ids: sample("Plasmid") array, "Plasmid Templates"  
+  template_ids: sample array, "Template (diluted plasmid or other template DNA)"  
   tanneal: number, "The anneal temperature in degrees C"
 end
 
