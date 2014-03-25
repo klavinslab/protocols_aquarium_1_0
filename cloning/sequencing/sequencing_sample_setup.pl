@@ -2,7 +2,7 @@
 
 
 argument 
-  plasmids: sample("Plasmid") array, "Enter the template plasmids you wish to create a sequencing reaction with"
+  plasmids: sample("Plasmid Stock") array, "Enter the template plasmids you wish to create a sequencing reaction with"
   plasmids_lengths: number array, "Enter the length in basepairs of the above plasmids" 
   concentrations: number array, "Enter the concentration of the above plasmid samples in ng/µl"
   primers: sample("Primer") array, "Enter the primers you wish to use to set up a sequencing reaction"
