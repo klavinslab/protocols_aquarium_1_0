@@ -72,7 +72,7 @@ plasmid_vol=[0]
 
 while count1<y
   DNA_req[count1]=plasmids_lengths[count1]/10
-  plasmid_vol[count1]=DNA_req[count1]/concentration[count1]
+  plasmid_vol[count1]=DNA_req[count1]/concentrations[count1]
   H20_req[count1]=12.5-DNA_req[count1]
   count1=count1+1
 end
