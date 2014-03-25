@@ -103,7 +103,7 @@ count4=0
 
 while count4<y
   label=count4+1
-  plas=plasmids_ids[counts4][:id]
+  plas=plasmids_ids[count4][:id]
   plasvol=plasmid_vol[count4]
     step
       description: "Add %{plasvol}µl of plasmid %{plas} into tube %{label}"
