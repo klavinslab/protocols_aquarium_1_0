@@ -73,7 +73,7 @@ plasmid_vol=[0]
 while count1<y
   DNA_req[count1]=plasmids_lengths[count1]/10
   plasmid_vol[count1]=DNA_req[count1]/concentrations[count1]
-  H20_req[count1]=12.5-DNA_req[count1]
+  H20_req[count1]=12.5-plasmid_vol[count1]
   count1=count1+1
 end
 
@@ -91,7 +91,7 @@ end
 count3=0
 
 while count3<y
-  lable=count3+1
+  label=count3+1
   primer=primers_ids[count3][:id]
     step  
       description: "Add 2.5µl of %{primer} to tube %{label}."
@@ -102,7 +102,7 @@ end
 count4=0
 
 while count4<y
-  lable=count4+1
+  label=count4+1
   plas=plasmids_ids[counts4][:id]
   plasvol=plasmid_vol[count4]
     step
