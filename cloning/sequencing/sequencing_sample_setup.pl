@@ -12,8 +12,11 @@ end
 y=length(plasmids)
 
 take
-  plasmids
-  primers
+  plasmids_ids=item unique(plasmids)
+end
+
+take
+  primers_ids=item unique(primers)
 end
 
 step
