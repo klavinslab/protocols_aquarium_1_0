@@ -65,10 +65,6 @@ count1=0
 DNA_req=plasmids_lengths/10  
 plasmid_vol=[0]
 
-while count1 < y 
-  label=count1+
-  plasmid_lengths[]
-end
 
 
 
