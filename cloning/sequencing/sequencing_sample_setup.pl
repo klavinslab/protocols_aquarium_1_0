@@ -90,14 +90,14 @@ end
 
 count3=0
 
-#while count3<y
- # label=count3+1
-  #primer=primers_ids[count3][:id]
-   # step  
-    #  description: "Add 2.5µl of %{primer} to tube %{label}."
-    #end
-  #count3=count3+1
-#end
+while count3<y
+  label=count3+1
+  primer=primers_ids[count3][:id]
+    step  
+      description: "Add 2.5µl of %{primer} to tube %{label}."
+    end
+  count3=count3+1
+end
 
 count4=0
 
