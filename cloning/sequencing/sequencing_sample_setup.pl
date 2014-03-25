@@ -92,7 +92,7 @@ count3=0
 
 while count3<y
   label=count3+1
-  primer=primers_ids[count3][:id]
+  primer=primers[count3][:id]
     step  
       description: "Add 2.5µl of %{primer} to tube %{label}."
     end
@@ -103,7 +103,7 @@ count4=0
 
 while count4<y
   label=count4+1
-  plas=plasmids_ids[count4][:id]
+  plas=plasmids[count4][:id]
   plasvol=plasmid_vol[count4]
     step
       description: "Add %{plasvol}µl of plasmid %{plas} into tube %{label}"
