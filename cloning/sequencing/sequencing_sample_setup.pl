@@ -65,15 +65,60 @@ end
 
 count1=0
 
-DNA_req=plasmids_lengths/10  
+H20_req=[0]
+DNA_req=[0]
 plasmid_vol=[0]
 
+while count1<y
+  DNA_req[count1]=plasmids_lengths[count1]/10
+  plasmid_vol[count1]=DNA_req[count1]/concentration[count1]
+  H20_req[count1]=12.5-DNA_req[count1]
+  count1=count1+1
+end
 
+count2=0
 
+while count2<y
+  lable=count2+1
+  water=H20_req[count2]
+    step  
+      description: "Add %{water}µl of MGH20 to tube %{label}."
+    end
+  count2=count2+1
+end
 
+count3=0
 
+while count2<y
+  lable=count3+1
+  primer=primers_ids[count3][:id]
+    step  
+      description: "Add 2.5µl of %{primer} to tube %{label}."
+    end
+  count3=count3+1
+end
 
+count4=0
 
+while count4<y
+  lable=count4+1
+  plas=plasmids_ids[counts4][:id]
+  plasvol=plasmid_vol[count4]
+    step
+      description: "Add %{plasvol}µl of plasmid %{plas} into tube %{label}"
+    end
+  count4=count4+1
+end
 
+step
+  description: "Cap all strip well tubes"
+end
 
+step
+  description: "Write %{tracking_no} on a small slip of paper."
+end
 
+step
+  description: "Place all of the strip well tubes and the small strip of paper in a small plastic bag above B14.310 and place the bag into the Genewiz collection box"
+end
+ 
