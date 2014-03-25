@@ -7,6 +7,7 @@ argument
   concentrations: number array, "Enter the concentration of the above plasmid samples in ng/µl"
   primers: sample("Primer") array, "Enter the primers you wish to use to set up a sequencing reaction"
   initials: string, "Your initials"
+  tracking_no: string, "Enter the tracking number of your Genewiz order"
 end
 
 y=length(plasmids)
