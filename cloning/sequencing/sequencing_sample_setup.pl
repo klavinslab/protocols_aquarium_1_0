@@ -29,7 +29,7 @@ step
   check: "Label the left most well with the letter %{initials}12"
   note: "These wells will be refered to as 1 - 12"
 end
-if length(plasmid_ids) > 12
+if length(plasmids_ids) > 12
   step
     description: "Grab a second 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
     check: "Label the right most well with the letters %{initials}13"
@@ -37,7 +37,7 @@ if length(plasmid_ids) > 12
     note: "These wells will be refered to as 13 - 24"
   end
 end
-if length(plasmid_ids) > 24
+if length(plasmids_ids) > 24
   step
     description: "Grab a third 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
     check: "Label the right most well with the letters %{initials}25"
@@ -45,7 +45,7 @@ if length(plasmid_ids) > 24
     note: "These wells will be refered to as 25 - 36"
   end
 end
-if length(plasmid_ids) > 36
+if length(plasmids_ids) > 36
   step
     description: "Grab a fourth 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
     check: "Label the right most well with the letters %{initials}37"
@@ -53,7 +53,7 @@ if length(plasmid_ids) > 36
     note: "These wells will be refered to as 37 - 48"
   end
 end
-if length(plasmid_ids) > 48
+if length(plasmids_ids) > 48
   step
     description: "Grab a fourth 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
     check: "Label the right most well with the letters %{initials}49"
