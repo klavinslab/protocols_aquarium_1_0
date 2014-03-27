@@ -207,7 +207,31 @@ if length(plates)<0
   end
 end
 
-if length(overnight)
+if length(overnight)<0
+  count10=0
+  while count10<length(overnight)
+    label = length(glycerol_stocks)+length(plates)+count10+1
+      step
+        check: "Take overnight culture %{overnight[count10]} and vortex the tube."
+        check: "Pipette 3µl of overnight culture %{overnight[count10]} and pipette into tube %{label}"
+      end
+  end
+end
+
+step
+  description: "Write the following ID numbers on the the tubes during the following produces. After that make sure caps are on all tubes and place them in B13.425 (large 37ºC shaker incubator)"
+end
+
+count=0
+  while count < y 
+    s = sample_tot[count]
+      produce
+        q=1 "TB Overnight" from s
+        location: "Benchtop"
+      end
+  count=count+1
+end
+
 
 
 
