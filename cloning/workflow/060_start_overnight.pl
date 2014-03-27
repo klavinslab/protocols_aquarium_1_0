@@ -227,7 +227,7 @@ end
 
 count=0
   while count < y 
-    s = sample_tot[count]
+    s = sample_tot[count][:name]
       produce
         q=1 "TB Overnight of Plasmid" of s
         location: "Benchtop"
