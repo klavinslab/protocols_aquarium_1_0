@@ -39,24 +39,17 @@ while x < len
   x=x+1
 end
 
-
-
-
 step
   description: "Ignore the following take"
   check: "primer_stock: %{primer_stock}, newid: %{newid}, newitem: %{newitem}"
 end
 
-
-
-
-
 take
-  item newid
+  a = item newid
 end
 step
   description: "Do NOT ignore the following release"
 end
 
-release newid
+release a
 release primer_stock
