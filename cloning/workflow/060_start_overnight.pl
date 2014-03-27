@@ -181,8 +181,9 @@ if length(glycerol_stocks)>0
   
   while count8<length(glycerol_stocks)
     label=count8+1
+    g=glycerol_stocks[count8]
       step
-        check:"Remove glycercol stock %{glycerol_stocks[count8]} from -80 freezer." 
+        check:"Remove glycercol stock %{g} from -80 freezer." 
         check:"Carefully open tube and remove a small amount of frozen cells with a pipette tip" 
         check:"Submurge the tip into the liquid culture of tube %{label}, be sure to use sterile technique"
         check:"Discard tip"
@@ -197,8 +198,9 @@ if length(plates)<0
   count9=0
   while count9<length(plates)
     label=length(glycerol_stocks)+count9+1
+    p=plates[count9]
       step
-        check:"Take a small pipette tip and grab a small amount of colony from plate %{plates[count9]}. Be sure to use sterile technique."
+        check:"Take a small pipette tip and grab a small amount of colony from plate %{p}. Be sure to use sterile technique."
         check:"Submerge the tip into the liquid culture of the tube %{label}"
         check:"Discard tip"
         note:"Make sure to pick different colonies if creating multiple cultures from the same plate!"
@@ -211,9 +213,10 @@ if length(overnight)<0
   count10=0
   while count10<length(overnight)
     label = length(glycerol_stocks)+length(plates)+count10+1
+    o=overnight[count10]
       step
-        check: "Take overnight culture %{overnight[count10]} and vortex the tube."
-        check: "Pipette 3µl of overnight culture %{overnight[count10]} and pipette into tube %{label}"
+        check: "Take overnight culture %{o]} and vortex the tube."
+        check: "Pipette 3µl of overnight culture %{o} and pipette into tube %{label}"
       end
   end
 end
