@@ -14,11 +14,11 @@ sample_tot=concat(sample_tot, overnight)
 
 y=length(sample_tot)
 
-#if length(glycerol_stocks)>0
- # take  
-  #  stocks=item unique(glycerol_stocks) 
-  #end
-#end
+if length(glycerol_stocks)>0
+  take  
+    stocks=item unique(glycerol_stocks) 
+  end
+end
 
 if length(plates)>0
   take
