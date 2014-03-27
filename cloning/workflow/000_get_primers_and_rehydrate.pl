@@ -56,6 +56,15 @@ if arrived=="Yes"
   step
     description: "Ignore the following 'take'"
   end
+  
+  
+  step
+    description: "ids: %{ids}"
+  end
+  
+  
+  
+  
   take
     xyz = item ids
   end
