@@ -64,7 +64,7 @@ chlor_tube_count=0
 while count2<y
   label=count2+1
     if antibiotic[count2]=="Chlor"
-      chlor_tubes[chlor_tube_count]=label
+      chlor_tubes[chlor_tube_count]=label-1
       chlor_tube_count=chlor_tube_count+1
     end
   count2=count2+1
@@ -77,7 +77,7 @@ kan_tube_count=0
 while count3<y
   label=count1+1
     if antibiotic[count3]=="Kan"
-      kan_tubes[kan_tube_count]=label
+      kan_tubes[kan_tube_count]=label-1
       kan_tube_count=kan_tube_count+1
     end
   count3=count3+1
@@ -90,7 +90,7 @@ ampchlor_tube_count=0
 while count1<y
   label=count4+1
     if antibiotic[count4]=="Amp+Chlor"
-      ampchlor_tubes[ampchlor_tube_count]=label
+      ampchlor_tubes[ampchlor_tube_count]=label-1
       ampchlor_tube_count=ampchlor_tube_count+1
     end
   count4=count4+1
@@ -103,7 +103,7 @@ ampkan_tube_count=0
 while count1<y
   label=count5+1
     if antibiotic[count5]=="Amp+Kan"
-      ampkan_tubes[ampkan_tube_count]=label
+      ampkan_tubes[ampkan_tube_count]=label-1
       ampkan_tube_count=ampkan_tube_count+1
     end
   count5=count5+1
@@ -116,7 +116,7 @@ chlorkan_tube_count=0
 while count6<y
   label=count6+1
     if antibiotic[count6]=="Chlor+Kan"
-      chlorkan_tubes[chlorkan_tube_count]=label
+      chlorkan_tubes[chlorkan_tube_count]=label-1
       chlorkan_tube_count=chlorkan_tube_count+1
     end
   count6=count6+1
@@ -129,7 +129,7 @@ TB_tube_count=0
 while count7<y
   label=count7+1
     if antibiotic[count7]=="None"
-      TB_tubes[TB_tube_count]=label
+      TB_tubes[TB_tube_count]=label-1
       TB_tube_count=TB_tube_count+1
     end
   count7=count7+1
