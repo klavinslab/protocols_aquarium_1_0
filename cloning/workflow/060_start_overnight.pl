@@ -229,7 +229,7 @@ count=0
   while count < y 
     s = sample_tot[count]
       produce
-        q=1 "TB Overnight of Plasmids" from s
+        q=1 "TB Overnight of Plasmids" of s
         location: "Benchtop"
       end
   count=count+1
