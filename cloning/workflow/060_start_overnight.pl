@@ -48,9 +48,9 @@ amp_tubes=[0]
 amp_tube_count=0
 
 while count1<y
-  label=count1+1
+  label1=count1+1
     if antibiotic[count1]=="Amp"
-      amp_tubes[amp_tube_count]=label
+      amp_tubes[amp_tube_count]=label1
       amp_tube_count=amp_tube_count+1
     end
   count1=count1+1
@@ -62,9 +62,9 @@ chlor_tubes=[0]
 chlor_tube_count=0
 
 while count2<y
-  label=count2+1
+  label2=count2+1
     if antibiotic[count2]=="Chlor"
-      chlor_tubes[chlor_tube_count]=label-1
+      chlor_tubes[chlor_tube_count]=label2
       chlor_tube_count=chlor_tube_count+1
     end
   count2=count2+1
@@ -75,9 +75,9 @@ kan_tubes=[0]
 kan_tube_count=0
 
 while count3<y
-  label=count1+1
+  label3=count1+1
     if antibiotic[count3]=="Kan"
-      kan_tubes[kan_tube_count]=label-1
+      kan_tubes[kan_tube_count]=label3
       kan_tube_count=kan_tube_count+1
     end
   count3=count3+1
@@ -88,9 +88,9 @@ ampchlor_tubes=[0]
 ampchlor_tube_count=0
 
 while count1<y
-  label=count4+1
+  label4=count4+1
     if antibiotic[count4]=="Amp+Chlor"
-      ampchlor_tubes[ampchlor_tube_count]=label-1
+      ampchlor_tubes[ampchlor_tube_count]=label4
       ampchlor_tube_count=ampchlor_tube_count+1
     end
   count4=count4+1
@@ -101,9 +101,9 @@ ampkan_tubes=[0]
 ampkan_tube_count=0
 
 while count1<y
-  label=count5+1
+  label5=count5+1
     if antibiotic[count5]=="Amp+Kan"
-      ampkan_tubes[ampkan_tube_count]=label-1
+      ampkan_tubes[ampkan_tube_count]=label5
       ampkan_tube_count=ampkan_tube_count+1
     end
   count5=count5+1
@@ -114,9 +114,9 @@ chlorkan_tubes=[0]
 chlorkan_tube_count=0
 
 while count6<y
-  label=count6+1
+  label6=count6+1
     if antibiotic[count6]=="Chlor+Kan"
-      chlorkan_tubes[chlorkan_tube_count]=label-1
+      chlorkan_tubes[chlorkan_tube_count]=label6
       chlorkan_tube_count=chlorkan_tube_count+1
     end
   count6=count6+1
@@ -127,9 +127,9 @@ TB_tubes=[0]
 TB_tube_count=0
 
 while count7<y
-  label=count7+1
+  label7=count7+1
     if antibiotic[count7]=="None"
-      TB_tubes[TB_tube_count]=label-1
+      TB_tubes[TB_tube_count]=label7
       TB_tube_count=TB_tube_count+1
     end
   count7=count7+1
