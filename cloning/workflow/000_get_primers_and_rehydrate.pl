@@ -56,12 +56,12 @@ if arrived=="Yes"
     description: "Ignore the following 'take'"
   end
   take
-    item ids
+    xyz = item ids
   end
   step
     description: "Do NOT ignore the following 'release'"
   end
-  release ids
+  release xyz
 else
   step
     description: "There are no primers to pick up"
