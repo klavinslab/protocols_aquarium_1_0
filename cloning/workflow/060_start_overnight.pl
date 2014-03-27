@@ -75,7 +75,7 @@ kan_tubes=[0]
 kan_tube_count=0
 
 while count3<y
-  label3=count1+1
+  label3=count3+1
     if antibiotic[count3]=="Kan"
       kan_tubes[kan_tube_count]=label3
       kan_tube_count=kan_tube_count+1
