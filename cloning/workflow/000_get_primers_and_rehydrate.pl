@@ -4,6 +4,7 @@ end
 
 answer="No"
 arrived="blank"
+xyz=[0]
 while answer=="No"
   step
     description: "Call the biochem store to see if primers have arrived."
