@@ -44,9 +44,16 @@ step
   check: "primer_stock: %{primer_stock}, newid: %{newid}, newitem: %{newitem}"
 end
 
-take
-  a = item newid
+x=0
+while x < len
+  y=newid[x]
+  modify 
+      y[x]
+      inuse: 1
+  end
+  x=x+1
 end
+
 step
   description: "Do NOT ignore the following release"
 end
