@@ -32,6 +32,9 @@ if length(overnight)>0
   end
 end
 
+total_taken=concat(glycerol_stocks, plates)
+total_taken=concat(total_takem, overnight)
+
 if length(sample_tot)>1
   step
     description: "Grab %{y} glass 14ml tubes from B1.450 and place them in a plastic tube rack label them 1 through %{y} with a pen"
@@ -229,30 +232,35 @@ step
   description: "%{sample_tot}"
 end
 
+final_samples=[]
 
-if length(glycerol_stocks)>0
-  count=0
-    while count < y 
-      s = glycerol_stocks[count]
-        produce
-          q=1 "TB Overnight of Plasmid" of s
-          location: "Benchtop"
-        end
-    count=count+1
+i=0 
+j=0
+k=0
+
+while i < y
+  while j < length(total_taken)
+    if total_taken[i][:id]==sample_tot[j]
+      final_samples[k]=total_taken[i]
+      k=k+!
+    end
+    j=j+1
   end
+  i=i+1
+end
+
+count=0
+  while count < y 
+    s = final_samples[count]
+      produce
+        q=1 "TB Overnight of Plasmid" from s
+        location: "Benchtop"
+      end
+  count=count+1
 end
 
 
-if length(plates)>0
-  count=0
-    while count < y 
-      s = plates[count]
-        produce
-          q=1 "TB Overnight of Plasmid" of s
-          location: "Benchtop"
-        end
-    count=count+1
-  end
-end
+  
+  
     
 
