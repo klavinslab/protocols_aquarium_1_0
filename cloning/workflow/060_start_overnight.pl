@@ -242,7 +242,7 @@ while i < y
   while j < length(total_taken)
     if total_taken[i][:id]==sample_tot[j]
       final_samples[k]=total_taken[i]
-      k=k+!
+      k=k+1
     end
     j=j+1
   end
