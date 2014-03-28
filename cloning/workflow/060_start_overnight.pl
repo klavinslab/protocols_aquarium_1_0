@@ -33,7 +33,7 @@ if length(overnight)>0
 end
 
 total_taken=concat(glycerol_stocks, plates)
-total_taken=concat(total_take, overnight)
+total_taken=concat(total_taken, overnight)
 
 if length(sample_tot)>1
   step
