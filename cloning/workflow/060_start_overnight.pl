@@ -229,16 +229,30 @@ step
   description: "%{sample_tot}"
 end
 
-count=0
-  while count < y 
-    s = sample_tot[count]
-      produce
-        q=1 "TB Overnight of Plasmid" of s
-        location: "Benchtop"
-      end
-  count=count+1
+
+if length(glycerol_stocks)>0
+  count=0
+    while count < y 
+      s = glycerol_stocks[count]
+        produce
+          q=1 "TB Overnight of Plasmid" of s
+          location: "Benchtop"
+        end
+    count=count+1
+  end
 end
 
 
-
+if length(plates)>0
+  count=0
+    while count < y 
+      s = plates[count]
+        produce
+          q=1 "TB Overnight of Plasmid" of s
+          location: "Benchtop"
+        end
+    count=count+1
+  end
+end
+    
 
