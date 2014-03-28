@@ -1,0 +1,9 @@
+{
+  "initials": "NB",
+  "enzyme_id": 706,
+  "fragment_names": ["fYG7", "fYG8", "PS-AtuiaaH-TP", "PP2-pFUS1-PS"],
+  "forward_ids": [1262, 1263, 2382, 2386],
+  "reverse_ids": [1261, 1264, 2384, 2388],
+  "template_ids": [1251, 1251, 2392, 2390],
+  "tanneal": 65
+}
