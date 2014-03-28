@@ -238,8 +238,7 @@ i=0
 j=0
 k=0
 
-current_total_taken="test"
-current_total_taken=to_string(total_taken[1][:id])
+key_samp_tot={id:sample_tot}
 
 while i < y
   while j < length(total_taken)
