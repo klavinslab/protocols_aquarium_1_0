@@ -238,7 +238,7 @@ i=0
 j=0
 k=0
 
-current_total_taken=total_taken[1][:id]
+current_total_taken=to_string(total_taken[1][:id])
 
 while i < y
   while j < length(total_taken)
