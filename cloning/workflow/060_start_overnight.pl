@@ -242,8 +242,7 @@ key_samp_tot={id:sample_tot}
 
 while i < y
   while j < length(total_taken)
-    current_total_taken=total_taken[i][:id]
-    if current_total_taken==sample_tot[j]
+    if total_taken[i][:id]==key_samp_tot[j][:id]
       final_samples[k]=total_taken[i]
       k=k+1
     end
