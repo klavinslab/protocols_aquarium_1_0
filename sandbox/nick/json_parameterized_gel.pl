@@ -8,12 +8,8 @@ input
   params = parameter_path
 end
 
-include "cloning/workflow/010_PCR.pl"
-  initials: params[:initials]
-  enzyme_id: params[:enzyme_id]
+include "cloning/workflow/020_run_gel.pl"
   fragment_names: params[:fragment_names]
-  forward_ids: params[:forward_ids]
-  reverse_ids: params[:reverse_ids]
-  template_ids: params[:template_ids]
-  tanneal: params[:tanneal]
+  ladder_one: params[:ladder_one]
+  fragment_volume: params[:fragment_volume]
 end
