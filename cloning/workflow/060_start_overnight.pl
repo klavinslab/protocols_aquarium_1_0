@@ -90,7 +90,7 @@ count4=0
 ampchlor_tubes=[0]
 ampchlor_tube_count=0
 
-while count1<y
+while count4<y
   label4=count4+1
     if antibiotic[count4]=="Amp+Chlor"
       ampchlor_tubes[ampchlor_tube_count]=label4
@@ -103,7 +103,7 @@ count5=0
 ampkan_tubes=[0]
 ampkan_tube_count=0
 
-while count1<y
+while count5<y
   label5=count5+1
     if antibiotic[count5]=="Amp+Kan"
       ampkan_tubes[ampkan_tube_count]=label5
@@ -240,7 +240,7 @@ k=0
 
 while i < y
   while j < length(total_taken)
-    if total_taken[i][:id]==sample_tot[j]
+    if total_taken[i]==sample_tot[j]
       final_samples[k]=total_taken[i]
       k=k+1
     end
