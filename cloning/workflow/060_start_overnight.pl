@@ -33,9 +33,9 @@ if length(overnight)>0
 end
 
 total_taken=concat(glycerol_stocks, plates)
-total_takena=concat(total_taken, overnight)
+total_taken=concat(total_taken, overnight)
 
-total_taken={id:[total_taken]}
+total_takena={id:[total_taken]}
 if length(sample_tot)>1
   step
     description: "Grab %{y} glass 14ml tubes from B1.450 and place them in a plastic tube rack label them 1 through %{y} with a pen"
