@@ -10,8 +10,9 @@ x=0
 newid=[0]
 newitem=[0]
 while x < len
+  name = primer_stock[x][:name]
   produce silently
-    q = 1 "Primer Aliquot" of primer_stock[x][:name]
+    q = 1 "Primer Aliquot" of name
   end
   newid[x]=q[:id]
   newitem[x]=q
