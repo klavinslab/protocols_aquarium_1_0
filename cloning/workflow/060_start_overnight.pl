@@ -33,7 +33,7 @@ if length(overnight)>0
 end
 
 total_taken=concat(glycerol_stocks, plates)
-total_taken=concat(total_taken, overnight)
+total_takena=concat(total_taken, overnight)
 
 total_taken={id:[total_taken]}
 if length(sample_tot)>1
@@ -243,7 +243,7 @@ key_samp_tot={id:sample_tot}
 
 while i < y
   while j < length(total_taken)
-    if total_taken[i][:id]==key_samp_tot[j][:id]
+    if total_takena[i][:id]==key_samp_tot[j][:id]
       final_samples[k]=total_taken[i]
       k=k+1
     end
