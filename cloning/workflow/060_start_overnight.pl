@@ -240,7 +240,7 @@ k=0
 
 while i < y
   while j < length(total_taken)
-    if total_taken[i][:id]==sample_tot[j]
+    if total_taken[i][:id]=sample_tot[j]
       final_samples[k]=total_taken[i]
       k=k+1
     end
