@@ -250,17 +250,11 @@ while i < y
 end
 
 count=0
-  while count < y 
-    s = final_samples[count]
-      produce
-        q=1 "TB Overnight of Plasmid" from s
-        location: "Benchtop"
-      end
+while count < y 
+  s = final_samples[count]
+    produce
+      q=1 "TB Overnight of Plasmid" from s
+      location: "Benchtop"
+    end
   count=count+1
 end
-
-
-  
-  
-    
-
