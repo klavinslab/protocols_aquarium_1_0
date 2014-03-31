@@ -7,7 +7,7 @@ take
 end
 
 
-include "plankton/includes/materials_prep/add_dry_reagent.pl"
+include "includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
   reagent: "M9 Minimal Salts"
   grams: 45.12  # 56.4 g / L

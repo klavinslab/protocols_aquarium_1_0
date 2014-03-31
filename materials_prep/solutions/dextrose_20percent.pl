@@ -11,7 +11,7 @@ percentage = 20
 ml = 30
 
 
-include "plankton/includes/materials_prep/add_dry_reagent.pl"
+include "includes/materials_prep/add_dry_reagent.pl"
   container: "the falcon tube"
   reagent: "Dextrose"
   grams: (percentage / 100) * ml
@@ -24,7 +24,7 @@ step
 end
 
 
-include "plankton/includes/materials_prep/filter_sterilize_syringe.pl"
+include "includes/materials_prep/filter_sterilize_syringe.pl"
   volume: ml
   name: "the dextrose solution"
 end

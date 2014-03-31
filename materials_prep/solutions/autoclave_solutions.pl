@@ -1,23 +1,20 @@
-information "Autoclave at 121C for 15 minutes"
+information "Autoclave yeast media"
 
 argument
-  m9_salts_5x_n: number, "Enter the number of 800 mL bottles of 5X M9 salts to autoclave."
+  m9_salts_n: number, "Enter the number of 5X M9 Salts bottles to autoclave."
 end
 
-
-# Take inputs
-if m9_salts_5x_n > 0
+# Take media bottles
+if m9_salts_n > 0
   take
-    m9_salts_5x = m9_salts_5x_n "800 mL Difco M9 Minimal Salts Solution, 5X (unsterile)"
+    m9_salts_bottles = m9_salts_n "800 mL Difco M9 Minimal Salts Solution, 5X (unsterile)"
   end
 end
-
 
 step
   description: "Apply autoclave tape"
   note: "Apply autoclave tape to each item. Loosen lids, then make sure autoclave tape extends fully over the lid and onto the sides of the item. The seal will have to be broken to use the sterilized item."
 end
-
 
 step
   description: "Select an autoclave"
@@ -26,20 +23,18 @@ step
   end
 end
 
-
 # Usage differences between the autoclaves
 if autoclave == "A1"
   check_autoclave = "Check that the low water indicator is not flashing. Refill the reservoir if the water is low."
   open_autoclave = "Close the autoclave door until it latches, pull the screw handle over to the front of the autoclave (unscrew if necessary), and rotate it clockwise until it is tight."
-  set_autoclave = "Select liquid cycle and start, which will heat 121°C for 15 minutes at pressure. Then, hit start."
+  set_autoclave = "Select optional cycle. Set the temperature to 110°C for 15 minutes. Then, hit the up button to start."
   finished_indicator = "The autoclave will beep twice every few seconds until you hit the stop button."
 else
   check_autoclave = "Check the water level. Inside the autoclave, the water should be high enough to almost cover the hexagonal plate. If it is low, fill with DI water.\n\nCheck the steam receptacle (the plastic bottle at the front of the autoclave). The receptacle's water level should be between low and high. If it is above this, empty into the sink."
   open_autoclave = "Close the hatch and seal by rotating clockwise and secure the magnetic safety device to the hatch."
-  set_autoclave = "Set the temperature to 121°C and time at pressure to 15 minutes. Then, hit start."
+  set_autoclave = "Set the temperature to 110°C and time at pressure to 15 minutes. Then, hit start."
   finished_indicator = "The autoclave will beeps 5 times in a row *just once* when it is done."
 end
-
 
 # Use the autoclave
 step
@@ -76,13 +71,13 @@ step
 end
 
 
-# Produce sterile outputs
-if m9_salts_5x_n > 0
+# Produce media bottles
+if m9_salts_n > 0
   produce
-    mi_salts_5x_sterile = m9_salts_5x_n "800 mL Difco M9 Minimal Salts Solution, 5X (sterile)"
+    sterile_m9_salts = m9_salts_n "800 mL Difco M9 Minimal Salts Solution, 5X (sterile)"
+    release m9_salts_bottles
     location: items_location
   end
 end
-
 
 release gloves

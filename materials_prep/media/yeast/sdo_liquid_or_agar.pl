@@ -107,6 +107,7 @@ take
 end
 
 
+agar = []  # Initialize global variable
 if add_agar == "Yes"
   if add_his == "Yes" && add_leu == "Yes" && add_trp == "Yes" && add_ura == "Yes"
     product_name = "800 mL SC agar (unsterile)"

@@ -52,13 +52,13 @@ antibiotic_name = antibiotic[0][:name]
 
 
 if antibiotic_type == "Kan"
-  include "plankton/includes/materials_prep/add_dry_reagent.pl"
+  include "includes/materials_prep/add_dry_reagent.pl"
     container: "each bottle"
     reagent: antibiotic_name
     grams: 0.5
   end
 
-  include "plankton/includes/materials_prep/clean_spatula.pl" end
+  include "includes/materials_prep/clean_spatula.pl" end
 
   take
     water = 1 "Molecular Biology Grade Water"
@@ -70,13 +70,13 @@ if antibiotic_type == "Kan"
     note: "Using a serological pipetter, add 50 mL molecular grade water to each bottle. Use a new pipet for each bottle."
   end
 elsif antibiotic_type == "Chlor"
-  include "plankton/includes/materials_prep/add_dry_reagent.pl"
+  include "includes/materials_prep/add_dry_reagent.pl"
     container: "each bottle"
     reagent: antibiotic_name
     grams: 0.34
   end
   # Clean the spatula before returning it
-  include "plankton/includes/materials_prep/clean_spatula.pl" end
+  include "includes/materials_prep/clean_spatula.pl" end
 
   take
     ethanol = 1 "95% Ethanol"
