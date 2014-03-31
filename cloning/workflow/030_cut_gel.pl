@@ -7,6 +7,12 @@ take
   y = item gel
 end
 
+n = length(y)
+step
+  description: "Take out and label 1.5 mL tubes"
+  note: "Take out %{n} 1.5 mL tubes and label them (ON THE SIDE) 1 through %{n}."
+end
+
 step
   description: "Take razor blade from shelf above station"
   note: "Razor blades are located in a petri dish next to the goggles. Take one out and carefully
@@ -16,6 +22,7 @@ end
 
 ii = 0
 while ii < length(gel)
+  tube_name = ii + 1
   lane_name = ii + 2
   lane_size = sizes[ii]
   step
@@ -33,7 +40,7 @@ while ii < length(gel)
   end
 
   step
-    description: "Put the gel slice into a 1.5 mL tube"
+    description: "Put the gel slice into 1.5 mL tube labeled %{tube_name}"
     note: "Slide the gel slice onto the razor blade, open the tube and push the slice in. If the
     slice is to big, trim down excess gel. Again, do not trim gel that contains the band, only
     excess gel around the band."
@@ -55,6 +62,10 @@ end
 jj = 0
 r = []
 while jj < length(gel)
+  step
+    description: "The next produce is for tube %{n}"
+    note: "Remember to write the id on top"
+  end
   produce
     product = 1 "Gel Slice" from y[jj]
     location: "Bench"
