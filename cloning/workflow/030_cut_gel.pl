@@ -1,6 +1,6 @@
 argument
   gel: sample array, "Gel lanes (after gel has been run) in the order they were run, starting from lane 2."
-  sizes: number array, "The expectd size for each band."
+  sizes: number array, "The expected size for each band."
 end
 
 take
