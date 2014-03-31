@@ -8,6 +8,6 @@ input
   params = parameter_path
 end
 
-include "cloning/workflow/025_mage_gel.pl"
+include "cloning/workflow/025_image_gel.pl"
   gel: params[:gel]
 end
