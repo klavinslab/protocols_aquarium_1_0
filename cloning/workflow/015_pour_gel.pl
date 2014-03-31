@@ -1,9 +1,9 @@
 information "Pour a 50 mL agarose gel."
 
-
 argument
   percentage: number, "Enter the percentage gel to make (e.g. 1 = 1%)"
-  comb_n: number, "Enter the number of combs to use (1 or 2)."
+  comb_1: number, "Enter '1' for 6 thin lanes. Enter '2' for 6 thick lanes. Enter '3' for 10 thin lanes. Enter '4' for 10 thick lanes"
+  comb_2: number, "Enter '0' for no second comb. Enter '1' for 6 thin lanes. Enter '2' for 6 thick lanes. Enter '3' for 10 thin lanes. Enter '4' for 10 thick lanes"
 end
 
 
@@ -91,25 +91,86 @@ take
 end
 
 
-if comb_n == 1
+if comb_1 == 1
   step
     description: "Add comb"
-    note: "Retrieve a 6-well purple comb from A7.325. Position the gel box With the electrodes facing away from you. Add a purple comb to the side of the casting tray nearest the side of the gel box, thicker side down. Make sure it is well-situated in the groove of the casting tray."
+    check: "Retrieve a 6-well purple comb from A7.325"
+    check: "Position the gel box With the electrodes facing away from you. Add a purple comb to the side of the casting tray nearest the side of the gel box."
+    check: "Put the thinner side of the comb down"
+    note: "Make sure it is well-situated in the groove of the casting tray"
     image: "gel_comb_placement"
   end
-else
+elsif comb_1 == 2
   step
-    description: "Add combs"
-    note: "Retrieve two 6-well purple combs from A7.325. Position the gel box With the electrodes facing away from you. Add a purple comb to each casting tray groove, thicker side down. Make sure it is well-situated in the groove of the casting tray."
+    description: "Add comb"
+    check: "Retrieve a 6-well purple comb from A7.325"
+    check: "Position the gel box With the electrodes facing away from you. Add a purple comb to the side of the casting tray nearest the side of the gel box."
+    check: "Put the thicker side of the comb down"   
+    note: "Make sure it is well-situated in the groove of the casting tray"    
+    image: "gel_comb_placement"
+  end
+elsif comb_1 == 3
+  step
+    description: "Add comb"
+    check: "Retrieve a 10-well purple comb from A7.325"
+    check: "Position the gel box With the electrodes facing away from you. Add a purple comb to the side of the casting tray nearest the side of the gel box."
+    check: "Put the thinner side of the comb down"
+    note: "Make sure it is well-situated in the groove of the casting tray"   
+    image: "gel_comb_placement"
+  end
+elsif comb_1 == 4
+  step
+    description: "Add comb"
+    check: "Retrieve a 10-well purple comb from A7.325"
+    check: "Position the gel box With the electrodes facing away from you. Add a purple comb to the side of the casting tray nearest the side of the gel box."
+    check: "Put the thicker side of the comb down"
+    note: "Make sure it is well-situated in the groove of the casting tray"   
     image: "gel_comb_placement"
   end
 end
 
+if comb_2 == 0
+elsif comb_2 == 1
+  step
+    description: "Add second comb"
+    check: "Retrieve a 6-well purple comb from A7.325"
+    check: "Position the gel box With the electrodes facing away from you. Add a purple comb to slot in the center of the casting tray."
+    check: "Put the thinner side of the comb down"
+    note: "Make sure it is well-situated in the groove of the casting tray"    
+    image: "gel_comb_placement"
+  end
+elsif comb_2 == 2
+  step
+    description: "Add second comb"
+    check: "Retrieve a 6-well purple comb from A7.325"
+    check: "Position the gel box With the electrodes facing away from you. Add a purple comb to slot in the center of the casting tray."
+    check: "Put the thicker side of the comb down"
+    note: "Make sure it is well-situated in the groove of the casting tray"  
+    image: "gel_comb_placement"
+  end
+elsif comb_2 == 3
+  step
+    description: "Add second comb"
+    check: "Retrieve a 10-well purple comb from A7.325"
+    check: "Position the gel box With the electrodes facing away from you. Add a purple comb to slot in the center of the casting tray."
+    check: "Put the thinner side of the comb down"
+    note: "Make sure it is well-situated in the groove of the casting tray"   
+    image: "gel_comb_placement"
+  end
+elsif comb_2 == 4
+  step
+    description: "Add second comb"
+    check: "Retrieve a 10-well purple comb from A7.325"
+    check: "Position the gel box With the electrodes facing away from you. Add a purple comb to slot in the center of the casting tray."
+    check: "Put the thicker side of the comb down"
+    note: "Make sure it is well-situated in the groove of the casting tray"   
+    image: "gel_comb_placement"
+  end
+end
 
 take
   glove = 1 "Gel Pouring Glove"
 end
-
 
 step
   description: "Pour the gel"
