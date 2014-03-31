@@ -1,5 +1,3 @@
-# Instead of manually inputting params, use JSON that can be reused/added to
-
 argument
   parameter_path: string, "Path to your (json) parameter set for the gel lanes"
 end
