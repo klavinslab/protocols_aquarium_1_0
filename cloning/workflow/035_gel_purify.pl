@@ -3,12 +3,8 @@
 
 argument
   GelSlice_id: sample("Fragment") array, "Fragment"
-end
-
-argument
   isop: string, "Would you like to wash your fragments with Isopropanol? Enter yes or no."
 end
-
 
 take
   slices = item unique(GelSlice_id)
