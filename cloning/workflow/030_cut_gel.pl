@@ -68,7 +68,6 @@ while jj < length(gel)
   end
   produce
     product = 1 "Gel Slice" from y[jj]
-    location: "Bench"
   end
   r = append(r,product[:id])
   jj = jj + 1

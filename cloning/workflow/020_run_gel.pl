@@ -85,7 +85,7 @@ if length(fragment_names) > 25
   step
     description: "Load the ladder in gel box 3"
     note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 33 (Gel 3: bottom-third to left)."
-    warning: "Note that the ladder should be loaded in the third column to denote that this is gel 3"    
+    warning: "Note that the ladder should be loaded in the third column to denote that this is gel 3"
     image: "gel_begin_loading"
   end
 end

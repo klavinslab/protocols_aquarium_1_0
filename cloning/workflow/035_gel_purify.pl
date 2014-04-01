@@ -33,7 +33,7 @@ while count1 < y
     end
   count1=count1+1
 end
-  
+
 step
   description: "Zero the scale with an empty 1.5 ml eppendorf tube"
   check: "weigh each gel slice tube on the scale and record it's weight on the side of the tube"
@@ -54,7 +54,7 @@ while count2 < y
   weights[count2]=weight
   count2=count2+1
 end
-  
+
 count3=0
 while count3 < y
   label=count3+1
@@ -65,7 +65,7 @@ while count3 < y
   end
   count3=count3+1
 end
-  
+
 
 step
   description: "Place tubes in 50 degree heat block for 10 minutes. Vortex every few minutes to speed up the process"
@@ -97,7 +97,7 @@ step
 end
 
 step
-  check:"Spin at top speed (> 17,900 g) for 1 minute to remove all PE buffer from columns" 
+  check:"Spin at top speed (> 17,900 g) for 1 minute to remove all PE buffer from columns"
 end
 
 step
@@ -117,14 +117,13 @@ end
 
 
 count=0
-  while count < y 
+  while count < y
     slice = slices[count]
       produce
         q=1 "Fragment Stock" from slice
-        location: "Benchtop"
       end
   count=count+1
 end
 
-  
+
 release(slices)
