@@ -237,9 +237,6 @@ step
   description: "Write the following ID numbers on the the tubes during the following produces. After that make sure caps are on all tubes and place them in B13.425 (large 37ºC shaker incubator)"
 end
 
-step
-  description: "%{sample_tot}"
-end
 
 final_samples=[]
 
