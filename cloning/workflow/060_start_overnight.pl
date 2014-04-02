@@ -25,6 +25,10 @@ if length(plates)>0
     plates_id=item unique(plates)
   end
 end
+
+step
+  description:"%{plates_id}"
+end
   
 if length(overnight)>0  
   take
