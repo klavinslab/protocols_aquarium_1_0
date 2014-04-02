@@ -195,8 +195,8 @@ if length(glycerol_stocks)>0
     description: "Walk to the -80 degree freezer with rack of culture tubes."
   end
   
-  while count8<length(glycerol_stocks)
-    label=count8+1
+while count8<length(glycerol_stocks)
+  label=count8+1
     g=glycerol_stocks[count8]
       step
         check:"Remove glycercol stock %{g} from -80 freezer." 
@@ -210,7 +210,7 @@ if length(glycerol_stocks)>0
 end
 
 
-if length(plates)<0
+if length(plates)>0
   count9=0
   while count9<length(plates)
     label=length(glycerol_stocks)+count9+1
@@ -225,7 +225,7 @@ if length(plates)<0
   end
 end
 
-if length(overnight)<0
+if length(overnight)>0
   count10=0
   while count10<length(overnight)
     label = length(glycerol_stocks)+length(plates)+count10+1
