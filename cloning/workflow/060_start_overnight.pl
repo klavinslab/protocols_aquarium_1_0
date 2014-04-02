@@ -254,8 +254,8 @@ x=length(total_taken)
 
 while i < y
   while j < x
-    u=total_takena[j]
-    v=key_samp_tot[i]
+    u=total_takena[i]
+    v=key_samp_tot[j]
     if u==v
       final_samples[k]=j
       k=k+1
