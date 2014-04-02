@@ -68,7 +68,7 @@ while kk < n
   product = products[kk]
   gibson = gibsons[kk]
   produce
-    plasmid = 1 "Gibson Reaction Results" of product
+    plasmid = 1 "Gibson Reaction Result" of product
     release gibson
   end
 

@@ -1,7 +1,7 @@
 argument
   plasmid_ids: sample array, "The plasmids to be used"
   e_coli_strain_type: object, "The electrocompetent E. coli aliquot type."
-  plate_type: object, "The (probably LB) plate type."
+  plate_type: object, "The (probably LB) plate type that will be used in the next protocol."
 end
 
 n = length(plasmid_ids)
