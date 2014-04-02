@@ -26,6 +26,8 @@ if length(plates)>0
   end
 end
 
+b=length(plates_id)
+
 step
   description:"%{plates_id}"
 end
