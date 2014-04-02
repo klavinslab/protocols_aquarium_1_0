@@ -259,9 +259,9 @@ end
 count=0
 while count < y 
   s = final_samples[count]
-  w = total_taken[s] 
+  w = plates_id[s] 
     produce
-      q=1 "TB Overnight of Plasmid" of w
+      q=1 "TB Overnight of Plasmid" from w
       location: "Benchtop"
     end
   count=count+1
