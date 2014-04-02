@@ -18,9 +18,8 @@ y=length(sample_tot)
 
 
 if length(glycerol_stocks)>0
-  stocks=item unique(glycerol_stocks)
   take  
-    stocks
+    stocks=item unique(glycerol_stocks)
   end
 end
 
@@ -28,9 +27,8 @@ end
 
 
 if length(plates)>0
-  plates_id=item unique(plates)
   take
-    plates_id
+    plates_id=item unique(plates)
   end
 end
 
@@ -39,9 +37,8 @@ end
 
   
 if length(overnight)>0
-  overnight_id=item unique(overnight)
   take
-    overnight_id
+    overnight_id=item unique(overnight)
   end
 end
 
