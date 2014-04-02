@@ -8,6 +8,12 @@ argument
   antibiotic: string array, "Enter in the antibiotic resistance of the above strains of E. Coli. Enter Amp, Chlor, Kan, Amp+Chlor, Amp+Kan, Chlor+Kan or None."
 end
 
+step
+  description: "This protocol starts overnight cultures of bactia."
+end
+
+
+
 sample_tot=concat(glycerol_stocks, plates)
 
 sample_tot=concat(sample_tot, overnight)
@@ -18,6 +24,10 @@ y=length(sample_tot)
 gstocks=[]
 
 if length(glycerol_stocks)>0
+  step
+    description: "Ignore the following take, the glycerol stock will be taken later in the protocol."
+  end
+
   take  
     stocks=item unique(glycerol_stocks)
   end
