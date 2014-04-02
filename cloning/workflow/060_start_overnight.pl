@@ -14,29 +14,29 @@ sample_tot=concat(sample_tot, overnight)
 
 y=length(sample_tot)
 
-stocks=item unique(glycerol_stocks)
+
 
 if length(glycerol_stocks)>0
   take  
-    stocks
+    stocks=item unique(glycerol_stocks)
   end
 end
 
-plates_id=item unique(plates)
+
 
 if length(plates)>0
   take
-    plates_id
+    plates_id=item unique(plates)
   end
 end
 
 b=length(plates_id)
 
-overnight_id=item unique(overnight)
+
   
 if length(overnight)>0  
   take
-    overnight_id
+    overnight_id=item unique(overnight)
   end
 end
 
@@ -271,4 +271,4 @@ while count < y
     end
   count=count+1
 end
-end
+
