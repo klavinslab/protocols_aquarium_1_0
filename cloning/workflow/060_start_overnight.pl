@@ -248,7 +248,7 @@ while i < y
     u=total_takena[j]
     v=key_samp_tot[i]
     if u==v
-      final_samples[k]=total_taken[j]
+      final_samples[k]=j
       k=k+1
     end
     j=j+1
@@ -259,8 +259,9 @@ end
 count=0
 while count < y 
   s = final_samples[count]
+  w = total_taken[s] 
     produce
-      q=1 "TB Overnight of Plasmid" from s
+      q=1 "TB Overnight of Plasmid" from w
       location: "Benchtop"
     end
   count=count+1
