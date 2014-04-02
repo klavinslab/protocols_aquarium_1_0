@@ -15,35 +15,37 @@ sample_tot=concat(sample_tot, overnight)
 y=length(sample_tot)
 
 
+gstocks=[]
 
-
-if length(glycerol_stocks)>=0
+if length(glycerol_stocks)>0
   take  
     stocks=item unique(glycerol_stocks)
   end
+  gstocks=stocks
 end
 
 
+pstocks=[]
 
 
-if length(plates)>=0
+if length(plates)>0
   take
     plates_id=item unique(plates)
   end
+  pstocks=plates_id
 end
 
 
-
-
-  
-if length(overnight)>=0
+ostocks=[]
+if length(overnight)>0
   take
     overnight_id=item unique(overnight)
   end
+  ostocks=overnight_id
 end
 
-total_taken=concat(glycerol_stocks, plates)
-total_taken=concat(total_taken, overnight)
+total_taken=concat(gstocks, pstocks)
+total_taken=concat(total_taken, ostocks)
 
 total_takena={id:total_taken}
 if length(sample_tot)>1
