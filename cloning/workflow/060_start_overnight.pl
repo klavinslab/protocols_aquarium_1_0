@@ -15,18 +15,20 @@ sample_tot=concat(sample_tot, overnight)
 y=length(sample_tot)
 
 
-stocks=item unique(glycerol_stocks)
+
 
 if length(glycerol_stocks)>0
+  stocks=item unique(glycerol_stocks)
   take  
     stocks
   end
 end
 
 
-plates_id=item unique(plates)
+
 
 if length(plates)>0
+  plates_id=item unique(plates)
   take
     plates_id
   end
@@ -34,9 +36,10 @@ end
 
 
 
-overnight_id=item unique(overnight)
+
   
-if length(overnight)>0  
+if length(overnight)>0
+  overnight_id=item unique(overnight)
   take
     overnight_id
   end
