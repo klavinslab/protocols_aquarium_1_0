@@ -253,9 +253,9 @@ key_samp_tot={id:sample_tot}
 x=length(total_taken)
 
 while i < y
+  v=key_samp_tot[i]
   while j < x
-    u=total_takena[i]
-    v=key_samp_tot[j]
+    u=total_takena[j]
     if u==v
       final_samples[k]=j
       k=k+1
