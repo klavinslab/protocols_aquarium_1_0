@@ -27,41 +27,45 @@ end
 
 step
   description: "Grab a 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
-  check: "Label the right most well with the letters %{initials}01"
-  check: "Label the left most well with the letter %{initials}12"
+  check: "Label the left most well with the letters %{initials}01"
+  check: "Label the right most well with the letter %{initials}12"
   note: "These wells will be refered to as 1 - 12"
 end
 if length(plasmids) > 12
   step
     description: "Grab a second 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
-    check: "Label the right most well with the letters %{initials}13"
-    check: "Label the left most well with the letter %{initials}24"
+    check: "Label the left most well with the letters %{initials}13"
+    check: "Label the right most well with the letter %{initials}24"
     note: "These wells will be refered to as 13 - 24"
   end
 end
 if length(plasmids) > 24
   step
     description: "Grab a third 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
-    check: "Label the right most well with the letters %{initials}25"
-    check: "Label the left most well with the letter %{initials}36"
+    check: "Label the left most well with the letters %{initials}25"
+    check: "Label the right most well with the letter %{initials}36"
     note: "These wells will be refered to as 25 - 36"
   end
 end
 if length(plasmids) > 36
   step
     description: "Grab a fourth 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
-    check: "Label the right most well with the letters %{initials}37"
-    check: "Label the left most well with the letter %{initials}48"
+    check: "Label the left most well with the letters %{initials}37"
+    check: "Label the right most well with the letter %{initials}48"
     note: "These wells will be refered to as 37 - 48"
   end
 end
 if length(plasmids) > 48
   step
     description: "Grab a fourth 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
-    check: "Label the right most well with the letters %{initials}49"
-    check: "Label the left most well with the letter %{initials}60"
+    check: "Label the left most well with the letters %{initials}49"
+    check: "Label the right most well with the letter %{initials}60"
     note: "These wells will be refered to as 49 - 60"
   end
+end
+
+step
+  description: "If not already labeled label tube #%{y}%{initials} and rip off any other tubes to the right."
 end
 
 
