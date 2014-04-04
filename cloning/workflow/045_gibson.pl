@@ -7,9 +7,8 @@ end
 
 n = length(group_n)
 
-# TODO: uniquify and deal with potential resulting issues in iterating over the fragments
 take
-  f = item fragments
+  f = item unique(fragments)
   gibsons = n "Gibson Aliquot"
 end
 

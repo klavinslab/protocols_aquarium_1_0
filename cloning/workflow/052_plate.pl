@@ -43,7 +43,7 @@ while ii < n
   end
 
   produce
-    r1 = 1 "Transformed E coli plate" from strain
+    r1 = 1 "Transformed E. coli Aliquot" from strain
     note: "Keep the plate on the bench to use in the next protocol (incubating)."
     location: "Bench"
     release plate
