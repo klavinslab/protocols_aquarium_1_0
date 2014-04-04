@@ -25,12 +25,13 @@ end
 
 ii = 0
 while ii < n
+  plasmid = plasmid_ids[ii]
   strain = strains[ii]
   plate = plates[ii]
 
   step
     description: "Transfer %{volume} µL of transformation to the center of a fresh plate"
-    note: "Invert the plate so the beads are on the agar surface. Lift the lid and pipette %{volume} µL of sample %{strain} on the agar surface and put the lid back on the plate."
+    note: "Invert the plate so the beads are on the agar surface. Lift the lid and pipette %{volume} µL of sample %{plasmid} on the agar surface and put the lid back on the plate."
     warning: "Do not place the plate lid on lab bench while you do this."
     image: "pipette_culture_on_plate"
   end
@@ -42,11 +43,13 @@ while ii < n
   end
 
   produce
-    r1 = 1 "Transformed E coli plate" from strain[0]
+    r1 = 1 "Transformed E coli plate" from strain
     note: "Keep the plate on the bench to use in the next protocol (incubating)."
     location: "Bench"
     release plate
   end
+
+  ii = ii + 1
 end
 
 release strains
