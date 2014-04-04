@@ -65,7 +65,7 @@ if length(plasmids) > 48
 end
 
 step
-  description: "If not already labeled label tube #%{y}%{initials} and rip off any other tubes to the right."
+  description: "If not already labeled, label tube %{y}%{initials} and rip off any other tubes to the right."
 end
 
 
