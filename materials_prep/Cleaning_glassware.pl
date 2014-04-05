@@ -5,16 +5,6 @@ information "Clean general glassware"
         volume: number array, "Enter the media volume (100, 250, 500, or 1000 mL)."
     end
     
-    if n_bottle < 1 || n_bottle > 9
-  step
-    description: "The number of bottles was incorrectly entered as %{n_bottle}."
-    note: "You can only specify 1-9 bottles!"
-    getdata
-      n_bottle: number, "Enter the number of bottles you want to clean.", [1, 2, 3, 4, 5, 6, 7, 8, 9,]
-    end
-  end
-end
-    
     if volume != 100 && volume != 250 && volume != 500 && volume != 1000
   step
     description: "The bottle volume was incorrectly entered as %{volume}."
@@ -24,7 +14,7 @@ end
   end
 end
 
-bottle_type = "150 mL Bottle"
+bottle_type = "100 mL Bottle"
 if volume == 100
 bottle_type = "250 mL Bottle"
 elsif volume == 250
