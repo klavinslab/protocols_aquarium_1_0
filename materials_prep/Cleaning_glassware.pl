@@ -2,7 +2,7 @@ information "Clean general glassware"
 # FIXME: NEED TO ADD "PRODUCE"
  argument
         n_bottle: number, "Enter the number of bottles you want to clean (maximum 9)."
-        volume: number, "Enter the media volume (100, 200, 400, or 800 mL)."
+        volume: number, "Enter the media volume (100, 250, 500, or 1000 mL)."
     end
     
     if n_bottle < 1 || n_bottle > 9
@@ -15,11 +15,11 @@ information "Clean general glassware"
   end
 end
     
-    if volume != 100 && volume != 200 && volume != 400 && volume != 800
+    if volume != 100 && volume != 250 && volume != 500 && volume != 1000
   step
     description: "The bottle volume was incorrectly entered as %{volume}."
     getdata
-      volume: number, "Enter the volume of the bottle to be cleaned.", [100, 200, 400, 800]
+      volume: number, "Enter the volume of the bottle to be cleaned.", [100, 250, 500, 1000]
     end
   end
 end
@@ -27,22 +27,22 @@ end
 bottle_type = "150 mL Bottle"
 if volume == 100
 bottle_type = "250 mL Bottle"
-elsif volume == 200
+elsif volume == 250
   bottle_type = "250 mL Bottle"
-elsif volume == 400
+elsif volume == 500
   bottle_type = "500 mL Bottle"
-elsif volume == 800
+elsif volume == 1000
   bottle_type = "1 L Bottle"
 end
 
     if volume == 100
     product_name == "100 mL Bottle (unsterile)"
-  elsif volume == 200
-    product_name = "200 mL Bottle (unsterile)"
-  elsif volume == 400
-    product_name = "400 mL Bottle (unsterile)"
+  elsif volume == 250
+    product_name = "250 mL Bottle (unsterile)"
+  elsif volume == 500
+    product_name = "500 mL Bottle (unsterile)"
   else
-    product_name = "800 mL Bottle (unsterile)"
+    product_name = "1000 mL Bottle (unsterile)"
   end
 
  step
