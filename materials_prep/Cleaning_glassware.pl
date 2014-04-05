@@ -71,4 +71,12 @@ end
       end
       
   end
+  produce
+  produced_bottles = n_bottle product_name
+  release bottles
+  note: "Write %{product_name} and the date on the label in addition to the above id number."
+  location: "B1.320"
+  
+end
+
   end
