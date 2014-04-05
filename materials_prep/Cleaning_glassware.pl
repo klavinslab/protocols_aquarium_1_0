@@ -1,9 +1,9 @@
 information "Clean general glassware"
-# FIXME: NEED TO ADD "PRODUCE"
+# FIXME: NEED TO ADD "PRODUCE" & fix volume
  argument
         n_bottle: number array, "Enter the number of each type of bottle you want to clean (maximum 9)."
         volume: number array, "Enter the media volume (100, 250, 500, or 1000 mL)."
-    end
+    end # Need to fix volume^
     
     if volume != 100 && volume != 250 && volume != 500 && volume != 1000
   step
@@ -70,7 +70,8 @@ end
        Place caps upright on drying mesh (located under hooks) to dry after sufficient rinsing."
       end
       
- 
+ end
+ # need to fix produce
   produce
   produced_bottles = n_bottle product_name
   release bottles
