@@ -70,7 +70,7 @@ end
        Place caps upright on drying mesh (located under hooks) to dry after sufficient rinsing."
       end
       
-  end
+ 
   produce
   produced_bottles = n_bottle product_name
   release bottles
