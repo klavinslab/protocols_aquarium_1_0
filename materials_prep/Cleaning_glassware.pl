@@ -1,8 +1,8 @@
 information "Clean general glassware"
 # FIXME: NEED TO ADD "PRODUCE"
  argument
-        n_bottle: number, "Enter the number of bottles you want to clean (maximum 9)."
-        volume: number, "Enter the media volume (100, 250, 500, or 1000 mL)."
+        n_bottle: number array, "Enter the number of each type of bottle you want to clean (maximum 9)."
+        volume: number array, "Enter the media volume (100, 250, 500, or 1000 mL)."
     end
     
     if n_bottle < 1 || n_bottle > 9
