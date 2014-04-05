@@ -46,7 +46,7 @@ end
   end
 
  step
-      description: "Remove Caps, lids, any autoclave tape, and any labelling tape."
+      description: "Remove Caps, any autoclave tape, and any labelling tape."
     end
     
  step
@@ -55,8 +55,8 @@ end
     end
     
   step
-       description: "Add dishwashing soap to each bottle"
-       note: "Fill each bottle just below halfway with water"
+       description: "Add a small amount of dishwashing soap to each bottle"
+       note: "Fill each bottle just below halfway with water after the addition of soap"
       end
       
   step
