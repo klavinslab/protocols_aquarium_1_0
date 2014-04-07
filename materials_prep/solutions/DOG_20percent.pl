@@ -34,9 +34,10 @@ end
 
 
 produce
-  dextrose_solution = 1 "20%% DOG Solution (sterile)"
+  dextrose_solution = 1 "DOG Solution, 20%% (sterile)"
   release tube
   release dog
+  location: "B5.470"
   note: "Write 20%% DOG Solution (sterile) and the date on the label in addition to the id number."
 end
 
