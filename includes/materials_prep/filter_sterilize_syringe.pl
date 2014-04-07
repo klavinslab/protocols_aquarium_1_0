@@ -26,7 +26,7 @@ end
 
 step
   description: "Dispense into falcon tube"
-  note: "Dispense the solution through the filter into the falcon tube. Replace all caps when you have finished dispensing."
+  note: "Dispense the solution through the filter into the falcon tube labeled 'filter sterilized'. Replace all caps when you have finished dispensing."
   warning: "Do not touch the filter to the falcon tube."
 end
 
