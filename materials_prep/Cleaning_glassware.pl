@@ -52,7 +52,7 @@ end
   step
        description: "Use a large brush to scrub around the inside of bottles"
        note: "If the large brush doesn't fit, use the next size down.
-       Be sure to brush the area around the neck/mouth of the bottles as well."
+       Be sure to brush the area around the neck/mouth of the bottles as well as the inside of the bottle(s)."
       end
       
   step
