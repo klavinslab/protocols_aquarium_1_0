@@ -101,7 +101,7 @@ step
 end
 
 step
-  check: "Add 30 uL EB elution buffer to center of column."
+  check: "Add 30 uL molecular grade water or EB elution buffer to center of column."
   note: "Be very careful to not pipette on the wall of the tube"
   check: "Wait five minutes"
   check: "Elute DNA into Eppendorf tubes by spinning at top speed (> 17,900 xg) for one minute"
