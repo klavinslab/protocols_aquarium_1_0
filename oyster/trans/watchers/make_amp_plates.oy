@@ -9,5 +9,5 @@ place lb
     group: "tamimeur"
 end
 
-transition [wait] => [lb] when quantity("test_object") < min_quantity("test_object") end
+transition [wait] => [lb] when quantity("test_object") < 5 end
 transition [lb] => [wait] when completed(0) end
