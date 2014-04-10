@@ -6,7 +6,7 @@ place make
   protocol: "oyster/watcher/make_widget.pl"
   start: now()
   window: minutes(30)
-  group: "klavins"
+  group: "tamimeur"
 end
 
 transition [wait] => [make] when quantity("Widget") < min_quantity("Widget") end
