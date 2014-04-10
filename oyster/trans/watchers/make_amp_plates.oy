@@ -3,11 +3,11 @@ place wait
 end
 
 place lb
-    protocol: "oyster/trans/watcher/media/lb.pl"
+    protocol: "oyster/trans/watchers/media/lb.pl"
     start: now()
     window: minutes(30)
     group: "tamimeur"
 end
 
-transition [wait] => [lb] when quantity("Autoclave Tape") < 5 end
+transition [wait] => [lb] when quantity("test_object") < 5 end
 transition [lb] => [wait] when completed(0) end
