@@ -3,7 +3,7 @@ place wait
 end
 
 place lb
-    protocol: "oyster/trans/watcher/media/lb.pl"
+    protocol: "oyster/trans/watchers/media/lb.pl"
     start: now()
     window: minutes(30)
     group: "tamimeur"
