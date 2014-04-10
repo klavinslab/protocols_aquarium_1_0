@@ -1,6 +1,6 @@
 information "make lb unsterile"
 
 produce
-  x = 2 "Autoclave Tape"
+  x = 2 "test_object"
   note: "Thanks for making widgets!"
 end
