@@ -9,5 +9,22 @@ place lb
     group: "tamimeur"
 end
 
+place autoclave
+    protocol: "oyster/trans/watchers/media/autoclave_bacteria_media.pl"
+    start: now()
+    window: minutes(30)
+    group: "tamimeur"
+end
+
+place pour
+    protocol: "oyster/trans/watchers/media/pour_lb_plates.pl"
+    start: now()
+    window: minutes(30)
+    group: "tamimeur"
+end
+
+
 transition [wait] => [lb] when quantity("LB Amp Plate (sterile)") < min_quantity("LB Amp Plate (sterile)") end
-transition [lb] => [wait] when completed(0) end
+transition [lb] => [autoclave] when completed(0) end
+transition [autoclave] => [pour] when completed(0) end
+transition [pour] => [wait] when completed(0) end
