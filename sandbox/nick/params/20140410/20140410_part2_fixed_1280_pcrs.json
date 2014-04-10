@@ -1,0 +1,9 @@
+{
+  "initials": "NB",
+  "enzyme_id": 712,
+  "fragment_names": ["G2S-ori-ampR-G1S"],
+  "forward_ids": [2617],
+  "reverse_ids": [2619],
+  "template_ids": [2623],
+  "tanneal": 65
+}
