@@ -6,7 +6,7 @@ place lb
     protocol: "oyster/trans/watcher/media/lb.pl"
     start: now()
     window: minutes(30)
-    group: "technicians"
+    group: "tamimeur"
 end
 
 transition [wait] => [lb] when quantity("test_object") < min_quantity("test_object") end
