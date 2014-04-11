@@ -1,9 +1,15 @@
+
 place wait
     marked: true
 end
 
 place lb
     protocol: "oyster/trans/watchers/media/lb.pl"
+    argument
+        n_bottle: 1
+        volume: 800
+        add_agar: No
+    end
     start: now()
     window: minutes(30)
     group: "tamimeur"
