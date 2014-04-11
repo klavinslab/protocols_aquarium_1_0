@@ -1,39 +1,5 @@
 information "Clean general glassware"
 # FIXME: NEED TO ADD "PRODUCE" & fix volume
- argument
-        n_bottle: number array, "Enter the number of each type of bottle you want to clean (maximum 9)."
-        volume: number array, "Enter the media volume (100, 250, 500, or 1000 mL)."
-    end # Need to fix volume^
-    
-    if volume != 100 && volume != 250 && volume != 500 && volume != 1000
-  step
-    description: "The bottle volume was incorrectly entered as %{volume}."
-    getdata
-      volume: number, "Enter the volume of the bottle to be cleaned.", [100, 250, 500, 1000]
-    end
-  end
-end
-
-bottle_type = "100 mL Bottle"
-if volume == 100
-bottle_type = "250 mL Bottle"
-elsif volume == 250
-  bottle_type = "250 mL Bottle"
-elsif volume == 500
-  bottle_type = "500 mL Bottle"
-elsif volume == 1000
-  bottle_type = "1 L Bottle"
-end
-
-    if volume == 100
-    product_name == "100 mL Bottle (unsterile)"
-  elsif volume == 250
-    product_name = "250 mL Bottle (unsterile)"
-  elsif volume == 500
-    product_name = "500 mL Bottle (unsterile)"
-  else
-    product_name = "1000 mL Bottle (unsterile)"
-  end
 
  step
       description: "Remove Caps, any autoclave tape, and any labelling tape."
@@ -71,12 +37,7 @@ end
       end
       
  end
- # need to fix produce
-  produce
-  produced_bottles = n_bottle product_name
-  release bottles
-  note: "Write %{product_name} and the date on the label in addition to the above id number."
-  location: "B1.320"
+
   
 end
 

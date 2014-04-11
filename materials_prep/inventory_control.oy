@@ -1,7 +1,7 @@
 place pour_yeast_plates
   protocol: "materials_prep/reagents/make_1kb_ladder_aliquot.pl"
   argument
-    ladder: 701
+    ladder: 2147
   end
   group: aquarium_user
   marked: true
@@ -12,7 +12,7 @@ end
 place pour_LB_Amp
   protocol: "materials_prep/reagents/make_1kb_ladder_aliquot.pl"
   argument
-    ladder: 819
+    ladder: 2598
   end
   group: aquarium_user
   marked: true
@@ -23,7 +23,7 @@ end
 place pour_LB_Kan
   protocol: "materials_prep/reagents/make_1kb_ladder_aliquot.pl"
   argument
-    ladder: 25317
+    ladder: 2599
   end
   group: aquarium_user
   marked: true

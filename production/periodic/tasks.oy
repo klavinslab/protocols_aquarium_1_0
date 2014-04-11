@@ -1,0 +1,24 @@
+root = "production/periodic/"
+
+place daily
+  protocol: root + "task.pl"
+  argument
+    type: "Daily"
+  end
+  group: admin
+  marked: true
+  window: hours(24)
+end
+
+place weekly
+  protocol: root + "task.pl"
+  argument
+    type: "Weekly"
+  end
+  group: admin
+  marked: true
+  window: hours(24)
+end
+
+transition [daily] => [daily] when completed(0)
+transition [weekly] => [weekly] when completed(0)
