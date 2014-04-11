@@ -28,3 +28,4 @@ transition [wait] => [lb] when quantity("LB Amp Plate (sterile)") < min_quantity
 transition [lb] => [autoclave] when completed(0) end
 transition [autoclave] => [pour] when completed(0) end
 transition [pour] => [wait] when completed(0) end
+ 
