@@ -1,6 +1,10 @@
 require "production/lib/util.pl"
 
-tasks = tasks("Daily","ready")
+argument
+   type: string
+end
+
+tasks = tasks(type,"ready")
 
 if length(tasks) == 0
 
@@ -14,14 +18,14 @@ else
   while length(tasks) > 0
 
     step
-      description: "Daily Tasks"
+      description: "Available %{type} Tasks"
       note: "The following tasks have not been completed today."
       getdata
-	name: string, "Choose a task", get_fields(tasks,:name)
+	name: string, "Choose a task", ha_select(tasks,:name)
       end
     end
 
-    task = get_hash(tasks,:name,name)
+    task = ha_get(tasks,:name,name)
 
     step
       description: task[:name]
@@ -38,13 +42,14 @@ else
 
       step
         description: "Thank you!"
+        note: "Aquarium has made a note of your efforts."
         getdata
-          more: string, "Do you have time to do another daily task?", [ "Yes", "No" ]
+          more: string, "Do you have time to do another %{type} task?", [ "Yes", "No" ]
         end
       end
      
       if more == "Yes"
-        tasks = tasks("Daily","ready")
+        tasks = tasks(type,"ready")
       else
         tasks = []
       end
@@ -53,7 +58,7 @@ else
 
       step
         description: "Thank you!"
-        note: "There are no more daily tasks."
+        note: "There are no more %{type} tasks."
       end
 
       tasks = []
