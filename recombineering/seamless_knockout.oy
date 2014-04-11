@@ -1,15 +1,11 @@
 argument
-  e_coli_strain: sample array, "the log phase E. coli strains you wish to preform the knockouts in. NOTE: the nth E. coli strain will be knocked out by the nth cassette" 
-  knockout_fragments: sample array, "the cassettes you wish to transform into the strains, respectively"
-  #note: "The nth E. coli strain will be knocked out with the nth cassette"
-  #strain_name: string, "the name of the strain you are producing today (copy it from Week4 lab description in Google Drive"
-  plate_type: object, "The appropriate selection plates (e.g. thyamine+trimethoprim, minimal-media, galactose, DOG, kan, etc.)"
+  json_file: string, "path to json file with all params"
 end
 
 place make_log_phase
-  protocol: "labw14/group4/make_log_phase.pl"
+  protocol: "recombineering/make_log_phase.pl"
   argument
-    e_coli_strains: e_coli_strain 
+    json_file: json_file 
   end
   marked: true
   group: aquarium_user
@@ -18,7 +14,7 @@ end
 
 
 place finish_log_phase
-	protocol: "labw14/group4/finish_log_phase.pl"	
+	protocol: "recombineering/finish_log_phase.pl"	
 	# log_cells: wire log phase cells from make_log_phase
 	start: hours(2)
 	window: minutes(30)
@@ -28,23 +24,16 @@ end
 
 wire (make_log_phase, "log_cells") => (finish_log_phase, "log_cells") 
 
-### ??  
-#log_cells = "BF001"
-#plate_type_1 = "LB Kan Plate (sterile)"
-###
-
 num_trans = 1
 
 place heat_shock
-  protocol: "labw14/group4/heat_shock_parallel.pl"
-  # cells_flask_array: wire log cells from here
-  argument
-  	cells_flask_array: e_coli_strain
-  end
+  protocol: "recombineering/heat_shock_parallel.pl"
+  #argument
+  #	cells_flask_array: e_coli_strain
+  #end
   group: aquarium_user
-  window: hours(1)
   start: now()
-  #marked: true
+  window: minutes(10)
 end
 
 wire (make_log_phase, "log_cells") => (heat_shock, "cells_flask_array")

@@ -51,12 +51,20 @@ end
 end
 
 ind = 0
+log_cell_tubes = []
 foreach strain in strains
   produce 
     output = 1 "Overnight suspension" from strain 
     release [flasks[ind]]
+    location: "SI03"
   end
   ind = ind+1
+  log_cell_tubes = append(log_cell_tubes, output[:id])
 end
+
+log
+  return: {log_cells: log_cell_tubes}
+end
+
 
 release strains
