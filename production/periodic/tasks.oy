@@ -1,0 +1,10 @@
+root = "production/periodic/"
+
+place daily
+  protocol: root + "daily.pl"
+  group: admin
+  marked: true
+  window: hours(24)
+end
+
+transition [daily] => [daily] when completed(0)
