@@ -30,12 +30,12 @@ else
     step
       description: task[:name]
       note: task[:specification][:note]
-      foreach c in task[:specificaiton][:check]
+      foreach c in task[:specification][:check]
         check: c
-      end
+      end 
       foreach w in task[:specification][:warning]
         warning: w
-       end
+      end
     end
 
     set_task_status(task,"done")
