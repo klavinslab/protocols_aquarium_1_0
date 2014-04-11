@@ -9,7 +9,7 @@ tasks = tasks(type,"ready")
 if length(tasks) == 0
 
   step
-    description: "All daily tasks have been completed."
+    description: "All %{type} tasks have been completed."
     note: "Thanks for checking!"
   end
 
