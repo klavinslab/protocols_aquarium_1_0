@@ -29,7 +29,13 @@ else
 
     step
       description: task[:name]
-      check: task[:specification][:description]
+      note: task[:specification][:note]
+      foreach c in task[:specificaiton][:check]
+        check: c
+      end
+      foreach w in task[:specification][:warning]
+        warning: w
+       end
     end
 
     set_task_status(task,"done")

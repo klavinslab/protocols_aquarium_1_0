@@ -1,24 +1,25 @@
 root = "production/periodic/"
+x = tasks("Daily","ready")
 
 place daily
-  protocol: root + "task.pl"
+  protocol: root + "tasks.pl"
   argument
     type: "Daily"
   end
-  group: admin
+  group: "admin"
   marked: true
   window: hours(24)
 end
 
 place weekly
-  protocol: root + "task.pl"
+  protocol: root + "tasks.pl"
   argument
     type: "Weekly"
   end
-  group: admin
+  group: "admin"
   marked: true
   window: hours(24)
 end
 
-transition [daily] => [daily] when completed(0)
-transition [weekly] => [weekly] when completed(0)
+transition [daily]  => [daily]  when completed(0) && length(tasks("Daily","ready"))  > 0 end
+transition [weekly] => [weekly] when completed(0) && length(tasks("Weekly","ready")) > 0 end
