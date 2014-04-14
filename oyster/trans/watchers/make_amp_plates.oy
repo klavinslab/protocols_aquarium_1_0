@@ -7,7 +7,7 @@ place lb
     argument
         n_bottle: 1
         volume: 800
-        add_agar: No
+        add_agar: "No"
     end
     start: now()
     window: minutes(30)
@@ -33,10 +33,10 @@ place pour
     argument
         n: 1
         volume: 800
-        antibiotic: Amp
-        iptg: No
-        atc: No
-        xgal: No
+        antibiotic: "Amp"
+        iptg: "No"
+        atc: "No"
+        xgal: "No"
     end
     start: now()
     window: minutes(30)
