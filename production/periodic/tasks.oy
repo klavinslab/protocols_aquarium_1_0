@@ -25,12 +25,22 @@ place daily_wait
   marked: true
 end
 
+place weekly_wait
+  marked: true
+end
+
 transition [daily]        => [daily]  when completed(0) && length(tasks("Daily","ready"))  > 0 end
+
 transition [weekly]       => [weekly] when completed(0) && length(tasks("Weekly","ready")) > 0 end
 
-transition [daily_wait]   => [daily_wait] when minutes_elapsed(0,2) 
+transition [daily_wait]   => [daily_wait] when hours_elapsed(0,24) 
   do
     dummy = set_task_status(tasks("Daily","done"),"ready")
   end
 end
 
+transition [weekly_wait]   => [weekly_wait] when hours_elapsed(0,7*24) 
+  do
+    dummy = set_task_status(tasks("Weekly","done"),"ready")
+  end
+end
