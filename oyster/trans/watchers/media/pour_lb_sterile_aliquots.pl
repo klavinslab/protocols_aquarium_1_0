@@ -5,12 +5,9 @@ take
 end
 
 step 
-
-end
-
-step
-  description: "Enter the number of 50mL aliquots you made from a 1L Bottle of LB (sterile)."
-  note: "You can only specify 1-4 bottles!"
+  description: "Pour 800mL LB liquid into sterile 50mL Falcon Tube"
+  note: "Fill up a new Falcon Tube until the 800mL LB liquid bottle is empty."
+  bullet: "How many aliquots did you make?"
   getdata
     num_aliquots: number, "Enter the number of aliquots you made (i.e number of 50mL Falcon tubes you used)."
   end
@@ -23,5 +20,12 @@ end
 
 take
   falcon_tubes = num_aliquots "50 mL Falcon Tube"
+end
+
+produce
+  produced_aliquots = num_aliquots "50 mL LB liquid aliquot (sterile)"
+  release bottles
+  note: "Write '50 mL LB',the date, and id number on each aliquot."
+  location: "B3.555"
 end
 
