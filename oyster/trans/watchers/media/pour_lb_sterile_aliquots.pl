@@ -4,6 +4,10 @@ take
   bottles = 1 "800 mL LB liquid (sterile)"
 end
 
+step 
+
+end
+
 step
   description: "Enter the number of 50mL aliquots you made from a 1L Bottle of LB (sterile)."
   note: "You can only specify 1-4 bottles!"
