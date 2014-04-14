@@ -52,7 +52,7 @@ end
 lb_powder = 1 "Difco LB Broth, Miller"
 lb_grams = 29.6
 product_name = "200 mL LB Agar (unsterile)"
-stir_bars = n_bottle "Medium Magnetic Stir Bar"
+stir_bars = n_bottle "Small Magnetic Stir Bar"
 if add_agar == "Yes"
   # TODO: make this a simple %{volume} substitution once that bug is fixed
   if volume == 200
@@ -66,7 +66,7 @@ if add_agar == "Yes"
   take
     bottles = n_bottle bottle_type
     lb_powder = 1 "LB Agar Miller"
-    stir_bars = n_bottle "Medium Magnetic Stir Bar"
+    stir_bars = n_bottle "Small Magnetic Stir Bar"
   end
 else
   if volume == 200
