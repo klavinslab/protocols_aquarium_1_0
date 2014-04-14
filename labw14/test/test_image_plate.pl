@@ -24,11 +24,21 @@ end
 
 step
   description: 
-    "Take a picture using the camera"
+    "Take a picture using the camera and remote shooting software on the computer"
   check:
-    "Turn on the camera"
+    "Turn on the camera if it is off"
   check:
     "Open EOS Utility software on the desktop, and click Camera Settings/Remote Shooting"
+  check:
+    "In the pop up window EOS Rebel T3, make sure the settings are 2'', F4.5, ISO100, Tungsten(light bulb icon)."
+  check: 
+    "click Live View shoot and in the pop up Remote Live View Window, click Test shooting"
+  check:
+    "If the Test shooting image looks focused, go back to the EOS Rebel T3 window and click the the black round shutter botton"
+  check:
+    "If the Test shooting image is not focused or the software shows Focus failure, go to the Remote Live View Window, in the focus
+    section, adjust the focus by clicking the <<< << < > >> >>> buttons until the live image looks focused. Then go back to the EOS 
+    Rebel T3 window and click the the black round shutter botton"
 end
 
 
@@ -36,7 +46,7 @@ step
   description: 
     "Rename the picture in Dropbox"
   note: 
-    "Wait several seconds for the picture uploading to Dropbox. In gel room touch screen computer, open Dropbox/GelImages,
+    "Open Dropbox/GelImages,
      under today's date folder and find the picture you just took.\n
      Rename the picture as the plate_id, where id should be replaced with the item number shown on your plate.\n
      For example, a plate with id 798 should have picture name plate_798."
