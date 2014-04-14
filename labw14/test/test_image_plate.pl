@@ -30,7 +30,7 @@ step
   check:
     "Open EOS Utility software on the desktop, and click Camera Settings/Remote Shooting"
   check:
-    "In the pop up window EOS Rebel T3, make sure the settings are 2'', F4.5, ISO100, Tungsten(light bulb icon)."
+    "In the pop up window EOS Rebel T3, make sure the settings are 2'', F4.5, ISO100, Tungsten(light bulb icon), S1."
   check: 
     "click Live View shoot and in the pop up Remote Live View Window, click Test shooting"
   check:
