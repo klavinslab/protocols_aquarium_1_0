@@ -80,7 +80,8 @@ else
   take
     bottles = n_bottle bottle_type
     lb_powder = 1 "Difco LB Broth, Miller"
-    stir_bars = n_bottle "Medium Magnetic Stir Bar"
+    stir_bars = n_bottle "Small Magnetic Stir Bar"
+    #there was no "Medium Magnetic Stir Bar" in rehearsal server
   end
 end
 
