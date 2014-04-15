@@ -38,7 +38,7 @@ place mk_aliquots
 end
 
 
-transition [wait] => [overnight] when quantity("MG1655Z1") < min_quantity("MG1655Z1") end
+transition [wait] => [overnight] when quantity("Electrocompetent aliquot") < min_quantity("Electrocompetent aliquot") end
 transition [overnight] => [parafilm] when completed(0) end
 transition [parafilm] => [miniprep] when completed(0) end
 transition [miniprep] => [ec_cells_day2] when completed(0) end
