@@ -1,0 +1,9 @@
+{
+  "initials": "NB",
+  "enzyme_id": 1329,
+  "fragment_names": ["G1S-PmeI-YBL016W_-997_from_stop-GSa", "5GEX-YFL026W_+1000_from_stop-PmeI-G2S", "5GEX-YHR084W_+1000_from_stop-PmeI-G2S", "5GEX-YDL159W_+1000_from_stop-PmeI-G2S", "G1S-PmeI-YDR103W_-997_from_stop-GSa", "5GEX-YDR103W_+1000_from_stop-PmeI-G2S", "GSa-mCherry-GSb", "GSb-IAA17.T1_Sc-TP", "TP-TCYC1-URA3-5GEX"],
+  "forward_ids": [2568, 2574, 2582, 2586, 2588, 2590, 2592, 2594, 2711]
+  "reverse_ids": [2569, 2575, 2583, 2587, 2589, 2591, 2593, 2595, 2712]
+  "template_ids": [2759, 2759, 2759, 2759, 2759, 2759, 2610, 2612, 2496]
+  "tanneal": 65
+}
