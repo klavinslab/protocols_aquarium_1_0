@@ -58,7 +58,7 @@ else
       end
 
       log
-        TASK: { id: task[:id], name: task[:name] }
+        TASK: { task: task }
       end
 
     else

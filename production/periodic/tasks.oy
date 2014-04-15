@@ -6,7 +6,7 @@ place daily
   argument
     type: "Daily"
   end
-  group: "admin"
+  group: "technicians"
   marked: true
   window: hours(24)
 end
@@ -16,7 +16,7 @@ place weekly
   argument
     type: "Weekly"
   end
-  group: "admin"
+  group: "technicians"
   marked: true
   window: hours(24)
 end
