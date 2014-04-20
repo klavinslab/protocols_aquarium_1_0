@@ -7,7 +7,7 @@ step
     media_type: string, "Media Type", ["800 mL LB liquid (sterile)",
                                        "800 mL TB liquid (sterile)",
                                        "800 mL SC liquid (sterile)",
-                                       "800 mL SDO liquid (sterile)".
+                                       "800 mL SDO liquid (sterile)",
                                        "800 mL YPAD liquid (sterile)",
                                        "400 mL TB plus Amp liquid (sterile)",
                                        "400 mL TB plus Kan liquid (sterile)"]
