@@ -1,5 +1,4 @@
-
-information: "This protocol is for practicing pipetting small volumes."
+information "This protocol is for practicing pipetting small volumes."
 
 step
   description: "Label the Tubes."
