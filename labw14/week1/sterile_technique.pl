@@ -1,5 +1,4 @@
 
-
 information "This protocol describes methods associated with maintaining a sterile technique."
 
 step
