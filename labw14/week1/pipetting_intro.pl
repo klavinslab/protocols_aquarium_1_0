@@ -1,5 +1,4 @@
-
-information: "This protocol teaches the fundamentals of handling and working with a pipette."
+information "This protocol teaches the fundamentals of handling and working with a pipette."
 
 step
   description: "Learn how to hold a pipette."
