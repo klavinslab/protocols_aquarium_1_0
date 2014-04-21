@@ -1,5 +1,4 @@
-
-information: "This protocol is for practicing pipetting large volumes."
+information "This protocol is for practicing pipetting large volumes."
 
 
 step
