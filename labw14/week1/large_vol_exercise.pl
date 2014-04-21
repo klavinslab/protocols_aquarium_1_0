@@ -20,7 +20,7 @@ end
 step
   description: "Add Solution I to Tube B"
   note:
-   Using a fresh tip and maintaining a sterile technique, add 150 µL of Solution I to Tube B. Be sure to change
+   "Using a fresh tip and maintaining a sterile technique, add 150 µL of Solution I to Tube B. Be sure to change
    the volume of the pipette before adding a new tip."
   image: "Add_solution_I_to_B_large_volume_exercise"
 end
