@@ -1,5 +1,5 @@
 q0 = quantity("Ladder Aliquot")
-q1 = quantity({object: "Ladder Aliquot", sample: "1 kb ladder"})
+q1 = quantity({object: "Ladder Aliquot", sample: "10 bp Ladder"})
 
 step
   description: "Quantities"
