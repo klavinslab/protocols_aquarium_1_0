@@ -9,4 +9,4 @@ place make_1kb_ladder_aliquot
   window: minutes(30)
 end
 
-transition [make_1kb_ladder_aliquot] => [make_1kb_ladder_aliquot] when error(0) || quantity({object: "Ladder Aliquot", sample: "1 kb Ladder"}) < 10 end
+transition [make_1kb_ladder_aliquot] => [make_1kb_ladder_aliquot] when error(0) || quantity({{object: "Primer Aliquot", sample: "lacI_h2"}}) < 10 end
