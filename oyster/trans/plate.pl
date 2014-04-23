@@ -1,13 +1,13 @@
 information "Spread cells onto a 25mL petri dish containing ~25mL agar media."
 
 argument
-   e_coli_strain_id: object, "The type of ecoli strain"
+   e_coli_strain_id: sample, "Transformed cells id"
    volume: number, "The volume (µL) to plate"
    plate_type: object, "Type of plate (from the solidmedia categoy)"
 end
 
 take
-  strain = 1 e_coli_strain_id
+  strain = item e_coli_strain_id
   plate = 1 plate_type
 #  beads = 1 "Glass Bead Aliquot (sterile)"
 #  collector = 1 "Glass Bead Waste Collector"
