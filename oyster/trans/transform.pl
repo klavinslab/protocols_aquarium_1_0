@@ -2,7 +2,7 @@
 
 argument
   plasmid_id: sample, "The plasmid to be used"
-  e_coli_strain_id: sample, "The electrocompetent cell type to be used."
+  e_coli_strain_id: object, "The electrocompetent cell type to be used."
   plate_type: object, "The plate on which the transformed cells to be plated"
 end
 
@@ -45,7 +45,7 @@ take
   iceblock = 1 "Styrofoam Ice Block"
   alrack = 1 "Aluminum Tube Rack"
   cuvette = 1 "Clean Electrocuvette"
-  strain = item e_coli_strain_id
+  strain = 1 e_coli_strain_id
 end 
 
 step
@@ -106,4 +106,3 @@ log
 end
 
 release [falcon_tube[0],plasmid[0],iceblock[0],strain[0],alrack[0],cuvette[0]]
-
