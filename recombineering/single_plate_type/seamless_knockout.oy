@@ -11,7 +11,7 @@ argument
   #ladder_one: sample, "the reference ladder for Gel electrophoresis"
 end
 
-base = "recombineering\single_plate_type" 
+base = "recombineering/single_plate_type" 
 
 ##
 ## Qs: How do you repeat OD test if not enough wait time
