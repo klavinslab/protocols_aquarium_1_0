@@ -9,7 +9,7 @@ tasks = tasks(type,"ready")
 if length(tasks) == 0
 
   step
-    description: "All daily tasks have been completed."
+    description: "All %{type} tasks have been completed or are in progress."
     note: "Thanks for checking!"
   end
 
@@ -27,22 +27,50 @@ else
 
     task = ha_get(tasks,:name,name)
 
+    set_task_status(task,"working")
+
     step
       description: task[:name]
-      check: task[:specification][:description]
+      foreach n in task[:specification][:notes]
+        note: n
+      end
+      foreach c in task[:specification][:checks]
+        check: c
+      end 
+      foreach w in task[:specification][:warnings]
+        warning: w
+      end
+      foreach i in task[:specification][:images]
+        image: i
+      end
+      getdata
+        done: string, "Did you complete the task?", ["Yes", "No"]
+      end
     end
 
-    set_task_status(task,"done")
+    if done == "Yes"
 
-    log
-      TASK: { id: task[:id], name: task[:name] }
-    end
-
-    if length(tasks) > 1
+      set_task_status(task,"done")
 
       step
         description: "Thank you!"
         note: "Aquarium has made a note of your efforts."
+      end
+
+      log
+        TASK: { task: task }
+      end
+
+    else
+
+      set_task_status(task,"ready")
+
+    end
+
+    if done == "No" || length(tasks) > 1
+
+      step
+        description: "Another task?"
         getdata
           more: string, "Do you have time to do another %{type} task?", [ "Yes", "No" ]
         end
@@ -57,7 +85,7 @@ else
     else
 
       step
-        description: "Thank you!"
+        description: "Done with daily tasks."
         note: "There are no more %{type} tasks."
       end
 

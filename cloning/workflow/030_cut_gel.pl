@@ -62,6 +62,7 @@ end
 jj = 0
 r = []
 while jj < length(gel)
+  n = jj + 1
   step
     description: "The next produce is for tube %{n}"
     note: "Remember to write the id on top"

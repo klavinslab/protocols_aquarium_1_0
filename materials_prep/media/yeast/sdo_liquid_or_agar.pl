@@ -1,10 +1,11 @@
-information "Make 800mL of Synthetic Drop-out or Synthetic Complete media."
+information "Make Synthetic Drop-out or Synthetic Complete media."
 # TODO: Add supplement data to produced item
 
 
 # FIXME: if dropping out only one aa, put drop out solutions on single take
 argument
   n_bottle: number, "Enter the number of bottles you want to make (maximum of 4)."
+  volume: number, "Enter the volume of media (in mL) you want to make - 200, 400, or 800."
   add_agar: string, "Add agar to the media? Enter Yes or No."
   add_his: string, "Add histidine to the media? Enter Yes or No."
   add_leu: string, "Add leucine to the media? Enter Yes or No."
@@ -74,16 +75,37 @@ if add_ura != "Yes" && add_ura != "No"
 end
 
 
-# 3 takes per page max
-take
-  bottles = n_bottle "1 L Bottle"
-  stir_bars = n_bottle "Medium Magnetic Stir Bar"
+if volume != 200 && volume != 400 && volume != 800
+  step
+    description: "The volume preference was incorrectly entered as %{volume}"
+    getdata
+      volume: number, "What volume should be used?", [200, 400, 800]
+    end
+  end
 end
 
+bottle_type = ""
+if volume == 200
+  bottle_type = "250 mL Bottle"
+elsif volume == 400
+  bottle_type = "500 mL Bottle"
+else
+  bottle_type = "1 L Bottle"
+end
 
-step
-  description: "Add stir bars"
-  note: "Add one stir bar to each bottle."
+take
+  bottles = n_bottle bottle_type
+end
+
+stir_bars = {}
+if volume == 800
+  take
+    stir_bars = n_bottle "Medium Magnetic Stir Bar"
+  end
+  step
+    description: "Add stir bars"
+    note: "Add one stir bar to each bottle."
+  end
 end
 
 
@@ -108,20 +130,21 @@ end
 
 
 agar = []  # Initialize global variable
+product_name = ""
 if add_agar == "Yes"
   if add_his == "Yes" && add_leu == "Yes" && add_trp == "Yes" && add_ura == "Yes"
-    product_name = "800 mL SC agar (unsterile)"
+    product_name = "%{volume} mL SC agar (unsterile)"
   else
-    product_name = "800 mL SDO agar (unsterile)"
+    product_name = "%{volume} mL SDO agar (unsterile)"
   end
   take
     agar = 1 "Bacto Agar"
   end
 else
   if add_his == "Yes" && add_leu == "Yes" && add_trp == "Yes" && add_ura == "Yes"
-    product_name = "800 mL SC liquid (unsterile)"
+    product_name = "%{volume} mL SC liquid (unsterile)"
   else
-    product_name = "800 mL SDO liquid (unsterile)"
+    product_name = "%{volume} mL SDO liquid (unsterile)"
   end
 end
 
@@ -132,13 +155,43 @@ dextrose_name = dextrose[0][:name]
 adenine_name = adenine[0][:name]
 
 
+agar_grams = 0
+dextrose_grams = 0
+nitrogen_base_grams = 0
+dropout_grams = 0
+adenine_grams = 0
+supplement_ml = 0
+if volume == 200
+  agar_grams = 4
+  dextrose_grams = 4
+  nitrogen_base_grams = 1.34
+  dropout_grams = 0.28
+  adenine_grams = 0.016
+  supplement_ml = 2
+elsif volume == 400
+  agar_grams = 8
+  dextrose_grams = 8
+  nitrogen_base_grams = 2.68
+  dropout_grams = 0.56
+  adenine_grams = 0.032
+  supplement_ml = 4
+else
+  agar_grams = 16
+  dextrose_grams = 16
+  nitrogen_base_grams = 5.36
+  dropout_grams = 1.12
+  adenine_grams = 0.064
+  supplement_ml = 8
+end
+
+
 #Agar
 if add_agar == "Yes"
   agar_name = agar[0][:name]
   include "includes/materials_prep/add_dry_reagent.pl"
     container: "each bottle"
     reagent: agar_name
-    grams: 16
+    grams: agar_grams
   end
 end
 
@@ -146,28 +199,28 @@ end
 include "includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
   reagent: dextrose_name
-  grams: 16
+  grams: dextrose_grams
 end
 
 
 include "includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
   reagent: nitrogen_base_name
-  grams: 5.36
+  grams: nitrogen_base_grams
 end
 
 
 include "includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
   reagent: dropout_name
-  grams: 1.12
+  grams: dropout_grams
 end
 
 
 include "includes/materials_prep/add_dry_reagent.pl"
   container: "each bottle"
   reagent: adenine_name
-  grams: 0.064
+  grams: adenine_grams
 end
 
 
@@ -211,7 +264,7 @@ end
 
 step
   description: "Add sterile drop out supplements"
-  note: "Label a piece of white laboratory tape with '-His -Leu -Trp -Ura' and attach it to the 1 L bottle.\n\nUsing a serological pipet, add 8 mL of each sterile supplement you just got out. As you add each supplement, black it out with a marker on the piece of tape."
+  note: "Label a piece of white laboratory tape with '-His -Leu -Trp -Ura' and attach it to each bottle.\n\nUsing a serological pipet, add %{supplement_ml} mL of each sterile supplement you just got out. As you add each supplement, black it out with a marker on the piece of tape."
   warning: "Use a separate pipet for each supplement."
 end
 
@@ -221,7 +274,7 @@ release supplements
 
 step
   description: "Add deionized water"
-  note: "Fill each bottle to the 800 mL mark with deionized water."
+  note: "Fill each bottle to the %{volume} mL mark with deionized water."
 end
 
 
@@ -240,16 +293,31 @@ release hot_plate
 
 
 # FIXME: Should also mark as '-Ura', etc. Need to construct that string.
-produce
-  produced_bottles = n_bottle product_name
-  data
-    his: add_his
-    leu: add_leu
-    trp: add_trp
-    ura: add_ura
+if volume == 800
+  produce
+    produced_bottles = n_bottle product_name
+    data
+      his: add_his
+      leu: add_leu
+      trp: add_trp
+      ura: add_ura
+    end
+    release bottles
+    release stir_bars
+    note: "Write %{product_name} and the date on a new label in addition to the above id number. Mark the label according to the solutions that were left out - mark red for -His, blue for -Leu, green for -Trp, purple for -Ura."
+    location: "B1.320"
   end
-  release bottles
-  release stir_bars
-  note: "Write %{product_name} and the date on a new label in addition to the above id number. Mark the label according to the solutions that were left out - mark red for -His, blue for -Leu, green for -Trp, purple for -Ura."
-  location: "B1.320"
+else
+  produce
+    produced_bottles = n_bottle product_name
+    data
+      his: add_his
+      leu: add_leu
+      trp: add_trp
+      ura: add_ura
+    end
+    release bottles
+    note: "Write %{product_name} and the date on a new label in addition to the above id number. Mark the label according to the solutions that were left out - mark red for -His, blue for -Leu, green for -Trp, purple for -Ura."
+    location: "B1.320"
+  end
 end

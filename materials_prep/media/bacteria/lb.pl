@@ -51,45 +51,48 @@ end
 
 lb_powder = 1 "Difco LB Broth, Miller"
 lb_grams = 29.6
-product_name = "200 mL LB Agar (unsterile)"
-stir_bars = n_bottle "Medium Magnetic Stir Bar"
+product_name = ""
+
+lb_grams = 0.0
+bottles = {}
 if add_agar == "Yes"
-  # TODO: make this a simple %{volume} substitution once that bug is fixed
+  product_name = "%{volume} mL LB Agar (unsterile)"
   if volume == 200
-    product_name = "200 mL LB Agar (unsterile)"
+    lb_grams = 7.4
   elsif volume == 400
-    product_name = "400 mL LB Agar (unsterile)"
+    lb_grams = 14.8
   else
-    product_name = "800 mL LB Agar (unsterile)"
+    lb_grams = 29.6
   end
-  lb_grams = 29.6
   take
     bottles = n_bottle bottle_type
     lb_powder = 1 "LB Agar Miller"
-    stir_bars = n_bottle "Medium Magnetic Stir Bar"
   end
 else
+  product_name = "%{volume} mL LB Liquid (unsterile)"
   if volume == 200
-    product_name = "200 mL LB Liquid (unsterile)"
+    lb_grams = 5.0
   elsif volume == 400
-    product_name = "400 mL LB Liquid (unsterile)"
+    lb_grams = 10.0
   else
-    product_name = "800 mL LB Liquid (unsterile)"
+    lb_grams = 20.0
   end
-  lb_grams = 20.0
   take
     bottles = n_bottle bottle_type
     lb_powder = 1 "Difco LB Broth, Miller"
-    stir_bars = n_bottle "Medium Magnetic Stir Bar"
   end
 end
 
-
-step
-  description: "Add stir bars."
-  note: "Add one stir bar to each bottle."
+stir_bars = {}
+if volume == 800
+  take
+     stir_bars = n_bottle "Medium Magnetic Stir Bar"
+  end
+  step
+    description: "Add stir bars."
+    note: "Add one stir bar to each bottle."
+  end
 end
-
 
 step
   description: "Add temporary labels"
@@ -135,12 +138,21 @@ else
   end
 end
 
-produce
-  produced_bottles = n_bottle product_name
-  release bottles
-  release stir_bars
-  note: "Write %{product_name} and the date on the label in addition to the above id number."
-  location: "B1.320"
+if volume == 800
+  produce
+    produced_bottles = n_bottle product_name
+    release bottles
+    release stir_bars
+    note: "Write %{product_name} and the date on the label in addition to the above id number."
+    location: "B1.320"
+  end
+else
+  produce
+    produced_bottles = n_bottle product_name
+    release bottles
+    note: "Write %{product_name} and the date on the label in addition to the above id number."
+    location: "B1.320"
+  end
 end
 
 

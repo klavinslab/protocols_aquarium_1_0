@@ -1,0 +1,9 @@
+{
+  "initials": "NB",
+  "enzyme_id": 2816,
+  "fragment_names": ["TP-TCYC1-URA3-5GEX"],
+  "forward_ids": [2881],
+  "reverse_ids": [2712],
+  "template_ids": [2496],
+  "tanneal": 65
+}

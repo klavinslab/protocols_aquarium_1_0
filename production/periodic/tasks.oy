@@ -1,24 +1,46 @@
 root = "production/periodic/"
+x = tasks("Daily","ready")
 
 place daily
-  protocol: root + "task.pl"
+  protocol: root + "tasks.pl"
   argument
     type: "Daily"
   end
-  group: admin
+  group: "technicians"
   marked: true
   window: hours(24)
 end
 
 place weekly
-  protocol: root + "task.pl"
+  protocol: root + "tasks.pl"
   argument
     type: "Weekly"
   end
-  group: admin
+  group: "technicians"
   marked: true
   window: hours(24)
 end
 
-transition [daily] => [daily] when completed(0)
-transition [weekly] => [weekly] when completed(0)
+place daily_wait
+  marked: true
+end
+
+place weekly_wait
+  marked: true
+end
+
+transition [daily]        => [daily]  when completed(0) && length(tasks("Daily","ready"))  > 0 end
+
+transition [weekly]       => [weekly] when completed(0) && length(tasks("Weekly","ready")) > 0 end
+
+transition [daily_wait]   => [daily_wait] when hours_elapsed(0,24) 
+  do
+    dummy = set_task_status(tasks("Daily","done"),"ready")
+  end
+end
+
+transition [weekly_wait]   => [weekly_wait] when hours_elapsed(0,7*24) 
+  do
+    dummy = set_task_status(tasks("Weekly","done"),"ready")
+  end
+end
