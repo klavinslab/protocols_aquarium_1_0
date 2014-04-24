@@ -24,7 +24,7 @@ end
 
 step
 	description: "Label test tubes"
-	note: "Label each 20 ml test tube from 1-%{sample_count}"
+	note: "Label each flask from 1-%{sample_count}"
 end
 
 i = 0
@@ -33,8 +33,8 @@ while i < sample_count
 	i = i + 1
 	step
 		description: "Dilute E. coli cells from sample %{e}"
-		check: "Add %{LB_V} ml of LB media to test tube %{i}" # -- large pipette?
-		check: "Add %{e_V_micro} μl of e. coli sample %{e} to test tube %{i}"
+		check: "Add %{LB_V} ml of LB media to flask %{i}" # -- large pipette?
+		check: "Add %{e_V_micro} μl of e. coli sample %{e} to flask %{i}"
 		bullet: "You should end up with approximately %{total_V} ml of liquid in the test tube"
 	end
 end
@@ -44,7 +44,7 @@ log_cell_tubes = []
 while i < sample_count
   tube_no = i+1
 	produce
-		y = 1 "20 mL Test Tubes" from e_items[i]
+		y = 1 "250 mL Baffled Flask" from e_items[i]
 		release t_tubes[i]
 		location: "B13.125"
 		data
