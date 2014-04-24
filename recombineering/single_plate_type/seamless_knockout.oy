@@ -11,7 +11,7 @@ argument
   #ladder_one: sample, "the reference ladder for Gel electrophoresis"
 end
 
- 
+base = "recombineering\single_plate_type" 
 
 ##
 ## Qs: How do you repeat OD test if not enough wait time
@@ -22,7 +22,7 @@ end
 #unique_e_coli_strains = unique(e_coli_strain)
 
 place make_log_phase
-  protocol: "labw14/group4/make_log_phase.pl"
+  protocol: base+"/make_log_phase.pl"
   argument
     e_coli_strains: e_coli_strain 
   end
@@ -33,7 +33,7 @@ end
 
 
 place finish_log_phase
-	protocol: "labw14/group4/finish_log_phase.pl"	
+	protocol: base+"/finish_log_phase.pl"	
 	# log_cells: wire log phase cells from make_log_phase
 	start: now() #hours(2)
 	window: hours(1)
@@ -51,7 +51,7 @@ wire (make_log_phase, "log_cells") => (finish_log_phase, "log_cells")
 num_trans = 1
 
 place heat_shock
-  protocol: "labw14/group4/heat_shock_parallel.pl"
+  protocol: base+"/heat_shock_parallel.pl"
   # cells_flask_array: wire log cells from here
   argument
   	cells_flask_array: e_coli_strain
@@ -65,7 +65,7 @@ end
 wire (make_log_phase, "log_cells") => (heat_shock, "cells_flask_array")
 
 place quick_comp
-  protocol: "labw14/group4/quick_comp_parallel.pl"
+  protocol: base+"/quick_comp_parallel.pl"
   group: aquarium_user
   start: now()
   window: minutes(1)
@@ -74,7 +74,7 @@ end
 wire (heat_shock,"shocked_cells") => (quick_comp,"shocked_cells")
 
 place transform
-  protocol: "labw14/group4/transform.pl"
+  protocol: base+"/transform.pl"
   argument
     plasmid_id: knockout_fragments
     dna_vol: 2
@@ -90,7 +90,7 @@ wire (quick_comp,"iceblock") => (transform, "iceblock") # carry the iceblock ove
 wire (quick_comp,"alrack") => (transform, "alrack") # carry the alrack over protocols
 
 place incubate_tube
-  protocol: "labw14/group4/incubate_tube.pl"
+  protocol: base+"/incubate_tube.pl"
   argument
     temp: 30
   end
@@ -102,7 +102,7 @@ end
 wire (transform,"transformed_cells_ids") => (incubate_tube,"e_coli_strain_id")
 
 place plate
-  protocol: "labw14/group4/plate.pl"
+  protocol: base+"/plate.pl"
   group: aquarium_user
   argument
     volume: 200
