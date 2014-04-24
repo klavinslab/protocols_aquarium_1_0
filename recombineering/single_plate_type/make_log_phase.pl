@@ -18,7 +18,7 @@ lb_count = 1+net_volume/50 # Bug: will ask for extra lb aliquot if net_volume is
 
 take
 	e_items = item unique_e_coli_strains
-	t_tubes = sample_count "20 ml Test Tubes" # -- glass flask?
+	t_tubes = sample_count "250 mL Baffled Flask" # -- glass flask?
 	LB     = lb_count "50 mL LB liquid aliquot (sterile)"
 end
 
@@ -42,6 +42,7 @@ end
 i=0
 log_cell_tubes = []
 while i < sample_count
+  tube_no = i+1
 	produce
 		y = 1 "20 mL Test Tubes" from e_items[i]
 		release t_tubes[i]
@@ -50,7 +51,7 @@ while i < sample_count
 			from: e_items[i][:id]
 			original_id: e_items[i][:id]
 		end
-		note: "Incubate tube %{i} for 2 hours in 30°C incubator (B13.125)"
+		note: "Incubate tube %{tube_no} for 2 hours in 30°C incubator (B13.125)"
 	end
 	log_cell_tubes = append(log_cell_tubes, y[:id])
 	i = i+1

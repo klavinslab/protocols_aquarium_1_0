@@ -19,8 +19,6 @@ take
   plasmids = item unique(plasmid_id)
   electroporator = 1 "Electroporator"
   strain = item e_coli_strain_type
-#  iceblock = 1 "Styrofoam Ice Block"
-#  alrack = 1 "Aluminum Tube Rack"
   cuvette = sample_count "Clean Electrocuvette"
 end
 
@@ -146,14 +144,7 @@ end
 
 step
 	description: "Return the aluminum rack and ice block to where you found them"
-	end
-modify
-	iceblock[0]
-	inuse: dinuse
 end
-modify
-	alrack[0]
-	inuse: dinuse
-end
+
 release [electroporator[0]]
 release concat(concat([falcon_tube[0],plasmids[0]], strain), cuvette)
