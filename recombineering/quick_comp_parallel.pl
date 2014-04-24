@@ -16,7 +16,6 @@ end
 take
   cells = item shocked_cells
 end
-#cells = cells[0]	# I don't know what this is for...
 
 step
   description: "Important notes before starting"
@@ -141,10 +140,6 @@ log
 	alrack: alrack[0]
 end
 
-#step
-#	note: "The next step instructs you to release the aluminum rack and ice block. Release but DO NOT PHYSICALLY RETURN the items since you will use them in the next step."
-#end
-#
 
 #release [iceblock[0], alrack[0]]
 #release cells	# DEBUG

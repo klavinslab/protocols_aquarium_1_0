@@ -1,9 +1,21 @@
+#json file needs fields:
+#logCultures - list of overnights to be put into flasks
+#dna - list of dna to transform
+#strains - list of strains to transform into
+#plates - list of plates to plate on
+#
+# dna, strains, and plates are all lists who's indices correspond to the same
+# transformation.  ie dna[n] is transformed into strain strains[n] onto plate
+# plates[n]
+
+base_dir = "recombineering/"
+
 argument
   json_file: string, "path to json file with all params"
 end
 
 place make_log_phase
-  protocol: "recombineering/make_log_phase.pl"
+  protocol: base_dir+"make_log_phase.pl"
   argument
     json_file: json_file 
   end
@@ -14,7 +26,7 @@ end
 
 
 place finish_log_phase
-	protocol: "recombineering/finish_log_phase.pl"	
+	protocol: base_dir+"finish_log_phase.pl"	
 	# log_cells: wire log phase cells from make_log_phase
 	start: hours(2)
 	window: minutes(30)
@@ -27,7 +39,7 @@ wire (make_log_phase, "log_cells") => (finish_log_phase, "log_cells")
 num_trans = 1
 
 place heat_shock
-  protocol: "recombineering/heat_shock_parallel.pl"
+  protocol: base_dir+"heat_shock_parallel.pl"
   #argument
   #	cells_flask_array: e_coli_strain
   #end
@@ -39,7 +51,7 @@ end
 wire (make_log_phase, "log_cells") => (heat_shock, "cells_flask_array")
 
 place quick_comp
-  protocol: "labw14/group4/quick_comp_parallel.pl"
+  protocol: base_dir+"quick_comp_parallel.pl"
   group: aquarium_user
   start: now()
   window: minutes(1)
@@ -48,11 +60,12 @@ end
 wire (heat_shock,"shocked_cells") => (quick_comp,"shocked_cells")
 
 place transform
-  protocol: "labw14/group4/transform.pl"
+  protocol: base_dir+"transform.pl"
   argument
-    plasmid_id: knockout_fragments
+    #plasmid_id: knockout_fragments
     dna_vol: 2
-    e_coli_map: e_coli_strain
+    #e_coli_map: e_coli_strain
+    json_file: json_file
   end
   group: aquarium_user
   start: now()
