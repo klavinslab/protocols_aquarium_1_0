@@ -245,6 +245,7 @@ if length(overnight)>0
         check: "Take overnight culture %{o} and vortex the tube."
         check: "Pipette 3µl of overnight culture %{o} and pipette into tube %{label}"
       end
+    count10=count10+1
   end
 end
 
