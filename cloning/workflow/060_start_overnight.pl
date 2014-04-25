@@ -9,7 +9,7 @@ argument
 end
 
 step
-  description: "This protocol starts overnight cultures of bactia."
+  description: "This protocol starts overnight cultures of bacteria."
 end
 
 
@@ -242,7 +242,7 @@ if length(overnight)>0
     label = length(glycerol_stocks)+length(plates)+count10+1
     o=overnight[count10]
       step
-        check: "Take overnight culture %{o]} and vortex the tube."
+        check: "Take overnight culture %{o} and vortex the tube."
         check: "Pipette 3µl of overnight culture %{o} and pipette into tube %{label}"
       end
   end
