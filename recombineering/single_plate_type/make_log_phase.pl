@@ -23,7 +23,7 @@ take
 end
 
 step
-	description: "Label test tubes"
+	description: "Label flasks"
 	note: "Label each flask from 1-%{sample_count}"
 end
 
@@ -35,7 +35,7 @@ while i < sample_count
 		description: "Dilute E. coli cells from sample %{e}"
 		check: "Add %{LB_V} ml of LB media to flask %{i}" # -- large pipette?
 		check: "Add %{e_V_micro} μl of e. coli sample %{e} to flask %{i}"
-		bullet: "You should end up with approximately %{total_V} ml of liquid in the test tube"
+		bullet: "You should end up with approximately %{total_V} ml of liquid in the flask"
 	end
 end
 
@@ -51,7 +51,7 @@ while i < sample_count
 			from: e_items[i][:id]
 			original_id: e_items[i][:id]
 		end
-		note: "Incubate tube %{tube_no} for 2 hours in 30°C incubator (B13.125)"
+		note: "Incubate flask %{tube_no} for 2 hours in 30°C incubator (B13.125)"
 	end
 	log_cell_tubes = append(log_cell_tubes, y[:id])
 	i = i+1

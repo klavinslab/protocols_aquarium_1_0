@@ -108,7 +108,7 @@ while i <  sample_count
 	  end
 	end
 
-	if time_constant >= 3
+	#if time_constant >= 3
 	  produce
 		r = 1 "1.5 mL tube transformation" from e_coli_s#of strain_name 
 		note: "Keep on the bench"
@@ -123,18 +123,18 @@ while i <  sample_count
 	  trans_cell_tm_consts = append(trans_cell_tm_consts, time_constant)
 	  
 
-	else
-	  step
-		description: "Transformation Unsuccessful"
-		note: "Your time constant value was too low, resulting in an unsuccessful transformation.\n
-		You must now discard your Transformed E.coli 1.5 mL tube and repeat this protocol."
-	  end
-	  trans_cell_ids = append(trans_cell_ids, 0000)
-	  trans_cell_tm_consts = append(trans_cell_tm_consts, time_constant)
+	#else
+	  #step
+		#description: "Transformation Unsuccessful"
+		#note: "Your time constant value was too low, resulting in an unsuccessful transformation.\n
+		#You must now discard your Transformed E.coli 1.5 mL tube and repeat this protocol."
+	  #end
+	  #trans_cell_ids = append(trans_cell_ids, 0000)
+	  #trans_cell_tm_consts = append(trans_cell_tm_consts, time_constant)
 	  
 	  
 
-	end
+	#end
 	i = i + 1
 end
 
