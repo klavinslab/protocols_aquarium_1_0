@@ -250,7 +250,7 @@ if length(overnight)>0
 end
 
 step
-  description: "Write the following ID numbers on the the tubes 1-%{y} during the following produces. After that make sure caps are on all tubes and place them in B13.425 (large 37ºC shaker incubator)"
+  description: "Write the following ID numbers on the the tubes 1-%{y} during the following produces. After that make sure caps are attached loosely on all tubes (for good aeration) and place them in B13.425 (large 37ºC shaker incubator)"
 end
 
 
