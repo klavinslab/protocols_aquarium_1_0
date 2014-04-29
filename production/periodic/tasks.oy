@@ -1,5 +1,4 @@
 root = "production/periodic/"
-x = tasks("Daily","ready")
 
 place daily
   protocol: root + "tasks.pl"
@@ -30,17 +29,22 @@ place weekly_wait
 end
 
 transition [daily]        => [daily]  when completed(0) && length(tasks("Daily","ready"))  > 0 end
-
 transition [weekly]       => [weekly] when completed(0) && length(tasks("Weekly","ready")) > 0 end
 
-transition [daily_wait]   => [daily_wait] when hours_elapsed(0,24) 
+last_daily_update = -1
+
+transition [daily_wait]   => [daily_wait] when time()[:day] != last_daily_update
   do
+    last_daily_update = time()[:day]
     dummy = set_task_status(tasks("Daily","done"),"ready")
   end
 end
 
-transition [weekly_wait]   => [weekly_wait] when hours_elapsed(0,7*24) 
+last_weekly_update = -1
+
+transition [weekly_wait]   => [weekly_wait] when time()[:day] == "Sunday" && time()[:day] != last_weekly_update
   do
+    last_weekly_update = time()[:day]
     dummy = set_task_status(tasks("Weekly","done"),"ready")
   end
 end

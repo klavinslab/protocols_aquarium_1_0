@@ -1,0 +1,59 @@
+place wait
+    marked: true
+end
+
+place lb
+    protocol: "oyster/trans/watchers/media/lb.pl"
+    argument
+        n_bottle: 1
+        volume: 800
+        add_agar: "No"
+    end
+    start: now()
+    window: minutes(30)
+    group: "tamimeur"
+end
+
+place autoclave
+    protocol: "oyster/trans/watchers/media/autoclave_bacteria_media.pl"
+    argument
+        lb_liquid_n: 1
+        lb_agar_800_n: 0
+        lb_agar_400_n: 0
+        lb_agar_200_n: 0
+        tb_liquid_n: 0
+    end
+    start: now()
+    window: minutes(30)
+    group: "tamimeur"
+end
+
+place pour
+    protocol: "oyster/trans/watchers/media/pour_lb_plates.pl"
+    argument
+        n: 1
+        volume: 800
+        antibiotic: "Amp"
+        iptg: "No"
+        atc: "No"
+        xgal: "No"
+    end
+    start: now()
+    window: minutes(30)
+    group: "tamimeur"
+end
+
+place move
+    protocol: "oyster/trans/watchers/media/move_plates.pl"
+    start: now()
+    window: minutes(30)
+    group: "tamimeur"
+end
+
+
+transition [wait] => [lb] when quantity("LB Amp Plate (sterile)") < min_quantity("LB Amp Plate (sterile)") end
+transition [lb] => [autoclave] when completed(0) end
+transition [autoclave] => [pour] when completed(0) end
+transition [pour] => [move] when completed(0) end
+transition [move] => [wait] when completed(0) end
+ 

@@ -1,0 +1,47 @@
+place wait
+    marked: true
+end
+
+place overnight
+    protocol: "oyster/trans/watchers/overnights/060_start_overnight.pl"
+    start: now()
+    window: minutes(30)
+    group: "tamimeur"
+end
+
+place parafilm
+    protocol: "oyster/trans/watchers/overnights/065_parafilm_plate.pl"
+    start: now()
+    window: minutes(30)
+    group: "tamimeur"
+end
+
+place miniprep
+    protocol: "oyster/trans/watchers/overnights/070_miniprep.pl"
+    start: now()
+    window: minutes(30)
+    group: "tamimeur"
+end
+
+place ec_cells_day2
+    protocol: "oyster/trans/watchers/overnights/make_electrocompetent_cells_day2.pl"
+    start: now()
+    window: minutes(30)
+    group: "tamimeur"
+end
+
+place mk_aliquots
+    protocol: "oyster/trans/watchers/overnights/plasmid_dilution.pl"
+    start: now()
+    window: minutes(30)
+    group: "tamimeur"
+end
+
+
+transition [wait] => [overnight] when quantity("MG1655Z1 Electrocompetent Aliquot") < min_quantity("MG1655Z1 Electrocompetent Aliquot") end
+transition [overnight] => [parafilm] when completed(0) end
+transition [parafilm] => [miniprep] when completed(0) end
+transition [miniprep] => [ec_cells_day2] when completed(0) end
+transition [ec_cells_day2] => [mk_aliquots] when completed(0) end
+transition [mk_aliquots] => [wait] when completed(0) end
+ 
