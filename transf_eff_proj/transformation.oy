@@ -45,7 +45,8 @@ wire (plate,"plate_id") => (incubate,"e_coli_strain_id")
 place image
   protocol: "oyster/trans/count_colonies.pl"
   group: "transformers"
-  start: hours(20)
+  #start: hours(20)
+  start: now()
   window: hours(1)
 end
 
@@ -65,7 +66,7 @@ transition [transform] => [plate]    when !error(0) && completed(0) && return_va
 transition [plate]     => [incubate] when !error(0) && completed(0) end
 transition [incubate]  => [image]    when !error(0) && completed(0) end
 transition [image]     => []         when !error(0) && completed(0) end
-transition [reimage]   => []         when !error(0) && completed(0) end
+#transition [reimage]   => []         when !error(0) && completed(0) end
 
 # rework transitions
 transition [transform] => [transform] when error(0) end
