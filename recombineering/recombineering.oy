@@ -39,7 +39,7 @@ wire (make_log_phase, "log_cells") => (finish_log_phase, "log_cells")
 num_trans = 1
 
 place heat_shock
-  protocol: base_dir+"heat_shock_parallel.pl"
+  protocol: base_dir+"heat_shock.pl"
   #argument
   #	cells_flask_array: e_coli_strain
   #end
