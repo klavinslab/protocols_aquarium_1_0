@@ -16,7 +16,6 @@ end
 take
   cells = item shocked_cells
 end
-#cells = cells[0]	# I don't know what this is for...
 
 step
   description: "Important notes before starting"

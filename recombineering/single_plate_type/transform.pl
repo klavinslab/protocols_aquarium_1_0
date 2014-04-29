@@ -1,4 +1,5 @@
 # Modified from existing protocol
+base = "recombineering/single_plate_type"
 
 argument
   plasmid_id: sample array, "The plasmid to be used"
@@ -10,7 +11,7 @@ argument
 	alrack: sample, "you shuld not see this prompt"
 end
 
-include "labw14/group4/lib.pl"
+include base+"/lib.pl"
 end
 
 sample_count = length(e_coli_strain_type)
