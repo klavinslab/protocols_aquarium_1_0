@@ -28,10 +28,9 @@ take
 end
 
 
-#TODO: move this loop inside step
-foreach strain in strainIDs
-  step
-	  description: "Label flasks"
+step
+  description: "Label flasks"
+  foreach strain in strainIDs
     bullet: "label a flask 'diluted from %{strain}' "
   end
 end
@@ -41,12 +40,11 @@ step
   note: "go to the media bay and using the steriological pipette, transfer 25ml LB into each flask"
 end
 
-#TODO: move into step
 step
 	description: "Dilute E. coli cells from each sample"
-   foreach strain in unique(strainIDs)
-    check: "For each overnight with with ID %{strain} transfer 350 ul to the flask(s) you just labeled 'diluted from %{strain}'"
-   end
+    foreach strain in unique(strainIDs)
+      check: "For each overnight with with ID %{strain} transfer 350 ul to the flask(s) you just labeled 'diluted from %{strain}'"
+    end
     note: "By the end of this step each each flask should have gotten 350 ul of overnight culture"
 end
 
@@ -56,7 +54,7 @@ foreach strain in strains
   produce 
     output = 1 "Overnight suspension" from strain 
     release [flasks[ind]]
-    location: "SI03"
+    location: "SI4"
   end
   ind = ind+1
   log_cell_tubes = append(log_cell_tubes, output[:id])

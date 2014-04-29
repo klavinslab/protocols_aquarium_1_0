@@ -38,7 +38,7 @@ foreach c in log_cells
 	  description: "Blank the Nanodrop"
 	  check: "Set the wavelength to 250 nm"
 	  check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
-	  check: "Using a pipette, carefully add 2 µL of LB Buffer to the lower pedestal." 
+	  check: "Using a pipette, carefully add 2 &micro;l of LB to the lower pedestal." 
 	  check: "Close the pedestal."
 		bullet: "Visually check for a column of liquid between the two pedestals when closed."
 	  check: "Click Blank in the software."
@@ -66,27 +66,28 @@ foreach c in log_cells
 	OD = 10*absorbance
 	ODs = append(ODs, OD)
 	
-	if OD < OD_min
-		step
-			description: "The OD is too low; the cells haven't grown enough!"
-			note: "Reincubation is suggested. Click next."
-		end
+#TODO: make this check restart the protocol later.  for now just skip the check
+	#if OD < OD_min
+		#step
+			#description: "The OD is too low; the cells haven't grown enough!"
+			#note: "Reincubation is suggested. Click next."
+		#end
 
-		step
-			description: "Re-incubate the suspension."
-			note: "let your instructor know the suspension needs more time to incubate."
-		end
+		#step
+			#description: "Re-incubate the suspension."
+			#note: "let your instructor know the suspension needs more time to incubate."
+		#end
 
 #		release c
-	end
+	#end
 
-	if OD > OD_max
-		step
-			description: "The OD is too high, cell growth has saturated!"
-			note: "Results may be negatively affected"
-		end
-	
-	end
+#if the OD is too high, oh well, keep going it's probably fine.
+	#if OD > OD_max
+		#step
+			#description: "The OD is too high, cell growth has saturated!"
+			#note: "Results may be negatively affected"
+		#end
+	#end
 	
 	step
 	  description: "Clean the Nanodrop"
@@ -95,6 +96,7 @@ foreach c in log_cells
 	end
 end
 release y
+release lb
 log
 	return: {ODs: ODs}
 end
