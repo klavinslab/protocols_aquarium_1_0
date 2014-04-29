@@ -42,12 +42,12 @@ step
 end
 
 #TODO: move into step
-foreach strain in unique(strainIDs)
 step
 	description: "Dilute E. coli cells from each sample"
-    check: "For each overnight with with ID %{strain} transfer 35ul to the flask(s) you just labeled 'diluted from %{strain}'"
-    note: "By the end of this step each each flask should have gotten 35ul of overnight culture"
-end
+   foreach strain in unique(strainIDs)
+    check: "For each overnight with with ID %{strain} transfer 350 ul to the flask(s) you just labeled 'diluted from %{strain}'"
+   end
+    note: "By the end of this step each each flask should have gotten 350 ul of overnight culture"
 end
 
 ind = 0
