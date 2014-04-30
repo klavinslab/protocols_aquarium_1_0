@@ -29,6 +29,7 @@ end
 
 ind = 0
 log_cell_flasks = []
+id_strings = []
 foreach strain in strains
   sid = strain[:id]
   produce silently
@@ -41,6 +42,7 @@ foreach strain in strains
   end
   ind = ind+1
   log_cell_flasks = append(log_cell_flasks, output[:id])
+  id_strings = append(id_strings, output)
 
   fid = output[:id]
   step
@@ -51,53 +53,26 @@ foreach strain in strains
 end
 
 step
+  note: "produced %{log_cell_flasks}"
+end
+
+step
   description: "add 25ml of LB to each flask"
   note: "go to the media bay and using the steriological pipette, transfer 25ml LB into each flask"
 end
 
 step
-  foreach flask in log_cell_flasks
-    fid = flask[:id]
-    sourceID = flask[:data][:from]
-    check: "Transfer 350 &micro;l of overnight %{sourceID} to flask %{fid}"
+  description: "Dilute overnights into flasks"
+  foreach flask in id_strings 
+    check: "Transfer 350  &micro;l of overnight " + to_string(flask[:data][:from]) + "to flask " + to_string(flask[:id])
   end
-  note: "By the end of this step each each flask should have gotten 350 ul of overnight culture.  If not make a note here."
+  note: "By the end of this step each each flask should have gotten 350 &micro;l of overnight culture.  If not make a note here."
 end
 
-####
-if 0
-
-step
-	description: "Dilute E. coli cells from each sample"
-    foreach strain in unique(strainIDs)
-      check: "For each overnight with with ID %{strain} transfer 350 ul to the flask(s) you just labeled 'diluted from %{strain}'"
-    end
-    note: "By the end of this step each each flask should have gotten 350 ul of overnight culture"
-end
-
-
-ind = 0
-log_cell_flasks = []
-foreach strain in strains
-  sid = strain[:id]
-  produce 
-    output = 1 "Overnight suspension" from strain 
-    note: "Tape over or cross out your old label 'diluted from %{sid}' and replace it with the item number above"
-    warning: "The flask you are labeling should be the one you previously labeled 'diluted from %{sid}'"
-    release [flasks[ind]]
-    location: "SI4"
-  end
-  ind = ind+1
-  log_cell_flasks = append(log_cell_flasks, output[:id])
-end
-
-end
-####
 step
   description: "Incubate flasks"
-  foreach flask in log_cell_flasks
-    fid = flask[:id]
-    bullet: "Place falsk %{fid} into SI4"
+  foreach flask in id_strings
+    bullet: "Place falsk " + to_string(flask[:id]) + " into SI4"
   end
   note: "Place all flasks above into the 30C shaker incubator (SI4)"
 end
