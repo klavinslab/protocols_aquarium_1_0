@@ -104,7 +104,7 @@ while ii < n
   end
 
   produce
-    r = 1 "Transformed E. coli Aliquot" from plasmid
+    r = 1 "Transformed E coli 1.5 mL tubes" from plasmid
     note: "Keep the tube on the bench to use in the next protocol. (no need to edit the location below)"
     location: "Bench"
   end
