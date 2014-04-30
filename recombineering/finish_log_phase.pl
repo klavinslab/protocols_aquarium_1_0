@@ -1,11 +1,9 @@
-##
-## Adapted from existing protocol
-##
  
 argument
   log_cells: sample array, "The sample that you want to spec its concentration"
 end
 
+#currently unused
 OD_min = 0.4
 OD_max = 0.6
 
@@ -28,7 +26,7 @@ step
 	bullet: "press the exit button and confirm that you wish to leave"
 	bullet: "Select 'cell culture' mode"
 	bullet: "The software will ask you to initialize the spectrophotometer. Follow the on screen instructions."
-	bullet: "Initialize with 2ul molecular grade water and make sure to pipette a clean, bubble free drop or you may have to repeat the initialization."
+	bullet: "Initialize with 2 &micro;l molecular grade water and make sure to pipette a clean, bubble free drop or you may have to repeat the initialization."
 	image: "cell_cultures_page"
 end
 
@@ -36,7 +34,7 @@ ODs = []
 foreach c in log_cells
 	step
 	  description: "Blank the Nanodrop"
-	  check: "Set the wavelength to 250 nm"
+	  check: "Set the wavelength to 600 nm"
 	  check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
 	  check: "Using a pipette, carefully add 2 &micro;l of LB to the lower pedestal." 
 	  check: "Close the pedestal."
@@ -50,7 +48,7 @@ foreach c in log_cells
 	  description: "Measure your sample"
 	  check: "Open the pedestal"
 	  check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
-	  check: "Add 2 µL of your sample with id %{c} on the lower pedestal."
+	  check: "Add 2 &micro;l of your sample with id %{c} on the lower pedestal."
 	  check: "Close the pedestal."
 		bullet: "Visually check for a column of liquid between the two pedestals when closed."
 	  check: "Click Measure in the software."
@@ -95,8 +93,16 @@ foreach c in log_cells
 	  check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
 	end
 end
+foreach yy in y
+  modify 
+    yy
+    location: "Bench"
+  end
+end
+
 release y
 release lb
+
 log
 	return: {ODs: ODs}
 end

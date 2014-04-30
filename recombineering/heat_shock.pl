@@ -1,12 +1,5 @@
-# Author: Patrick Ma
-# 2/17/2014
-#
-# A modified version of the heat_shock protocol for making multiple samples of
-# electrocompetent cells simultaneously
-
-# Precondition: The input array has no duplicates 
 argument
-  cells_flask_array: sample array , "Array of cells to be heat shocked"
+  cells_flask_array: sample array , "Array of cell flaks to be heat shocked"
 end
 
 num_samples = length(cells_flask_array)
@@ -29,17 +22,17 @@ end
 
 step
   description: "Label (%{num_samples}) 50 mL Falcon tube(s)"
-  note: "Write your initials, date, and sample number on the cap of each tube."
+  note: "Try and leave some extra room above the label.  This tube will get an item number later"
+  foreach samp in cells_flask_array
+    check: "Write 'from %{samp}' on the tube cap"
+  end
 end
 
 step
   description: "Transfer each sample of log phase cells into a 50 mL Falcon Tube"
-  note: "Pour the entire volume of the shaker tube into the 50 mL falcon tube. The volume should be approximately 18 mL."
+  note: "Pour the entire volume of the shaker tube into the 50 mL falcon tube. The volume should be approximately 25 mL."
 end
 
-# NOTE: must break up the cells into batches that will fit inside the heat bath
-
-bath_size = 4	# the number of falcon tubes that will fit in the bath
 step
   description: "Wait until the heat bath has reached 42C"
   note: "The next steps are time sensitive so you must make sure the bath is ready."
@@ -85,6 +78,7 @@ while ii < num_samples
   	hot_cells = 1 "Heat shocked tube" from taken_cells[ii]
 
 		note: "This new sample is produced from Sample %{id}. Keep these cells on ice for the next step"
+    warning: "Make sure you're labeling the tube that you previously labeled 'from %{id}'"
 		data
 			from: id	# for sample tracking purposes
 			original_id: taken_cells[ii][:data][:original_id]
