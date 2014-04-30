@@ -27,18 +27,45 @@ take
 	flasks = nflasks "125 mL Baffled Flask"
 end
 
-
-step
-  description: "Label flasks"
-  foreach strain in strainIDs
-    bullet: "label a flask 'diluted from %{strain}' "
+ind = 0
+log_cell_flasks = []
+foreach strain in strains
+  sid = strain[:id]
+  produce silently
+    output = 1 "Overnight suspension" from strain 
+    release [flasks[ind]]
+    location: "SI4"
+    data
+      from: sid
+    end
   end
+  ind = ind+1
+  log_cell_flasks = append(log_cell_flasks, output[:id])
+
+  fid = output[:id]
+  step
+    description: "Label flasks"
+    note: "label a flask '%{fid}' "
+  end
+
 end
 
 step
   description: "add 25ml of LB to each flask"
   note: "go to the media bay and using the steriological pipette, transfer 25ml LB into each flask"
 end
+
+step
+  foreach flask in log_cell_flasks
+    fid = flask[:id]
+    sourceID = flask[:data][:from]
+    check: "Transfer 350 &micro;l of overnight %{sourceID} to flask %{fid}"
+  end
+  note: "By the end of this step each each flask should have gotten 350 ul of overnight culture.  If not make a note here."
+end
+
+####
+if 0
 
 step
 	description: "Dilute E. coli cells from each sample"
@@ -48,20 +75,35 @@ step
     note: "By the end of this step each each flask should have gotten 350 ul of overnight culture"
 end
 
+
 ind = 0
-log_cell_tubes = []
+log_cell_flasks = []
 foreach strain in strains
+  sid = strain[:id]
   produce 
     output = 1 "Overnight suspension" from strain 
+    note: "Tape over or cross out your old label 'diluted from %{sid}' and replace it with the item number above"
+    warning: "The flask you are labeling should be the one you previously labeled 'diluted from %{sid}'"
     release [flasks[ind]]
     location: "SI4"
   end
   ind = ind+1
-  log_cell_tubes = append(log_cell_tubes, output[:id])
+  log_cell_flasks = append(log_cell_flasks, output[:id])
+end
+
+end
+####
+step
+  description: "Incubate flasks"
+  foreach flask in log_cell_flasks
+    fid = flask[:id]
+    bullet: "Place falsk %{fid} into SI4"
+  end
+  note: "Place all flasks above into the 30C shaker incubator (SI4)"
 end
 
 log
-  return: {log_cells: log_cell_tubes}
+  return: {log_cells: log_cell_flasks}
 end
 
 
