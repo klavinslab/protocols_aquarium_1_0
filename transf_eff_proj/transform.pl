@@ -94,7 +94,8 @@ step
 end
 
 produce
-  r = 1 "Transformed E coli 1.5 mL tube" of "pLAB1 in Z1"
+  #r = 1 "Transformed E coli 1.5 mL tube" of "pLAB1 in Z1"
+  r = 1 "Transformed E. coli Aliquot" from plasmid
   note: "Keep the tube on the bench to use in the next protocol."
   location: "Bench"
 end
