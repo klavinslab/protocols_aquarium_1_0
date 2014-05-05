@@ -11,7 +11,7 @@ place transform
     e_coli_strain_id: e_coli_strain_id
     plate_type: plate_type
   end
-  group: "transformers"
+  group: "technicians"
   marked: true
   start: now()
   window: minutes(30)
@@ -23,7 +23,7 @@ place plate
     volume: 200
     plate_type: plate_type
   end
-  group: "transformers"
+  group: "technicians"
   start: now()
   window: minutes(1)
 end
@@ -35,7 +35,7 @@ place incubate
   argument
     temp: 37
   end
-  group: "transformers"
+  group: "technicians"
   start: now()
   window: minutes(1)
 end
@@ -44,7 +44,7 @@ wire (plate,"plate_id") => (incubate,"e_coli_strain_id")
 
 place image
   protocol: "transf_eff_proj/count_colonies.pl"
-  group: "transformers"
+  group: "technicians"
   #start: hours(20)
   start: now()
   window: hours(1)
@@ -54,7 +54,7 @@ wire (plate,"plate_id") => (image,"e_coli_strain_id")
 
 place reimage
   protocol: "transf_eff_proj/count_colonies.pl"
-  group: "transformers"
+  group: "technicians"
   start: now()
   window: hours(1)
 end
