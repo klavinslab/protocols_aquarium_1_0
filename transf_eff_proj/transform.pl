@@ -38,6 +38,10 @@ step
   note: "You will next retrieve a styrofoam ice block, an aluminum tube rack, 
          the electrocompetent cells and a cuvette.\n
          Place the tube of cells in the aluminum tube rack on top of the ice block."
+  bullet: "Once you click the next button, this protocol will begin recording the thaw time of the 
+          electrocompetent cells"
+  bullet: "Once you click next, do not dilly dally. Go straight to the freezer to collect your items and 
+        return immediately"
   warning: "The cuvette should be touching the ice block to keep it cool."
   image: "handle_electrocompetent_cells"
 end
@@ -47,6 +51,8 @@ take
   alrack = 1 "Aluminum Tube Rack"
   cuvette = 1 "Clean Electrocuvette"
   strain = 1 e_coli_strain_id
+  note: "Quickly, take the items. Once you've taken the items return to your bench immediately and click next. 
+  Electrocompetent cell thaw time is being recorded."
 end 
 
 step
@@ -54,11 +60,12 @@ step
   note:  "Wait until the cells have thawed to a slushy consistency that can be pipetted out."
   warning: "Do not wait too long! Transformation efficiency  
         depends on keeping electrocompetent cells ice-cold until electroporation."
+  bullet: "Only click next when your cells have thawed. This will end the thaw recording time."
   image: "thawed_electrocompotent_cells"
 end
 
 step
-  description: "Pipette 2 µL plasmid into the electrocompetent cells tube"
+  description: "Immediately Pipette 2 µL plasmid into the electrocompetent cells tube"
   note: "Swirl the tip gently in the culture to mix. Put back on the aluminum rack after mixing."
   warning: "Vortex the plasmid stock before pipetting into the electrocompetent cells"
   image: "pipette_plasmid_into_electrocompotent_cells"
@@ -81,16 +88,27 @@ step
 end
 
 step
+  description: "Set up timer."
+  note: "The next step is time sensitive. You will use a physical timer to record your rescue time"
+  note: "Press clear to clear all rows to 00:00"
+  note: "When asked to start the timer, you'll press the number 3. You'll need to only press 3 again to stop it."
+  image: "timer"
+end
+
+step
   description: "Electroporation, Rescue and Transfer"
-  bullet: "Put the cuvette in the cuvette holder, slide into electroporator and press the PULSE button twice."
+  bullet: "Put the cuvette in the cuvette holder, slide into electroporator and press the PULSE button twice while
+        starting the timer by pressing the 3."
   bullet: "Remove the cuvette from the electroporator and QUICKLY add 1 mL of LB."
-  bullet: "Pipette up and down 3 times to extract the cells from the gap in the cuvette."
+  bullet: "Pipette up and down 3 times to extract the cells from the gap in the cuvette, and press 3 again on the timer to stop it."
   bullet: "Transfer to tube T."
   warning: "If you hear a pop, throw away the cuvette, 
             click ABORT."
   image: "electroporation_rescue"
+  image: "start_timer"
   getdata
     time_constant: number, "Enter the time constant shown on the electroporator."
+    rescue_time: number, "Enter the number of seconds it took for you to rescue. (i.e. the timer's recorded time)"
   end
 end
 
