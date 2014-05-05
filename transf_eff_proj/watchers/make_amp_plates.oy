@@ -3,7 +3,7 @@ place wait
 end
 
 place lb
-    protocol: "oyster/trans/watchers/media/lb.pl"
+    protocol: "transf_eff_proj/watchers/media/lb.pl"
     argument
         n_bottle: 1
         volume: 800
@@ -15,7 +15,7 @@ place lb
 end
 
 place autoclave
-    protocol: "oyster/trans/watchers/media/autoclave_bacteria_media.pl"
+    protocol: "transf_eff_proj/watchers/media/autoclave_bacteria_media.pl"
     argument
         lb_liquid_n: 1
         lb_agar_800_n: 0
@@ -29,7 +29,7 @@ place autoclave
 end
 
 place pour
-    protocol: "oyster/trans/watchers/media/pour_lb_plates.pl"
+    protocol: "transf_eff_proj/watchers/media/pour_lb_plates.pl"
     argument
         n: 1
         volume: 800
@@ -44,7 +44,7 @@ place pour
 end
 
 place move
-    protocol: "oyster/trans/watchers/media/move_plates.pl"
+    protocol: "transf_eff_proj/watchers/media/move_plates.pl"
     start: now()
     window: minutes(30)
     group: "tamimeur"
