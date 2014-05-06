@@ -72,8 +72,13 @@ end
 
 step
   description: "Pipette 2 µL plasmid into the electrocompetent cells tube"
-  note: "Swirl the tip gently in the culture to mix. Put back on the aluminum rack after mixing."
-  warning: "Vortex the plasmid stock before pipetting into the electrocompetent cells"
+  bullet: "Vortex the plasmid stock before pipetting into the electrocompetent cells"
+  bullet: "Stop the timer when you are ready to pipette"
+  bullet: "Swirl the tip gently in the culture to mix. Put back on the aluminum rack after mixing."
+  getdata
+    thaw_time_min: number, "Enter the number of MINUTES shown on the timer. (i.e. recorded thaw time)"
+    thaw_time_sec: number, "Enter the number of SECONDS shown on the timer."
+  end
   image: "pipette_plasmid_into_electrocompotent_cells"
 end
 
@@ -83,6 +88,7 @@ step
   bullet: "Prepare 100 µL and 1000 µL pipette tips."
   bullet: "Loosen cap on the 50 mL LB liquid aliquot (sterile)."
   bullet: "Take the black plastic cuvette holder out of electroporator."
+  bullet: "Clear the timer. You will be using the timer now to record rescue time."
 end
     
 step
@@ -94,20 +100,12 @@ step
 end
 
 step
-  description: "Set up timer."
-  note: "The next step is time sensitive. You will use a physical timer to record your rescue time"
-  note: "Press clear to clear all rows to 00:00"
-  note: "When asked to start the timer, you'll press the number 3. You'll need to only press 3 again to stop it."
-  image: "timer"
-end
-
-step
   description: "Electroporation, Rescue and Transfer"
   bullet: "Put the cuvette in the cuvette holder, slide into electroporator and press the PULSE button twice while
-        starting the timer by pressing the 3."
+        starting the timer."
   bullet: "Remove the cuvette from the electroporator and QUICKLY add 1 mL of LB."
-  bullet: "Pipette up and down 3 times to extract the cells from the gap in the cuvette, and press 3 again on the timer to stop it."
-  bullet: "Transfer to tube T."
+  bullet: "Pipette up and down 3 times to extract the cells from the gap in the cuvette, and then stop the timer."
+  bullet: "Transfer to the T.E. tube with your initials on it"
   warning: "If you hear a pop, throw away the cuvette, 
             click ABORT."
   image: "electroporation_rescue"
@@ -132,3 +130,10 @@ log
 end
 
 release [timer[0],falcon_tube[0],plasmid[0],iceblock[0],strain[0],alrack[0],cuvette[0]]
+
+step
+  getdata
+    thaw_time_accurate: number, "Is your thaw time accurate or was there an issue while timing?"
+    rescue_time_accurate: number, "Is your rescue time accurate or was there an issue while timing?"
+  end
+end
