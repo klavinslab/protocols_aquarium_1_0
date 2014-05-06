@@ -112,8 +112,8 @@ step
   image: "electroporation_rescue"
   image: "start_timer"
   getdata
-    time_constant: number, "Enter the time constant shown on the electroporator."
-    rescue_time: number, "Enter the number of seconds it took for you to rescue. (i.e. the timer's recorded time)"
+    time_constant: number, "Enter the TIME CONSTANT shown on the electroporator."
+    rescue_time: number, "Enter the number of SECONDS it took for you to RESCUE. (i.e. the timer's recorded time)"
   end
 end
 
@@ -134,7 +134,7 @@ release [timer[0],falcon_tube[0],plasmid[0],iceblock[0],strain[0],alrack[0],cuve
 
 step
   getdata
-    thaw_time_accurate: number, "Is your thaw time accurate or was there an issue while timing?"
-    rescue_time_accurate: number, "Is your rescue time accurate or was there an issue while timing?"
+    thaw_time_accurate: number, "Is your THAW time accurate or was there an issue while timing?"
+    rescue_time_accurate: number, "Is your RESCUE time accurate or was there an issue while timing?"
   end
 end
