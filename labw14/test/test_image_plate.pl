@@ -1,6 +1,7 @@
 argument
-  Transformed_E_coli_Strain_id: sample, "Choose the plate you incubated yesterday"
+  plate_ids: sample arrary, "Choose the plate you incubated yesterday"
 end
+
 
 step
   description: 
@@ -11,7 +12,7 @@ step
 end
 	
 take
-  y = item Transformed_E_coli_Strain_id
+  y = item unique(plate_ids)
 end
 
 step
