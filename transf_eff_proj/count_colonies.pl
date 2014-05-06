@@ -1,44 +1,62 @@
 argument
-  e_coli_strain_id: sample, "Choose the plate you incubated yesterday"
+  Transformed_E_coli_Strain_id: sample, "Choose the plate you incubated yesterday"
 end
 
 step
   description: 
-    "This protocol describes how to take a plate from an incubator and 
-     count number of colonies on the plate." 
+    "This protocol describes how to take a picuture of a plate and count number of colonies on the plate." 
   note: 
     "In this protocol you will use the gel station camera to take a picture
-     of the plate and use software on the plate reader computer to process 
-     the image to get the count of colonies."
+     of the plate and use software or human eye to get colony count on the plate."
 end
-	
+
 take
-  y = item e_coli_strain_id
+  y = item Transformed_E_coli_Strain_id
 end
 
 step
   description: 
-    "Image the plate without the lid"
+    "Put the camera hood on transilluminator"
   note: 
-    "Place the agar part of the plate inverted on the transilluminator.
-     Turn the on camera and transilluminator. Take a picture by centering 
-     around the plate.\n
-     You need to set the camera at manual shooting mode by turning the dial until the 
-     M apppears, zoom in to center around the plate until the whole plate takes up the
-     screen. Then click the flower button and choose macro. Set the shutter speed at 2 seconds,
-     click the button with box on it, move the focus box to the edge of the plate and take
-     the picture by holding the button half way down until you hear two beeps, then press
-     it all the way down to take the picture."
+    "Go the the Gel room, place the agar part of the plate inverted on the transilluminator.
+     Place the camera hood on the transilluminator. Turn on transilluminator by sliding you hand into the hood.\n"
 end
 
 step
   description: 
-    "Put the picture into software and get the count."
+    "Take a picture using the camera and remote shooting software on the computer"
+  check:
+    "Turn on the camera if it is off"
+  check:
+    "Open EOS Utility software on the desktop, and click Camera Settings/Remote Shooting"
+  check:
+    "In the pop up window EOS Rebel T3, make sure the settings are 2'', F4.5, ISO100, Tungsten(light bulb icon), S1."
+  check: 
+    "click Live View shoot and in the pop up Remote Live View Window, click Test shooting"
+  check:
+    "If the Test shooting image looks focused, go back to the EOS Rebel T3 window and click the the black round shutter botton"
+  check:
+    "If the Test shooting image is not focused or the software shows Focus failure, go to the Remote Live View Window, in the focus
+    section, adjust the focus by clicking the <<< << < > >> >>> buttons until the live image looks focused. Then go back to the EOS 
+    Rebel T3 window and click the the black round shutter botton"
+end
+
+
+step
+  description: 
+    "Rename the picture in Dropbox"
   note: 
-    "Wait several seconds for the picture uploading to Dropbox. In the plate reader computer, open Dropbox/GelImages,
+    "Open Dropbox/GelImages,
      under today's date folder and find the picture you just took.\n
-     Open the OpenCFU software, drag the picture into the software and wait for the
-     software to count the colonies"
+     Rename the picture as the plate_id, where id should be replaced with the item number shown on your plate.\n
+     For example, a plate with id 798 should have picture name plate_798."
+end
+
+step
+  description: 
+    "Drag the picture into OpenCFU software and get the count."
+  note: 
+    "Open the OpenCFU software, drag the picture into the software and wait for the software to count the colonies."
 end
 
 step
@@ -57,16 +75,13 @@ step
   description: 
     "Store the plate in 4C fridge."
   note:
-    "Turn off the transillumniator and camera, take the plate from transilluminator, wrap up
-     the plate with parafilm and put it the in the fridge located at D2.100."
+    "Turn off the transillumniator and camera, remove the camera hood, take the plate from transilluminator, wrap up
+     the plate with parafilm and put it the in the Box 0 in deli fridge located at D2.100."
 end
-	
+
 modify
   y[0]
-  location: "D2.100"
+  location: "DFP.0"
   inuse: 0
 end
 
-
-	
-	
