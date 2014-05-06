@@ -134,7 +134,9 @@ release [timer[0],falcon_tube[0],plasmid[0],iceblock[0],strain[0],alrack[0],cuve
 
 step
   getdata
-    thaw_time_accurate: number, "Is your THAW time accurate or was there an issue while timing?"
-    rescue_time_accurate: number, "Is your RESCUE time accurate or was there an issue while timing?"
+    thaw_time_accurate: string, "Is your THAW time accurate? Yes if accurate, No if there was an issue while timing.", ["yes","no"]
+    rescue_time_accurate: string, "Is your RESCUE time accurate? Yes if accurate, No if there was an issue while timing?", ["yes","no"]
+    ecomp_cell_accurate: string, "Did you use the e.comp cells in the box with the pink tape labled 'transformation
+            efficiency only'?", ["yes","no"]
   end
 end
