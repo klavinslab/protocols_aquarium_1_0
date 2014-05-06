@@ -89,7 +89,7 @@ step
   bullet: "Prepare 100 µL and 1000 µL pipette tips."
   bullet: "Loosen cap on the 50 mL LB liquid aliquot (sterile)."
   bullet: "Take the black plastic cuvette holder out of electroporator."
-  bullet: "Clear the timer. You will be using the timer now to record rescue time."
+  bullet: "CLEAR THE TIMER. You will be using the timer now to record rescue time."
 end
     
 step
