@@ -50,7 +50,7 @@ place image
   window: hours(1)
 end
 
-wire (plate,"plate_id") => (image,"e_coli_strain_id")
+wire (plate,"plate_id") => (image,"Transformed_E_coli_Strain_id")
 
 place reimage
   protocol: "transf_eff_proj/count_colonies.pl"
@@ -59,7 +59,7 @@ place reimage
   window: hours(1)
 end
 
-wire (plate,"plate_id") => (reimage,"e_coli_strain_id")
+wire (plate,"plate_id") => (reimage,"Transformed_E_coli_Strain_id")
 
 # forward transitions
 transition [transform] => [plate]    when !error(0) && completed(0) && return_value(0,"tube_incubation_choice") == 0 end
