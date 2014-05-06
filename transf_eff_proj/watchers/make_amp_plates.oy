@@ -7,7 +7,7 @@ place lb
     argument
         n_bottle: 1
         volume: 800
-        add_agar: "No"
+        add_agar: "Yes"
     end
     start: now()
     window: minutes(30)
@@ -17,8 +17,8 @@ end
 place autoclave
     protocol: "transf_eff_proj/watchers/media/autoclave_bacteria_media.pl"
     argument
-        lb_liquid_n: 1
-        lb_agar_800_n: 0
+        lb_liquid_n: 0
+        lb_agar_800_n: 1
         lb_agar_400_n: 0
         lb_agar_200_n: 0
         tb_liquid_n: 0
