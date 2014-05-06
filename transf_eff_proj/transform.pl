@@ -27,21 +27,29 @@ end
 
 step
   description: "Label a 1.5 mL tube"
-  note: "Write 'T' on top of the tube.\n
+  note: "Write 'T.E' on top of the tube, along with your initials and the date.\n
          Place the tube in the tube rack.\n
          This tube will eventually hold the transformed cells."
   image: "label_1_5mL_tube"
 end
 
 step
+  description: "Set up timer."
+  note: "This protocol requires that we time certain actions. You will use a physical timer to record your 
+        electrocompetent cell thaw time and your transformation rescue time"
+  bullet: "Press clear to clear all rows to 00:00"
+  bullet: "When asked to start the timer, you'll press the number 3."
+  bullet: "To stop the timer, press 3 again."
+  image: "timer"
+end
+
+step
   description: "Handling Electrocompetent Cells and Electrocuvette"
   note: "You will next retrieve a styrofoam ice block, an aluminum tube rack, 
-         the electrocompetent cells and a cuvette.\n
-         Place the tube of cells in the aluminum tube rack on top of the ice block."
-  bullet: "Once you click the next button, this protocol will begin recording the thaw time of the 
-          electrocompetent cells"
-  bullet: "Once you click next, do not dilly dally. Go straight to the freezer to collect your items and 
-        return immediately"
+         the electrocompetent cells and a cuvette."
+  bullet: "Take the timer with you. You will start the timer when you remove the 
+          electrocompetent cells from the freezer to record thaw time."
+  bullet: "Place the tube of cells in the aluminum tube rack on top of the ice block."
   warning: "The cuvette should be touching the ice block to keep it cool."
   image: "handle_electrocompetent_cells"
 end
@@ -51,8 +59,7 @@ take
   alrack = 1 "Aluminum Tube Rack"
   cuvette = 1 "Clean Electrocuvette"
   strain = 1 e_coli_strain_id
-  note: "Quickly, take the items. Once you've taken the items return to your bench immediately and click next. 
-  Electrocompetent cell thaw time is being recorded."
+  note: "Start the timer when you remove the e.comp cells from the freezer to begin recording thaw time."
 end 
 
 step
@@ -60,12 +67,11 @@ step
   note:  "Wait until the cells have thawed to a slushy consistency that can be pipetted out."
   warning: "Do not wait too long! Transformation efficiency  
         depends on keeping electrocompetent cells ice-cold until electroporation."
-  bullet: "Only click next when your cells have thawed. This will end the thaw recording time."
   image: "thawed_electrocompotent_cells"
 end
 
 step
-  description: "Immediately Pipette 2 µL plasmid into the electrocompetent cells tube"
+  description: "Pipette 2 µL plasmid into the electrocompetent cells tube"
   note: "Swirl the tip gently in the culture to mix. Put back on the aluminum rack after mixing."
   warning: "Vortex the plasmid stock before pipetting into the electrocompetent cells"
   image: "pipette_plasmid_into_electrocompotent_cells"
