@@ -14,7 +14,7 @@ place transform
   group: "technicians"
   marked: true
   start: now()
-  window: minutes(30)
+  window: hours(20)
 end
 
 place plate
