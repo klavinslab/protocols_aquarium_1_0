@@ -51,7 +51,7 @@ step
           electrocompetent cells from the freezer to record thaw time."
   bullet: "Place the tube of cells in the aluminum tube rack on top of the ice block."
   warning: "The cuvette should be touching the ice block to keep it cool."
-  image: "handle_electrocompetent_cells"
+  image: "handle_electrocompetent_cells_timer"
   image: "start_timer"
 end
 
