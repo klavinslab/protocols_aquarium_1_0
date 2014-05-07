@@ -1,7 +1,14 @@
+tech = "technicians"
+
 argument
   plasmid_id: sample, "The plasmid stock with which to transform"
   e_coli_strain_id: object, "The electrocompetent stock to be transformed"
   plate_type: object, "The plate on which the transformed cells to be plated"
+  technician: string, "username of the technician. if empty, defaults to 'technicians' group."
+end
+
+if length(technician) > 0
+  tech = technician
 end
 
 place transform
@@ -11,7 +18,7 @@ place transform
     e_coli_strain_id: e_coli_strain_id
     plate_type: plate_type
   end
-  group: "technicians"
+  group: tech
   marked: true
   start: now()
   window: hours(20)
@@ -23,7 +30,7 @@ place plate
     volume: 200
     plate_type: plate_type
   end
-  group: "technicians"
+  group: tech
   start: now()
   window: minutes(1)
 end
@@ -35,7 +42,7 @@ place incubate
   argument
     temp: 37
   end
-  group: "technicians"
+  group: tech
   start: now()
   window: minutes(1)
 end
@@ -44,7 +51,7 @@ wire (plate,"plate_id") => (incubate,"e_coli_strain_id")
 
 place image
   protocol: "transf_eff_proj/count_colonies.pl"
-  group: "technicians"
+  group: tech
   start: hours(20)
   #start: now()
   window: hours(1)
@@ -54,7 +61,7 @@ wire (plate,"plate_id") => (image,"Transformed_E_coli_Strain_id")
 
 place reimage
   protocol: "transf_eff_proj/count_colonies.pl"
-  group: "technicians"
+  group: tech
   start: now()
   window: hours(1)
 end
