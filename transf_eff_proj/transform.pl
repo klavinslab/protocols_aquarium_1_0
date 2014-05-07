@@ -73,7 +73,8 @@ end
 
 step
   description: "Pipette 2 µL plasmid into the electrocompetent cells tube"
-  bullet: "Vortex the plasmid stock before pipetting into the electrocompetent cells"
+  bullet: "Vortex the plasmid stock, and then centrifuge with another 1.5 mL tube to balance
+          before pipetting into the electrocompetent cells"
   bullet: "Stop the timer when you are ready to pipette"
   bullet: "Swirl the tip gently in the culture to mix. Put back on the aluminum rack after mixing."
   getdata
