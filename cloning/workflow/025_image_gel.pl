@@ -38,31 +38,21 @@ step
 end
 
 step
-  description: "Turn on the camera"
-  note: "The camera is turned on by pressing the power button once."
-end
-
-step
-  description: "Adjust camera settings"
-  note: "The camera settings must be properly adjusted for gel photography if they are not already."
-  bullet: "Turn the large dial to manual (M)"
-  bullet: "Switch the camera to macro mode by pressing the button with a flower and
-  rotating the menu wheel to the flower icon."
-  bullet: "Set the ISO to 100 by turning the larger dial"
-  bullet: "Set the white balance to tungsten by pressing the center button and navigating to tungsten."
-  bullet: "Set the shutter speed to 4 seconds by turning the menu wheel."
+  description: "Set up the camera software"
+  note: "Check off any of the steps below if they've already been done."
+  check: "Open up the EOS REBEL T3 program."
+  check: "Click 'Live View Shoot' to open up the 'Remote Live View window'."
+  bullet: "The camera should have these settings:\n2\" exposure\nF4.5\n100 ISO\nS1"
+  image: "gel_image_eos_rebel_t3_and_remote_live_view"
 end
 
 step
   description: "Take a picture of the gel."
-  note: "Zoom in such that the gel takes up the entire field of view."
-  note: "Press the trigger half way to focus and all the way down to take the photo. Leave the camera on
+  check: "Adjust the gel so that it takes up the entire field of view. Zoom in or out if necessary."
+  check: "Click the trigger button on the EOS REBEL T3 window."
   as it takes time to transmit the photo to the computer wirelessly"
-end
-
-step
-  description: "Rename the picture in Dropbox"
-  note: "In gel room touch screen computer, open Dropbox/GelImages, under today's date folder and find the picture you just took.\nIf the image is not in the Dropbox, you can manually retrieve the images using a USB cord."
+  check: "Identify the name of the file by looking at the Quick Preview window - it should be something similar to IMG_0002_1.JPG"
+  image: "gel_image_take_picture"
   getdata
     gel_name: string, "Enter the filename of the gel image"
   end
