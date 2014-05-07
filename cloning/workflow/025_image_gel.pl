@@ -50,7 +50,6 @@ step
   description: "Take a picture of the gel."
   check: "Adjust the gel so that it takes up the entire field of view. Zoom in or out if necessary."
   check: "Click the trigger button on the EOS REBEL T3 window."
-  as it takes time to transmit the photo to the computer wirelessly"
   check: "Identify the name of the file by looking at the Quick Preview window - it should be something similar to IMG_0002_1.JPG"
   image: "gel_image_take_picture"
   getdata
