@@ -42,7 +42,7 @@ step
   note: "Check off any of the steps below if they've already been done."
   check: "Open up the EOS REBEL T3 program."
   check: "Click 'Live View Shoot' to open up the 'Remote Live View window'."
-  bullet: "The camera should have these settings:\n2\" exposure\nF4.5\n100 ISO\nS1"
+  bullet: "The camera should have these settings:\n2\ second exposure\nF4.5\n100 ISO\nS1"
   image: "gel_image_eos_rebel_t3_and_remote_live_view"
 end
 
