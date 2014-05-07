@@ -1,14 +1,9 @@
-tech = "technicians"
 
 argument
   plasmid_id: sample, "The plasmid stock with which to transform"
   e_coli_strain_id: object, "The electrocompetent stock to be transformed"
   plate_type: object, "The plate on which the transformed cells to be plated"
-  technician: string, "username of the technician. if empty, defaults to 'technicians' group."
-end
-
-if length(technician) > 0
-  tech = technician
+  tech: string, "username of the technician or the group"
 end
 
 place transform
