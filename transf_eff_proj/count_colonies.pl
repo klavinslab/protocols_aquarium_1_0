@@ -44,7 +44,7 @@ end
 
 step
   description: 
-    "Rename the picture in Dropbox"
+    "IMPORTANT: Rename the picture in Dropbox"
   note: 
     "Open Dropbox/GelImages,
      under today's date folder and find the picture you just took.\n
@@ -61,11 +61,14 @@ end
 
 step
   description: 
-    "Record the count."
-  note:
+    "Record the count. Screenshot the image of counted cells."
+  bullet:
     "If the software recognizes the coloines correctly and give a reasonbale count, record
      that number below. If not, count the number of colonies by dividing up the plate in
      four regions, get the count in each region and sum up as the final count." 
+  bullet: "Take a screenshot of the final image with colonies circled by the software and save 
+     it in the same dropbox folder as the plate's original image. Save it as plate_id_count.
+     I.e if the plate had id 798 save it as plate_798_count."
   getdata
     count: number, "Enter the count."
   end
