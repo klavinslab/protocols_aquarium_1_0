@@ -36,3 +36,30 @@ function ha_get(list,key,value)
   return h
 
 end
+
+#############################################################################################
+# Producing multiple samples silently
+#
+
+function produce_multiple(container,sample_names)
+
+  # Produces a new item for each sample name and returns the resulting items in an array
+  #
+  # For example, produce_multiple("Primer Aliquot",["P1","P2"])
+
+  local result = []
+  local p
+
+  foreach name in sample_names
+
+    produce silently 
+      i = 1 container of name
+    end
+
+    result = append(result,i)
+
+  end
+
+  return result
+
+end
