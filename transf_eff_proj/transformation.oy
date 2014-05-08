@@ -47,9 +47,9 @@ wire (plate,"plate_id") => (incubate,"e_coli_strain_id")
 place image
   protocol: "transf_eff_proj/count_colonies.pl"
   group: tech
-  start: hours(20)
+  start: hours(19)
   #start: now()
-  window: hours(1)
+  window: hours(4)
 end
 
 wire (plate,"plate_id") => (image,"Transformed_E_coli_Strain_id")
