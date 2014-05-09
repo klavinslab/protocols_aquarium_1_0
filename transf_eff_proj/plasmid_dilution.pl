@@ -19,9 +19,19 @@ end
 
 begin_conc = plasmid[0][:data][:concentration]
 
+if begin_conc == 0 
+  step 
+    description: "Go to nanodrop to measure concentration of the plasmid stock"
+    getdata
+        input_conc: number, "Enter the concentration (a number without units) here"
+    end
+end
+
+begin_cocn = input_conc
+
 step
   description:
-    "Lable a 1.5 mL tube %{begin_conc}."
+    "Lable a 1.5 mL tube."
   note:
     "Write 'D' on top of the tube."
 end
