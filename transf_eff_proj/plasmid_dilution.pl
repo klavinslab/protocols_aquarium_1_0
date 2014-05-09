@@ -17,11 +17,11 @@ else
 volume = aliquot * count
 end
 
-#begin_conc = plasmid[:concentration]
+begin_conc = plasmid[:data][:concentration]
 
 step
   description:
-    "Lable a 1.5 mL tube %{plasmid}."
+    "Lable a 1.5 mL tube %{begin_conc}."
   note:
     "Write 'D' on top of the tube."
 end
