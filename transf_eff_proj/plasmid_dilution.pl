@@ -31,7 +31,7 @@ end
 
 step
   description:
-    "Lable a 1.5 mL tube."
+    "Lable a 1.5 mL tube.  conc is %{begin_conc}"
   note:
     "Write 'D' on top of the tube."
 end
