@@ -17,7 +17,7 @@ else
 volume = aliquot * count
 end
 
-begin_conc = plasmid[:data][:concentration]
+begin_conc = plasmid[:data]
 
 step
   description:
