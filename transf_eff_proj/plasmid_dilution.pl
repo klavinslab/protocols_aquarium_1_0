@@ -25,6 +25,7 @@ if begin_conc == 0
     getdata
         input_conc: number, "Enter the concentration (a number without units) here"
     end
+  end
 end
 
 begin_cocn = input_conc
