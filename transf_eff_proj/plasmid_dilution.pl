@@ -17,7 +17,7 @@ else
 volume = aliquot * count
 end
 
-begin_conc = info(plasmid)[:id]
+begin_conc = plasmid[:id]
 
 step
   description:
