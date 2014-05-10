@@ -118,4 +118,8 @@ while x < y
   x = x+1
 end
 
+step
+  description: "Go to B9 and nanodrop all of the plasmid stocks created. Record the concentrations on the side of the tubes."
+end
+
 release overnight
