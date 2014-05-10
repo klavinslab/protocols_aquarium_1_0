@@ -121,5 +121,9 @@ count=0
   count=count+1
 end
 
+step
+  description: "Go to B9 and nanodrop all of the fragment stocks created. Record the concentrations on the side of the tubes. If the concentration of the stock is less than 10ng/µl discard the stock and delete the item from the inventory"
+end
+
 
 release(slices)
