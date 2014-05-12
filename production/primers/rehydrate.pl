@@ -37,19 +37,41 @@ n = 0
 
 while n < length(primers)
 
+  p = to_string(primers[n][:id]) + "(" + to_string(primers[n][:name]) + ")"
+  s = stocks[n][:id]
+  a = aliquots[n][:id]
+
   step
-    description: "Set up for primer " + to_string(primers[n][:id])
-    check: "Stock: Label the tube with primer " + to_string(primers[n][:id]) + " with the item number " + to_string(stocks[n][:id])
-    check: "Aliquot: Label a new 1.5 mL tube with the item number " + to_string(aliquots[n][:id])
+    description: "Set up for primer %{p}"
+    check: "Stock: Label the tube with primer %{p} with the item number %{s}."
+    check: "Aliquot: Label a new 1.5 mL tube with the item number %{a}."
     getdata
-      mass: number, "Enter the number of nanomoles of DNA in the tube"
+      mass: number, "Enter the number of nanomoles (nm) of DNA in the tube"
     end
   end
 
+  te = 10*mass
+
   step
-    description: "Make stock
+    description: "Make stock and aliquot for %{p}."
+    check: "Spin tube %{s} for 10 seconds."
+    check: "Transfer %{te} &micro;L of TE to tube %{s}"
+    check: "Vortex tube %{s} for 20 seconds, then spin it down for 10 seconds."
+    check: "Transfer 10 &micro;L from stock tube %{s} to aliquot tube %{a}."
+    check: "Transfer 90 &micro;L of to aliquot tube %{a} and mix with the pipettor."
   end
 
   n = n + 1
 
+end
+
+step
+  description: "Store sample items."
+  table: concat(
+    [ [ "Item Id", "Location" ] ],
+    transpose([ 
+      concat(ha_select(stocks,:id),ha_select(aliquots,:id)), 
+      concat(ha_select(stocks,:location),ha_select(aliquots,:location)) 
+    ])
+  )
 end
