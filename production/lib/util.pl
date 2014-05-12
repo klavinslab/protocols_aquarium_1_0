@@ -38,7 +38,7 @@ function ha_get(list,key,value)
 end
 
 #############################################################################################
-# Producing multiple samples silently
+# Producing 
 #
 
 function produce_multiple(container,sample_names)
