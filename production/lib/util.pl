@@ -1,4 +1,21 @@
 #########################################################################################
+# Arrays
+#
+
+function array_same ( x, n )
+
+  # builds an array of length n with all elements equal to x
+  #
+  # For example, array_same(0,3) returns [ 0, 0, 0 ]
+
+  if n == 1
+    return [ x ]
+  else
+    return concat ( [ x ], array_same ( x, n-1 ) )
+  end 
+end
+
+#########################################################################################
 # Arrays of hashes
 #
 

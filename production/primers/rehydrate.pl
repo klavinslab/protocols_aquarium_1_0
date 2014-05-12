@@ -81,14 +81,6 @@ step
   bullet: "Vortex tube for 20 seconds to mix and and then spin it down for 10 seconds."
 end
 
-function array_same ( x, n )
-  if n == 1
-    return [ x ]
-  else
-    return concat ( [ x ], array_same ( x, n-1 ) )
-  end 
-end
-
 step
   description: "Make first aliquots"
   table: concat(
