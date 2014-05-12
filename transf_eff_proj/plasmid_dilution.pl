@@ -26,7 +26,7 @@ if !begin_conc
         input_conc: number, "Enter the concentration (a number without units) here"
     end
   end
-  begin_cocn = input_conc
+  begin_conc = input_conc
 end
 
 step
