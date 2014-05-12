@@ -18,9 +18,10 @@ volume = aliquot * count
 end
 
 begin_conc = plasmid[0][:data][:concentration]
-#input_conc = 0
+input_conc = 0
 
 if !begin_conc
+  begin_conc = 0
   step 
     description: "Go to nanodrop to measure concentration of the plasmid stock"
     getdata
