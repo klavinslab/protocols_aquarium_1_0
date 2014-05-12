@@ -19,7 +19,7 @@ end
 
 begin_conc = plasmid[0][:data][:concentration]
 
-if begin_conc == []
+if begin_conc
   step 
     description: "Go to nanodrop to measure concentration of the plasmid stock"
     getdata
