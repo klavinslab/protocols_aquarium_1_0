@@ -38,7 +38,7 @@ end
 
 step
   description:
-    "Test page conc is %{begin_conc} and input conc is %{input_conc}"
+    "Test page begin_conc is %{begin_conc}; input_conc is %{input_conc}; volume_of_plasmid is %{volume_of_plasmid};"
 end
 
 step
