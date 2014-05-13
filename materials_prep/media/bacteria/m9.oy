@@ -16,7 +16,7 @@ end
 
 place autoclave
   protocol: base_path+"m9_autoclave.pl"
-  group: "mediabay"
+  group: "technicians"
   marked: true
   start: now()
   window: days(1)
@@ -29,7 +29,7 @@ place makeM9
     cellobiose_percent: cellobiose_percent
     biotin: biotin
   end
-  group: "mediabay"
+  group: "technicians"
   marked: false
   start: minutes(100)
   window: days(1)
