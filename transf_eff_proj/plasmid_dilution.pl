@@ -38,30 +38,26 @@ end
 
 step
   description:
-    "Lable a 1.5 mL tube.  conc is %{begin_conc} and input conc is %{input_conc}"
-  note:
-    "Write 'D' on top of the tube."
+    "Test page conc is %{begin_conc} and input conc is %{input_conc}"
 end
 
 step
-  description:
+  description: "Make diluted stock of plasmid"
+  check: 
+    "Lable a 1.5 mL tube. Write 'D' on top of the tube."
+  check:
     "Add %{volume} µL of TE into tube D."
-end
-
-step
-  description:
+  check:
     "Add %{volume_of_plasmid}µL of plasmid stock %{plasmid_id} to make the final concentration to be %{final_conc} ng/µL."
 end
 
 step
-  description: 
+  description: "Aliquot into %{count} tubes"
+  check:
     "Take out %{count} 1.5 mL tubes"
-  note: 
-    "Add %{aliquot} µL of diluted plasmid from tube D to each tube."
-end
-
-step
-  description:
+  check:
+    "Aliquot %{aliquot} µL from tube D to each tube."
+  check:
     "Throw out the tube D"
 end
 
