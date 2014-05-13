@@ -66,6 +66,9 @@ produce
     concentration: final_conc
     unit: "ng/µL"
   end
+  note: "Write this ID number on the top of one of the remaining aliquot tubes."
+  note: "Move all aliquots to the below location in the box labled 'Transformation Efficiency' when done labeling"
+  location: "B1.165"
 end
 x = x + 1
 end
