@@ -32,6 +32,11 @@ take
 end
 
 step
+  description: "Take the sterile 'M9 salts' from the autoclave"
+  note: "if you missed the note from the last step, get the bottle labeled 'M9 salts' from the autoclave"
+end
+
+step
   description: "Let water and M9 salts cool"
   note: "Press next once the water and M9 salts have cooled below 50 C (not painful to hold)"
   note: "While you wait, relabel the bottle labeled 'M9 salts' to '%{label}'"
@@ -45,7 +50,7 @@ end
 
 step
   description: "Add 100X MgSO4 CaCl2 solution"
-	note: "Using a serological pipette, add 4 mL of 100x MgSO4 CaCl2 solution."
+	note: "Using a serological pipette, add 10 mL of 100x MgSO4 CaCl2 solution."
 end
 
 
@@ -65,8 +70,7 @@ if cellobiose_percent > 0
   take
     cb = 1 "4%% Sterile Filtered Cellobiose"
   end
-  # c1v1 = c2v2 -> v1 = c2v2/c1
-  cellobiose_volume = (cellobiose_percent / 100.0) * 400.0 / 4.0
+  cellobiose_volume = (cellobiose_percent / 4.0) * 1000.0
   step
     description: "Add cellobiose"
     note: "Using the serological pipette, add %{cellobiose_volume} mL of 4%% cellobiose."
@@ -79,7 +83,7 @@ if glucose_percent > 0
   take
     dextrose = 1 "20%% Dextrose Solution (sterile)"
   end
-  glucose_volume = (glucose_percent / 100.0) * 1000.0 / 20.0
+  glucose_volume = (glucose_percent/20.0 ) * 1000.0 
   step
     description: "Add dextrose"
 		note: "Using the serological pipette, add %{glucose_volume} mL of 20%% Dextrose."
