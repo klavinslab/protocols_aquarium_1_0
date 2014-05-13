@@ -25,6 +25,7 @@ end
 wire (autoclave,"water") =>(makeM9,"w")
 
 place makeM9
+  protocol: base_path+"m9_liquid.pl"
   argument
     glucose_percent: glucose_percent
     cellobiose_percent: cellobiose_percent
