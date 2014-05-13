@@ -43,7 +43,7 @@ step
   check:
     "Add %{volume} µL of TE into tube D."
   check:
-    "Add %{volume_of_plasmid}µL of plasmid stock %{plasmid_id} to make the final concentration to be %{final_conc} ng/µL. (Truncate this number to one decimal point.)"
+    "Add %{volume_of_plasmid}µL of plasmid stock %{plasmid_id} to make the final concentration to be %{final_conc} ng/µL."
   check:
     "Mix the contents of the tube by using the Vortexer."
 end
@@ -66,7 +66,6 @@ produce
     concentration: final_conc
     unit: "ng/µL"
   end
-  note: "Write this ID number on the top of one of the remaining aliquot tubes."
   note: "Move all aliquots to the below location in the box labled 'Transformation Efficiency' when done labeling"
   location: "B1.165"
 end
