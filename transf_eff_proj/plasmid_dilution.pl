@@ -50,12 +50,12 @@ end
 
 step
   description:
-    "Add %{volume_of_plasmid} of plasmid stock %{plasmid_id} to make the final concentration to be %{final_conc} ng/µL."
+    "Add %{volume_of_plasmid}µL of plasmid stock %{plasmid_id} to make the final concentration to be %{final_conc} ng/µL."
 end
 
 step
   description: 
-    "Take out %{count} 1.5 mL tube"
+    "Take out %{count} 1.5 mL tubes"
   note: 
     "Add %{aliquot} µL of diluted plasmid from tube D to each tube."
 end
