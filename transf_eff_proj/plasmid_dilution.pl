@@ -31,7 +31,7 @@ if !begin_conc
 end
 
 if input_conc != 0
-  volume_of_plasmid = volume * final_conc / input_conc
+  volume_of_plasmid = 1.0 * volume * final_conc / input_conc
 else 
   volume_of_plasmid = volume * final_conc / begin_conc
 end
