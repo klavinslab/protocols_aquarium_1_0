@@ -1,0 +1,40 @@
+# M9 media 1L protocol.
+
+#1) autoclave the salts and some water
+#2) mix and produce the M9
+
+base_path = "materials_prep/media/bacteria/"
+
+
+argument
+  glucose_percent: number, "The percentage of glucose in the final product. If 0, none will be added. The standard is 2."
+  cellobiose_percent: number, "The percentage of cellobiose in the final product. If 0, none will be added."
+  biotin: string, "Add biotin? (Yes or No)."
+end
+
+
+
+place autoclave
+  protocol: base_path+"m9_autoclave.pl"
+  group: "mediabay"
+  marked: true
+  start: now()
+  window: days(1)
+end
+
+wire (autoclave,"water") =>(makeM9,"w")
+
+place makeM9
+  argument
+    glucose_percent: glucose_percent
+    cellobiose_percent: cellobiose_percent
+    biotin: biotin
+  end
+  group: "mediabay"
+  marked: true
+  start: minutes(100)
+  window: days(1)
+end
+
+transition[autoclave] => [makeM9] when !error(0) && completed(0) end
+transition[makeM9] => [] when !error(0) && completed(0) end
