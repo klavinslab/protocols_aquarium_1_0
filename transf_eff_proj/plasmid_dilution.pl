@@ -43,7 +43,7 @@ step
   check:
     "Add %{volume} µL of TE into tube D."
   check:
-    "Add %{volume_of_plasmid}µL of plasmid stock %{plasmid_id} to make the final concentration to be %{final_conc} ng/µL."
+    "Add %{volume_of_plasmid}µL of plasmid stock %{plasmid_id} to make the final concentration to be %{final_conc} ng/µL. (Truncate this to one digit after the decimal point.)"
   check:
     "Mix the contents of the tube by using the Vortexer."
 end
