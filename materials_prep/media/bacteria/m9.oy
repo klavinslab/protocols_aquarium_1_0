@@ -30,7 +30,7 @@ place makeM9
     biotin: biotin
   end
   group: "mediabay"
-  marked: true
+  marked: false
   start: minutes(100)
   window: days(1)
 end
