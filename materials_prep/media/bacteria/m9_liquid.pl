@@ -106,7 +106,7 @@ end
 
 
 step
-  description "Put the away the water bottle"
+  description: "Put away the water bottle"
   note: "empty the remaining sterile water down the sink, remove any labels, and place on the bottle drying rack"
 end
 
