@@ -28,12 +28,13 @@ if !begin_conc
         input_conc: number, "Enter the concentration (a number without units) here"
     end
   end
+end
+
+if input_conc != 0
   volume_of_plasmid = volume * final_conc / input_conc
 else 
   volume_of_plasmid = volume * final_conc / begin_conc
 end
-
-
 
 step
   description:
