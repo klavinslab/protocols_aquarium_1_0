@@ -17,9 +17,9 @@ else
 volume = aliquot * count
 end
 
-begin_conc = 0
 begin_conc = plasmid[0][:data][:concentration]
 input_conc = 0
+volume_of_plasmid = 0
 
 if !begin_conc
   step 
@@ -28,12 +28,16 @@ if !begin_conc
         input_conc: number, "Enter the concentration (a number without units) here"
     end
   end
-  begin_conc = input_conc
+  volume_of_plasmid = volume * final_conc / input_conc
+else 
+  volume_of_plasmid = volume * final_conc / begin_conc
 end
+
+
 
 step
   description:
-    "Lable a 1.5 mL tube.  conc is %{begin_conc1} and input conc is %{input_conc}"
+    "Lable a 1.5 mL tube.  conc is %{begin_conc} and input conc is %{input_conc}"
   note:
     "Write 'D' on top of the tube."
 end
@@ -45,7 +49,7 @@ end
 
 step
   description:
-    "Add calculated volume of plasmid stock to make the final concentration to be %{final_conc} ng/µL."
+    "Add %{volume_of_plasmid} of plasmid stock %{plasmid_id} to make the final concentration to be %{final_conc} ng/µL."
 end
 
 step
