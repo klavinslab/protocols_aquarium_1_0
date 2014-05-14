@@ -76,7 +76,7 @@ if antibiotic == "Amp"
   antibiotic_name = "100X 1 mL Ampicillin Aliquot"
   antibiotic_volume = volume / 100.0
   antibiotic_number = antibiotic_volume * n
-  product_name = "LB Amp Plate (sterile)"
+  product_name = "Trans Eff LB Amp Plate (sterile)"
 elsif antibiotic == "Kan"
   antibiotic_name = "200X 1 mL Kanamycin Aliquot"
   antibiotic_volume = volume / 200.0
@@ -236,13 +236,13 @@ if antibiotic == "None"
   produce
     n_poured product_name
     release poured_plates
-    location: "A1.110"
+    location: "A1.110.R1.300"
   end
 else
   produce
     n_poured product_name
     release poured_plates
-    location: "A1.110"
+    location: "A1.110.R1.300"
   end
   release antibiotic_aliquots
 end
