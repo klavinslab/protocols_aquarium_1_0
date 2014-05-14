@@ -30,6 +30,13 @@ if media_type == "LB Amp Plate (sterile)"
   end
 end
 
+if media_type == "Trans Eff LB Amp Plate (sterile)"
+  step
+    description: "Move the plates to the Refrigerator R1, located at B0.110. Bacteria plates are on the second shelf from the top."
+    note: "Move the plates to the row labeled ' Trans Eff LB + Amp', putting them behind the older stack(s) of plates."
+  end
+end
+
 if media_type == "LB Kan Plate (sterile)"
   step
     description: "Move the plates to the Refridgerator R1, located at B0.110. Bacteria plates are on the second shelf from the top."
