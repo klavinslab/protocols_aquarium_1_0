@@ -3,7 +3,8 @@ information "This protocol describes how to move bacteria plates from the yeast 
 step
   description: "Choose the type of bacteria plates you are moving."
   getdata
-    media_type: string, "Media Types:", ["LB Amp Plate (sterile)",
+    media_type: string, "Media Types:", ["Trans Eff LB Amp Plate (sterile)",
+                                         "LB Amp Plate (sterile)",
                                          "LB Kan Plate (sterile)",
                                          "LB Chlor Plate (sterile)",
                                          "LB plus Amp plus Chlor",
@@ -32,7 +33,7 @@ end
 
 if media_type == "Trans Eff LB Amp Plate (sterile)"
   step
-    description: "Move the plates to the Refrigerator R1, located at B0.110. Bacteria plates are on the second shelf from the top."
+    description: "Move the plates to the Refrigerator R1, located at B0.110. Bacteria plates are on the third shelf from the top."
     note: "Move the plates to the row labeled ' Trans Eff LB + Amp', putting them behind the older stack(s) of plates."
   end
 end
@@ -58,5 +59,5 @@ end
 
 modify
   produced_plates
-  location: "B0.110"
+  location: "B0.110.R1.300"
 end
