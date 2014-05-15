@@ -20,6 +20,13 @@ end
 ########## SETUP #########################
 
 num_samples = length(shocked_cells)
+#work around for no assignment or while in side of steps
+samp_ind = []
+ii = 0
+while ii<num_samples
+  samp_ind = append(samp_ind,ii)
+  ii=ii+1
+end
 
 ##################### Begin PROTOCOL ##################3
 
@@ -50,15 +57,13 @@ step
 end
   
 ii = 0
-while ii < num_samples
-cur_sample = cells[ii][:id]
-cur_tube = ii + 1
 
-  step
-    description: "Transfer sample %{cur_sample} into a prechilled 1.5 mL centrifuge tube."
-    note: "Put the sample into the 1.5 mL tube labelled %{cur_tube} using your Pipettor P1000 (100-1000 µL pipettor)."
+step
+  description: "Transfer cells into a prechilled 1.5 mL centrifuge tube."
+  note: "using the P1000:"
+  foreach ii in samp_ind
+    check: "Transfer cells from tube " + to_string(cells[ii][:id]) + " into the 1.5 mL tube labelled " + to_string(ii+1) + "."
   end
-  ii = ii + 1
 end
 
 ###### SECOND CENTRIFUGE SEQUENCE#### 
@@ -99,6 +104,11 @@ end
 
 step
   description: "Resuspend each cell pellet in 200 µL of sterile cold molecular grade water and keep it cool."
+end
+
+step
+  warning: "HERE!"
+
 end
 
 ######### make the aliquots ############
