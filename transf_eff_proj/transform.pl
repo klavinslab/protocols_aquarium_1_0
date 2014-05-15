@@ -7,7 +7,7 @@ argument
 end
 
 tube_incubation_choice = 1
-if plate_type == "LB Amp Plate (sterile)"
+if( (plate_type == "LB Amp Plate (sterile)") && (plate_type == "Trans Eff LB Amp Plate (sterile)"))
   tube_incubation_choice = 0
 end
 
