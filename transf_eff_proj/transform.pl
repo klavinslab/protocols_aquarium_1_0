@@ -7,7 +7,7 @@ argument
 end
 
 tube_incubation_choice = 1
-if plate_type == "LB Amp Plate (sterile)"
+if( (plate_type == "LB Amp Plate (sterile)") || (plate_type == "Trans Eff LB Amp Plate (sterile)"))
   tube_incubation_choice = 0
 end
 
@@ -137,7 +137,7 @@ step
   getdata
     thaw_time_accurate: string, "Is your THAW time accurate? Yes if accurate, No if there was an issue while timing.", ["yes","no"]
     rescue_time_accurate: string, "Is your RESCUE time accurate? Yes if accurate, No if there was an issue while timing?", ["yes","no"]
-    ecomp_cell_accurate: string, "Did you use the e.comp cells in the box with the pink tape labled 'transformation
-            efficiency only'?", ["yes","no"]
+    ecomp_cell_accurate: string, "Did you use the MG1655 e.comp cells in the box with the pink tape labled 'transformation
+            efficiency only'? (Answer no if you used DH5alpha cells or e.comp cells from any other box)", ["yes","no"]
   end
 end

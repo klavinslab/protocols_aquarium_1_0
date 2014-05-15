@@ -37,18 +37,15 @@ else
 end
 
 step
-  description:
-    "Test page begin_conc is %{begin_conc}; input_conc is %{input_conc}; volume_of_plasmid is %{volume_of_plasmid};"
-end
-
-step
   description: "Make diluted stock of plasmid"
   check: 
     "Lable a 1.5 mL tube. Write 'D' on top of the tube."
   check:
     "Add %{volume} µL of TE into tube D."
   check:
-    "Add %{volume_of_plasmid}µL of plasmid stock %{plasmid_id} to make the final concentration to be %{final_conc} ng/µL."
+    "Add %{volume_of_plasmid}µL of plasmid stock %{plasmid_id} to make the final concentration to be %{final_conc} ng/µL. (Truncate this to one digit after the decimal point.)"
+  check:
+    "Mix the contents of the tube by using the Vortexer."
 end
 
 step
@@ -64,11 +61,13 @@ end
 x = 0
 while x < count
 produce
-  r = 1 "Plasmid Stock" from plasmid[0]
+  r = 1 "Plasmid Aliquot" from plasmid[0]
   data
     concentration: final_conc
     unit: "ng/µL"
   end
+  note: "Move all aliquots to the below location in the box labled 'Transformation Efficiency' when done labeling"
+  location: "B1.165"
 end
 x = x + 1
 end
