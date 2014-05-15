@@ -1,9 +1,3 @@
-#
-# Author: Patrick Ma
-# 2.17.2014
-#
-# A parallel version of the quick_comp protocol
-
 BIG_CENTRIFUGE_SIZE = 8	# The max number of 50mL tubes the centrifuge can hold safely
 SMALL__CENTRIFUGE_SIZE = 20	# max number of 1.5mL tubes the centrifuge can hold safely
 
