@@ -13,11 +13,7 @@ take
 end
 take
     forward_primer_stock = item unique(forward_ids)
-end
-take
     reverse_primer_stock = item unique(reverse_ids)
-end
-take
     plasmid_stock = item unique(template_ids)
 end
 
@@ -109,10 +105,11 @@ step
   image: "thermal_cycler_home"
 end
 
-release [phusion_stock[0]]
-release forward_primer_stock
-release reverse_primer_stock
-release plasmid_stock
+release phusion_stock
+#release forward_primer_stock
+#release reverse_primer_stock
+#release plasmid_stock
+release append(append(forward_primer_stock,reverse_primer_stock),plasmid_stock)
 
 x=0
 while x < y
