@@ -109,7 +109,7 @@ release phusion_stock
 #release forward_primer_stock
 #release reverse_primer_stock
 #release plasmid_stock
-release append(append(forward_primer_stock,reverse_primer_stock),plasmid_stock)
+release concat(concat(forward_primer_stock,reverse_primer_stock),plasmid_stock)
 
 x=0
 while x < y
