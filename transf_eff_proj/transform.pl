@@ -134,7 +134,7 @@ end
 release [timer[0],falcon_tube[0],plasmid[0],iceblock[0],strain[0],alrack[0],cuvette[0]]
 
 step
-  description "Is there any reason to discard the data from this protocol?"
+  description: "Is there any reason to discard the data from this protocol?"
   bullet: "1 - comp cells used were not from the DH5alpha Transformation Efficiency batch"
   bullet: "2 - the THAW time is not accurate"
   bullet: "3 - the RESCUE time is not accurate"
