@@ -70,6 +70,10 @@ end
 
 
 # Usage differences between the autoclaves
+check_autoclave = ""
+open_autoclave = ""
+set_autoclave = ""
+finished_indicator = ""
 if autoclave == "A1"
   check_autoclave = "Check that the low water indicator is not flashing. Refill the reservoir if the water is low."
   open_autoclave = "Close the autoclave door until it latches, pull the screw handle over to the front of the autoclave (unscrew if necessary), and rotate it clockwise until it is tight."
