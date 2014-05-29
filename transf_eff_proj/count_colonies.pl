@@ -86,11 +86,10 @@ end
 
 step
   description: "Is there any reason to discard the colony count data from this protocol?"
-  bullet: "1 - No, the data from this protocol is clean"
-  bullet: "2 - Plating was done incorrectly"
-  bullet: "3 - I was unable to get/enter an accurate cell count"
+  bullet: "1 - No, the data from this protocol is clean and the recorded colony count is accurate"
+  bullet: "2 - Yes, discard the data. Plating was bad, something was contaminated, etc."
   getdata
-    colony_data_status: number, "Select one of the following:", [1,2,3]
+    colony_data_status: number, "Select one of the following:", [1,2]
   end
 end
 
