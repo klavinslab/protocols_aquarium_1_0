@@ -134,10 +134,13 @@ end
 release [timer[0],falcon_tube[0],plasmid[0],iceblock[0],strain[0],alrack[0],cuvette[0]]
 
 step
+  description "Is there any reason to discard the data from this protocol?"
+  bullet: "1 - comp cells used were not from the DH5alpha Transformation Efficiency batch"
+  bullet: "2 - the THAW time is not accurate"
+  bullet: "3 - the RESCUE time is not accurate"
+  bullet: "4 - The LB aliquot used for Rescue may be contaminated"
+  bullet: "5 - No, the data from this protocol is clean"
   getdata
-    thaw_time_accurate: string, "Is your THAW time accurate? Yes if accurate, No if there was an issue while timing.", ["yes","no"]
-    rescue_time_accurate: string, "Is your RESCUE time accurate? Yes if accurate, No if there was an issue while timing?", ["yes","no"]
-    ecomp_cell_accurate: string, "Did you use the MG1655 e.comp cells in the box with the pink tape labled 'transformation
-            efficiency only'? (Answer no if you used DH5alpha cells or e.comp cells from any other box)", ["yes","no"]
+    data_status: number, "Select one of the following:", [1,2,3,4,5]
   end
 end
