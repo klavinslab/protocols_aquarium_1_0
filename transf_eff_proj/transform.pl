@@ -118,21 +118,6 @@ step
   end
 end
 
-produce
-  r = 1 "Transformed E coli 1.5 mL tube" of "pLAB1 in Z1"
-  #r = 1 "Transformed E. coli Aliquot" from plasmid_id
-  note: "Keep the tube on the bench to use in the next protocol."
-  location: "Bench"
-end
-
-transformation_id = r[:id]
-    
-log
-  return: { transformed_cells_id: r[:id], tube_incubation_choice : tube_incubation_choice, transf_data_status: transf_data_status }
-end
-
-release [timer[0],falcon_tube[0],plasmid[0],iceblock[0],strain[0],alrack[0],cuvette[0]]
-
 step
   description: "Is there any reason to discard the data from this protocol?"
   bullet: "1 - No, the data from this protocol is clean"
@@ -144,3 +129,26 @@ step
     transf_data_status: number, "Select one of the following:", [1,2,3,4,5]
   end
 end
+
+if(transf_data_status == 1)
+  produce
+    r = 1 "Transformed E coli 1.5 mL tube" of "pLAB1 in Z1"
+    #r = 1 "Transformed E. coli Aliquot" from plasmid_id
+    note: "Keep the tube on the bench to use in the next protocol."
+    location: "Bench"
+  end
+else
+  step
+    description: "Aborting and Ending this transformation"
+    bullet: "Throw away your transformed T.E tube and click ABORT"
+  end
+end
+
+
+transformation_id = r[:id]
+    
+log
+  return: { transformed_cells_id: r[:id], tube_incubation_choice : tube_incubation_choice}
+end
+
+release [timer[0],falcon_tube[0],plasmid[0],iceblock[0],strain[0],alrack[0],cuvette[0]]
