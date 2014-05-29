@@ -1,5 +1,5 @@
 argument
-  template: sample array, "liquied cultures from colonies"
+  template: sample array, "liquied cultures from colonies "
 end
 
 take
