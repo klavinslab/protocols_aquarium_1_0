@@ -63,12 +63,14 @@ step
   description: 
     "Record the count. Screenshot the image of counted cells."
   bullet:
-    "If the software recognizes the coloines correctly and give a reasonbale count, record
-     that number below. If not, count the number of colonies by dividing up the plate in
-     four regions, get the count in each region and sum up as the final count." 
+    "IF the software recognizes the colonies correctly and gives a reasonbale count, record
+     that number below." 
+  bullet: "IF NOT, count the number of colonies by hand and use this as the colony count." 
   bullet: "Take a screenshot of the final image with colonies circled by the software and save 
      it in the same dropbox folder as the plate's original image. Save it as plate_id_count.
      I.e if the plate had id 798 save it as plate_798_count."
+  warning: "Make sure the number you enter here as the colony count is an accurate representation of how many actual colonies are on the plate.
+  If the software returned an innacurate count, do not record that. Record your hand-counted/estimated value instead."
   getdata
     count: number, "Enter the count."
   end
@@ -80,6 +82,20 @@ step
   note:
     "Turn off the transillumniator and camera, remove the camera hood, take the plate from transilluminator, wrap up
      the plate with parafilm and put it the in the Box 0 in deli fridge located at D2.100."
+end
+
+step
+  description: "Is there any reason to discard the colony count data from this protocol?"
+  bullet: "1 - No, the data from this protocol is clean"
+  bullet: "2 - Plating was done incorrectly"
+  bullet: "3 - I was unable to get/enter an accurate cell count"
+  getdata
+    colony_data_status: number, "Select one of the following:", [1,2,3]
+  end
+end
+
+log
+  return: { colony_data_status : colony_data_status }
 end
 
 modify
