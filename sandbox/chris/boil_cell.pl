@@ -9,7 +9,6 @@ end
 n_samp = length(template)
 step
   description: "Take %{n_samp} tubes from a PCR tube strip and label them 1 through %{n_samp} on the side, also write your initials on it." 
-  note: "ignore this note.  it is for testing."
 end
 
 step
