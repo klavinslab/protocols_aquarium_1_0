@@ -141,6 +141,6 @@ step
   bullet: "4 - the RESCUE time is not accurate"
   bullet: "5 - The LB aliquot used for Rescue may be contaminated"
   getdata
-    data_status: number, "Select one of the following:", [1,2,3,4,5]
+    transf_data_status: number, "Select one of the following:", [1,2,3,4,5]
   end
 end
