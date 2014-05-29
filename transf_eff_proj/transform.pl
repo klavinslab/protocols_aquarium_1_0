@@ -128,7 +128,7 @@ end
 transformation_id = r[:id]
     
 log
-  return: { transformed_cells_id: r[:id], tube_incubation_choice : tube_incubation_choice }
+  return: { transformed_cells_id: r[:id], tube_incubation_choice : tube_incubation_choice, transf_data_status: transf_data_status }
 end
 
 release [timer[0],falcon_tube[0],plasmid[0],iceblock[0],strain[0],alrack[0],cuvette[0]]
