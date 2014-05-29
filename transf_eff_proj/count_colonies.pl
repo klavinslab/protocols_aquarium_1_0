@@ -93,10 +93,6 @@ step
   end
 end
 
-log
-  return: { colony_data_status : colony_data_status }
-end
-
 modify
   y[0]
   location: "DFP.0"
