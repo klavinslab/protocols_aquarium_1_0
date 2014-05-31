@@ -19,6 +19,7 @@ end
 
 produce
     y1 = 1 "Yeast Plate" of "pGP8GAL-GAVNY, pGP6GAL-AFB2 in W303alpha"
+    location: "A1.110"
     release x1
 end
 
