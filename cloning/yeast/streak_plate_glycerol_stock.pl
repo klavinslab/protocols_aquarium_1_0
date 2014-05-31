@@ -10,9 +10,8 @@ end
 
 step
   description: "Use a pipette with sterile tip to scrape a reasonable amount of stock and transfer to the plate"
+  timer: { hours: 0, minutes: 1, seconds: 30 }
 end
-
-timer: { hours: 0, minutes: 1, seconds: 30 }
 
 step
   description: "Use a sterile pipette tip to streak out plate"
