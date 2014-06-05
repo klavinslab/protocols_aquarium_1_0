@@ -1,10 +1,4 @@
-json_file = "recombineering/test.json"
-
 input
-  p = "protocols/plankton/sandbox/parameters.json" #"recombineering/test.json"# json_file
+  p = "protocols/plankton/sandbox/parameters.json" 
 end
 
-step
-
-  note: "%{jdat}"
-end
