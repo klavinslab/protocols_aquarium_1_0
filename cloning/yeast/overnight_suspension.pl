@@ -24,10 +24,18 @@ step
   check: "Scrape colony into broth, using a swirling motion"
 end
 
+step
+  description: "Wrap up the plate with parafilm"
+end
+
 release [yeast_plate[0],yeast_media[0]]
 
+step
+  description: "Make sure you label the tube with item number in the next produce step"
+end
+
 produce
-  y = 1 "Yeast Overnight Suspensions" from yeast_plate[0]
+  y = 1 "Yeast Overnight Suspension" from yeast_plate[0]
   note: "Place the test tube in 30 C incubator shaker at B13.125"
   location: "B13.125"
   release test_tube
