@@ -1,4 +1,4 @@
 input
-  p = "plankton/sandbox/parameters.json" 
+  p = "test.json" 
 end
 
