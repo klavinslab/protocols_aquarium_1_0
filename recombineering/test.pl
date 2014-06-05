@@ -4,9 +4,14 @@ argument
 end
 
 if json_file == ""
-  json_file = "recombineering/test.json"
+  json_file = "protocols/recombineering/test.json"
 end
 
 input
   jdat = json_file
+end
+
+step
+
+  note: "%{jdat}"
 end
