@@ -9,8 +9,9 @@ argument
 end
 
 take
+  N4 = item NEB4
   bsa_stock = item bsa
-  
+  plasmid_stocks = item unique(plasmids)
 end
 
 step
@@ -18,7 +19,9 @@ step
 end
 
 take
+  pmei_stock = item pmei 
 end
+
 step
   
 end
