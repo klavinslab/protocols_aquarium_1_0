@@ -1,4 +1,4 @@
-information "Dilute overnight culcutre to grow cells into log phase for testing purposes"
+information "Dilute overnight culture to grow cells into log phase for testing purposes"
 
 argument
   yeast_overnight_id: sample, "Choose the plate you intended to do overnight suspension"
