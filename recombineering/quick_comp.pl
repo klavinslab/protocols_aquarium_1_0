@@ -3,6 +3,15 @@ information "Make competent cells for immediate use."
 
 argument
   shocked_cells: sample array, "Array of heat shocked cells"
+  json_file: string, "the json file associated with this metacol.  This is a hack until the :data field gets fixed."
+end
+
+if json_file == ""
+  json_file = "recombineering/test.json"
+end
+
+input
+  jdat = json_file
 end
 
 take
@@ -104,17 +113,16 @@ step
   description: "Resuspend each cell pellet in 200 µL of sterile cold molecular grade water and keep it cool."
 end
 
-step
-  warning: "HERE!"
-
-end
 
 ######### make the aliquots ############
 electrocompetent_cells = []
 ii = 0
 while ii < num_samples
   sample_id = cells[ii][:id]
-  orig_id = find(:item,{id: sample_id})[:data][:original_id]
+  #Restore the line below once data field fixed
+  #orig_id = find(:item,{id: sample_id})[:data][:original_id]
+  #delete line below once data field is fixed
+  orig_id = jdat[:strains]
   ii = ii + 1
   step
     description: "Make four aliquots from Tube %{ii}"
