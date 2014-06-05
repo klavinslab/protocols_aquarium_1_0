@@ -1,5 +1,3 @@
-BIG_CENTRIFUGE_SIZE = 8 # The max number of 50mL tubes the centrifuge can hold safely
-SMALL__CENTRIFUGE_SIZE = 20 # max number of 1.5mL tubes the centrifuge can hold safely
 
 information "Make competent cells for immediate use."
 
