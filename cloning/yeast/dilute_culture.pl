@@ -18,7 +18,7 @@ end
 
 step
   description: "Dilute culture"
-  check: "Pipette 2 µL from tube %{yeast_overnight_id} into the newly labeled test tube"
+  check: "Pipette 2 µL from tube %{yeast_overnight_id} into the newly labeled test tube, making sure touch the media."
 end
 
 release [yeast_overnight[0],yeast_media[0]]
