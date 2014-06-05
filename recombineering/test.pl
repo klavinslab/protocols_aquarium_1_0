@@ -1,7 +1,7 @@
 json_file = "recombineering/test.json"
 
 input
-  jdat = json_file
+  jdat = "recombineering/test.json"# json_file
 end
 
 step
