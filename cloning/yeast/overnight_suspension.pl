@@ -20,19 +20,16 @@ step
   description: "Inoculate cells from plate to tube"
   check: "Select a medium size isolated colony prior to opening plate. Mark desired colony with circle and intials and date"
   check: "Take a sterile pipette tip, pick up your desired colony by gently scraping the tip to the colony."
-  check: "Tilt 14 mL tube such that you can reach the broth with your tip."
-  check: "Scrape colony into broth, using a swirling motion"
+  check: "Tilt 14 mL tube such that you can reach the media with your tip."
+  check: "Open the tube cap, scrape colony into media, using a swirling motion."
+  check: "Place the tube back on the rack with cap closed."
 end
 
 step
-  description: "Wrap up the plate with parafilm"
+  check: "Wrap up the plate with parafilm."
 end
 
 release [yeast_plate[0],yeast_media[0]]
-
-step
-  description: "Make sure you label the tube with item number in the next produce step"
-end
 
 produce
   y = 1 "Yeast Overnight Suspension" from yeast_plate[0]
