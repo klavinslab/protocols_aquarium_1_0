@@ -10,6 +10,17 @@ take
   test_tube = 1 "14 mL Test Tube"
 end
 
+step
+  description: "Prepare media in test tube"
+  check: "Label a 14 mL tube with your initials AND date"
+  check: "Pipette 2 mL of SC liquid aliquot into the labeled 14 mL tube"
+end
+
+step
+  description: "Dilute culture"
+  check: "Pipette 2 µL from tube %{yeast_overnight_id} into the newly labeled test tube"
+end
+
 release [yeast_overnight[0],yeast_media[0]]
 
 produce
