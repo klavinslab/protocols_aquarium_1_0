@@ -26,25 +26,11 @@ while ii < length(gel)
   lane_name = ii + 2
   lane_size = sizes[ii]
   step
-    description: "Remove the camera hood, cut out a gel slice from lane %{lane_name}"
-    note: "The lane should be %{lane_size} bp.\n\nIt may help to turn the romm lights off during this step. Use the ladder to locate where
-    the band is. Use the razor blade to cut around the band."
+    description: "Cut out a gel slice from lane %{lane_name}"
+    check: "Cut out a band of %{lane_size} bp and leave it on the transilluminator."
+    check: "Trim the gel slice, removing as much that doesn't have DNA as possible."
+    check: "Put the gel slice into 1.5 mL tube labeled %{tube_name}."
     image: "cut_gel"
-  end
-
-  step
-    description: "Trim the gel slice"
-    note: "Try to remove as much excess gel as possible. Do not remove any gel that contains the band
-    as this will limit the amount of DNA that can be extracted. In essence, try to cut away everything
-    that is not glowing. It is important to trim the gel as excess gel will complicate the next protocol."
-  end
-
-  step
-    description: "Put the gel slice into 1.5 mL tube labeled %{tube_name}"
-    note: "Slide the gel slice onto the razor blade, open the tube and push the slice in. If the
-    slice is to big, trim down excess gel. Again, do not trim gel that contains the band, only
-    excess gel around the band."
-    image: "slice_tube"
   end
 
   step
@@ -69,6 +55,7 @@ while jj < length(gel)
   end
   produce
     product = 1 "Gel Slice" from y[jj]
+    release y[jj]
   end
   r = append(r,product[:id])
   jj = jj + 1
