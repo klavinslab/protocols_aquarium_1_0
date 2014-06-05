@@ -1,4 +1,4 @@
 input
-  p = "protocols/plankton/sandbox/parameters.json" 
+  p = "plankton/sandbox/parameters.json" 
 end
 
