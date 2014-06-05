@@ -10,9 +10,10 @@ if json_file == ""
   json_file = "recombineering/test.json"
 end
 
-input
-  jdat = json_file
-end
+#uncomment when input bug fixed
+#input
+  #jdat = json_file
+#end
 
 take
   cells = item shocked_cells
