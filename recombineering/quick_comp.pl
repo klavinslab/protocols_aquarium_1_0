@@ -122,7 +122,7 @@ while ii < num_samples
   #Restore the line below once data field fixed
   #orig_id = find(:item,{id: sample_id})[:data][:original_id]
   #delete line below once data field is fixed
-  orig_id = jdat[:strains]
+  orig_id = jdat[:logCultures]
   ii = ii + 1
   step
     description: "Make four aliquots from Tube %{ii}"
