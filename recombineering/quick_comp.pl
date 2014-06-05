@@ -119,10 +119,13 @@ electrocompetent_cells = []
 ii = 0
 while ii < num_samples
   sample_id = cells[ii][:id]
-  #Restore the line below once data field fixed
+  ##Restore the line below once data field fixed
   #orig_id = find(:item,{id: sample_id})[:data][:original_id]
-  #delete line below once data field is fixed
-  orig_id = jdat[:logCultures]
+  ##delete line below once data field is fixed
+  #orig_id = jdat[:logCultures]
+  ##bug work around for bug in bug workaround
+  orig_id = [3046,3047]
+  
   ii = ii + 1
   step
     description: "Make four aliquots from Tube %{ii}"
