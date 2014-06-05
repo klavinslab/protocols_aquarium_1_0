@@ -24,8 +24,10 @@ step
   check: "Scrape colony into broth, using a swirling motion"
 end
 
+release concat(yeast_plate, yeast_media, test_tube)
+
 produce
   y = 1 "Yeast Overnight Suspensions" from yeast_plate[0]
-  note: "Place in 30 C incubator shaker at B13.125"
+  note: "Place the test tube in 30 C incubator shaker at B13.125"
   location: "B13.125"
 end
