@@ -17,8 +17,8 @@ step
 end
 
 step
-  description: "Dilute culture"
-  check: "Pipette 2 µL from tube %{yeast_overnight_id} into the newly labeled test tube, making sure touch the media."
+  description: "Make a 1:100 dilution"
+  check: "Use 10 µL pipettor to pipette 2 µL from tube %{yeast_overnight_id} into the newly labeled test tube, making sure touch the media."
 end
 
 release [yeast_overnight[0],yeast_media[0]]
