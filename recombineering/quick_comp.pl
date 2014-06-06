@@ -2,21 +2,11 @@
 information "Make competent cells for immediate use."
 
 argument
-  shocked_cells: sample array, "Array of heat shocked cells"
-  json_file: string, "the json file associated with this metacol.  This is a hack until the :data field gets fixed."
+  heat_shocked_cells: sample array, "Array of heat shocked cells"
 end
-
-if json_file == ""
-  json_file = "recombineering/test.json"
-end
-
-#uncomment when input bug fixed
-#input
-  #jdat = json_file
-#end
 
 take
-  cells = item shocked_cells
+  cells = item heat_shocked_cells
 end
 
 step
@@ -121,11 +111,11 @@ ii = 0
 while ii < num_samples
   sample_id = cells[ii][:id]
   ##Restore the line below once data field fixed
-  #orig_id = find(:item,{id: sample_id})[:data][:original_id]
+  orig_id = find(:item,{id: sample_id})[:data][:original_id]
   ##delete line below once data field is fixed
   #orig_id = jdat[:logCultures]
   ##bug work around for bug in bug workaround
-  orig_id = [3046,3047]
+  #orig_id = [3046,3047]
   
   ii = ii + 1
   step
@@ -160,4 +150,5 @@ end
 
 
 #release [iceblock[0], alrack[0]]
-#release cells  # DEBUG
+#TODO: throw out "cells" when done.
+release cells  # DEBUG
