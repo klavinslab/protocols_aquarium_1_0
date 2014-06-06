@@ -1,4 +1,4 @@
 input
-  p = "recombineering/test.json" 
+  p = "protocols/recombineering/test.json" 
 end
 
