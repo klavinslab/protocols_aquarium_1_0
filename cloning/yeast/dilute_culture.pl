@@ -1,4 +1,4 @@
-information "Dilute overnight culcutre to grow cells into log phase for testing purposes"
+information "Dilute overnight culture to grow cells into log phase for testing purposes"
 
 argument
   yeast_overnight_id: sample, "Choose the plate you intended to do overnight suspension"
@@ -17,8 +17,9 @@ step
 end
 
 step
-  description: "Dilute culture"
-  check: "Pipette 2 µL from tube %{yeast_overnight_id} into the newly labeled test tube, making sure touch the media."
+  description: "Make a 1:100 dilution"
+  check: "Use 10 µL pipettor to pipette 2 µL from tube %{yeast_overnight_id} into the newly labeled test tube, making sure touch the media."
+  check: "Dispose the yeast overnight suspension tube in the next release page."
 end
 
 release [yeast_overnight[0],yeast_media[0]]

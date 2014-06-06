@@ -60,3 +60,5 @@ end
 log
   return: {filename: gel_name}
 end
+
+release gel
