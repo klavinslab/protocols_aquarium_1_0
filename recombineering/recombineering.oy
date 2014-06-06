@@ -51,7 +51,10 @@ end
 wire (make_log_phase, "log_cells") => (heat_shock, "cells_flask_array")
 
 place quick_comp
-  protocol: base_dir+"quick_comp_parallel.pl"
+  protocol: base_dir+"quick_comp.pl"
+  argument
+    json_file: json_file 
+  end
   group: aquarium_user
   start: now()
   window: minutes(1)

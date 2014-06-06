@@ -19,7 +19,7 @@ end
 step
   description: "Inoculate cells from plate to tube"
   check: "Select a medium size isolated colony prior to opening plate. Mark desired colony with circle and intials and date"
-  check: "Take a sterile pipette tip, pick up your desired colony by gently scraping the tip to the colony."
+  check: "Take a sterile pipette tip (10 µL tips), pick up your desired colony by gently scraping the tip to the colony."
   check: "Tilt 14 mL tube such that you can reach the media with your tip."
   check: "Open the tube cap, scrape colony into media, using a swirling motion."
   check: "Place the tube back on the rack with cap closed."
