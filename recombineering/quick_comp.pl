@@ -17,7 +17,7 @@ end
 
 ########## SETUP #########################
 
-num_samples = length(shocked_cells)
+num_samples = length(cells)
 #work around for no assignment or while in side of steps
 samp_ind = []
 ii = 0
