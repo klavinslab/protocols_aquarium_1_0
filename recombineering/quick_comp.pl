@@ -110,8 +110,9 @@ electrocompetent_cells = []
 ii = 0
 while ii < num_samples
   sample_id = cells[ii][:id]
+  orig_id = cells[ii][:data][:original_id]
   ##Restore the line below once data field fixed
-  orig_id = find(:item,{id: sample_id})[:data][:original_id]
+  #orig_id = find(:item,{id: sample_id})[:data][:original_id]
   ##delete line below once data field is fixed
   #orig_id = jdat[:logCultures]
   ##bug work around for bug in bug workaround
