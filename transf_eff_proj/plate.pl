@@ -56,6 +56,15 @@ produce
   release plate
 end
 
+step
+  description: "Is there any reason to discard the data from this protocol?"
+  bullet: "1 - No, the data from this protocol is clean"
+  bullet: "2 - Yes, plating was bad"
+  getdata
+    transf_data_status: number, "Select one of the following:", [1,2]
+  end
+end
+
 log
   return: { plate_id: r[:id] }
 end
