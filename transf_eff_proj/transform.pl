@@ -130,18 +130,12 @@ step
   end
 end
 
-if(transf_data_status == 1)
-  produce
-    r = 1 "Transformed E coli 1.5 mL tube" of "pLAB1 in Z1"
-    #r = 1 "Transformed E. coli Aliquot" from plasmid_id
-    note: "Keep the tube on the bench to use in the next protocol."
-    location: "Bench"
-  end
-else
-  step
-    description: "Aborting and Ending this transformation"
-    bullet: "Throw away your transformed T.E tube and click ABORT"
-  end
+
+produce
+  r = 1 "Transformed E coli 1.5 mL tube" of "pLAB1 in Z1"
+  #r = 1 "Transformed E. coli Aliquot" from plasmid_id
+  note: "Keep the tube on the bench to use in the next protocol."
+  location: "Bench"
 end
 
 
