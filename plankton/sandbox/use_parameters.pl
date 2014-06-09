@@ -2,9 +2,7 @@ input
   p = "plankton/sandbox/parameters.json"
 end
 
-take
-  primers  = item p[:primers]
-  plasmids = item p[:plasmids]
+step
+  description: "Data from json file"
+  note: p
 end
-
-release concat(primers,plasmids)
