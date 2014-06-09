@@ -56,10 +56,11 @@ produce
   release plate
 end
 
+
 step
   description: "Is there any reason to discard the data from this protocol?"
   bullet: "1 - No, the data from this protocol is clean"
-  bullet: "2 - Yes, plating was bad"
+  bullet: "2 - Yes, discard the data. Plating was bad, something was contaminated, etc."
   getdata
     transf_data_status: number, "Select one of the following:", [1,2]
   end
