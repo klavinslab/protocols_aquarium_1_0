@@ -60,10 +60,9 @@ wire (heat_shock,"shocked_cells") => (quick_comp,"heat_shocked_cells")
 place transform
   protocol: base_dir+"transform.pl"
   argument
-    #plasmid_id: knockout_fragments
+    fragment_id: params[:ldna]
     dna_vol: 2
     #e_coli_map: e_coli_strain
-    json_file: json_file
   end
   group: aquarium_user
   start: now()
@@ -107,7 +106,7 @@ transition [parse_args] => [make_log_phase] when true
     #if task named task_name is ready then run with it
     #otherwise just start running the last task in the list
     ii = 0
-    while ii<length(tsk) && tsk[ii] != task_name
+    while (ii<length(tsk)) && (tsk[ii] != task_name)
       ii = ii+1
     end
     set_task_status(tsk[ii],"running")
