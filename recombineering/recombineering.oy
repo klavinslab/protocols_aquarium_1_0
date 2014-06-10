@@ -101,7 +101,7 @@ wire (transform,"transformed_cells_ids") => (plate,"e_coli_strain_id")
 # forward transitions
 transition [parse_args] => [make_log_phase] when true 
   do
-    tsk = tasks("recombineering", "debug")
+#    tsk = tasks("recombineering", "debug")
     #if task named task_name is ready then run with it
     #otherwise just start running the last task in the list
     ii = 0
@@ -110,8 +110,8 @@ transition [parse_args] => [make_log_phase] when true
     #while ii<length(tsk)
     #  ii = ii+1
     #end
-    useless_variable = set_task_status(tsk[ii],"running")
-    params = tsk[ii][:specification]
+#    useless_variable = set_task_status(tsk[ii],"running")
+#    params = tsk[ii][:specification]
   end
 end
 
