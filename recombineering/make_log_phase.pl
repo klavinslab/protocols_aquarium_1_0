@@ -46,6 +46,7 @@ foreach strain in strains
 
 end
 
+#TODO: delete this step
 step
   note: "produced %{log_cell_flasks}"
 end
@@ -58,7 +59,7 @@ end
 step
   description: "Dilute overnights into flasks"
   foreach flask in id_strings 
-    check: "Transfer 350  &micro;l of overnight " + to_string(flask[:data][:from]) + "to flask " + to_string(flask[:id])
+    check: "Transfer 350  &micro;L of overnight " + to_string(flask[:data][:from]) + " to flask " + to_string(flask[:id])
   end
   note: "By the end of this step each each flask should have gotten 350 &micro;l of overnight culture.  If not make a note here."
 end
