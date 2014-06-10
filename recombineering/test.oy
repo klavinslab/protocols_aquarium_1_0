@@ -1,0 +1,24 @@
+base_dir = "recombineering/"
+
+place parse_args
+  marked: true
+end
+
+place donothing
+end
+
+
+# forward transitions
+transition [parse_args] => [donothing] when true 
+  do
+    tsk = tasks("recombineering", "debug")
+    #if task named task_name is ready then run with it
+    #otherwise just start running the last task in the list
+    ii = 0
+#    useless_variable = set_task_status(tsk[ii],"running")
+#    params = tsk[ii][:specification]
+  end
+end
+
+transition [donothing] => [] when !error(0) && completed(0) end
+
