@@ -106,9 +106,11 @@ transition [parse_args] => [make_log_phase] when true
     #if task named task_name is ready then run with it
     #otherwise just start running the last task in the list
     ii = 0
-    while ii<length(tsk)
-      ii = ii+1
-    end
+    #TODO: fix searching for the correct task, it looks like while doesn't work
+    #      in oyster
+    #while ii<length(tsk)
+    #  ii = ii+1
+    #end
     set_task_status(tsk[ii],"running")
     params = tsk[ii][:specification]
   end
