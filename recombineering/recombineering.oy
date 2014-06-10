@@ -111,7 +111,7 @@ transition [parse_args] => [make_log_phase] when true
     #while ii<length(tsk)
     #  ii = ii+1
     #end
-    set_task_status(tsk[ii],"running")
+    useless_variable = set_task_status(tsk[ii],"running")
     params = tsk[ii][:specification]
   end
 end
