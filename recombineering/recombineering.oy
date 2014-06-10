@@ -33,6 +33,7 @@ place finish_log_phase
 	start: hours(2)
 	window: minutes(30)
 	group: aquarium_user
+end
 
 
 wire (make_log_phase, "log_cells") => (finish_log_phase, "log_cells") 
