@@ -7,17 +7,11 @@
 #  will be made one with strain 123 and two with strain 555.
 
 argument
-  json_file: string, "path to json parameter file"
+  params: generic, "task we're running"
 end
 
-if json_file==""
-  json_file = "recombineering/test.json"
-end
-
-input
-  ins = json_file
-end
-strainIDs = ins[:logCultures]
+strainIDs = params[:logCultures]
+#TODO: remove logCultures field and instead count from strains field
 
 information "Dilute cells and bring them to log phase"
 

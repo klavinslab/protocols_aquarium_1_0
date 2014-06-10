@@ -122,19 +122,6 @@ while ii < num_samples
     warning: "Make sure the tubes stay on the chilled aluminum block."
   end
     
-#these are so short lived don't track them.
-#  produce
-    #can't produce 4 electrocomp aliquotes...
-#    competent_cells = 4 "Electrocompetent aliquot" from cells[ii]
-#    note: "Write the same item number on all four aliquots"
-#    location: "Bench"
-#    data
-#      from: sample_id
-#      original_id: cells[ii][:data][:original_id]
-#    end
-#    release cells[ii]
-#  end
-#  electrocompetent_cells = append(electrocompetent_cells, competent_cells[:id])
 end
 
 log
