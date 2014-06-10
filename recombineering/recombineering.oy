@@ -106,7 +106,7 @@ transition [parse_args] => [make_log_phase] when true
     #if task named task_name is ready then run with it
     #otherwise just start running the last task in the list
     ii = 0
-    while (ii<length(tsk)) && (tsk[ii] != task_name)
+    while ( (ii<length(tsk)) && (tsk[ii] != task_name) )
       ii = ii+1
     end
     set_task_status(tsk[ii],"running")
