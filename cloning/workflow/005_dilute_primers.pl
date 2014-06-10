@@ -9,6 +9,8 @@ len=length(primer_ids)
 x=0
 newid=[0]
 newitem=[0]
+name = ""
+q = 0
 while x < len
   name = primer_stock[x][:name]
   produce silently
@@ -28,6 +30,8 @@ end
 
 
 x=0
+y = 0
+z = 0
 while x < len
   y=newid[x]
   z=primer_stock[x][:id]
