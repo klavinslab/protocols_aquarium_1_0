@@ -7,17 +7,11 @@
 #  will be made one with strain 123 and two with strain 555.
 
 argument
-  json_file: string, "path to json parameter file"
+  params: generic, "task we're running"
 end
 
-if json_file==""
-  json_file = "recombineering/test.json"
-end
-
-input
-  ins = json_file
-end
-strainIDs = ins[:logCultures]
+strainIDs = params[:logCultures]
+#TODO: remove logCultures field and instead count from strains field
 
 information "Dilute cells and bring them to log phase"
 
@@ -52,6 +46,7 @@ foreach strain in strains
 
 end
 
+#TODO: delete this step
 step
   note: "produced %{log_cell_flasks}"
 end
@@ -64,7 +59,7 @@ end
 step
   description: "Dilute overnights into flasks"
   foreach flask in id_strings 
-    check: "Transfer 350  &micro;l of overnight " + to_string(flask[:data][:from]) + "to flask " + to_string(flask[:id])
+    check: "Transfer 350  &micro;L of overnight " + to_string(flask[:data][:from]) + " to flask " + to_string(flask[:id])
   end
   note: "By the end of this step each each flask should have gotten 350 &micro;l of overnight culture.  If not make a note here."
 end

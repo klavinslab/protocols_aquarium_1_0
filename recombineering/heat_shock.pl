@@ -73,12 +73,12 @@ heat_treated_cells = []
 
 while ii < num_samples
 	id = taken_cells[ii][:id]
-  orig_id = find(:item,{id:id})[:data][:from]
+  #orig_id = find(:item,{id:id})[:data][:from]
+  orig_id = taken_cells[ii][:data][:from]
 	produce
   	hot_cells = 1 "Heat shocked tube" from taken_cells[ii]
 
-		note: "This new sample is produced from Sample %{id}. Keep these cells on ice for the next step"
-    warning: "Make sure you're labeling the tube that you previously labeled 'from %{id}'"
+		note: "This new sample is produced from Sample %{id}. Keep these cells on ice for the next step. Make sure you're labeling the tube that you previously labeled 'from %{id}'"
 		data
 			from: id	# for sample tracking purposes
 			original_id: orig_id

@@ -61,4 +61,4 @@ log
   return: {filename: gel_name}
 end
 
-release gel
+release y

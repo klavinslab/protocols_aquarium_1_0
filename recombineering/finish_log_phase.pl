@@ -12,11 +12,12 @@ take
   lb = 1 "50 mL LB liquid aliquot (sterile)"
 end
 
-information "Measure DNA concentration using Nanodrop spectrophotometer."
+information "Measure cell density using Nanodrop."
 
+#TODO: update nanodrop location.
 step
-  description: "Take the cells and LB to the Nanodrop at location B3.405"
-	note: "Log into Aquarium at a computer in the B3 aisle."
+  description: "Take the cells and LB to the Nanodrop"
+	note: "Log into Aquarium at a computer close to the Nanodrop."
 end
 
 step
@@ -31,19 +32,19 @@ step
 end
 
 ODs = []
+
+
+step
+  description: "Blank the Nanodrop"
+  check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
+  check: "Using a pipette, carefully add 2 &micro;l of LB to the lower pedestal." 
+  check: "Close the pedestal."
+	bullet: "Visually check for a column of liquid between the two pedestals when closed."
+  check: "Click Blank in the software."
+end
+
+
 foreach c in log_cells
-	step
-	  description: "Blank the Nanodrop"
-	  check: "Set the wavelength to 600 nm"
-	  check: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
-	  check: "Using a pipette, carefully add 2 &micro;l of LB to the lower pedestal." 
-	  check: "Close the pedestal."
-		bullet: "Visually check for a column of liquid between the two pedestals when closed."
-	  check: "Click Blank in the software."
-	end
-
-	## What settings should we set the nanodrop to?
-
 	step
 	  description: "Measure your sample"
 	  check: "Open the pedestal"

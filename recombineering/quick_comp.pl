@@ -2,21 +2,11 @@
 information "Make competent cells for immediate use."
 
 argument
-  shocked_cells: sample array, "Array of heat shocked cells"
-  json_file: string, "the json file associated with this metacol.  This is a hack until the :data field gets fixed."
+  heat_shocked_cells: sample array, "Array of heat shocked cells"
 end
-
-if json_file == ""
-  json_file = "recombineering/test.json"
-end
-
-#uncomment when input bug fixed
-#input
-  #jdat = json_file
-#end
 
 take
-  cells = item shocked_cells
+  cells = item heat_shocked_cells
 end
 
 step
@@ -27,7 +17,7 @@ end
 
 ########## SETUP #########################
 
-num_samples = length(shocked_cells)
+num_samples = length(cells)
 #work around for no assignment or while in side of steps
 samp_ind = []
 ii = 0
@@ -120,12 +110,7 @@ electrocompetent_cells = []
 ii = 0
 while ii < num_samples
   sample_id = cells[ii][:id]
-  ##Restore the line below once data field fixed
-  #orig_id = find(:item,{id: sample_id})[:data][:original_id]
-  ##delete line below once data field is fixed
-  #orig_id = jdat[:logCultures]
-  ##bug work around for bug in bug workaround
-  orig_id = [3046,3047]
+  orig_id = cells[ii][:data][:original_id]
   
   ii = ii + 1
   step
@@ -137,19 +122,6 @@ while ii < num_samples
     warning: "Make sure the tubes stay on the chilled aluminum block."
   end
     
-#these are so short lived don't track them.
-#  produce
-    #can't produce 4 electrocomp aliquotes...
-#    competent_cells = 4 "Electrocompetent aliquot" from cells[ii]
-#    note: "Write the same item number on all four aliquots"
-#    location: "Bench"
-#    data
-#      from: sample_id
-#      original_id: cells[ii][:data][:original_id]
-#    end
-#    release cells[ii]
-#  end
-#  electrocompetent_cells = append(electrocompetent_cells, competent_cells[:id])
 end
 
 log
@@ -160,4 +132,4 @@ end
 
 
 #release [iceblock[0], alrack[0]]
-#release cells  # DEBUG
+release cells  

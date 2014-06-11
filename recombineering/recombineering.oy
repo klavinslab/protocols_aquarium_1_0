@@ -11,15 +11,18 @@
 base_dir = "recombineering/"
 
 argument
-  json_file: string, "path to json file with all params"
+  task_name: string, "ready task to run.  If empty or mistyped choose any single task that is ready."
+end
+
+place parse_args
+  marked: true
 end
 
 place make_log_phase
   protocol: base_dir+"make_log_phase.pl"
   argument
-    json_file: json_file 
+    params: params
   end
-  marked: true
   group: aquarium_user
   start: now()
 end
@@ -27,22 +30,16 @@ end
 
 place finish_log_phase
 	protocol: base_dir+"finish_log_phase.pl"	
-	# log_cells: wire log phase cells from make_log_phase
 	start: hours(2)
 	window: minutes(30)
 	group: aquarium_user
-	marked: false
 end
+
 
 wire (make_log_phase, "log_cells") => (finish_log_phase, "log_cells") 
 
-num_trans = 1
-
 place heat_shock
   protocol: base_dir+"heat_shock.pl"
-  #argument
-  #	cells_flask_array: e_coli_strain
-  #end
   group: aquarium_user
   start: now()
   window: minutes(10)
@@ -52,23 +49,19 @@ wire (make_log_phase, "log_cells") => (heat_shock, "cells_flask_array")
 
 place quick_comp
   protocol: base_dir+"quick_comp.pl"
-  argument
-    json_file: json_file 
-  end
   group: aquarium_user
   start: now()
   window: minutes(1)
 end
 
-wire (heat_shock,"shocked_cells") => (quick_comp,"shocked_cells")
+wire (heat_shock,"shocked_cells") => (quick_comp,"heat_shocked_cells")
 
 place transform
   protocol: base_dir+"transform.pl"
   argument
-    #plasmid_id: knockout_fragments
+    fragment_id: params[:ldna]
     dna_vol: 2
     #e_coli_map: e_coli_strain
-    json_file: json_file
   end
   group: aquarium_user
   start: now()
@@ -106,6 +99,21 @@ wire (transform,"transformed_cells_ids") => (plate,"e_coli_strain_id")
 
 
 # forward transitions
+transition [parse_args] => [make_log_phase] when true 
+  do
+    tsk = tasks("recombineering", "debug")
+    #if task named task_name is ready then run with it
+    #otherwise just start running the last task in the list
+    ii = 0
+    #TODO: fix searching for the correct task, it looks like while doesn't work
+    #      in oyster
+    #while ii<length(tsk)
+    #  ii = ii+1
+    #end
+    useless_variable = set_task_status(tsk[ii],"running")
+    params = tsk[ii][:specification]
+  end
+end
 
 transition [make_log_phase] => [finish_log_phase] when !error(0) && completed(0) end 
 transition [finish_log_phase] => [heat_shock] when !error(0) && completed(0) end
@@ -118,13 +126,6 @@ transition [plate] => [] when !error(0) && completed(0) end
 
 # T1 -> []
 transition [transform] => [incubate_tube] when !error(0) && completed(0) end #&& (return_value(0,"time_constant") >= 3) end
-
-# T1 -> T1
-#transition [ transform ] => [ transform ] when !error(0) && completed(0) && (return_value(0,"time_constant") < 3) && (num_trans == 1)
-#    do
-#        num_trans = num_trans + 1
-#    end
-#end
 
 
 # remaining reverse transitions
