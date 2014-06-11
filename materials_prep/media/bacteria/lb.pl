@@ -1,3 +1,5 @@
+require "protocols:materials_prep/lib/materials_prep.pl"
+
 information "Prepare unsterile bottle(s) of LB (rich media for bacteria)."
 # FIXME: parameterize for adding IPTG, aTc, X-Gal
 
@@ -7,6 +9,7 @@ argument
   volume: number, "Enter the media volume (200, 400, or 800 mL)."
   add_agar: string, "Make agar media? (Yes or No)"
 end
+
 
 
 if n_bottle < 1 || n_bottle > 4
@@ -108,16 +111,10 @@ end
 
 # Add LB Powder
 lb_name = lb_powder[0][:name]
-include "includes/materials_prep/add_dry_reagent.pl"
-  container: "each bottle"
-  reagent: lb_name
-  grams: lb_grams
-end
-
+add_dry_reagent("each bottle", lb_name, lb_grams)
 
 # Clean the spatula before returning it
-include "includes/materials_prep/clean_spatula.pl"
-end
+clean_spatula()
 
 
 step
