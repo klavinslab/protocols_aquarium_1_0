@@ -73,7 +73,8 @@ heat_treated_cells = []
 
 while ii < num_samples
 	id = taken_cells[ii][:id]
-  orig_id = find(:item,{id:id})[:data][:from]
+  #orig_id = find(:item,{id:id})[:data][:from]
+  orig_id = taken_cells[ii][:data][:from]
 	produce
   	hot_cells = 1 "Heat shocked tube" from taken_cells[ii]
 
