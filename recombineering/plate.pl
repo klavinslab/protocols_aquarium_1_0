@@ -1,98 +1,83 @@
-# Modified from existing protocol
 information "Spread cells onto a petri dish containing ~25mL agar media."
 
 argument
    e_coli_strain_id: sample array, "A sample"
-   volume: number, "The volume (µL) to plate"
    plate_type: object, "Type of plates you will use to select for transformed cells.\nList in order of corresponding transformed E. coli strains (from the solidmedia category)"
-#   plate_type_2: object, "Type of inducer plate (from the solidmedia category)"
 end
 
 sample_count = length(e_coli_strain_id)
 take
   strain = item e_coli_strain_id
   plate = sample_count plate_type
-  LB     = 1 "50 mL LB liquid aliquot (sterile)"
-#  plate_2 = 1 plate_type_2
-#  beads = 1 "Glass Bead Aliquot (sterile)"
-#  collector = 1 "Glass Bead Waste Collector"
-  note: "Do not take plate from top of the stack if there is a date stick on it, take from the middle of the stack."
-  warning: "Make certain you are grabbing the correct type of plate. Using the wrong plate will kill your cells!"
+  #LB     = 1 "50 mL LB liquid aliquot (sterile)"
+end
+
+#TODO: replace this with a table with IDs and selection type
+step
+  description: "Label plates 1-%{sample_count}"
+  image: "write_on_the_plate"
 end
 
 step
-  	description: "Write down your initials and date on plates and label 1-%{sample_count}"
-  	image: "write_on_the_plate"
+  description: "Spin down cells"
+  note: "Place each 1.5 mL tube (ids: %{e_coli_strain_id}) into the centrifuge and spin for 1m at 10,000g or greater."
 end
-	
+
+step
+  description: "Remove some supernatant and resuspend"
+  bullet: "for each tube, remove 700 &micro;L of supernatant into the liquid waste bottle."
+  bullet: "Recap each tube (if you have not already) and vortex until the cells are completely resuspended.  If the cells don't want to resuspend you may have to mix with a pipette by slowly pipetting up and down."
+end
+  
 transformed_plates = []
+
+step
+  description: "Add beads to each plate"
+  bullet: "lay out each plate on the bench agar-side up."
+  bullet: "for each plate, lift off the agar side and pour 5-10 beads into the lid and replace the agarside."
+  image: "pour_beads_on_plate"
+end
 
 i = 0
 while i < sample_count
-	current_sample = i + 1
-	plate_sample_id = plate_type[i]
-	coli_sample_id = e_coli_strain_id[i]
-	step
-		description: "Concentrate cells"
-		check: "Microcentrifuge the sample(s) for 1 minute (or longer if a the supernatant is still not clear)"
-		check: "Centrifuge all of the samples. This may require running multiple batches depending on the number of samples."
-		check: "Pippette out the supernatant with a 1000ul pippettor and discard the tip with the liquid in it.\nRepeat for eah sample"
-		check: "Pippette %{volume} ul LB into the sample tube(s) and resuspend the pellet(s) by pipetting up and down"
-		warning: "Check the LB for contamination before using. Make sure to use a new pipette tip after each pipetting operation."
-	end
-	step
-	  description: "Add sterile glass beads to plate %{current_sample}"
-	  note: "Invert the plate so that the lid is on the bench. 
-			 Add 5-10 beads to the inside of the lid (lift the plate up). 
-			 Place the plate back on the lid afterwards."
-	  image: "pour_beads_on_plate"
-	end
+  plate_t = plate_type[i]
+  coli_sample_id = e_coli_strain_id[i]
+  current_sample = i + 1
+  step
+    description: "Vortex sample %{coli_sample_id}"
+    note: "Vortex sample %{coli_sample_id} on vortexor."
+    image: "vortex_tube"
+  end
+  
+  step
+    description: "Transfer sample %{coli_sample_id} to the center of the plate (type %{plate_t}}"
+    note: "Invert plate %{current_sample} so the beads are on the agar surface. Lift the lid and pipette the entire contents of of sample %{coli_sample_id} on the agar surface and put the lid back on the plate."
+    warning: "Do not place the plate lid on lab bench while you do this."
+    image: "pipette_culture_on_plate"
+  end
 
-	step
-	  description: "Vortex sample %{coli_sample_id}"
-	  note: "Vortex sample %{coli_sample_id} on vortexor."
-	  image: "vortex_tube"
-	end
-	
-	step
-	  description: "Transfer sample %{coli_sample_id} to the center of the plate"
-	  note: "Invert plate %{current_sample} so the beads are on the agar surface. Lift the lid and 
-			 pipette %{volume} µL of sample on the agar surface
-			 and put the lid back on the plate."
-	  warning: "Do not place the plate lid on lab bench while you do this."
-	  image: "pipette_culture_on_plate"
-	end
+  step
+    description: "Shake the plate to spread the sample over the surface."
+    note: "Use 4+ gentile shakes, turn 90 degrees and repeat (keep the plate level while turning), then pour the beads out into the waste bead container.  When done, place the plate lid down on the bench in preparation for incubation."
+    image: "spread_beads_on_plate"
+  end
 
-	step
-	  description: "Shake the plate to spread the sample over the surface."
-	  note: "Use 4 sharp shakes, turn 90 degrees between two shakes (keep the plate level while turning), then pour the beads out into the waste bead container. 
-			 When done, place the plate lid down on the bench in preparation for incubation."
-	  image: "spread_beads_on_plate"
-	end
-
-	produce
-	  r1 = 1 "Agar plate" from strain[i]
-	  note: "Place upside down in 30 C incubator at A1.110."
-	  location: "A1.110"
-	  data
-	  	from: strain[i][:id]
-	  	original_id: strain[i][:data][:original_id]
-	  end
-	  release [plate[i]]
-	end
-	transformed_plates = append(transformed_plates, r1[:id])
-	
-	i = i + 1
+  produce
+    r1 = 1 "Agar plate" from strain[i]
+    location: "I1"
+    data
+      from: strain[i][:id]
+      original_id: strain[i][:data][:original_id]
+    end
+    note: "Strike out the number on the plate and replace it with the item number above.  Place upside down in 30 C incubator at A1.110. (you can wait for all plates to be done before you transfer carry them to the incubator)"
+    release [plate[i],strain[i]]
+  end
+  transformed_plates = append(transformed_plates, r1[:id])
+  
+  i = i + 1
 end
-#produce
- # r2 = 1 "Transformed E coli plate" of "pLAB1 in Z1"
-  #note: "Keep the plate on the bench to use in the next protocol (incubating)."
-  #location: "Bench"
-  #release plate_2
-#end
 
 log
   return: { plate_id: transformed_plates}
 end
   
-release strain
