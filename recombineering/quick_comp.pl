@@ -106,7 +106,6 @@ end
 
 
 ######### make the aliquots ############
-electrocompetent_cells = []
 ii = 0
 while ii < num_samples
   sample_id = cells[ii][:id]
@@ -115,8 +114,8 @@ while ii < num_samples
   ii = ii + 1
   step
     description: "Make four aliquots from Tube %{ii}"
-    bullet: "Set your pipette to 50 µL"
-    bullet: "Transfer 50 µL of liquid from Tube %{ii} into four pre-chilled 1.5 mL centrifuge tubes"
+    bullet: "Set your pipette to 50 &micro;L"
+    bullet: "Transfer 50 &micro;L of liquid from Tube %{ii} into four pre-chilled 1.5 mL centrifuge tubes"
     bullet: "Give each tube the same label: f%{orig_id}"
     bullet: "Discard the source tube along with any remaining cells it may contain."
     warning: "Make sure the tubes stay on the chilled aluminum block."
@@ -125,9 +124,7 @@ while ii < num_samples
 end
 
 log
-  return: {electrocompetent_cells: electrocompetent_cells}
-  ice: iceblock[0]
-  alrack: alrack[0]
+  return{ ice: iceblock[0], alrack: alrack[0] }
 end
 
 

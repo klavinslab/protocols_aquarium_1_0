@@ -14,6 +14,7 @@ argument
   task_name: string, "ready task to run.  If empty or mistyped choose any single task that is ready."
 end
 
+#TODO: add protocol to setup 42C bath and 4C centrifuge
 place parse_args
   marked: true
 end
@@ -61,15 +62,14 @@ place transform
   argument
     fragment_id: params[:ldna]
     dna_vol: 2
-    #e_coli_map: e_coli_strain
+    strain_list: params[:strains]
   end
   group: aquarium_user
   start: now()
   window: minutes(1)
 end
 
-wire (quick_comp,"electrocompetent_cells") => (transform,"e_coli_strain_type")
-wire (quick_comp,"iceblock") => (transform, "iceblock") # carry the iceblock over protocols
+wire (quick_comp,"ice") => (transform, "ice") # carry the iceblock over protocols
 wire (quick_comp,"alrack") => (transform, "alrack") # carry the alrack over protocols
 
 place incubate_tube
@@ -91,7 +91,7 @@ place plate
     volume: 200
     plate_type: plate_type
   end
-  start: hours(1) #minutes(30)
+  start: hours(3)
   window: hours(1)
 end
 
