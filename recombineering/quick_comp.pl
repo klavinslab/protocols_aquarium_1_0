@@ -124,7 +124,7 @@ while ii < num_samples
 end
 
 log
-  return{ ice: iceblock[0], alrack: alrack[0] }
+  return: { ice: iceblock[0], alrack: alrack[0] }
 end
 
 
