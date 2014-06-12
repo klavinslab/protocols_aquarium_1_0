@@ -97,16 +97,20 @@ while i<length(strain_list)
 
 #TODO: workout how many retries.
   if 1==1 #time_constant >= 3.0
-    produce
+    produce silently 
       r = 1 "1.5 mL tube transformation" from 
-      note: "Cover the label T%{t_tube_label} with one of the white circle stickers and add write the above item number on the sticker.  Either now or when you're done you may place the tube in the 30C incubator at A1.110"
       location: "I1"
       data
         fragment: fragment
         parent_id: compstr
       end
     end
-    
+    newID = r[:id]
+    step
+      description: "Relable and store transformant"
+      note: "Cover the label T%{t_tube_label} with one of the white circle stickers and write the item number %{newID} on the sticker. " 
+    end    
+
     trans_cell_ids = append(trans_cell_ids, r[:id])
     trans_cell_tm_consts = append(trans_cell_tm_consts, time_constant)
     
@@ -120,6 +124,11 @@ while i<length(strain_list)
     trans_cell_tm_consts = append(trans_cell_tm_consts, time_constant)
   end
   i = i + 1
+end
+
+step
+  description: "place all tubes into the incubator"
+  note: "collect all the tubes you just produced (id: %{trans_cell_ids}) and labeled and place them in the 30C incubator (I1) at location A1.110."
 end
 
 log
