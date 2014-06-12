@@ -7,7 +7,7 @@ argument
   alrack: generic, "taken alrack"
 end
 
-sample_count = length(strains)
+sample_count = length(strain_list)
 take
   fragments = item unique(fragment_id)
   electroporator = 1 "Electroporator"
