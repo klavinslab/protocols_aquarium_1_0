@@ -1,10 +1,10 @@
 argument
   initials: string, "Your initials or another 2-3 letter identifier for tube labeling"
-  enzyme_id: sample("Enzyme"), "The Phsion HF Master Mix stock"
+  enzyme_id: sample("Enzyme"), "The Phusion HF Master Mix stock"
   fragment_names: string array, "Fragment Names"
   forward_ids: sample("Primer") array, "Forward Primers"
   reverse_ids: sample("Primer") array, "Reverse Primers"
-  template_ids: sample array, "Template (diluted plasmid or other template DNA)"  
+  template_ids: sample array, "Template (diluted plasmid or other template DNA)"
   tanneal: number, "The anneal temperature in degrees C"
 end
 
@@ -62,7 +62,7 @@ end
 
 y=length(forward_ids)
 
-step 
+step
   description: "Pipet 19 µL molecular grade water into wells 1 through %{y}."
   note:"Be careful to pipette into the bottom of the tube, not onto the side of the tube."
 end
@@ -71,7 +71,7 @@ x=0
 while x < y
   a=template_ids[x]
   z=x+1
-  step 
+  step
     description: "Pipet 1 µL of plasmid with id %{a} into well %{z}."
   end
   x = x+1
@@ -82,7 +82,7 @@ while x < y
   a=forward_ids[x]
   b=reverse_ids[x]
   z=x+1
-  step 
+  step
     description: "Add both forward and reverse primers"
     check: "Pipet 2.5 µL of primer with id %{a} into well %{z}."
     check: "Pipet 2.5 µL of primer with id %{b} into well %{z}."
@@ -90,7 +90,7 @@ while x < y
   x = x+1
 end
 
-step 
+step
   description:"Pipet 25 µL Phusion Master Mix with id %{enzyme_id} into wells 1 through %{y}."
   note:"USE A NEW PIPETTE TIP FOR EACH WELL AND PIPETTE UP AND DOWN TO MIX"
 end
@@ -108,11 +108,40 @@ end
 release phusion_stock
 release concat(concat(forward_primer_stock,reverse_primer_stock),plasmid_stock)
 
+step
+  description: "Ignore produce locations"
+  note: "For the following produced items, do not move the tubes - ignore the location listed."
+end
+
 x=0
+first = 0
+last = 0
 while x < y
   produce
     q = 1 "PCR Result" of fragment_names[x]
-    location: "Thermocycler"
+    location: "R4.300"
   end
-  x = x+1
+
+  if x == 0
+    first = q[:id]
+  end
+  if x == y - 1
+    last = q[:id]
+  end
+
+  x = x + 1
+end
+
+
+if length(fragment_names) > 1
+  step
+    description: "Label tape and tube rack with PCR Result IDs"
+    note: "Label the tape (exactly) with: %{first} - %{last}."
+  end
+else
+  step
+    description: "Label tape and tube rack with PCR Result IDs"
+    check: "Label the tape (exactly) with: %{first}."
+    check: "Apply the tape to both the thermal cycler and a green 12-well tube rack."
+  end
 end
