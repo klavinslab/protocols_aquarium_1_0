@@ -72,18 +72,6 @@ end
 wire (quick_comp,"ice") => (transform, "ice") # carry the iceblock over protocols
 wire (quick_comp,"alrack") => (transform, "alrack") # carry the alrack over protocols
 
-place incubate_tube
-  protocol: "labw14/group4/incubate_tube.pl"
-  argument
-    temp: 30
-  end
-  group: aquarium_user
-  start: now()
-  window: minutes(2)
-end
-
-wire (transform,"transformed_cells_ids") => (incubate_tube,"e_coli_strain_id")
-
 place plate
   protocol: "labw14/group4/plate.pl"
   group: aquarium_user
