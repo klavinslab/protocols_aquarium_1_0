@@ -8,4 +8,4 @@ step
   description: "Choose to dispose the tube in the release step"
 end
 
-release yeast_tube
+release yeast_tube[0]
