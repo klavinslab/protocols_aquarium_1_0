@@ -99,7 +99,7 @@ while i<length(strain_list)
   if 1==1 #time_constant >= 3.0
     produce silently 
       #TODO: change to a destination strain
-      r = 1 "1.5 mL tube transformation" from compstr
+      r = 1 "1.5 mL tube transformation" of "recombineering intermediate" 
       location: "I1"
       data
         fragment: fragment
