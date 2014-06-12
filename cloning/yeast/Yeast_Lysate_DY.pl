@@ -55,7 +55,7 @@ step
 end
 
 step
-  description: "Pipet 30µl of the SDS mix created in the last step into the stripwells"
+  description: "Pipet 30µl of the SDS mix created in the previous step into wells 1 through %{x-1}"
 end
 
 z=0
