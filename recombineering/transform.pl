@@ -98,7 +98,8 @@ while i<length(strain_list)
 #TODO: workout how many retries.
   if 1==1 #time_constant >= 3.0
     produce silently 
-      r = 1 "1.5 mL tube transformation" from 
+      #TODO: change to a destination strain
+      r = 1 "1.5 mL tube transformation" from compstr
       location: "I1"
       data
         fragment: fragment
