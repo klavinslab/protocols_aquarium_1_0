@@ -100,7 +100,7 @@ while i<length(strain_list)
     produce
       r = 1 "1.5 mL tube transformation" from 
       note: "Cover the label T%{t_tube_label} with one of the white circle stickers and add write the above item number on the sticker.  Either now or when you're done you may place the tube in the 30C incubator at A1.110"
-      location: "30C" #TODO update this location name
+      location: "I1"
       data
         fragment: fragment
         parent_id: compstr
