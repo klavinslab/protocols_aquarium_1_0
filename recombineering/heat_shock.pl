@@ -10,11 +10,12 @@ take
 	taken_cells = item cells_flask_array
 end
 
+#TODO: Move to pre protocol step. or make log phase
 step
   description: "Prepare a heat bath"
-  check: "Locate and plug in the hot water bath."
-  check: "Press the button on the left labled 'I/O' to turn on the controller."
-  check: "Set the middle temperature to 42 C"
+  bullet: "Locate and plug in the hot water bath."
+  bullet: "Press the button on the left labled 'I/O' to turn on the controller."
+  bullet: "Set the middle temperature to 42 C"
   note: "Press the refresh button until a flashing tempurature appears and the leftmost thermometer is illumminated."
   note: "Use the up and down arrows to set the tempurature of the heat bath to 42 C."
   image: "heat_bath"
@@ -30,7 +31,7 @@ end
 
 step
   description: "Transfer each sample of log phase cells into a 50 mL Falcon Tube"
-  note: "Pour the entire volume of the shaker tube into the 50 mL falcon tube. The volume should be approximately 25 mL."
+  note: "Pour the entire volume of the shaker flask into the 50 mL falcon tube. The volume should be approximately 25 mL."
 end
 
 step
@@ -57,12 +58,9 @@ step
 end
 
 step
-  description: "Go grab the cells and prepare to put in the ice bath"
-end
-
-step
   description: "Chill the cells"
-  note: "Submerge the cells in the ice bath you just made.  Make sure the cells have fully chilled for 5-10 minutes before continuing."
+  note: "Remove the tubes from the heat bath and place in the ice bath you just made.  Make sure the cells have fully chilled for 5-10 minutes before continuing."
+  check: "While you wait, locate chilled molecular grade water (in a 50mL falcon tube) and place it into the ice bath as well."
   timer: { hours: 0, minutes: 8, seconds: 0 }
 end
 
