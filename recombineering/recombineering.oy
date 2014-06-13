@@ -73,7 +73,7 @@ wire (quick_comp,"ice") => (transform, "ice") # carry the iceblock over protocol
 wire (quick_comp,"alrack") => (transform, "alrack") # carry the alrack over protocols
 
 place plate
-  protocol: "labw14/group4/plate.pl"
+  protocol: base_dir+"plate.pl"
   group: aquarium_user
   argument
     volume: 200
