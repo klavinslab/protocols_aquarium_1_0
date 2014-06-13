@@ -1,6 +1,6 @@
 argument
   YeastStrain_id: sample("Yeast Strain") array, "Yeast Strain"
-  ColonyNumber: number, "Number of desired colonies from each plate to lysate"
+  ColonyNumber: number, "Number of desired colonies from each plate to make lysate from"
 end
 
 take
@@ -47,24 +47,36 @@ end
 
 y=length(YeastStrain_id)
 x=(ColonyNumber*y)+1
+z=(ColonyNumber*y)
+c=ColonyNumber
 sds=x*3
 h20=x*27
 
 step
-  description: "Grab a 1.5 ml tube and pipet in %{sds}µl of 2%% sds solution into it, then pipet in %{h20} µl of molecular grade water. Mix the 1.5ml tube with the vortexter"
+  description: "Grab a 1.5 ml tube and pipet in %{sds}µl of 2%% sds solution into it, then pipet in %{h20}µl of molecular grade water. Mix the 1.5ml tube with the vortexter"
 end
 
 step
-  description: "Pipet 30µl of the SDS mix created in the last step into the stripwells"
+  description: "Pipet 30µl of the SDS mix created in the previous step into wells 1 through %{z}"
 end
 
 z=0
-while z< y 
+f=0
+w=0
+
+while z<y 
   a=YeastStrain_id[z]
-  f=z+1
-  step
-    description: "Take an unused small pipet tip and scrape a small amount of cells off a colony from %{a} and place it into well %{f}"
-    note: "If you're already picked a colony for this strain make sure you pick a different one for this well"
+  while w<c
+    f=z*c+1
+    step
+      description: "With the plate closed and upside down, find a large colony and label it ......"
+      note: "If you're already picked a colony for this strain make sure you pick a different one for this well"
+    end
+    step
+      description: "Take an unused small pipet tip and scrape a small amount of cells off a colony from %{a} and place it into well %{f}"
+      note: "If you're already picked a colony for this strain make sure you pick a different one for this well"
+    end
+    w=w+1
   end
   z=z+1
 end
