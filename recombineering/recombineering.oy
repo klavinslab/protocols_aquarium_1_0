@@ -14,6 +14,7 @@ argument
   task_name: string, "ready task to run.  If empty or mistyped choose any single task that is ready."
 end
 
+#TODO: add protocol to setup 42C bath and 4C centrifuge
 place parse_args
   marked: true
 end
@@ -61,28 +62,15 @@ place transform
   argument
     fragment_id: params[:ldna]
     dna_vol: 2
-    #e_coli_map: e_coli_strain
+    strain_list: params[:strains]
   end
   group: aquarium_user
   start: now()
   window: minutes(1)
 end
 
-wire (quick_comp,"electrocompetent_cells") => (transform,"e_coli_strain_type")
-wire (quick_comp,"iceblock") => (transform, "iceblock") # carry the iceblock over protocols
+wire (quick_comp,"ice") => (transform, "ice") # carry the iceblock over protocols
 wire (quick_comp,"alrack") => (transform, "alrack") # carry the alrack over protocols
-
-place incubate_tube
-  protocol: "labw14/group4/incubate_tube.pl"
-  argument
-    temp: 30
-  end
-  group: aquarium_user
-  start: now()
-  window: minutes(2)
-end
-
-wire (transform,"transformed_cells_ids") => (incubate_tube,"e_coli_strain_id")
 
 place plate
   protocol: "labw14/group4/plate.pl"
@@ -91,7 +79,7 @@ place plate
     volume: 200
     plate_type: plate_type
   end
-  start: hours(1) #minutes(30)
+  start: hours(3)
   window: hours(1)
 end
 
@@ -101,7 +89,7 @@ wire (transform,"transformed_cells_ids") => (plate,"e_coli_strain_id")
 # forward transitions
 transition [parse_args] => [make_log_phase] when true 
   do
-    tsk = tasks("recombineering", "debug")
+    tsk = tasks("recombineering", "ready")
     #if task named task_name is ready then run with it
     #otherwise just start running the last task in the list
     ii = 0
@@ -120,13 +108,8 @@ transition [finish_log_phase] => [heat_shock] when !error(0) && completed(0) end
 
 transition [heat_shock] => [quick_comp] when !error(0) && completed(0) end 
 transition [quick_comp] => [transform] when !error(0) && completed(0) end 
-transition [incubate_tube] => [plate] when !error(0) && completed(0) end 
+transition [transform] => [plate] when !error(0) && completed(0) end 
 transition [plate] => [] when !error(0) && completed(0) end
-
-
-# T1 -> []
-transition [transform] => [incubate_tube] when !error(0) && completed(0) end #&& (return_value(0,"time_constant") >= 3) end
-
 
 # remaining reverse transitions
 transition [make_log_phase] => [make_log_phase] when error(0) end 
@@ -135,7 +118,6 @@ transition [finish_log_phase] => [make_log_phase] when error(0) end
 transition [heat_shock] => [heat_shock] when error(0) end 
 transition [quick_comp] => [quick_comp] when error(0) end 
 transition [transform] => [transform] when error(0) end 
-transition [incubate_tube] => [incubate_tube] when error(0) end
 transition [plate] => [plate] when error(0) end
 #transition [boil_cells] => [boil_cells] when error(0) end
 #transition [pcr_prepare] => [pcr_prepare] when error(0) end

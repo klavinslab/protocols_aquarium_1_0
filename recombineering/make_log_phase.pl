@@ -18,7 +18,7 @@ information "Dilute cells and bring them to log phase"
 nflasks = length(strainIDs)
 take
 	strains = item unique(strainIDs)
-	flasks = nflasks "125 mL Baffled Flask"
+	flasks = nflasks "250 mL Baffled Flask"
 end
 
 ind = 0
