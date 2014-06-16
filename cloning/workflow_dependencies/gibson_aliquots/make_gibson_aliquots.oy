@@ -22,7 +22,7 @@ end
 
 
 place gibson
-  "gibson_aliquots/045_gibson.pl"
+  protocol: "gibson_aliquots/045_gibson.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
@@ -31,7 +31,7 @@ end
 
 
 place transform1
-  "gibson_aliquots/050_ecoli_transformation.pl"
+  protocol: "gibson_aliquots/050_ecoli_transformation.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
@@ -39,7 +39,7 @@ end
 
 
 place plate1
-  "gibson_aliquots/052_plate.pl"
+  protocol: "gibson_aliquots/052_plate.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
@@ -47,14 +47,14 @@ end
 
 
 place image1
-  "gibson_aliquots/055_image_plate.pl"
+  protocol: "gibson_aliquots/055_image_plate.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
 end
 
 place transform2
-  "gibson_aliquots/050_ecoli_transformation.pl"
+  protocol: "gibson_aliquots/050_ecoli_transformation.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
@@ -62,7 +62,7 @@ end
 
 
 place plate2
-  "gibson_aliquots/052_plate.pl"
+  protocol: "gibson_aliquots/052_plate.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
@@ -70,7 +70,7 @@ end
 
 
 place image2
-  "gibson_aliquots/055_image_plate.pl"
+  protocol: "gibson_aliquots/055_image_plate.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
@@ -78,7 +78,7 @@ end
 
 
 place transform3
-  "gibson_aliquots/050_ecoli_transformation.pl"
+  protocol: "gibson_aliquots/050_ecoli_transformation.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
@@ -86,7 +86,7 @@ end
 
 
 place plate3
-  "gibson_aliquots/052_plate.pl"
+  protocol: "gibson_aliquots/052_plate.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
@@ -94,14 +94,17 @@ end
 
 
 place image3
-  "gibson_aliquots/055_image_plate.pl"
+  protocol: "gibson_aliquots/055_image_plate.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
 end
 
-place
- 
+place fail_clean_up
+  protocol: "gibson_aliquots/fail_clean_up.pl"
+  group: "technicians"
+  start: now()
+  window: minutes(1)
 end
 
 # forward transitions
@@ -119,8 +122,8 @@ transition [plate3] => [image3] when !error(0) && completed(0) end
 transition [image1,image2,image3] => [] when !error(0) && completed(0) end
 
 #gibson aliquots failed
-transition [image1,image2,image3] => [] when !error(0) && completed(0) end
-
+transition [image1,image2,image3] => [fail_clean_up] when !error(0) && completed(0) end
+transition [fail_clean_up] => [] when !error(0) && completed(0) end
 
 
 # rework transitions 
