@@ -1,12 +1,13 @@
-place wait
-    marked: true
-end
+#place wait
+#    marked: true
+#end
 
 place lb
     protocol: "transf_eff_proj/watchers/media/lb.pl"
     start: now()
     window: minutes(30)
     group: "technicians"
+    marked: true
 end
 
 place autoclave
@@ -35,7 +36,9 @@ end
 transition [lb] => [autoclave] when completed(0) end
 transition [autoclave] => [pour] when completed(0) end
 transition [pour] => [move] when completed(0) end
-transition [move] => [wait] when completed(0) end
+transition [pour] => [] when completed(0) end
+
+#transition [move] => [wait] when completed(0) end
 
 # rework transitions
 transition [lb] => [lb] when error(0) end
