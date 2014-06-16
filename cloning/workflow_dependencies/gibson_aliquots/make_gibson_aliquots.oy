@@ -110,7 +110,7 @@ end
 # forward transitions
 transition [make_iso_buffer] => [make_aliquots] when !error(0) && completed(0) end
 transition [make_aliquots] => [gibson] when !error(0) && completed(0) end
-transition [gibson] => [transform1,transform2,transform3] when !error(0) && completed(0) && !error(1) && completed(1) !error(2) && completed(2) end
+transition [gibson] => [transform1,transform2,transform3] when !error(0) && completed(0) end
 transition [transform1] => [plate1] when !error(0) && completed(0) end
 transition [transform2] => [plate2] when !error(0) && completed(0) end
 transition [transform3] => [plate3] when !error(0) && completed(0) end
@@ -119,10 +119,10 @@ transition [plate2] => [image2] when !error(0) && completed(0) end
 transition [plate3] => [image3] when !error(0) && completed(0) end
 
 #gibson aliquots worked
-transition [image1,image2,image3] => [] when !error(0) && completed(0) end
+#transition [image1,image2,image3] => [] when !error(0) && completed(0) && !error(1) && completed(1) && !error(2) && completed(2) end
 
 #gibson aliquots failed
-transition [image1,image2,image3] => [fail_clean_up] when !error(0) && completed(0) end
+transition [image1,image2,image3] => [fail_clean_up] when !error(0) && completed(0) && !error(1) && completed(1) && !error(2) && completed(2) end
 transition [fail_clean_up] => [] when !error(0) && completed(0) end
 
 
