@@ -2,15 +2,21 @@ information "Pour LB plates from 200, 400, or 800 mL sources."
 
 
 # TODO: Add the date to each plate (using stamp eventually)
-argument
-  n: number, "Enter the number of bottles you are pouring."
-  volume: number, "Enter the volume of LB Agar you are pouring in mL. Valid options are 200, 400, or 800."
-  antibiotic: string, "Enter the type of antibiotic you want. Valid options are Amp, Kan, Chlor or None."
-  iptg: string, "Add IPTG? Enter Yes or No."
-  atc: string, "Add aTc? Enter Yes or No."
-  xgal: string, "Add X-gal? Enter Yes or No."
-end
+#argument
+#  n: number, "Enter the number of bottles you are pouring."
+#  volume: number, "Enter the volume of LB Agar you are pouring in mL. Valid options are 200, 400, or 800."
+#  antibiotic: string, "Enter the type of antibiotic you want. Valid options are Amp, Kan, Chlor or None."
+#  iptg: string, "Add IPTG? Enter Yes or No."
+#  atc: string, "Add aTc? Enter Yes or No."
+#  xgal: string, "Add X-gal? Enter Yes or No."
+#end
 
+  n = 1
+  volume = 800
+  antibiotic =  "Amp"
+  iptg = "No"
+  atc = "No"
+  xgal = "No"
 
 if volume != 200 && volume != 400 && volume != 800
   step

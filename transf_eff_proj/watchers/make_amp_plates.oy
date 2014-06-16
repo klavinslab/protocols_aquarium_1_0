@@ -1,28 +1,17 @@
-place wait
-    marked: true
-end
+#place wait
+#    marked: true
+#end
 
 place lb
     protocol: "transf_eff_proj/watchers/media/lb.pl"
-    argument
-        n_bottle: 1
-        volume: 800
-        add_agar: "Yes"
-    end
+    group: "technicians"
+    marked: true
     start: now()
     window: minutes(30)
-    group: "technicians"
 end
 
 place autoclave
     protocol: "transf_eff_proj/watchers/media/autoclave_bacteria_media.pl"
-    argument
-        lb_liquid_n: 0
-        lb_agar_800_n: 1
-        lb_agar_400_n: 0
-        lb_agar_200_n: 0
-        tb_liquid_n: 0
-    end
     start: now()
     window: minutes(30)
     group: "technicians"
@@ -30,14 +19,6 @@ end
 
 place pour
     protocol: "transf_eff_proj/watchers/media/pour_lb_plates.pl"
-    argument
-        n: 1
-        volume: 800
-        antibiotic: "Amp"
-        iptg: "No"
-        atc: "No"
-        xgal: "No"
-    end
     start: now()
     window: minutes(30)
     group: "technicians"
@@ -51,11 +32,13 @@ place move
 end
 
 
-transition [wait] => [lb] when quantity("Trans Eff LB Amp Plate (sterile)") < min_quantity("Trans Eff LB Amp Plate (sterile)") end
+#transition [wait] => [lb] when quantity("Trans Eff LB Amp Plate (sterile)") < min_quantity("Trans Eff LB Amp Plate (sterile)") end
 transition [lb] => [autoclave] when completed(0) end
 transition [autoclave] => [pour] when completed(0) end
 transition [pour] => [move] when completed(0) end
-transition [move] => [wait] when completed(0) end
+transition [pour] => [] when completed(0) end
+
+#transition [move] => [wait] when completed(0) end
 
 # rework transitions
 transition [lb] => [lb] when error(0) end

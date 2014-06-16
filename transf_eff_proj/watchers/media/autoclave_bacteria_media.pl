@@ -1,25 +1,30 @@
 information "Autoclave bacterial media"
 
-argument
-  lb_liquid_n: number, "Enter the number of 800 mL LB liquid media bottles to autoclave."
-end
+#argument
+#  lb_liquid_n: number, "Enter the number of 800 mL LB liquid media bottles to autoclave."
+#end
 
-argument
-  lb_agar_800_n: number, "Enter the number of 800 mL LB agar media bottles to autoclave."
-end
+#argument
+#  lb_agar_800_n: number, "Enter the number of 800 mL LB agar media bottles to autoclave."
+#end
 
-argument
-  lb_agar_400_n: number, "Enter the number of 400 mL LB agar media bottles to autoclave."
-end
+#argument
+#  lb_agar_400_n: number, "Enter the number of 400 mL LB agar media bottles to autoclave."
+#end
 
-argument
-  lb_agar_200_n: number, "Enter the number of 200 mL LB agar media bottles to autoclave."
-end
+#argument
+#  lb_agar_200_n: number, "Enter the number of 200 mL LB agar media bottles to autoclave."
+#end
 
-argument
-  tb_liquid_n: number, "Enter the number of 800 mL TB liquid media bottles to autoclave."
-end
+#argument
+#  tb_liquid_n: number, "Enter the number of 800 mL TB liquid media bottles to autoclave."
+#end
 
+lb_liquid_n = 0
+lb_agar_800_n = 1 
+lb_agar_400_n = 0
+lb_agar_200_n = 0
+tb_liquid_n = 0
 
 # Take media bottles
 lb_liquid = []  # Initialize global parameter

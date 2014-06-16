@@ -7,6 +7,7 @@ end
 n = length(plasmid_ids)
 
 take
+  # FIXME: uniquify
   strains = item plasmid_ids
   plates = n plate_type
   #note: "Do not take plate from top of the stack if there is a date stick on it, take from the middle of the stack."
@@ -43,7 +44,7 @@ while ii < n
   end
 
   produce
-    r1 = 1 "E coli Plate" from strain
+    r1 = 1 "E coli Plate of Plasmid" from strain
     note: "Keep the plate on the bench to use in the next protocol (incubating)."
     location: "Bench"
     release plate

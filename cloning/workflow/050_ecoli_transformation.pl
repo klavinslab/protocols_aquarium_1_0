@@ -19,6 +19,7 @@ end
 
 step
   description: "Intialize the Electroporator"
+  note: "If the electroporator is off (no numbers displayed), turn it on using the ON/STDBY button."
   note: "Turn on the electroporator if it is off and set the voltage to 1250V by clicking up and down button.\nClick the time constant button."
 end
 

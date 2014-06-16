@@ -2,12 +2,15 @@ information "Prepare unsterile bottle(s) of LB (rich media for bacteria)."
 # FIXME: parameterize for adding IPTG, aTc, X-Gal
 
 
-argument
-  n_bottle: number, "Enter the number of bottles you want to make (maximum of 4)."
-  volume: number, "Enter the media volume (200, 400, or 800 mL)."
-  add_agar: string, "Make agar media? (Yes or No)"
-end
+#argument
+#  n_bottle: number, "Enter the number of bottles you want to make (maximum of 4)."
+#  volume: number, "Enter the media volume (200, 400, or 800 mL)."
+#  add_agar: string, "Make agar media? (Yes or No)"
+#end
 
+n_bottle = 1
+volume = 800
+add_agar = "Yes"
 
 if n_bottle < 1 || n_bottle > 4
   step
