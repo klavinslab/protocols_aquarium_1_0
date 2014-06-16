@@ -1,7 +1,3 @@
-argument
-  enzymes: string, "enzymes to be used"
-end
-
 
 place make_iso_buffer
   protocol: "gibson_aliquots/make_iso_buffer.pl"
