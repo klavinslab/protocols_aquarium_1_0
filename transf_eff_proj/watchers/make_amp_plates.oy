@@ -31,7 +31,7 @@ place move
 end
 
 
-transition [wait] => [lb] when quantity("Trans Eff LB Amp Plate (sterile)") < min_quantity("Trans Eff LB Amp Plate (sterile)") end
+#transition [wait] => [lb] when quantity("Trans Eff LB Amp Plate (sterile)") < min_quantity("Trans Eff LB Amp Plate (sterile)") end
 transition [lb] => [autoclave] when completed(0) end
 transition [autoclave] => [pour] when completed(0) end
 transition [pour] => [move] when completed(0) end
