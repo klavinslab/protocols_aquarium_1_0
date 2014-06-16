@@ -4,10 +4,10 @@
 
 place lb
     protocol: "transf_eff_proj/watchers/media/lb.pl"
+    marked: true
     start: now()
     window: minutes(30)
     group: "technicians"
-    marked: true
 end
 
 place autoclave
