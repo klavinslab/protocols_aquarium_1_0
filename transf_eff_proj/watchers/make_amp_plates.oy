@@ -11,13 +11,13 @@ end
 
 place autoclave
     protocol: "transf_eff_proj/watchers/media/autoclave_bacteria_media.pl"
-    argument
-        lb_liquid_n: 0
-        lb_agar_800_n: 1
-        lb_agar_400_n: 0
-        lb_agar_200_n: 0
-        tb_liquid_n: 0
-    end
+#    argument
+#        lb_liquid_n: 0
+#        lb_agar_800_n: 1
+#        lb_agar_400_n: 0
+#        lb_agar_200_n: 0
+#        tb_liquid_n: 0
+#    end
     start: now()
     window: minutes(30)
     group: "technicians"
@@ -25,14 +25,14 @@ end
 
 place pour
     protocol: "transf_eff_proj/watchers/media/pour_lb_plates.pl"
-    argument
-        n: 1
-        volume: 800
-        antibiotic: "Amp"
-        iptg: "No"
-        atc: "No"
-        xgal: "No"
-    end
+#    argument
+#        n: 1
+#        volume: 800
+#        antibiotic: "Amp"
+#        iptg: "No"
+#        atc: "No"
+#        xgal: "No"
+#    end
     start: now()
     window: minutes(30)
     group: "technicians"
