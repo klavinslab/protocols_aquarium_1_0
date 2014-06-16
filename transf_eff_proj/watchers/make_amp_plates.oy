@@ -5,7 +5,7 @@ end
 place lb
     protocol: "transf_eff_proj/watchers/media/lb.pl"
     argument
-        n_bottle: 1
+        #n_bottle: 1
         volume: 800
         add_agar: "Yes"
     end
