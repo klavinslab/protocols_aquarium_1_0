@@ -9,6 +9,8 @@ argument
 end
 
 n_bottle = 1
+volume = 800
+add_agar = "Yes"
 
 if n_bottle < 1 || n_bottle > 4
   step
