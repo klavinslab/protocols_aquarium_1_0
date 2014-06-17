@@ -1,0 +1,18 @@
+place one
+  protocol: "cloning/workflow_dependencies/gibson_aliquots/one.pl"
+  group: "technicians"
+  marked: true
+  start: now()
+  window: minutes(5)
+end
+
+place two
+  protocol: "cloning/workflow_dependencies/gibson_aliquots/two.pl"
+  group: "technicians"
+  start: now()
+  window: minutes(5)
+end
+
+transition [one] => [two] when !error(0) && completed(0) end
+transition [two] => [] when !error(0) && completed(0) end
+

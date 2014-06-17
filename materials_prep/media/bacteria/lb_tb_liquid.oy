@@ -1,0 +1,16 @@
+# The same as the plates metacol, but instead of a pouring step, an antibiotics-adding step
+
+# QA: Use same control strains as for lb plates
+# 1) Prepare 2 1 mL aliquots of media from each new bottle
+# 2)
+#   a) For plain LB liquid, inoculate one with an antibiotic+ strain (antibiotic- would also be fine), don't inoculate the other
+#   b) For LB with antibiotics, inoculate one aliquot with antibiotic+ strain, another with antibiotic- strain
+# 3) Incubate both overnight
+# 4) Check for growth:
+#   a) For plain LB liquid, growth in inoculated tube, but not the other
+#   b) For LB with anbitiocis, growth in tube with right antibiotic, not without
+# 5) Throw out all bottles that don't pass QA
+# TODO: Missing QA protocols:
+#   1) bottle item id-specific overnight protocol (?)
+#   2) QA Check
+#   3) General "throw out these items" protocol, also needed for lb plates

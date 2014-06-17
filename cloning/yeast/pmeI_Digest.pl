@@ -5,8 +5,8 @@ argument
   plasmids: sample("Plasmid") array, "Plasmids"
   Plasmids_conc: number array, "Plasmid DNA Concentrations in ng/µl"
   pmei: sample("Enzyme"), "Tube of PMEI to be used."
-  bsa: sample("Enzyme Buffer Stock"), "Tube of BSA to be used"
-  NEB4: sample("Enzyme Buffer Stock"), "Tube of NEB Buffer 4 to be used."
+  bsa: sample("Enzyme Buffer"), "Tube of BSA to be used"
+  NEB4: sample("Enzyme Buffer"), "Tube of NEB Buffer 4 to be used."
   DNA_amount: number, "The amount of DNA you would like to digest in ng/µl"
 end
 
@@ -42,7 +42,7 @@ if length(plasmids) > 12
   end
 end
 
-if length(forward_ids) > 24
+if length(plasmids) > 24
   step
     description: "Grab a third 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
     check: "Label the right most well with the letters %{initials}"
@@ -52,7 +52,7 @@ if length(forward_ids) > 24
 end
 
 step
-  description: "If not already labeled, label tube %{y}%{initials} and rip off any other tubes to the right."
+  description: "If not already labeled, label tube %{y} %{initials} and rip off any other tubes to the right."
 end
 
 count1=0
@@ -66,13 +66,14 @@ step
 end
 
 
-while count<y
+while count1<y
   label1=count1+1
   plas_vol=ceil(DNA_amount/Plasmids_conc[count1])
   H20_vol=43.5-plas_vol
   step
-    description: "Add %{H20_vol}µl of MGH2O into tube %{label}"
+    description: "Add %{H20_vol}µl of MGH2O into tube %{label1}"
   end
+  count1=count1+1
 end
 
 count=0
@@ -84,6 +85,7 @@ while count<y
   step
     description: "Add %{plas_vol}µl of plasmid %{plas} into tube %{label}"
   end
+  count=count+1
 end
 
 step
@@ -96,13 +98,13 @@ step
 end
 
 step
-  description: "Place the capped tubes into the 37ºc incubator B15.320"
+  description: "Place the capped tubes into the 37ºc incubator B15.320. Make sure to label them them with %{initials} and today's date."
 end
 
 x=0
 while x < y
   produce
-    q = 1 "Digested Plasmid" of plasmid_stocks[x]
+    q = 1 "Digested Plasmid" from plasmid_stocks[x]
     location: "B15.320"
   end
   x = x+1

@@ -1,0 +1,16 @@
+place parse_args
+  marked: true
+end
+
+place donothing
+end
+
+transition [parse_args] => [donothing] when true
+  do
+    tsk = tasks("Daily", "running")
+    ii = 0
+    useless_variable = set_task_status(tsk,"done")
+  end
+end
+
+transition [donothing] => [] when !error(0) && completed(0) end

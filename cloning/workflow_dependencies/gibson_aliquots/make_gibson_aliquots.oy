@@ -1,7 +1,3 @@
-argument
-  enzymes: string, "enzymes to be used"
-end
-
 
 place make_iso_buffer
   protocol: "gibson_aliquots/make_iso_buffer.pl"
@@ -22,7 +18,7 @@ end
 
 
 place gibson
-  "gibson_aliquots/045_gibson.pl"
+  protocol: "gibson_aliquots/045_gibson.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
@@ -31,7 +27,7 @@ end
 
 
 place transform1
-  "gibson_aliquots/050_ecoli_transformation.pl"
+  protocol: "gibson_aliquots/050_ecoli_transformation.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
@@ -39,7 +35,7 @@ end
 
 
 place plate1
-  "gibson_aliquots/052_plate.pl"
+  protocol: "gibson_aliquots/052_plate.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
@@ -47,14 +43,14 @@ end
 
 
 place image1
-  "gibson_aliquots/055_image_plate.pl"
+  protocol: "gibson_aliquots/055_image_plate.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
 end
 
 place transform2
-  "gibson_aliquots/050_ecoli_transformation.pl"
+  protocol: "gibson_aliquots/050_ecoli_transformation.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
@@ -62,7 +58,7 @@ end
 
 
 place plate2
-  "gibson_aliquots/052_plate.pl"
+  protocol: "gibson_aliquots/052_plate.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
@@ -70,7 +66,7 @@ end
 
 
 place image2
-  "gibson_aliquots/055_image_plate.pl"
+  protocol: "gibson_aliquots/055_image_plate.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
@@ -78,7 +74,7 @@ end
 
 
 place transform3
-  "gibson_aliquots/050_ecoli_transformation.pl"
+  protocol: "gibson_aliquots/050_ecoli_transformation.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
@@ -86,7 +82,7 @@ end
 
 
 place plate3
-  "gibson_aliquots/052_plate.pl"
+  protocol: "gibson_aliquots/052_plate.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
@@ -94,20 +90,23 @@ end
 
 
 place image3
-  "gibson_aliquots/055_image_plate.pl"
+  protocol: "gibson_aliquots/055_image_plate.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
 end
 
-place
- 
+place fail_clean_up
+  protocol: "gibson_aliquots/fail_clean_up.pl"
+  group: "technicians"
+  start: now()
+  window: minutes(1)
 end
 
 # forward transitions
 transition [make_iso_buffer] => [make_aliquots] when !error(0) && completed(0) end
 transition [make_aliquots] => [gibson] when !error(0) && completed(0) end
-transition [gibson] => [transform1,transform2,transform3] when !error(0) && completed(0) && !error(1) && completed(1) !error(2) && completed(2) end
+transition [gibson] => [transform1,transform2,transform3] when !error(0) && completed(0) end
 transition [transform1] => [plate1] when !error(0) && completed(0) end
 transition [transform2] => [plate2] when !error(0) && completed(0) end
 transition [transform3] => [plate3] when !error(0) && completed(0) end
@@ -116,11 +115,11 @@ transition [plate2] => [image2] when !error(0) && completed(0) end
 transition [plate3] => [image3] when !error(0) && completed(0) end
 
 #gibson aliquots worked
-transition [image1,image2,image3] => [] when !error(0) && completed(0) end
+#transition [image1,image2,image3] => [] when !error(0) && completed(0) && !error(1) && completed(1) && !error(2) && completed(2) end
 
 #gibson aliquots failed
-transition [image1,image2,image3] => [] when !error(0) && completed(0) end
-
+transition [image1,image2,image3] => [fail_clean_up] when !error(0) && completed(0) && !error(1) && completed(1) && !error(2) && completed(2) end
+transition [fail_clean_up] => [] when !error(0) && completed(0) end
 
 
 # rework transitions 
