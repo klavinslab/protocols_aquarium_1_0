@@ -35,5 +35,7 @@ produce
 end
 
 
-release [Tris_HCL, Tris_base, MGh2o]
+release Tris_HCL
+release Tris_base 
+release MGh2o
 
