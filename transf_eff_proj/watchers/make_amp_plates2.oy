@@ -8,7 +8,7 @@ end
 
 place lb
     protocol: "transf_eff_proj/watchers/media/lb.pl"
-    marked: true
+    #marked: true
     start: now()
     window: minutes(30)
     group: tech
@@ -22,7 +22,7 @@ place transform
     plate_type: plate_type
   end
   group: tech
-  #marked: true
+  marked: true
   start: now()
   window: hours(20)
 end
