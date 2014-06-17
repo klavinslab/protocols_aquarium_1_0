@@ -31,9 +31,9 @@ end
 produce
   r = 1 "1M Tris-HCL, ph7.5"
   location: "Bench"
+  release bottle
 end
 
-release bottle
-release Tris_HCL
-release MGh2o
-release Tris_base
+
+release [Tris_HCL, Tris_base, MGh2o]
+
