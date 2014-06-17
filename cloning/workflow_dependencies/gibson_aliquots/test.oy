@@ -1,6 +1,6 @@
 place one
   protocol: "cloning/workflow_dependencies/gibson_aliquots/one.pl"
-  group: "technician"
+  group: "technicians"
   marked: true
   start: now()
   window: minutes(5)
@@ -8,7 +8,7 @@ end
 
 place two
   protocol: "cloning/workflow_dependencies/gibson_aliquots/two.pl"
-  group: "technician"
+  group: "technicians"
   start: now()
   window: minutes(5)
 end
