@@ -8,7 +8,7 @@ end
 #
 
 place p1
-  protocol: "plankton/sandbox/one.pl"
+  protocol: "protocols:plankton/sandbox/one.pl"
   group: aquarium_user
   marked: true
   start: now()
@@ -18,7 +18,7 @@ end
 num = 0
 
 place p2
-  protocol: "plankton/sandbox/two.pl"
+  protocol: "protocols:plankton/sandbox/two.pl"
   argument
     y: num
   end

@@ -1,0 +1,79 @@
+
+argument
+  plasmid_id: sample, "The plasmid stock with which to transform"
+  e_coli_strain_id: object, "The electrocompetent stock to be transformed"
+  plate_type: object, "The plate on which the transformed cells to be plated"
+  tech: string, "username of the technician or the group"
+end
+
+place transform
+  protocol: "transf_eff_proj/transform.pl"
+  argument
+    plasmid_id: plasmid_id
+    e_coli_strain_id: e_coli_strain_id
+    plate_type: plate_type
+  end
+  group: tech
+  marked: true
+  start: now()
+  window: hours(20)
+end
+
+place plate
+  protocol: "transf_eff_proj/plate.pl"
+  argument
+    volume: 200
+    plate_type: plate_type
+  end
+  group: tech
+  start: now()
+  window: minutes(1)
+end
+
+wire (transform,"transformed_cells_id") => (plate,"e_coli_strain_id")
+
+place incubate
+  protocol: "transf_eff_proj/incubate.pl"
+  argument
+    temp: 37
+  end
+  group: tech
+  start: now()
+  window: minutes(1)
+end
+
+wire (plate,"plate_id") => (incubate,"e_coli_strain_id")
+
+place image
+  protocol: "transf_eff_proj/count_colonies.pl"
+  group: tech
+  start: hours(19)
+  #start: now()
+  window: hours(4)
+end
+
+wire (plate,"plate_id") => (image,"Transformed_E_coli_Strain_id")
+
+place reimage
+  protocol: "transf_eff_proj/count_colonies.pl"
+  group: tech
+  start: now()
+  window: hours(1)
+end
+
+wire (plate,"plate_id") => (reimage,"Transformed_E_coli_Strain_id")
+
+# forward transitions
+transition [transform] => [plate]    when !error(0) && completed(0) && return_value(0,"tube_incubation_choice") == 0 end
+transition [plate]     => [incubate] when !error(0) && completed(0) end
+transition [incubate]  => [image]    when !error(0) && completed(0) end
+transition [image]     => []         when !error(0) && completed(0) end
+#transition [reimage]   => []         when !error(0) && completed(0) end
+
+
+# rework transitions
+transition [transform] => [transform] when error(0) end
+transition [plate]     => [plate]     when error(0) end
+transition [incubate]  => [incubate]  when error(0) end
+transition [image]     => [reimage]   when error(0) end
+transition [reimage]   => [reimage]   when error(0) end
