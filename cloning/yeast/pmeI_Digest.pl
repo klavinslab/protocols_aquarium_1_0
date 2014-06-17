@@ -73,6 +73,7 @@ while count1<y
   step
     description: "Add %{H20_vol}µl of MGH2O into tube %{label1}"
   end
+  count1=count1+1
 end
 
 count=0
@@ -84,6 +85,7 @@ while count<y
   step
     description: "Add %{plas_vol}µl of plasmid %{plas} into tube %{label}"
   end
+  count=count+1
 end
 
 step
