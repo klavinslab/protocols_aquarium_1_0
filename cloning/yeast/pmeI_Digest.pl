@@ -104,7 +104,7 @@ end
 x=0
 while x < y
   produce
-    q = 1 "Digested Plasmid" of plasmid_stocks[x]
+    q = 1 "Digested Plasmid" of plasmid_stocks[x][:name]
     location: "B15.320"
   end
   x = x+1
