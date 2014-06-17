@@ -6,6 +6,14 @@ argument
   tech: string, "username of the technician or the group"
 end
 
+place lb
+    protocol: "transf_eff_proj/watchers/media/lb.pl"
+    marked: true
+    start: now()
+    window: minutes(30)
+    group: tech
+end
+
 place transform
   protocol: "transf_eff_proj/transform.pl"
   argument
@@ -14,7 +22,7 @@ place transform
     plate_type: plate_type
   end
   group: tech
-  marked: true
+  #marked: true
   start: now()
   window: hours(20)
 end
@@ -64,6 +72,7 @@ end
 wire (plate,"plate_id") => (reimage,"Transformed_E_coli_Strain_id")
 
 # forward transitions
+transition [lb] => [transform] when !error(0) && completed(0) end
 transition [transform] => [plate]    when !error(0) && completed(0) && return_value(0,"tube_incubation_choice") == 0 end
 transition [plate]     => [incubate] when !error(0) && completed(0) end
 transition [incubate]  => [image]    when !error(0) && completed(0) end
@@ -72,6 +81,7 @@ transition [image]     => []         when !error(0) && completed(0) end
 
 
 # rework transitions
+transition [lb] => [lb] when error(0) end
 transition [transform] => [transform] when error(0) end
 transition [plate]     => [plate]     when error(0) end
 transition [incubate]  => [incubate]  when error(0) end
