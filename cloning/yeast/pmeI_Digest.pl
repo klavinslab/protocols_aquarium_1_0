@@ -71,7 +71,7 @@ while count1<y
   plas_vol=ceil(DNA_amount/Plasmids_conc[count1])
   H20_vol=43.5-plas_vol
   step
-    description: "Add %{H20_vol}µl of MGH2O into tube %{label}"
+    description: "Add %{H20_vol}µl of MGH2O into tube %{label1}"
   end
 end
 
