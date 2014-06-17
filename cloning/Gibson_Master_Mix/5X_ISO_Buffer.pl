@@ -68,17 +68,17 @@ step
 end
 
 produce
-  r = 1 "5X ISO Buffer"
+  r = 1 "Enzyme Buffer Stock" from "5X ISO Buffer"
   location: "Bench"
 end
 
 produce
-  r = 1 "5X ISO Buffer"
+  r = 1 "Enzyme Buffer Stock" from "5X ISO Buffer"
   location: "Bench"
 end
 
 produce
-  r = 3 "5X ISO Buffer"
+  r = 1 "Enzyme Buffer Stock" from "5X ISO Buffer"
   location: "Bench"
 end
 
