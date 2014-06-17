@@ -66,7 +66,7 @@ step
 end
 
 
-while count<y
+while count1<y
   label1=count1+1
   plas_vol=ceil(DNA_amount/Plasmids_conc[count1])
   H20_vol=43.5-plas_vol
