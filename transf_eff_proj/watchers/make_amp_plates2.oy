@@ -1,0 +1,43 @@
+place lb
+    protocol: "transf_eff_proj/watchers/media/lb.pl"
+    group: "technicians"
+    marked: true
+    start: now()
+    window: minutes(30)
+end
+
+place autoclave
+    protocol: "transf_eff_proj/watchers/media/autoclave_bacteria_media.pl"
+    start: now()
+    window: minutes(30)
+    group: "technicians"
+end
+
+place pour
+    protocol: "transf_eff_proj/watchers/media/pour_lb_plates.pl"
+    start: now()
+    window: minutes(30)
+    group: "technicians"
+end
+
+place move
+    protocol: "transf_eff_proj/watchers/media/move_plates.pl"
+    start: now()
+    window: minutes(30)
+    group: "technicians"
+end
+
+
+#transition [wait] => [lb] when quantity("Trans Eff LB Amp Plate (sterile)") < min_quantity("Trans Eff LB Amp Plate (sterile)") end
+transition [lb] => [autoclave] when completed(0) end
+transition [autoclave] => [pour] when completed(0) end
+transition [pour] => [move] when completed(0) end
+transition [pour] => [] when completed(0) end
+
+#transition [move] => [wait] when completed(0) end
+
+# rework transitions
+transition [lb] => [lb] when error(0) end
+transition [autoclave] => [autoclave] when error(0) end
+transition [pour] => [pour] when error(0) end
+transition [move] => [move] when error(0) end 
