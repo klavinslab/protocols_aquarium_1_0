@@ -13,6 +13,6 @@ place two
   window: minutes(5)
 end
 
-transition [one] => [two] 
-transition [two] => []
+transition [one] => [two] when !error(0) && completed(0) end
+transition [two] => [] when !error(0) && completed(0) end
 
