@@ -2,6 +2,7 @@
 
 step
   description: "This protcol makes a 50ml bottle of 1M Tris-HCL pH7.5 solution."
+end
 
 take
   Tris_HCL= 1 "Tris-HCL"
