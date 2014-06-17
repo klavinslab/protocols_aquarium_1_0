@@ -1,5 +1,5 @@
 place one
-  protocol: "one.pl"
+  protocol: "protocols/cloning/workflow_dependencies/gibson_aliquots/one.pl"
   group: "technician"
   marked: true
   start: now()
@@ -7,7 +7,7 @@ place one
 end
 
 place two
-  protocol: "two.pl"
+  protocol: "protocols/cloning/workflow_dependencies/gibson_aliquots/two.pl"
   group: "technician"
   start: now()
   window: minutes(5)
