@@ -5,8 +5,8 @@ argument
   plasmids: sample("Plasmid") array, "Plasmids"
   Plasmids_conc: number array, "Plasmid DNA Concentrations in ng/µl"
   pmei: sample("Enzyme"), "Tube of PMEI to be used."
-  bsa: sample("Enzyme Buffer Stock"), "Tube of BSA to be used"
-  NEB4: sample("Enzyme Buffer Stock"), "Tube of NEB Buffer 4 to be used."
+  bsa: sample("Enzyme Buffer"), "Tube of BSA to be used"
+  NEB4: sample("Enzyme Buffer"), "Tube of NEB Buffer 4 to be used."
   DNA_amount: number, "The amount of DNA you would like to digest in ng/µl"
 end
 
