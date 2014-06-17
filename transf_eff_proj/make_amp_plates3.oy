@@ -1,64 +1,79 @@
-place wait
-    marked: true
+
+argument
+  plasmid_id: sample, "The plasmid stock with which to transform"
+  e_coli_strain_id: object, "The electrocompetent stock to be transformed"
+  plate_type: object, "The plate on which the transformed cells to be plated"
+  tech: string, "username of the technician or the group"
 end
 
-place lb
-    protocol: "transf_eff_proj/watchers/media/lb.pl"
-    argument
-        n_bottle: 1
-        volume: 800
-        add_agar: "Yes"
-    end
-    start: now()
-    window: minutes(30)
-    group: "technicians"
+place transform
+  protocol: "transf_eff_proj/transform.pl"
+  argument
+    plasmid_id: plasmid_id
+    e_coli_strain_id: e_coli_strain_id
+    plate_type: plate_type
+  end
+  group: tech
+  marked: true
+  start: now()
+  window: hours(20)
 end
 
-place autoclave
-    protocol: "transf_eff_proj/watchers/media/autoclave_bacteria_media.pl"
-    argument
-        lb_liquid_n: 0
-        lb_agar_800_n: 1
-        lb_agar_400_n: 0
-        lb_agar_200_n: 0
-        tb_liquid_n: 0
-    end
-    start: now()
-    window: minutes(30)
-    group: "technicians"
+place plate
+  protocol: "transf_eff_proj/plate.pl"
+  argument
+    volume: 200
+    plate_type: plate_type
+  end
+  group: tech
+  start: now()
+  window: minutes(1)
 end
 
-place pour
-    protocol: "transf_eff_proj/watchers/media/pour_lb_plates.pl"
-    argument
-        n: 1
-        volume: 800
-        antibiotic: "Amp"
-        iptg: "No"
-        atc: "No"
-        xgal: "No"
-    end
-    start: now()
-    window: minutes(30)
-    group: "technicians"
+wire (transform,"transformed_cells_id") => (plate,"e_coli_strain_id")
+
+place incubate
+  protocol: "transf_eff_proj/incubate.pl"
+  argument
+    temp: 37
+  end
+  group: tech
+  start: now()
+  window: minutes(1)
 end
 
-place move
-    protocol: "transf_eff_proj/watchers/media/move_plates.pl"
-    start: now()
-    window: minutes(30)
-    group: "technicians"
+wire (plate,"plate_id") => (incubate,"e_coli_strain_id")
+
+place image
+  protocol: "transf_eff_proj/count_colonies.pl"
+  group: tech
+  start: hours(19)
+  #start: now()
+  window: hours(4)
 end
 
+wire (plate,"plate_id") => (image,"Transformed_E_coli_Strain_id")
 
-transition [wait] => [lb] when quantity("Trans Eff LB Amp Plate (sterile)") < min_quantity("Trans Eff LB Amp Plate (sterile)") end
-transition [lb] => [autoclave] when completed(0) end
-transition [autoclave] => [pour] when completed(0) end
-transition [pour] => [move] when completed(0) end
-transition [move] => [wait] when completed(0) end
+place reimage
+  protocol: "transf_eff_proj/count_colonies.pl"
+  group: tech
+  start: now()
+  window: hours(1)
+end
+
+wire (plate,"plate_id") => (reimage,"Transformed_E_coli_Strain_id")
+
+# forward transitions
+transition [transform] => [plate]    when !error(0) && completed(0) && return_value(0,"tube_incubation_choice") == 0 end
+transition [plate]     => [incubate] when !error(0) && completed(0) end
+transition [incubate]  => [image]    when !error(0) && completed(0) end
+transition [image]     => []         when !error(0) && completed(0) end
+#transition [reimage]   => []         when !error(0) && completed(0) end
+
 
 # rework transitions
-transition [lb] => [lb] when error(0) end
-transition [autoclave] => [autoclave] when error(0) end
-transition [pour] => [pour] when error(0) end
-transition [move] => [move] when error(0) end 
+transition [transform] => [transform] when error(0) end
+transition [plate]     => [plate]     when error(0) end
+transition [incubate]  => [incubate]  when error(0) end
+transition [image]     => [reimage]   when error(0) end
+transition [reimage]   => [reimage]   when error(0) end
