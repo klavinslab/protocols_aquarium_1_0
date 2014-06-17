@@ -75,6 +75,15 @@ end
 #  window: hours(8)
 #end
 
+# QA:
+# always have cultures of (only) Amp+, Kan+, Chlor+ strains (watcher)
+# amp+: SSJ128, id 4
+# kan+: pLAB1, id 32
+# chlor+: keio cassette plasmid, id 118
+# 1) streak a single plate with antibiotic resistance+, resistence- strains
+# 2) incubate
+# 3) plate check protocol
+# 4) if plate check protocol fails, throw out batch of plates
 
 # Transitions
 transition [lb_agar_unsterile] => [autoclave] when !error(0) && completed(0) end

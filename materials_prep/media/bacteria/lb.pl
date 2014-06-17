@@ -3,14 +3,12 @@ require "protocols:materials_prep/lib/materials_prep.pl"
 information "Prepare unsterile bottle(s) of LB (rich media for bacteria)."
 # FIXME: parameterize for adding IPTG, aTc, X-Gal
 
-
 argument
-  n_bottle: number, "Enter the number of bottles you want to make (maximum of 4)."
-  volume: number, "Enter the media volume (200, 400, or 800 mL)."
+  volumes: number array, "Enter the media volume (200, 400, or 800 mL)."
   add_agar: string, "Make agar media? (Yes or No)"
 end
 
-
+n_bottle = length(volumes)
 
 if n_bottle < 1 || n_bottle > 4
   step
@@ -22,7 +20,6 @@ if n_bottle < 1 || n_bottle > 4
   end
 end
 
-
 if volume != 200 && volume != 400 && volume != 800
   step
     description: "The LB volume was incorrectly entered as %{volume}."
@@ -31,7 +28,6 @@ if volume != 200 && volume != 400 && volume != 800
     end
   end
 end
-
 
 if add_agar != "Yes" && add_agar != "No"
   step
