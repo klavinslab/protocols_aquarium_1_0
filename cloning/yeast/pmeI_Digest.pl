@@ -42,7 +42,7 @@ if length(plasmids) > 12
   end
 end
 
-if length(forward_ids) > 24
+if length(plasmids) > 24
   step
     description: "Grab a third 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
     check: "Label the right most well with the letters %{initials}"
