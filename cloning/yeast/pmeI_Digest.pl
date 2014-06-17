@@ -98,7 +98,7 @@ step
 end
 
 step
-  description: "Place the capped tubes into the 37ºc incubator B15.320"
+  description: "Place the capped tubes into the 37ºc incubator B15.320. Make sure to label them them with %{initials} and today's date."
 end
 
 x=0
