@@ -1,0 +1,18 @@
+place one
+  protocol: "one.pl"
+  group: "technician"
+  marked: true
+  start: now()
+  window: minutes(5)
+end
+
+place two
+  protocol: "two.pl"
+  group: "technician"
+  start: now()
+  window: minutes(5)
+end
+
+transition [one] => [two] 
+transition [two] => []
+
