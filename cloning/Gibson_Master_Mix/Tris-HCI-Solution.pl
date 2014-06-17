@@ -29,7 +29,7 @@ step
 end
 
 produce
-  r = 1 "1M Tris-HCL, ph7.5"
+  r = 1 "Enzyme Buffer Stock" of "1M Tris-HCL, ph7.5"
   location: "Bench"
   release bottle
 end
