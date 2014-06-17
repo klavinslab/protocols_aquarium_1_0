@@ -68,8 +68,19 @@ step
 end
 
 produce
+  r = 1 "5X ISO Buffer"
+  location: "Bench"
+end
+
+produce
+  r = 1 "5X ISO Buffer"
+  location: "Bench"
+end
+
+produce
   r = 3 "5X ISO Buffer"
   location: "Bench"
 end
+
 
 release [ Tris_HCL[0], mgcl2[0], dGTP[0], dTTP[0], dATP[0], dGTP[0], DTT[0], NAD[0], peg[0],MGh2o[0] ]
