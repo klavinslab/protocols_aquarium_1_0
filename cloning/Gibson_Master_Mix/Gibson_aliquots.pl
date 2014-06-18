@@ -19,8 +19,8 @@ take
  MGh2o = 1 "Molecular Biology Grade Water"
  iso = 1 iso_buffer
  t5_ex = 1 t5
- phusion = phusion_pol
- lig = ligase
+ phusion = 1 phusion_pol
+ lig = 1  ligase
 end
 
 step
