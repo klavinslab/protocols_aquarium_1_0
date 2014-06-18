@@ -139,7 +139,7 @@ end
 #end
 
 produce
-  r = 1 "Transformed E.coli Aliquot" from plasmid
+  r = 1 "Transformed E. coli Aliquot" from plasmid[0]
   note: "Keep the tube on the bench to use in the next protocol."
   location: "Bench"
 end
