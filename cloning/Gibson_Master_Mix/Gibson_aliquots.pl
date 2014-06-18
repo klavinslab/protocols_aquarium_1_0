@@ -8,7 +8,7 @@ argument
 end
 
 step
-  description: "This protocol makes 80 gibson aliquots. Make sure you keep all associated enzyme in this prtocol ON ICE throug the duration of the WHOLE PROTCOL."
+  description: "This protocol makes 80 gibson aliquots. Make sure you keep all associated enzyme in this prtocol ON ICE through the duration of the WHOLE PROTOCOL."
 end
 
 step
@@ -17,10 +17,10 @@ end
 
 take
  MGh2o = 1 "Molecular Biology Grade Water"
- iso = 1 iso_buffer
- t5_ex = 1 t5
- phusion = 1 phusion_pol
- lig = 1  ligase
+ iso = item iso_buffer
+ t5_ex = item t5
+ phusion = item phusion_pol
+ lig = item  ligase
 end
 
 step
