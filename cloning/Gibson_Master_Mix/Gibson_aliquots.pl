@@ -60,10 +60,11 @@ step
 end
 
 produce
-  q = 1 "Batch of Reactions" of "Gibson Aliquots"
+  80 "Gibson Aliquot"
+  release iso
 end
 
-release [ MGh2o[0], iso[0], t5_ex[0], phusion[0], lig[0]]
+release [ MGh2o[0], t5_ex[0], phusion[0], lig[0]]
 
 
 
