@@ -1,7 +1,3 @@
-argument
-  names: string array, "Name(s) of the person/people on the order(s) that may have arrived"
-end
-
 answer="No"
 arrived="blank"
 xyz=[0]
@@ -9,7 +5,7 @@ while answer=="No"
   step
     description: "Call the biochem store to see if primers have arrived."
     check: "On the lab phone, dial 31728"
-    check: "If someone answers, politely ask the following: 'Hi, I am calling from the Klavins Lab and was wondering if primers have arrived for %{names}?"
+    check: "If someone answers, politely ask the following: 'Hi, I am calling from the Klavins Lab and was wondering if primers have arrived."
     getdata
       answer: string, "Did anyone answer?", [ "Yes", "No" ]
       arrived: string, "Did any primers arrive?", [ "Yes", "No", "They did not answer..." ]
@@ -49,10 +45,12 @@ if arrived=="Yes"
     step
       description: "Rehydrate the primer"
       check: "Add %{vol}ul of TE to the primer tube"
-      check: "Put the cap back on, and flick the tube many times to mix"
+      check: "Put the cap back on"
     end
     x=x+1
   end
+  step
+    description: "Individually flick each tube a few times or tap it against the table to disolve the primer"
   step
     description: "Ignore the following 'take'"
   end
