@@ -49,13 +49,20 @@ step
   image: "spread_beads_on_plate"
 end
 
+#produce
+#  r = 1 "Agar plate" from strain[0]
+#  note: "Keep the plate on the bench to use in the next protocol (incubating)."
+#  location: "Bench"
+#  release plate
+#end
+
+
 produce
-  r = 1 "Agar plate" from strain[0]
+  r = 1 "E coli Plate of Plasmid" from plasmid[0]
   note: "Keep the plate on the bench to use in the next protocol (incubating)."
   location: "Bench"
   release plate
 end
-
 
 step
   description: "Is there any reason to discard the data from this protocol?"
