@@ -51,6 +51,7 @@ if arrived=="Yes"
   end
   step
     description: "Individually flick each tube a few times or tap it against the table to disolve the primer"
+  end
   step
     description: "Ignore the following 'take'"
   end
