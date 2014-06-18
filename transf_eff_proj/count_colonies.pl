@@ -84,11 +84,6 @@ step
      the plate with parafilm and put it the in the Box 0 in deli fridge located at D2.100."
 end
 
-produce
-  r = 1 "E coli Plate of Plasmid" from plasmid[0]
-  location: "D2.100"
-end
-
 step
   description: "Is there any reason to discard the colony count data from this protocol?"
   bullet: "1 - No, the data from this protocol is clean and the recorded colony count is accurate"
