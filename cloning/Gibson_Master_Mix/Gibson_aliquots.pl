@@ -60,7 +60,7 @@ step
 end
 
 produce
-  q = 1 "Gibson Reaction Mix Batch"
+  q = 1 "Batch of Stock" of "Gibson Aliquots"
 end
 
 release [ MGh2o[0], iso[0], t5_ex[0], phusion[0], lig[0]]
