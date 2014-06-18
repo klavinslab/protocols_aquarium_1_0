@@ -7,7 +7,7 @@ argument
 end
 
 take
-  strain = item e_coli_strain_id
+  plasmid = item e_coli_strain_id
   plate = 1 plate_type
 #  beads = 1 "Glass Bead Aliquot (sterile)"
 #  collector = 1 "Glass Bead Waste Collector"
@@ -77,5 +77,5 @@ log
   return: { plate_id: r[:id] }
 end
   
-release [ strain[0]]
+release [ plasmid[0]]
  
