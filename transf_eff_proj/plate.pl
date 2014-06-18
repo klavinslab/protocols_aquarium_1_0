@@ -61,7 +61,9 @@ produce
   r = 1 "E coli Plate of Plasmid" from plasmid[0]
   note: "Keep the plate on the bench to use in the next protocol (incubating)."
   location: "Bench"
-  release plate
+  release [plate[0], plasmid[0]]
+ 
+
 end
 
 step
@@ -77,5 +79,3 @@ log
   return: { plate_id: r[:id] }
 end
   
-release [ plasmid[0]]
- 
