@@ -20,13 +20,21 @@ if n_bottle < 1 || n_bottle > 4
   end
 end
 
-if volume != 200 && volume != 400 && volume != 800
-  step
-    description: "The LB volume was incorrectly entered as %{volume}."
-    getdata
-      volume: number, "Enter the volume of LB to make.", [200, 400, 800]
+volume = 0
+i = 0
+while i < n_bottle
+  volume = volumes[i]
+  if volume != 200 && volume != 400 && volume != 800
+    step
+      description: "The LB volume was incorrectly entered as %{volume}."
+      getdata
+        volume: number, "Enter the volume of LB to make.", [200, 400, 800]
+      end
     end
+    volumes[i] = volume
   end
+
+  i = i + 1
 end
 
 if add_agar != "Yes" && add_agar != "No"
@@ -39,50 +47,64 @@ if add_agar != "Yes" && add_agar != "No"
   end
 end
 
-bottle_type = "250 mL Bottle"
-if volume == 200
+bottle_types = []
+product_names = []
+lb_grams_list = []
+bottles = []
+lb_powder = []
+i = 0
+while i < n_bottle
   bottle_type = "250 mL Bottle"
-elsif volume == 400
-  bottle_type = "500 mL Bottle"
-elsif volume == 800
-  bottle_type = "1 L Bottle"
+  if volume == 200
+    bottle_type = "250 mL Bottle"
+  elsif volume == 400
+    bottle_type = "500 mL Bottle"
+  elsif volume == 800
+    bottle_type = "1 L Bottle"
+  end
+
+  bottle_types = append(bottle_types, bottle_type)
+
+  lb_grams = 29.6
+  product_name = ""
+
+  lb_grams = 0.0
+  bottles = {}
+  if add_agar == "Yes"
+    product_name = "%{volume} mL LB Agar (unsterile)"
+    if volume == 200
+      lb_grams = 7.4
+    elsif volume == 400
+      lb_grams = 14.8
+    else
+      lb_grams = 29.6
+    end
+    take
+      bottles = n_bottle bottle_type
+      lb_powder = 1 "LB Agar Miller"
+    end
+  else
+    product_name = "%{volume} mL LB Liquid (unsterile)"
+    if volume == 200
+      lb_grams = 5.0
+    elsif volume == 400
+      lb_grams = 10.0
+    else
+      lb_grams = 20.0
+    end
+    take
+      bottles = n_bottle bottle_type
+      lb_powder = 1 "Difco LB Broth, Miller"
+    end
+  end
+
+  product_names = append(product_names, product_name)
+  lb_grams_list = append(lb_grams_list, lb_grams)
+
+  i = i + 1
 end
 
-lb_powder = 1 "Difco LB Broth, Miller"
-lb_grams = 29.6
-product_name = ""
-
-lb_grams = 0.0
-bottles = {}
-if add_agar == "Yes"
-  product_name = "%{volume} mL LB Agar (unsterile)"
-  if volume == 200
-    lb_grams = 7.4
-  elsif volume == 400
-    lb_grams = 14.8
-  else
-    lb_grams = 29.6
-  end
-  take
-    bottles = n_bottle bottle_type
-    lb_powder = 1 "LB Agar Miller"
-  end
-else
-  product_name = "%{volume} mL LB Liquid (unsterile)"
-  if volume == 200
-    lb_grams = 5.0
-  elsif volume == 400
-    lb_grams = 10.0
-  else
-    lb_grams = 20.0
-  end
-  take
-    bottles = n_bottle bottle_type
-    lb_powder = 1 "Difco LB Broth, Miller"
-  end
-end
-
-stir_bars = {}
+stir_bars = []
 if volume == 800
   take
      stir_bars = n_bottle "Medium Magnetic Stir Bar"
@@ -95,7 +117,7 @@ end
 
 step
   description: "Add temporary labels"
-  note: "Using lab tape, number each bottle (from 1 up to 4)."
+  note: "Using lab tape, number each bottle (from 1 to %{n_bottle})."
 end
 
 
@@ -107,15 +129,26 @@ end
 
 # Add LB Powder
 lb_name = lb_powder[0][:name]
-add_dry_reagent("each bottle", lb_name, lb_grams)
 
-# Clean the spatula before returning it
-clean_spatula()
+i = 0
+while i < n_bottle
+  n = i + 1
+  lb_grams = lb_grams_list[i]
+  add_dry_reagent("bottle %{n}", lb_name, lb_grams)
+  clean_spatula()
+
+  i = i + 1
+end
 
 
-step
-  description: "Add deionized water"
-  note: "Fill each bottle to the %{volume} mL mark with deionized water."
+i = 0
+while i < n_bottle
+  n = i + 1
+  step
+    description: "Add deionized water"
+    note: "Fill bottle %{n} to the %{volume} mL mark with deionized water."
+  end
+  i = i + 1
 end
 
 
@@ -131,21 +164,29 @@ else
   end
 end
 
-if volume == 800
-  produce
-    produced_bottles = n_bottle product_name
-    release bottles
-    release stir_bars
-    note: "Write %{product_name} and the date on the label in addition to the above id number."
-    location: "B1.320"
+i = 0
+while i < n_bottle
+  product_name = product_names[i]
+  bottle = bottles[i]
+  stir_bar = stir_bars[i]
+  if volume == 800
+    produce
+      produced_bottle = 1 product_name
+      release bottle
+      release stir_bar
+      note: "Write %{product_name} and the date on the label in addition to the above id number."
+      location: "B1.320"
+    end
+  else
+    produce
+      produced_bottle = 1 product_name
+      release bottle
+      note: "Write %{product_name} and the date on the label in addition to the above id number."
+      location: "B1.320"
+    end
   end
-else
-  produce
-    produced_bottles = n_bottle product_name
-    release bottles
-    note: "Write %{product_name} and the date on the label in addition to the above id number."
-    location: "B1.320"
-  end
+
+  i = i + 1
 end
 
 
