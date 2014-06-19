@@ -25,6 +25,7 @@ take
 end
 
 step
+  description: "Innoculate the flasks with E. coli"
   check: "Using a 100ul pipette tip, scrape some cells out of the glycerol stock and add them to the first flask"
   check: "Repeat the same thing (with a new pipette tip) for the second flask"
 end
@@ -32,7 +33,7 @@ end
 release ecoli
 
 produce
-  x = 2 "250 mL Flask of E coli cells" of ecoli[0]
+  x = 2 "250 mL Flask of E coli cells" from ecoli[0]
   release flask
 end
 
