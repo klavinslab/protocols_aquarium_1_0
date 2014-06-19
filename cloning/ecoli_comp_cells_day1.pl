@@ -2,16 +2,11 @@ information "Set up for making e.coli electrocompetent cells tomorrow."
 
 argument
   e_coli_id: sample, "The E. coli glycerol stock that you want to make competent cells from."
-  e_coli_strain: string, "The E. coli strain name that you are making competent cells of"
 end
 
 take 
   flask = 2 "250 mL Baffled Flask"
   LB = 1 "800 mL LB liquid (sterile)"
-end
-
-step
-  description: "Label both flasks with the strain name: %{e_coli_strain}."
 end
 
 step
@@ -33,10 +28,16 @@ end
 release ecoli
 
 produce
-  x = 2 "250 mL Flask of E coli cells" from ecoli[0]
+  x = "250 mL Flask of E coli cells" from ecoli[0]
   release flask
+  location: "37 degree shaker"
+end
+
+produce
+  x = "250 mL Flask of E coli cells" from ecoli[0]
+  location: "37 degree shaker"
 end
 
 step
-  description: "Put both flasks into the 37 degree shaker incubator"
+  description: "Make sure both flasks are secure in the 37 degree shaker incubator"
 end
