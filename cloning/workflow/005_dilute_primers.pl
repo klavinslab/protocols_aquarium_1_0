@@ -9,12 +9,10 @@ len=length(primer_ids)
 x=0
 newid=[0]
 newitem=[0]
-name = ""
 q = 0
 while x < len
-  name = primer_stock[x][:name]
   produce silently
-    q = 1 "Primer Aliquot" of name
+    q = 1 "Primer Aliquot" from primer_stock[x]
   end
   newid[x]=q[:id]
   newitem[x]=q
