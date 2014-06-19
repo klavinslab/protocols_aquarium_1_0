@@ -7,7 +7,7 @@ argument
 end
 
 take
-  strain = item e_coli_strain_id
+  plasmid = item e_coli_strain_id
   plate = 1 plate_type
 #  beads = 1 "Glass Bead Aliquot (sterile)"
 #  collector = 1 "Glass Bead Waste Collector"
@@ -49,13 +49,22 @@ step
   image: "spread_beads_on_plate"
 end
 
+#produce
+#  r = 1 "Agar plate" from strain[0]
+#  note: "Keep the plate on the bench to use in the next protocol (incubating)."
+#  location: "Bench"
+#  release plate
+#end
+
+
 produce
-  r = 1 "Agar plate" from strain[0]
+  r = 1 "E coli Plate of Plasmid" from plasmid[0]
   note: "Keep the plate on the bench to use in the next protocol (incubating)."
   location: "Bench"
-  release plate
-end
+  release [plate[0], plasmid[0]]
+ 
 
+end
 
 step
   description: "Is there any reason to discard the data from this protocol?"
@@ -70,5 +79,3 @@ log
   return: { plate_id: r[:id] }
 end
   
-release [ strain[0]]
- 
