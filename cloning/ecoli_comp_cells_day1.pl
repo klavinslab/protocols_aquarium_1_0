@@ -28,13 +28,13 @@ end
 release ecoli
 
 produce
-  x = "250 mL Flask of E coli cells" from ecoli[0]
+  x = 1 "250 mL Flask of E coli cells" from ecoli[0]
   release flask
   location: "37 degree shaker"
 end
 
 produce
-  x = "250 mL Flask of E coli cells" from ecoli[0]
+  x = 1 "250 mL Flask of E coli cells" from ecoli[0]
   location: "37 degree shaker"
 end
 
