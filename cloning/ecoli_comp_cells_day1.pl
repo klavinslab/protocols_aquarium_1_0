@@ -18,18 +18,24 @@ step
   description: "Add 50mL LB broth into each of the 2 250mL flasks using a serological pipette."
 end
 
+release LB
+
 take
   ecoli = item e_coli_id
 end
 
 step
-  description: "Using a 100ul pipette tip, scrape some cells out of the glycerol stock and add them to the first flask"
+  check: "Using a 100ul pipette tip, scrape some cells out of the glycerol stock and add them to the first flask"
+  check: "Repeat the same thing (with a new pipette tip) for the second flask"
 end
 
 release ecoli
 
+produce
+  x = 2 "250 mL Flask of E coli cells" of ecoli[0]
+  release flask
+end
+
 step
   description: "Put both flasks into the 37 degree shaker incubator"
 end
-
-release concat(flask,LB)
