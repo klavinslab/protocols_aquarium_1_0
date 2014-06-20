@@ -1,14 +1,14 @@
-information "Make e.coli electrocompetent cells!"
+information "Make DH5alpha e.coli electrocompetent cells!"
 
 argument
   e_coli_id: sample array, "The 2 250 mL cultures of E coli that were innoculated yesterday."
 end
 
 take
-  LB = 1 "800 mL LB liquid (sterile)"
-  water =
-  glycerol = 
-  gyt = 
+  LB = 1 "800 mL LB Liquid: For Electrocompetent Cells Only (sterile)"
+  water = "800 mL DI Water: For Competent Cells Only (sterile)"
+  glycerol = "500 mL 10 Percent Glycerol: For Electrocompetent Cells Only (sterile)"
+  gyt = "400 mL GYT"
   overnight = item e_coli_id
   flask = 1 "2000 mL Flask"
   centrifuge_tubes = 4 "225 mL Centrifuge Tube"
@@ -48,6 +48,8 @@ step
   check: "Transfer 200mL of LB culture into each of 4 ice-cold 225 mL centrifuge tubes"
   check: "Spin at 2500 rmp for 15 minutes at 4 degrees C"
 end
+
+release overnight
 
 step
   description: "Wash the cells with water"
@@ -98,18 +100,46 @@ end
   
 conc=(y*2.5*10^13)
 add=(((4*10^13)/conc)-1600)
+total_volume=(1600+add)
+tubes=(total_volume/40)
 
 step
   decription: "Dilute the cell suspension by adding an additional %{add}ul GYT"
+  warning: "Keep the cells on ice at all times!"
 end  
-
-
-
 
 step
-  decription: "Aliquot out the cells"
+  decription: "Prepare tubes for aliquoting"
+  check: "Get two metal 96 well plate holders from the fridge and put them on ice blocks"
+  check: "Get %{tubes} (rounded down) 0.5mL tubes and label their lids with 5alpha"
+  check: "Assemble the tubes in the 96 well plates as shown"
 end  
 
+step
+  decription: "Aliquot out 40ul of cells into each of the labeled 0.5 mL tubes"
+  note: "If there are any tubes left over that did not receive a FULL 40ul aliquot, throw them away"
+  getdata
+    z: number, "How many aliquots were made?"
+  end
+  warning: "Continue to keep the cells cold at all times!"
+end  
 
+step
+  decription: "Put all of the filled tubes into a labeled freezer box and immedietly put this in the -80C freezer."
+end  
 
+produce
+  %{z} "DH5alpha Electrocompetent Aliquot"
+  location: "M80.fourth_shelf"
+end
 
+release [LB[0],water[0],glycerol[0],gyt[0],flask[0]]
+release centrifuge_tubes
+  
+  
+  
+  
+  
+  
+  
+  
