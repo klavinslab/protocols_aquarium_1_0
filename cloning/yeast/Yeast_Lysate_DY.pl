@@ -123,6 +123,7 @@ end
 ColonyCount=0
 count=0
   while count < y 
+  ColonyCount=0
     strain = strains[count]
       while ColonyCount < ColonyNumber
       produce
