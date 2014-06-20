@@ -129,7 +129,7 @@ step
 end  
 
 produce
-  %{z} "DH5alpha Electrocompetent Aliquot"
+  q = %{z} "DH5alpha Electrocompetent Aliquot"
   location: "M80.fourth_shelf"
 end
 
