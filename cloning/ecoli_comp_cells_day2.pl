@@ -90,26 +90,25 @@ end
 step
   description: "Measure the OD600"
   check: "In an eppendorf tube, add 990 ul GYT and 10 ul cells"
+  check: "Use the nanodrop to measure the OD600"
   getdata
-    y: number, "Enter the OD"
+    y: number, "Enter the OD600"
   end
 end
   
-  
-  
+conc=(y*2.5*10^13)
+add=(((4*10^13)/conc)-1600)
 
-  
-  
 step
-  decription: "Dilute the cell suspension with GYT"
+  decription: "Dilute the cell suspension by adding an additional %{add}ul GYT"
 end  
 
 
 
 
-
-
-
+step
+  decription: "Aliquot out the cells"
+end  
 
 
 
