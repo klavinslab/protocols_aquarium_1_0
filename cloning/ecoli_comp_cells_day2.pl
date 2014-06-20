@@ -6,9 +6,12 @@ end
 
 take
   LB = 1 "800 mL LB liquid (sterile)"
+  water =
+  glycerol = 
+  gyt = 
   overnight = item e_coli_id
   flask = 1 "2000 mL Flask"
-  centrifuge_tubes = 4 "225 mL centrifuge tubes"
+  centrifuge_tubes = 4 "225 mL Centrifuge Tube"
 end
 
 step
@@ -24,6 +27,7 @@ step
   check: "Put 4 225mL centrifuge tubes on the ice"
   check: "Put a bottle with 800 mL of sterile water on the ice"
   check: "Put a bottle with 420 mL of sterile 10%% glycerol on ice"
+  check: "Put a bottle of sterile GYT on ice"
   check: "Set the large centrifuge to 4 degrees C and close the lid"
   timer:{ hours: 0, minutes: 0, seconds: 5 }
 end
@@ -55,7 +59,7 @@ step
 end
 
 step
-  description: "Wash the cells with 10% glycerol"
+  description: "Wash the cells with 10%% glycerol"
   warning: "Keep the cells on ice at all times!"
   check: "Decant the supernatant of each of the 225 mL centrifuge tubes"
   check: "Add 100 mL of ice-cold 10%% glycerol to each of the 225 mL centrifuge tubes"
@@ -65,7 +69,7 @@ step
 end
 
 step
-  description: "Wash the cells a final time with 10% glycerol"
+  description: "Wash the cells a final time with 10%% glycerol"
   warning: "Keep the cells on ice at all times!"
   check: "Decant the supernatant of both of the 225 mL centrifuge tubes"
   check: "Add 8 mL of ice-cold 10%% glycerol to both of the 225 mL centrifuge tubes"
