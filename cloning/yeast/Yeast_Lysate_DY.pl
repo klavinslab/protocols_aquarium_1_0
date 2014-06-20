@@ -73,6 +73,8 @@ while j<y
   step
     description: "%{YeastStrain_id}"
   end
+  f=0
+  w=0
   while w<c
     f=w+1
     step
