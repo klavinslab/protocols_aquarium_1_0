@@ -15,6 +15,14 @@ take
   falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
   plasmid = item plasmid_id
   timer = 1 "Timer"
+  plate = 1 plate_type
+end
+
+step
+  description: 
+    "Dry plate"
+  note: 
+    "l"
 end
 
 step
