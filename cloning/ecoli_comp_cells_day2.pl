@@ -104,19 +104,19 @@ total_volume=(1600+add)
 tubes=(total_volume/40)
 
 step
-  decription: "Dilute the cell suspension by adding an additional %{add}ul GYT"
+  description: "Dilute the cell suspension by adding an additional %{add}ul GYT"
   warning: "Keep the cells on ice at all times!"
 end  
 
 step
-  decription: "Prepare tubes for aliquoting"
+  description: "Prepare tubes for aliquoting"
   check: "Get two metal 96 well plate holders from the fridge and put them on ice blocks"
   check: "Get %{tubes} (rounded down) 0.5mL tubes and label their lids with 5alpha"
   check: "Assemble the tubes in the 96 well plates as shown"
 end  
 
 step
-  decription: "Aliquot out 40ul of cells into each of the labeled 0.5 mL tubes"
+  description: "Aliquot out 40ul of cells into each of the labeled 0.5 mL tubes"
   note: "If there are any tubes left over that did not receive a FULL 40ul aliquot, throw them away"
   getdata
     z: number, "How many aliquots were made?"
@@ -125,7 +125,7 @@ step
 end  
 
 step
-  decription: "Put all of the filled tubes into a labeled freezer box and immedietly put this in the -80C freezer."
+  description: "Put all of the filled tubes into a labeled freezer box and immedietly put this in the -80C freezer."
 end  
 
 produce
