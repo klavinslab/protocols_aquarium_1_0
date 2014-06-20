@@ -130,7 +130,7 @@ end
 
 f=0
 
-while f<tubes
+while f<z
   produce
     1 "DH5alpha Electrocompetent Aliquot"
     location: "M80.fourth_shelf"
