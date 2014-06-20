@@ -60,16 +60,16 @@ step
   description: "Pipet 30µl of the SDS mix created in the previous step into wells 1 through %{z}"
 end
 
-z=0
+j=0
 f=0
 w=0
 
-while z<y 
+while j<y
   a=YeastStrain_id[z]
   while w<c
-    f=z+1
+    f=w+1
     step
-      description: "With the plate closed and upside down, find a large colony and label it ......"
+      description: "With the plate closed and upside down, find a large colony and label it %{f}"
       note: "If you're already picked a colony for this strain make sure you pick a different one for this well"
     end
     step
@@ -78,7 +78,7 @@ while z<y
     end
     w=w+1
   end
-  z=z+1
+  j=j+1
 end
 
 step
