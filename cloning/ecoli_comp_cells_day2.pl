@@ -6,9 +6,9 @@ end
 
 take
   LB = 1 "800 mL LB Liquid: For Electrocompetent Cells Only (sterile)"
-  water = "800 mL DI Water: For Competent Cells Only (sterile)"
-  glycerol = "500 mL 10 Percent Glycerol: For Electrocompetent Cells Only (sterile)"
-  gyt = "400 mL GYT"
+  water = 1 "800 mL DI Water: For Competent Cells Only (sterile)"
+  glycerol = 1 "500 mL 10 Percent Glycerol: For Electrocompetent Cells Only (sterile)"
+  gyt = 1 "400 mL GYT"
   overnight = item e_coli_id
   flask = 1 "2000 mL Flask"
   centrifuge_tubes = 4 "225 mL Centrifuge Tube"
