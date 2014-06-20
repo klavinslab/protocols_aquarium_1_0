@@ -69,6 +69,9 @@ w=0
 
 while j<y
   a=YeastStrain_id[j]
+  step
+    description: "%{YeastStrain_id}"
+  end
   while w<c
     f=w+1
     step
