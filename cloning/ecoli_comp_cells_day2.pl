@@ -98,8 +98,8 @@ step
   end
 end
   
-conc=(y*2.5*10000000000000)
-add=(((4*10000000000000000)/conc)-1600)
+conc=(y*2.5*100000000000)
+add=(((4*10000000000000)/conc)-1600)
 total_volume=(1600+add)
 tubes=(total_volume/40)
 
