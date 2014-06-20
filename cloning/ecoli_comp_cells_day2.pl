@@ -128,9 +128,14 @@ step
   description: "Put all of the filled tubes into a labeled freezer box and immedietly put this in the -80C freezer."
 end  
 
-produce
-  q = %{z} "DH5alpha Electrocompetent Aliquot"
-  location: "M80.fourth_shelf"
+f=0
+
+while f<tubes
+  produce
+    1 "DH5alpha Electrocompetent Aliquot"
+    location: "M80.fourth_shelf"
+  end
+  f=f+1
 end
 
 release [LB[0],water[0],glycerol[0],gyt[0],flask[0]]
