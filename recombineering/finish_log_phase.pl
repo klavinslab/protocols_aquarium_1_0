@@ -50,7 +50,7 @@ foreach c in log_cells
     bullet: "Wipe both lower (sensor) pedestal and the upper (lid) pedestal with Kimwipe."
     bullet: "Carefully pipette 2 &micro;L of sample %{c} on the lower pedestal."
     bullet: "Close the pedestal."
-    check: "Click Measure in the software."
+    bullet: "Click measure in the software."
   end
 
   step

@@ -24,12 +24,6 @@ step
 end
 
 step
-  description: "Wait until the heat bath has reached 42C"
-  note: "The next steps are time sensitive so you must make sure the bath is ready."
-  image: "heat_bath"
-end
-
-step
   description: "Place cells in heat bath"
   note: "Don't press next until you are ready to walk the cells over to the bath."
   image: "tube_in_bath"

@@ -56,7 +56,6 @@ end
 step
   description: "Add 1 mL ice cold sterile molecular grade water"
   note: "Use your Pipettor P1000 (100-1000 µL pipettor) to add 1 mL ice cold molecular grade water to each 50 mL tube. Resuspend each pellet by gently pipetting up and down."
-  warning: "Remember to use a new pipette tip with each tube!"
 end
   
 ii = 0
