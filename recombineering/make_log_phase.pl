@@ -46,7 +46,8 @@ end
 step
   description: "Label flasks"
   foreach f in fids
-  bullet: "label a flask '%{f}' "
+    check: "label a flask '%{f}' "
+  end
 end
 
 step
