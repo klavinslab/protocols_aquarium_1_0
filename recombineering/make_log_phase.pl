@@ -23,7 +23,8 @@ end
 
 ind = 0
 log_cell_flasks = []
-id_strings = []
+produced_flasks = []
+log_ids = []
 foreach strain in strains
   sid = strain[:id]
   produce silently
@@ -36,14 +37,16 @@ foreach strain in strains
   end
   ind = ind+1
   log_cell_flasks = append(log_cell_flasks, output[:id])
-  id_strings = append(id_strings, output)
+  produced_flasks = append(produced_flasks, output)
 
   fid = output[:id]
-  step
-    description: "Label flasks"
-    note: "label a flask '%{fid}' "
-  end
+  fids = append(fids,fid)
+end
 
+step
+  description: "Label flasks"
+  foreach f in fids
+  bullet: "label a flask '%{f}' "
 end
 
 step
@@ -53,7 +56,7 @@ end
 
 step
   description: "Dilute overnights into flasks"
-  foreach flask in id_strings 
+  foreach flask in produced_flasks 
     check: "Transfer 350  &micro;L of overnight " + to_string(flask[:data][:from]) + " to flask " + to_string(flask[:id])
   end
   note: "By the end of this step each each flask should have gotten 350 &micro;l of overnight culture.  If not make a note here."
@@ -61,7 +64,7 @@ end
 
 step
   description: "Incubate flasks"
-  foreach flask in id_strings
+  foreach flask in produced_flasks
     bullet: "Place falsk " + to_string(flask[:id]) + " into SI4"
   end
   note: "Place all flasks above into the 30C shaker incubator (SI4)"
