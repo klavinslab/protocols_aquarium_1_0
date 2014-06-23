@@ -16,13 +16,6 @@ take
 end
 
 step
-    description: "Arange Ice Block"
-    note: "You will next arrange the styrofoam ice block and the aluminum tube rack.\n
-       Put the aluminum tube rack on top of the ice block."
-    image: "arrange_cold_block"
-end
-
-step
     description:"Setup Electrocuvettes"
     note: "Put Electrocuvettes inside the styrofoam touching ice block."
     image: "handle_electrocompetent_cells"
@@ -30,18 +23,10 @@ step
 end
 
 step
-  description:"Setup Electrocompetent Cells"
-  bullet: "Place electrocompetent cells on the aluminum tube rack to cool."
-  image: "handle_electrocompetent_cells"
-end
-
-  
-step
   description:
     "Intialize the Electroporator"
   note: 
-    "Turn on the electroporator if it is off and set the voltage to 1800V by clicking up and down button.\n
-     Click the time constant button."
+    "Turn on the electroporator if it is off and set the voltage to 1800V by clicking up and down button.  Click the time constant button."
 end
 
 trans_cell_ids = []
@@ -53,9 +38,7 @@ while i<length(strain_list)
   compstr = strain_list[i] 
   step
     description: "Label a 1.5 mL tube."
-    note: "Label a tube T%{t_tube_label}.\n
-       Place the tube in the tube rack.\n
-       This tube will eventually hold the transformed cells."
+    note: "Label a tube T%{t_tube_label}.  Place the tube in a room temperature tube rack.  This tube will eventually hold the transformed cells."
     image: "label_1_5mL_tube"
   end
   
@@ -68,16 +51,13 @@ while i<length(strain_list)
   end
 
   step
-    description: "Electroporation and Rescue Preparation"
+    description: "Transfer the cells-plasmid mixture to electrocuvette."
     bullet: "Set your pipettors to be 50 &micro;L and 1000 &micro;L."
     bullet: "Loosen cap on the 50 mL LB liquid aliquot (sterile)."
     bullet: "Turn the electroporator on and set the voltage to 1800 V."
     bullet: "Take the black plastic cuvette holder out of electroporator."
-  end
-
-  step
-    description: "Transfer the cells-plasmid mixture to electrocuvette."
-    note: "Take lid off the cuvette.  Pipette 50 &micro;L of the mixture from the electrocompetent cell tube %{t_tube_label} into the center of the gap of the electrocuvette."
+    bullet: "Take lid off the cuvette."
+    bullet: "Pipette 50 &micro;L of the mixture from the electrocompetent cell tube %{t_tube_label} into the center of the gap of the electrocuvette."
     warning: "Hold the plastic sides of cuvette during pipetting."
     image: "pipette_transformation_mix_to_cuvette"
   end
@@ -108,8 +88,8 @@ while i<length(strain_list)
     end
     newID = r[:id]
     step
-      description: "Relable and store transformant"
-      note: "Cover the label T%{t_tube_label} with one of the white circle stickers and write the item number %{newID} on the sticker. " 
+      description: "Label and store transformant"
+      note: "Plate a circle sticker ontop of the tube and write the item number %{newID} on the sticker. " 
     end    
 
     trans_cell_ids = append(trans_cell_ids, r[:id])

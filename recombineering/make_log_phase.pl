@@ -46,11 +46,6 @@ foreach strain in strains
 
 end
 
-#TODO: delete this step
-step
-  note: "produced %{log_cell_flasks}"
-end
-
 step
   description: "add 25ml of LB to each flask"
   note: "go to the media bay and using the steriological pipette, transfer 25ml LB into each flask"
@@ -70,6 +65,21 @@ step
     bullet: "Place falsk " + to_string(flask[:id]) + " into SI4"
   end
   note: "Place all flasks above into the 30C shaker incubator (SI4)"
+end
+
+step
+  description: "Prepare a heat bath"
+  bullet: "Locate and plug in the hot water bath."
+  bullet: "Press the button on the left labled 'I/O' to turn on the controller."
+  bullet: "Set the middle temperature to 42 C"
+  note: "Press the refresh button until a flashing tempurature appears and the leftmost thermometer is illumminated."
+  note: "Use the up and down arrows to set the tempurature of the heat bath to 42 C."
+  image: "heat_bath"
+end
+
+step
+  description: "Prepare the centrifuges"
+  note: "Find both the large centrifuge C3 at B15.410 and the smaller centrifuge C2 at B5.335 and adjust the temperature setings to 4C.  Make sure the lids are closed when you're done as they won't refrigerate when open."
 end
 
 log

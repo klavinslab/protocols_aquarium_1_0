@@ -26,6 +26,16 @@ while ii<num_samples
   ii=ii+1
 end
 
+take
+  alrack = 1 "Aluminum Tube Rack"
+  iceblock = 1 "Styrofoam Ice Block"
+end
+
+step
+  description: "Place the aluminum tube rack onto the styrofoam iceblock"
+  image: "arrange_cold_block"
+end
+
 ##################### Begin PROTOCOL ##################3
 
 step
@@ -33,19 +43,14 @@ step
   note: "Centrifuge all of the 50 mL Falcon tubes. This may require running multiple batches depending on the number of samples."
   bullet: "Use the large centrifuge located at B14.330"
   check: "While waiting for all of the samples to run, place (%{num_samples}) 1.5mL tubes on ice. Label the tubes 1 through %{num_samples}"
+  warning: "make sure the cintrifuge is ballanced"
   image: "put image of blue ice box here"
-end
-
-take
-  alrack = 1 "Aluminum Tube Rack"
-  iceblock = 1 "Styrofoam Ice Block"
 end
 
 step
   description: "Pour off supernatant"
   note: "Use your Pipettor P1000 (100-1000 µL pipettor) to remove any remaining supernatant from each 50 mL tube. Be careful not to desturb the pellet."
   bullet: "Try not to leave any more supernatant than you have to (but don't disturb the pellet)"
-  warning: "Use a clean tip for each tube"
 end
 
 step
@@ -71,6 +76,7 @@ while jj < 3
     description: "Centrifuge all samples at 10,000 g for 1 min at 4 C"
     note: "Place as many tubes as possible in the centrifuge. Depending on the number of samples, you may need to run the centrifuge multiple times."
     bullet: " Use the refrigerated microcentrifuge located at B14.320"
+    warning: "make sure the cintrifuge is ballanced"
   end
 
   if 0 == jj
@@ -78,7 +84,7 @@ while jj < 3
    
     step
       description: "Pre-chill 1.5 ml tubes"
-      check: "For each sample in the centrifuge, put (4) 1.5 mL tubes on ice. There should be a total of %{tubes} tubes."
+      check: "For each sample in the centrifuge, put 4 1.5 mL tubes on ice. There should be a total of %{tubes} tubes."
       image: "image of blue box here"
     end
   end
@@ -91,17 +97,16 @@ while jj < 3
   
   if jj<2
     step
-      description: "Add 1 mL ice cold sterile molecular grade water"
+      description: "Resuspend sample"
       bullet: "Use your Pipettor P1000 add 1 mL ice cold molecular grade water to each tube"
       bullet: "Resuspend the pellet by gently pipetting up and down."
-      warning: "Remember to use a clean pipette tip for each tube"
     end
   end
   jj = jj + 1
 end
 
 step
-  description: "Resuspend each cell pellet in 200 µL of sterile cold molecular grade water and keep it cool."
+  description: "Resuspend each cell pellet in 200 &micro;L of sterile cold molecular grade water and keep it cool."
 end
 
 

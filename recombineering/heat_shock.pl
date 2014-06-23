@@ -10,17 +10,6 @@ take
 	taken_cells = item cells_flask_array
 end
 
-#TODO: Move to pre protocol step. or make log phase
-step
-  description: "Prepare a heat bath"
-  bullet: "Locate and plug in the hot water bath."
-  bullet: "Press the button on the left labled 'I/O' to turn on the controller."
-  bullet: "Set the middle temperature to 42 C"
-  note: "Press the refresh button until a flashing tempurature appears and the leftmost thermometer is illumminated."
-  note: "Use the up and down arrows to set the tempurature of the heat bath to 42 C."
-  image: "heat_bath"
-end
-
 step
   description: "Label (%{num_samples}) 50 mL Falcon tube(s)"
   note: "Try and leave some extra room above the label.  This tube will get an item number later"
