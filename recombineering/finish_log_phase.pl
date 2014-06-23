@@ -58,7 +58,7 @@ foreach c in log_cells
     getdata
       absorbance: number,"Write down the absorbance shown in the '600 nm Abs.' box. (not to be confused with the 'Abs.' box under the 'User Cursor' label.)" 
     end
-    image: "measurement" TODO: fix photo
+    image: "measurement" 
   end
   OD = 10*absorbance
   ODs = append(ODs, OD)
