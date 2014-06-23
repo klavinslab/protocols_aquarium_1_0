@@ -25,6 +25,7 @@ ind = 0
 log_cell_flasks = []
 produced_flasks = []
 log_ids = []
+fds = []
 foreach strain in strains
   sid = strain[:id]
   produce silently
