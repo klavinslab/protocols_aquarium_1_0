@@ -112,7 +112,7 @@ transition [quick_comp] => [transform] when !error(0) && completed(0) end
 transition [transform] => [plate] when !error(0) && completed(0) end 
 transition [plate] => [] when !error(0) && completed(0) 
   do
-    useless_variable = set_fast_status(choosen_task,"done")
+    useless_variable = set_task_status(choosen_task,"done")
   end
 end
 
