@@ -46,6 +46,9 @@ if length(YeastStrain_id)*ColonyNumber > 48
 end
 
 y=length(YeastStrain_id)
+step
+  description: "%{y}"
+end
 x=(ColonyNumber*y)+1
 z=(ColonyNumber*y)
 c=ColonyNumber
@@ -60,16 +63,19 @@ step
   description: "Pipet 30µl of the SDS mix created in the previous step into wells 1 through %{z}"
 end
 
-z=0
+j=0
 f=0
 w=0
 
-while z<y 
-  a=YeastStrain_id[z]
+while j<y
+  y=length(YeastStrain_id)
+  a=YeastStrain_id[j]
+  f=0
+  w=0
   while w<c
-    f=z*c+1
+    f=w+1
     step
-      description: "With the plate closed and upside down, find a large colony and label it ......"
+      description: "With plate %{a} closed and upside down, find a large colony and label it %{f}"
       note: "If you're already picked a colony for this strain make sure you pick a different one for this well"
     end
     step
@@ -78,7 +84,7 @@ while z<y
     end
     w=w+1
   end
-  z=z+1
+  j=j+1
 end
 
 step
@@ -114,6 +120,7 @@ end
 ColonyCount=0
 count=0
   while count < y 
+  ColonyCount=0
     strain = strains[count]
       while ColonyCount < ColonyNumber
       produce

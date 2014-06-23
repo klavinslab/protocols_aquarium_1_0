@@ -19,6 +19,13 @@ end
 
 step
   description: 
+    "Dry plate"
+  note: 
+    "l"
+end
+
+step
+  description: 
     "Intialize the Electroporator"
   note: 
     "Turn on the electroporator if it is off and set the voltage to 1250V by clicking up and down button.\n

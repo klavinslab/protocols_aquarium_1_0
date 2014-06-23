@@ -12,7 +12,7 @@ step
 end
 
 step
-  description: "Grab a sample ice block and place all items retrieved in the next take in it."
+  description: "Grab a sample cooling block from SF2 and place all items retrieved in the next take in it."
 end
 
 take
