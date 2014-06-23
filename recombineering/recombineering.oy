@@ -77,7 +77,7 @@ place plate
   group: aquarium_user
   argument
     volume: 200
-    plate_type: params[:plate_type]
+    plate_type: params[:plates]
   end
   start: hours(3)
   window: hours(1)
