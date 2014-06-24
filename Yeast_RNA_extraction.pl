@@ -1,8 +1,7 @@
 # Protocol for Yeast RNA extraction
 
 step
-  description: "Collect desired volume of cells (usually 10-20 mL of OD 0.7-1.0) by centrifugation or vacuum filtration."
-  description: "Flash freeze in liquid nitrogen and store at -80C."
+  description: "Collect desired volume of cells (usually 10-20 mL of OD 0.7-1.0) by centrifugation or vacuum filtration. Flash freeze in liquid nitrogen and store at -80C."
 end
 
 step
@@ -24,7 +23,7 @@ end
 
 step
   description: "Centrifuge at 13 kRPM for 10 minutes in cold room."
-  description: "Transfer 200-250 uL to a new 1.5 mL tube."
+  check: "Transfer 200-250 uL to a new 1.5 mL tube."
 end
 
 step
@@ -32,8 +31,7 @@ step
 end
 
 step
-  description: "Pellet RNA by centrifuging at 13 kRPM for 15 minutes in cold room."
-  description: "Discard supernatant and wash once in 500 uL 80% EtOH: 'resuspend' as much as possible with pipetting, then spin 5 minutes at 13 kRPM in cold room centrifuge. Discard supernatant."
+  description: "Pellet RNA by centrifuging at 13 kRPM for 15 minutes in cold room. Discard supernatant and wash once in 500 uL 80% EtOH: 'resuspend' as much as possible with pipetting, then spin 5 minutes at 13 kRPM in cold room centrifuge. Discard supernatant."
 end
 
 step
