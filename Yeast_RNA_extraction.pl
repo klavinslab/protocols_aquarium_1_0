@@ -2,7 +2,6 @@
 
 argument
   strain_id: sample("Yeast Strain") array, "Yeast overnight suspension(s) to be extracted"
-  n: length(strain_id)
 end
 
 take
@@ -66,7 +65,7 @@ step
 end
 
 produce
-  n "Isolated RNAs"
+  length(strain_id) "Isolated RNAs"
 end
 
 release [ a[0], b[0], c[0], d[0], e[0], f[0]]
