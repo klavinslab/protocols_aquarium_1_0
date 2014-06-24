@@ -46,6 +46,7 @@ end
 
 step
   description: "Measure RNA concentration and quality with a Nanodrop."
+  note: "Use a 1:50 dilution to nanodrop."
   note: "Optional: run a denaturing agarose gel to check degradation."
 end
 
