@@ -2,7 +2,7 @@
 
 argument
   strain_id: sample("Yeast Strain") array, "Yeast overnight suspension(s) to be extracted"
-  n = length(strain_id)
+  n: length(strain_id)
 end
 
 take
