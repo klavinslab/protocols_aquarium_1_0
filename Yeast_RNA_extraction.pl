@@ -64,3 +64,11 @@ step
   note: "Optional: run a denaturing agarose gel to check degradation."
 end
 
+produce
+  release a
+  release b
+  release c
+  release d
+  release e
+  release f
+end
