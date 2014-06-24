@@ -1,5 +1,17 @@
 # Protocol for Yeast RNA extraction
 
+argument
+  strain_id: sample ("Yeast Strains") array, "Yeast overnight suspension(s) to be extracted"
+end
+
+take
+  overnight = item strain_id
+  a = 1 "TES Buffer"
+  b = 1 "Acid Phenol"
+  c = 1 "Chloroform"
+  d = 1 "Sodium Acetate Trihydrate"
+end
+
 step
   description: "Collect desired volume of cells (usually 10-20 mL of OD 0.7-1.0) by centrifugation or vacuum filtration. Flash freeze in liquid nitrogen and store at -80C."
 end
