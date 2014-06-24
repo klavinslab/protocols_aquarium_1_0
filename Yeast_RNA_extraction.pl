@@ -66,7 +66,7 @@ end
 
 count=0
 while count < length(strain_id)
-  strain = strain_id[count]
+  strain = overnight[count]
   produce
     p = 1 "Isolated RNAs" from strain
   end
