@@ -24,13 +24,14 @@ step
 end
 
 step
-  description: "Place cells in heat bath"
-  note: "Don't press next until you are ready to walk the cells over to the bath."
+  description: "Place all tubes in heat bath"
+  note: "Place each 50 mL falcon tube you just poured into the the 42 C bath."
+  bullet: "Press next when you're ready to move the tubes into the bath."
   image: "tube_in_bath"
 end
 
 step
-  description: "Wait 15 minutes."
+  description: "Incubate in bath for 15 minutes."
   note: "While you wait, prep an ice bath"
   check: "Find a styrofoam box."
   check: "Put a 50 mL tube rack inside with some ice or ice packs."

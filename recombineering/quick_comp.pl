@@ -49,13 +49,14 @@ end
 
 step
   description: "Pour off supernatant"
-  note: "Use your Pipettor P1000 (100-1000 µL pipettor) to remove any remaining supernatant from each 50 mL tube. Be careful not to desturb the pellet."
+  note: "Use your Pipettor P1000 (100-1000 µL pipettor) to remove any remaining supernatant from each 50 mL tube. Be careful not to disturb the pellet."
   bullet: "Try not to leave any more supernatant than you have to (but don't disturb the pellet)"
 end
 
 step
   description: "Add 1 mL ice cold sterile molecular grade water"
-  note: "Use your Pipettor P1000 (100-1000 µL pipettor) to add 1 mL ice cold molecular grade water to each 50 mL tube. Resuspend each pellet by gently pipetting up and down."
+  note: "Use your Pipettor P1000 (100-1000 µL pipettor) to add 1 mL ice cold molecular grade water to each 50 mL tube. Resuspend each pellet by gently pipetting up and down and or vortexing."
+  bullet: "do not continue until the cells are completely suspended and clump free"
 end
   
 ii = 0
@@ -64,7 +65,7 @@ step
   description: "Transfer cells into a prechilled 1.5 mL centrifuge tube."
   note: "using the P1000:"
   foreach ii in samp_ind
-    check: "Transfer cells from tube " + to_string(cells[ii][:id]) + " into the 1.5 mL tube labelled " + to_string(ii+1) + "."
+    check: "Transfer the entire volume of cells from tube " + to_string(cells[ii][:id]) + " into the 1.5 mL tube labelled " + to_string(ii+1) + "."
   end
 end
 
@@ -73,8 +74,7 @@ jj = 0
 while jj < 3
   step
     description: "Centrifuge all samples at 10,000 g for 1 min at 4 C"
-    note: "Place as many tubes as possible in the centrifuge. Depending on the number of samples, you may need to run the centrifuge multiple times."
-    bullet: " Use the refrigerated microcentrifuge located at B14.320"
+    bullet: "Use the refrigerated microcentrifuge located at B5.435"
     warning: "make sure the cintrifuge is ballanced"
   end
 

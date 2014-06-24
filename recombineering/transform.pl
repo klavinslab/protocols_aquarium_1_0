@@ -90,8 +90,6 @@ while i<length(strain_list)
 
     trans_cell_ids = append(trans_cell_ids, r[:id])
     trans_cell_tm_consts = append(trans_cell_tm_consts, time_constant)
-    
-
   else
     step
       description: "Transformation Unsuccessful"
@@ -106,6 +104,12 @@ end
 step
   description: "place all tubes into the incubator"
   note: "collect all the tubes you just produced (id: %{trans_cell_ids}) and labeled and place them in the 30C incubator (I1) at location A1.110."
+  warning: "Make sure these go in the yeast (30 C) incubator.  This strain will die at 37C"
+end
+
+step
+  description: "dispose of any remaining competent cells"
+  note: "Throw in the biohazard or tip waste bin the remaining tubes labeled fxxx"
 end
 
 log
