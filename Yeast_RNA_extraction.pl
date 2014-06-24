@@ -10,6 +10,7 @@ take
   b = 1 "Acid Phenol"
   c = 1 "Chloroform"
   d = 1 "Sodium Acetate Trihydrate"
+  e = 1 "100%% Ethanol"
 end
 
 step
