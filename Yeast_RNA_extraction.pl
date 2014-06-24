@@ -18,7 +18,8 @@ step
 end
 
 step
-  description: "While samples are in their second spin, prepare phase lock gel (PLG) tubes: centrifuge at 13 kRPM for 30 seconds at room temperature (spin down PLG tubes so gel is at the bottom)"
+  description: "While samples are in their second spin, prepare phase lock gel (PLG) tubes: spin down PLG tubes so gel is at the bottom."
+  check: "Centrifuge at 13 kRPM for 30 seconds at room temperature."
 end
 
 step
