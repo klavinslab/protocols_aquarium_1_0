@@ -28,11 +28,11 @@ step
 end
 
 step
-  description: "Precipitate RNA with 1/10 volume 3M NaOAc and 3 volumes 100% EtOH on dry ice for appx. 1 hour or at -20C overnight (keep EtOH cold)."
+  description: "Precipitate RNA with 1/10 volume 3M NaOAc and 3 volumes 100%% EtOH on dry ice for appx. 1 hour or at -20C overnight (keep EtOH cold)."
 end
 
 step
-  description: "Pellet RNA by centrifuging at 13 kRPM for 15 minutes in cold room. Discard supernatant and wash once in 500 uL 80% EtOH: 'resuspend' as much as possible with pipetting, then spin 5 minutes at 13 kRPM in cold room centrifuge. Discard supernatant."
+  description: "Pellet RNA by centrifuging at 13 kRPM for 15 minutes in cold room. Discard supernatant and wash once in 500 uL 80%% EtOH: 'resuspend' as much as possible with pipetting, then spin 5 minutes at 13 kRPM in cold room centrifuge. Discard supernatant."
 end
 
 step
