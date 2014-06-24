@@ -1,7 +1,7 @@
 place make_1kb_ladder_aliquot
   protocol: "materials_prep/reagents/make_1kb_ladder_aliquot.pl"
   argument
-    ladder: 2380
+    ladder: 819
   end
   group: aquarium_user
   marked: true
