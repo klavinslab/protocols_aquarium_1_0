@@ -1,7 +1,7 @@
 # Protocol for Yeast RNA extraction
 
 argument
-  strain_id: sample ("Yeast Strains") array, "Yeast overnight suspension(s) to be extracted"
+  strain_id: sample("Yeast Strain") array, "Yeast overnight suspension(s) to be extracted"
 end
 
 take
