@@ -64,8 +64,13 @@ step
   note: "Optional: run a denaturing agarose gel to check degradation."
 end
 
-produce
-  length(strain_id) "Isolated RNAs"
+count=0
+while count < length(strain_id)
+  strain = strain_id[count]
+  produce
+    p = 1 "Isolated RNAs" from strain
+  end
+  count = count + 1
 end
 
 release [ a[0], b[0], c[0], d[0], e[0], f[0]]
