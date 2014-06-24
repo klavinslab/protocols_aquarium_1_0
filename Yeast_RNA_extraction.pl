@@ -8,7 +8,7 @@ step
   check: "Resuspend cells in 400 uL TES buffer."
   check: "Transfer to a 1.5 mL tube containing 400 uL acid phenol."
   check: "Vortex 10 seconds and then incubate at 65C for 60 minutes, vortexing a few times during the incubation."
-  check: "Plae on ice for 5 minutes."
+  check: "Place on ice for 5 minutes."
 end
 
 step
