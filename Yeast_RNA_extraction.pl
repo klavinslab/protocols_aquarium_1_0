@@ -11,6 +11,7 @@ take
   c = 1 "Chloroform"
   d = 1 "Sodium Acetate Trihydrate"
   e = 1 "100%% Ethanol"
+  f = 1 "80%% Ethanol"
 end
 
 step
