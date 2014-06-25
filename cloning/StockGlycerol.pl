@@ -5,23 +5,30 @@ end
 
 x = 0
 y = 0
-z = 0
+
 
 x = percent*volume/100
 y = (100-percent)*volume/100
+bottle_type = ""
+
+  if volume<250
+    bottle_type = "250 mL Bottle"
+  elsif volume < 500
+    bottle_type = "500 mL Bottle"
+  else
+    bottle_type = "1 L Bottle"
+  end
 
 step
   description: "This protocol makes Stock Glycerol"
 end
 
+
+
+
+
 take
-  if volume<250
-    z = 1 "250 mL Bottle"
-  elsif volume < 500
-    z = 1 "500 mL Bottle"
-  else
-    z = 1 "1 L Bottle"
-  end
+  z = 1 bottle_type
   a = 1 "Glycerol"
 end
 
