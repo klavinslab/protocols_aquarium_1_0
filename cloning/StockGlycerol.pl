@@ -15,11 +15,11 @@ end
 
 take
   if volume<250
-    1 "250 mL Bottle"
+    z= 1 "250 mL Bottle"
   elsif volume < 500
-    1 "500 mL Bottle"
+    z= 1 "500 mL Bottle"
   else
-    1 "1 L Bottle"
+    z= 1 "1 L Bottle"
   end
   1 "Glycerol"
 end
@@ -46,13 +46,7 @@ end
 
 produce
   1 "%{percent} Percent Glycerol Stock"
-  if volume<250
-    release 1 "250 mL Bottle"
-  elsif volume < 500
-    release 1 "500 mL Bottle"
-  else
-    release 1 "1 L Bottle"
-  end
+  release z
 end
 
 release [Glycerol]
