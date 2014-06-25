@@ -37,7 +37,7 @@ place finish_log_phase
 end
 
 
-wire (make_log_phase, "log_cells") => (finish_log_phase, "log_cells") 
+wire (make_log_phase, "params") => (finish_log_phase, "params") 
 
 place heat_shock
   protocol: base_dir+"heat_shock.pl"
@@ -46,7 +46,8 @@ place heat_shock
   window: minutes(10)
 end
 
-wire (make_log_phase, "log_cells") => (heat_shock, "cells_flask_array")
+#wire (make_log_phase, "params") => (heat_shock, "params")
+wire (finish_log_phase, "params") => (heat_shock, "params")
 
 place quick_comp
   protocol: base_dir+"quick_comp.pl"

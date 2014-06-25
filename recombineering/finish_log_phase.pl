@@ -1,7 +1,9 @@
  
 argument
-  log_cells: sample array, "The sample that you want to spec its concentration"
+  params: generic, "must contain a field 'log_cells' that is an array of samples"
+  #log_cells: sample array, "The sample that you want to spec its concentration"
 end
+log_cells = params[:log_cells]
 
 #currently unused
 OD_min = 0.4
@@ -103,5 +105,6 @@ release y
 release lb
 
 log
-  return: {ODs: ODs}
+  ODs: ODs
+  return: {params: params}
 end
