@@ -5,6 +5,7 @@ end
 
 x = 0
 y = 0
+z = 0
 
 x = percent*volume/100
 y = (100-percent)*volume/100
