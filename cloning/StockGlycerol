@@ -9,6 +9,21 @@ end
 
 take
   1 "500 mL Bottle"
-  1 "
+  1 "Glycerol"
 end
 
+step
+  description: "Uncap bottle and add", percent*volume/100, "mL of the Glycerol to it using a pipette man and a serological pipette."
+end
+
+step
+  description: "Add", (100-percent)*volume/100, "mL of the DI water to it using a pipette man and a serological pipette."
+end
+
+step
+  description: "Screw on the cap half way. MAKE SURE IT IS STILL LOOSE ENOUGH THAT IT IS NOT AIR TIGHT. Put a peice of autoclave tape on it"
+end
+
+step
+  description: "Autoclave the bottle for 15 mins at 125C"
+end
