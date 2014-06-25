@@ -3,8 +3,11 @@ argument
   volume: number, "Enter the ml of Glycerol you want to make"
 end
 
-x=percent*volume/100
-y=(100-percent)*volume/100
+x = 0
+y = 0
+
+x = percent*volume/100
+y = (100-percent)*volume/100
 
 step
   description: "This protocol makes Stock Glycerol"
