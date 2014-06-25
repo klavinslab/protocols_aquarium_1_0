@@ -15,11 +15,11 @@ end
 
 take
   if volume<250
-    z= 1 "250 mL Bottle"
+    z = 1 "250 mL Bottle"
   elsif volume < 500
-    z= 1 "500 mL Bottle"
+    z = 1 "500 mL Bottle"
   else
-    z= 1 "1 L Bottle"
+    z = 1 "1 L Bottle"
   end
   1 "Glycerol"
 end
