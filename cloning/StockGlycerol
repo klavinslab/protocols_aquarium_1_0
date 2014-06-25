@@ -1,0 +1,14 @@
+argument
+  percent: number, "Enter the percent Glycerol you want to make"
+  volume: number, "Enter the ml of Glycerol you want to make"
+end
+
+step
+  description: "This protocol makes Stock Glycerol"
+end
+
+take
+  1 "500 mL Bottle"
+  1 "
+end
+
