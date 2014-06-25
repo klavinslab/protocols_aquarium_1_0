@@ -13,11 +13,13 @@ take
 end
 
 step
-  description: "Uncap bottle and add", percent*volume/100, "mL of the Glycerol to it using a pipette man and a serological pipette."
+  x=percent*volume/100
+  description: "Uncap bottle and add %{x} mL of the Glycerol to it using a pipette man and a serological pipette."
 end
 
 step
-  description: "Add", (100-percent)*volume/100, "mL of the DI water to it using a pipette man and a serological pipette."
+  y=(100-percent)*volume/100
+  description: "Add %{y} mL of the DI water to it using a pipette man and a serological pipette."
 end
 
 step
@@ -28,7 +30,13 @@ step
   description: "Autoclave the bottle for 15 mins at 125C"
 end
 
-produce
-  1 "Glycerol Stock"
-  release Glycerol
+step
+  description: "Take the Bottle out once the cycle is complete and tighten the cap. Label the bottle %{percent} Percent Glycerol Stock."
 end
+
+produce
+  1 "%{percent} Percent Glycerol Stock"
+  release 1 "500 mL Bottle"
+end
+
+release [Glycerol]
