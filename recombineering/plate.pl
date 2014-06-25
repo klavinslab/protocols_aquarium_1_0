@@ -1,5 +1,15 @@
 information "Spread cells onto a petri dish containing ~25mL agar media."
 
+function array_count(arry,match) #returns number of instances of match in arry
+  ii = 0
+  foreach a in arry
+    if a == match
+      ii = ii+1
+    end
+  end
+  return ii
+end
+
 argument
   params: generic, "not for humans"
 #   e_coli_strain_id: sample array, "A sample"
@@ -11,8 +21,15 @@ plate_type = params[:plates]
 sample_count = length(e_coli_strain_id)
 take
   strain = item e_coli_strain_id
-  plate = sample_count plate_type
   #LB     = 1 "50 mL LB liquid aliquot (sterile)"
+end
+
+plate = []
+foreach p_type in unique(plate_type)
+  take
+    p = array_count(plate_type,p_type) p_type
+  end
+  plate = append(plate,p)
 end
 
 #TODO: replace this with a table with IDs and selection type
@@ -71,6 +88,8 @@ while i < sample_count
     data
       from: strain[i][:id]
       original_id: strain[i][:data][:original_id]
+      sampleName: params[i][:sampleName]
+      verified: "no"
     end
     note: "Strike out the number on the plate and replace it with the item number above.  Place upside down in 30 C incubator at A1.110. (you can wait for all plates to be done before you transfer carry them to the incubator)"
     release [plate[i],strain[i]]
