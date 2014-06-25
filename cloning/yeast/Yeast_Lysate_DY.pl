@@ -46,9 +46,7 @@ if length(YeastStrain_id)*ColonyNumber > 48
 end
 
 y=length(YeastStrain_id)
-step
-  description: "%{y}"
-end
+
 x=(ColonyNumber*y)+1
 z=(ColonyNumber*y)
 c=ColonyNumber
