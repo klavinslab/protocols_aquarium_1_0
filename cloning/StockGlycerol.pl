@@ -21,7 +21,7 @@ take
   else
     z = 1 "1 L Bottle"
   end
-  1 "Glycerol"
+  a = 1 "Glycerol"
 end
 
 step
@@ -49,4 +49,4 @@ produce
   release z
 end
 
-release [Glycerol]
+release a
