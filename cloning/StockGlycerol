@@ -27,3 +27,8 @@ end
 step
   description: "Autoclave the bottle for 15 mins at 125C"
 end
+
+produce
+  1 "Glycerol Stock"
+  release Glycerol
+end
