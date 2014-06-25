@@ -3,8 +3,8 @@ argument
   volume: number, "Enter the ml of Glycerol you want to make"
 end
 
-x=0
-y=0
+x=percent*volume/100
+y=(100-percent)*volume/100
 
 step
   description: "This protocol makes Stock Glycerol"
@@ -22,12 +22,10 @@ take
 end
 
 step
-  x=percent*volume/100
   description: "Uncap bottle and add %{x} mL of the Glycerol to it using a pipette man and a serological pipette."
 end
 
 step
-  y=(100-percent)*volume/100
   description: "Add %{y} mL of the DI water to it using a pipette man and a serological pipette."
 end
 
