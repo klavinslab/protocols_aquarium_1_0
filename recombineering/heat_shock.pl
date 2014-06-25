@@ -1,6 +1,8 @@
 argument
-  cells_flask_array: sample array , "Array of cell flaks to be heat shocked"
+  params: generic, "not for human use"
+  #cells_flask_array: sample array , "Array of cell flaks to be heat shocked"
 end
+cells_flask_array = params[:log_cells]
 
 num_samples = length(cells_flask_array)
 
@@ -72,9 +74,10 @@ while ii < num_samples
 	ii = ii + 1
 end
 
+params[:shocked_cells] = heat_treated_cells
 
 # output the id numbers of the treated cells for the next protocol
 log
-  return: {shocked_cells : heat_treated_cells}
+  return: {params: params}
 end
 

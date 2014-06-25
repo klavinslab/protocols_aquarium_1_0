@@ -2,8 +2,10 @@
 information "Make competent cells for immediate use."
 
 argument
-  heat_shocked_cells: sample array, "Array of heat shocked cells"
+  params: generic, "not for humans"
+  #heat_shocked_cells: sample array, "Array of heat shocked cells"
 end
+heat_shocked_cells = params[:shocked_cells]
 
 take
   cells = item heat_shocked_cells
@@ -127,8 +129,11 @@ while ii < num_samples
     
 end
 
+params[:ice] = iceblock[0]
+params[:alrack] = alrack[0]
 log
-  return: { ice: iceblock[0], alrack: alrack[0] }
+#  return: { ice: iceblock[0], alrack: alrack[0] }
+  return: {params: params}
 end
 
 

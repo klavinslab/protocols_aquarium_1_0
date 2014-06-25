@@ -1,9 +1,12 @@
 information "Spread cells onto a petri dish containing ~25mL agar media."
 
 argument
-   e_coli_strain_id: sample array, "A sample"
-   plate_type: object, "Type of plates you will use to select for transformed cells.\nList in order of corresponding transformed E. coli strains (from the solidmedia category)"
+  params: generic, "not for humans"
+#   e_coli_strain_id: sample array, "A sample"
+#   plate_type: object, "Type of plates you will use to select for transformed cells.\nList in order of corresponding transformed E. coli strains (from the solidmedia category)"
 end
+e_coli_strain_id = params[:transformed_cells]
+plate_type = params[:plates]
 
 sample_count = length(e_coli_strain_id)
 take

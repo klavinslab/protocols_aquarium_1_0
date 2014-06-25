@@ -1,11 +1,18 @@
 
 argument
-  fragment_id: sample array, "List of fragments to trans form into respective ecomp strain"
+  params: generic, "not for humans"
+#  fragment_id: sample array, "List of fragments to trans form into respective ecomp strain"
   dna_vol: number, "Volume of DNA to trnsform (ul)"
-  strain_list: sample array, "The e coli strains in order of mapping with knockout plasmid"
-  ice: generic, "taken iceblock"
-  alrack: generic, "taken alrack"
+#  strain_list: sample array, "The e coli strains in order of mapping with knockout plasmid"
+#  ice: generic, "taken iceblock"
+#  alrack: generic, "taken alrack"
 end
+
+#unpack parameters
+fragment_id = params[:ldna]
+strain_list = params[:strains]
+ice = params[:ice]
+alrack= params[:alrack]
 
 sample_count = length(strain_list)
 take
@@ -112,8 +119,10 @@ step
   note: "Throw in the biohazard or tip waste bin the remaining tubes labeled fxxx"
 end
 
+params[:transformed_cells]= trans_cell_ids
+
 log
-  return: {transformed_cells_ids: trans_cell_ids, time_constants: trans_cell_tm_consts }
+  time_constants: trans_cell_tm_consts 
 end
 
 release [electroporator[0],lbtube[0]]
