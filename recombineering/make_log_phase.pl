@@ -87,7 +87,7 @@ step
   note: "Find both the large centrifuge C3 at B15.410 and the smaller centrifuge C2 at B5.335 and adjust the temperature setings to 4C.  Make sure the lids are closed when you're done as they won't refrigerate when open."
 end
 
-params[log_cells: log_cell_flasks]
+params[:log_cells] = log_cell_flasks
 
 log
   return: {params: params}
