@@ -3,6 +3,9 @@ argument
   volume: number, "Enter the ml of Glycerol you want to make"
 end
 
+x=0
+y=0
+
 step
   description: "This protocol makes Stock Glycerol"
 end
