@@ -14,7 +14,8 @@ take
 end
 
 step
-  description: "Collect desired volume of cells (usually 10-20 mL of OD 0.7-1.0) by centrifugation or vacuum filtration. Flash freeze in liquid nitrogen and store at -80C."
+  bullet: "Collect desired volume of cells (usually 10-20 mL of OD 0.7-1.0) by centrifugation or vacuum filtration."
+  bullet: "Flash freeze in liquid nitrogen and store at -80C."
 end
 
 step
@@ -31,17 +32,17 @@ step
 end
 
 step
-  description: "While samples are in their second spin, prepare phase lock gel (PLG) tubes: spin down PLG tubes so gel is at the bottom."
+  note: "While samples are in their second spin, prepare phase lock gel (PLG) tubes: spin down PLG tubes so gel is at the bottom."
   check: "Centrifuge at 13 kRPM for 30 seconds at room temperature."
 end
 
 step
-  description: "Centrifuge at 13 kRPM for 10 minutes in cold room."
+  note: "Centrifuge at 13 kRPM for 10 minutes in cold room."
   check: "Transfer 200-250 uL to a new 1.5 mL tube."
 end
 
 step
-  description: "Precipitate RNA with 1/10 volume 3M NaOAc and 3 volumes 100%% EtOH on dry ice for appx. 1 hour or at -20C overnight (keep EtOH cold)"
+  note: "Precipitate RNA with 1/10 volume 3M NaOAc and 3 volumes 100%% EtOH on dry ice for appx. 1 hour or at -20C overnight (keep EtOH cold)"
 end
 
 count=0
