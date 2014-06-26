@@ -9,7 +9,7 @@ take
   a = 1 "TES Buffer"
   b = 1 "Acid Phenol"
   c = 1 "Chloroform"
-  d = 1 "Sodium Acetate Trihydrate"
+  d = 1 "3M NaOAc"
   e = 1 "100%% Ethanol"
 end
 
