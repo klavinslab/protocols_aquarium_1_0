@@ -53,8 +53,8 @@ while count < length(strain_id)
   count = count + 1
 end
 
+release [ a[0], b[0], c[0], d[0], e[0]]
+
 step
   description: "Proceed to Day 2 protocol"
 end
-
-release [ a[0], b[0], c[0], d[0], e[0]]
