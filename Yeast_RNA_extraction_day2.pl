@@ -32,7 +32,7 @@ count=0
 while count < length(strain_id)
   strain = overnight[count]
   produce
-    p = 1 "Isolated RNAs" from strain
+    p = 1 "Isolated RNA" from strain
   end
   count = count + 1
 end
