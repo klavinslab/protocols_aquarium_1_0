@@ -38,6 +38,10 @@ produce
   location: "37 degree shaker"
 end
 
+log
+  return: {e_coli_array: x[:id]}
+end
+
 step
   description: "Make sure both flasks are secure in the 37 degree shaker incubator"
 end
