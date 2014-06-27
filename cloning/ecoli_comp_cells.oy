@@ -1,5 +1,12 @@
+argument
+  e_coli_id: sample, "The E. coli glycerol stock that you want to make competent cells from."
+end
+
+
 place day1
   protocol: "ecoli_comp_cells_day1.pl"
+  argument
+    e_coli_id: e_coli_id
   group: "technicians"
   marked: true
   start: now()
@@ -13,6 +20,8 @@ place day2
   start: now()
   window: hours(20)
 end
+
+wire (day1,"e_coli_array") => (plate,"e_coli_id")
 
 
 #forward transitions
