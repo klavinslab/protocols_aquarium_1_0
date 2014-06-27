@@ -21,7 +21,7 @@ place day2
   window: hours(20)
 end
 
-wire (day1,"e_coli_array") => (plate,"e_coli_id")
+wire (day1,"e_coli_array") => (day2,"e_coli_id")
 
 
 #forward transitions
