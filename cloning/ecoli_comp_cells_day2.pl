@@ -128,15 +128,15 @@ step
   description: "Put all of the filled tubes into a labeled freezer box and immedietly put this in the -80C freezer."
 end  
 
-f=0
+#f=0
 
-while f<z
+#while f<z
   produce
-    1 "DH5alpha Electrocompetent Aliquot"
+    z "DH5alpha Electrocompetent Aliquot"
     location: "M80.fourth_shelf"
   end
-  f=f+1
-end
+#  f=f+1
+#end
 
 release [LB[0],water[0],glycerol[0],gyt[0],flask[0]]
 release centrifuge_tubes
