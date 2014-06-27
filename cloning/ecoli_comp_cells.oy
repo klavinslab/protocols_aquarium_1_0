@@ -29,7 +29,6 @@ place transform
   protocol: "cloning/workflow/050_ecoli_transformation.pl"
   argument
     plasmid_ids: plasmid_ids
-    e_coli_strain_type: object, "The electrocompetent E. coli aliquot type."
     plate_type: object, "The (probably LB) plate type that will be used in the next protocol."
   end
   group: "technicians"
@@ -37,13 +36,19 @@ place transform
   window: hours(20)
 end
 
-wire (day2, "") => (transform, "e_coli_strain_type")
+wire (day2, "e_coli_strain_type") => (transform, "e_coli_strain_type")
 
 place plate
-
+  protocol: "cloning/workflow/052_plate.pl"
+  argument
+    plasmid_ids: sample array, "Transformed aliquots of E. coli."
+    volume: number, "The volume (µL) to plate"
+    plate_type: object, "The (probably LB) plate type."
+  end
 end
 
 place image
+  protocol: "cloning/workflow/055_image_plate.pl"
 
 end
 
