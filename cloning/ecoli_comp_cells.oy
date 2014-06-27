@@ -1,0 +1,22 @@
+place day1
+  protocol: "ecoli_comp_cells_day1.pl"
+  group: "technicians"
+  marked: true
+  start: now()
+  window: hours(20)
+end
+
+place day2
+  protocol: "	ecoli_comp_cells_day1.pl"
+  group: "technicians"
+  marked: true
+  start: now()
+  window: hours(20)
+end
+
+
+#forward transitions
+transition [day1] => [day2] when !error(0) && completed(0) end
+transition [day2] => [] when !error(0) && completed(0) end
+
+#reword trasitions
