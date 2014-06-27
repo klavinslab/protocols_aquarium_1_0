@@ -132,11 +132,15 @@ end
 
 #while f<z
   produce
-    z "DH5alpha Electrocompetent Aliquot"
+    ecomp_cells = z "DH5alpha Electrocompetent Aliquot"
     location: "M80.fourth_shelf"
   end
 #  f=f+1
 #end
+
+log
+  return: {e_coli_strain_type: ecomp_cells[:id]}
+end
 
 release [LB[0],water[0],glycerol[0],gyt[0],flask[0]]
 release centrifuge_tubes
