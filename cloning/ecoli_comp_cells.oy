@@ -16,7 +16,6 @@ end
 place day2
   protocol: "	ecoli_comp_cells_day1.pl"
   group: "technicians"
-  marked: true
   start: now()
   window: hours(20)
 end
