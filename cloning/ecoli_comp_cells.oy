@@ -7,6 +7,7 @@ place day1
   protocol: "ecoli_comp_cells_day1.pl"
   argument
     e_coli_id: e_coli_id
+  end
   group: "technicians"
   marked: true
   start: now()
