@@ -4,7 +4,7 @@ end
 
 
 place day1
-  protocol: "ecoli_comp_cells_day1.pl"
+  protocol: "cloning/ecoli_comp_cells_day1.pl"
   argument
     e_coli_id: e_coli_id
   end
@@ -15,7 +15,7 @@ place day1
 end
 
 place day2
-  protocol: "	ecoli_comp_cells_day1.pl"
+  protocol: "cloning/ecoli_comp_cells_day2.pl"
   group: "technicians"
   start: now()
   window: hours(20)
