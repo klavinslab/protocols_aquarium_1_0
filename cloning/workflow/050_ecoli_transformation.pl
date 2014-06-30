@@ -117,9 +117,10 @@ while ii < n
   ii = ii + 1
 end
 
-if length(rarray) < 3
+if length(rarray) <= 3
   log
-  return: { transformed_cells: returned_items }
+    return: { transformed_cells: returned_items }
+  end
 end
 
 release plasmids
