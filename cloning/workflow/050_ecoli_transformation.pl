@@ -110,6 +110,20 @@ while ii < n
     location: "Bench"
   end
 
+  if ii==0
+    log
+      return: { transformed_cells_id0: r[:id]}
+    end
+  elsif ii == 1
+      log
+      return: { transformed_cells_id1: r[:id]}
+    end
+  else
+      log
+      return: { transformed_cells_id2: r[:id]}
+    end
+  end
+
   ii = ii + 1
 end
 
