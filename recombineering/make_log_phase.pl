@@ -20,14 +20,29 @@ function array_count(arry,match) #returns number of instances of match in arry
   return ii
 end
 
-logCult = []
+step
+  description: "Foo"
+end
 
-foreach cult in unique(params[:strains])
+logCult = []
+st = params[:strains]
+ii = 0
+count = 0
+nflsk = 0
+
+foreach cult in unique(st)
   ii = 0
-  while ii< array_count(params[:strains],cult)
-    logCult = append(logCult,cult)
+  count = array_count(st,cult)
+  while ii< count
     ii = ii + 1
   end
+  nflsk = ceil(ii/4.0)
+  ii = 0
+  while ii<nflsk
+    logCult= append(logCult,cult)
+    ii = ii+1
+  end
+  
 end
 
 params[:logCultures] = logCult
