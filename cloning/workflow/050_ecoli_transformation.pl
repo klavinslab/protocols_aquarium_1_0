@@ -117,7 +117,7 @@ while ii < n
   ii = ii + 1
 end
 
-if length(rarray) <= 3
+if length(returned_items) <= 3
   log
     return: { transformed_cells: returned_items }
   end
