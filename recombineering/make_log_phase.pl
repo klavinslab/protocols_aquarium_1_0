@@ -10,7 +10,29 @@ argument
   params: generic, "task we're running"
 end
 
-strainIDs = params[:logCultures]
+function array_count(arry,match) #returns number of instances of match in arry
+  ii = 0
+  foreach a in arry
+    if a == match
+      ii = ii+1
+    end
+  end
+  return ii
+end
+
+logCult = []
+
+foreach cult in unique(params[:strains])
+  ii = 0
+  while ii< array_count(params[:strains],cult)
+    logCult = append(logCult,cult)
+    ii = ii + 1
+  end
+end
+
+params[:logCultures] = logCult
+
+#strainIDs = params[:logCultures]
 #TODO: remove logCultures field and instead count from strains field
 
 information "Dilute cells and bring them to log phase"
