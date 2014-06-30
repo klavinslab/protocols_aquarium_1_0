@@ -123,6 +123,7 @@ params[:transformed_cells]= trans_cell_ids
 
 log
   time_constants: trans_cell_tm_consts 
+  return: {params: params}
 end
 
 release [electroporator[0],lbtube[0]]
