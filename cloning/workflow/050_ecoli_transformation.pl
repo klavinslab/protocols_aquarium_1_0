@@ -66,6 +66,7 @@ step
 end
 
 ii = 0
+returned_items = []
 while ii < n
   plasmid_id = plasmid_ids[ii]
   plasmid = plasmids[ii]
@@ -110,7 +111,16 @@ while ii < n
     location: "Bench"
   end
 
+  rid = r[:id]
+  returned_items = append(returned_items, rid)
+
   ii = ii + 1
+end
+
+if length(returned_items) <= 3
+  log
+    return: { transformed_cells: returned_items }
+  end
 end
 
 release plasmids
