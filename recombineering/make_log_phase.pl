@@ -31,9 +31,7 @@ foreach cult in unique(params[:strains])
 end
 
 params[:logCultures] = logCult
-
-#strainIDs = params[:logCultures]
-#TODO: remove logCultures field and instead count from strains field
+strainIDs = params[:logCultures]
 
 information "Dilute cells and bring them to log phase"
 
