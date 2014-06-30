@@ -1,6 +1,6 @@
 argument
   e_coli_id: sample, "The E. coli glycerol stock that you want to make competent cells from."
-  plasmid_ids: sample array, "The plasmids to be used to test theses aliquots"
+  #plasmid_ids: sample array, "The plasmids to be used to test theses aliquots"
 end
 
 
