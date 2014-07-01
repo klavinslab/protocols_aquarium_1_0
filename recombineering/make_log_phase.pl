@@ -1,10 +1,4 @@
 #Author: Chris Takahashi
-#input json file should have the following field(s)
-#[:logCultures]: the list of strains that diluted into 25ml of culture
-#
-#eg if 
-#  in[:logCultures] = [123,555,555] then three 25ml logphase flasks 
-#  will be made one with strain 123 and two with strain 555.
 
 argument
   params: generic, "task we're running"
@@ -22,10 +16,6 @@ end
 
 logCult = []
 st = params[:strains]
-ii = 0
-count = 0
-nflsk = 0
-
 foreach cult in unique(st)
   ii = 0
   count = array_count(st,cult)
