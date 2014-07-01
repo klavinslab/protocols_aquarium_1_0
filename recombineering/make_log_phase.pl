@@ -20,10 +20,6 @@ function array_count(arry,match) #returns number of instances of match in arry
   return ii
 end
 
-step
-  description: "Foo"
-end
-
 logCult = []
 st = params[:strains]
 ii = 0
@@ -63,20 +59,25 @@ log_ids = []
 fids = []
 foreach strain in strains
   sid = strain[:id]
-  produce silently
-    output = 1 "Overnight suspension" from strain 
-    release [flasks[ind]]
-    location: "SI4"
-    data
-      from: sid
+  ncopy = array_count(strainIDs,sid)
+  ii=0
+  while ii<ncopy
+    produce silently
+      output = 1 "Overnight suspension" from strain 
+      release [flasks[ind]]
+      location: "SI4"
+      data
+        from: sid
+      end
     end
-  end
-  ind = ind+1
-  log_cell_flasks = append(log_cell_flasks, output[:id])
-  produced_flasks = append(produced_flasks, output)
+    ind = ind+1
+    log_cell_flasks = append(log_cell_flasks, output[:id])
+    produced_flasks = append(produced_flasks, output)
 
-  fid = output[:id]
-  fids = append(fids,fid)
+    fid = output[:id]
+    fids = append(fids,fid)
+    ii = ii+1
+  end
 end
 
 step

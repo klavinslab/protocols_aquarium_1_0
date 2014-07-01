@@ -88,7 +88,7 @@ while i < sample_count
     data
       from: strain[i][:id]
       original_id: strain[i][:data][:original_id]
-      sampleName: params[i][:sampleName]
+      sampleName: params[:sampleName][i]
       verified: "no"
     end
     note: "Strike out the number on the plate and replace it with the item number above.  Place upside down in 30 C incubator at A1.110. (you can wait for all plates to be done before you transfer carry them to the incubator)"
