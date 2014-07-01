@@ -9,8 +9,8 @@ end
 
 step
   description: "Start overnight culture"
-  note: "Bring a test tube with 2-10mL of YPAD liquid media to the M20 fridge."
-  note: "Using a sterile pipette tip take a small amount of the desired yeast glycerol stock and add it to the test tube. Replace the glycerol stock back into the M20 as quickly as possible."
+  note: "Bring a test tube with 2-10mL of YPAD liquid media to the M80 fridge."
+  note: "Using a sterile pipette tip take a small amount of the desired yeast glycerol stock and add it to the test tube. Replace the glycerol stock back into the M80 as quickly as possible."
 end
 
 step
@@ -22,11 +22,11 @@ end
 step
   description: "Dilute the overnight culture"
   note: "Prewarm 50mL YPAD in baffled flask(s) for 15-30 minutes in the shaking incubator"
-  note: "Dilute the culture using a 1:50 or 1:100 ratio with 50mL of prewarmed YPAD"
+  note: "Dilute the overnight culture using a 1:50 or 1:100 ratio with 50mL of prewarmed YPAD"
 end
 
 step
-  description: "Put diluted cells into shaking incubator"
+  description: "Put diluted cells into shaking incubator and wait"
   note: "Wait 5-6 hours (1:50 dilution) or 6.5-8 hours (1:100 dilution) before harvesting the cells growing in the incubator"
 end
 
@@ -48,7 +48,7 @@ end
 
 step
   description: "Spin down epinedorf tubes on tabletop microfuge"
-  note: "Make sure the microfuge is balanced. Spine down for 10-20 seconds and remove supernatant from resulting pellet using a 1000uL pipette."
+  note: "Make sure the microfuge is balanced. Spin down for 10-20 seconds and remove supernatant from resulting pellet using a 1000uL pipette."
 end
   
 step
