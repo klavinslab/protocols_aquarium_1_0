@@ -1,6 +1,6 @@
 argument
   e_coli_id: sample, "The E. coli glycerol stock that you want to make competent cells from."
-  plasmid_ids: sample array, "The plasmids to be used to test theses aliquots"
+  #plasmid_ids: sample array, "The plasmids to be used to test theses aliquots"
 end
 
 
@@ -41,24 +41,26 @@ wire (day2, "e_coli_strain_type") => (transform, "e_coli_strain_type")
 place plate
   protocol: "cloning/workflow/052_plate.pl"
   argument
-    plasmid_ids: sample array, "Transformed aliquots of E. coli."
     volume: number, "The volume (µL) to plate"
     plate_type: object, "The (probably LB) plate type."
   end
 end
 
-place image
-  protocol: "cloning/workflow/055_image_plate.pl"
+wire (transform,"transformed_cells") => (plate,"plasmid_ids")
 
-end
+#place image
+#  protocol: "cloning/workflow/055_image_plate.pl"
+#end
 
-place fail_clean
-
-end
+#place fail_clean
+#
+#end
 
 
 #forward transitions
 transition [day1] => [day2] when !error(0) && completed(0) end
-transition [day2] => [] when !error(0) && completed(0) end
+transition [day2] => [transform] when !error(0) && completed(0) end
+transition [transform] => [plate] when !error(0) && completed(0) end
+transition [plate] => [] when !error(0) && completed(0) end
 
 #reword trasitions
