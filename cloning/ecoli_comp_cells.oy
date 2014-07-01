@@ -1,6 +1,8 @@
 argument
   e_coli_id: sample, "The E. coli glycerol stock that you want to make competent cells from."
-  #plasmid_ids: sample array, "The plasmids to be used to test theses aliquots"
+  plasmid_ids: sample array, "The plasmids to be used for testing"
+  volume: number, "The volume (µL) to plate for testing"
+  plate_type: object, "The (probably LB) plate type for testing."
 end
 
 
@@ -29,7 +31,7 @@ place transform
   protocol: "cloning/workflow/050_ecoli_transformation.pl"
   argument
     plasmid_ids: plasmid_ids
-    plate_type: object, "The (probably LB) plate type that will be used in the next protocol."
+    plate_type: plate_type
   end
   group: "technicians"
   start: now()
@@ -41,8 +43,8 @@ wire (day2, "e_coli_strain_type") => (transform, "e_coli_strain_type")
 place plate
   protocol: "cloning/workflow/052_plate.pl"
   argument
-    volume: number, "The volume (µL) to plate"
-    plate_type: object, "The (probably LB) plate type."
+    volume: volume
+    plate_type: plate_type
   end
 end
 
