@@ -1,0 +1,23 @@
+step
+  description: "This Protocol relays how to grow up yeast frozen compotent cells."
+end
+  
+step
+  description: "Plan out how many aliquots are required" 
+  note: "Approximately 20-30 aliquots will be produced from 1mL of overnight culture. Before beginning make sure that you have enough baffled flasks for the following day; approximately one flask is needed for every 30-50 aliquots produced."
+end
+
+step
+  description: "Start overnight culture"
+  note: "Bring a test tube with 2-10mL of YPAD liquid media to the M20 fridge."
+  note: "Using a sterile pipette tip take a small amount of the desired yeast glycerol stock and add it to the test tube. Replace the glycerol stock back into the M20 as quickly as possible."
+end
+
+step
+  description: "Grow up culture"
+  note: "Label the test tube with the yeast strain ID, your initials, and today's date."
+  note: "Place the test tube in the 30 degree rotary shaker to grow up overnight."
+end 
+
+step
+  description: "
