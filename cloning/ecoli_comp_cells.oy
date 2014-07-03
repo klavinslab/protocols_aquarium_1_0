@@ -48,6 +48,9 @@ place plate
     volume: volume
     plate_type: plate_type
   end
+  group: "technicians"
+  start: now()
+  window: hours(20)
 end
 
 wire (transform,"transformed_cells") => (plate,"plasmid_ids")
