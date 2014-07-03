@@ -43,7 +43,7 @@ end
 
 take
   #strain = n e_coli_strain_type
-  strain = item [26405]
+  strain = item [26405, 26405, 26405]
   cuvette = n "Clean Electrocuvette"
 end
 
