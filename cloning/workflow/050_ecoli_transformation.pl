@@ -41,10 +41,14 @@ step
   warning: "The cuvette metal sides should be touching the ice block to keep it cool."
 end
 
+strainid = 3456
+
 take
   #strain = n e_coli_strain_type
-  strain = item [26405, 26405, 26405]
+  strain = n "DH5alpha Electrocompetent Aliquot"
+  #strain = item [26405, 26405, 26405]
   cuvette = n "Clean Electrocuvette"
+  note: "Take all electrocompetent aliquots from box with ID %{strainid}"
 end
 
 step
