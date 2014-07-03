@@ -1,6 +1,6 @@
 argument
   e_coli_id: sample, "The E. coli glycerol stock that you want to make competent cells from."
-  #e_coli_strain_type: object, "The electrocompetent E. coli aliquot type."
+  e_coli_strain_type: object, "The electrocompetent E. coli aliquot type."
   plasmid_ids: sample array, "The plasmids to be used for testing"
   volume: number, "The volume (µL) to plate for testing"
   plate_type: object, "The (probably LB) plate type for testing."
