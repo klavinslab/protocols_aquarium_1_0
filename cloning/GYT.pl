@@ -34,7 +34,7 @@ step
 end
 
 step
-  description:"After the bottle has cooled pipette in 20mls of 50% glycerol into the 100ml bottle"
+  description:"After the bottle has cooled pipette in 20mls of 50 percent glycerol into the 100ml bottle"
   note: "Mix the bottle after the glycerol is added"
 end
 
