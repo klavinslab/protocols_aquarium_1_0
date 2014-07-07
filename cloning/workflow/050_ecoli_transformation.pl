@@ -42,7 +42,7 @@ step
   warning: "The cuvette metal sides should be touching the ice block to keep it cool."
 end
 
-if e_coli_strain_id != null
+if e_coli_strain_id > 0
   step
     description:"You will be taking from a specific batch of comp cells."
     note: "In the following take, pay careful attention and look for the ID of the box of comp cells to take from."
