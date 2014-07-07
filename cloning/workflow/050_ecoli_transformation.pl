@@ -1,7 +1,7 @@
 argument
   plasmid_ids: sample array, "The plasmids to be used"
   e_coli_strain_type: object, "The electrocompetent E. coli aliquot type."
-  e_coli_strain_id: number, "The ID of the comp cell. Leave blank if you don't need comp cells from a specific batch."
+  e_coli_strain_id: number, "The ID of the comp cell. Enter 0 if you don't need comp cells from a specific batch."
   plate_type: object, "The (probably LB) plate type that will be used in the next protocol."
 end
 
@@ -42,27 +42,19 @@ step
   warning: "The cuvette metal sides should be touching the ice block to keep it cool."
 end
 
-if e_coli_strain_id > 0
-  step
-    description:"You will be taking from a specific batch of comp cells."
-    note: "In the following take, pay careful attention and look for the ID of the box of comp cells to take from."
-  end
 
-  take
-    strain = n e_coli_strain_type
-    #strain = n "DH5alpha Electrocompetent Aliquot"
-    #strain = item [26405, 26405, 26405]
-    cuvette = n "Clean Electrocuvette"
-    note: "Take all electrocompetent aliquots from box with ID %{e_coli_strain_id}"
-  end  
-else
-  take
-    strain = n e_coli_strain_type
-    #strain = n "DH5alpha Electrocompetent Aliquot"
-    #strain = item [26405, 26405, 26405]
-    cuvette = n "Clean Electrocuvette"
-  end
+step
+  description:"Which comp cells."
+  note: "In the following take, pay careful attention and look for the ID of the box of comp cells to take from. If it is 0, then the batch number doesn't matter. If it's any other ID number grab all aliquots from the E. comp cell box with that ID."
 end
+
+take
+  strain = n e_coli_strain_type
+  #strain = n "DH5alpha Electrocompetent Aliquot"
+  #strain = item [26405, 26405, 26405]
+  cuvette = n "Clean Electrocuvette"
+  note: "Take all electrocompetent aliquots from box with ID %{e_coli_strain_id}"
+end  
 
 
 step
