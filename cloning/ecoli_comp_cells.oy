@@ -76,6 +76,8 @@ transition [day1] => [day2] when !error(0) && completed(0) end
 transition [day2] => [transform] when !error(0) && completed(0) end
 transition [transform] => [plate] when !error(0) && completed(0) end
 transition [plate] => [image] when !error(0) && completed(0) end
-transition [image] => [] when !error(0) && completed(0) end
+transition [image] => [] when !error(0) && completed(0) && return_value(0,"count_result") == 1 end
+#transition [image] => [fail_clean] when !error(0) && completed(0) && return_value(0,"count_result") == 0 end
+#transition [fail_clean] => [] when !error(0) && completed(0) end
 
 #reword trasitions
