@@ -81,6 +81,7 @@ while ii < n
 	
 	returned_counts = append(returned_counts, count)
 
+	 ii = ii + 1
 
 end
 
@@ -99,6 +100,7 @@ while ii < n
 	  location: "DFP.0"
 	  inuse: 0
 	end
+	 ii = ii + 1
 end
 
 if length(returned_counts) <= 3
