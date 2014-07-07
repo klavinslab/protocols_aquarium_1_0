@@ -28,6 +28,7 @@ end
 
 ii=0
 returned_counts = []
+plate_tally = 0
 while ii < n
 
 	step
@@ -80,6 +81,9 @@ while ii < n
 	end
 	
 	returned_counts = append(returned_counts, count)
+	if count > 75 
+	  plate_tally = plate_tally + 1
+	end
 
 	 ii = ii + 1
 
@@ -103,11 +107,11 @@ while ii < n
 	 ii = ii + 1
 end
 
-if length(returned_counts) <= 3
+#if length(returned_counts) <= 3
   log
-    return: { returned_counts: returned_counts}
+    return: { plate_tally: plate_tally}
   end
-end
+#end
 	
 	
 	
