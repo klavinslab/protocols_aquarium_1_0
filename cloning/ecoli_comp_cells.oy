@@ -57,7 +57,9 @@ wire (transform,"transformed_cells") => (plate,"plasmid_ids")
 
 place image
   protocol: "cloning/workflow/055_image_plate.pl"
-
+  group: "technicians"
+  start: now()
+  window: hours(20)
 end
 
 wire (plate,"transformed_plates") => (image,"Transformed_E_coli_Strain_id")
@@ -73,6 +75,7 @@ wire (plate,"transformed_plates") => (image,"Transformed_E_coli_Strain_id")
 transition [day1] => [day2] when !error(0) && completed(0) end
 transition [day2] => [transform] when !error(0) && completed(0) end
 transition [transform] => [plate] when !error(0) && completed(0) end
-transition [plate] => [] when !error(0) && completed(0) end
+transition [plate] => [image] when !error(0) && completed(0) end
+transition [image] => [] when !error(0) && completed(0) end
 
 #reword trasitions
