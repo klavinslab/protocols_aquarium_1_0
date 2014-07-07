@@ -40,7 +40,7 @@ place transform
   window: hours(20)
 end
 
-#wire (day2, "e_coli_strain_type") => (transform, "e_coli_strain_type")
+wire (day2, "e_coli_strain_type") => (transform, "e_coli_strain_id")
 
 place plate
   protocol: "cloning/workflow/052_plate.pl"
