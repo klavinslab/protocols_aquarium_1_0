@@ -65,10 +65,13 @@ end
 wire (plate,"transformed_plates") => (image,"Transformed_E_coli_Strain_id")
 
 
-
-#place fail_clean
-#
-#end
+place fail_clean
+  protocol: "cloning/discard_ecoli_comp_cells.pl"
+  group: "technicians"
+  start: now()
+  window: hours(20)
+end
+wire (day2, "e_coli_strain_type") => (fail_clean, "e_coli_strain_id")
 
 
 #forward transitions
@@ -76,8 +79,8 @@ transition [day1] => [day2] when !error(0) && completed(0) end
 transition [day2] => [transform] when !error(0) && completed(0) end
 transition [transform] => [plate] when !error(0) && completed(0) end
 transition [plate] => [image] when !error(0) && completed(0) end
-transition [image] => [] when !error(0) && completed(0) && return_value(0,"count_result") == 1 end
-#transition [image] => [fail_clean] when !error(0) && completed(0) && return_value(0,"count_result") == 0 end
+transition [image] => [] when !error(0) && completed(0) && return_value(0,"plate_tally") > 1 end
+#transition [image] => [fail_clean] when !error(0) && completed(0) && return_value(0,"plate_tally") <= 1 end
 #transition [fail_clean] => [] when !error(0) && completed(0) end
 
 #reword trasitions
