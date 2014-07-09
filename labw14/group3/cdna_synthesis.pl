@@ -25,11 +25,6 @@ step
   bullet: "If precipitation has occured, please mix thoroughly to resuspend, before moving forward"
 end
 
-step
-  note: "%{rna_conc_array[0]"
-  note: "%{rna_conc_array[1]"
-end
-
 i = 0
 while i<n
   thisConc = rna_conc_array[i]
