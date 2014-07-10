@@ -15,4 +15,6 @@ end
 #  a = item [ 26450, 26450, 26450]
 #end
 
-return [x[0],y[0],z[0],a[0]]
+return x
+return y
+return z
