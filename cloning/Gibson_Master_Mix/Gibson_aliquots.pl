@@ -1,7 +1,7 @@
 ##This protocol makes 80 gibson aliquots
 
 argument
-  iso_buffer: sample("Enzyme Buffer"), "Choose an aliquot of 5X ISO Buffer to use for this protocol."
+  iso_buffer: sample("Enzyme Buffer Stock"), "Choose an aliquot of 5X ISO Buffer to use for this protocol."
   t5: sample("Enzyme"), "Choose a tube T5 Exonuclease to use in this protocol."
   phusion_pol: sample("Enzyme"), "Choose a tube of phusion polymerase to use in this protocol."
   ligase: sample("Enzyme"), "Choose a tube of Taq DNA Ligase to use in this protocol"
