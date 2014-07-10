@@ -102,8 +102,9 @@ step
   description: "Spin down the tubes in the benchtop centrifuge until a small pellet is visible at the bottom of the tubes"
 end
 
+j=y*ColonyNumber
 step
-  description: "Label %{y} more strip-well tubes in the manner described earlier in the protocol"
+  description: "Label %{j} more strip-well tubes in the manner described earlier in the protocol"
 end
 
 step
