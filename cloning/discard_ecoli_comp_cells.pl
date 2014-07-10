@@ -6,9 +6,14 @@ take
   discard = item e_coli_strain_id
 end
 
+#step
+#  description: "Throw away aliquots in box {%e_coli_strain_id}"
+#  note: "Go to the minus 80 freezer, fourth shelf and discard the ecoli aliquots in box ID {%e_coli_strain_id}"
+#end
+
+
 step
-  description: "Throw away aliquots in box {%e_coli_strain_id}"
-  note: "Go to the minus 80 freezer, fourth shelf and discard the ecoli aliquots in box ID {%e_coli_strain_id}"
+  description: "Throw away the aliquots in the box"
 end
 
 #step
