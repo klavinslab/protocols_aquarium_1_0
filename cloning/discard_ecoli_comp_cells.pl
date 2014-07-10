@@ -25,7 +25,8 @@ end
 modify 
     discard[0]
     location: "deleted"
-    inuse: 0
+    inuse: -1
+    quantity: -1
 end
 
 
