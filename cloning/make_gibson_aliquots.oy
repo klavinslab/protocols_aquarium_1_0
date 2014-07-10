@@ -2,7 +2,7 @@
 
 
 place make_iso_buffer
-  protocol: "gibson_aliquots/make_iso_buffer.pl"
+  protocol: "cloning/Gibson_Master_Mix/5X_ISO_Buffer.pl"
   group: "technicians"
   marked: true
   start: now()
@@ -11,7 +11,7 @@ end
 
 
 place make_aliquots
-  protocol: "gibson_aliquots/make_aliquots.pl"
+  protocol: "cloning/Gibson_Master_Mix/Gibson_aliquots.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
@@ -20,7 +20,7 @@ end
 
 
 place gibson
-  protocol: "gibson_aliquots/045_gibson.pl"
+  protocol: "cloning/workflow/045_gibson.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
