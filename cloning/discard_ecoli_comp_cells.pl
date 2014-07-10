@@ -3,7 +3,7 @@ argument
 end
 
 take
-  discard = item {%e_coli_strain_id}
+  discard = item e_coli_strain_id
 end
 
 step
