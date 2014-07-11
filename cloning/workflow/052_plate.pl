@@ -25,6 +25,7 @@ step
 end
 
 ii = 0
+returned_items = []
 while ii < n
   plasmid = plasmid_ids[ii]
   strain = strains[ii]
@@ -49,8 +50,18 @@ while ii < n
     location: "Bench"
     release plate
   end
+  
+  rid = r1[:id]
+  returned_items = append(returned_items, rid)
+  
 
   ii = ii + 1
+end
+
+if length(returned_items) <=3
+  log
+    return: { transformed_plates: returned_items }
+  end
 end
 
 release strains

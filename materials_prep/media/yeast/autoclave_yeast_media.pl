@@ -20,6 +20,12 @@ argument
   ypad_agar_n: number, "Enter the number of YPAD agar media bottles to autoclave."
 end
 
+sdo_liquid = []
+sdo_agar = []
+sc_liquid = []
+ypad_liquid = []
+ypad_agar = []
+
 # Take media bottles
 if sdo_liquid_n > 0
   take
