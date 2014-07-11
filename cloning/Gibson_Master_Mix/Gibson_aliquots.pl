@@ -60,8 +60,12 @@ step
 end
 
 produce
-  80 "Gibson Aliquot"
+  r = 80 "Gibson Aliquot"
   release iso
+end
+
+log
+  return: {aliquot_id: r[:id]}
 end
 
 release [ MGh2o[0], t5_ex[0], phusion[0], lig[0]]
