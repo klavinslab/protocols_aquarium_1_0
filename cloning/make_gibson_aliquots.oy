@@ -4,10 +4,24 @@ argument
   t5: sample, "Choose a tube T5 Exonuclease to use in this protocol."
   phusion_pol: sample, "Choose a tube of phusion polymerase to use in this protocol."
   ligase: sample, "Choose a tube of Taq DNA Ligase to use in this protocol"
+  fragments: sample array, "Fragment(s) to Gibson for test."
+  volumes: number array, "Volumes of each fragment to add, one per fragment."
+  group_n: number array, "How many fragments, in order, belong to each Gibson (e.g. 2 and 3 implies the first two fragments make one Gibson, the last 3 make another."
+  products: string array, "The exact name of each plasmid that is being produced."
+  plasmid_ids: sample array, "The plasmids to be used to test"
+  e_coli_strain_type: object, "The electrocompetent E. coli aliquot type."
+  plate_type: object, "The (probably LB) plate type that will be used in the next protocol."   
+  volume: number, "The volume (µL) to plate"
 end
 
 place make_aliquots
   protocol: "cloning/Gibson_Master_Mix/Gibson_aliquots.pl"
+    argument
+    iso_buffer: iso_buffer
+    t5: t5
+    phusion_pol: phusion_pol
+    ligase: ligase
+  end
   group: "technicians"
   marked: true
   start: now()
@@ -18,10 +32,10 @@ end
 place gibson
   protocol: "cloning/workflow/045_gibson.pl"
   argument
-    iso_buffer: iso_buffer
-    t5: t5
-    phusion_pol: phusion_pol
-    ligase: ligase
+    fragments: fragments
+    volumes: volumes
+    group_n: group_n
+    products: products
   end
   group: "technicians"
   start: now()
