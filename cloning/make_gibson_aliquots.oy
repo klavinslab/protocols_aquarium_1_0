@@ -1,31 +1,31 @@
-argument
-  e_coli_id: sample, "The E. coli glycerol stock that you want to make competent cells from."
-  e_coli_strain_type: object, "The electrocompetent E. coli aliquot type."
-  plasmid_ids: sample array, "The plasmids to be used for testing"
-  volume: number, "The volume (µL) to plate for testing"
-  plate_type: object, "The (probably LB) plate type for testing."
-end
+#
 
 
-place day1
-  protocol: "cloning/ecoli_comp_cells_day1.pl"
-  argument
-    e_coli_id: e_coli_id
-  end
+place make_iso_buffer
+  protocol: "cloning/Gibson_Master_Mix/5X_ISO_Buffer.pl"
   group: "technicians"
   marked: true
   start: now()
   window: hours(20)
 end
 
-place day2
-  protocol: "cloning/ecoli_comp_cells_day2.pl"
+
+place make_aliquots
+  protocol: "cloning/Gibson_Master_Mix/Gibson_aliquots.pl"
   group: "technicians"
   start: now()
-  window: hours(20)
+  window: minutes(1)
+
 end
 
-wire (day1,"e_coli_array") => (day2,"e_coli_id")
+
+place gibson
+  protocol: "cloning/workflow/045_gibson.pl"
+  group: "technicians"
+  start: now()
+  window: minutes(1)
+
+end
 
 
 place transform
@@ -65,22 +65,29 @@ end
 wire (plate,"transformed_plates") => (image,"Transformed_E_coli_Strain_id")
 
 
-place fail_clean
-  protocol: "cloning/discard_ecoli_comp_cells.pl"
+place fail_clean_up
+  protocol: "gibson_aliquots/fail_clean_up.pl"
   group: "technicians"
   start: now()
-  window: hours(20)
+  window: minutes(1)
 end
-wire (day2, "e_coli_strain_type") => (fail_clean, "e_coli_strain_id")
 
-
-#forward transitions
-transition [day1] => [day2] when !error(0) && completed(0) end
-transition [day2] => [transform] when !error(0) && completed(0) end
+# forward transitions
+transition [make_iso_buffer] => [make_aliquots] when !error(0) && completed(0) end
+transition [make_aliquots] => [gibson] when !error(0) && completed(0) end
+transition [gibson] => [transform] when !error(0) && completed(0) end
 transition [transform] => [plate] when !error(0) && completed(0) end
 transition [plate] => [image] when !error(0) && completed(0) end
 transition [image] => [] when !error(0) && completed(0) && return_value(0,"plate_tally") > 1 end
 #transition [image] => [fail_clean] when !error(0) && completed(0) && return_value(0,"plate_tally") <= 1 end
 #transition [fail_clean] => [] when !error(0) && completed(0) end
 
-#reword trasitions
+#gibson aliquots worked
+#transition [image] => [] when !error(0) && completed(0) && !error(1) && completed(1) && !error(2) && completed(2) end
+
+#gibson aliquots failed
+transition [image] => [fail_clean_up] when !error(0) && completed(0) && !error(1) && completed(1) && !error(2) && completed(2) end
+transition [fail_clean_up] => [] when !error(0) && completed(0) end
+
+
+# rework transitions 

@@ -1,6 +1,8 @@
 argument
-  Transformed_E_coli_Strain_id: sample, "Choose the plate you incubated yesterday"
+  Transformed_E_coli_Strain_id: sample array, "Choose the plate(s) you incubated yesterday"
 end
+
+n = length(Transformed_E_coli_Strain_id)
 
 step
   description: 
@@ -11,8 +13,9 @@ step
 end
 	
 take
-  y = item Transformed_E_coli_Strain_id
+  plates = item Transformed_E_coli_Strain_id
 end
+
 
 step
   description: 
@@ -21,66 +24,94 @@ step
     "Go the the Gel room, place the agar part of the plate inverted on the transilluminator.
      Place the camera hood on the transilluminator. Turn on transilluminator by sliding you hand into the hood.\n"
 end
+	
 
-step
-  description: 
-    "Take a picture using the camera and remote shooting software on the computer"
-  check:
-    "Turn on the camera if it is off"
-  check:
-    "Open EOS Utility software on the desktop, and click Camera Settings/Remote Shooting"
-  check:
-    "In the pop up window EOS Rebel T3, make sure the settings are 2'', F4.5, ISO100, Tungsten(light bulb icon), S1."
-  check: 
-    "click Live View shoot and in the pop up Remote Live View Window, click Test shooting"
-  check:
-    "If the Test shooting image looks focused, go back to the EOS Rebel T3 window and click the the black round shutter botton"
-  check:
-    "If the Test shooting image is not focused or the software shows Focus failure, go to the Remote Live View Window, in the focus
-    section, adjust the focus by clicking the <<< << < > >> >>> buttons until the live image looks focused. Then go back to the EOS 
-    Rebel T3 window and click the the black round shutter botton"
+ii=0
+returned_counts = []
+plate_tally = 0
+while ii < n
+
+	step
+	  description: 
+	    "Take a picture using the camera and remote shooting software on the computer"
+	  check:
+	    "Turn on the camera if it is off"
+	  check:
+	    "Open EOS Utility software on the desktop, and click Camera Settings/Remote Shooting"
+	  check:
+	    "In the pop up window EOS Rebel T3, make sure the settings are 2'', F4.5, ISO100, Tungsten(light bulb icon), S1."
+	  check: 
+	    "click Live View shoot and in the pop up Remote Live View Window, click Test shooting"
+	  check:
+	    "If the Test shooting image looks focused, go back to the EOS Rebel T3 window and click the the black round shutter botton"
+	  check:
+	    "If the Test shooting image is not focused or the software shows Focus failure, go to the Remote Live View Window, in the focus
+	    section, adjust the focus by clicking the <<< << < > >> >>> buttons until the live image looks focused. Then go back to the EOS 
+	    Rebel T3 window and click the the black round shutter botton"
+	end
+	
+	
+	step
+	  description: 
+	    "Rename the picture in Dropbox"
+	  note: 
+	    "Open Dropbox/GelImages,
+	     under today's date folder and find the picture you just took.\n
+	     Rename the picture as the plate_id, where id should be replaced with the item number shown on your plate.\n
+	     For example, a plate with id 798 should have picture name plate_798."
+	end
+	
+	step
+	  description: 
+	    "Drag the picture into OpenCFU software and get the count."
+	  note: 
+	    "Open the OpenCFU software, drag the picture into the software and wait for the software to count the colonies."
+	end
+	
+	step
+	  description: 
+	    "Record the count."
+	  note:
+	    "If the software recognizes the coloines correctly and give a reasonable count, record
+	     that number below. If not, count the number of colonies by dividing up the plate in
+	     four regions, get the count in each region and sum up as the final count." 
+	  getdata
+	    count: number, "Enter the count."
+	  end
+	end
+	
+	returned_counts = append(returned_counts, count)
+	if count > 75 
+	  plate_tally = plate_tally + 1
+	end
+
+	 ii = ii + 1
+
 end
 
-
 step
   description: 
-    "Rename the picture in Dropbox"
-  note: 
-    "Open Dropbox/GelImages,
-     under today's date folder and find the picture you just took.\n
-     Rename the picture as the plate_id, where id should be replaced with the item number shown on your plate.\n
-     For example, a plate with id 798 should have picture name plate_798."
-end
-
-step
-  description: 
-    "Drag the picture into OpenCFU software and get the count."
-  note: 
-    "Open the OpenCFU software, drag the picture into the software and wait for the software to count the colonies."
-end
-
-step
-  description: 
-    "Record the count."
-  note:
-    "If the software recognizes the coloines correctly and give a reasonbale count, record
-     that number below. If not, count the number of colonies by dividing up the plate in
-     four regions, get the count in each region and sum up as the final count." 
-  getdata
-    count: number, "Enter the count."
-  end
-end
-
-step
-  description: 
-    "Store the plate in 4C fridge."
+    "Store the plate(s) in 4C fridge."
   note:
     "Turn off the transillumniator and camera, remove the camera hood, take the plate from transilluminator, wrap up
      the plate with parafilm and put it the in the Box 0 in deli fridge located at D2.100."
 end
-	
-modify
-  y[0]
-  location: "DFP.0"
-  inuse: 0
+
+ii=0
+while ii < n
+	modify
+	  plates[ii]
+	  location: "DFP.0"
+	  inuse: 0
+	end
+	 ii = ii + 1
 end
+
+#if length(returned_counts) <= 3
+  log
+    return: { plate_tally: plate_tally}
+  end
+#end
+	
+	
+	
