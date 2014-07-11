@@ -17,7 +17,7 @@ end
 
 place gibson
   protocol: "cloning/workflow/045_gibson.pl"
-  arguments
+  argument
     iso_buffer: iso_buffer
     t5: t5
     phusion_pol: phusion_pol
