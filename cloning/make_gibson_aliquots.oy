@@ -58,7 +58,6 @@ place transform
   window: hours(20)
 end
 
-#wire (day2, "e_coli_strain_type") => (transform, "e_coli_strain_id")
 
 place plate
   protocol: "cloning/workflow/052_plate.pl"
@@ -84,11 +83,13 @@ wire (plate,"transformed_plates") => (image,"Transformed_E_coli_Strain_id")
 
 
 place fail_clean_up
-  protocol: "gibson_aliquots/fail_clean_up.pl"
+  protocol: ""cloning/Gibson_Master_Mix/discard_gibson_aliquots.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
 end
+
+wire (make_aliquots, "aliquot_id") => (fail_clean_up, "aliquot_id")
 
 # forward transitions
 transition [make_aliquots] => [gibson] when !error(0) && completed(0) end
@@ -96,15 +97,8 @@ transition [gibson] => [transform] when !error(0) && completed(0) end
 transition [transform] => [plate] when !error(0) && completed(0) end
 transition [plate] => [image] when !error(0) && completed(0) end
 transition [image] => [] when !error(0) && completed(0) && return_value(0,"plate_tally") > 1 end
-#transition [image] => [fail_clean] when !error(0) && completed(0) && return_value(0,"plate_tally") <= 1 end
-#transition [fail_clean] => [] when !error(0) && completed(0) end
-
-#gibson aliquots worked
-#transition [image] => [] when !error(0) && completed(0) && !error(1) && completed(1) && !error(2) && completed(2) end
-
-#gibson aliquots failed
-transition [image] => [fail_clean_up] when !error(0) && completed(0) && !error(1) && completed(1) && !error(2) && completed(2) end
-transition [fail_clean_up] => [] when !error(0) && completed(0) end
+#transition [image] => [fail_clean_up] when !error(0) && completed(0) && return_value(0,"plate_tally") <= 1 end
+#transition [fail_clean_up] => [] when !error(0) && completed(0) end
 
 
 # rework transitions 
