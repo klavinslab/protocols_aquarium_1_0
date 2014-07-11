@@ -68,18 +68,22 @@ step
 end
 
 produce
-  r = 1 "Enzyme Buffer Stock" of "5X ISO Buffer"
+  r1 = 1 "Enzyme Buffer Stock" of "5X ISO Buffer"
   location: "Bench"
 end
 
 produce
-  r = 1 "Enzyme Buffer Stock" of "5X ISO Buffer"
+  r2 = 1 "Enzyme Buffer Stock" of "5X ISO Buffer"
   location: "Bench"
 end
 
 produce
-  r = 1 "Enzyme Buffer Stock" of "5X ISO Buffer"
+  r3 = 1 "Enzyme Buffer Stock" of "5X ISO Buffer"
   location: "Bench"
+end
+
+log
+  return: { iso_buffer: r1[:id]}
 end
 
 
