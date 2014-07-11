@@ -29,8 +29,8 @@ end
 i = 0
 while i<n
   thisConc = rna_conc_array[i]
-  volRNA = mod(((1000/(thisConc))*10), 1)/10
-  molec_wat= mod((15-volRNA), 1)/10
+  volRNA = (1000/(thisConc)
+  molec_wat= (15-volRNA)
   thisRNA = rna_iso_array[i]
 
   step 
