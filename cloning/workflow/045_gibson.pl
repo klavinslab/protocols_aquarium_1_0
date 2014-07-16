@@ -3,13 +3,20 @@ argument
   volumes: number array, "Volumes of each fragment to add, one per fragment."
   group_n: number array, "How many fragments, in order, belong to each Gibson (e.g. 2 and 3 implies the first two fragments make one Gibson, the last 3 make another."
   products: string array, "The exact name of each plasmid that is being produced."
+  aliquot_id: number, "The ID of the gibson aliquot box. Enter 0 if you don't need comp cells from a specific batch."
 end
 
 n = length(group_n)
 
+step
+  description:"Which aliquots."
+  note: "In the following take, pay careful attention and look for the ID of the box of gibson aliquots to take from. If it is 0, then the batch number doesn't matter. If it's any other ID number grab all aliquots from the Gibson aliquot box with that ID."
+end
+
 take
   f = item unique(fragments)
   gibsons = n "Gibson Aliquot"
+  note: "Take all Gibson aliquots from box with ID %{aliquot_id}"
 end
 
 step

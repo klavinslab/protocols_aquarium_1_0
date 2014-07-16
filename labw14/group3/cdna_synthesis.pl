@@ -17,6 +17,7 @@ n=length(rna_iso_array)
 step
   description: "This protocol prepares cDNA to be used in qPCR"
   note: "Using template RNA you will synthesize complementary DNA to be used later"
+  warning: "This protocol requires isolated RNA samples with concentrations of at least 66.7 ng/mL"
 end
 
 step
@@ -28,21 +29,17 @@ end
 i = 0
 while i<n
   thisConc = rna_conc_array[i]
-  molec_wat= (thisConc/0.2)-1
+  rawVolRNA = ceil((1000/thisConc)*10)
+  volRNA = (mod(rawVolRNA, 10)*0.1) + rawVolRNA/10
+  molec_wat = (15-volRNA)
   thisRNA = rna_iso_array[i]
 
-  step
-    description: "Dilute your isolated RNA"
-    bullet: "In a 1.5 mL tube, add 1 µL of %{thisRNA}."
-    bullet: "In the same 1.5 mL tube, add %{molec_wat} µL of Nuclease free water."
-  end
-  
   step 
     description: "Prepare Reaction"
     check:"Pipet 4 µL of 5x iScript reaction mix into the labeled PCR tube."
     check: "Pipet 1 µL of iScript reverse transcriptase into the labeled PCR tube"
-    check: "Pipet 10 µL of Nuclease-free water into the labeled PCR tube"
-    check: "Pipet 5 µL of RNA template %{thisRNA} into the labeled PCR tube"
+    check: "Pipet %{volRNA} µL of RNA template %{thisRNA} into the labeled PCR tube"
+    check: "Pipet %{molec_wat} µL of Nuclease-free water into the labeled PCR tube"
     check: "Use the tip to gently mix."
     note: "Be careful to pipette into the liquid, not the side of the tube."
   end

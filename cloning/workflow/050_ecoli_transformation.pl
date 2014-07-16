@@ -128,6 +128,16 @@ while ii < n
   ii = ii + 1
 end
 
+
+if grow_out == 1
+  step
+    description: "Incubate tube"
+    bullet: "Incubate the Transformed Aliquot for 30 minutes."
+    timer:{ hours: 0, minutes: 30, seconds: 0 }
+  end
+end
+
+
 if length(returned_items) <= 3
   log
     return: { transformed_cells: returned_items }

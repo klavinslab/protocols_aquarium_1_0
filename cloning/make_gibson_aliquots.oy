@@ -1,31 +1,48 @@
-#
 
-
-place make_iso_buffer
-  protocol: "cloning/Gibson_Master_Mix/5X_ISO_Buffer.pl"
-  group: "technicians"
-  marked: true
-  start: now()
-  window: hours(20)
+argument
+  iso_buffer: sample, "Choose an aliquot of 5X ISO Buffer to use for this protocol."
+  t5: sample, "Choose a tube T5 Exonuclease to use in this protocol."
+  phusion_pol: sample, "Choose a tube of phusion polymerase to use in this protocol."
+  ligase: sample, "Choose a tube of Taq DNA Ligase to use in this protocol"
+  fragments: sample array, "Fragment(s) to Gibson for test."
+  volumes: number array, "Volumes of each fragment to add, one per fragment."
+  group_n: number array, "How many fragments, in order, belong to each Gibson (e.g. 2 and 3 implies the first two fragments make one Gibson, the last 3 make another."
+  products: string array, "The exact name of each plasmid that is being produced."
+  plasmid_ids: sample array, "The plasmids to be used to test"
+  e_coli_strain_type: object, "The electrocompetent E. coli aliquot type."
+  plate_type: object, "The (probably LB) plate type that will be used in the next protocol."   
+  volume: number, "The volume (µL) to plate"
 end
-
 
 place make_aliquots
   protocol: "cloning/Gibson_Master_Mix/Gibson_aliquots.pl"
+    argument
+    iso_buffer: iso_buffer
+    t5: t5
+    phusion_pol: phusion_pol
+    ligase: ligase
+  end
   group: "technicians"
+  marked: true
   start: now()
   window: minutes(1)
-
 end
 
 
 place gibson
   protocol: "cloning/workflow/045_gibson.pl"
+  argument
+    fragments: fragments
+    volumes: volumes
+    group_n: group_n
+    products: products
+  end
   group: "technicians"
   start: now()
   window: minutes(1)
-
 end
+
+wire (make_aliquots, "aliquot_id") => (gibson, "aliquot_id")
 
 
 place transform
@@ -33,6 +50,7 @@ place transform
   argument
     plasmid_ids: plasmid_ids
     e_coli_strain_type: e_coli_strain_type
+    e_coli_strain_id: 0
     plate_type: plate_type
   end
   group: "technicians"
@@ -40,7 +58,6 @@ place transform
   window: hours(20)
 end
 
-wire (day2, "e_coli_strain_type") => (transform, "e_coli_strain_id")
 
 place plate
   protocol: "cloning/workflow/052_plate.pl"
@@ -66,28 +83,22 @@ wire (plate,"transformed_plates") => (image,"Transformed_E_coli_Strain_id")
 
 
 place fail_clean_up
-  protocol: "gibson_aliquots/fail_clean_up.pl"
+  protocol: ""cloning/Gibson_Master_Mix/discard_gibson_aliquots.pl"
   group: "technicians"
   start: now()
   window: minutes(1)
 end
 
+wire (make_aliquots, "aliquot_id") => (fail_clean_up, "aliquot_id")
+
 # forward transitions
-transition [make_iso_buffer] => [make_aliquots] when !error(0) && completed(0) end
 transition [make_aliquots] => [gibson] when !error(0) && completed(0) end
 transition [gibson] => [transform] when !error(0) && completed(0) end
 transition [transform] => [plate] when !error(0) && completed(0) end
 transition [plate] => [image] when !error(0) && completed(0) end
 transition [image] => [] when !error(0) && completed(0) && return_value(0,"plate_tally") > 1 end
-#transition [image] => [fail_clean] when !error(0) && completed(0) && return_value(0,"plate_tally") <= 1 end
-#transition [fail_clean] => [] when !error(0) && completed(0) end
-
-#gibson aliquots worked
-#transition [image] => [] when !error(0) && completed(0) && !error(1) && completed(1) && !error(2) && completed(2) end
-
-#gibson aliquots failed
-transition [image] => [fail_clean_up] when !error(0) && completed(0) && !error(1) && completed(1) && !error(2) && completed(2) end
-transition [fail_clean_up] => [] when !error(0) && completed(0) end
+#transition [image] => [fail_clean_up] when !error(0) && completed(0) && return_value(0,"plate_tally") <= 1 end
+#transition [fail_clean_up] => [] when !error(0) && completed(0) end
 
 
 # rework transitions 
