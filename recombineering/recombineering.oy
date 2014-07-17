@@ -74,10 +74,7 @@ wire (quick_comp,"params") => (transform,"params")
 
 place plate
   protocol: base_dir+"plate.pl"
-  group: aquarium_user
-  #argument
-#    plate_type: params[:plates]
-  #end
+  group: "technicians"
   start: hours(3)
   window: hours(1)
 end
