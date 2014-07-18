@@ -20,6 +20,7 @@ step
   image: "spray_blade"
 end
 
+#TODO: account for case where no band is cut out
 ii = 0
 while ii < length(gel)
   tube_name = ii + 1
