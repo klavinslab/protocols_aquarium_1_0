@@ -29,12 +29,16 @@ foreach p_type in unique(plate_type)
   take
     p = array_count(plate_type,p_type) p_type
   end
-  plate = append(plate,p)
+  plate = concat(plate,p)
+end
+
+step
+  description: "took: %{plate}"
 end
 
 #TODO: replace this with a table with IDs and selection type
 step
-  description: "Label plates 1-%{sample_count}"
+  description: "Label plates 1 to %{sample_count}"
   image: "write_on_the_plate"
 end
 
@@ -87,7 +91,7 @@ while i < sample_count
     location: "I1"
     data
       from: strain[i][:id]
-      original_id: strain[i][:data][:original_id]
+      #original_id: strain[i][:data][:original_id]
       sampleName: params[:sampleName][i]
       verified: "no"
     end
