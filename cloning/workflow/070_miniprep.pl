@@ -105,21 +105,32 @@ step
   check: "Remove the tubes and discard the columns"
 end
 
+step
+  description: "Go to B9 and nanodrop all of the plasmid stocks created. Record the concentrations on the side of the tubes."
+end
+
+step
+  getdata
+    concs: number array, "Enter the recorded DNA concetrations on tubes 1 though %{y}"
+  end
+end
+
 step 
   description: "Re-label the final tubes"
   note: "In the next %{y} screens, you will see the ID numbers of each sample in order. Write this number on a white tube cap sticker and stick it on the tube over the previously written number."
 end
 
+
 x=0
 while x < y
   produce
     q = 1 "Plasmid Stock" from overnight[x]
+    data
+      concentration: concs[x]
+    end
   end
   x = x+1
 end
 
-step
-  description: "Go to B9 and nanodrop all of the plasmid stocks created. Record the concentrations on the side of the tubes."
-end
 
 release overnight
