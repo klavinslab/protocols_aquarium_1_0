@@ -117,8 +117,9 @@ while x < y
       getdata
         conc: number, "Enter the recorded DNA concetrations on tube %{y}"
       end
-      concs[x]=conc
   end
+  concs[x]=conc
+  x=x+1
 end
 
 step 
