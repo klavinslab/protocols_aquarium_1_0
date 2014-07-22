@@ -109,11 +109,16 @@ step
   description: "Go to B9 and nanodrop all of the plasmid stocks created. Record the concentrations on the side of the tubes."
 end
 
-step
-  description: "Enter the concentrations of DNA"
-    getdata
-      conc: number array, "Enter the recorded DNA concetrations on tubes 1 though %{y}"
-    end
+x=0
+concs=[]
+while x < y
+  step
+    description: "Enter the concentrations of DNA"
+      getdata
+        conc: number, "Enter the recorded DNA concetrations on tube %{y}"
+      end
+      concs[x]=conc
+  end
 end
 
 step 
