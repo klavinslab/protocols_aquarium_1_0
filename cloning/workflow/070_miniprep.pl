@@ -112,7 +112,7 @@ end
 step
   description: "Enter the concentrations of DNA"
     getdata
-      x: number, "Enter the recorded DNA concetrations on tubes 1 though %{y}"
+      conc: number array, "Enter the recorded DNA concetrations on tubes 1 though %{y}"
     end
 end
 
