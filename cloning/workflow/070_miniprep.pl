@@ -112,10 +112,12 @@ end
 x=0
 concs=[]
 while x < y
+  z=x+1
   step
-    description: "Enter the concentrations of DNA"
+    description: "Enter the concentrations of each miniprep tube."
+    note: "Concentration for tube %{z}"
       getdata
-        conc: number, "Enter the recorded DNA concetrations on tube %{y}"
+        conc: number, "Enter the recorded DNA concetrations on tube %{z}"
       end
   end
   concs[x]=conc
