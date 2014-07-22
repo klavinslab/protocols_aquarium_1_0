@@ -115,7 +115,7 @@ while x < y
   z=x+1
   step
     description: "Enter the concentrations of each miniprep tube."
-    note: "Concentration for tube %{z}"
+    note: "Concentration for tube %{z} in ng/µl"
       getdata
         conc: number, "Enter the recorded DNA concetrations on tube %{z}"
       end
