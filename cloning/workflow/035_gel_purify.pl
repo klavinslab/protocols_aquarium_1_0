@@ -108,6 +108,26 @@ step
 end
 
 step
+  description: "Go to B9 and nanodrop all of the fragment stocks created. Record the concentrations on the side of the tubes."
+end
+
+x=0
+concs=[]
+while x < y
+  z=x+1
+  step
+    description: "Enter the concentrations of each fragment stock tube."
+    note: "Concentration for tube %{z} in ng/µl"
+      getdata
+        conc: number, "Enter the recorded DNA concetrations on tube %{z}"
+      end
+  end
+  concs[x]=conc
+  x=x+1
+end
+
+
+step
   description: "the order the fragement stocks are produced is defined by 1 through %{y}. Label them as the production steps show up"
 end
 
@@ -117,6 +137,9 @@ count=0
     slice = slices[count]
       produce
         q=1 "Fragment Stock" from slice
+        data
+          concentration: concs[x]
+        end
       end
   count=count+1
 end
