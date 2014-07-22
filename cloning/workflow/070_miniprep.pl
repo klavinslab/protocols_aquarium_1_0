@@ -111,7 +111,7 @@ end
 
 step
   getdata
-    concs: number array, "Enter the recorded DNA concetrations on tubes 1 though %{y}"
+    x: number "Enter the recorded DNA concetrations on tubes 1 though %{y}"
   end
 end
 
