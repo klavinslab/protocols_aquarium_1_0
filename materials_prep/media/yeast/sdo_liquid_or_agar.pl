@@ -1,3 +1,5 @@
+require "protocols:materials_prep/lib/materials_prep.pl"
+
 information "Make Synthetic Drop-out or Synthetic Complete media."
 # TODO: Add supplement data to produced item
 
@@ -188,45 +190,18 @@ end
 #Agar
 if add_agar == "Yes"
   agar_name = agar[0][:name]
-  include "includes/materials_prep/add_dry_reagent.pl"
-    container: "each bottle"
-    reagent: agar_name
-    grams: agar_grams
-  end
+  add_dry_reagent("each bottle", agar_name, agar_grams)
 end
 
 
-include "includes/materials_prep/add_dry_reagent.pl"
-  container: "each bottle"
-  reagent: dextrose_name
-  grams: dextrose_grams
-end
-
-
-include "includes/materials_prep/add_dry_reagent.pl"
-  container: "each bottle"
-  reagent: nitrogen_base_name
-  grams: nitrogen_base_grams
-end
-
-
-include "includes/materials_prep/add_dry_reagent.pl"
-  container: "each bottle"
-  reagent: dropout_name
-  grams: dropout_grams
-end
-
-
-include "includes/materials_prep/add_dry_reagent.pl"
-  container: "each bottle"
-  reagent: adenine_name
-  grams: adenine_grams
-end
+add_dry_reagent("each bottle", dextrose_name, dextrose_grams)
+add_dry_reagent("each bottle", nitrogen_base_name, nitrogen_base_grams)
+add_dry_reagent("each bottle", dropout_name, dropout_grams)
+add_dry_reagent("each bottle", adenine_name, adenine_grams)
 
 
 # Clean the spatula before returning it
-include "includes/materials_prep/clean_spatula.pl"
-end
+clean_spatula()
 
 
 release [nitrogen_base[0], dropout[0], dextrose[0], adenine[0]]
@@ -235,41 +210,47 @@ if add_agar == "Yes"
 end
 
 
-supplements = []
-if add_his == "Yes"
-  take
-    his = 1 "Histidine Solution"
-  end
-  supplements = supplements + his
-end
-if add_leu == "Yes"
-  take
-    leu = 1 "Leucine Solution"
-  end
-  supplements = supplements + leu
-end
-if add_trp == "Yes"
-  take
-    trp = 1 "Tryptophan Solution"
-  end
-  supplements = supplements + trp
-end
-if add_ura == "Yes"
-  take
-    ura = 1 "Uracil Solution"
-  end
-  supplements = supplements + ura
-end
-
-
 step
-  description: "Add sterile drop out supplements"
-  note: "Label a piece of white laboratory tape with '-His -Leu -Trp -Ura' and attach it to each bottle.\n\nUsing a serological pipet, add %{supplement_ml} mL of each sterile supplement you just got out. As you add each supplement, black it out with a marker on the piece of tape."
-  warning: "Use a separate pipet for each supplement."
+  description: "Add Drop-Out Label"
+  note: "Label a piece of white laboratory tape with '-His -Leu -Trp -Ura' and attach it to each bottle."
 end
 
 
-release supplements
+if add_his == "Yes" || add_leu == "Yes" || add_trp == "Yes" || add_ura == "Yes"
+  supplements = []
+  if add_his == "Yes"
+    take
+      his = 1 "Histidine Solution"
+    end
+    supplements = supplements + his
+  end
+  if add_leu == "Yes"
+    take
+      leu = 1 "Leucine Solution"
+    end
+    supplements = supplements + leu
+  end
+  if add_trp == "Yes"
+    take
+      trp = 1 "Tryptophan Solution"
+    end
+    supplements = supplements + trp
+  end
+  if add_ura == "Yes"
+    take
+      ura = 1 "Uracil Solution"
+    end
+    supplements = supplements + ura
+  end
+
+  step
+    description: "Add sterile drop out supplements"
+    note: "Using a serological pipet, add %{supplement_ml} mL of each sterile supplement you just got out. As you add each supplement, black it out with a marker on the piece of tape."
+    warning: "Use a separate pipet for each supplement."
+  end
+
+  release supplements
+end
 
 
 step
