@@ -49,7 +49,7 @@ elsif volume == 200
     bottle_size = "250 mL Bottle"
 end
 
-take 
+take
   bottles = n_bottle bottle_size
 end
 
@@ -98,11 +98,6 @@ end
 step
   description: "Remove autoclave tape"
   note: "Remove any autoclave tape from each bottle."
-end
-
-step
-  description: "Dextrose item hash"
-  note: "%{dextrose}"
 end
 
 yeast_extract_name = yeast_extract[0][:name]
