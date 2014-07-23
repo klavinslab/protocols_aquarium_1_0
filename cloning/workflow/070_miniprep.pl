@@ -105,21 +105,41 @@ step
   check: "Remove the tubes and discard the columns"
 end
 
+step
+  description: "Go to B9 and nanodrop all of the plasmid stocks created. Record the concentrations on the side of the tubes."
+end
+
+x=0
+concs=[]
+while x < y
+  z=x+1
+  step
+    description: "Enter the concentrations of each miniprep tube."
+    note: "Concentration for tube %{z} in ng/µl"
+      getdata
+        conc: number, "Enter the recorded DNA concetrations on tube %{z}"
+      end
+  end
+  concs[x]=conc
+  x=x+1
+end
+
 step 
   description: "Re-label the final tubes"
   note: "In the next %{y} screens, you will see the ID numbers of each sample in order. Write this number on a white tube cap sticker and stick it on the tube over the previously written number."
 end
 
+
 x=0
 while x < y
   produce
     q = 1 "Plasmid Stock" from overnight[x]
+    data
+      concentration: concs[x]
+    end
   end
   x = x+1
 end
 
-step
-  description: "Go to B9 and nanodrop all of the plasmid stocks created. Record the concentrations on the side of the tubes."
-end
 
 release overnight
