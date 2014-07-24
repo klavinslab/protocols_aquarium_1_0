@@ -10,10 +10,6 @@ take
   slices = item unique(GelSlice_id)
 end
 
-step
-  description: "This protocol purifies DNA fragments from gel slices"
-end
-
 
 y=length(GelSlice_id)
 
@@ -74,16 +70,11 @@ if isop=="yes"
 end
 
 step
-  description: "Add tube contents to LABELED pink Qiagen columns"
-  note: "be sure to add a maximum of 750µl to each pick columns"
-end
-
-step
-  description: "Spin at top speed (> 17,900 g) for 1 minute to bind DNA to columns"
-  note: "after spin empty collection columns"
-end
-
-step
+  description: "Check the boxes as you complete each step."
+  check: "Add tube contents to LABELED pink Qiagen columns"
+  check: "be sure to add a maximum of 750µl to each pick columns"
+  check: "Spin at top speed (> 17,900 g) for 1 minute to bind DNA to columns"
+  check: "after spin empty collection columns"
   check: "Add 750 uL PE buffer to columns and wait five minutes"
   check: "Spin at top speed (> 17,900 g) for 30 seconds to wash columns."
   check: "Empty collection tubes."
@@ -97,10 +88,8 @@ step
 end
 
 step
-  description: "Label 1.5 ml Eppendorf tubes. Transfer pink columns to empty Eppendorf tubes"
-end
-
-step
+  description: "Check the boxes as you complete each step."
+  check: "Label 1.5 ml Eppendorf tubes. Transfer pink columns to empty Eppendorf tubes"
   check: "Add 30 uL molecular grade water or EB elution buffer to center of column."
   note: "Be very careful to not pipette on the wall of the tube"
   check: "Wait five minutes"
