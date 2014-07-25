@@ -86,7 +86,7 @@ end
 count2=0
 
 step
-  desctiption: "Refer to the table for the volume of water to add to each tube"
+  description: "Refer to the table for the volume of water to add to each tube"
   table: [["tubes","H20 Volume"][tubes, H20_req]]
 end
 
