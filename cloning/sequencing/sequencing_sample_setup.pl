@@ -87,7 +87,7 @@ count2=0
 
 step
   description: "Refer to the table for the volume of water to add to each tube"
-  table: [["tubes","H20 Volume"],[tubes], [H20_req]]
+  table: [[tubes], [H20_req]]
 end
 
 while count2<y
