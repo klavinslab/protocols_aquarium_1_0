@@ -83,21 +83,18 @@ while count1<y
   count1=count1+1
 end
 
-count2=0
+tbl = [["Tube Number", "H2O Volume"]]
+ii = 0 
+while ii<y
+  tbl = append(tbl,[ii+1,H20_req[ii]])
+  ii = ii+1
+end
 
 step
   description: "Refer to the table for the volume of water to add to each tube"
-  table: [[tubes], [H20_req]]
+  table: tbl
 end
 
-while count2<y
-  label=count2+1
-  water=H20_req[count2]
-    step  
-      description: "Add %{water}µl of MGH20 to tube %{label}."
-    end
-  count2=count2+1 
-end
 
 count3=0
 
