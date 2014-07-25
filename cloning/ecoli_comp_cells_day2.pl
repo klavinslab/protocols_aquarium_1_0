@@ -29,7 +29,7 @@ step
   check: "Put a bottle with 420 mL of sterile 10%% glycerol on ice"
   check: "Put a bottle of sterile GYT on ice"
   check: "Set the large centrifuge to 4 degrees C and close the lid"
-  timer:{ hours: 0, minutes: 0, seconds: 5 }
+  timer:{ hours: 0, minutes: 0, seconds: 10 }
 end
 
 step
@@ -80,6 +80,17 @@ step
   check: "Spin at 2500 rmp for 20 minutes at 4 degrees C"
   warning: "Remember to balance the cntrifuge!"
 end
+
+step
+  description: "Set up 0.5 mL eppendorf tubes in cold aluminum racks"
+  check: "Take out both aluminum tube racks from the door of the plate fridge"
+  check: "Position 48 tubes with their caps open into each of two aluminum racks"
+  check: "Add 8 mL of ice-cold 10%% glycerol to both of the 225 mL centrifuge tubes"
+  check: "Resuspend by vortexing"
+  check: "Combine the tubes so that you have 1 225 mL centrifge tube with 16 mL"
+  check: "Spin at 2500 rmp for 20 minutes at 4 degrees C"
+end
+
 
 step
   description: "Prepare cells for aliquoting"
