@@ -70,6 +70,7 @@ count1=0
 H20_req=[0]
 DNA_req=[0]
 plasmid_vol=[0]
+tubes=[0]
 
 while count1<y
   DNA_req[count1]=plasmids_lengths[count1]/10
@@ -78,6 +79,7 @@ while count1<y
       plasmid_vol[count1]=1
     end
   H20_req[count1]=12.5-plasmid_vol[count1]
+  tubes[count]=count+1
   count1=count1+1
 end
 
@@ -85,7 +87,9 @@ count2=0
 
 step
   foreach i in H20_req
-    check: "Add %{i}µl of MGH20 to tube %{i+1}."
+    foreach j in tubes
+    check: "Add %{i}µl of MGH20 to tube %{j}."
+    end
   end
 end
 
