@@ -115,9 +115,7 @@ while x < y
   x=x+1
 end
 
-step
-  description: "%{concs}"
-end
+
 step
   description: "the order the fragement stocks are produced is defined by 1 through %{y}. Label them as the production steps show up"
 end
@@ -129,7 +127,7 @@ count=0
       produce
         q=1 "Fragment Stock" from slice
         data
-          concentration: concs[x]
+          concentration: concs[count]
         end
       end
   count=count+1
