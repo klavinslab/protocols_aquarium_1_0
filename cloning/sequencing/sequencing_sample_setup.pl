@@ -97,7 +97,6 @@ end
 
 i1=0
 tbl1 = [["Tube Number", "Primer ID Number"]]
-i1 = 0 
 while i1<y
   tbl1 = append(tbl,[i1+1,primers_entered[i1]])
   i1 = i1+1
@@ -120,8 +119,7 @@ end
 
 
 i2=0
-tbl2 = [["Tube Number", "Plasmid ID", "Plasmid Volume"]]
-i2 = 0 
+tbl2 = [["Tube Number", "Plasmid ID", "Plasmid Volume in µl"]]
 while i2<y
   tbl2 = append(tbl2,[i2+1,plasmids[i2], plasmid_vol[i2]])
   i2 = i2+1
