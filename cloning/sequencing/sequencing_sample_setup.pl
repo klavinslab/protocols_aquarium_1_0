@@ -98,7 +98,7 @@ end
 i1=0
 tbl1 = [["Tube Number", "Primer ID Number"]]
 while i1<y
-  tbl1 = append(tbl,[i1+1,primers_entered[i1]])
+  tbl1 = append(tbl1,[i1+1,primers_entered[i1]])
   i1 = i1+1
 end
 
