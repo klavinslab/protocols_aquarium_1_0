@@ -79,7 +79,7 @@ while count1<y
       plasmid_vol[count1]=1
     end
   H20_req[count1]=12.5-plasmid_vol[count1]
-  tubes[count]=count+1
+  tubes[count1]=count1+1
   count1=count1+1
 end
 
