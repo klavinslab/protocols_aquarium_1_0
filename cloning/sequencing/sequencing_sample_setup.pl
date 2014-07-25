@@ -85,8 +85,7 @@ count2=0
 
 step
   foreach i in H20_req
-    label=i+1
-    check: "Add %{i}µl of MGH20 to tube %{label}."
+    check: "Add %{i}µl of MGH20 to tube %{i+1}."
   end
 end
 
