@@ -29,7 +29,7 @@ step
   check: "Put a bottle with 420 mL of sterile 10%% glycerol on ice"
   check: "Put a bottle of sterile GYT on ice"
   check: "Set the large centrifuge to 4 degrees C and close the lid"
-  timer:{ hours: 0, minutes: 0, seconds: 10 }
+  timer:{ hours: 2, minutes: 0, seconds: 0 }
 end
 
 step
