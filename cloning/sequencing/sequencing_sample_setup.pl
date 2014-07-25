@@ -83,6 +83,13 @@ end
 
 count2=0
 
+step
+  foreach i in H20_req
+    label=i+1
+    check: "Add %{i}µl of MGH20 to tube %{label}."
+  end
+end
+
 while count2<y
   label=count2+1
   water=H20_req[count2]
