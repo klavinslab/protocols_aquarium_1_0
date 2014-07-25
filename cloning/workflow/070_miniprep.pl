@@ -46,21 +46,16 @@ step
 end
 
 step 
-  description: "Add P2 and gently invert to mix"
-  note:"Pipette 250 ul of P2 into each tube and gently invert 10 times to mix. Tube contents should turn blue."
+  description: "Be sure to check the boxs as you complete each step."
+  check: "Add P2 and gently invert to mix"
+  check:"Pipette 250 ul of P2 into each tube and gently invert 10 times to mix. Tube contents should turn blue."
   warning:"This step should be done rapidly. Cells should not be exposed to active P2 for more than 5 minutes"
-end
-
-step 
-  description: "Add N3 and gently invert to mix"
-  note:"Pipette 350 ul of N3 into each tube and gently invert 10 times to mix. Tube contents should turn colorless."
-end
-
-step
-  description: "Spin tubes and set up columns and final tubes"
+  check: "Add N3 and gently invert to mix"
+  check:"Pipette 350 ul of N3 into each tube and gently invert 10 times to mix. Tube contents should turn colorless."
+  check: "Spin tubes and set up columns and final tubes"
   check: "Spin tubes at 17,000Xg for 10 minutes"
   warning: "Make sure to balance the centrifuge. If you have an odd number of samples, use a balance tube with water"
-  note: "Meanwhile, prep and label all of the columns and tubes you will need for the rest of the protocol"
+  check: "Meanwhile, prep and label all of the columns and tubes you will need for the rest of the protocol"
   check: "Grab %{y} blue miniprep spin columns"
   check: "Label the side of the columns 1, 2, 3, ... , %{y}"
   check: "Grab %{y} new eppendorf tubes"
@@ -73,13 +68,11 @@ step
 end
 
 step 
-  description: "Spin the columns"
-  note:"Spin at 17,000Xg for 1 minute"
+  description: "Be sure to check the boxs as you complete each step."
+  check: "Spin the columns"
+  check:"Spin at 17,000Xg for 1 minute"
   warning: "Again, make sure the the centrifuge is balanced. Use an extra column with 500 ul of water if necessary"
-end
-
-step 
-  description: "Wash the column with PE buffer"
+  check: "Wash the column with PE buffer"
   check: "Remove the columns from the centrifuge and discard the flow through into a liquid waste container"
   warning: "Make sure the PE bottle that you are using as ethanol added!"
   check: "Add 750 ul of PE buffer to each column."
