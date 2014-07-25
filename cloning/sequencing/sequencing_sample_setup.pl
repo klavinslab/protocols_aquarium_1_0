@@ -95,40 +95,48 @@ step
   table: tbl
 end
 
-
-count3=0
-
-while count3<y
-  label=count3+1
-  p=primers_entered[count3]
-    step  
-      description: "Add 2.5µl of primer %{p} into tube %{label}."
-    end
-  count3=count3+1
+i1=0
+tbl1 = [["Tube Number", "Primer ID Number"]]
+i1 = 0 
+while i1<y
+  tbl1 = append(tbl,[i1+1,primers_entered[i1]])
+  i1 = i1+1
 end
 
+
+step  
+  description: "Add 2.5µl of the identified primer into the corresponding tube."
+  table: tbl1
+end
+ 
 count4=0
 
 while count4<y
   label=count4+1
   plas=plasmids[count4]
   plasvol=plasmid_vol[count4]
-    step
-      description: "Add %{plasvol}µl of plasmid %{plas} into tube %{label}"
-    end
   count4=count4+1
 end
 
-step
-  description: "Cap all strip well tubes"
+
+i2=0
+tbl2 = [["Tube Number", "Plasmid ID", "Plasmid Volume"]]
+i2 = 0 
+while i2<y
+  tbl2 = append(tbl2,[i2+1,plasmids[i2], plasmid_vol[i2]])
+  i2 = i2+1
 end
 
 step
-  description: "Write %{tracking_no} on a small slip of paper."
+  description: "Add the described plasmid volume of given plasmids to each tube."
+  table: tbl2
 end
 
+
 step
-  description: "Place all of the strip well tubes and the small strip of paper in a small plastic bag above B14.310 and place the bag into the Genewiz collection box"
+  check: "Cap all strip well tubes"
+  check: "Write %{tracking_no} on a small slip of paper."
+  check: "Place all of the strip well tubes and the small strip of paper in a small plastic bag above B14.310 and place the bag into the Genewiz collection box"
 end
 
 release plasmids_ids
