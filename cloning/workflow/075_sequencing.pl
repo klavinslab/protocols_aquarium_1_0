@@ -27,45 +27,41 @@ end
 
 step
   description: "Grab a 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
-  check: "Label the left most well with the letters %{initials}01"
-  check: "Label the right most well with the letter %{initials}12"
+  check: "Label the right most well with the letters %{initials}01"
+  check: "Label the left most well with the letter %{initials}12"
   note: "These wells will be refered to as 1 - 12"
 end
 if length(plasmids) > 12
   step
     description: "Grab a second 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
-    check: "Label the left most well with the letters %{initials}13"
-    check: "Label the right most well with the letter %{initials}24"
+    check: "Label the right most well with the letters %{initials}13"
+    check: "Label the left most well with the letter %{initials}24"
     note: "These wells will be refered to as 13 - 24"
   end
 end
 if length(plasmids) > 24
   step
     description: "Grab a third 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
-    check: "Label the left most well with the letters %{initials}25"
-    check: "Label the right most well with the letter %{initials}36"
+    check: "Label the right most well with the letters %{initials}25"
+    check: "Label the left most well with the letter %{initials}36"
     note: "These wells will be refered to as 25 - 36"
   end
 end
 if length(plasmids) > 36
   step
     description: "Grab a fourth 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
-    check: "Label the left most well with the letters %{initials}37"
-    check: "Label the right most well with the letter %{initials}48"
+    check: "Label the right most well with the letters %{initials}37"
+    check: "Label the left most well with the letter %{initials}48"
     note: "These wells will be refered to as 37 - 48"
   end
 end
 if length(plasmids) > 48
   step
     description: "Grab a fourth 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
-    check: "Label the left most well with the letters %{initials}49"
-    check: "Label the right most well with the letter %{initials}60"
+    check: "Label the right most well with the letters %{initials}49"
+    check: "Label the left most well with the letter %{initials}60"
     note: "These wells will be refered to as 49 - 60"
   end
-end
-
-step
-  description: "If not already labeled, label tube %{y}%{initials} and rip off any other tubes to the right."
 end
 
 
@@ -74,6 +70,7 @@ count1=0
 H20_req=[0]
 DNA_req=[0]
 plasmid_vol=[0]
+tubes=[0]
 
 while count1<y
   DNA_req[count1]=plasmids_lengths[count1]/10
@@ -82,53 +79,62 @@ while count1<y
       plasmid_vol[count1]=1
     end
   H20_req[count1]=12.5-plasmid_vol[count1]
+  tubes[count1]=count1+1
   count1=count1+1
 end
 
-count2=0
-
-while count2<y
-  label=count2+1
-  water=H20_req[count2]
-    step  
-      description: "Add %{water}µl of MGH20 to tube %{label}."
-    end
-  count2=count2+1 
+tbl = [["Tube Number", "H2O Volume"]]
+ii = 0 
+while ii<y
+  tbl = append(tbl,[ii+1,H20_req[ii]])
+  ii = ii+1
 end
 
-count3=0
-
-while count3<y
-  label=count3+1
-  p=primers_entered[count3]
-    step  
-      description: "Add 2.5µl of primer %{p} into tube %{label}."
-    end
-  count3=count3+1
+step
+  description: "Refer to the table for the volume of water to add to each tube"
+  table: tbl
 end
 
+i1=0
+tbl1 = [["Tube Number", "Primer ID Number"]]
+while i1<y
+  tbl1 = append(tbl1,[i1+1,primers_entered[i1]])
+  i1 = i1+1
+end
+
+
+step  
+  description: "Add 2.5µl of the identified primer into the corresponding tube."
+  table: tbl1
+end
+ 
 count4=0
 
 while count4<y
   label=count4+1
   plas=plasmids[count4]
   plasvol=plasmid_vol[count4]
-    step
-      description: "Add %{plasvol}µl of plasmid %{plas} into tube %{label}"
-    end
   count4=count4+1
 end
 
-step
-  description: "Cap all strip well tubes"
+
+i2=0
+tbl2 = [["Tube Number", "Plasmid ID", "Plasmid Volume in µl"]]
+while i2<y
+  tbl2 = append(tbl2,[i2+1,plasmids[i2], plasmid_vol[i2]])
+  i2 = i2+1
 end
 
 step
-  description: "Write %{tracking_no} on a small slip of paper."
+  description: "Add the described plasmid volume of given plasmids to each tube."
+  table: tbl2
 end
 
+
 step
-  description: "Place all of the strip well tubes and the small strip of paper in a small plastic bag above B14.310 and place the bag into the Genewiz collection box"
+  check: "Cap all strip well tubes"
+  check: "Write %{tracking_no} on a small slip of paper."
+  check: "Place all of the strip well tubes and the small strip of paper in a small plastic bag above B14.310 and place the bag into the Genewiz collection box"
 end
 
 release plasmids_ids
