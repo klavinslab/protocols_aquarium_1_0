@@ -86,11 +86,8 @@ end
 count2=0
 
 step
-  foreach i in H20_req
-    foreach j in tubes
-    check: "Add %{i}µl of MGH20 to tube %{j}."
-    end
-  end
+  desctiption: "Refer to the table for the volume of water to add to each tube"
+  table: [["tubes","H20 Volume"][tubes, H20_req]]
 end
 
 while count2<y
