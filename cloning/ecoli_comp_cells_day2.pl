@@ -82,15 +82,11 @@ step
 end
 
 step
-  description: "Set up 0.5 mL eppendorf tubes in cold aluminum racks"
-  check: "Take out both aluminum tube racks from the door of the plate fridge"
-  check: "Position 48 tubes with their caps open into each of two aluminum racks"
-  check: "Add 8 mL of ice-cold 10%% glycerol to both of the 225 mL centrifuge tubes"
-  check: "Resuspend by vortexing"
-  check: "Combine the tubes so that you have 1 225 mL centrifge tube with 16 mL"
-  check: "Spin at 2500 rmp for 20 minutes at 4 degrees C"
+  description: "Prepare tubes for aliquoting"
+  check: "Take out both aluminum 96 well plate holders from the door of the plate fridge and put them on ice blocks"
+  check: "Position 48 tubes with their caps open into each of two aluminum racks as shown in the image (TO BE ADDED)"
+  check: "Put the tube racks with tubes back into the plate fridge to keep them cold"
 end
-
 
 step
   description: "Prepare cells for aliquoting"
@@ -120,15 +116,10 @@ step
 end  
 
 step
-  description: "Prepare tubes for aliquoting"
-  check: "Get two metal 96 well plate holders from the fridge and put them on ice blocks"
-  check: "Get %{tubes} (rounded down) 0.5mL tubes and label their lids with 5alpha"
-  check: "Assemble the tubes in the 96 well plates as shown"
-end  
-
-step
-  description: "Aliquot out 40ul of cells into each of the labeled 0.5 mL tubes"
-  note: "If there are any tubes left over that did not receive a FULL 40ul aliquot, throw them away"
+  description: "Aliquot the cells"
+  check: "Take out both aluminum plate holders with assembled tubes and immedietly put them on ice blocks"
+  check: "Aliquot out 40ul of cells into each of the labeled 0.5 mL tubes"
+  check: "If there are any tubes left over that did not receive a FULL 40ul aliquot, throw them away"
   getdata
     z: number, "How many aliquots were made?"
   end
