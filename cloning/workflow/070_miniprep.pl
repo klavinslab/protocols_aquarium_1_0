@@ -19,17 +19,7 @@ step
 end
 
 
-x=0
-while x < y
-  a=strain_id[x]
-  z=x+1
-  step 
-    description: "Pipet 1000 uL of culture with id %{a} into tube %{z}."
-  end
-  x = x+1
-end
-
-tbl = [["Culture ID", "Tube Label"]]
+tbl = [["Tube Label", "Overngiht Culture ID"]]
 ii = 0 
 while ii<y
   tbl = append(tbl,[ii+1,strain_id[ii]])
