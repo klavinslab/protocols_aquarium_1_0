@@ -13,18 +13,21 @@ end
 
 y=length(GelSlice_id)
 
-
-count1=0
-
-while count1 < y
-  label=count1+1
-  slice = slices[count1][:id]
-    step
-      description: "label the %{slice} tube with a %{label}"
-      note: "these labels are very important as you will use them to label different tubes in the protocol and they will define the order in which the fragment stocks are produced at the end of the protocol"
-    end
-  count1=count1+1
+tbl = [["Slice ID", "Tube Label"]]
+ii = 0 
+while ii<y
+  slice = slices[ii][:id]
+  tbl = append(tbl,[ii+1,slice])
+  ii = ii+1
 end
+
+step
+  description:"Label the gel slices with the following numbers."
+  note: "these labels are very important as you will use them to label different tubes in the protocol and they will define the order in which the fragment stocks are produced at the end of the protocol"
+  table: tbl
+end
+
+
 
 step
   description: "Zero the scale with an empty 1.5 ml eppendorf tube"
@@ -47,17 +50,28 @@ while count2 < y
   count2=count2+1
 end
 
+qgs=[]
 count3=0
 while count3 < y
   label=count3+1
   qg=weights[count3]*3000
   qg=floor(qg)
-  step
-    description: "Add %{qg} µl of QG buffer into tube %{label}"
-  end
+  qgs[count3]=qg
   count3=count3+1
 end
 
+
+tbl1 = [["Slice ID", "QG volume in µl"]]
+i1 = 0 
+while i1<y
+  tbl1 = append(tbl1,[i1+1,qgs[i1]])
+  i1 = i1+1
+end
+
+step
+  description:"Add the QG volume to each tube described in the table."
+  table:tbl1
+end
 
 step
   description: "Place tubes in 50 degree heat block for 10 minutes. Vortex every few minutes to speed up the process"
