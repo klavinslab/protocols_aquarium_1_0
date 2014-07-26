@@ -17,7 +17,7 @@ foreach p in taken_plates
     end
   end
   
-  if n>0
+  if count>0
     step
       description: "Collect %{n_col} 1.5 mL tubes and place them in a tube rack."
     end
