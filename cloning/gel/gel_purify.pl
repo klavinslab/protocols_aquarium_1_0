@@ -50,12 +50,13 @@ while count2 < y
   count2=count2+1
 end
 
-weight=[]
+weight1=[]
 step
   description: "Enter the weight in grams of each tube"
   foreach i in slices
     getdata
-      weight[i]: number, "Enter weight of tube %{i}"
+      weight: number, "Enter weight of tube %{i}"
+      weight1[i]=weight
     end
 end
 
