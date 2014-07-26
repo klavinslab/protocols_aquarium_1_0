@@ -40,7 +40,7 @@ foreach p in taken_plates
         bullet: "Select an isolated colony to pick."
         bullet: "Using the pointy end of the pipett tip, scrape the colony you just choose with a short stroke.  It may not look like you picked up much."
         bullet: "Dip the tip into the 1.5 mL tube of LB below the liquid surface and scape it along the side to dislodge any cells."
-        bullet: "Cap the tube and write the item number " + to_string(tube[:id]) + " on top of a sticker on the top of the tube."
+        check: "Cap the tube and write the item number " + to_string(tube[:id]) + " on top of a sticker on the top of the tube."
         warning: "make sure to use sterile technique and to never touch the end of the pipette tip to anything but a single colony and a single tube"
       end
       
