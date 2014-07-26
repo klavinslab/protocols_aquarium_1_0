@@ -64,7 +64,7 @@ end
 tbl1 = [["Slice ID", "QG volume in ¨µl"]]
 i1 = 0 
 while i1<y
-  tbl1 = append(tbl,[i1+1,qgs[i1]])
+  tbl1 = append(tbl1,[i1+1,qgs[i1]])
   i1 = i1+1
 end
 
