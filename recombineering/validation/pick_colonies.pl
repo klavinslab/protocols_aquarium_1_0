@@ -3,6 +3,11 @@ argument
   n_col: number, "number of colonies per plate."
 end
 
+step
+  description: "Put on gloves"
+  note: "the cells we're working with don't have any resistance marker so they are really easy to contaminate."
+end
+
 take
   taken_plates = item unique(plates)
   lb = 1 "50 mL LB liquid aliquot (sterile)"
@@ -18,6 +23,11 @@ foreach p in taken_plates
   end
   
   if count>0
+    step
+      description: "ethanol your hands"
+      note: "Spray ethanol on your gloved hands, rub, and allow to evaporate."
+    end
+
     step
       description: "Collect %{n_col} 1.5 mL tubes and place them in a tube rack."
     end
