@@ -29,6 +29,19 @@ while x < y
   x = x+1
 end
 
+tbl = [["Culture ID", "Tube Label"]]
+ii = 0 
+while ii<y
+  tbl = append(tbl,[ii+1,strain_id[ii]])
+  ii = ii+1
+end
+
+step
+  description: "Pipet 100 µl of culture from the overnight culutres into the corresponding tubes."
+  table: tbl
+end
+
+
 step
   description: "Spin down the cells"
   note: "Spin at 5,800Xg for 2 minutes"
