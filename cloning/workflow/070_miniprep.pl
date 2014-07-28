@@ -27,7 +27,7 @@ while ii<y
 end
 
 step
-  description: "Pipet 100 µl of culture from the overnight culutres into the corresponding tubes."
+  description: "Pipet 1000 µl of culture from the overnight culutres into the corresponding tubes."
   table: tbl
 end
 
