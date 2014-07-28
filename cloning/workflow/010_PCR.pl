@@ -60,6 +60,8 @@ if length(forward_ids) > 48
   end
 end
 
+#y is used all over the place.  It really needs to be refactored to a readable
+#identifier.  
 y=length(forward_ids)
 
 step
@@ -120,6 +122,9 @@ while x < y
   produce
     q = 1 "PCR Result" of fragment_names[x]
     location: "R4.300"
+    data
+      from: template_ids[x]
+    end
   end
 
   if x == 0
