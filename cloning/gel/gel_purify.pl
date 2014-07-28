@@ -50,6 +50,8 @@ while count2 < y
   count2=count2+1
 end
 
+
+
 qgs=[]
 count3=0
 while count3 < y
