@@ -7,7 +7,7 @@ end
 take
   Tris_HCL= 1 "1M Tris-HCL, ph7.5"
   mgcl2= 1 "2M MgCl2"
-  dGTP= 1 "100 mM dGTP"
+  dGTP= 1 "100mM dGTP"
   dATP= 1 "100mM dATP"
   dTTP= 1 "100mM dTTP"
   dCTP= 1 "100mM dCTP"
