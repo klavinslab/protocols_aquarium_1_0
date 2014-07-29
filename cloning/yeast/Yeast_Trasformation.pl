@@ -3,7 +3,7 @@
 argument
   frozen_aliquots: sample("Yeast Strain") array, "Enter in the frozen aliquots you would like to transform your digested plasmids into."
   digested_plasmdis: sample("Plasmid") array, "Enter the digested plasmid samples you want transformed into the strains above."
-  plate_type: object, "The yeast plate type that will be used for each digested plasmid above."
+  plate_type: object array, "The yeast plate type that will be used for each digested plasmid above."
 end
 
 
