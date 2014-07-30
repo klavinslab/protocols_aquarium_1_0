@@ -30,8 +30,8 @@ while x < y
   elsif plate_type[x]==4
     l=l+1
     plate_names[x]="Leu Plate"
-  x=x+1
   end
+  x=x+1
 end
 
 take
