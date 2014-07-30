@@ -13,6 +13,8 @@ take
   lb = 1 "50 mL LB liquid aliquot (sterile)"
 end 
 
+
+tubes = []
 foreach p in taken_plates
   pid = p[:id]
   step
@@ -42,6 +44,7 @@ foreach p in taken_plates
         tube = 1 "Overnight suspension" from p
         location: "SI4"
       end
+      tubes = append(tubes,tube[:id])
 
       step
         description: "Pick a colony"
@@ -63,6 +66,11 @@ step
   description: "incubate overnight"
   note: "place all the 1.5 mL tubes you just made into SI4"
   warning: "Make sure they go into the 30 degree incubator.  Putting them in the hotter incubator will kill them"
+end
+
+
+log
+  return: {tubes: tubes}
 end
 
 release taken_plates

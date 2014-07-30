@@ -110,6 +110,7 @@ end
 release phusion_stock
 release concat(concat(forward_primer_stock,reverse_primer_stock),plasmid_stock)
 
+#TODO: refactor with silent produces
 step
   description: "Ignore produce locations"
   note: "For the following produced items, do not move the tubes - ignore the location listed."
@@ -118,6 +119,7 @@ end
 x=0
 first = 0
 last = 0
+fids = []
 while x < y
   produce
     q = 1 "PCR Result" of fragment_names[x]
@@ -127,6 +129,9 @@ while x < y
     end
   end
 
+  fids = append(fids,q[:id])
+
+#TODO: fix this.  There is NO guarentee that items will be produced in sequence!
   if x == 0
     first = q[:id]
   end
@@ -149,4 +154,10 @@ else
     check: "Label the tape (exactly) with: %{first}."
     check: "Apply the tape to both the thermal cycler and a green 12-well tube rack."
   end
+end
+
+#NOTE: removing some return values may break metacols.  
+#      It is fine to add more though.
+log
+  return: {fragment_ids: fids, params: {fragment_ids: fids}}
 end
