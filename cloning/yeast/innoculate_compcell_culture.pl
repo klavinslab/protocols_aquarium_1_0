@@ -1,5 +1,5 @@
 argument
-  strains_id: sample("Yeast Overnight Suspension") array, "The overnights of the strains you want to make comp cells out of"
+  strains_id: sample array, "The overnights of the strains you want to make comp cells out of"
 end
 
 number = length(strains_id)
