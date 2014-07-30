@@ -19,7 +19,7 @@ place pick_col
     plates: plates
     n_col: n_col
   end
-  group: technicians
+  group: "technicians"
   start: now()
 end
 
@@ -31,7 +31,7 @@ place boil_cells
   end
 	start: hours(16)
 	window: days(1)
-	group: technicians
+	group: "technicians"
 end
 
 wire (pick_col, "tubes") => (boil_cells, "overnights") 
@@ -45,7 +45,7 @@ place pcr
   end
   start: now()
   window: days(1)
-  group: technicians
+  group: "technicians"
 end
 wire (boil_cells, "fwd_pri") => (pcr,"forward_ids")
 wire (boil_cells, "rev_pri") => (pcr,"reverse_ids")
