@@ -53,36 +53,19 @@ wire (boil_cells, "gen_preps") => (pcr,"template_ids")
 
 
 # forward transitions
-transition [parse_args] => [make_log_phase] when true 
+transition [parse_args] => [pick_col] when true 
   do
     #tsk = tasks("recombineering", "ready")
     params = {plates: plates, f_primer: f_pri, r_primer: r_pri, n_col: n_col}
   end
 end
+transition [pick_col] => [boil_cells] when !error(0) && completed(0) end 
+transition [boil_cells] => [pcr] when !error(0) && completed(0) end
 
-transition [make_log_phase] => [finish_log_phase] when !error(0) && completed(0) end 
-transition [finish_log_phase] => [heat_shock] when !error(0) && completed(0) end
-
-transition [heat_shock] => [quick_comp] when !error(0) && completed(0) end 
-transition [quick_comp] => [transform] when !error(0) && completed(0) end 
-transition [transform] => [plate] when !error(0) && completed(0) end 
-transition [plate] => [] when !error(0) && completed(0) 
-  do
-    useless_variable = set_task_status(choosen_task,"done")
-  end
-end
 
 # remaining reverse transitions
-transition [make_log_phase] => [make_log_phase] when error(0) end 
-transition [finish_log_phase] => [make_log_phase] when error(0) end 
+transition [pick_col] => [pick_col] when error(0) end 
+transition [boil_cells] => [boil_cells] when error(0) end 
+transition [pcr] => [pcr] when error(0) end 
 
-transition [heat_shock] => [heat_shock] when error(0) end 
-transition [quick_comp] => [quick_comp] when error(0) end 
-transition [transform] => [transform] when error(0) end 
-transition [plate] => [plate] when error(0) end
-#transition [boil_cells] => [boil_cells] when error(0) end
-#transition [pcr_prepare] => [pcr_prepare] when error(0) end
-#transition [pour_gels] => [pour_gels] when error(0) end
-#transition [run_gels] => [run_gels] when error(0) end
-#transition [image_gels] => [image_gels] when error(0) end
 
