@@ -40,12 +40,7 @@ wire (boil_cells, "frag_names") => (pcr,"fragment_names")
 
 
 # forward transitions
-transition [parse_args] => [boil_cells] when true 
-  do
-    #tsk = tasks("recombineering", "ready")
-    params = {plates: plates, f_primer: f_pri, r_primer: r_pri, n_col: n_col}
-  end
-end
+transition [parse_args] => [boil_cells] when true end
 transition [boil_cells] => [pcr] when !error(0) && completed(0) end
 
 
