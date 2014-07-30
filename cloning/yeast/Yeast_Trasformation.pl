@@ -23,13 +23,13 @@ while y > x
   if plate_type[x]==1
     h=h+1
     plate_names[x]="His Plate"
-  else if plate_type[x]==2
+  elsif plate_type[x]==2
     t=t+1
     plate_names[x]="Trp Plate"
-  else if plate_type[x]==3
+  elsif plate_type[x]==3
     u=u+1
     plate_names[x]="Ura Plate"
-  else if plate_type[x]==4
+  elsif plate_type[x]==4
     l=l+1
     plate_names[x]="Leu Plate"
   end
