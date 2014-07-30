@@ -78,8 +78,9 @@ step
 end
 
 step
-  description: "add 25ml of LB to each flask"
-  note: "go to the media bay and using the steriological pipette, transfer 25ml LB into each flask"
+  description: "add 25ml of LB+thymine to each flask"
+  note: "go to the media bay and using the steriological pipette, transfer 25ml LB+thymine into each flask"
+  warning: "This step has changed recently!  make sure to use LB+thymine."
 end
 
 step
