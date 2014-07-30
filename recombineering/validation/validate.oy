@@ -6,7 +6,7 @@ argument
   f_pri: sample("Primer"), "forward assay primer"
   r_pri: sample("Primer"), "reverse assay primer"
   n_col: number, "number of colonies to pick, (eg 2)"
-  enzyme_id: samples("Enzyme"), "Physion HF MM"
+  enzyme_id: sample("Enzyme"), "Physion HF MM"
 end
 
 place parse_args
