@@ -72,7 +72,7 @@ step
   check: "Add 240µl of 50 percent PEG into each frozen aliquot tube."
   warning: "Be careful when pipetting PEG as it is very viscus. Pipette slowly"
   check: "Add 36µl of 1M lithium acetate to each tube"
-  check: "Add 25µl of boiled samlom sperm to each tube"
+  check: "Add 25µl of boiled salmom sperm to each tube"
 end
 
 tbl1 = [["Tube Label", "Digested Plasmid"]]
