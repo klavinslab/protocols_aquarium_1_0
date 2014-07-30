@@ -19,7 +19,7 @@ end
  
 y=length(frozen_aliquots)
 
-while y > x
+while x < y
   if plate_type[x]==1
     h=h+1
     plate_names[x]="His Plate"
