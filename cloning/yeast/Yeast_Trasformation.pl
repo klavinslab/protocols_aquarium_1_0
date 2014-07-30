@@ -124,8 +124,7 @@ while x < y
   produce
     q = 1 "Yeast Plate" of products[x]
     location: "30º Incubator"
-    release frozen_aliquots[x]
-    release digested_plasmids[x] 
+    release [frozen_aliquots[x], digested_plasmids[x]]
   end
   x = x+1
 end
