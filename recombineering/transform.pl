@@ -19,7 +19,7 @@ take
   fragments = item unique(fragment_id)
   electroporator = 1 "Electroporator"
   cuvette = sample_count "Clean Electrocuvette"
-  lbtube = 1 "50 mL LB liquid aliquot (sterile)"
+  lbtube = 1 "50 mL LB plus thymine liquid aliquot (sterile)"
 end
 
 step
@@ -57,7 +57,7 @@ while i<length(strain_list)
   step
     description: "Transfer the cells-plasmid mixture to electrocuvette."
     bullet: "Set your pipettors to be 50 &micro;L and 1000 &micro;L."
-    bullet: "Loosen cap on the 50 mL LB liquid aliquot (sterile)."
+    bullet: "Loosen cap on the 50 mL LB plus thymine liquid aliquot (sterile)."
     bullet: "Take the black plastic cuvette holder out of electroporator."
     bullet: "Take lid off the cuvette."
     bullet: "Pipette 50 &micro;L of the mixture from the electrocompetent cell tube %{t_tube_label} into the center of the gap of the electrocuvette."
@@ -69,7 +69,7 @@ while i<length(strain_list)
     description: "Electroporation, Rescue and Transfer"
     bullet: "Put the cuvette in the cuvette holder, slide into electroporator and press the PULSE button twice quickly."
     bullet: "Wait for the electroporator to finish (it should make a long beep and take roughly 10 seconds total from double press to electroporation)."
-    bullet: "Remove the cuvette from the electroporator and QUICKLY add 1 mL of LB."
+    bullet: "Remove the cuvette from the electroporator and QUICKLY add 1 mL of LB plus thymine."
     bullet: "Pipette up and down 3 times to extract the cells from the gap in the cuvette."
     bullet: "Transfer to the 1.5 mL tube you set out prepared."
     image: "electroporation_rescue"
