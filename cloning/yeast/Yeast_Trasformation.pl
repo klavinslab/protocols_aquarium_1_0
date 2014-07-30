@@ -39,10 +39,10 @@ take
 end
 
 take
-  his_plates "SDO -His Plate (sterile)"
-  ura_plates "SDO -Ura Plate (sterile)"
-  leu_plates "SDO -Leu Plate (sterile)"
-  trp_plates "SDO -Trp Plate (sterile)"
+  h "SDO -His Plate (sterile)"
+  u "SDO -Ura Plate (sterile)"
+  l "SDO -Leu Plate (sterile)"
+  t "SDO -Trp Plate (sterile)"
 end
 
 
