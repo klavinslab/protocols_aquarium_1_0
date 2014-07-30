@@ -12,24 +12,24 @@ take
 end
   y=length(frozen_aliquots)
 
-his_plates=0
-trp_plates=0
-urp_plates=0
-leu_plates=0
+h=0
+t=0
+u=0
+l=0
 plate_names=[]
 
 while y > x
   if plate_type[x]==1
-    his_plates=his_plates+1
+    h=h+1
     plate_names[x]="His Plate"
   else if plate_type[x]==2
-    trp_plates=trp_plates+1
+    t=t+1
     plate_names[x]="Trp Plate"
   else if plate_type[x]==3
-    ura_plates=ura_plates+1
+    u=u+1
     plate_names[x]="Ura Plate"
   else if plate_type[x]==4
-    leu_plates=leu_plates+1
+    l=l+1
     plate_namesp[x]="Leu Plate"
   end
 end
