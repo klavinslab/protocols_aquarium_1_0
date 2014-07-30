@@ -35,14 +35,14 @@ while x < y
 end
 
 take
-  y=digested_plasmids
+  y= sample digested_plasmids
 end
 
 take
-  a= his_plates "SDO -His Plate (sterile)"
-  b= ura_plates "SDO -Ura Plate (sterile)"
-  c= leu_plates "SDO -Leu Plate (sterile)"
-  d= trp_plates "SDO -Trp Plate (sterile)"
+  his_plates "SDO -His Plate (sterile)"
+  ura_plates "SDO -Ura Plate (sterile)"
+  leu_plates "SDO -Leu Plate (sterile)"
+  trp_plates "SDO -Trp Plate (sterile)"
 end
 
 
