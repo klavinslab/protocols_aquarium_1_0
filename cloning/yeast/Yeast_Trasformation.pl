@@ -16,6 +16,7 @@ l = 0
 
 plate_names=[]
 
+x=0
 while x < y
   if plate_type[x]==1
     h=h+1
@@ -30,6 +31,7 @@ while x < y
     l=l+1
     plate_names[x]="Leu Plate"
   x=x+1
+  end
 end
 
 take
@@ -49,7 +51,7 @@ step
 end
 
 take
-  y= sample frozen_aliquots
+  y = sample frozen_aliquots
 end
 
 tbl = [["Tube Label", "Frozen Aliquot ID"]]
@@ -127,7 +129,3 @@ while x < y
   end
   x = x+1
 end
-
-
-
-
