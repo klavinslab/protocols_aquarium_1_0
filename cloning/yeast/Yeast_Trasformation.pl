@@ -51,7 +51,7 @@ step
 end
 
 take
-  y = item unique(frozen_aliquots)
+  k = item unique(frozen_aliquots)
 end
 
 tbl = [["Tube Label", "Frozen Aliquot ID"]]
