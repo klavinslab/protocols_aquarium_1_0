@@ -42,6 +42,7 @@ wire (boil_cells, "frag_names") => (pcr,"fragment_names")
 # forward transitions
 transition [parse_args] => [boil_cells] when true end
 transition [boil_cells] => [pcr] when !error(0) && completed(0) end
+transition [pcr] => [] when !error(0) && completed(0) end
 
 
 # remaining reverse transitions
