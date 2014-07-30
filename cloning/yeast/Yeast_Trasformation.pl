@@ -14,6 +14,9 @@ t = 0
 u = 0
 l = 0
 
+plate_names=[]
+
+
 
 take
   y=digested_plasmids
@@ -22,7 +25,6 @@ end
   y=length(frozen_aliquots)
 
 
-plate_names=[]
 
 
 while y > x
