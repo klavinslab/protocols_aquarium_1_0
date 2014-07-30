@@ -3,6 +3,8 @@ argument
 end
 
 number = length(strains_id)
+xid=0
+yid=0
 
 take
   number "250 mL Baffled Flask"
@@ -37,14 +39,16 @@ end
 foreach x in strains
   step
     description: "Innoculating Cultures"
-    check: "Add 1ml of the overnight labeled %{x[:id]} to one of the unlabeled flasks."
+    xid = x[:id]
+    check: "Add 1ml of the overnight labeled %{ xid} to one of the unlabeled flasks."
   end
   produce
     y = 1 "Yeast 50ml culture" from x
     location: "30C Shaker"
   end
   step
-    check: "Label the flask %{y[:id]}." 
+    yid = y[:id]
+    check: "Label the flask %{ yid }." 
     note: "MAKE SURE TO NOT TOUCH THE TIP OF THE PIPETTE TO ANYTHING (Tubes, bottle etc.)."
   end
 end
