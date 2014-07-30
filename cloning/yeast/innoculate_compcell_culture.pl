@@ -37,14 +37,16 @@ end
 foreach x in strains
   step
     description: "Innoculating Cultures"
-    check: "Add 1ml of the overnight labeled %{x[:id]} to one of the unlabeled flasks."
+    x_id  = x[:id]
+    check: "Add 1ml of the overnight labeled %{x_id} to one of the unlabeled flasks."
   end
   produce
     y = 1 "Yeast 50ml culture" from x
     location: "30C Shaker"
   end
   step
-    check: "Label the flask %{y[:id]}." 
+    y_id = y[:id]
+    check: "Label the flask %{y_id}." 
     note: "MAKE SURE TO NOT TOUCH THE TIP OF THE PIPETTE TO ANYTHING (Tubes, bottle etc.)."
   end
 end
