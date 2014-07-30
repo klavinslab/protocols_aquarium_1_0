@@ -35,7 +35,7 @@ while x < y
 end
 
 take
-  y= sample digested_plasmids
+  y= item digested_plasmids
 end
 
 take
