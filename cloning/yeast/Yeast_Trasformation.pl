@@ -1,4 +1,3 @@
-##This protocol performs yeast transformations for frozen cell aliquots 
 argument
   products: string array, "The exact name of each strain the transformations will produce."
   frozen_aliquots: sample("Yeast Strain") array, "Enter in the frozen aliquots you would like to transform your digested plasmids into."
@@ -30,7 +29,6 @@ while x < y
   elsif plate_type[x]==4
     l=l+1
     plate_names[x]="Leu Plate"
-  end
   x=x+1
 end
 
