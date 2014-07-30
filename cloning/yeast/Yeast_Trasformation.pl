@@ -33,6 +33,7 @@ while y > x
     l=l+1
     plate_names[x]="Leu Plate"
   end
+  x=x+1
 end
 
 take
