@@ -6,18 +6,16 @@ argument
   plate_type: number array, "Enter a number that corresponds to a given plate type for each transformation. 1= -His Plate, 2= -Trp Plate, 3= -Ura Plate, 4= -Leu Plate"
 end
 
+
+ 
+y=length(frozen_aliquots)
+
 h = 0
 t = 0
 u = 0
 l = 0
 
 plate_names=[]
-
-take
-  y=digested_plasmids
-end
- 
-y=length(frozen_aliquots)
 
 while x < y
   if plate_type[x]==1
@@ -34,6 +32,10 @@ while x < y
     plate_names[x]="Leu Plate"
   end
   x=x+1
+end
+
+take
+  y=digested_plasmids
 end
 
 take
