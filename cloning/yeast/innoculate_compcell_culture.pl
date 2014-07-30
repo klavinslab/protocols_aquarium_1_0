@@ -3,8 +3,6 @@ argument
 end
 
 number = length(strains_id)
-xid=0
-yid=0
 
 take
   number "250 mL Baffled Flask"
@@ -37,6 +35,9 @@ end
 
 
 foreach x in strains
+  xid=0
+  yid=0
+
   step
     description: "Innoculating Cultures"
     xid = x[:id]
