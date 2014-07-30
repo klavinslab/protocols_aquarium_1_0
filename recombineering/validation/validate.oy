@@ -3,8 +3,8 @@ cloning_base = "cloning/workflow/"
 
 argument
   plates: sample("E coli strain") array, "overnights to test"
-  f_pri: sample("Primer"), "forward assay primer"
-  r_pri: sample("Primer"), "reverse assay primer"
+  f_pri: sample("Primer") array, "forward assay primer"
+  r_pri: sample("Primer") array, "reverse assay primer"
   n_col: number, "number of colonies to pick, (eg 2)"
   enzyme_id: sample("Enzyme"), "Physion HF MM"
 end
