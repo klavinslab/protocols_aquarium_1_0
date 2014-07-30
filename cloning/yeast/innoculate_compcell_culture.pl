@@ -33,17 +33,16 @@ take
   strains = item unique(strains_id)
 end
 
-produce
-  y = 1 "Yeast 50ml culture" from x
-  location: "30C Shaker"
-end
 
 foreach x in strains
   step
     description: "Innoculating Cultures"
     check: "Add 1ml of the overnight labeled %{x[:id]} to one of the unlabeled flasks."
   end
-  
+  produce
+    y = 1 "Yeast 50ml culture" from x
+    location: "30C Shaker"
+  end
   step
     check: "Label the flask %{y[:id]}." 
     note: "MAKE SURE TO NOT TOUCH THE TIP OF THE PIPETTE TO ANYTHING (Tubes, bottle etc.)."
