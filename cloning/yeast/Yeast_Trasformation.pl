@@ -63,7 +63,7 @@ end
 
 step
   description: "Refer to the table below and label each frozen aliquot with the corresponding tube label"
-  tbl
+  table: tbl
   note: "put all of the frozen aliquots in order in a tube rack" 
 end
 
@@ -84,7 +84,7 @@ end
 
 step
   description:"Add the full contents (50µl) of the digested plasmid stocks to their coressponding tube lables in the table below."
-  tbl1
+  table: tbl1
 end
 
 step
