@@ -108,7 +108,7 @@ end
 
 step
   description: "Add the contents of each tube to the corresponding plate type. Be sure to label the plate with the same tube label after the contents are pipetted."
-  tbl2
+  table: tbl2
 end
 
 step
