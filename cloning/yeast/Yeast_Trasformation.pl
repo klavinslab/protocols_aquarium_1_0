@@ -5,7 +5,7 @@ argument
   plate_type: number array, "Enter a number that corresponds to a given plate type for each transformation. 1= -His Plate, 2= -Trp Plate, 3= -Ura Plate, 4= -Leu Plate"
 end
 
-
+  
  
 y=length(frozen_aliquots)
 
