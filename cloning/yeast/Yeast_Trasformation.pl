@@ -35,7 +35,7 @@ while x < y
 end
 
 take
-  y= item digested_plasmids
+  y= item unique(digested_plasmids)
 end
 
 take
