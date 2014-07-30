@@ -3,6 +3,7 @@ argument
   frozen_aliquots: sample("Yeast Strain") array, "Enter in the frozen aliquots you would like to transform your digested plasmids into."
   digested_plasmids: sample("Plasmid") array, "Enter the digested plasmid samples you want transformed into the strains above."
   plate_type: number array, "Enter a number that corresponds to a given plate type for each transformation. 1= -His Plate, 2= -Trp Plate, 3= -Ura Plate, 4= -Leu Plate"
+  rescue_vol: number, "Enter the amount of molecular grade water you would like to resuce the competent aliquots with."
 end
 
   
@@ -63,8 +64,8 @@ end
 
 step
   description: "Refer to the table below and label each frozen aliquot with the corresponding tube label"
-  table: tbl
   note: "put all of the frozen aliquots in order in a tube rack" 
+  table: tbl
 end
 
 step
@@ -95,7 +96,8 @@ end
 step
    description: "Check off the boxes as you complete each step."
    check: "Spin down the tubes for 30 seconds on the tabel top centrifuge and discard the supernatant."
-   check: "pippet 200µl of Molecular Grade water into each tube."
+   check: "pippet %{rescue_vol}µl of Molecular Grade water into each tube."
+   warning: "The resuce volume changes based on the users preference."
    check: "vortex each tube to resuspend cells."
 end
 
