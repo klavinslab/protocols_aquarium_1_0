@@ -44,12 +44,7 @@ foreach x in strains
     y = 1 "Yeast 50ml culture" from x
     location: "30C Shaker"
   end
-  step
-    check: "Label the flask %{ y[0][:id] }." 
-    note: "MAKE SURE TO NOT TOUCH THE TIP OF THE PIPETTE TO ANYTHING (Tubes, bottle etc.)."
-  end
 end
-
 
 step
   description: "Grow cultures for 5 hours"
