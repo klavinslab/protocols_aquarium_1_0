@@ -12,10 +12,10 @@ take
 end
   y=length(frozen_aliquots)
 
-h=0
-t=0
-u=0
-l=0
+h = 0
+t = 0
+u = 0
+l = 0
 plate_names=[]
 
 while y > x
