@@ -68,7 +68,7 @@ step
 end
 
 step
-  description: "Check off the boxs as you complete each step."
+  description: "Check off the boxes as you complete each step."
   check: "Add 240µl of 50 percent PEG into each frozen aliquot tube."
   warning: "Be careful when pipetting PEG as it is very viscus. Pipette slowly"
   check: "Add 36µl of 1M lithium acetate to each tube"
@@ -93,7 +93,7 @@ step
 end
 
 step
-   description: "Check off the boxs as you complete each step."
+   description: "Check off the boxes as you complete each step."
    check: "Spin down the tubes for 30 seconds on the tabel top centrifuge and discard the supernatant."
    check: "pippet 200µl of Molecular Grade water into each tube."
    check: "vortex each tube to resuspend cells."
