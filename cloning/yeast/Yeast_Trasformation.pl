@@ -1,17 +1,46 @@
 ##This protocol performs yeast transformations for frozen cell aliquots 
 
 argument
+  products: string array, "The exact name of each strain the transformations will produce."
   frozen_aliquots: sample("Yeast Strain") array, "Enter in the frozen aliquots you would like to transform your digested plasmids into."
   digested_plasmdis: sample("Plasmid") array, "Enter the digested plasmid samples you want transformed into the strains above."
-  plate_type: object array, "The yeast plate type that will be used for each digested plasmid above."
+  plate_type: number array, "Enter a number that corresponds to a given plate type for each transformation. 1= -His Plate, 2= -Trp Plate, 3= -Ura Plate, 4= -Leu Plate"
 end
-
 
 take
   y=digested_plasmids
-  x=plate_type
 end
   y=length(frozen_aliquots)
+
+his_plates=0
+trp_plates=0
+urp_plates=0
+leu_plates=0
+plate_names=[]
+
+while y > x
+  if plate_type[x]==1
+    his_plates=his_plates+1
+    plate_names[x]="His Plate"
+  else if plate_type[x]==2
+    trp_plates=trp_plates+1
+    plate_names[x]="Trp Plate"
+  else if plate_type[x]==3
+    ura_plates=ura_plates+1
+    plate_names[x]="Ura Plate"
+  else if plate_type[x]==4
+    leu_plates=leu_plates+1
+    plate_namesp[x]="Leu Plate"
+  end
+end
+
+take
+  a= his_plates "SDO -His Plate (sterile)"
+  b= ura_plates "SDO -Ura Plate (sterile)"
+  c= leu_plates "SDO -Leu Plate (sterile)"
+  d= trp_plates "SDO -Trp Plate (sterile)"
+end
+
 
 step
   description: "Go to the the M20 and remove %{y} boiled salmon sperm DNA frozen aliquots."
@@ -69,7 +98,7 @@ end
 tbl2 = [["Tube Label", "Plate Type"]]
 i2 = 0 
 while i2<y
-  tbl2 = append(tbl2,[i2+1,plate_type[i2]])
+  tbl2 = append(tbl2,[i2+1,plate_names[i2]])
   i2 = i2+1
 end
 
@@ -78,6 +107,22 @@ step
   tbl2
 end
 
+step
+  description: "Pour 3-10 sterile beads in each of the plates and shake plates until they are dry."
+end
+
+step
+  description: "The following step will produce yeast plates in numerical order of the plate labels"
+end
+
+x=0
+while x < y
+  produce
+    q = 1 "Yeast Plate" from products[x]
+    location: "30º Incubator"
+  end
+  x = x+1
+end
 
 
 
