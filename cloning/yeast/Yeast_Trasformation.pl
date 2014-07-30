@@ -125,6 +125,7 @@ while x < y
     q = 1 "Yeast Plate" of products[x]
     location: "30º Incubator"
     release k[x]
+    release j[x]
   end
   x = x+1
 end
