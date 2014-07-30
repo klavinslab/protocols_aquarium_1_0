@@ -35,9 +35,10 @@ end
 
 
 foreach x in strains
+  x_id = x[:id]
   step
     description: "Innoculating Cultures"
-    check: "Add 1ml of the overnight labeled %{ x[0][:id]} to one of the unlabeled flasks."
+    check: "Add 1ml of the overnight labeled %{x_id} to one of the unlabeled flasks."
   end
   produce
     y = 1 "Yeast 50ml culture" from x
