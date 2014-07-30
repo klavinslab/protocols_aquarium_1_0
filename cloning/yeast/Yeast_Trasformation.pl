@@ -49,7 +49,7 @@ step
 end
 
 take
-  y=frozen_aliquots
+  y= sample frozen_aliquots
 end
 
 tbl = [["Tube Label", "Frozen Aliquot ID"]]
@@ -114,7 +114,7 @@ step
 end
 
 step
-  description: "The following step will produce yeast plates in numerical order of the plate labels"
+  description: "The following step will produce yeast plates in numerical order of the plate labels."
 end
 
 x=0
