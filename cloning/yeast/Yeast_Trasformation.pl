@@ -1,5 +1,6 @@
 ##This protocol performs yeast transformations for frozen cell aliquots 
 
+
 argument
   products: string array, "The exact name of each strain the transformations will produce."
   frozen_aliquots: sample("Yeast Strain") array, "Enter in the frozen aliquots you would like to transform your digested plasmids into."
@@ -13,7 +14,6 @@ t = 0
 u = 0
 l = 0
 
-plate_names=[]
 
 take
   y=digested_plasmids
@@ -22,6 +22,7 @@ end
   y=length(frozen_aliquots)
 
 
+plate_names=[]
 
 
 while y > x
