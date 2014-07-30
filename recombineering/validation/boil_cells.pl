@@ -1,7 +1,5 @@
 argument
   overnights: sample array, "plates to pick"
-  pf: generic, "for metacol"
-  pr: generic, "for metacol"
 end
 
 take
@@ -109,28 +107,13 @@ end
 
 release genomepreps
 
-#detect number of replicates
-n = length(overnights)/length(pf)
-f_pri = []
-foreach p in pf
-  ii = 0
-  while ii<n
-    f_pri = append(f_pri,p)
-    ii = ii+1
-  end
-end
-
-r_pri = []
-foreach p in pr
-  ii = 0
-  while ii<n
-    r_pri = append(r_pri,p)
-    ii = ii+1
-  end
+fragment_names = []
+foreach g in GPIDs
+  fragment_names = append(fragment_names,"recombineering assay fragment")
 end
 
 log
-  return: {fwd_pri: f_pri, rev_pri: r_pri, gen_preps: GPIDs}
+  return: {gen_preps: GPIDs, frag_names: fragment_names}
 end
 
 

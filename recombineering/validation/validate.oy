@@ -2,10 +2,9 @@ base_dir = "recombineering/validation/"
 cloning_base = "cloning/workflow/"
 
 argument
-  plates: sample("E coli strain") array, "overnights to test"
+  overnights: sample("E coli strain") array, "overnights to test"
   f_pri: sample("Primer") array, "forward assay primer"
   r_pri: sample("Primer") array, "reverse assay primer"
-  n_col: number, "number of colonies to pick, (eg 2)"
   enzyme_id: sample("Enzyme"), "Physion HF MM"
 end
 
@@ -13,28 +12,15 @@ place parse_args
   marked: true
 end
 
-place pick_col 
-  protocol: base_dir+"pick_colonies.pl"
-  argument
-    plates: plates
-    n_col: n_col
-  end
-  group: "technicians"
-  start: now()
-end
-
 place boil_cells
 	protocol: base_dir+"boil_cells.pl"	
   argument
-    pf: f_pri
-    pr: r_pri
+    overnights: overnights
   end
-	start: hours(16)
+	start: now()
 	window: days(1)
 	group: "technicians"
 end
-
-wire (pick_col, "tubes") => (boil_cells, "overnights") 
 
 place pcr
   protocol: cloning_base + "010_PCR.pl"
@@ -42,29 +28,28 @@ place pcr
     initials: "REC"
     enzyme_id: enzyme_id
     tanneal: 65
+    forward_ids: f_pri
+    reverse_ids: r_pri
   end
   start: now()
   window: days(1)
   group: "technicians"
 end
-wire (boil_cells, "fwd_pri") => (pcr,"forward_ids")
-wire (boil_cells, "rev_pri") => (pcr,"reverse_ids")
 wire (boil_cells, "gen_preps") => (pcr,"template_ids")
+wire (boil_cells, "frag_names") => (pcr,"fragment_names")
 
 
 # forward transitions
-transition [parse_args] => [pick_col] when true 
+transition [parse_args] => [boil_cells] when true 
   do
     #tsk = tasks("recombineering", "ready")
     params = {plates: plates, f_primer: f_pri, r_primer: r_pri, n_col: n_col}
   end
 end
-transition [pick_col] => [boil_cells] when !error(0) && completed(0) end 
 transition [boil_cells] => [pcr] when !error(0) && completed(0) end
 
 
 # remaining reverse transitions
-transition [pick_col] => [pick_col] when error(0) end 
 transition [boil_cells] => [boil_cells] when error(0) end 
 transition [pcr] => [pcr] when error(0) end 
 
