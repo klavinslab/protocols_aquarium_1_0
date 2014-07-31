@@ -9,6 +9,7 @@ take
   note:"Take a rack and bring these to the cloning bay"
 end
 
+mating_plate_ids=[]
 counter=0
 foreach z in matings
   mid=matings_ids[counter]
@@ -51,11 +52,17 @@ foreach z in matings
   end
   
   produce
-    1 "Yeast Plate" of mating_names[counter]
+    q=1 "Yeast Plate" of mating_names[counter]
     location: "30º Incubator"
     release z
   end
+  mating_plate_ids=append(mating_plate_ids,q[:id])
+
+  
   counter=counter+1
 end
 
+log
+  return: { mating_plate_ids:   mating_plate_ids}
+end
 
