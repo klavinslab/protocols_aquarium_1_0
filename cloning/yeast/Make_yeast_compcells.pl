@@ -9,7 +9,7 @@ end
 
 
 step
-  discription: "Harvesting cells"
+  description: "Harvesting cells"
   check: "Get flask with the following labels from the 30C incubator"
   table: [culture_id] 
 end
