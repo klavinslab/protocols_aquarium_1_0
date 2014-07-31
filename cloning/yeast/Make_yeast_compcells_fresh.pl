@@ -67,7 +67,7 @@ step
   note: "The 0.1 on the tube means 100ul and each line is another 100ul"
 end
 
-y_id=[]
+yeast_compcell_aliquot_id=[]
 counter=0
 foreach x in cultures
   num = aliquots_number[counter]
@@ -86,7 +86,7 @@ foreach x in cultures
       y=1 "Yeast Competent Aliquots" from x
       location: "Bench"
     end
-    y_id = append(y_id,y[:id])
+    yeast_compcell_aliquot_id = append(yeast_compcell_aliquot_id,y[:id])
     
     counter2 = counter2 + 1
   end
@@ -98,7 +98,7 @@ release liac
 release water
 
 log 
-  return: {y_id: y_id}
+  return: {yeast_compcell_aliquot_id: yeast_compcell_aliquot_id}
 end
 
 
