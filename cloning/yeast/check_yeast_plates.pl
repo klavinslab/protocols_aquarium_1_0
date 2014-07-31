@@ -2,15 +2,16 @@ argument
   yeast_plate_ids: sample array, "Enter the plates which you want to be checked."
 end
 
-table = []
+tab = []
+
 foreach x in yeast_plate_ids
-  table = append(table,x)
+  tab = append(tab,x)
 end
 
 step
   description: "Retrieve plate"
   check: "Go to 30C incubator and remove the plates with the following ID numbers"
-  table: table
+  table: tab
 end
 
 step
