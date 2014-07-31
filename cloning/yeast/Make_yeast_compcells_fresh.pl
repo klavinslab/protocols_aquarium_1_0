@@ -71,7 +71,7 @@ counter=0
 foreach x in cultures
   num = aliquots_number[counter]
   counter2=0
-  xid = = x[:id]
+  xid = x[:id]
   
   while counter2<num
     step
