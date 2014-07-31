@@ -59,7 +59,6 @@ place transformation
 
   end
   group: "technicians"
-  marked: true
   start: now()
   window: hours(20)
 end
@@ -67,7 +66,6 @@ end
 place checkplates
   protocol: "check_yeast_plates"
   group: "technicians"
-  marked: true
   start: now()
   window: hours(20)
 end
