@@ -11,7 +11,7 @@ end
 step
   description: "Retrieve plate"
   check: "Go to 30C incubator and remove the plates with the following ID numbers"
-#  table: tab
+  table: tab
 end
 
 step
