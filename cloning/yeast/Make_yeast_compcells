@@ -3,4 +3,13 @@ argument
 end
 
 take
-  1 "50 percent Glycerol (sterile)"
+  liac = 1 "100 mM LiOAc"
+  water = 1 "50 mL Molecular Grade Water aliquot"  
+end
+
+
+step
+  discription: "Harvesting cells"
+  check: "Get flask with the following labels from the 30C incubator"
+  table: [culture_id] 
+end
