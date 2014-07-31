@@ -79,7 +79,7 @@ foreach x in cultures
       check: "Aliquot 50ul of the %{xid} resuspension into an eppendorf tube"
     end
      produce
-        1 "Yeast comp cell aliquot" from x
+        1 "Yeast Competent Aliquots" from x
         location: "Bench"
       end
     counter2 = counter2 + 1
