@@ -68,6 +68,7 @@ step
 end
 
 counter=0
+y_id=[]
 foreach x in cultures
   num = aliquots_number[counter]
   counter2=0
@@ -78,10 +79,12 @@ foreach x in cultures
       description: "Aliquoting cells"
       check: "Aliquot 50ul of the %{xid} resuspension into an eppendorf tube"
     end
-     produce
-        1 "Yeast Competent Aliquots" from x
-        location: "M80"
-      end
+     
+    produce
+      y=1 "Yeast Competent Aliquots" from x
+      location: "M80"
+    end
+    y_id = append(y_id,y[:id])
     counter2 = counter2 + 1
   end
   counter = counter + 1
@@ -91,6 +94,10 @@ step
   description: "Putting cells away"
   check: "Put aliquots into a styrafoam box and put into the -80C."
   note: "Make sure the styrofoam box is closed tightly so that the cells cool slowly."
+end
+
+log 
+  return: {y_id: y_id}
 end
 
 release FCC
