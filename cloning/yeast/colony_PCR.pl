@@ -1,4 +1,4 @@
-arguments
+argument
   initials: string, "Your initials or another 2-3 letter identifier for tube labeling"
   enzyme_id: sample("Enzyme"), "The Phusion HF Master Mix stock"
   strain_names: string array, "Name of strain that lysate is from"
