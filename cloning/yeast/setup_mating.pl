@@ -59,7 +59,8 @@ foreach x in mated_strain
     location: "B13.125"
     release test_tube
   end
-
+  
+  counter=counter+1
 end
 
 release yeast_media
