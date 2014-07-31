@@ -33,7 +33,7 @@ take
   strains = item unique(strains_id)
 end
 
-
+y_id=[]
 foreach x in strains
   x_id = x[:id]
   step
