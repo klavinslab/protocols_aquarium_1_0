@@ -87,6 +87,12 @@ foreach x in cultures
   counter = counter + 1
 end
 
+release liac
+release water
+
+
+
+
 
 
 
