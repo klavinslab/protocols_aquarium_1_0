@@ -2,17 +2,10 @@ argument
   yeast_plate_ids: sample array, "Enter the plates which you want to be checked."
 end
 
-tbl = [[]]
-
-counter=0
-foreach x in yeast_plate_ids
-  tab = append(tab,x)
-end
 
 step
   description: "Retrieve plate"
-  check: "Go to 30C incubator and remove the plates with the following ID numbers"
-  table: tab
+  check: "Go to 30C incubator and remove the plates with the following ID numbers: %{yeast_plate_ids}"
 end
 
 step
