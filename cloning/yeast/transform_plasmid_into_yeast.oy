@@ -64,14 +64,23 @@ place transformation
   window: hours(20)
 end
 
+place checkplates
+  protocol: "check_yeast_plates"
+  group: "technicians"
+  marked: true
+  start: now()
+  window: hours(20)
+end
 
 
 wire (innoculate,"yeast_50ml_culture_id") => (makecompcell,"cultures_id")
 wire (makecompcell,"yeast_compcell_aliquot_id") => (transformation,"frozen_aliquots")
 wire (digest,"digested_plasmids_ids") => (transformation,"digested_plasmids")
+wire (transformation,"yeast_transformation_plate_id") => (checkplates,"yeast_plate_ids")
 
 
 transition [innoculate,digest] => [makecompcell] when !error(0) && completed(0) && minutes_elapsed(0,1) end
-transition [makecompcell] => [transformation] when !error(0) && completed(0) && minutes_elapsed(0,1) end
+transition [makecompcell] => [transformation] when !error(0) && completed(0) end
+transition [transformation] => [checkplates] when !error(0) && completed(0) end
 
 
