@@ -7,6 +7,10 @@ step
   check: "Go to 30C incubator and remove the plates with the following ID numbers"
 end
 
+take
+  plates = item yeast_plate_ids
+end
+
 step
   description: "a"
   check: "Look at each plate carefully. Seperate the ones that have colonies from the ones that dont."
@@ -22,4 +26,3 @@ step
   description: "a"
   check: "Wrap the plates that have colonies in parafilm and put in the fridge according to their location in aquarium, leave the plates without colonies on the benchtop"
 end
-
