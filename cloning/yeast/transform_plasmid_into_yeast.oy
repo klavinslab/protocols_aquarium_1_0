@@ -49,7 +49,7 @@ place makecompcell
 end
 
 place transformation
-  protocol: "cloning/yeast/pmeI_Digest.pl"
+  protocol: "cloning/yeast/yeast_transformation_aj.pl"
   argument
   plate_type: plate_type
   rescue_vol: rescue_vol
