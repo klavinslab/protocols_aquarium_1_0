@@ -48,7 +48,6 @@ end
 step
   description: "Making cells competent: LiAcO wash"
   check: "Load the 1.5ml ependorf tubes into the table top centerfuge and spin down for 20 seconds or till cells are pelleted"
-  timer: { hours: 0, minutes: 0, seconds: 20 }
   check: "Use a pipette and remove the supernatant from each tube without disturbing the cell pellet."
   check:  "Add 1ml of 100mM Lithium Acetate to each ependorf tube and recap"
   check: "Vortex the tubes till cell pellet is resuspended"
@@ -57,7 +56,6 @@ end
 step
   description: "Making cells competent: Resuspension"
   check: "Load the 1.5ml ependorf tubes into the table top centerfuge and spin down for 20 seconds or till cells are pelleted"
-  timer: { hours: 0, minutes: 0, seconds: 20 }
   check: "Use a pipette and remove the supernatant from each tube without disturbing the cell pellet."
 end
 
@@ -72,14 +70,21 @@ end
 counter=0
 foreach x in cultures_id
   num = aliquots_number[counter]
-  step
-    description: "Aliquoting cells"
-    check: "Label %{num} fresh eppendorf tubes with %{x}"
-    check: "Aliquot 50ul of the %{x} resuspension into each eppendorf tube and discard excess"
-    note: "You may not need that many aliquots. If whoever scheduled the protocol is around ask how many aliquots you need."
+  counter2=0
+  
+  while counter2<num
+    step
+      description: "Aliquoting cells"
+      check: "Aliquot 50ul of the %{x} resuspension into an eppendorf tube"
+      produce
+        1 "Yeast comp cell aliquot" from x
+      end
+    end
+    counter2 = counter2 + 1
   end
   counter = counter + 1
 end
+
 
 
 
