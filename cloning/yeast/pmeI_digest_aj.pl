@@ -64,6 +64,7 @@ count=0
 
 while count<y
   label=count+1
+  plas=plasmids[count]
   step
     description: "Add 2µl of plasmid %{plas} into tube %{label}"
   end
