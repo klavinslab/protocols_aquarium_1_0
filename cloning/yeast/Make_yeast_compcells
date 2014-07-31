@@ -1,0 +1,6 @@
+argument
+  cultures_id: sample array, "The 50ml cultures to make comp cells out of"
+end
+
+take
+  1 "50 percent Glycerol (sterile)"
