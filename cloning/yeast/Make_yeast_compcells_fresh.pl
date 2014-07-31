@@ -79,15 +79,12 @@ foreach x in cultures
       description: "Aliquoting cells"
       check: "Aliquot 50ul of the %{xid} resuspension into an eppendorf tube"
     end
-      
+
+
+#no good way to release 250ml culture flask      
     produce
       y=1 "Yeast Competent Aliquots" from x
       location: "Bench"
-      
-      if counter2 == (num - 1)
-      release x
-      end
-      
     end
     y_id = append(y_id,y[:id])
     
