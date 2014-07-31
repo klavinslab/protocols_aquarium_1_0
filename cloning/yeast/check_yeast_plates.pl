@@ -2,10 +2,9 @@ argument
   yeast_plate_ids: sample array, "Enter the plates which you want to be checked."
 end
 
-
 step
   description: "Retrieve plate"
-  check: "Go to 30C incubator and remove the plates with the following ID numbers: %{yeast_plate_ids}"
+  check: "Go to 30C incubator and remove the plates with the following ID numbers"
 end
 
 step
