@@ -1,0 +1,30 @@
+argument
+  strains_id: sample array, "The overnights of the strains you want to make comp cells out of"
+  aliquots_number: number array, "Number of comp cell aliquots you want made from each 50ml culture"
+end
+
+place innoculate
+  protocol: "cloning/yeast/innoculate_compcell_culture.pl"
+  argument
+    strains_id: strains_id
+  end
+  group: "technicians"
+  marked: true
+  start: now()
+  window: hours(20)
+end
+
+place makecompcell
+  protocol: "cloning/yeast/Make_yeast_compcells_fresh.pl"
+  argument
+    aliquots_number: aliquots_number
+  end
+  group: "technicians"
+  start: now()
+  window: hours(20)
+end
+
+wire (innoculate,"yeast_50ml_culture_id") => (day2,"cultures_id")
+
+transition [innoculate] => [makecompcell] when !error(0) && completed(0) && hours_elapsed(0,5) end
+
