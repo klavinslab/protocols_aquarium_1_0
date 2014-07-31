@@ -45,7 +45,7 @@ foreach x in mated_strain
   step
     description: "Innoculate with Matalpha strain"
     check: "If refers to a plate pick a medium sized colony from the plate, if it is a glycerol stock take a stab of the glycerol stock with a pipette tip."
-    check: "Take a sterile pipette tip (10 µL tips), pick up your desired colony by gently scraping the tip to the colony."
+    check: "For colonies: Take a sterile pipette tip (10 µL tips), pick up your desired colony by gently scraping the tip to the colony. For Glycerol Stocks: use a 100ul tip and vigerously scrape the glycerol stock to get a chunk of stock."
     check: "Tilt 14 mL THE SAME TUBE AS PREVIOUS STEP such that you can reach the media with your tip."
     check: "Open the tube cap, scrape colony into media, using a swirling motion."
     check: "Place the tube back on the rack with cap closed."
@@ -54,7 +54,7 @@ foreach x in mated_strain
   release yeast_alpha
   
   produce
-    mating = 1 "Yeast Mating" from x
+    mating = 1 "Yeast Mating" of x
     note: "Place the test tube in 30 C incubator shaker at B13.125"
     location: "B13.125"
     release test_tube
