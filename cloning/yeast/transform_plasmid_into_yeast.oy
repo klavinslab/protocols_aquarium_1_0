@@ -25,7 +25,7 @@ place innoculate
 end
 
 place digest
-  protocol: "cloning/yeast/pmeI_Digest.pl"
+  protocol: "cloning/yeast/pmeI_digest_aj.pl"
   argument
     plasmids: plasmids
     pmei: pmei
