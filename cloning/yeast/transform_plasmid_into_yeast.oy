@@ -68,7 +68,7 @@ wire (makecompcell,"yeast_compcell_aliquot_id") => (transformation,"frozen_aliqu
 wire (digest,"digested_plasmids_ids") => (transformation,"digested_plasmids")
 
 
-transition [innoculate] => [makecompcell] when !error(0) && completed(0) && minutes_elapsed(0,1) end
-transition [makecompcell,digest] => [transformation] when !error(0) && completed(0) && !error(1) && completed(1) end
+transition [innoculate,digest] => [makecompcell] when !error(0) && completed(0) && minutes_elapsed(0,1) end
+transition [makecompcell] => [transformation] when !error(0) && completed(0) end
 
 
