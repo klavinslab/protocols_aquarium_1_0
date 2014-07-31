@@ -68,14 +68,15 @@ step
 end
 
 counter=0
-foreach x in cultures_id
+foreach x in cultures
   num = aliquots_number[counter]
   counter2=0
+  xid = = x[:id]
   
   while counter2<num
     step
       description: "Aliquoting cells"
-      check: "Aliquot 50ul of the %{x} resuspension into an eppendorf tube"
+      check: "Aliquot 50ul of the %{xid} resuspension into an eppendorf tube"
     end
      produce
         1 "Yeast comp cell aliquot" from x
