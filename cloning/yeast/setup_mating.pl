@@ -21,6 +21,8 @@ step
 end
 
 counter=0
+mated_strain_id=[]
+
 foreach x in mated_strain
 
   take
@@ -53,7 +55,6 @@ foreach x in mated_strain
   
   release yeast_alpha
   
-  mated_strain_id=[]
   produce
     mating = 1 "Yeast Mating" of x
     note: "Place the test tube in 30 C incubator shaker at B13.125"
