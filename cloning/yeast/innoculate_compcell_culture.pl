@@ -33,7 +33,7 @@ take
   strains = item unique(strains_id)
 end
 
-y_id=[]
+yeast_50ml_culture_id=[]
 foreach x in strains
   x_id = x[:id]
   step
@@ -44,7 +44,7 @@ foreach x in strains
     y = 1 "Yeast 50ml culture" from x
     location: "30C Shaker"
   end
-  y_id = append(y_id,y[:id])
+  yeast_50ml_culture_id = append(yeast_50ml_culture_id,y[:id])
 end
 
 step
@@ -54,7 +54,7 @@ step
 end
 
 log 
-  return: {y_id: y_id}
+  return: {yeast_50ml_culture_id: yeast_50ml_culture_id}
 end
 
 
