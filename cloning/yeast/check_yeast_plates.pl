@@ -25,8 +25,8 @@ step
   check: "Email the grad student whose initials are on the plates with a report. The format should be plate_id- # of colonies (0, a count for less than 20 or just more than 20). AJ/AK - arjunkhakhar at gmail.com, MG - miles, DY - david, NB- nick"
 end
 
-step
-  description: "a"
-  check: "Wrap the plates that have colonies in parafilm and put in the fridge according to their location in aquarium, leave the plates without colonies on the benchtop"
-end
+#step
+#  description: "a"
+#  check: "Wrap the plates that have colonies in parafilm and put in the fridge according to their location in aquarium, leave the plates without colonies on the benchtop"
+#end
 
