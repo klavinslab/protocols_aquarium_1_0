@@ -1,4 +1,4 @@
-information  "This protocol describes how to set up a mating from a wet of plates/Glycerol stock"
+information  "This protocol describes how to set up a mating from a set of plates/Glycerol stock"
 
 argument
   mata_strain_id: sample array, "The Mat a strain for mating"
@@ -30,7 +30,7 @@ foreach x in mated_strain
   step
     description: "Innoculate with Mata strain"
     check: "If refers to a plate pick a medium sized colony from the plate, if it is a glycerol stock take a stab of the glycerol stock with a pipette tip."
-    check: "Take a sterile pipette tip (10 µL tips), pick up your desired colony by gently scraping the tip to the colony."
+    check: "For colonies: Take a sterile pipette tip (10 µL tips), pick up your desired colony by gently scraping the tip to the colony. For Glycerol Stocks: use a 100ul tip and vigerously scrape the glycerol stock to get a chunk of stock."
     check: "Tilt 14 mL tube such that you can reach the media with your tip."
     check: "Open the tube cap, scrape colony into media, using a swirling motion."
     check: "Place the tube back on the rack with cap closed."
