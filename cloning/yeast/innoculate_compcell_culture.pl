@@ -5,7 +5,7 @@ end
 number = length(strains_id)
 
 take
-  number "250 mL Baffled Flask"
+  flasks = number "250 mL Baffled Flask"
   ypad = 1 "800 mL YPAD liquid (sterile)"
 end
 
@@ -43,6 +43,7 @@ foreach x in strains
   produce
     y = 1 "Yeast 50ml culture" from x
     location: "30C Shaker"
+    release flasks
   end
   yeast_50ml_culture_id = append(yeast_50ml_culture_id,y[:id])
 end
