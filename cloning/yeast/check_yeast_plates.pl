@@ -2,7 +2,7 @@ argument
   yeast_plate_ids: sample array, "Enter the plates which you want to be checked."
 end
 
-tbl = [["Plate ID"]]
+tbl = [[]]
 
 counter=0
 foreach x in yeast_plate_ids
