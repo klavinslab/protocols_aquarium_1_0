@@ -5,7 +5,7 @@ end
 
 
 take
-  FCC = 1 "50ml Frozen Competent Cell Solution ailquot"
+  FCC = 1 "50ml Frozen Competent Cell Solution aliquot"
   water = 1 "50 mL Molecular Grade Water aliquot" 
   cultures = item cultures_id
 end
