@@ -2,10 +2,10 @@ argument
   yeast_plate_ids: sample array, "Enter the plates which you want to be checked."
 end
 
-tab = []
+tab = [[]]
 
 foreach x in yeast_plate_ids
-  tab = append(tab,x)
+  tab = append(tab,[x,0])
 end
 
 step
