@@ -83,16 +83,17 @@ foreach x in cultures
     produce
       y=1 "Yeast Competent Aliquots" from x
       location: "Bench"
+      
+      if counter2 == (num - 1)
+      release x
+      end
+      
     end
     y_id = append(y_id,y[:id])
     
     counter2 = counter2 + 1
   end
   counter = counter + 1
-end
-
-produce
-  release cultures
 end
 
 
