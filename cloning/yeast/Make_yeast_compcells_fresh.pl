@@ -67,6 +67,7 @@ step
   note: "The 0.1 on the tube means 100ul and each line is another 100ul"
 end
 
+y_id=[]
 counter=0
 foreach x in cultures
   num = aliquots_number[counter]
@@ -78,10 +79,13 @@ foreach x in cultures
       description: "Aliquoting cells"
       check: "Aliquot 50ul of the %{xid} resuspension into an eppendorf tube"
     end
-     produce
-        1 "Yeast Competent Aliquots" from x
-        location: "Bench"
-      end
+      
+    produce
+      y=1 "Yeast Competent Aliquots" from x
+      location: "Bench"
+    end
+    y_id = append(y_id,y[:id])
+    
     counter2 = counter2 + 1
   end
   counter = counter + 1
@@ -90,7 +94,9 @@ end
 release liac
 release water
 
-
+log 
+  return: {y_id: y_id}
+end
 
 
 
