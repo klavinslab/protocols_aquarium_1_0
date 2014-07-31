@@ -44,12 +44,17 @@ foreach x in strains
     y = 1 "Yeast 50ml culture" from x
     location: "30C Shaker"
   end
+  y_id = append(y_id,y[:id])
 end
 
 step
   description: "Grow cultures for 5 hours"
   check: "Put flasks in the 30C shaker."
   check: "Set a timer for 5 hours."
+end
+
+log 
+  return: {y_id: y_id}
 end
 
 
