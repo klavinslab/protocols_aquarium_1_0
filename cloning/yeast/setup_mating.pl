@@ -39,7 +39,7 @@ foreach x in mated_strain
   release yeast_a
   
   take
-    yeast_alpha = item mata_strain_id[counter]
+    yeast_alpha = item matalpha_strain_id[counter]
   end
   
   step
