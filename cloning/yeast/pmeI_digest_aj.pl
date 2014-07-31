@@ -4,13 +4,11 @@ argument
   initials: string, "Your initials or another 2-3 letter identifier for tube labeling"
   plasmids: sample("Plasmid") array, "Plasmids"
   pmei: sample("Enzyme"), "Tube of PMEI to be used."
-  bsa: sample("Enzyme Buffer"), "Tube of BSA to be used"
-  NEB4: sample("Enzyme Buffer"), "Tube of NEB Buffer 4 to be used."
+  cutsmart: sample("Enzyme Buffer"), "Tube of Cutsmart to be used."
 end
 
 take
-  N4 = item NEB4
-  bsa_stock = item bsa
+  cutsmart = item cutsmart
   plasmid_stocks = item unique(plasmids)
 end
 
@@ -54,15 +52,11 @@ step
 end
 
 step
-  description: "Add 5µl of NEB Buffer 4 to every tube"
+  description: "Add 5µl of Cutsmart Buffer to every tube"
 end
 
 step
-  description: "Add 0.5µl of BSA to every tube"
-end
-
-step
-  description: "Add 41.5µl of MGH2O to every tube"
+  description: "Add 42µl of MGH2O to every tube"
 end
 
 
@@ -89,16 +83,21 @@ step
   description: "Place the capped tubes into the 37ºc incubator B15.320. Make sure to label them them with %{initials} and today's date."
 end
 
+digested_plasmids_ids=[]
 x=0
 while x < y
   produce
     q = 1 "Digested Plasmid" from plasmid_stocks[x]
     location: "B15.320"
   end
+  digested_plasmids_ids=append(digested_plasmids_ids,q[:id])
   x = x+1
 end
 
 release pmei_stock
 release plasmid_stocks
-release bsa_stock
-release N4
+release cutsmart_stock
+
+log
+  return: {digested_plasmids_ids: digested_plasmids_ids}
+end
