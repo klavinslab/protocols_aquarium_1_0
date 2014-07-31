@@ -53,15 +53,21 @@ foreach x in mated_strain
   
   release yeast_alpha
   
+  mated_strain_id=[]
   produce
     mating = 1 "Yeast Mating" of x
     note: "Place the test tube in 30 C incubator shaker at B13.125"
     location: "B13.125"
     release test_tube
   end
+  mated_strain_id=append(mated_strain_id,mating[:id])
   
   counter=counter+1
 end
 
 release yeast_media
+
+log
+  return: {mated_strain_id: mated_strain_id}
+end
 
