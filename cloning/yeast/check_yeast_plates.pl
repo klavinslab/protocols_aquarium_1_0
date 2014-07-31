@@ -4,14 +4,14 @@ end
 
 tab = []
 
-#foreach x in yeast_plate_ids
-#  tab = append(tab,x)
-#end
+foreach x in yeast_plate_ids
+  tab = append(tab,x)
+end
 
 step
   description: "Retrieve plate"
   check: "Go to 30C incubator and remove the plates with the following ID numbers"
-#  table: tab
+  table: tab
 end
 
 step
@@ -20,7 +20,7 @@ step
 end
 
 step
-  check: "Email the grad student whose initials are on the plates with a report. The format should be plate_id: # of colonies (0, a count for less than 20 or just more than 20). AJ/AK - arjunkhakhar at gmail.com, MG - miles, DY - david, NB- nick"
+  check: "Email the grad student whose initials are on the plates with a report. The format should be plate_id- # of colonies (0, a count for less than 20 or just more than 20). AJ/AK - arjunkhakhar at gmail.com, MG - miles, DY - david, NB- nick"
 end
 
 step
