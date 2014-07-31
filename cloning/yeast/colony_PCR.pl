@@ -145,7 +145,7 @@ while x < y
 end
 
 
-if length(fragment_names) > 1
+if length(strain_names) > 1
   step
     description: "Label tape and tube rack with PCR Result IDs"
     note: "Label the tape (exactly) with: %{first} - %{last}."
