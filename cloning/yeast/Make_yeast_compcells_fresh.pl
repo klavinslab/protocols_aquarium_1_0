@@ -76,10 +76,11 @@ foreach x in cultures_id
     step
       description: "Aliquoting cells"
       check: "Aliquot 50ul of the %{x} resuspension into an eppendorf tube"
-      produce
-        1 "Yeast comp cell aliquot" from x
-      end
     end
+     produce
+        1 "Yeast comp cell aliquot" from x
+        location: "Bench"
+      end
     counter2 = counter2 + 1
   end
   counter = counter + 1
