@@ -69,6 +69,6 @@ wire (digest,"digested_plasmids_ids") => (transformation,"digested_plasmids")
 
 
 transition [innoculate,digest] => [makecompcell] when !error(0) && completed(0) && minutes_elapsed(0,1) end
-transition [makecompcell] => [transformation] when !error(0) && completed(0) end
+transition [makecompcell] => [transformation] when !error(0) && completed(0) && minutes_elapsed(0,1) end
 
 
