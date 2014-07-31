@@ -68,7 +68,7 @@ step
 end
 
 counter=0
-y_id=[]
+yeast_compcell_aliquot_id=[]
 foreach x in cultures
   num = aliquots_number[counter]
   counter2=0
@@ -84,7 +84,7 @@ foreach x in cultures
       y=1 "Yeast Competent Aliquots" from x
       location: "M80"
     end
-    y_id = append(y_id,y[:id])
+    yeast_compcell_aliquot_id = append(yeast_compcell_aliquot_id,y[:id])
     counter2 = counter2 + 1
   end
   counter = counter + 1
@@ -97,7 +97,7 @@ step
 end
 
 log 
-  return: {y_id: y_id}
+  return: {yeast_compcell_aliquot_id: yeast_compcell_aliquot_id}
 end
 
 release FCC
