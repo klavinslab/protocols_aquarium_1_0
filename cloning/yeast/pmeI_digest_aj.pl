@@ -8,7 +8,7 @@ argument
 end
 
 take
-  cutsmart = item cutsmart
+  cutsmart_stock = item cutsmart
   plasmid_stocks = item unique(plasmids)
 end
 
