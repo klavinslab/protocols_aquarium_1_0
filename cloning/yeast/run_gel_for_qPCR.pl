@@ -108,6 +108,26 @@ if length(QPCR_ids) > 63
 end
 
 counter = 0
+well1 = 0
+well2 = 0
+well3 = 0
+well4 = 0
+well5 = 0
+well6 = 0
+well7 = 0
+well8 = 0
+well9 = 0
+lane1 = 0
+lane2 = 0
+lane3 = 0
+lane4 = 0
+lane5 = 0
+lane6 = 0
+lane7 = 0
+lane8 = 0
+lane9 = 0
+
+
 while counter<num
   well1 = counter+1
   well2 = counter+2
