@@ -35,7 +35,7 @@ place platematings
 end
 
 place checkplates
-  protocol: "cloning/yest/check_yeast_plates.pl"
+  protocol: "cloning/yeast/check_yeast_plates.pl"
   group: "technicians"
   start: now()
   window: hours(20)
