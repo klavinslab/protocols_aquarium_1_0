@@ -109,19 +109,38 @@ end
 
 counter = 0
 while counter<num
-
+  well1 = counter+1
+  well2 = counter+2
+  well3 = counter+3
+  well4 = counter+4
+  well5 = counter+5
+  well6 = counter+6
+  well7 = counter+7
+  well8 = counter+8
+  well9 = counter+9
+  
+  lane1 = counter+2
+  lane2 = counter+3
+  lane3 = counter+4
+  lane4 = counter+5
+  lane5 = counter+6
+  lane6 = counter+7
+  lane7 = counter+8
+  lane8 = counter+9
+  lane9 = counter+10
+  
   step
     description: "Using a 100 µL pipetter, pipet 10 µL of the first five PCR results with loading dye into the gel."
     note: "You should have a strip-well tube with the left-most well labeled with an 'A'. This well with the 'A' on it contains the first sample, the well to its right contains the second sample, etc. If you have less than 5 samples, follow this step until you run out of samples, then just check the remaining boxes and hit next."
-    check: "pipet 10 µL from well %{counter+1} into lane %{counter+2}. Lane %{counter+1} is skipped, because it has ladder in it."
-    check: "pipet 10 µL from well %{counter+2} into %{counter+3}"
-    check: "pipet 10 µL from well %{counter+3} into %{counter+4}"
-    check: "pipet 10 µL from well %{counter+4} into %{counter+5}"
-    check: "pipet 10 µL from well %{counter+5} into %{counter+6}"
-    check: "pipet 10 µL from well %{counter+6} into %{counter+7}"
-    check: "pipet 10 µL from well %{counter+7} into %{counter+8}"
-    check: "pipet 10 µL from well %{counter+8 into %{counter+9}"
-    check: "pipet 10 µL from well %{counter+9} into %{counter+10}."
+    check: "pipet 10 µL from well %{well1} into lane %{lane1}. Lane %{counter+1} is skipped, because it has ladder in it."
+    check: "pipet 10 µL from well %{well2} into lane %{lane2}"
+    check: "pipet 10 µL from well %{well3} into lane %{lane3}"
+    check: "pipet 10 µL from well %{well4} into lane %{lane4}}"
+    check: "pipet 10 µL from well %{well5} into lane %{lane5}"
+    check: "pipet 10 µL from well %{well6} into lane %{lane6}"
+    check: "pipet 10 µL from well %{well7} into lane %{lane7}"
+    check: "pipet 10 µL from well %{well8} into lane %{lane8}"
+    check: "pipet 10 µL from well %{well9} into lane %{lane9}"
    image: "gel_begin_loading"
   end
   counter = counter+9
