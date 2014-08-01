@@ -25,7 +25,7 @@ place platematings
   protocol: "cloning/yeast/plate_matings.pl"
   
   argument
-    mated_strain: mated_strain
+    mating_names: mated_strain
     plate_type: plate_type
   end
   
