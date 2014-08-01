@@ -114,27 +114,13 @@ if length(plates) > 0
   end
 end
 
-to_produce_from = []
-current_taken = []
-i = 0
-while i < length(plates)
-  j = 0
-  while j < length(total_taken)
-    current_item = total_taken[j]
-    if combined_input_ids[i] == current_item[:id]
-      to_produce_from = append(to_produce_from, current_item)
-    end
-    j = j + 1
-  end
-  i = i + 1
-end
 
 produced = []
 over_nights = []
 i = 0
-while i < n_tubes
+while i < length(plates)
   n = i + 1
-  w = to_produce_from[i]
+  w = plates[i]
   produce
     q = 1 "TB Overnight of Plasmid" from w
     note: "Label tube %{n} with this id."
@@ -151,7 +137,7 @@ end
 
 # FIXME: Not sure how to manage locations of these tubes (they're samples - locations will conflict) until shaker tracked like freezers.
 i = 0
-while i < n_tubes
+while i < length(plates)
   p = produced[i]
   modify
     produced[0]
