@@ -49,7 +49,7 @@ place fragmentpcr
 end
 
 place rungel
-  protocol: "cloning/metacol-workflow/020_run_gel.pl"
+  protocol: "cloning/metacol-workflow/run_gel.pl"
   argument
     ladder_one: ladder_one
   end
