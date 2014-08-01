@@ -147,7 +147,7 @@ while i < length(plates)
   i = i + 1
 end
 
-release(total_taken)
+release(pstocks)
 
 log
   return: {over_nights: over_nights}
