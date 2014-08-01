@@ -31,7 +31,7 @@ place pourgel
 end
 
 place fragmentpcr
-  protocol: "cloning/workflow/010_PCR.pl"
+  protocol: "cloning/PCR_fragmentprep.pl"
   argument
     initials: initials
     enzyme_id: enzyme_id
