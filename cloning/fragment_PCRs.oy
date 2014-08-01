@@ -37,6 +37,7 @@ place fragmentpcr
     enzyme_id: enzyme_id
     fragment_names: fragment_names
     forward_ids: forward_ids
+    reverse_ids: reverse_ids
     template_ids: template_ids
     tanneal: tanneal
     ext_time: ext_time
