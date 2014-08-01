@@ -17,7 +17,6 @@ end
 place gelpurify
   protocol: "cloning/metacol-workflow/gel_purify.pl"
   group: "technicians"
-  marked: true
   start: now()
   window: minutes(1)
 end
