@@ -15,8 +15,8 @@ else
 end
 
 step
-  description: "Only grab one gel as part of the following takes"
-  note: "You will be asked to take a set of gel slices. They should be in a single gel."
+  description: "Grab the gelboxes in the gelroom"
+  note: "You will be asked to take a set of gel slices. They should be in %{number_gels} gelboxes."
 end
 
 take
