@@ -208,12 +208,19 @@ step
   image: "gel_check_for_bubbles"
 end
 
+
+gel_lane_ids=[]
 x=0
 while x < num
   produce
     gel_lane = 1 "Gel Lane" from fragment[x]
   end
+  gel_lane_ids = append(gel_lane_ids,gel_lane[:id])
   x=x+1
+end
+
+log
+  return: {gel_lane_ids: gel_lane_ids}
 end
 
 release ladder
