@@ -14,7 +14,7 @@ step
 end
 
 step
-  check: "Email the grad student whose initials are on the plates with a report. The format should be plate_id- # of colonies (0, a count for less than 20 or just more than 20). AJ/AK - arjunkhakhar at gmail.com, MG - miles, DY - david, NB- nick"
+  check: "Email the grad student whose initials are on the plates with a report. The format should be plate_id- number of colonies (0, a count for less than 20 or just more than 20). AJ/AK - arjunkhakhar at gmail.com, MG - miles, DY - david, NB- nick"
 end
 
 step
