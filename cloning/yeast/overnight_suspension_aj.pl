@@ -20,7 +20,7 @@ end
 
 release yeast_media
 
-scounter=0
+counter=0
 overnight_id=[]
 release yeast_media
 
