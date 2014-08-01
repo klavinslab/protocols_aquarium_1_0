@@ -156,7 +156,7 @@ while counter<num
     check: "pipet 10 µL from well %{well1} into lane %{lane1}. Lane %{well1} is skipped, because it has ladder in it."
     check: "pipet 10 µL from well %{well2} into lane %{lane2}"
     check: "pipet 10 µL from well %{well3} into lane %{lane3}"
-    check: "pipet 10 µL from well %{well4} into lane %{lane4}}"
+    check: "pipet 10 µL from well %{well4} into lane %{lane4}"
     check: "pipet 10 µL from well %{well5} into lane %{lane5}"
     check: "pipet 10 µL from well %{well6} into lane %{lane6}"
     check: "pipet 10 µL from well %{well7} into lane %{lane7}"
