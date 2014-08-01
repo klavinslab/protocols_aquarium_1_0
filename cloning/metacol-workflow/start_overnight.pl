@@ -101,7 +101,7 @@ end
 if length(plates) > 0
   i = 0
   while i < length(plates)
-    label = length(glycerol_stocks) + i + 1
+    label = i + 1
     p = plates[i]
     step
       check:"Take a small pipette tip and grab a small amount of colony from plate %{p}. Be sure to use sterile technique."
