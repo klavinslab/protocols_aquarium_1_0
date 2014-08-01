@@ -1,0 +1,72 @@
+argument
+  
+  initials: string, "Your initials or another 2-3 letter identifier for tube labeling"
+  
+  enzyme_id: sample("Enzyme"), "The Phusion HF Master Mix stock"
+  fragment_names: string array, "Fragment Names"
+  forward_ids: sample("Primer") array, "Forward Primers"
+  reverse_ids: sample("Primer") array, "Reverse Primers"
+  template_ids: sample array, "Template (diluted plasmid or other template DNA)"
+  tanneal: number, "The anneal temperature in degrees C"
+  ext_time: number, "Extension time in minutes"
+  
+  percentage: number, "Enter the percentage gel to make (e.g. 1 = 1%)"
+  
+  ladder_one: sample
+
+end
+
+number_frags = length(fragment_names)
+
+place pourgel
+  protocol: "cloning/workflow/pour_gel_fragmentprep.pl"
+  argument
+    percentage: percentage
+    number_frags: number_frags
+  end
+  group: "technicians"
+  marked: true
+  start: now()
+  window: hours(20)
+end
+
+place fragmentpcr
+  protocol: "cloning/workflow/010_PCR.pl"
+  argument
+    initials: initials
+    enzyme_id: enzyme_id
+    fragment_names: fragment_names
+    forward_ids: forward_ids
+    template_ids: template_ids
+    tanneal: tanneal
+    ext_time: ext_time
+  end
+  group: "technicians"
+  marked: true
+  start: now()
+  window: hours(20)
+end
+
+place rungel
+  protocol: "cloning/workflow/020_run_gel.pl"
+  argument
+    ladder_one: ladder_one
+    fragment_volume: 50
+  end
+  group: "technicians"
+  start: now()
+  window: hours(20)
+end
+
+place imagegel
+  protocol: "cloning/workflow/image_gel_fragmentprep.pl"
+  group: "technicians"
+  start: now()
+  window: hours(20)
+end
+
+wire (fragmentpcr,"fragment_ids") => (rungel,"fragment_names")
+wire (rungel,"gel_lane_ids") => (imagegel,"gel")
+
+transition [fragmentpcr,pourgel] => [rungel] when !error(0) && completed(1) && minutes_elapsed(0,1) end
+transition [rungel] => [imagegel] when !error(0) && completed(0) end
