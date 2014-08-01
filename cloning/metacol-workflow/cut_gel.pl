@@ -63,5 +63,5 @@ while jj < length(gel)
 end
 
 log
-  return: {Gel_Slice_id: r}
+  return: {Gel_Slice_id: Gel_Slice_id}
 end
