@@ -122,7 +122,7 @@ while i < length(plates)
   n = i + 1
   w = pstocks[i]
   produce
-    q = 1 "TB Overnight of Plasmid" of w
+    q = 1 "TB Overnight of Plasmid" from w
     note: "Label tube %{n} with this id."
     location: "Benchtop"
   end
