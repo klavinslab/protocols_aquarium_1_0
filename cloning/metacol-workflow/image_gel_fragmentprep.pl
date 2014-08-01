@@ -28,6 +28,7 @@ step
   note: "Spray with ethanol and wipe down with a kimwipe"
 end
 
+x=0
 gelnames=[]
 while x < numgel
 
@@ -73,6 +74,7 @@ step
 end
 
   gelnames = append(gelnames,gel_name)
+  x=x+1
 end
 
 step
