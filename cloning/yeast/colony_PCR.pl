@@ -1,7 +1,6 @@
 argument
   initials: string, "Your initials or another 2-3 letter identifier for tube labeling"
   enzyme_id: sample("Enzyme"), "The Phusion HF Master Mix stock"
-  strain_names: string array, "Name of strain that lysate is from"
   forward_ids: sample("Primer") array, "Forward Primers"
   reverse_ids: sample("Primer") array, "Reverse Primers"
   template_ids: sample array, "Template lysates"
@@ -15,7 +14,7 @@ end
 take
     forward_primer_stock = item unique(forward_ids)
     reverse_primer_stock = item unique(reverse_ids)
-    plasmid_stock = item unique(template_ids)
+    lysate = item unique(template_ids)
 end
 
 step
@@ -110,7 +109,7 @@ step
 end
 
 release phusion_stock
-release concat(concat(forward_primer_stock,reverse_primer_stock),plasmid_stock)
+
 
 #TODO: refactor with silent produces
 step
@@ -124,7 +123,7 @@ last = 0
 fids = []
 while x < y
   produce
-    q = 1 "QPCR result" of strain_names[x]
+    q = 1 "QPCR result" from lysate
     location: "R4.300"
     data
       from: template_ids[x]
@@ -144,6 +143,7 @@ while x < y
   x = x + 1
 end
 
+release concat(concat(forward_primer_stock,reverse_primer_stock),lysate)
 
 if length(strain_names) > 1
   step
@@ -161,5 +161,5 @@ end
 #NOTE: removing some return values may break metacols.  
 #      It is fine to add more though.
 log
-  return: {QPCR_ids: fids, params: {QPCR_ids: fids}}
+  return: {QPCR_ids: fids}
 end
