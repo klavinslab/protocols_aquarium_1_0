@@ -1,7 +1,6 @@
 information "Pour a 50 mL agarose gel."
 
 argument
-  percentage: number, "Enter the percentage gel to make (e.g. 1 = 1%)"
   number_gels: number
 end
 
@@ -31,7 +30,7 @@ while x<number_gels
 
 
   gel_volume = 50.0
-  agarose_mass = (percentage / 100.0) * gel_volume
+  agarose_mass = (1 / 100.0) * gel_volume
   error = agarose_mass * 0.05
   step
     description: "Add %{agarose_mass} g agarose to flask"
