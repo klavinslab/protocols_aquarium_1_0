@@ -129,25 +129,25 @@ lane9 = 0
 
 
 while counter<num
-  well1 = counter+1
-  well2 = counter+2
-  well3 = counter+3
-  well4 = counter+4
-  well5 = counter+5
-  well6 = counter+6
-  well7 = counter+7
-  well8 = counter+8
-  well9 = counter+9
+  well1 = counter + 1
+  well2 = counter + 2
+  well3 = counter + 3
+  well4 = counter + 4
+  well5 = counter + 5
+  well6 = counter + 6
+  well7 = counter + 7
+  well8 = counter + 8
+  well9 = counter + 9
   
-  lane1 = counter+2
-  lane2 = counter+3
-  lane3 = counter+4
-  lane4 = counter+5
-  lane5 = counter+6
-  lane6 = counter+7
-  lane7 = counter+8
-  lane8 = counter+9
-  lane9 = counter+10
+  lane1 = counter + 2
+  lane2 = counter + 3
+  lane3 = counter + 4
+  lane4 = counter + 5
+  lane5 = counter + 6
+  lane6 = counter + 7
+  lane7 = counter + 8
+  lane8 = counter + 9
+  lane9 = counter + 10
   
   step
     description: "Using a 100 µL pipetter, pipet 10 µL of the first five PCR results with loading dye into the gel."
