@@ -19,7 +19,7 @@ end
 number_frags = length(fragment_names)
 
 place pourgel
-  protocol: "cloning/pour_gel_fragmentprep.pl"
+  protocol: "metacol-workflow/pour_gel_fragmentprep.pl"
   argument
     percentage: percentage
     number_frags: number_frags
@@ -31,7 +31,7 @@ place pourgel
 end
 
 place fragmentpcr
-  protocol: "cloning/PCR_fragmentprep.pl"
+  protocol: "cloning/metacol-workflow/PCR_fragmentprep.pl"
   argument
     initials: initials
     enzyme_id: enzyme_id
@@ -49,7 +49,7 @@ place fragmentpcr
 end
 
 place rungel
-  protocol: "cloning/workflow/020_run_gel.pl"
+  protocol: "cloning/metacol-workflow/020_run_gel.pl"
   argument
     ladder_one: ladder_one
     fragment_volume: 50
@@ -60,7 +60,7 @@ place rungel
 end
 
 place imagegel
-  protocol: "cloning/image_gel_fragmentprep.pl"
+  protocol: "metacol-workflow/image_gel_fragmentprep.pl"
   group: "technicians"
   start: now()
   window: hours(20)
