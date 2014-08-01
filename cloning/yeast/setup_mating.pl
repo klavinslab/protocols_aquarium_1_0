@@ -30,8 +30,8 @@ foreach x in mated_strain
   end
   
   step
-    description: "Innoculate with Mata strain"
-    check: "If refers to a plate pick a medium sized colony from the plate, if it is a glycerol stock take a stab of the glycerol stock with a pipette tip."
+    description: "Innoculate with %{mata_strain_id[counter]}"
+    note: "If refers to a plate pick a medium sized colony from the plate, if it is a glycerol stock take a stab of the glycerol stock with a pipette tip."
     check: "For colonies: Take a sterile pipette tip (10 µL tips), pick up your desired colony by gently scraping the tip to the colony. For Glycerol Stocks: use a 100ul tip and vigerously scrape the glycerol stock to get a chunk of stock."
     check: "Tilt 14 mL tube such that you can reach the media with your tip."
     check: "Open the tube cap, scrape colony into media, using a swirling motion."
@@ -45,8 +45,8 @@ foreach x in mated_strain
   end
   
   step
-    description: "Innoculate with Matalpha strain"
-    check: "If refers to a plate pick a medium sized colony from the plate, if it is a glycerol stock take a stab of the glycerol stock with a pipette tip."
+    description: "Innoculate with %{matalpha_strain_id[counter]}"
+    note: "If refers to a plate pick a medium sized colony from the plate, if it is a glycerol stock take a stab of the glycerol stock with a pipette tip."
     check: "For colonies: Take a sterile pipette tip (10 µL tips), pick up your desired colony by gently scraping the tip to the colony. For Glycerol Stocks: use a 100ul tip and vigerously scrape the glycerol stock to get a chunk of stock."
     check: "Tilt 14 mL THE SAME TUBE AS PREVIOUS STEP such that you can reach the media with your tip."
     check: "Open the tube cap, scrape colony into media, using a swirling motion."
