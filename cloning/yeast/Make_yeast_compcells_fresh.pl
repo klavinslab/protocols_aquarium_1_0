@@ -85,6 +85,7 @@ foreach x in cultures
     produce
       y=1 "Yeast Competent Aliquots" from x
       location: "Bench"
+      release (cultures)
     end
     yeast_compcell_aliquot_id = append(yeast_compcell_aliquot_id,y[:id])
     
@@ -96,7 +97,7 @@ end
 
 release liac
 release water
-release (cultures)
+
 log 
   return: {yeast_compcell_aliquot_id: yeast_compcell_aliquot_id}
 end
