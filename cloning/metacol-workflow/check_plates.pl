@@ -4,7 +4,7 @@ end
 
 step
   description: "Retrieve plate"
-  check: "Go to 30C incubator and remove the plates with the following ID numbers: %{yeast_plate_ids}"
+  check: "Go to 30C incubator and remove the plates with the following ID numbers: %{ecoli_transformation_plate_ids}"
 end
 
 step
