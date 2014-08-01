@@ -152,7 +152,7 @@ while counter<num
   step
     description: "Using a 100 µL pipetter, pipet 10 µL of the first five PCR results with loading dye into the gel."
     note: "You should have a strip-well tube with the left-most well labeled with an 'A'. This well with the 'A' on it contains the first sample, the well to its right contains the second sample, etc. If you have less than 5 samples, follow this step until you run out of samples, then just check the remaining boxes and hit next."
-    check: "pipet 10 µL from well %{well1} into lane %{lane1}. Lane %{counter+1} is skipped, because it has ladder in it."
+    check: "pipet 10 µL from well %{well1} into lane %{lane1}. Lane %{well1} is skipped, because it has ladder in it."
     check: "pipet 10 µL from well %{well2} into lane %{lane2}"
     check: "pipet 10 µL from well %{well3} into lane %{lane3}"
     check: "pipet 10 µL from well %{well4} into lane %{lane4}}"
