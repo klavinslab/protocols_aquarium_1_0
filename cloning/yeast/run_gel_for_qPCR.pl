@@ -1,7 +1,7 @@
 information "Load and run an agarose gel."
 
 argument
-  QPCR_ids: sample("Yeast Strain") array, "QPCRs to run on a gel"
+  QPCR_ids: sample array, "QPCRs to run on a gel"
   initials: string, "Initials of person running gel"
   ladder_one: sample
 end
