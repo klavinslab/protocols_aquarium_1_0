@@ -44,6 +44,6 @@ end
 wire (setup,"mated_strain_id") => (platematings,"matings_ids")
 wire (setup,"matings_ids") => (checkplates,"yeast_plate_ids")
 
-transition [setup] => [platematings] when !error(0) && completed(0) && hours_elapsed(0,5) end
-transition [platematings] => [checkplates] when !error(0) && completed(0) && hours_elapsed(0,24) end
+transition [setup] => [platematings] when !error(0) && completed(0) && minutes_elapsed(0,1) end
+transition [platematings] => [checkplates] when !error(0) && completed(0) && minutes_elapsed(0,1) end
 
