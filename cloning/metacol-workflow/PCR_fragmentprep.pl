@@ -161,5 +161,5 @@ end
 #NOTE: removing some return values may break metacols.  
 #      It is fine to add more though.
 log
-  return: {fragment_ids: fids,params: {fragment_ids: fids}}
+  return: {fragment_ids: fids}
 end
