@@ -124,7 +124,7 @@ last = 0
 fids = []
 while x < y
   produce
-    q = 1 "PCR Result" of fragment_names[x]
+    q = 1 "PCR Result" from fragment_names[x]
     location: "R4.300"
     data
       from: template_ids[x]
