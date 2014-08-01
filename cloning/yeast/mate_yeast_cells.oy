@@ -3,15 +3,18 @@ argument
   matalpha_strain_id: sample array, "The Mat alpha strain for mating"
   mated_strain: string array, "The exact name of yeast strain resulting from mating"
   plate_type: number array, "Enter a number that corresponds to a given plate type for each transformation. 1= -Ura -Trp Plate, 2= -Ura -His Plate, 3= -Ura -Leu Plate, 4= -Trp -His Plate, 5= -Trp -Leu Plate, 6= -His -Leu Plate"
+
 end
 
 place setup
   protocol: "cloning/yeast/setup_mating.pl"
+  
   argument
     mata_strain_id: mata_strain_id
     matalpha_strain_id: matalpha_strain_id
     mated_strain: mated_strain
   end
+  
   group: "technicians"
   marked: true
   start: now()
@@ -20,17 +23,19 @@ end
 
 place platematings
   protocol: "cloning/yeast/plate_matings.pl"
+  
   argument
-    mated_strain: mated_strain:
-    plate_type: plate_type:
+    mated_strain: mated_strain
+    plate_type: plate_type
   end
+  
   group: "technicians"
   start: now()
   window: hours(20)
 end
 
 place checkplates
-  protocol: "check_yeast_plates"
+  protocol: "cloning/yest/check_yeast_plates.pl"
   group: "technicians"
   start: now()
   window: hours(20)
