@@ -1,5 +1,5 @@
 argument
-  plasmid_ids: sample array, "The plasmids to be used"
+  plasmid_ids: sample array, "Gibson reactions being used"
   e_coli_strain_type: object, "The electrocompetent E. coli aliquot type."
   e_coli_strain_id: number, "The ID of the comp cell. Enter 0 if you don't need comp cells from a specific batch."
   plate_type: object, "The (probably LB) plate type that will be used in the next protocol."
