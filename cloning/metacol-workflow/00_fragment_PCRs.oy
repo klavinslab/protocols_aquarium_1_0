@@ -52,7 +52,6 @@ place rungel
   protocol: "cloning/metacol-workflow/020_run_gel.pl"
   argument
     ladder_one: ladder_one
-    fragment_volume: 50
   end
   group: "technicians"
   start: now()
