@@ -77,5 +77,5 @@ wire (rungel,"QPCR_gel_ids") => (imagegel,"QPCR_gel_ids")
 
 
 transition [makelysates,pourgel] => [colonypcr] when !error(0) && completed(0) && completed(1) end
-transition [colonypcr] => [rungel] when !error(0) && completed(0) && minutes_elapsed(0,1) end
-transition [rungel] => [imagegel] when !error(0) && completed(0) && minutes_elapsed(0,1) end
+transition [colonypcr] => [rungel] when !error(0) && completed(0) && minutes_elapsed(0) end
+transition [rungel] => [imagegel] when !error(0) && completed(0) && minutes_elapsed(0) end
