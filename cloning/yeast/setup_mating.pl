@@ -22,6 +22,7 @@ end
 
 counter=0
 mated_strain_id=[]
+release yeast_media
 
 foreach x in mated_strain
 
@@ -67,8 +68,6 @@ foreach x in mated_strain
   
   counter=counter+1
 end
-
-release yeast_media
 
 log
   return: {mated_strain_id: mated_strain_id}
