@@ -19,7 +19,7 @@ end
 number_frags = length(fragment_names)
 
 place pourgel
-  protocol: "cloning/workflow/pour_gel_fragmentprep.pl"
+  protocol: "cloning/pour_gel_fragmentprep.pl"
   argument
     percentage: percentage
     number_frags: number_frags
@@ -59,7 +59,7 @@ place rungel
 end
 
 place imagegel
-  protocol: "cloning/workflow/image_gel_fragmentprep.pl"
+  protocol: "cloning/image_gel_fragmentprep.pl"
   group: "technicians"
   start: now()
   window: hours(20)
