@@ -1,8 +1,7 @@
 argument
   GelSlice_id: sample("Fragment") array, "Fragment"
-  isop: string, "Would you like to wash your fragments with Isopropanol? Enter yes or no."
 end
-
+  isop = "yes"
 take
   slices = item unique(GelSlice_id)
 end
