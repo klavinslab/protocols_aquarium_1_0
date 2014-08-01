@@ -14,6 +14,7 @@ argument
 end
 
 n=length(Transformation_plate_id)*ColonyNumber
+numgel=0
 
 if n < 19
   numgel=1
