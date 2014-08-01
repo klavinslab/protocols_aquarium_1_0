@@ -15,11 +15,11 @@ end
 
 n=length(Transformation_plate_id)*ColonyNumber
 
-if n<19
+if n < 19
   numgel=1
-elseif n<37
+elsif n < 37
   numgel=2
-elseif n<55
+elsif n < 55
   numgel=3
 else
   numgel=4
