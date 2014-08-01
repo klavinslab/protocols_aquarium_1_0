@@ -17,7 +17,6 @@ end
 place pourgel
   protocol: "cloning/yeast/pour_gel_qpcr.pl"
   argument
-    number_gels: numgel
     Transformation_plate_id: Transformation_plate_id
     ColonyNumber: ColonyNumber
   end
