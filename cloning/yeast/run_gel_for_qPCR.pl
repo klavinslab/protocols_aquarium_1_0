@@ -36,7 +36,7 @@ end
 num = length(QPCRs)
 dye_volume = 10 / 5.0
 step
-  description: "Add loading dye to each of the the %{num} PCR fragments"
+  description: "Add loading dye to each of the %{num} QPCRs"
   note: "Add %{dye_volume} µL of loading dye to the PCR results."
   image: "gel_add_loading_dye"
 end
