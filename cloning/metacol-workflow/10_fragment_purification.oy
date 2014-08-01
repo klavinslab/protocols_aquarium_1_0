@@ -3,7 +3,7 @@ argument
 end
 
 place cutgel
-  protocol: "metacol-workflow/cut_gel.pl"
+  protocol: "cloning/metacol-workflow/cut_gel.pl"
   argument
     gel: gel
   end
@@ -15,7 +15,7 @@ place cutgel
 end
 
 place gelpurify
-  protocol: "metacol-workflow/gel_purify.pl"
+  protocol: "cloning/metacol-workflow/gel_purify.pl"
   group: "technicians"
   marked: true
   start: now()
