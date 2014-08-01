@@ -5,25 +5,25 @@ argument
   number_gels: number
 end
 
+
+step
+  description: "Transfer this protocol to the gel room"
+  note: "Log out, go to the gel room (A5, A6, A7), and log in there to run this protocol - it will be under 'Protocols >   Pending Jobs'."
+end
+
+
+step
+  description: "Work in the gel weigh area"
+  note: "Work in the gel weigh area (A5.300-A5.305) until otherwise indicated."
+  warning: "Wear gloves at all times!"
+end
+
+step
+  description: "Put on the clear protective glasses"
+end
+
 x=0
 while x<number_gels
-
-  step
-    description: "Transfer this protocol to the gel room"
-    note: "Log out, go to the gel room (A5, A6, A7), and log in there to run this protocol - it will be under 'Protocols >   Pending Jobs'."
-  end
-
-
-  step
-    description: "Work in the gel weigh area"
-    note: "Work in the gel weigh area (A5.300-A5.305) until otherwise indicated."
-    warning: "Wear gloves at all times!"
-  end
-
-  step
-    description: "Put on the clear protective glasses"
-  end
-
 
   take
     agarose = 1 "Ultrapure* Agarose"
