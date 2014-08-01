@@ -42,7 +42,7 @@ place checkplates
 end
 
 wire (setup,"mated_strain_id") => (platematings,"matings_ids")
-wire (setup,"matings_ids") => (checkplates,"yeast_plate_ids")
+wire (platematings,"matings_ids") => (checkplates,"yeast_plate_ids")
 
 transition [setup] => [platematings] when !error(0) && completed(0) && minutes_elapsed(0,1) end
 transition [platematings] => [checkplates] when !error(0) && completed(0) && minutes_elapsed(0,1) end
