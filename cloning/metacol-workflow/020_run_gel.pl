@@ -1,7 +1,7 @@
 information "Load and run an agarose gel."
 
 argument
-  fragment_names: sample array, "Fragment Names"
+  fragment_names: string array, "Fragment Ids"
   ladder_one: sample
 end
 
