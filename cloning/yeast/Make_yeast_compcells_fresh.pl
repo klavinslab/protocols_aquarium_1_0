@@ -96,7 +96,7 @@ end
 
 release liac
 release water
-
+release (cultures)
 log 
   return: {yeast_compcell_aliquot_id: yeast_compcell_aliquot_id}
 end
