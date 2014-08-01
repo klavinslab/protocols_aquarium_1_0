@@ -79,7 +79,7 @@ while kk < n
     release gibson
   end
 
-  gibson_reaction_result_ids = apend(gibson_reaction_result_ids,plasmid[:id])
+  gibson_reaction_result_ids = append(gibson_reaction_result_ids,plasmid[:id])
 
   kk = kk + 1
 end
