@@ -123,7 +123,7 @@ last = 0
 fids = []
 while x < y
   produce
-    q = 1 "QPCR result" from lysate
+    q = 1 "QPCR result" from lysate[x]
     location: "R4.300"
     data
       from: template_ids[x]
