@@ -5,8 +5,8 @@ argument
   number_gels: number
 end
 
-
-foreach x in number_gels
+x=0
+while x<number_gels
 
   step
     description: "Transfer this protocol to the gel room"
@@ -129,7 +129,7 @@ foreach x in number_gels
     note: "Write the id on a piece of lab tape. Add your initials as well."
     release gel_box
   end
-
+  x=x+1
 end
 
 step
