@@ -45,14 +45,14 @@ release loading_dye
 
 step
   description: "Load the ladder"
-  note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 1 (top-left)."
+  note: "Using a 10 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 1 (top-left)."
   image: "gel_begin_loading"
 end
 
 if num > 9
   step
     description: "Load the ladder"
-    note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into  well 11 (bottom-left)."
+    note: "Using a 10 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into  well 11 (bottom-left)."
     image: "gel_begin_loading"
   end
 end
@@ -60,7 +60,7 @@ end
 if length(QPCR_ids) > 18
   step
     description: "Load the ladder in gel box 2"
-    note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 21 (Gel 2: top-second to left)."
+    note: "Using a 10 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 21 (Gel 2: top-second to left)."
     warning: "Note that the ladder should be loaded in the second column to denote that this is gel 2"
     image: "gel_begin_loading"
   end
@@ -69,7 +69,7 @@ end
 if length(QPCR_ids) > 27
   step
     description: "Load the ladder in gel box 2"
-    note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 31 (Gel 2: bottom-second to left)."
+    note: "Using a 10 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 31 (Gel 2: bottom-second to left)."
     warning: "Note that the ladder should be loaded in the second column to denote that this is gel 2"
     image: "gel_begin_loading"
   end
@@ -77,7 +77,7 @@ end
 if length(QPCR_ids) > 36
   step
     description: "Load the ladder in gel box 3"
-    note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 41 (Gel 3: top-third to left)."
+    note: "Using a 10 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 41 (Gel 3: top-third to left)."
     warning: "Note that the ladder should be loaded in the third column to denote that this is gel 3"
     image: "gel_begin_loading"
   end
@@ -85,7 +85,7 @@ end
 if length(QPCR_ids) > 45
   step
     description: "Load the ladder in gel box 3"
-    note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 51 (Gel 3: bottom-third to left)."
+    note: "Using a 10 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 51 (Gel 3: bottom-third to left)."
     warning: "Note that the ladder should be loaded in the third column to denote that this is gel 3"
     image: "gel_begin_loading"
   end
@@ -93,7 +93,7 @@ end
 if length(QPCR_ids) > 54
   step
     description: "Load the ladder in gel box 4"
-    note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 61 (Gel 3: top-fourth to left)."
+    note: "Using a 10 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 61 (Gel 3: top-fourth to left)."
     warning: "Note that the ladder should be loaded in the fourth column to denote that this is gel 4"
     image: "gel_begin_loading"
   end
@@ -101,7 +101,7 @@ end
 if length(QPCR_ids) > 63
   step
     description: "Load the ladder in gel box 4"
-    note: "Using a 100 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 71 (Gel 3: bottom-fourth to left)."
+    note: "Using a 10 µL pipetter, pipet 10 µL of ladder (containing loading dye) with id %{ladder_one} into well 71 (Gel 3: bottom-fourth to left)."
     warning: "Note that the ladder should be loaded in the fourth column to denote that this is gel 4"
     image: "gel_begin_loading"
   end
@@ -150,7 +150,7 @@ while counter<num
   lane9 = counter + 10
   
   step
-    description: "Using a 100 µL pipetter, pipet 10 µL of the first five PCR results with loading dye into the gel."
+    description: "Using a 10 µL pipetter, pipet 10 µL of the first five PCR results with loading dye into the gel."
     note: "You should have a strip-well tube with the left-most well labeled with an 'A'. This well with the 'A' on it contains the first sample, the well to its right contains the second sample, etc. If you have less than 5 samples, follow this step until you run out of samples, then just check the remaining boxes and hit next."
     check: "pipet 10 µL from well %{well1} into lane %{lane1}. Lane %{well1} is skipped, because it has ladder in it."
     check: "pipet 10 µL from well %{well2} into lane %{lane2}"
