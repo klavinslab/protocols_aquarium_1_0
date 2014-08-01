@@ -13,12 +13,13 @@ argument
   initials: string, "Your initials or another 2-3 letter identifier for tube labeling"
 end
 
+n=length(Transformation_plate_id)*ColonyNumber
 
-if length(Transformation_plate_id)*ColonyNumber<19
+if n<19
   numgel=1
-elseif length(Transformation_plate_id)*ColonyNumber<37
+elseif n<37
   numgel=2
-elseif length(Transformation_plate_id)*ColonyNumber<55
+elseif n<55
   numgel=3
 else
   numgel=4
