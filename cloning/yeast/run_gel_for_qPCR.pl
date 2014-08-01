@@ -2,6 +2,7 @@ information "Load and run an agarose gel."
 
 argument
   QPCR_ids: sample("Yeast Strain") array, "QPCRs to run on a gel"
+  initials: string, "Initials of person running gel"
   ladder_one: sample
 end
 
@@ -178,6 +179,9 @@ while counter2 < num
   produce
     QPCR_gel = 1 "QPCR gel" from QPCRs[counter2]
     release QPCRs[counter2]
+  end
+  step
+    description: "Also write the initials %{initials} on the label for the QPCR gel"
   end
   counter2=counter2+18
 end
