@@ -1,5 +1,5 @@
 argument
-  strains_id: sample array, "Enter strains you want to transform into."
+  strains_id: sample array, "Enter overnights of strains you want to transform into to make comp cells from."
   aliquots_number: number array, "Enter the number of transformations into each strain"
   
   plasmids: sample("Plasmid") array, "Enter the plasmids you want transformed into the strains above. Each transformation should have an associated plasmid."
