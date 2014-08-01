@@ -24,7 +24,6 @@ ii = 0
 while ii < length(gel)
   tube_name = ii + 1
   lane_name = ii + 2
-  lane_size = sizes[ii]
   step
     description: "Cut out a gel slice from lane %{lane_name}"
     check: "Cut out the band that is circled on the gel image provided to you and leave it on the transilluminator."
