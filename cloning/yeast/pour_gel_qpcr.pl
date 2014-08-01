@@ -1,9 +1,22 @@
 information "Pour a 50 mL agarose gel."
 
 argument
-  number_gels: number
+  Transformation_plate_id: sample("Yeast Strain") array, "The yeast transformation plates to screen"
+  ColonyNumber: number, "Number of desired colonies from each plate to make lysate from"
 end
 
+n = length(Transformation_plate_id)*ColonyNumber
+number_gels = 0
+
+if n < 19
+  number_gels = 1
+elsif n < 37
+  number_gels = 2
+elsif n < 55
+  number_gels = 3
+else
+  number_gels = 4
+end
 
 step
   description: "Transfer this protocol to the gel room"
