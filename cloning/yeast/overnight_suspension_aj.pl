@@ -18,8 +18,6 @@ step
   check: "Pipette 3 mL of YPAD media into the labeled 14 mL tube"
 end
 
-release yeast_media
-
 counter=0
 overnight_id=[]
 release yeast_media
