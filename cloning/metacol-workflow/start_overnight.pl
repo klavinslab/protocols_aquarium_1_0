@@ -120,7 +120,7 @@ over_nights = []
 i = 0
 while i < length(plates)
   n = i + 1
-  w = plates[i]
+  w = pstocks[i]
   produce
     q = 1 "TB Overnight of Plasmid" of w
     note: "Label tube %{n} with this id."
