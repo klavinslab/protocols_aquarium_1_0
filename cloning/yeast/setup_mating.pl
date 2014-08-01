@@ -33,11 +33,8 @@ foreach x in mated_strain
   a_id=mata_strain_id[counter]
   step
     description: "Innoculate with %{a_id}"
-    note: "If refers to a plate pick a medium sized colony from the plate, if it is a glycerol stock take a stab of the glycerol stock with a pipette tip."
-    check: "For colonies: Take a sterile pipette tip (10 µL tips), pick up your desired colony by gently scraping the tip to the colony. For Glycerol Stocks: use a 100ul tip and vigerously scrape the glycerol stock to get a chunk of stock."
-    check: "Tilt 14 mL tube such that you can reach the media with your tip."
-    check: "Open the tube cap, scrape colony into media, using a swirling motion."
-    check: "Place the tube back on the rack with cap closed."
+    bullet: "For plates: Take a sterile pipette tip (10 µL tips), pick up a medium sized colony by gently scraping the tip to the colony. Tilt 14 mL tube such that you can reach the media with your tip. Open the tube cap, scrape colony into media, using a swirling motion. Place the tube back on the rack with cap closed."
+    bullet: "For Glycerol Stocks: use a 100ul tip and vigerously scrape the glycerol stock to get a chunk of stock. Tilt 14 mL tube such that you can reach the media with your tip. Open the tube cap, scrape colony into media, using a swirling motion. Place the tube back on the rack with cap closed."
   end
   
   release yeast_a
@@ -49,11 +46,8 @@ foreach x in mated_strain
   alpha_id=matalpha_strain_id[counter]
   step
     description: "Innoculate with %{alpha_id}"
-    note: "If refers to a plate pick a medium sized colony from the plate, if it is a glycerol stock take a stab of the glycerol stock with a pipette tip."
-    check: "For colonies: Take a sterile pipette tip (10 µL tips), pick up your desired colony by gently scraping the tip to the colony. For Glycerol Stocks: use a 100ul tip and vigerously scrape the glycerol stock to get a chunk of stock."
-    check: "Tilt 14 mL THE SAME TUBE AS PREVIOUS STEP such that you can reach the media with your tip."
-    check: "Open the tube cap, scrape colony into media, using a swirling motion."
-    check: "Place the tube back on the rack with cap closed."
+    bullet: "For plates: Take a sterile pipette tip (10 µL tips), pick up a medium sized colony by gently scraping the tip to the colony. Tilt 14 mL tube such that you can reach the media with your tip. Open the tube cap, scrape colony into media, using a swirling motion. Place the tube back on the rack with cap closed."
+    bullet: "For Glycerol Stocks: use a 100ul tip and vigerously scrape the glycerol stock to get a chunk of stock. Tilt 14 mL tube such that you can reach the media with your tip. Open the tube cap, scrape colony into media, using a swirling motion. Place the tube back on the rack with cap closed."
   end
   
   release yeast_alpha
