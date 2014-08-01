@@ -174,6 +174,7 @@ step
   image: "gel_check_for_bubbles"
 end
 
+QPCR_gel_ids=[]
 counter2=0
 while counter2 < num
   produce
@@ -183,9 +184,13 @@ while counter2 < num
   step
     description: "Also write the initials %{initials} on the label for the QPCR gel"
   end
+  QPCR_gel_ids = append(QPCR_gel_ids,QPCR_gel[:id])
   counter2=counter2+18
 end
 
 release ladder
 release gel
+
+log
+  return: {QPCR_gel_ids: QPCR_gel_ids}
 end
