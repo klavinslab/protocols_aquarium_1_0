@@ -6,6 +6,7 @@ argument
   reverse_ids: sample("Primer") array, "Reverse Primers"
   template_ids: sample array, "Template (diluted plasmid or other template DNA)"
   tanneal: number, "The anneal temperature in degrees C"
+  ext_time: number, "Extension time in minutes"
 end
 
 take
@@ -103,6 +104,7 @@ step
   check: "Place the tube into an available thermal cycler and close the lid"
   check: "Click Home then click Saved Protocol, choose DAVID, choose CLONEPCR."
   check: "Set the anneal temperature to %{tanneal}, this is the 3rd temperature (default 70). Don't change the extension temperature of 72."
+  check: "Set the extension time to %{ext_time} minutes, this is the time of the 3rd step in the loop which is at 72C."
   check: "hit 'run' and select 50ul"
   image: "thermal_cycler_home"
 end
