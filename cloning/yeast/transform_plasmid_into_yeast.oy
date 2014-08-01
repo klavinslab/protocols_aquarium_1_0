@@ -64,7 +64,7 @@ place transformation
 end
 
 place checkplates
-  protocol: "check_yeast_plates"
+  protocol: "cloning/yeast/check_yeast_plates.pl"
   group: "technicians"
   start: now()
   window: hours(20)
