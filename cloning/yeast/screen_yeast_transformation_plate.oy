@@ -13,17 +13,17 @@ argument
   initials: string, "Your initials or another 2-3 letter identifier for tube labeling"
 end
 
-n=length(Transformation_plate_id)*ColonyNumber
-numgel=0
+n = length(Transformation_plate_id)*ColonyNumber
+numgel = 0
 
 if n < 19
-  numgel=1
+  numgel = 1
 elsif n < 37
-  numgel=2
+  numgel = 2
 elsif n < 55
-  numgel=3
+  numgel = 3
 else
-  numgel=4
+  numgel = 4
 end
 
 place pourgel
