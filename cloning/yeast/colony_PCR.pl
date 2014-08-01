@@ -120,7 +120,7 @@ end
 x=0
 first = 0
 last = 0
-fids = []
+QPCR_ids = []
 while x < y
   produce
     q = 1 "QPCR result" from lysate[x]
@@ -130,7 +130,7 @@ while x < y
     end
   end
 
-  fids = append(fids,q[:id])
+  QPCR_ids = append(QPCR_ids,q[:id])
 
 #TODO: fix this.  There is NO guarentee that items will be produced in sequence!
   if x == 0
@@ -145,7 +145,7 @@ end
 
 release concat(concat(forward_primer_stock,reverse_primer_stock),lysate)
 
-if length(strain_names) > 1
+if length(lysate) > 1
   step
     description: "Label tape and tube rack with PCR Result IDs"
     note: "Label the tape (exactly) with: %{first} - %{last}."
@@ -161,5 +161,5 @@ end
 #NOTE: removing some return values may break metacols.  
 #      It is fine to add more though.
 log
-  return: {QPCR_ids: fids}
+  return: {QPCR_ids: QPCR_ids}
 end
