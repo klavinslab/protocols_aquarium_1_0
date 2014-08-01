@@ -1,5 +1,5 @@
 argument
-  yeast_plate_ids: sample array, "Enter the plates which you want to be checked."
+  ecoli_transformation_plate_ids: sample array, "Enter the plates which you want to be checked."
 end
 
 step
