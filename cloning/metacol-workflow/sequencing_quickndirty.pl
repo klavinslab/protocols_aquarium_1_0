@@ -15,7 +15,7 @@ number_seq_rxs = length(primers_entered)*number_colonies
 
 
 take
-  plasmids_ids=item unique(plasmids)
+  plasmids_ids=item plasmids
 end
 
 take
