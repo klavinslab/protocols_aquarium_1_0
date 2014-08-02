@@ -136,7 +136,7 @@ tbl2 = [["Tube Number", "Plasmid ID", "Plasmid Volume in µl"]]
 while i2<number_unique_plasmids
   i3=0
   while i3<number_colonies
-    tbl2 = append(tb12,[ind,plasmids[i2], plasmid_vol[ind]])
+    tbl2 = append(tbl2,[ind,plasmids[i2], plasmid_vol[ind]])
     i3=i3+1
     ind = ind+1
   end
