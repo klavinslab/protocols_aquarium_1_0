@@ -70,22 +70,20 @@ number_unique_plasmids = length(plasmids)/number_colonies
 H20_req=[0]
 DNA_req=[0]
 plasmid_vol=[0]
-tubes=[0]
 
 count1=0
-index=0
+ind=0
 while count1 < number_unique_plasmids
   count2=0
   while count2 < number_colonies
-    DNA_req[index]=plasmids_lengths[count1]/10
-    plasmid_vol[index] = ceil(DNA_req[count1]/250)
-      if plasmid_vol[index]==0
-        plasmid_vol[index]=1
+    DNA_req[ind]=plasmids_lengths[count1]/10
+    plasmid_vol[ind] = ceil(DNA_req[count1]/250)
+      if plasmid_vol[ind]==0
+        plasmid_vol[ind]=1
       end
-    H20_req[index]=12.5-plasmid_vol[count1]
+    H20_req[ind]=12.5-plasmid_vol[count1]
     count2=count2+1
-    index=index+1
-    tubes[index]=index+1
+    ind=ind+1
   end
   count1=count1+1
 end
@@ -103,19 +101,19 @@ step
 end
 
 i1=0
-index=0
+ind=0
 tbl1 = [["Tube Number", "Primer ID Number"]]
 while i1<number_unique_plasmids
   i2=0
   while i2<number_colonies
     i3=0
     while i3 < groups[i1]
-      tbl1 = append(tbl1,[i1+i2+i3+1,primers_entered[index+i3]])
+      tbl1 = append(tbl1,[i1+i2+i3+1,primers_entered[ind+i3]])
       i3=i3+1
     end
     i2=i2+1
   end
-  index = index+groups[i1]-1
+  ind = ind+groups[i1]-1
   i1 = i1+1
 end
 
@@ -126,14 +124,14 @@ step
 end
 
 i2=0
-index = 0
+ind = 0
 tbl2 = [["Tube Number", "Plasmid ID", "Plasmid Volume in µl"]]
 while i2<number_unique_plasmids
   i3=0
   while i3<number_colonies
-    tbl2 = append(tb12,[index,plasmids[i2], plasmid_vol[index]])
+    tbl2 = append(tb12,[ind,plasmids[i2], plasmid_vol[ind]])
     i3=i3+1
-    index = index+1
+    ind = ind+1
   end
   i2 = i2+1
 end
