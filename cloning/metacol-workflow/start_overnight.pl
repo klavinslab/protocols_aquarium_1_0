@@ -1,5 +1,6 @@
 argument
   plates: sample array, "Enter in plates containing colonies of a strain of E. Coli you would like to culture."
+  number_colonies: number, "Number of colonies to start overnights of from the plate"
   antibiotic: string array, "Enter in the antibiotic resistance of the above strains of E. Coli. Enter Amp, Chlor, Kan"
 end
 
@@ -12,7 +13,7 @@ if length(plates) > 0
 end
 
 # Take tubes
-n_tubes = length(plates)
+n_tubes = length(plates)*number_colonies
 
 if n_tubes > 1
   step
@@ -77,9 +78,13 @@ end
 
 if length(plates) > 0
   i = 0
+  label = 0
+  
   while i < length(plates)
-    label = i + 1
     p = plates[i]
+    j=0
+    while j < number_colonies
+    label = label  + 1
     step
       check:"Take a small pipette tip and grab a small amount of colony from plate %{p}. Be sure to use sterile technique."
       check:"Make sure to make the colony you picked from with a permanent pen, so it can be identified."
@@ -87,8 +92,11 @@ if length(plates) > 0
       check:"Discard tip"
       note:"Make sure to pick different colonies if creating multiple cultures from the same plate!"
     end
+    j=j+1
+    end
     i = i + 1
   end
+  
 end
 
 combined_input_ids = plates
@@ -112,15 +120,21 @@ end
 
 produced = []
 i = 0
-while i < n_tubes
-  n = i + 1
+n = 0
+while i < length(plates)
   w = to_produce_from[i]
-  produce
-    q = 1 "TB Overnight of Plasmid" from w
-    note: "Label tube %{n} with this id."
-    location: "Benchtop"
+  
+  j = 0
+  while j < number_colonies
+    n = n + 1
+    produce
+      q = 1 "TB Overnight of Plasmid" from w
+      note: "Label tube %{n} with this id."
+      location: "Benchtop"
+    end
+    produced = append(produced, q)
+    j = j + 1
   end
-  produced = append(produced, q)
   i = i + 1
 end
 
