@@ -38,7 +38,7 @@ foreach x in yeast_strain_id
 
   
   produce
-    overnight = 1 "Yeast Overnight Suspension" of overnight_name[counter]
+    overnight = 1 "Yeast Overnight Suspension" from yeast
     note: "Place the test tube in 30 C incubator shaker at B13.125"
     location: "B13.125"
     release test_tube
