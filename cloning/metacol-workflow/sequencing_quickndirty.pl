@@ -113,12 +113,12 @@ while i1<number_unique_plasmids
   while i2<number_colonies
     i3=0
     while i3 < groups[i1]
-      tbl1 = append(tbl1,[ind+i3,primers_entered[ind+i3]])
+      tbl1 = append(tbl1,[ind+i3+i2,primers_entered[ind+i3]])
       i3=i3+1
     end
     i2=i2+1
   end
-  ind = ind+groups[i1]-1
+  ind = ind+groups[i1]
   i1 = i1+1
 end
 
