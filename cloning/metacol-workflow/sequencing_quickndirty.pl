@@ -107,7 +107,7 @@ end
 
 i1=0
 ind=0
-tubeind=0
+tubeind=1
 tbl1 = [["Tube Number", "Primer ID Number"]]
 while i1<number_unique_plasmids
   i2=0
