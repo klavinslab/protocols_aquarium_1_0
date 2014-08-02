@@ -76,14 +76,19 @@ ind=0
 while count1 < number_unique_plasmids
   count2=0
   while count2 < number_colonies
-    DNA_req[ind]=plasmids_lengths[count1]/10
-    plasmid_vol[ind] = ceil(DNA_req[count1]/250)
-      if plasmid_vol[ind]==0
-        plasmid_vol[ind]=1
-      end
-    H20_req[ind]=12.5-plasmid_vol[count1]
+    count3=0
+    while count3 < groups[count1]
+  
+      DNA_req[ind]=plasmids_lengths[count1]/10
+      plasmid_vol[ind] = ceil(DNA_req[count1]/250)
+        if plasmid_vol[ind]==0
+          plasmid_vol[ind]=1
+        end
+      H20_req[ind]=12.5-plasmid_vol[count1]
+      ind=ind+1
+      count3 = count3 + 1
+    end
     count2=count2+1
-    ind=ind+1
   end
   count1=count1+1
 end
