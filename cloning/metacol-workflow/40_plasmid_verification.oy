@@ -1,4 +1,4 @@
-arguments
+argument
   plates: sample array, "Enter in plates containing colonies of a strain of E. Coli you would like to culture."
   number_colonies: number, "Enter how many colonies you want to sequence from each plate."
   antibiotic: string array, "Enter in the antibiotic resistance of the above strains of E. Coli. Enter Amp, Chlor, Kan"
