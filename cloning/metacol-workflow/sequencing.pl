@@ -6,7 +6,7 @@ argument
   plasmids_lengths: number array, "Enter the length in basepairs of the above plasmids" 
   primers_entered: sample("Primer") array, "Enter the primers you wish to use to set up a sequencing reaction"
   initials: string, "Your initials"
-  groups: number array, "Enter number of sequencing reactions you want set up for each plasmids. Eg(2 for the first, 3 for the second etc)"
+  groups: number, "Enter number of sequencing reactions you want set up for each plasmids. Eg(2 for the first, 3 for the second etc)"
   number_colonies: number array, "Enter how many colonies you want to sequence from each plate."
   tracking_no: string, "Enter the tracking number of your Genewiz order"
 end
