@@ -1,9 +1,9 @@
 argument
   plates: sample array, "Enter in plates containing colonies of a strain of E. Coli you would like to culture."
-  antibiotic: string array, "Enter in the antibiotic resistance of the above strains of E. Coli. Enter Amp, Chlor, Kan, Amp+Chlor, Amp+Kan, Chlor+Kan or None."
+  antibiotic: string array, "Enter in the antibiotic resistance of the above strains of E. Coli. Enter Amp, Chlor, Kan"
 end
 
-# Take plates
+# Take (if applicable) glycerol stocks, plates, and overnights
 pstocks = []
 if length(plates) > 0
   take
@@ -13,6 +13,7 @@ end
 
 # Take tubes
 n_tubes = length(plates)
+
 if n_tubes > 1
   step
     description: "Grab %{n_tubes} glass 14 mL tubes from B1.450 and place them in a plastic tube rack label them 1 through %{n_tubes} with a pen"
@@ -26,7 +27,6 @@ end
 # Keep track of which tubes need antibiotics - an array for each antibiotic
 # to save on steps (i.e. get out Amp and add to appropriate tubes, then kan,
 # etc)
-
 amp_tubes = []
 amp_tube_count = 0
 chlor_tubes = []
@@ -51,15 +51,6 @@ while i < n_tubes
       chlor_tubes = append(chlor_tubes, tube_n)
     elsif antibiotic[i] == "Kan"
       kan_tubes = append(kan_tubes, tube_n)
-    elsif antibiotic[i] == "Amp+Chlor"
-      ampchlor_tubes = append(ampchlor_tubes, tube_n)
-    elsif antibiotic[i] == "Amp+Kan"
-      ampkan_tubes = append(ampkan_tubes, tube_n)
-    elsif antibiotic[i] == "Chlor+Kan"
-      chlorkan_tubes = append(chlorkan_tubes, tube_n)
-    # This variable never gets used?
-    elsif antibiotic[i] == "None"
-      none_tubes = append(none_tubes, tube_n)
     end
 
   i = i + 1
@@ -82,21 +73,7 @@ if length(chlor_tubes) > 0
     description: "Add 3 mL of TB+Chlor media to tubes %{chlor_tubes} using the serological pipette"
   end
 end
-if length(ampkan_tubes) > 0
-  step
-    description: "Add 3 mL of TB+Amp+Kan media to tubes %{ampkan_tubes} using the serological pipette"
-  end
-end
-if length(ampchlor_tubes) > 0
-  step
-    description: "Add 3 mL of TB+Amp+Chlor media to tubes %{ampchlor_tubes} using the serological pipette"
-  end
-end
-if length(chlorkan_tubes) > 0
-  step
-    description: "Add 3 mL of TB+Chlor+Kan media to tubes %{chlorkan_tubes} using the serological pipette"
-  end
-end
+
 
 if length(plates) > 0
   i = 0
@@ -114,20 +91,36 @@ if length(plates) > 0
   end
 end
 
+combined_input_ids = plates
+total_taken = pstocks
+n_taken = length(total_taken)
+
+to_produce_from = []
+current_taken = []
+i = 0
+while i < length(combined_input_ids)
+  j = 0
+  while j < length(total_taken)
+    current_item = total_taken[j]
+    if combined_input_ids[i] == current_item[:id]
+      to_produce_from = append(to_produce_from, current_item)
+    end
+    j = j + 1
+  end
+  i = i + 1
+end
 
 produced = []
-over_nights = []
 i = 0
-while i < length(plates)
+while i < n_tubes
   n = i + 1
-  w = pstocks[i]
+  w = to_produce_from[i]
   produce
     q = 1 "TB Overnight of Plasmid" from w
     note: "Label tube %{n} with this id."
     location: "Benchtop"
   end
   produced = append(produced, q)
-  over_nights = append(over_nights, q[:id])
   i = i + 1
 end
 
@@ -137,7 +130,7 @@ end
 
 # FIXME: Not sure how to manage locations of these tubes (they're samples - locations will conflict) until shaker tracked like freezers.
 i = 0
-while i < length(plates)
+while i < n_tubes
   p = produced[i]
   modify
     produced[0]
@@ -147,8 +140,8 @@ while i < length(plates)
   i = i + 1
 end
 
-release(pstocks)
+release(total_taken)
 
 log
-  return: {over_nights: over_nights}
+  return: {overnights: produced}
 end
