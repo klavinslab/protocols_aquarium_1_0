@@ -1,7 +1,7 @@
 information  "This protocol describes how to perform a yeast overnight"
 argument
   yeast_strain_id: sample array, "Choose the plate/glycerol stock/yeast suspension you intended to start an overnight from"
-#  overnight_name: string array, "The exact name of yeast strain for the overnight"
+  overnight_name: string array, "The exact name of yeast strain for the overnight"
 end
 
 num=length(yeast_strain_id)
@@ -38,7 +38,7 @@ foreach x in yeast_strain_id
 
   
   produce
-    overnight = 1 "Yeast Overnight Suspension" of x
+    overnight = 1 "Yeast Overnight Suspension" of overnight_name[counter]
     note: "Place the test tube in 30 C incubator shaker at B13.125"
     location: "B13.125"
     release test_tube
