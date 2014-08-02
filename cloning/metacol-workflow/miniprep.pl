@@ -145,4 +145,3 @@ log
   return: {miniprep_ids: miniprep_ids}
 end
 
-log
