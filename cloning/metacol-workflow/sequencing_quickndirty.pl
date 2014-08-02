@@ -107,13 +107,15 @@ end
 
 i1=0
 ind=0
+tubeind=0
 tbl1 = [["Tube Number", "Primer ID Number"]]
 while i1<number_unique_plasmids
   i2=0
   while i2<number_colonies
     i3=0
     while i3 < groups[i1]
-      tbl1 = append(tbl1,[ind+i3+i2,primers_entered[ind+i3]])
+      tbl1 = append(tbl1,[tubeind,primers_entered[ind+i3]])
+      tubeind=tubeind+1
       i3=i3+1
     end
     i2=i2+1
