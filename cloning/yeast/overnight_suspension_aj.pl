@@ -25,7 +25,7 @@ release yeast_media
 foreach x in yeast_strain_id
 
   take
-    yeast = item x
+    yeast = item unique(yeast_strain_id[counter])
   end
   
   step
