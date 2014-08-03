@@ -133,6 +133,7 @@ while i < length(plates)
       location: "Benchtop"
     end
     produced = append(produced, q)
+    overnight_ids = append(overnight_ids, q[:id])
     j = j + 1
   end
   i = i + 1
@@ -157,5 +158,5 @@ end
 release(total_taken)
 
 log
-  return: {overnights: produced}
+  return: {overnight_ids: overnight_ids}
 end
