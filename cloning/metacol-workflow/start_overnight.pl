@@ -119,6 +119,7 @@ while i < length(combined_input_ids)
 end
 
 produced = []
+overnight_ids = []
 i = 0
 n = 0
 while i < length(plates)
