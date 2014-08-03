@@ -38,7 +38,7 @@ end
 
 place sequencing
   protocol: "cloning/metacol-workflow/sequencing_quickndirty.pl"
-  argument:
+  argument
     plasmids_lengths: plasmids_lengths
     number_colonies: number_colonies
     primers_entered: primers_entered
