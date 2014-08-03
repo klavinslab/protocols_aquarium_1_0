@@ -145,16 +145,16 @@ step
 end
 
 # FIXME: Not sure how to manage locations of these tubes (they're samples - locations will conflict) until shaker tracked like freezers.
-#i = 0
-#while i < n_tubes
-#  p = produced[i]
-#  modify
-#    produced[i]
-#    location: "37°C shaker incubator"
-#  end
+i = 0
+while i < n_tubes
+  p = produced[i]
+  modify
+    produced[i]
+    location: "37°C shaker incubator"
+  end
 
-#  i = i + 1
-#end
+  i = i + 1
+end
 
 release(total_taken)
 
