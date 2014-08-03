@@ -147,7 +147,7 @@ i = 0
 while i < n_tubes
   p = produced[i]
   modify
-    produced[0]
+    produced[i]
     location: "37°C shaker incubator"
   end
 
