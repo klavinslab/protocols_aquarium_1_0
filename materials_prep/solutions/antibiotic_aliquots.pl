@@ -20,6 +20,7 @@ if antibiotic_type != "Amp" && antibiotic_type != "Kan" && antibiotic_type != "C
   end
 end
 
+aliquot_number = 0
 
 # TODO: make this an argument?
 if antibiotic_type == "Amp"
@@ -30,7 +31,7 @@ if antibiotic_type == "Amp"
     end
   end
   take
-    antibiotic_stock = n_bottles "Ampicillin Stock"
+    antibiotic_stock = n_bottles "Ampicillin Sodium Salt"
   end
   antibiotic_label = "Amp"
   aliquot_number = n_bottles * 20
@@ -51,11 +52,11 @@ elsif antibiotic_type == "Kan"
 else
   # TODO: make smaller aliquots of chlor? It gets used very slowly.
   take
-    antibiotic_stock = 1 "Chloramphenicol Stock"
+    antibiotic_stock = 1 "Chloramphenicol Stock Solution"
   end
   step
     description: "Thaw"
-    note: "If necessary, thaw the Ampicillin Stock at roomp temp, vortexing every 5 minutes. This should take between 30 and 60 minutes."
+    note: "If necessary, thaw the Chloramphenicol Stock Solution at roomp temp, vortexing every 5 minutes. This should take between 30 and 60 minutes."
   end
   antibiotic_label = "Chlor"
   aliquot_number = 2
