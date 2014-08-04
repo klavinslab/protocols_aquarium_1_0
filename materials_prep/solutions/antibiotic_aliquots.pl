@@ -21,6 +21,7 @@ if antibiotic_type != "Amp" && antibiotic_type != "Kan" && antibiotic_type != "C
 end
 
 aliquot_number = 0
+product_name = ""
 
 # TODO: make this an argument?
 if antibiotic_type == "Amp"
