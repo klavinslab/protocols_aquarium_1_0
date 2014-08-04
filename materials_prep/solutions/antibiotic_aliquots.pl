@@ -37,7 +37,7 @@ if antibiotic_type == "Amp"
   product_name = "100X 1mL Ampicillin Aliquot"
 elsif antibiotic_type == "Kan"
   take
-    antibiotic_stock = 1 "Kanamycin Stock"
+    antibiotic_stock = 1 "Kanamycin Stock Solution"
   end
   # TODO: takes a long time to thaw at room temp. Can we incubate / microwave?
   # Could also try putting sterile stir bar
