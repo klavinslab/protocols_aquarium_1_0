@@ -43,7 +43,7 @@ elsif antibiotic_type == "Kan"
   # Could also try putting sterile stir bar
   step
     description: "Thaw"
-    note: "If necessary, thaw the Kanamycin Stock at roomp temp, vortexing every 5 minutes. This should take between 30 and 60 minutes."
+    note: "If necessary, thaw the Kanamycin Stock Solution at room temp, vortexing every 5 minutes. This should take between 30 and 60 minutes."
   end
   antibiotic_label = "Kan"
   aliquot_number = 10
