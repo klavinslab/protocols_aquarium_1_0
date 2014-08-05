@@ -38,7 +38,7 @@ x = 0
 
 while x < length(e_id2)
   produce
-    r = 1 "Transformed E coli Glycerol Stock" from overnight_culture[0]
+    r = 1 "Plasmid Glycerol Stock" from overnight_culture[0]
     release cryo_tube
     # The product is created and the user is told to put it in the freezer. The Cryo tube has been consumed.
   end
