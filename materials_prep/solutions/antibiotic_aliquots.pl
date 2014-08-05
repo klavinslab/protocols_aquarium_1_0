@@ -20,6 +20,8 @@ if antibiotic_type != "Amp" && antibiotic_type != "Kan" && antibiotic_type != "C
   end
 end
 
+aliquot_number = 0
+product_name = ""
 
 # TODO: make this an argument?
 if antibiotic_type == "Amp"
@@ -30,34 +32,31 @@ if antibiotic_type == "Amp"
     end
   end
   take
-    antibiotic_stock = n_bottles "Ampicillin Stock"
+    antibiotic_stock = n_bottles "Ampicillin Sodium Salt"
   end
-  antibiotic_label = "Amp"
   aliquot_number = n_bottles * 20
   product_name = "100X 1mL Ampicillin Aliquot"
 elsif antibiotic_type == "Kan"
   take
-    antibiotic_stock = 1 "Kanamycin Stock"
+    antibiotic_stock = 1 "Kanamycin Stock Solution"
   end
   # TODO: takes a long time to thaw at room temp. Can we incubate / microwave?
   # Could also try putting sterile stir bar
   step
     description: "Thaw"
-    note: "If necessary, thaw the Kanamycin Stock at roomp temp, vortexing every 5 minutes. This should take between 30 and 60 minutes."
+    note: "If necessary, thaw the Kanamycin Stock Solution at room temp, vortexing every 5 minutes. This should take between 30 and 60 minutes."
   end
-  antibiotic_label = "Kan"
   aliquot_number = 10
   product_name = "200X 1mL Kanamycin Aliquot"
 else
   # TODO: make smaller aliquots of chlor? It gets used very slowly.
   take
-    antibiotic_stock = 1 "Chloramphenicol Stock"
+    antibiotic_stock = 1 "Chloramphenicol Stock Solution"
   end
   step
     description: "Thaw"
-    note: "If necessary, thaw the Ampicillin Stock at roomp temp, vortexing every 5 minutes. This should take between 30 and 60 minutes."
+    note: "If necessary, thaw the Chloramphenicol Stock Solution at roomp temp, vortexing every 5 minutes. This should take between 30 and 60 minutes."
   end
-  antibiotic_label = "Chlor"
   aliquot_number = 2
   product_name = "1000X 1mL Chloramphenicol Aliquot"
 end
@@ -65,7 +64,7 @@ end
 
 step
   description: "Take out and label 1.5 mL tubes"
-  note: "Take out and close %{aliquot_number} of 1.5 mL tubes. Label their tops with '%{antibiotic_label}'."
+  note: "Take out and close %{aliquot_number} of 1.5 mL tubes. Label their tops with '%{antibiotic_type}'."
 end
 
 

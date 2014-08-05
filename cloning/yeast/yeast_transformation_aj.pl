@@ -4,6 +4,7 @@ argument
   digested_plasmids: sample("Plasmid") array, "Enter the digested plasmid samples you want transformed into the strains above."
   plate_type: number array, "Enter a number that corresponds to a given plate type for each transformation. 1= -His Plate, 2= -Trp Plate, 3= -Ura Plate, 4= -Leu Plate"
   rescue_vol: number, "Enter the amount of molecular grade water you would like to resuce the competent aliquots with."
+  initials: string, "Initials of the person scheduling the protocol"
 end
 
   
@@ -46,6 +47,9 @@ take
   t "SDO -Trp Plate (sterile)"
 end
 
+step
+  description: "Label each plate with the date and the initials %{initials}."
+end
 
 step
   description: "Go to the the M20 and remove %{y} boiled salmon sperm DNA frozen aliquots."
@@ -121,6 +125,7 @@ step
   description: "The following step will produce yeast plates in numerical order of the plate labels."
 end
 
+yeast_transformation_plate_id=[]
 x=0
 while x < y
   produce
@@ -129,5 +134,10 @@ while x < y
     release k[x]
     release j[x]
   end
+  yeast_transformation_plate_id = append(yeast_transformation_plate_id,q[:id])
   x = x+1
+end
+
+log
+  return: {yeast_transformation_plate_id: yeast_transformation_plate_id}
 end

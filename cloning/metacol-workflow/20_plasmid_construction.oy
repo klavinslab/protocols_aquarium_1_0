@@ -1,0 +1,65 @@
+argument
+  fragments: sample array, "Fragment(s) to Gibson."
+  volumes: number array, "Volumes of each fragment to add, one per fragment."
+  group_n: number array, "How many fragments, in order, belong to each Gibson (e.g. 2 and 3 implies the first two fragments make one Gibson, the last 3 make another."
+  products: string array, "The exact name of each plasmid that is being produced."
+  
+  e_coli_strain_type: object, "The electrocompetent E. coli aliquot type."
+  plate_type: object, "The (probably LB) plate type that will be used in to plate the transformation."
+  
+  initials: string, "Your 2 letter initials so you can be contacted with information about colony status"
+  
+end
+
+place gibson
+  protocol: "cloning/metacol-workflow/gibson.pl"
+  argument
+    fragments: fragments
+    volumes: volumes
+    group_n: group_n
+    products: products
+  end
+  group: "technicians"
+  marked: true
+  start: now()
+  window: minutes(1)
+end
+
+place transformation
+  protocol: "cloning/metacol-workflow/ecoli_transformation.pl"
+  argument
+     e_coli_strain_type:  e_coli_strain_type
+  end
+  
+  group: "technicians"
+  start: now()
+  window: minutes(1)
+end
+
+place plating
+  protocol: "cloning/metacol-workflow/plate.pl"
+  argument
+    plate_type: plate_type
+    initials: initials
+  end
+  
+  group: "technicians"
+  start: now()
+  window: minutes(30)
+end
+
+place checkplates
+  protocol: "cloning/metacol-workflow/check_plates.pl"
+  group: "technicians"
+  start: now()
+  window: minutes(30)
+end
+
+wire (gibson, "gibson_reaction_result_ids") => (transformation, "plasmid_ids")
+wire (transformation, "transformed_cells") => (plating, "plasmid_ids")
+wire (plating, "transformed_plates") => (checkplates,"ecoli_transformation_plate_ids")
+
+transition [gibson] => [transformation] when !error(0) && completed(0) end
+transition [transformation] => [plating] when !error(0) && completed(0) end
+transition [plating] => [checkplates] when !error(0) && completed(0) && minutes_elapsed(0,1) end
+

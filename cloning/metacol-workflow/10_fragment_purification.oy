@@ -1,0 +1,26 @@
+argument
+  gel: sample array, "Gel lanes (after gel has been run) in the order they were run, starting from lane 2."
+end
+
+place cutgel
+  protocol: "cloning/metacol-workflow/cut_gel.pl"
+  argument
+    gel: gel
+  end
+  
+  group: "technicians"
+  marked: true
+  start: now()
+  window: minutes(1)
+end
+
+place gelpurify
+  protocol: "cloning/metacol-workflow/gel_purify.pl"
+  group: "technicians"
+  start: now()
+  window: minutes(1)
+end
+
+wire (cutgel, "Gel_Slice_id") => (gelpurify, "GelSlice_id")
+transition [cutgel] => [gelpurify] when !error(0) && completed(0) end
+

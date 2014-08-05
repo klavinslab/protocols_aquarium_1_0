@@ -1,0 +1,63 @@
+argument
+  plates: sample array, "Enter in plates containing colonies of a strain of E. Coli you would like to culture."
+  number_colonies: number, "Enter how many colonies you want to sequence from each plate."
+  antibiotic: string array, "Enter in the antibiotic resistance of the above strains of E. Coli. Enter Amp, Chlor, Kan"
+  volume: number, "The elution volume in ul"
+  
+  
+  plasmids_lengths: number array, "Enter the length in basepairs of the above plasmids" 
+  primers_entered: sample("Primer") array, "Enter the primers you wish to use to set up a sequencing reaction"
+  groups: number array, "Enter number of sequencing reactions you want set up for each plasmids. Eg(2 for the first, 3 for the second etc)"
+  tracking_no: string, "Enter the tracking number of your Genewiz order"
+  
+  initials: string, "Your initials (Arjun remember to type AK not AJ)"
+end
+
+place start_overnight
+  protocol: "cloning/metacol-workflow/start_overnight.pl"
+  argument
+    plates: plates
+    number_colonies: number_colonies
+    antibiotic: antibiotic
+  end
+  group: "technicians"
+  marked: true
+  start: now()
+  window: hours(20)
+end
+
+place miniprep
+  protocol: "cloning/metacol-workflow/miniprep.pl"
+  argument
+    volume: volume
+  end
+  group: "technicians"
+  start: now()
+  window: hours(20)
+end
+
+place sequencing
+  protocol: "cloning/metacol-workflow/sequencing_quickndirty.pl"
+  argument
+    plasmids_lengths: plasmids_lengths
+    number_colonies: number_colonies
+    primers_entered: primers_entered
+    groups: groups
+    tracking_no: tracking_no
+    initials: initials
+  end
+  group: "technicians"
+  start: now()
+  window: hours(20)
+end
+
+wire (start_overnight,"overnight_ids") => (miniprep,"strain_id")
+wire (miniprep,"miniprep_ids") => (sequencing,"plasmids")
+
+transition [start_overnight] => [miniprep] when !error(0) && completed(0) end
+transition [miniprep] => [sequencing] when !error(0) && completed(0) end
+
+
+
+
+

@@ -1,10 +1,11 @@
 information "Load and run an agarose gel."
 
 argument
-  fragment_names: sample("Fragment") array, "Fragment Names"
+  fragment_names: sample array, "Fragment Ids"
   ladder_one: sample
-  fragment_volume: number, "The volume of PCR fragment to load in µL."
 end
+
+ fragment_volume = 50
 
 a=length(fragment_names)-1
 b=a/10

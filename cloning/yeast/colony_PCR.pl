@@ -1,12 +1,11 @@
 argument
   initials: string, "Your initials or another 2-3 letter identifier for tube labeling"
   enzyme_id: sample("Enzyme"), "The Phusion HF Master Mix stock"
-  fragment_names: string array, "Fragment Names"
   forward_ids: sample("Primer") array, "Forward Primers"
   reverse_ids: sample("Primer") array, "Reverse Primers"
-  template_ids: sample array, "Template (diluted plasmid or other template DNA)"
+  template_ids: sample array, "Template lysates"
   tanneal: number, "The anneal temperature in degrees C"
-  ext_time: number, "Extension time in minutes"
+  ext_time: number, "The extension time in minutes"
 end
 
 take
@@ -15,7 +14,7 @@ end
 take
     forward_primer_stock = item unique(forward_ids)
     reverse_primer_stock = item unique(reverse_ids)
-    plasmid_stock = item unique(template_ids)
+    lysate = item unique(template_ids)
 end
 
 step
@@ -66,7 +65,7 @@ end
 y=length(forward_ids)
 
 step
-  description: "Pipet 19 µL molecular grade water into wells 1 through %{y}."
+  description: "Pipet 5 µL molecular grade water into wells 1 through %{y}."
   note:"Be careful to pipette into the bottom of the tube, not onto the side of the tube."
 end
 
@@ -75,7 +74,7 @@ while x < y
   a=template_ids[x]
   z=x+1
   step
-    description: "Pipet 1 µL of plasmid with id %{a} into well %{z}."
+    description: "Pipet 1 µL of lysate/template with id %{a} into well %{z}."
   end
   x = x+1
 end
@@ -87,14 +86,14 @@ while x < y
   z=x+1
   step
     description: "Add both forward and reverse primers"
-    check: "Pipet 2.5 µL of primer with id %{a} into well %{z}."
-    check: "Pipet 2.5 µL of primer with id %{b} into well %{z}."
+    check: "Pipet 0.75 µL of primer with id %{a} into well %{z}."
+    check: "Pipet 0.75 µL of primer with id %{b} into well %{z}."
   end
   x = x+1
 end
 
 step
-  description:"Pipet 25 µL Phusion Master Mix with id %{enzyme_id} into wells 1 through %{y}."
+  description:"Pipet 7.5 µL Phusion Master Mix with id %{enzyme_id} into wells 1 through %{y}."
   note:"USE A NEW PIPETTE TIP FOR EACH WELL AND PIPETTE UP AND DOWN TO MIX"
 end
 
@@ -102,7 +101,7 @@ step
   description: "Begin the PCR reaction with a thermal cycler"
   check: "Put the cap on the PCR strip tubes and press each one very hard to make sure they are sealed."
   check: "Place the tube into an available thermal cycler and close the lid"
-  check: "Click Home then click Saved Protocol, choose DAVID, choose CLONEPCR."
+  check: "Click Home then click Saved Protocol, choose DAVID, choose QPCR."
   check: "Set the anneal temperature to %{tanneal}, this is the 3rd temperature (default 70). Don't change the extension temperature of 72."
   check: "Set the extension time to %{ext_time} minutes, this is the time of the 3rd step in the loop which is at 72C."
   check: "hit 'run' and select 50ul"
@@ -110,7 +109,7 @@ step
 end
 
 release phusion_stock
-release concat(concat(forward_primer_stock,reverse_primer_stock),plasmid_stock)
+
 
 #TODO: refactor with silent produces
 step
@@ -121,17 +120,17 @@ end
 x=0
 first = 0
 last = 0
-fids = []
+QPCR_ids = []
 while x < y
   produce
-    q = 1 "PCR Result" of fragment_names[x]
+    q = 1 "QPCR result" from lysate[x]
     location: "R4.300"
     data
       from: template_ids[x]
     end
   end
 
-  fids = append(fids,q[:id])
+  QPCR_ids = append(QPCR_ids,q[:id])
 
 #TODO: fix this.  There is NO guarentee that items will be produced in sequence!
   if x == 0
@@ -144,8 +143,9 @@ while x < y
   x = x + 1
 end
 
+release concat(concat(forward_primer_stock,reverse_primer_stock),lysate)
 
-if length(fragment_names) > 1
+if length(lysate) > 1
   step
     description: "Label tape and tube rack with PCR Result IDs"
     note: "Label the tape (exactly) with: %{first} - %{last}."
@@ -161,5 +161,5 @@ end
 #NOTE: removing some return values may break metacols.  
 #      It is fine to add more though.
 log
-  return: {fragment_ids: fids, params: {fragment_ids: fids}}
+  return: {QPCR_ids: QPCR_ids}
 end

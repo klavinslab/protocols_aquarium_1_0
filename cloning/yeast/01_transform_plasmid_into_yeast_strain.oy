@@ -1,0 +1,92 @@
+argument
+  strain_name: string array, "The exact name of yeast strain you want to transform into"
+  strains_id: sample array, "Enter source of yeast strain for overnight."
+  aliquots_number: number array, "Enter the number of transformations into each strain"
+  
+  plasmids: sample("Plasmid") array, "Enter the plasmids you want transformed into the strains above. Each transformation should have an associated plasmid."
+  pmei: sample("Enzyme"), "Tube of PMEI to be used."
+  cutsmart: sample("Enzyme Buffer"), "Tube of Cutsmart to be used."
+  initials: string, "Your initials or another 2-3 letter identifier for tube labeling"
+  
+  plate_type: number array, "Enter a number that corresponds to a given plate type for each transformation. 1= -His Plate, 2= -Trp Plate, 3= -Ura Plate, 4= -Leu Plate"
+  rescue_vol: number, "Enter the amount of molecular grade water you would like to resuce the competent aliquots with."
+  products: string array, "The exact name of each strain the transformations will produce."
+
+end
+
+
+
+place startovernight
+protocol: "cloning/yeast/overnight_suspension_aj.pl"
+  argument
+    yeast_strain_id: strains_id
+    overnight_name: strain_name
+  end
+  group: "technicians"
+  marked: true
+  start: now()
+  window: hours(20)
+end
+
+place innoculate
+  protocol: "cloning/yeast/innoculate_compcell_culture.pl"
+  group: "technicians"
+  start: now()
+  window: hours(20)
+end
+
+place digest
+  protocol: "cloning/yeast/pmeI_digest_aj.pl"
+  argument
+    plasmids: plasmids
+    pmei: pmei
+    cutsmart: cutsmart
+    initials: initials
+  end
+  group: "technicians"
+  start: now()
+  window: hours(20)
+end
+
+place makecompcell
+  protocol: "cloning/yeast/Make_yeast_compcells_fresh.pl"
+  argument
+    aliquots_number: aliquots_number
+  end
+  group: "technicians"
+  start: now()
+  window: hours(20)
+end
+
+place transformation
+  protocol: "cloning/yeast/yeast_transformation_aj.pl"
+  argument
+  plate_type: plate_type
+  rescue_vol: rescue_vol
+  products: products
+  initials: initials
+
+
+  end
+  group: "technicians"
+  start: now()
+  window: hours(20)
+end
+
+place checkplates
+  protocol: "cloning/yeast/check_yeast_plates.pl"
+  group: "technicians"
+  start: now()
+  window: hours(20)
+end
+
+wire (startovernight,"overnight_id") => (innoculate,"strains_id")
+wire (innoculate,"yeast_50ml_culture_id") => (makecompcell,"cultures_id")
+wire (makecompcell,"yeast_compcell_aliquot_id") => (transformation,"frozen_aliquots")
+wire (digest,"digested_plasmids_ids") => (transformation,"digested_plasmids")
+wire (transformation,"yeast_transformation_plate_id") => (checkplates,"yeast_plate_ids")
+
+transition [startovernight] => [innoculate,digest] when !error(0) && completed(0) && minutes_elapsed(0,1) end
+transition [innoculate,digest] => [makecompcell] when !error(0) && completed(0) && minutes_elapsed(0,1) end
+transition [makecompcell] => [transformation] when !error(0) && completed(0) end
+transition [transformation] => [checkplates] when !error(0) && completed(0) && minutes_elapsed(0,1) end
