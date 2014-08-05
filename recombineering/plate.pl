@@ -49,7 +49,7 @@ end
 
 step
   description: "Remove some supernatant and resuspend"
-  bullet: "for each tube, remove 700 &micro;L of supernatant into the liquid waste bottle."
+  bullet: "for each tube, remove the supernatant and add 1 mL of LB ( just plain LB)"
   bullet: "Recap each tube (if you have not already) and vortex until the cells are completely resuspended.  If the cells don't want to resuspend you may have to mix with a pipette by slowly pipetting up and down."
 end
   
