@@ -4,9 +4,12 @@ end
 step
   description: "This protocol describes the preparation of glycerol stock from an overnight suspension."
 end
+
+n_tubes = length(e_id2)
+
 take 
   glycerol_sol = 1 "50 percent Glycerol (sterile)"  
-  cryo_tube = 1 "Cryo Tube"
+  cryo_tube = n_tubes "Cryo Tube"
   overnight_culture = item e_id2
 end
 
