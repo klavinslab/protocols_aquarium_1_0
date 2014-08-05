@@ -1,5 +1,5 @@
 argument
-  e_id2: sample("Transformed E coli Strain") array, "Overnight suspension culture" 
+  e_id2: sample array, "Overnight suspension culture" 
 end
 step
   description: "This protocol describes the preparation of glycerol stock from an overnight suspension."
