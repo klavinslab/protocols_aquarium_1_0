@@ -30,14 +30,11 @@ foreach p in taken_plates
       note: "Spray ethanol on your gloved hands, rub, and allow to evaporate."
     end
 
-    step
-      description: "Collect %{n_col} 1.5 mL tubes and place them in a tube rack."
-    end
-
     ii = 0
     while ii<n_col
       step
         description: "pipette 1 mL of LB into an empty tube"
+        note: "pull out a sterile 1.5ml centrifuge and place it in the a rack.  Pipette 1mL of LB into the tube" 
       end
   
       produce silently
