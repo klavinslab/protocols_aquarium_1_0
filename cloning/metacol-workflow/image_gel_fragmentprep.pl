@@ -30,7 +30,7 @@ end
 
 x=0
 gelnames=[]
-while x < numgel
+while x < number_gels
 
 step
   description: "Take the gel out of gel box and put it on transilluminator"
