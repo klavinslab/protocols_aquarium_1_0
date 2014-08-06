@@ -84,7 +84,7 @@ step
 end
 
 log
-  return: {filename: gel_name}
+  return: {filename: gelnames}
 end
 
 release y
