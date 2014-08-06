@@ -27,7 +27,7 @@ while x < length(overnight_array)
   end
 
   produce
-    r = 1 "Plasmid Glycerol Stock" from overnight_culture[x] 
+    r = 1 "Yeast Glycerol Stock" from overnight_culture[x] 
     release cryo_tube
   end
   x = x + 1
