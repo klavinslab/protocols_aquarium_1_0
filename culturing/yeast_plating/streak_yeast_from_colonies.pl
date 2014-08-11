@@ -28,11 +28,28 @@ while i < length(plate_type)
 end
 
 take
-  strain_container = item strain_array
+  strain = item strain_array
   his "SDO -His Plate (sterile)"
   trp "SDO -Ura Plate (sterile)"
   ura "SDO -Leu Plate (sterile)"
   leu "SDO -Trp Plate (sterile)"
 end
 
-release strain_container
+j = 0
+while j < length(plate_type)
+  plate_name = plate_type[j]
+  strain_id = strain_array[j]
+  step
+    check: "Select a medium size isolated colony from plate %{strain_id}. Mark desired colony with circle and intials and date"
+    check: "Take a sterile pipette tip (10 µL tips), pick up your desired colony by gently scraping the tip to the colony, then transfer to the edge of new %{plate_name}."
+    check: "Using a new pipette tip to streak the new plate."
+  end
+  produce
+    y = 1 "Yeast Plate" from strain[j]
+    location: "30º Incubator"
+  end
+
+j = j + 1
+end
+
+release strain
