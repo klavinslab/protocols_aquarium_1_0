@@ -4,7 +4,7 @@
 yeast_overnight_ids = [7968,7973]
 
 place dilute_culture
-  protocol: "culturing/yeast_culture/dilute_culture.pl"
+  protocol: "culturing/yeast_culture/dilute_culture_auxin.pl"
   argument
     yeast_overnight_ids: yeast_overnight_ids
   end
