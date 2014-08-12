@@ -39,7 +39,7 @@ end
 step
   check: "Transfer 300uL of aqueous layer of samples to the PLG tubes."
   check: "Add 300uL chloroform."
-  note: "Mix by interting; do not vortex!"
+  note: "Mix by inverting; do not vortex!"
 end
 
 step
