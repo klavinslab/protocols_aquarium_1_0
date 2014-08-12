@@ -37,6 +37,12 @@ step
 end
 
 step
+  check: "Transfer 300uL of aqueous layer of samples to the PLG tubes."
+  check: "Add 300uL chloroform."
+  note: "Mix by interting; do not vortex!"
+end
+
+step
   note: "Centrifuge at 13 kRPM for 10 minutes in cold room."
   check: "Transfer 200-250 uL to a new 1.5 mL tube."
 end
