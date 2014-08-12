@@ -1,0 +1,16 @@
+argument
+  yeast_overnight_ids: sample array, "The yeast overnight suspensions"
+end
+
+place dilute_culture
+  protocol: "culturing/yeast_culture/dilute_culture.pl"
+  argument
+    yeast_overnight_ids: yeast_overnight_ids
+  end
+  group: "technicians"
+  marked: true
+  start: now()
+  window: hours(1)
+end
+
+transition [dilute_culture] => [] when !error(0) && completed(0) end
