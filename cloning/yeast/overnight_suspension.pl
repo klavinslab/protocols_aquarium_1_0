@@ -17,7 +17,7 @@ yeast_plate = yeast_plates[i]
 yeast_plate_id = yeast_plate_ids[i]
 step
   description: "Prepare overnight suspension media"
-  check: "Label a 14 mL tube with your initials AND date"
+  check: "Label a 14 mL tube with your initials"
   check: "Pipette 2 mL of SC liquid aliquot into the labeled 14 mL tube"
 end
 
