@@ -131,4 +131,4 @@ while x < y
   x = x+1
 end
 
-release j[x]
+release j
