@@ -46,6 +46,7 @@ place colonypcr
     tanneal: tanneal
     ext_time: ext_time
     initials: initials
+    colony_number: ColonyNumber
   end
   group: "technicians"
   start: now()
