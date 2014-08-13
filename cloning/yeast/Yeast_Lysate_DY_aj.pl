@@ -64,14 +64,16 @@ end
 j=0
 w=0
 well_id=1
+colony_id=0
 
 while j<y
   y=length(YeastStrain_id)
   a=YeastStrain_id[j]
   w=0
   while w<c
+    colony_id=w+1
     step
-      description: "With plate %{a} closed and upside down, find a large colony and label it %{well_id}"
+      description: "With plate %{a} closed and upside down, find a large colony and label it %{colony_id}"
       note: "If you're already picked a colony for this strain make sure you pick a different one for this well"
     end
     step
