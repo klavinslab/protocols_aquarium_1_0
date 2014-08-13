@@ -68,7 +68,6 @@ w=0
 while j<y
   y=length(YeastStrain_id)
   a=YeastStrain_id[j]
-  f=0
   w=0
   while w<c
     f=w+1
