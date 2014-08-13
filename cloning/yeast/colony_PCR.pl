@@ -6,6 +6,7 @@ argument
   template_ids: sample array, "Template lysates"
   tanneal: number, "The anneal temperature in degrees C"
   ext_time: number, "The extension time in minutes"
+  colony_number: number, "Number of colonies being screened, if dont know put 1"
 end
 
 take
@@ -62,7 +63,7 @@ end
 
 #y is used all over the place.  It really needs to be refactored to a readable
 #identifier.  
-y=length(forward_ids)
+y=length(lysate)
 
 step
   description: "Pipet 5 µL molecular grade water into wells 1 through %{y}."
@@ -80,14 +81,18 @@ while x < y
 end
 
 x=0
-while x < y
+z=1
+j= y/colony_number
+while x < j
   a=forward_ids[x]
   b=reverse_ids[x]
-  z=x+1
-  step
-    description: "Add both forward and reverse primers"
-    check: "Pipet 0.75 µL of primer with id %{a} into well %{z}."
-    check: "Pipet 0.75 µL of primer with id %{b} into well %{z}."
+  while i < colony_number
+    z=z+1
+    step
+      description: "Add both forward and reverse primers"
+      check: "Pipet 0.75 µL of primer with id %{a} into well %{z}."
+      check: "Pipet 0.75 µL of primer with id %{b} into well %{z}."
+    end
   end
   x = x+1
 end
