@@ -13,19 +13,6 @@ argument
   initials: string, "Your initials or another 2-3 letter identifier for tube labeling"
 end
 
-
-place pourgel
-  protocol: "cloning/yeast/pour_gel_qpcr.pl"
-  argument
-    Transformation_plate_id: Transformation_plate_id
-    ColonyNumber: ColonyNumber
-  end
-  group: "technicians"
-  marked: true
-  start: now()
-  window: hours(20)
-end
-
 place makelysates
   protocol: "cloning/yeast/Yeast_Lysate_DY_aj.pl"
   argument
@@ -37,6 +24,18 @@ place makelysates
   start: now()
   window: hours(20)
 end
+
+place pourgel
+  protocol: "cloning/yeast/pour_gel_qpcr.pl"
+  argument
+    Transformation_plate_id: Transformation_plate_id
+    ColonyNumber: ColonyNumber
+  end
+  group: "technicians"
+  start: now()
+  window: hours(20)
+end
+
 
 place colonypcr
   protocol: "cloning/yeast/colony_PCR.pl"
@@ -76,6 +75,7 @@ wire (colonypcr,"QPCR_ids") => (rungel,"QPCR_ids")
 wire (rungel,"QPCR_gel_ids") => (imagegel,"QPCR_gel_ids")
 
 
-transition [makelysates,pourgel] => [colonypcr] when !error(0) && completed(0) && !error(1) && completed(1) end
+transition [makelysates] => [colonypcr] when !error(0) && completed(0) end
+transition [makelysates] => [pourgel] when !error(0) && completed(0) && minutes_elapsed(0,30) end
 transition [colonypcr] => [rungel] when !error(0) && completed(0) && hours_elapsed(0,1) end
 transition [rungel] => [imagegel] when !error(0) && completed(0) && minutes_elapsed(0,30) end
