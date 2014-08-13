@@ -77,8 +77,10 @@ wire (digest,"digested_plasmids_ids") => (transformation,"digested_plasmids")
 wire (transformation,"yeast_transformation_plate_id") => (checkplates,"yeast_plate_ids")
 
 
-transition [innoculate,digest] => [makecompcell] when !error(0) && completed(0) && hours_elapsed(0,4) end
+transition [innoculate,digest] => [makecompcell] when !error(0) && completed(0) end
+# transition [innoculate,digest] => [makecompcell] when !error(0) && completed(0) && hours_elapsed(0,4) end
 transition [makecompcell] => [transformation] when !error(0) && completed(0) end
-transition [transformation] => [checkplates] when !error(0) && completed(0) && hours_elapsed(0,40) end
+transition [transformation] => [checkplates] when !error(0) && completed(0) end
+# transition [transformation] => [checkplates] when !error(0) && completed(0) && hours_elapsed(0,40) end
 
 
