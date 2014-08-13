@@ -63,7 +63,7 @@ end
 
 j=0
 w=0
-well_id=0
+well_id=1
 
 while j<y
   y=length(YeastStrain_id)
