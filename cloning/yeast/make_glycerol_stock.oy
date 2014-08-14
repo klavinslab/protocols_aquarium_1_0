@@ -4,7 +4,7 @@ end
 # yeast_plate_ids = [7968,7970,7971,7972,7973,7974,7975,7976]
 
 place overnight_suspension
-  protocol: "cloning/yeast/overnight_suspension.pl
+  protocol: "cloning/yeast/overnight_suspension.pl"
   argument
     yeast_plate_ids: yeast_plate_ids
   end
@@ -15,7 +15,7 @@ place overnight_suspension
 end
 
 place make_glycerol_stock
-  protocol: "cloning/yeast/make_glycerol_stock_yeast.pl
+  protocol: "cloning/yeast/make_glycerol_stock_yeast.pl"
   group: "technicians"
   start: now()
   window: hours(1)
