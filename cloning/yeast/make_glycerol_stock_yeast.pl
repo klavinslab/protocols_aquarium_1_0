@@ -33,7 +33,7 @@ while x < length(overnight_array)
     release cryo_tube
   end
   x = x + 1
-  glycerol_stock_output_ids = append(glycerol_stock_output_ids,glycerol_stock[:id] 
+  glycerol_stock_output_ids = append(glycerol_stock_output_ids,glycerol_stock[:id])
 end
 
 release glycerol_sol
