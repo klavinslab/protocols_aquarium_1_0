@@ -10,7 +10,7 @@ take
   yeast_media = 1 "50 mL SC liquid aliquot (sterile)"
   test_tube = n "14 mL Test Tube"
 end
-
+yeast_overnight_output_ids = []
 i = 0
 while i < n 
 yeast_plate = yeast_plates[i]
@@ -35,14 +35,20 @@ step
 end
 
 produce
-  y = 1 "Yeast Overnight Suspension" from yeast_plate
+  overnight = 1 "Yeast Overnight Suspension" from yeast_plate
   note: "Place the test tube in 30 C incubator shaker at B13.125"
   location: "B13.125"
   release test_tube[i]
 end
+
+yeast_overnight_output_ids = append(yeast_overnight_output_ids, overnight[:id])
 
 i = i + 1
 end
 
 release yeast_plates
 release yeast_media
+
+log
+  return: {yeast_overnight_output_ids: yeast_overnight_output_ids}
+end
