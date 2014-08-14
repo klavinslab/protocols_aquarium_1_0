@@ -1,13 +1,21 @@
 information  "This protocol describes how to perform overnight suspensions from plates"
 argument
   yeast_plate_ids: sample ("Yeast Strain") array, "Choose the plate you intended to do overnight suspension"
+  media_type: string, "Enter SC or YPAD"
+end
+
+yeast_media_type = ""
+if media_type == "SC"
+  yeast_media_type =  "50 mL SC liquid aliquot (sterile)"
+elsif media_type == "YPAD"
+  yeast_media_type = "50 mL YPAD liquid aliquot (sterile)"
 end
 
 n = length(yeast_plate_ids)
 take
   note: "Use a test tube rack to retrieve the 14 mL Test Tube"
   yeast_plates = item yeast_plate_ids
-  yeast_media = 1 "50 mL SC liquid aliquot (sterile)"
+  yeast_media = 1 yeast_media_type 
   test_tube = n "14 mL Test Tube"
 end
 yeast_overnight_output_ids = []
