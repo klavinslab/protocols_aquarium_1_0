@@ -1,4 +1,4 @@
-information  "This protocol describes how to perform an overnight suspension from a plate"
+information  "This protocol describes how to perform overnight suspensions from plates"
 argument
   yeast_plate_ids: sample ("Yeast Strain") array, "Choose the plate you intended to do overnight suspension"
 end
