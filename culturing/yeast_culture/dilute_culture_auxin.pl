@@ -57,7 +57,7 @@ while i < n
     release test_tubes[2*i+1]
   end
 
-
+  yeast_overnight_output_ids = append(yeast_overnight_output_ids, overnight[:id])
 
   i = i + 1
 end
