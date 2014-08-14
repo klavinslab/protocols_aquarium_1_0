@@ -1,14 +1,14 @@
 argument
   yeast_plate_ids: sample array, "The yeast plate suspensions"
 end
-yeast_plate_ids = [7968,7970,7971,7972,7973,7974,7975,7976]
+# yeast_plate_ids = [7968,7970,7971,7972,7973,7974,7975,7976]
 
 place overnight_suspension
   protocol: "cloning/yeast/overnight_suspension.pl
   argument
     yeast_plate_ids: yeast_plate_ids
   end
-  group: "technicians"
+  group: "technicians" 
   marked: true
   start: now()
   window: hours(1)
