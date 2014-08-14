@@ -18,7 +18,7 @@ end
 place make_glycerol_stock
   protocol: "cloning/yeast/make_glycerol_stock_yeast.pl"
   group: "technicians"
-  start: now()
+  start: hours(18) 
   window: hours(1)
 end
 
