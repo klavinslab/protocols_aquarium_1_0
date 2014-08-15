@@ -1,5 +1,4 @@
 argument
-  strain_name: string array, "The exact name of yeast strain you want to transform into"
   strains_id: sample array, "Enter source of yeast strain for overnight."
   aliquots_number: number array, "Enter the number of transformations into each strain"
   
@@ -20,7 +19,6 @@ place startovernight
 protocol: "cloning/yeast/overnight_suspension_aj.pl"
   argument
     yeast_strain_id: strains_id
-    overnight_name: strain_name
   end
   group: "technicians"
   marked: true
