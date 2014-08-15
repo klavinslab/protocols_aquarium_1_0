@@ -94,6 +94,7 @@ while x < j
       check: "Pipet 0.75 µL of primer with id %{a} into well %{z}."
       check: "Pipet 0.75 µL of primer with id %{b} into well %{z}."
     end
+    i=i+1
   end
   x = x+1
 end
