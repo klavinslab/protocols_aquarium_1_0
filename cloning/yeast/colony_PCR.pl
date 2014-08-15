@@ -86,6 +86,7 @@ j= y/colony_number
 while x < j
   a=forward_ids[x]
   b=reverse_ids[x]
+  i=0
   while i < colony_number
     z=z+1
     step
