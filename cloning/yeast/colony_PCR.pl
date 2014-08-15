@@ -130,7 +130,7 @@ last = 0
 QPCR_ids = []
 while x < y
   produce
-    q = 1 "QPCR result" from lysate[x]
+    q = 1 "QCPCR result" from lysate[x]
     location: "R4.300"
     data
       from: template_ids[x]
