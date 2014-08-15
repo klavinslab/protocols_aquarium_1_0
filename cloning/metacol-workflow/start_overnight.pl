@@ -29,7 +29,7 @@ end
 # FIXME: Media is never taken/released
 # Add antibiotics
 step
-  description: "Add 3 mL of TB+%{antibiotic} media to tubes %{n_tubes} using the serological pipette"
+  description: "Add 3 mL of TB+%{antibiotic} media to the %{n_tubes} tubes using the serological pipette"
 end
 
 if length(plates) > 0
@@ -93,7 +93,7 @@ while i < n_tubes
   i = i + 1
 end
 
-release(total_taken)
+release pstocks
 
 log
   return: {overnight_ids: overnight_ids}
