@@ -26,7 +26,7 @@ place makelysates
 end
 
 place pourgel
-  protocol: "cloning/yeast/pour_gel_qpcr.pl"
+  protocol: "cloning/yeast/pour_gel_qcpcr.pl"
   argument
     Transformation_plate_id: Transformation_plate_id
     ColonyNumber: ColonyNumber
@@ -54,7 +54,7 @@ place colonypcr
 end
 
 place rungel
-  protocol: "cloning/yeast/run_gel_for_qPCR.pl"
+  protocol: "cloning/yeast/run_gel_for_qcPCR.pl"
   argument
     ladder_one: ladder_one
     initials: initials
@@ -65,7 +65,7 @@ place rungel
 end
 
 place imagegel
-  protocol: "cloning/yeast/image_QPCR_gel.pl"
+  protocol: "cloning/yeast/image_QCPCR_gel.pl"
   group: "technicians"
   start: now()
   window: hours(20)
