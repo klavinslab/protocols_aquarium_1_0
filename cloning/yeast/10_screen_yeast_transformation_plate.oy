@@ -80,6 +80,7 @@ transition [makelysates] => [colonypcr] when !error(0) && completed(0) end
 # transition [makelysates] => [pourgel] when !error(0) && completed(0) && minutes_elapsed(0,30) end
 transition [makelysates] => [pourgel] when !error(0) && completed(0) end
 
-transition [colonypcr] => [rungel] when !error(0) && completed(0) && hours_elapsed(0,1) end
+#transition [colonypcr] => [rungel] when !error(0) && completed(0) && hours_elapsed(0,1) end
+transition [colonypcr] => [rungel] when !error(0) && completed(0) end
 # transition [rungel] => [imagegel] when !error(0) && completed(0) && minutes_elapsed(0,30) end
 transition [rungel] => [imagegel] when !error(0) && completed(0) end
