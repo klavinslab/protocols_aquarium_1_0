@@ -131,8 +131,8 @@ while x < y
   produce
     q = 1 "Yeast Plate" of products[x]
     location: "30º Incubator"
-    release k[x]
-    release j[x]
+    release k
+    release j
   end
   yeast_transformation_plate_id = append(yeast_transformation_plate_id,q[:id])
   x = x+1
