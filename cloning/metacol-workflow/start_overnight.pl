@@ -29,7 +29,7 @@ end
 # FIXME: Media is never taken/released
 # Add antibiotics
 step
-  description: "Add 3 mL of TB+%{antibiotic} media to tubes %{amp_tubes} using the serological pipette"
+  description: "Add 3 mL of TB+%{antibiotic} media to tubes %{n_tubes} using the serological pipette"
 end
 
 if length(plates) > 0
