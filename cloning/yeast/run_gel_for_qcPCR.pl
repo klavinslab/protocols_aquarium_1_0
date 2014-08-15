@@ -35,7 +35,7 @@ step
 end
 
 num = length(QPCRs)
-dye_volume = 10 / 5.0
+dye_volume = 15 / 5.0
 step
   description: "Add loading dye to each of the %{num} QPCRs"
   note: "Add %{dye_volume} µL of loading dye to the PCR results."
