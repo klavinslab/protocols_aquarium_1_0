@@ -22,12 +22,13 @@ counter=0
 overnight_id=[]
 release yeast_media
 
-foreach x in yeast_strain_id
+take
+  yeast = item unique(yeast_strain_id)
+end
 
-  take
-    yeast = item unique(yeast_strain_id)
-  end
-  
+while counter<length(yeast)
+
+  x = yeast[counter]
   step
     description: "Innoculate with %{x}"
     bullet: "For liquid cultures: pipette 10ul of culture into tube"
@@ -38,7 +39,7 @@ foreach x in yeast_strain_id
 
   
   produce
-    overnight = 1 "Yeast Overnight Suspension" from yeast
+    overnight = 1 "Yeast Overnight Suspension" from x
     note: "Place the test tube in 30 C incubator shaker at B13.125"
     location: "B13.125"
     release test_tube
@@ -48,6 +49,7 @@ foreach x in yeast_strain_id
   overnight_id=append(overnight_id,overnight[:id])
   
   counter=counter+1
+  
 end
 
 log
