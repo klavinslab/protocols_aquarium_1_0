@@ -14,10 +14,14 @@ end
 n = length(yeast_plate_ids)
 take
   note: "Use a test tube rack to retrieve the 14 mL Test Tube"
-  yeast_plates = item yeast_plate_ids
   yeast_media = 1 yeast_media_type 
   test_tube = n "14 mL Test Tube"
 end
+
+take
+  yeast_plates = item yeast_plate_ids
+end
+
 yeast_overnight_output_ids = []
 i = 0
 while i < n 
