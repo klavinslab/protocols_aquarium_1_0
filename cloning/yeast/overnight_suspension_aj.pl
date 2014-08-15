@@ -29,7 +29,7 @@ while counter<length(yeast)
 
   x = yeast[counter]
   step
-    description: "Innoculate with %{x}"
+    description: "Innoculate with %{x[:id]}"
     bullet: "For liquid cultures: pipette 10ul of culture into tube"
     bullet: "For plates: Take a sterile pipette tip (10 µL tips), pick up a medium sized colony by gently scraping the tip to the colony. Tilt 14 mL tube such that you can reach the media with your tip. Open the tube cap, scrape colony into media, using a swirling motion. Place the tube back on the rack with cap closed."
     bullet: "For Glycerol Stocks: use a 100ul tip and vigerously scrape the glycerol stock to get a chunk of stock. Tilt 14 mL tube such that you can reach the media with your tip. Open the tube cap, scrape colony into media, using a swirling motion. Place the tube back on the rack with cap closed."
@@ -44,12 +44,13 @@ while counter<length(yeast)
     release test_tube
   end
   
-  release yeast
   overnight_id=append(overnight_id,overnight[:id])
   
   counter=counter+1
   
 end
+
+  release yeast
 
 log
   return: {overnight_id: overnight_id}
