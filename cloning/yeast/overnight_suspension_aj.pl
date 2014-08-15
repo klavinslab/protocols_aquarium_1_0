@@ -1,7 +1,6 @@
 information  "This protocol describes how to perform a yeast overnight"
 argument
   yeast_strain_id: sample array, "Choose the plate/glycerol stock/yeast suspension you intended to start an overnight from"
-  overnight_name: string array, "The exact name of yeast strain for the overnight"
 end
 
 num=length(yeast_strain_id)
