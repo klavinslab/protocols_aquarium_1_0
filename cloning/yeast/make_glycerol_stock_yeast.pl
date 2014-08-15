@@ -11,6 +11,9 @@ n_tubes = length(overnight_array)
 take 
   glycerol_sol = 1 "50 percent Glycerol (sterile)"  
   cryo_tube = n_tubes "Cryo Tube"
+end
+
+take
   overnight_culture = item overnight_array
 end
 
