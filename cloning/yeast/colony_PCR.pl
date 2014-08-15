@@ -88,12 +88,12 @@ while x < j
   b=reverse_ids[x]
   i=0
   while i < colony_number
-    z=z+1
     step
       description: "Add both forward and reverse primers"
       check: "Pipet 0.75 µL of primer with id %{a} into well %{z}."
       check: "Pipet 0.75 µL of primer with id %{b} into well %{z}."
     end
+    z=z+1
     i=i+1
   end
   x = x+1
