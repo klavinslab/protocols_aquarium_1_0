@@ -9,7 +9,7 @@ end
 
 take
   cutsmart_stock = item cutsmart
-  plasmid_stocks = item unique(plasmids)
+  plasmid_stocks = item plasmids
 end
 
 number_plasmids=length(plasmids)
