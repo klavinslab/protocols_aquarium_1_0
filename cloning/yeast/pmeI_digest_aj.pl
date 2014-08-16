@@ -12,7 +12,7 @@ take
   plasmid_stocks = item unique(plasmids)
 end
 
-y=length(plasmids)
+number_plasmids=length(plasmids)
 
 step
   description: "In the following step you will take PMEI enzyme out of the freezer. Make sure the enzyme is kept on ice for the duration of the protocol."
@@ -48,7 +48,7 @@ if length(plasmids) > 24
 end
 
 step
-  description: "If not already labeled, label tube %{y} %{initials} and rip off any other tubes to the right."
+  description: "If not already labeled, label tube %{number_plasmids} %{initials} and rip off any other tubes to the right."
 end
 
 step
@@ -86,9 +86,10 @@ end
 
 digested_plasmids_ids=[]
 x=0
-while x < y
+while x < number_plasmids
+  plasmid = plasmid_stocks[x]
   produce
-    q = 1 "Digested Plasmid" from plasmid_stocks[x]
+    q = 1 "Digested Plasmid" from plasmid
     location: "B15.320"
   end
   digested_plasmids_ids=append(digested_plasmids_ids,q[:id])
