@@ -86,19 +86,20 @@ end
 
 digested_plasmids_ids=[]
 x=0
+plasmid_to_produce = plasmid_stocks[0]
 while x < number_plasmids
   
   counter2 = 0
   while counter2 < length(plasmid_stocks)
     temp = plasmid_stocks[counter2]
     if plasmids[x] == temp[:id]
-      plasmid = plasmid_stocks[x]
+      plasmid_to_produce = temp
     end
     counter2 = counter2 + 1
   end
   
   produce
-    q = 1 "Digested Plasmid" from plasmid
+    q = 1 "Digested Plasmid" from plasmid_to_produce
     location: "B15.320"
   end
   digested_plasmids_ids=append(digested_plasmids_ids,q[:id])
