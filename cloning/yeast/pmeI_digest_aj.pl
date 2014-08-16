@@ -86,7 +86,6 @@ end
 
 digested_plasmids_ids=[]
 x=0
-plasmid=plasmid_stocks[0]
 while x < number_plasmids
   
   counter2 = 0
