@@ -9,7 +9,7 @@ end
 
 take
   cutsmart_stock = item cutsmart
-  plasmid_stocks = item plasmids
+  plasmid_stocks = item unique(plasmids)
 end
 
 number_plasmids=length(plasmids)
@@ -86,8 +86,18 @@ end
 
 digested_plasmids_ids=[]
 x=0
+plasmid=plasmid_stocks[0]
 while x < number_plasmids
-  plasmid = plasmid_stocks[x]
+  
+  counter2 = 0
+  while counter2 < number_plasmids
+    temp = plasmid_stocks[counter2]
+    if plasmids[x] == temp[id]
+      plasmid = plasmid_stocks[x]
+    end
+    counter2 = counter2 + 1
+  end
+  
   produce
     q = 1 "Digested Plasmid" from plasmid
     location: "B15.320"
