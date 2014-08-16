@@ -62,7 +62,7 @@ end
 
 count=0
 
-while count<y
+while count<number_plasmids
   label=count+1
   plas=plasmids[count]
   step
