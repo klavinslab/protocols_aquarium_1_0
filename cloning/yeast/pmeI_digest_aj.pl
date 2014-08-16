@@ -90,7 +90,7 @@ plasmid=plasmid_stocks[0]
 while x < number_plasmids
   
   counter2 = 0
-  while counter2 < number_plasmids
+  while counter2 < length(plasmid_stocks)
     temp = plasmid_stocks[counter2]
     if plasmids[x] == temp[:id]
       plasmid = plasmid_stocks[x]
