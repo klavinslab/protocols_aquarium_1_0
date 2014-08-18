@@ -14,15 +14,20 @@ take
 end
 
 step
-  bullet: "Collect desired volume of cells (usually 10-20 mL of OD 0.7-1.0) by centrifugation or vacuum filtration."
-  bullet: "Flash freeze in liquid nitrogen and store at -80C."
+  check: "Collect desired volume of cells (usually 10-20 mL of OD 0.7-1.0) by centrifugation at 3000 RPM for 5 minutes."
+  check: "Discard supernatent."
+  check: "Flash freeze by storing at -80C."
+  note: "Samples can be removed from -80C storage as soon as it is frozen, in order to proceed with extraction."
 end
 
 step
+  check: "Remove samples from -80C storage."
   check: "Resuspend cells in 400 uL TES buffer."
   check: "Transfer to a 1.5 mL tube containing 400 uL acid phenol."
   check: "Vortex 10 seconds and then incubate at 65C for 60 minutes, vortexing a few times during the incubation."
-  check: "Place on ice for 5 minutes."
+  note: "While samples are in their second spin, prepare phase lock gel (PLG) tubes: spin down PLG tubes so gel is at the bottom."
+  check: "Centrifuge PLG tubes at 13 kRPM for 30 seconds."
+  check: "Once incubation is complete, place samples on ice for 5 minutes."
 end
 
 step
@@ -32,19 +37,14 @@ step
 end
 
 step
-  note: "While samples are in their second spin, prepare phase lock gel (PLG) tubes: spin down PLG tubes so gel is at the bottom."
-  check: "Centrifuge at 13 kRPM for 30 seconds at room temperature."
-end
-
-step
-  check: "Transfer 300uL of aqueous layer of samples to the PLG tubes."
-  check: "Add 300uL chloroform."
+  check: "Transfer 350uL of aqueous layer of samples to the PLG tubes."
+  check: "Add 350uL chloroform."
   note: "Mix by inverting; do not vortex!"
 end
 
 step
   note: "Centrifuge at 13 kRPM for 10 minutes in cold room."
-  check: "Transfer 200-250 uL to a new 1.5 mL tube."
+  check: "Transfer 200-300uL top aqueous layer to a new 1.5 mL tube."
 end
 
 step
