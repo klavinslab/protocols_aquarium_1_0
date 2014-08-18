@@ -11,22 +11,25 @@ end
 
 step
   check: "Pellet RNA by centrifuging at 13 kRPM for 15 minutes in cold room."
-  check: "Discard supernatant and wash once in 500 uL 80%% EtOH: 'resuspend' as much as possible with pipetting."
+  check: "Discard supernatant by shaking the tube - do not pipette out!"
+  check: "Wash once in 500 uL 80%% EtOH: 'resuspend' as much as possible by pipetting."
+  note: "If it is not possible to resuspend samples, proceed to centrifugation."
   check: "Spin 5 minutes at 13 kRPM in cold room centrifuge."
-  check: "Discard supernatant."
+  check: "Discard supernatant by shaking the tube - do not pipette out!."
 end
 
 step
   check: "Air dry pellets by leaving tubes open and inverted on the bench or by speed vac."
-  warning: "Make sure the pellets don't get too warm."
+  note: "Make sure the pellets don't get too warm."
 end
 
 step
-  check: "Resuspend in 50 uL H2O."
+  check: "Resuspend in 100 uL H2O."
   note: "Pellet might be difficult to resuspend."
 end
 
 step
+  check: "Place samples on ice block."
   check: "Measure RNA concentration and quality with a Nanodrop."
   note: "Use a 1:50 dilution to nanodrop."
   note: "Optional: run a denaturing agarose gel to check degradation."
