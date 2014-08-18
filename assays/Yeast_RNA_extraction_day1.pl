@@ -48,7 +48,9 @@ step
 end
 
 step
-  note: "Precipitate RNA with 1/10 volume 3M NaOAc and 3 volumes 100%% EtOH on dry ice for appx. 1 hour or at -20C overnight (keep EtOH cold)."
+  check: "Add 1/10 original volume 3M NaOAc."
+  check: "Add 3 original volumes 100%% EtOH." 
+  check : "Place on dry ice for appx. 1 hour or at -20C overnight (keep EtOH cold)."
 end
 
 count=0
