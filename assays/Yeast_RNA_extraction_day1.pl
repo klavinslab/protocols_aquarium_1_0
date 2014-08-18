@@ -14,7 +14,7 @@ take
 end
 
 step
-  check: "Collect desired volume of cells (usually 10-20 mL of OD 0.7-1.0) by centrifugation at 3000 RPM for 5 minutes."
+  check: "Collect cells by centrifugation at 3000 RPM for 5 minutes."
   check: "Discard supernatent."
   check: "Flash freeze by storing at -80C."
   note: "Samples can be removed from -80C storage as soon as it is frozen, in order to proceed with extraction."
