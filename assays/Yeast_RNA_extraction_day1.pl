@@ -25,7 +25,7 @@ step
   check: "Resuspend cells in 400 uL TES buffer."
   check: "Transfer to a 1.5 mL tube containing 400 uL acid phenol."
   check: "Vortex 10 seconds and then incubate at 65C for 60 minutes, vortexing a few times during the incubation."
-  note: "While samples are in their second spin, prepare phase lock gel (PLG) tubes: spin down PLG tubes so gel is at the bottom."
+  note: "While samples are incubating, prepare phase lock gel (PLG) tubes: spin down PLG tubes so gel is at the bottom."
   check: "Centrifuge PLG tubes at 13 kRPM for 30 seconds."
 end
 
