@@ -45,9 +45,6 @@ end
 step
   note: "Centrifuge at 13 kRPM for 10 minutes in cold room."
   check: "Transfer 200-300uL top aqueous layer to a new 1.5 mL tube."
-end
-
-step
   check: "Add 1/10 original volume 3M NaOAc."
   check: "Add 3 original volumes 100%% EtOH." 
   check : "Place on dry ice for appx. 1 hour or at -20C overnight (keep EtOH cold)."
