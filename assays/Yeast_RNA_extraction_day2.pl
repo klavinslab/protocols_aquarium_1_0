@@ -13,9 +13,9 @@ step
   check: "Pellet RNA by centrifuging at 13 kRPM for 15 minutes in cold room."
   check: "Discard supernatant by shaking the tube - do not pipette out!"
   check: "Wash once in 500 uL 80%% EtOH: 'resuspend' as much as possible by pipetting."
-  note: "If it is not possible to resuspend samples, proceed to centrifugation."
+  note: "It may not be possible to resuspend samples; if so, proceed to centrifugation."
   check: "Spin 5 minutes at 13 kRPM in cold room centrifuge."
-  check: "Discard supernatant by shaking the tube - do not pipette out!."
+  check: "Discard supernatant by shaking the tube - do not pipette out!"
 end
 
 step
