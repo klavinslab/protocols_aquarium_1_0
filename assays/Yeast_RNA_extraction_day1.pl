@@ -31,6 +31,7 @@ end
 
 step
   check: "Once incubation is complete, place samples on ice for 5 minutes."
+  note: "If samples freeze, thaw them before centrifugation."
   check: "Centrifuge at 13 kRPM in microcentrifuge for 10 minutes at 4C or in cold room."
   check: "Transfer aqueous layer to new 1.5 mL tube containing 400 uL acid phenol."
   check: "Vortex briefly and spin again."
