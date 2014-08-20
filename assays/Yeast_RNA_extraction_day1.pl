@@ -24,6 +24,9 @@ step
   check: "Remove samples from -80C storage."
   check: "Resuspend cells in 400 uL TES buffer."
   check: "Transfer to a 1.5 mL tube containing 400 uL acid phenol."
+end 
+
+step
   check: "Vortex 10 seconds and then incubate at 65C for 60 minutes, vortexing a few times during the incubation."
   note: "While samples are incubating, prepare phase lock gel (PLG) tubes: spin down PLG tubes so gel is at the bottom."
   check: "Centrifuge PLG tubes at 13 kRPM for 30 seconds."
@@ -32,7 +35,7 @@ end
 step
   check: "Once incubation is complete, place samples on ice for 5 minutes."
   note: "If samples freeze, thaw them before centrifugation."
-  check: "Centrifuge at 13 kRPM in microcentrifuge for 10 minutes at 4C or in cold room."
+  check: "Centrifuge at 13 kRPM in microcentrifuge for 10 minutes at 4C."
   check: "Transfer aqueous layer to new 1.5 mL tube containing 400 uL acid phenol."
   check: "Vortex briefly and spin again."
 end
@@ -44,7 +47,7 @@ step
 end
 
 step
-  check: "Centrifuge at 13 kRPM for 10 minutes in cold room."
+  check: "Centrifuge at 13 kRPM for 10 minutes at 4C."
   check: "Transfer 200-300uL top aqueous layer to a new 1.5 mL tube."
   check: "Add 1/10 original volume 3M NaOAc."
   check: "Add 3 original volumes 100%% EtOH." 
