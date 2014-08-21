@@ -6,11 +6,6 @@ end
 
 take
   overnight = item strain_id
-  a = 1 "TES Buffer"
-  b = 1 "Acid Phenol"
-  c = 1 "Chloroform"
-  d = 1 "3M NaOAc"
-  e = 1 "100%% Ethanol"
 end
 
 step
@@ -18,6 +13,14 @@ step
   check: "Discard supernatent."
   check: "Flash freeze by storing at -80C."
   note: "Samples can be removed from -80C storage and used as soon as they have frozen."
+end
+
+take
+  a = 1 "TES Buffer"
+  b = 1 "Acid Phenol"
+  c = 1 "Chloroform"
+  d = 1 "3M NaOAc"
+  e = 1 "100%% Ethanol"
 end
 
 step
