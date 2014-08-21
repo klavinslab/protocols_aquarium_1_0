@@ -28,7 +28,7 @@ end
 
 step
   check: "Vortex 10 seconds and then incubate at 65C for 60 minutes, vortexing a few times during the incubation."
-  #timer: { hours: 1, minutes: 0, seconds: 0 }
+  timer: { hours: 1, minutes: 0, seconds: 0 }
   note: "While samples are incubating, prepare phase lock gel (PLG) tubes: spin down PLG tubes so gel is at the bottom."
   check: "Centrifuge PLG tubes at 13 kRPM for 30 seconds."
 end
