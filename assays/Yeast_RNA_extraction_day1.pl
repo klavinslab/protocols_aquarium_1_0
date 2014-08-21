@@ -38,7 +38,7 @@ step
 end
 
 step
-  check: "Once incubation is complete, place samples on ice for 5 minutes."
+  check: "Once incubation is complete, place samples on an ice block for 5 minutes."
   timer: { hours: 0, minutes: 5, seconds: 0 }
   note: "If samples freeze, thaw them before centrifugation."
   check: "Centrifuge at 13 kRPM for 10 minutes at 4C."
