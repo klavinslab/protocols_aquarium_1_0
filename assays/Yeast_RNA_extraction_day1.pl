@@ -26,7 +26,8 @@ end
 step
   check: "Remove samples from -80C storage."
   check: "Resuspend cells in 400 uL TES buffer."
-  check: "Transfer to a 1.5 mL tube containing 400 uL acid phenol."
+  warning: "Always handle acid phenol under fume hood!"
+  check: "Transfer to a 1.5 mL tube containing 400 uL acid phenol, while under fume hood."
 end 
 
 step
@@ -40,14 +41,19 @@ step
   check: "Once incubation is complete, place samples on ice for 5 minutes."
   timer: { hours: 0, minutes: 5, seconds: 0 }
   note: "If samples freeze, thaw them before centrifugation."
-  check: "Centrifuge at 13 kRPM in microcentrifuge for 10 minutes at 4C."
-  check: "Transfer aqueous layer to new 1.5 mL tube containing 400 uL acid phenol."
-  check: "Vortex briefly and spin again."
+  check: "Centrifuge at 13 kRPM for 10 minutes at 4C."
+end 
+
+step
+  warning: "Always handle acid phenol under fume hood!"
+  check: "Transfer top aqueous layer to new 1.5 mL tube containing 400 uL acid phenol, while under fume hood."
+  check: "Vortex briefly and centrifuge at 13 kRPM for 10 minutes at 4C."
 end
 
 step
-  check: "Transfer 350uL of aqueous layer of samples to the PLG tubes."
-  check: "Add 350uL chloroform."
+  check: "Transfer 350uL of top aqueous layer of samples to the PLG tubes."
+  warning: "Always handle chloroform under fume hood!"
+  check: "Add 350uL chloroform, while under fume hood."
   note: "Mix by inverting; do not vortex!"
 end
 
