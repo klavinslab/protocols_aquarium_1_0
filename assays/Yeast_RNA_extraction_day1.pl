@@ -24,6 +24,12 @@ take
 end
 
 step
+  description: "RNAse-free room etiquette"
+  note: "Wear gloves at all times."
+  #note: "Spray any items from outside the room with 
+end
+
+step
   check: "Remove samples from -80C storage."
   check: "Resuspend cells in 400 uL TES buffer."
   warning: "Always handle acid phenol under fume hood!"
