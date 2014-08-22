@@ -10,7 +10,7 @@ end
 
 step
   check: "Collect cells by centrifugation at 3000 RPM for 5 minutes."
-  check: "Discard supernatent."
+  check: "Discard all of the liquid supernatent by pouring."
   check: "Flash freeze by storing at -80C."
   note: "Samples can be removed from -80C storage and used as soon as they have frozen."
 end
