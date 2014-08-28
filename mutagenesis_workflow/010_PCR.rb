@@ -12,7 +12,7 @@ class Protocol
 
   def arguments
     {
-      # For testing purposes, choose a random set of 10 fragments
+      #Enter the fragment sample id (not item ids) as a list, eg [2060,2061]
       fragment_ids: [2060,2061]
     }
   end
@@ -43,9 +43,11 @@ class Protocol
       title "Fragment Information"
       note "This protocol will build the following fragments:"
       note (fragments.collect { |f| "#{f}" })
-      separator
-      note "The following fragments have missing ingredients and will not be built:"
-      note not_ready.to_s
+      if not_ready.any?
+        separator
+        note "The following fragments have missing ingredients and will not be built:"
+        note not_ready.to_s
+      end
     }
 
     # Take the primers and templates
@@ -83,7 +85,7 @@ class Protocol
         check "Pipette 25 µL of master mix (item #{phusion_stock_item}) into each of wells " + sw.non_empty_string + " of stripwell #{sw}."
       end
       separator
-      warning "USE A NEW PIPETTE TIP FOR EACH WELL AND PIPETTE UP AND DOWN TO MIX"
+      warning "Use a new pipette tip for each pipetting! Pipette up and down to mix."
     }
 
     # Run the thermocycler
@@ -96,7 +98,7 @@ class Protocol
       separator
       check "Click 'Home' then click 'Saved Protocol'. Choose 'DAVID' and then 'CLONEPCR'."
       check "Set the anneal temperature to #{tanneal}. This is the 3rd temperature (default 70). Don't change the extension temperature of 72."
-      check "Press 'run' and select 50ul."
+      check "Press 'run' and select 50 µL."
       # TODO: image: "thermal_cycler_home"
     }
 
