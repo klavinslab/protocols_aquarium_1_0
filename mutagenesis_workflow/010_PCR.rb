@@ -13,7 +13,7 @@ class Protocol
   def arguments
     {
       # For testing purposes, choose a random set of 10 fragments
-      fragment_ids: (SampleType.where("name='Fragment'")[0].samples.collect { |f| f.id })
+      fragment_ids: [2060,2061]
     }
   end
 
