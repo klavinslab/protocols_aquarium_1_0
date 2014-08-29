@@ -17,15 +17,15 @@ class Protocol
 
   def main
   
+    gels = input[:gels_ids].collect { |gid| collection_from gid }  
     stripwells = input[:stripwell_ids].collect { |sid| collection_from sid }
-    gels = input[:gels_ids].collect { |gid| collection_from gid }
 
-    take gels
+    take gels, interactive: true,  method: "boxes"
       
     num_samples = stripwells.inject(0) { |sum,sw| sum + sw.num_samples }
 
     show {
-      title "Take out #{num_samples} 1.5 mL tubes and label each"
+      title "Take out #{num_samples} 1.5 mL tubes and label each #{stripwell_ids} and #{gels_ids}"
       note "Take out #{num_samples}  1.5 mL tubes and label them (ON THE SIDE) 1 through #{num_samples}."
     }
 
