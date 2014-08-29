@@ -20,7 +20,7 @@ class Protocol
     gels = input[:gels_ids].collect { |gid| collection_from gid }  
     stripwells = input[:stripwell_ids].collect { |sid| collection_from sid }
 
-    take gels, interactive: true,  method: "boxes"
+    take gels, interactive: true
       
     num_samples = stripwells.inject(0) { |sum,sw| sum + sw.num_samples }
 
