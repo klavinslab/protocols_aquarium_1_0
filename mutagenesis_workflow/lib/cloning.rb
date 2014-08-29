@@ -25,9 +25,9 @@ module Cloning
 
       else
 
-        t1 = fwd_items[0].sample.properties["T Anneal"]
-        t2 = rev_items[0].sample.properties["T Anneal"]
-
+        t1 = fwd_items[0].sample.properties["T Anneal"] || 72
+        t2 = rev_items[0].sample.properties["T Anneal"] || 72
+ 
         return {
           fragment: fragment,
           fwd: fwd_items[0],
