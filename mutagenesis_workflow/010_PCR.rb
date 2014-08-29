@@ -1,5 +1,5 @@
 needs "aqualib/lib/standard"
-needs "aqualib/lib/cloning"
+needs "protocols/mutagenesis_workflow/lib/cloning"
 
 class Protocol
 
