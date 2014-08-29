@@ -7,7 +7,7 @@ class Protocol
   include Cloning
 
   def debug
-    false
+    true
   end
 
   def arguments
@@ -42,11 +42,11 @@ class Protocol
     show {
       title "Fragment Information"
       note "This protocol will build the following fragments:"
-      note (fragments.collect { |f| "#{f}" })
+      note (fragments.collect { |f| "#{f} " })
       if not_ready.any?
         separator
         note "The following fragments have missing ingredients and will not be built:"
-        note not_ready.to_s
+        note not_ready.collect { |f| "#{f} "}
       end
     }
 
