@@ -29,7 +29,7 @@ class Protocol
     size_list = []
 
     input[:fragment_ids].each do |fid|
-      fragment = find(:sample,{id: pid})[0]
+      fragment = find(:sample,{id: fid})[0]
       name = fragment.name
       size = fragment.properties["Length"]
       gel_slice = produce new_sample name, of: "Fragment", as: "Gel Slice"
