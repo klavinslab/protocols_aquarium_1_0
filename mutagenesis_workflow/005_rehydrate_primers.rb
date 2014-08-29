@@ -21,9 +21,9 @@ class Protocol
 		  primer = find(:sample,{id: pid})[0]
 		  name = primer.name
 		  primer_stock = produce new_sample name, of: "Primer", as: "Primer Stock"
-		  primer_stock_id = primer_stock.id		  
+		  #primer_stock_id = primer_stock.id		  
 		  primer_stock_list = primer_stock_list.push primer_stock
-		  note "Label Primer #{pid} with item number #{primer_stock_id}on the lid"
+		  note "Label Primer with item number on the lid"
 	  end
   	}
 
