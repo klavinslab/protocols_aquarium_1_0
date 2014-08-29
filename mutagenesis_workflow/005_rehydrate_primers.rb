@@ -15,11 +15,17 @@ class Protocol
   end
 
   def main
+  	primer_stock_list = []
 	input[:primer_ids].each do |pid|
 	  primer = find(:sample,{id: pid})[0]
 	  name = primer.name
 	  primer_stock = produce new_sample name, of: "Primer", as: "Primer Stock"
+	  primer_stock_list = primer_stock_list.push primer_stock
 	end
+
+	release([primer_stock_list],interactive: true)
   end
+
+
 
 end
