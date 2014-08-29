@@ -23,7 +23,7 @@ class Protocol
 	  primer_stock_list = primer_stock_list.push primer_stock
 	end
 
-	release([primer_stock_list],interactive: true)
+	release(primer_stock_list,interactive: true)
   end
 
 
