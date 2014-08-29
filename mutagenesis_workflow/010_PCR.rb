@@ -42,6 +42,7 @@ class Protocol
     show {
       title "Fragment Information"
       note "This protocol will build the following fragments:"
+      note "#{fragments} and #{templates}"
       note (fragments.collect { |f| " #{f}" })
       if not_ready.any?
         separator
@@ -96,7 +97,7 @@ class Protocol
       check "Place the stripwells into an available thermal cycler and close the lid."
       get "text", var: "name", label: "Enter the name of the thermocycler used", default: "TC1"
       separator
-      check "Click 'Home' then click 'Saved Protocol'. Choose 'DAVID' and then 'CLONEPCR'."
+      check "Click 'Home' then click 'Saved Protocol'. Choose 'YY' and then 'CLONEPCR'."
       check "Set the anneal temperature to #{tanneal}. This is the 3rd temperature (default 70). Don't change the extension temperature of 72."
       check "Press 'run' and select 50 µL."
       # TODO: image: "thermal_cycler_home"
