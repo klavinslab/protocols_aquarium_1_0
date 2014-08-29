@@ -12,7 +12,7 @@ class Protocol
     {
       stripwell_ids: [],
       gels_ids: [],
-      volume: 20       # The volume of PCR fragment to load in µL
+      volume: 50       # The volume of PCR fragment to load in µL
     }
   end
 
