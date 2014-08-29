@@ -20,5 +20,6 @@ class Protocol
 	  name = primer.name
 	  primer_stock = produce new_sample name, of: "Primer", as: "Primer Stock"
 	end
+  end
 
 end
