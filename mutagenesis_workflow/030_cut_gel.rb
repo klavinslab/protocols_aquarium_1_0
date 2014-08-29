@@ -25,7 +25,7 @@ class Protocol
     num_samples = stripwells.inject(0) { |sum,sw| sum + sw.num_samples }
 
     show {
-      title "Take out #{num_samples} 1.5 mL tubes and label each #{stripwell_ids} and #{gels_ids}"
+      title "Take out #{num_samples} 1.5 mL tubes and label each"
       note "Take out #{num_samples}  1.5 mL tubes and label them (ON THE SIDE) 1 through #{num_samples}."
     }
 
