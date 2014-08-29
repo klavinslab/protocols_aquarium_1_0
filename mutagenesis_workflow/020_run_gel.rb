@@ -19,7 +19,7 @@ class Protocol
   def main
 
     stripwells = input[:stripwell_ids].collect { |i| collection_from i }
-    gels = input[:gel_ids].collect { |i| collection_from i }
+    gels = input[:gels_ids].collect { |i| collection_from i }
     volume = input[:volume] || 20
 
     take stripwells + gels
