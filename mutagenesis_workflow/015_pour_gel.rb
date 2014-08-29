@@ -5,7 +5,7 @@ class Protocol
   include Standard
 
   def debug
-    ture
+    true
   end
 
   def arguments
