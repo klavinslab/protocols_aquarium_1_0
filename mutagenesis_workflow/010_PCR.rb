@@ -13,7 +13,7 @@ class Protocol
   def arguments
     {
       #Enter the fragment sample id (not item ids) as a list, eg [2060,2061]
-      fragment_ids: [2060,2061]
+      fragment_ids: [2058,2059,2060,2061]
     }
   end
 
