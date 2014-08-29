@@ -22,7 +22,7 @@ class Protocol
     gels = input[:gels_ids].collect { |i| collection_from i }
     volume = input[:volume] || 20
 
-    take stripwells + gels
+    take stripwells + gels, interactive: true
 
     ladder = choose_sample "1 kb Ladder" 
     dye = choose_object "Gel Loading Dye Blue (6X)"
@@ -80,9 +80,9 @@ class Protocol
       image "gel_check_for_bubbles"
     }
 
-    release stripwells # TODO throw these away
+    release stripwells, interactive: true
 
-    release gels + [ ladder, dye ]
+    release gels + [ ladder, dye ], interactive: true
 
     return input
 
