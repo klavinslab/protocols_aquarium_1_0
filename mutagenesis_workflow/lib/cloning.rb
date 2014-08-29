@@ -17,7 +17,7 @@ module Cloning
 
       fwd_items = fwd.in "Primer Aliquot"
       rev_items = rev.in "Primer Aliquot"
-      template_items = template.in "Plasmid Stock"
+      template_items = template.in "1 ng/µL Plasmid Stock"
 
       if fwd_items.length == 0 || rev_items.length == 0 || template_items.length == 0
 

@@ -42,7 +42,6 @@ class Protocol
     show {
       title "Fragment Information"
       note "This protocol will build the following fragments:"
-      note templates.collect { |t| " #{t}" }
       note (fragments.collect { |f| " #{f}" })
       if not_ready.any?
         separator
