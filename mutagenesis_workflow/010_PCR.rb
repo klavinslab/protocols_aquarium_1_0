@@ -113,10 +113,7 @@ class Protocol
     # Release the stripwells silently, since they should stay in the thermocycler
     release stripwells
 
-    return { 
-      stripwell_ids: stripwells.collect { |s| s.id },
-      fragment_ids: fragments.collect {|f| f.id}
-    }
+    return input.merge stripwell_ids: stripwells.collect { |s| s.id }
 
   end
 
