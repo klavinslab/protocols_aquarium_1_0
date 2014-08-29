@@ -94,10 +94,10 @@ class Protocol
       check "Put the cap on each stripwell. Press each one very hard to make sure it is sealed."
       separator
       check "Place the stripwells into an available thermal cycler and close the lid."
-      get "text", var: "name", label: "Enter the name of the thermocycler used", default: "TC1"
+      get "text", var: "name", label: "Enter the name of the thermocycler used", default: "T1"
       separator
       check "Click 'Home' then click 'Saved Protocol'. Choose 'YY' and then 'CLONEPCR'."
-      check "Set the anneal temperature to #{tanneal}. This is the 3rd temperature (default 70). Don't change the extension temperature of 72."
+      check "Set the anneal temperature to #{tanneal}. This is the 3rd temperature."
       check "Press 'run' and select 50 µL."
       # TODO: image: "thermal_cycler_home"
     }
