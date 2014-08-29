@@ -26,7 +26,7 @@ class Protocol
     comb_1 = input[:comb_1] || 2
     comb_2 = input[:comb_2] || 2
     percentage = input[:percentage] || 1
-    stripwells = input[:stripwell_ids].collect { |sid| collection_from sid }
+    stripwells = input[:stripwell_ids].collect { |sid| sid }
 
     take stripwells
 
