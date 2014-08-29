@@ -33,7 +33,7 @@ class Protocol
       name = fragment.name
       size = fragment.properties["Length"]
       gel_slice = produce new_sample name, of: "Fragment", as: "Gel Slice"
-      gel_slice_list = gel_slice_list.push primer_stock
+      gel_slice_list = gel_slice_list.push gel_slice
       size_list = size_list.push size
     end
 
