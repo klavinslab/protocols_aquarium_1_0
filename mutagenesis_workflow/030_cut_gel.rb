@@ -39,7 +39,7 @@ class Protocol
 
 
     show {
-      title "Take out #{num_samples} 1.5 mL tubes and label each #{gel_slice_list} and #{size_list}"
+      title "Take out #{num_samples} 1.5 mL tubes and label each #{gel_slice_list.collect { |g| " #{g}" }} and #{size_list.collect {|s| "#{s}"}}"
       note "Take out #{num_samples}  1.5 mL tubes and label them (ON THE SIDE) 1 through #{num_samples}."
     }
 
