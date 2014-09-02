@@ -84,9 +84,9 @@ class Protocol
     show {
       title "Add 10X Mutazyme II Buffer, 40 mM dNTP mix and Mutazyme II DNA polymerase"
       stripwells.each do |sw|
-        check "Pipette 5 µL of 10X Mutazyme II Buffer (item #{phusion_stock_item}) into each of wells " + sw.non_empty_string + " of stripwell #{sw}."
-        check "Pipette 1 µL of 40 mM dNTP mix (item #{phusion_stock_item}) into each of wells " + sw.non_empty_string + " of stripwell #{sw}."
-        check "Pipette 1 µL of Mutazyme II DNA polymerase (item #{phusion_stock_item}) into each of wells " + sw.non_empty_string + " of stripwell #{sw}."
+        check "Pipette 5 µL of 10X Mutazyme II Buffer (item #{buffer_stock_item}) into each of wells " + sw.non_empty_string + " of stripwell #{sw}."
+        check "Pipette 1 µL of 40 mM dNTP mix (item #{dNTP_stock_item}) into each of wells " + sw.non_empty_string + " of stripwell #{sw}."
+        check "Pipette 1 µL of Mutazyme II DNA polymerase (item #{mutazymeII_stock_item}) into each of wells " + sw.non_empty_string + " of stripwell #{sw}."
       end
       separator
       warning "Use a new pipette tip for each pipetting! Pipette up and down to mix."
