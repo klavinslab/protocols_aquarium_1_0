@@ -82,7 +82,7 @@ class Protocol
       }
 
     show {
-      title "Add 10X Mutazyme II Buffer, 40 mM dNTP mix and Mutazyme II DNA polymerase"
+      title "Add Mutazyme II Buffer, dNTP mix and Mutazyme II DNA polymerase"
       stripwells.each do |sw|
         check "Pipette 5 µL of 10X Mutazyme II Buffer (item #{buffer_stock_item}) into each of wells " + sw.non_empty_string + " of stripwell #{sw}."
         check "Pipette 1 µL of 40 mM dNTP mix (item #{dNTP_stock_item}) into each of wells " + sw.non_empty_string + " of stripwell #{sw}."
@@ -113,7 +113,7 @@ class Protocol
     end
 
     # Release the templates, primers, and enzymes
-    release templates + forward_primers + reverse_primers + [ phusion_stock_item ], interactive: true, method: "boxes" 
+    release templates + forward_primers + reverse_primers + [ buffer_stock_item ] + [dNTP_stock_item] + [mutazymeII_stock_item], interactive: true, method: "boxes" 
 
     # Release the stripwells silently, since they should stay in the thermocycler
     release stripwells
