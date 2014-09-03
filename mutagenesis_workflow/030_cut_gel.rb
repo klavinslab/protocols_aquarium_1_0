@@ -12,7 +12,6 @@ class Protocol
       fragment_ids: [],
       gels_ids: [],
       stripwell_ids: [],
-      volume: 50       # The volume of PCR fragment to load in µL
     }
   end
 
