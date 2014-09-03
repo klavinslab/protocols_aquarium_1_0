@@ -70,3 +70,4 @@ wire (rungel,"gel_lane_ids") => (imagegel,"gel")
 
 transition [fragmentpcr,pourgel] => [rungel] when !error(0) && completed(0) && !error(1) && completed(1) && hours_elapsed(0,1) end
 transition [rungel] => [imagegel] when !error(0) && completed(0) end
+transition [imagegel] => [] when !error(0) && completed(0) end
