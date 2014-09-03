@@ -8,7 +8,7 @@ module Cloning
     fwd = props["Forward Primer"]
     rev = props["Reverse Primer"]
     template = props["Template"]
-    length = props["Length"].to_f
+    length = props["Length"] || 7823
 
     if fwd == nil || rev == nil || template == nil
 
