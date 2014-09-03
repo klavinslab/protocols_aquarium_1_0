@@ -57,6 +57,7 @@ wire (miniprep,"miniprep_ids") => (sequencing,"minipreps")
 transition [start_overnight] => [miniprep] when !error(0) && completed(0) && hours_elapsed(0,12) end
 #transition [start_overnight] => [miniprep] when !error(0) && completed(0) end
 transition [miniprep] => [sequencing] when !error(0) && completed(0) end
+transition [sequencing] => [] when !error(0) && completed(0) end
 
 
 
