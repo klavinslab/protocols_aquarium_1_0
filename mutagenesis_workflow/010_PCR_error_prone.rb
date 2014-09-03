@@ -13,7 +13,7 @@ class Protocol
   def arguments
     {
       #Enter the fragment sample id (not item ids) as a list, eg [2060,2061]
-      fragment_ids: [2048,2049,2062]
+      fragment_ids: [2048,2049,2062],
       #Enter expected number of mutations on this fragment
       mutation_nums: [2,2,4]
     }
@@ -46,6 +46,7 @@ class Protocol
     # find target amount in template for error prone PCR
     mutation_nums_kb = mutation_nums.map.with_index { |m,i| m * 1000.0 / length[i] }
     target_amount = mutation_nums_kb.collect { |n| Math.exp((12.6-n)/1.9) }
+    template_amount = target_amount.map.with_index { |t,i| t * template_length[i] / length[i]}
 
     # Tell the user what we are doing
     show {
