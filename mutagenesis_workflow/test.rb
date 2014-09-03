@@ -25,6 +25,7 @@ class Protocol
   		note "template is #{template.name}"
   		note "fwd is #{fwd.name}"
   		note "rev id is #{rev.id}"
+  		note "props is #{props}
   	}
   end
 
