@@ -82,5 +82,7 @@ transition [innoculate,digest] => [makecompcell] when !error(0) && completed(0) 
 transition [makecompcell] => [transformation] when !error(0) && completed(0) end
 # transition [transformation] => [checkplates] when !error(0) && completed(0) end
 transition [transformation] => [checkplates] when !error(0) && completed(0) && hours_elapsed(0,40) end
+transition [checkplates] => [] when !error(0) && completed(0) end
+
 
 
