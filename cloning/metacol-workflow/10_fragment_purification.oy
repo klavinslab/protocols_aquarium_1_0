@@ -23,4 +23,4 @@ end
 
 wire (cutgel, "Gel_Slice_id") => (gelpurify, "GelSlice_id")
 transition [cutgel] => [gelpurify] when !error(0) && completed(0) end
-transition [gelpurify] => [] when !error(0) && completed(0)
+transition [gelpurify] => [] when !error(0) && completed(0) end
