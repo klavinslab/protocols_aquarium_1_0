@@ -53,6 +53,7 @@ class Protocol
       title "Fragment Information"
       note "This protocol will build the following fragments:"
       note (fragments.collect { |f| " #{f}" })
+      note (template_amount.collect { |t| "#{t}"  })
       if not_ready.any?
         separator
         note "The following fragments have missing ingredients and will not be built:"
