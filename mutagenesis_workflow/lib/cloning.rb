@@ -8,8 +8,7 @@ module Cloning
     fwd = props["Forward Primer"]
     rev = props["Reverse Primer"]
     template = props["Template"]
-    length = props["Length"]
-    length = 7823
+    length = props["Length"] || 7823
 
     if fwd == nil || rev == nil || template == nil
 
@@ -30,7 +29,7 @@ module Cloning
         t1 = fwd_items[0].sample.properties["T Anneal"] || 72
         t2 = rev_items[0].sample.properties["T Anneal"] || 72
 
-        template_length = template_items[0].sample.properties["Length"]       
+        template_length = template_items[0].sample.properties["Length"] || 100      
  
         return {
           fragment: fragment,
