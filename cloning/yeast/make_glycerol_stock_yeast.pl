@@ -11,6 +11,9 @@ n_tubes = length(overnight_array)
 take 
   glycerol_sol = 1 "50 percent Glycerol (sterile)"  
   cryo_tube = n_tubes "Cryo Tube"
+end
+
+take
   overnight_culture = item overnight_array
 end
 
@@ -18,6 +21,8 @@ step
   description: "Pipette 900 µL of 50 percent Glycerol stock into each Cyro tube."
   warning: "Make sure not to touch the inner side of the Glycerol bottle with the pipetter."
 end
+
+glycerol_stock_output_ids = []
 x = 0
 while x < length(overnight_array)
   y = overnight_array[x]
@@ -27,10 +32,11 @@ while x < length(overnight_array)
   end
 
   produce
-    r = 1 "Plasmid Glycerol Stock" from overnight_culture[x] 
+    glycerol_stock = 1 "Yeast Glycerol Stock" from overnight_culture[x] 
     release cryo_tube
   end
   x = x + 1
+  glycerol_stock_output_ids = append(glycerol_stock_output_ids,glycerol_stock[:id])
 end
 
 release glycerol_sol
@@ -38,5 +44,6 @@ release glycerol_sol
 
 release overnight_culture
 # Fill the test tube that contained the overnight suspension with 20% bleach and leave in the dishwashing tube rack.
-
+log
+  return: {glycerol_stock_output_ids: glycerol_stock_output_ids}  
 end

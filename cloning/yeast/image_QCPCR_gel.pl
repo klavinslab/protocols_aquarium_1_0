@@ -1,5 +1,5 @@
 argument
-  QPCR_gel_ids: sample array, "QPCR Gels"
+  QPCR_gel_ids: sample array, "QCPCR Gels"
 end
 
 step

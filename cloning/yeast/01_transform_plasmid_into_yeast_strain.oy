@@ -1,5 +1,4 @@
 argument
-  strain_name: string array, "The exact name of yeast strain you want to transform into"
   strains_id: sample array, "Enter source of yeast strain for overnight."
   aliquots_number: number array, "Enter the number of transformations into each strain"
   
@@ -20,7 +19,6 @@ place startovernight
 protocol: "cloning/yeast/overnight_suspension_aj.pl"
   argument
     yeast_strain_id: strains_id
-    overnight_name: strain_name
   end
   group: "technicians"
   marked: true
@@ -86,7 +84,12 @@ wire (makecompcell,"yeast_compcell_aliquot_id") => (transformation,"frozen_aliqu
 wire (digest,"digested_plasmids_ids") => (transformation,"digested_plasmids")
 wire (transformation,"yeast_transformation_plate_id") => (checkplates,"yeast_plate_ids")
 
-transition [startovernight] => [innoculate,digest] when !error(0) && completed(0) && minutes_elapsed(0,1) end
-transition [innoculate,digest] => [makecompcell] when !error(0) && completed(0) && minutes_elapsed(0,1) end
+transition [startovernight] => [innoculate,digest] when !error(0) && completed(0) && hours_elapsed(0,12) end
+# transition [startovernight] => [innoculate,digest] when !error(0) && completed(0) end
+transition [innoculate,digest] => [makecompcell] when !error(0) && completed(0) && hours_elapsed(0,4) end
+# transition [innoculate,digest] => [makecompcell] when !error(0) && completed(0) end
 transition [makecompcell] => [transformation] when !error(0) && completed(0) end
-transition [transformation] => [checkplates] when !error(0) && completed(0) && minutes_elapsed(0,1) end
+transition [transformation] => [checkplates] when !error(0) && completed(0) && hours_elapsed(0,40) end
+# transition [transformation] => [checkplates] when !error(0) && completed(0) end
+transition [checkplates] => [] when !error(0) && completed(0) end
+

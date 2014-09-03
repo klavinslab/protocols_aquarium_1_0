@@ -2,7 +2,7 @@
 
 
 argument 
-  plasmids: sample("Plasmid") array, "Enter the template plasmids you wish to create a sequencing reaction with"
+  minipreps: sample("Plasmid") array, "Enter the template minipreps you wish to create a sequencing reaction with"
   plasmids_lengths: number array, "Enter the length in basepairs of the above plasmids" 
   primers_entered: sample("Primer") array, "Enter the primers you wish to use to set up a sequencing reaction"
   initials: string, "Your initials"
@@ -11,11 +11,12 @@ argument
   tracking_no: string, "Enter the tracking number of your Genewiz order"
 end
 
+
 number_seq_rxs = length(primers_entered)*number_colonies
 
 
 take
-  plasmids_ids=item plasmids
+  minipreps_ids=item minipreps
 end
 
 take
@@ -66,7 +67,7 @@ if number_seq_rxs > 48
   end
 end
 
-number_unique_plasmids = length(plasmids)/number_colonies
+number_unique_plasmids = length(plasmids_lengths)
 H20_req=[0]
 DNA_req=[0]
 plasmid_vol=[0]
@@ -84,13 +85,13 @@ while count1 < number_unique_plasmids
         if plasmid_vol[ind]==0
           plasmid_vol[ind]=1
         end
-      H20_req[ind]=12.5-plasmid_vol[count1]
-      ind=ind+1
+      H20_req[ind]=12.5-plasmid_vol[ind]
+      ind = ind + 1
       count3 = count3 + 1
     end
-    count2=count2+1
+    count2 = count2 + 1
   end
-  count1=count1+1
+  count1 = count1 + 1
 end
 
 tbl = [["Tube Number", "H2O Volume"]]
@@ -115,6 +116,7 @@ while i1<number_unique_plasmids
     i3=0
     while i3 < groups[i1]
       tbl1 = append(tbl1,[tubeind,primers_entered[ind+i3]])
+      
       tubeind=tubeind+1
       i3=i3+1
     end
@@ -130,17 +132,23 @@ step
   table: tbl1
 end
 
-i2=0
+i1=0
 ind = 0
+ind2 = 0
 tbl2 = [["Tube Number", "Plasmid ID", "Plasmid Volume in µl"]]
-while i2<number_unique_plasmids
-  i3=0
-  while i3<number_colonies
-    tbl2 = append(tbl2,[ind+1,plasmids[ind], plasmid_vol[ind]])
-    i3=i3+1
-    ind = ind+1
+while i1<number_unique_plasmids
+  i2=0
+  while i2<number_colonies
+    i3=0
+    while i3 < groups [i1]
+      tbl2 = append(tbl2,[ind+1,minipreps[ind2], plasmid_vol[ind]])
+      ind = ind + 1
+      i3 = i3 + 1
+    end
+    ind2 = ind2 + 1
+    i2 = i2 + 1
   end
-  i2 = i2+1
+  i1 = i1 + 1
 end
 
 step
@@ -156,5 +164,5 @@ step
   check: "Email grad student with initials %{initials} when the sequencing reaction was submitted by."
 end
 
-release plasmids_ids
+release minipreps_ids
 release primers_ids

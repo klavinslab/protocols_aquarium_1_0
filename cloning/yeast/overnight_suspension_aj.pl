@@ -1,7 +1,6 @@
 information  "This protocol describes how to perform a yeast overnight"
 argument
   yeast_strain_id: sample array, "Choose the plate/glycerol stock/yeast suspension you intended to start an overnight from"
-  overnight_name: string array, "The exact name of yeast strain for the overnight"
 end
 
 num=length(yeast_strain_id)
@@ -22,33 +21,37 @@ counter=0
 overnight_id=[]
 release yeast_media
 
-foreach x in yeast_strain_id
+take
+  yeast = item unique(yeast_strain_id)
+end
 
-  take
-    yeast = item unique(yeast_strain_id)
-  end
-  
+while counter<length(yeast)
+
+  x = yeast[counter]
+  x_id=x[:id]
   step
-    description: "Innoculate with %{x}"
-    bullet: "For liquid cultures: pipette 10ul of culture into tube"
+    description: "Innoculate with %{x_id}"
+    bullet: "For liquid cultures: pipette 10 µL of culture into tube"
     bullet: "For plates: Take a sterile pipette tip (10 µL tips), pick up a medium sized colony by gently scraping the tip to the colony. Tilt 14 mL tube such that you can reach the media with your tip. Open the tube cap, scrape colony into media, using a swirling motion. Place the tube back on the rack with cap closed."
-    bullet: "For Glycerol Stocks: use a 100ul tip and vigerously scrape the glycerol stock to get a chunk of stock. Tilt 14 mL tube such that you can reach the media with your tip. Open the tube cap, scrape colony into media, using a swirling motion. Place the tube back on the rack with cap closed."
+    bullet: "For Glycerol Stocks: use a 100 µL tip and vigerously scrape the glycerol stock to get a chunk of stock. Tilt 14 mL tube such that you can reach the media with your tip. Open the tube cap, scrape colony into media, using a swirling motion. Place the tube back on the rack with cap closed."
   end
   
 
   
   produce
-    overnight = 1 "Yeast Overnight Suspension" of overnight_name[counter]
+    overnight = 1 "Yeast Overnight Suspension" from x
     note: "Place the test tube in 30 C incubator shaker at B13.125"
     location: "B13.125"
     release test_tube
   end
   
-  release yeast
   overnight_id=append(overnight_id,overnight[:id])
   
   counter=counter+1
+  
 end
+
+  release yeast
 
 log
   return: {overnight_id: overnight_id}

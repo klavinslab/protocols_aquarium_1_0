@@ -27,4 +27,5 @@ end
 wire (innoculate,"yeast_50ml_culture_id") => (makecompcell,"cultures_id")
 
 transition [innoculate] => [makecompcell] when !error(0) && completed(0) && hours_elapsed(0,5) end
+transition [makecompcell] => [] when !error(0) && completed(0) end
 

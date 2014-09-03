@@ -142,6 +142,7 @@ count=0
         q=1 "Fragment Stock" from slice
         data
           concentration: concs[count]
+          unit: "ng/µl"
         end
       end
   count=count+1

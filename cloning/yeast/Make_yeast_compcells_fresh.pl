@@ -83,10 +83,10 @@ foreach x in cultures
 
 #no good way to release 250ml culture flask      
     produce
-      y=1 "Yeast Competent Aliquots" from x
+      y=1 "Yeast Competent Aliquot" from x
       location: "Bench"
-#      release (cultures)
     end
+    
     yeast_compcell_aliquot_id = append(yeast_compcell_aliquot_id,y[:id])
     
     counter2 = counter2 + 1
@@ -97,6 +97,7 @@ end
 
 release liac
 release water
+release (cultures)
 
 log 
   return: {yeast_compcell_aliquot_id: yeast_compcell_aliquot_id}

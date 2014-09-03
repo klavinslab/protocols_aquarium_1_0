@@ -35,7 +35,7 @@ step
 end
 
 num = length(QPCRs)
-dye_volume = 10 / 5.0
+dye_volume = 15 / 5.0
 step
   description: "Add loading dye to each of the %{num} QPCRs"
   note: "Add %{dye_volume} µL of loading dye to the PCR results."
@@ -178,7 +178,7 @@ QPCR_gel_ids=[]
 counter2=0
 while counter2 < num
   produce
-    QPCR_gel = 1 "QPCR gel" from QPCRs[counter2]
+    QPCR_gel = 1 "QCPCR gel" from QPCRs[counter2]
     release QPCRs[counter2]
   end
   step

@@ -50,8 +50,8 @@ y=length(YeastStrain_id)
 x=(ColonyNumber*y)+1
 z=(ColonyNumber*y)
 c=ColonyNumber
-sds=x*3
-h20=x*27
+sds=x*3*1.1
+h20=x*27*1.1
 
 step
   description: "Grab a 1.5 ml tube and pipet in %{sds}µl of 2%% sds solution into it, then pipet in %{h20}µl of molecular grade water. Mix the 1.5ml tube with the vortexter"
@@ -62,25 +62,26 @@ step
 end
 
 j=0
-f=0
 w=0
+well_id=1
+colony_id=0
 
 while j<y
   y=length(YeastStrain_id)
   a=YeastStrain_id[j]
-  f=0
   w=0
   while w<c
-    f=w+1
+    colony_id=w+1
     step
-      description: "With plate %{a} closed and upside down, find a large colony and label it %{f}"
+      description: "With plate %{a} closed and upside down, find a large colony and label it %{colony_id}"
       note: "If you're already picked a colony for this strain make sure you pick a different one for this well"
     end
     step
-      description: "Take an unused small pipet tip and scrape a small amount of cells off a colony from %{a} and place it into well %{f}"
+      description: "Take an unused small pipet tip and scrape a small amount of cells off a colony from %{a} and place it into well %{well_id}"
       note: "If you're already picked a colony for this strain make sure you pick a different one for this well"
     end
     w=w+1
+    well_id = well_id+1
   end
   j=j+1
 end

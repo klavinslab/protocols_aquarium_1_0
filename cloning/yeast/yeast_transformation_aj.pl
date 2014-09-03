@@ -1,6 +1,6 @@
 argument
   products: string array, "The exact name of each strain the transformations will produce."
-  frozen_aliquots: sample("Yeast Strain") array, "Enter in the frozen aliquots you would like to transform your digested plasmids into."
+  frozen_aliquots: sample("Yeast Strain") array, "Enter in the comp cell aliquots you would like to transform your digested plasmids into."
   digested_plasmids: sample("Plasmid") array, "Enter the digested plasmid samples you want transformed into the strains above."
   plate_type: number array, "Enter a number that corresponds to a given plate type for each transformation. 1= -His Plate, 2= -Trp Plate, 3= -Ura Plate, 4= -Leu Plate"
   rescue_vol: number, "Enter the amount of molecular grade water you would like to resuce the competent aliquots with."
@@ -67,8 +67,8 @@ while ii<y
 end
 
 step
-  description: "Refer to the table below and label each frozen aliquot with the corresponding tube label"
-  note: "put all of the frozen aliquots in order in a tube rack" 
+  description: "Refer to the table below and label each comp cell aliquot with the corresponding tube label"
+  note: "put all of the comp cell aliquots in order in a tube rack" 
   table: tbl
 end
 
@@ -131,8 +131,8 @@ while x < y
   produce
     q = 1 "Yeast Plate" of products[x]
     location: "30º Incubator"
-    release k[x]
-    release j[x]
+    release k
+    release j
   end
   yeast_transformation_plate_id = append(yeast_transformation_plate_id,q[:id])
   x = x+1
