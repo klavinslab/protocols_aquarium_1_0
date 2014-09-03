@@ -62,4 +62,5 @@ wire (plating, "transformed_plates") => (checkplates,"ecoli_transformation_plate
 transition [gibson] => [transformation] when !error(0) && completed(0) end
 transition [transformation] => [plating] when !error(0) && completed(0) end
 transition [plating] => [checkplates] when !error(0) && completed(0) && hours_elapsed(0,40) end
+transition [checkplates] => [] when !error(0) && completed(0) end
 
