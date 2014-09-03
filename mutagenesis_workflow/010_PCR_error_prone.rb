@@ -39,6 +39,7 @@ class Protocol
     forward_primers = fragment_info_list.collect { |fi| fi[:fwd] }
     reverse_primers = fragment_info_list.collect { |fi| fi[:rev] }
     temperatures    = fragment_info_list.collect { |fi| fi[:tanneal] }
+    props 			= fragment_info_list.collect { |fi| fi[:props] }
 
     # find the average annealing temperature
     tanneal = temperatures.inject{ |sum, el| sum + el }.to_f / temperatures.size
@@ -54,6 +55,7 @@ class Protocol
       note "This protocol will build the following fragments:"
       note (fragments.collect { |f| " #{f}" })
       note (template_amount.collect { |t| "#{t}"  })
+      note (props.collect {|p| "#{p}"})
       if not_ready.any?
         separator
         note "The following fragments have missing ingredients and will not be built:"
