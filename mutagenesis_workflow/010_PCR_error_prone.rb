@@ -82,7 +82,7 @@ class Protocol
       }
 
     show {
-      title "Add Mutazyme II Buffer, dNTP mix and Mutazyme II DNA polymerase"
+      title "Add Buffer, dNTPs and Mutazyme II"
       stripwells.each do |sw|
         check "Pipette 5 µL of 10X Mutazyme II Buffer (item #{buffer_stock_item}) into each of wells " + sw.non_empty_string + " of stripwell #{sw}."
         check "Pipette 1 µL of 40 mM dNTP mix (item #{dNTP_stock_item}) into each of wells " + sw.non_empty_string + " of stripwell #{sw}."
