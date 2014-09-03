@@ -36,6 +36,7 @@ class Protocol
     length			= fragment_info_list.collect { |fi| fi[:length] }
     templates       = fragment_info_list.collect { |fi| fi[:template] }
     template_length = fragment_info_list.collect { |fi| fi[:template_length] }
+    conc            = fragment_info_list.collect { |fi| fi[:conc] }
     forward_primers = fragment_info_list.collect { |fi| fi[:fwd] }
     reverse_primers = fragment_info_list.collect { |fi| fi[:rev] }
     temperatures    = fragment_info_list.collect { |fi| fi[:tanneal] }
@@ -56,6 +57,7 @@ class Protocol
       note (fragments.collect { |f| " #{f}" })
       note (template_amount.collect { |t| "#{t}"  })
       note (props.collect {|p| "#{p}"})
+      note (conc.collect {|c| "#{c}"})
       if not_ready.any?
         separator
         note "The following fragments have missing ingredients and will not be built:"

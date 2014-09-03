@@ -30,6 +30,7 @@ module Cloning
         t2 = rev_items[0].sample.properties["T Anneal"] || 72
 
         template_length = template_items[0].sample.properties["Length"] || 100      
+        conc = template_items[0].datum[:concentration] || 500
  
         return {
           fragment: fragment,
@@ -38,6 +39,7 @@ module Cloning
           rev: rev_items[0],
           template: template_items[0],
           template_length: template_length,
+          conc: conc,
           tanneal: (t1+t2)/2.0,
           props: props
         }
