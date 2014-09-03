@@ -38,7 +38,7 @@ module Cloning
           rev: rev_items[0],
           template: template_items[0],
           template_length: template_length,
-          tanneal: (t1+t2)/2.0
+          tanneal: (t1+t2)/2.0,
           props: props
         }
 
