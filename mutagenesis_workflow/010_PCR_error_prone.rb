@@ -14,6 +14,8 @@ class Protocol
     {
       #Enter the fragment sample id (not item ids) as a list, eg [2060,2061]
       fragment_ids: [2048,2049,2062]
+      #Enter expected number of mutations on this fragment
+      mutation_nums: [2,2,4]
     }
   end
 
@@ -22,6 +24,7 @@ class Protocol
     # Collect fragment info
     fragment_info_list = []
     not_ready = []
+    mutation_nums = input[:mutation_nums]
 
     input[:fragment_ids].each do |fid|
       info = fragment_info fid
@@ -30,13 +33,19 @@ class Protocol
     end
 
     fragments       = fragment_info_list.collect { |fi| fi[:fragment] }
+    length			= fragment_info_list.collect { |fi| fi[:length] }
     templates       = fragment_info_list.collect { |fi| fi[:template] }
+    template_length = fragment_info_list.collect { |fi| fi[:template_length] }
     forward_primers = fragment_info_list.collect { |fi| fi[:fwd] }
     reverse_primers = fragment_info_list.collect { |fi| fi[:rev] }
     temperatures    = fragment_info_list.collect { |fi| fi[:tanneal] }
 
     # find the average annealing temperature
     tanneal = temperatures.inject{ |sum, el| sum + el }.to_f / temperatures.size
+
+    # find target amount in template for error prone PCR
+    mutation_nums_kb = mutation_nums.map.with_index { |m,i| m * 1000.0 / length[i] }
+    target_amount = mutation_nums_kb.collect { |n| Math.exp((12.6-n)/1.9) }
 
     # Tell the user what we are doing
     show {
