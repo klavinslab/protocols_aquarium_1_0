@@ -33,25 +33,27 @@ class Protocol
     end
 
     fragments       = fragment_info_list.collect { |fi| fi[:fragment] }
-    length			= fragment_info_list.collect { |fi| fi[:length] }
+    length			    = fragment_info_list.collect { |fi| fi[:length] }
     templates       = fragment_info_list.collect { |fi| fi[:template] }
     template_length = fragment_info_list.collect { |fi| fi[:template_length] }
     conc            = fragment_info_list.collect { |fi| fi[:conc] }
     forward_primers = fragment_info_list.collect { |fi| fi[:fwd] }
     reverse_primers = fragment_info_list.collect { |fi| fi[:rev] }
     temperatures    = fragment_info_list.collect { |fi| fi[:tanneal] }
-    props 			= fragment_info_list.collect { |fi| fi[:props] }
+    props 			    = fragment_info_list.collect { |fi| fi[:props] }
 
     # find the average annealing temperature
     tanneal = temperatures.inject{ |sum, el| sum + el }.to_f / temperatures.size
 
     # find target amount in template for error prone PCR
     mutation_nums_kb = mutation_nums.map.with_index { |m,i| m * 1000.0 / length[i] }
-    target_amount = mutation_nums_kb.collect { |n| Math.exp((12.6-n)/1.9) }
-    template_amount = target_amount.map.with_index { |t,i| t * template_length[i] / length[i]}
-    template_volume = template_amount.map.with_index { |t,i| t / conc[i]}
+    target_amount    = mutation_nums_kb.collect { |n| Math.exp((12.6-n)/1.9) }
+    template_amount  = target_amount.map.with_index { |t,i| t * template_length[i] / length[i]}
+    template_volume  = template_amount.map.with_index { |t,i| t / conc[i]}
 
-    templates_id_vol = templates.map.with_index {|t,i| template_volume[i].round(2).to_s + " µL of " + t.id.to_s}
+    # find template vol and id, primer vol and id, water vol to add error prone PCR
+    templates_id_vol    = templates.map.with_index {|t,i| template_volume[i].round(2).to_s + " µL of " + t.id.to_s}
+    water_vol           = templates_volume.collect {|v| 42.5 - v}
     forward_primers_vol = forward_primers.map.with_index {|f| "0.25 µL of " + f.id.to_s}
     reverse_primers_vol = reverse_primers.map.with_index {|f| "0.25 µL of " + f.id.to_s}
 
@@ -95,10 +97,11 @@ class Protocol
     }
 
     # Set up reactions
-    load_samples_variable_vol( [ "Template", "Forward Primer", "Reverse Primer" ], [
+    load_samples_variable_vol( [ "Template", "Forward Primer", "Reverse Primer", "Water" ], [
         templates_id_vol,
         forward_primers_vol,
-        reverse_primers_vol
+        reverse_primers_vol,
+        water_vol
       ], stripwells ) {
         note "Load templates first, then forward primers, then reverse primers."
         warning "Use a fresh pipette tip for each transfer."
