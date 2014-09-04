@@ -56,7 +56,7 @@ class Protocol
       title "Fragment Information"
       note "This protocol will build the following fragments with expected mutation rates:"
       note (fragments.collect { |f| " #{f}" })
-      note (template_amount.collect { |t| "#{t}"  })
+      note (template_amount.collect { |t| "#{t.round(2)}"  })
       note (template_length.collect { |l| "#{l}"})
       #note (props.collect {|p| "#{p}"})
       note (template_volume.collect {|c| "#{c.round(2)}"})
@@ -119,7 +119,7 @@ class Protocol
       get "text", var: "name", label: "Enter the name of the thermocycler used", default: "T1"
       separator
       check "Click 'Home' then click 'Saved Protocol'. Choose 'YY' and then 'ERRORPCR'."
-      check "Set the anneal temperature to #{tanneal}. This is the 3rd temperature."
+      check "Set the anneal temperature to #{tanneal.round(0)}. This is the 3rd temperature."
       check "Press 'run' and select 50 µL."
       # TODO: image: "thermal_cycler_home"
     }
