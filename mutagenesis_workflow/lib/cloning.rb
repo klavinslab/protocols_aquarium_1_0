@@ -50,7 +50,7 @@ module Cloning
 
   end
 
-  def load_samples_variable_vol headings, ingredients, collections
+  def load_samples_variable_vol headings, ingredients_with_vol, collections
 
     raise "Empty collection list" unless collections.length > 0
 
@@ -70,7 +70,7 @@ module Cloning
             else
               loc = "#{r+1},#{c+1}"
             end
-            tab.push( [ col.id, loc ] + ingredients.collect { |ing| { content: "5µL of " + ing[i].id.to_s, check: true } } )
+            tab.push( [ col.id, loc ] + ingredients.collect { |ing| { content: ing[i], check: true } } )
           end
           i += 1
         end
