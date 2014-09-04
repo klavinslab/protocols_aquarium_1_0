@@ -50,7 +50,7 @@ module Cloning
 
   end
 
-  def load_samples_variable_vol headings, ingredients_with_vol, collections
+  def load_samples_variable_vol headings, ingredients, collections
 
     raise "Empty collection list" unless collections.length > 0
 
