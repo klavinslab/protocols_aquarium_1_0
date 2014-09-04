@@ -89,7 +89,7 @@ class Protocol
     }
 
     # Set up reactions
-    load_samples( [ "Template, variable amount", "Forward Primer, 0.25 µL", "Reverse Primer, 0.25 µL" ], [
+    load_samples_variable_vol( [ "Template, variable amount", "Forward Primer, 0.25 µL", "Reverse Primer, 0.25 µL" ], [
         templates,
         forward_primers,
         reverse_primers

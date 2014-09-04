@@ -50,4 +50,30 @@ module Cloning
 
   end
 
+  def load_samples_variable_vol headings, ingredients, collections
+
+    raise "Empty collection list" unless collections.length > 0
+
+    heading = [ [ "#{collections[0].object_type.name}", "Location" ] + headings ]
+    i = 0
+
+    collections.each do |col|
+      
+      tab = []
+      m = col.matrix
+
+      (0..m.length-1).each do |r|
+        (0..m[r].length-1).each do |c|
+          if i < ingredients[0].length
+            if m.length == 1
+              loc = "#{c+1}"
+            else
+              loc = "#{r+1},#{c+1}"
+            end
+            tab.push( [ col.id, loc ] + ingredients.collect { |ing| { content: "5µL of " + ing[i].id, check: true } } )
+          end
+          i += 1
+        end
+      end
+
 end
