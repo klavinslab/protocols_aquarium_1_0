@@ -58,8 +58,8 @@ class Protocol
       note (fragments.collect { |f| " #{f}" })
       note (template_amount.collect { |t| "#{t}"  })
       note (template_length.collect { |l| "#{l}"})
-      note (props.collect {|p| "#{p}"})
-      note (template_volume.collect {|c| "#{c}"})
+      #note (props.collect {|p| "#{p}"})
+      note (template_volume.collect {|c| "#{c.round(2)}"})
       if not_ready.any?
         separator
         note "The following fragments have missing ingredients and will not be built:"
@@ -89,7 +89,7 @@ class Protocol
     }
 
     # Set up reactions
-    load_samples( [ "Template, various amount", "Forward Primer, 0.25 µL", "Reverse Primer, 0.25 µL" ], [
+    load_samples( [ "Template, variable amount", "Forward Primer, 0.25 µL", "Reverse Primer, 0.25 µL" ], [
         templates,
         forward_primers,
         reverse_primers
