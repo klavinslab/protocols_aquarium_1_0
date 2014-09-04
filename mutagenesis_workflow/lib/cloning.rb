@@ -76,4 +76,12 @@ module Cloning
         end
       end
 
+      show {
+          title "Load #{col.object_type.name} #{col.id}"
+          table heading + tab
+        }
+    end
+
+  end
+
 end
