@@ -56,6 +56,7 @@ class Protocol
       note "This protocol will build the following fragments:"
       note (fragments.collect { |f| " #{f}" })
       note (template_amount.collect { |t| "#{t}"  })
+      note (template_length.collect { |l| "#{l}"})
       note (props.collect {|p| "#{p}"})
       note (conc.collect {|c| "#{c}"})
       if not_ready.any?
