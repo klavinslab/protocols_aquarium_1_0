@@ -53,7 +53,7 @@ class Protocol
 
     # find template vol and id, primer vol and id, water vol to add error prone PCR
     template_id_vol    = templates.map.with_index {|t,i| template_volume[i].round(2).to_s + " µL of " + t.id.to_s}
-    water_vol           = template_volume.collect {|v| (42.5 - v).round(2)}
+    water_vol           = template_volume.collect {|v| (42.5 - v).round(2).to_s + " µL"}
     forward_primers_vol = forward_primers.map.with_index {|f| "0.25 µL of " + f.id.to_s}
     reverse_primers_vol = reverse_primers.map.with_index {|f| "0.25 µL of " + f.id.to_s}
 
@@ -90,14 +90,13 @@ class Protocol
       title "Prepare Stripwell Tubes"
       stripwells.each do |sw|
         check "Label a new stripwell with the id #{sw}."
-        check "Pipette 19 µL of molecular grade water into wells " + sw.non_empty_string + "."
         separator
       end
       # TODO: Put an image of a labeled stripwell here
     }
 
     # Set up reactions
-    load_samples_variable_vol( [ "Template", "Forward Primer", "Reverse Primer", "Water" ], [
+    load_samples_variable_vol( [ "Template", "Forward Primer", "Reverse Primer", "Molecular Grade Water" ], [
         template_id_vol,
         forward_primers_vol,
         reverse_primers_vol,
