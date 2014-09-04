@@ -62,12 +62,12 @@ class Protocol
     # Tell the user what we are doing
     show {
       title "Fragment Information"
-      note "This protocol will build the following fragments with expected mutation rates:"
-      note (fragments.collect { |f| " #{f}" })
-      note (template_amount.collect { |t| "#{t.round(2)}"  })
-      note (template_length.collect { |l| "#{l}"})
+      note "This protocol will build the following fragments with expected input mutation numbers:"
+      note (fragments.map.with_index { |f,i| " #{f} with #{mutation_nums} bps mutations" })
+      #note (template_amount.collect { |t| "#{t.round(2)}"  })
+      #note (template_length.collect { |l| "#{l}"})
       #note (props.collect {|p| "#{p}"})
-      note (template_volume.collect {|c| "#{c.round(2)}"})
+      #note (template_volume.collect {|c| "#{c.round(2)}"})
       if not_ready.any?
         separator
         note "The following fragments have missing ingredients and will not be built:"
