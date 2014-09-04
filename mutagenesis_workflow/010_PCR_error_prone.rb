@@ -127,7 +127,7 @@ class Protocol
       get "text", var: "name", label: "Enter the name of the thermocycler used", default: "T1"
       separator
       check "Click 'Home' then click 'Saved Protocol'. Choose 'YY' and then 'ERRORPCR'."
-      check "Set the anneal temperature to #{tanneal.round(0)}. This is the 3rd temperature."
+      check "Set the anneal temperature to #{tanneal.round(0)-5}. This is the 3rd temperature."
       check "Press 'run' and select 50 µL."
       # TODO: image: "thermal_cycler_home"
     }
