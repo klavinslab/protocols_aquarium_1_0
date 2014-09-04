@@ -52,8 +52,8 @@ class Protocol
     template_volume  = template_amount.map.with_index { |t,i| t / conc[i]}
 
     # find template vol and id, primer vol and id, water vol to add error prone PCR
-    templates_id_vol    = templates.map.with_index {|t,i| template_volume[i].round(2).to_s + " µL of " + t.id.to_s}
-    water_vol           = templates_volume.collect {|v| 42.5 - v}
+    template_id_vol    = templates.map.with_index {|t,i| template_volume[i].round(2).to_s + " µL of " + t.id.to_s}
+    water_vol           = template_volume.collect {|v| 42.5 - v}
     forward_primers_vol = forward_primers.map.with_index {|f| "0.25 µL of " + f.id.to_s}
     reverse_primers_vol = reverse_primers.map.with_index {|f| "0.25 µL of " + f.id.to_s}
 
@@ -98,7 +98,7 @@ class Protocol
 
     # Set up reactions
     load_samples_variable_vol( [ "Template", "Forward Primer", "Reverse Primer", "Water" ], [
-        templates_id_vol,
+        template_id_vol,
         forward_primers_vol,
         reverse_primers_vol,
         water_vol
