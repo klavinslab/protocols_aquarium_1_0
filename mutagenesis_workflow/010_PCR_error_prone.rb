@@ -54,7 +54,7 @@ class Protocol
     # Tell the user what we are doing
     show {
       title "Fragment Information"
-      note "This protocol will build the following fragments:"
+      note "This protocol will build the following fragments with expected mutation rates:"
       note (fragments.collect { |f| " #{f}" })
       note (template_amount.collect { |t| "#{t}"  })
       note (template_length.collect { |l| "#{l}"})
@@ -89,7 +89,7 @@ class Protocol
     }
 
     # Set up reactions
-    load_samples( [ "Template, 1 µL", "Forward Primer, 0.25 µL", "Reverse Primer, 0.25 µL" ], [
+    load_samples( [ "Template, various amount", "Forward Primer, 0.25 µL", "Reverse Primer, 0.25 µL" ], [
         templates,
         forward_primers,
         reverse_primers
