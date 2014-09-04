@@ -70,7 +70,7 @@ module Cloning
             else
               loc = "#{r+1},#{c+1}"
             end
-            tab.push( [ col.id, loc ] + ingredients.collect { |ing| { content: "5µL of " + ing[i].id, check: true } } )
+            tab.push( [ col.id, loc ] + ingredients.collect { |ing| { content: "5µL of " + ing[i].id.to_s, check: true } } )
           end
           i += 1
         end
