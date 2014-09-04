@@ -51,7 +51,7 @@ class Protocol
     template_amount = target_amount.map.with_index { |t,i| t * template_length[i] / length[i]}
     template_volume = template_amount.map.with_index { |t,i| t / conc[i]}
 
-    templates_id_vol = templates.map.with_index {|t,i| template_volume[i].to_s + " µL of" + t.id}
+    templates_id_vol = templates.map.with_index {|t,i| template_volume[i].round(2).to_s + " µL of" + t.id}
     forward_primers_vol = forward_primers.map.with_index {|f| "0.25 µL of" + f.id}
     reverse_primers_vol = reverse_primers.map.with_index {|f| "0.25 µL of" + f.id}
 
