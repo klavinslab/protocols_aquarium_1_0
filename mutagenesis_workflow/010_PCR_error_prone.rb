@@ -49,6 +49,7 @@ class Protocol
     mutation_nums_kb = mutation_nums.map.with_index { |m,i| m * 1000.0 / length[i] }
     target_amount = mutation_nums_kb.collect { |n| Math.exp((12.6-n)/1.9) }
     template_amount = target_amount.map.with_index { |t,i| t * template_length[i] / length[i]}
+    template_volume = template_amount.map.with_index { |t,i| t / conc[i]}
 
     # Tell the user what we are doing
     show {
@@ -58,7 +59,7 @@ class Protocol
       note (template_amount.collect { |t| "#{t}"  })
       note (template_length.collect { |l| "#{l}"})
       note (props.collect {|p| "#{p}"})
-      note (conc.collect {|c| "#{c}"})
+      note (template_volume.collect {|c| "#{c}"})
       if not_ready.any?
         separator
         note "The following fragments have missing ingredients and will not be built:"

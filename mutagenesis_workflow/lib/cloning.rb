@@ -29,7 +29,7 @@ module Cloning
         t1 = fwd_items[0].sample.properties["T Anneal"] || 72
         t2 = rev_items[0].sample.properties["T Anneal"] || 72
 
-        template_length = template_items[0].sample.id  || 1000
+        template_length = template_items[0].sample.properties["Length"]
         conc = template_items[0].datum[:concentration]
  
         return {
