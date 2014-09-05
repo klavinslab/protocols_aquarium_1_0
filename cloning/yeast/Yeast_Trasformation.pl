@@ -125,6 +125,8 @@ step
   description: "The following step will produce yeast plates in numerical order of the plate labels."
 end
 
+release [j]
+
 x=0
 while x < y
   produce
@@ -135,4 +137,4 @@ while x < y
   x = x+1
 end
 
-release j
+
