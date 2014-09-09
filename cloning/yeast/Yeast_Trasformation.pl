@@ -90,15 +90,19 @@ end
 
 step
   description:"Vortex all the tubes and place them on the 40º C heat block in B5.330 for 12 minutes"
+end
+
+step
   timer: { hours: 0, minutes: 12, seconds: 0 }
 end
 
 step
    description: "Check off the boxes as you complete each step."
-   check: "Spin down the tubes for 30 seconds on the tabel top centrifuge and discard the supernatant."
+   check: "Spin down the tubes for 20 seconds on the tabel top centrifuge and discard the supernatant."
    check: "pippet %{rescue_vol}µl of Molecular Grade water into each tube."
    warning: "The resuce volume changes based on the users preference."
    check: "vortex each tube to resuspend cells."
+   warning: "Make sure you vigorously vortex the tubes. If some cells are still stuck on the bottom of the tubes try raking the tube quickly across a small 1.5ml tube rack to loosen them."
 end
 
 tbl2 = [["Tube Label", "Plate Type"]]
@@ -121,6 +125,8 @@ step
   description: "The following step will produce yeast plates in numerical order of the plate labels."
 end
 
+release j
+
 x=0
 while x < y
   produce
@@ -131,4 +137,4 @@ while x < y
   x = x+1
 end
 
-release j
+
