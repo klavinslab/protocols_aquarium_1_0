@@ -23,6 +23,11 @@ class Protocol
 	  primer_stock_list = primer_stock_list.push primer_stock
 	end
 
+	show {
+		primer_stock_list.each do |psid|
+			note "Write #{psid} on top of the "
+	}
+
 	release(primer_stock_list,interactive: true)
   end
 
