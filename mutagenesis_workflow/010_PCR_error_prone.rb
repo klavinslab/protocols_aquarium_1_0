@@ -102,8 +102,8 @@ class Protocol
     # Centrifuge all the template and primers
 
     show {
-      title "Quick centrifuge template and primers"
-      note "Put the following items in a table top centrifuge (make sure to balance) and spin for 5 seconds"
+      title "Quick centrifuge templates and primers"
+      note "Put the following items in a table top centrifuge (make sure to balance) and spin for 5 seconds."
       note (templates.collect { |t| "#{t.id}"  })
       note (forward_primers.collect { |f| "#{f.id}"})
       note (reverse_primers.collect { |r| "#{r.id}"})
