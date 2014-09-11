@@ -64,7 +64,8 @@ class Protocol
       title "Fragment Information"
       note "This protocol will build the following fragments with expected input mutation numbers:"
       note (fragments.map.with_index { |f,i| " #{f} with #{mutation_nums[i]} bps mutations" })
-      note ("The amount in ng for each template needed to be add are:" template_amount.collect { |t| "#{t.round(2)}"  })
+      note ("The amount in ng for each template needed to be add are:" )
+      note (template_amount.collect { |t| "#{t.round(2)}"  })
       #note (template_length.collect { |l| "#{l}"})
       #note (props.collect {|p| "#{p}"})
       #note (template_volume.collect {|c| "#{c.round(2)}"})
