@@ -82,6 +82,15 @@ class Protocol
     # Take the primers and templates
     take templates + forward_primers + reverse_primers, interactive: true,  method: "boxes"
 
+    # Centrifuge all the template and primers
+    template_and_primers = (templates + forward_primers + reverse_primers).uniq{|x| x}
+
+    show {
+      title "Quick centrifuge templates and primers"
+      note "Put the following items in a table top centrifuge (make sure to balance) and spin for 5 seconds."
+      note (template_and_primers.collect { |t| "#{t.id}"  })
+    }
+
     # Get phusion enzyme
     buffer_stock_item = choose_sample "10X Mutazyme II reaction buffer"
     dNTP_stock_item = choose_sample "40 mM dNTP mix"
@@ -93,20 +102,10 @@ class Protocol
     show {
       title "Prepare Stripwell Tubes"
       stripwells.each do |sw|
-        check "Label a new stripwell with the id #{sw}."
+        check "Label a new stripwell with the id #{sw}. Grab 5 wells for less than 5 PCRs"
         separator
       end
       # TODO: Put an image of a labeled stripwell here
-    }
-
-    # Centrifuge all the template and primers
-
-    show {
-      title "Quick centrifuge templates and primers"
-      note "Put the following items in a table top centrifuge (make sure to balance) and spin for 5 seconds."
-      note (templates.collect { |t| "#{t.id}"  })
-      note (forward_primers.collect { |f| "#{f.id}"})
-      note (reverse_primers.collect { |r| "#{r.id}"})
     }
 
     # Set up reactions
