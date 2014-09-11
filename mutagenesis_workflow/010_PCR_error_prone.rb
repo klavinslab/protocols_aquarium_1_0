@@ -68,7 +68,7 @@ class Protocol
       note (fragments.map.with_index { |f,i| " #{f} with #{mutation_nums[i]} bps mutations" })
       note ("The amount in ng for each template needed to be add are:" )
       note (template_amount.collect { |t| "#{t.round(2)}"  })
-      note (net_length.collect { |l| "#{l}"})
+      #note (net_length.collect { |l| "#{l}"})
       #note (template_length.collect { |l| "#{l}"})
       #note (props.collect {|p| "#{p}"})
       #note (template_volume.collect {|c| "#{c.round(2)}"})
@@ -97,6 +97,16 @@ class Protocol
         separator
       end
       # TODO: Put an image of a labeled stripwell here
+    }
+
+    # Centrifuge all the template and primers
+
+    show {
+      title "Quick centrifuge template and primers"
+      note "Put the following items in a table top centrifuge (make sure to balance) and spin for 5 seconds"
+      note (templates { |t| "#{t.id}"  })
+      note (forward_primers { |f| "#{f.id}"})
+      note (reverse_primers { |r| "#{r.id}"})
     }
 
     # Set up reactions
