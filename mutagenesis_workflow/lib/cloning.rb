@@ -28,6 +28,9 @@ module Cloning
 
         t1 = fwd_items[0].sample.properties["T Anneal"] || 72
         t2 = rev_items[0].sample.properties["T Anneal"] || 72
+        
+        # net_length of the fragment part without primers overhang anneal and overhang.
+        net_length = length - fwd_items[0].sample.properties["Anneal Sequence"].length - fwd_items[0].sample.properties["Overhang Sequence"].length - rev_items[0].sample.properties["Anneal Sequence"].length - rev_items[0].sample.properties["Overhang Sequence"].length
 
         template_length = template_items[0].sample.properties["Length"]
         conc = template_items[0].datum[:concentration]
@@ -35,6 +38,7 @@ module Cloning
         return {
           fragment: fragment,
           length: length,
+          net_length: net_length
           fwd: fwd_items[0],
           rev: rev_items[0],
           template: template_items[0],

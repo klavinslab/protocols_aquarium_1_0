@@ -34,6 +34,7 @@ class Protocol
 
     fragments       = fragment_info_list.collect { |fi| fi[:fragment] }
     length			    = fragment_info_list.collect { |fi| fi[:length] }
+    net_length      = fragment_info_list.collect { |fi| fi[:net_length] }
     templates       = fragment_info_list.collect { |fi| fi[:template] }
     template_length = fragment_info_list.collect { |fi| fi[:template_length] }
     conc            = fragment_info_list.collect { |fi| fi[:conc] }
@@ -45,9 +46,6 @@ class Protocol
     # find the average annealing temperature
     tanneal = temperatures.inject{ |sum, el| sum + el }.to_f / temperatures.size
 
-    # net_length of the fragment that is mutagenized, the part without primer overhang, useful for
-    # mutation rates calulation.
-    net_length = length.map.with_index {|l,i| l - forward_primers[i].sample.properties["Anneal Sequence"].length - reverse_primers[i].sample.properties["Anneal Sequence"].length}
 
     # find target amount in template for error prone PCR
     mutation_nums_kb = mutation_nums.map.with_index { |m,i| m * 1000.0 / length[i] }
