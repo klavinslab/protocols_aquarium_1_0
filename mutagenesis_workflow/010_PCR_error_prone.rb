@@ -111,11 +111,11 @@ class Protocol
     }
 
     # Set up reactions
-    load_samples_variable_vol( [ "Template", "Forward Primer", "Reverse Primer", "Molecular Grade Water" ], [
+    load_samples_variable_vol( [ "Molecular Grade Water","Template", "Forward Primer", "Reverse Primer"], [
+        water_vol,
         template_id_vol,
         forward_primers_vol,
-        reverse_primers_vol,
-        water_vol
+        reverse_primers_vol
       ], stripwells ) {
         note "Load templates first, then forward primers, then reverse primers."
         warning "Use a fresh pipette tip for each transfer."
