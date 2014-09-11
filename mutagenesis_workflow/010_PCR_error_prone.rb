@@ -92,7 +92,7 @@ class Protocol
     }
 
     # Get phusion enzyme
-    buffer_stock_item = choose_sample "10X Mutazyme II reaction buffer" take:false
+    buffer_stock_item = choose_sample "10X Mutazyme II reaction buffer", take: false
     dNTP_stock_item = choose_sample "40 mM dNTP mix"
     mutazymeII_stock_item = choose_sample "Mutazyme II DNA polymerase"
 
