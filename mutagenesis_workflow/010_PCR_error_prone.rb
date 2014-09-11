@@ -104,9 +104,9 @@ class Protocol
     show {
       title "Quick centrifuge template and primers"
       note "Put the following items in a table top centrifuge (make sure to balance) and spin for 5 seconds"
-      note (templates { |t| "#{t.id}"  })
-      note (forward_primers { |f| "#{f.id}"})
-      note (reverse_primers { |r| "#{r.id}"})
+      note (templates.collect { |t| "#{t.id}"  })
+      note (forward_primers.collect { |f| "#{f.id}"})
+      note (reverse_primers.collect { |r| "#{r.id}"})
     }
 
     # Set up reactions
