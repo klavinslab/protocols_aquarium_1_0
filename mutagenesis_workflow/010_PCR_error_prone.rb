@@ -45,6 +45,10 @@ class Protocol
     # find the average annealing temperature
     tanneal = temperatures.inject{ |sum, el| sum + el }.to_f / temperatures.size
 
+    # net_length of the fragment that is mutagenized, the part without primer overhang, useful for
+    # mutation rates calulation.
+    net_length = length.map.with_index {|l,i| l - forward_primers[i].sample.properties["Anneal Sequence"].length - reverse_primers[i].sample.properties["Anneal Sequence"].length}
+
     # find target amount in template for error prone PCR
     mutation_nums_kb = mutation_nums.map.with_index { |m,i| m * 1000.0 / length[i] }
     target_amount    = mutation_nums_kb.collect { |n| Math.exp((12.6-n)/1.9) }
@@ -66,6 +70,7 @@ class Protocol
       note (fragments.map.with_index { |f,i| " #{f} with #{mutation_nums[i]} bps mutations" })
       note ("The amount in ng for each template needed to be add are:" )
       note (template_amount.collect { |t| "#{t.round(2)}"  })
+      note (net_length.collect { |l| "#{l}"})
       #note (template_length.collect { |l| "#{l}"})
       #note (props.collect {|p| "#{p}"})
       #note (template_volume.collect {|c| "#{c.round(2)}"})
