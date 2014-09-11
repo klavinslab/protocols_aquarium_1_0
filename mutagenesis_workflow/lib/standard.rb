@@ -4,7 +4,7 @@
 
 module Standard
 
-	def choose_sample sample_name args={}
+	def choose_sample sample_name, args={}
 
 		options = find(:item, sample: {name: sample_name})
 
