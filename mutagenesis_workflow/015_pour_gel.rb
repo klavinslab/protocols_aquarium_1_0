@@ -96,13 +96,14 @@ class Protocol
         title "Gel Number #{gel_number}"
       }
 
-      gel_box = choose_object "49 mL Gel Box With Casting Tray (clean)"
+      # gel_box = choose_object "49 mL Gel Box With Casting Tray (clean)"
 
       combs = [ "n/a", "6-well", "6-well", "10-well", "10-well"   ]
       sides = [ "n/a", "thinner", "thicker", "thinner", "thicker" ]
 
       show {
         title "Add top comb"
+        check "Go get a 49 mL Gel Box With Casting Tray (clean)"
         check "Retrieve a #{combs[comb_1]} purple comb from A7.325"
         check "Position the gel box With the electrodes facing away from you. Add a purple comb to the side of the casting tray nearest the side of the gel box."
         check "Put the #{sides[comb_1]} side of the comb down."
@@ -134,7 +135,7 @@ class Protocol
       end
 
       gel = produce new_collection "50 mL #{percentage} Percent Agarose Gel in Gel Box", rows, cols
-      release [ gel_box ]
+      # release [ gel_box ]
       gel.move "A7.325"
 
       show {
