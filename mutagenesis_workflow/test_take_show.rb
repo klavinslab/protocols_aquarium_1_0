@@ -18,7 +18,7 @@ class Protocol
     }
 
     items_by_id = find(:item, id: 761)
-    items = find(:item, object_type: {name: "GelGreen Nucleic Acid Stain"})
+    # items = find(:item, object_type: {name: "GelGreen Nucleic Acid Stain"})
 
     take items_by_id, interactive: true
 
