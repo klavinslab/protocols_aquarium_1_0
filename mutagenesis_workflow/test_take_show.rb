@@ -13,7 +13,7 @@ class Protocol
   def main
 
     fragment = find(:sample,{id: 2048})[0]
-    take (fragment, interactive: true,  method: "boxes")
+    take fragment, interactive: true,  method: "boxes"
   end
 
 end
