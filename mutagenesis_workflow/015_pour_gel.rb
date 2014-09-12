@@ -40,18 +40,12 @@ class Protocol
     }
 
     show {
-      title "Work in the gel weigh area"
+      title "Work in the gel weigh area, wear gloves and eye protection"
       note "Work in the gel weigh area (A5.300-A5.305) until otherwise indicated."
-      warning "Wear gloves at all times!"
+      check "Wear gloves at all times!"
+      check "Put on the clear protective glasses""
     }
-
-    show {
-      title "Wear eye protection"
-      warning "Put on the clear protective glasses"
-    }
-
-    agarose = choose_object "Ultrapure* Agarose"
-
+    
     gel_volume = 50.0
     agarose_mass = num_gels * (percentage / 100.0) * gel_volume
     error = (agarose_mass * 0.05).round 5
