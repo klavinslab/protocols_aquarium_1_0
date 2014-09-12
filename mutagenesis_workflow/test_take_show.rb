@@ -17,7 +17,7 @@ class Protocol
     #   warning "Do not leave the freezer open too long!"
     # }
 
-    take (items)
+    take (items, interactive: true)
 
   end
 
