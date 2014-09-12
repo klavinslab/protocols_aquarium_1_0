@@ -61,22 +61,13 @@ class Protocol
       bullet "Go to the station at A5.300. Obtain a flask from on top of the microwave M2."
       bullet "Using a digital scale, measure out #{agarose_mass} g (+/- #{error} g) of agarose powder and add it to the flask."
       bullet "Add agarose by tipping and shaking the bag, removing excess to the waste container by folding the weigh paper."
+      bullet "Wipe down the weigh area"
       image "gel_measure_agarose"
     }
 
     show {
-      title "Wipe down the weigh area"
-      note "Use a 70% ethanol spray bottle and kimwipes."
-    }
-
-    show {
-      title "Add 1X TAE"
-      note "Get a graduated cylinder from on top of the microwave at A5.305. Measure and add #{num_gels*50} mL of 1X TAE from jug J2 at A5.500 to the flask."
-      image "gel_measure_tae"
-    }
-
-    show {
-      title "Microwave into solution"
+      title "Add 1X TAE and microwave into solution"
+      bullet "Get a graduated cylinder from on top of the microwave at A5.305. Measure and add #{num_gels*50} mL of 1X TAE from jug J2 at A5.500 to the flask."
       bullet "Swirl the flask to mix for about two seconds."
       bullet "Microwave 70 seconds on high in microwave M2, then swirl. The agarose should now be in solution."
       bullet "If it is not in solution, microwave 7 seconds on high, then swirl. Repeat until dissolved."
