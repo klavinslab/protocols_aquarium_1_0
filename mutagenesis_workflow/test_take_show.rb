@@ -17,7 +17,7 @@ class Protocol
       warning "Do not leave the freezer open too long!"
     }
 
-    gel_green = choose_object "GelGreen Nucleic Acid Stain"
+    gel_green = choose_object "500 mL Bottle"
 
   end
 
