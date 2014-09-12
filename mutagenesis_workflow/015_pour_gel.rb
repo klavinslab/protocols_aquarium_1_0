@@ -11,7 +11,7 @@ class Protocol
   def arguments
     {
       comb_1: 2,
-      comb_2: 2,
+      comb_2: 0,
       percentage: 1,
       stripwell_ids: []
     }
