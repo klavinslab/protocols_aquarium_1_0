@@ -43,9 +43,9 @@ class Protocol
       title "Work in the gel weigh area, wear gloves and eye protection"
       note "Work in the gel weigh area (A5.300-A5.305) until otherwise indicated."
       check "Wear gloves at all times!"
-      check "Put on the clear protective glasses""
+      check "Put on the clear protective glasses"
     }
-    
+
     gel_volume = 50.0
     agarose_mass = num_gels * (percentage / 100.0) * gel_volume
     error = (agarose_mass * 0.05).round 5
