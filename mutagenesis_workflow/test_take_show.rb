@@ -17,12 +17,12 @@ class Protocol
       warning "Do not leave the freezer open too long!"
     }
 
-    items_by_id = find(:item, id: 761)
+    items_by_id = find(:item, id: 10004)
     # items = find(:item, object_type: {name: "GelGreen Nucleic Acid Stain"})
 
     take items_by_id, interactive: true
 
-    gel_green = choose_object "500 mL Bottle"
+#    gel_green = choose_object "500 mL Bottle"
 
   end
 
