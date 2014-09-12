@@ -17,6 +17,8 @@ class Protocol
       warning "Do not leave the freezer open too long!"
     }
 
+    take (items)
+
   end
 
 end
