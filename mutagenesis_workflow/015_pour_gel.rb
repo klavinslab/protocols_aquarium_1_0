@@ -74,7 +74,7 @@ class Protocol
       note "For the remainder of this protocol, work in the gel pouring area (A7.320-A7.325). Carefully transfer the flask containing molten agar to A7.320 using a paper towel."
     }
 
-    gel_green = choose_object "GelGreen Nucleic Acid Stain"
+    # gel_green = choose_object "GelGreen Nucleic Acid Stain"
 
     gel_green_volume = num_gels * gel_volume / 10.0  # in µL
 
@@ -86,7 +86,7 @@ class Protocol
       image "gel_add_gelgreen"
     }
 
-    release [ agarose, gel_green ], interactive: true
+    # release [ agarose, gel_green ], interactive: true
 
     gels = []
 
