@@ -17,7 +17,7 @@ class Protocol
       warning "Do not leave the freezer open too long!"
     }
 
-    items_by_id = find(:item, id: 10004)
+    items_by_id = find(:item, id: 374)
     # items = find(:item, object_type: {name: "GelGreen Nucleic Acid Stain"})
 
     take items_by_id, interactive: true
