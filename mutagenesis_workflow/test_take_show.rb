@@ -12,8 +12,9 @@ class Protocol
 
   def main
 
-    fragment = find(:sample,{id: 2048})[0]
-    take fragment, interactive: true,  method: "boxes"
+    items = find(:item, { sample: { name: "pLAB1" }, object_type: { name: "Plasmid Stock" } } )
+    take items, interactive: true,  method: "boxes"
+
   end
 
 end
