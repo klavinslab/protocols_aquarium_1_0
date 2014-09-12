@@ -17,7 +17,7 @@ class Protocol
     #   warning "Do not leave the freezer open too long!"
     # }
 
-    take (items, interactive: true)
+    gel_green = choose_object "GelGreen Nucleic Acid Stain"
 
   end
 
