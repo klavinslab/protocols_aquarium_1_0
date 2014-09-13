@@ -38,5 +38,6 @@ class Protocol
       note (length.collect {|l| "#{l}"})
       note (conc.collect {|c| "#{c}"})
     }
+  end
 
 end
