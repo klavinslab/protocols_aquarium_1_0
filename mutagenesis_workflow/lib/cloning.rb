@@ -54,6 +54,22 @@ module Cloning
 
   end
 
+
+  def fragment_info_gibson fid
+    fragment = find(:sample,{id: fid})[0]# Sample.find(fid)
+    length = fragment.properties["Length"]
+    stock = fragment.in "Fragment Stock"
+    conc = stock[0].datum[:concentration]
+
+    return {
+      fragment: fragment,
+      length: length,
+      stock: stock[0],
+      conc: conc
+    }
+
+  end
+
   def load_samples_variable_vol headings, ingredients, collections # ingredients must be a string or number
 
     raise "Empty collection list" unless collections.length > 0
