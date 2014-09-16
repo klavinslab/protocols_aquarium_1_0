@@ -1,4 +1,4 @@
-#json file needs fields:
+#Task needs fields
 #logCultures - list of overnights to be put into flasks
 #dna - list of dna to transform
 #strains - list of strains to transform into
@@ -9,9 +9,11 @@
 # plates[n]
 
 base_dir = "recombineering/"
+technician = "msummers"
 
 argument
   task_name: string, "ready task to run.  If empty or mistyped choose any single task that is ready."
+  #tech: string, "user name of tech to run protocols."
 end
 
 #TODO: add protocol to setup 42C bath and 4C centrifuge
@@ -24,7 +26,7 @@ place make_log_phase
   argument
     params: params
   end
-  group: aquarium_user
+  group: technician
   start: now()
 end
 
@@ -33,7 +35,7 @@ place finish_log_phase
 	protocol: base_dir+"finish_log_phase.pl"	
 	start: hours(2)
 	window: minutes(30)
-	group: aquarium_user
+	group: technician
 end
 
 
@@ -41,7 +43,7 @@ wire (make_log_phase, "params") => (finish_log_phase, "params")
 
 place heat_shock
   protocol: base_dir+"heat_shock.pl"
-  group: aquarium_user
+  group: technician
   start: now()
   window: minutes(10)
 end
@@ -51,7 +53,7 @@ wire (finish_log_phase, "params") => (heat_shock, "params")
 
 place quick_comp
   protocol: base_dir+"quick_comp.pl"
-  group: aquarium_user
+  group: technician
   start: now()
   window: minutes(1)
 end
@@ -65,7 +67,7 @@ place transform
     dna_vol: 2
     #strain_list: params[:strains]
   end
-  group: aquarium_user
+  group: technician
   start: now()
   window: minutes(1)
 end
