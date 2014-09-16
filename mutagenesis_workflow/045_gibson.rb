@@ -1,5 +1,6 @@
 needs "protocols/mutagenesis_workflow/lib/standard"
 needs "protocols/mutagenesis_workflow/lib/cloning"
+require Matrix
 
 class Protocol
 
