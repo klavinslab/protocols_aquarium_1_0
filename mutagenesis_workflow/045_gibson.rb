@@ -93,6 +93,7 @@ class Protocol
     show {
       gibson_results_list.each do |gsid|
         note "Write #{gsid} on top of the "
+      end
     }
 
   end
