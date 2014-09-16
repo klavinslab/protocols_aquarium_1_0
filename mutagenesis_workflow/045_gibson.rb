@@ -19,6 +19,14 @@ class Protocol
     }
   end
 
+  def gibson_vector x
+    if x == 0
+      return 5
+    else
+      return 0
+    end
+  end
+
   def main
     # retrieve fragment length, fragment stock, concentration
     fragment_info_list = []
@@ -32,11 +40,16 @@ class Protocol
     stock  = fragment_info_list.collect { |fi| fi[:stock] }
     conc   = fragment_info_list.collect { |fi| fi[:conc] }
 
+    # calculate volumes to add for each fragment stock assuming 5 µL of total volume
+    total_vector = Matrix.build(1, conc.length) {|row, col| gibson_vector col}
+
+
     # Tell the user what we are doing
     show {
       title "Fragment Information"
       note (length.collect {|l| "#{l}"})
       note (conc.collect {|c| "#{c}"})
+      note (total_vector.collect {|t| "#{t}"})
     }
   end
 
