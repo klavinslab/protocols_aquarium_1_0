@@ -57,6 +57,7 @@ class Protocol
     # calculate volumes to add for each fragment stock assuming 5 µL of total volume
     total_vector = Matrix.build(1, conc.length) {|row, col| gibson_vector col}
     coefficient_matrix = Matrix.build(conc.length, conc.length) {|row, col| gibson_coefficients row, col, conc_over_length}
+    volume_vector = coefficient_matrix.inv * total_vector
 
 
     # Tell the user what we are doing
@@ -67,6 +68,7 @@ class Protocol
       note (total_vector.collect {|t| "#{t}"})
       note (conc_over_length.collect {|cl| "#{cl}"})
       note (coefficient_matrix.each {|e| "#{e}"})
+      note (volume_vector.each {|v| "#{v}"})
     }
   end
 
