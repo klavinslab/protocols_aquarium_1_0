@@ -118,7 +118,7 @@ module Cloning
       end
       tab.push([gsid] + [fragments[i],volumes[i]])
       show {
-          title "Load Gibson Reaction #{cgsid}"
+          title "Load Gibson Reaction #{gsid}"
           table heading + tab
         }
       i += 1
