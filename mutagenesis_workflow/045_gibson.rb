@@ -62,7 +62,7 @@ class Protocol
 
     # parse unique plasmid ids
     plasmid_ids = input[:plasmid_ids]
-    plasmids = plasmid_ids.uniq
+    plasmid_uniq = plasmid_ids.uniq
 
 
     # Tell the user what we are doing
@@ -76,12 +76,24 @@ class Protocol
       note (volume.collect {|v| "#{v.round(1)}"})
       note (plasmids.collect {|p| "#{p}"})
     }
+    
+    # produce gibson results ids
+    gibson_results_list = []
+    plasmid_uniq.each do |pid|
+      plasmid = find(:sample,{id: pid})[0]
+      gibson_results = produce new_sample name, of: "Plasmid", as: "Gibson Reaction Result"
+      gibson_results_list = gibson_results_list.push gibson_results
+    end
+
 
     show {
-
+      note "Take #{plasmid_uniq.length} Gibson Aliquot"
     }
 
-
+    show {
+      gibson_results_list.each do |gsid|
+        note "Write #{gsid} on top of the "
+    }
 
   end
 
