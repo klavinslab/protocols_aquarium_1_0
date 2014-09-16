@@ -40,6 +40,7 @@ class Protocol
     length = fragment_info_list.collect { |fi| fi[:length] }
     stock  = fragment_info_list.collect { |fi| fi[:stock] }
     conc   = fragment_info_list.collect { |fi| fi[:conc] }
+    conc_over_length = conc.map.with_index {|c,i| c/length[i]}
 
     # calculate volumes to add for each fragment stock assuming 5 µL of total volume
     total_vector = Matrix.build(1, conc.length) {|row, col| gibson_vector col}
@@ -51,6 +52,7 @@ class Protocol
       note (length.collect {|l| "#{l}"})
       note (conc.collect {|c| "#{c}"})
       note (total_vector.collect {|t| "#{t}"})
+      note (conc_over_length.collect {|cl| "#{cl}"})
     }
   end
 
