@@ -16,7 +16,7 @@ class Protocol
       #Enter the fragment sample id (not item ids) as a list, eg [2048,2049,2060,2061,2,2]
       fragment_ids: [2058,2059,2060,2061],
       #Enter correspoding plasmid id or fragment id for each fragment to be Gibsoned in.
-      plasmid_ids: [2236,2236,2236,2236]
+      plasmid_ids: [1923,1923,1923,1923]
     }
   end
 
@@ -81,8 +81,7 @@ class Protocol
     gibson_results_list = []
     plasmid_uniq.each do |pid|
       plasmid = find(:sample,{id: pid})[0]
-      name = plasmid.name
-      gibson_results = produce new_sample name, of: "Plasmid", as: "Gibson Reaction Result"
+      gibson_results = produce new_sample plasmid.name, of: "Plasmid", as: "Gibson Reaction Result"
       gibson_results_list = gibson_results_list.push gibson_results
     end
 
