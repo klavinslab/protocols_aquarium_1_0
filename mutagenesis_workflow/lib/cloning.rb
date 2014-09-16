@@ -110,13 +110,13 @@ module Cloning
     gibson_ids.each do |gsid|
       tab = []
       while plasmid_ids[i+1] == plasmid_ids[i]
-        tab.push([{gsid},fragments[i],volumes[i]])
+        tab.push(["#{gsid}",fragments[i],volumes[i]])
         i += 1
         if i + 1 == plasmid_ids.length
           break
         end
       end
-      tab.push([{gsid},fragments[i],volumes[i]])
+      tab.push(["#{gsid}",fragments[i],volumes[i]])
       show {
           title "Load Gibson Reaction #{gsid}"
           table heading + tab
