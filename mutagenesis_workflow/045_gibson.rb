@@ -33,7 +33,7 @@ class Protocol
       return 1
     elsif col == 0
       return conc_over_length[0]
-    elsif row == collect 
+    elsif row == col
       return -conc_over_length[row]
     else
       return 0
