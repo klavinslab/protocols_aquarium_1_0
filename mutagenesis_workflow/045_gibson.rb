@@ -65,7 +65,6 @@ class Protocol
 
     # parse unique plasmid ids
     plasmid_ids = input[:plasmid_ids]
-    plasmid_ids = plasmid_ids.collect {|p| p}
     plasmid_uniq = plasmid_ids.uniq
 
 
