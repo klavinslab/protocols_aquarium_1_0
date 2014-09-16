@@ -20,9 +20,21 @@ class Protocol
     }
   end
 
-  def gibson_vector x
-    if x == 0
+  def gibson_vector col
+    if col == 0
       return 5
+    else
+      return 0
+    end
+  end
+
+  def gibson_coefficients row, col, conc_over_length
+    if row == 0
+      return 1
+    elsif col == 0
+      return conc_over_length[0]
+    elsif row == collect 
+      return -conc_over_length[row]
     else
       return 0
     end
@@ -44,6 +56,7 @@ class Protocol
 
     # calculate volumes to add for each fragment stock assuming 5 µL of total volume
     total_vector = Matrix.build(1, conc.length) {|row, col| gibson_vector col}
+    coefficient_matrix = Matrix.build(conc.length, conc.length) {|row, col| gibson_coefficients row col conc_over_length}
 
 
     # Tell the user what we are doing
