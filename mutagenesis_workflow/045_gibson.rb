@@ -69,7 +69,7 @@ class Protocol
       note (total_vector.collect {|t| "#{t}"})
       note (conc_over_length.collect {|cl| "#{cl}"})
       note (coefficient_matrix.each {|e| "#{e}"})
-      note (volume.collect {|v| "#{v}"})
+      note (volume.collect {|v| "#{v.round(1)}"})
     }
   end
 
