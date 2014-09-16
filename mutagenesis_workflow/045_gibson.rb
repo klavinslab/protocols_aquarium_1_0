@@ -66,6 +66,7 @@ class Protocol
       note (conc.collect {|c| "#{c}"})
       note (total_vector.collect {|t| "#{t}"})
       note (conc_over_length.collect {|cl| "#{cl}"})
+      note (matrix.each {|e| "#{e}"})
     }
   end
 
