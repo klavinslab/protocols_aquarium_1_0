@@ -74,7 +74,7 @@ class Protocol
       note (conc_over_length.collect {|cl| "#{cl}"})
       note (coefficient_matrix.each {|e| "#{e}"})
       note (volume.collect {|v| "#{v.round(1)}"})
-      note (plasmids.collect {|p| "#{p}"})
+      note (plasmid_uniq.collect {|p| "#{p}"})
     }
     
     # produce gibson results ids
