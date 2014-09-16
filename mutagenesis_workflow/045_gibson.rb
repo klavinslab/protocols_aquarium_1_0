@@ -22,7 +22,7 @@ class Protocol
 
   def gibson_vector row
     if row == 0
-      return 5
+      return 5.0
     else
       return 0
     end
