@@ -109,7 +109,7 @@ module Cloning
     i = 0
     gibson_ids.each do |gsid|
       tab = []
-      while plasmid_ids[i + 1] == plamid_ids[i]
+      while plasmid_ids[i+1] == plamid_ids[i]
         tab.push([gsid] + [fragments[i],volumes[i]])
         i += 1
         if i + 1 == plasmid_ids.length
