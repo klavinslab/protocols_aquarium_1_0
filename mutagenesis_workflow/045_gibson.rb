@@ -53,12 +53,15 @@ class Protocol
     stock  = fragment_info_list.collect { |fi| fi[:stock] }
     conc   = fragment_info_list.collect { |fi| fi[:conc] }
     conc_over_length = conc.map.with_index {|c,i| c/length[i]}
+    
+    # parse fragment ids
+    fragment_ids = input[:fragment_ids]
 
     # calculate volumes to add for each fragment stock assuming 5 µL of total volume
     total_vector = Matrix.build(conc.length, 1) {|row, col| gibson_vector row}
     coefficient_matrix = Matrix.build(conc.length, conc.length) {|row, col| gibson_coefficients row, col, conc_over_length}
     volume_vector = coefficient_matrix.inv * total_vector
-    volume = volume_vector.each.to_a
+    volumes = volume_vector.each.to_a
 
     # parse unique plasmid ids
     plasmid_ids = input[:plasmid_ids]
@@ -73,7 +76,7 @@ class Protocol
       note (total_vector.collect {|t| "#{t}"})
       note (conc_over_length.collect {|cl| "#{cl}"})
       note (coefficient_matrix.each {|e| "#{e}"})
-      note (volume.collect {|v| "#{v.round(1)}"})
+      note (volumes.collect {|v| "#{v.round(1)}"})
       note (plasmid_uniq.collect {|p| "#{p}"})
     }
     
@@ -87,14 +90,14 @@ class Protocol
 
 
     show {
-      note "Take #{plasmid_uniq.length} Gibson Aliquot"
-    }
-
-    show {
+      title "Take Gibson Aliquots and label them with ids"
+      note "Take #{plasmid_uniq.length} Gibson Aliquots"
       gibson_results_list.each do |gsid|
-        note "Write #{gsid} on top of the "
+        note "Write #{gsid} on top of an unused Gibson Aliquot using round dot labels"
       end
     }
+
+    load_gibson_fragments(["Fragment Stock","Volume"], fragment_ids, volumes, gibson_results_list, plasmid_ids)
 
   end
 
