@@ -116,7 +116,7 @@ module Cloning
           break
         end
       end
-      tab.push(["#{gsid}",fragments[i],volumes[i]])
+      tab.push(["#{gsid}",fragments[i],volumes[i].round(2)])
       show {
           title "Load Gibson Reaction #{gsid}"
           table heading + tab
