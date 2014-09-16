@@ -81,7 +81,7 @@ class Protocol
     gibson_results_list = []
     plasmid_uniq.each do |pid|
       plasmid = find(:sample,{id: pid})[0]
-      gibson_results = produce new_sample name, of: "Plasmid", as: "Gibson Reaction Result"
+      gibson_results = produce new_sample plasmid.name, of: "Plasmid", as: "Gibson Reaction Result"
       gibson_results_list = gibson_results_list.push gibson_results
     end
 
