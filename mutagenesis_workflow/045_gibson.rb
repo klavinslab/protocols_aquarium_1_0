@@ -60,6 +60,10 @@ class Protocol
     volume_vector = coefficient_matrix.inv * total_vector
     volume = volume_vector.each.to_a
 
+    # parse unique plasmid ids
+    plasmid_ids = input[:plasmid_ids]
+    plasmids = plasmid_ids.uniq
+
 
     # Tell the user what we are doing
     show {
@@ -70,7 +74,15 @@ class Protocol
       note (conc_over_length.collect {|cl| "#{cl}"})
       note (coefficient_matrix.each {|e| "#{e}"})
       note (volume.collect {|v| "#{v.round(1)}"})
+      note (plasmids.collect {|p| "#{p}"})
     }
+
+    show {
+
+    }
+
+
+
   end
 
 end
