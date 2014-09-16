@@ -58,6 +58,7 @@ class Protocol
     total_vector = Matrix.build(conc.length, 1) {|row, col| gibson_vector row}
     coefficient_matrix = Matrix.build(conc.length, conc.length) {|row, col| gibson_coefficients row, col, conc_over_length}
     volume_vector = coefficient_matrix.inv * total_vector
+    volume = volume_vector.each.to_a
 
 
     # Tell the user what we are doing
@@ -68,7 +69,7 @@ class Protocol
       note (total_vector.collect {|t| "#{t}"})
       note (conc_over_length.collect {|cl| "#{cl}"})
       note (coefficient_matrix.each {|e| "#{e}"})
-      note (volume_vector.each {|v| "#{v}"})
+      note (volume.collect {|v| "#{v}"})
     }
   end
 
