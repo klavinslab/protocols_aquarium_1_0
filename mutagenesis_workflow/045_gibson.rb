@@ -46,6 +46,7 @@ class Protocol
 
     # parse fragment ids
     fragment_ids = input[:fragment_ids]
+    fragment_uniq = fragment_ids.uniq
 
     # parse unique plasmid ids
     plasmid_ids = input[:plasmid_ids]
@@ -67,6 +68,14 @@ class Protocol
       info = fragment_info_gibson fid
       plasmid_fragment_conc_over_length[plasmid_ids[index]].push info[:conc]/info[:length]
       fragment_info_list.push info   if info
+    end
+
+    # initilize fragment stocks array
+    fragment_stocks = []
+    fragment_uniq.each do |fid|
+      fragments = find(:sample,{id: fid})[0]
+      fragment_stock = in "Fragment Stock"
+      fragment_stocks.push fragment_stock[0] if fragment_stock[0]
     end
 
     plasmid_uniq.each do |pid|
@@ -94,7 +103,7 @@ class Protocol
     # Tell the user what we are doing
     show {
       title "Fragment Information"
-      note "This protocol will build the following plasmids using Gibson Assembly method"
+      note "This protocol will build the following plasmids using Gibson Assembly method:"
       note plasmid_uniq.collect {|p| "#{p}"}
       # note (length.collect {|l| "#{l}"})
       # note (conc.collect {|c| "#{c}"})
@@ -107,6 +116,8 @@ class Protocol
       # note (plasmid_fragment_conc_over_length[1923].collect {|p| "#{p}"})
       # note (plasmid_fragment_volume[1923].collect {|p| "#{p}"})
     }
+
+    take fragment_stocks, interactive: true,  method: "boxes"
     
     # produce gibson results ids
     gibson_results_list = []

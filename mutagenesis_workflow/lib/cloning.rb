@@ -143,9 +143,4 @@ module Cloning
     end
 
   end
-
-
-
-
-
 end
