@@ -119,7 +119,7 @@ class Protocol
 
     take fragment_stocks, interactive: true,  method: "boxes"
 
-    gibson_aliquot = choose_object("Gibson Aliquot")
+    # gibson_aliquot = choose_object("Gibson Aliquot")
 
     # take gibson_aliquot, interactive: true
     
@@ -135,7 +135,7 @@ class Protocol
 
     show {
       title "Take Gibson Aliquots and label them with ids"
-      note "Take #{plasmid_uniq.length} Gibson Aliquots"
+      note "Take #{plasmid_uniq.length} Gibson Aliquots from SF2.100"
       # note "Write" + gibson_ids.collect {|gid| "#{gid}"}.to_s + "on top of each Gibson Aliquot tube"
       note "Label each unused Gibson Aliquot with the following ids using round dot labels"
       note (gibson_results_list.collect {|gid| "#{gid}"})
@@ -146,9 +146,8 @@ class Protocol
 
     load_gibson_fragments(["Fragment Stock ids","Volume (µL)"], plasmid_fragment, plasmid_fragment_volume, gibson_results_list, plasmid_uniq)
 
-    release gibson_aliquot
+    # release gibson_aliquot
     release fragment_stocks, interactive: true,  method: "boxes"
-
 
   end
 
