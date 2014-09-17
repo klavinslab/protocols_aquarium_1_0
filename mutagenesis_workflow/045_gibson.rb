@@ -112,11 +112,13 @@ class Protocol
       plasmid = find(:sample,{id: pid})[0]
       gibson_results = produce new_sample plasmid.name, of: "Plasmid", as: "Gibson Reaction Result"
       gibson_results_list = gibson_results_list.push gibson_results
+      gibson_ids = gibson_results_list.id
     end
 
     show {
       title "Take Gibson Aliquots and label them with ids"
       note "Take #{plasmid_uniq.length} Gibson Aliquots"
+      note "Write #{gibson_ids[0]} on top of each Gibson Aliquot tube"
       gibson_results_list.each do |gsid|
         note "Write #{gsid} on top of an unused Gibson Aliquot using round dot labels"
       end
