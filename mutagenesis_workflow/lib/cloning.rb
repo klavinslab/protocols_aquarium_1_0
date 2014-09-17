@@ -134,7 +134,7 @@ module Cloning
     gibson_ids.each_with_index do |gsid,idx|
       tab = []
       plasmid_fragment[plasmid_uniq[idx]].each_with_index do |fid,idx_inner|
-        tab.push(["#{gsid}",fid,plasmid_fragment_volume[plasmid_uniq[idx]][idx_inner].round(2)])
+        tab.push(["#{gsid}","#{fid}",plasmid_fragment_volume[plasmid_uniq[idx]][idx_inner].round(2)])
       end
       show {
           title "Load Gibson Reaction #{gsid}"

@@ -59,6 +59,7 @@ class Protocol
 
     plasmid_uniq.each do |pid|
       plasmid_fragment[pid] = []
+      plasmid_fragment_stock[pid] = []
       plasmid_fragment_conc_over_length[pid] = []
       plasmid_fragment_volume[pid] = []
     end
@@ -67,6 +68,7 @@ class Protocol
       plasmid_fragment[plasmid_ids[index]].push fid
       info = fragment_info_gibson fid
       plasmid_fragment_conc_over_length[plasmid_ids[index]].push info[:conc]/info[:length]
+      plasmid_fragment_stock[plasmid_ids[index]].push info[:stock]
       fragment_info_list.push info   if info
     end
 
@@ -144,7 +146,7 @@ class Protocol
       # end
     }
 
-    load_gibson_fragments(["Fragment Stock ids","Volume (µL)"], plasmid_fragment, plasmid_fragment_volume, gibson_results_list, plasmid_uniq)
+    load_gibson_fragments(["Fragment Stock ids","Volume (µL)"], plasmid_fragment_stock, plasmid_fragment_volume, gibson_results_list, plasmid_uniq)
 
     show {
       title "Place all Gibson Reaction tubes on a 50 C heat block"
