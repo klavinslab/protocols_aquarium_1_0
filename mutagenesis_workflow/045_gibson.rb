@@ -69,6 +69,16 @@ class Protocol
       fragment_info_list.push info   if info
     end
 
+    plasmid_uniq.each do |pid|
+      num = plasmid_fragment[pid].length  # number of fragments in Gibsoning this plasmid
+      total_vector = Matrix.build(num, 1) {|row, col| gibson_vector row}
+      coefficient_matrix = Matrix.build(num, num) {|row, col| gibson_coefficients row, col, plasmid_fragment_conc_over_length[pid]}
+      volume_vector = coefficient_matrix.inv * total_vector
+      volumes = volume_vector.each.to_a
+      plasmid_fragment_volume[pid] = volumes
+    end
+
+    # old fashioned way
     length = fragment_info_list.collect { |fi| fi[:length] }
     stock  = fragment_info_list.collect { |fi| fi[:stock] }
     conc   = fragment_info_list.collect { |fi| fi[:conc] }
@@ -79,15 +89,6 @@ class Protocol
     coefficient_matrix = Matrix.build(conc.length, conc.length) {|row, col| gibson_coefficients row, col, conc_over_length}
     volume_vector = coefficient_matrix.inv * total_vector
     volumes = volume_vector.each.to_a
-
-    plasmid_uniq.each do |pid|
-      num = plasmid_fragment[pid].length  # number of fragments in Gibsoning this plasmid
-      total_vector = Matrix.build(num, 1) {|row, col| gibson_vector row}
-      coefficient_matrix = Matrix.build(num, num) {|row, col| gibson_coefficients row, col, plasmid_fragment_conc_over_length[pid]}
-      volume_vector = coefficient_matrix.inv * total_vector
-      volumes = volume_vector.each.to_a
-      plasmid_fragment_volume[pid] = volumes
-    end
 
 
     # Tell the user what we are doing
@@ -122,7 +123,7 @@ class Protocol
       end
     }
 
-    load_gibson_fragments(["Fragment Stock","Volume"], fragment_ids, volumes, gibson_results_list, plasmid_ids)
+    load_gibson_fragments_new(["Fragment Stock","Volume"], plasmid_fragment, plasmid_fragment_volume, gibson_results_list, plasmid_uniq)
 
   end
 
