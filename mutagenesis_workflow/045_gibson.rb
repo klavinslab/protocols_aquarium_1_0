@@ -120,9 +120,11 @@ class Protocol
       title "Take Gibson Aliquots and label them with ids"
       note "Take #{plasmid_uniq.length} Gibson Aliquots"
       note "Write" + gibson_ids.collect {|gid| "#{gid}"}.to_s + "on top of each Gibson Aliquot tube"
-      gibson_results_list.each do |gsid|
-        note "Write #{gsid} on top of an unused Gibson Aliquot using round dot labels"
-      end
+      note "Label each unused Gibson Aliquot with the following ids using round dot labels"
+      note (gibson_results_list.collect {|gid| "#{gid}"})
+      # gibson_results_list.each do |gsid|
+      #   note "Write #{gsid} on top of an unused Gibson Aliquot using round dot labels"
+      # end
     }
 
     load_gibson_fragments(["Fragment Stock ids","Volume (µL)"], plasmid_fragment, plasmid_fragment_volume, gibson_results_list, plasmid_uniq)
