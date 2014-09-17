@@ -102,7 +102,7 @@ class Protocol
       note (plasmid_uniq.collect {|p| "#{p}"})
       note (plasmid_ids.collect {|p| "#{p}"})
       note (plasmid_fragment_conc_over_length[1923].collect {|p| "#{p}"})
-      note (plasmid_fragment_volume[1923].collect {|p| "#{p}"}])
+      note (plasmid_fragment_volume[1923].collect {|p| "#{p}"})
     }
     
     # produce gibson results ids
