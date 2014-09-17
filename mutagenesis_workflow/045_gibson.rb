@@ -14,9 +14,9 @@ class Protocol
   def arguments
     {
       #Enter the fragment sample id (not item ids) as a list, eg [2048,2049,2060,2061,2,2]
-      fragment_ids: [2058,2059,2060,2061,2058,2061],
+      fragment_ids: [2058,2059,2060,2061,2062],
       #Enter correspoding plasmid id or fragment id for each fragment to be Gibsoned in.
-      plasmid_ids: [1923,1923,1922,1922,273,273]
+      plasmid_ids: [2236,2236,2236,2236,2236]
     }
   end
 
