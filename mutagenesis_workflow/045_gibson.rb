@@ -54,6 +54,7 @@ class Protocol
 
     #initilize a plasmid fragment and related info hash
     plasmid_fragment = {}
+    plasmid_fragment_stock = {}
     plasmid_fragment_conc_over_length = {}
     plasmid_fragment_volume = {}
 
