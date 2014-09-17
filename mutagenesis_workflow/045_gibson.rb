@@ -53,6 +53,7 @@ class Protocol
 
     #initilize a plasmid fragment hash
     plasmid_fragment = {}
+    plasmid_fragment_conc_over_length = {}
 
     plasmid_uniq.each do |pid|
       plasmid_fragment[pid] = []
