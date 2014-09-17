@@ -146,8 +146,20 @@ class Protocol
 
     load_gibson_fragments(["Fragment Stock ids","Volume (µL)"], plasmid_fragment, plasmid_fragment_volume, gibson_results_list, plasmid_uniq)
 
-    # release gibson_aliquot
+    show {
+      title "Place all Gibson Reaction tubes on a 50 C heat block"
+      note "Put all Gibson Reaction tubes on the 50C heat block located in the back of bay B3."
+    }
+
     release fragment_stocks, interactive: true,  method: "boxes"
+
+    show {
+      title "Wait for 60 mins"
+      note "Please start a timer by yourself"
+    }
+
+    release gibson_results_list, interactive: true,  method: "boxes"
+
 
   end
 
