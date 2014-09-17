@@ -118,6 +118,10 @@ class Protocol
     }
 
     take fragment_stocks, interactive: true,  method: "boxes"
+
+    gibson_aliquot = choose_object("Gibson Aliquot")
+
+    # take gibson_aliquot, interactive: true
     
     # produce gibson results ids
     gibson_results_list = []
@@ -141,6 +145,10 @@ class Protocol
     }
 
     load_gibson_fragments(["Fragment Stock ids","Volume (µL)"], plasmid_fragment, plasmid_fragment_volume, gibson_results_list, plasmid_uniq)
+
+    release gibson_aliquot
+    release fragment_stocks, interactive: true,  method: "boxes"
+
 
   end
 
