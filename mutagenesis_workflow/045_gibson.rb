@@ -108,11 +108,12 @@ class Protocol
     
     # produce gibson results ids
     gibson_results_list = []
+    gibson_ids = []
     plasmid_uniq.each do |pid|
       plasmid = find(:sample,{id: pid})[0]
       gibson_results = produce new_sample plasmid.name, of: "Plasmid", as: "Gibson Reaction Result"
       gibson_results_list = gibson_results_list.push gibson_results
-      gibson_ids = gibson_results_list.id
+      gibson_ids = gibson_ids.push gibson_results.id
     end
 
     show {
