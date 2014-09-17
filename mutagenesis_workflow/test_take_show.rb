@@ -20,7 +20,7 @@ class Protocol
     # items_by_id = find(:item, id: 374)
     items = find(:item, object_type: {name: "GelGreen Nucleic Acid Stain"})
 
-    take [items], interactive: true
+    take items
 
 
 #    gel_green = choose_object "500 mL Bottle"
