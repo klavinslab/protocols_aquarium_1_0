@@ -14,9 +14,9 @@ class Protocol
   def arguments
     {
       #Enter the fragment sample id (not item ids) as a list, eg [2048,2049,2060,2061,2,2]
-      fragment_ids: [2058,2059,2060,2061],
+      fragment_ids: [2058,2059,2060,2061,2058,2061],
       #Enter correspoding plasmid id or fragment id for each fragment to be Gibsoned in.
-      plasmid_ids: [1923,1923,1923,1923]
+      plasmid_ids: [1923,1923,1922,1922,273,273]
     }
   end
 
@@ -44,8 +44,25 @@ class Protocol
     # retrieve fragment length, fragment stock, concentration
     fragment_info_list = []
 
-    input[:fragment_ids].each do |fid|
+    # parse fragment ids
+    fragment_ids = input[:fragment_ids]
+
+    # parse unique plasmid ids
+    plasmid_ids = input[:plasmid_ids]
+    plasmid_uniq = plasmid_ids.uniq
+
+    #initilize a plasmid fragment hash
+    plasmid_fragment = {}
+
+    plasmid_uniq.each do |pid|
+      plasmid_fragment[pid] = []
+      plasmid_fragment_conc_over_length[pid] = []
+    end
+
+    fragment_ids.each_with_index do |fid, index|
+      plasmid_fragment[plasmid_ids[index]].push fid
       info = fragment_info_gibson fid
+      plasmid_fragment_conc_over_length[plasmid_ids[index]].push info[:conc]/info[:length]
       fragment_info_list.push info   if info
     end
 
@@ -53,19 +70,12 @@ class Protocol
     stock  = fragment_info_list.collect { |fi| fi[:stock] }
     conc   = fragment_info_list.collect { |fi| fi[:conc] }
     conc_over_length = conc.map.with_index {|c,i| c/length[i]}
-    
-    # parse fragment ids
-    fragment_ids = input[:fragment_ids]
 
     # calculate volumes to add for each fragment stock assuming 5 µL of total volume
     total_vector = Matrix.build(conc.length, 1) {|row, col| gibson_vector row}
     coefficient_matrix = Matrix.build(conc.length, conc.length) {|row, col| gibson_coefficients row, col, conc_over_length}
     volume_vector = coefficient_matrix.inv * total_vector
     volumes = volume_vector.each.to_a
-
-    # parse unique plasmid ids
-    plasmid_ids = input[:plasmid_ids]
-    plasmid_uniq = plasmid_ids.uniq
 
 
     # Tell the user what we are doing
@@ -79,6 +89,7 @@ class Protocol
       note (volumes.collect {|v| "#{v.round(1)}"})
       note (plasmid_uniq.collect {|p| "#{p}"})
       note (plasmid_ids.collect {|p| "#{p}"})
+      note (plasmid_fragment_conc_over_length[1923].collect {|p| "#{p}"})
     }
     
     # produce gibson results ids
