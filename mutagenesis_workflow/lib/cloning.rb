@@ -129,12 +129,13 @@ module Cloning
 
   end
 
-  def load_gibson_fragments_new headings, fragments, volumes, gibson_ids, plasmid_uniq
+  def load_gibson_fragments_new headings, plasmid_fragment, plasmid_fragment_volume, gibson_ids, plasmid_uniq
     heading = [ ["Gibson Reaction ids"] + headings]
     gibson_ids.each_with_index do |gsid,idx|
       tab = []
-      fragments[plasmid_uniq[idx]].each_with_index do |fid,idx_inner|
-      tab.push(["#{gsid}",fid,volumes[plasmid_uniq[idx]][idx_inner].round(2)])
+      plasmid_fragment[plasmid_uniq[idx]].each_with_index do |fid,idx_inner|
+        tab.push(["#{gsid}",fid,plasmid_fragment_volume[plasmid_uniq[idx]][idx_inner].round(2)])
+      end
       show {
           title "Load Gibson Reaction #{gsid}"
           table heading + tab
