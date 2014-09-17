@@ -74,7 +74,7 @@ class Protocol
     fragment_stocks = []
     fragment_uniq.each do |fid|
       fragment = find(:sample,{id: fid})[0]
-      fragment_stock = fragment in "Fragment Stock"
+      fragment_stock = fragment.in "Fragment Stock"
       fragment_stocks.push fragment_stock[0] if fragment_stock[0]
     end
 
