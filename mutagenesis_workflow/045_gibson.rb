@@ -119,7 +119,7 @@ class Protocol
     show {
       title "Take Gibson Aliquots and label them with ids"
       note "Take #{plasmid_uniq.length} Gibson Aliquots"
-      note "Write #{gibson_ids[0]} on top of each Gibson Aliquot tube"
+      note "Write" + gibson_ids.collect {|gid| "#{gid}} + on top of each Gibson Aliquot tube"
       gibson_results_list.each do |gsid|
         note "Write #{gsid} on top of an unused Gibson Aliquot using round dot labels"
       end
