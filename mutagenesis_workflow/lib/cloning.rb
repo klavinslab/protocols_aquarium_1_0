@@ -104,32 +104,32 @@ module Cloning
 
   end
 
-  def load_gibson_fragments headings, fragments, volumes, gibson_ids, plasmid_ids
-    heading = [ ["Gibson Reaction ids"] + headings]
-    i = 0
-    gibson_ids.each do |gsid|
-      tab = []
-      while plasmid_ids[i+1] == plasmid_ids[i]
-        tab.push(["#{gsid}",fragments[i],volumes[i]])
-        i += 1
-        if i + 1 == plasmid_ids.length
-          break
-        end
-      end
-      tab.push(["#{gsid}",fragments[i],volumes[i].round(2)])
-      show {
-          title "Load Gibson Reaction #{gsid}"
-          table heading + tab
-        }
-      i += 1
-      if i + 1 == plasmid_ids.length
-        break
-      end        
-    end
+  # def load_gibson_fragments headings, fragments, volumes, gibson_ids, plasmid_ids
+  #   heading = [ ["Gibson Reaction ids"] + headings]
+  #   i = 0
+  #   gibson_ids.each do |gsid|
+  #     tab = []
+  #     while plasmid_ids[i+1] == plasmid_ids[i]
+  #       tab.push(["#{gsid}",fragments[i],volumes[i]])
+  #       i += 1
+  #       if i + 1 == plasmid_ids.length
+  #         break
+  #       end
+  #     end
+  #     tab.push(["#{gsid}",fragments[i],volumes[i].round(2)])
+  #     show {
+  #         title "Load Gibson Reaction #{gsid}"
+  #         table heading + tab
+  #       }
+  #     i += 1
+  #     if i + 1 == plasmid_ids.length
+  #       break
+  #     end        
+  #   end
 
-  end
+  # end
 
-  def load_gibson_fragments_new headings, plasmid_fragment, plasmid_fragment_volume, gibson_ids, plasmid_uniq
+  def load_gibson_fragments headings, plasmid_fragment, plasmid_fragment_volume, gibson_ids, plasmid_uniq
     heading = [ ["Gibson Reaction ids"] + headings]
     gibson_ids.each_with_index do |gsid,idx|
       tab = []

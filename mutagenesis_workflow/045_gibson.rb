@@ -114,7 +114,6 @@ class Protocol
       gibson_results_list = gibson_results_list.push gibson_results
     end
 
-
     show {
       title "Take Gibson Aliquots and label them with ids"
       note "Take #{plasmid_uniq.length} Gibson Aliquots"
@@ -123,7 +122,7 @@ class Protocol
       end
     }
 
-    load_gibson_fragments_new(["Fragment Stock","Volume"], plasmid_fragment, plasmid_fragment_volume, gibson_results_list, plasmid_uniq)
+    load_gibson_fragments(["Fragment Stock ids","Volume (µL)"], plasmid_fragment, plasmid_fragment_volume, gibson_results_list, plasmid_uniq)
 
   end
 
