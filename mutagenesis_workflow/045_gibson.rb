@@ -51,13 +51,15 @@ class Protocol
     plasmid_ids = input[:plasmid_ids]
     plasmid_uniq = plasmid_ids.uniq
 
-    #initilize a plasmid fragment hash
+    #initilize a plasmid fragment and related info hash
     plasmid_fragment = {}
     plasmid_fragment_conc_over_length = {}
+    plasmid_fragment_volume = {}
 
     plasmid_uniq.each do |pid|
       plasmid_fragment[pid] = []
       plasmid_fragment_conc_over_length[pid] = []
+      plasmid_fragment_volume[pid] = []
     end
 
     fragment_ids.each_with_index do |fid, index|
@@ -78,6 +80,15 @@ class Protocol
     volume_vector = coefficient_matrix.inv * total_vector
     volumes = volume_vector.each.to_a
 
+    plasmid_uniq.each do |pid|
+      num = plasmid_fragment[pid].length  # number of fragments in Gibsoning this plasmid
+      total_vector = Matrix.build(num, 1) {|row, col| gibson_vector row}
+      coefficient_matrix = Matrix.build(num, num) {|row, col| gibson_coefficients row, col, plasmid_fragment_conc_over_length[pid]}
+      volume_vector = coefficient_matrix.inv * total_vector
+      volumes = volume_vector.each.to_a
+      plasmid_fragment_volume[pid] = volumes
+    end
+
 
     # Tell the user what we are doing
     show {
@@ -91,6 +102,7 @@ class Protocol
       note (plasmid_uniq.collect {|p| "#{p}"})
       note (plasmid_ids.collect {|p| "#{p}"})
       note (plasmid_fragment_conc_over_length[1923].collect {|p| "#{p}"})
+      note (plasmid_fragment_volume[1923].collect {|p| "#{p}"}])
     }
     
     # produce gibson results ids
