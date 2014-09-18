@@ -94,7 +94,8 @@ class Protocol
 #produce a flask of cells for each item in logCult
     innoculated_flasks = []
     strains.each do |str|
-      innoculated_flasks.concat (1..logCult.count(str.id)).map do |ii|
+      nduplicates = logCult.count(str.id)
+      innoculated_flasks.concat (1..nduplicates).map do |ii|
         an_innoculated_flask = produce new_sample str.sample.name, 
           of: str.sample.sample_type.name, as: "Overnight suspension"
         an_innoculated_flask.location = "SI4"
