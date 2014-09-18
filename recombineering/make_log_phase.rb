@@ -15,7 +15,7 @@ class Protocol
 
     show {
       title "test"
-      note "#{input[p]}"
+      note "#{p}"
     }
 #
 #function array_count(arry,match) #returns number of instances of match in arry
