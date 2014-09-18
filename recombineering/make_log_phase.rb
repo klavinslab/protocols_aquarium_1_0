@@ -112,7 +112,7 @@ class Protocol
     show {
       title "Label each flask"
       innoculated_flasks.each do |flsk|
-        check: "label a flask '#{flsk.id}'"
+        check "label a flask '#{flsk.id}'"
       end
     }
 
