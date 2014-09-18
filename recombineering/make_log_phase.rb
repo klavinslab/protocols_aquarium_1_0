@@ -59,7 +59,7 @@ class Protocol
     take strains, interactive: true
     show {
       title "test2"
-      note "#{strains}"
+      note "ids: #{strainIDs} str: #{strains.inspect}"
     }
 
 
