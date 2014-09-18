@@ -63,39 +63,39 @@ class Protocol
     flasks = choose_object("250 mL Baffled Flask", take:false) {
       title "Take #{nflasks} flask(s)"
     }
-#ind = 0
-#log_cell_flasks = []
-#produced_flasks = []
-#log_ids = []
-#fids = []
-#foreach strain in strains
-#  sid = strain[:id]
-#  ncopy = array_count(strainIDs,sid)
-#  ii=0
-#  while ii<ncopy
-#    produce silently
-#      output = 1 "Overnight suspension" from strain 
-#      release [flasks[ind]]
-#      location: "SI4"
-#      data
-#        from: sid
-#      end
-#    end
-#    ind = ind+1
-#    log_cell_flasks = append(log_cell_flasks, output[:id])
-#    produced_flasks = append(produced_flasks, output)
-#
-#    fid = output[:id]
-#    fids = append(fids,fid)
-#    ii = ii+1
-#  end
-#end
+    #ind = 0
+    #log_cell_flasks = []
+    #produced_flasks = []
+    #log_ids = []
+    #fids = []
+    #foreach strain in strains
+    #  sid = strain[:id]
+    #  ncopy = array_count(strainIDs,sid)
+    #  ii=0
+    #  while ii<ncopy
+    #    produce silently
+    #      output = 1 "Overnight suspension" from strain 
+    #      release [flasks[ind]]
+    #      location: "SI4"
+    #      data
+    #        from: sid
+    #      end
+    #    end
+    #    ind = ind+1
+    #    log_cell_flasks = append(log_cell_flasks, output[:id])
+    #    produced_flasks = append(produced_flasks, output)
+    #
+    #    fid = output[:id]
+    #    fids = append(fids,fid)
+    #    ii = ii+1
+    #  end
+    #end
 
-#produce a flask of cells for each item in logCult
+    #produce a flask of cells for each item in logCult
     innoculated_flasks = []
     strains.each do |str|
       nduplicates = logCult.count(str.id)
-      for ii in 1..nduplicates do |ii|
+      for ii in 1..nduplicates do 
         an_innoculated_flask = produce new_sample str.sample.name, 
           of: str.sample.sample_type.name, as: "Overnight suspension"
         an_innoculated_flask.location = "SI4"
