@@ -21,10 +21,10 @@ class Protocol
       
       number_overnights = overnights.length
       
-      glycerol = choose_object "50 percent Glycerol (sterile)"
+     # glycerol = choose_object "50 percent Glycerol (sterile)"
       
       show {
-        title "Pipette 900 µL of 50 percent Glycerol stock into Cyro tube(s)."
+        title "Pipette 900 µL of 50 percent Glycerol stock #{number_overnights} into Cyro tube(s)."
         warning "Make sure not to touch the inner side of the Glycerol bottle with the pipetter."
       }
       
@@ -43,7 +43,7 @@ class Protocol
       end
       
       release overnights
-      release glycerol
+      #release glycerol
   end
   
 end
