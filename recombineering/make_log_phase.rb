@@ -1,16 +1,17 @@
 #Author: Chris Takahashi
 require 'json'
+$DEF_FILE = './repos/protocols/recombineering/defaults.json'
+$defaults = JSON.parse(File.read(DEF_FILE))
+
 class Protocol
   def debug
     true
   end
+  def arguments
+    {params: $defaults}
+  end
   def main
-    def_file = './repos/protocols/recombineering/defaults.json'
-    defaults = JSON.parse(File.read(def_file))
 
-    def argument
-      {params: defaults}
-    end
     p = input[:params]
 
     show {
