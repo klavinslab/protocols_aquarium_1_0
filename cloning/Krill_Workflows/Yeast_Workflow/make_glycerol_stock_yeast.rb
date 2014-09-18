@@ -9,13 +9,13 @@ class Protocol
 
   def arguments
     {
-      overnights: SampleType.where("name='Yeast Overnight Suspension'")
+      overnight_ids: SampleType.where("name='Yeast Overnight Suspension'")
     }
   end
   
   def main
     
-      overnights = find(:item, { sample: input[:overnights] } )
+      overnights = find(:item, id:overnight_ids )
       
       take overnights
       
