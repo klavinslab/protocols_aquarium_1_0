@@ -15,7 +15,7 @@ class Protocol
   
   def main
     
-      overnights = find(:item, id:overnight_ids )
+      overnights = find(:item, id: input[:overnight_ids] )
       
       take overnights
       
