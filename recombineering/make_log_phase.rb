@@ -5,6 +5,7 @@ $DEF_FILE = './repos/protocols/recombineering/defaults.json'
 $defaults = JSON.parse(File.read($DEF_FILE))
 
 class Protocol
+  include Standard
   def debug
     true
   end
@@ -20,17 +21,18 @@ class Protocol
       note "#{p}"
     }
 
-#foreach cult in unique(st)
-#  ii = 0
-#  count = array_count(st,cult)
-#  nflsk = ceil(ii/4.0)
-#  ii = 0
-#  while ii<nflsk
-#    logCult= append(logCult,cult)
-#    ii = ii+1
-#  end
-#  
-#end
+    ##
+    #foreach cult in unique(st)
+    #  ii = 0
+    #  count = array_count(st,cult)
+    #  nflsk = ceil(ii/4.0)
+    #  ii = 0
+    #  while ii<nflsk
+    #    logCult= append(logCult,cult)
+    #    ii = ii+1
+    #  end
+    #  
+    #end
     logCult = []
     st = p[:strains]
     st.uniq.each do |cult|
@@ -40,25 +42,25 @@ class Protocol
     end
 
 
-#
-#params[:logCultures] = logCult
-#strainIDs = params[:logCultures] #wtf was this?!
+    #
+    #params[:logCultures] = logCult
+    #strainIDs = params[:logCultures] #wtf was this?!
     p[:logCultures] = logCult
-#
-#information "Dilute cells and bring them to log phase"
-#
-#nflasks = length(strainIDs)
-#take
-#	strains = item unique(strainIDs)
-#	flasks = nflasks "250 mL Baffled Flask"
-#end
+    #
+    #information "Dilute cells and bring them to log phase"
+    #
+    #nflasks = length(strainIDs)
+    #take
+    #	strains = item unique(strainIDs)
+    #	flasks = nflasks "250 mL Baffled Flask"
+    #end
     strains = []
-    logCult.uniq.each do |anid|
-      strains.concat  find(:item, id: anid)
+    logCult.uniq.each do |an_id|
+      strains.concat  find(:item, id: an_id)
     end
     take strains, interactive: true
     flasks = choose_object("250 mL Baffled Flask", take:false) {
-      title "Take #{nflasks} flask(s)"
+      title "Take 3 flask(s)"
     }
 #ind = 0
 #log_cell_flasks = []
