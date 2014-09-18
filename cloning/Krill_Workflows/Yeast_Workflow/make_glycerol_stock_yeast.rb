@@ -24,7 +24,7 @@ class Protocol
      # glycerol = choose_object "50 percent Glycerol (sterile)"
      # cyrotubes = choose_object number_overnights "Cyro tubes" <- put in correct names
       show {
-        title "Pipette 900 µL of 50 percent Glycerol stock #{number_overnights} into Cyro tube(s)."
+        title "Pipette 900 µL of 50 percent Glycerol stock into #{number_overnights} Cyro tube(s)."
         warning "Make sure not to touch the inner side of the Glycerol bottle with the pipetter."
       }
       
@@ -38,7 +38,7 @@ class Protocol
         
         j = produce new_sample overnight.sample.name, of: "Yeast Strain", as: "Yeast Glycerol Stock"
         
-        release[j]
+        release j
         
       end
       
