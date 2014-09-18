@@ -1,7 +1,7 @@
 #Author: Chris Takahashi
 require 'json'
 $DEF_FILE = './repos/protocols/recombineering/defaults.json'
-$defaults = JSON.parse(File.read(DEF_FILE))
+$defaults = JSON.parse(File.read($DEF_FILE))
 
 class Protocol
   def debug
