@@ -38,7 +38,7 @@ class Protocol
         
         j = produce new_sample overnight.sample.name, of: "Yeast Strain", as: "Yeast Glycerol Stock"
         
-      #  release j, interactive: true
+        release j, interactive: true
         
       end
       
