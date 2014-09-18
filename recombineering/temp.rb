@@ -1,13 +1,12 @@
+needs "aqualib/lib/standard"
 class Protocol
+  include Standard
   def debug
     true
   end
   def main
-    itms = find(:item, object_type: {name:"250 mL Baffled Flask"})
-    foo = itms.map {|e| e.id}
-    show {
-      title "Hello World!"
-      note "#{foo}"
+    flasks = choose_object("250 mL Baffled Flask", take:false) {
+      title "Take 3 flask(s)"
     }
   end
 end
