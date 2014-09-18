@@ -17,7 +17,7 @@ class Protocol
       title "test"
       note "#{p}"
     }
-#
+# not needed.  ruby has foo.count(match)
 #function array_count(arry,match) #returns number of instances of match in arry
 #  ii = 0
 #  foreach a in arry
