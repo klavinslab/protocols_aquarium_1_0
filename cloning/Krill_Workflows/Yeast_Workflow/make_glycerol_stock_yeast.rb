@@ -28,7 +28,7 @@ class Protocol
         warning "Make sure not to touch the inner side of the Glycerol bottle with the pipetter."
       }
       
-    
+      glycerolstocks=[]
       overnights.each do |overnight|
         
         show {
@@ -37,11 +37,11 @@ class Protocol
         }
         
         j = produce new_sample overnight.sample.name, of: "Yeast Strain", as: "Yeast Glycerol Stock"
-        
+        glycerolstocks.push(j)
         
       end
       
-      release j, interactive: true
+      release glycerolstocks, interactive: true
       release overnights, interactive: true
       #release glycerol, interactive: true
   end
