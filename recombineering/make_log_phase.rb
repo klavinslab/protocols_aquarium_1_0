@@ -18,25 +18,10 @@ class Protocol
       title "test"
       note "#{p}"
     }
-# not needed.  ruby has foo.count(match)
-#function array_count(arry,match) #returns number of instances of match in arry
-#  ii = 0
-#  foreach a in arry
-#    if a == match
-#      ii = ii+1
-#    end
-#  end
-#  return ii
-#end
-#
-#logCult = []
-#st = params[:strains]
+
 #foreach cult in unique(st)
 #  ii = 0
 #  count = array_count(st,cult)
-#  while ii< count
-#    ii = ii + 1
-#  end
 #  nflsk = ceil(ii/4.0)
 #  ii = 0
 #  while ii<nflsk
@@ -45,9 +30,20 @@ class Protocol
 #  end
 #  
 #end
+    logCult = []
+    st = p[:strains]
+    st.uniq.each do |cult|
+      ii = 0
+      nflsk = (st.count(cult)/4.0).ceil
+      logCult.concat [cult]*nflsk
+    end
+
+
 #
 #params[:logCultures] = logCult
 #strainIDs = params[:logCultures]
+    p[:logCultures] = logCult
+    strainIDs = logCult
 #
 #information "Dilute cells and bring them to log phase"
 #
@@ -56,6 +52,13 @@ class Protocol
 #	strains = item unique(strainIDs)
 #	flasks = nflasks "250 mL Baffled Flask"
 #end
+    strains_obj = find(:item, id: strainIDs.uniq)
+    show {
+      title "test2"
+      note "%{strains_obj}"
+    }
+
+
 #
 #ind = 0
 #log_cell_flasks = []
