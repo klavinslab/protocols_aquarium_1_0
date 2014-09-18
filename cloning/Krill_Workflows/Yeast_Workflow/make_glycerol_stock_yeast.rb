@@ -36,7 +36,7 @@ class Protocol
           check "Cap the Cryo tube and then vortex on a table top vortexer for about 20 seconds"
         }
         
-        j = produce new_sample overnight.name, of: "Yeast Strain", as: "Yeast Glycerol Stock"
+        j = produce new_sample overnight.sample.name, of: "Yeast Strain", as: "Yeast Glycerol Stock"
         
         release[j]
         
