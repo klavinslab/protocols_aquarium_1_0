@@ -30,17 +30,23 @@ class Protocol
       }
       
       glycerolstocks=[]
+      table1=["Cyro tube IDs"]
+      table2=[["Overnights IDs to add","Cyro tube ID to add to"]]
+      
+      
       overnights.each do |overnight|
-        
-        show {
-          check "Pipette 900 µL of yeast overnight #{overnight.id} into a Cyro tube."
-          check "Cap the Cryo tube and then vortex on a table top vortexer for about 20 seconds"
-        }
         
         j = produce new_sample overnight.sample.name, of: "Yeast Strain", as: "Yeast Glycerol Stock"
         glycerolstocks.push(j)
+        table1.push(j.id)
+        table2.push([overnight.id,j.id])
         
       end
+      
+      show {
+        note "Pipette 900 µL of yeast overnight into a Cyro tube accordint to the table and then vortex on a table top vortexer for about 20 seconds"
+        table table2
+      }
       
       release glycerolstocks, interactive: true
       release overnights, interactive: true
