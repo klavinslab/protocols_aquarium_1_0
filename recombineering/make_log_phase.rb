@@ -1,8 +1,11 @@
 #Author: Chris Takahashi
 require 'json'
-def_file = './repos/protocols/recombineering/defaults.json'
 class Protocol
+  def debug
+    true
+  end
   def main
+    def_file = './repos/protocols/recombineering/defaults.json'
     defaults = JSON.parse(File.read(def_file))
 
     def argument
