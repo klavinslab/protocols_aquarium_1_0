@@ -1,17 +1,17 @@
 #Author: Chris Takahashi
 require 'json'
-
+def_file = './repos/protocols/recombineering/defaults.json'
 class Protocol
   def main
-#    defaults = JSON.parse(File.read('defaults.json'))
-    test = File.expand_path('.')
+    defaults = JSON.parse(File.read(def_file))
+
     def argument
       {params: defaults}
     end
 
     show {
       title "test"
-      note "#{test}"
+      note "#{defaults}"
     }
 #
 #function array_count(arry,match) #returns number of instances of match in arry
