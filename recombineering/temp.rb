@@ -5,8 +5,9 @@ class Protocol
     true
   end
   def main
+    nflasks = 3
     flasks = choose_object("250 mL Baffled Flask", take:false) {
-      title "Take 3 flask(s)"
+      title "Take #{nflasks} flask(s)"
     }
   end
 end
