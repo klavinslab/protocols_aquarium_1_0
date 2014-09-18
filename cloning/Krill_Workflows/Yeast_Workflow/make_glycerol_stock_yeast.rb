@@ -17,7 +17,7 @@ class Protocol
     
       overnights = find(:item, id: input[:overnight_ids] )
       
-      take overnights
+      take overnights, interactive: true 
       
       number_overnights = overnights.length
       
