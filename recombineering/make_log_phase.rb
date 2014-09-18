@@ -41,9 +41,8 @@ class Protocol
 
 #
 #params[:logCultures] = logCult
-#strainIDs = params[:logCultures]
+#strainIDs = params[:logCultures] #wtf was this?!
     p[:logCultures] = logCult
-    strainIDs = logCult
 #
 #information "Dilute cells and bring them to log phase"
 #
@@ -53,18 +52,10 @@ class Protocol
 #	flasks = nflasks "250 mL Baffled Flask"
 #end
     strains = []
-    strainIDs.uniq.each do |anid|
+    logCult.uniq.each do |anid|
       strains.concat  find(:item, id: anid)
     end
     take strains, interactive: true
-    foo = strains.map{|e| e.id}
-    show {
-      title "test2"
-      note "ids: #{strainIDs} str: #{foo}"
-    }
-
-
-#
 #ind = 0
 #log_cell_flasks = []
 #produced_flasks = []
@@ -92,6 +83,16 @@ class Protocol
 #    ii = ii+1
 #  end
 #end
+
+#produce a flask of cells for each item in strains
+strains.each do |str|
+  for ii in 1..strainIDs.count(str.id)
+    produce new_sample str.sample.name, of: str.sample.sample_type.name,
+      as: "Overnight suspension"
+  end
+end
+
+
 #
 #step
 #  description: "Label flasks"
