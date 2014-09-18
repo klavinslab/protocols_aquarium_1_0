@@ -23,8 +23,7 @@ class Protocol
       
       glycerol = choose_sample "50 percent Glycerol (sterile)"
       
-      show 
-      {
+      show {
         title "Pipette 900 µL of 50 percent Glycerol stock into Cyro tube(s)."
         warning "Make sure not to touch the inner side of the Glycerol bottle with the pipetter."
       }
@@ -32,8 +31,7 @@ class Protocol
     
       (overnights).each do |overnight|
         
-        show 
-        {
+        show {
           check "Pipette 900 µL of yeast overnight into a Cyro tube."
           check "Cap the Cryo tube and then vortex on a table top vortexer for about 20 seconds"
         }
