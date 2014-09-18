@@ -95,13 +95,13 @@ class Protocol
     innoculated_flasks = []
     strains.each do |str|
       nduplicates = logCult.count(str.id)
-      innoculated_flasks.concat (1..3).yield.map do |ii|
+      for ii in 1..nduplicates do |ii|
         an_innoculated_flask = produce new_sample str.sample.name, 
           of: str.sample.sample_type.name, as: "Overnight suspension"
         an_innoculated_flask.location = "SI4"
         an_innoculated_flask.datum = {from:str.id}
         an_innoculated_flask.save
-        an_innoculated_flask #"return" this object to map
+        innoculated_flasks.push an_innoculated_flask
       end
     end
 
