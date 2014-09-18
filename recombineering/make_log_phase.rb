@@ -41,7 +41,6 @@ class Protocol
       logCult.concat [cult]*nflsk
     end
 
-
     #
     #params[:logCultures] = logCult
     #strainIDs = params[:logCultures] #wtf was this?!
@@ -54,13 +53,15 @@ class Protocol
     #	strains = item unique(strainIDs)
     #	flasks = nflasks "250 mL Baffled Flask"
     #end
+    nflasks = logCult.length
     strains = []
     logCult.uniq.each do |an_id|
       strains.concat  find(:item, id: an_id)
     end
     take strains, interactive: true
+
     flasks = choose_object("250 mL Baffled Flask", take:false) {
-      title "Take 3 flask(s)"
+      title "Take #{nflasks} flask(s)"
     }
 #ind = 0
 #log_cell_flasks = []
