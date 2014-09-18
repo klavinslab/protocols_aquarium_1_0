@@ -23,11 +23,6 @@ class Protocol
       
      # glycerol = choose_object "50 percent Glycerol (sterile)"
      # cyrotubes = choose_object number_overnights "Cyro tubes" <- put in correct names
-     
-      show {
-        title "Pipette 900 µL of 50 percent Glycerol stock into #{number_overnights} Cyro tube(s)."
-        warning "Make sure not to touch the inner side of the Glycerol bottle with the pipetter."
-      }
       
       glycerolstocks=[]
       table1=["Cyro tube IDs"]
@@ -42,6 +37,16 @@ class Protocol
         table2.push([overnight.id,j.id])
         
       end
+      
+      show {
+        note "Label the Cyro tubes according to the table below writing the name on a sticker on the top of the tube as well as the side along with the date"
+        table table1
+      }
+
+      show {
+        title "Pipette 900 µL of 50 percent Glycerol stock  Cyro tube(s)."
+        warning "Make sure not to touch the inner side of the Glycerol bottle with the pipetter."
+      }
       
       show {
         note "Pipette 900 µL of yeast overnight into a Cyro tube accordint to the table and then vortex on a table top vortexer for about 20 seconds"
