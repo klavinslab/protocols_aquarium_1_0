@@ -14,7 +14,7 @@ class Protocol
 
     show {
       title "test"
-      note "#{defaults}"
+      note "#{input[:params]}"
     }
 #
 #function array_count(arry,match) #returns number of instances of match in arry
