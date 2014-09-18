@@ -1,18 +1,18 @@
 #Author: Chris Takahashi
 require 'json'
 
-log_cell_flasks
+class Protocol
   def main
     defaults = JSON.parse(File.read('defaults.json'))
 
-  def argument
-    {params: defaults}
-  end
+    def argument
+      {params: defaults}
+    end
 
-  show {
-    title "test"
-    note "#{defaults}"
-  }
+    show {
+      title "test"
+      note "#{defaults}"
+    }
 #
 #function array_count(arry,match) #returns number of instances of match in arry
 #  ii = 0
