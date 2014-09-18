@@ -11,10 +11,11 @@ class Protocol
     def argument
       {params: defaults}
     end
+    p = input[:params]
 
     show {
       title "test"
-      note "#{input[:params]}"
+      note "#{input[p]}"
     }
 #
 #function array_count(arry,match) #returns number of instances of match in arry
