@@ -56,6 +56,9 @@ class Protocol
       strains.concat  find(:item, id: anid)
     end
     take strains, interactive: true
+    flasks = choose_object("250 mL Baffled Flask", take:false) {
+      title "Take #{nflasks} flask(s)"
+    }
 #ind = 0
 #log_cell_flasks = []
 #produced_flasks = []
@@ -84,11 +87,14 @@ class Protocol
 #  end
 #end
 
-#produce a flask of cells for each item in strains
+#produce a flask of cells for each item in logCult
+innoculated_flasks = []
 strains.each do |str|
-  for ii in 1..strainIDs.count(str.id)
-    produce new_sample str.sample.name, of: str.sample.sample_type.name,
-      as: "Overnight suspension"
+  innoculated_flasks.concat (1..logCult.count(str.id)).map do |ii|
+    an_innoculated_flask = produce new_sample str.sample.name, 
+      of: str.sample.sample_type.name, as: "Overnight suspension"
+    an_innoculated_flask.location = "SI4"
+    an_innoculated_flask.datum = {from:str.id}
   end
 end
 
