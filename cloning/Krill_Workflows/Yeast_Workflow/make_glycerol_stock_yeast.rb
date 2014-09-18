@@ -21,7 +21,7 @@ class Protocol
       
       number_overnights = overnights.length
       
-      glycerol = choose_item "50 percent Glycerol (sterile)"
+      glycerol = choose_object "50 percent Glycerol (sterile)"
       
       show {
         title "Pipette 900 µL of 50 percent Glycerol stock into #{number_overnights} Cyro tube(s)."
