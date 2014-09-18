@@ -33,7 +33,7 @@ class Protocol
         
         j = produce new_sample overnight.sample.name, of: "Yeast Strain", as: "Yeast Glycerol Stock"
         glycerolstocks.push(j)
-        table1.push(j.id)
+        table1.push([j.id])
         table2.push([overnight.id,j.id])
         
       end
