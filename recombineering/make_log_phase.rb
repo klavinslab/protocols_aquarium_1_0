@@ -1,4 +1,5 @@
 #Author: Chris Takahashi
+needs "Krill/lib/standard"
 require 'json'
 $DEF_FILE = './repos/protocols/recombineering/defaults.json'
 $defaults = JSON.parse(File.read($DEF_FILE))
