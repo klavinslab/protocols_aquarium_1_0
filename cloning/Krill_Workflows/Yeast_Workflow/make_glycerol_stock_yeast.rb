@@ -42,7 +42,7 @@ class Protocol
         
       end
       
-      release [ overnights glycerol]
+      release ([ overnights glycerol])
   end
   
 end
