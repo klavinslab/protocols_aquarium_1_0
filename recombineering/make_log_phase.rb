@@ -52,10 +52,14 @@ class Protocol
 #	strains = item unique(strainIDs)
 #	flasks = nflasks "250 mL Baffled Flask"
 #end
-    strains_obj = find(:item, id: strainIDs.uniq)
+    strains = []
+    strainIDs.uniq.each do |anid|
+      strains.concat  find(:item, id: anid)
+    end
+    take strains, interactive: true
     show {
       title "test2"
-      note "#{strains_obj}"
+      note "#{strains}"
     }
 
 
