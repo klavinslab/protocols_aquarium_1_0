@@ -57,7 +57,7 @@ class Protocol
       strains.concat  find(:item, id: anid)
     end
     take strains, interactive: true
-    foo = strains.map{|e| e.inspect}
+    foo = strains.map{|e| e.id}
     show {
       title "test2"
       note "ids: #{strainIDs} str: #{foo}"
