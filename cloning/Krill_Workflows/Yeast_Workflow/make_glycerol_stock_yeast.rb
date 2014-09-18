@@ -25,7 +25,7 @@ class Protocol
      # cyrotubes = choose_object number_overnights "Cyro tubes" <- put in correct names
       
       glycerolstocks=[]
-      table1=["Cyro tube IDs"]
+      table1=[["Cyro tube IDs"]]
       table2=[["Overnights IDs to add","Cyro tube ID to add to"]]
       
       
