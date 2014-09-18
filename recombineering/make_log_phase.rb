@@ -55,7 +55,7 @@ class Protocol
     strains_obj = find(:item, id: strainIDs.uniq)
     show {
       title "test2"
-      note "%{strains_obj}"
+      note "#{strains_obj}"
     }
 
 
