@@ -9,7 +9,7 @@ class Protocol
 
   def arguments
     {
-      overnights:SampleType.where("name='Yeast Overnight Suspension'")
+      overnights:27277
     }
   end
   
