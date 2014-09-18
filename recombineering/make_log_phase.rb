@@ -105,14 +105,6 @@ class Protocol
       end
     end
 
-#
-#step
-#  description: "Label flasks"
-#  foreach f in fids
-#    check: "label a flask '%{f}' "
-#  end
-#end
-
     show {
       title "Label each flask"
       innoculated_flasks.each do |flsk|
@@ -120,52 +112,60 @@ class Protocol
       end
     }
 
-#
-#step
-#  description: "add 25ml of LB+thymine to each flask"
-#  note: "go to the media bay and using the steriological pipette, transfer 25ml LB+thymine into each flask"
-#  warning: "This step has changed recently!  make sure to use LB+thymine."
-#end
-#
-#step
-#  description: "Dilute overnights into flasks"
-#  foreach flask in produced_flasks 
-#    check: "Transfer 350  &micro;L of overnight " + to_string(flask[:data][:from]) + " to flask " + to_string(flask[:id])
-#  end
-#  note: "By the end of this step each each flask should have gotten 350 &micro;l of overnight culture.  If not make a note here."
-#end
-#
-#step
-#  description: "Incubate flasks"
-#  foreach flask in produced_flasks
-#    bullet: "Place falsk " + to_string(flask[:id]) + " into SI4"
-#  end
-#  note: "Place all flasks above into the 30C shaker incubator (SI4)"
-#end
-#
-#step
-#  description: "Prepare a heat bath"
-#  bullet: "Locate and plug in the hot water bath."
-#  bullet: "Press the button on the left labled 'I/O' to turn on the controller."
-#  bullet: "Set the middle temperature to 42 C"
-#  note: "Press the refresh button until a flashing tempurature appears and the leftmost thermometer is illumminated."
-#  note: "Use the up and down arrows to set the tempurature of the heat bath to 42 C."
-#  image: "heat_bath"
-#end
-#
-#step
-#  description: "Prepare the centrifuges"
-#  note: "Find both the large centrifuge C3 at B15.410 and the smaller centrifuge C2 at B5.335 and adjust the temperature setings to 4C.  Make sure the lids are closed when you're done as they won't refrigerate when open."
-#end
-#
-#params[:log_cells] = log_cell_flasks
-#
-#log
-#  return: {params: params}
-#end
-#
-#
-#release strains
-#
+    show {
+      title "add 25ml of LB+thymine to each flask"
+      note "go to the media bay and using the steriological pipette, transfer 25ml LB+thymine into each flask"
+      warning "This step has changed recently!  make sure to use LB+thymine."
+    }
+    #
+    #step
+    #  description: "Dilute overnights into flasks"
+    #  foreach flask in produced_flasks 
+    #    check: "Transfer 350  &micro;L of overnight " + to_string(flask[:data][:from]) + " to flask " + to_string(flask[:id])
+    #  end
+    #  note: "By the end of this step each each flask should have gotten 350 &micro;l of overnight culture.  If not make a note here."
+    #end
+    show {
+      title "Dilute overnights into flasks"
+      innoculated_flasks.each do |flsk|
+        check: "Transfer 350 &micro;L of overnight #{flsk.datum[:from]} 
+                to flask #{flsk.id}"
+      end
+      note "By the end of this step each each flask should have gotten 350 
+            &micro;l of overnight culture.  If not make a note here."
+    }
+    #
+    #step
+    #  description: "Incubate flasks"
+    #  foreach flask in produced_flasks
+    #    bullet: "Place falsk " + to_string(flask[:id]) + " into SI4"
+    #  end
+    #  note: "Place all flasks above into the 30C shaker incubator (SI4)"
+    #end
+    #
+    #step
+    #  description: "Prepare a heat bath"
+    #  bullet: "Locate and plug in the hot water bath."
+    #  bullet: "Press the button on the left labled 'I/O' to turn on the controller."
+    #  bullet: "Set the middle temperature to 42 C"
+    #  note: "Press the refresh button until a flashing tempurature appears and the leftmost thermometer is illumminated."
+    #  note: "Use the up and down arrows to set the tempurature of the heat bath to 42 C."
+    #  image: "heat_bath"
+    #end
+    #
+    #step
+    #  description: "Prepare the centrifuges"
+    #  note: "Find both the large centrifuge C3 at B15.410 and the smaller centrifuge C2 at B5.335 and adjust the temperature setings to 4C.  Make sure the lids are closed when you're done as they won't refrigerate when open."
+    #end
+    #
+    #params[:log_cells] = log_cell_flasks
+    #
+    #log
+    #  return: {params: params}
+    #end
+    #
+    #
+    #release strains
+    #
   end
 end
