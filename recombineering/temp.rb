@@ -3,7 +3,7 @@ class Protocol
     true
   end
   def main
-    itms = find(:item, {object_type: "250 mL Baffled Flask"})
+    itms = find(:item, sample: {object_type: "250 mL Baffled Flask"})
     foo = itms.map {|e| e.id}
     show {
       title "Hello World!"
