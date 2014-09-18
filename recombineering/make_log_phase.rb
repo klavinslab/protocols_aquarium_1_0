@@ -3,15 +3,15 @@ require 'json'
 
 class Protocol
   def main
-    defaults = JSON.parse(File.read('defaults.json'))
-
+#    defaults = JSON.parse(File.read('defaults.json'))
+    test = File.expand_path('.')
     def argument
       {params: defaults}
     end
 
     show {
       title "test"
-      note "#{defaults}"
+      note "#{test}"
     }
 #
 #function array_count(arry,match) #returns number of instances of match in arry
