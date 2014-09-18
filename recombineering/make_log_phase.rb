@@ -128,7 +128,7 @@ class Protocol
     show {
       title "Dilute overnights into flasks"
       innoculated_flasks.each do |flsk|
-        check: "Transfer 350 &micro;L of overnight #{flsk.datum[:from]} 
+        check "Transfer 350 &micro;L of overnight #{flsk.datum[:from]} 
                 to flask #{flsk.id}"
       end
       note "By the end of this step each each flask should have gotten 350 
