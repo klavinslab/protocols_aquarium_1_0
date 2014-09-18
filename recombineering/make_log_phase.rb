@@ -1,5 +1,5 @@
 #Author: Chris Takahashi
-needs "aqualib/lib/standard.rb"
+needs "aqualib/lib/standard"
 require 'json'
 $DEF_FILE = './repos/protocols/recombineering/defaults.json'
 $defaults = JSON.parse(File.read($DEF_FILE))
