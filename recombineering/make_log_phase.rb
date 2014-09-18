@@ -1,5 +1,5 @@
 #Author: Chris Takahashi
-needs "Krill/lib/standard"
+needs "aqualib/lib/standard"
 require 'json'
 $DEF_FILE = './repos/protocols/recombineering/defaults.json'
 $defaults = JSON.parse(File.read($DEF_FILE))
@@ -89,16 +89,17 @@ class Protocol
 #end
 
 #produce a flask of cells for each item in logCult
-innoculated_flasks = []
-strains.each do |str|
-  innoculated_flasks.concat (1..logCult.count(str.id)).map do |ii|
-    an_innoculated_flask = produce new_sample str.sample.name, 
-      of: str.sample.sample_type.name, as: "Overnight suspension"
-    an_innoculated_flask.location = "SI4"
-    an_innoculated_flask.datum = {from:str.id}
-  end
-end
-
+    innoculated_flasks = []
+    strains.each do |str|
+      innoculated_flasks.concat (1..logCult.count(str.id)).map do |ii|
+        an_innoculated_flask = produce new_sample str.sample.name, 
+          of: str.sample.sample_type.name, as: "Overnight suspension"
+        an_innoculated_flask.location = "SI4"
+        an_innoculated_flask.datum = {from:str.id}
+        an_innoculated_flask.save
+        an_innoculated_flask #"return" this object to map
+      end
+    end
 
 #
 #step
@@ -107,6 +108,14 @@ end
 #    check: "label a flask '%{f}' "
 #  end
 #end
+
+    show {
+      title "Label each flask"
+      innoculated_flasks.each do |flsk|
+        check: "label a flask '#{flsk.id}'"
+      end
+    }
+
 #
 #step
 #  description: "add 25ml of LB+thymine to each flask"
