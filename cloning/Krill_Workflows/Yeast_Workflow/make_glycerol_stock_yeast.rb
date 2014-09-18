@@ -29,7 +29,7 @@ class Protocol
       }
       
     
-      (overnights).each do |overnight|
+      overnights.each do |overnight|
         
         show {
           check "Pipette 900 µL of yeast overnight #{overnight.id} into a Cyro tube."
