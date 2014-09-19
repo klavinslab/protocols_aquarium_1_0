@@ -131,41 +131,43 @@ class Protocol
         check "Transfer 350 &micro;L of overnight #{flsk.datum[:from]} 
                 to flask #{flsk.id}"
       end
-      note "By the end of this step each each flask should have gotten 350 
+      note "By the end of this step each flask should have gotten 350 
             &micro;l of overnight culture.  If not make a note here."
     }
-    #
-    #step
-    #  description: "Incubate flasks"
-    #  foreach flask in produced_flasks
-    #    bullet: "Place falsk " + to_string(flask[:id]) + " into SI4"
-    #  end
-    #  note: "Place all flasks above into the 30C shaker incubator (SI4)"
-    #end
-    #
-    #step
-    #  description: "Prepare a heat bath"
-    #  bullet: "Locate and plug in the hot water bath."
-    #  bullet: "Press the button on the left labled 'I/O' to turn on the controller."
-    #  bullet: "Set the middle temperature to 42 C"
-    #  note: "Press the refresh button until a flashing tempurature appears and the leftmost thermometer is illumminated."
-    #  note: "Use the up and down arrows to set the tempurature of the heat bath to 42 C."
-    #  image: "heat_bath"
-    #end
-    #
-    #step
-    #  description: "Prepare the centrifuges"
-    #  note: "Find both the large centrifuge C3 at B15.410 and the smaller centrifuge C2 at B5.335 and adjust the temperature setings to 4C.  Make sure the lids are closed when you're done as they won't refrigerate when open."
-    #end
-    #
-    #params[:log_cells] = log_cell_flasks
-    #
-    #log
-    #  return: {params: params}
-    #end
-    #
-    #
-    #release strains
-    #
+
+    show {
+      title "Incubate flasks"
+      innoculated_flasks.each do |flsk|
+        bullet: "Place flask #{flsk.id} into SI4"
+      end
+      note "Place all flasks above into the 30C shaker incubator (SI4)"
+    }
+
+    show { 
+      title "Prepare a heat bath"
+      bullet "Locate and plug in the hot water bath."
+      bullet "Press the button on the left labled 'I/O' to turn on the controller."
+      bullet "Set the middle temperature to 42 C"
+      note "Press the refresh button until a flashing tempurature appears and the leftmost thermometer is illumminated."
+      note "Use the up and down arrows to set the tempurature of the heat bath to 42 C."
+      image "heat_bath"
+    }
+    
+    show {
+      title "Prepare the centrifuges"
+      note "Find both the large centrifuge C3 at B15.410 and the smaller 
+            centrifuge C2 at B5.335 and adjust the temperature setings to 4C.  
+            Make sure the lids are closed when you're done as they won't 
+            refrigerate when open."
+    }
+    
+    p[:log_cells] = innoculated_flasks
+    
+    
+    return {params: p}
+    
+    
+    release strains
+    
   end
 end
