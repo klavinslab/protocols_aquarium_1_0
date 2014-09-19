@@ -16,11 +16,6 @@ class Protocol
 
     p = input[:params]
 
-    show {
-      title "test"
-      note "#{p}"
-    }
-
     ##
     #foreach cult in unique(st)
     #  ii = 0
@@ -59,6 +54,11 @@ class Protocol
       strains.concat  find(:item, id: an_id)
     end
     take strains, interactive: true
+
+    show {
+      title "debug"
+      note "strains is #{strains.length}"
+    }
 
     flasks = choose_object("250 mL Baffled Flask", take:false) {
       title "Take #{nflasks} flask(s)"
