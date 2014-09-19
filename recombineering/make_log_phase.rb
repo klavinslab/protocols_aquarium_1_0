@@ -165,7 +165,7 @@ class Protocol
             refrigerate when open."
     }
     
-    p[:log_cells] = innoculated_flasks
+    p[:log_cells] = innoculated_flasks.map{|e| e.id}
     
     
     return {params: p}
