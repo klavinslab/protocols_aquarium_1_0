@@ -138,7 +138,7 @@ class Protocol
     show {
       title "Incubate flasks"
       innoculated_flasks.each do |flsk|
-        bullet: "Place flask #{flsk.id} into SI4"
+        bullet "Place flask #{flsk.id} into SI4"
       end
       note "Place all flasks above into the 30C shaker incubator (SI4)"
     }
