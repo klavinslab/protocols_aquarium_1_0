@@ -55,10 +55,7 @@ class Protocol
     end
     take strains, interactive: true
 
-    show {
-      title "debug"
-      note "strains is #{strains.length}"
-    }
+    #TODO: DIE if find doesn't find the right thing!
 
     flasks = choose_object("250 mL Baffled Flask", take:false) {
       title "Take #{nflasks} flask(s)"
