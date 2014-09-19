@@ -166,7 +166,7 @@ class Protocol
     }
     
     p[:log_cells] = innoculated_flasks.map{|e| e.id}
-    foo = innoculated_flasks.map{|e| e.id
+    foo = innoculated_flasks.map{|e| e.id}
     
     show {
       title "debug"
