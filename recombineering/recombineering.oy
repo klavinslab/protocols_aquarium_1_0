@@ -22,7 +22,7 @@ place parse_args
 end
 
 place make_log_phase
-  protocol: base_dir+"make_log_phase.pl"
+  protocol: base_dir+"make_log_phase.rb"
   argument
     params: params
   end

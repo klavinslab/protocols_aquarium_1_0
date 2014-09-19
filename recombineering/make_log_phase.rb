@@ -114,7 +114,8 @@ class Protocol
 
     show {
       title "add 25ml of LB+thymine to each flask"
-      note "go to the media bay and using the steriological pipette, transfer 25ml LB+thymine into each flask"
+      note "go to the media bay and using the steriological pipette, transfer 
+            25ml LB+thymine into each flask"
       warning "This step has changed recently!  make sure to use LB+thymine."
     }
     #
@@ -144,13 +145,16 @@ class Protocol
     }
 
     show { 
-      title "Prepare a heat bath"
+      title  "Prepare a heat bath"
       bullet "Locate and plug in the hot water bath."
-      bullet "Press the button on the left labled 'I/O' to turn on the controller."
+      bullet "Press the button on the left labled 'I/O' to turn on the 
+              controller."
       bullet "Set the middle temperature to 42 C"
-      note "Press the refresh button until a flashing tempurature appears and the leftmost thermometer is illumminated."
-      note "Use the up and down arrows to set the tempurature of the heat bath to 42 C."
-      image "heat_bath"
+      note   "Press the refresh button until a flashing tempurature appears and 
+              the leftmost thermometer is illumminated."
+      note   "Use the up and down arrows to set the tempurature of the heat bath 
+              to 42 C."
+      image  "heat_bath"
     }
     
     show {
