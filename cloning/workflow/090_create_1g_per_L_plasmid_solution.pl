@@ -1,3 +1,6 @@
+# This protocol starts from plasmid stock with certain concentration, and creates 1 gn/uL solution of this plasmid.
+# This solution is usually used for PCR or transformation.
+
 argument
   plasmid_ids: sample("Plasmid") array, "Enter the plasmid IDs that you wish to make a 1 g/L solution of"
 end
@@ -16,7 +19,9 @@ while x < len
   end
   newid[x]=q[:id]
   newitem[x]=q
+  # Getting single plasmid
   i=plasmid_stock[x]
+  # Pulling its concentration
   conc=i[:concentration]
   x = x+1
 end
@@ -26,6 +31,7 @@ step
   check: "Grab %{len} eppendorf tubes"
   check: "Put a circular label sticker on the cap of each tube."
   check: "Pipette 90ul of molecular grade water into each tube."
+  note: "Concentration of sample is %{conc} g/L"
 end
 
 
