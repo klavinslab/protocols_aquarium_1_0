@@ -41,7 +41,7 @@ z = 0
 while x < len
   y=newid[x]
   z=plasmid_stock[x][:id]
-  conc=plasmid_stock[x][:concentration]
+  conc=plasmid_stock[x][:data]
   step
     description: "Label a tube and add plasmid to make a diluted stock"
     check: "Grab an unlabeled tube"
