@@ -1,0 +1,11 @@
+{
+  "strains":[5824,5824,5824,5822 ,5822 ],
+  "ldna":[6126,6127,6128,6126,6127], 
+  "plates":["LB Plate (sterile)",
+    "LB Plate (sterile)",
+    "LB Plate (sterile)",
+    "LB Plate (sterile)",
+    "LB Plate (sterile)"],
+  "sampleName":["TestA","TestB","TestC","TestA2","TestB2"]
+
+}
