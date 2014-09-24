@@ -31,10 +31,8 @@ step
   check: "Grab %{len} eppendorf tubes"
   check: "Put a circular label sticker on the cap of each tube."
   check: "Pipette 90ul of molecular grade water into each tube."
-  note: len
-  note: plasmid_stock
-  #note: "Concentration of sample is %{conc} g/L"
 end
+
 
 
 x=0
@@ -43,11 +41,13 @@ z = 0
 while x < len
   y=newid[x]
   z=plasmid_stock[x][:id]
+  conc=plasmid_stock[x][:concentration]
   step
     description: "Label a tube and add plasmid to make a diluted stock"
     check: "Grab an unlabeled tube"
     check: "Label the tube with the ID number %{y}"
     check: "Pipette 10ul from the tube with ID %{z} into the newly labeled tube with ID %{y}"
+    note: conc
   end
   x=x+1
 end
