@@ -31,7 +31,8 @@ step
   check: "Grab %{len} eppendorf tubes"
   check: "Put a circular label sticker on the cap of each tube."
   check: "Pipette 90ul of molecular grade water into each tube."
-  note: "Concentration of sample is %{conc} g/L"
+  note: conc
+  #note: "Concentration of sample is %{conc} g/L"
 end
 
 
