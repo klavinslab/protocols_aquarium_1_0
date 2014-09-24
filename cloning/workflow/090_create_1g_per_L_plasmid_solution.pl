@@ -47,7 +47,7 @@ while x < len
     check: "Grab an unlabeled tube"
     check: "Label the tube with the ID number %{y}"
     check: "Pipette 10ul from the tube with ID %{z} into the newly labeled tube with ID %{y}"
-    note: conc
+    note: "Concentration is %{conc}"
   end
   x=x+1
 end
