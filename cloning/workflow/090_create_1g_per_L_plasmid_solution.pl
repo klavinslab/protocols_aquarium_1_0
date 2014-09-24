@@ -38,15 +38,20 @@ end
 x=0
 y = 0
 z = 0
+final_conc = 1  # ng/uL
+stock_vol = 1   # uL
+vol = 0
 while x < len
   y=newid[x]
   z=plasmid_stock[x][:id]
-  conc=plasmid_stock[x][:data]
+  conc=plasmid_stock[x][:data][:concentration]  # ng/uL
+  buffer_vol = 1 * conc / final_conc - stock_vol  # uL
   step
     description: "Label a tube and add plasmid to make a diluted stock"
     check: "Grab an unlabeled tube"
     check: "Label the tube with the ID number %{y}"
-    check: "Pipette 10ul from the tube with ID %{z} into the newly labeled tube with ID %{y}"
+    check: "Pipette %{buffer_vol} of EB buffer to the newly labeled tube with ID %{y}"
+    check: "Pipette %{stock_vol} from the tube with ID %{z} into the newly labeled tube with ID %{y}"
     note: "Concentration is %{conc}"
   end
   x=x+1
