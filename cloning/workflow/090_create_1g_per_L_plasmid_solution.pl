@@ -30,7 +30,6 @@ step
   description: "Prepare sterile Eppendorf tubes"
   check: "Grab %{len} eppendorf tubes"
   check: "Put a circular label sticker on the cap of each tube."
-  check: "Pipette 90ul of molecular grade water into each tube."
 end
 
 
@@ -50,9 +49,8 @@ while x < len
     description: "Label a tube and add plasmid to make a diluted stock"
     check: "Grab an unlabeled tube"
     check: "Label the tube with the ID number %{y}"
-    check: "Pipette %{buffer_vol} of EB buffer to the newly labeled tube with ID %{y}"
-    check: "Pipette %{stock_vol} from the tube with ID %{z} into the newly labeled tube with ID %{y}"
-    note: "Concentration is %{conc}"
+    check: "Pipette %{buffer_vol} uL of EB buffer to the newly labeled tube with ID %{y}"
+    check: "Pipette %{stock_vol} uL from the tube with ID %{z} into the newly labeled tube with ID %{y}"
   end
   x=x+1
 end
