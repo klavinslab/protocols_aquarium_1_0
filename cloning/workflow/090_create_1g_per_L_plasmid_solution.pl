@@ -16,6 +16,10 @@ q = 0
 while x < len
   produce silently
     q = 1 "1 ng/µL Plasmid Stock" from plasmid_stock[x]
+    data
+      concentration: 1
+      solvent: "EB buffer"
+    end
   end
   newid[x]=q[:id]
   newitem[x]=q
