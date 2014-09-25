@@ -267,6 +267,9 @@ end
 
 # Produce resulted fragments
 
+# Initializing counter for cycling through reaction tubes
+counter = 0
+
 # Cycling through reaction tubes
 while counter < number_of_reactions
   label = counter + 1                # Label starts from 1
