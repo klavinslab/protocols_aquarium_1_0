@@ -43,7 +43,7 @@ if length(plates) > 0
     label = label  + 1
     step
       check:"Take a small pipette tip and grab a small amount of colony from plate %{p}. Be sure to use sterile technique."
-      check:"Make sure to make the colony you picked from with a permanent pen, so it can be identified."
+      check:"Make sure to mark the colony you picked from with a permanent pen, so it can be identified."
       check:"Submerge the tip into the liquid culture of the tube %{label}"
       check:"Discard tip"
       note:"Make sure to pick different colonies if creating multiple cultures from the same plate!"
