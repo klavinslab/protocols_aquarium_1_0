@@ -14,11 +14,6 @@ newid=[0]
 newitem=[0]
 q = 0
 
-step
-  note: plasmid_stock[0]
-  note: plasmid_stock[1]
-end
-
 
 while x < len
   one_plasmid_stock = item plasmid_ids[x]
