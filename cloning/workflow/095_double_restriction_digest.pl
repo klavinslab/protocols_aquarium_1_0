@@ -276,10 +276,17 @@ while counter < number_of_reactions
   
   plasmid_id = plasmids[counter]
   plasmid = FindSample(plasmid_stocks, plasmid_id)
+  enzyme1 = enzymes1[counter]
+  enzyme2 = enzymes2[counter]
   
   produce
     q = 1 "Digested Plasmid" from plasmid
     location: "B15.320"
+    data
+      from: plasmid_id
+      enzyme_cut_1: enzyme1
+      enzyme_cut_2: enzyme2
+    end
   end
   
   counter = counter + 1
