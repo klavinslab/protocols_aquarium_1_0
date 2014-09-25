@@ -46,8 +46,8 @@ end
 
 # Taking enzymes
 take
-  enzyme_stocks_1 = item unique enzymes1
-  enzyme_stocks_2 = item unique enzymes2
+  enzyme_stocks_1 = item unique(enzymes1)
+  enzyme_stocks_2 = item unique(enzymes2)
 end
 
 
