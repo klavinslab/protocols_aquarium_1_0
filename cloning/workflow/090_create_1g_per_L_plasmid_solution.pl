@@ -16,7 +16,7 @@ q = 0
 
 
 while x < len
-  current_plasmid = plasmid_ids[x]
+  current_plasmid = find(:item, {id: plasmid_ids[x]})
   produce silently
     q = 1 "1 ng/µL Plasmid Stock" from current_plasmid
     data
