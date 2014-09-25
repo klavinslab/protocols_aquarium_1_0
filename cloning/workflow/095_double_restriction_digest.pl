@@ -39,7 +39,7 @@ end
 # Taking enzymes
 
 step
-  description: "Prepare ice for plasmids"
+  description: "Prepare ice for enzymes"
   check: "Get ice or ice-cold sample holder"
   note: "All enzymes must be kept on ice during entire protocol"
 end
@@ -79,112 +79,160 @@ if length(plasmids) > 24
 end
 
 step
-  description: "If not already labeled, label tube %{y} %{initials} and rip off any other tubes to the right."
+  description: "If not already labeled, label tube %{number_of_reactions} with initials %{initials} and rip off any other tubes to the right."
 end
 
-count1=0
 
-
-
-step
-  description: "Add 5µl of NEB buffer %{N4} to every tube"
-end
-
-step
-  description: "Add 0.5µl of BSA to every tube"
-end
 
 # Adding water
-while count1<y
-  label1=count1+1
+# -----------------------------------------------------------------------------
+
+# Initializing counter for cycling through reaction tubes
+counter = 0
+
+# Cycling through reaction tubes
+while counter < number_of_reactions
+  label = counter + 1        # Label starts from 1
   
-  dna_stock_conc = plasmid_stocks[count1][:data][:concentration]  # ng/uL
+  # Calculating amount of water to add. This depends how much DNA must be added
+  dna_stock_conc = plasmid_stocks[counter][:data][:concentration]  # ng/uL
   dna_stock_vol = dna_mass / dna_stock_conc                       # uL
   water_vol = water_total_vol - dna_stock_vol - buffer_vol - enzyme_vol - bsa_vol
   
   step
     description: "Add molecular grade water to the tubes"
-    check: "Add %{water_vol} uL of water molecular grade to the tube %{label1}."
+    check: "Add %{water_vol} uL of water molecular grade to the tube %{label}."
   end
-  count1=count1+1
+  counter = counter + 1     # Update counter for the next tube
 end
 
+
+
 # Adding BSA
+# -----------------------------------------------------------------------------
+
 step
   description: "Add BSA"
   check: "Add %{bsa_vol} µl of BSA to every tube."
 end
 
+
+
 # Adding NEB buffers
-while count1<y
-  label1=count1+1
-  buffer = buffers[count1]
+# -----------------------------------------------------------------------------
+
+# Initializing counter for cycling through reaction tubes
+counter = 0
+
+# Cycling through reaction tubes
+while counter < number_of_reactions
+  label = counter + 1                # Label starts from 1
+  buffer = buffers[counter][:id]     # Buffer id for current tube
   
   step
     description: "Add proper NEB buffer to the tubes"
-    check: "Add %{buffer_vol} uL of NEB buffer %{buffer} to the tube %{label1}."
+    check: "Add %{buffer_vol} uL of NEB buffer from tube %{buffer} to the reaction tube %{label}."
   end
-  count1=count1+1
+  counter = counter + 1
 end
 
-count=0
+
 
 # Adding plasmids
-while count<y
-  label=count+1
-  plas=plasmids[count]
-  dna_stock_conc = plasmid_stocks[count1][:data][:concentration]  # ng/uL
+# -----------------------------------------------------------------------------
+
+# Initializing counter for cycling through reaction tubes
+counter = 0
+
+# Cycling through reaction tubes
+while counter < number_of_reactions
+  label = counter + 1                # Label starts from 1
+  plasmid = plasmid_stocks[counter][:id]
+  dna_stock_conc = plasmid_stocks[counter][:data][:concentration]  # ng/uL
   dna_stock_vol = dna_mass / dna_stock_conc                       # uL
   
   step
     description: "Add plasmids to be digested"
-    check: "Add %{dna_stock_vol} uL of plasmid %{plas} into tube %{label}."
+    check: "Add %{dna_stock_vol} uL of plasmid %{plasmid} into tube %{label}."
   end
-  count=count+1
+  counter = counter + 1
 end
 
-# Adding enzyme 1
-while count<y
-  label=count+1
-  enzyme1 = enzyme_stocks_1[count]
-  
-  dna_stock_conc = plasmid_stocks[count1][:data][:concentration]  # ng/uL
-  dna_stock_vol = dna_mass / dna_stock_conc                       # uL
+
+
+# Adding enzyme No 1
+# -----------------------------------------------------------------------------
+
+# Initializing counter for cycling through reaction tubes
+counter = 0
+
+# Cycling through reaction tubes
+while counter < number_of_reactions
+  label = counter + 1                # Label starts from 1
+  enzyme = enzyme_stocks_1[counter][:id]
   
   step
     description: "Add first enzyme"
-    check: "Add %{enzyme_vol} uL of enzyme %{enzyme1} into tube %{label}."
+    check: "Add %{enzyme_vol} uL of enzyme %{enzyme} into tube %{label}."
   end
-  count=count+1
+  counter = counter + 1
 end
 
 
 
+# Adding enzyme No 2
+# -----------------------------------------------------------------------------
 
+# Initializing counter for cycling through reaction tubes
+counter = 0
+
+# Cycling through reaction tubes
+while counter < number_of_reactions
+  label = counter + 1                # Label starts from 1
+  enzyme = enzyme_stocks_2[counter][:id]
+  
+  step
+    description: "Add second enzyme"
+    check: "Add %{enzyme_vol} uL of enzyme %{enzyme} into tube %{label}."
+  end
+  counter = counter + 1
+end
+
+
+
+# Incubation steps
 
 step
-  description: "Add 1µl of PMEI enzyme to every tube."
-  note: "Make sure you are using good sterile technique when handling enyzmes."
+  description: "Finish handling reactions"
+  check: "Close all tubes with caps"
 end
 
 step
-  description: "Cap all strip well tubes"
+  description: "Incubation"
+  check: "Place all closed tubes into incubator 37 C, which is at B15.320"
+  check: "Double check that they are labelled with %{initials} and today's date."
 end
 
-step
-  description: "Place the capped tubes into the 37ºc incubator B15.320. Make sure to label them them with %{initials} and today's date."
-end
 
-x=0
-while x < y
+
+# Produce resulted fragments
+
+# Cycling through reaction tubes
+while counter < number_of_reactions
+  label = counter + 1                # Label starts from 1
+  
   produce
     q = 1 "Digested Plasmid" from plasmids[x]
     location: "B15.320"
   end
-  x = x+1
+  
+  counter = counter + 1
 end
 
-release pmei_stock
-release plasmid_stocks
+
+# Releasing stuff
+release buffer_stock
 release bsa_stock
-release N4
+release plasmid_stocks
+release enzyme_stocks_1
+release enzyme_stocks_2
