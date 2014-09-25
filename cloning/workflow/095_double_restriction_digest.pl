@@ -203,7 +203,7 @@ while counter < number_of_reactions
   
   step
     description: "Add plasmids to be digested"
-    check: "Add %{dna_stock_vol} uL of plasmid %{plasmid} into tube %{label}."
+    check: "Add %{dna_stock_vol} uL of plasmid %{plasmid_id} into tube %{label}."
   end
   counter = counter + 1
 end
@@ -271,8 +271,11 @@ end
 while counter < number_of_reactions
   label = counter + 1                # Label starts from 1
   
+  plasmid_id = plasmids[counter]
+  plasmid = FindSample(plasmid_stocks, plasmid_id)
+  
   produce
-    q = 1 "Digested Plasmid" from fragment_names[x]
+    q = 1 "Digested Plasmid" from plasmid
     location: "B15.320"
   end
   
