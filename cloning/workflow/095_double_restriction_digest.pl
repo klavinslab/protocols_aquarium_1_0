@@ -261,6 +261,7 @@ step
   description: "Incubation"
   check: "Place all closed tubes into incubator 37 C, which is at B15.320"
   check: "Double check that they are labelled with %{initials} and today's date."
+  note: "Minimum time for incubation is 1 hour; the longer the better. It is better to incubate samples overnight."
 end
 
 
