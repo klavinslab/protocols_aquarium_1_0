@@ -24,7 +24,7 @@ place lb_agar_unsterile
   argument
     n_bottle: n
     add_agar: "Yes"
-    volume: 800
+    volumes: 800
   end
   group: "mediabay"
   marked: true
