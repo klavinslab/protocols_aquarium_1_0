@@ -6,13 +6,48 @@
 # DNA amount should be in grams or mols.
 
 
+function FindSample(sample_array, id)
+
+  # Finds sample with specified ID in the array of samples
+  # Inputs:
+  #   sample_array - produced by take operator
+  #   id - number, id of the sample I'm looking for
+  # Returns instance of a sample, which has specified ID.
+  
+  number_of_samples = length(sample_array)
+  
+  sample_number = 0
+  desired_sample = sample_array[0] # Just initializing, if not found, first sample will always be returned.
+  
+  while sample_number < number_of_samples
+    
+    current_sample = sample_array[sample_number]
+    sample_id = current_sample[:id]
+    
+    if sample_id == id
+      desired_sample = current_sample
+    end
+    
+    sample_number = sample_number + 1
+  
+  end
+
+  return desired_sample
+  
+end
+
+
+
+
 argument
   initials: string, "Your initials or another 2-3 letter identifier for tube labeling"
+  fragment_names: string array, "Fragment Names (names to be assigned to resulting linear fragments)"
   plasmids: sample("Plasmid") array, "Plasmids"
   enzymes1: sample("Enzyme") array, "Enzyme tube to be used as first enzyme. \nCheck enzymes for compatibility at NEB site https://www.neb.com/tools-and-resources/interactive-tools/double-digest-finder"
   enzymes2: sample("Enzyme") array, "Enzyme tube to be used as second enzyme. \nCheck enzymes for compatibility at NEB site https://www.neb.com/tools-and-resources/interactive-tools/double-digest-finder"
   bsa: sample("Enzyme Buffer"), "Tube of BSA to be used"
   buffers: sample("Enzyme Buffer") array, "Tube of buffer for restriction digest reaction.\nCheck which buffer to use at NEB site https://www.neb.com/tools-and-resources/interactive-tools/double-digest-finder "
+  
 end
 
 
@@ -24,7 +59,7 @@ enzyme_vol = single_enzyme_vol*2    # uL
 bsa_vol = 0.5     # uL
 water_total_vol = 100 # uL
 
-number_of_reactions=length(plasmids)
+number_of_reactions=length(fragment_names)
 
 
 # Taking stuff
@@ -94,8 +129,11 @@ counter = 0
 while counter < number_of_reactions
   label = counter + 1        # Label starts from 1
   
+  plasmid_id = plasmids[counter]
+  plasmid = FindSample(plasmid_stocks, plasmid_id)
+  
   # Calculating amount of water to add. This depends how much DNA must be added
-  dna_stock_conc = plasmid_stocks[counter][:data][:concentration]  # ng/uL
+  dna_stock_conc = plasmid[:data][:concentration]  # ng/uL
   dna_stock_vol = dna_mass / dna_stock_conc                       # uL
   water_vol = water_total_vol - dna_stock_vol - buffer_vol - enzyme_vol - bsa_vol
   
@@ -127,11 +165,12 @@ counter = 0
 # Cycling through reaction tubes
 while counter < number_of_reactions
   label = counter + 1                # Label starts from 1
-  buffer = buffers[counter][:id]     # Buffer id for current tube
+  
+  buffer_id = buffers[counter]
   
   step
     description: "Add proper NEB buffer to the tubes"
-    check: "Add %{buffer_vol} uL of NEB buffer from tube %{buffer} to the reaction tube %{label}."
+    check: "Add %{buffer_vol} uL of NEB buffer from tube %{buffer_id} to the reaction tube %{label}."
   end
   counter = counter + 1
 end
@@ -146,9 +185,12 @@ counter = 0
 
 # Cycling through reaction tubes
 while counter < number_of_reactions
-  label = counter + 1                # Label starts from 1
-  plasmid = plasmid_stocks[counter][:id]
-  dna_stock_conc = plasmid_stocks[counter][:data][:concentration]  # ng/uL
+  label = counter + 1    # Label starts from 1
+  
+  plasmid_id = plasmids[counter]
+  plasmid = FindSample(plasmid_stocks, plasmid_id)
+  
+  dna_stock_conc = plasmid[:data][:concentration]  # ng/uL
   dna_stock_vol = dna_mass / dna_stock_conc                       # uL
   
   step
@@ -169,7 +211,7 @@ counter = 0
 # Cycling through reaction tubes
 while counter < number_of_reactions
   label = counter + 1                # Label starts from 1
-  enzyme = enzyme_stocks_1[counter][:id]
+  enzyme = enzymes1[counter]
   
   step
     description: "Add first enzyme"
@@ -189,7 +231,7 @@ counter = 0
 # Cycling through reaction tubes
 while counter < number_of_reactions
   label = counter + 1                # Label starts from 1
-  enzyme = enzyme_stocks_2[counter][:id]
+  enzyme = enzymes2[counter]
   
   step
     description: "Add second enzyme"
@@ -222,7 +264,7 @@ while counter < number_of_reactions
   label = counter + 1                # Label starts from 1
   
   produce
-    q = 1 "Digested Plasmid" from plasmids[x]
+    q = 1 "Digested Plasmid" from fragment_names[x]
     location: "B15.320"
   end
   
