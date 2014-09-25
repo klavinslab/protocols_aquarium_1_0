@@ -30,6 +30,7 @@ place pcr
     tanneal: 65
     forward_ids: f_pri
     reverse_ids: r_pri
+    ext_time: 3
   end
   start: now()
   window: days(1)
