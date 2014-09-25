@@ -52,7 +52,7 @@ end
 
 
 # Initializing constants
-dna_mass = 5      # ug
+dna_mass = 5000   # ng
 buffer_vol = 10   # uL
 single_enzyme_vol = 4   # uL
 enzyme_vol = single_enzyme_vol*2    # uL
@@ -89,7 +89,9 @@ end
 
 
 step
-  description: "Grab a 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
+  description: "Label reaction tubes"
+  check: "Grab a 12 strip-well PCR tube, rest it in a green PCR tube rack. Numbers should face you."
+  check: "Grab a cap for 12 strip-well PCR tube, put aside."
   check: "Label the right most well with the letters %{initials}"
   check: "Label the left most well with the letter A"
   note: "These wells will be refered to as 1 - 12"
@@ -97,7 +99,9 @@ end
 
 if length(plasmids) > 12
   step
-    description: "Grab a second 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
+    description: "Label reaction tubes"
+    check: "Grab a second 12 strip-well PCR tube, rest it in a green PCR tube rack. Numbers should face you."
+    check: "Grab a cap for 12 strip-well PCR tube, put aside."
     check: "Label the left most well with the letters %{initials}13"
     check: "Label the right most well with the letter %{initials}24"
     note: "These wells will be refered to as 13 - 24"
@@ -106,7 +110,9 @@ end
 
 if length(plasmids) > 24
   step
-    description: "Grab a third 12 strip-well PCR tube and cap, and rest it in a green PCR tube rack. With the numbers FACING YOU, do the following:"
+    description: "Label reaction tubes"
+    check: "Grab a third 12 strip-well PCR tube, rest it in a green PCR tube rack. Numbers should face you."
+    check: "Grab a cap for 12 strip-well PCR tube, put aside."
     check: "Label the right most well with the letters %{initials}"
     check: "Label the left most well with the letter C"
     note: "These wells will be refered to as 25 - 36"
@@ -114,7 +120,9 @@ if length(plasmids) > 24
 end
 
 step
-  description: "If not already labeled, label tube %{number_of_reactions} with initials %{initials} and rip off any other tubes to the right."
+  description: "Label reaction tubes"
+  check: "If not already labeled, label tube %{number_of_reactions} with initials %{initials}."
+  check: "Rip off any other tubes to the right."
 end
 
 
@@ -215,7 +223,7 @@ while counter < number_of_reactions
   
   step
     description: "Add first enzyme"
-    check: "Add %{enzyme_vol} uL of enzyme %{enzyme} into tube %{label}."
+    check: "Add %{single_enzyme_vol} uL of enzyme %{enzyme} into tube %{label}."
   end
   counter = counter + 1
 end
@@ -235,7 +243,7 @@ while counter < number_of_reactions
   
   step
     description: "Add second enzyme"
-    check: "Add %{enzyme_vol} uL of enzyme %{enzyme} into tube %{label}."
+    check: "Add %{single_enzyme_vol} uL of enzyme %{enzyme} into tube %{label}."
   end
   counter = counter + 1
 end
