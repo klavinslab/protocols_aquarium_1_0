@@ -11,7 +11,7 @@ argument
   xgal: string, "Add X-gal? Enter Yes or No."
 end
 
-
+##Input checking part of code.
 if volume != 200 && volume != 400 && volume != 800
   step
     description: "The LB Agar volume was incorrectly entered as %{volume}."
@@ -28,7 +28,8 @@ if iptg != "Yes" && iptg != "No"
     end
   end
 end
-if atc != "Yes" && iptg != "No"
+
+if atc != "Yes" && atc != "No" 
   step
     description: "The aTc preference was incorrectly entered as %{atc}."
     getdata
@@ -36,7 +37,7 @@ if atc != "Yes" && iptg != "No"
     end
   end
 end
-if xgal != "Yes" && iptg != "No"
+if xgal != "Yes" && xgal != "No"
   step
     description: "The X-gal preference was incorrectly entered as %{xgal}."
     getdata
@@ -44,6 +45,8 @@ if xgal != "Yes" && iptg != "No"
     end
   end
 end
+
+
 if antibiotic != "Amp" && antibiotic != "Kan" && antibiotic != "Chlor" && antibiotic != "None"
   step
     description: "The antibiotic preference was incorrectly entered as %{antibiotic}."
