@@ -13,9 +13,17 @@ x=0
 newid=[0]
 newitem=[0]
 q = 0
+
+step
+  note: plasmid_stock[0]
+  note: plasmid_stock[1]
+end
+
+
 while x < len
+  one_plasmid_stock = item plasmid_ids[x]
   produce silently
-    q = 1 "1 ng/µL Plasmid Stock" from plasmid_stock[x]
+    q = 1 "1 ng/µL Plasmid Stock" from one_plasmid_stock
     data
       concentration: 1
       solvent: "EB buffer"
