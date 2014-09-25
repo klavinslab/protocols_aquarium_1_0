@@ -7,7 +7,7 @@ end
 take
     plasmid_stock = item unique(plasmid_ids)
 end
-len=length(plasmid_ids)
+len=length(plasmid_stock)
 
 x=0
 newid=[0]
@@ -16,9 +16,8 @@ q = 0
 
 
 while x < len
-  current_plasmid = find(:item, {id: plasmid_ids[x]})
   produce silently
-    q = 1 "1 ng/µL Plasmid Stock" from current_plasmid
+    q = 1 "1 ng/µL Plasmid Stock" from plasmid_stock[x]
     data
       concentration: 1
       solvent: "EB buffer"
@@ -44,10 +43,9 @@ final_conc = 1  # ng/uL
 stock_vol = 1   # uL
 vol = 0
 while x < len
-  current_plasmid = plasmid_ids[x]
   y=newid[x]
-  z=current_plasmid[:id]
-  conc=current_plasmid[:data][:concentration]  # ng/uL
+  z=plasmid_stock[x][:id]
+  conc=plasmid_stock[x][:data][:concentration]  # ng/uL
   buffer_vol = 1 * conc / final_conc - stock_vol  # uL
   step
     description: "Label a tube and add plasmid to make a diluted stock"
