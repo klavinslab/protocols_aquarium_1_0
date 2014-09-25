@@ -47,8 +47,8 @@ while ii < n
 
   produce
     r1 = 1 "E coli Plate of Plasmid" from strain
-    note: "Keep the plate on the bench to use in the next protocol (incubating)."
-    location: "Bench"
+    note: "Place the plate in 37C incubator."
+    location: "37C incubator"
     release plate
   end
   
