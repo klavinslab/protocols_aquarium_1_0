@@ -49,8 +49,11 @@ class Protocol
     show {
       title "Prepare Stripwell Tubes for sequencing reaction"
       stripwells.each_with_index do |sw,idx|
-        check "Label the first well with #{initials}#{idx} and last well with"
-        separator
+      	if idx < stripwells.length-1 and idx != stripwells.length-1
+	        check "Grab a stripwell with 12 wells, label the first well with #{initials}#{idx*12+1} and last well with #{initials}#{idx*12+12}"
+	        separator
+	    else
+	    	check" Grab a stripwell with #{plasmid_items.length.module(12)} label the first well with #{initials}#{idx*12+1} and last well with #{initials}#{plasmid_items.length}
       end
       # TODO: Put an image of a labeled stripwell here
     }
