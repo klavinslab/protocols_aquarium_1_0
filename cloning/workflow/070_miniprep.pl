@@ -132,6 +132,7 @@ while x < y
     q = 1 "Plasmid Stock" from overnight[x]
     data
       concentration: concs[x]
+      unit: "ng/µL"
     end
   end
   x = x+1
