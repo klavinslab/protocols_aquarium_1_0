@@ -1,3 +1,6 @@
+# This protocol is not ready yet. Do not run.
+# Created by Sergii Pochekailov 9/25/2014.
+
 ##DNA origami requires 3 kind of stocks for creation.
 ##  1 - common stock of staples. Here are the staples, which will not be 
 ##      modified in any experiment.
