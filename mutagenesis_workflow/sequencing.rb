@@ -39,6 +39,8 @@ class Protocol
     	end
     end
     water_volume_list = plasmid_volume_list.collect{|v| 12.5-v}
+    plasmids_with_volume = input[:plasmid_item_ids].map.with_index{|pid,i| plasmid_volume_list[i].to_s + " µL of " + pid.to_s}
+    primers_with_volume = input[:primer_ids].collect{|prid| "2.5 µL of " + prid.to_s }
     			
     show {
     	note (water_volume_list.collect {|p| "#{p}"})
@@ -63,8 +65,8 @@ class Protocol
 
     load_samples_variable_vol_seq( ["Molecular Grade Water", "Plasmid", "Primer"], [
         water_volume_list,
-        input[:plasmid_item_ids],
-        input[:primer_ids]
+        plasmids_with_volume,
+        primers_with_volume
       ], stripwells ) {
         note "Load templates first, then forward primers, then reverse primers."
         warning "Use a fresh pipette tip for each transfer."
