@@ -11,7 +11,7 @@ class Protocol
       table i2.collect { |i| [ i.id, i.object_type.name ] }
     }
 
-    take i2
+    take i2, interactive: true
 
   end
 

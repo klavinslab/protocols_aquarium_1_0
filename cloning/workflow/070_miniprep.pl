@@ -15,7 +15,7 @@ y=length(strain_id)
 
 step
   description: "Grab %{y} eppendorf tubes and label them"
-  note: "Label the top of the tubes 1, ... , %{y}"
+  note: "Label the top of the tubes 1, ..., %{y}"
 end
 
 
@@ -34,7 +34,7 @@ end
 
 step
   description: "Spin down the cells"
-  note: "Spin at 5,800Xg for 2 minutes"
+  note: "Spin at 5,800 xg for 2 minutes"
   warning: "Make sure to balance the centrifuge. If you have an odd number of samples, use a balance tube with water"
 end
 
@@ -45,24 +45,24 @@ end
 
 step 
   description: "Resuspend in P1"
-  note:"Pipette 250 ul of P1 into each tube and vortex strongly to resuspent"
-end
+  note:"Pipette 250 µL of P1 into each tube and vortex strongly to resuspent"
+eppendorf
 
 step 
   description: "Be sure to check the boxs as you complete each step."
   check: "Add P2 and gently invert to mix"
-  check:"Pipette 250 ul of P2 into each tube and gently invert 10 times to mix. Tube contents should turn blue."
+  check:"Pipette 250 µL of P2 into each tube and gently invert 10 times to mix. Tube contents should turn blue."
   warning:"This step should be done rapidly. Cells should not be exposed to active P2 for more than 5 minutes"
   check: "Add N3 and gently invert to mix"
-  check:"Pipette 350 ul of N3 into each tube and gently invert 10 times to mix. Tube contents should turn colorless."
+  check:"Pipette 350 µL of N3 into each tube and gently invert 10 times to mix. Tube contents should turn colorless."
   check: "Spin tubes and set up columns and final tubes"
-  check: "Spin tubes at 17,000Xg for 10 minutes"
+  check: "Spin tubes at 17,000 xg for 10 minutes"
   warning: "Make sure to balance the centrifuge. If you have an odd number of samples, use a balance tube with water"
   check: "Meanwhile, prep and label all of the columns and tubes you will need for the rest of the protocol"
   check: "Grab %{y} blue miniprep spin columns"
-  check: "Label the side of the columns 1, 2, 3, ... , %{y}"
+  check: "Label the side of the columns 1, ..., %{y}"
   check: "Grab %{y} new eppendorf tubes"
-  check: "Label the top of the tubes 1, 2, 3, ... , %{y}"
+  check: "Label the top of the tubes 1, ..., %{y}"
 end
 
 step 
@@ -73,20 +73,20 @@ end
 step 
   description: "Be sure to check the boxs as you complete each step."
   check: "Spin the columns"
-  check:"Spin at 17,000Xg for 1 minute"
-  warning: "Again, make sure the the centrifuge is balanced. Use an extra column with 500 ul of water if necessary"
+  check:"Spin at 17,000 xg for 1 minute"
+  warning: "Again, make sure the the centrifuge is balanced. Use an extra column with 500 µL of water if necessary"
   check: "Wash the column with PE buffer"
   check: "Remove the columns from the centrifuge and discard the flow through into a liquid waste container"
   warning: "Make sure the PE bottle that you are using as ethanol added!"
-  check: "Add 750 ul of PE buffer to each column."
+  check: "Add 750 µL of PE buffer to each column."
   check: "Close the PE bottle tightly."
-  check: "Spin the columns at 17,000Xg for 1 minute"
+  check: "Spin the columns at 17,000 xg for 1 minute"
 end
 
 step 
   description: "Perform a final spin to fully dry the columns"
   check: "Remove the columns from the centrifuge and discard the flow through into a liquid waste container"
-  check: "Spin the columns at 17,000Xg for 1 minute"
+  check: "Spin the columns at 17,000 xg for 1 minute"
   check: "During the spin, open the clean eppendorf tubes labeled 1 - %{y}"
 end
 
@@ -95,9 +95,9 @@ step
   check: "Remove the columns from the centrifuge"
   check: "Inidividually take each column out of the flowthrough collector and put it into the open eppendorf tube of the same number."
   warning: "For this step, use a new pipette tip for each sample to avoid cross contamination"
-  check: "Pipette %{volume} ul of water into the CENTER of each column"
+  check: "Pipette %{volume} µL of water into the CENTER of each column"
   check: "Let the tubes sit on the bench for 5 minutes"
-  check: "Spin the columns at 17,000Xg for 1 minute"
+  check: "Spin the columns at 17,000 xg for 1 minute"
   check: "Remove the tubes and discard the columns"
 end
 

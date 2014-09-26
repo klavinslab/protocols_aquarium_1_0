@@ -120,7 +120,7 @@ while x < y
   z=x+1
   step
     description: "Enter the concentrations of each fragment stock tube."
-    note: "Concentration for tube %{z} in ng/µl"
+    note: "Concentration for tube %{z} in ng/µL"
       getdata
         conc: number, "Enter the recorded DNA concetrations on tube %{z}"
       end
@@ -142,7 +142,7 @@ count=0
         q=1 "Fragment Stock" from slice
         data
           concentration: concs[count]
-          unit: "ng/µl"
+          unit: "ng/µL"
         end
       end
   count=count+1
