@@ -62,8 +62,6 @@ class Protocol
       # TODO: Put an image of a labeled stripwell here
     }
 
-    row = ["Well", "Molecular Grade Water", "Plasmid", "Primer"]
-
     load_samples_variable_vol_seq( ["Molecular Grade Water", "Plasmid", "Primer"], [
         water_volume_list,
         plasmids_with_volume,
