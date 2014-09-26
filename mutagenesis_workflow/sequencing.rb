@@ -38,7 +38,7 @@ class Protocol
     		plasmid_volume_list.push (10000.0/plasmid_concs[idx]).round(1)
     	end
     end
-    water_volume_list = plasmid_volume_list.collect{|v| 12.5-v}
+    water_volume_list = plasmid_volume_list.collect{|v| (12.5-v).to_s + " µL"}
     plasmids_with_volume = input[:plasmid_item_ids].map.with_index{|pid,i| plasmid_volume_list[i].to_s + " µL of " + pid.to_s}
     primers_with_volume = input[:primer_ids].collect{|prid| "2.5 µL of " + prid.to_s }
     			
@@ -55,7 +55,7 @@ class Protocol
 	        check "Grab a stripwell with 12 wells, label the first well with #{initials}#{idx*12+1} and last well with #{initials}#{idx*12+12}"
 	        separator
 	    else
-	    	check" Grab a stripwell with #{plasmid_items.length.modulo(12)} wells, label the first well with #{initials}#{idx*12+1} and last well with #{initials}#{plasmid_items.length}"
+	    	check" Grab a stripwell with #{plasmid_items.length.modulo(12)} wells, label the first well with #{initials}0#{idx*12+1} and last well with #{initials}0#{plasmid_items.length}"
         end
     end
       # TODO: Put an image of a labeled stripwell here
@@ -71,7 +71,6 @@ class Protocol
         note "Load templates first, then forward primers, then reverse primers."
         warning "Use a fresh pipette tip for each transfer."
       }
-
   end
 end
 
