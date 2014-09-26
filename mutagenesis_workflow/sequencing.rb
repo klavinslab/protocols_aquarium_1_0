@@ -1,5 +1,5 @@
-needs "aqualib/lib/standard"
-needs "aqualib/lib/cloning"
+needs "protocols/mutagenesis_workflow/lib/standard"
+needs "protocols/mutagenesis_workflow/lib/cloning"
 
 class Protocol
   
@@ -44,6 +44,19 @@ class Protocol
     	note (water_volume_list.collect {|p| "#{p}"})
     	note (plasmid_volume_list.collect {|p| "#{p}"})
     }
+
+    stripwells = produce spread fragments, "Stripwell", 1, 12
+    show {
+      title "Prepare Stripwell Tubes for sequencing reaction"
+      stripwells.each_with_index do |sw,idx|
+        check "Label the first well with #{initials}#{idx} and last well with"
+        separator
+      end
+      # TODO: Put an image of a labeled stripwell here
+    }
+
+    row = ["Well", "Molecular Grade Water", "Plasmid", "Primer"]
+
   end
 end
 
