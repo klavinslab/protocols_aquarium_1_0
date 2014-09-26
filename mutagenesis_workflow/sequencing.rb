@@ -61,7 +61,7 @@ class Protocol
 
     row = ["Well", "Molecular Grade Water", "Plasmid", "Primer"]
 
-    load_samples_variable_vol( ["Molecular Grade Water", "Plasmid", "Primer"], [
+    load_samples_variable_vol_seq( ["Molecular Grade Water", "Plasmid", "Primer"], [
         water_volume_list,
         input[:plasmid_item_ids],
         input[:primer_ids]
