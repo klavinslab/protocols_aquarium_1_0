@@ -7,16 +7,16 @@ class Protocol
   include Cloning
   
   def debug
-    true
+    false
   end
 
   def arguments
     {
     # Enter your first and last name initials
     initials: "YY",
-    plasmid_item_ids: [11247, 11247, 11248, 11248],
+    plasmid_item_ids: [11546, 11546, 11547, 11547],
     primer_ids: [9963, 9966, 9963, 9966],
-    genewiz_tracking_number: "00-000000000"
+    genewiz_tracking_number: "10-275726027"
     }
   end
  
@@ -43,10 +43,10 @@ class Protocol
     plasmids_with_volume = input[:plasmid_item_ids].map.with_index{|pid,i| plasmid_volume_list[i].to_s + " µL of " + pid.to_s}
     primers_with_volume = input[:primer_ids].collect{|prid| "2.5 µL of " + prid.to_s }
     			
-    show {
-    	note (water_volume_list.collect {|p| "#{p}"})
-    	note (plasmid_volume_list.collect {|p| "#{p}"})
-    }
+    # show {
+    # 	note (water_volume_list.collect {|p| "#{p}"})
+    # 	note (plasmid_volume_list.collect {|p| "#{p}"})
+    # }
 
     stripwells = produce spread plasmid_items, "Stripwell", 1, 12
     show {
