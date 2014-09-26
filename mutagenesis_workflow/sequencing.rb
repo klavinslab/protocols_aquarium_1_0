@@ -28,11 +28,23 @@ class Protocol
 
     plasmid_lengths = plasmid_items.collect{|pls| pls.sample.properties["Length"]}
     plasmid_concs = plasmid_items.collect{|pls| pls.datum[:concentration]}
+    plasmid_volumes = []
+    plasmid_length.each_with_index do |length, idx|
+    	if length < 6000
+    		plasmid_volumes.push (500.0/plasmid_concs[idx]).round(1)
+    	elsif length < 10000
+    		plasmid_volumes.push (800.0/plasmid_concs[idx]).round(1)
+    	else
+    		plasmid_volumes.push (10000.0/plasmid_concs[idx]).round(1)
+    	end
+    end
+    water_volumes = 12.5 - plasmid_volumes
+    			
 
     show {
-    	note (plasmid_lengths.collect {|p| "#{p}"})
-    	note (plasmid_concs.collect {|p| "#{p}"})
+    	note (water_volumes.collect {|p| "#{p}"})
+    	note (plasmid_volumes.collect {|p| "#{p}"})
     }
-  end 
+  end
 end
 
