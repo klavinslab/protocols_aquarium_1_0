@@ -53,8 +53,9 @@ class Protocol
 	        check "Grab a stripwell with 12 wells, label the first well with #{initials}#{idx*12+1} and last well with #{initials}#{idx*12+12}"
 	        separator
 	    else
-	    	check" Grab a stripwell with #{plasmid_items.length.module(12)} label the first well with #{initials}#{idx*12+1} and last well with #{initials}#{plasmid_items.length}
-      end
+	    	check" Grab a stripwell with #{plasmid_items.length.module(12)} label the first well with #{initials}#{idx*12+1} and last well with #{initials}#{plasmid_items.length}"
+        end
+    end
       # TODO: Put an image of a labeled stripwell here
     }
 
