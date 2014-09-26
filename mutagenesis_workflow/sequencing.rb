@@ -71,6 +71,12 @@ class Protocol
         note "Load templates first, then forward primers, then reverse primers."
         warning "Use a fresh pipette tip for each transfer."
       }
+    show {
+      title "Put all stripwells in the Genewiz mailbox"
+      note "Cap all of the stripwells"
+      note "Put the stripwells into a zip-lock bag along with the Genewiz order form with tracking number #{tracking_number}"
+      note "Ensure that the bag is sealed, and put it into the Genewiz mailbox"
+    }
   end
 end
 
