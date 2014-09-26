@@ -46,7 +46,7 @@ end
 step 
   description: "Resuspend in P1"
   note:"Pipette 250 µL of P1 into each tube and vortex strongly to resuspent"
-eppendorf
+end
 
 step 
   description: "Be sure to check the boxs as you complete each step."
