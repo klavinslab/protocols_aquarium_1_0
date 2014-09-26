@@ -14,8 +14,8 @@ class Protocol
     {
     # Enter your first and last name initials
     initials: "YY",
-    plasmid_item_ids: [9976, 10575, 10576],
-    primer_ids: [2064, 2064, 2064],
+    plasmid_item_ids: [11247, 11247, 11248, 11248],
+    primer_ids: [9963, 9966, 9963, 9966],
     genewiz_tracking_number: "00-000000000"
     }
   end
