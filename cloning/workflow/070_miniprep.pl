@@ -15,7 +15,7 @@ y=length(strain_id)
 
 step
   description: "Grab %{y} eppendorf tubes and label them"
-  note: "Label the top of the tubes 1, 2, 3, ... , %{y}"
+  note: "Label the top of the tubes 1, ... , %{y}"
 end
 
 
@@ -27,7 +27,7 @@ while ii<y
 end
 
 step
-  description: "Pipet 1000 µl of culture from the overnight culutres into the corresponding tubes."
+  description: "Pipet 1000 µL of culture from the overnight culutres into the corresponding tubes."
   table: tbl
 end
 
@@ -111,7 +111,7 @@ while x < y
   z=x+1
   step
     description: "Enter the concentrations of each miniprep tube."
-    note: "Concentration for tube %{z} in ng/µl"
+    note: "Concentration for tube %{z} in ng/µL"
       getdata
         conc: number, "Enter the recorded DNA concetrations on tube %{z}"
       end
