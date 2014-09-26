@@ -22,6 +22,7 @@ class Protocol
  
   def main
   	initials = input[:initials]
+    tracking_number = input[:genewiz_tracking_number]
     plasmid_items = input[:plasmid_item_ids].collect{|pid| find(:item, id: pid )[0]} 
     primer_items = input[:primer_ids].collect{|pid| find(:item, id: pid )[0]} 
     take plasmid_items + primer_items, interactive: true, method: "boxes"
