@@ -38,9 +38,8 @@ class Protocol
     		plasmid_volumes.push (10000.0/plasmid_concs[idx]).round(1)
     	end
     end
-    water_volumes = 12.5 - plasmid_volumes
+    water_volumes = plasmid_volume.collect{|v| 12.5-v}
     			
-
     show {
     	note (water_volumes.collect {|p| "#{p}"})
     	note (plasmid_volumes.collect {|p| "#{p}"})
