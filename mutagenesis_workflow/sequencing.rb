@@ -47,19 +47,28 @@ class Protocol
 
     stripwells = produce spread plasmid_items, "Stripwell", 1, 12
     show {
-      title "Prepare Stripwell Tubes for sequencing reaction"
+      title "Prepare Stripwells for sequencing reaction"
       stripwells.each_with_index do |sw,idx|
       	if idx < stripwells.length-1 and idx != stripwells.length-1
 	        check "Grab a stripwell with 12 wells, label the first well with #{initials}#{idx*12+1} and last well with #{initials}#{idx*12+12}"
 	        separator
 	    else
-	    	check" Grab a stripwell with #{plasmid_items.length.modulo(12)} label the first well with #{initials}#{idx*12+1} and last well with #{initials}#{plasmid_items.length}"
+	    	check" Grab a stripwell with #{plasmid_items.length.modulo(12)} wells, label the first well with #{initials}#{idx*12+1} and last well with #{initials}#{plasmid_items.length}"
         end
     end
       # TODO: Put an image of a labeled stripwell here
     }
 
     row = ["Well", "Molecular Grade Water", "Plasmid", "Primer"]
+
+    load_samples_variable_vol( ["Molecular Grade Water", "Plasmid", "Primer"], [
+        water_volume_list,
+        input[:plasmid_item_ids],
+        input[:primer_ids]
+      ], stripwells ) {
+        note "Load templates first, then forward primers, then reverse primers."
+        warning "Use a fresh pipette tip for each transfer."
+      }
 
   end
 end
