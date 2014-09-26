@@ -45,7 +45,7 @@ class Protocol
     	note (plasmid_volume_list.collect {|p| "#{p}"})
     }
 
-    stripwells = produce spread fragments, "Stripwell", 1, 12
+    stripwells = produce spread plasmid_items, "Stripwell", 1, 12
     show {
       title "Prepare Stripwell Tubes for sequencing reaction"
       stripwells.each_with_index do |sw,idx|
