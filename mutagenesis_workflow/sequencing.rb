@@ -29,7 +29,7 @@ class Protocol
     plasmid_lengths = plasmid_items.collect{|pls| pls.sample.properties["Length"]}
     plasmid_concs = plasmid_items.collect{|pls| pls.datum[:concentration]}
     plasmid_volumes = []
-    plasmid_length.each_with_index do |length, idx|
+    plasmid_lengths.each_with_index do |length, idx|
     	if length < 6000
     		plasmid_volumes.push (500.0/plasmid_concs[idx]).round(1)
     	elsif length < 10000
