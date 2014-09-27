@@ -59,17 +59,13 @@ class Protocol
 	    	check" Grab a stripwell with #{plasmid_items.length.modulo(12)} wells, label the first well with #{initials}0#{idx*12+1} and last well with #{initials}0#{plasmid_items.length}"
         end
     end
-      # TODO: Put an image of a labeled stripwell here
     }
 
     load_samples_variable_vol_seq( ["Molecular Grade Water", "Plasmid", "Primer"], [
         water_volume_list,
         plasmids_with_volume,
         primers_with_volume
-      ], stripwells ) {
-        note "Load templates first, then forward primers, then reverse primers."
-        warning "Use a fresh pipette tip for each transfer."
-      }
+      ], stripwells ) 
     show {
       title "Put all stripwells in the Genewiz mailbox"
       note "Cap all of the stripwells"
