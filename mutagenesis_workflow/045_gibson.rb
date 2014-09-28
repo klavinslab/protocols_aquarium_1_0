@@ -8,15 +8,17 @@ class Protocol
   require 'matrix'
 
   def debug
-    false
+    true
   end
 
   def arguments
     {
       #Enter the fragment sample id (not item ids) as a list, eg [2048,2049,2060,2061,2,2]
       fragment_ids: [2058,2059,2060,2061,2062],
+      sample_or_item: "sample",
+      group_info: [3,2],
       #Enter correspoding plasmid id or fragment id for each fragment to be Gibsoned in.
-      plasmid_ids: [2236,2236,2236,2236,2236]
+      plasmid_ids: [2236,1923]
     }
   end
 
@@ -41,117 +43,97 @@ class Protocol
   end
 
   def main
-    # retrieve fragment length, fragment stock, concentration
-    fragment_info_list = []
+    #check if inputs are correct
+    raise "Incorrect group info inputs, does not match number of fragments" if input[:group_info].inject{|sum,x| sum + x } != input[:fragment_ids].length
+    raise "Incorrect group info inputs, does not match numer of plasmids" if input[:group_info].length != input[:plasmid_ids].length
 
-    # parse fragment ids
-    fragment_ids = input[:fragment_ids]
-    fragment_uniq = fragment_ids.uniq
-
-    # parse unique plasmid ids
-    plasmid_ids = input[:plasmid_ids]
-    plasmid_uniq = plasmid_ids.uniq
-
-    #initilize a plasmid fragment and related info hash
-    plasmid_fragment = {}
-    plasmid_fragment_stock = {}
-    plasmid_fragment_conc_over_length = {}
-    plasmid_fragment_volume = {}
-
-    plasmid_uniq.each do |pid|
-      plasmid_fragment[pid] = []
-      plasmid_fragment_stock[pid] = []
-      plasmid_fragment_conc_over_length[pid] = []
-      plasmid_fragment_volume[pid] = []
+    #find fragment stocks, concentrations and lengths
+    # fragment_stocks = []
+    fragment_stocks = input[:fragment_ids].collect{|fid| find(:sample,{id: fid})[0].in("Fragment Stock")[0]} if input[:sample_or_item] == "sample"
+    fragment_stocks = input[:fragment_ids].collect{|fid| find(:item, id: fid )[0]} if input[:sample_or_item] == "item"
+    # show {
+    #   note fragment_stocks.collect {|p| "#{p}"}
+    # }
+    # build an array of arrays for fragments stocks based on the group info
+    fragment_stocks_arr = []
+    i = 0
+    input[:group_info].each do |info|
+      fragment_stocks_sub = fragment_stocks[i..(i+info-1)]
+      fragment_stocks_arr.push fragment_stocks_sub
     end
 
-    fragment_ids.each_with_index do |fid, index|
-      plasmid_fragment[plasmid_ids[index]].push fid
-      info = fragment_info_gibson fid
-      plasmid_fragment_conc_over_length[plasmid_ids[index]].push info[:conc]/info[:length]
-      plasmid_fragment_stock[plasmid_ids[index]].push info[:stock]
-      fragment_info_list.push info   if info
-    end
-
-    # initilize fragment stocks array
-    fragment_stocks = []
-    fragment_uniq.each do |fid|
-      fragment = find(:sample,{id: fid})[0]
-      fragment_stock = fragment.in "Fragment Stock"
-      fragment_stocks.push fragment_stock[0] if fragment_stock[0]
-    end
-
-    plasmid_uniq.each do |pid|
-      num = plasmid_fragment[pid].length  # number of fragments in Gibsoning this plasmid
+    fragment_volumes = []
+    fragment_stocks_arr.each do |fs|
+      conc_over_length = fs.collect{|f| f.datum[:concentration].to_f/f.sample.properties["Length"]}
+      num = conc_over_length.length
       total_vector = Matrix.build(num, 1) {|row, col| gibson_vector row}
-      coefficient_matrix = Matrix.build(num, num) {|row, col| gibson_coefficients row, col, plasmid_fragment_conc_over_length[pid]}
+      coefficient_matrix = Matrix.build(num, num) {|row, col| gibson_coefficients row, col, conc_over_length}
       volume_vector = coefficient_matrix.inv * total_vector
       volumes = volume_vector.each.to_a
-      plasmid_fragment_volume[pid] = volumes
+      fragment_volumes.push volumes 
     end
 
-    # # old fashioned way
-    # length = fragment_info_list.collect { |fi| fi[:length] }
-    # stock  = fragment_info_list.collect { |fi| fi[:stock] }
-    # conc   = fragment_info_list.collect { |fi| fi[:conc] }
-    # conc_over_length = conc.map.with_index {|c,i| c/length[i]}
+    # following loop is to calculate the fragment volumes for each fragment to add into reaction
+    # j = 0  # set a index outside the loop to track which groups of Gibson fragments are being worked on
+    # input[:group_info].each do |info|
+    #   conc_over_length_sub = conc_over_length[j..(j+info-1)]
+    #   num = conc_over_length_sub.length
+    #   total_vector = Matrix.build(num, 1) {|row, col| gibson_vector row}
+    #   coefficient_matrix = Matrix.build(num, num) {|row, col| gibson_coefficients row, col, conc_over_length_sub}
+    #   volume_vector = coefficient_matrix.inv * total_vector
+    #   volumes = volume_vector.each.to_a
+    #   fragment_volumes.push volumes 
+    #   j += info
+    # end
 
-    # # calculate volumes to add for each fragment stock assuming 5 µL of total volume
-    # total_vector = Matrix.build(conc.length, 1) {|row, col| gibson_vector row}
-    # coefficient_matrix = Matrix.build(conc.length, conc.length) {|row, col| gibson_coefficients row, col, conc_over_length}
-    # volume_vector = coefficient_matrix.inv * total_vector
-    # volumes = volume_vector.each.to_a
-
+    # produce Gibson reaction results ids
+    plasmid_ids = input[:plasmid_ids]
+    gibson_ids = []
+    gibson_results_list = []
+    plasmid_ids.each_with_index do |pid,idx|
+      plasmid = find(:sample,{id: pid})[0]
+      gibson_result = produce new_sample plasmid.name, of: "Plasmid", as: "Gibson Reaction Result"
+      gibson_results_list = gibson_results_list.push gibson_result
+      gibson_ids = gibson_ids.push gibson_result.id
+    end
 
     # Tell the user what we are doing
     show {
       title "Fragment Information"
       note "This protocol will build the following plasmids using Gibson Assembly method:"
-      note plasmid_uniq.collect {|p| "#{p}"}
-      # note (length.collect {|l| "#{l}"})
-      # note (conc.collect {|c| "#{c}"})
-      # note (total_vector.collect {|t| "#{t}"})
-      # note (conc_over_length.collect {|cl| "#{cl}"})
-      # note (coefficient_matrix.each {|e| "#{e}"})
-      # note (volumes.collect {|v| "#{v.round(1)}"})
-      # note (plasmid_uniq.collect {|p| "#{p}"})
-      # note (plasmid_ids.collect {|p| "#{p}"})
-      # note (plasmid_fragment_conc_over_length[1923].collect {|p| "#{p}"})
-      # note (plasmid_fragment_volume[1923].collect {|p| "#{p}"})
+      note plasmid_ids.collect {|p| "#{p}"}
     }
 
+    # Take fragment stocks
     take fragment_stocks, interactive: true,  method: "boxes"
 
-    # gibson_aliquot = choose_object("Gibson Aliquot")
-
-    # take gibson_aliquot, interactive: true
-    
-    # produce gibson results ids
-    gibson_results_list = []
-    gibson_ids = []
-    plasmid_uniq.each do |pid|
-      plasmid = find(:sample,{id: pid})[0]
-      gibson_results = produce new_sample plasmid.name, of: "Plasmid", as: "Gibson Reaction Result"
-      gibson_results_list = gibson_results_list.push gibson_results
-      gibson_ids = gibson_ids.push gibson_results.id
-    end
-
+    # Take Gibson aliquots and label with Gibson Reaction Result ids
     show {
       title "Take Gibson Aliquots and label them with ids"
-      note "Take #{plasmid_uniq.length} Gibson Aliquots from SF2.100"
-      # note "Write" + gibson_ids.collect {|gid| "#{gid}"}.to_s + "on top of each Gibson Aliquot tube"
-      note "Label each unused Gibson Aliquot with the following ids using round dot labels"
-      note (gibson_results_list.collect {|gid| "#{gid}"})
-      # gibson_results_list.each do |gsid|
-      #   note "Write #{gsid} on top of an unused Gibson Aliquot using round dot labels"
-      # end
+      note "Take #{gibson_ids.length} Gibson Aliquots from SF2.100"
+      note "Label each Gibson Aliquot with the following ids using round dot labels"
+      note (gibson_ids.collect {|gid| "#{gid}"})
     }
 
-    load_gibson_fragments(["Fragment Stock ids","Volume (µL)"], plasmid_fragment_stock, plasmid_fragment_volume, gibson_results_list, plasmid_uniq)
+    # following loop is to show a table of setting up each Gibson reaction to the user
+    k = 0  # set a index outside the loop to track which groups of Gibson fragments are being worked on
+    gibson_ids.each_with_index do |gid,idx|
+      group_size = input[:group_info][idx]
+      tab = [["Gibson Reaction ids","Fragment Stock ids","Volume (µL)"]]
+      fragment_stocks_arr[idx].each_with_index do |f,m|
+        tab.push([gid,"#{f}",fragment_volumes[idx][m].round(2)])
+      end
+      k += group_size
+      show {
+          title "Load Gibson Reaction #{gid}"
+          table tab
+        } 
+    end
 
+    # Place all reactions in 50 C heat block
     show {
-      title "Place all Gibson Reaction tubes on a 50 C heat block"
-      note "Put all Gibson Reaction tubes on the 50C heat block located in the back of bay B3."
+      title "Place on a 50 C heat block"
+      note "Put all Gibson Reaction tubes on the 50 C heat block located in the back of bay B3."
     }
 
     release fragment_stocks, interactive: true,  method: "boxes"
@@ -162,8 +144,6 @@ class Protocol
     }
 
     release gibson_results_list, interactive: true,  method: "boxes"
-
-
   end
 
 end
