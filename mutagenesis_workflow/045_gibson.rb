@@ -75,11 +75,11 @@ class Protocol
     # produce Gibson reaction results ids
     plasmid_ids = input[:plasmid_ids]
     gibson_ids = []
-    gibson_results_list = []
+    gibson_results = []
     plasmid_ids.each_with_index do |pid,idx|
       plasmid = find(:sample,{id: pid})[0]
       gibson_result = produce new_sample plasmid.name, of: "Plasmid", as: "Gibson Reaction Result"
-      gibson_results_list = gibson_results_list.push gibson_result
+      gibson_results = gibson_results.push gibson_result
       gibson_ids = gibson_ids.push gibson_result.id
     end
 
@@ -129,7 +129,7 @@ class Protocol
       note "Please start a timer by yourself"
     }
 
-    release gibson_results_list, interactive: true,  method: "boxes"
+    release gibson_results, interactive: true,  method: "boxes"
   end
 
 end
