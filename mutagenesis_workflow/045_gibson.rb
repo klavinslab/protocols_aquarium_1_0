@@ -13,9 +13,11 @@ class Protocol
 
   def arguments
     {
-      #Enter the fragment sample id (not item ids) as a list, eg [2048,2049,2060,2061,2,2]
+      #Enter the fragment sample id or item id as a list, eg [2048,2049,2060,2061,2,2]
       fragment_ids: [2058,2059,2060,2061,2062],
+      #Tell the system if the ids you entered are sample ids or item ids by enter sample or item
       sample_or_item: "sample",
+      #Tell the system how the fragments are grouped to perform Gibson reaction. e.g. [3,2] represents the first 3 fragments are in one Gibson reaction and the last 2 fragments are in another Gibson reaction.
       group_info: [3,2],
       #Enter correspoding plasmid id or fragment id for each fragment to be Gibsoned in.
       plasmid_ids: [2236,1923]
@@ -48,12 +50,9 @@ class Protocol
     raise "Incorrect group info inputs, does not match numer of plasmids" if input[:group_info].length != input[:plasmid_ids].length
 
     #find fragment stocks, concentrations and lengths
-    # fragment_stocks = []
     fragment_stocks = input[:fragment_ids].collect{|fid| find(:sample,{id: fid})[0].in("Fragment Stock")[0]} if input[:sample_or_item] == "sample"
     fragment_stocks = input[:fragment_ids].collect{|fid| find(:item, id: fid )[0]} if input[:sample_or_item] == "item"
-    # show {
-    #   note fragment_stocks.collect {|p| "#{p}"}
-    # }
+
     # build an array of arrays for fragments stocks based on the group info
     fragment_stocks_arr = []
     i = 0
@@ -72,19 +71,6 @@ class Protocol
       volumes = volume_vector.each.to_a
       fragment_volumes.push volumes 
     end
-
-    # following loop is to calculate the fragment volumes for each fragment to add into reaction
-    # j = 0  # set a index outside the loop to track which groups of Gibson fragments are being worked on
-    # input[:group_info].each do |info|
-    #   conc_over_length_sub = conc_over_length[j..(j+info-1)]
-    #   num = conc_over_length_sub.length
-    #   total_vector = Matrix.build(num, 1) {|row, col| gibson_vector row}
-    #   coefficient_matrix = Matrix.build(num, num) {|row, col| gibson_coefficients row, col, conc_over_length_sub}
-    #   volume_vector = coefficient_matrix.inv * total_vector
-    #   volumes = volume_vector.each.to_a
-    #   fragment_volumes.push volumes 
-    #   j += info
-    # end
 
     # produce Gibson reaction results ids
     plasmid_ids = input[:plasmid_ids]
@@ -132,14 +118,14 @@ class Protocol
 
     # Place all reactions in 50 C heat block
     show {
-      title "Place on a 50 C heat block"
+      title "Place on a heat block"
       note "Put all Gibson Reaction tubes on the 50 C heat block located in the back of bay B3."
     }
 
     release fragment_stocks, interactive: true,  method: "boxes"
 
     show {
-      title "Wait for 60 mins"
+      title "Wait for 60 minutes"
       note "Please start a timer by yourself"
     }
 
