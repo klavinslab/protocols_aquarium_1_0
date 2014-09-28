@@ -81,9 +81,9 @@ Day 2
 
 1. Retrieve plates form 37 C incubator, or deli fridge if the first day was skipped and desired colonies are already avaliable.
 2. Pick one colony per streak into 200 uL of LB + kan + low amp in a 1.5 mL centrifuge tube.
-3. Dilute each resuspended colony 10:1 into LB + kan + low amp (20 uL into 180 uL).
+3. Dilute each resuspended colony 20:1 into LB + kan + low amp (10 uL into 190 uL).
 4. Go to media bay and set up one 20 mL glass tube per colony with 6 mL of LB + kan + low amp, label side of each tube.
-5. Inoculate media with resuspended colony by adding 0.5 uL of the 10:1 diluted sample into its respecitve LB tube.
+5. Inoculate media with resuspended colony by adding 1.0 uL of the 20:1 diluted sample into its respecitve LB tube.
 6. Place tubes in the 30 C shaker, dispose of 200 uL cultures.
 7. Parafilm plates and place in designated are in the deli fridge.
 
