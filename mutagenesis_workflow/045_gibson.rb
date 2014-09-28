@@ -107,7 +107,7 @@ class Protocol
       group_size = input[:group_info][idx]
       tab = [["Gibson Reaction ids","Fragment Stock ids","Volume (µL)"]]
       fragment_stocks_arr[idx].each_with_index do |f,m|
-        tab.push([gid,"#{f}",fragment_volumes[idx][m].round(2)])
+        tab.push([gid,"#{f.id}",{ content: fragment_volumes[idx][m].round(2), check: true }])
       end
       k += group_size
       show {
