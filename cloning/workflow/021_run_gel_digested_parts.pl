@@ -63,7 +63,7 @@ while counter < length(control_names)
   
   step
     description: "Prepare control samples"
-    note "Those samples are to help identify the success of main reaction. \nFor example, if one did restriction digestion reaction, a control will be non-digested sample. \nThis band usually not necessary to cut, it is informational only."
+    note: "Those samples are to help identify the success of main reaction. \nFor example, if one did restriction digestion reaction, a control will be non-digested sample. \nThis band usually not necessary to cut, it is informational only."
     check: "Take 0.3 mL PCR tube, label it as C%{counter}."
     check: "To PCR tube, add %{buffer_volume} uL of 1X TAE buffer."
     check: "Take %{one_ctrl_vol} uL of sample %{current_ctrl} and add to PCR tube."
