@@ -10,7 +10,6 @@ argument
   time_to_run: number, "Time of gel run in minutes."
   percent: number, "Gel persentage to use, 1 = 1%."
   well_volume: number, "Total volume of compounds to be loaded, uL"
-  fragment_volume: number, "The volume of PCR fragment to load in µL."
 end
 
 number_of_samples = length(fragment_names)
@@ -51,8 +50,6 @@ step
   image: "gel_fill_TAE_to_line"
 end
 
-#num = length(fragment_names)
-#dye_volume = fragment_volume / 5.0
 
 # Prepare control samples
 counter = 0
@@ -146,104 +143,104 @@ if length(fragment_names) > 25
 end
 
 step
-  description: "Using a 100 µL pipetter, pipet %{fragment_volume} µL of the first five samples with loading dye into the gel."
+  description: "Using a 100 µL pipetter, pipet %{well_volume} µL of the first five samples with loading dye into the gel."
   note: "You should have a strip-well tube with the left-most well labeled with an 'A'. This well with the 'A' on it contains the first sample, the well to its right contains the second sample, etc. If you have less than 5 samples, follow this step until you run out of samples, then just check the remaining boxes and hit next."
   note: "After you run out of purification samples, start adding control samples, labelled with 'S<number>'. "
-  check: "pipet %{fragment_volume} µL from well 1 into lane 2 (the second lane of the TOP of the first gel). Lane 1 is skipped, because it has ladder in it."
-  check: "pipet %{fragment_volume} µL from well 2 into lane 3"
-  check: "pipet %{fragment_volume} µL from well 3 into lane 4"
-  check: "pipet %{fragment_volume} µL from well 4 into lane 5"
-  check: "pipet %{fragment_volume} µL from well 5 into lane 6. This should fill the final well in the top of the gel"
+  check: "pipet %{well_volume} µL from well 1 into lane 2 (the second lane of the TOP of the first gel). Lane 1 is skipped, because it has ladder in it."
+  check: "pipet %{well_volume} µL from well 2 into lane 3"
+  check: "pipet %{well_volume} µL from well 3 into lane 4"
+  check: "pipet %{well_volume} µL from well 4 into lane 5"
+  check: "pipet %{well_volume} µL from well 5 into lane 6. This should fill the final well in the top of the gel"
   image: "gel_begin_loading"
 end
 if length(fragment_names) > 5
   step
-    description: "Using a 100 µL pipetter, pipet %{fragment_volume} µL of the next five PCR results with loading dye into the gel."
+    description: "Using a 100 µL pipetter, pipet %{well_volume} µL of the next five PCR results with loading dye into the gel."
     note: "You should still have samples left in the strip-well tube with an 'A' on the left most well. If you have less than 10 samples, follow this step until you run out of samples, then just check the remaining boxes and hit next."
     note: "After you run out of purification samples, start adding control samples, labelled with 'S<number>'. "
-    check: "pipet %{fragment_volume} µL from well 6 into lane 8 (the second lane of the BOTTOM of the first gel). Lane 7 is skipped, because it has ladder in it."
-    check: "pipet %{fragment_volume} µL from well 7 into lane 9"
-    check: "pipet %{fragment_volume} µL from well 8 into lane 10"
-    check: "pipet %{fragment_volume} µL from well 9 into lane 11"
-    check: "pipet %{fragment_volume} µL from well 10 into lane 12. This should fill the final well in this gel"
+    check: "pipet %{well_volume} µL from well 6 into lane 8 (the second lane of the BOTTOM of the first gel). Lane 7 is skipped, because it has ladder in it."
+    check: "pipet %{well_volume} µL from well 7 into lane 9"
+    check: "pipet %{well_volume} µL from well 8 into lane 10"
+    check: "pipet %{well_volume} µL from well 9 into lane 11"
+    check: "pipet %{well_volume} µL from well 10 into lane 12. This should fill the final well in this gel"
     image: "gel_begin_loading"
   end
 end
 if length(fragment_names) > 10
   step
-    description: "Using a 100 µL pipetter, pipet %{fragment_volume} µL of the next five PCR results with loading dye into the second gel."
+    description: "Using a 100 µL pipetter, pipet %{well_volume} µL of the next five PCR results with loading dye into the second gel."
     note: "You should still have samples left in the strip-well tube with an 'A' on the left most well. You may also have samples in a strip-well tube labeled 'B'. The well with the 'B' on it contains sample 13, the one to its right 14, ... If you have less than 15 samples, follow this step until you run out of samples, then just check the remaining boxes and hit next."
     note: "After you run out of purification samples, start adding control samples, labelled with 'S<number>'. "
-    check: "pipet %{fragment_volume} µL from well 11 into lane 13 (the first lane of the TOP of the second gel)"
-    check: "pipet %{fragment_volume} µL from well 12 into lane 15 (the third lane of the TOP of the second gel). Lane 14 is skipped, because it has ladder in it"
-    check: "pipet %{fragment_volume} µL from well 13 (now using the 'B' strip-well tube) into lane 16"
-    check: "pipet %{fragment_volume} µL from well 14 into lane 17"
-    check: "pipet %{fragment_volume} µL from well 15 into lane 18. This should fill the final well in the top of gel 2"
+    check: "pipet %{well_volume} µL from well 11 into lane 13 (the first lane of the TOP of the second gel)"
+    check: "pipet %{well_volume} µL from well 12 into lane 15 (the third lane of the TOP of the second gel). Lane 14 is skipped, because it has ladder in it"
+    check: "pipet %{well_volume} µL from well 13 (now using the 'B' strip-well tube) into lane 16"
+    check: "pipet %{well_volume} µL from well 14 into lane 17"
+    check: "pipet %{well_volume} µL from well 15 into lane 18. This should fill the final well in the top of gel 2"
     image: "gel_begin_loading"
   end
 end
 if length(fragment_names) > 15
   step
-    description: "Using a 100 µL pipetter, pipet %{fragment_volume} µL of the next five PCR results with loading dye into the second gel."
+    description: "Using a 100 µL pipetter, pipet %{well_volume} µL of the next five PCR results with loading dye into the second gel."
     note: "At this point, you should get how this works... If you have less than 20 samples, follow this step until you run out of samples, then just check the remaining boxes and hit next."
     note: "After you run out of purification samples, start adding control samples, labelled with 'S<number>'. "
-    check: "pipet %{fragment_volume} µL from well 16 into lane 19"
-    check: "pipet %{fragment_volume} µL from well 17 into lane 21"
-    check: "pipet %{fragment_volume} µL from well 18 into lane 22"
-    check: "pipet %{fragment_volume} µL from well 19 into lane 23"
-    check: "pipet %{fragment_volume} µL from well 20 into lane 24"
+    check: "pipet %{well_volume} µL from well 16 into lane 19"
+    check: "pipet %{well_volume} µL from well 17 into lane 21"
+    check: "pipet %{well_volume} µL from well 18 into lane 22"
+    check: "pipet %{well_volume} µL from well 19 into lane 23"
+    check: "pipet %{well_volume} µL from well 20 into lane 24"
     image: "gel_begin_loading"
   end
 end
 if length(fragment_names) > 20
   step
-    description: "Using a 100 µL pipetter, pipet %{fragment_volume} µL of the next five PCR results with loading dye into the third gel."
+    description: "Using a 100 µL pipetter, pipet %{well_volume} µL of the next five PCR results with loading dye into the third gel."
     note: "If you have less than 25 samples, follow this step until you run out of samples, then just check the remaining boxes and hit next."
     note: "After you run out of purification samples, start adding control samples, labelled with 'S<number>'. "
-    check: "pipet %{fragment_volume} µL from well 21 into lane 25"
-    check: "pipet %{fragment_volume} µL from well 22 into lane 26"
-    check: "pipet %{fragment_volume} µL from well 23 into lane 28"
-    check: "pipet %{fragment_volume} µL from well 24 into lane 29"
-    check: "pipet %{fragment_volume} µL from well 25 into lane 30"
+    check: "pipet %{well_volume} µL from well 21 into lane 25"
+    check: "pipet %{well_volume} µL from well 22 into lane 26"
+    check: "pipet %{well_volume} µL from well 23 into lane 28"
+    check: "pipet %{well_volume} µL from well 24 into lane 29"
+    check: "pipet %{well_volume} µL from well 25 into lane 30"
     image: "gel_begin_loading"
   end
 end
 if length(fragment_names) > 25
   step
-    description: "Using a 100 µL pipetter, pipet %{fragment_volume} µL of the next five PCR results with loading dye into the third gel."
+    description: "Using a 100 µL pipetter, pipet %{well_volume} µL of the next five PCR results with loading dye into the third gel."
     note: "If you have less than 30 samples, follow this step until you run out of samples, then just check the remaining boxes and hit next."
     note: "After you run out of purification samples, start adding control samples, labelled with 'S<number>'. "
-    check: "pipet %{fragment_volume} µL from well 26 into lane 31"
-    check: "pipet %{fragment_volume} µL from well 27 into lane 32"
-    check: "pipet %{fragment_volume} µL from well 28 into lane 34"
-    check: "pipet %{fragment_volume} µL from well 29 into lane 35"
-    check: "pipet %{fragment_volume} µL from well 30 into lane 36"
+    check: "pipet %{well_volume} µL from well 26 into lane 31"
+    check: "pipet %{well_volume} µL from well 27 into lane 32"
+    check: "pipet %{well_volume} µL from well 28 into lane 34"
+    check: "pipet %{well_volume} µL from well 29 into lane 35"
+    check: "pipet %{well_volume} µL from well 30 into lane 36"
     image: "gel_begin_loading"
   end
 end
 if length(fragment_names) > 30
   step
-    description: "Using a 100 µL pipetter, pipet %{fragment_volume} µL of the next five PCR results with loading dye into the fourth gel."
+    description: "Using a 100 µL pipetter, pipet %{well_volume} µL of the next five PCR results with loading dye into the fourth gel."
     note: "After you run out of purification samples, start adding control samples, labelled with 'S<number>'. "
     note: "If you have less than 35 samples, follow this step until you run out of samples, then just check the remaining boxes and hit next."
-    check: "pipet %{fragment_volume} µL from well 31 into lane 37"
-    check: "pipet %{fragment_volume} µL from well 32 into lane 38"
-    check: "pipet %{fragment_volume} µL from well 33 into lane 39"
-    check: "pipet %{fragment_volume} µL from well 34 into lane 41"
-    check: "pipet %{fragment_volume} µL from well 35 into lane 42"
+    check: "pipet %{well_volume} µL from well 31 into lane 37"
+    check: "pipet %{well_volume} µL from well 32 into lane 38"
+    check: "pipet %{well_volume} µL from well 33 into lane 39"
+    check: "pipet %{well_volume} µL from well 34 into lane 41"
+    check: "pipet %{well_volume} µL from well 35 into lane 42"
     image: "gel_begin_loading"
   end
 end
 if length(fragment_names) > 35
   step
-    description: "Using a 100 µL pipetter, pipet %{fragment_volume} µL of the next five PCR results with loading dye into the fourth gel."
+    description: "Using a 100 µL pipetter, pipet %{well_volume} µL of the next five PCR results with loading dye into the fourth gel."
     note: "If you have less than 40 samples, follow this step until you run out of samples, then just check the remaining boxes and hit next."
     note: "After you run out of purification samples, start adding control samples, labelled with 'S<number>'. "
-    check: "pipet %{fragment_volume} µL from well 36 into lane 43"
-    check: "pipet %{fragment_volume} µL from well 37 into lane 44"
-    check: "pipet %{fragment_volume} µL from well 38 into lane 45"
-    check: "pipet %{fragment_volume} µL from well 39 into lane 47"
-    check: "pipet %{fragment_volume} µL from well 40 into lane 48"
+    check: "pipet %{well_volume} µL from well 36 into lane 43"
+    check: "pipet %{well_volume} µL from well 37 into lane 44"
+    check: "pipet %{well_volume} µL from well 38 into lane 45"
+    check: "pipet %{well_volume} µL from well 39 into lane 47"
+    check: "pipet %{well_volume} µL from well 40 into lane 48"
     image: "gel_begin_loading"
   end
 end
