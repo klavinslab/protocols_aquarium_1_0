@@ -1,11 +1,11 @@
-information "Load digested parts and run an agarose gel."
+information "This protocol purifies linear parts created by previous PCR or restriction digestion reaction. \nAlong with purified samples, protocol loads control samples, to see if band(s) are in correct position."
 
 argument
   fragment_names: sample array, "Fragment Names"
   fragment_volumes: number array, "The volume of each fragment to load."
   control_names: sample array, "Names of control samples"
   control_volumes: number array, "Volumes of each control to load, uL"
-  ladder_one: sample
+  ladder_one: sample, "Choose ladder to run with this gel."
   voltage: number, "Voltage of gel run, number. Example: 140 = 140 Volts"
   time_to_run: number, "Time of gel run in minutes."
   percent: number, "Gel persentage to use, 1 = 1%."
@@ -25,7 +25,7 @@ dye_volume = well_volume / 5.0
 #c=b+1
 
 take
-  gel = number_of_gels "50 mL %{percent} Percent Agarose Gel in Gel Box"
+  gel = number_of_gels "50 mL 1 Percent Agarose Gel in Gel Box"
   fragment = item fragment_names
   control = item control_names
   ladder = item ladder_one
