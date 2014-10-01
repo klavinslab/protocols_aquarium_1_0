@@ -8,7 +8,7 @@ step
 end
 
 take
-  overnight = item strain_id
+  overnight = item unique(strain_id)
 end
 
 y=length(strain_id)
