@@ -22,7 +22,7 @@ place gibson
   group: "technicians"
   marked: true
   start: now()
-  window: minutes(360)
+  window: hours(12)
 end
 
 place transformation
@@ -33,7 +33,7 @@ place transformation
   
   group: "technicians"
   start: now()
-  window: minutes(1)
+  window: hours(2)
 end
 
 place plating
