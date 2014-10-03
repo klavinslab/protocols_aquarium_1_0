@@ -11,7 +11,7 @@ place cutgel
   group: "technicians"
   marked: true
   start: now()
-  window: minutes(1)
+  window: minutes(360)
 end
 
 place gelpurify
