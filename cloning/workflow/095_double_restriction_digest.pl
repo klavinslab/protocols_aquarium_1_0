@@ -148,6 +148,7 @@ while counter < number_of_reactions
   step
     description: "Add molecular grade water to the tubes"
     check: "Add %{water_vol} uL of water molecular grade to the tube %{label}."
+    note: "If negative number appears, don't add any water."
   end
   counter = counter + 1     # Update counter for the next tube
 end
@@ -204,6 +205,7 @@ while counter < number_of_reactions
   step
     description: "Add plasmids to be digested"
     check: "Add %{dna_stock_vol} uL of plasmid %{plasmid_id} into tube %{label}."
+    note: "If the tube has not enough DNA, add everything you have in the tube. Discard empty tube afterwards."
   end
   counter = counter + 1
 end
