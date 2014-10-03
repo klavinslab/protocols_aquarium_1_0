@@ -22,7 +22,7 @@ place gibson
   group: "technicians"
   marked: true
   start: now()
-  window: minutes(1)
+  window: minutes(360)
 end
 
 place transformation
