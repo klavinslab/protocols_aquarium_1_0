@@ -11,14 +11,14 @@ place cutgel
   group: "technicians"
   marked: true
   start: now()
-  window: minutes(360)
+  window: hours(12)
 end
 
 place gelpurify
   protocol: "cloning/metacol-workflow/gel_purify.pl"
   group: "technicians"
   start: now()
-  window: minutes(1)
+  window: hours(12)
 end
 
 wire (cutgel, "Gel_Slice_id") => (gelpurify, "GelSlice_id")
