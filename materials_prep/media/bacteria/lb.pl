@@ -6,6 +6,7 @@ information "Prepare unsterile bottle(s) of LB (rich media for bacteria)."
 argument
   volumes: number array, "Enter the media volume (200, 400, or 800 mL)."
   add_agar: string, "Make agar media? (Yes or No)"
+  add_cmc: string, "Make cmc media? (Yes or No)"
 end
 
 n_bottle = length(volumes)
@@ -47,11 +48,23 @@ if add_agar != "Yes" && add_agar != "No"
   end
 end
 
+
+if add_cmc != "Yes" && add_cmc != "No"
+  step
+    description: "The question of whether this is to be CMC media was incorrectly entered as %{add_cmc}."
+    note: "You can only specify Yes or No! Hassle the person who scheduled this protocol."
+    getdata
+      add_cmc: string, "Should this be a batch of CMC media?", ["Yes", "No"]
+    end
+  end
+end
+
 bottle_types = []
 product_names = []
 lb_grams_list = []
 bottles = []
 lb_powder = []
+cmc_powder = []
 i = 0
 while i < n_bottle
   bottle_type = "250 mL Bottle"
@@ -66,9 +79,11 @@ while i < n_bottle
   bottle_types = append(bottle_types, bottle_type)
 
   lb_grams = 29.6
+  cmc_grams = 0.8
   product_name = ""
 
   lb_grams = 0.0
+  cmc_grams = 0.0
   bottles = {}
   if add_agar == "Yes"
     product_name = "%{volume} mL LB Agar (unsterile)"
@@ -82,6 +97,23 @@ while i < n_bottle
     take
       bottles = n_bottle bottle_type
       lb_powder = 1 "LB Agar Miller"
+    end
+  elsif add_agar == "Yes" && add_cmc == "Yes"
+    product_name = "%{volume} mL LB CMC Agar (unsterile)"
+    if volume == 200
+      lb_grams = 7.4
+      cmc_grams = 0.2
+    elsif volume == 400
+      lb_grams = 14.8
+      cmc_grams = 0.4
+    else
+      lb_grams = 29.6
+      cmc_grams = 0.8
+    end
+    take
+      bottles = n_bottle bottle_type
+      lb_powder = 1 "LB Agar Miller"
+      cmc_powder = 1 "Sodium Carboxymethyl Cellulose"
     end
   else
     product_name = "%{volume} mL LB Liquid (unsterile)"
@@ -137,9 +169,13 @@ while i < n_bottle
   add_dry_reagent("bottle %{n}", lb_name, lb_grams)
   clean_spatula()
 
+  if add_cmc == "Yes"
+    add_dry_reagent("bottle %{n}", cmc_powder[0][:name], cmc_grams)
+  end
+  clean_spatula()
+
   i = i + 1
 end
-
 
 i = 0
 while i < n_bottle
@@ -150,7 +186,6 @@ while i < n_bottle
   end
   i = i + 1
 end
-
 
 if add_agar == "Yes"
   step
@@ -191,3 +226,6 @@ end
 
 
 release lb_powder
+if add_cmc == "Yes"
+  release cmc_powder
+end
