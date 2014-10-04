@@ -169,12 +169,19 @@ while i < n_bottle
   add_dry_reagent("bottle %{n}", lb_name, lb_grams)
   clean_spatula()
 
-  if add_cmc == "Yes"
+  i = i + 1
+end
+
+if add_cmc == "Yes"
+
+  i = 0
+  while i < n_bottle
+    n = i + 1
     add_dry_reagent("bottle %{n}", cmc_powder[0][:name], cmc_grams)
-  end
-  clean_spatula()
+    clean_spatula()
 
   i = i + 1
+  end
 end
 
 i = 0
