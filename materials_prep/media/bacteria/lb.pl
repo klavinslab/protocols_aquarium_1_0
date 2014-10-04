@@ -174,6 +174,7 @@ while i < n_bottle
   i = i + 1
 end
 
+# Add CMC powder
 if add_cmc == "Yes"
   
   cmc_name = cmc_powder[0][:name]
