@@ -65,6 +65,7 @@ lb_grams_list = []
 bottles = []
 lb_powder = []
 cmc_powder = []
+cmc_grams_list = []
 i = 0
 while i < n_bottle
   bottle_type = "250 mL Bottle"
@@ -102,6 +103,7 @@ while i < n_bottle
       lb_powder = 1 "LB Agar Miller"
       cmc_powder = 1 "Sodium Carboxymethyl Cellulose"
     end
+    cmc_grams_list = append(cmc_grams_list, cmc_grams)
   elsif add_agar == "Yes"
     product_name = "%{volume} mL LB Agar (unsterile)"
     if volume == 200
@@ -132,7 +134,7 @@ while i < n_bottle
 
   product_names = append(product_names, product_name)
   lb_grams_list = append(lb_grams_list, lb_grams)
-
+  
   i = i + 1
 end
 
@@ -173,11 +175,14 @@ while i < n_bottle
 end
 
 if add_cmc == "Yes"
+  
+  cmc_name = cmc_powder[0][:name]
 
   i = 0
   while i < n_bottle
     n = i + 1
-    add_dry_reagent("bottle %{n}", cmc_powder[0][:name], cmc_grams)
+    cmc_grams = cmc_grams_list[i]
+    add_dry_reagent("bottle %{n}", cmc_name, cmc_grams)
     clean_spatula()
 
   i = i + 1
