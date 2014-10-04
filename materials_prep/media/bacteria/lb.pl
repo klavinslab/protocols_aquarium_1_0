@@ -85,20 +85,7 @@ while i < n_bottle
   lb_grams = 0.0
   cmc_grams = 0.0
   bottles = {}
-  if add_agar == "Yes"
-    product_name = "%{volume} mL LB Agar (unsterile)"
-    if volume == 200
-      lb_grams = 7.4
-    elsif volume == 400
-      lb_grams = 14.8
-    else
-      lb_grams = 29.6
-    end
-    take
-      bottles = n_bottle bottle_type
-      lb_powder = 1 "LB Agar Miller"
-    end
-  elsif add_agar == "Yes" && add_cmc == "Yes"
+  if add_agar == "Yes" && add_cmc == "Yes"
     product_name = "%{volume} mL LB CMC Agar (unsterile)"
     if volume == 200
       lb_grams = 7.4
@@ -114,6 +101,19 @@ while i < n_bottle
       bottles = n_bottle bottle_type
       lb_powder = 1 "LB Agar Miller"
       cmc_powder = 1 "Sodium Carboxymethyl Cellulose"
+    end
+  elsif add_agar == "Yes"
+    product_name = "%{volume} mL LB Agar (unsterile)"
+    if volume == 200
+      lb_grams = 7.4
+    elsif volume == 400
+      lb_grams = 14.8
+    else
+      lb_grams = 29.6
+    end
+    take
+      bottles = n_bottle bottle_type
+      lb_powder = 1 "LB Agar Miller"
     end
   else
     product_name = "%{volume} mL LB Liquid (unsterile)"
