@@ -68,6 +68,7 @@ end
 
 kan_number = kan_volume * n  # Initialize global variable
 
+product_name = ""
 if cmc == "No"
   product_name = "SDAc Plate (Kan + low Amp) (sterile)"  # Initialize global variable
 else 
