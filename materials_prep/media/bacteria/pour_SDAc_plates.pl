@@ -19,9 +19,9 @@ if volume != 200 && volume != 400 && volume != 800
   end
 end
 
-if cmc != "Yes" && iptg != "No"
+if cmc != "Yes"
   step
-    description: "The CMC addition was incorrectly entered as %{iptg}."
+    description: "The CMC addition was incorrectly entered as %{cmc}."
     getdata
       iptg: string, "Are these CMC plates?", ["Yes", "No"]
     end
