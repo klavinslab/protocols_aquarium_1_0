@@ -119,6 +119,7 @@ else
   step
     description: "Mark the side of each plate"
     note: "Mark the side of each poured plate with a marker: purple for Amp and green for Kan."
+  end
 end
 
 # IDEA: Split here and use metacol for the wait?
