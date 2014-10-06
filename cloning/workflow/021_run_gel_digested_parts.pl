@@ -145,6 +145,7 @@ end
 step
   description: "Using a 100 µL pipetter, pipet %{well_volume} µL of the first five samples with loading dye into the gel."
   note: "You should have a strip-well tube with the left-most well labeled with an 'A'. This well with the 'A' on it contains the first sample, the well to its right contains the second sample, etc. If you have less than 5 samples, follow this step until you run out of samples, then just check the remaining boxes and hit next."
+  note: "If the sample does not fit into the well, add the remains into the next well."
   note: "After you run out of purification samples, start adding control samples, labelled with 'S<number>'. "
   check: "pipet %{well_volume} µL from well 1 into lane 2 (the second lane of the TOP of the first gel). Lane 1 is skipped, because it has ladder in it."
   check: "pipet %{well_volume} µL from well 2 into lane 3"
@@ -157,6 +158,7 @@ if length(fragment_names) > 5
   step
     description: "Using a 100 µL pipetter, pipet %{well_volume} µL of the next five PCR results with loading dye into the gel."
     note: "You should still have samples left in the strip-well tube with an 'A' on the left most well. If you have less than 10 samples, follow this step until you run out of samples, then just check the remaining boxes and hit next."
+    note: "If the sample does not fit into the well, add the remains into the next well."
     note: "After you run out of purification samples, start adding control samples, labelled with 'S<number>'. "
     check: "pipet %{well_volume} µL from well 6 into lane 8 (the second lane of the BOTTOM of the first gel). Lane 7 is skipped, because it has ladder in it."
     check: "pipet %{well_volume} µL from well 7 into lane 9"
@@ -170,6 +172,7 @@ if length(fragment_names) > 10
   step
     description: "Using a 100 µL pipetter, pipet %{well_volume} µL of the next five PCR results with loading dye into the second gel."
     note: "You should still have samples left in the strip-well tube with an 'A' on the left most well. You may also have samples in a strip-well tube labeled 'B'. The well with the 'B' on it contains sample 13, the one to its right 14, ... If you have less than 15 samples, follow this step until you run out of samples, then just check the remaining boxes and hit next."
+    note: "If the sample does not fit into the well, add the remains into the next well."
     note: "After you run out of purification samples, start adding control samples, labelled with 'S<number>'. "
     check: "pipet %{well_volume} µL from well 11 into lane 13 (the first lane of the TOP of the second gel)"
     check: "pipet %{well_volume} µL from well 12 into lane 15 (the third lane of the TOP of the second gel). Lane 14 is skipped, because it has ladder in it"
@@ -183,6 +186,7 @@ if length(fragment_names) > 15
   step
     description: "Using a 100 µL pipetter, pipet %{well_volume} µL of the next five PCR results with loading dye into the second gel."
     note: "At this point, you should get how this works... If you have less than 20 samples, follow this step until you run out of samples, then just check the remaining boxes and hit next."
+    note: "If the sample does not fit into the well, add the remains into the next well."
     note: "After you run out of purification samples, start adding control samples, labelled with 'S<number>'. "
     check: "pipet %{well_volume} µL from well 16 into lane 19"
     check: "pipet %{well_volume} µL from well 17 into lane 21"
@@ -196,6 +200,7 @@ if length(fragment_names) > 20
   step
     description: "Using a 100 µL pipetter, pipet %{well_volume} µL of the next five PCR results with loading dye into the third gel."
     note: "If you have less than 25 samples, follow this step until you run out of samples, then just check the remaining boxes and hit next."
+    note: "If the sample does not fit into the well, add the remains into the next well."
     note: "After you run out of purification samples, start adding control samples, labelled with 'S<number>'. "
     check: "pipet %{well_volume} µL from well 21 into lane 25"
     check: "pipet %{well_volume} µL from well 22 into lane 26"
@@ -209,6 +214,7 @@ if length(fragment_names) > 25
   step
     description: "Using a 100 µL pipetter, pipet %{well_volume} µL of the next five PCR results with loading dye into the third gel."
     note: "If you have less than 30 samples, follow this step until you run out of samples, then just check the remaining boxes and hit next."
+    note: "If the sample does not fit into the well, add the remains into the next well."
     note: "After you run out of purification samples, start adding control samples, labelled with 'S<number>'. "
     check: "pipet %{well_volume} µL from well 26 into lane 31"
     check: "pipet %{well_volume} µL from well 27 into lane 32"
@@ -222,6 +228,7 @@ if length(fragment_names) > 30
   step
     description: "Using a 100 µL pipetter, pipet %{well_volume} µL of the next five PCR results with loading dye into the fourth gel."
     note: "After you run out of purification samples, start adding control samples, labelled with 'S<number>'. "
+    note: "If the sample does not fit into the well, add the remains into the next well."
     note: "If you have less than 35 samples, follow this step until you run out of samples, then just check the remaining boxes and hit next."
     check: "pipet %{well_volume} µL from well 31 into lane 37"
     check: "pipet %{well_volume} µL from well 32 into lane 38"
@@ -235,6 +242,7 @@ if length(fragment_names) > 35
   step
     description: "Using a 100 µL pipetter, pipet %{well_volume} µL of the next five PCR results with loading dye into the fourth gel."
     note: "If you have less than 40 samples, follow this step until you run out of samples, then just check the remaining boxes and hit next."
+    note: "If the sample does not fit into the well, add the remains into the next well."
     note: "After you run out of purification samples, start adding control samples, labelled with 'S<number>'. "
     check: "pipet %{well_volume} µL from well 36 into lane 43"
     check: "pipet %{well_volume} µL from well 37 into lane 44"
