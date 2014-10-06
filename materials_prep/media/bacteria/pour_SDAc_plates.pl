@@ -6,6 +6,7 @@ information "Pour SDAc plates from 200, 400, or 800 mL sources."
 argument
   n: number, "Enter the number of bottles you are pouring."
   volume: number, "Enter the volume of LB Agar you are pouring in mL. Valid options are 200, 400, or 800."
+  cmc: string, "Are these CMC plates? Enter Yes or No."
 end
 
 
@@ -18,17 +19,35 @@ if volume != 200 && volume != 400 && volume != 800
   end
 end
 
+if cmc != "Yes" && iptg != "No"
+  step
+    description: "The CMC addition was incorrectly entered as %{iptg}."
+    getdata
+      iptg: string, "Are these CMC plates?", ["Yes", "No"]
+    end
+  end
+end
+
 
 bottle_type = ""  # Initialize global variable
 n_empty_plates = ""  # Initialize global variable
-if volume == 200
+if volume == 200 && cmc == "No"
   bottle_type = "200 mL LB Agar (sterile)"
   n_empty_plates = 10 * n
-elsif volume == 400
+elsif volume == 400 && cmc == "No"
   bottle_type = "400 mL LB Agar (sterile)"
   n_empty_plates = 20 * n
-else
+elsif volume == 800 && cmc == "No"
   bottle_type = "800 mL LB Agar (sterile)"
+  n_empty_plates = 40 * n
+elsif volume == 200 && cmc == "Yes"
+  bottle_type = "200 mL LB CMC Agar (sterile)"
+  n_empty_plates = 10 * n
+elsif volume == 400 && cmc == "Yes"
+  bottle_type = "400 mL LB CMC Agar (sterile)"
+  n_empty_plates = 20 * n
+else
+  bottle_type = "800 mL LB CMC Agar (sterile)"
   n_empty_plates = 40 * n
 end
 
@@ -48,8 +67,12 @@ else
 end
 
 kan_number = kan_volume * n  # Initialize global variable
-product_name = "SDAc Plate (Kan + low Amp) (sterile)"  # Initialize global variable
 
+if cmc == "No"
+  product_name = "SDAc Plate (Kan + low Amp) (sterile)"  # Initialize global variable
+else 
+  product_name = "SDAc CMC Plate (Kan + low Amp) (sterile)"
+end
 
 take
   bottles = n bottle_type
@@ -87,11 +110,16 @@ step
 end
 
 
-step
-  description: "Mark the side of each plate"
-  note: "Mark the side of each poured plate with a marker: purple for Amp and green for Kan."
+if cmc == "Yes"
+  step
+    description: "Mark the side of each plate"
+    note: "Mark the side of each poured plate with a marker: purple for Amp, green for Kan, and black for CMC."
+  end
+else
+  step
+    description: "Mark the side of each plate"
+    note: "Mark the side of each poured plate with a marker: purple for Amp and green for Kan."
 end
-
 
 # IDEA: Split here and use metacol for the wait?
 step
