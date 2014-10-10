@@ -13,7 +13,7 @@ end
 
 # TODO: need to unique-ify the take, but also need to produce 'from' - need a key-value pair or new length-n array of taken items.
 take
-  plasmids = item plasmid_ids
+  plasmids = item unique(plasmid_ids)
   falcon_tube = 1 "50 mL LB liquid aliquot (sterile)"
   electroporator = 1 "Electroporator"
 end
