@@ -7,7 +7,7 @@ information "Make Synthetic Drop-out or Synthetic Complete media."
 # FIXME: if dropping out only one aa, put drop out solutions on single take
 argument
   n_bottle: number, "Enter the number of bottles you want to make (maximum of 4)."
-  volume: number, "Enter the volume of media (in mL) you want to make - 200, 400, or 800."
+  volume: number, "Enter the volume of media (in mL) you want to make 200, 400, 800 or 1600"
   add_agar: string, "Add agar to the media? Enter Yes or No."
   add_his: string, "Add histidine to the media? Enter Yes or No."
   add_leu: string, "Add leucine to the media? Enter Yes or No."
@@ -77,11 +77,11 @@ if add_ura != "Yes" && add_ura != "No"
 end
 
 
-if volume != 200 && volume != 400 && volume != 800
+if volume != 200 && volume != 400 && volume != 800 && volume != 1600
   step
     description: "The volume preference was incorrectly entered as %{volume}"
     getdata
-      volume: number, "What volume should be used?", [200, 400, 800]
+      volume: number, "What volume should be used?", [200, 400, 800, 1600]
     end
   end
 end
@@ -91,8 +91,10 @@ if volume == 200
   bottle_type = "250 mL Bottle"
 elsif volume == 400
   bottle_type = "500 mL Bottle"
-else
+elsif volume == 800
   bottle_type = "1 L Bottle"
+elsif volume > 800
+  bottle_type = "2 L Bottle"
 end
 
 take
@@ -100,7 +102,7 @@ take
 end
 
 stir_bars = {}
-if volume == 800
+if volume >= 800
   take
     stir_bars = n_bottle "Medium Magnetic Stir Bar"
   end
@@ -177,13 +179,20 @@ elsif volume == 400
   dropout_grams = 0.56
   adenine_grams = 0.032
   supplement_ml = 4
-else
+elsif volume == 800
   agar_grams = 16
   dextrose_grams = 16
   nitrogen_base_grams = 5.36
   dropout_grams = 1.12
   adenine_grams = 0.064
   supplement_ml = 8
+else
+  agar_grams = 16.0/800*volume
+  dextrose_grams = 16.0/800*volume
+  nitrogen_base_grams = 5.36/800*volume
+  dropout_grams = 1.12/800*volume
+  adenine_grams = 0.064/800*volume
+  supplement_ml = 8.0/800*volume
 end
 
 
@@ -274,7 +283,7 @@ release hot_plate
 
 
 # FIXME: Should also mark as '-Ura', etc. Need to construct that string.
-if volume == 800
+if volume >= 800
   produce
     produced_bottles = n_bottle product_name
     data
