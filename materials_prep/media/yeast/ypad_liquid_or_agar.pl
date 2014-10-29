@@ -3,7 +3,7 @@ information "Prepare unsterile bottle(s) of YPAD (rich yeast media), ready to be
 argument
   n_bottle: number, "Enter the number of bottles you want to make (maximum of 4)."
   add_agar: string, "Add agar to the media? Enter Yes or No."
-  volume: number, "The volume to make: 800, 400, or 200 (in mL)"
+  volume: number, "The volume to make: 1600, 800, 400, or 200 (in mL)"
 end
 
 
@@ -26,11 +26,11 @@ if add_agar != "Yes" && add_agar != "No"
   end
 end
 
-if volume != 200 && volume != 400 && volume != 800
+if volume != 200 && volume != 400 && volume != 800 && volume != 1600
   step
     description: "The LB volume was incorrectly entered as %{volume}."
     getdata
-      volume: number, "Enter the volume of LB to make.", [200, 400, 800]
+      volume: number, "Enter the volume of LB to make.", [200, 400, 800, 1600]
     end
   end
 end
@@ -41,7 +41,9 @@ take
 end
 
 bottle_size = "1 L Bottle"
-if volume == 800
+if volume == 1600
+    bottle_size = "2L Bottle" 
+elsif volume == 800
     bottle_size =  "1 L Bottle"
 elsif volume == 400
     bottle_size =  "500 mL Bottle"
@@ -59,7 +61,9 @@ adenine = []  # Initialize global variable (why is this one required?)
 agar = []  # Initialize global variable (why is this one required?)
 stir_bars = []  # Initialize global variable (why is this one required?)
 if add_agar == "Yes"
-  if volume == 800
+  if volume == 1600
+    product_name = "1600 mL YPAD agar (unsterile)"
+  elsif volume == 800
     product_name = "800 mL YPAD agar (unsterile)"
   elsif volume == 400
     product_name = "400 mL YPAD agar (unsterile)"
@@ -77,7 +81,9 @@ if add_agar == "Yes"
     note: "Add one stir bar to each bottle."
   end
 else
-  if volume == 800
+  if volume == 1600
+    product_name = "1600 mL YPAD liquid (unsterile)"
+  elsif volume == 800
     product_name = "800 mL YPAD liquid (unsterile)"
   elsif volume == 400
     product_name = "400 mL YPAD liquid (unsterile)"
