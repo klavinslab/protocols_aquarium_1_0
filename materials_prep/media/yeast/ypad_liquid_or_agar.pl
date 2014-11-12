@@ -42,7 +42,7 @@ end
 
 bottle_size = "1 L Bottle"
 if volume == 1600
-    bottle_size = "2L Bottle" 
+    bottle_size = "2 L Bottle" 
 elsif volume == 800
     bottle_size =  "1 L Bottle"
 elsif volume == 400
