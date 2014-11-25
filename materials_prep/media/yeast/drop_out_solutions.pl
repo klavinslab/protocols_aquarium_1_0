@@ -47,8 +47,6 @@ take
   supplement_item = 1 supplement_type
 end
 
-clean_spatula()
-
 add_dry_reagent("non-sterile bottle", supplement_type, supplement_mass)
 
 release concat(boat, scale)
