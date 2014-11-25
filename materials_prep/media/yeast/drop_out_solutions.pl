@@ -1,3 +1,6 @@
+
+require "protocols:materials_prep/lib/materials_prep.pl"
+
 information "Make sterile solution of Tryptophan, Histidine, Leucine, or Uracil."
 
 argument
