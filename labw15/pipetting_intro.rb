@@ -8,7 +8,7 @@ def main
     free to press the button on top of the pipette. Make sure the number screen is on the opposite side of your thumb.
     ALWAYS HOLD THE PIPETTE UPRIGHT. Do not turn the pipette to the side or upside down, especially when pipetting 
     liquid. This messes up the calibration of the pipette."
-    image path "how_to_hold_pipette_pipetting_intro"
+    image "how_to_hold_pipette_pipetting_intro"
   end
   
   show
@@ -16,7 +16,7 @@ def main
     note "We use three different pipettes in this lab that pipette three different volumes. They can generally be
     thought of as small, medium, and large volume pipettes the small pipette pipettes small volumes
     (0.5 - 10 µL), the medium pipette pipettes medium volumes (10 - 100 µL), and the large pipette pipettes large volumes (100 - 1000 µL). Each pipette fits a different size of tip, and each tip size has its own box."
-    image path "Three_different_pipettes_pipetting_intro"
+    image "Three_different_pipettes_pipetting_intro"
   end
     
   show
@@ -24,7 +24,7 @@ def main
     note "The maximum volume of the small pipette is 10 µL, the medium pipette is 100 µL, and the large pipette is 1000 µL.
     This is the danger number. NEVER exceed the danger number, because it messes up the calibration of the pipette.
     For each pipette, the danger number reads as 100 (from top to bottom) on the number screen."
-    image path "danger_number_pipetting_intro"
+    image "danger_number_pipetting_intro"
   end
   
   show
@@ -38,7 +38,7 @@ def main
     to unlocked (an open lock). Note that some of the pipettes do not have a locked or unlocked position. The volume can be changed by rotating the button clockwise (smaller volume) or
     counterclockwise (larger volume.) Once the pipette is set to the correct volume, slide the notch back to the locked
     position."
-    image path "ten_percent_of_danger_number_pipetting_intro"
+    image "ten_percent_of_danger_number_pipetting_intro"
   end
   
   show
@@ -52,7 +52,7 @@ def main
     all tips into a tip waste cntainer.Practice adding and releasing tips using all three pipettes until you 
     feel comfortable."
     warning "Make sure the tip box is closed."
-    image path "putting_on_pipette_tip_pipetting_intro"
+    image "putting_on_pipette_tip_pipetting_intro"
   end
   
   show
@@ -70,5 +70,5 @@ def main
     should be drawn up into the tip. To release the liquid, press down on the button to the first stop to release 
     most of the liquid, then keeping pressing down to the second stop to release the rest of the liquid. 
     Practice drawing up and releasing liquid using the three different pipettes until you feel comfortable."
-    image path "drawing_up_liquid_pipetting_intro"
+    image "drawing_up_liquid_pipetting_intro"
   end
