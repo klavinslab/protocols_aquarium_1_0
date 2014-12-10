@@ -72,3 +72,4 @@ def main
     Practice drawing up and releasing liquid using the three different pipettes until you feel comfortable."
     image "drawing_up_liquid_pipetting_intro"
   end
+end
