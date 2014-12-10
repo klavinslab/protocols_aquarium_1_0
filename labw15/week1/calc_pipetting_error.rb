@@ -17,60 +17,39 @@ class Protocol
               pipette tip." ], var: "choice", label: "Outcome possibilities:", default: 1
     }
     
-    <if>
-      <condition>%{outcome} == "There is still liquid left in the tube."</condition>
-          <then>
-            show {
-              title "Too much liquid was pipetted."
-              note "
-              Dispose of the tip with liquid in it add a fresh tip and pipette up the remaining liquid, then slowly  
-              rotate the volume dial to decrease the volume until the liquid reaches the bottom of the tip. This volume 
-              is the new volume.
-              "
-            }
-            show {
-              title "Calculate the error."
-              note "The error rate is (new volume / total volume)."
-            }
-          </then>
-    </if>
-    
-    <if>
-      <condition>%{outcome} == "There is not more liquid left in the tube, but there is air at the bottom of the pipette tip."</condition>
-        <then>
-          show {
-            title "Too little liquid was pipetted."
-            note "
-            Slowly rotate the volume dial to decrease the volume until the liquid reaches the bottom of the tip. This
-            volume is the new volume.
-            "
-          }
-          show {
-            title "Calculate the error."
-            note "
-            The error rate is (total volume - new volume) / total volume.
-            "
-          }
-        </then>
-    </if>
-    
-    <if>
-      <condition>%{outcome} == "There is no more liquid left in the tube, and there is no air at the bottom of the pipette tip."</condition>
-        <then>
-          show {
-            title "Congratulations!"
-            note "
-            The error rate is 0.
-            "
-          }
-        </then>
-    </if>
+    if choice == "There is still liquid left in the tube."
+      show {
+        title "Too much liquid was pipetted."
+        note "Dispose of the tip with liquid in it add a fresh tip and pipette up the remaining liquid, then slowly  
+        rotate the volume dial to decrease the volume until the liquid reaches the bottom of the tip. This volume 
+        is the new volume."
+      }
+      show {
+        title "Calculate the error."
+        note "The error rate is (new volume / total volume)."
+      }
+
+    elsif choice == "There is not more liquid left in the tube, but there is air at the bottom of the pipette tip."
+      show {
+        title "Too little liquid was pipetted."
+        note "Slowly rotate the volume dial to decrease the volume until the liquid reaches the bottom of the tip. This
+        volume is the new volume."
+      }
+      show {
+        title "Calculate the error."
+        note "The error rate is (total volume - new volume) / total volume."
+      }
+
+    else
+      show {
+          title "Congratulations!"
+          note "The error rate is 0."
+      }
+    end
         
     show {
       title "Write down the error rate."
-      note "
-      Repeat this protocol for every tube of liquid.
-      "
+      note "Repeat this protocol for every tube of liquid."
     }
   end
 end
