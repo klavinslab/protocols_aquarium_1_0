@@ -31,15 +31,13 @@ class Protocol
     
     show {
       title "Add Solution I to Tube E."
-      note
-      "Using a fresh tip and maintaining a sterile technique, add 4 µL of Solution I to Tube E."
+      note "Using a fresh tip and maintaining a sterile technique, add 4 µL of Solution I to Tube E."
       image "solution_I_small_volume_exercise"
     }
     
     show {
       title "Add Solution II to Tube C."
-      note
-      "Using a fresh tip and maintaining a sterile technique, add 5 µL of Solution II to Tube C. Be sure to change
+      note "Using a fresh tip and maintaining a sterile technique, add 5 µL of Solution II to Tube C. Be sure to change
       the volume of the pipette before adding a new tip."
       image "solution_II_small_volume_exercise"
     }
