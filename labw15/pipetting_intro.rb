@@ -1,6 +1,6 @@
-class Protocol
 #information "This protocol teaches the fundamentals of handling and working with a pipette."
-  
+
+class Protocol
   def main
     show {
       title "Learn how to hold a pipette."
