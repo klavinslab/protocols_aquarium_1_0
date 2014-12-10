@@ -17,6 +17,8 @@ class Protocol
               pipette tip." ], var: "choice", label: "Outcome possibilities:", default: 1
     }
     
+    choice = data[:choice]
+    
     if choice == "There is still liquid left in the tube."
       show {
         title "Too much liquid was pipetted."
