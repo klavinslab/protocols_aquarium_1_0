@@ -8,7 +8,7 @@ class Protocol
       the total volume is 1000 µL. If you just executed the small volume pipetting exercise, the total volume is 10 µL."
     }
     
-    show {
+    data = show {
       title "Draw up the liquid."
       note "If the total volume is 10 µL, make sure you have centrifuged all the the liquid to the bottom of the tube. Using the correct pipette that is set to the total volume, draw up as much liquid from the tube as 
       possible. There are three possible outcomes after this step. Pick which outcome best applies."
@@ -16,7 +16,6 @@ class Protocol
               pipette tip.", "There is no more liquid left in the tube, and there is no air at the bottom of the 
               pipette tip." ], var: "choice", label: "Outcome possibilities:", default: 1
     }
-    
     choice = data[:choice]
     
     if choice == "There is still liquid left in the tube."
