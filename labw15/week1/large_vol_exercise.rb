@@ -53,8 +53,7 @@ class Protocol
     
     show {
       title "Add Solution IV to tube A"
-      note
-      "Using a fresh tip and maintaining a sterile technique, add 550 µL of Solution IV to Tube A. Be sure to change
+      note "Using a fresh tip and maintaining a sterile technique, add 550 µL of Solution IV to Tube A. Be sure to change
       the volume of the pipette before adding a new tip."
       image "Add_solution_IV_to_A_large_volume_exercise"
     }
