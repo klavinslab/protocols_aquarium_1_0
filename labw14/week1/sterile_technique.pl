@@ -22,7 +22,7 @@ step
 end
 
 step
-  description: "Practice taking off and putting on the test tube cap with on hand."
+  description: "Practice taking off and putting on the test tube cap with one hand."
   note:
   "Hold the test tube in your non-dominant hand so that your thumb and pointer finger are gripping the cap. 
   Slowly slide the cap of the test tube off with your thumb and forefinger until the cap is loose but not
