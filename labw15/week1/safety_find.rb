@@ -29,6 +29,7 @@ class Protocol
     		}
      	else
     	  show {
+    	  	$task = 0
     			title "That is incorrect."
     			note "Please return to the sharps container and then answer again."
     			image "Sharps_Container"
