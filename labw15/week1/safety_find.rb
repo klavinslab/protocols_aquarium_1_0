@@ -6,7 +6,6 @@ class Protocol
   		title "Directions:"
   		note "In each step, you will be asked to find an item in the lab. A picture of the item and a map, with the item's location marked by a yellow dot, are provided. Walk to the location the item, note the color of the dot that is on or near it, and then return to the computer to submit your answer.status = 
   		warning "You will fail this protocol if you enter two or more incorrect answers."
-  		"
   	}
   
   	$task = 0
