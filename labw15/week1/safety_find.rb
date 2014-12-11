@@ -12,7 +12,6 @@ class Protocol
   	$numberWrong = 0
   	
   	while $task == 0 do
-
     	sharps_data = show {
     		title "Where is the sharps container?"
     		note "Its location is B15.215. \nPlease go to the sharps container, note the color of the dot that is on or near it, and then return to the computer. 
@@ -35,101 +34,98 @@ class Protocol
     			image "Sharps_Container"
     		}
     		$numberWrong = $numberWrong + 1
-    		#status = 'Fail - sharps container'
-    		#return { status }
+    		status = 'Fail - sharps container'
+    		return { status }
     	end
     end
 
-    	$task = 0
-    
-  	  while $task == 0 do
-    
-      	fireext_data = show {
-      		title "Where is the fire extinguisher located? "
-      		note "Its location is B16.100. \nLocate the fire extinguisher, note the color of the dot that is on or near it, and then return to the computer. 
-      		\n\nWhat color was the dot associated with the fire extinguisher?"
-      		image "Fire_Extinguisher"
-          select [ "purple", "green", "yellow", "blue"], var: "choice", label: "Please select the correct color", default: 1
-        	}
-          fireext_choice = fireext_data[:choice]
-      
-      	if fireext_choice == 'blue'
-    			$task = 1
-    			show {
-    				title "That is correct!"
-    				note "You have successfully located the fire extinguisher which is used for putting out fires. "
-    			}
-        else
-    			show {
-    				title "That is incorrect."
-     				note "Please return to the fire extinguisher and then answer again."
-    				image "Fire_Extinguisher"
-    			}
-    		  $numberWrong = $numberWrong + 1
-    			#status = 'Fail - fire extinguisher'
-    			#return { status }
-    	  end
-     	end
-    
-    $task = 0
+   	$task = 0
     
     while $task == 0 do
-    
-      	eyewash_data = show {
-      		title "Where is the shower and eyewash station? "
-      		note "Its location is A3.515. \nPlease go to the shower and eyewash station, note the color of the dot that is on or near it, and then return to the computer. 
-      		\n\nWhat color was the dot associated with the shower and eyewash station?"
-      		image "shower-eyewash"
-          select [ "purple", "green", "yellow", "blue"], var: "choice", label: "Please select the correct color", default: 1
-        	}
-          eyewash_choice = eyewash_data[:choice]
-      
-      	if eyewash_choice == 'yellow'
-      		$task = 1
-      		show {
-      			title "That is correct! "
-      			note "You have successfully located the shower and eyewash station which is used to cleanse your eyes or person in case you come in contact with hazardous chemicals or fire. "
-      		}
-        else
-      		show {
-      			title "That is incorrect."
-      			note "Please return to the shower and eyewash station and then answer again."
-      			image "shower-eyewash"
-      		}
-      		$numberWrong = $numberWrong + 1
-      		status = 'Fail - Shower and Eyewash'
-      		return { status }
-      	end
+     	fireext_data = show {
+     		title "Where is the fire extinguisher located? "
+     		note "Its location is B16.100. \nLocate the fire extinguisher, note the color of the dot that is on or near it, and then return to the computer. 
+     		\n\nWhat color was the dot associated with the fire extinguisher?"
+     		image "Fire_Extinguisher"
+        select [ "purple", "green", "yellow", "blue"], var: "choice", label: "Please select the correct color", default: 1
+     	}
+      fireext_choice = fireext_data[:choice]
+  
+     	if fireext_choice == 'blue'
+   			$task = 1
+   			show {
+   				title "That is correct!"
+   				note "You have successfully located the fire extinguisher which is used for putting out fires. "
+   			}
+      else
+   			show {
+   				title "That is incorrect."
+   				note "Please return to the fire extinguisher and then answer again."
+   				image "Fire_Extinguisher"
+   			}
+   		  $numberWrong = $numberWrong + 1
+   			status = 'Fail - fire extinguisher'
+   			return { status }
     	end
+    end
     
     $task = 0
     
     while $task == 0 do
+     	eyewash_data = show {
+    		title "Where is the shower and eyewash station? "
+     		note "Its location is A3.515. \nPlease go to the shower and eyewash station, note the color of the dot that is on or near it, and then return to the computer. 
+     		\n\nWhat color was the dot associated with the shower and eyewash station?"
+     		image "shower-eyewash"
+       	select [ "purple", "green", "yellow", "blue"], var: "choice", label: "Please select the correct color", default: 1
+     	}
+    	eyewash_choice = eyewash_data[:choice]
+      
+      if eyewash_choice == 'yellow'
+      	$task = 1
+      	show {
+      		title "That is correct! "
+      		note "You have successfully located the shower and eyewash station which is used to cleanse your eyes or person in case you come in contact with hazardous chemicals or fire. "
+      	}
+      else
+      	show {
+      		title "That is incorrect."
+      		note "Please return to the shower and eyewash station and then answer again."
+      		image "shower-eyewash"
+      	}
+      	$numberWrong = $numberWrong + 1
+      	status = 'Fail - Shower and Eyewash'
+      	return { status }
+      end
+    end
     
-    	fumehood_data = show {
+    $task = 0
+    
+    while $task == 0 do
+     	fumehood_data = show {
     		title "Where is the fume hood? "
     		note "Its location is A5.615. \nPlease go to the fume hood, note the color of the dot that is on or near it, and then return to the computer. 
     		\n\nWhat color was the dot associated with the fume hood?"
     		image "Fume_Hood"
         select [ "purple", "green", "yellow", "blue"], var: "choice", label: "Please select the correct color", default: 1
-        }
-        fumehood_choice = fumehood_data[:choice]
+      }
+      fumehood_choice = fumehood_data[:choice]
     
-    	if fumehood_choice == 'yellow'
+     	if fumehood_choice == 'yellow'
     		$task = 1
     		show {
     			title "That is correct! "
     			note "You have successfully located the fume hood which is used limit exposure to hazardeous fumes."
     		}
   		else
-       	show {
+      	show {
     			title "That is incorrect."
     			note "Please return to the fume hood and then answer again."
     			image "Fume_Hood"
     		}
     		$numberWrong = $numberWrong + 1
     		status = 'Fail - Fume Hood'
-    	  return { status }
+    	 	return { status }
     	end
     end
     
@@ -137,11 +133,11 @@ class Protocol
     
     while $task == 0 do
     	hsink_data = show {
-    	title "Where is the handwashing sink? "
-    	note "Its location is B2.315. \nPlease go to the handwashing sink, note the color of the dot that is on or near it, and then return to the computer. 
-    	\n\nWhat color was the dot associated with the handwashing sink?"
-    	image "handwashingsink"
-      select [ "purple", "green", "yellow", "blue"], var: "choice", label: "Please select the correct color", default: 1
+    		title "Where is the handwashing sink? "
+    		note "Its location is B2.315. \nPlease go to the handwashing sink, note the color of the dot that is on or near it, and then return to the computer. 
+    		\n\nWhat color was the dot associated with the handwashing sink?"
+    		image "handwashingsink"
+      	select [ "purple", "green", "yellow", "blue"], var: "choice", label: "Please select the correct color", default: 1
       }
       hsink_choice = hsink_data[:choice]
     
@@ -151,8 +147,8 @@ class Protocol
     			title "That is correct! "
     			note "You have successfully located the sink used for washing your hands."
     		}
-      else
-      	show {
+			else
+     		show {
     			title "That is incorrect."
     			note "Please return to the handwashing sink and then answer again."
     			image "handwashingsink"
@@ -163,30 +159,30 @@ class Protocol
     	end
     end
   
-  	$task = 0
+	 $task = 0
   
   	while $task == 0 do
-    	biohaz_data = show {
-  		title "Where are the biohazard boxes? "
-  		note "Their location is B15.400. \nPlease go to the biohazard boxes, note the color of the dot that is on or near them, and then return to the computer. 
-  		\n\nWhat color was the dot associated with the biohazard boxes?"
-  		image "Biohazard_Box"
-      select [ "purple", "green", "yellow", "blue"], var: "choice", label: "Please select the correct color", default: 1
+  		biohaz_data = show {
+  			title "Where are the biohazard boxes? "
+  			note "Their location is B15.400. \nPlease go to the biohazard boxes, note the color of the dot that is on or near them, and then return to the computer. 
+  			\n\nWhat color was the dot associated with the biohazard boxes?"
+  			image "Biohazard_Box"
+      	select [ "purple", "green", "yellow", "blue"], var: "choice", label: "Please select the correct color", default: 1
       }
-      biohaz_choice = biohaz_data[:choice]
+     	biohaz_choice = biohaz_data[:choice]
   
-    	if biohaz_choice == 'blue'
-    		$task = 1
-    		show {
-    			title "That is correct! "
-    		  note "You have successfully located one of the biohazard boxes which are used for disposing of biohazardous materials."
-    		}
-    	else
-    		show {
-    			title "That is incorrect."
-    			note "Please return to the biohazard boxes and then answer again."
-    			image "Biohazard_Box"
-    		}
+	    if biohaz_choice == 'blue'
+	    	$task = 1
+	    	show {
+	    		title "That is correct! "
+	    	  note "You have successfully located one of the biohazard boxes which are used for disposing of biohazardous materials."
+	    	}
+	    else
+	    	show {
+	    		title "That is incorrect."
+	    		note "Please return to the biohazard boxes and then answer again."
+	    		image "Biohazard_Box"
+	    	}
     		$numberWrong = $numberWrong + 1
     		status = 'Fail - Biohazard boxes'
     		return { status }
@@ -202,26 +198,26 @@ class Protocol
     		\n\nWhat color was the dot associated with the dishwashing sink?"
     		image "dishwashingsink"
         select [ "purple", "green", "yellow", "blue"], var: "choice", label: "Please select the correct color", default: 1
-        }
-        dsink_choice = dsink_data[:choice]
+      }
+      dsink_choice = dsink_data[:choice]
   
-  	if dsink_choice == 'green'
-			$task = 1
-			show {
-				title "That is correct! "
-				note "You have successfully located the sink which is used for washing dishes."
-			}
-		else
-			show {
-				title "That is incorrect."
-				note "Please return to the dishwashing sink and then answer again."
-				image "dishwashingsink"
-			}
-			$numberWrong = $numberWrong + 1
-			status = 'Fail - Dishwashing sink'
-			return { status }
-  	end
-  end
+  		if dsink_choice == 'green'
+				$task = 1
+				show {
+					title "That is correct! "
+					note "You have successfully located the sink which is used for washing dishes."
+				}
+			else
+				show {
+					title "That is incorrect."
+					note "Please return to the dishwashing sink and then answer again."
+					image "dishwashingsink"
+				}
+				$numberWrong = $numberWrong + 1
+				status = 'Fail - Dishwashing sink'
+				return { status }
+  		end
+		end
   
   	$task = 0
   
