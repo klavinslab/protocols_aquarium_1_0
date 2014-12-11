@@ -1,5 +1,5 @@
 place safety_find
-  protocol: "labw14/week1/safety_find.pdl"
+  protocol: "labw15/week1/protocols/safety_find.rb"
   group: aquarium_user
   marked: true
   start: now()
@@ -7,42 +7,42 @@ place safety_find
 end
 
 place sterile_technique
-  protocol: "labw14/week1/sterile_technique.pdl"
+  protocol: "labw15/week1/protocols/sterile_technique.rb"
   group: aquarium_user
   start: now()
   window: minutes(1)
 end
 
 place pipetting_intro
-  protocol: "labw14/week1/pipetting_intro.pdl"
+  protocol: "labw15/week1/protocols/pipetting_intro.rb"
   group: aquarium_user
   start: now()
   window: minutes(1)
 end
 
 place large_vol_exercise
-  protocol: "labw14/week1/large_vol_exercise.pdl"
+  protocol: "labw15/week1/protocols/large_vol_exercise.rb"
   group: aquarium_user
   start: now()
   window: minutes(1)
 end
 
 place small_vol_exercise
-  protocol: "labw14/week1/small_vol_exercise.pdl"
+  protocol: "labw15/week1/protocols/small_vol_exercise.rb"
   group: aquarium_user
   start: now()
   window: minutes(1)
 end
 
 place calc_pipetting_error_small
-  protocol: "labw14/week1/calc_pipetting_error.pdl"
+  protocol: "labw15/week1/protocols/calc_pipetting_error.rb"
   group: aquarium_user
   start: now()
   window: minutes(1)
 end
 
 place calc_pipetting_error_large
-  protocol: "labw14/week1/calc_pipetting_error.pdl"
+  protocol: "labw15/week1/protocols/calc_pipetting_error.rb"
   group: aquarium_user
   start: now()
   window: minutes(1)
