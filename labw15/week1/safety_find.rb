@@ -35,7 +35,7 @@ class Protocol
     		}
     		$numberWrong = $numberWrong + 1
     		status = 'Fail - sharps container'
-    		return { status }
+    		return status
     	end
     end
 
@@ -65,7 +65,7 @@ class Protocol
    			}
    		  $numberWrong = $numberWrong + 1
    			status = 'Fail - fire extinguisher'
-   			return { status }
+   			return status
     	end
     end
     
@@ -95,7 +95,7 @@ class Protocol
       	}
       	$numberWrong = $numberWrong + 1
       	status = 'Fail - Shower and Eyewash'
-      	return { status }
+      	return status
       end
     end
     
@@ -125,7 +125,7 @@ class Protocol
     		}
     		$numberWrong = $numberWrong + 1
     		status = 'Fail - Fume Hood'
-    	 	return { status }
+    	 	return status
     	end
     end
     
@@ -155,7 +155,7 @@ class Protocol
     		}
     		$numberWrong = $numberWrong + 1
     		status = 'Fail - handwashing sink'
-    		return { status }
+    		return status
     	end
     end
   
@@ -185,7 +185,7 @@ class Protocol
 	    	}
     		$numberWrong = $numberWrong + 1
     		status = 'Fail - Biohazard boxes'
-    		return { status }
+    		return status
     	end
   	end
   
@@ -215,7 +215,7 @@ class Protocol
 				}
 				$numberWrong = $numberWrong + 1
 				status = 'Fail - Dishwashing sink'
-				return { status }
+				return status
   		end
 		end
   
@@ -245,7 +245,7 @@ class Protocol
   			}
   			$numberWrong = $numberWrong + 1
   			status = 'Fail - Latex Gloves'
-  			return { status }
+  			return status
     	end
   	end
   
@@ -275,7 +275,7 @@ class Protocol
     		}
     		$numberWrong = $numberWrong + 1
     		status = 'Fail - Heat Resistant Gloves'
-    		return { status }
+    		return status
     	end
     end
   
@@ -305,7 +305,7 @@ class Protocol
     		}
     		$numberWrong = $numberWrong + 1
     		status = 'Fail - Paper Towels'
-    		return { status }
+    		return status
     	end
     end
   
@@ -336,7 +336,7 @@ class Protocol
     		}
     		$numberWrong = $numberWrong + 1
     		status = 'Fail - goggles'
-    		return { status }
+    		return status
     	end
     end
   
@@ -366,7 +366,7 @@ class Protocol
     		}
     		$numberWrong = $numberWrong + 1
     		status = 'Fail - first aid kit'
-    		return { status }
+    		return status
     	end
     end
   
@@ -376,13 +376,13 @@ class Protocol
   			note "Your score is unsatisfactory. You will have to retake this protocol. "
   		}
   		status = 'Fail'
-  		return { status }
+  		return status
   	else
   		show { 
     		title "Congratulations! You have passed this protocol."
   		}
   		status = 'Pass'
-  		return { status }
+  		return status
   	end
   	
   end
