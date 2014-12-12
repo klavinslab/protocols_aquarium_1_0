@@ -26,7 +26,7 @@ class Protocol
   		
   		$numberWrong = 0
 
-  		object.each do |i|
+  		objects.each do |i|
   			
   			$pass = 0
 	     	
