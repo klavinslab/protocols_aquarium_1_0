@@ -69,12 +69,14 @@ class Protocol
       }
       status = "Fail"
       return status
+      return $numberWrong
     else
       show { 
         title "Congratulations! You have passed this protocol."
       }
       status = "Pass"
       return status
+      return $numberWrong
     end
     
   end
