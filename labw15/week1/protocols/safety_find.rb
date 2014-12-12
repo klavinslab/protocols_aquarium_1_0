@@ -20,7 +20,7 @@ class Protocol
                 { name: "biohazard boxes", location: "B15.400", color: "blue", imgfile: "Biohazard_Box", default: 4, plural: 2, status: nil },
                 { name: "dish-washing sink", location: "A8.315", color: "green", imgfile: "dishwashingsink", default: 2, plural: 1, status: nil },
                 { name: "latex gloves", location: "B14.320", color: "purple", imgfile: "latexgloves", default: 1, plural: 2, status: nil },
-                { name: "heat resistant gloves", location: "B15.320", color: "yellow", imgfile: "Heat_Resistance_Gloves", default: 2, plural: 1, status: nil },
+                { name: "heat resistant gloves", location: "B15.320", color: "yellow", imgfile: "Heat_Resistance_Gloves", default: 2, plural: 2, status: nil },
                 { name: "paper towels", location: "B15.520", color: "blue", imgfile: "papertowels", default: 4, plural: 2, status: nil },
                 { name: "goggles", location: "B7.235", color: "purple", imgfile: "goggles", default: 1, plural: 2, status: nil },
                 { name: "first-aid kit", location: "B7.500", color: "green", imgfile: "first_aid_kit_with_map", default: 2, plural: 1, status: nil }
@@ -68,14 +68,12 @@ class Protocol
         note "Your score is unsatisfactory. You will have to retake this protocol. "
       }
       status = "Fail"
-      return status
       return $numberWrong
     else
       show { 
         title "Congratulations! You have passed this protocol."
       }
       status = "Pass"
-      return status
       return $numberWrong
     end
     
