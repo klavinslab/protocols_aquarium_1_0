@@ -8,20 +8,20 @@ class Protocol
   		warning "You will fail this protocol if you enter two or more incorrect answers."
   	}
 
-  	objects = [ { name: "sharps container", location: "B15.215", color: "green", imgfile: "Sharps_Container" },
-  							{ name: "fire extinguisher", location: "B16.100", color: "blue", imgfile: "Fire_Extinguisher" },
-  							{ name: "shower/eyewash station", location: "A3.515", color: "yellow", imgfile: "shower-eyewash" },
-  							{ name: "sharps container", location: "B15.215", color: "green", imgfile: "Sharps_Container" },
-  							{ name: "fume hood", location: "A6.615", color: "yellow", imgfile: "Fume_Hood" },
-  							{ name: "sharps container", location: "B15.215", color: "green", imgfile: "Sharps_Container" },
-  							{ name: "hand-washing sink", location: "B2.315", color: "purple", imgfile: "handwashingsink" },
-  							{ name: "biohazard box", location: "B15.400", color: "blue", imgfile: "Biohazard_Box" },
-  							{ name: "dish-washing sink", location: "A8.315", color: "green", imgfile: "dishwashingsink" },
-  							{ name: "latex gloves", location: "B14.320", color: "purple", imgfile: "latexgloves" },
-  							{ name: "heat resistant gloves", location: "B15.320", color: "yellow", imgfile: "Heat_Resistance_Gloves" },
-  							{ name: "paper towels", location: "B15.520", color: "blue", imgfile: "papertowels" },
-  							{ name: "goggles", location: "B7.235", color: "purple", imgfile: "goggles" },
-  							{ name: "first-aid kit", location: "B7.500", color: "green", imgfile: "first_aid_kit_with_map" }
+  	objects = [ { name: "sharps container", location: "B15.215", color: "green", imgfile: "Sharps_Container", default: 2 },
+  							{ name: "fire extinguisher", location: "B16.100", color: "blue", imgfile: "Fire_Extinguisher", default: 4 },
+  							{ name: "shower/eyewash station", location: "A3.515", color: "yellow", imgfile: "shower-eyewash", default: 3 },
+  							{ name: "sharps container", location: "B15.215", color: "green", imgfile: "Sharps_Container", default: 2 },
+  							{ name: "fume hood", location: "A6.615", color: "yellow", imgfile: "Fume_Hood", default: 3 },
+  							{ name: "sharps container", location: "B15.215", color: "green", imgfile: "Sharps_Container", default: 2 },
+  							{ name: "hand-washing sink", location: "B2.315", color: "purple", imgfile: "handwashingsink", default: 1 },
+  							{ name: "biohazard box", location: "B15.400", color: "blue", imgfile: "Biohazard_Box", default: 4 },
+  							{ name: "dish-washing sink", location: "A8.315", color: "green", imgfile: "dishwashingsink", default: 2 },
+  							{ name: "latex gloves", location: "B14.320", color: "purple", imgfile: "latexgloves", default: 1 },
+  							{ name: "heat resistant gloves", location: "B15.320", color: "yellow", imgfile: "Heat_Resistance_Gloves", default: 3 },
+  							{ name: "paper towels", location: "B15.520", color: "blue", imgfile: "papertowels", default: 4 },
+  							{ name: "goggles", location: "B7.235", color: "purple", imgfile: "goggles", default: 1 },
+  							{ name: "first-aid kit", location: "B7.500", color: "green", imgfile: "first_aid_kit_with_map", default: 2 }
   		]
   		
   		$numberWrong = 0
@@ -34,12 +34,12 @@ class Protocol
 	    		
 	    		data = show {
 	    		title "Where is/are the #{i[:name]}?"
-	    		note "The location is #{i[:location]}. \nPlease go to the #{i[:name]} note the color of the dot that is on or near, and then return to the computer. 
+	    		note "The location is #{i[:location]}. \nPlease go to the #{i[:name]} and note the color of the dot that is on or near the object, and then return to the computer. 
 	    		\n\nWhat color was the dot associated with the #{i[:name]}? "
 	    		image "#{i[:imgfile]}"
-	        select [ "purple", "green", "yellow", "blue"], var: "choice", label: "Please select the correct color", default: 1
+	        select [ "purple", "green", "yellow", "blue"], var: "choice", label: "Please select the correct color", default: i[:default]
 	      	}
-	      	choice = firstaid_data[:choice]
+	      	choice = data[:choice]
 	  
 		    	if choice == "#{i[:color]}"
 		  			$pass = 1
