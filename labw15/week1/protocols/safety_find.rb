@@ -33,7 +33,7 @@ class Protocol
          while $pass == 0 do
           
           data = show {
-          title "Where #{pluralize.is(i[:plural])} the #{i[:name]}?"
+          title "Where #{is.pluralize(i[:plural])} the #{i[:name]}?"
           note "The location is #{i[:location]}. \nPlease go to the #{i[:name]} and note the color of the dot that is on or near the object, and then return to the computer. 
           \n\nWhat color was the dot associated with the #{i[:name]}? "
           select [ "purple", "green", "yellow", "blue"], var: "choice", label: "Please select the correct color", default: i[:default]
