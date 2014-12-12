@@ -14,7 +14,7 @@ class Protocol
                 { name: "sharps container", location: "B15.215", color: "green", imgfile: "Sharps_Container", default: 2, plural: 1, status: nil },
                 { name: "fume hood", location: "A6.615", color: "yellow", imgfile: "Fume_Hood", default: 3, plural: 1, status: nil },
                 { name: "sharps container", location: "B15.215", color: "green", imgfile: "Sharps_Container", default: 2, plural: 1, status: nil },
-                { name: "hand-washing sink", location: "B2.315", color: "purple", imgfile: "handwashingsink", plural: 1 default: 1, plural: 1, status: nil },
+                { name: "hand-washing sink", location: "B2.315", color: "purple", imgfile: "handwashingsink", default: 1, plural: 1, status: nil },
                 { name: "biohazard boxes", location: "B15.400", color: "blue", imgfile: "Biohazard_Box", default: 4, plural: 2, status: nil },
                 { name: "dish-washing sink", location: "A8.315", color: "green", imgfile: "dishwashingsink", default: 2, plural: 1, status: nil },
                 { name: "latex gloves", location: "B14.320", color: "purple", imgfile: "latexgloves", default: 1 plural: 2, status: nil },
