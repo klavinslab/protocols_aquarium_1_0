@@ -54,8 +54,8 @@ class Protocol
 		    			image "#{i[:imgfile]}"
 		    		}
 		    		$numberWrong = $numberWrong + 1
-		    		status = "Fail - #{i[:name]}"
-		    		return status
+		    		#status = "Fail - #{i[:name]}"
+		    		#return status
 		    	end
 		    	
 	    	end
