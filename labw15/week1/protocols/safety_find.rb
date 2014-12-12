@@ -1,5 +1,9 @@
 #information "This protocol is a teaching tool for locating safety items in the laboratory."
 
+Inflector.inflections do |inflection|
+  inflection.irregular "is", "are"
+end
+
 class Protocol
   def main
     show {
@@ -11,9 +15,7 @@ class Protocol
     objects = [ { name: "sharps container", location: "B15.215", color: "green", imgfile: "Sharps_Container", default: 2, plural: 1, status: nil },
                 { name: "fire extinguisher", location: "B16.100", color: "blue", imgfile: "Fire_Extinguisher", default: 4, plural: 1, status: nil },
                 { name: "shower/eyewash station", location: "A3.515", color: "yellow", imgfile: "shower-eyewash", default: 3, plural: 1, status: nil },
-                { name: "sharps container", location: "B15.215", color: "green", imgfile: "Sharps_Container", default: 2, plural: 1, status: nil },
                 { name: "fume hood", location: "A6.615", color: "yellow", imgfile: "Fume_Hood", default: 3, plural: 1, status: nil },
-                { name: "sharps container", location: "B15.215", color: "green", imgfile: "Sharps_Container", default: 2, plural: 1, status: nil },
                 { name: "hand-washing sink", location: "B2.315", color: "purple", imgfile: "handwashingsink", default: 1, plural: 1, status: nil },
                 { name: "biohazard boxes", location: "B15.400", color: "blue", imgfile: "Biohazard_Box", default: 4, plural: 2, status: nil },
                 { name: "dish-washing sink", location: "A8.315", color: "green", imgfile: "dishwashingsink", default: 2, plural: 1, status: nil },
