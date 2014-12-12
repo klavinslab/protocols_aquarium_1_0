@@ -1,6 +1,6 @@
 #information "This protocol is a teaching tool for locating safety items in the laboratory."
 
-Inflector.inflections do |inflection|
+ActiveSupport::Inflector.inflections do |inflection|
   inflection.irregular "is", "are"
 end
 
