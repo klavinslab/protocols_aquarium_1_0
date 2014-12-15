@@ -68,13 +68,13 @@ class Protocol
         note "Your score is unsatisfactory. You will have to retake this protocol. "
       }
       status = "Fail"
-      return $numberWrong
+      return {numberWrong: $numberWrong}
     else
       show { 
         title "Congratulations! You have passed this protocol."
       }
       status = "Pass"
-      return $numberWrong
+      return {numberWrong: $numberWrong}
     end
     
   end
