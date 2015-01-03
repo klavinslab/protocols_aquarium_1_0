@@ -8,7 +8,7 @@ argument
 end
 
 place transformation
-  protocol: "aqualib:workflows/ecoli/050_ecoli_transformation_test.rb"
+  protocol: "aqualib:workflows/ecoli/050_ecoli_transformation.rb"
   group: group
   argument
     debug_mode: debug_mode
