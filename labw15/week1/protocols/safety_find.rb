@@ -26,13 +26,13 @@ class Protocol
                 { name: "first-aid kit", location: "B7.500", color: "green", imgfile: "first_aid_kit_with_map", default: 2, plural: 1, status: nil }
       ]
       
-      $numberWrong = 0
+      numberWrong = 0
 
       objects.each do |i|
         
-        $pass = 0
+        pass = 0
          
-         while $pass == 0 do
+         while pass == 0 do
           
           data = show {
           title "Where #{'is'.pluralize(i[:plural])} the #{i[:name]}?"
@@ -44,7 +44,7 @@ class Protocol
           choice = data[:choice]
     
           if choice == "#{i[:color]}"
-            $pass = 1
+            pass = 1
             show {
               title "That is correct! "
               note "You have successfully located the #{i[:name]} in the lab."
@@ -55,26 +55,26 @@ class Protocol
               note "Please return to the #{i[:name]} and then answer again."
               image "#{i[:imgfile]}"
             }
-            $numberWrong = $numberWrong + 1
+            numberWrong = numberWrong + 1
             i[:status] = "Fail - #{i[:name]}"
           end
           
         end
     end
     
-    if $numberWrong > 1
+    if numberWrong > 1
       show {
         title "You have failed this protocol. "
         note "Your score is unsatisfactory. You will have to retake this protocol. "
       }
       status = "Fail"
-      return {numberWrong: $numberWrong}
+      return {numberWrong: numberWrong}
     else
       show { 
         title "Congratulations! You have passed this protocol."
       }
       status = "Pass"
-      return {numberWrong: $numberWrong}
+      return {numberWrong: numberWrong}
     end
     
   end
