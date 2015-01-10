@@ -15,7 +15,7 @@ class Protocol
 
     show {
       title "Prepare #{overnights.length} 1.5 mL centrifuge tubes"
-      note: "place #{overnights.length} 1.ml centrifuge tubes in a a rack and 
+      note "place #{overnights.length} 1.ml centrifuge tubes in a a rack and 
              label them 1 through #{overnights.length}"
     }
 
