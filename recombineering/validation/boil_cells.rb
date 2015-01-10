@@ -1,15 +1,9 @@
+needs "protocols/recombineering/lib/ctutility"
+
 class Protocol
-  def take_by_id (items_list,interactive = false)
-    taken = []
-    items_list.uniq.each do |an_id|
-      f = find(:item, id: an_id)
-      if f.length == 1
-        taken.concat f 
-      end
-      #TODO: error checking for taknig items that don't exist
-    end
-    take taken, interactive: interactive
-    return taken
+  include CTUtility
+  def debug
+    true
   end
 
   def arguments
@@ -52,25 +46,33 @@ class Protocol
       nwash = nwash - 1
     end
 
+    n_stripwell = overnights.length/12+1
+    current_SW = 0
+    filled_SWs = []
+    
+    #move overnights to a stripwell
+    filled_SWs = produce spread overnights, "Stripwell",1,12
+
     show {
       title "Transfer to a PCR strip well tube."
       note "transfer 100 &micro;L from tubes 1-#{overnights.length} to wells 
         1-#{overnights.length} marking them appropriatly and using additional
-        strips if necessary.  Throw out the centrifuge tubes and remaining cells
-        once you're done with this step."
-      warning "It is important to transfer 1 to 1, 2 to 2 so samples don't get confused"
+        strips if necessary.  Throw out the centrifuge tubes and remaining 
+        cells once you're done with this step."
+      warning "It is important to transfer 1 to 1, 2 to 2 so samples don't 
+        get confused"
     }
     show {
       title "Boil cells"
       note "Place the strip wells into a free thermocycler and find a protocol 
           labeled boil.  Adjust parameters to 95C and 5 min if necessary."
-      check "while you wait, label #{overnights.length} new 1.5 mL centrifuge tubes 
-          1-#{overnights.length}"
+      check "while you wait, label #{overnights.length} new 1.5 mL centrifuge 
+        tubes 1-#{overnights.length}"
     }
     show {
       title "Transfer back to centrifuge tubes."
-      note "Transfer the entire contents (100 &micro;L) of each strip well into 
-          the tubes you just labeled."
+      note "Transfer the entire contents (100 &micro;L) of each strip well 
+        into the tubes you just labeled."
     }
   end
 end
