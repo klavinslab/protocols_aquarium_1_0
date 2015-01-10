@@ -10,8 +10,8 @@ class Protocol
     { overnight_ids: [0] }
   end
   def main
-    ON_ids = input[:overnight_ids]
-    overnights= take_by_id(ON_ids,true) #take overnights
+    oNight_ids = input[:overnight_ids]
+    overnights= take_by_id(oNight_ids,true) #take overnights
 
     show {
       title "Prepare #{overnights.length} 1.5 mL centrifuge tubes"
