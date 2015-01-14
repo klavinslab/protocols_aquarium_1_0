@@ -31,7 +31,7 @@ while i<n
   thisConc = rna_conc_array[i]
   rawVolRNA = ceil((1000/thisConc)*10)
   #volRNA = (mod(rawVolRNA, 10)*0.1) + rawVolRNA/10
-  molec_wat = (15-volRNA)
+  molec_wat = (15-rawVolRNA)
   thisRNA = rna_iso_array[i]
 
   step 
