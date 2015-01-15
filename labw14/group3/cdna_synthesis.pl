@@ -30,15 +30,15 @@ i = 0
 while i<n
   thisConc = rna_conc_array[i]
   rawVolRNA = ceil((1000/thisConc)*10)
-  volRNA = (mod(rawVolRNA, 10)*0.1) + rawVolRNA/10
-  molec_wat = (15-volRNA)
+  #volRNA = (mod(rawVolRNA, 10)*0.1) + rawVolRNA/10
+  molec_wat = (15-rawVolRNA)
   thisRNA = rna_iso_array[i]
 
   step 
     description: "Prepare Reaction"
     check:"Pipet 4 µL of 5x iScript reaction mix into the labeled PCR tube."
     check: "Pipet 1 µL of iScript reverse transcriptase into the labeled PCR tube"
-    check: "Pipet %{volRNA} µL of RNA template %{thisRNA} into the labeled PCR tube"
+    check: "Pipet %{rawVolRNA} µL of RNA template %{thisRNA} into the labeled PCR tube"
     check: "Pipet %{molec_wat} µL of Nuclease-free water into the labeled PCR tube"
     check: "Use the tip to gently mix."
     note: "Be careful to pipette into the liquid, not the side of the tube."
