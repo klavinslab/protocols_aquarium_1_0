@@ -71,9 +71,7 @@ class Protocol
     load_samples(
       [ "Template, .5 µL", "Forward Primer, .5 µL", "Reverse Primer, .5 µL" ],
       [  lysates, fp , rp ],
-      stripwells ) {
-        warning "Use a fresh pipette tip for each transfer."
-      }
+      stripwells ) {}
 
     # Add master mix
     show {
@@ -83,8 +81,6 @@ class Protocol
                each of wells " + sw.non_empty_string + " of stripwell #{sw}."
       end
       separator
-      warning "USE A NEW PIPETTE TIP FOR EACH WELL AND PIPETTE UP 
-               AND DOWN TO MIX"
     }
 
     release [phusion_stock_item], interactive: true, method: "boxes"
