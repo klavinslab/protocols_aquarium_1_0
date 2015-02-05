@@ -36,9 +36,6 @@ class Protocol
                percentage: 0.8,
                volume:10}.merge(io_hash)
 
-    show {
-      title "H #{io_hash.to_s}"
-    }
     raise "inconsistant input lengths" unless (
       io_hash[:f_primers].length == io_hash[:r_primers].length &&
       io_hash[:r_primers].length == io_hash[:overnight_ids].length )
@@ -65,11 +62,12 @@ class Protocol
     end
 
     oNight_ids = io_hash[:overnight_ids]
-    overnights= take_by_id(oNight_ids,true) #take overnights
+    #take overnights
+    overnights= take_by_id oNight_ids, interactive: true
 
     show {
       title "Prepare #{overnights.length} 1.5 mL centrifuge tubes"
-      note "place #{overnights.length} 1.ml centrifuge tubes in a a rack and 
+      note "place #{overnights.length} 1 ml centrifuge tubes in a a rack and 
              label them 1 through #{overnights.length}"
     }
 

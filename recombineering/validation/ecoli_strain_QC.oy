@@ -1,3 +1,13 @@
+# debug io_hash json:
+#    {  
+#      "overnight_ids": [14947,14948,13992,13993],
+#      "f_primers": [10774,10774,10775,10774],
+#      "r_primers": [10778,10778,10779,10778], 
+#      "debug_mode": "yes"
+#    }
+
+
+
 argument
   debug_mode: string, "Yes or No"
   group: group, "choose the group to assign this metacol"

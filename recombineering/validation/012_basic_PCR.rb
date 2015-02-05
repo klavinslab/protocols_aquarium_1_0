@@ -44,8 +44,8 @@ class Protocol
     lysate_ids = io_hash[:lysate_ids]
     fp_ids = io_hash[:f_primers]
     rp_ids = io_hash[:r_primers]
-    lysates = take_by_id(lysate_ids,true)
-    primers = take_by_id(fp_ids+rp_ids,true)
+    lysates = take_by_id lysate_ids, interactive: true, method: "boxes"
+    primers = take_by_id fp_ids+rp_ids, interactive:true, method: "boxes"
     fp = fp_ids.collect{|id| primers.select{|p| p.id==id}[0]}
     rp = rp_ids.collect{|id| primers.select{|p| p.id==id}[0]}
 
