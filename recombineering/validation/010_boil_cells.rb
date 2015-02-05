@@ -37,7 +37,7 @@ class Protocol
                volume:10}.merge(io_hash)
 
     show {
-      title: "H #{io_hash.to_s}"
+      title "H #{io_hash.to_s}"
     }
     raise "inconsistant input lengths" unless (
       io_hash[:f_primers].length == io_hash[:r_primers].length &&
