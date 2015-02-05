@@ -20,6 +20,7 @@ class Protocol
       io_hash = input
       io_hash.delete(:io_hash) #clean up to prevent future mistakes
     else
+      io_hash = input[:io_hash]
       io_hash[:overnight_ids]=
         (io_hash[:overnight_ids] || []) + (input[:overnight_ids] || [])
       io_hash[:f_primers] = (io_hash[:f_primers] || []) + 
