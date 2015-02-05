@@ -5,7 +5,7 @@ argument
   overnights: sample("E coli strain") array, "overnights to test"
   f_pri: sample("Primer") array, "forward assay primer"
   r_pri: sample("Primer") array, "reverse assay primer"
-  enzyme_id: sample("Enzyme"), "Physion HF MM"
+#  enzyme_id: sample("Enzyme"), "Physion HF MM"
 end
 
 place parse_args
@@ -13,7 +13,7 @@ place parse_args
 end
 
 place boil_cells
-	protocol: base_dir+"boil_cells.pl"	
+	protocol: base_dir+"boil_cells.rb"	
   argument
     overnights: overnights
   end
