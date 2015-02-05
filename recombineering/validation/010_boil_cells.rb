@@ -21,9 +21,11 @@ class Protocol
       io_hash.delete(:io_hash) #clean up to prevent future mistakes
     else
       io_hash[:overnight_ids]=
-        (io_hash[:overnight_ids] || []) + input[:overnight_ids]
-      io_hash[:f_primers] = (io_hash[:f_primers] || []) + input[:f_primers]
-      io_hash[:r_primers] = (io_hash[:r_primers] || []) + input[:r_primers]
+        (io_hash[:overnight_ids] || []) + (input[:overnight_ids] || [])
+      io_hash[:f_primers] = (io_hash[:f_primers] || []) + 
+                              ( input[:f_primers] || [])
+      io_hash[:r_primers] = (io_hash[:r_primers] || []) + 
+                              ( input[:r_primers] || [])
     end
 
     #some setup for the eventual gel.
