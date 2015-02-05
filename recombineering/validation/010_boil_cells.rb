@@ -2,15 +2,63 @@ needs "protocols/recombineering/lib/ctutility"
 
 class Protocol
   include CTUtility
-  def debug
-    true
-  end
 
   def arguments
-    { overnight_ids: [14947,14948,13992,13993] }
+    { 
+      io_hash: {},
+      overnight_ids: [14947,14948,13992,13993],
+      f_primers: [10774,10774,10775,10774],
+      r_primers: [10778,10778,10779,10778], 
+      debug_mode: "yes"
+    }
   end
+
   def main
-    oNight_ids = input[:overnight_ids]
+    #if no io hash use inputs.
+    #if there is an io hash, merge inputs
+    if (input[:io_hash]==nil) || input[:io_hash].empty?
+      io_hash = input
+      io_hash.delete(:io_hash) #clean up to prevent future mistakes
+    else
+      io_hash[:overnight_ids]=
+        (io_hash[:overnight_ids] || []) + input[:overnight_ids]
+      io_hash[:f_primers] = (io_hash[:f_primers] || []) + input[:f_primers]
+      io_hash[:r_primers] = (io_hash[:r_primers] || []) + input[:r_primers]
+    end
+
+    #some setup for the eventual gel.
+    io_hash = {comb_1: "10 thin", 
+               comb_2: "10 thin", 
+               volume: 10,
+               percentage: 0.8,
+               volume:10}.merge(io_hash)
+
+    raise "inconsistant input lengths" unless (
+      io_hash[:f_primers].length == io_hash[:r_primers].length &&
+      io_hash[:r_primers].length == io_hash[:overnight_ids].length )
+
+    #actually fuck tasks right now.  There's a lot of implicit assumptions
+    #that go with merging data from tasks (like only one metacol is going at
+    # any given time) that I'll deal with later
+    ##merge in anything from tasks
+    #e_QC_tasks = find(:task,{task_prototype:{name: "E coli Strain QC"}})
+    #overnight_tasks = e_QC_tasks.select{|t| t.status.downcase == "overnight"}
+    #show {
+    #  title "h #{overnight_tasks[0].simple_spec.to_s}"
+    #}
+    #overnight_tasks.each do |t| 
+    #  io_hash[:overnight_ids].concat(t.simple_spec[:over_night_ids])
+    #end
+
+
+
+    if io_hash[:debug_mode].downcase == "yes"
+      def debug
+        true
+      end
+    end
+
+    oNight_ids = io_hash[:overnight_ids]
     overnights= take_by_id(oNight_ids,true) #take overnights
 
     show {
@@ -97,7 +145,10 @@ class Protocol
 
     genomes = []
     overnights.each do |x|
-      genomes.append produce x.sample.make_item "Genome Prep"
+      gp = produce x.sample.make_item "Genome Prep"
+      gp.datum = {from:x.id}
+      gp.save
+      genomes.append gp
     end
 
     tube_ids = genomes.map {|x| x.id.to_s}
@@ -126,6 +177,17 @@ class Protocol
     }
 
     release genomes, interactive: true
+
+    #generate a genome prep list that's coherent with the input list 
+    #(duplicates allowed and in the correct order so they can be matched up
+    # with the primer list)
+    gp_list = oNight_ids.collect { |id| 
+      (genomes.select { |g| g.datum[:from] == id}[0]).id
+    }
+
+    io_hash[:lysate_ids] = gp_list
+
+    return {io_hash: io_hash}
 
   end
 end
