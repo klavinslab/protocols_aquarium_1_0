@@ -26,10 +26,13 @@ class Protocol
       io_hash = input
       io_hash.delete(:io_hash) #clean up to prevent future mistakes
     else
+      io_hash = input[:io_hash]
       io_hash[:lysate_ids]=
-        (io_hash[:lysate_ids] || []) + input[:lysate_ids]
-      io_hash[:f_primers] = (io_hash[:f_primers] || []) + input[:f_primers]
-      io_hash[:r_primers] = (io_hash[:r_primers] || []) + input[:r_primers]
+        (io_hash[:lysate_ids] || []) + (input[:lysate_ids] || [])
+      io_hash[:f_primers] = (io_hash[:f_primers] || []) + 
+                              (input[:f_primers] || [])
+      io_hash[:r_primers] = (io_hash[:r_primers] || []) + 
+                              (input[:r_primers] || [])
     end
 
     if io_hash[:debug_mode].downcase == "yes"
