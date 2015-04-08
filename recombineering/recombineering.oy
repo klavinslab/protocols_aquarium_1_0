@@ -27,7 +27,7 @@ place make_log_phase
   argument
     params: params
   end
-  group: technician
+  group: "technicians" 
   start: now()
 end
 
