@@ -42,7 +42,7 @@ place pcr
 end
 
 place pour_gel
-  protocol: "aqualib:workflows/ecoli/015_pour_gel.rb"
+  protocol: "aqualib:workflows/ecoli/pour_gel.rb"
   group: group
   marked: false
   start: now()
@@ -50,7 +50,7 @@ place pour_gel
 end
 
 place run_gel
-  protocol: "aqualib:workflows/ecoli/020_run_gel.rb"
+  protocol: "aqualib:workflows/ecoli/run_gel.rb"
   group: group
   marked: false
   start: now()
@@ -58,7 +58,7 @@ place run_gel
 end
 
 place image_gel
-  protocol: "aqualib:workflows/ecoli/025_image_gel.rb"
+  protocol: "aqualib:workflows/ecoli/image_gel.rb"
   group: group
   marked: false
   start: now()
