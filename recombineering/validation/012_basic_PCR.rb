@@ -11,7 +11,7 @@ class Protocol
   def arguments
     {
       io_hash: {},
-      lysate_ids: [32378,32379,32380,32381],
+      lysate_ids: [32378,14498,32380,14498],
       f_primers: [10774,10774,10775,10774],
       r_primers: [10778,10778,10779,10778],
       debug_mode: "No"
@@ -68,9 +68,11 @@ class Protocol
       end
     }
 
+    #take care of duplicate templates.
+    disp_ids = lysate_ids.map {|lid| lysates.find {|x| x.id == lid}}
     load_samples(
       [ "Template, .5 µL", "Forward Primer, .5 µL", "Reverse Primer, .5 µL" ],
-      [  lysates, fp , rp ],
+      [  disp_ids, fp , rp ],
       stripwells ) {}
 
     # Add master mix
