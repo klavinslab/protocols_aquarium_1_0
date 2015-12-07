@@ -9,6 +9,7 @@ class Protocol
 
     show do
       title "Instructions here"
+      check "PCR"
     end
 
     o.input.all.release
