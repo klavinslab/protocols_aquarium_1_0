@@ -16,7 +16,7 @@ class Protocol
 
     show {
       title "Quick spin down all the primer tubes"
-      note "Find the order with sales order (or supplier ref) number #{io_hash[:order_number]}"
+      note "Find the order with sales order (or supplier ref) number "
       note "Put all the primer tubes in a table top centrifuge to spin down for 3 seconds."
       warning "Make sure to balance!"
     }
