@@ -5,9 +5,10 @@ class Protocol
     o = op input
 
     o.input.all.take
-    primer_stocks = o.output.all.produce
+    o.output.all.produce
 
     primer_ids = o.input.all.sample_ids
+    primer_stocks = o.output.all.items
 
     show {
       title "Go the EE office to pick up primers"
@@ -29,7 +30,6 @@ class Protocol
       end
     }
 
-    primer_stocks = []
     primer_stocks_to_dilute = []
     primer_aliquots = []
 
