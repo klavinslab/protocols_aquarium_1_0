@@ -7,11 +7,8 @@ class Protocol
     o.input.all.take
     o.output.all.produce
 
-    primer_ids = o.input.all.sample_ids
-    show {
-      note o.output.primer.items
-    }
-    primer_stocks = o.output.all.items
+    primer_ids = o.input.primer.sample_ids
+    primer_stocks = o.output.primer.items
 
     show {
       title "Go the EE office to pick up primers"
