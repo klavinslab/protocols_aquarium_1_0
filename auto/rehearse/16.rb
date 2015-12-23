@@ -5,7 +5,7 @@ class Protocol
     o = op input
 
     o.input.all.take
-    o.output.all.produce
+    primer_stocks = o.output.all.produce
 
     primer_ids = o.input.all.sample_ids
 
@@ -35,8 +35,6 @@ class Protocol
 
     tab = [["Primer ids", "Primer Stock ids", "Rehydrate"]]
     
-    primer_stocks = o.output.all
-
     primer_ids.each_with_index do |prid, idx|
       
       primer_stock = primer_stocks[idx]
