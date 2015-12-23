@@ -8,6 +8,9 @@ class Protocol
     o.output.all.produce
 
     primer_ids = o.input.all.sample_ids
+    show {
+      note o.output.primer.items
+    }
     primer_stocks = o.output.all.items
 
     show {
