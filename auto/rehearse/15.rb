@@ -15,7 +15,7 @@ class Protocol
     end
 
 
-    idt = show {
+    order = show {
       title "Create an IDT DNA oligos order"
       check "Go to the <a href='https://www.idtdna.com/site/account' target='_blank'>IDT website</a>, log in with the lab account. (Username: klavins_lab, password is the lab general password)."
       check "Click Custom DNA Oligos, click Bulk Input. Copy paste the following table and then click the Update button."
@@ -26,6 +26,10 @@ class Protocol
       check "Go back to the main page, find the order number for the order you just placed, enter in the following."
       get "text", var: "order_number", label: "Enter the IDT order number below", default: 100
     }
+    
+    o.threads.each do |t|
+      t.data.order_number = order[:order_number]
+    end
 
 
     o.input.all.release
