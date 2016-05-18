@@ -8,7 +8,7 @@ class Protocol
     o.output.all.produce
 
     show do
-      title "Instructions here"
+      title "Instructions here!"
     end
 
     o.input.all.release
