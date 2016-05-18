@@ -19,7 +19,9 @@ class DeveloperController < ApplicationController
   end
 
   def save
+
     path = params[:path] + ".rb"
+
     begin
       Repo::save path, params[:content]
       sha = Repo::version path
@@ -27,6 +29,7 @@ class DeveloperController < ApplicationController
     rescue Exception => e
       render json: { errors: [ e.to_s ] }
     end
+
   end
 
 end
