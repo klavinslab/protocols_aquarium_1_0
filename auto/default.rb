@@ -1,34 +1,20 @@
-class DeveloperController < ApplicationController
+class Protocol
 
-  before_filter :signed_in_user
+  def main
 
-  def developer
-  end
+    o = op input
 
-  def get
+    o.input.all.take
+    o.output.all.produce
 
-    begin
-      path = params[:path] + ".rb"
-      sha = Repo::version path
-      content = Repo::contents path, sha
-      render json: { path: path, sha: sha, content: content, errors: [] }
-    rescue Exception => e
-      render json: { errors: [ e.to_s ] }
+    show do
+      title "Instructions here!"
     end
 
-  end
+    o.input.all.release
+    o.output.all.release
 
-  def save
-
-    path = params[:path] + ".rb"
-
-    begin
-      Repo::save path, params[:content]
-      sha = Repo::version path
-      render json: { errors: [], sha: sha }
-    rescue Exception => e
-      render json: { errors: [ e.to_s ] }
-    end
+    return o.result
 
   end
 
