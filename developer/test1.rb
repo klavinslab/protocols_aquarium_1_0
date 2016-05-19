@@ -10,10 +10,6 @@ class Protocol
       title "Hello Again!!"
     end
 
-    show do
-      title "And Again!!"
-    end
-
   end
 
 end
