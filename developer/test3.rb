@@ -29,18 +29,21 @@ class Protocol
     }
 
     show do
+      title "Basic Items"
       basics.each do |ot|
         note ot.name
       end
     end
 
     show do
+      title "Individual Samples"
       samples.each do |ot|
         note ot.name
       end
     end
 
     show do
+      title "Batched samples"
       collections.each do |ot|
         note ot.name
       end
