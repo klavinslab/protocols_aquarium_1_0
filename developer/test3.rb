@@ -17,15 +17,15 @@ class Protocol
   def main
 
     basics = ObjectType.all.select { |ot|
-      purchase_info ot == "basic"
+      purchase_info(ot) == "basic"
     }
 
     samples = ObjectType.all.select { |ot|
-      purchase_info ot == "sample"
+      purchase_info(ot) == "sample"
     }
 
     collections = ObjectType.all.select { |ot|
-      purchase_info ot == "collection"
+      purchase_info(ot) == "collection"
     }
 
     show do
