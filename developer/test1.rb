@@ -2,7 +2,7 @@ class Protocol
 
   def main
 
-    show do
+    show { do
       title "Hello World!!"
     end
 
