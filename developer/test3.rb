@@ -19,8 +19,8 @@ class Protocol
   #   - Choose purchase type
   #   - Choose specific object and/or sample
   #   - For a given object type / sample, find all items available to purchase
-  #   - 
-  #   - 
+  #   - Choose the particular item
+  #   - Create a task to enable the purchase (will need a new task prototype)
   #
 
   def main
