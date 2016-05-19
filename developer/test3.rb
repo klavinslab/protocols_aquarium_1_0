@@ -16,8 +16,16 @@ class Protocol
 
   def main
 
-    ots = ObjectType.all.select { |ot|
-      ot.data_object[:purchasable]
+    basics = ObjectType.all.select { |ot|
+      purchase_info ot == "basic"
+    }
+
+    samples = ObjectType.all.select { |ot|
+      purchase_info ot == "sample"
+    }
+
+    collection = ObjectType.all.select { |ot|
+      purchase_info ot == "collection"
     }
 
     show do
