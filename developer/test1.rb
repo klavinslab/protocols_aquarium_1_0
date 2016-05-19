@@ -12,4 +12,7 @@ class Protocol
 
   end
 
+  def wow
+  end
+
 end
