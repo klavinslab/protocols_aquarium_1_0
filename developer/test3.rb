@@ -14,6 +14,15 @@ class Protocol
 
   end
 
+  #
+  # TODO: 
+  #   - Choose purchase type
+  #   - Choose specific object and/or sample
+  #   - For a given object type / sample, find all items available to purchase
+  #   - 
+  #   - 
+  #
+
   def main
 
     basics = ObjectType.all.select { |ot|
