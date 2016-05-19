@@ -7,7 +7,7 @@ class Protocol
     end
 
     show do
-      title "Hello Again."
+      title "Hello Again!"
     end
 
   end
