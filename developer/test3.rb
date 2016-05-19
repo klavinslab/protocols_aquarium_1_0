@@ -2,11 +2,11 @@ class Protocol
 
   def purchase_info ot
 
-    if ot.object_type[:materials] && ot.object_type[:labor]
+    if ot.data_object[:materials] && ot.data_object[:labor]
       "basic"
-    elsif ot.handler == "sample_container" && ot.object_type[:samples]
+    elsif ot.handler == "sample_container" && ot.data_object[:samples]
       "sample"
-    elsif ot.handler == "collection" && ot.object_type[:samples]
+    elsif ot.handler == "collection" && ot.data_object[:samples]
       "collection"
     else
       nil
