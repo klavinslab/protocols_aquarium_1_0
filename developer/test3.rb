@@ -8,7 +8,7 @@ class Protocol
 
     show do
       ot_names.each do |name|
-        note name
+        note "object type: " + name
       end
     end
 
