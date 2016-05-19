@@ -3,7 +3,7 @@ class Protocol
   def main
 
     ots = ObjectType.all.select { |ot|
-      ot.data_object.purchasable
+      ot.data_object[:purchasable]
     }
 
     show do
