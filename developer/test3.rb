@@ -24,12 +24,24 @@ class Protocol
       purchase_info ot == "sample"
     }
 
-    collection = ObjectType.all.select { |ot|
+    collections = ObjectType.all.select { |ot|
       purchase_info ot == "collection"
     }
 
     show do
-      ots.each do |ot|
+      basics.each do |ot|
+        note ot.name
+      end
+    end
+
+    show do
+      samples.each do |ot|
+        note ot.name
+      end
+    end
+
+    show do
+      collections.each do |ot|
         note ot.name
       end
     end
