@@ -7,7 +7,7 @@ class Protocol
     }
 
     show do
-      ot_names.each do |name|
+      ot_names.breach do |name|
         note name
       end
     end
