@@ -2,17 +2,17 @@ class Protocol
 
   def main
 
-    show do
-      title "Hello World!"
-    end
+    ot_names = ObjectType.all.collect { |ot|
+      ot.name
+    }
 
     show do
-      title "Hello Again!"
+      ot_names.each do |name|
+        note name
+      end
     end
 
-  end
 
-  def wow
   end
 
 end
