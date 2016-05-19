@@ -2,13 +2,13 @@ class Protocol
 
   def main
 
-    ot_names = ObjectType.all.collect { |ot|
-      ot.name
+    ots = ObjectType.all.select { |ot|
+      ot.data_object.purchasable
     }
 
     show do
-      ot_names.each do |name|
-        note "object type = " + name
+      ots.each do |ot|
+        note ot.name
       end
     end
 
