@@ -58,11 +58,13 @@ class Protocol
         end
 
         ot = basics.find { |b| b.name == result[:choice] }
+        m = currency(ot.data_object[:materials])
+        l = currency(ot.data_object[:labor])
         
         result = show do
           title "#result[:choice] Costs"
-          note "Material: #{currency(ot.data_object[:materials])}"
-          note "Labor: #{currency(ot.data_object[:labor])}"
+          note "Material: #{m}"
+          note "Labor: #{l}"
           select [ "Ok", "Cancel" ], var: "choice", label: "Choose item", default: 0
         end
         
