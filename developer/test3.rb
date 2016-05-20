@@ -39,13 +39,35 @@ class Protocol
 
     result = show do
       title "Select Category"
-      select [ "Basic Items", "Samples", "Batch Items" ], var: "choice", label: "Choose something", default: 1
+      note "Basics: e.g. tubes and tip boxes"
+      note "Samples: e.g. media"
+      note "Batched: e.g. Gibson Aliquots and plates"
+      select [ "Basics", "Samples", "Batched" ], var: "choice", label: "Choose something", default: 0
     end
 
-    choice = result[:choice]
+    case result[:choice]
 
-    show do
-      title "You chose #{result[:choice]}"
+      when "Basics"
+
+        show do
+          title "Chose Item"
+          select basics.collect { |ot| ot.name }, var: "basic", label: "Choose item", default: 0
+        end
+
+      when "Samples"
+
+        show do
+          title "Chose Item"
+          select samples.collect { |ot| ot.name }, var: "sample", label: "Choose sample", default: 0
+        end
+
+      when "Batched"
+
+        show do
+          title "Chose Batch Item"
+          select collections.collect { |ot| ot.name }, var: "batch", label: "Choose batch item", default: 0
+        end
+
     end
 
   end
