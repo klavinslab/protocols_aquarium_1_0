@@ -25,7 +25,7 @@ class Protocol
 
     show do
       note "User: #{user.name} (#{user.login})"
-      select user.budgets.collect { |b| b.name }, var: "budget", label: "Choose a budget", default: 0
+      select user.budget_info.collect { |bi| bi[:budget].name }, var: "budget", label: "Choose a budget", default: 0
     end
 
     object_types = ObjectType.all
