@@ -64,7 +64,7 @@ class Protocol
         l = currency(ot.data_object[:labor])
         
         result = show do
-          title "#result[:choice] Costs"
+          title "#{result[:choice]} Costs"
           note "Material: #{m}"
           note "Labor: #{l}"
           select [ "Ok", "Cancel" ], var: "choice", label: "Choose item", default: 0
