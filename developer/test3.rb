@@ -15,7 +15,7 @@ class Protocol
   end
 
   def currency num
-   ActionController::Base.helpers.number_to_currency num
+    ActionController::Base.helpers.number_to_currency num
   end
 
   def main
@@ -25,6 +25,7 @@ class Protocol
 
     show do
       note "User: #{user.name} (#{user.login})"
+      select user.budgets.collect { |b| b.name }, var: "budget", label: "Choose a budget", default: 0
     end
 
     object_types = ObjectType.all
