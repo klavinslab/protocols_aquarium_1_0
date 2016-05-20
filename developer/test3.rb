@@ -45,7 +45,7 @@ class Protocol
     choice = result[:choice]
 
     show do
-      title "You chose #{choice}"
+      title "You chose #{result[:choice]}"
     end
 
   end
