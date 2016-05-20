@@ -28,11 +28,12 @@ class Protocol
 
   def main
 
+    job = Job.find(jid)
+
     show do
-      note "Job: #{jid}"
+      note "Job: #{job.id}"
     end
 
-    job = Job.find(jid)
     user = job.user
 
     show do
