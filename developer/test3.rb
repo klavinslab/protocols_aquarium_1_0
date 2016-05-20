@@ -31,7 +31,7 @@ class Protocol
     job = Job.find(jid)
 
     show do
-      note "Job: #{job.id}"
+      note "Job: #{job}"
     end
 
     user = User.find(job.user_id)
