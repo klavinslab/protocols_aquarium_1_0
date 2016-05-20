@@ -19,7 +19,7 @@ class Protocol
   end
 
   def main
-
+    x = 1/0
     job = Job.find(jid)
     user = User.find(job.user_id)
 
