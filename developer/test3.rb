@@ -86,6 +86,11 @@ class Protocol
 
     end
 
+    return {
+      user: user,
+      job: job
+    }
+
   end
 
 end
