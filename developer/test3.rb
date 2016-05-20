@@ -28,6 +28,13 @@ class Protocol
 
   def main
 
+    job = Job.find(jid)
+    user = job.user
+
+    show do
+      note "User: #{user.name} (#{user.login})"
+    end
+
     object_types = ObjectType.all
 
     basics = object_types.select { |ot|
