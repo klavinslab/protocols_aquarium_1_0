@@ -18,14 +18,6 @@ class Protocol
    ActionController::Base.helpers.number_to_currency num
   end
 
-  ###########
-  # TODO: 
-  #   - Choose specific object and/or sample
-  #   - For a given object type / sample, find all items available to purchase
-  #   - Choose the particular item
-  #   - Create a task to enable the purchase (will need a new task prototype)
-  #
-
   def main
 
     job = Job.find(jid)
