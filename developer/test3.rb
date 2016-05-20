@@ -14,6 +14,10 @@ class Protocol
 
   end
 
+  def currency num
+   ActionController::Base.helpers.number_to_currency num
+  end
+
   ###########
   # TODO: 
   #   - Choose specific object and/or sample
@@ -57,8 +61,8 @@ class Protocol
         
         result = show do
           title "#result[:choice] Costs"
-          note "Material: #{ot.data_object[:materials]}"
-          note "Labor: #{ot.data_object[:labor]}"
+          note "Material: #{currency ot.data_object[:materials]}"
+          note "Labor: #{currency ot.data_object[:labor]}"
           select [ "Ok", "Cancel" ], var: "choice", label: "Choose item", default: 0
         end
         
