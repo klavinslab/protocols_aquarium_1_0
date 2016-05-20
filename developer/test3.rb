@@ -29,12 +29,7 @@ class Protocol
   def main
 
     job = Job.find(jid)
-
-    show do
-      note "Job: #{job.id}, #{job.user_id}"
-    end
-
-    user = User.find(job.user_id)
+    user = User.find(job.performed_by)
 
     show do
       note "User: #{user.name} (#{user.login})"
