@@ -28,6 +28,10 @@ class Protocol
 
   def main
 
+    show do
+      note "Job: #{jid}"
+    end
+
     job = Job.find(jid)
     user = job.user
 
