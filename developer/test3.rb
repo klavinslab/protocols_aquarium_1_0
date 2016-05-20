@@ -37,25 +37,15 @@ class Protocol
       purchase_info(ot) == "collection"
     }
 
-    show do
-      title "Basic Items"
-      basics.each do |ot|
-        note ot.name
-      end
+    result = show do
+      title "Select Category"
+      select [ "Basic Items", "Samples", "Batch Items" ], var: "choice", label: "Choose something", default: 1
     end
 
-    show do
-      title "Individual Samples"
-      samples.each do |ot|
-        note ot.name
-      end
-    end
+    choice = result[:choice]
 
     show do
-      title "Batched samples"
-      collections.each do |ot|
-        note ot.name
-      end
+      title "You chose #{choice}"
     end
 
   end
