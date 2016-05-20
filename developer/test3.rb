@@ -16,7 +16,6 @@ class Protocol
 
   ###########
   # TODO: 
-  #   - Choose purchase type
   #   - Choose specific object and/or sample
   #   - For a given object type / sample, find all items available to purchase
   #   - Choose the particular item
@@ -49,23 +48,32 @@ class Protocol
 
       when "Basics"
 
-        show do
+        result = show do
           title "Chose Item"
-          select basics.collect { |ot| ot.name }, var: "basic", label: "Choose item", default: 0
+          select basics.collect { |ot| ot.name }, var: "choice", label: "Choose item", default: 0
         end
 
+        ot = basics.find { |b| b.name == result[:choice] }
+        
+        result = show do
+          title "#result[:choice] Costs"
+          note "Material: #{ot.data_object[:materials]"
+          note "Labor: #{ot.data_object[:labor]"
+          select [ "Ok", "Cancel" ], var: "choice", label: "Choose item", default: 0
+        end
+        
       when "Samples"
 
         show do
           title "Chose Item"
-          select samples.collect { |ot| ot.name }, var: "sample", label: "Choose sample", default: 0
+          select samples.collect { |ot| ot.name }, var: "choice", label: "Choose sample", default: 0
         end
 
       when "Batched"
 
         show do
           title "Chose Batch Item"
-          select collections.collect { |ot| ot.name }, var: "batch", label: "Choose batch item", default: 0
+          select collections.collect { |ot| ot.name }, var: "choice", label: "Choose batch item", default: 0
         end
 
     end
