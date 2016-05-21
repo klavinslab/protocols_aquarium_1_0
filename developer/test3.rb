@@ -10,7 +10,7 @@ class Protocol
       "collection"
     else
       nil
-    end
+    endr
 
   end 
 
