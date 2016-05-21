@@ -8,7 +8,7 @@ class Protocol
 
   end
 
-  def how
+  def howto
   end
 
 end
