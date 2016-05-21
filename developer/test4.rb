@@ -10,28 +10,30 @@ class Protocol
       
     yeast_strains = find(:sample, { sample_type: { name: "Yeast Strain" } })
     changes = []
-    i = 0
     
     yeast_strains.each do |yeast_strain|
-      if i < 5
-        description = yeast_strain.description
-        if description
-          if description.include? "QC_length"
-            length = description.split('QC_length')[-1].split(':')[-1].to_i
-            yeast_strain.set_property "QC_length", length
-            if yeast_strain.errors.empty?
-              changes.push "#{yeast_strain.id} Comp_cell_limit changed"
-            end
-          end
-          if description.include? "comp_cell_limit: no"
-            r = yeast_strain.set_property "Comp_cell_limit", "No"
-            if yeast_strain.errors.empty?
-              changes.push "#{yeast_strain.id} Comp_cell_limit changed"
-            end
+        
+      description = yeast_strain.description
+      
+      if description
+          
+        if description.include? "QC_length"
+          length = description.split('QC_length')[-1].split(':')[-1].to_i
+          yeast_strain.set_property "QC_length", length
+          if yeast_strain.errors.empty?
+            changes.push "#{yeast_strain.id} Comp_cell_limit changed"
           end
         end
+        
+        if description.include? "comp_cell_limit: no"
+          r = yeast_strain.set_property "Comp_cell_limit", "No"
+          if yeast_strain.errors.empty?
+            changes.push "#{yeast_strain.id} Comp_cell_limit changed"
+          end
+        end
+        
       end
-      i += 1
+      
     end
     
     show {
