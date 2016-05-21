@@ -30,7 +30,7 @@ class Protocol
             if r
               changes.push "#{yeast_strain.id} Comp_cell_limit changed"
             else
-              changes.push "Could not change Comp_cell_limit for #{yeast_strain.id}"
+              changes.push yeast_strain.errors.full_messages.join(',')
             end
           end
         end
