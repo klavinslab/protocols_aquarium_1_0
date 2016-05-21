@@ -32,7 +32,7 @@ class Protocol
       select [ "Basics", "Samples", "Batched" ], var: "choice", label: "Choose something", default: 0
     end
 
-    case result[:choice
+    case result[:choice]
 
       when "Basics"
 
