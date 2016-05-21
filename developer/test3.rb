@@ -1,5 +1,6 @@
 # Title: Inventory Purchase Protocol
 # Author: Eric Klavins
+# Date: May, 2016
 
 class Protocol
 
@@ -9,7 +10,7 @@ class Protocol
     user = User.find(job.user_id)
 
     show do
-      note "User: #{user.name} (#{user.login})"
+      note "Current User: #{user.name} (#{user.login})"
       select user.budget_info.collect { |bi| bi[:budget].name }, var: "budget", label: "Choose a budget", default: 0
     end
 
