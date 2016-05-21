@@ -12,7 +12,7 @@ class Protocol
       nil
     end
 
-  end
+  end 
 
   def currency num
     ActionController::Base.helpers.number_to_currency num
