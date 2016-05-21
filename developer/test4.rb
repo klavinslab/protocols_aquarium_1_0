@@ -6,15 +6,13 @@ class Protocol
   include Standard
   include Cloning
 
-  def arguments
-    {
-    }
-  end
 
   def main
+      
     yeast_strains = find(:sample, { sample_type: { name: "Yeast Strain" } })
     changes = []
     i = 0
+    
     yeast_strains.each do |yeast_strain|
       if i < 5
         description = yeast_strain.description
@@ -36,10 +34,14 @@ class Protocol
       end
       i += 1
     end
+    
     show {
       note yeast_strains.length
       note changes.length
     }
+    
     return changes
+    
   end
+  
 end
