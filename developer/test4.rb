@@ -6,7 +6,6 @@ class Protocol
   include Standard
   include Cloning
 
-
   def main
       
     yeast_strains = find(:sample, { sample_type: { name: "Yeast Strain" } })
