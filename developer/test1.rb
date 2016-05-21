@@ -8,7 +8,7 @@ class Protocol
 
   end
 
-  def wow
+  def how
   end
 
 end
