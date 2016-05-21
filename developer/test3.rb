@@ -1,23 +1,5 @@
 class Protocol
 
-  def purchase_info ot
-
-    if ot.data_object[:materials] && ot.data_object[:labor]
-      "basic"
-    elsif ot.handler == "sample_container" && ot.data_object[:samples]
-      "sample"
-    elsif ot.handler == "collection" && ot.data_object[:samples]
-      "collection"
-    else
-      nil
-    end
-
-  end 
-
-  def currency num
-    ActionController::Base.helpers.number_to_currency num
-  end
-
   def main
 
     job = Job.find(jid)
@@ -92,5 +74,23 @@ class Protocol
     }
 
   end
+  
+  def purchase_info ot
+
+    if ot.data_object[:materials] && ot.data_object[:labor]
+      "basic"
+    elsif ot.handler == "sample_container" && ot.data_object[:samples]
+      "sample"
+    elsif ot.handler == "collection" && ot.data_object[:samples]
+      "collection"
+    else
+      nil
+    end
+
+  end 
+
+  def currency num
+    ActionController::Base.helpers.number_to_currency num
+  end  
 
 end
