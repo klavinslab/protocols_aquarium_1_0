@@ -17,7 +17,7 @@ class Protocol
     }
 
     samples = object_types.select { |ot|
-      purchase_info(ot) == "sample"
+      purchase_info(ot) == "sample
     }
 
     collections = object_types.select { |ot|
