@@ -1,6 +1,5 @@
-####
-# Inventory Purchase Protocol
-#
+# Title: Inventory Purchase Protocol
+# Author: Eric Klavins
 
 class Protocol
 
