@@ -26,9 +26,12 @@ class Protocol
             changes.push "#{yeast_strain} QC_length changed"
           end
           if description.include? "comp_cell_limit: no"
-            yeast_strain.set_property "Comp_cell_limit", "No"
-            yeast_strain.save
-            changes.push "#{yeast_strain} Comp_cell_limit changed"
+            r = yeast_strain.set_property "Comp_cell_limit", "No"
+            if r
+              changes.push "#{yeast_strain.id} Comp_cell_limit changed"
+            else
+              changes.push "Could not change Comp_cell_limit for #{yeast_strain.id}"
+            end
           end
         end
       end
