@@ -8,7 +8,7 @@ class Protocol
 
   end
 
-  def howto
+  def hownotto
   end
 
 end
