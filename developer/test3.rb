@@ -17,7 +17,7 @@ class Protocol
     }
 
     samples = object_types.select { |ot|
-      purchase_info(ot) == "sample
+      purchase_info(ot) == "sample"
     }
 
     collections = object_types.select { |ot|
@@ -32,7 +32,7 @@ class Protocol
       select [ "Basics", "Samples", "Batched" ], var: "choice", label: "Choose something", default: 0
     end
 
-    case result[:choice]
+    case result[:choice
 
       when "Basics"
 
