@@ -8,7 +8,7 @@ class Protocol
   def main
       
     show do
-        title Task.last.name    
+        title TaskPrototype.last.name    
     end
 
     @job = Job.find(jid)
