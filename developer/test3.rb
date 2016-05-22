@@ -99,7 +99,7 @@ class Protocol
       task.save
       unless task.errors.empty?
         show do
-          title "Errors"
+          title "Error: Could not make purchase"
           note task.errors.full_messages.join(', ')
         end
       end
