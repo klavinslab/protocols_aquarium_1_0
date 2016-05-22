@@ -9,9 +9,10 @@ class Protocol
 
     @job = Job.find(jid)
     @user = User.find(@job.user_id)
+    user = @user # Can't put @user in show, becuase it would refer to the rwong object
 
     result = show do
-      note "User: #{@user.name} (#{@user.login})"
+      note "User: #{user.name} (#{user.login})"
       select @user.budget_info.collect { |bi| bi[:budget].name }, var: "choice", label: "Choose a budget", default: 0
     end
     
