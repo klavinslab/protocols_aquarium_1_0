@@ -1,6 +1,7 @@
 # Title: Inventory Purchase Protocol
 # Author: Eric Klavins
 # Date: May 21, 2016
+# 
 
 class Protocol
 
@@ -92,7 +93,8 @@ class Protocol
             description: description,
             materials: mat,
             labor: lab
-        })
+         }
+      })
       task.save
     end
   end
