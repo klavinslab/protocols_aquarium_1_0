@@ -6,16 +6,13 @@
 class Protocol
 
   def main
-      
-    show do
-        title Module.const_get("TaskPrototype").last.name    
-    end
 
     @job = Job.find(jid)
     @user = User.find(@job.user_id)
     user = @user # Can't put @user in show, becuase it would refer to the rwong object
 
     result = show do
+      title "Choose a budget"
       note "User: #{user.name} (#{user.login})"
       select user.budget_info.collect { |bi| bi[:budget].name }, var: "choice", label: "Choose a budget", default: 1
     end
