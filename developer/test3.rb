@@ -80,8 +80,8 @@ class Protocol
     end
 
     return {
-      user: user.login,
-      job: job.id
+      user: @user.login,
+      job: @job.id
     }
 
   end
