@@ -56,7 +56,7 @@ class Protocol
         end
         
         if result[:choice] == "Ok"
-          make_purchase result[:choice], ot.data_object[:materials], ot.data_object[:labor]
+          make_purchase ot.name, ot.data_object[:materials], ot.data_object[:labor]
         else
           show do
               title "Canceled purchase"
