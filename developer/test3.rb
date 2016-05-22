@@ -91,7 +91,7 @@ class Protocol
     if tp
       task = tp.tasks.create({
         user_id: @user.id, 
-        name: "direct_purchase_#{DateTime.now.to_i}",
+        name: "#{DateTime.now.to_i}: #{description}",
         status: "purchased",
         budget_id: @budget.id,
         specification: {
