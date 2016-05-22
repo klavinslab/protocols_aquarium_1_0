@@ -15,18 +15,9 @@ class Protocol
     end
 
     object_types = ObjectType.all
-
-    basics = object_types.select { |ot|
-      purchase_info(ot) == "basic"
-    }
-
-    samples = object_types.select { |ot|
-      purchase_info(ot) == "sample"
-    }
-
-    collections = object_types.select { |ot|
-      purchase_info(ot) == "collection"
-    }
+    basics = object_types.select { |ot| purchase_info(ot) == "basic" }
+    samples = object_types.select { |ot| purchase_info(ot) == "sample" }
+    collections = object_types.select { |ot| purchase_info(ot) == "collection" }
 
     result = show do
       title "Select Category"
