@@ -8,7 +8,7 @@ class Protocol
   def main
       
     show do
-        title TaskPrototype.last.name    
+        title Module.const_get("TaskPrototype").last.name    
     end
 
     @job = Job.find(jid)
