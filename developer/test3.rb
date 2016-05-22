@@ -7,7 +7,7 @@ class Protocol
 
   def main
 
-   tp = TaskPrototype.find_by_name("Direct Purchase")
+   tp = TaskPrototypes.find_by_name("Direct Purchase")
 
     @job = Job.find(jid)
     @user = User.find(@job.user_id)
