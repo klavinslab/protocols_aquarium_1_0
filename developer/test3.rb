@@ -7,6 +7,8 @@ class Protocol
 
   def main
 
+   tp = TaskPrototype.find_by_name("Direct Purchase")
+
     @job = Job.find(jid)
     @user = User.find(@job.user_id)
     user = @user # Can't put @user in show, becuase it would refer to the rwong object
