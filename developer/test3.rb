@@ -50,7 +50,7 @@ class Protocol
         end
         
         if result[:choice] == "Ok"
-          make_purchase ot
+          make_purchase result[:choice], ot.data_object[:materials], ot.data_object[:labor]
         else
           show do
               title "Canceled purchase"
@@ -80,14 +80,20 @@ class Protocol
 
   end
   
-  def make_purchase ot
+  def make_purchase description, mat, lab
     tp = TaskPrototype.find_by_name("Direct Purchase")
     if tp
       task = tp.tasks.create({
         user_id: @user.id, 
         name: "direct_purchase_#{DateTime.now.to_i}",
         status: "purchased",
-        budget_id: @budget.id
+        budget_id: @budget.id,
+        specification: {
+            description: description,
+            materials: mat,
+            labor: lab
+        })
+      task.save
     end
   end
   
