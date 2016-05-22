@@ -98,7 +98,7 @@ class Protocol
             description: description,
             materials: mat,
             labor: lab
-         }
+         }.to_json
       })
       task.save
       unless task.errors.empty?
