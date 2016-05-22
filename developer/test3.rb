@@ -27,7 +27,7 @@ class Protocol
       title "Select Category"
       note "Basics: tubes, tip boxes, ..."
       note "Samples: media, ..."
-      note "Batched: Gibson Aliquots, plates", ...
+      note "Batched: Gibson Aliquots, plates, ..."
       select [ "Basics", "Samples", "Batched" ], var: "choice", label: "Choose something", default: 0
     end
 
