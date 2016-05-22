@@ -17,7 +17,7 @@ class Protocol
 
     result = show do
       note "User: #{user.name} (#{user.login})"
-      select user.budget_info.collect { |bi| bi[:budget].name }, var: "choice", label: "Choose a budget", default: 0
+      select user.budget_info.collect { |bi| bi[:budget].name }, var: "choice", label: "Choose a budget", default: 1
     end
     
     @budget = Budget.find_by_name(result[:choice])
