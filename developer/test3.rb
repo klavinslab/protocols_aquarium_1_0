@@ -6,27 +6,20 @@ class Protocol
 
   def main
 
-    job = Job.find(jid)
-    user = User.find(job.user_id)
+    @job = Job.find(jid)
+    @user = User.find(job.user_id)
 
-    show do
-      note "User: #{user.name} (#{user.login})"
-      select user.budget_info.collect { |bi| bi[:budget].name }, var: "budget", label: "Choose a budget", default: 0
+    result = show do
+      note "User: #{@user.name} (#{@user.login})"
+      select @user.budget_info.collect { |bi| bi[:budget].name }, var: "choice", label: "Choose a budget", default: 0
     end
+    
+    @budget = Budget.find_by_name(result[:choice])
 
     object_types = ObjectType.all
-
-    basics = object_types.select { |ot|
-      purchase_info(ot) == "basic"
-    }
-
-    samples = object_types.select { |ot|
-      purchase_info(ot) == "sample"
-    }
-
-    collections = object_types.select { |ot|
-      purchase_info(ot) == "collection"
-    }
+    basics = object_types.select { |ot| purchase_info(ot) == "basic" }
+    samples = object_types.select { |ot| purchase_info(ot) == "sample" }
+    collections = object_types.select { |ot| purchase_info(ot) == "collection" }
 
     result = show do
       title "Select Category"
@@ -57,9 +50,7 @@ class Protocol
         end
         
         if result[:choice] == "Ok"
-          show do
-              title "TODO: Make the purchase"
-          end           
+          make_purchase ot
         else
           show do
               title "Canceled purchase"
@@ -87,6 +78,17 @@ class Protocol
       job: job.id
     }
 
+  end
+  
+  def make_purchase ot
+    tp = TaskPrototype.find_by_name("Direct Purchase")
+    if tp
+      task = tp.tasks.create({
+        user_id: @user.id, 
+        name: "direct_purchase_#{DateTime.now.to_i}",
+        status: "purchased",
+        budget_id: @budget.id
+    end
   end
   
   def purchase_info ot
