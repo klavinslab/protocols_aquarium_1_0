@@ -15,9 +15,18 @@ class Protocol
     end
 
     object_types = ObjectType.all
-    basics = object_types.select { |ot| purchase_info(ot) == "basic" }
-    samples = object_types.select { |ot| purchase_info(ot) == "sample" }
-    collections = object_types.select { |ot| purchase_info(ot) == "collection" }
+
+    basics = object_types.select { |ot|
+      purchase_info(ot) == "basic"
+    }
+
+    samples = object_types.select { |ot|
+      purchase_info(ot) == "sample"
+    }
+
+    collections = object_types.select { |ot|
+      purchase_info(ot) == "collection"
+    }
 
     result = show do
       title "Select Category"
@@ -45,6 +54,16 @@ class Protocol
           note "Material: #{m}"
           note "Labor: #{l}"
           select [ "Ok", "Cancel" ], var: "choice", label: "Choose item", default: 0
+        end
+        
+        if result[:choice] == "Ok"
+          show do
+              title "Todo: Make the purchase"
+          end           
+        else
+          show do
+              title "Canceled purchase"
+          end
         end
         
       when "Samples"
