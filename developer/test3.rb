@@ -105,6 +105,7 @@ class Protocol
         show do
           title "Errors"
           note task.errors.full_messages.join(', ')
+        end
       end
     end
   end
