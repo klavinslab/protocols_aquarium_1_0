@@ -1,6 +1,6 @@
-#
-# Inventory Purchase Protocol
-#
+# Title: Inventory Purchase Protocol
+# Author: Eric Klavins
+# Date: May 21, 2016
 
 class Protocol
 
