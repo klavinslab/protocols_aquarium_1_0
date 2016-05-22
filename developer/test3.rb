@@ -107,6 +107,7 @@ class Protocol
           note task.errors.full_messages.join(', ')
         end
       end
+      set_task_status(task,"purchased")
     end
   end
   
