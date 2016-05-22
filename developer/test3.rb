@@ -11,7 +11,7 @@ class Protocol
         title TaskPrototype.last.name    
     end
 
-    tp = TaskPrototype.find_by_name("Direct Purchase")
+    tp = User.find_by_name("Direct Purchase")
 
     @job = Job.find(jid)
     @user = User.find(@job.user_id)
