@@ -87,7 +87,7 @@ class Protocol
   end
   
   def make_purchase description, mat, lab
-    tp = TaskPrototype.find_by_name("Direct Purchase")
+    tp = Module.const_get("TaskPrototype").find_by_name("Direct Purchase")
     if tp
       task = tp.tasks.create({
         user_id: @user.id, 
