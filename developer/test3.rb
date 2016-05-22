@@ -101,6 +101,11 @@ class Protocol
          }
       })
       task.save
+      unless task.errors.empty?
+        show do
+          title "Errors"
+          note task.errors.full_messages.join(', ')
+      end
     end
   end
   
