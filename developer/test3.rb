@@ -8,7 +8,7 @@ class Protocol
   def main
       
     show do
-        title User.last.name    
+        title Budget.last.name    
     end
 
     @job = Job.find(jid)
