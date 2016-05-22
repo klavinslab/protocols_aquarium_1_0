@@ -99,7 +99,7 @@ class Protocol
       task.save
       unless task.errors.empty?
         show do
-          title "Error: Could not make purchase"
+          title "Errors"
           note task.errors.full_messages.join(', ')
         end
       end
@@ -108,7 +108,6 @@ class Protocol
   end
   
   def purchase_info ot
-
     if ot.data_object[:materials] && ot.data_object[:labor]
       "basic"
     elsif ot.handler == "sample_container" && ot.data_object[:samples]
@@ -118,7 +117,6 @@ class Protocol
     else
       nil
     end
-
   end 
 
   def currency num
