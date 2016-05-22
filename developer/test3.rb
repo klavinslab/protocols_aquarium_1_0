@@ -8,10 +8,8 @@ class Protocol
   def main
       
     show do
-        title TaskPrototype.last.name    
+        title User.last.name    
     end
-
-    tp = User.find_by_name("Direct Purchase")
 
     @job = Job.find(jid)
     @user = User.find(@job.user_id)
