@@ -58,7 +58,7 @@ class Protocol
         
         if result[:choice] == "Ok"
           show do
-              title "Todo: Make the purchase"
+              title "TODO: Make the purchase"
           end           
         else
           show do
