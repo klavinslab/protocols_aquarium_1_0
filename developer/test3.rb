@@ -26,9 +26,9 @@ class Protocol
 
     result = show do
       title "Select Category"
-      note "Basics: e.g. tubes and tip boxes"
-      note "Samples: e.g. media"
-      note "Batched: e.g. Gibson Aliquots and plates"
+      note "Basics: tubes, tip boxes, ..."
+      note "Samples: media, ..."
+      note "Batched: Gibson Aliquots, plates", ...
       select [ "Basics", "Samples", "Batched" ], var: "choice", label: "Choose something", default: 0
     end
 
