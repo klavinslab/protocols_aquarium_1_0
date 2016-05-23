@@ -6,10 +6,6 @@ class Protocol
       title "Hello World!"
     end
 
-    show do
-      title "Hello Again!"
-    end
-
   end
 
   def wow
