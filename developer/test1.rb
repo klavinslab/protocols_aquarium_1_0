@@ -12,7 +12,7 @@ class Protocol
 
   end
 
-  def hello
+  def hello_again
   end
 
 end
