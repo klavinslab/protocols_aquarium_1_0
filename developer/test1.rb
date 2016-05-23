@@ -12,7 +12,7 @@ class Protocol
 
   end
 
-  def wow
+  def hello
   end
 
 end
