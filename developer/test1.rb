@@ -12,7 +12,7 @@ class Protocol
 
   end
 
-  def wow_test
+  def wow_test2
   end
 
 end
