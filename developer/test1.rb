@@ -7,7 +7,7 @@ class Protocol
     end
     
     show do
-      title "Goodbye World!"
+      title "Goodbye World!
     end    
 
   end
