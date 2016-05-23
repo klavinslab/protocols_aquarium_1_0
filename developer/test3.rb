@@ -1,3 +1,5 @@
+# A test protocol
+
 class Protocol
 
   def main
