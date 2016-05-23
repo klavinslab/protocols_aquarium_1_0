@@ -4,7 +4,7 @@
 
 class Protocol
 
-  def main
+  defun main
 
     @job = Job.find(jid)
     @user = User.find(@job.user_id)
