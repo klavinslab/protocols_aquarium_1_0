@@ -2,7 +2,7 @@ class Protocol
     
     def main
         
-        a = args
+        a = input
         
         show do
             title "Arguments"
