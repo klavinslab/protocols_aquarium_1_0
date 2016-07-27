@@ -1,13 +1,9 @@
 class Protocol
 
-  def debug
-    true
-  end
-
   def main
 
     Operation.where(job_id: jid).each do |op|
-      puts "Operation #{op.id} is part of job #{jid}"
+      puts "\e[91mOperation #{op.id} is part of job #{jid}\e[39m"
     end
 
     return {}
