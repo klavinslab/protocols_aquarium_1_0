@@ -8,12 +8,12 @@ class Protocol
 
       op.inputs.each do |input|
         input.retrieve
-        puts "\e[91mInput #{input.info}\e[39m"
+        puts "\e[91m  Input #{input.info}\e[39m"
       end
 
       op.outputs.each do |output|
         output.make
-        puts "\e[91mOutput #{output.info}\e[39m"
+        puts "\e[91m  Output #{output.info}\e[39m"
       end
 
     end
