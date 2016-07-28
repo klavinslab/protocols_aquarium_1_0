@@ -15,7 +15,7 @@ class Protocol
 
       op.outputs.each do |output|
         output.make
-        puts "\e[97m  Output #{output.info}\e[39m"
+        puts "\e[97m  Made output #{output.info}\e[39m"
       end
 
     end
