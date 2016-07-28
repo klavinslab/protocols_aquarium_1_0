@@ -6,7 +6,7 @@ class Protocol
 
     Operation.where(job_id: jid).each do |op|
 
-      puts "\e[97mOperation #{op.id} (#{op.name})\e[39m"
+      puts "\e[97mOperation #{op.id} (#{op.name} for #{op.user.name})\e[39m"
 
       op.inputs.each do |input|
         input.retrieve
