@@ -23,10 +23,10 @@ class Protocol
         if output.part?
 
           if output_collections[output.name]
-            output.item = output_collections[output.name]
+            output.child_item_id = output_collections[output.name]
           else
             output_collections[output.name] = Collection.new_collection "Stripwell", operations.count, 1
-            output.item = output_collections[output.name]
+            output.child_item_id = output_collections[output.name]
           end
 
           output.row = i
