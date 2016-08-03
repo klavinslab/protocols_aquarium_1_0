@@ -26,6 +26,7 @@ class Protocol
             output.child_item_id = output_collections[output.name]
           else
             output_collections[output.name] = Collection.new_collection "Stripwell", operations.count, 1
+            output_collections[output.name].save
             output.child_item_id = output_collections[output.name]
           end
 
