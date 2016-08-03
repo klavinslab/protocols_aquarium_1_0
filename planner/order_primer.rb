@@ -21,8 +21,6 @@ class Protocol
 
         if output.part?
 
-          puts "\e[96m  Found output collection of type #{output.field_type.inspect}\e[39m"
-
           if output_collections[output.name]
             output.child_item_id = output_collections[output.name].id
           else
