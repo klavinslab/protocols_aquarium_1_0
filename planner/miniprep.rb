@@ -20,11 +20,7 @@ class Protocol
         if output.part?
 
           output_collections[output.name] ||= Collection.new_collection(output.object_type.name, operations.count, 1)
-          output.child_item_id = output_collections[output.name].id
-          output_collections[output.name].set i, 0, output.child_sample
-          output.row = i
-          output.column = 0
-          output.save
+          output.make_part(output_collections[output.name],i,0)
 
         else
 
