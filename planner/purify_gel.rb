@@ -22,7 +22,7 @@ class Protocol
 
           puts "  Got a part for #{output.name}. What to do??"
           unless output_collections[output.name]
-            puts "  output.object_type.inspect"
+            puts "  #{output.object_type.inspect}"
           end
 
         else
