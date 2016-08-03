@@ -21,12 +21,12 @@ class Protocol
 
         if output.part?
 
-          puts "\e96m  Found output collection of type #{output.field_type.inspect}"
+          puts "\e[96m  Found output collection of type #{output.field_type.inspect}\e[39m"
 
           if output_collections[output.name]
             output.child_item_id = output_collections[output.name].id
           else
-            output_collections[output.name] = Collection.new_collection("Stripwell", operations.count, 1)
+            output_collections[output.name] = Collection.new_collection(output.object_type.name, operations.count, 1)
             output.child_item_id = output_collections[output.name].id
           end
 
