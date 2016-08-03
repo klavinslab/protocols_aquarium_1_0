@@ -2,6 +2,7 @@ class Protocol
 
   def put s
     puts "\e[97m  #{s}\e[39m"
+  end
 
   def main
 
