@@ -6,8 +6,6 @@ class Protocol
 
     output_collections = {}
 
-    operations = Operation.where(job_id: jid)
-
     operations.each_with_index do |op,i|
 
       puts "\e[97m  Operation #{op.id} (#{op.name} for #{op.user.name})\e[39m"
@@ -46,10 +44,6 @@ class Protocol
     end
 
     puts ""
-
-    show do
-      title "Done"
-    end
 
     return {}
 
