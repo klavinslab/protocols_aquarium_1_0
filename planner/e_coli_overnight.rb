@@ -25,9 +25,10 @@ class Protocol
           if output_collections[output.name]
             output.child_item_id = output_collections[output.name]
           else
-            output_collections[output.name] = Collection.new_collection "Stripwell", operations.count, 1
-            output_collections[output.name].save
-            output.child_item_id = output_collections[output.name].id
+            c = Collection.new_collection("Stripwell", operations.count, 1)
+            puts "  errors = #{c.errors.full_messages.join(', ')}"
+            output_collections[output.name] = c
+            output.child_item_id = c.id
           end
 
           output.row = i
