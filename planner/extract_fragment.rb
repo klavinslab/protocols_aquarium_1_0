@@ -22,7 +22,7 @@ class Protocol
       op.outputs.each do |output|
 
         if output.part?
-          collections[output.name] ||= output.make_collection(operations.count, 1)
+          output_collections[output.name] ||= output.make_collection(operations.count, 1)
           output.make_part(output_collections[output.name],i,0)
         else
           output.make
