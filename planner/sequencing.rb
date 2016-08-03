@@ -4,7 +4,6 @@ class Protocol
 
     puts "\e[97mJob #{jid}\e[39m"
 
-    input_collections = {}
     output_collections = {}
 
     operations = Operation.where(job_id: jid)
@@ -21,6 +20,8 @@ class Protocol
       op.outputs.each do |output|
 
         if output.part?
+
+          puts "\e96m  Found output collection of type #{output.field_type.inspect}"
 
           if output_collections[output.name]
             output.child_item_id = output_collections[output.name].id
@@ -40,7 +41,7 @@ class Protocol
 
         end
 
-        puts "\e[97m    Made output #{output.info}\e[39m"
+        puts "\e[97m    Output #{output.info}\e[39m"
 
       end
 
