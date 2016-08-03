@@ -16,7 +16,7 @@ class Protocol
       op.outputs.each do |output|
 
         if output.part?
-          puts "Got a part. What to do??"
+          puts "  Got a part for #{output.name}. What to do??"
         else
           output.make
           puts "\e[97m    Made output #{output.info}\e[39m"
