@@ -16,7 +16,7 @@ class Protocol
 
       op.inputs.each do |input|
         input.retrieve
-        put "Input #{input.info}"
+        put "  Input #{input.info}"
       end
 
       op.outputs.each do |output|
@@ -28,7 +28,7 @@ class Protocol
           output.make
         end
 
-        put "Output #{output.info}"
+        put "  Output #{output.info}"
 
       end
 
