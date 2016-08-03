@@ -7,7 +7,9 @@ class Protocol
     input_collections = {}
     output_collections = {}
 
-    Operation.where(job_id: jid).each do |op|
+    operations = Operation.where(job_id: jid)
+
+    operations.each_with_index do |op,i|
 
       puts "\e[97m  Operation #{op.id} (#{op.name} for #{op.user.name})\e[39m"
 
@@ -20,15 +22,24 @@ class Protocol
 
         if output.part?
 
-          puts "  Got a part for #{output.name}. What to do??"
-          unless output_collections[output.name]
-            puts "  #{output.object_type.inspect}"
+          if output_collections[output.name]
+            output.item = output_collections[output.name]
+          else
+            output_collections[output.name] = Collection.new_collection "Stripwell", operations.count, 1
+            output.item = output_collections[output.name]
           end
 
+          output.row = i
+          output.column = 0
+          output.save
+
         else
+
           output.make
-          puts "\e[97m    Made output #{output.info}\e[39m"
+
         end
+
+        puts "\e[97m    Made output #{output.info}\e[39m"
 
       end
 
