@@ -19,7 +19,7 @@ class Protocol
 
         if output.part?
 
-          output_collections[output.name] ||= Collection.new_collection(output.object_type.name, operations.count, 1)
+          output_collections[output.name] ||= output.make_collection(operations.count, 1)
           output.make_part(output_collections[output.name],i,0)
 
         else
