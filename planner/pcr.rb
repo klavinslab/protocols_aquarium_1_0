@@ -25,11 +25,11 @@ class Protocol
           if output_collections[output.name]
             output.child_item_id = output_collections[output.name].id
           else
-            c = Collection.new_collection("Stripwell", operations.count, 1)
-            output_collections[output.name] = c
-            output.child_item_id = c.id
+            output_collections[output.name] = Collection.new_collection("Stripwell", operations.count, 1)
+            output.child_item_id = output_collections[output.name].id
           end
 
+          output_collections[output.name].set i, 0, output.child_sample
           output.row = i
           output.column = 0
           output.save
