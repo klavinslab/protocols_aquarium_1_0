@@ -19,13 +19,8 @@ class Protocol
 
         if output.part?
 
-          if output_collections[output.name]
-            output.child_item_id = output_collections[output.name].id
-          else
-            output_collections[output.name] = Collection.new_collection(output.object_type.name, operations.count, 1)
-            output.child_item_id = output_collections[output.name].id
-          end
-
+          output_collections[output.name] ||= Collection.new_collection(output.object_type.name, operations.count, 1)
+          output.child_item_id = output_collections[output.name].id
           output_collections[output.name].set i, 0, output.child_sample
           output.row = i
           output.column = 0
