@@ -47,6 +47,10 @@ class Protocol
 
     puts ""
 
+    show do
+      title "Done"
+    end
+
     return {}
 
   end
