@@ -1,5 +1,8 @@
 class Protocol
 
+  def put s
+    puts "\e[97m  #{s}\e[39m"
+
   def main
 
     puts "\e[97mJob #{jid}\e[39m"
@@ -8,33 +11,29 @@ class Protocol
 
     operations.each_with_index do |op,i|
 
-      puts "\e[97m  Operation #{op.id} (#{op.name} for #{op.user.name})\e[39m"
+      put "Operation #{op.id} (#{op.name} for #{op.user.name})"
 
       op.inputs.each do |input|
         input.retrieve
-        puts "\e[97m    Input #{input.info}\e[39m"
+        put "Input #{input.info}"
       end
 
       op.outputs.each do |output|
 
         if output.part?
-
-          output_collections[output.name] ||= output.make_collection(operations.count, 1)
+          collections[output.name] ||= output.make_collection(operations.count, 1)
           output.make_part(output_collections[output.name],i,0)
-
         else
-
           output.make
-
         end
 
-        puts "\e[97m    Output #{output.info}\e[39m"
+        put "Output #{output.info}"
 
       end
 
     end
 
-    puts ""
+    put ""
 
     return {}
 
